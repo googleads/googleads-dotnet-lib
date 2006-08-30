@@ -29,7 +29,8 @@ namespace AccountServiceDemo
             String myUseragent = "YOUR COMPANY -- C# Get AdGroup Test";
             String myEmail = "youremail@yourcompany.com";
             String myPassword = "secret";
-            String myToken = "ABcdeFGH93KL-NOPQ_STUv";
+            String myApplicationToken = "ABcdeFGH93KL-NOPQ_STUv";
+            String myDeveloperToken = "zYxwVutS11AB-cdEF_g99H";
 
             accountService.useragentValue = new AccountService.useragent();
             accountService.useragentValue.Text = new String[] { myUseragent };
@@ -40,8 +41,11 @@ namespace AccountServiceDemo
             accountService.passwordValue = new AccountService.password();
             accountService.passwordValue.Text = new String[] { myPassword };
 
-            accountService.tokenValue = new AccountService.token();
-            accountService.tokenValue.Text = new String[] { myToken };
+            accountService.developerTokenValue = new AccountService.developerToken();
+            accountService.developerTokenValue.Text = new String[] { myDeveloperToken };
+
+            accountService.applicationTokenValue = new AccountService.applicationToken();
+            accountService.applicationTokenValue.Text = new String[] { myApplicationToken };
 
             // get the account info
             AccountService.AccountInfo acctInfo = accountService.getAccountInfo();
