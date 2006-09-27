@@ -1,12 +1,11 @@
-The .NET client library for the AdWords API makes it easier to write 
+﻿The .NET client library for the AdWords API makes it easier to write 
 .NET clients to programmatically access AdWords accounts. The client
 library is provided as a Visual Studio project that contains the generated stubs
 all in the same namespace. com.google.api.adwords.vx, where x is the version.
 You don't need to worry about accessing the WSDL for the web services 
 -- classes in the client library do it for you.
 
-All duplicate classes generated from wsdl have been removed (wsdl.exe from .NET SDK 2.0 
-does that for you, but not the one in .NET SDK 1.1).
+All duplicate classes generated from wsdl have been removed (wsdl.exe from .NET SDK 2.0 does that for you, but not the one in .NET SDK 1.1).
 It is compatible with .NET SDK 1.1 and above.
 
 The .NET client library contain 2 useful SOAPExtension classes:
@@ -16,23 +15,45 @@ The .NET client library contain 2 useful SOAPExtension classes:
 These can be configured in your project by modifying the file App.config.
 By default they are on.
 
-You can use the demo programs in the $ADWORDS_ROOT/src/examples directory to get started
-writing your own client.
+You can use the demo programs in the $ADWORDS_ROOT/src/examples directory to get started writing your own client.
 The demo programs show how to use all the services.
 
 They should work out of the box if you provide the right credentials in App.config.
-To run a sample, build the project, then go to bin/Debug and run:
+To run a sample, open the project file google-api-adwords-dotnet.csproj in Visual Studio, build the project, then debug the project, or go to bin/Debug and run:
 >google-api-adwords-dotnet.exe ClassNameOfTheDemo
 
 The examples use the default constructor
     AdWordsUser me = new AdWordsUser();
+
 which uses credentials provided in the current directory in google-api-adwords-dotnet.exe.config
+
 Then you instantiate a service from the AdWordsUser object
 			CampaignServiceService campaignService = (CampaignServiceService)user.getService("CampaignServiceService");
+
 and call methods on it.
 In the end you can ask the user how much quota units have been consumed.
+
 			Console.WriteLine("Total Quota unit cost for this run: {0}", user.getUnits());
-			
+
+<GOTCHA --- READ THIS PLEASE --->
+This is a mistake that all C#/.NET newbies make, so please read this before you start coding.
+
+In the .NET 1.1 SOAP layer primitive types do not get serialized by defaults.
+.NET has no way of specifying null for a variable of a primitive type.
+If a primitive type variable is a binding to a SOAP paramer defined in the WSDL as nillable="true", in order for the variable to be serialized you need to set a variable <parameterName>Serialized to true in order for it to be serialized.
+Look at http://google-api-adwords-dotnet.googlecode.com/svn/trunk/src/examples/CampaignServiceDemo.cs
+for an exmaple, like:
+			newCampaign.dailyBudget = 1000000;
+			newCampaign.dailyBudgetSpecified = true;
+
+The members <parameterName>Serialized are an artifact of the .NET SOAP library and are not present in the original WSDL.
+
+Now you know!
+Good luck with the library and may the AdWords be with you.
+
+P@
+</GOTCHA --- READ THIS PLEASE --->
+
 There is sample App.config file in the root of the project.
 You need to customize it with your actual credentials before using the samples.
 
