@@ -7,7 +7,7 @@
     >
         <Build>
             <Settings
-                ApplicationIcon = "App.ico"
+                ApplicationIcon = ""
                 AssemblyKeyContainerName = ""
                 AssemblyName = "google-api-adwords-dotnet"
                 AssemblyOriginatorKeyFile = ""
@@ -76,7 +76,7 @@
                 />
                 <Reference
                     Name = "System.XML"
-                    AssemblyName = "System.XML"
+                    AssemblyName = "System.Xml"
                     HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
                 />
                 <Reference
@@ -91,10 +91,6 @@
                 <File
                     RelPath = "App.config"
                     BuildAction = "None"
-                />
-                <File
-                    RelPath = "App.ico"
-                    BuildAction = "Content"
                 />
                 <File
                     RelPath = "AssemblyInfo.cs"
