@@ -28,7 +28,7 @@ namespace com.google.api.adwords.lib
 
 	public class QuotaExtension : SoapExtension 
 	{
-		String currentEmail;
+		String currentToken;
 
 		// When the SOAP extension is accessed for the first time, the XML Web
 		// service method it is applied to is accessed to store the file
@@ -67,9 +67,19 @@ namespace com.google.api.adwords.lib
 				case SoapMessageStage.AfterSerialize:
 					foreach (SoapHeader header in message.Headers)
 					{
-						if (header.GetType() == Type.GetType("com.google.api.adwords.v5.email")) 
+						//not very clean, maybe use reflection to clean it up
+						//<rant>This is typical of why strong typing sucks for that type of apps
+						//you end up with many duplicate strongly typed boilerplate code, or super
+						//generic code using reflection all over the place, which kills your perf anyway.
+						//You might as well have used a dynamically typed language
+						//right away</rant>
+						if (header.GetType() == Type.GetType("com.google.api.adwords.v5.developerToken")) 
 						{
-							this.currentEmail = ((com.google.api.adwords.v5.email)header).Text[0];
+							this.currentToken = ((com.google.api.adwords.v5.developerToken)header).Text[0];
+						}
+						if (header.GetType() == Type.GetType("com.google.api.adwords.v6.developerToken")) 
+						{
+							this.currentToken = ((com.google.api.adwords.v6.developerToken)header).Text[0];
 						}
 					}
 					break;
@@ -79,13 +89,18 @@ namespace com.google.api.adwords.lib
 					int units = 0;
 					foreach (SoapHeader header in message.Headers)
 					{
+						//same remark as above
 						if (header.GetType() == Type.GetType("com.google.api.adwords.v5.units"))
 						{
 							units = Int32.Parse(((com.google.api.adwords.v5.units)header).Text[0]);
 						}
+						if (header.GetType() == Type.GetType("com.google.api.adwords.v6.units"))
+						{
+							units = Int32.Parse(((com.google.api.adwords.v6.units)header).Text[0]);
+						}
 					}
 
-					AdWordsUser.addUnits(this.currentEmail, units);
+					AdWordsUser.addUnits(this.currentToken, units);
 					break;
 				default:
 					throw new Exception("invalid stage");

@@ -15,7 +15,7 @@
 */
 using System;
 using System.Text;
-using com.google.api.adwords.v5;
+using com.google.api.adwords.v6;
 using com.google.api.adwords.lib;
 
 

@@ -16,7 +16,8 @@
 
 namespace com.google.api.adwords.lib 
 {
-	using com.google.api.adwords.v5;
+	//if you want to use v5 change this import
+	using com.google.api.adwords.v6;
 	using System;
 	using System.Web.Services.Protocols;
 	using System.Text.RegularExpressions;
@@ -30,9 +31,9 @@ namespace com.google.api.adwords.lib
 
 	public class AdWordsUser 
 	{
-		const String LAST_VERSION = "v5";
+		const String LAST_VERSION = "v6";
 		const String PACKAGE_PREFIX = "com.google.api.adwords.";
-		const String LIB_VERSION_PREFIX = "google C# lib 0.1 ";
+		const String LIB_VERSION_PREFIX = "google C# lib 0.2 ";
 
 		public static String[] HEADERS = {"email",
 									 "clientEmail",
@@ -146,23 +147,26 @@ namespace com.google.api.adwords.lib
 			client.Url = Regex.Replace(client.Url, @"https://adwords.google.com/", url);
 		}
 
-		public static void addUnits(String email, int i) 
+		public static void addUnits(String token, int i) 
 		{
-			lock(units)
+			if (null != token) 
 			{
-				if (!units.Contains(email))
+				lock(units)
 				{
-					units[email] = 0;
+					if (!units.Contains(token))
+					{
+						units[token] = 0;
+					}
+					units[token] = (int)units[token] + i; 
 				}
-				units[email] = (int)units[email] + i; 
 			}
 		}
 
 		public int getUnits() 
 		{
-			if (AdWordsUser.units.Contains(this.emailValue.Text[0]))
+			if (AdWordsUser.units.Contains(this.developerTokenValue.Text[0]))
 			{
-				return (int)AdWordsUser.units[this.emailValue.Text[0]];
+				return (int)AdWordsUser.units[this.developerTokenValue.Text[0]];
 			}
 			return 0;
 		}

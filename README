@@ -57,7 +57,11 @@ P@
 There is sample App.config file in the root of the project.
 You need to customize it with your actual credentials before using the samples.
 
-For information on how to use the AdWords API Java client library,
+If you want to use an older version of the API than the latest, use the constructor AdWordsUser(String version), and change the import statement in AdWordsUser
+	//if you want to use v5 change this import
+	using com.google.api.adwords.v6;
+
+For information on how to use the AdWords API .NET client library,
 visit index.html in the doc/javadoc directory. For more information
 about the AdWords API in general, read the Developer Guide at
 http://www.google.com/apis/adwords/developer/

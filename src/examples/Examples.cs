@@ -17,7 +17,7 @@
 using System;
 using System.Text;
 using System.Reflection;
-using com.google.api.adwords.v5;
+using com.google.api.adwords.v6;
 using com.google.api.adwords.lib;
 using com.google.api.adwords.examples;
 using System.Web.Services.Protocols;
@@ -53,7 +53,7 @@ namespace com.google.api.adwords.examples
 				}
 				catch (Exception e) 
 				{
-					Console.WriteLine("Exception: {0}", e.Message);
+					Console.WriteLine("Exception: {0}", e.InnerException.Message);
 					Console.ReadLine();
 				}
 			}
