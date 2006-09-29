@@ -1,0 +1,9 @@
+0.2
+added support for v6
+fixed quota accounting bug: accumulate under token, not email
+additional sample for KeywordToolService
+additional docs in README
+
+0.1
+Initial release, support for v5
+samples for all services
