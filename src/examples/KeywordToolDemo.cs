@@ -45,6 +45,26 @@ namespace com.google.api.adwords.examples
 			{
 				Console.WriteLine(siteKeywordDump(kw[i], groups));
 			}
+			
+			//get KeywordVariations
+			getKeywordVariations kwReq = new getKeywordVariations();
+			SeedKeyword seed = new SeedKeyword();
+			seed.text = "flower";
+			SeedKeyword[] seeds = {seed};
+			kwReq.seedKeywords = seeds;
+			getKeywordVariationsResponse kwResp = s.getKeywordVariations(kwReq);
+			KeywordVariation[] kwVar = kwResp.getKeywordVariationsReturn.moreSpecific;
+			if (null != kwVar) 
+			{
+				Console.WriteLine("-------------------------------");
+				Console.WriteLine("List of keyword variations for keyword seed {0}", seed.text);
+				Console.WriteLine("advertiserCompetitionScale|language|searchVolumeScale|text");
+				for (int i=0; i < kwVar.Length; i++) 
+				{
+					Console.WriteLine("{0}|{1}|{2}|{3}", new object[] {kwVar[i].advertiserCompetitionScale, 
+																		  kwVar[i].language, kwVar[i].searchVolumeScale, kwVar[i].text});
+				}
+			}
 			Console.ReadLine();
 		}
  
