@@ -65,3 +65,27 @@ For information on how to use the AdWords API .NET client library,
 visit index.html in the doc/javadoc directory. For more information
 about the AdWords API in general, read the Developer Guide at
 http://www.google.com/apis/adwords/developer/
+
+Cooking instructions for curious Developers
+===========================================
+
+If you just want to use this library, you don't need to read further.
+These are cooking recipes for developers who want to understand how this library was designed, and what other options there are.
+
+1. First I decided not to use .NET 2.0, because potentially many users of this library may not have migrated to .NET 2.0 yet.
+.NET 2.0 makes it much easier: you can use some nifty options in wsdl.exe to generate a single file with all the bindings in the same namespace, for a bunch a wsdl urls, and it will remove duoplicates automagically.
+If you use .NET 2.0 I have included a sample parameters file for wsdl.exe at the root of this project.
+just run
+> wsdl.exe /parameters wsdl-dotnet20-parameters.xml
+
+2. Now for poor users of .NET 1.1 like the rest of us, if you want to generate bindings for a new version of AdWords, here are the instructions:
+The generation is automated using Ruby Rake, so you'll need to install Ruby on your windows box before generating.
+Then edit Rakefile to adjust the version and run rake, the default target generates one file per service in the current directory, all in the same namespace.
+Create a src/vx directory, copy the files there, then add that to your visual studio project.
+Then you have to remove the duplicates manually: I decided that the cost of building a duplicate remover was higher than the cost of manually removing duplicates once per release until we move to .NET 2.0, but if you're game to do it, go for it:-)
+
+That's all there is to it.
+AdWordsUser uses Reflection to instantiate the services and populate the headers, and I use SOAPExtensions to trace calls to log files, as well as do quota accounting.
+Simple stuff.
+
+
