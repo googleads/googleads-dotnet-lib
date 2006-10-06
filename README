@@ -40,9 +40,9 @@ This is a mistake that all C#/.NET newbies make, so please read this before you 
 
 In the .NET 1.1 SOAP layer primitive types do not get serialized by defaults.
 .NET has no way of specifying null for a variable of a primitive type.
-If a primitive type variable is a binding to a SOAP paramer defined in the WSDL as nillable="true", in order for the variable to be serialized you need to set a variable <parameterName>Serialized to true in order for it to be serialized.
+If a primitive type variable is a binding to a SOAP paramer defined in the WSDL as nillable="true", in order for the variable to be serialized you need to set a variable <parameterName>Specified to true in order for it to be serialized.
 Look at http://google-api-adwords-dotnet.googlecode.com/svn/trunk/src/examples/CampaignServiceDemo.cs
-for an exmaple, like:
+for an example, like:
 			newCampaign.dailyBudget = 1000000;
 			newCampaign.dailyBudgetSpecified = true;
 
