@@ -264,7 +264,9 @@ namespace com.google.api.adwords.v7 {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapHeaderAttribute("tokenValue")]
+		[System.Web.Services.Protocols.SoapHeaderAttribute("developerTokenValue")]
+		[System.Web.Services.Protocols.SoapHeaderAttribute("applicationTokenValue")]
+		[System.Web.Services.Protocols.SoapHeaderAttribute("tokenValue")]
         [System.Web.Services.Protocols.SoapHeaderAttribute("passwordValue")]
         [System.Web.Services.Protocols.SoapHeaderAttribute("operationsValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
         [System.Web.Services.Protocols.SoapHeaderAttribute("clientCustomerIdValue")]

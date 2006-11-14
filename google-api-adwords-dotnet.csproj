@@ -102,6 +102,10 @@
                     BuildAction = "Content"
                 />
                 <File
+                    RelPath = "CHANGELOG"
+                    BuildAction = "None"
+                />
+                <File
                     RelPath = "COPYING"
                     BuildAction = "Content"
                 />
@@ -125,6 +129,11 @@
                 />
                 <File
                     RelPath = "src\examples\CampaignServiceWebsiteDemo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\examples\CreativeServiceDemo.cs"
                     SubType = "Code"
                     BuildAction = "Compile"
                 />
