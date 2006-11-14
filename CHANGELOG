@@ -1,3 +1,6 @@
+0.3
+added support for v7
+
 0.2
 added support for v6
 fixed quota accounting bug: accumulate under token, not email
