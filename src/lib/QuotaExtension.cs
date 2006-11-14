@@ -81,6 +81,10 @@ namespace com.google.api.adwords.lib
 						{
 							this.currentToken = ((com.google.api.adwords.v6.developerToken)header).Text[0];
 						}
+						if (header.GetType() == Type.GetType("com.google.api.adwords.v7.developerToken")) 
+						{
+							this.currentToken = ((com.google.api.adwords.v7.developerToken)header).Text[0];
+						}
 					}
 					break;
 				case SoapMessageStage.BeforeDeserialize:
@@ -97,6 +101,10 @@ namespace com.google.api.adwords.lib
 						if (header.GetType() == Type.GetType("com.google.api.adwords.v6.units"))
 						{
 							units = Int32.Parse(((com.google.api.adwords.v6.units)header).Text[0]);
+						}
+						if (header.GetType() == Type.GetType("com.google.api.adwords.v7.units"))
+						{
+							units = Int32.Parse(((com.google.api.adwords.v7.units)header).Text[0]);
 						}
 					}
 

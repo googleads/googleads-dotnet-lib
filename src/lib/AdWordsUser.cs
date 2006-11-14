@@ -17,7 +17,7 @@
 namespace com.google.api.adwords.lib 
 {
 	//if you want to use v5 change this import
-	using com.google.api.adwords.v6;
+	using com.google.api.adwords.v7;
 	using System;
 	using System.Web.Services.Protocols;
 	using System.Text.RegularExpressions;
@@ -31,9 +31,9 @@ namespace com.google.api.adwords.lib
 
 	public class AdWordsUser 
 	{
-		const String LAST_VERSION = "v6";
+		const String LAST_VERSION = "v7";
 		const String PACKAGE_PREFIX = "com.google.api.adwords.";
-		const String LIB_VERSION_PREFIX = "google C# lib 0.2 ";
+		const String LIB_VERSION_PREFIX = "google C# lib 0.3 ";
 
 		public static String[] HEADERS = {"email",
 									 "clientEmail",

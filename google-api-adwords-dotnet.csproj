@@ -106,6 +106,10 @@
                     BuildAction = "Content"
                 />
                 <File
+                    RelPath = "Rakefile"
+                    BuildAction = "None"
+                />
+                <File
                     RelPath = "README"
                     BuildAction = "Content"
                 />
@@ -261,6 +265,51 @@
                 />
                 <File
                     RelPath = "src\v6\TrafficEstimatorService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v7\AccountServiceService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v7\AdGroupServiceService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v7\CampaignServiceService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v7\CreativeServiceService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v7\CriterionServiceService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v7\InfoService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v7\KeywordToolService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v7\ReportService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v7\TrafficEstimatorService.cs"
                     SubType = "code"
                     BuildAction = "Compile"
                 />
