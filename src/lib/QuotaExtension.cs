@@ -45,6 +45,7 @@ namespace com.google.api.adwords.lib
 		{
 			return null;    
 		}
+
 		// Receive the file name stored by GetInitializer and store it in a
 		// member variable for this specific instance.
 		public override void Initialize(object initializer) 
@@ -55,6 +56,7 @@ namespace com.google.api.adwords.lib
 		{
 			return stream;
 		}
+
 		//  If the SoapMessageStage is such that the SoapRequest or
 		//  SoapResponse is still in the SOAP format to be sent or received,
 		//  save it out to a file.
@@ -85,6 +87,10 @@ namespace com.google.api.adwords.lib
 						{
 							this.currentToken = ((com.google.api.adwords.v7.developerToken)header).Text[0];
 						}
+						if (header.GetType() == Type.GetType("com.google.api.adwords.v8.developerToken")) 
+						{
+							this.currentToken = ((com.google.api.adwords.v8.developerToken)header).Text[0];
+						}
 					}
 					break;
 				case SoapMessageStage.BeforeDeserialize:
@@ -106,6 +112,10 @@ namespace com.google.api.adwords.lib
 						{
 							units = Int32.Parse(((com.google.api.adwords.v7.units)header).Text[0]);
 						}
+						if (header.GetType() == Type.GetType("com.google.api.adwords.v8.units"))
+						{
+							units = Int32.Parse(((com.google.api.adwords.v8.units)header).Text[0]);
+						}
 					}
 
 					AdWordsUser.addUnits(this.currentToken, units);
@@ -122,7 +132,6 @@ namespace com.google.api.adwords.lib
 	[AttributeUsage(AttributeTargets.Method)]
 	public class QuotaExtensionAttribute : SoapExtensionAttribute 
 	{
-
 		private int priority;
 
 		public override Type ExtensionType 

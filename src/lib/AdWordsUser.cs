@@ -16,7 +16,7 @@
 
 namespace com.google.api.adwords.lib 
 {
-	//if you want to use v5 change this import
+	// If you want to use earlier/later version, change this import
 	using com.google.api.adwords.v7;
 	using System;
 	using System.Web.Services.Protocols;
@@ -31,16 +31,19 @@ namespace com.google.api.adwords.lib
 
 	public class AdWordsUser 
 	{
+		// If you want to use earlier/later version, change this string
 		const String LAST_VERSION = "v7";
 		const String PACKAGE_PREFIX = "com.google.api.adwords.";
-		const String LIB_VERSION_PREFIX = "google C# lib 0.3 ";
+		const String LIB_VERSION_PREFIX = "Google C# lib 0.4 ";
 
-		public static String[] HEADERS = {"email",
-									 "clientEmail",
-									 "password",
-									 "applicationToken",
-									 "developerToken",
-									 "useragent"};
+		public static String[] HEADERS = {
+			"email",
+			"clientEmail",
+			"password",
+			"applicationToken",
+			"developerToken",
+			"useragent"
+		};
 
 		public email emailValue;
         
@@ -54,6 +57,8 @@ namespace com.google.api.adwords.lib
         
 		public developerToken developerTokenValue;
 
+		// If you are using v8 or later, comment out this line. In v8 "token"
+		// header was removed, use developerToken instead.
 		public token tokenValue;
 
 		public Hashtable headers;
@@ -76,7 +81,7 @@ namespace com.google.api.adwords.lib
 			this.headers = (Hashtable)System.Configuration.ConfigurationSettings.GetConfig("adwordsHeaders");
 
 			this.version = version;
-			this.services = new Hashtable(9);
+			this.services = new Hashtable(10);
 
 			//all this could be refactored using reflection
 			this.useragentValue = new useragent();

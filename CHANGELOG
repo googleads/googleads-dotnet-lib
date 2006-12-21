@@ -1,3 +1,15 @@
+0.4
+- Added support for v8. At present, v8 is available in sandbox only. Thus, 
+v7 remains as default lib version.
+- New AdService sevice was added.
+- Additional sample for new AdService, v8 only. When using v8, few edits 
+need to be done:
+	= Change v7 to v8 in AdWordsUser.cs:20, (using com.google.api.adwords.v8;).
+	= Change v7 to v8 in AdWordsUse.cs:35, (const String LAST_VERSION = "v8";).
+	= Comment out "token" header in AdWordsUser:62, 
+	  (//public token tokenValue;). In v8 "token" header was removed, use 
+	  "developerToken" header instead.
+
 0.3
 added support for v7
 

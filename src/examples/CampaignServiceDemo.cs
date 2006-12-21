@@ -22,7 +22,7 @@ using com.google.api.adwords.lib;
 namespace com.google.api.adwords.examples
 {
 	/**
-	 * Displays some of the fields in the Account's Info. 
+	 * Adds campaign, ad group, creative, and keywords.
 	 */
 	class CampaignServiceDemo
 	{

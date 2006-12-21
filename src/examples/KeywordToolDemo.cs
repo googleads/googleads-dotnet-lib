@@ -22,7 +22,7 @@ using com.google.api.adwords.lib;
 namespace com.google.api.adwords.examples
 {
 	/**
-	 * Displays some of the fields in the Account's Info. 
+	 * Gets variations for given keywords.
 	 */
 	class KeywordToolDemo
 	{

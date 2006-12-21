@@ -25,7 +25,7 @@ using System.Web.Services.Protocols;
 namespace com.google.api.adwords.examples
 {
 	/**
-	 * Displays some of the fields in the Account's Info. 
+	 * Executes examples.
 	 */
 	class Examples
 	{
