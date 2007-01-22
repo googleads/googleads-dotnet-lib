@@ -15,7 +15,7 @@
 */
 using System;
 using System.Text;
-using com.google.api.adwords.v7;
+using com.google.api.adwords.v8;
 using com.google.api.adwords.lib;
 
 
@@ -47,13 +47,15 @@ namespace com.google.api.adwords.examples
 			}
 			
 			//get KeywordVariations
-			getKeywordVariations kwReq = new getKeywordVariations();
 			SeedKeyword seed = new SeedKeyword();
 			seed.text = "flower";
 			SeedKeyword[] seeds = {seed};
-			kwReq.seedKeywords = seeds;
-			getKeywordVariationsResponse kwResp = s.getKeywordVariations(kwReq);
-			KeywordVariation[] kwVar = kwResp.getKeywordVariationsReturn.moreSpecific;
+			bool useSynonyms = true;
+			String[] languages = {"en"};
+			String[] countries = {"US"};
+			KeywordVariations kwResp = s.getKeywordVariations(seeds, useSynonyms, languages, countries);
+			KeywordVariation[] kwVar = kwResp.moreSpecific;
+
 			if (null != kwVar) 
 			{
 				Console.WriteLine("-------------------------------");

@@ -17,7 +17,7 @@
 using System;
 using System.Text;
 using System.Reflection;
-using com.google.api.adwords.v7;
+using com.google.api.adwords.v8;
 using com.google.api.adwords.lib;
 using com.google.api.adwords.examples;
 using System.Web.Services.Protocols;

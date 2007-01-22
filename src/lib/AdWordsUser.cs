@@ -17,7 +17,7 @@
 namespace com.google.api.adwords.lib 
 {
 	// If you want to use earlier/later version, change this import
-	using com.google.api.adwords.v7;
+	using com.google.api.adwords.v8;
 	using System;
 	using System.Web.Services.Protocols;
 	using System.Text.RegularExpressions;
@@ -32,9 +32,9 @@ namespace com.google.api.adwords.lib
 	public class AdWordsUser 
 	{
 		// If you want to use earlier/later version, change this string
-		const String LAST_VERSION = "v7";
+		const String LAST_VERSION = "v8";
 		const String PACKAGE_PREFIX = "com.google.api.adwords.";
-		const String LIB_VERSION_PREFIX = "Google C# lib 0.4 ";
+		const String LIB_VERSION_PREFIX = "Google C# lib 0.5 ";
 
 		public static String[] HEADERS = {
 			"email",
@@ -57,9 +57,9 @@ namespace com.google.api.adwords.lib
         
 		public developerToken developerTokenValue;
 
-		// If you are using v8 or later, comment out this line. In v8 "token"
-		// header was removed, use developerToken instead.
-		public token tokenValue;
+		// If you are using earlier version than v8, uncomment this line. In 
+		// v8 "token" header was removed, use developerToken instead.
+		//public token tokenValue;
 
 		public Hashtable headers;
 

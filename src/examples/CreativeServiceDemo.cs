@@ -15,7 +15,7 @@
 */
 using System;
 using System.Text;
-using com.google.api.adwords.v7;
+using com.google.api.adwords.v8;
 using com.google.api.adwords.lib;
 
 
@@ -31,9 +31,9 @@ namespace com.google.api.adwords.examples
 			//create a user (reads headers from app.config file)
 			AdWordsUser user = new AdWordsUser();
 			// get the services
-			CampaignServiceService campaignService = (CampaignServiceService)user.getService("CampaignServiceService");
-			AdGroupServiceService adgroupService = (AdGroupServiceService)user.getService("AdGroupServiceService");
-			CreativeServiceService creativeService = (CreativeServiceService)user.getService("CreativeServiceService");
+			CampaignService campaignService = (CampaignService)user.getService("CampaignService");
+			AdGroupService adgroupService = (AdGroupService)user.getService("AdGroupService");
+			CreativeService creativeService = (CreativeService)user.getService("CreativeService");
 
 			// Create a new campaign with some ad groups.
 			// First create the campaign so we can get its id.

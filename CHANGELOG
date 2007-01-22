@@ -1,4 +1,7 @@
-0.4
+0.5: api.sgrinberg@gmail.com
+- Made v8 lib's default version.
+
+0.4: api.sgrinberg@gmail.com
 - Added support for v8. At present, v8 is available in sandbox only. Thus, 
 v7 remains as default lib version.
 - New AdService sevice was added.

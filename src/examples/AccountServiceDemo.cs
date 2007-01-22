@@ -15,7 +15,7 @@
 */
 using System;
 using System.Text;
-using com.google.api.adwords.v7;
+using com.google.api.adwords.v8;
 using com.google.api.adwords.lib;
 
 
@@ -31,9 +31,9 @@ namespace com.google.api.adwords.examples
 			//create a user (reads headers from app.config file)
 			AdWordsUser user = new AdWordsUser();
 			//use sandbox
-			//user.useSandbox();
+			user.useSandbox();
 			// get an Account Service client
-			AccountServiceService service = (AccountServiceService)user.getService("AccountServiceService");
+			AccountService service = (AccountService)user.getService("AccountService");
 
 			// get the account info
 			AccountInfo acctInfo = service.getAccountInfo();
