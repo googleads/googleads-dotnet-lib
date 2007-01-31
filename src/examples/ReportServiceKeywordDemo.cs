@@ -54,7 +54,7 @@ namespace com.google.api.adwords.examples
 			myReportJob.aggregationType = AggregationType.Daily;
 
 			// Set the start and end date for the report
-			myReportJob.endDay = new DateTime(); // defaults to today
+			myReportJob.endDay = DateTime.Today; // defaults to today
 			myReportJob.startDay = new DateTime(2006, 1, 1);
 			myReportJob.name = "Report1";
 

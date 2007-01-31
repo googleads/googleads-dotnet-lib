@@ -34,7 +34,7 @@ namespace com.google.api.adwords.lib
 		// If you want to use earlier/later version, change this string
 		const String LAST_VERSION = "v8";
 		const String PACKAGE_PREFIX = "com.google.api.adwords.";
-		const String LIB_VERSION_PREFIX = "Google C# lib 0.5 ";
+		const String LIB_VERSION_PREFIX = "Google C# lib 0.6 ";
 
 		public static String[] HEADERS = {
 			"email",
