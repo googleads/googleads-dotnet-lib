@@ -31,7 +31,7 @@ namespace com.google.api.adwords.examples
 	{
 		static void Main(string[] args)
 		{
-			// parse arguments
+			// Parse arguments
 			if (args.Length < 1) 
 			{
 				usage();

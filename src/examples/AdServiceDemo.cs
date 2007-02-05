@@ -18,7 +18,6 @@ using System.Text;
 using com.google.api.adwords.v8;
 using com.google.api.adwords.lib;
 
-
 namespace com.google.api.adwords.examples
 {
 	/**
@@ -28,14 +27,14 @@ namespace com.google.api.adwords.examples
 	{
 		public static void run()
 		{
-			//create a user (reads headers from app.config file)
+			// Create a user (reads headers from app.config file)
 			AdWordsUser user = new AdWordsUser();
-			//use sandbox
+			// Use sandbox
 			user.useSandbox();
-			// get an Ad Service client
+			// Get an Ad Service client
 			AdService service = (AdService)user.getService("AdService");
 
-			// get all ads
+			// Get all ads
 			int[] adGroupIds = {1234};
 			Ad[] ads = service.getAllAds(adGroupIds);
 			for (int i = 0; i < ads.Length; i ++) 

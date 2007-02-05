@@ -18,7 +18,6 @@ using System.Text;
 using com.google.api.adwords.v8;
 using com.google.api.adwords.lib;
 
-
 namespace com.google.api.adwords.examples
 {
 	/**
@@ -28,17 +27,19 @@ namespace com.google.api.adwords.examples
 	{
 		public static void run()
 		{
-			//create a user (reads headers from app.config file)
+			// Create a user (reads headers from app.config file)
 			AdWordsUser user = new AdWordsUser();
-			// get the services
+			// Use sandbox
+			user.useSandbox();
+			// Get the services
 			CampaignService campaignService = (CampaignService)user.getService("CampaignService");
 
 			// Print out all campaign ids
 			Campaign[] myCampaigns = campaignService.getAllAdWordsCampaigns(1);
 
-			// Print name and id for each campaign
+			// Print name, id, and status for each campaign
 			for (int i = 0; i < myCampaigns.Length; i++) {
-			Console.WriteLine("Name: " + myCampaigns[i].name +
+			Console.WriteLine("Name: " + myCampaigns[i].name + 
 								"    id: " + myCampaigns[i].id +
 								"  status: " + myCampaigns[i].status);
 			}

@@ -18,7 +18,6 @@ using System.Text;
 using com.google.api.adwords.v8;
 using com.google.api.adwords.lib;
 
-
 namespace com.google.api.adwords.examples
 {
 	/**
@@ -28,9 +27,11 @@ namespace com.google.api.adwords.examples
 	{
 		public static void run()
 		{
-			//create a user (reads headers from app.config file)
+			// Create a user (reads headers from app.config file)
 			AdWordsUser user = new AdWordsUser();
-			// get the services
+			// Use sandbox
+			user.useSandbox();
+			// Get the services
 			CampaignService campaignService = (CampaignService)user.getService("CampaignService");
 			AdGroupService adgroupService = (AdGroupService)user.getService("AdGroupService");
 			CreativeService creativeService = (CreativeService)user.getService("CreativeService");
@@ -55,8 +56,7 @@ namespace com.google.api.adwords.examples
 			// Target the campaign at English, French and Spanish.
 			String[] languages =  {"en", "fr", "es"};
 			newCampaign.languageTargeting = languages;
-			//set the campaign status to paused
-			//we don't want to start paying for this test
+			// Set the campaign status to paused, we don't want to start paying for this test
 			newCampaign.status = CampaignStatus.Paused;
 
 			// Add the new campaign.
@@ -77,8 +77,8 @@ namespace com.google.api.adwords.examples
 			int adgroup_id=newAdGroup.id;
 
 			// Create a creative.
-			// IMPORTANT: create the creative before adding keywords!
-			//else the minCpc will have a higher value
+			// IMPORTANT: create the creative before adding keywords! Eelse the minCpc will 
+			// have a higher value
 			Creative creative1 = new Creative();
 			creative1.headline = "AdWords API Dev Guide";
 			creative1.description1 = "Access your AdWords";
@@ -88,14 +88,14 @@ namespace com.google.api.adwords.examples
 			creative1.adGroupId = adgroup_id;
 			creative1 = creativeService.addCreative(creative1);
 			Console.WriteLine("Before update: " + creative1.headline + " status = " + creative1.status);
-			//update the creative status (only field updatable for now)
+			// Update the creative status (only field updatable for now)
 			creative1.status = AdStatus.Disabled;
 			creative1.statusSpecified = true;
 			Creative[] creatives = {creative1};
 
 			creativeService.updateCreatives(creatives);
 
-			//check creative status
+			// Check creative status
 			Creative[] updatedCreatives = creativeService.getAllCreatives(adgroup_id);
 			Creative c;
 			for (int i = 0; i < updatedCreatives.Length; i++) 
@@ -104,7 +104,7 @@ namespace com.google.api.adwords.examples
 				Console.WriteLine("After update: " + c.headline + " status = " + c.status);
 			}
     
-			//determining how much quota all these operations have consumed
+			// Determining how much quota all these operations have consumed
 			Console.WriteLine("---------------------------------------");
 			Console.WriteLine("Total Quota unit cost for this run: {0}", user.getUnits());
 

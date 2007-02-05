@@ -18,24 +18,23 @@ using System.Text;
 using com.google.api.adwords.v8;
 using com.google.api.adwords.lib;
 
-
 namespace com.google.api.adwords.examples
 {
 	/**
-	 * Displays some of the fields in the Account's Info. 
+	 * Displays some of the account's info. 
 	 */
 	class AccountServiceDemo
 	{
 		public static void run()
 		{
-			//create a user (reads headers from app.config file)
+			// Create a user (reads headers from app.config file)
 			AdWordsUser user = new AdWordsUser();
-			//use sandbox
+			// Use sandbox
 			user.useSandbox();
-			// get an Account Service client
+			// Get an Account Service client
 			AccountService service = (AccountService)user.getService("AccountService");
 
-			// get the account info
+			// Get the account info
 			AccountInfo acctInfo = service.getAccountInfo();
 			Console.WriteLine("----- Account Info -----");
 			Console.WriteLine("Customer ID: " + acctInfo.customerId);

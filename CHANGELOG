@@ -1,5 +1,6 @@
 0.6: api.sgrinberg@gmail.com
 - Fixed endDate bug in example code.  new DateTime() defaults to "1/1/0001 12:00:00 AM", not today.
+- Removed no longer supported v5.
 
 0.5: api.sgrinberg@gmail.com
 - Made v8 lib's default version.

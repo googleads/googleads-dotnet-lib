@@ -22,15 +22,17 @@ using System.Threading;
 namespace com.google.api.adwords.examples
 {
 	/**
-	 * Displays some of the fields in the Account's Info. 
+	 * Schedules custom report job.
 	 */
 	class ReportServiceCustomDemo
 	{
 		public static void run()
 		{
-			//create a user (reads headers from app.config file)
+			// Create a user (reads headers from app.config file)
 			AdWordsUser user = new AdWordsUser();
-			// get the services
+			// Use sandbox
+			user.useSandbox();
+			// Get the services
 			ReportService rs = (ReportService)user.getService("ReportService");
 
 			// Create the report job we're going to send
@@ -56,7 +58,7 @@ namespace com.google.api.adwords.examples
 			// Set the start and end date for the report
 			myReportJob.endDay = DateTime.Today; // defaults to today
 			myReportJob.startDay = new DateTime(2006, 1, 1);
-			//CustomReports lets you specify exactly what you want to retrive in the report
+			// CustomReports lets you specify exactly what you want to retrive in the report
 			CustomReportOption[] customOptions = {
 													 CustomReportOption.AccountName,
 													 CustomReportOption.Campaign,
@@ -68,7 +70,6 @@ namespace com.google.api.adwords.examples
 													 CustomReportOption.Cpc,
 													 CustomReportOption.Ctr
 												 };
-	    
 			myReportJob.customOptions = customOptions;
 			// Name this report job
 			myReportJob.name = "Report2";
@@ -79,10 +80,9 @@ namespace com.google.api.adwords.examples
 			// Wait until the report has been generated
 			ReportJobStatus mystatus = rs.getReportJobStatus(myJobId);
 
-			while (mystatus != ReportJobStatus.Completed
-				&& mystatus != ReportJobStatus.Failed) 
+			while (mystatus != ReportJobStatus.Completed && mystatus != ReportJobStatus.Failed) 
 			{
-					Thread.Sleep(30000);
+				Thread.Sleep(30000);
 				mystatus = rs.getReportJobStatus(myJobId);
 				Console.WriteLine("Report job status is " + mystatus);
 			}
@@ -93,14 +93,14 @@ namespace com.google.api.adwords.examples
 			} 
 			else 
 			{
-				// report is ready; download it
+				// Report is ready; download it
 				Console.WriteLine("The report is ready!");
 
 				// Download the report
 				String url = rs.getReportDownloadUrl(myJobId);
 				Console.WriteLine("Download it at url {0}", url);
 
-			} // closes the else
+			}
 			Console.ReadLine();
 		}
 	}

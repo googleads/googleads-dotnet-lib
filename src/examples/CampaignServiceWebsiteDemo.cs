@@ -18,7 +18,6 @@ using System.Text;
 using com.google.api.adwords.v8;
 using com.google.api.adwords.lib;
 
-
 namespace com.google.api.adwords.examples
 {
 	/**
@@ -28,9 +27,11 @@ namespace com.google.api.adwords.examples
 	{
 		public static void run()
 		{
-			//create a user (reads headers from app.config file)
+			// Create a user (reads headers from app.config file)
 			AdWordsUser user = new AdWordsUser();
-			// get the services
+			// Use sandbox
+			user.useSandbox();
+			// Get the services
 			CampaignService campaignService = (CampaignService)user.getService("CampaignService");
 			AdGroupService adgroupService = (AdGroupService)user.getService("AdGroupService");
 			CriterionService criterionService = (CriterionService)user.getService("CriterionService");
@@ -56,8 +57,7 @@ namespace com.google.api.adwords.examples
 			// Target the campaign at English, French and Spanish.
 			String[] languages =  {"en", "fr", "es"};
 			newCampaign.languageTargeting = languages;
-			//set the campaign status to paused
-			//we don't want to start paying for this test
+			// Set the campaign status to paused, we don't want to start paying for this test
 			newCampaign.status = CampaignStatus.Paused;
 
 			// Add the new campaign.
@@ -78,8 +78,8 @@ namespace com.google.api.adwords.examples
 			int adgroup_id=newAdGroup.id;
 
 			// Create a creative.
-			// IMPORTANT: create the creative before adding keywords!
-			//else the minCpc will have a higher value
+			// IMPORTANT: create the creative before adding keywords! Eelse the minCpc will 
+			// have a higher value
 			Creative creative1 = new Creative();
 			creative1.headline = "AdWords API Dev Guide";
 			creative1.description1 = "Access your AdWords";
@@ -99,12 +99,12 @@ namespace com.google.api.adwords.examples
 
 			newWebsites = criterionService.addCriteria(newWebsites);
 
-			//update all criteria maxCpc
+			// Update all criteria maxCpc
 			((Website)newWebsites[0]).maxCpm = 3000000;			
 			((Website)newWebsites[0]).maxCpmSpecified = true;			
 			criterionService.updateCriteria(newWebsites);
     
-			//check criteria maxCpm
+			// Check criteria maxCpm
 			Criterion[] updatedWs = criterionService.getAllCriteria(adgroup_id);
 			for (int i = 0; i < updatedWs.Length; i++) 
 			{

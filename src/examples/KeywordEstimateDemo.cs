@@ -18,7 +18,6 @@ using System.Text;
 using com.google.api.adwords.v8;
 using com.google.api.adwords.lib;
 
-
 namespace com.google.api.adwords.examples
 {
 	/**
@@ -28,9 +27,11 @@ namespace com.google.api.adwords.examples
 	{
 		public static void run()
 		{
-			//create a user (reads headers from app.config file)
+			// Create a user (reads headers from app.config file)
 			AdWordsUser user = new AdWordsUser();
-			// get the services
+			// Use sandbox
+			user.useSandbox();
+			// Get the services
 			TrafficEstimatorService tes = (TrafficEstimatorService)user.getService("TrafficEstimatorService");
 
 			// Set the attributes of the keywords to be estimated

@@ -18,7 +18,6 @@ using System.Text;
 using com.google.api.adwords.v8;
 using com.google.api.adwords.lib;
 
-
 namespace com.google.api.adwords.examples
 {
 	/**
@@ -28,17 +27,19 @@ namespace com.google.api.adwords.examples
 	{
 		public static void run()
 		{
-			//create a user (reads headers from app.config file)
+			// Create a user (reads headers from app.config file)
 			AdWordsUser user = new AdWordsUser();
-			// get the services
+			// Use sandbox
+			user.useSandbox();
+			// Get the services
 			KeywordToolService s = (KeywordToolService)user.getService("KeywordToolService");
 			String site = "http://blog.chanezon.com";
 
-			//get a list of keywords for that url
+			// Get a list of keywords for that url
 			SiteKeywordGroups kwg = s.getKeywordsFromSite(site, true, null, null);
 			SiteKeyword[] kw = kwg.keywords;
 			String[] groups = kwg.groups;
-			//print the list
+			// Print the list
 			Console.WriteLine("List of keyword suggestions for url {0}", site);
 			Console.WriteLine("Group	groupid	compte  volume text");
 			for (int i=0; i < kw.Length; i++) 
@@ -46,7 +47,7 @@ namespace com.google.api.adwords.examples
 				Console.WriteLine(siteKeywordDump(kw[i], groups));
 			}
 			
-			//get KeywordVariations
+			// Get KeywordVariations
 			SeedKeyword seed = new SeedKeyword();
 			seed.text = "flower";
 			SeedKeyword[] seeds = {seed};
