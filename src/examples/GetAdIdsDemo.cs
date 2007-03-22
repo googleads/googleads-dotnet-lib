@@ -21,9 +21,9 @@ using com.google.api.adwords.lib;
 namespace com.google.api.adwords.examples
 {
 	/**
-	 * Gets name, id, and status of all campaigns in the account.
+	 * Tests new getAllAds() method.
 	 */
-	class GetCampaignIdsDemo
+	class GetAdIdsDemo
 	{
 		public static void run()
 		{
@@ -31,19 +31,21 @@ namespace com.google.api.adwords.examples
 			AdWordsUser user = new AdWordsUser();
 			// Use sandbox
 			user.useSandbox();
-			// Get the services
-			CampaignService campaignService = (CampaignService)user.getService("CampaignService");
+			// Get an Ad Service client
+			AdService service = (AdService)user.getService("AdService");
 
-			// Print out all campaign ids
-			Campaign[] myCampaigns = campaignService.getAllAdWordsCampaigns(1);
-
-			// Print name, id, and status for each campaign
-			for (int i = 0; i < myCampaigns.Length; i++) {
-			Console.WriteLine("Name: " + myCampaigns[i].name + 
-								"    id: " + myCampaigns[i].id +
-								"  status: " + myCampaigns[i].status);
+			// Get all ads
+			int[] adGroupIds = {12345};
+			Ad[] ads = service.getAllAds(adGroupIds);
+			for (int i = 0; i < ads.Length; i ++) 
+			{
+				Console.WriteLine("----- Ad Info -----");
+				Console.WriteLine("Ad Group ID: " + ads[i].adGroupId);
+				Console.WriteLine("ID: " + ads[i].id);
+				Console.WriteLine("Type: " + ads[i].adType);
+				Console.WriteLine("Status: " + ads[i].status);
+				Console.WriteLine("------------------------");
 			}
-
 			Console.ReadLine();
 		}
 	}

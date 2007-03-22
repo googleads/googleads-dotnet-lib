@@ -1,5 +1,5 @@
-SERVICES = ['Creative', 'Criterion', 'AdGroup', 'Campaign', 'TrafficEstimator', 'Report', 'Info', 'Account', 'KeywordTool', 'Ad']
-version = "v8"
+SERVICES = ['Criterion', 'AdGroup', 'Campaign', 'TrafficEstimator', 'Report', 'Info', 'Account', 'KeywordTool', 'Ad']
+version = "v9"
 prefix = "https://adwords.google.com/api/adwords/" + version + "/"
 srcdir = "src" + version
 
@@ -15,4 +15,3 @@ task :genclient do
 	    system(command)
 		end
 end
-

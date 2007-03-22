@@ -1,3 +1,9 @@
+0.7.0:
+- Added support for v9.  Made v9 lib's default version.
+- Removed no longer supported v6.
+- Renamed AdServiceDemo example into GetAdIdsDemo.
+- Converted CreativeServiceDemo example into AdServiceDemo.  CreativeService was removed in v9.
+
 0.6: api.sgrinberg@gmail.com
 - Fixed endDate bug in example code.  new DateTime() defaults to "1/1/0001 12:00:00 AM", not today.
 - Removed no longer supported v5.

@@ -15,7 +15,7 @@
 */
 using System;
 using System.Text;
-using com.google.api.adwords.v8;
+using com.google.api.adwords.v9;
 using com.google.api.adwords.lib;
 using System.Threading;
 
@@ -57,7 +57,7 @@ namespace com.google.api.adwords.examples
 
 			// Set the start and end date for the report
 			myReportJob.endDay = DateTime.Today; // defaults to today
-			myReportJob.startDay = new DateTime(2006, 1, 1);
+			myReportJob.startDay = new DateTime(2007, 1, 1);
 			myReportJob.name = "Report1";
 
 			// Submit the request for the report

@@ -138,12 +138,12 @@
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\examples\CreativeServiceDemo.cs"
+                    RelPath = "src\examples\Examples.cs"
                     SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\examples\Examples.cs"
+                    RelPath = "src\examples\GetAdIdsDemo.cs"
                     SubType = "Code"
                     BuildAction = "Compile"
                 />
@@ -190,51 +190,6 @@
                 <File
                     RelPath = "src\lib\TraceExtension.cs"
                     SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v6\AccountServiceService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v6\AdGroupServiceService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v6\CampaignServiceService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v6\CreativeServiceService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v6\CriterionServiceService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v6\InfoService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v6\KeywordToolService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v6\ReportService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v6\TrafficEstimatorService.cs"
-                    SubType = "code"
                     BuildAction = "Compile"
                 />
                 <File
@@ -329,6 +284,51 @@
                 />
                 <File
                     RelPath = "src\v8\TrafficEstimatorService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v9\AccountService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v9\AdGroupService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v9\AdService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v9\CampaignService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v9\CriterionService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v9\InfoService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v9\KeywordToolService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v9\ReportService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v9\TrafficEstimatorService.cs"
                     SubType = "code"
                     BuildAction = "Compile"
                 />

@@ -15,7 +15,7 @@
 */
 using System;
 using System.Text;
-using com.google.api.adwords.v8;
+using com.google.api.adwords.v9;
 using com.google.api.adwords.lib;
 
 namespace com.google.api.adwords.examples
@@ -35,7 +35,7 @@ namespace com.google.api.adwords.examples
 			CampaignService campaignService = (CampaignService)user.getService("CampaignService");
 			AdGroupService adgroupService = (AdGroupService)user.getService("AdGroupService");
 			CriterionService criterionService = (CriterionService)user.getService("CriterionService");
-			CreativeService creativeService = (CreativeService)user.getService("CreativeService");
+			AdService adService = (AdService)user.getService("AdService");
 
 			// Create a new campaign with some ad groups.
 			// First create the campaign so we can get its id.
@@ -77,17 +77,17 @@ namespace com.google.api.adwords.examples
 
 			int adgroup_id=newAdGroup.id;
 
-			// Create a creative.
-			// IMPORTANT: create the creative before adding keywords! Eelse the minCpc will 
+			// Create a text ad.
+			// IMPORTANT: create the ad before adding keywords! Else the minCpc will 
 			// have a higher value
-			Creative creative1 = new Creative();
-			creative1.headline = "AdWords API Dev Guide";
-			creative1.description1 = "Access your AdWords";
-			creative1.description2 = "accounts programmatically";
-			creative1.displayUrl = "blog.chanezon.com";
-			creative1.destinationUrl = "http://blog.chanezon.com/";
-			creative1.adGroupId = adgroup_id;
-			creative1 = creativeService.addCreative(creative1);
+			TextAd ad1 = new TextAd();
+			ad1.headline = "AdWords API Dev Guide";
+			ad1.description1 = "Access your AdWords";
+			ad1.description2 = "accounts programmatically";
+			ad1.displayUrl = "blog.chanezon.com";
+			ad1.destinationUrl = "http://blog.chanezon.com/";
+			ad1.adGroupId = adgroup_id;
+			Ad[] ads = adService.addAds(new Ad[] {ad1});
     
 			// Add keywords to the AdGroup.
 			Website ws = new Website();

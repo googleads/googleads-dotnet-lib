@@ -15,7 +15,7 @@
 */
 using System;
 using System.Text;
-using com.google.api.adwords.v8;
+using com.google.api.adwords.v9;
 using com.google.api.adwords.lib;
 
 namespace com.google.api.adwords.examples
@@ -39,30 +39,30 @@ namespace com.google.api.adwords.examples
 			Console.WriteLine("Usage quota for this month: " + usageQuota);
 			//Console.ReadLine();
 
-			// Get the quota used between July 1, 2006 and today
+			// Get the quota used between January 1, 2007 and today
 			long unitCount = service.getUnitCount(
-				new DateTime(2006, 7, 1, 0, 0, 0),
+				new DateTime(2007, 1, 1, 0, 0, 0),
 				DateTime.Today);
 			Console.WriteLine("Unit count for the past day month: " 
 				+ unitCount);
 			//Console.ReadLine();
 
-			// Get the operation count used between July 1, 2006 and today
+			// Get the operation count used between January 1, 2007 and today
 			long operationCount = service.getOperationCount(
-				new DateTime(2006, 7, 1, 0, 0, 0),
+				new DateTime(2007, 1, 1, 0, 0, 0),
 				DateTime.Today);
 			Console.WriteLine("Operation count for the past day month: " 
 				+ operationCount);
 
-			// Get the quota used between July 1, 2006 and today for 
+			// Get the quota used between January 1, 2007 and today for 
 			// AccountService.getAccountInfo() call
 			long methodUnitCount = service.getUnitCountForMethod(
 				"AccountService", 
 				"getAccountInfo", 
-				new DateTime(2006, 7, 1, 0, 0, 0),
+				new DateTime(2007, 1, 1, 0, 0, 0),
 				DateTime.Today);
 			Console.WriteLine("Method unit count for AccountService" 
-				+ ".getAccountInfo between July 1, 2006 and"
+				+ ".getAccountInfo between January 1, 2007 and"
 				+ " today: " + methodUnitCount);
 
 			Console.ReadLine();

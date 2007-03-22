@@ -15,7 +15,7 @@
 */
 using System;
 using System.Text;
-using com.google.api.adwords.v8;
+using com.google.api.adwords.v9;
 using com.google.api.adwords.lib;
 
 namespace com.google.api.adwords.examples
