@@ -3,17 +3,17 @@
   <parsableerrors>true</parsableerrors>
   <sharetypes>true</sharetypes>
   <documents>
-    <document>https://adwords.google.com/api/adwords/v5/CampaignService?wsdl</document>
-    <document>https://adwords.google.com/api/adwords/v5/AdGroupService?wsdl</document>
-		<document>https://adwords.google.com/api/adwords/v5/CriterionService?wsdl</document>
-		<document>https://adwords.google.com/api/adwords/v5/CreativeService?wsdl</document>
-		<document>https://adwords.google.com/api/adwords/v5/InfoService?wsdl</document>
-		<document>https://adwords.google.com/api/adwords/v5/AccountService?wsdl</document>
-		<document>https://adwords.google.com/api/adwords/v5/KeywordToolService?wsdl</document>
-		<document>https://adwords.google.com/api/adwords/v5/TrafficEstimatorService?wsdl</document>
-		<document>https://adwords.google.com/api/adwords/v5/ReportService?wsdl</document>
+    <document>https://adwords.google.com/api/adwords/v9/CampaignService?wsdl</document>
+    <document>https://adwords.google.com/api/adwords/v9/AdGroupService?wsdl</document>
+	<document>https://adwords.google.com/api/adwords/v9/CriterionService?wsdl</document>
+	<document>https://adwords.google.com/api/adwords/v9/AdService?wsdl</document>
+	<document>https://adwords.google.com/api/adwords/v9/InfoService?wsdl</document>
+	<document>https://adwords.google.com/api/adwords/v9/AccountService?wsdl</document>
+	<document>https://adwords.google.com/api/adwords/v9/KeywordToolService?wsdl</document>
+	<document>https://adwords.google.com/api/adwords/v9/TrafficEstimatorService?wsdl</document>
+	<document>https://adwords.google.com/api/adwords/v9/ReportService?wsdl</document>
   </documents>
-  <namespace>com.google.adwords.v5</namespace>
+  <namespace>com.google.adwords.v9</namespace>
   <out>AdWordsApi.cs</out>
   <webReferenceOptions>
     <verbose>false</verbose>
