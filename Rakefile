@@ -10,7 +10,7 @@ task :default => [:genclient]
 
 desc "generates client csharp files based on wsdl urls"
 task :genclient do
-    SERVICES.each do |s|
+	SERVICES.each do |s|
     	command = "wsdl /namespace:com.google.api.adwords." + version + " " + prefix + s + "Service?wsdl"
 	    system(command)
 		end

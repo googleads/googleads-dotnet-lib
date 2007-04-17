@@ -1,55 +1,70 @@
-﻿The .NET client library for the AdWords API makes it easier to write 
-.NET clients to programmatically access AdWords accounts. The client
-library is provided as a Visual Studio project that contains the generated stubs
-all in the same namespace. com.google.api.adwords.vx, where x is the version.
-You don't need to worry about accessing the WSDL for the web services 
--- classes in the client library do it for you.
+﻿The .NET client library for the AdWords API makes it easier to write .NET 
+clients to programmatically access AdWords accounts.  The client library is 
+provided as a Visual Studio project that contains the generated stubs all 
+in the same namespace, com.google.api.adwords.vx, where x is the version.  
+You don't need to worry about accessing the WSDL for the web services -- 
+classes in the client library do it for you.
 
-All duplicate classes generated from wsdl have been removed (wsdl.exe from .NET SDK 2.0 does that for you, but not the one in .NET SDK 1.1).
-It is compatible with .NET SDK 1.1 and above.
+All duplicate classes generated from wsdl have been removed (wsdl.exe 
+from .NET SDK 2.0 does that for you, but not the one in .NET SDK 1.1).  It 
+is compatible with .NET SDK 1.1 and above.
 
 The .NET client library contain 2 useful SOAPExtension classes:
-- QuotaExtension takes care of quota unit accounting for all services
-- TraceExtension logs all requests and responses in log files.
+1. QuotaExtension takes care of quota unit accounting for all services.
+2. TraceExtension logs all requests and responses in log files.
 
 These can be configured in your project by modifying the file App.config.
 By default they are on.
 
-You can use the demo programs in the $ADWORDS_ROOT/src/examples directory to get started writing your own client.
-The demo programs show how to use all the services.
+You can use the demo programs in the $ADWORDS_ROOT/src/examples directory 
+to get started writing your own client.  The demo programs show how to use 
+all the services.
 
-They should work out of the box if you provide the right credentials in App.config.
-To run a sample, open the project file google-api-adwords-dotnet.csproj in Visual Studio, build the project, then debug the project, or go to bin/Debug and run:
->google-api-adwords-dotnet.exe ClassNameOfTheDemo
+They should work out of the box if you provide the right credentials in 
+App.config.  To run a sample, open the project file 
+google-api-adwords-dotnet.csproj in Visual Studio, build the project, then 
+debug the project, or go to bin/Debug and run:
 
-The examples use the default constructor
+	> google-api-adwords-dotnet.exe ClassNameOfTheDemo
+
+The examples use default constructor, 
+
     AdWordsUser me = new AdWordsUser();
 
-which uses credentials provided in the current directory in google-api-adwords-dotnet.exe.config
+which uses credentials provided in the current directory in 
+google-api-adwords-dotnet.exe.config
 
 Then you instantiate a service from the AdWordsUser object
-			CampaignServiceService campaignService = (CampaignServiceService)user.getService("CampaignServiceService");
 
-and call methods on it.
-In the end you can ask the user how much quota units have been consumed.
+	CampaignServiceService campaignService = 
+		(CampaignServiceService)user.getService("CampaignServiceService");
 
-			Console.WriteLine("Total Quota unit cost for this run: {0}", user.getUnits());
+and call methods on it.  In the end you can ask the user how much quota units 
+have been consumed:
+
+	Console.WriteLine("Total Quota unit cost for this run: {0}", user.getUnits());
 
 <GOTCHA --- READ THIS PLEASE --->
-This is a mistake that all C#/.NET newbies make, so please read this before you start coding.
+This is a mistake that all C#/.NET newbies make, so please read this before you 
+start coding.
 
-In the .NET 1.1 SOAP layer primitive types do not get serialized by defaults.
-.NET has no way of specifying null for a variable of a primitive type.
-If a primitive type variable is a binding to a SOAP paramer defined in the WSDL as nillable="true", in order for the variable to be serialized you need to set a variable <parameterName>Specified to true in order for it to be serialized.
+In the .NET 1.1 SOAP layer primitive types do not get serialized by 
+defaults.  .NET has no way of specifying null for a variable of a primitive 
+type.  If a primitive type variable is a binding to a SOAP paramer defined in 
+the WSDL as nillable="true", in order for the variable to be serialized you 
+need to set a variable <parameterName>Specified to true in order for it to be 
+serialized.
+
 Look at http://google-api-adwords-dotnet.googlecode.com/svn/trunk/src/examples/CampaignServiceDemo.cs
-for an example, like:
-			newCampaign.dailyBudget = 1000000;
-			newCampaign.dailyBudgetSpecified = true;
+for an example,
 
-The members <parameterName>Serialized are an artifact of the .NET SOAP library and are not present in the original WSDL.
+	newCampaign.dailyBudget = 1000000;
+	newCampaign.dailyBudgetSpecified = true;
 
-Now you know!
-Good luck with the library and may the AdWords be with you.
+The members <parameterName>Specified are an artifact of the .NET SOAP library 
+and are not present in the original WSDL.
+
+Now you know!  Good luck with the library and may the AdWords be with you.
 
 P@
 </GOTCHA --- READ THIS PLEASE --->
@@ -57,9 +72,12 @@ P@
 There is sample App.config file in the root of the project.
 You need to customize it with your actual credentials before using the samples.
 
-If you want to use an older version of the API than the latest, use the constructor AdWordsUser(String version), and change the import statement in AdWordsUser
-	//if you want to use v5 change this import
-	using com.google.api.adwords.v6;
+If you want to use an older version of the API than the latest, use the 
+constructor AdWordsUser(String version), and change the import statement in 
+AdWordsUser
+
+	// If you want to use earlier/later version, change this import
+	using com.google.api.adwords.v9;
 
 For information on how to use the AdWords API .NET client library,
 visit index.html in the doc/javadoc directory. For more information
@@ -70,22 +88,35 @@ Cooking instructions for curious Developers
 ===========================================
 
 If you just want to use this library, you don't need to read further.
-These are cooking recipes for developers who want to understand how this library was designed, and what other options there are.
+These are cooking recipes for developers who want to understand how this 
+library was designed, and what other options there are.
 
-1. First I decided not to use .NET 2.0, because potentially many users of this library may not have migrated to .NET 2.0 yet.
-.NET 2.0 makes it much easier: you can use some nifty options in wsdl.exe to generate a single file with all the bindings in the same namespace, for a bunch a wsdl urls, and it will remove duoplicates automagically.
-If you use .NET 2.0 I have included a sample parameters file for wsdl.exe at the root of this project.
-just run
-> wsdl.exe /parameters wsdl-dotnet20-parameters.xml
+1. First I decided not to use .NET 2.0, because potentially many users of this 
+library may not have migrated to .NET 2.0 yet.  .NET 2.0 makes it much easier: 
+you can use some nifty options in wsdl.exe to generate a single file with all 
+the bindings in the same namespace, for a bunch a wsdl urls, and it will 
+remove duplicates automatically.  If you use .NET 2.0 I have included a sample 
+parameters file for wsdl.exe at the root of this project.  Just run,
+	
+	> wsdl.exe /parameters wsdl-dotnet20-parameters.xml
 
-2. Now for poor users of .NET 1.1 like the rest of us, if you want to generate bindings for a new version of AdWords, here are the instructions:
-The generation is automated using Ruby Rake, so you'll need to install Ruby on your windows box before generating.
-Then edit Rakefile to adjust the version and run rake, the default target generates one file per service in the current directory, all in the same namespace.
-Create a src/vx directory, copy the files there, then add that to your visual studio project.
-Then you have to remove the duplicates manually: I decided that the cost of building a duplicate remover was higher than the cost of manually removing duplicates once per release until we move to .NET 2.0, but if you're game to do it, go for it:-)
+2. Now for poor users of .NET 1.1 like the rest of us, if you want to generate 
+bindings for a new version of AdWords, here are the instructions:
+
+a) The generation is automated using Ruby Rake, so you'll need to install Ruby 
+on your windows box before generating.
+b) Then edit Rakefile to adjust the version, and available web services for 
+current version, and run rake.  The default target generates one file per 
+service in the current directory, all in the same namespace.
+c) Create a src/vx directory, copy the files there, then add that to your 
+Visual Studio project.
+d) Then you have to remove the duplicates manually: I decided that the cost of 
+building a duplicate remover was higher than the cost of manually removing 
+duplicates once per release until we move to .NET 2.0, but if you're game to 
+do it, go for it:-)
 
 That's all there is to it.
-AdWordsUser uses Reflection to instantiate the services and populate the headers, and I use SOAPExtensions to trace calls to log files, as well as do quota accounting.
+AdWordsUser uses Reflection to instantiate the services and populate the 
+headers, and I use SOAPExtensions to trace calls to log files, as well as do 
+quota accounting.
 Simple stuff.
-
-

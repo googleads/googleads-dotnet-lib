@@ -1,3 +1,12 @@
+0.7.1:
+- Added logPath key to App.config, which can be used to set location of where 
+  to save SOAP logs.
+- Added example for how to fetch completed report, see 
+  ReportServiceCustomDemo.cs.
+- Added MAX_WEB_SERVICES constant to better control the size of the hash 
+  table, see AdWordsUser.cs.
+- Fixed code's style.
+
 0.7.0:
 - Added support for v9.  Made v9 lib's default version.
 - Removed no longer supported v6.

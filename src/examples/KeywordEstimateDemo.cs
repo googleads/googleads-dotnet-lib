@@ -1,63 +1,71 @@
-/*
-* Copyright (C) 2006 Google Inc.
-* 
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-* 
-*      http://www.apache.org/licenses/LICENSE-2.0
-* 
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+//
+// Copyright (C) 2006 Google Inc.
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//      http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
 using System;
 using System.Text;
-using com.google.api.adwords.v9;
+
 using com.google.api.adwords.lib;
+using com.google.api.adwords.v9;
 
 namespace com.google.api.adwords.examples
 {
-	/**
-	 * Estimates given keywords.
-	 */
+	// Estimates traffic for a given keyword.
 	class KeywordEstimateDemo
 	{
 		public static void run()
 		{
-			// Create a user (reads headers from app.config file)
+			// Create a user (reads headers from App.config file).
 			AdWordsUser user = new AdWordsUser();
-			// Use sandbox
-			user.useSandbox();
-			// Get the services
-			TrafficEstimatorService tes = (TrafficEstimatorService)user.getService("TrafficEstimatorService");
+			user.useSandbox();	// use sandbox
 
-			// Set the attributes of the keywords to be estimated
+			// Get the service.
+			TrafficEstimatorService service = 
+				(TrafficEstimatorService) user.getService(
+					"TrafficEstimatorService");
+
+			// Set the attributes of the keywords to be estimated.
 			KeywordRequest myKeyword = new KeywordRequest();
 			myKeyword.text = "flowers";
 			myKeyword.maxCpc = 50000;
 			myKeyword.maxCpcSpecified = true;
-
 			myKeyword.type = KeywordType.Broad;
 			myKeyword.typeSpecified = true;
 
-			// Make an array of the keywordrequests
-			KeywordRequest[] myKeywordList = {myKeyword};
-
 			// To estimate more keywords, create more KeywordRequest objects
-			// and add them to the myKeywordList array.
+			// and add them to the list of keyword to estimate.
 
-			// Send the request to the TrafficEstimator service
-			KeywordEstimate[] estimates = tes.estimateKeywordList(myKeywordList);
+			// Estimate traffic for given keywords.
+			KeywordEstimate[] estimates = 
+				service.estimateKeywordList(new KeywordRequest[] {myKeyword});
 
-			// Print information from the results.
-			KeywordEstimate est = estimates[0];
+			for (int i = 0; i < estimates.Length; i ++)
+			{
+				KeywordEstimate estimate = estimates[i];
 
-			Console.WriteLine("Clicks per day between " + est.lowerClicksPerDay + " and " + est.upperClicksPerDay);
-			Console.WriteLine("Cost per click between " + est.lowerCpc + " and " + est.upperCpc);
-			Console.WriteLine("Average position between " + est.lowerAvgPosition + " and " + est.upperAvgPosition);
+				Console.WriteLine("Clicks per day between "
+								+ estimate.lowerClicksPerDay
+								+ " and " + estimate.upperClicksPerDay
+								+ "\nCost per click between "
+								+ estimate.lowerCpc
+								+ " and " + estimate.upperCpc
+								+ "\nAverage position between "
+								+ estimate.lowerAvgPosition
+								+ " and " + estimate.upperAvgPosition);
+			}
+
 			Console.ReadLine();
 		}
 	}

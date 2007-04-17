@@ -1,69 +1,64 @@
-/*
-* Copyright (C) 2006 Google Inc.
-* 
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-* 
-*      http://www.apache.org/licenses/LICENSE-2.0
-* 
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+//
+// Copyright (C) 2006 Google Inc.
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//      http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
 using System;
 using System.Text;
-using com.google.api.adwords.v9;
+
 using com.google.api.adwords.lib;
+using com.google.api.adwords.v9;
 
 namespace com.google.api.adwords.examples
 {
-	/**
-	 * Gets quota usage details.
-	 */
+	// Gets quota usage information.
 	class InfoServiceDemo
 	{
 		public static void run()
 		{
-			// Create a user (reads headers from app.config file)
+			// Create a user (reads headers from App.config file).
 			AdWordsUser user = new AdWordsUser();
-			// Use sandbox
-			user.useSandbox();
-			// Get the services
-			InfoService service = (InfoService)user.getService("InfoService");
+			user.useSandbox();	// use sandbox
 
-			// Get the quota for this month
+			// Get the service.
+			InfoService service = (InfoService) user.getService("InfoService");
+
+			// Get the quota for this month.
 			long usageQuota = service.getUsageQuotaThisMonth();
 			Console.WriteLine("Usage quota for this month: " + usageQuota);
-			//Console.ReadLine();
 
-			// Get the quota used between January 1, 2007 and today
+			// Get the quota used between January 1, 2007 and today.
 			long unitCount = service.getUnitCount(
-				new DateTime(2007, 1, 1, 0, 0, 0),
-				DateTime.Today);
-			Console.WriteLine("Unit count for the past day month: " 
-				+ unitCount);
-			//Console.ReadLine();
+				new DateTime(2007, 1, 1, 0, 0, 0), DateTime.Today);
+			Console.WriteLine("Unit count for the past day month: " + unitCount);
 
-			// Get the operation count used between January 1, 2007 and today
+			// Get the operation count used between January 1, 2007 and today.
 			long operationCount = service.getOperationCount(
-				new DateTime(2007, 1, 1, 0, 0, 0),
-				DateTime.Today);
+				new DateTime(2007, 1, 1, 0, 0, 0), DateTime.Today);
 			Console.WriteLine("Operation count for the past day month: " 
-				+ operationCount);
+							+ operationCount);
 
 			// Get the quota used between January 1, 2007 and today for 
-			// AccountService.getAccountInfo() call
+			// AccountService.getAccountInfo() call.
 			long methodUnitCount = service.getUnitCountForMethod(
 				"AccountService", 
 				"getAccountInfo", 
-				new DateTime(2007, 1, 1, 0, 0, 0),
+				new DateTime(2007, 1, 1, 0, 0, 0), 
 				DateTime.Today);
 			Console.WriteLine("Method unit count for AccountService" 
-				+ ".getAccountInfo between January 1, 2007 and"
-				+ " today: " + methodUnitCount);
+							+ ".getAccountInfo between January 1, 2007 and"
+							+ " today: " + methodUnitCount);
 
 			Console.ReadLine();
 		}
