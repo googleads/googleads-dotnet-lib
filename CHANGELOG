@@ -1,3 +1,10 @@
+0.8.0:
+- Added support for v10, lib's default version is still v9.
+- Added code sample to get web site suggestions, see 
+  examples/SiteSuggestionServiceDemo.cs (new in v10).
+- Added code sample to check keyword traffic, see 
+  examples/CheckKeywordTrafficDemo.cs (new in v10).
+
 0.7.1:
 - Added logPath key to App.config, which can be used to set location of where 
   to save SOAP logs.

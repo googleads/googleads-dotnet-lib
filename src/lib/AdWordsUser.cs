@@ -38,7 +38,7 @@ namespace com.google.api.adwords.lib
 		// this API version, see http://www.google.com/apis/adwords/developer/adwords_api_services.html
 		const int MAX_WEB_SERVICES = 9;
 		const String PACKAGE_PREFIX = "com.google.api.adwords.";
-		const String LIB_VERSION_PREFIX = "Google C# Lib 0.7.1: ";
+		const String LIB_VERSION_PREFIX = "Google C# Lib 0.8.0: ";
 
 		public static String[] HEADERS = {
 			"email",
@@ -90,35 +90,36 @@ namespace com.google.api.adwords.lib
 
 			// All this could be refactored using reflection
 			this.useragentValue = new useragent();
-			this.useragentValue.Text = new String[] { LIB_VERSION_PREFIX + 
-				(String) this.headers["useragent"] };
+			this.useragentValue.Text = 
+				new String[] {LIB_VERSION_PREFIX 
+					+ (String) this.headers["useragent"]};
 			this.headers["useragent"] = this.useragentValue;
 
 			this.emailValue = new email();
 			this.emailValue.Text = 
-				new String[] { (String) this.headers["email"] };
+				new String[] {(String) this.headers["email"]};
 			this.headers["email"] = this.emailValue;
 
 			this.passwordValue = new password();
 			this.passwordValue.Text = 
-				new String[] { (String) this.headers["password"] };
+				new String[] {(String) this.headers["password"]};
 			this.headers["password"] = this.passwordValue;
 
 			this.developerTokenValue = new developerToken();
 			this.developerTokenValue.Text = 
-				new String[] { (String) this.headers["developerToken"] };
+				new String[] {(String) this.headers["developerToken"]};
 			this.headers["developerToken"] = this.developerTokenValue;
 
 			this.applicationTokenValue = new applicationToken();
 			this.applicationTokenValue.Text = 
-				new String[] { (String) this.headers["applicationToken"] };
+				new String[] {(String) this.headers["applicationToken"]};
 			this.headers["applicationToken"] = this.applicationTokenValue;
 
 			if (this.headers["clientEmail"] != null)
 			{
 				this.clientEmailValue = new clientEmail();
 				this.clientEmailValue.Text = 
-					new String[] { (String) this.headers["clientEmail"] };
+					new String[] {(String) this.headers["clientEmail"]};
 				this.headers["clientEmail"] = this.clientEmailValue;
 			}
 

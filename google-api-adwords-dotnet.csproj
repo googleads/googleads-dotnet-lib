@@ -138,6 +138,11 @@
                     BuildAction = "Compile"
                 />
                 <File
+                    RelPath = "src\examples\CheckKeywordTrafficDemo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
                     RelPath = "src\examples\Examples.cs"
                     SubType = "Code"
                     BuildAction = "Compile"
@@ -178,6 +183,11 @@
                     BuildAction = "Compile"
                 />
                 <File
+                    RelPath = "src\examples\SiteSuggestionServiceDemo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
                     RelPath = "src\lib\AdWordsUser.cs"
                     SubType = "Code"
                     BuildAction = "Compile"
@@ -190,6 +200,56 @@
                 <File
                     RelPath = "src\lib\TraceExtension.cs"
                     SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v10\AccountService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v10\AdGroupService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v10\AdService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v10\CampaignService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v10\CriterionService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v10\InfoService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v10\KeywordToolService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v10\ReportService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v10\SiteSuggestionService.cs"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\v10\TrafficEstimatorService.cs"
+                    SubType = "code"
                     BuildAction = "Compile"
                 />
                 <File
