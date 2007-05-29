@@ -1,3 +1,9 @@
+0.9.0:
+- Removed no longer supported v7.
+- Fix for multiple re initialization of AdWordsUser object in the same 
+  instance, (http://code.google.com/p/google-api-adwords-dotnet/issues/detail?id=3).
+- Removed support for "token" header, which was present in pre-v8 versions.
+
 0.8.0:
 - Added support for v10, lib's default version is still v9.
 - Added code sample to get web site suggestions, see 

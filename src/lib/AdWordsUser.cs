@@ -38,7 +38,7 @@ namespace com.google.api.adwords.lib
 		// this API version, see http://www.google.com/apis/adwords/developer/adwords_api_services.html
 		const int MAX_WEB_SERVICES = 9;
 		const String PACKAGE_PREFIX = "com.google.api.adwords.";
-		const String LIB_VERSION_PREFIX = "Google C# Lib 0.8.0: ";
+		const String LIB_VERSION_PREFIX = "Google C# Lib 0.9.0: ";
 
 		public static String[] HEADERS = {
 			"email",
@@ -60,10 +60,6 @@ namespace com.google.api.adwords.lib
 		public applicationToken applicationTokenValue;
         
 		public developerToken developerTokenValue;
-
-		// If you are using earlier version than v8, uncomment this line. In 
-		// v8 "token" header was removed, use developerToken instead.
-		//public token tokenValue;
 
 		public Hashtable headers;
 
@@ -88,46 +84,74 @@ namespace com.google.api.adwords.lib
 			this.version = version;
 			this.services = new Hashtable(MAX_WEB_SERVICES);
 
-			// All this could be refactored using reflection
-			this.useragentValue = new useragent();
-			this.useragentValue.Text = 
-				new String[] {LIB_VERSION_PREFIX 
-					+ (String) this.headers["useragent"]};
-			this.headers["useragent"] = this.useragentValue;
-
-			this.emailValue = new email();
-			this.emailValue.Text = 
-				new String[] {(String) this.headers["email"]};
-			this.headers["email"] = this.emailValue;
-
-			this.passwordValue = new password();
-			this.passwordValue.Text = 
-				new String[] {(String) this.headers["password"]};
-			this.headers["password"] = this.passwordValue;
-
-			this.developerTokenValue = new developerToken();
-			this.developerTokenValue.Text = 
-				new String[] {(String) this.headers["developerToken"]};
-			this.headers["developerToken"] = this.developerTokenValue;
-
-			this.applicationTokenValue = new applicationToken();
-			this.applicationTokenValue.Text = 
-				new String[] {(String) this.headers["applicationToken"]};
-			this.headers["applicationToken"] = this.applicationTokenValue;
+			// All this could be refactored using reflection.
+			// Always check to see if we should reconstruct our list of 
+			// headers.
+			if (!this.headers.ContainsKey("email") || 
+				this.headers["email"].GetType() != typeof(email))
+			{
+				this.emailValue = new email();
+				this.emailValue.Text = 
+					new String[] {(String) this.headers["email"]};
+				this.headers["email"] = this.emailValue;
+			}
 
 			if (this.headers["clientEmail"] != null)
 			{
-				this.clientEmailValue = new clientEmail();
-				this.clientEmailValue.Text = 
-					new String[] {(String) this.headers["clientEmail"]};
-				this.headers["clientEmail"] = this.clientEmailValue;
+				if (!this.headers.ContainsKey("clientEmail") || 
+					this.headers["clientEmail"].GetType() != 
+					typeof(clientEmail))
+				{
+					this.clientEmailValue = new clientEmail();
+					this.clientEmailValue.Text = 
+						new String[] {(String) this.headers["clientEmail"]};
+					this.headers["clientEmail"] = this.clientEmailValue;
+				}
+			}
+
+			if (!this.headers.ContainsKey("password") || 
+				this.headers["password"].GetType() != typeof(password))
+			{
+				this.passwordValue = new password();
+				this.passwordValue.Text = 
+					new String[] {(String) this.headers["password"]};
+				this.headers["password"] = this.passwordValue;
+			}
+
+			if (!this.headers.ContainsKey("useragent") || 
+				this.headers["useragent"].GetType() != typeof(useragent))
+			{
+				this.useragentValue = new useragent();
+				this.useragentValue.Text = 
+					new String[] {LIB_VERSION_PREFIX 
+					+ (String) this.headers["useragent"]};
+				this.headers["useragent"] = this.useragentValue;
+			}
+
+			if (!this.headers.ContainsKey("developerToken") || 
+				this.headers["developerToken"].GetType() != typeof(
+				developerToken))
+			{
+				this.developerTokenValue = new developerToken();
+				this.developerTokenValue.Text = 
+					new String[] {(String) this.headers["developerToken"]};
+				this.headers["developerToken"] = this.developerTokenValue;
+			}
+
+			if (!this.headers.ContainsKey("applicationToken") || 
+				this.headers["applicationToken" ].GetType() != typeof( 
+				applicationToken))
+			{
+				this.applicationTokenValue = new applicationToken();
+				this.applicationTokenValue.Text = 
+					new String[] {(String) this.headers["applicationToken"]};
+				this.headers["applicationToken"] = this.applicationTokenValue;
 			}
 
 			if (this.headers["alternateUrl"] != null)
 			{
 				this.alternateUrl = (String) this.headers["alternateUrl"];
 			}
-
 		}
 
 		public void useSandbox()
