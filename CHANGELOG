@@ -1,3 +1,7 @@
+0.9.1:
+- Added support to set headers when AdWordsUser() object is initialized 
+  (alternative to using App.config).
+
 0.9.0:
 - Removed no longer supported v7.
 - Fix for multiple re initialization of AdWordsUser object in the same 

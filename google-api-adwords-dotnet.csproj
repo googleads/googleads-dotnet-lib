@@ -123,6 +123,11 @@
                     BuildAction = "Compile"
                 />
                 <File
+                    RelPath = "src\examples\AccountServiceNoConfigDemo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
                     RelPath = "src\examples\AdServiceDemo.cs"
                     SubType = "Code"
                     BuildAction = "Compile"

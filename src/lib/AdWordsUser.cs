@@ -61,13 +61,13 @@ namespace com.google.api.adwords.lib
         
 		public developerToken developerTokenValue;
 
+		public String alternateUrl;
+
 		public Hashtable headers;
 
 		public Hashtable services;
 
 		public String version;
-
-		public String alternateUrl;
 
 		public static Hashtable units = new Hashtable();
  
@@ -151,6 +151,82 @@ namespace com.google.api.adwords.lib
 			if (this.headers["alternateUrl"] != null)
 			{
 				this.alternateUrl = (String) this.headers["alternateUrl"];
+				this.headers["alternateUrl"] = this.alternateUrl;
+			}
+		}
+
+		public AdWordsUser(Hashtable headers)
+		{
+			if (headers != null)
+			{
+				this.headers = new Hashtable();
+
+				this.version = LAST_VERSION;
+				this.services = new Hashtable(MAX_WEB_SERVICES);
+
+				if (!headers.ContainsKey("email") ||
+					headers["email"].GetType() != typeof(email))
+				{
+					this.emailValue = new email();
+					this.emailValue.Text = 
+						new String[] {(String) headers["email"]};
+					this.headers["email"] = this.emailValue;
+				}
+
+				if (!headers.ContainsKey("clientEmail") ||
+					headers["clientEmail"].GetType() != typeof(clientEmail))
+				{
+					this.clientEmailValue = new clientEmail();
+					this.clientEmailValue.Text = 
+						new String[] {(String) headers["clientEmail"]};
+					this.headers["clientEmail"] = this.clientEmailValue;
+				}
+
+				if (!headers.ContainsKey("password") ||
+					headers["password"].GetType() != typeof(password))
+				{
+					this.passwordValue = new password();
+					this.passwordValue.Text = 
+						new String[] {(String) headers["password"]};
+					this.headers["password"] = this.passwordValue;
+				}
+
+				if (!headers.ContainsKey("useragent") ||
+					headers["useragent"].GetType() != typeof(useragent))
+				{
+					this.useragentValue = new useragent();
+					this.useragentValue.Text = 
+						new String[] {LIB_VERSION_PREFIX 
+						+ (String) headers["useragent"]};
+					this.headers["useragent"] = this.useragentValue;
+				}
+
+				if (!headers.ContainsKey("developerToken") ||
+					headers["developerToken"].GetType() != typeof(
+					developerToken))
+				{
+					this.developerTokenValue = new developerToken();
+					this.developerTokenValue.Text = 
+						new String[] {(String) headers["developerToken"]};
+					this.headers["developerToken"] = this.developerTokenValue;
+				}
+
+				if (!headers.ContainsKey("applicationToken") ||
+					headers["applicationToken"].GetType() != typeof(
+					applicationToken))
+				{
+					this.applicationTokenValue = new applicationToken();
+					this.applicationTokenValue.Text = 
+						new String[] {(String) headers["applicationToken"]};
+					this.headers["applicationToken"] = 
+						this.applicationTokenValue;
+				}
+
+				if (headers["alternateUrl"] != null)
+				{
+					this.alternateUrl = (String) headers["alternateUrl"];
+					this.headers["alternateUrl"] = this.alternateUrl;
+				}
 			}
 		}
 
