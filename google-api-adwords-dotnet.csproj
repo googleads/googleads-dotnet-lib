@@ -258,56 +258,6 @@
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v8\AccountService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v8\AdGroupService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v8\AdService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v8\CampaignService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v8\CreativeService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v8\CriterionService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v8\InfoService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v8\KeywordToolService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v8\ReportService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v8\TrafficEstimatorService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
                     RelPath = "src\v9\AccountService.cs"
                     SubType = "code"
                     BuildAction = "Compile"

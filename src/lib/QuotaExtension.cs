@@ -73,10 +73,6 @@ namespace com.google.api.adwords.lib
 						// you end up with many duplicate strongly typed boilerplate code, or super
 						// generic code using reflection all over the place, which kills your perf anyway.
 						// You might as well have used a dynamically typed language right away</rant>
-						if (header.GetType() == Type.GetType("com.google.api.adwords.v8.developerToken"))
-						{
-							this.currentToken = ((com.google.api.adwords.v8.developerToken)header).Text[0];
-						}
 						if (header.GetType() == Type.GetType("com.google.api.adwords.v9.developerToken"))
 						{
 							this.currentToken = ((com.google.api.adwords.v9.developerToken)header).Text[0];
@@ -94,10 +90,6 @@ namespace com.google.api.adwords.lib
 					foreach (SoapHeader header in message.Headers)
 					{
 						// Same remark as above
-						if (header.GetType() == Type.GetType("com.google.api.adwords.v8.units"))
-						{
-							units = Int32.Parse(((com.google.api.adwords.v8.units)header).Text[0]);
-						}
 						if (header.GetType() == Type.GetType("com.google.api.adwords.v9.units"))
 						{
 							units = Int32.Parse(((com.google.api.adwords.v9.units)header).Text[0]);

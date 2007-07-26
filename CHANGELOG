@@ -1,3 +1,7 @@
+0.10.0:
+- Removed no longer supported v8.
+- Added support for clientCustomerId header.
+
 0.9.1:
 - Added support to set headers when AdWordsUser() object is initialized 
   (alternative to using App.config).
