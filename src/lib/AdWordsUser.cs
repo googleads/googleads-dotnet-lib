@@ -190,35 +190,29 @@ namespace com.google.api.adwords.lib
 					this.headers["email"] = this.emailValue;
 				}
 
-				if (this.headers["clientEmail"] != null)
+				if (!headers.ContainsKey("clientEmail") || 
+					headers["clientEmail"].GetType() != 
+					typeof(clientEmail))
 				{
-					if (!this.headers.ContainsKey("clientEmail") || 
-						this.headers["clientEmail"].GetType() != 
-						typeof(clientEmail))
-					{
-						this.clientEmailValue = new clientEmail();
-						this.clientEmailValue.Text = 
-							new String[] {(String) this.headers["clientEmail"]};
-						this.headers["clientEmail"] = this.clientEmailValue;
-					}
+					this.clientEmailValue = new clientEmail();
+					this.clientEmailValue.Text = 
+						new String[] {(String) headers["clientEmail"]};
+					this.headers["clientEmail"] = this.clientEmailValue;
 				}
 
-				if (this.headers["clientCustomerId"] != null)
+				if (!headers.ContainsKey("clientCustomerId") || 
+					headers["clientCustomerId"].GetType() != 
+					typeof(clientCustomerId))
 				{
-					if (!this.headers.ContainsKey("clientCustomerId") || 
-						this.headers["clientCustomerId"].GetType() != 
-						typeof(clientCustomerId))
-					{
-						this.clientCustomerIdValue = new clientCustomerId();
-						this.clientCustomerIdValue.Text = 
-							new String[] {(String) this.headers["clientCustomerId"]};
-						this.headers["clientCustomerId"] = this.clientCustomerIdValue;
-					}
+					this.clientCustomerIdValue = new clientCustomerId();
+					this.clientCustomerIdValue.Text = 
+						new String[] {(String) headers["clientCustomerId"]};
+					this.headers["clientCustomerId"] = this.clientCustomerIdValue;
 				}
 
 				// If both are specified, defaults to clientEmail
-				if (this.headers["clientEmail"] != null &&
-					this.headers["clientCustomerId"] != null)
+				if (headers.ContainsKey("clientEmail") &&
+					headers.ContainsKey("clientCustomerId"))
 				{
 					this.headers["clientCustomerId"] = null;
 					this.clientCustomerIdValue = null;

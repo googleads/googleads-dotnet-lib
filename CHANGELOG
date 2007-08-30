@@ -1,3 +1,7 @@
+0.10.1:
+- Fix for setting clientEmail when initializing AdWordsUser object with
+  headers, http://code.google.com/p/google-api-adwords-dotnet/issues/detail?id=5.
+
 0.10.0:
 - Removed no longer supported v8.
 - Added support for clientCustomerId header.
