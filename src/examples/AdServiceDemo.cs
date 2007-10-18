@@ -18,7 +18,7 @@ using System;
 using System.Text;
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v9;
+using com.google.api.adwords.v10;
 
 namespace com.google.api.adwords.examples
 {
@@ -53,7 +53,7 @@ namespace com.google.api.adwords.examples
 			// geotargeting can be specified.
 			GeoTarget newGeoTarget = new GeoTarget();
 			String[] countries = {"FR", "ES"};
-			newGeoTarget.countries = countries;
+			newGeoTarget.countryTargets = countries;
 			newCampaign.geoTargeting = newGeoTarget;
 
 			// Target the campaign at English, French and Spanish

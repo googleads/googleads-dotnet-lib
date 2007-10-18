@@ -1,5 +1,5 @@
 SERVICES = ['Criterion', 'AdGroup', 'Campaign', 'TrafficEstimator', 'Report', 'Info', 'Account', 'KeywordTool', 'Ad', 'SiteSuggestion']
-version = "v10"
+version = "v11"
 prefix = "https://adwords.google.com/api/adwords/" + version + "/"
 srcdir = "src" + version
 

@@ -24,7 +24,7 @@ using System.Threading;
 using ICSharpCode.SharpZipLib.GZip;
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v9;
+using com.google.api.adwords.v10;
 
 namespace com.google.api.adwords.examples
 {
@@ -43,19 +43,6 @@ namespace com.google.api.adwords.examples
 
 			// Create the report job.
 			CustomReportJob reportJob = new CustomReportJob();
-
-			// Create an array of campaign ids and put them in the report 
-			// job.  If you don't set any campaign ids, the report includes 
-			// all active keywords in all of your campaigns.
-			// int[] campaignIds = {myCampaignId};
-			// myReportJob.setCampaigns(campaignIds);
-
-			// In this case, use the default settings for a custom 
-			// report.  The report will contain keywords that
-			// - have any matching type
-			// - can be shown in all situations (content pages and search 
-			//   results)
-			// - have any status
 
 			// Set the aggregation period.
 			reportJob.aggregationType = AggregationType.Daily;

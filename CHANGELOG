@@ -1,3 +1,9 @@
+0.11.0:
+- Removed no longer supported v9.
+- Added support for v11, lib's default version was increased to v10.
+- Upgraded ReportServiceKeywordDemo.cs to show how to schedule a report 
+  using v11.
+
 0.10.1:
 - Fix for setting clientEmail when initializing AdWordsUser object with
   headers, http://code.google.com/p/google-api-adwords-dotnet/issues/detail?id=5.

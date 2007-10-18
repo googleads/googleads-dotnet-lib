@@ -24,7 +24,7 @@ namespace com.google.api.adwords.lib
 	using System.Web.Services.Protocols;
 
 	// If you want to use earlier/later version, change this import
-	using com.google.api.adwords.v9;
+	using com.google.api.adwords.v10;
 
 	public class Util
 	{
@@ -33,12 +33,12 @@ namespace com.google.api.adwords.lib
 	public class AdWordsUser
 	{
 		// If you want to use earlier/later version, change LAST_VERSION
-		const String LAST_VERSION = "v9";
+		const String LAST_VERSION = "v10";
 		// Change MAX_WEB_SERVICES to the number of available web sevices for 
 		// this API version, see http://www.google.com/apis/adwords/developer/adwords_api_services.html
-		const int MAX_WEB_SERVICES = 9;
+		const int MAX_WEB_SERVICES = 10;
 		const String PACKAGE_PREFIX = "com.google.api.adwords.";
-		const String LIB_VERSION_PREFIX = "Google C# Lib 0.10.0: ";
+		const String LIB_VERSION_PREFIX = "Google C# Lib 0.11.0: ";
 
 		public static String[] HEADERS = {
 			"email",
