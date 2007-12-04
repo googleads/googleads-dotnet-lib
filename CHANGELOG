@@ -1,7 +1,10 @@
+0.11.1:
+- Minor update to fix code style.
+
 0.11.0:
 - Removed no longer supported v9.
 - Added support for v11, lib's default version was increased to v10.
-- Upgraded ReportServiceKeywordDemo.cs to show how to schedule a report 
+- Upgraded ReportServiceKeywordDemo.cs to show how to schedule a report
   using v11.
 
 0.10.1:
@@ -13,28 +16,28 @@
 - Added support for clientCustomerId header.
 
 0.9.1:
-- Added support to set headers when AdWordsUser() object is initialized 
+- Added support to set headers when AdWordsUser() object is initialized
   (alternative to using App.config).
 
 0.9.0:
 - Removed no longer supported v7.
-- Fix for multiple re initialization of AdWordsUser object in the same 
+- Fix for multiple re initialization of AdWordsUser object in the same
   instance, (http://code.google.com/p/google-api-adwords-dotnet/issues/detail?id=3).
 - Removed support for "token" header, which was present in pre-v8 versions.
 
 0.8.0:
 - Added support for v10, lib's default version is still v9.
-- Added code sample to get web site suggestions, see 
+- Added code sample to get web site suggestions, see
   examples/SiteSuggestionServiceDemo.cs (new in v10).
-- Added code sample to check keyword traffic, see 
+- Added code sample to check keyword traffic, see
   examples/CheckKeywordTrafficDemo.cs (new in v10).
 
 0.7.1:
-- Added logPath key to App.config, which can be used to set location of where 
+- Added logPath key to App.config, which can be used to set location of where
   to save SOAP logs.
-- Added example for how to fetch completed report, see 
+- Added example for how to fetch completed report, see
   ReportServiceCustomDemo.cs.
-- Added MAX_WEB_SERVICES constant to better control the size of the hash 
+- Added MAX_WEB_SERVICES constant to better control the size of the hash
   table, see AdWordsUser.cs.
 - Fixed code's style.
 
@@ -52,15 +55,15 @@
 - Made v8 lib's default version.
 
 0.4: api.sgrinberg@gmail.com
-- Added support for v8. At present, v8 is available in sandbox only. Thus, 
+- Added support for v8. At present, v8 is available in sandbox only. Thus,
 v7 remains as default lib version.
 - New AdService sevice was added.
-- Additional sample for new AdService, v8 only. When using v8, few edits 
+- Additional sample for new AdService, v8 only. When using v8, few edits
 need to be done:
 	= Change v7 to v8 in AdWordsUser.cs:20, (using com.google.api.adwords.v8;).
 	= Change v7 to v8 in AdWordsUse.cs:35, (const String LAST_VERSION = "v8";).
-	= Comment out "token" header in AdWordsUser:62, 
-	  (//public token tokenValue;). In v8 "token" header was removed, use 
+	= Comment out "token" header in AdWordsUser:62,
+	  (//public token tokenValue;). In v8 "token" header was removed, use
 	  "developerToken" header instead.
 
 0.3
