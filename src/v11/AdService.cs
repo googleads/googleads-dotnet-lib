@@ -382,7 +382,7 @@ namespace com.google.api.adwords.v11 {
             this.EndInvoke(asyncResult);
         }
     }
-    
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MobileAd))]
@@ -465,7 +465,7 @@ namespace com.google.api.adwords.v11 {
         /// <remarks/>
         Paused,
     }
-	
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public class Business {

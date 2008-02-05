@@ -129,7 +129,7 @@ namespace com.google.api.adwords.v11 {
             return ((SiteKeywordGroups)(results[0]));
         }
     }
-    
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public class SeedKeyword {
@@ -147,7 +147,7 @@ namespace com.google.api.adwords.v11 {
         /// <remarks/>
         public KeywordType type;
     }
-    
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public class SiteKeyword {

@@ -269,7 +269,7 @@ namespace com.google.api.adwords.v11 {
             this.EndInvoke(asyncResult);
         }
     }
-    
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DefinedReportJob))]
@@ -389,7 +389,7 @@ namespace com.google.api.adwords.v11 {
         /// <remarks/>
         public string selectedReportType;
     }
-    
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public enum AdWordsType {
@@ -400,7 +400,7 @@ namespace com.google.api.adwords.v11 {
         /// <remarks/>
         ContentOnly,
     }
-    
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public enum KeywordStatus {

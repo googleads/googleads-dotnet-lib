@@ -321,7 +321,7 @@ namespace com.google.api.adwords.v11 {
             return ((long)(results[0]));
         }
     }
-    
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public class ClientUsageRecord {

@@ -313,8 +313,8 @@ namespace com.google.api.adwords.v11 {
             this.EndInvoke(asyncResult);
         }
     }
-	
-	/// <remarks/>
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public class AdGroup {
         

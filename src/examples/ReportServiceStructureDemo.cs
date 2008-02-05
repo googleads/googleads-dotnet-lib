@@ -24,8 +24,8 @@ using System.Web.Services.Protocols;
 
 namespace com.google.api.adwords.examples
 {
-  // Schedules keyword report and retrives its destination url.
-  class ReportServiceKeywordDemo
+  // Schedules structure report and retrives its destination url.
+  class ReportServiceStructureDemo
   {
     public static void run()
     {
@@ -38,19 +38,14 @@ namespace com.google.api.adwords.examples
 
       // Create the report job.
       DefinedReportJob reportJob = new DefinedReportJob();
-      reportJob.name = "Keyword Report";
-      reportJob.selectedReportType = "Keyword";
-      reportJob.aggregationTypes = new String[] {"Daily"};
-      reportJob.adWordsType = AdWordsType.SearchOnly;
-      reportJob.adWordsTypeSpecified = true;
-      reportJob.endDay = DateTime.Today;  // defaults to today
-      reportJob.startDay = new DateTime(2007, 1, 1);
+      reportJob.name = "Structure Report";
+      reportJob.selectedReportType = "Structure";
+      reportJob.aggregationTypes = new String[] {"Keyword"};
       reportJob.selectedColumns = new String[]
-          {
-            "Campaign", "AdGroup", "Keyword", "KeywordStatus", "KeywordMinCPC",
-            "KeywordDestUrlDisplay", "Impressions", "Clicks", "CTR",
-            "AveragePosition"
-          };
+        {
+          "Campaign", "CampaignId", "AdGroup", "AdGroupId", "Keyword", 
+          "KeywordId", "KeywordStatus", "MaximumCPC"
+        };
 
       // Validate the report job.
       try

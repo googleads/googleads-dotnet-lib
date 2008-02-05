@@ -189,7 +189,7 @@ namespace com.google.api.adwords.v11 {
             return ((SiteSuggestion[])(results[0]));
         }
     }
-    
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public class LanguageGeoTargeting {

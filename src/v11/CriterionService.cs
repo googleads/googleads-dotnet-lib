@@ -348,7 +348,7 @@ namespace com.google.api.adwords.v11 {
             this.EndInvoke(asyncResult);
         }
     }
-    
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Keyword))]
@@ -425,7 +425,7 @@ namespace com.google.api.adwords.v11 {
         /// <remarks/>
         Deleted,
     }
-
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public class Keyword : Criterion {

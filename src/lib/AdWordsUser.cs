@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2007 Google Inc.
+// Copyright (C) 2008 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 namespace com.google.api.adwords.lib
 {
-  // If you want to use earlier/later version, change this import
   using com.google.api.adwords.v10;
 
   using System;
@@ -32,14 +31,14 @@ namespace com.google.api.adwords.lib
 
   public class AdWordsUser
   {
-    // If you want to use earlier/later version, change LAST_VERSION
     const String LAST_VERSION = "v10";
     // Change MAX_WEB_SERVICES to the number of available web sevices for this
     // API version, see
     // http://www.google.com/apis/adwords/developer/adwords_api_services.html
     const int MAX_WEB_SERVICES = 10;
     const String PACKAGE_PREFIX = "com.google.api.adwords.";
-    const String LIB_VERSION_PREFIX = "Google C# Lib 0.11.1: ";
+    const String LIB_VERSION_PREFIX = 
+        "AdWords API DotNet Client Library v0.12.0: ";
 
     public static String[] HEADERS = {
       "email",
@@ -81,7 +80,6 @@ namespace com.google.api.adwords.lib
       this.version = version;
       this.services = new Hashtable(MAX_WEB_SERVICES);
 
-      // All this could be refactored using reflection.
       // Always check to see if we should reconstruct our list of
       // headers.
       if (!this.headers.ContainsKey("email")
@@ -117,7 +115,7 @@ namespace com.google.api.adwords.lib
         }
       }
 
-      // If both are specified, defaults to clientEmail
+      // If both are specified, defaults to clientEmail.
       if (this.headers["clientEmail"] != null
           && this.headers["clientCustomerId"] != null)
       {
@@ -205,7 +203,7 @@ namespace com.google.api.adwords.lib
           this.headers["clientCustomerId"] = this.clientCustomerIdValue;
         }
 
-        // If both are specified, defaults to clientEmail
+        // If both are specified, defaults to clientEmail.
         if (headers.ContainsKey("clientEmail")
             && headers.ContainsKey("clientCustomerId"))
         {

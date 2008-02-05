@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2007 Google Inc.
+// Copyright (C) 2008 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -67,13 +67,6 @@ namespace com.google.api.adwords.lib
         case SoapMessageStage.AfterSerialize:
           foreach (SoapHeader header in message.Headers)
           {
-            // Not very clean, maybe use reflection to clean it up
-            //
-            // <rant>This is typical of why strong typing sucks for that
-            // type of apps you end up with many duplicate strongly typed
-            // boilerplate code, or super generic code using reflection all
-            // over the place, which kills your perf anyway. You might as
-            // well have used a dynamically typed language right away</rant>
             if (header.GetType() == Type.GetType(
                 "com.google.api.adwords.v10.developerToken"))
             {
@@ -93,7 +86,6 @@ namespace com.google.api.adwords.lib
           int units = 0;
           foreach (SoapHeader header in message.Headers)
           {
-            // Same remark as above
             if (header.GetType() == Type.GetType(
                 "com.google.api.adwords.v10.units"))
             {

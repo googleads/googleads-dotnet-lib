@@ -181,7 +181,7 @@ namespace com.google.api.adwords.v11 {
             return ((KeywordEstimate[])(results[0]));
         }
     }
-    
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public class KeywordTrafficRequest {
@@ -195,8 +195,8 @@ namespace com.google.api.adwords.v11 {
         /// <remarks/>
         public string language;
     }
-	
-	/// <remarks/>
+        
+    /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public class CampaignEstimate {
         
@@ -257,7 +257,7 @@ namespace com.google.api.adwords.v11 {
         /// <remarks/>
         public long upperCpc;
     }
-    
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public class CampaignRequest {

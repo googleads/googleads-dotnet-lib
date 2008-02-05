@@ -370,7 +370,7 @@ namespace com.google.api.adwords.v11 {
             this.EndInvoke(asyncResult);
         }
     }
-	
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public class Campaign {
@@ -459,7 +459,7 @@ namespace com.google.api.adwords.v11 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool takeOnOptimizedBidsSpecified;
     }
-    
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public class SchedulingInterval {
@@ -531,7 +531,7 @@ namespace com.google.api.adwords.v11 {
         /// <remarks/>
         Enabled,
     }
-
+        
     /// <remarks/>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://adwords.google.com/api/adwords/v11")]
     public enum CampaignStatus {

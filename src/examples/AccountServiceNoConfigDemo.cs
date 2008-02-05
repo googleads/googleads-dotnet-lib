@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2007 Google Inc.
+// Copyright (C) 2008 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -30,12 +30,12 @@ namespace com.google.api.adwords.examples
     {
       // Creates a user.
       Hashtable headers = new Hashtable();
-      headers.Add("email", "api.sgrinberg@gmail.com");
-      headers.Add("useragent", "C# Client Library");
-      headers.Add("password", "secret");
-      headers.Add("clientEmail", "client_1+api.sgrinberg@gmail.com");
-      headers.Add("applicationToken", "api.sgrinberg@gmail.com++USD");
-      headers.Add("developerToken", "api.sgrinberg@gmail.com++USD");
+      headers.Add("email", "INSERT_LOGIN_EMAIL_HERE");
+      headers.Add("password", "INSERT_PASSWORD_HERE");
+      headers.Add("clientEmail", "INSERT_CLIENT_LOGIN_EMAIL_HERE");
+      headers.Add("useragent", "AdWords API DotNet Client Library: INSERT_COMPANY_NAME");
+      headers.Add("developerToken", "INSERT_DEVELOPER_TOKEN_HERE");
+      headers.Add("applicationToken", "INSERT_APPLICATION_TOKEN_HERE");
 
       AdWordsUser user = new AdWordsUser(headers);
       user.useSandbox();  // use sandbox
