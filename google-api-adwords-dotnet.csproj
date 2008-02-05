@@ -98,11 +98,7 @@
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "AUTHORS"
-                    BuildAction = "Content"
-                />
-                <File
-                    RelPath = "CHANGELOG"
+                    RelPath = "ChangeLog"
                     BuildAction = "None"
                 />
                 <File
