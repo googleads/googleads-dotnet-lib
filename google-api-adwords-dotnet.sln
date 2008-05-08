@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "google-api-adwords-dotnet", "google-api-adwords-dotnet.csproj", "{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples", "Examples\Examples.csproj", "{1DF6FFA1-85EC-4FD9-BE35-32E5A3CD8F48}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}.Debug.ActiveCfg = Debug|.NET
+		{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}.Debug.Build.0 = Debug|.NET
+		{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}.Release.ActiveCfg = Release|.NET
+		{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}.Release.Build.0 = Release|.NET
+		{1DF6FFA1-85EC-4FD9-BE35-32E5A3CD8F48}.Debug.ActiveCfg = Debug|.NET
+		{1DF6FFA1-85EC-4FD9-BE35-32E5A3CD8F48}.Debug.Build.0 = Debug|.NET
+		{1DF6FFA1-85EC-4FD9-BE35-32E5A3CD8F48}.Release.ActiveCfg = Release|.NET
+		{1DF6FFA1-85EC-4FD9-BE35-32E5A3CD8F48}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

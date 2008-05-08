@@ -15,15 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v10;
+using com.google.api.adwords.v11;
 
 using System;
 using System.Text;
 
 namespace com.google.api.adwords.examples
 {
-  // Gets all ads from specific ad group.
-  class GetAdIdsDemo
+  // Gets all campaigns.
+  class GetCampaignIdsDemo
   {
     public static void run()
     {
@@ -32,22 +32,17 @@ namespace com.google.api.adwords.examples
       user.useSandbox();  // use sandbox
 
       // Get the service.
-      AdService service = (AdService) user.getService("AdService");
+      CampaignService campaignService =
+          (CampaignService) user.getService("CampaignService");
 
-      // Get all ads.
-      int[] adGroupIds = {12345};
-      Ad[] ads = service.getAllAds(adGroupIds);
+      // Get all campaigns.
+      Campaign[] myCampaigns = campaignService.getAllAdWordsCampaigns(1);
 
-      for (int i = 0; i < ads.Length; i ++)
+      for (int i = 0; i < myCampaigns.Length; i ++)
       {
         Console.WriteLine(
-            "----- Ad Info -----"
-            + "\nAd Group Id: {0}"
-            + "\nId: {1}"
-            + "\nType: {2}"
-            + "\nStatus: {3}"
-            + "\n------------------------",
-            ads[i].adGroupId, ads[i].id, ads[i].adType, ads[i].status);
+            "Name: {0}    id: {1}  status: {2}",
+            myCampaigns[i].name, myCampaigns[i].id, myCampaigns[i].status);
       }
 
       Console.ReadLine();

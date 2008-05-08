@@ -15,15 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v10;
+using com.google.api.adwords.v11;
 
 using System;
 using System.Text;
 
 namespace com.google.api.adwords.examples
 {
-  // Creates new campaign, ad group, and a text ad.
-  class AdServiceDemo
+  // Creates new campaign, ad group, text ad, and some keywords.
+  class CampaignServiceDemo
   {
     public static void run()
     {
@@ -36,10 +36,11 @@ namespace com.google.api.adwords.examples
           (CampaignService) user.getService("CampaignService");
       AdGroupService adgroupService =
           (AdGroupService) user.getService("AdGroupService");
-      AdService adService =
-          (AdService) user.getService("AdService");
+      CriterionService criterionService =
+          (CriterionService) user.getService("CriterionService");
+      AdService adService = (AdService) user.getService("AdService");
 
-      // Create a new campaign and an ad group.  First create a
+      // Create a new campaign with an ad group.  First create a
       // campaign, so we can get its id.
       Campaign newCampaign = new Campaign();
       newCampaign.dailyBudget = 1000000;
@@ -56,7 +57,7 @@ namespace com.google.api.adwords.examples
       newGeoTarget.countryTargets = countries;
       newCampaign.geoTargeting = newGeoTarget;
 
-      // Target the campaign at English, French and Spanish
+      // Target the campaign at English, French and Spanish.
       String[] languages =  {"en", "fr", "es"};
       newCampaign.languageTargeting = languages;
 
@@ -72,8 +73,8 @@ namespace com.google.api.adwords.examples
       // Create an ad group.
       AdGroup newAdGroup = new AdGroup();
       newAdGroup.name = "dev guide";
-      newAdGroup.maxCpc = 50000;
-      newAdGroup.maxCpcSpecified = true;
+      newAdGroup.keywordMaxCpc = 50000;
+      newAdGroup.keywordMaxCpcSpecified = true;
 
       // Associate this ad group with the newly created campaign.  Send
       // the request to add the new ad group.
@@ -93,25 +94,41 @@ namespace com.google.api.adwords.examples
       newTextAd.destinationUrl = "http://blog.chanezon.com/";
       newTextAd.adGroupId = adGroupId;
       Ad[] myAds = adService.addAds(new Ad[] {newTextAd});
-      Console.WriteLine(
-          "Before update: {0} status = {1}",
-          newTextAd.headline, newTextAd.status);
 
-      // Update the creative status, the only field updatable for now.
-      myAds[0].status = AdStatus.Disabled;
-      myAds[0].statusSpecified = true;
+      // Add keywords to the newly created ad group.
+      Keyword newKeyword1 = new Keyword();
+      newKeyword1.adGroupId = adGroupId;
+      newKeyword1.text = "AdWords API";
+      newKeyword1.type = KeywordType.Broad;
+      Keyword newKeyword2 = new Keyword();
+      newKeyword2.adGroupId = adGroupId;
+      newKeyword2.text = "Adwords developer guide";
+      newKeyword2.type = KeywordType.Broad;
+      Keyword newKeyword3 = new Keyword();
+      newKeyword3.adGroupId = adGroupId;
+      newKeyword3.text  = "AdWords reference";
+      newKeyword3.type= KeywordType.Broad;
 
-      adService.updateAds(myAds);
+      Criterion[] myKeywords = criterionService.addCriteria(
+        new Criterion[] {newKeyword1, newKeyword2, newKeyword3});
 
-      // Check creative status.
-      myAds = adService.getAllAds(new int[] {adGroupId});
+      // Update all criteria maxCpc.
+      ((Keyword) myKeywords[0]).maxCpc = 100000;
+      ((Keyword) myKeywords[0]).maxCpcSpecified = true;
+      ((Keyword) myKeywords[1]).maxCpc = 100000;
+      ((Keyword) myKeywords[1]).maxCpcSpecified = true;
+      ((Keyword) myKeywords[2]).maxCpc = 100000;
+      ((Keyword) myKeywords[2]).maxCpcSpecified = true;
+      criterionService.updateCriteria(myKeywords);
 
-      for (int i = 0; i < myAds.Length; i ++)
+      // Check criteria maxCpc.
+      myKeywords = criterionService.getAllCriteria(adGroupId);
+
+      for (int i = 0; i < myKeywords.Length; i ++)
       {
-        TextAd myTextAd = (TextAd) myAds[i];
+        Keyword myKeyword = (Keyword) myKeywords[i];
         Console.WriteLine(
-            "After update: {0} status = {1}",
-            myTextAd.headline, myTextAd.status);
+            "{0}: maxCpc = {1}", myKeyword.text, myKeyword.maxCpc);
       }
 
       // Determine how much quota these operations have consumed.

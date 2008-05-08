@@ -15,15 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v10;
+using com.google.api.adwords.v11;
 
 using System;
 using System.Text;
 
 namespace com.google.api.adwords.examples
 {
-  // Creates new campaign, ad group, creative, and a website.
-  class CampaignServiceWebsiteDemo
+  // Creates new campaign, ad group, and a text ad.
+  class AdServiceDemo
   {
     public static void run()
     {
@@ -36,14 +36,13 @@ namespace com.google.api.adwords.examples
           (CampaignService) user.getService("CampaignService");
       AdGroupService adgroupService =
           (AdGroupService) user.getService("AdGroupService");
-      CriterionService criterionService =
-          (CriterionService) user.getService("CriterionService");
-      AdService adService = (AdService) user.getService("AdService");
+      AdService adService =
+          (AdService) user.getService("AdService");
 
-      // Create a new campaign with some ad groups.  First create a
+      // Create a new campaign and an ad group.  First create a
       // campaign, so we can get its id.
       Campaign newCampaign = new Campaign();
-      newCampaign.dailyBudget = 10000000;
+      newCampaign.dailyBudget = 1000000;
       newCampaign.dailyBudgetSpecified = true;
 
       // The campaign name is optional.  An error results if a campaign
@@ -57,12 +56,12 @@ namespace com.google.api.adwords.examples
       newGeoTarget.countryTargets = countries;
       newCampaign.geoTargeting = newGeoTarget;
 
-      // Target the campaign at English, French and Spanish.
+      // Target the campaign at English, French and Spanish
       String[] languages =  {"en", "fr", "es"};
       newCampaign.languageTargeting = languages;
 
       // Set the campaign status to paused, we don't want to start
-      // paying for this test
+      // paying for this test.
       newCampaign.status = CampaignStatus.Paused;
 
       // Add this campaign.  The campaign object is returned with ids
@@ -73,8 +72,8 @@ namespace com.google.api.adwords.examples
       // Create an ad group.
       AdGroup newAdGroup = new AdGroup();
       newAdGroup.name = "dev guide";
-      newAdGroup.maxCpm = 10000000;
-      newAdGroup.maxCpmSpecified = true;
+      newAdGroup.keywordMaxCpc = 50000;
+      newAdGroup.keywordMaxCpcSpecified = true;
 
       // Associate this ad group with the newly created campaign.  Send
       // the request to add the new ad group.
@@ -85,7 +84,7 @@ namespace com.google.api.adwords.examples
       // Create a text ad.
       //
       // IMPORTANT: create an ad before adding keywords!  Else the
-      // minCpc will have a higher value
+      // minCpc will have a higher value.
       TextAd newTextAd = new TextAd();
       newTextAd.headline = "AdWords API Dev Guide";
       newTextAd.description1 = "Access your AdWords";
@@ -94,30 +93,31 @@ namespace com.google.api.adwords.examples
       newTextAd.destinationUrl = "http://blog.chanezon.com/";
       newTextAd.adGroupId = adGroupId;
       Ad[] myAds = adService.addAds(new Ad[] {newTextAd});
+      Console.WriteLine(
+          "Before update: {0} status = {1}",
+          newTextAd.headline, newTextAd.status);
 
-      // Add keywords to this ad group.
-      Website newWebsite = new Website();
-      newWebsite.adGroupId = adGroupId;
-      newWebsite.url = "artima.com";
-      newWebsite.maxCpm = 1000000;
+      // Update the creative status, the only field updatable for now.
+      myAds[0].status = AdStatus.Disabled;
+      myAds[0].statusSpecified = true;
 
-      Criterion[] myWebsites =
-          criterionService.addCriteria(new Criterion[] {newWebsite});
+      adService.updateAds(myAds);
 
-      // Update all criteria maxCpm.
-      ((Website) myWebsites[0]).maxCpm = 3000000;
-      ((Website) myWebsites[0]).maxCpmSpecified = true;
-      criterionService.updateCriteria(myWebsites);
+      // Check creative status.
+      myAds = adService.getAllAds(new int[] {adGroupId});
 
-      // Check criteria maxCpm.
-      myWebsites = criterionService.getAllCriteria(adGroupId);
-
-      for (int i = 0; i < myWebsites.Length; i ++)
+      for (int i = 0; i < myAds.Length; i ++)
       {
-        Website myWebsite = (Website) myWebsites[i];
+        TextAd myTextAd = (TextAd) myAds[i];
         Console.WriteLine(
-            "{0}: maxCpm = {1}", myWebsite.url, myWebsite.maxCpm);
+            "After update: {0} status = {1}",
+            myTextAd.headline, myTextAd.status);
       }
+
+      // Determine how much quota these operations have consumed.
+      Console.WriteLine(
+          "---------------------------------------"
+          + "\nTotal Quota unit cost for this run: {0}", user.getUnits());
 
       Console.ReadLine();
     }

@@ -16,7 +16,7 @@
 
 namespace com.google.api.adwords.lib
 {
-  using com.google.api.adwords.v10;
+  using com.google.api.adwords.v11;
 
   using System;
   using System.Collections;
@@ -31,14 +31,14 @@ namespace com.google.api.adwords.lib
 
   public class AdWordsUser
   {
-    const String LAST_VERSION = "v10";
+    const String LAST_VERSION = "v11";
     // Change MAX_WEB_SERVICES to the number of available web sevices for this
     // API version, see
     // http://www.google.com/apis/adwords/developer/adwords_api_services.html
     const int MAX_WEB_SERVICES = 10;
     const String PACKAGE_PREFIX = "com.google.api.adwords.";
     const String LIB_VERSION_PREFIX = 
-        "AdWords API DotNet Client Library v0.12.0: ";
+        "AdWords API DotNet Client Library v1.0.0: ";
 
     public static String[] HEADERS = {
       "email",

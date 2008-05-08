@@ -6,8 +6,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyTitle("google-api-adwords-dotnet")]
-[assembly: AssemblyDescription("AdWords API DotNet Client Library")]
+[assembly: AssemblyTitle("google-api-adwords-dotnet-examples")]
+[assembly: AssemblyDescription("AdWords API DotNet Examples")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Google Inc.")]
 [assembly: AssemblyProduct("")]

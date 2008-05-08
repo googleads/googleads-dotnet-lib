@@ -15,15 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v10;
+using com.google.api.adwords.v11;
 
 using System;
 using System.Text;
 
 namespace com.google.api.adwords.examples
 {
-  // Creates new campaign, ad group, text ad, and some keywords.
-  class CampaignServiceDemo
+  // Creates new campaign, ad group, creative, and a website.
+  class CampaignServiceWebsiteDemo
   {
     public static void run()
     {
@@ -40,10 +40,10 @@ namespace com.google.api.adwords.examples
           (CriterionService) user.getService("CriterionService");
       AdService adService = (AdService) user.getService("AdService");
 
-      // Create a new campaign with an ad group.  First create a
+      // Create a new campaign with some ad groups.  First create a
       // campaign, so we can get its id.
       Campaign newCampaign = new Campaign();
-      newCampaign.dailyBudget = 1000000;
+      newCampaign.dailyBudget = 10000000;
       newCampaign.dailyBudgetSpecified = true;
 
       // The campaign name is optional.  An error results if a campaign
@@ -62,7 +62,7 @@ namespace com.google.api.adwords.examples
       newCampaign.languageTargeting = languages;
 
       // Set the campaign status to paused, we don't want to start
-      // paying for this test.
+      // paying for this test
       newCampaign.status = CampaignStatus.Paused;
 
       // Add this campaign.  The campaign object is returned with ids
@@ -73,8 +73,8 @@ namespace com.google.api.adwords.examples
       // Create an ad group.
       AdGroup newAdGroup = new AdGroup();
       newAdGroup.name = "dev guide";
-      newAdGroup.maxCpc = 50000;
-      newAdGroup.maxCpcSpecified = true;
+      newAdGroup.siteMaxCpm = 10000000;
+      newAdGroup.siteMaxCpmSpecified = true;
 
       // Associate this ad group with the newly created campaign.  Send
       // the request to add the new ad group.
@@ -85,7 +85,7 @@ namespace com.google.api.adwords.examples
       // Create a text ad.
       //
       // IMPORTANT: create an ad before adding keywords!  Else the
-      // minCpc will have a higher value.
+      // minCpc will have a higher value
       TextAd newTextAd = new TextAd();
       newTextAd.headline = "AdWords API Dev Guide";
       newTextAd.description1 = "Access your AdWords";
@@ -95,46 +95,29 @@ namespace com.google.api.adwords.examples
       newTextAd.adGroupId = adGroupId;
       Ad[] myAds = adService.addAds(new Ad[] {newTextAd});
 
-      // Add keywords to the newly created ad group.
-      Keyword newKeyword1 = new Keyword();
-      newKeyword1.adGroupId = adGroupId;
-      newKeyword1.text = "AdWords API";
-      newKeyword1.type = KeywordType.Broad;
-      Keyword newKeyword2 = new Keyword();
-      newKeyword2.adGroupId = adGroupId;
-      newKeyword2.text = "Adwords developer guide";
-      newKeyword2.type = KeywordType.Broad;
-      Keyword newKeyword3 = new Keyword();
-      newKeyword3.adGroupId = adGroupId;
-      newKeyword3.text  = "AdWords reference";
-      newKeyword3.type= KeywordType.Broad;
+      // Add keywords to this ad group.
+      Website newWebsite = new Website();
+      newWebsite.adGroupId = adGroupId;
+      newWebsite.url = "artima.com";
+      newWebsite.maxCpm = 1000000;
 
-      Criterion[] myKeywords = criterionService.addCriteria(
-        new Criterion[] {newKeyword1, newKeyword2, newKeyword3});
+      Criterion[] myWebsites =
+          criterionService.addCriteria(new Criterion[] {newWebsite});
 
-      // Update all criteria maxCpc.
-      ((Keyword) myKeywords[0]).maxCpc = 100000;
-      ((Keyword) myKeywords[0]).maxCpcSpecified = true;
-      ((Keyword) myKeywords[1]).maxCpc = 100000;
-      ((Keyword) myKeywords[1]).maxCpcSpecified = true;
-      ((Keyword) myKeywords[2]).maxCpc = 100000;
-      ((Keyword) myKeywords[2]).maxCpcSpecified = true;
-      criterionService.updateCriteria(myKeywords);
+      // Update all criteria maxCpm.
+      ((Website) myWebsites[0]).maxCpm = 3000000;
+      ((Website) myWebsites[0]).maxCpmSpecified = true;
+      criterionService.updateCriteria(myWebsites);
 
-      // Check criteria maxCpc.
-      myKeywords = criterionService.getAllCriteria(adGroupId);
+      // Check criteria maxCpm.
+      myWebsites = criterionService.getAllCriteria(adGroupId);
 
-      for (int i = 0; i < myKeywords.Length; i ++)
+      for (int i = 0; i < myWebsites.Length; i ++)
       {
-        Keyword myKeyword = (Keyword) myKeywords[i];
+        Website myWebsite = (Website) myWebsites[i];
         Console.WriteLine(
-            "{0}: maxCpc = {1}", myKeyword.text, myKeyword.maxCpc);
+            "{0}: maxCpm = {1}", myWebsite.url, myWebsite.maxCpm);
       }
-
-      // Determine how much quota these operations have consumed.
-      Console.WriteLine(
-          "---------------------------------------"
-          + "\nTotal Quota unit cost for this run: {0}", user.getUnits());
 
       Console.ReadLine();
     }

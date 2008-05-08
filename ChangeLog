@@ -1,3 +1,7 @@
+1.0.0:
+- Updated for v12 of the API; removed v10 of the API.
+- Separated core client library and sample code into two projects.
+
 0.12.1:
 - Fix for project file (.csproj) to pick up changes to AUTHORS and CHANGELOG
   files.

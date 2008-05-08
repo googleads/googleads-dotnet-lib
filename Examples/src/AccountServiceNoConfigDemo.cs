@@ -15,7 +15,7 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v10;
+using com.google.api.adwords.v11;
 
 using System;
 using System.Collections;
@@ -33,7 +33,8 @@ namespace com.google.api.adwords.examples
       headers.Add("email", "INSERT_LOGIN_EMAIL_HERE");
       headers.Add("password", "INSERT_PASSWORD_HERE");
       headers.Add("clientEmail", "INSERT_CLIENT_LOGIN_EMAIL_HERE");
-      headers.Add("useragent", "AdWords API DotNet Client Library: INSERT_COMPANY_NAME");
+      headers.Add("useragent",
+          "AdWords API DotNet Client Library: INSERT_COMPANY_NAME");
       headers.Add("developerToken", "INSERT_DEVELOPER_TOKEN_HERE");
       headers.Add("applicationToken", "INSERT_APPLICATION_TOKEN_HERE");
 

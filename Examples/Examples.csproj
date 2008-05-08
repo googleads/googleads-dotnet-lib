@@ -3,24 +3,24 @@
         ProjectType = "Local"
         ProductVersion = "7.10.3077"
         SchemaVersion = "2.0"
-        ProjectGuid = "{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}"
+        ProjectGuid = "{1DF6FFA1-85EC-4FD9-BE35-32E5A3CD8F48}"
     >
         <Build>
             <Settings
                 ApplicationIcon = ""
                 AssemblyKeyContainerName = ""
-                AssemblyName = "google-api-adwords-dotnet"
+                AssemblyName = "Examples"
                 AssemblyOriginatorKeyFile = ""
                 DefaultClientScript = "JScript"
                 DefaultHTMLPageLayout = "Grid"
                 DefaultTargetSchema = "IE50"
                 DelaySign = "false"
-                OutputType = "Library"
+                OutputType = "Exe"
                 PreBuildEvent = ""
                 PostBuildEvent = ""
-                RootNamespace = "google_api_adwords_dotnet"
+                RootNamespace = "Examples"
                 RunPostBuildEvent = "OnBuildSuccess"
-                StartupObject = ""
+                StartupObject = "com.google.api.adwords.examples.Examples"
             >
                 <Config
                     Name = "Debug"
@@ -76,8 +76,13 @@
                 />
                 <Reference
                     Name = "System.XML"
-                    AssemblyName = "System.Xml"
+                    AssemblyName = "System.XML"
                     HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "google-api-adwords-dotnet"
+                    Project = "{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
                 />
                 <Reference
                     Name = "System.Web.Services"
@@ -98,134 +103,78 @@
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "ChangeLog"
-                    BuildAction = "None"
-                />
-                <File
-                    RelPath = "COPYING"
-                    BuildAction = "Content"
-                />
-                <File
-                    RelPath = "Rakefile"
-                    BuildAction = "None"
-                />
-                <File
-                    RelPath = "README"
-                    BuildAction = "Content"
-                />
-                <File
-                    RelPath = "src\lib\AdWordsUser.cs"
+                    RelPath = "src\AccountServiceDemo.cs"
                     SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\lib\QuotaExtension.cs"
+                    RelPath = "src\AccountServiceNoConfigDemo.cs"
                     SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\lib\TraceExtension.cs"
+                    RelPath = "src\AdServiceDemo.cs"
                     SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v11\AccountService.cs"
-                    SubType = "code"
+                    RelPath = "src\CampaignServiceDemo.cs"
+                    SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v11\AdGroupService.cs"
-                    SubType = "code"
+                    RelPath = "src\CampaignServiceWebsiteDemo.cs"
+                    SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v11\AdService.cs"
-                    SubType = "code"
+                    RelPath = "src\CheckKeywordTrafficDemo.cs"
+                    SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v11\CampaignService.cs"
-                    SubType = "code"
+                    RelPath = "src\Examples.cs"
+                    SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v11\CriterionService.cs"
-                    SubType = "code"
+                    RelPath = "src\GetAdIdsDemo.cs"
+                    SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v11\InfoService.cs"
-                    SubType = "code"
+                    RelPath = "src\GetCampaignIdsDemo.cs"
+                    SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v11\KeywordToolService.cs"
-                    SubType = "code"
+                    RelPath = "src\InfoServiceDemo.cs"
+                    SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v11\ReportService.cs"
-                    SubType = "code"
+                    RelPath = "src\KeywordEstimateDemo.cs"
+                    SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v11\SiteSuggestionService.cs"
-                    SubType = "code"
+                    RelPath = "src\KeywordToolDemo.cs"
+                    SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v11\TrafficEstimatorService.cs"
-                    SubType = "code"
+                    RelPath = "src\ReportServiceKeywordDemo.cs"
+                    SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v12\AccountService.cs"
-                    SubType = "code"
+                    RelPath = "src\ReportServiceStructureDemo.cs"
+                    SubType = "Code"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v12\AdGroupService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\AdService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\CampaignService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\CriterionService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\InfoService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\KeywordToolService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\ReportService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\SiteSuggestionService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\TrafficEstimatorService.cs"
-                    SubType = "code"
+                    RelPath = "src\SiteSuggestionServiceDemo.cs"
+                    SubType = "Code"
                     BuildAction = "Compile"
                 />
             </Include>
