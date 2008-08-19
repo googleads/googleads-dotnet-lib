@@ -16,51 +16,42 @@
 
 using com.google.api.adwords.examples;
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v11;
+using com.google.api.adwords.v12;
 
 using System;
 using System.Reflection;
 using System.Text;
 using System.Web.Services.Protocols;
 
-namespace com.google.api.adwords.examples
-{
+namespace com.google.api.adwords.examples {
   // Executes examples.
-  class Examples
-  {
-    static void Main(string[] args)
-    {
+  class Examples {
+    static void Main(string[] args) {
       // Parse arguments.
-      if (args.Length < 1)
-      {
+      if (args.Length < 1) {
         usage();
         return;
       }
+
       Type t = Type.GetType("com.google.api.adwords.examples." + args[0]);
       object o = Activator.CreateInstance(t);
       MethodInfo runMethod = t.GetMethod("run");
-      if (null != runMethod)
-      {
-        try
-        {
+
+      if (null != runMethod) {
+        try {
           runMethod.Invoke(o, null);
-        }
-        catch (SoapException e)
-        {
+        } catch (SoapException e) {
           Console.WriteLine("SOAP Fault code: {0} Message {1}",
               e.Code, e.Detail);
           Console.ReadLine();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
           Console.WriteLine("Exception: {0}", e.InnerException.Message);
           Console.ReadLine();
         }
       }
     }
 
-    static void usage()
-    {
+    static void usage() {
       Console.WriteLine(
           "Usage: Examples.exe exampleClassName");
     }

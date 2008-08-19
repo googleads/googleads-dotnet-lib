@@ -15,18 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v11;
+using com.google.api.adwords.v12;
 
 using System;
 using System.Text;
 
-namespace com.google.api.adwords.examples
-{
+namespace com.google.api.adwords.examples {
   // Estimates traffic for a given keyword.
-  class KeywordEstimateDemo
-  {
-    public static void run()
-    {
+  class KeywordEstimateDemo {
+    public static void run() {
       // Create a user (reads headers from App.config file).
       AdWordsUser user = new AdWordsUser();
       user.useSandbox();  // use sandbox
@@ -45,17 +42,18 @@ namespace com.google.api.adwords.examples
 
       // To estimate more keywords, create more KeywordRequest objects
       // and add them to the list of keyword to estimate.
+      KeywordRequest[] keyReqs = new KeywordRequest[] {myKeyword};
 
       // Estimate traffic for given keywords.
       KeywordEstimate[] estimates =
-          service.estimateKeywordList(new KeywordRequest[] {myKeyword});
+          service.estimateKeywordList(keyReqs);
 
-      for (int i = 0; i < estimates.Length; i ++)
-      {
+      for (int i = 0; i < estimates.Length; i++) {
         KeywordEstimate estimate = estimates[i];
 
         Console.WriteLine(
-            "Clicks per day between {0} and {1}"
+            "Keyword estimates for: " + keyReqs[i].text
+            + "\nClicks per day between {0} and {1}"
             + "\nCost per click between {0} and {1}"
             + "\nAverage position between {0} and {1}",
             estimate.lowerClicksPerDay, estimate.upperClicksPerDay,

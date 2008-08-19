@@ -15,18 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v11;
+using com.google.api.adwords.v12;
 
 using System;
 using System.Text;
 
-namespace com.google.api.adwords.examples
-{
+namespace com.google.api.adwords.examples {
   // Creates new campaign, ad group, creative, and a website.
-  class CampaignServiceWebsiteDemo
-  {
-    public static void run()
-    {
+  class CampaignServiceWebsiteDemo {
+    public static void run() {
       // Create a user (reads headers from App.config file).
       AdWordsUser user = new AdWordsUser();
       user.useSandbox();  // use sandbox
@@ -43,8 +40,10 @@ namespace com.google.api.adwords.examples
       // Create a new campaign with some ad groups.  First create a
       // campaign, so we can get its id.
       Campaign newCampaign = new Campaign();
-      newCampaign.dailyBudget = 10000000;
-      newCampaign.dailyBudgetSpecified = true;
+      newCampaign.budgetAmount = 10000000L;
+      newCampaign.budgetAmountSpecified = true;
+      newCampaign.budgetPeriod = BudgetPeriod.Daily;
+      newCampaign.budgetPeriodSpecified = true;
 
       // The campaign name is optional.  An error results if a campaign
       // of the same name already exists.
@@ -79,8 +78,8 @@ namespace com.google.api.adwords.examples
       // Associate this ad group with the newly created campaign.  Send
       // the request to add the new ad group.
       AdGroup myAdGroup =
-        adgroupService.addAdGroup(campaignId, newAdGroup);
-      int adGroupId = myAdGroup.id;
+          adgroupService.addAdGroup(campaignId, newAdGroup);
+      long adGroupId = myAdGroup.id;
 
       // Create a text ad.
       //
@@ -112,8 +111,7 @@ namespace com.google.api.adwords.examples
       // Check criteria maxCpm.
       myWebsites = criterionService.getAllCriteria(adGroupId);
 
-      for (int i = 0; i < myWebsites.Length; i ++)
-      {
+      for (int i = 0; i < myWebsites.Length; i++) {
         Website myWebsite = (Website) myWebsites[i];
         Console.WriteLine(
             "{0}: maxCpm = {1}", myWebsite.url, myWebsite.maxCpm);

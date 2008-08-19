@@ -22,28 +22,28 @@ using System.Text;
 
 namespace com.google.api.adwords.examples {
   // Gets all ads from specific ad group.
-  class GetAdIdsDemo {
+  class GetAdGroupIdsDemo {
     public static void run() {
       // Create a user (reads headers from App.config file).
       AdWordsUser user = new AdWordsUser();
       user.useSandbox();  // use sandbox
 
       // Get the service.
-      AdService service = (AdService) user.getService("AdService");
+      AdGroupService adGroupService =
+        (AdGroupService) user.getService("AdGroupService");
 
-      // Get all ads.
-      long[] adGroupIds = {12345};
-      Ad[] ads = service.getAllAds(adGroupIds);
+      // Get all adGroups.
+      int campaignId = 12345;
+      AdGroup[] adGroups = adGroupService.getAllAdGroups(campaignId);
 
-      for (int i = 0; i < ads.Length; i++) {
+      for (int i = 0; i < adGroups.Length; i++) {
         Console.WriteLine(
-            "----- Ad Info -----"
+            "----- AdGroup Info -----"
             + "\nAd Group Id: {0}"
-            + "\nId: {1}"
-            + "\nType: {2}"
-            + "\nStatus: {3}"
+            + "\nName: {1}"
+            + "\nStatus: {2}"
             + "\n------------------------",
-            ads[i].adGroupId, ads[i].id, ads[i].adType, ads[i].status);
+            adGroups[i].id, adGroups[i].name, adGroups[i].status);
       }
 
       Console.ReadLine();

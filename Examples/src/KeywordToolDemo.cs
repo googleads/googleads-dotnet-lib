@@ -15,18 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v11;
+using com.google.api.adwords.v12;
 
 using System;
 using System.Text;
 
-namespace com.google.api.adwords.examples
-{
+namespace com.google.api.adwords.examples {
   // Gets keyword variations for specific seed keywords.
-  class KeywordToolDemo
-  {
-    public static void run()
-    {
+  class KeywordToolDemo {
+    public static void run() {
       // Create a user (reads headers from App.config file).
       AdWordsUser user = new AdWordsUser();
       user.useSandbox();  // use sandbox
@@ -51,8 +48,8 @@ namespace com.google.api.adwords.examples
           "Competion",
           "Volume",
           "Text");
-      for (int i = 0; i < keywords.Length; i ++)
-      {
+
+      for (int i = 0; i < keywords.Length; i++) {
         SiteKeyword siteKeyword = keywords[i];
         Console.WriteLine(
             "{0, -10}{1, -10}{2, -10}{3, -10}{4, -10}",
@@ -76,8 +73,7 @@ namespace com.google.api.adwords.examples
       KeywordVariation[] myKeywordVariationsDetails =
           myKeywordVariations.moreSpecific;
 
-      if (null != myKeywordVariationsDetails)
-      {
+      if (null != myKeywordVariationsDetails) {
         Console.WriteLine(
             "\n-------------------------------\n"
             + "\nList of keyword variations for keyword seed \"{0}\"\n",
@@ -88,8 +84,8 @@ namespace com.google.api.adwords.examples
             "language",
             "searchVolumeScale",
             "text");
-        for (int i = 0; i < myKeywordVariationsDetails.Length; i ++)
-        {
+
+        for (int i = 0; i < myKeywordVariationsDetails.Length; i++) {
           KeywordVariation keywordDetail = myKeywordVariationsDetails[i];
           Console.WriteLine(
               "{0, -30}{1, -10}{2, -20}{3, -10}",
@@ -102,5 +98,5 @@ namespace com.google.api.adwords.examples
 
       Console.ReadLine();
     }
-   }
+  }
 }

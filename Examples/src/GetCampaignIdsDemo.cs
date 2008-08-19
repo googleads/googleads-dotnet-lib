@@ -15,18 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v11;
+using com.google.api.adwords.v12;
 
 using System;
 using System.Text;
 
-namespace com.google.api.adwords.examples
-{
+namespace com.google.api.adwords.examples {
   // Gets all campaigns.
-  class GetCampaignIdsDemo
-  {
-    public static void run()
-    {
+  class GetCampaignIdsDemo {
+    public static void run() {
       // Create a user (reads headers from App.config file).
       AdWordsUser user = new AdWordsUser();
       user.useSandbox();  // use sandbox
@@ -38,10 +35,9 @@ namespace com.google.api.adwords.examples
       // Get all campaigns.
       Campaign[] myCampaigns = campaignService.getAllAdWordsCampaigns(1);
 
-      for (int i = 0; i < myCampaigns.Length; i ++)
-      {
+      for (int i = 0; i < myCampaigns.Length; i++) {
         Console.WriteLine(
-            "Name: {0}    id: {1}  status: {2}",
+            "Name: {0,-30} id: {1,-10} status: {2}",
             myCampaigns[i].name, myCampaigns[i].id, myCampaigns[i].status);
       }
 

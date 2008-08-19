@@ -15,18 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v11;
+using com.google.api.adwords.v12;
 
 using System;
 using System.Text;
 
-namespace com.google.api.adwords.examples
-{
+namespace com.google.api.adwords.examples {
   // Gets web site suggestions by topics.
-  class SiteSuggestionServiceDemo
-  {
-    public static void run()
-    {
+  class SiteSuggestionServiceDemo {
+    public static void run() {
       // Create a user (reads headers from App.config file).
       AdWordsUser user = new AdWordsUser();
       user.useSandbox();  // use sandbox
@@ -43,10 +40,9 @@ namespace com.google.api.adwords.examples
 
       // Get site suggestions.
       SiteSuggestion[] sites =
-        service.getSitesByTopics(topics, targeting);
+          service.getSitesByTopics(topics, targeting);
 
-      if (sites != null)
-      {
+      if (sites != null) {
         Console.WriteLine(
             "{0, -16}{1, -15}{2, -15}{3, -12}{4, -14}",
             "acceptsImageAds",
@@ -54,8 +50,8 @@ namespace com.google.api.adwords.examples
             "acceptsVidoAds",
             "pageViews",
             "url");
-        for (int i = 0; i < sites.Length; i ++)
-        {
+
+        for (int i = 0; i < sites.Length; i++) {
           SiteSuggestion site = sites[i];
           Console.WriteLine(
               "{0, -16}{1, -15}{2, -15}{3, -12}{4, -14}",

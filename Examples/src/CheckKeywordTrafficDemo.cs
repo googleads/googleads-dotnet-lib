@@ -15,18 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v11;
+using com.google.api.adwords.v12;
 
 using System;
 using System.Text;
 
-namespace com.google.api.adwords.examples
-{
+namespace com.google.api.adwords.examples {
   // Checks a batch of keywords to see whether they will get any traffic.
-  class CheckKeywordTrafficDemo
-  {
-    public static void run()
-    {
+  class CheckKeywordTrafficDemo {
+    public static void run() {
       // Create a user (reads headers from App.config file).
       AdWordsUser user = new AdWordsUser();
       user.useSandbox();  // use sandbox
@@ -51,18 +48,15 @@ namespace com.google.api.adwords.examples
       // Check keyword traffic estimates.
       KeywordTraffic[] estimates = service.checkKeywordTraffic(trafficRequests);
 
-      if (estimates != null)
-      {
+      if (estimates != null) {
         Console.WriteLine("{0, -20}{1, -10}", "Keyword", "Traffic");
         Console.WriteLine("---------------------------------");
-        for (int i = 0; i < estimates.Length; i ++)
-        {
+
+        for (int i = 0; i < estimates.Length; i++) {
           Console.WriteLine(
               "{0, -20}{1, -10}", trafficRequests[i].keywordText, estimates[i]);
         }
-      }
-      else
-      {
+      } else {
         Console.WriteLine("Given keyword(s) not expected to get any traffic.");
       }
 

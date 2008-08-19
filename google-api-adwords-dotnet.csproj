@@ -129,56 +129,6 @@
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "src\v11\AccountService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v11\AdGroupService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v11\AdService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v11\CampaignService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v11\CriterionService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v11\InfoService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v11\KeywordToolService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v11\ReportService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v11\SiteSuggestionService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v11\TrafficEstimatorService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
                     RelPath = "src\v12\AccountService.cs"
                     SubType = "code"
                     BuildAction = "Compile"

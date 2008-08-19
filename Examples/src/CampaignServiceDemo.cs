@@ -15,18 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v11;
+using com.google.api.adwords.v12;
 
 using System;
 using System.Text;
 
-namespace com.google.api.adwords.examples
-{
+namespace com.google.api.adwords.examples {
   // Creates new campaign, ad group, text ad, and some keywords.
-  class CampaignServiceDemo
-  {
-    public static void run()
-    {
+  class CampaignServiceDemo {
+    public static void run() {
       // Create a user (reads headers from App.config file).
       AdWordsUser user = new AdWordsUser();
       user.useSandbox();  // use sandbox
@@ -43,8 +40,10 @@ namespace com.google.api.adwords.examples
       // Create a new campaign with an ad group.  First create a
       // campaign, so we can get its id.
       Campaign newCampaign = new Campaign();
-      newCampaign.dailyBudget = 1000000;
-      newCampaign.dailyBudgetSpecified = true;
+      newCampaign.budgetAmount = 1000000L;
+      newCampaign.budgetAmountSpecified = true;
+      newCampaign.budgetPeriod = BudgetPeriod.Daily;
+      newCampaign.budgetPeriodSpecified = true;
 
       // The campaign name is optional.  An error results if a campaign
       // of the same name already exists.
@@ -79,8 +78,8 @@ namespace com.google.api.adwords.examples
       // Associate this ad group with the newly created campaign.  Send
       // the request to add the new ad group.
       AdGroup myAdGroup =
-        adgroupService.addAdGroup(campaignId, newAdGroup);
-      int adGroupId = myAdGroup.id;
+          adgroupService.addAdGroup(campaignId, newAdGroup);
+      long adGroupId = myAdGroup.id;
 
       // Create a text ad.
       //
@@ -110,7 +109,7 @@ namespace com.google.api.adwords.examples
       newKeyword3.type= KeywordType.Broad;
 
       Criterion[] myKeywords = criterionService.addCriteria(
-        new Criterion[] {newKeyword1, newKeyword2, newKeyword3});
+          new Criterion[] {newKeyword1, newKeyword2, newKeyword3});
 
       // Update all criteria maxCpc.
       ((Keyword) myKeywords[0]).maxCpc = 100000;
@@ -124,8 +123,7 @@ namespace com.google.api.adwords.examples
       // Check criteria maxCpc.
       myKeywords = criterionService.getAllCriteria(adGroupId);
 
-      for (int i = 0; i < myKeywords.Length; i ++)
-      {
+      for (int i = 0; i < myKeywords.Length; i++) {
         Keyword myKeyword = (Keyword) myKeywords[i];
         Console.WriteLine(
             "{0}: maxCpc = {1}", myKeyword.text, myKeyword.maxCpc);

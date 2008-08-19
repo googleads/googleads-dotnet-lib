@@ -14,8 +14,7 @@
 // limitations under the License.
 //
 
-namespace com.google.api.adwords.lib
-{
+namespace com.google.api.adwords.lib {
   using System;
   using System.IO;
   using System.Net;
@@ -24,58 +23,43 @@ namespace com.google.api.adwords.lib
 
   // Define a SOAP Extension that traces the SOAP request and SOAP response for
   // the XML Web service method the SOAP extension is applied to.
-  public class QuotaExtension : SoapExtension
-  {
+  public class QuotaExtension : SoapExtension {
     String currentToken;
 
     // When the SOAP extension is accessed for the first time, the XML Web
     // service method it is applied to is accessed to store the file
     // name passed in, using the corresponding SoapExtensionAttribute.
-    public override object GetInitializer(
-        LogicalMethodInfo methodInfo, SoapExtensionAttribute attribute)
-    {
+    public override object GetInitializer(LogicalMethodInfo methodInfo,
+        SoapExtensionAttribute attribute) {
       return null;
     }
 
     // The SOAP extension was configured to run using a configuration file
     // instead of an attribute applied to a specific XML Web service
     // method.
-    public override object GetInitializer(Type WebServiceType)
-    {
+    public override object GetInitializer(Type WebServiceType) {
       return null;
     }
 
     // Receive the file name stored by GetInitializer and store it in a
     // member variable for this specific instance.
-    public override void Initialize(object initializer)
-    {
+    public override void Initialize(object initializer) {
     }
 
-    public override Stream ChainStream(Stream stream)
-    {
+    public override Stream ChainStream(Stream stream) {
       return stream;
     }
 
     // If the SoapMessageStage is such that the SoapRequest or
     // SoapResponse is still in the SOAP format to be sent or received,
     // save it out to a file.
-    public override void ProcessMessage(SoapMessage message)
-    {
-      switch (message.Stage)
-      {
+    public override void ProcessMessage(SoapMessage message) {
+      switch (message.Stage) {
         case SoapMessageStage.BeforeSerialize: break;
         case SoapMessageStage.AfterSerialize:
-          foreach (SoapHeader header in message.Headers)
-          {
+          foreach (SoapHeader header in message.Headers) {
             if (header.GetType() == Type.GetType(
-                "com.google.api.adwords.v11.developerToken"))
-            {
-              this.currentToken =
-                  ((com.google.api.adwords.v11.developerToken)header).Text[0];
-            }
-            if (header.GetType() == Type.GetType(
-                "com.google.api.adwords.v12.developerToken"))
-            {
+                "com.google.api.adwords.v12.developerToken")) {
               this.currentToken =
                   ((com.google.api.adwords.v12.developerToken)header).Text[0];
             }
@@ -84,17 +68,9 @@ namespace com.google.api.adwords.lib
         case SoapMessageStage.BeforeDeserialize: break;
         case SoapMessageStage.AfterDeserialize:
           int units = 0;
-          foreach (SoapHeader header in message.Headers)
-          {
+          foreach (SoapHeader header in message.Headers) {
             if (header.GetType() == Type.GetType(
-                "com.google.api.adwords.v11.units"))
-            {
-              units = Int32.Parse(((
-                  com.google.api.adwords.v11.units)header).Text[0]);
-            }
-            if (header.GetType() == Type.GetType(
-                "com.google.api.adwords.v12.units"))
-            {
+                "com.google.api.adwords.v12.units")) {
               units = Int32.Parse(((
                   com.google.api.adwords.v12.units)header).Text[0]);
             }
@@ -111,17 +87,14 @@ namespace com.google.api.adwords.lib
   // Create a SoapExtensionAttribute for the SOAP Extension that can be
   // applied to an XML Web service method.
   [AttributeUsage(AttributeTargets.Method)]
-  public class QuotaExtensionAttribute : SoapExtensionAttribute
-  {
+  public class QuotaExtensionAttribute : SoapExtensionAttribute {
     private int priority;
 
-    public override Type ExtensionType
-    {
+    public override Type ExtensionType {
       get { return typeof(QuotaExtension); }
     }
 
-    public override int Priority
-    {
+    public override int Priority {
       get { return priority; }
       set { priority = value; }
     }

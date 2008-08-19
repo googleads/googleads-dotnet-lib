@@ -15,18 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v11;
+using com.google.api.adwords.v12;
 
 using System;
 using System.Text;
 
-namespace com.google.api.adwords.examples
-{
+namespace com.google.api.adwords.examples {
   // Gets quota usage information.
-  class InfoServiceDemo
-  {
-    public static void run()
-    {
+  class InfoServiceDemo {
+    public static void run() {
       // Create a user (reads headers from App.config file).
       AdWordsUser user = new AdWordsUser();
       user.useSandbox();  // use sandbox
@@ -41,13 +38,14 @@ namespace com.google.api.adwords.examples
       // Get the quota used between January 1, 2007 and today.
       long unitCount = service.getUnitCount(
           new DateTime(2007, 1, 1, 0, 0, 0), DateTime.Today);
-      Console.WriteLine("Unit count for the past day month: " + unitCount);
+      Console.WriteLine("Unit count between January 1, 2007 and today: " +
+          unitCount);
 
       // Get the operation count used between January 1, 2007 and today.
       long operationCount = service.getOperationCount(
           new DateTime(2007, 1, 1, 0, 0, 0), DateTime.Today);
-      Console.WriteLine("Operation count for the past day month: "
-              + operationCount);
+      Console.WriteLine("Operation count between January 1, 2007 and today: " +
+          operationCount);
 
       // Get the quota used between January 1, 2007 and today for
       // AccountService.getAccountInfo() call.

@@ -76,18 +76,18 @@
                 />
                 <Reference
                     Name = "System.XML"
-                    AssemblyName = "System.XML"
+                    AssemblyName = "System.Xml"
                     HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
-                />
-                <Reference
-                    Name = "google-api-adwords-dotnet"
-                    Project = "{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}"
-                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
                 />
                 <Reference
                     Name = "System.Web.Services"
                     AssemblyName = "System.Web.Services"
                     HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Web.Services.dll"
+                />
+                <Reference
+                    Name = "google-api-adwords-dotnet"
+                    Project = "{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
                 />
             </References>
         </Build>
@@ -134,6 +134,11 @@
                 />
                 <File
                     RelPath = "src\Examples.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "src\GetAdGroupIdsDemo.cs"
                     SubType = "Code"
                     BuildAction = "Compile"
                 />

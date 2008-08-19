@@ -14,9 +14,8 @@
 // limitations under the License.
 //
 
-namespace com.google.api.adwords.lib
-{
-  using com.google.api.adwords.v11;
+namespace com.google.api.adwords.lib {
+  using com.google.api.adwords.v12;
 
   using System;
   using System.Collections;
@@ -25,30 +24,26 @@ namespace com.google.api.adwords.lib
   using System.Text.RegularExpressions;
   using System.Web.Services.Protocols;
 
-  public class Util
-  {
+  public class Util {
   }
 
-  public class AdWordsUser
-  {
-    const String LAST_VERSION = "v11";
+  public class AdWordsUser {
+    const String LAST_VERSION = "v12";
     // Change MAX_WEB_SERVICES to the number of available web sevices for this
     // API version, see
     // http://www.google.com/apis/adwords/developer/adwords_api_services.html
     const int MAX_WEB_SERVICES = 10;
     const String PACKAGE_PREFIX = "com.google.api.adwords.";
     const String LIB_VERSION_PREFIX = 
-        "AdWords API DotNet Client Library v1.0.0: ";
+        "AdWords API DotNet Client Library v2.0.0: ";
 
-    public static String[] HEADERS = {
-      "email",
-      "clientEmail",
-      "clientCustomerId",
-      "password",
-      "applicationToken",
-      "developerToken",
-      "useragent"
-    };
+    public static String[] HEADERS = {"email",
+                                      "clientEmail",
+                                      "clientCustomerId",
+                                      "password",
+                                      "applicationToken",
+                                      "developerToken",
+                                      "useragent"};
 
     public email emailValue;
     public clientEmail clientEmailValue;
@@ -67,12 +62,14 @@ namespace com.google.api.adwords.lib
 
     public static Hashtable units = new Hashtable();
 
-    public AdWordsUser():this(LAST_VERSION)
-    {
+    public AdWordsUser():this(LAST_VERSION) {
     }
 
-    public AdWordsUser(String version)
-    {
+    public AdWordsUser(Hashtable headers, String version):this(headers) {
+      this.version = version;
+    }
+
+    public AdWordsUser(String version) {
       // Reads headers from App.config file
       this.headers = (Hashtable) System.Configuration.
           ConfigurationSettings.GetConfig("adwordsHeaders");
@@ -83,18 +80,15 @@ namespace com.google.api.adwords.lib
       // Always check to see if we should reconstruct our list of
       // headers.
       if (!this.headers.ContainsKey("email")
-          || this.headers["email"].GetType() != typeof(email))
-      {
+          || this.headers["email"].GetType() != typeof(email)) {
         this.emailValue = new email();
         this.emailValue.Text = new String[] {(String) this.headers["email"]};
         this.headers["email"] = this.emailValue;
       }
 
-      if (this.headers["clientEmail"] != null)
-      {
+      if (this.headers["clientEmail"] != null) {
         if (!this.headers.ContainsKey("clientEmail")
-            || this.headers["clientEmail"].GetType() != typeof(clientEmail))
-        {
+            || this.headers["clientEmail"].GetType() != typeof(clientEmail)) {
           this.clientEmailValue = new clientEmail();
           this.clientEmailValue.Text =
               new String[] {(String) this.headers["clientEmail"]};
@@ -102,12 +96,10 @@ namespace com.google.api.adwords.lib
         }
       }
 
-      if (this.headers["clientCustomerId"] != null)
-      {
-        if (!this.headers.ContainsKey("clientCustomerId")
-            || this.headers["clientCustomerId"].GetType() != typeof(
-                clientCustomerId))
-        {
+      if (this.headers["clientCustomerId"] != null) {
+        if (!this.headers.ContainsKey("clientCustomerId") ||
+            this.headers["clientCustomerId"].GetType() !=
+            typeof(clientCustomerId)) {
           this.clientCustomerIdValue = new clientCustomerId();
           this.clientCustomerIdValue.Text =
               new String[] {(String) this.headers["clientCustomerId"]};
@@ -117,15 +109,13 @@ namespace com.google.api.adwords.lib
 
       // If both are specified, defaults to clientEmail.
       if (this.headers["clientEmail"] != null
-          && this.headers["clientCustomerId"] != null)
-      {
+          && this.headers["clientCustomerId"] != null) {
         this.headers["clientCustomerId"] = null;
         this.clientCustomerIdValue = null;
       }
 
       if (!this.headers.ContainsKey("password")
-          || this.headers["password"].GetType() != typeof(password))
-      {
+          || this.headers["password"].GetType() != typeof(password)) {
         this.passwordValue = new password();
         this.passwordValue.Text =
             new String[] {(String) this.headers["password"]};
@@ -133,17 +123,16 @@ namespace com.google.api.adwords.lib
       }
 
       if (!this.headers.ContainsKey("useragent")
-          || this.headers["useragent"].GetType() != typeof(useragent))
-      {
+          || this.headers["useragent"].GetType() != typeof(useragent)) {
         this.useragentValue = new useragent();
-        this.useragentValue.Text = new String[] {LIB_VERSION_PREFIX
-            + (String) this.headers["useragent"]};
+        this.useragentValue.Text =
+            new String[] {LIB_VERSION_PREFIX +
+            (String) this.headers["useragent"]};
         this.headers["useragent"] = this.useragentValue;
       }
 
-      if (!this.headers.ContainsKey("developerToken")
-          || this.headers["developerToken"].GetType() != typeof(developerToken))
-      {
+      if (!this.headers.ContainsKey("developerToken") ||
+          this.headers["developerToken"].GetType() != typeof(developerToken)) {
         this.developerTokenValue = new developerToken();
         this.developerTokenValue.Text =
             new String[] {(String) this.headers["developerToken"]};
@@ -152,41 +141,35 @@ namespace com.google.api.adwords.lib
 
       if (!this.headers.ContainsKey("applicationToken")
           || this.headers["applicationToken" ].GetType() !=
-          typeof(applicationToken))
-      {
+        typeof(applicationToken)) {
         this.applicationTokenValue = new applicationToken();
         this.applicationTokenValue.Text =
             new String[] {(String) this.headers["applicationToken"]};
         this.headers["applicationToken"] = this.applicationTokenValue;
       }
 
-      if (this.headers["alternateUrl"] != null)
-      {
+      if (this.headers["alternateUrl"] != null) {
         this.alternateUrl = (String) this.headers["alternateUrl"];
         this.headers["alternateUrl"] = this.alternateUrl;
       }
     }
 
-    public AdWordsUser(Hashtable headers)
-    {
-      if (headers != null)
-      {
+    public AdWordsUser(Hashtable headers) {
+      if (headers != null) {
         this.headers = new Hashtable();
 
         this.version = LAST_VERSION;
         this.services = new Hashtable(MAX_WEB_SERVICES);
 
         if (!headers.ContainsKey("email")
-            || headers["email"].GetType() != typeof(email))
-        {
+            || headers["email"].GetType() != typeof(email)) {
           this.emailValue = new email();
           this.emailValue.Text = new String[] {(String) headers["email"]};
           this.headers["email"] = this.emailValue;
         }
 
         if (!headers.ContainsKey("clientEmail")
-            || headers["clientEmail"].GetType() != typeof(clientEmail))
-        {
+            || headers["clientEmail"].GetType() != typeof(clientEmail)) {
           this.clientEmailValue = new clientEmail();
           this.clientEmailValue.Text =
               new String[] {(String) headers["clientEmail"]};
@@ -195,8 +178,7 @@ namespace com.google.api.adwords.lib
 
         if (!headers.ContainsKey("clientCustomerId")
             || headers["clientCustomerId"].GetType() != typeof(
-                clientCustomerId))
-        {
+          clientCustomerId)) {
           this.clientCustomerIdValue = new clientCustomerId();
           this.clientCustomerIdValue.Text =
               new String[] {(String) headers["clientCustomerId"]};
@@ -205,23 +187,20 @@ namespace com.google.api.adwords.lib
 
         // If both are specified, defaults to clientEmail.
         if (headers.ContainsKey("clientEmail")
-            && headers.ContainsKey("clientCustomerId"))
-        {
+            && headers.ContainsKey("clientCustomerId")) {
           this.headers["clientCustomerId"] = null;
           this.clientCustomerIdValue = null;
         }
 
         if (!headers.ContainsKey("password")
-            || headers["password"].GetType() != typeof(password))
-        {
+            || headers["password"].GetType() != typeof(password)) {
           this.passwordValue = new password();
           this.passwordValue.Text = new String[] {(String) headers["password"]};
           this.headers["password"] = this.passwordValue;
         }
 
         if (!headers.ContainsKey("useragent")
-            || headers["useragent"].GetType() != typeof(useragent))
-        {
+            || headers["useragent"].GetType() != typeof(useragent)) {
           this.useragentValue = new useragent();
           this.useragentValue.Text =
               new String[] {LIB_VERSION_PREFIX + (String) headers["useragent"]};
@@ -229,8 +208,7 @@ namespace com.google.api.adwords.lib
         }
 
         if (!headers.ContainsKey("developerToken")
-            || headers["developerToken"].GetType() != typeof(developerToken))
-        {
+            || headers["developerToken"].GetType() != typeof(developerToken)) {
           this.developerTokenValue = new developerToken();
           this.developerTokenValue.Text =
               new String[] {(String) headers["developerToken"]};
@@ -238,67 +216,54 @@ namespace com.google.api.adwords.lib
         }
 
         if (!headers.ContainsKey("applicationToken")
-            || headers["applicationToken"].GetType() != typeof(
-                applicationToken))
-        {
+            || headers["applicationToken"].GetType() !=
+            typeof(applicationToken)) {
           this.applicationTokenValue = new applicationToken();
           this.applicationTokenValue.Text =
               new String[] {(String) headers["applicationToken"]};
           this.headers["applicationToken"] = this.applicationTokenValue;
         }
 
-        if (headers["alternateUrl"] != null)
-        {
+        if (headers["alternateUrl"] != null) {
           this.alternateUrl = (String) headers["alternateUrl"];
           this.headers["alternateUrl"] = this.alternateUrl;
         }
       }
     }
 
-    public void useSandbox()
-    {
+    public void useSandbox() {
       this.alternateUrl = "https://sandbox.google.com/";
     }
 
-    public object getService(String name)
-    {
+    public object getService(String name) {
       object o = services[name];
-      if (null != o)
-      {
+      if (null != o) {
         return o;
       }
       Type t = Type.GetType(PACKAGE_PREFIX + version + "." + name);
       o = Activator.CreateInstance(t);
-      foreach(String headerName in HEADERS)
-      {
+      foreach (String headerName in HEADERS) {
         FieldInfo f = t.GetField(headerName + "Value");
-        if ((f != null) && (this.headers[headerName] != null))
-        {
+        if ((f != null) && (this.headers[headerName] != null)) {
           f.SetValue(o, this.headers[headerName]);
         }
       }
-      if (alternateUrl != null)
-      {
+      if (alternateUrl != null) {
         setUrlPrefix((SoapHttpClientProtocol) o, alternateUrl);
       }
       services.Add(name, o);
       return o;
     }
 
-    public static void setUrlPrefix(SoapHttpClientProtocol client, String url)
-    {
+    public static void setUrlPrefix(SoapHttpClientProtocol client, String url) {
       client.Url =
           Regex.Replace(client.Url, @"https://adwords.google.com/", url);
     }
 
-    public static void addUnits(String token, int i)
-    {
-      if (token != null)
-      {
-        lock(units)
-        {
-          if (!units.Contains(token))
-          {
+    public static void addUnits(String token, int i) {
+      if (token != null) {
+        lock(units) {
+          if (!units.Contains(token)) {
             units[token] = 0;
           }
           units[token] = (int) units[token] + i;
@@ -306,13 +271,11 @@ namespace com.google.api.adwords.lib
       }
     }
 
-    public int getUnits()
-    {
-      if (AdWordsUser.units.Contains(this.developerTokenValue.Text[0]))
-      {
+    public int getUnits() {
+      if (AdWordsUser.units.Contains(this.developerTokenValue.Text[0])) {
         return (int) AdWordsUser.units[this.developerTokenValue.Text[0]];
       }
       return 0;
     }
   }
-}
+}  

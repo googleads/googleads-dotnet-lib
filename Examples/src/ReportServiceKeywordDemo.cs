@@ -15,20 +15,17 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v11;
+using com.google.api.adwords.v12;
 
 using System;
 using System.Text;
 using System.Threading;
 using System.Web.Services.Protocols;
 
-namespace com.google.api.adwords.examples
-{
+namespace com.google.api.adwords.examples {
   // Schedules keyword report and retrives its destination url.
-  class ReportServiceKeywordDemo
-  {
-    public static void run()
-    {
+  class ReportServiceKeywordDemo {
+    public static void run() {
       // Create a user (reads headers from App.config file).
       AdWordsUser user = new AdWordsUser();
       user.useSandbox();  // use sandbox
@@ -45,16 +42,13 @@ namespace com.google.api.adwords.examples
       reportJob.adWordsTypeSpecified = true;
       reportJob.endDay = DateTime.Today;  // defaults to today
       reportJob.startDay = new DateTime(2007, 1, 1);
-      reportJob.selectedColumns = new String[]
-          {
+      reportJob.selectedColumns = new String[] {
             "Campaign", "AdGroup", "Keyword", "KeywordStatus", "KeywordMinCPC",
             "KeywordDestUrlDisplay", "Impressions", "Clicks", "CTR",
-            "AveragePosition"
-          };
+            "AveragePosition" };
 
       // Validate the report job.
-      try
-      {
+      try {
         service.validateReportJob(reportJob);
 
         // Submit the request for the report.
@@ -62,21 +56,17 @@ namespace com.google.api.adwords.examples
 
         // Wait until the report has been generated.
         ReportJobStatus status = service.getReportJobStatus(jobId);
-        while (
-          status != ReportJobStatus.Completed &&
-          status != ReportJobStatus.Failed)
-        {
+
+        while (status != ReportJobStatus.Completed &&
+            status != ReportJobStatus.Failed) {
           Thread.Sleep(30000);
           status = service.getReportJobStatus(jobId);
           Console.WriteLine("Report job status is " + status);
         }
 
-        if (status == ReportJobStatus.Failed)
-        {
+        if (status == ReportJobStatus.Failed) {
           Console.WriteLine("Job failed!");
-        }
-        else
-        {
+        } else {
           // Report is ready.
           Console.WriteLine("The report is ready!");
 
@@ -85,9 +75,7 @@ namespace com.google.api.adwords.examples
           Console.WriteLine("Download it at url {0}", url);
 
         }
-      }
-      catch(SoapException e)
-      {
+      } catch(SoapException e) {
         Console.WriteLine("Report job is invalid. Exception: {0}", e.Message);
       }
 

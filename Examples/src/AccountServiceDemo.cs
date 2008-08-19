@@ -15,18 +15,15 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v11;
+using com.google.api.adwords.v12;
 
 using System;
 using System.Text;
 
-namespace com.google.api.adwords.examples
-{
+namespace com.google.api.adwords.examples {
   // Displays some of the account's info
-  class AccountServiceDemo
-  {
-    public static void run()
-    {
+  class AccountServiceDemo {
+    public static void run() {
       // Creates a user (reads headers from App.config file).
       AdWordsUser user = new AdWordsUser();
       user.useSandbox();  // use sandbox
@@ -42,8 +39,7 @@ namespace com.google.api.adwords.examples
           + "\nCustomer Id: {0}"
           + "\nDescriptive Name: {1}",
           acctInfo.customerId, acctInfo.descriptiveName);
-      if (null != acctInfo.billingAddress)
-      {
+      if (null != acctInfo.billingAddress) {
         Console.WriteLine(
             "Billing information"
             + "\n   Company Name: {0}"
@@ -58,6 +54,7 @@ namespace com.google.api.adwords.examples
             acctInfo.billingAddress.state, acctInfo.billingAddress.postalCode,
             acctInfo.billingAddress.countryCode);
       }
+
       Console.WriteLine(
           "Time Zone ID: {0}\n------------------------", acctInfo.timeZoneId);
 

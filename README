@@ -31,8 +31,8 @@ In the .NET 1.1 SOAP layer primitive types do not get serialized by default.
 primitive type variable is a binding to a SOAP paramer defined in the WSDL as
 nillable="true", in order for the variable to be serialized you need to set a
 variable <parameterName>Specified to true in order for it to be serialized.
-    newCampaign.dailyBudget = 1000000;
-    newCampaign.dailyBudgetSpecified = true;
+    newCampaign.budgetAmount = 1000000L;
+    newCampaign.budgetAmountSpecified = true;
 The members <parameterName>Specified are an artifact of the .NET SOAP library
 and are not present in the original WSDL.
 
@@ -64,7 +64,7 @@ If new version was added, create src/vXX directory and copy generated files
 into it. Build the project and remove all duplicate classes manually, until
 build is successful. Update examples to appriate API version. Create new
 directory with a name awapi_dotnet_lib_v.v.v, where v.v.v is a version number
-(i.e. 0.1.0), and copy new release into it. Pack new release into a tarball and
+(i.e. 2.0.0), and copy new release into it. Pack new release into a tarball and
 then gzip it,
     > tar -cvf awapi_dotnet_lib_v.v.v.tar awapi_dotnet_lib_v.v.v/
     > gzip awapi_dotnet_lib_v.v.v.tar
