@@ -80,12 +80,13 @@ Requires:
     - Google Account    -- https://www.google.com/accounts/NewAccount
 
 Includes:
-    - src/examples      -- demo programs for the client library
+    - Examples/src      -- demo programs for the client library
     - src/lib           -- core library
     - src/vXX           -- classes for each API web service
 
 Author:
     chanezon@gmail.com (Patrick Chanezon)
 
-Maintainer:
+Maintainers:
     api.jeffy@gmail.com (Jeffrey Posnick)
+    api.arogal@gmail.com (Adam Rogal)

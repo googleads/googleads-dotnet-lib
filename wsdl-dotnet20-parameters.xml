@@ -12,6 +12,7 @@
     <document>https://adwords.google.com/api/adwords/v12/KeywordToolService?wsdl</document>
     <document>https://adwords.google.com/api/adwords/v12/TrafficEstimatorService?wsdl</document>
     <document>https://adwords.google.com/api/adwords/v12/ReportService?wsdl</document>
+    <document>https://adwords.google.com/api/adwords/v12/SiteSuggestionService?wsdl</document>
   </documents>
   <namespace>com.google.adwords.v12</namespace>
   <out>AdWordsApi.cs</out>
