@@ -1,3 +1,7 @@
+2.1.0:
+- Added support for v13.
+- Updated README.
+
 2.0.0:
 - Migrated to v12.
 - Removed references to v11.

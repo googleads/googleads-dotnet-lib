@@ -35,7 +35,7 @@ namespace com.google.api.adwords.lib {
     const int MAX_WEB_SERVICES = 10;
     const String PACKAGE_PREFIX = "com.google.api.adwords.";
     const String LIB_VERSION_PREFIX = 
-        "AdWords API DotNet Client Library v2.0.0: ";
+        "AdWords API DotNet Client Library v2.1.0: ";
 
     public static String[] HEADERS = {"email",
                                       "clientEmail",
@@ -278,4 +278,4 @@ namespace com.google.api.adwords.lib {
       return 0;
     }
   }
-}  
+}

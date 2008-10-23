@@ -42,7 +42,7 @@ https://www.google.com/accounts/NewAccount. Update App.config with
 authentication credentials for your Google Account, to make requests against
 sandbox or with authentication credentials for your AdWords account, to make
 requests against production environment. The client library normally defaults
-to a single version (i.e. v11). However, it may support more than one version
+to a single version (i.e. v12). However, it may support more than one version
 at a time. In order to use a different version of API the following updates
 should be made. In src/lib/AdWordsUser.cs, update the following lines with the
 desired version.
@@ -64,7 +64,7 @@ If new version was added, create src/vXX directory and copy generated files
 into it. Build the project and remove all duplicate classes manually, until
 build is successful. Update examples to appriate API version. Create new
 directory with a name awapi_dotnet_lib_v.v.v, where v.v.v is a version number
-(i.e. 2.0.0), and copy new release into it. Pack new release into a tarball and
+(i.e. 2.1.0), and copy new release into it. Pack new release into a tarball and
 then gzip it,
     > tar -cvf awapi_dotnet_lib_v.v.v.tar awapi_dotnet_lib_v.v.v/
     > gzip awapi_dotnet_lib_v.v.v.tar
