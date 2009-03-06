@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2008 Google Inc.
+// Copyright (C) 2009 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v12;
+using com.google.api.adwords.v13;
 
 using System;
 using System.Text;
@@ -61,6 +61,8 @@ namespace com.google.api.adwords.examples {
               site.pageViews,
               site.url);
         }
+      } else {
+        Console.WriteLine("No site suggestions available for given keyword(s)");
       }
 
       Console.ReadLine();

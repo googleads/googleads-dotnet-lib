@@ -1,235 +1,146 @@
-<VisualStudioProject>
-    <CSHARP
-        ProjectType = "Local"
-        ProductVersion = "7.10.3077"
-        SchemaVersion = "2.0"
-        ProjectGuid = "{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}"
-    >
-        <Build>
-            <Settings
-                ApplicationIcon = ""
-                AssemblyKeyContainerName = ""
-                AssemblyName = "google-api-adwords-dotnet"
-                AssemblyOriginatorKeyFile = ""
-                DefaultClientScript = "JScript"
-                DefaultHTMLPageLayout = "Grid"
-                DefaultTargetSchema = "IE50"
-                DelaySign = "false"
-                OutputType = "Library"
-                PreBuildEvent = ""
-                PostBuildEvent = ""
-                RootNamespace = "google_api_adwords_dotnet"
-                RunPostBuildEvent = "OnBuildSuccess"
-                StartupObject = ""
-            >
-                <Config
-                    Name = "Debug"
-                    AllowUnsafeBlocks = "false"
-                    BaseAddress = "285212672"
-                    CheckForOverflowUnderflow = "false"
-                    ConfigurationOverrideFile = ""
-                    DefineConstants = "DEBUG;TRACE"
-                    DocumentationFile = ""
-                    DebugSymbols = "true"
-                    FileAlignment = "4096"
-                    IncrementalBuild = "false"
-                    NoStdLib = "false"
-                    NoWarn = ""
-                    Optimize = "false"
-                    OutputPath = "bin\Debug\"
-                    RegisterForComInterop = "false"
-                    RemoveIntegerChecks = "false"
-                    TreatWarningsAsErrors = "false"
-                    WarningLevel = "4"
-                />
-                <Config
-                    Name = "Release"
-                    AllowUnsafeBlocks = "false"
-                    BaseAddress = "285212672"
-                    CheckForOverflowUnderflow = "false"
-                    ConfigurationOverrideFile = ""
-                    DefineConstants = "TRACE"
-                    DocumentationFile = ""
-                    DebugSymbols = "false"
-                    FileAlignment = "4096"
-                    IncrementalBuild = "false"
-                    NoStdLib = "false"
-                    NoWarn = ""
-                    Optimize = "true"
-                    OutputPath = "bin\Release\"
-                    RegisterForComInterop = "false"
-                    RemoveIntegerChecks = "false"
-                    TreatWarningsAsErrors = "false"
-                    WarningLevel = "4"
-                />
-            </Settings>
-            <References>
-                <Reference
-                    Name = "System"
-                    AssemblyName = "System"
-                    HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll"
-                />
-                <Reference
-                    Name = "System.Data"
-                    AssemblyName = "System.Data"
-                    HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
-                />
-                <Reference
-                    Name = "System.XML"
-                    AssemblyName = "System.Xml"
-                    HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
-                />
-                <Reference
-                    Name = "System.Web.Services"
-                    AssemblyName = "System.Web.Services"
-                    HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Web.Services.dll"
-                />
-            </References>
-        </Build>
-        <Files>
-            <Include>
-                <File
-                    RelPath = "App.config"
-                    BuildAction = "None"
-                />
-                <File
-                    RelPath = "AssemblyInfo.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "ChangeLog"
-                    BuildAction = "None"
-                />
-                <File
-                    RelPath = "COPYING"
-                    BuildAction = "Content"
-                />
-                <File
-                    RelPath = "Rakefile"
-                    BuildAction = "None"
-                />
-                <File
-                    RelPath = "README"
-                    BuildAction = "Content"
-                />
-                <File
-                    RelPath = "src\lib\AdWordsUser.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\lib\QuotaExtension.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\lib\TraceExtension.cs"
-                    SubType = "Code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\AccountService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\AdGroupService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\AdService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\CampaignService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\CriterionService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\InfoService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\KeywordToolService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\ReportService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\SiteSuggestionService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v12\TrafficEstimatorService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v13\AccountService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v13\AdGroupService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v13\AdService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v13\CampaignService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v13\CriterionService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v13\InfoService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v13\KeywordToolService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v13\ReportService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v13\SiteSuggestionService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "src\v13\TrafficEstimatorService.cs"
-                    SubType = "code"
-                    BuildAction = "Compile"
-                />
-            </Include>
-        </Files>
-    </CSHARP>
-</VisualStudioProject>
-
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>google-api-adwords-dotnet</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>google_api_adwords_dotnet</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ChangeLog" />
+    <None Include="Rakefile" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\lib\AdWordsUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\lib\QuotaExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\lib\TraceExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\v13\AccountService.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="src\v13\AdGroupService.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="src\v13\AdService.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="src\v13\CampaignService.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="src\v13\CriterionService.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="src\v13\InfoService.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="src\v13\KeywordToolService.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="src\v13\ReportService.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="src\v13\SiteSuggestionService.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="src\v13\TrafficEstimatorService.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Content Include="COPYING" />
+    <Content Include="README" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2008 Google Inc.
+// Copyright (C) 2009 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v12;
+using com.google.api.adwords.v13;
 
 using System;
 using System.Text;
@@ -36,14 +36,18 @@ namespace com.google.api.adwords.examples {
       int campaignId = 12345;
       AdGroup[] adGroups = adGroupService.getAllAdGroups(campaignId);
 
-      for (int i = 0; i < adGroups.Length; i++) {
-        Console.WriteLine(
-            "----- AdGroup Info -----"
-            + "\nAd Group Id: {0}"
-            + "\nName: {1}"
-            + "\nStatus: {2}"
-            + "\n------------------------",
-            adGroups[i].id, adGroups[i].name, adGroups[i].status);
+      if (adGroups != null) {
+        for (int i = 0; i < adGroups.Length; i++) {
+          Console.WriteLine(
+              "----- AdGroup Info -----"
+              + "\nAd Group Id: {0}"
+              + "\nName: {1}"
+              + "\nStatus: {2}"
+              + "\n------------------------",
+              adGroups[i].id, adGroups[i].name, adGroups[i].status);
+        }
+      } else {
+        Console.WriteLine("There are no adgroups in this campaign.");
       }
 
       Console.ReadLine();

@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2008 Google Inc.
+// Copyright (C) 2009 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v12;
+using com.google.api.adwords.v13;
 
 using System;
 using System.Text;
@@ -35,10 +35,14 @@ namespace com.google.api.adwords.examples {
       // Get all campaigns.
       Campaign[] myCampaigns = campaignService.getAllAdWordsCampaigns(1);
 
-      for (int i = 0; i < myCampaigns.Length; i++) {
-        Console.WriteLine(
-            "Name: {0,-30} id: {1,-10} status: {2}",
-            myCampaigns[i].name, myCampaigns[i].id, myCampaigns[i].status);
+      if (myCampaigns != null) {
+        for (int i = 0; i < myCampaigns.Length; i++) {
+          Console.WriteLine(
+              "Name: {0,-30} id: {1,-10} status: {2}",
+              myCampaigns[i].name, myCampaigns[i].id, myCampaigns[i].status);
+        }
+      } else {
+        Console.WriteLine("There are no campaigns in this account.");
       }
 
       Console.ReadLine();

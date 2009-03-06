@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2008 Google Inc.
+// Copyright (C) 2009 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v12;
+using com.google.api.adwords.v13;
 
 using System;
 using System.Text;
@@ -53,7 +53,8 @@ namespace com.google.api.adwords.examples {
       // geotargeting can be specified.
       GeoTarget newGeoTarget = new GeoTarget();
       String[] countries = {"FR", "ES"};
-      newGeoTarget.countryTargets = countries;
+      newGeoTarget.countryTargets = new CountryTargets();
+      newGeoTarget.countryTargets.countries = countries;
       newCampaign.geoTargeting = newGeoTarget;
 
       // Target the campaign at English, French and Spanish.

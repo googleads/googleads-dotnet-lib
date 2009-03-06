@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2008 Google Inc.
+// Copyright (C) 2009 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v12;
+using com.google.api.adwords.v13;
 
 using System;
 using System.Text;
@@ -48,19 +48,23 @@ namespace com.google.api.adwords.examples {
       KeywordEstimate[] estimates =
           service.estimateKeywordList(keyReqs);
 
-      for (int i = 0; i < estimates.Length; i++) {
-        KeywordEstimate estimate = estimates[i];
+      if (estimates != null) {
+        for (int i = 0; i < estimates.Length; i++) {
+          KeywordEstimate estimate = estimates[i];
 
-        Console.WriteLine(
-            "Keyword estimates for: " + keyReqs[i].text
-            + "\nClicks per day between {0} and {1}"
-            + "\nCost per click between {0} and {1}"
-            + "\nAverage position between {0} and {1}",
-            estimate.lowerClicksPerDay, estimate.upperClicksPerDay,
-            estimate.lowerCpc, estimate.upperCpc, estimate.lowerAvgPosition,
-            estimate.upperAvgPosition);
+          Console.WriteLine(
+              "Keyword estimates for: " + keyReqs[i].text
+              + "\nClicks per day between {0} and {1}"
+              + "\nCost per click between {0} and {1}"
+              + "\nAverage position between {0} and {1}",
+              estimate.lowerClicksPerDay, estimate.upperClicksPerDay,
+              estimate.lowerCpc, estimate.upperCpc, estimate.lowerAvgPosition,
+              estimate.upperAvgPosition);
+        }
+      } else {
+        Console.WriteLine("No traffic estimates are available for " +
+            "given keyword(s)");
       }
-
       Console.ReadLine();
     }
   }

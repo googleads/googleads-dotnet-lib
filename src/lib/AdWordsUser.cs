@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2008 Google Inc.
+// Copyright (C) 2009 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 //
 
 namespace com.google.api.adwords.lib {
-  using com.google.api.adwords.v12;
+  using com.google.api.adwords.v13;
 
   using System;
   using System.Collections;
@@ -28,14 +28,14 @@ namespace com.google.api.adwords.lib {
   }
 
   public class AdWordsUser {
-    const String LAST_VERSION = "v12";
+    const String LAST_VERSION = "v13";
     // Change MAX_WEB_SERVICES to the number of available web sevices for this
     // API version, see
     // http://www.google.com/apis/adwords/developer/adwords_api_services.html
     const int MAX_WEB_SERVICES = 10;
     const String PACKAGE_PREFIX = "com.google.api.adwords.";
-    const String LIB_VERSION_PREFIX = 
-        "AdWords API DotNet Client Library v2.1.0: ";
+    const String LIB_VERSION_PREFIX =
+        "AdWords API DotNet Client Library v2.2.0: ";
 
     public static String[] HEADERS = {"email",
                                       "clientEmail",

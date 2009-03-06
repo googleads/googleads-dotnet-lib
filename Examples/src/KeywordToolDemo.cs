@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2008 Google Inc.
+// Copyright (C) 2009 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v12;
+using com.google.api.adwords.v13;
 
 using System;
 using System.Text;
@@ -45,19 +45,23 @@ namespace com.google.api.adwords.examples {
           "{0, -10}{1, -10}{2, -10}{3, -10}{4, -10}",
           "Group",
           "Group Id",
-          "Competion",
+          "Competition",
           "Volume",
           "Text");
 
-      for (int i = 0; i < keywords.Length; i++) {
-        SiteKeyword siteKeyword = keywords[i];
-        Console.WriteLine(
-            "{0, -10}{1, -10}{2, -10}{3, -10}{4, -10}",
-            groups[siteKeyword.groupId],
-            siteKeyword.groupId,
-            siteKeyword.advertiserCompetitionScale,
-            siteKeyword.searchVolumeScale,
-            siteKeyword.text);
+      if (keywords != null) {
+        for (int i = 0; i < keywords.Length; i++) {
+          SiteKeyword siteKeyword = keywords[i];
+          Console.WriteLine(
+              "{0, -10}{1, -10}{2, -10}{3, -10}{4, -10}",
+              groups[siteKeyword.groupId],
+              siteKeyword.groupId,
+              siteKeyword.advertiserCompetitionScale,
+              siteKeyword.avgSearchVolume,
+              siteKeyword.text);
+        }
+      } else {
+        Console.WriteLine("No keywords available from this site");
       }
 
       // Get keyword variations.
@@ -73,7 +77,7 @@ namespace com.google.api.adwords.examples {
       KeywordVariation[] myKeywordVariationsDetails =
           myKeywordVariations.moreSpecific;
 
-      if (null != myKeywordVariationsDetails) {
+      if (myKeywordVariationsDetails != null) {
         Console.WriteLine(
             "\n-------------------------------\n"
             + "\nList of keyword variations for keyword seed \"{0}\"\n",
@@ -82,7 +86,7 @@ namespace com.google.api.adwords.examples {
             "{0, -30}{1, -10}{2, -20}{3, -10}",
             "advertiserCompetitionScale",
             "language",
-            "searchVolumeScale",
+            "avgSearchVolume",
             "text");
 
         for (int i = 0; i < myKeywordVariationsDetails.Length; i++) {
@@ -91,9 +95,11 @@ namespace com.google.api.adwords.examples {
               "{0, -30}{1, -10}{2, -20}{3, -10}",
               keywordDetail.advertiserCompetitionScale,
               keywordDetail.language,
-              keywordDetail.searchVolumeScale,
+              keywordDetail.avgSearchVolume,
               keywordDetail.text);
         }
+      } else {
+        Console.WriteLine("No variations are available for given keyword(s)");
       }
 
       Console.ReadLine();

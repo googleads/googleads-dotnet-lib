@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2008 Google Inc.
+// Copyright (C) 2009 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -59,9 +59,9 @@ namespace com.google.api.adwords.lib {
         case SoapMessageStage.AfterSerialize:
           foreach (SoapHeader header in message.Headers) {
             if (header.GetType() == Type.GetType(
-                "com.google.api.adwords.v12.developerToken")) {
+                "com.google.api.adwords.v13.developerToken")) {
               this.currentToken =
-                  ((com.google.api.adwords.v12.developerToken)header).Text[0];
+                  ((com.google.api.adwords.v13.developerToken)header).Text[0];
             }
           }
           break;
@@ -70,9 +70,9 @@ namespace com.google.api.adwords.lib {
           int units = 0;
           foreach (SoapHeader header in message.Headers) {
             if (header.GetType() == Type.GetType(
-                "com.google.api.adwords.v12.units")) {
+                "com.google.api.adwords.v13.units")) {
               units = Int32.Parse(((
-                  com.google.api.adwords.v12.units)header).Text[0]);
+                  com.google.api.adwords.v13.units)header).Text[0]);
             }
           }
 

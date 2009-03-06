@@ -1,3 +1,7 @@
+2.2.0:
+- Set v13 as default version
+- Removed support for v12
+
 2.1.0:
 - Added support for v13.
 - Updated README.

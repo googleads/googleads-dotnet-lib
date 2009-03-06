@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2008 Google Inc.
+// Copyright (C) 2009 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 //
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v12;
+using com.google.api.adwords.v13;
 
 using System;
 using System.Text;
@@ -35,28 +35,28 @@ namespace com.google.api.adwords.examples {
       long usageQuota = service.getUsageQuotaThisMonth();
       Console.WriteLine("Usage quota for this month: " + usageQuota);
 
-      // Get the quota used between January 1, 2007 and today.
+      // Get the quota used between January 1, 2009 and today.
       long unitCount = service.getUnitCount(
-          new DateTime(2007, 1, 1, 0, 0, 0), DateTime.Today);
-      Console.WriteLine("Unit count between January 1, 2007 and today: " +
+          new DateTime(2009, 1, 1, 0, 0, 0), DateTime.Today);
+      Console.WriteLine("Unit count between January 1, 2009 and today: " +
           unitCount);
 
-      // Get the operation count used between January 1, 2007 and today.
+      // Get the operation count used between January 1, 2009 and today.
       long operationCount = service.getOperationCount(
-          new DateTime(2007, 1, 1, 0, 0, 0), DateTime.Today);
-      Console.WriteLine("Operation count between January 1, 2007 and today: " +
+          new DateTime(2009, 1, 1, 0, 0, 0), DateTime.Today);
+      Console.WriteLine("Operation count between January 1, 2009 and today: " +
           operationCount);
 
-      // Get the quota used between January 1, 2007 and today for
+      // Get the quota used between January 1, 2009 and today for
       // AccountService.getAccountInfo() call.
       long methodUnitCount = service.getUnitCountForMethod(
           "AccountService",
           "getAccountInfo",
-          new DateTime(2007, 1, 1, 0, 0, 0),
+          new DateTime(2009, 1, 1, 0, 0, 0),
           DateTime.Today);
       Console.WriteLine(
           "Method unit count for AccountService.getAccountInfo between "
-          + "January 1, 2007 and today: {0}", methodUnitCount);
+          + "January 1, 2009 and today: {0}", methodUnitCount);
 
       Console.ReadLine();
     }
