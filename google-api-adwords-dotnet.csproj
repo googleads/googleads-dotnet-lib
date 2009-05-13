@@ -1,146 +1,85 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectType>Local</ProjectType>
-    <ProductVersion>8.0.50727</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>
-    </ApplicationIcon>
-    <AssemblyKeyContainerName>
-    </AssemblyKeyContainerName>
-    <AssemblyName>google-api-adwords-dotnet</AssemblyName>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
-    <DefaultClientScript>JScript</DefaultClientScript>
-    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
-    <DefaultTargetSchema>IE50</DefaultTargetSchema>
-    <DelaySign>false</DelaySign>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B701ED76-54AE-4591-86DE-EDCD0D8DAC6C}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>google_api_adwords_dotnet</RootNamespace>
-    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>
-    </StartupObject>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.google.api.adwords</RootNamespace>
+    <AssemblyName>google-api-adwords-dotnet</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <ConfigurationOverrideFile>
-    </ConfigurationOverrideFile>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>
-    </DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
-    <FileAlignment>4096</FileAlignment>
-    <NoStdLib>false</NoStdLib>
-    <NoWarn>
-    </NoWarn>
-    <Optimize>false</Optimize>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
     <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\Release\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <ConfigurationOverrideFile>
-    </ConfigurationOverrideFile>
-    <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>
-    </DocumentationFile>
-    <DebugSymbols>false</DebugSymbols>
-    <FileAlignment>4096</FileAlignment>
-    <NoStdLib>false</NoStdLib>
-    <NoWarn>
-    </NoWarn>
+    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
-    <DebugType>none</DebugType>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System">
-      <Name>System</Name>
-    </Reference>
-    <Reference Include="System.Data">
-      <Name>System.Data</Name>
-    </Reference>
-    <Reference Include="System.Web.Services">
-      <Name>System.Web.Services</Name>
-    </Reference>
-    <Reference Include="System.Xml">
-      <Name>System.XML</Name>
-    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ChangeLog" />
-    <None Include="Rakefile" />
-    <Compile Include="AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\lib\AdWordsUser.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\lib\QuotaExtension.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\lib\TraceExtension.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\v13\AccountService.cs">
-      <SubType>code</SubType>
-    </Compile>
-    <Compile Include="src\v13\AdGroupService.cs">
-      <SubType>code</SubType>
-    </Compile>
-    <Compile Include="src\v13\AdService.cs">
-      <SubType>code</SubType>
-    </Compile>
-    <Compile Include="src\v13\CampaignService.cs">
-      <SubType>code</SubType>
-    </Compile>
-    <Compile Include="src\v13\CriterionService.cs">
-      <SubType>code</SubType>
-    </Compile>
-    <Compile Include="src\v13\InfoService.cs">
-      <SubType>code</SubType>
-    </Compile>
-    <Compile Include="src\v13\KeywordToolService.cs">
-      <SubType>code</SubType>
-    </Compile>
-    <Compile Include="src\v13\ReportService.cs">
-      <SubType>code</SubType>
-    </Compile>
-    <Compile Include="src\v13\SiteSuggestionService.cs">
-      <SubType>code</SubType>
-    </Compile>
-    <Compile Include="src\v13\TrafficEstimatorService.cs">
-      <SubType>code</SubType>
-    </Compile>
-    <Content Include="COPYING" />
-    <Content Include="README" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\AssemblyInfo.cs" />
+    <Compile Include="src\lib\AdWordsUser.cs" />
+    <Compile Include="src\lib\ApiServices.cs" />
+    <Compile Include="src\lib\util\AccountManager.cs" />
+    <Compile Include="src\lib\util\ReportUtilities.cs" />
+    <Compile Include="src\lib\ApplicationConfiguration.cs" />
+    <Compile Include="src\lib\AuthToken.cs" />
+    <Compile Include="src\lib\AuthTokenException.cs" />
+    <Compile Include="src\lib\util\Archiver.cs" />
+    <Compile Include="src\lib\util\ArchiveClasses.cs" />
+    <Compile Include="src\lib\util\CommonStructs.cs" />
+    <Compile Include="src\lib\util\CsvFile.cs" />
+    <Compile Include="src\lib\ApiUnitsExtension.cs" />
+    <Compile Include="src\lib\TraceExtension.cs" />
+    <Compile Include="src\lib\util\DataUtilities.cs" />
+    <Compile Include="src\v13\AccountService.cs" />
+    <Compile Include="src\v13\AdGroupService.cs" />
+    <Compile Include="src\v13\AdService.cs" />
+    <Compile Include="src\v13\ApiExceptions.cs" />
+    <Compile Include="src\v13\CampaignService.cs" />
+    <Compile Include="src\v13\CriterionService.cs" />
+    <Compile Include="src\v13\CustomSoapService.cs" />
+    <Compile Include="src\v13\InfoService.cs" />
+    <Compile Include="src\v13\KeywordToolService.cs" />
+    <Compile Include="src\v13\ReportService.cs" />
+    <Compile Include="src\v13\SiteSuggestionService.cs" />
+    <Compile Include="src\v13\TrafficEstimatorService.cs" />
+    <Compile Include="src\v200902\AdGroupAdService.cs" />
+    <Compile Include="src\v200902\AdGroupCriterionService.cs" />
+    <Compile Include="src\v200902\AdGroupService.cs" />
+    <Compile Include="src\v200902\CampaignCriterionService.cs" />
+    <Compile Include="src\v200902\CampaignService.cs" />
+    <Compile Include="src\v200902\CampaignTargetService.cs" />
+    <Compile Include="src\v200902\SoapHeaders.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

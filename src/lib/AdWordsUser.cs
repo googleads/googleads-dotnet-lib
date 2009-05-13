@@ -1,281 +1,310 @@
-//
-// Copyright (C) 2009 Google Inc.
+// Copyright 2009, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//      http://www.apache.org/licenses/LICENSE-2.0
+//     http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-//
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Net;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Web.Services.Protocols;
+using com.google.api.adwords.lib.util;
 
 namespace com.google.api.adwords.lib {
-  using com.google.api.adwords.v13;
-
-  using System;
-  using System.Collections;
-  using System.Configuration;
-  using System.Reflection;
-  using System.Text.RegularExpressions;
-  using System.Web.Services.Protocols;
-
-  public class Util {
-  }
-
+  /// <summary>
+  /// Represents an AdWords API user. This class wraps features
+  /// like creating the services transparently, creating the login
+  /// token for v200902 and keeping track of API units used in a session.
+  /// </summary>
   public class AdWordsUser {
-    const String LAST_VERSION = "v13";
-    // Change MAX_WEB_SERVICES to the number of available web sevices for this
-    // API version, see
-    // http://www.google.com/apis/adwords/developer/adwords_api_services.html
-    const int MAX_WEB_SERVICES = 10;
-    const String PACKAGE_PREFIX = "com.google.api.adwords.";
-    const String LIB_VERSION_PREFIX =
-        "AdWords API DotNet Client Library v2.2.0: ";
+    /// <summary>
+    /// Url for v13 API.
+    /// </summary>
+    private string urlV13 = ApplicationConfiguration.urlV13;
+    /// <summary>
+    /// Url for v200902 API.
+    /// </summary>
+    private string urlV200902 = ApplicationConfiguration.urlV200902;
 
-    public static String[] HEADERS = {"email",
-                                      "clientEmail",
-                                      "clientCustomerId",
-                                      "password",
-                                      "applicationToken",
-                                      "developerToken",
-                                      "useragent"};
+    /// <summary>
+    /// The auth token to be used with v200902 services.
+    /// </summary>
+    private AuthToken authToken = null;
 
-    public email emailValue;
-    public clientEmail clientEmailValue;
-    public clientCustomerId clientCustomerIdValue;
-    public password passwordValue;
-    public useragent useragentValue;
-    public applicationToken applicationTokenValue;
-    public developerToken developerTokenValue;
-    public String alternateUrl;
+    /// <summary>
+    /// The overridden SOAP headers to be used with v13 services.
+    /// If the settings from App.config is not overridden, this
+    /// field will be null.
+    /// </summary>
+    private Dictionary<string, SoapHeader> headers = null;
 
-    public Hashtable headers;
+    /// <summary>
+    /// An internal table to cache all the service objects created so far.
+    /// </summary>
+    private Hashtable objectCache = new Hashtable();
 
-    public Hashtable services;
+    /// <summary>
+    /// Units consumed for API calls during this session.
+    /// </summary>
+    private int units = 0;
 
-    public String version;
-
-    public static Hashtable units = new Hashtable();
-
-    public AdWordsUser():this(LAST_VERSION) {
+    /// <summary>
+    /// Public constructor. Use this version if you want the library to
+    /// use all settings from App.config.
+    /// </summary>
+    public AdWordsUser() {
+      // Load authToken and headers from configuration file.
+      authToken = ReadAuthTokenFromConfig();
+      headers = ReadV13HeadersFromConfig();
     }
 
-    public AdWordsUser(Hashtable headers, String version):this(headers) {
-      this.version = version;
+    /// <summary>
+    /// Public constructor. Use this version if you want to use v13 services
+    /// authentication from App.config, but want to override v200902 services
+    /// authentication.
+    /// </summary>
+    /// <param name="authToken">The overridden authToken to be used with
+    /// v200902 services.</param>
+    public AdWordsUser(AuthToken authToken) {
+      this.authToken = authToken;
+      headers = ReadV13HeadersFromConfig();
     }
 
-    public AdWordsUser(String version) {
-      // Reads headers from App.config file
-      this.headers = (Hashtable) System.Configuration.
-          ConfigurationSettings.GetConfig("adwordsHeaders");
-
-      this.version = version;
-      this.services = new Hashtable(MAX_WEB_SERVICES);
-
-      // Always check to see if we should reconstruct our list of
-      // headers.
-      if (!this.headers.ContainsKey("email")
-          || this.headers["email"].GetType() != typeof(email)) {
-        this.emailValue = new email();
-        this.emailValue.Text = new String[] {(String) this.headers["email"]};
-        this.headers["email"] = this.emailValue;
-      }
-
-      if (this.headers["clientEmail"] != null) {
-        if (!this.headers.ContainsKey("clientEmail")
-            || this.headers["clientEmail"].GetType() != typeof(clientEmail)) {
-          this.clientEmailValue = new clientEmail();
-          this.clientEmailValue.Text =
-              new String[] {(String) this.headers["clientEmail"]};
-          this.headers["clientEmail"] = this.clientEmailValue;
-        }
-      }
-
-      if (this.headers["clientCustomerId"] != null) {
-        if (!this.headers.ContainsKey("clientCustomerId") ||
-            this.headers["clientCustomerId"].GetType() !=
-            typeof(clientCustomerId)) {
-          this.clientCustomerIdValue = new clientCustomerId();
-          this.clientCustomerIdValue.Text =
-              new String[] {(String) this.headers["clientCustomerId"]};
-          this.headers["clientCustomerId"] = this.clientCustomerIdValue;
-        }
-      }
-
-      // If both are specified, defaults to clientEmail.
-      if (this.headers["clientEmail"] != null
-          && this.headers["clientCustomerId"] != null) {
-        this.headers["clientCustomerId"] = null;
-        this.clientCustomerIdValue = null;
-      }
-
-      if (!this.headers.ContainsKey("password")
-          || this.headers["password"].GetType() != typeof(password)) {
-        this.passwordValue = new password();
-        this.passwordValue.Text =
-            new String[] {(String) this.headers["password"]};
-        this.headers["password"] = this.passwordValue;
-      }
-
-      if (!this.headers.ContainsKey("useragent")
-          || this.headers["useragent"].GetType() != typeof(useragent)) {
-        this.useragentValue = new useragent();
-        this.useragentValue.Text =
-            new String[] {LIB_VERSION_PREFIX +
-            (String) this.headers["useragent"]};
-        this.headers["useragent"] = this.useragentValue;
-      }
-
-      if (!this.headers.ContainsKey("developerToken") ||
-          this.headers["developerToken"].GetType() != typeof(developerToken)) {
-        this.developerTokenValue = new developerToken();
-        this.developerTokenValue.Text =
-            new String[] {(String) this.headers["developerToken"]};
-        this.headers["developerToken"] = this.developerTokenValue;
-      }
-
-      if (!this.headers.ContainsKey("applicationToken")
-          || this.headers["applicationToken" ].GetType() !=
-        typeof(applicationToken)) {
-        this.applicationTokenValue = new applicationToken();
-        this.applicationTokenValue.Text =
-            new String[] {(String) this.headers["applicationToken"]};
-        this.headers["applicationToken"] = this.applicationTokenValue;
-      }
-
-      if (this.headers["alternateUrl"] != null) {
-        this.alternateUrl = (String) this.headers["alternateUrl"];
-        this.headers["alternateUrl"] = this.alternateUrl;
-      }
+    /// <summary>
+    /// Public constructor. Use this version if you want to use v200902
+    /// services authentication from App.config, but want to override
+    /// v13 SOAP headers.
+    /// </summary>
+    /// <param name="headers">The custom SOAP headers to be used
+    /// with v13 services.</param>
+    public AdWordsUser(Dictionary<string, SoapHeader> headers) {
+      // Load the authToken from configuration file.
+      authToken = ReadAuthTokenFromConfig();
+      this.headers = headers;
     }
 
-    public AdWordsUser(Hashtable headers) {
-      if (headers != null) {
-        this.headers = new Hashtable();
-
-        this.version = LAST_VERSION;
-        this.services = new Hashtable(MAX_WEB_SERVICES);
-
-        if (!headers.ContainsKey("email")
-            || headers["email"].GetType() != typeof(email)) {
-          this.emailValue = new email();
-          this.emailValue.Text = new String[] {(String) headers["email"]};
-          this.headers["email"] = this.emailValue;
-        }
-
-        if (!headers.ContainsKey("clientEmail")
-            || headers["clientEmail"].GetType() != typeof(clientEmail)) {
-          this.clientEmailValue = new clientEmail();
-          this.clientEmailValue.Text =
-              new String[] {(String) headers["clientEmail"]};
-          this.headers["clientEmail"] = this.clientEmailValue;
-        }
-
-        if (!headers.ContainsKey("clientCustomerId")
-            || headers["clientCustomerId"].GetType() != typeof(
-          clientCustomerId)) {
-          this.clientCustomerIdValue = new clientCustomerId();
-          this.clientCustomerIdValue.Text =
-              new String[] {(String) headers["clientCustomerId"]};
-          this.headers["clientCustomerId"] = this.clientCustomerIdValue;
-        }
-
-        // If both are specified, defaults to clientEmail.
-        if (headers.ContainsKey("clientEmail")
-            && headers.ContainsKey("clientCustomerId")) {
-          this.headers["clientCustomerId"] = null;
-          this.clientCustomerIdValue = null;
-        }
-
-        if (!headers.ContainsKey("password")
-            || headers["password"].GetType() != typeof(password)) {
-          this.passwordValue = new password();
-          this.passwordValue.Text = new String[] {(String) headers["password"]};
-          this.headers["password"] = this.passwordValue;
-        }
-
-        if (!headers.ContainsKey("useragent")
-            || headers["useragent"].GetType() != typeof(useragent)) {
-          this.useragentValue = new useragent();
-          this.useragentValue.Text =
-              new String[] {LIB_VERSION_PREFIX + (String) headers["useragent"]};
-          this.headers["useragent"] = this.useragentValue;
-        }
-
-        if (!headers.ContainsKey("developerToken")
-            || headers["developerToken"].GetType() != typeof(developerToken)) {
-          this.developerTokenValue = new developerToken();
-          this.developerTokenValue.Text =
-              new String[] {(String) headers["developerToken"]};
-          this.headers["developerToken"] = this.developerTokenValue;
-        }
-
-        if (!headers.ContainsKey("applicationToken")
-            || headers["applicationToken"].GetType() !=
-            typeof(applicationToken)) {
-          this.applicationTokenValue = new applicationToken();
-          this.applicationTokenValue.Text =
-              new String[] {(String) headers["applicationToken"]};
-          this.headers["applicationToken"] = this.applicationTokenValue;
-        }
-
-        if (headers["alternateUrl"] != null) {
-          this.alternateUrl = (String) headers["alternateUrl"];
-          this.headers["alternateUrl"] = this.alternateUrl;
-        }
-      }
+    /// <summary>
+    /// Public constructor. Use this version if you want to override
+    /// both v200902 and v13 authentication settings in App.config.
+    /// </summary>
+    /// <param name="authToken">The overridden authToken to be used with
+    /// v200902 services.</param>
+    /// <param name="headers">The custom SOAP headers to be used
+    /// with v13 services.</param>
+    /// <remarks>If you want to override more items from code, like web
+    /// proxy for the services, or url endpoint for services, you should
+    /// also look at <see cref="Settings"/>.</remarks>
+    public AdWordsUser(AuthToken authToken,
+        Dictionary<string, SoapHeader> headers) {
+      this.authToken = authToken;
+      this.headers = headers;
     }
 
-    public void useSandbox() {
-      this.alternateUrl = "https://sandbox.google.com/";
-    }
+    /// <summary>
+    /// Creates an object of the requested type of v200902 service.
+    /// </summary>
+    /// <param name="v2009Service">The name of the service to be
+    /// created.</param>
+    /// <returns>An object of the requested type of v200902 service. The
+    /// caller should cast this object to the desired type.</returns>
+    [MethodImpl(MethodImplOptions.Synchronized)]
+    public object GetService(ApiServices.v200902 v2009Service) {
+      string serviceName = "v200902." + v2009Service.ToString();
+      if (!objectCache.ContainsKey(serviceName)) {
+        string serviceType = "com.google.api.adwords.v200902." +
+            v2009Service.ToString() + "." + v2009Service.ToString();
+        object service = Assembly.GetExecutingAssembly().
+            CreateInstance(serviceType);
+        objectCache[serviceName] = service;
 
-    public object getService(String name) {
-      object o = services[name];
-      if (null != o) {
-        return o;
-      }
-      Type t = Type.GetType(PACKAGE_PREFIX + version + "." + name);
-      o = Activator.CreateInstance(t);
-      foreach (String headerName in HEADERS) {
-        FieldInfo f = t.GetField(headerName + "Value");
-        if ((f != null) && (this.headers[headerName] != null)) {
-          f.SetValue(o, this.headers[headerName]);
+        object requestHeader = Assembly.GetExecutingAssembly().
+            CreateInstance("com.google.api.adwords.v200902.RequestHeader");
+
+        Type type = requestHeader.GetType();
+        PropertyInfo propInfo = type.GetProperty("clientEmail");
+
+        if (propInfo != null) {
+          propInfo.SetValue(requestHeader,
+              ApplicationConfiguration.clientEmail, null);
         }
-      }
-      if (alternateUrl != null) {
-        setUrlPrefix((SoapHttpClientProtocol) o, alternateUrl);
-      }
-      services.Add(name, o);
-      return o;
-    }
 
-    public static void setUrlPrefix(SoapHttpClientProtocol client, String url) {
-      client.Url =
-          Regex.Replace(client.Url, @"https://adwords.google.com/", url);
-    }
+        propInfo = type.GetProperty("clientCustomerId");
 
-    public static void addUnits(String token, int i) {
-      if (token != null) {
-        lock(units) {
-          if (!units.Contains(token)) {
-            units[token] = 0;
+        if (propInfo != null) {
+          propInfo.SetValue(requestHeader, ApplicationConfiguration.clientCustomerId, null);
+        }
+
+        propInfo = type.GetProperty("authToken");
+
+        if (propInfo != null) {
+          propInfo.SetValue(requestHeader, authToken.GetToken(), null);
+        }
+
+        type = service.GetType();
+        propInfo = type.GetProperty("RequestHeader");
+        if (propInfo != null) {
+          propInfo.SetValue(service, requestHeader, null);
+        }
+
+        if (ApplicationConfiguration.proxy != null) {
+          propInfo = type.GetProperty("Proxy");
+          if (propInfo != null) {
+            propInfo.SetValue(service, ApplicationConfiguration.proxy, null);
           }
-          units[token] = (int) units[token] + i;
+        }
+        if (!string.IsNullOrEmpty(urlV200902)) {
+          string fullUrl = urlV200902 +
+              "/api/adwords/cm/v200902/" + v2009Service.ToString();
+          propInfo = type.GetProperty("Url");
+          if (propInfo != null) {
+            propInfo.SetValue(service, fullUrl, null);
+          }
         }
       }
+      return objectCache[serviceName];
     }
 
-    public int getUnits() {
-      if (AdWordsUser.units.Contains(this.developerTokenValue.Text[0])) {
-        return (int) AdWordsUser.units[this.developerTokenValue.Text[0]];
+    /// <summary>
+    /// Creates an object of the requested type of v13 service.
+    /// </summary>
+    /// <param name="v13Service">The name of the service to be
+    /// created.</param>
+    /// <returns>An object of the requested type of v13 service. The
+    /// caller should cast this object to the desired type.</returns>
+    [MethodImpl(MethodImplOptions.Synchronized)]
+    public object GetService(ApiServices.v13 v13Service) {
+      string serviceName = "v13." + v13Service.ToString();
+      if (!objectCache.ContainsKey(serviceName)) {
+        string serviceType = "com.google.api.adwords.v13." + v13Service.ToString();
+        object service = Assembly.GetExecutingAssembly().CreateInstance(serviceType);
+        objectCache[serviceName] = service;
+        Type type = service.GetType();
+        PropertyInfo propInfo = null;
+
+        if (this.headers != null) {
+          foreach (string key in headers.Keys) {
+            propInfo = type.GetProperty(key);
+            if (propInfo != null) {
+              propInfo.SetValue(service, headers[key], null);
+            }
+          }
+        }
+
+        if (ApplicationConfiguration.proxy != null) {
+          propInfo = type.GetProperty("Proxy");
+          if (propInfo != null) {
+            propInfo.SetValue(service, ApplicationConfiguration.proxy, null);
+          }
+        }
+        if (!string.IsNullOrEmpty(urlV13)) {
+          string fullUrl = urlV13 + "/api/adwords/v13/" + v13Service.ToString();
+          propInfo = type.GetProperty("Url");
+          if (propInfo != null) {
+            propInfo.SetValue(service, fullUrl, null);
+          }
+        }
+        propInfo = type.GetProperty("Parent");
+        if (propInfo != null) {
+          propInfo.SetValue(service, this, null);
+        }
+
       }
-      return 0;
+      return objectCache[serviceName];
+    }
+
+    /// <summary>
+    /// Adds addUnits to the total usage against token.
+    /// </summary>
+    /// <param name="token">The developer token.</param>
+    /// <param name="addUnits">The amount of units to be added.</param>
+    [MethodImpl(MethodImplOptions.Synchronized)]
+    public void AddUnits(int addUnits) {
+      units += addUnits;
+    }
+
+    /// <summary>
+    /// Gets the units consumed by the services of this object.
+    /// </summary>
+    /// <returns>The units used by the services of this object,
+    /// or 0 if no units are consumed.</returns>
+    public int GetUnits() {
+      return units;
+    }
+
+    /// <summary>
+    /// Resets the units consumed by the services of this object.
+    /// </summary>
+    public void ResetUnits() {
+      units = 0;
+    }
+
+    /// <summary>
+    /// Use sandbox for both v13 and v200902 API.
+    /// </summary>
+    public void UseSandbox() {
+      urlV13 = "https://sandbox.google.com";
+      urlV200902 = "https://adwords-sandbox.google.com";
+    }
+
+    /// <summary>
+    /// Loads the v13 headers from App.config
+    /// </summary>
+    /// <returns>A map, with key=headername and value=SoapHeader object.
+    /// </returns>
+    private Dictionary<string, SoapHeader> ReadV13HeadersFromConfig() {
+      headers = new Dictionary<string, SoapHeader>();
+      headers["emailValue"] = MakeHeader("email",
+          ApplicationConfiguration.email);
+      headers["passwordValue"] = MakeHeader("password",
+          ApplicationConfiguration.password);
+      headers["useragentValue"] = MakeHeader("useragent",
+          "AWAPI DotNetLib " + DataUtilities.GetVersion() + " - " +
+          ApplicationConfiguration.companyName);
+      headers["developerTokenValue"] = MakeHeader("developerToken",
+          ApplicationConfiguration.developerToken);
+      headers["applicationTokenValue"] = MakeHeader("applicationToken",
+          ApplicationConfiguration.applicationToken);
+      headers["clientEmailValue"] = MakeHeader("clientEmail",
+          ApplicationConfiguration.clientEmail);
+      headers["clientCustomerIdValue"] = MakeHeader("clientCustomerId",
+          ApplicationConfiguration.clientCustomerId);
+      return headers;
+    }
+
+    /// <summary>
+    /// Creates a SoapHeader for use with v13 API.
+    /// </summary>
+    /// <param name="headerName">Name of the header.</param>
+    /// <param name="value">String value for the header.</param>
+    /// <returns>The SoapHeader object.</returns>
+    private SoapHeader MakeHeader(string headerName, string value) {
+      string typeName = "com.google.api.adwords.v13." + headerName;
+      SoapHeader header = (SoapHeader) Assembly.GetExecutingAssembly().
+          CreateInstance(typeName);
+      PropertyInfo propInfo = header.GetType().GetProperty("Value");
+      if (propInfo != null) {
+        propInfo.SetValue(header, new string[] {value}, null);
+      }
+      return header;
+    }
+
+    /// <summary>
+    /// Reads the AuthToken for v200902 services from config file.
+    /// </summary>
+    /// <returns>A new AuthToken object.</returns>
+    private AuthToken ReadAuthTokenFromConfig() {
+      return new AuthToken(ApplicationConfiguration.email, ApplicationConfiguration.password);
     }
   }
 }

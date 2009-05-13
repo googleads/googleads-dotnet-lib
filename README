@@ -8,25 +8,31 @@ their large or complex AdWords accounts and campaigns.
 
 AdWords API DotNet Client Library makes it easier to write .NET clients to
 programmatically access AdWords accounts. The client library is provided as a
-Visual Studio project that contains the generated stubs all in the
-same namespace, com.google.api.adwords.vXX, where XX is the API version. There
-is no need to worry about accessing the WSDL for the web services, this is done
-through the classes in the client library. All duplicate classes generated from
-WSDL have been removed. This is done automatically with wsdl.exe from
-.NET SDK 2.0, but not with from .NET SDK 1.1. The client library is
-compatible with .NET SDK 1.1 and above. Two useful SOAPExtension classes are
-provided. The QuotaExtension takes care of quota unit accounting for all
-services. The TraceExtension logs all SOAP requests and responses to log
-files. The place where log files are stored can be configured in the App.config
-file, using "logPath" key.
+Visual Studio project that contains the generated stubs, with v13 classes in
+com.google.api.adwords.v13 namespace and v200902 classes in
+com.google.api.adwords.v200902.ServiceName namespace. There is no need to worry
+about accessing the WSDL for the web services, this is done through the classes
+in the client library. All duplicate classes generated from WSDL have been
+removed. This is done automatically with wsdl.exe from .NET SDK 2.0. The client
+library is compatible with .NET SDK 2.0 and above. Two useful SOAPExtension
+classes are provided. The ApiUnitsExtension takes care of API units accounting
+for all services. The TraceExtension logs all SOAP requests and responses to
+log files or to console. You can configure logging using various keys in the
+App.config file. You can turn console logging on or off using "LogToConsole"
+key, and file logging using "LogToFile" key. The place where log files are
+stored can be configured in the App.config file, using "LogPath" key.
 
-Demo programs in the src/examples directory demonstrate how to use client
-library. To run an example, open the project file
-google-api-adwords-dotnet.csproj in Visual Studio, build the project, and
-execute it on command line at bin/Debug.
-    > google-api-adwords-dotnet.exe AccountServiceDemo
+Demo programs in the Examples directory demonstrate how to use client
+library. To run an example, open the solution file google-api-adwords-dotnet.sln
+in Visual Studio, build the solution, and execute it on command line at
+Examples/bin/Debug.
+    > Examples.exe v13.AccountServiceDemo
+    > Examples.exe v200902.AddCampaign
 
-In the .NET 1.1 SOAP layer primitive types do not get serialized by default.
+You can get the list of all the commandline options by running Examples.exe
+without any command line options.
+
+In the .NET 2.0 SOAP layer primitive types do not get serialized by default.
 .NET has no way of specifying null for a variable of a primitive type. If a
 primitive type variable is a binding to a SOAP paramer defined in the WSDL as
 nillable="true", in order for the variable to be serialized you need to set a
@@ -41,31 +47,24 @@ If you don't have one already, sign up for a Google Account at
 https://www.google.com/accounts/NewAccount. Update App.config with
 authentication credentials for your Google Account, to make requests against
 sandbox or with authentication credentials for your AdWords account, to make
-requests against production environment. The client library normally defaults
-to a single version (i.e. v12). However, it may support more than one version
-at a time. In order to use a different version of API the following updates
-should be made. In src/lib/AdWordsUser.cs, update the following lines with the
-desired version.
-    using com.google.api.adwords.vXX;
-    const String LAST_VERSION = "vXX";
-    const int MAX_WEB_SERVICES = XX;
-Also, in src/examples/Examples.cs, update the following line with the desired
-version.
-    using com.google.api.adwords.vXX;
+requests against production environment.
 
 How to make a release?
-Update version and list of web services in Rakefile. Change client library
-version in LIB_VERSION_PREFIX from src/lib/AdWordsUser.cs. Also, update library
-import, LAST_VERSION, and MAX_WEB_SERVICES, if applicable. Add appropriate
-header in src/lib/QuotaExtension.cs. Generate stubs from WSDLs by executing the
-following command in the project's home directory (requires Ruby),
-    > rake
-If new version was added, create src/vXX directory and copy generated files
-into it. Build the project and remove all duplicate classes manually, until
-build is successful. Update examples to appriate API version. Create new
-directory with a name awapi_dotnet_lib_v.v.v, where v.v.v is a version number
-(i.e. 2.1.0), and copy new release into it. Pack new release into a tarball and
-then gzip it,
+1. If a new version is being added, create the stub classes for the new version
+as follows:
+  > wsdl.exe /namespace:com.google.api.adwords.vXX wsdl-url
+
+2. Create src/vXX directory and copy generated files into it. Build the project
+and remove all duplicate classes manually, until build is successful.
+
+3. Update examples to appropriate API version.
+
+4. Change the versions in AssemblyInfo.cs and Examples\AssemblyInfo.cs to
+v.v.v, where v.v.v is a version number (e.g., 2.1.0).
+
+5. Create a directory with a name awapi_dotnet_lib_v.v.v, where v.v.v is a
+version number (e.g., 2.1.0), and copy new release into it. Pack new release
+into a tarball and then gzip it,
     > tar -cvf awapi_dotnet_lib_v.v.v.tar awapi_dotnet_lib_v.v.v/
     > gzip awapi_dotnet_lib_v.v.v.tar
 
@@ -74,15 +73,16 @@ Bug reports and feature requests can be submitted at
 http://code.google.com/p/google-api-adwords-dotnet/issues/list.
 
 Requires:
-    - .NET Framework 1.1 (or above)
+    - .NET Framework 2.0 (or above)
                         -- http://msdn2.microsoft.com/en-us/netframework/default.aspx
     - Visual Studio     -- http://msdn2.microsoft.com/en-us/vstudio/default.aspx
     - Google Account    -- https://www.google.com/accounts/NewAccount
 
 Includes:
-    - Examples/src      -- demo programs for the client library
+    - Examples          -- demo programs for the client library
     - src/lib           -- core library
     - src/vXX           -- classes for each API web service
+    - src/lib/util      -- utility classes
 
 Author:
     chanezon@gmail.com (Patrick Chanezon)

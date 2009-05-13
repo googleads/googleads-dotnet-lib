@@ -1,155 +1,90 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectType>Local</ProjectType>
-    <ProductVersion>8.0.50727</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1DF6FFA1-85EC-4FD9-BE35-32E5A3CD8F48}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>
-    </ApplicationIcon>
-    <AssemblyKeyContainerName>
-    </AssemblyKeyContainerName>
-    <AssemblyName>Examples</AssemblyName>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
-    <DefaultClientScript>JScript</DefaultClientScript>
-    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
-    <DefaultTargetSchema>IE50</DefaultTargetSchema>
-    <DelaySign>false</DelaySign>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E314C85-32A9-4015-AC92-FBCF7BB52454}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Examples</RootNamespace>
-    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>com.google.api.adwords.examples.Examples</StartupObject>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.google.api.adwords.samples</RootNamespace>
+    <AssemblyName>Examples</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <ConfigurationOverrideFile>
-    </ConfigurationOverrideFile>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>
-    </DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
-    <FileAlignment>4096</FileAlignment>
-    <NoStdLib>false</NoStdLib>
-    <NoWarn>
-    </NoWarn>
-    <Optimize>false</Optimize>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
     <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\Release\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <ConfigurationOverrideFile>
-    </ConfigurationOverrideFile>
-    <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>
-    </DocumentationFile>
-    <DebugSymbols>false</DebugSymbols>
-    <FileAlignment>4096</FileAlignment>
-    <NoStdLib>false</NoStdLib>
-    <NoWarn>
-    </NoWarn>
+    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
-    <DebugType>none</DebugType>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System">
-      <Name>System</Name>
-    </Reference>
-    <Reference Include="System.Data">
-      <Name>System.Data</Name>
-    </Reference>
-    <Reference Include="System.Web.Services">
-      <Name>System.Web.Services</Name>
-    </Reference>
-    <Reference Include="System.Xml">
-      <Name>System.XML</Name>
-    </Reference>
-    <ProjectReference Include="..\google-api-adwords-dotnet.csproj">
-      <Name>google-api-adwords-dotnet</Name>
-      <Project>{3AA022DC-E8BC-4FED-98A3-1CAECA726C42}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-    </ProjectReference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="both\UsingKeywordSuggestionDemo.cs" />
+    <Compile Include="InputUtils.cs" />
+    <Compile Include="v13\AccountServiceDemo.cs" />
+    <Compile Include="v13\AccountServiceNoConfigDemo.cs" />
+    <Compile Include="v13\AdServiceDemo.cs" />
+    <Compile Include="v13\BackupSandboxDemo.cs" />
+    <Compile Include="v13\CampaignServiceDemo.cs" />
+    <Compile Include="v13\CampaignServiceWebsiteDemo.cs" />
+    <Compile Include="v13\CheckKeywordTrafficDemo.cs" />
+    <Compile Include="v13\DownloadReportAsCsvDemo.cs" />
+    <Compile Include="v13\DownloadReportAsXmlDemo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="v13\GetAdGroupIdsDemo.cs" />
+    <Compile Include="v13\GetAdIdsDemo.cs" />
+    <Compile Include="v13\GetCampaignIdsDemo.cs" />
+    <Compile Include="v13\InfoServiceDemo.cs" />
+    <Compile Include="v13\KeywordEstimateDemo.cs" />
+    <Compile Include="v13\KeywordToolDemo.cs" />
+    <Compile Include="v13\ReportServiceKeywordDemo.cs" />
+    <Compile Include="v13\ReportServiceStructureDemo.cs" />
+    <Compile Include="v13\RestoreSandboxDemo.cs" />
+    <Compile Include="v13\SiteSuggestionServiceDemo.cs" />
+    <Compile Include="v2000902\AddImageAd.cs" />
+    <Compile Include="v2000902\AddTextAd.cs" />
+    <Compile Include="v2000902\GetAllAds.cs" />
+    <Compile Include="v2000902\UpdateAd.cs" />
+    <Compile Include="v2000902\AddAdGroupKeyword.cs" />
+    <Compile Include="v2000902\GetActiveCriteria.cs" />
+    <Compile Include="v2000902\AddAdGroup.cs" />
+    <Compile Include="v2000902\AddNegativeCampaignPlacement.cs" />
+    <Compile Include="v2000902\AddCampaign.cs" />
+    <Compile Include="v2000902\AddCampaignTarget.cs" />
+    <Compile Include="SampleBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <Compile Include="AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\AccountServiceDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\AccountServiceNoConfigDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\AdServiceDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\CampaignServiceDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\CampaignServiceWebsiteDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\CheckKeywordTrafficDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\Examples.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\GetAdGroupIdsDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\GetAdIdsDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\GetCampaignIdsDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\InfoServiceDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\KeywordEstimateDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\KeywordToolDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\ReportServiceKeywordDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\ReportServiceStructureDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\SiteSuggestionServiceDemo.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <None Include="_App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\google-api-adwords-dotnet.csproj">
+      <Project>{B701ED76-54AE-4591-86DE-EDCD0D8DAC6C}</Project>
+      <Name>google-api-adwords-dotnet</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

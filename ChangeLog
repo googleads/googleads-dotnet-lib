@@ -1,3 +1,9 @@
+3.0.0:
+- Added v200902 support.
+- Added code samples for v200902
+- v13 and v200902 works side-by-side.
+- Added several utility classes to enhance the client library functionality.
+
 2.2.0:
 - Set v13 as default version
 - Removed support for v12
