@@ -143,7 +143,7 @@ namespace com.google.api.adwords.lib.util {
     /// Call this function to complete the asynchronous call.
     /// </summary>
     /// <param name="result">The IAsyncResult object, returned from
-    /// <see cref="endDownloadReportAsXml"/></param>
+    /// <see cref="EndDownloadReportAsXml"/></param>
     /// <remarks>This call should be enclosed in a try-catch block block,
     /// since any exception generated during the asynchronous call will
     /// be thrown at this stage.</remarks>

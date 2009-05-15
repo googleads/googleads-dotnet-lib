@@ -21,7 +21,7 @@ using com.google.api.adwords.v13;
 
 namespace com.google.api.adwords.lib.util {
   /// <summary>
-  /// Handles the archiving and unarchiving of a ClientAccount object
+  /// Handles the archiving and unarchiving of a <see cref="ClientAccount"/> object
   /// to an XML document.
   /// </summary>
   public class Archiver {

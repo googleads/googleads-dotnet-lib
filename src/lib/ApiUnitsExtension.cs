@@ -1,4 +1,4 @@
-/// This file is based on the code sample available at http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconAlteringSOAPMessageUsingSOAPExtensions.asp
+// This file is based on the code sample available at http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconAlteringSOAPMessageUsingSOAPExtensions.asp
 
 using System;
 using System.IO;
@@ -103,7 +103,7 @@ namespace com.google.api.adwords.lib {
   /// applied to an XML Web service method.
   /// </summary>
   [AttributeUsage(AttributeTargets.Method)]
-  public class QuotaExtensionAttribute : SoapExtensionAttribute {
+  public class ApiUnitsExtensionAttribute : SoapExtensionAttribute {
     /// <summary>
     /// Priority to be associated with this extension.
     /// </summary>

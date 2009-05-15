@@ -24,7 +24,7 @@ namespace com.google.api.adwords.samples {
     /// AdGroup ID, Ad ID or a Campaign ID.
     /// </summary>
     /// <param name="message">The message prompt to be displayed.</param>
-    /// <returns></returns>
+    /// <returns>The user input as long.</returns>
     public static long AcceptLong(string message) {
       bool isValidInput = false;
       long adId = 0;

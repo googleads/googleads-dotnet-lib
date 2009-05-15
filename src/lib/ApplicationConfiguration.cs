@@ -74,7 +74,7 @@ namespace com.google.api.adwords.lib {
             proxy.Credentials = new NetworkCredential(proxyUser,
                 proxyPassword, proxyDomain);
           }
-          proxy = proxy;
+          ApplicationConfiguration.proxy = proxy;
           companyName = ReadSetting(settings, COMPANY_NAME, "");
         }
 

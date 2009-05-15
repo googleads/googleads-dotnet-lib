@@ -102,9 +102,6 @@ namespace com.google.api.adwords.lib {
     /// v200902 services.</param>
     /// <param name="headers">The custom SOAP headers to be used
     /// with v13 services.</param>
-    /// <remarks>If you want to override more items from code, like web
-    /// proxy for the services, or url endpoint for services, you should
-    /// also look at <see cref="Settings"/>.</remarks>
     public AdWordsUser(AuthToken authToken,
         Dictionary<string, SoapHeader> headers) {
       this.authToken = authToken;
@@ -226,7 +223,6 @@ namespace com.google.api.adwords.lib {
     /// <summary>
     /// Adds addUnits to the total usage against token.
     /// </summary>
-    /// <param name="token">The developer token.</param>
     /// <param name="addUnits">The amount of units to be added.</param>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public void AddUnits(int addUnits) {

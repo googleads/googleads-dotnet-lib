@@ -70,7 +70,7 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <param name="fileName">The full path of the file to which
     /// the contents are to be written.</param>
-    /// <remarks>The file will have headers only if <see cref="Headers"./>
+    /// <remarks>The file will have headers only if <see cref="Headers"/>
     /// are set for this object.</remarks>
     public void Write(string fileName) {
       StreamWriter writer = null;

@@ -1,4 +1,4 @@
-/// This file is based on the code sample available at http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconAlteringSOAPMessageUsingSOAPExtensions.asp
+// This file is based on the code sample available at http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconAlteringSOAPMessageUsingSOAPExtensions.asp
 
 using System;
 using System.Collections;
