@@ -31,7 +31,7 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of Category objects.</returns>
     public static List<Category> GetAllCategories() {
-      string fullPath = GetDataPath() + "\\categories.csv";
+      string fullPath = GetDataPath() + "categories.csv";
       CsvFile reader = new CsvFile();
       reader.Read(fullPath, true);
       List<Category> retVal = new List<Category>();
@@ -51,7 +51,7 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of Country objects.</returns>
     public static List<Country> GetAllCountries() {
-      string fullPath = GetDataPath() + "\\countries.csv";
+      string fullPath = GetDataPath() + "countries.csv";
       CsvFile reader = new CsvFile();
       reader.Read(fullPath, true);
       List<Country> retVal = new List<Country>();
@@ -71,7 +71,7 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of Currency objects.</returns>
     public static List<Currency> GetAllCurrencies() {
-      string fullPath = GetDataPath() + "\\currencies.csv";
+      string fullPath = GetDataPath() + "currencies.csv";
       CsvFile reader = new CsvFile();
       reader.Read(fullPath, true);
       List<Currency> retVal = new List<Currency>();
@@ -92,7 +92,7 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of Language objects.</returns>
     public static List<Language> GetAllLanguages() {
-      string fullPath = GetDataPath() + "\\languages.csv";
+      string fullPath = GetDataPath() + "languages.csv";
       CsvFile reader = new CsvFile();
       reader.Read(fullPath, true);
       List<Language> retVal = new List<Language>();
@@ -113,7 +113,7 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of OpRates objects.</returns>
     public static List<OpRates> GetAllOpRates() {
-      string fullPath = GetDataPath() + "\\ops_rates.csv";
+      string fullPath = GetDataPath() + "ops_rates.csv";
       CsvFile reader = new CsvFile();
       reader.Read(fullPath, true);
       List<OpRates> retVal = new List<OpRates>();
@@ -135,7 +135,7 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of OpRates objects.</returns>
     public static List<Timezone> GetAllTimezones() {
-      string fullPath = GetDataPath() + "\\timezones.csv";
+      string fullPath = GetDataPath() + "timezones.csv";
       CsvFile reader = new CsvFile();
       reader.Read(fullPath, true);
       List<Timezone> retVal = new List<Timezone>();
@@ -154,7 +154,7 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of OpRates objects.</returns>
     public static List<UsCity> GetAllUsCities() {
-      string fullPath = GetDataPath() + "\\us_cities.csv";
+      string fullPath = GetDataPath() + "us_cities.csv";
       CsvFile reader = new CsvFile();
       reader.Read(fullPath, true);
       List<UsCity> retVal = new List<UsCity>();
@@ -174,7 +174,7 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of UsMetro objects.</returns>
     public static List<UsMetro> GetAllUsMetros() {
-      string fullPath = GetDataPath() + "\\us_metros.csv";
+      string fullPath = GetDataPath() + "us_metros.csv";
       CsvFile reader = new CsvFile();
       reader.Read(fullPath, true);
       List<UsMetro> retVal = new List<UsMetro>();
@@ -195,7 +195,7 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of WorldCity objects.</returns>
     public static List<WorldCity> GetAllWorldCities() {
-      string fullPath = GetDataPath() + "\\world_cities.csv";
+      string fullPath = GetDataPath() + "world_cities.csv";
       CsvFile reader = new CsvFile();
       reader.Read(fullPath, true);
       List<WorldCity> retVal = new List<WorldCity>();
@@ -216,7 +216,7 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of WorldCity objects.</returns>
     public static List<WorldRegion> GetAllWorldRegions() {
-      string fullPath = GetDataPath() + "\\world_regions.csv";
+      string fullPath = GetDataPath() + "world_regions.csv";
       CsvFile reader = new CsvFile();
       reader.Read(fullPath, true);
       List<WorldRegion> retVal = new List<WorldRegion>();
@@ -294,9 +294,7 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>The folder where the CSVs are stored.</returns>
     private static string GetDataPath() {
-      Hashtable headers = (Hashtable) ConfigurationSettings.GetConfig("adwordsHeaders");
-
-      return headers["dataPath"].ToString();
+      return ApplicationConfiguration.dataFilePath;
     }
   }
 }
