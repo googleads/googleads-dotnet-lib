@@ -131,14 +131,13 @@ namespace com.google.api.adwords.lib {
         Type type = requestHeader.GetType();
         PropertyInfo propInfo = type.GetProperty("clientEmail");
 
-        if (propInfo != null) {
-          propInfo.SetValue(requestHeader,
-              ApplicationConfiguration.clientEmail, null);
+        if (propInfo != null && !string.IsNullOrEmpty(ApplicationConfiguration.clientEmail)) {
+          propInfo.SetValue(requestHeader, ApplicationConfiguration.clientEmail, null);
         }
 
         propInfo = type.GetProperty("clientCustomerId");
 
-        if (propInfo != null) {
+        if (propInfo != null && !string.IsNullOrEmpty(ApplicationConfiguration.clientCustomerId)) {
           propInfo.SetValue(requestHeader, ApplicationConfiguration.clientCustomerId, null);
         }
 

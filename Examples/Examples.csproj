@@ -34,7 +34,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="both\UsingKeywordSuggestionDemo.cs" />
     <Compile Include="InputUtils.cs" />
     <Compile Include="v13\AccountServiceDemo.cs" />

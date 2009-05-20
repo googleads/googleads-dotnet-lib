@@ -1,3 +1,7 @@
+3.0.1
+- Fixed a few documentation bugs in the source code.
+- Fixed the DataPath key in App.config and ApplicationConfiguration.cs.
+
 3.0.0:
 - Added v200902 support.
 - Added code samples for v200902
