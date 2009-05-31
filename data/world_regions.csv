@@ -463,30 +463,30 @@ Poland,PL-SL,Slaskie
 Poland,PL-WN,Warminsko-Mazurskie
 Poland,PL-WP,Wielkopolskie
 Poland,PL-ZP,Zachodnio-Pomorskie
-Russian Federation,RU-AD,Adygeya, Republic
+Russian Federation,RU-AD,"Adygeya, Republic"
 Russian Federation,RU-AGB,Aginskiy Buryatskiy avtonomnyy okrug
-Russian Federation,RU-AL,Altay, Republic
+Russian Federation,RU-AL,"Altay, Republic"
 Russian Federation,RU-ALT,Altayskiy kray
 Russian Federation,RU-AMU,Amurskaya oblast
 Russian Federation,RU-ARK,Arkhangel'skaya oblast
 Russian Federation,RU-AST,Astrakhanskaya oblast
-Russian Federation,RU-BA,Bashkortostan, Republic
+Russian Federation,RU-BA,"Bashkortostan, Republic"
 Russian Federation,RU-BEL,Belgorodskaya oblast
 Russian Federation,RU-BRY,Bryanskaya oblast
-Russian Federation,RU-BU,Buryatiya, Republic
-Russian Federation,RU-CE,Chechnya, Republic
+Russian Federation,RU-BU,"Buryatiya, Republic"
+Russian Federation,RU-CE,"Chechnya, Republic"
 Russian Federation,RU-CHE,Chelyabinskaya oblast
 Russian Federation,RU-CHI,Chitinskaya oblast
 Russian Federation,RU-CHU,Chukotskiy avtonomnyy okrug
-Russian Federation,RU-CU,Chuvashiya, Republic
-Russian Federation,RU-DA,Dagestan, Republic
+Russian Federation,RU-CU,"Chuvashiya, Republic"
+Russian Federation,RU-DA,"Dagestan, Republic"
 Russian Federation,RU-EVE,Evenkiyskiy avtonomniy okrug
-Russian Federation,RU-IN,Ingushetiya, Republic
+Russian Federation,RU-IN,"Ingushetiya, Republic"
 Russian Federation,RU-IRK,Irkutskaya oblast
 Russian Federation,RU-IVA,Ivanovskaya oblast
 Russian Federation,RU-KAM,Kamchatskaya oblast
-Russian Federation,RU-KB,Kabardino-Balkariya, Republic
-Russian Federation,RU-KC,Karachayevo-Cherkessiya, Republic
+Russian Federation,RU-KB,"Kabardino-Balkariya, Republic"
+Russian Federation,RU-KC,"Karachayevo-Cherkessiya, Republic"
 Russian Federation,RU-KDA,Krasnodarskiy kray
 Russian Federation,RU-KEM,Kemerovskaya oblast
 Russian Federation,RU-KGD,Kaliningradskaya oblast
@@ -494,20 +494,20 @@ Russian Federation,RU-KGN,Kurganskaya oblast
 Russian Federation,RU-KHA,Khabarovskiy kray
 Russian Federation,RU-KHM,Khanty-Mansiyskiy avtonomnyy okrug
 Russian Federation,RU-KIR,Kirovskaya oblast
-Russian Federation,RU-KK,Khakasiya, Republic
-Russian Federation,RU-KL,Kalmykiya, Republic
+Russian Federation,RU-KK,"Khakasiya, Republic"
+Russian Federation,RU-KL,"Kalmykiya, Republic"
 Russian Federation,RU-KLU,Kaluzhskaya oblast
-Russian Federation,RU-KO,Komi, Republic
+Russian Federation,RU-KO,"Komi, Republic"
 Russian Federation,RU-KOR,Koryakskiy avtonomniy okrug
 Russian Federation,RU-KOS,Kostromskaya oblast
-Russian Federation,RU-KR,Kareliya, Republic
+Russian Federation,RU-KR,"Kareliya, Republic"
 Russian Federation,RU-KRS,Kurskaya oblast
 Russian Federation,RU-KYA,Krasnoyarskiy kray
 Russian Federation,RU-LEN,Leningradskaya oblast
 Russian Federation,RU-LIP,Lipetskaya oblast
 Russian Federation,RU-MAG,Magadanskaya oblast
-Russian Federation,RU-ME,Mariy El, Republic
-Russian Federation,RU-MO,Mordoviya, Republic
+Russian Federation,RU-ME,"Mariy El, Republic"
+Russian Federation,RU-MO,"Mordoviya, Republic"
 Russian Federation,RU-MOS,Moskovskaya oblast
 Russian Federation,RU-MOW,Moscow
 Russian Federation,RU-MUR,Murmanskaya oblast
@@ -524,24 +524,24 @@ Russian Federation,RU-PRI,Primorskiy kray
 Russian Federation,RU-PSK,Pskovskaya oblast
 Russian Federation,RU-ROS,Rostovskaya oblast
 Russian Federation,RU-RYA,Ryazanskaya oblast
-Russian Federation,RU-SA,Sakha, Republic
+Russian Federation,RU-SA,"Sakha, Republic"
 Russian Federation,RU-SAK,Sakhalinskaya oblast
 Russian Federation,RU-SAM,Samarskaya oblast
 Russian Federation,RU-SAR,Saratovskaya oblast
-Russian Federation,RU-SE,Severnaya Osetiya, Republic
+Russian Federation,RU-SE,"Severnaya Osetiya, Republic"
 Russian Federation,RU-SMO,Smolenskaya oblast
 Russian Federation,RU-SPE,Sankt-Petersburg
 Russian Federation,RU-STA,Stavropol'skiy kray
 Russian Federation,RU-SVE,Sverdlovskaya oblast
-Russian Federation,RU-TA,Tatarstan, Republic
+Russian Federation,RU-TA,"Tatarstan, Republic"
 Russian Federation,RU-TAM,Tambovskaya oblast
 Russian Federation,RU-TAY,Taymyrskiy (Dolgano-Nenetskiy) avtonomnyy okrug
 Russian Federation,RU-TOM,Tomskaya oblast
 Russian Federation,RU-TUL,Tul'skaya oblast
 Russian Federation,RU-TVE,Tverskaya oblast
-Russian Federation,RU-TY,Tyva, Republic
+Russian Federation,RU-TY,"Tyva, Republic"
 Russian Federation,RU-TYU,Tyumenskaya oblast
-Russian Federation,RU-UD,Udmurtiya, Republic
+Russian Federation,RU-UD,"Udmurtiya, Republic"
 Russian Federation,RU-ULY,Ulyanovskaya oblast
 Russian Federation,RU-UOB,Ust'-Ordyniskiy Buryatskiy avtonomnyy okrug
 Russian Federation,RU-VGG,Volgogradskaya oblast
@@ -601,7 +601,7 @@ Spain,ES-TF,Santa Cruz De Tenerife
 Spain,ES-TO,Toledo
 Spain,ES-V,Valencia
 Spain,ES-VA,Valladolid
-Spain,ES-VC,Valenciana, Comunidad
+Spain,ES-VC,"Valenciana, Comunidad"
 Spain,ES-VI,Álava
 Spain,ES-Z,Zaragoza
 Sweden,SE-AB,Stockholms lan
@@ -786,4 +786,3 @@ United States,US-WA,Washington
 United States,US-WI,Wisconsin
 United States,US-WV,West Virginia
 United States,US-WY,Wyoming
-
