@@ -1,3 +1,12 @@
+3.0.2
+- Fixed issue 15 in issue tracker (TraceExtension corrupts response xml if logging is turned off).
+- Fixed Examples.csproj.
+- Fixed issue 16 in issue tracker (Some csvs did not escape commas properly.)
+- Fixed issue 17 in issue tracker (checkAds() and checkCriteria() choke if ApiError has textLength
+  and textIndex as null in SOAP Response xml.
+- Fixed issue 13 in issue tracker (GetAllJobs() choke if a StructureReport is present in Report
+  Center.
+
 3.0.1
 - Fixed a few documentation bugs in the source code.
 - Fixed the DataPath key in App.config and ApplicationConfiguration.cs.

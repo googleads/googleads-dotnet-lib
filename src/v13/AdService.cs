@@ -506,14 +506,14 @@ namespace com.google.api.adwords.v13 {
     public bool isExemptable;
 
     /// <remarks/>
-    public int textIndex;
+    public int? textIndex;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool textIndexSpecified;
 
     /// <remarks/>
-    public int textLength;
+    public int? textLength;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]

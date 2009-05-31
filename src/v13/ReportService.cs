@@ -265,7 +265,7 @@ namespace com.google.api.adwords.v13 {
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
-    public System.DateTime endDay;
+    public System.DateTime? endDay;
 
     /// <remarks/>
     public long id;
@@ -279,7 +279,7 @@ namespace com.google.api.adwords.v13 {
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
-    public System.DateTime startDay;
+    public System.DateTime? startDay;
 
     /// <remarks/>
     public ReportJobStatus status;
