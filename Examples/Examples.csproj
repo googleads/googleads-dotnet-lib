@@ -70,7 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="_App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\google-api-adwords-dotnet.csproj">

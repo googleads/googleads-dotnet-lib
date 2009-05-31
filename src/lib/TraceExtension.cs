@@ -205,8 +205,8 @@ namespace com.google.api.adwords.lib {
       writer.Flush();
       writer.Close();
       cleanStream.Close();
-
       textWriter.WriteLine(Encoding.UTF8.GetString(w.ToArray()));
+      newStream.Position = 0;
     }
 
     /// <summary>
@@ -222,6 +222,7 @@ namespace com.google.api.adwords.lib {
     /// </summary>
     private void CopyContentsFromOldStream() {
       Copy(oldStream, newStream);
+      newStream.Position = 0;
     }
 
     /// <summary>
@@ -250,7 +251,6 @@ namespace com.google.api.adwords.lib {
 
       MemoryStream cleanStream = new MemoryStream();
       CopyAndCleanXmlStream(newStream, cleanStream);
-
       MemoryStream w = new MemoryStream();
       StreamWriter writer = new StreamWriter(w);
 
@@ -263,9 +263,7 @@ namespace com.google.api.adwords.lib {
       writer.Flush();
       writer.Close();
       cleanStream.Close();
-
       textWriter.WriteLine(Encoding.UTF8.GetString(w.ToArray()));
-      newStream.Position = 0;
     }
 
     /// <summary>
