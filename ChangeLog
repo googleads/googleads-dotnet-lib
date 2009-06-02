@@ -1,3 +1,16 @@
+3.1.0
+- All the samples now have INSERT_XXX placeholders for various items like adGroupId, campaignId,
+  etc. You have to substitute correct values before running these samples.
+- Added unit tests that are compatible with NUnit. See UnitTests/README for details.
+- TraceExtension now masks out password and authToken from SOAP logs before saving them on disk.
+- AdWordsUser has new constructors.
+- Data csvs are now embedded as resources within the assembly. Hence dataFilePath key in app.config
+  has been removed.
+- Added UnitsUtilities to provide helper functions for retrieving API usage in units. You can now
+  retrieve unit usage for your account broken down by method name, or by individual accounts linked
+  under your MCC.
+- Documentation for the project is now available at /doc in chm format. 
+
 3.0.2
 - Fixed issue 15 in issue tracker (TraceExtension corrupts response xml if logging is turned off).
 - Fixed Examples.csproj.

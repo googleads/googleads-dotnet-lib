@@ -12,23 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Xml;
-
 using com.google.api.adwords.lib;
+using com.google.api.adwords.v13;
+
+using System;
+using System.Collections;
 using com.google.api.adwords.lib.util;
+using System.Collections.Generic;
 
 namespace com.google.api.adwords.samples.v13 {
   /// <summary>
-  /// Shows how to backup an entire sandbox account.
+  /// This demo displays API method usage for this month for all methods provided
+  /// by the AdWords API. Note that this data is not in real time and is refreshed
+  /// every few hours.
   /// </summary>
-  class BackupSandboxDemo : SampleBase{
+  class MethodQuotaUsageDemo : SampleBase {
     /// <summary>
     /// Returns a description about the sample code.
     /// </summary>
     public override string Description {
       get {
-        return "Shows how to backup an entire sandbox account.";
+        return "Displays API method usage for this month for all methods provided" +
+            " by the AdWords API.";
       }
     }
 
@@ -38,8 +43,15 @@ namespace com.google.api.adwords.samples.v13 {
     /// <param name="user">The AdWords user object running the sample.
     /// </param>
     public override void Run(AdWordsUser user) {
-      DataUtilities.DownloadSandboxContents(user, "C:\\SandboxBackup-" +
-          DateTime.Now.ToString("yyyy-M-d H-m-s") + ".xml");
+      user.ResetUnits();
+      List<MethodQuotaUsage> methodQuotaUsage = UnitsUtilities.GetMethodQuotaUsage(user,
+          DateTime.Now.AddMonths(-1), DateTime.Now);
+
+      foreach (MethodQuotaUsage usage in methodQuotaUsage) {
+        Console.WriteLine("{0,-50} - {1}", usage.serviceName + "." + usage.methodName,
+            usage.units);
+      }
+      Console.WriteLine("\nTotal Quota unit cost for this run: {0}.\n", user.GetUnits());
     }
   }
 }

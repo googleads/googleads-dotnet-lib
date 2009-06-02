@@ -62,7 +62,17 @@ namespace com.google.api.adwords.lib.util {
     /// <param name="fileName">Full path to the csv file.</param>
     /// <param name="hasHeaders">True, if the first line of the csv file is a header.</param>
     public void Read(string fileName, bool hasHeaders) {
-      Parse(fileName, hasHeaders);
+      Load(fileName, hasHeaders);
+    }
+
+    /// <summary>
+    /// Reads the contents of the CSV string into memory.
+    /// </summary>
+    /// <param name="fileName">Text to be parsed as csv file contents.</param>
+    /// <param name="hasHeaders">True, if the first line of the csv file contents
+    /// is a header.</param>
+    public void ReadFromString(string contents, bool hasHeaders) {
+      Parse(contents, hasHeaders);
     }
 
     /// <summary>
@@ -117,34 +127,43 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <param name="filepath">Full path to the csv file.</param>
     /// <param name="hasHeaders">True, if the first line of the csv file is a header.</param>
-    private void Parse(string filePath, bool hasHeaders) {
+    private void Load(string filePath, bool hasHeaders) {
       StreamReader reader = null;
       try {
         reader = new StreamReader(filePath);
         string contents = reader.ReadToEnd();
-        string[] lines = contents.Split(new char[] {'\n', '\r'},
-            StringSplitOptions.RemoveEmptyEntries);
-
-        if (lines.Length == 0) {
-          return;
-        }
-        int startIndex = 0;
-
-        if (hasHeaders) {
-          headers = new List<string>(SplitCsvLine(lines[0], StringSplitOptions.None));
-          startIndex = 1;
-        } else {
-          headers = null;
-        }
-        records = new List<string[]>();
-        for (int i = startIndex; i < lines.Length; i++) {
-          string[] splits = SplitCsvLine(lines[i], StringSplitOptions.None);
-          records.Add(splits);
-        }
+        Parse(contents, hasHeaders);
       } finally {
         if (reader != null) {
           reader.Close();
         }
+      }
+    }
+
+    /// <summary>
+    /// Parses a csv file's contents and loads it into memory.
+    /// </summary>
+    /// <param name="contents">File contents that should be parsed into memory.</param>
+    /// <param name="hasHeaders">True, if the first line of the csv file is a header.</param>
+    private void Parse(string contents, bool hasHeaders) {
+      string[] lines = contents.Split(new char[] {'\n', '\r'},
+          StringSplitOptions.RemoveEmptyEntries);
+
+      if (lines.Length == 0) {
+        return;
+      }
+      int startIndex = 0;
+
+      if (hasHeaders) {
+        headers = new List<string>(SplitCsvLine(lines[0], StringSplitOptions.None));
+        startIndex = 1;
+      } else {
+        headers = null;
+      }
+      records = new List<string[]>();
+      for (int i = startIndex; i < lines.Length; i++) {
+        string[] splits = SplitCsvLine(lines[i], StringSplitOptions.None);
+        records.Add(splits);
       }
     }
 

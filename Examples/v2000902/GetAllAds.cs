@@ -41,10 +41,9 @@ namespace com.google.api.adwords.samples.v200902 {
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(ApiServices.v200902.AdGroupAdService);
 
-      long nAdGroupId = InputUtils.AcceptLong("Enter the AdGroup ID: ");
+      long nAdGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
 
       // Create your filter.
-
       AdGroupAdIdFilter filter = new AdGroupAdIdFilter();
 
       AdGroupId adGroupId = new AdGroupId();
@@ -54,7 +53,6 @@ namespace com.google.api.adwords.samples.v200902 {
       filter.adGroupId = adGroupId;
 
       // Create a selector and set the filters.
-
       AdGroupAdSelector selector = new AdGroupAdSelector();
       selector.adGroupAdIdFilters = new AdGroupAdIdFilter[] {filter};
 

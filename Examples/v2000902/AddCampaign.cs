@@ -41,18 +41,15 @@ namespace com.google.api.adwords.samples.v200902 {
       Campaign campaign = new Campaign();
 
       // Generate a campaign name.
-
       string campaignName =
-        string.Format("Campaign - {0}", DateTime.Now.ToString("yyyy-M-d H:m:s"));
+          string.Format("Campaign - {0}", DateTime.Now.ToString("yyyy-M-d H:m:s"));
       campaign.name = string.Format(campaignName);
 
       // Required: Set the campaign status.
-
       campaign.status = CampaignStatus.ACTIVE;
       campaign.statusSpecified = true;
 
       // Required: Specify the currency and budget amount.
-
       Budget budget = new Budget();
       Money amount = new Money();
       amount.currencyCode = "USD";
@@ -62,11 +59,9 @@ namespace com.google.api.adwords.samples.v200902 {
       budget.amount = amount;
 
       // Required: Specify the bidding strategy.
-
       campaign.biddingStrategy = new ManualCPC();
 
       // Optional: Specify the budget period and delivery method.
-
       budget.periodSpecified = true;
       budget.period = BudgetBudgetPeriod.DAILY;
       budget.deliveryMethodSpecified = true;
@@ -74,7 +69,6 @@ namespace com.google.api.adwords.samples.v200902 {
       campaign.budget = budget;
 
       // Define an Add operation to add the campaign.
-
       CampaignOperation campaignOperation = new CampaignOperation();
 
       campaignOperation.operatorSpecified = true;

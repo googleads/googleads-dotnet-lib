@@ -43,7 +43,7 @@ namespace com.google.api.adwords.samples.v200902 {
 
       criterion.campaignId = new CampaignId();
       criterion.campaignId.idSpecified = true;
-      criterion.campaignId.id = InputUtils.AcceptLong("Enter the Campaign ID: ");
+      criterion.campaignId.id = long.Parse("INSERT_CAMPAIGN_ID_HERE");
 
       Placement placement = new Placement();
       placement.url = "http://www.example.com";

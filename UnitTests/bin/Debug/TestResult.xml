@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\MyProjects\AdWords API\NetWebMerger\google-api-adwords-dotnet\UnitTests\bin\Debug\UnitTests.dll" total="1" errors="0" failures="0" not-run="0" ignored="0" skipped="0" invalid="0" date="2009-06-01" time="20:14:06">
+  <environment nunit-version="2.5.0.9122" clr-version="2.0.50727.3082" os-version="Microsoft Windows NT 5.1.2600 Service Pack 2" platform="Win32NT" cwd="C:\MyProjects\AdWords API\NetWebMerger\google-api-adwords-dotnet\UnitTests\bin\Debug" machine-name="ANASH-LAPTOP" user="anash" user-domain="GOOGLE" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite name="C:\MyProjects\AdWords API\NetWebMerger\google-api-adwords-dotnet\UnitTests\bin\Debug\UnitTests.dll" executed="True" success="True" time="0.204" asserts="0">
+    <results>
+      <test-suite name="com" executed="True" success="True" time="0.189" asserts="0">
+        <results>
+          <test-suite name="google" executed="True" success="True" time="0.189" asserts="0">
+            <results>
+              <test-suite name="api" executed="True" success="True" time="0.173" asserts="0">
+                <results>
+                  <test-suite name="adwords" executed="True" success="True" time="0.173" asserts="0">
+                    <results>
+                      <test-suite name="tests" executed="True" success="True" time="0.173" asserts="0">
+                        <results>
+                          <test-suite name="ApplicationConfigurationTests" executed="True" success="True" time="0.173" asserts="0">
+                            <results>
+                              <test-case name="com.google.api.adwords.tests.ApplicationConfigurationTests.TestConfigCreation" executed="True" success="True" time="0.173" asserts="8" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

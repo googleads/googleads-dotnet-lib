@@ -44,7 +44,6 @@ namespace com.google.api.adwords.samples.both {
           (KeywordToolService) user.GetService(ApiServices.v13.KeywordToolService);
 
       // Use v13 KeywordToolService to get keyword variations.
-
       SeedKeyword seed = new SeedKeyword();
       seed.text = "Red Planet";
       seed.type = KeywordType.Broad;
@@ -58,7 +57,7 @@ namespace com.google.api.adwords.samples.both {
 
       int count = (variations.moreSpecific.Length > 3) ? 3 : variations.moreSpecific.Length;
       List<AdGroupCriterionOperation> operations =  new List<AdGroupCriterionOperation>();
-      long adGroupId = InputUtils.AcceptLong("Enter the AdGroup ID: ");
+      long adGroupId = long.Parse("INSERT_AD_GROUP_ID_HERE");
 
       for (int i = 0; i < count; i++) {
         KeywordV200902 keyword = new KeywordV200902();

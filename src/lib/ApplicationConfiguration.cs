@@ -91,9 +91,6 @@ namespace com.google.api.adwords.lib {
         // v200902 keys.
         urlV200902 = ReadSetting(settings, URL_V200902,
             "https://adwords-sandbox.google.com");
-
-        // Location of data files.
-        dataFilePath = ReadSetting(settings, DATA_FILE_PATH, "C:\\data\\");
       }
       return null;
     }
@@ -264,15 +261,5 @@ namespace com.google.api.adwords.lib {
     /// Key name for v200902 Url.
     /// </summary>
     internal const String URL_V200902 = "v200902.Url";
-
-    /// <summary>
-    /// Path for data files.
-    /// </summary>
-    public static String dataFilePath;
-
-    /// <summary>
-    /// Key name for data files.
-    /// </summary>
-    internal const String DATA_FILE_PATH = "DataPath";
   }
 }

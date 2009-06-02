@@ -206,7 +206,6 @@ namespace com.google.api.adwords.lib {
       writer.Close();
       cleanStream.Close();
       textWriter.WriteLine(Encoding.UTF8.GetString(w.ToArray()));
-      newStream.Position = 0;
     }
 
     /// <summary>
@@ -291,6 +290,28 @@ namespace com.google.api.adwords.lib {
       XmlTextReader xmlReader = new XmlTextReader(oldStream);
       XmlDocument xml = new XmlDocument();
       xml.Load(xmlReader);
+
+      // Clear the password from v13 logs, authToken from v2009 logs.
+      XmlNamespaceManager xmlns = new XmlNamespaceManager(xml.NameTable);
+      xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
+      XmlNodeList headerNodes =
+          xml.SelectNodes("soap:Envelope/soap:Header/*", xmlns);
+      foreach (XmlElement headerNode in headerNodes) {
+        switch(headerNode.Name) {
+          case "password":
+            headerNode.InnerText = "********";
+            break;
+          case "RequestHeader":
+            XmlNodeList childNodes = headerNode.SelectNodes("*");
+            foreach (XmlElement childNode in childNodes) {
+              if (childNode.Name == "authToken") {
+                childNode.InnerText = "********";
+                break;
+              }
+            }
+            break;
+        }
+      }
       xml.WriteTo(xmlWriter);
       xmlWriter.Flush();
       cleanedUpStream.Flush();

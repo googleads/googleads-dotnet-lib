@@ -64,9 +64,7 @@ namespace com.google.api.adwords.lib {
     /// use all settings from App.config.
     /// </summary>
     public AdWordsUser() {
-      // Load authToken and headers from configuration file.
-      authToken = ReadAuthTokenFromConfig();
-      headers = ReadV13HeadersFromConfig();
+      Initialize(ReadAuthTokenFromConfig(), ReadV13HeadersFromConfig());
     }
 
     /// <summary>
@@ -77,8 +75,18 @@ namespace com.google.api.adwords.lib {
     /// <param name="authToken">The overridden authToken to be used with
     /// v200902 services.</param>
     public AdWordsUser(AuthToken authToken) {
-      this.authToken = authToken;
-      headers = ReadV13HeadersFromConfig();
+      Initialize(authToken, ReadV13HeadersFromConfig());
+    }
+
+    /// <summary>
+    /// Public constructor. Use this version if you want to use v200902
+    /// services authentication from App.config, but want to override
+    /// v13 SOAP headers.
+    /// </summary>
+    /// <param name="headers">The custom SOAP headers to be used
+    /// with v13 services.</param>
+    public AdWordsUser(Dictionary<string, string> headers) {
+      Initialize(ReadAuthTokenFromConfig(), MakeSoapHeaders(headers));
     }
 
     /// <summary>
@@ -89,9 +97,7 @@ namespace com.google.api.adwords.lib {
     /// <param name="headers">The custom SOAP headers to be used
     /// with v13 services.</param>
     public AdWordsUser(Dictionary<string, SoapHeader> headers) {
-      // Load the authToken from configuration file.
-      authToken = ReadAuthTokenFromConfig();
-      this.headers = headers;
+      Initialize(ReadAuthTokenFromConfig(), headers);
     }
 
     /// <summary>
@@ -102,10 +108,20 @@ namespace com.google.api.adwords.lib {
     /// v200902 services.</param>
     /// <param name="headers">The custom SOAP headers to be used
     /// with v13 services.</param>
-    public AdWordsUser(AuthToken authToken,
-        Dictionary<string, SoapHeader> headers) {
-      this.authToken = authToken;
-      this.headers = headers;
+    public AdWordsUser(AuthToken authToken, Dictionary<string, string> headers) {
+      Initialize(authToken, MakeSoapHeaders(headers));
+    }
+
+    /// <summary>
+    /// Public constructor. Use this version if you want to override
+    /// both v200902 and v13 authentication settings in App.config.
+    /// </summary>
+    /// <param name="authToken">The overridden authToken to be used with
+    /// v200902 services.</param>
+    /// <param name="headers">The custom SOAP headers to be used
+    /// with v13 services.</param>
+    public AdWordsUser(AuthToken authToken, Dictionary<string, SoapHeader> headers) {
+      Initialize(authToken, headers);
     }
 
     /// <summary>
@@ -300,6 +316,34 @@ namespace com.google.api.adwords.lib {
     /// <returns>A new AuthToken object.</returns>
     private AuthToken ReadAuthTokenFromConfig() {
       return new AuthToken(ApplicationConfiguration.email, ApplicationConfiguration.password);
+    }
+
+    /// <summary>
+    /// Convert a dictionary of string header values to SoapHeader objects.
+    /// </summary>
+    /// <param name="headers">The dictionary, with key as the header field name
+    /// and value as the header value.</param>
+    /// <returns>A dictionary, with key as header field name and value as a
+    /// SoapHeader object.</returns>
+    /// <remarks>This function is used by the constructors that accept header
+    /// values as string rather than SoapHeader objects.</remarks>
+    private Dictionary<string, SoapHeader> MakeSoapHeaders(Dictionary<string, string> headers) {
+      Dictionary<string, SoapHeader> soapHeaders = new Dictionary<string, SoapHeader>();
+      foreach (string key in headers.Keys) {
+        soapHeaders[key + "Value"] = MakeHeader(key, headers[key]);
+      }
+      return soapHeaders;
+    }
+
+    /// <summary>
+    /// Initializes this object.
+    /// </summary>
+    /// <param name="authToken">AuthToken to be used with v200902 services.</param>
+    /// <param name="headers">The SOAP headers to be used with v13 services.</param>
+    /// <remarks>This function is used by all constructors.</remarks>
+    private void Initialize(AuthToken authToken, Dictionary<string, SoapHeader> headers) {
+      this.authToken = authToken;
+      this.headers = headers;
     }
   }
 }

@@ -24,13 +24,13 @@ namespace com.google.api.adwords.lib.util {
   /// Handles the archiving and unarchiving of a <see cref="ClientAccount"/> object
   /// to an XML document.
   /// </summary>
-  public class Archiver {
+  internal class Archiver {
     /// <summary>
     /// Deserialize an account from an XML node.
     /// </summary>
     /// <param name="xAccount">The XML node that contains serialized data.</param>
     /// <returns>The deserialized ClientAccount object.</returns>
-    public ClientAccount DeSerializeAccount(XmlElement xAccount) {
+    internal ClientAccount DeSerializeAccount(XmlElement xAccount) {
       ClientAccount account = new ClientAccount();
       try {
         XmlElement xAccountInfo = (XmlElement) xAccount.SelectSingleNode("accountInfo");
@@ -97,7 +97,7 @@ namespace com.google.api.adwords.lib.util {
     /// <param name="accountNode">The XML node to which serialization
     /// happens.</param>
     /// <param name="client">The account details to be serialized.</param>
-    public void SerializeAccount(XmlElement accountNode, ClientAccount client) {
+    internal void SerializeAccount(XmlElement accountNode, ClientAccount client) {
       try {
         accountNode.SetAttribute("email", client.email);
         SerializeObject(accountNode, "accountInfo", client.accountInfo);

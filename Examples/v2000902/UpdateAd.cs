@@ -40,16 +40,15 @@ namespace com.google.api.adwords.samples.v200902 {
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(ApiServices.v200902.AdGroupAdService);
 
-      long adGroupId = InputUtils.AcceptLong("Enter AdGroup Id : ");
-      long adId = InputUtils.AcceptLong("Enter Ad Id : ");
+      long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+      long adId = long.Parse("INSERT_AD_ID_HERE");
 
       // Update your Ad.
-
       AdGroupAd adGroupAd = new AdGroupAd();
 
       adGroupAd.statusSpecified = true;
-      //TODO: Put your ad status here.
-      adGroupAd.status = AdGroupAdStatus.PAUSED;
+      adGroupAd.status =
+          (AdGroupAdStatus) Enum.Parse(typeof(AdGroupAdStatus), "INSERT_ADGROUP_AD_STATUS_HERE");
 
       adGroupAd.adGroupId = new AdGroupId();
       adGroupAd.adGroupId.idSpecified = true;

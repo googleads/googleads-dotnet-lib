@@ -61,6 +61,9 @@ namespace com.google.api.adwords.samples {
       sampleMap.Add("v13.DownloadReportAsXmlDemo", new DownloadReportAsXmlDemo());
       sampleMap.Add("v13.BackupSandboxDemo", new BackupSandboxDemo());
       sampleMap.Add("v13.RestoreSandboxDemo", new RestoreSandboxDemo());
+      sampleMap.Add("v13.MethodQuotaUsageDemo", new MethodQuotaUsageDemo());
+      sampleMap.Add("v13.ClientQuotaUsageDemo", new ClientQuotaUsageDemo());
+
 
       // Add v200902 samples.
       sampleMap.Add("v200902.AddCampaign", new AddCampaign());

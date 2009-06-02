@@ -39,38 +39,31 @@ namespace com.google.api.adwords.samples.v200902 {
       AdGroupService service =
           (AdGroupService) user.GetService(ApiServices.v200902.AdGroupService);
 
-      long nCampaignId = InputUtils.AcceptLong("Enter the Campaign ID: ");
+      long nCampaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
 
       AdGroup adGroup = new AdGroup();
 
       // Required: Set the campaign id.
-
       CampaignId campaignId = new CampaignId();
       campaignId.id = nCampaignId;
       campaignId.idSpecified = true;
-
       adGroup.campaignId = campaignId;
 
       // Optional: set the status of adgroup.
-
       adGroup.statusSpecified = true;
       adGroup.status = AdGroupStatus.ENABLED;
 
       // Optional: set a name for adgroup.
-
       string adGroupName = string.Format("AdGroup - {0}", DateTime.Now.ToString("yyyy-M-d H:m:s"));
       adGroup.name = adGroupName;
 
       // Optional: Create a Manual CPC Bid.
-
       ManualCPCAdGroupBids bids = new ManualCPCAdGroupBids();
 
       // Set the keyword content max cpc.
-
       bids.keywordContentMaxCpc = new Bid();
 
       Money kwdContentMaxCpc = new Money();
-
       kwdContentMaxCpc.currencyCode = "USD";
       kwdContentMaxCpc.microAmountSpecified = true;
       kwdContentMaxCpc.microAmount = 100000;
@@ -79,7 +72,6 @@ namespace com.google.api.adwords.samples.v200902 {
       bids.keywordContentMaxCpc.@event = BidEvent.CLICK;
 
       // Set the keyword max cpc.
-
       bids.keywordMaxCpc = new Bid();
       Money kwdMaxCpc = new Money();
       kwdMaxCpc.currencyCode = "USD";
@@ -90,7 +82,6 @@ namespace com.google.api.adwords.samples.v200902 {
       bids.keywordMaxCpc.@event = BidEvent.CLICK;
 
       // Set the manual bid to the adgroup.
-
       adGroup.bids = bids;
 
       AdGroupOperation adGroupOperation = new AdGroupOperation();

@@ -21,21 +21,21 @@ namespace com.google.api.adwords.lib.util {
   /// <summary>
   /// Represents a client account downloaded by sandbox download script.
   /// </summary>
-  public class ClientAccount {
+  internal class ClientAccount {
     /// <summary>
     /// email of the client account.
     /// </summary>
-    public string email = "";
+    internal string email = "";
 
     /// <summary>
     /// Account information.
     /// </summary>
-    public AccountInfo accountInfo = new AccountInfo();
+    internal AccountInfo accountInfo = new AccountInfo();
 
     /// <summary>
     /// List of all campaigns.
     /// </summary>
-    public List<CampaignEx> campaigns = new List<CampaignEx>();
+    internal List<CampaignEx> campaigns = new List<CampaignEx>();
   }
 
   /// <summary>

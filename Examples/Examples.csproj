@@ -35,7 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="both\UsingKeywordSuggestionDemo.cs" />
-    <Compile Include="InputUtils.cs" />
+    <Compile Include="v13\ClientQuotaUsageDemo.cs" />
     <Compile Include="v13\AccountServiceDemo.cs" />
     <Compile Include="v13\AccountServiceNoConfigDemo.cs" />
     <Compile Include="v13\AdServiceDemo.cs" />
@@ -52,6 +52,7 @@
     <Compile Include="v13\InfoServiceDemo.cs" />
     <Compile Include="v13\KeywordEstimateDemo.cs" />
     <Compile Include="v13\KeywordToolDemo.cs" />
+    <Compile Include="v13\MethodQuotaUsageDemo.cs" />
     <Compile Include="v13\ReportServiceKeywordDemo.cs" />
     <Compile Include="v13\ReportServiceStructureDemo.cs" />
     <Compile Include="v13\RestoreSandboxDemo.cs" />

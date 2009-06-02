@@ -37,12 +37,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EmbeddedResource Include="data\categories.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="data\countries.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="data\currencies.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="data\languages.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="data\ops_rates.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="data\timezones.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="data\us_cities.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="data\us_metros.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="data\world_cities.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="data\world_regions.csv">
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\AssemblyInfo.cs" />
     <Compile Include="src\lib\AdWordsUser.cs" />
     <Compile Include="src\lib\ApiServices.cs" />
     <Compile Include="src\lib\util\AccountManager.cs" />
+    <Compile Include="src\lib\util\UnitsUtilities.cs" />
     <Compile Include="src\lib\util\ReportUtilities.cs" />
     <Compile Include="src\lib\ApplicationConfiguration.cs" />
     <Compile Include="src\lib\AuthToken.cs" />

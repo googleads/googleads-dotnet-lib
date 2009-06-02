@@ -42,17 +42,15 @@ namespace com.google.api.adwords.samples.v200902 {
     public override void Run(AdWordsUser user) {
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(ApiServices.v200902.AdGroupAdService);
-      long adGroupId = InputUtils.AcceptLong("Enter the AdGroup ID: ");
+      long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
 
       // Create your image ad.
-
       ImageAd imageAd = new ImageAd();
       imageAd.name = "My Image Ad";
       imageAd.displayUrl = "http://www.example.com";
       imageAd.url = "http://www.example.com";
 
       // Load your image into data field.
-
       string imageUrl = "https://sandbox.google.com/sandboximages/image.jpg";
 
       WebRequest request = HttpWebRequest.Create(imageUrl);
@@ -74,7 +72,6 @@ namespace com.google.api.adwords.samples.v200902 {
       imageAd.image.data = memStream.ToArray();
 
       // Set the AdGroup Id.
-
       AdGroupAd adGroupAd = new AdGroupAd();
       adGroupAd.adGroupId = new AdGroupId();
       adGroupAd.adGroupId.idSpecified = true;
@@ -82,7 +79,6 @@ namespace com.google.api.adwords.samples.v200902 {
       adGroupAd.ad = imageAd;
 
       // Create the ADD Operation.
-
       AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
       adGroupAdOperation.operatorSpecified = true;
       adGroupAdOperation.@operator = Operator.ADD;

@@ -42,10 +42,9 @@ namespace com.google.api.adwords.samples.v200902 {
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(ApiServices.v200902.AdGroupAdService);
 
-      long adGroupId = InputUtils.AcceptLong("Enter the AdGroup ID: ");
+      long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
 
       // Create your good text ad.
-
       TextAd goodTextAd = new TextAd();
       goodTextAd.headline = "Luxury Cruise to Mars";
       goodTextAd.description1 = "Visit the Red Planet in style.";
@@ -60,7 +59,6 @@ namespace com.google.api.adwords.samples.v200902 {
       goodAdGroupAd.ad = goodTextAd;
 
       // Create your bad text ad.
-
       TextAd badTextAd = new TextAd();
       badTextAd.headline = "Luxury Cruise to MARS";
       badTextAd.description1 = "Visit the Red Planet in style.";
@@ -75,7 +73,6 @@ namespace com.google.api.adwords.samples.v200902 {
       badAdGroupAd.ad = badTextAd;
 
       // Create the ADD operation.
-
       AdGroupAd[] adGroupAds = {goodAdGroupAd, badAdGroupAd};
       ArrayList operations = new ArrayList();
 

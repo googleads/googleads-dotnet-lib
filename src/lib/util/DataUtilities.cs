@@ -16,6 +16,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Reflection;
 using System.Xml;
 
@@ -31,9 +32,9 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of Category objects.</returns>
     public static List<Category> GetAllCategories() {
-      string fullPath = GetDataPath() + "categories.csv";
+      string csvContents = GetCsv("categories.csv");
       CsvFile reader = new CsvFile();
-      reader.Read(fullPath, true);
+      reader.ReadFromString(csvContents, true);
       List<Category> retVal = new List<Category>();
 
       foreach (string[] item in reader.Records) {
@@ -51,9 +52,9 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of Country objects.</returns>
     public static List<Country> GetAllCountries() {
-      string fullPath = GetDataPath() + "countries.csv";
+      string csvContents = GetCsv("countries.csv");
       CsvFile reader = new CsvFile();
-      reader.Read(fullPath, true);
+      reader.ReadFromString(csvContents, true);
       List<Country> retVal = new List<Country>();
 
       foreach (string[] item in reader.Records) {
@@ -71,9 +72,9 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of Currency objects.</returns>
     public static List<Currency> GetAllCurrencies() {
-      string fullPath = GetDataPath() + "currencies.csv";
+      string csvContents = GetCsv("currencies.csv");
       CsvFile reader = new CsvFile();
-      reader.Read(fullPath, true);
+      reader.ReadFromString(csvContents, true);
       List<Currency> retVal = new List<Currency>();
 
       foreach (string[] item in reader.Records) {
@@ -92,9 +93,9 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of Language objects.</returns>
     public static List<Language> GetAllLanguages() {
-      string fullPath = GetDataPath() + "languages.csv";
+      string csvContents = GetCsv("languages.csv");
       CsvFile reader = new CsvFile();
-      reader.Read(fullPath, true);
+      reader.ReadFromString(csvContents, true);
       List<Language> retVal = new List<Language>();
 
       foreach (string[] item in reader.Records) {
@@ -113,9 +114,9 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of OpRates objects.</returns>
     public static List<OpRates> GetAllOpRates() {
-      string fullPath = GetDataPath() + "ops_rates.csv";
+      string csvContents = GetCsv("ops_rates.csv");
       CsvFile reader = new CsvFile();
-      reader.Read(fullPath, true);
+      reader.ReadFromString(csvContents, true);
       List<OpRates> retVal = new List<OpRates>();
 
       foreach (string[] item in reader.Records) {
@@ -135,9 +136,9 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of OpRates objects.</returns>
     public static List<Timezone> GetAllTimezones() {
-      string fullPath = GetDataPath() + "timezones.csv";
+      string csvContents = GetCsv("timezones.csv");
       CsvFile reader = new CsvFile();
-      reader.Read(fullPath, true);
+      reader.ReadFromString(csvContents, true);
       List<Timezone> retVal = new List<Timezone>();
 
       foreach (string[] item in reader.Records) {
@@ -154,9 +155,9 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of OpRates objects.</returns>
     public static List<UsCity> GetAllUsCities() {
-      string fullPath = GetDataPath() + "us_cities.csv";
+      string csvContents = GetCsv("us_cities.csv");
       CsvFile reader = new CsvFile();
-      reader.Read(fullPath, true);
+      reader.ReadFromString(csvContents, true);
       List<UsCity> retVal = new List<UsCity>();
 
       foreach (string[] item in reader.Records) {
@@ -174,9 +175,9 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of UsMetro objects.</returns>
     public static List<UsMetro> GetAllUsMetros() {
-      string fullPath = GetDataPath() + "us_metros.csv";
+      string csvContents = GetCsv("us_metros.csv");
       CsvFile reader = new CsvFile();
-      reader.Read(fullPath, true);
+      reader.ReadFromString(csvContents, true);
       List<UsMetro> retVal = new List<UsMetro>();
 
       foreach (string[] item in reader.Records) {
@@ -195,9 +196,9 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of WorldCity objects.</returns>
     public static List<WorldCity> GetAllWorldCities() {
-      string fullPath = GetDataPath() + "world_cities.csv";
+      string csvContents = GetCsv("world_cities.csv");
       CsvFile reader = new CsvFile();
-      reader.Read(fullPath, true);
+      reader.ReadFromString(csvContents, true);
       List<WorldCity> retVal = new List<WorldCity>();
 
       foreach (string[] item in reader.Records) {
@@ -216,9 +217,9 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A list of WorldCity objects.</returns>
     public static List<WorldRegion> GetAllWorldRegions() {
-      string fullPath = GetDataPath() + "world_regions.csv";
+      string csvContents = GetCsv("world_regions.csv");
       CsvFile reader = new CsvFile();
-      reader.Read(fullPath, true);
+      reader.ReadFromString(csvContents, true);
       List<WorldRegion> retVal = new List<WorldRegion>();
 
       foreach (string[] item in reader.Records) {
@@ -289,12 +290,37 @@ namespace com.google.api.adwords.lib.util {
     }
 
     /// <summary>
-    /// Get the data path. This is where the CSVs containing various
-    /// codes are stored.
+    /// Load an embedded csv into memory.
     /// </summary>
-    /// <returns>The folder where the CSVs are stored.</returns>
-    private static string GetDataPath() {
-      return ApplicationConfiguration.dataFilePath;
+    /// <param name="csvName">The csv filename to be loaded.</param>
+    /// <returns>The contents of the resource file as a string, or null if the
+    /// resource cannot be found.</returns>
+    private static string GetCsv(string csvName) {
+      Stream resourceStream = null;
+      StreamReader reader = null;
+      string contents = null;
+      try {
+        resourceStream = Assembly.GetExecutingAssembly().
+          GetManifestResourceStream("com.google.api.adwords.data." + csvName);
+        if (resourceStream != null) {
+          reader = new StreamReader(resourceStream);
+          contents = reader.ReadToEnd();
+          reader.Close();
+          resourceStream.Close();
+          return contents;
+        }
+      } catch (Exception ex) {
+        throw new ApplicationException("Could not load resource '" + csvName + "'. See inner " +
+            "exception for details.", ex);
+      } finally {
+        if (resourceStream != null) {
+          resourceStream.Close();
+        }
+        if (reader != null) {
+          reader.Close();
+        }
+      }
+      return contents;
     }
   }
 }

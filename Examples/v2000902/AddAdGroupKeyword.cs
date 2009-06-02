@@ -47,7 +47,7 @@ namespace com.google.api.adwords.samples.v200902 {
       BiddableAdGroupCriterion criterion = new BiddableAdGroupCriterion();
       criterion.adGroupId = new AdGroupId();
       criterion.adGroupId.idSpecified = true;
-      criterion.adGroupId.id = InputUtils.AcceptLong("Enter the AdGroup ID: ");
+      criterion.adGroupId.id =  long.Parse("INSERT_ADGROUP_ID_HERE");
       criterion.criterion = keyword;
 
       AdGroupCriterionOperation adGroupCriterionOperation = new AdGroupCriterionOperation();

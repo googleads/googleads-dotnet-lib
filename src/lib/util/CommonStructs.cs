@@ -199,4 +199,24 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     public string region;
   }
+
+  /// <summary>
+  /// Represents the quota usage of a method in AdWords API, in units.
+  /// </summary>
+  public struct MethodQuotaUsage {
+    /// <summary>
+    /// Name of the service.
+    /// </summary>
+    public string serviceName;
+
+    /// <summary>
+    /// Name of the method.
+    /// </summary>
+    public string methodName;
+
+    /// <summary>
+    /// Units consumed.
+    /// </summary>
+    public long units;
+  }
 }

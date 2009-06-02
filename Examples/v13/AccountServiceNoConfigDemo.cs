@@ -45,28 +45,15 @@ namespace com.google.api.adwords.samples.v13 {
     /// </param>
     public override void Run(AdWordsUser user) {
       // Declare the headers
-      Dictionary<string, SoapHeader> headers = new Dictionary<string, SoapHeader>();
+      Dictionary<string, string> headers = new Dictionary<string, string>();
 
-      email email = new email();
-      email.Value = new String[] {"ENTER_YOUR_EMAIL_HERE"};
-      headers["emailValue"] = email;
-
-      password password = new password();
-      password.Value = new String[] {"ENTER_YOUR_PASSWORD_HERE"};
-      headers["passwordValue"] = password;
-
-      useragent useragent = new useragent();
-      useragent.Value = new String[] {"AWAPI DotNetLib " + DataUtilities.GetVersion() +
-          " - ENTER_YOUR_COMPANY_NAME_HERE"};
-      headers["useragentValue"] = useragent;
-
-      developerToken developerToken = new developerToken();
-      developerToken.Value = new String[] {"ENTER_YOUR_DEVELOPER_TOKEN_HERE"};
-      headers["developerTokenValue"] = developerToken;
-
-      applicationToken applicationToken = new applicationToken();
-      applicationToken.Value = new String[] {"ENTER_YOUR_APPLICATION_TOKEN_HERE"};
-      headers["applicationTokenValue"] = applicationToken;
+      headers.Add("email", "ENTER_YOUR_EMAIL_HERE");
+      headers.Add("password", "ENTER_YOUR_PASSWORD_HERE");
+      headers.Add("useragent", "AWAPI DotNetLib " + DataUtilities.GetVersion() +
+          " - ENTER_YOUR_COMPANY_NAME_HERE");
+      headers.Add("developerToken", "ENTER_YOUR_DEVELOPER_TOKEN_HERE");
+      headers.Add("applicationToken", "ENTER_YOUR_APPLICATION_TOKEN_HERE");
+      headers.Add("clientEmail", "ENTER_YOUR_CLIENT_EMAIL_HERE");
 
       // Create a custom AdWordsUser.
       user = new AdWordsUser(headers);

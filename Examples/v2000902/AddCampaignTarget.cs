@@ -42,10 +42,9 @@ namespace com.google.api.adwords.samples.v200902 {
 
       CampaignId campaignId = new CampaignId();
       campaignId.idSpecified = true;
-      campaignId.id = InputUtils.AcceptLong("Enter the Campaign ID: ");
+      campaignId.id = long.Parse("INSERT_CAMPAIGN_ID_HERE");
 
       // Create a language target - for English language.
-
       LanguageTarget languageTarget = new LanguageTarget();
       languageTarget.languageCode = "en";
       LanguageTargetList languageTargetList = new LanguageTargetList();
@@ -53,7 +52,6 @@ namespace com.google.api.adwords.samples.v200902 {
       languageTargetList.campaignId = campaignId;
 
       // Create a country target - include US, exclude metrocode 743.
-
       CountryTarget countryTarget = new CountryTarget();
       countryTarget.countryCode = "US";
       countryTarget.excludedSpecified = true;
@@ -68,7 +66,6 @@ namespace com.google.api.adwords.samples.v200902 {
       geoTargetList.campaignId = campaignId;
 
       // Create a network target - Google Search.
-
       NetworkTarget networkTarget1 = new NetworkTarget();
       networkTarget1.networkCoverageTypeSpecified = true;
       networkTarget1.networkCoverageType = NetworkCoverageType.GOOGLE_SEARCH;
