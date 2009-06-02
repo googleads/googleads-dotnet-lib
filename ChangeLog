@@ -9,7 +9,7 @@
 - Added UnitsUtilities to provide helper functions for retrieving API usage in units. You can now
   retrieve unit usage for your account broken down by method name, or by individual accounts linked
   under your MCC.
-- Documentation for the project is now available at /doc in chm format. 
+- Documentation for the project is now available at /doc in chm format.
 
 3.0.2
 - Fixed issue 15 in issue tracker (TraceExtension corrupts response xml if logging is turned off).
