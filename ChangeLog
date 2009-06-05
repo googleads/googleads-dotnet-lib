@@ -1,3 +1,6 @@
+3.1.1
+- Regenerated stub classes for v200902.
+
 3.1.0
 - All the samples now have INSERT_XXX placeholders for various items like adGroupId, campaignId,
   etc. You have to substitute correct values before running these samples.

@@ -15,6 +15,7 @@
 using com.google.api.adwords.lib;
 using com.google.api.adwords.lib.util;
 using com.google.api.adwords.v13;
+using com.google.api.adwords.v200902;
 using com.google.api.adwords.v200902.AdGroupAdService;
 
 using NUnit.Framework;
