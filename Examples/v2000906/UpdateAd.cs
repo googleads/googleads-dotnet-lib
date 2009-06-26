@@ -15,9 +15,9 @@
 using System;
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200902.AdGroupAdService;
+using com.google.api.adwords.v200906.AdGroupAdService;
 
-namespace com.google.api.adwords.samples.v200902 {
+namespace com.google.api.adwords.samples.v200906 {
   /// <summary>
   /// This code sample updates an ad's status given an existing ad group and ad.
   /// </summary>
@@ -38,26 +38,21 @@ namespace com.google.api.adwords.samples.v200902 {
     /// </param>
     public override void Run(AdWordsUser user) {
       AdGroupAdService service =
-          (AdGroupAdService) user.GetService(ApiServices.v200902.AdGroupAdService);
-
-      long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
-      long adId = long.Parse("INSERT_AD_ID_HERE");
+          (AdGroupAdService) user.GetService(ApiServices.v200906.AdGroupAdService);
 
       // Update your Ad.
       AdGroupAd adGroupAd = new AdGroupAd();
 
       adGroupAd.statusSpecified = true;
       adGroupAd.status =
-          (AdGroupAdStatus) Enum.Parse(typeof(AdGroupAdStatus), "INSERT_ADGROUP_AD_STATUS_HERE");
+          (AdGroupAdStatus) Enum.Parse(typeof(AdGroupAdStatus), _T("INSERT_ADGROUP_STATUS_HERE"));
 
-      adGroupAd.adGroupId = new AdGroupId();
-      adGroupAd.adGroupId.idSpecified = true;
-      adGroupAd.adGroupId.id = adGroupId;
+      adGroupAd.adGroupId = long.Parse(_T("INSERT_ADGROUP_ID_HERE"));
+      adGroupAd.adGroupIdSpecified = true;
 
       adGroupAd.ad = new Ad();
-      adGroupAd.ad.id = new AdId();
-      adGroupAd.ad.id.idSpecified = true;
-      adGroupAd.ad.id.id = adId;
+      adGroupAd.ad.id = long.Parse(_T("INSERT_AD_ID_HERE"));
+      adGroupAd.ad.idSpecified = true;
 
       AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
       adGroupAdOperation.operatorSpecified = true;
@@ -68,7 +63,7 @@ namespace com.google.api.adwords.samples.v200902 {
         if (result.value != null && result.value.Length > 0) {
           AdGroupAd tempAdGroupAd = result.value[0];
           Console.WriteLine("Status of ad with id \"{0}\" was set to \"{1}\"",
-              tempAdGroupAd.ad.id.id, tempAdGroupAd.status);
+              tempAdGroupAd.ad.id, tempAdGroupAd.status);
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to update Ad. Exception says \"{0}\"", ex.Message);

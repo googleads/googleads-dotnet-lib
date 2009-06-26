@@ -15,9 +15,9 @@
 using System;
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200902.AdGroupCriterionService;
+using com.google.api.adwords.v200906.AdGroupCriterionService;
 
-namespace com.google.api.adwords.samples.v200902 {
+namespace com.google.api.adwords.samples.v200906 {
   /// <summary>
   /// This code sample creates a new keyword given an existing ad group.
   /// To create an ad group, you can run AddAdGroup.cs.
@@ -37,7 +37,7 @@ namespace com.google.api.adwords.samples.v200902 {
     /// </param>
     public override void Run(AdWordsUser user) {
       AdGroupCriterionService service =
-          (AdGroupCriterionService) user.GetService(ApiServices.v200902.AdGroupCriterionService);
+          (AdGroupCriterionService) user.GetService(ApiServices.v200906.AdGroupCriterionService);
 
       Keyword keyword = new Keyword();
       keyword.text = "mars cruise";
@@ -45,9 +45,8 @@ namespace com.google.api.adwords.samples.v200902 {
       keyword.matchType = KeywordMatchType.BROAD;
 
       BiddableAdGroupCriterion criterion = new BiddableAdGroupCriterion();
-      criterion.adGroupId = new AdGroupId();
-      criterion.adGroupId.idSpecified = true;
-      criterion.adGroupId.id =  long.Parse("INSERT_ADGROUP_ID_HERE");
+      criterion.adGroupId = long.Parse(_T("INSERT_ADGROUP_ID_HERE"));
+      criterion.adGroupIdSpecified = true;
       criterion.criterion = keyword;
 
       AdGroupCriterionOperation adGroupCriterionOperation = new AdGroupCriterionOperation();
@@ -61,7 +60,7 @@ namespace com.google.api.adwords.samples.v200902 {
         if (results != null && results.value != null && results.value.Length > 0) {
           Keyword result = results.value[0].criterion as Keyword;
           Console.WriteLine("New keyword with text = \"{0}\" and id = \"{1}\" was created.",
-              result.text, result.id.id);
+              result.text, result.id);
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to create keyword at Ad group level. Exception says \"{0}\"",

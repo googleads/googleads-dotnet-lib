@@ -15,9 +15,9 @@
 using System;
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200902.AdGroupService;
+using com.google.api.adwords.v200906.AdGroupService;
 
-namespace com.google.api.adwords.samples.v200902 {
+namespace com.google.api.adwords.samples.v200906 {
   /// <summary>
   /// This code sample creates a new ad group given an existing campaign.
   /// To create a campaign, you can run AddCampaign.cs.
@@ -37,17 +37,13 @@ namespace com.google.api.adwords.samples.v200902 {
     /// </param>
     public override void Run(AdWordsUser user) {
       AdGroupService service =
-          (AdGroupService) user.GetService(ApiServices.v200902.AdGroupService);
-
-      long nCampaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+          (AdGroupService) user.GetService(ApiServices.v200906.AdGroupService);
 
       AdGroup adGroup = new AdGroup();
 
       // Required: Set the campaign id.
-      CampaignId campaignId = new CampaignId();
-      campaignId.id = nCampaignId;
-      campaignId.idSpecified = true;
-      adGroup.campaignId = campaignId;
+      adGroup.campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
+      adGroup.campaignIdSpecified = true;
 
       // Optional: set the status of adgroup.
       adGroup.statusSpecified = true;
@@ -64,22 +60,16 @@ namespace com.google.api.adwords.samples.v200902 {
       bids.keywordContentMaxCpc = new Bid();
 
       Money kwdContentMaxCpc = new Money();
-      kwdContentMaxCpc.currencyCode = "USD";
       kwdContentMaxCpc.microAmountSpecified = true;
       kwdContentMaxCpc.microAmount = 100000;
       bids.keywordContentMaxCpc.amount = kwdContentMaxCpc;
-      bids.keywordContentMaxCpc.eventSpecified = true;
-      bids.keywordContentMaxCpc.@event = BidEvent.CLICK;
 
       // Set the keyword max cpc.
       bids.keywordMaxCpc = new Bid();
       Money kwdMaxCpc = new Money();
-      kwdMaxCpc.currencyCode = "USD";
       kwdMaxCpc.microAmountSpecified = true;
       kwdMaxCpc.microAmount = 150000;
       bids.keywordMaxCpc.amount = kwdMaxCpc;
-      bids.keywordMaxCpc.eventSpecified = true;
-      bids.keywordMaxCpc.@event = BidEvent.CLICK;
 
       // Set the manual bid to the adgroup.
       adGroup.bids = bids;
@@ -93,7 +83,7 @@ namespace com.google.api.adwords.samples.v200902 {
         AdGroupReturnValue results = service.mutate(new AdGroupOperation[] {adGroupOperation});
         if (results != null && results.value != null && results.value.Length > 0) {
           Console.WriteLine("New ad group with name = \"{0}\" and id = \"{1}\" was created.",
-              results.value[0].name, results.value[0].id.id);
+              results.value[0].name, results.value[0].id);
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to create ad group. Exception says \"{0}\"", ex.Message);

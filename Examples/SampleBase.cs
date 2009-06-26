@@ -33,5 +33,14 @@ namespace com.google.api.adwords.samples {
     /// </summary>
     /// <param name="user">AdWords user object running the sample.</param>
     public abstract void Run(AdWordsUser user);
+
+    protected string _T(string prompt) {
+#if INTERACTIVE
+      Console.Write(prompt + " : ");
+      return Console.ReadLine();
+#else
+      return prompt;
+#endif
+    }
   }
 }

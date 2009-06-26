@@ -18,7 +18,7 @@ using System.Collections.Specialized;
 
 using com.google.api.adwords.lib;
 using com.google.api.adwords.samples.v13;
-using com.google.api.adwords.samples.v200902;
+using com.google.api.adwords.samples.v200906;
 using com.google.api.adwords.samples.both;
 
 namespace com.google.api.adwords.samples {
@@ -65,17 +65,17 @@ namespace com.google.api.adwords.samples {
       sampleMap.Add("v13.ClientQuotaUsageDemo", new ClientQuotaUsageDemo());
 
 
-      // Add v200902 samples.
-      sampleMap.Add("v200902.AddCampaign", new AddCampaign());
-      sampleMap.Add("v200902.AddCampaignTarget", new AddCampaignTarget());
-      sampleMap.Add("v200902.AddNegativeCampaignPlacement", new AddNegativeCampaignPlacement());
-      sampleMap.Add("v200902.AddAdGroup", new AddAdGroup());
-      sampleMap.Add("v200902.AddImageAd", new AddImageAd());
-      sampleMap.Add("v200902.AddTextAd", new AddTextAd());
-      sampleMap.Add("v200902.GetAllAds", new GetAllAds());
-      sampleMap.Add("v200902.UpdateAd", new UpdateAd());
-      sampleMap.Add("v200902.AddAdGroupKeyword", new AddAdGroupKeyword());
-      sampleMap.Add("v200902.GetActiveCriteria", new GetActiveCriteria());
+      // Add v200906 samples.
+      sampleMap.Add("v200906.AddCampaign", new AddCampaign());
+      sampleMap.Add("v200906.AddCampaignTarget", new AddCampaignTarget());
+      sampleMap.Add("v200906.AddNegativeCampaignPlacement", new AddNegativeCampaignPlacement());
+      sampleMap.Add("v200906.AddAdGroup", new AddAdGroup());
+      sampleMap.Add("v200906.AddImageAd", new AddImageAd());
+      sampleMap.Add("v200906.AddTextAd", new AddTextAd());
+      sampleMap.Add("v200906.GetAllAds", new GetAllAds());
+      sampleMap.Add("v200906.UpdateAd", new UpdateAd());
+      sampleMap.Add("v200906.AddAdGroupKeyword", new AddAdGroupKeyword());
+      sampleMap.Add("v200906.GetActiveCriteria", new GetActiveCriteria());
 
       // Add combined examples.
       sampleMap.Add("both.UsingKeywordSuggestionDemo", new UsingKeywordSuggestionDemo());
@@ -95,16 +95,36 @@ namespace com.google.api.adwords.samples {
 
       if (string.Compare(args[0], "--all", true) == 0) {
         foreach (string key in sampleMap.Keys) {
-          SampleBase sample = (SampleBase)sampleMap[key];
+          SampleBase sample = (SampleBase) sampleMap[key];
           Console.WriteLine(sample.Description);
           sample.Run(user);
           Console.WriteLine("Press [Enter] to continue");
           Console.ReadLine();
         }
+      } else if (string.Compare(args[0], "--v13all", true) == 0) {
+        foreach (string key in sampleMap.Keys) {
+          if (key.StartsWith("v13")) {
+            SampleBase sample = (SampleBase) sampleMap[key];
+            Console.WriteLine(sample.Description);
+            sample.Run(user);
+            Console.WriteLine("Press [Enter] to continue");
+            Console.ReadLine();
+          }
+        }
+      } else if (string.Compare(args[0], "--v2009all", true) == 0) {
+        foreach (string key in sampleMap.Keys) {
+          if (key.StartsWith("v2009")) {
+            SampleBase sample = (SampleBase) sampleMap[key];
+            Console.WriteLine(sample.Description);
+            sample.Run(user);
+            Console.WriteLine("Press [Enter] to continue");
+            Console.ReadLine();
+          }
+        }
       } else {
         foreach (string cmdArgs in args) {
           if (sampleMap.Contains(cmdArgs)) {
-            SampleBase sample = (SampleBase)sampleMap[cmdArgs];
+            SampleBase sample = (SampleBase) sampleMap[cmdArgs];
             Console.WriteLine(sample.Description);
             sample.Run(user);
             Console.WriteLine("Press [Enter] to continue");

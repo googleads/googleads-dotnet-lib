@@ -16,9 +16,9 @@ using System;
 using System.Collections;
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200902.AdGroupAdService;
+using com.google.api.adwords.v200906.AdGroupAdService;
 
-namespace com.google.api.adwords.samples.v200902 {
+namespace com.google.api.adwords.samples.v200906 {
   /// <summary>
   /// This code sample creates new text ads given an existing ad group. To
   /// create an ad group, you can run AddAdGroup.cs.
@@ -40,9 +40,9 @@ namespace com.google.api.adwords.samples.v200902 {
     /// </param>
     public override void Run(AdWordsUser user) {
       AdGroupAdService service =
-          (AdGroupAdService) user.GetService(ApiServices.v200902.AdGroupAdService);
+          (AdGroupAdService) user.GetService(ApiServices.v200906.AdGroupAdService);
 
-      long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+      long adGroupId = long.Parse(_T("INSERT_ADGROUP_ID_HERE"));
 
       // Create your good text ad.
       TextAd goodTextAd = new TextAd();
@@ -53,9 +53,8 @@ namespace com.google.api.adwords.samples.v200902 {
       goodTextAd.url = "http://www.example.com";
 
       AdGroupAd goodAdGroupAd = new AdGroupAd();
-      goodAdGroupAd.adGroupId = new AdGroupId();
-      goodAdGroupAd.adGroupId.idSpecified = true;
-      goodAdGroupAd.adGroupId.id = adGroupId;
+      goodAdGroupAd.adGroupId = adGroupId;
+      goodAdGroupAd.adGroupIdSpecified = true;
       goodAdGroupAd.ad = goodTextAd;
 
       // Create your bad text ad.
@@ -67,9 +66,8 @@ namespace com.google.api.adwords.samples.v200902 {
       badTextAd.url = "http://www.example.com";
 
       AdGroupAd badAdGroupAd = new AdGroupAd();
-      badAdGroupAd.adGroupId = new AdGroupId();
-      badAdGroupAd.adGroupId.idSpecified = true;
-      badAdGroupAd.adGroupId.id = adGroupId;
+      badAdGroupAd.adGroupId = adGroupId;
+      badAdGroupAd.adGroupIdSpecified = true;
       badAdGroupAd.ad = badTextAd;
 
       // Create the ADD operation.
@@ -92,7 +90,7 @@ namespace com.google.api.adwords.samples.v200902 {
         if (result.value != null && result.value.Length > 0) {
           foreach (AdGroupAd tempAdGroupAd in result.value) {
             Console.WriteLine("New text ad with headline = \"{0}\" and id = \"{1}\" was created.",
-                ((TextAd)tempAdGroupAd.ad).headline, tempAdGroupAd.ad.id.id);
+                ((TextAd)tempAdGroupAd.ad).headline, tempAdGroupAd.ad.id);
           }
         }
       } catch (Exception ex) {

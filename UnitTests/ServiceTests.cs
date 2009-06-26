@@ -14,7 +14,7 @@
 
 using com.google.api.adwords.lib;
 using com.google.api.adwords.v13;
-using com.google.api.adwords.v200902.CampaignService;
+using com.google.api.adwords.v200906.CampaignService;
 
 using NUnit.Framework;
 
@@ -23,9 +23,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 
-using CampaignServiceV200902 = com.google.api.adwords.v200902.CampaignService.CampaignService;
-using CampaignV200902 = com.google.api.adwords.v200902.CampaignService.Campaign;
-using CampaignStatusV200902 = com.google.api.adwords.v200902.CampaignService.CampaignStatus;
+using CampaignServiceV200906 = com.google.api.adwords.v200906.CampaignService.CampaignService;
+using CampaignV200906 = com.google.api.adwords.v200906.CampaignService.Campaign;
+using CampaignStatusV200906 = com.google.api.adwords.v200906.CampaignService.CampaignStatus;
 
 namespace com.google.api.adwords.tests {
   /// <summary>
@@ -58,16 +58,16 @@ namespace com.google.api.adwords.tests {
     }
 
     /// <summary>
-    /// Test if v200902 API calls can be made successfully.
+    /// Test if v200906 API calls can be made successfully.
     /// </summary>
     [Test]
-    public void TestV200902ApiCalls() {
+    public void Testv200906ApiCalls() {
       AdWordsUser user = new AdWordsUser();
 
-      CampaignServiceV200902 service =
-          (CampaignServiceV200902) user.GetService(ApiServices.v200902.CampaignService);
+      CampaignServiceV200906 service =
+          (CampaignServiceV200906) user.GetService(ApiServices.v200906.CampaignService);
 
-      CampaignV200902 campaign = new CampaignV200902();
+      CampaignV200906 campaign = new CampaignV200906();
 
       // Generate a campaign name.
       string campaignName =
@@ -75,13 +75,12 @@ namespace com.google.api.adwords.tests {
       campaign.name = string.Format(campaignName);
 
       // Required: Set the campaign status.
-      campaign.status = CampaignStatusV200902.ACTIVE;
+      campaign.status = CampaignStatusV200906.ACTIVE;
       campaign.statusSpecified = true;
 
       // Required: Specify the currency and budget amount.
       Budget budget = new Budget();
       Money amount = new Money();
-      amount.currencyCode = "USD";
       amount.microAmountSpecified = true;
       amount.microAmount = 50000000;
 
@@ -116,11 +115,9 @@ namespace com.google.api.adwords.tests {
       Assert.Greater(results.value.Length, 0);
 
       Console.WriteLine("New campaign with name = \"{0}\" and id = " +
-          "\"{1}\" was created.", results.value[0].name, results.value[0].id.id);
+          "\"{1}\" was created.", results.value[0].name, results.value[0].id);
       Assert.AreEqual(results.value[0].name, campaign.name);
       Assert.AreEqual(results.value[0].status, campaign.status);
-      Assert.AreEqual(results.value[0].budget.amount.currencyCode,
-          campaign.budget.amount.currencyCode);
       Assert.AreEqual(results.value[0].budget.amount.microAmount,
           campaign.budget.amount.microAmount);
       Assert.AreEqual(results.value[0].budget.period, campaign.budget.period);

@@ -18,9 +18,9 @@ namespace com.google.api.adwords.lib {
   /// </summary>
   public class ApiServices {
     /// <summary>
-    /// All the services available in v200902.
+    /// All the services available in v200906.
     /// </summary>
-    public enum v200902 {
+    public enum v200906 {
       /// <summary>
       /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/AdGroupAdService.html">
       /// this page </a> for details.

@@ -57,16 +57,16 @@
     <Compile Include="v13\ReportServiceStructureDemo.cs" />
     <Compile Include="v13\RestoreSandboxDemo.cs" />
     <Compile Include="v13\SiteSuggestionServiceDemo.cs" />
-    <Compile Include="v2000902\AddImageAd.cs" />
-    <Compile Include="v2000902\AddTextAd.cs" />
-    <Compile Include="v2000902\GetAllAds.cs" />
-    <Compile Include="v2000902\UpdateAd.cs" />
-    <Compile Include="v2000902\AddAdGroupKeyword.cs" />
-    <Compile Include="v2000902\GetActiveCriteria.cs" />
-    <Compile Include="v2000902\AddAdGroup.cs" />
-    <Compile Include="v2000902\AddNegativeCampaignPlacement.cs" />
-    <Compile Include="v2000902\AddCampaign.cs" />
-    <Compile Include="v2000902\AddCampaignTarget.cs" />
+    <Compile Include="v2000906\AddImageAd.cs" />
+    <Compile Include="v2000906\AddTextAd.cs" />
+    <Compile Include="v2000906\GetAllAds.cs" />
+    <Compile Include="v2000906\UpdateAd.cs" />
+    <Compile Include="v2000906\AddAdGroupKeyword.cs" />
+    <Compile Include="v2000906\GetActiveCriteria.cs" />
+    <Compile Include="v2000906\AddAdGroup.cs" />
+    <Compile Include="v2000906\AddNegativeCampaignPlacement.cs" />
+    <Compile Include="v2000906\AddCampaign.cs" />
+    <Compile Include="v2000906\AddCampaignTarget.cs" />
     <Compile Include="SampleBase.cs" />
   </ItemGroup>
   <ItemGroup>

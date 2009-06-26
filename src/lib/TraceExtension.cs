@@ -178,13 +178,14 @@ namespace com.google.api.adwords.lib {
         // Gather the header information
         System.Uri uri = new Uri(message.Url);
         String host = uri.Host;
+        String port = uri.Port.ToString();
         String path = uri.LocalPath;
         String userAgent = hwcp.UserAgent;
         String contentLength = clientMessage.Stream.Length.ToString();
         String soapAction = clientMessage.MethodInfo.BeginMethodInfo.Name;
 
         soapHeaderString += "POST " + path + " HTTP/1.0\n";
-        soapHeaderString += "Host: " + host + "\n";
+        soapHeaderString += "Host: " + host + ":" + port + "\n";
         soapHeaderString += "User-agent: " + userAgent + "\n";
         soapHeaderString += "Content-type: " + outputContentType + "\n";
         soapHeaderString += "Content-length: " + contentLength + "\n";
@@ -291,26 +292,8 @@ namespace com.google.api.adwords.lib {
       XmlDocument xml = new XmlDocument();
       xml.Load(xmlReader);
 
-      // Clear the password from v13 logs, authToken from v2009 logs.
-      XmlNamespaceManager xmlns = new XmlNamespaceManager(xml.NameTable);
-      xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
-      XmlNodeList headerNodes =
-          xml.SelectNodes("soap:Envelope/soap:Header/*", xmlns);
-      foreach (XmlElement headerNode in headerNodes) {
-        switch(headerNode.Name) {
-          case "password":
-            headerNode.InnerText = "********";
-            break;
-          case "RequestHeader":
-            XmlNodeList childNodes = headerNode.SelectNodes("*");
-            foreach (XmlElement childNode in childNodes) {
-              if (childNode.Name == "authToken") {
-                childNode.InnerText = "********";
-                break;
-              }
-            }
-            break;
-        }
+      if (ApplicationConfiguration.maskCredentials) {
+        MaskCredentialsInLogs(xml);
       }
       xml.WriteTo(xmlWriter);
       xmlWriter.Flush();
@@ -318,6 +301,52 @@ namespace com.google.api.adwords.lib {
 
       cleanedUpStream.Position = 0;
       oldStream.Position = oldPosition;
+    }
+
+    /// <summary>
+    /// Mask password, authToken, applicationToken and developerToken from the
+    /// soap message before logging it.
+    /// </summary>
+    /// <param name="soapMessageXml">The SOAP message, loaded as an XmlDocument.</param>
+    private static void MaskCredentialsInLogs(XmlDocument soapMessageXml) {
+      XmlNamespaceManager xmlns = new XmlNamespaceManager(soapMessageXml.NameTable);
+      xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
+      XmlNodeList headerNodes =
+          soapMessageXml.SelectNodes("soap:Envelope/soap:Header/*", xmlns);
+      foreach (XmlElement headerNode in headerNodes) {
+        switch (headerNode.Name) {
+          case "password":
+            headerNode.InnerText = "********";
+            break;
+
+          case "developerToken":
+          case "applicationToken":
+            if (headerNode.InnerText.Length > 4) {
+              headerNode.InnerText =
+                  "********" + headerNode.InnerText.Substring(headerNode.InnerText.Length - 4);
+            }
+            break;
+
+          case "RequestHeader":
+            XmlNodeList childNodes = headerNode.SelectNodes("*");
+            foreach (XmlElement childNode in childNodes) {
+              switch (childNode.Name) {
+                case "authToken":
+                  childNode.InnerText = "********";
+                  break;
+
+                case "developerToken":
+                case "applicationToken":
+                  if (childNode.InnerText.Length > 4) {
+                    childNode.InnerText =
+                        "********" + childNode.InnerText.Substring(childNode.InnerText.Length - 4);
+                  }
+                  break;
+              }
+            }
+            break;
+        }
+      }
     }
 
     /// <summary>

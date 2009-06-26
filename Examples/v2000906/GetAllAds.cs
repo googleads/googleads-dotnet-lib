@@ -15,9 +15,9 @@
 using System;
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200902.AdGroupAdService;
+using com.google.api.adwords.v200906.AdGroupAdService;
 
-namespace com.google.api.adwords.samples.v200902 {
+namespace com.google.api.adwords.samples.v200906 {
   /// <summary>
   /// This code sample retrieves all ads given an existing ad group. To add
   /// ads to an existing ad group, you can run AddTextAd.cs.
@@ -39,29 +39,18 @@ namespace com.google.api.adwords.samples.v200902 {
     /// </param>
     public override void Run(AdWordsUser user) {
       AdGroupAdService service =
-          (AdGroupAdService) user.GetService(ApiServices.v200902.AdGroupAdService);
-
-      long nAdGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
-
-      // Create your filter.
-      AdGroupAdIdFilter filter = new AdGroupAdIdFilter();
-
-      AdGroupId adGroupId = new AdGroupId();
-      adGroupId.idSpecified = true;
-      adGroupId.id = nAdGroupId;
-
-      filter.adGroupId = adGroupId;
+          (AdGroupAdService) user.GetService(ApiServices.v200906.AdGroupAdService);
 
       // Create a selector and set the filters.
       AdGroupAdSelector selector = new AdGroupAdSelector();
-      selector.adGroupAdIdFilters = new AdGroupAdIdFilter[] {filter};
+      selector.adGroupIds = new long[] {long.Parse(_T("INSERT_ADGROUP_ID_HERE"))};
 
       try {
         AdGroupAdPage page = service.get(selector);
 
         if (page != null && page.entries != null) {
           foreach (AdGroupAd tempAdGroupAd in page.entries) {
-            Console.WriteLine("Ad status is {0} and id is {1}", tempAdGroupAd.ad.id.id,
+            Console.WriteLine("Ad status is {0} and id is {1}", tempAdGroupAd.ad.id,
                 tempAdGroupAd.status);
           }
         }

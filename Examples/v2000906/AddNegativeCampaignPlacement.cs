@@ -15,9 +15,9 @@
 using System;
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200902.CampaignCriterionService;
+using com.google.api.adwords.v200906.CampaignCriterionService;
 
-namespace com.google.api.adwords.samples.v200902 {
+namespace com.google.api.adwords.samples.v200906 {
   /// <summary>
   /// This code sample creates a new negative campaign placement given an
   /// existing campaign. To create a campaign, you can run AddCampaign.cs.
@@ -37,13 +37,12 @@ namespace com.google.api.adwords.samples.v200902 {
     /// </param>
     public override void Run(AdWordsUser user) {
       CampaignCriterionService service =
-          (CampaignCriterionService) user.GetService(ApiServices.v200902.CampaignCriterionService);
+          (CampaignCriterionService) user.GetService(ApiServices.v200906.CampaignCriterionService);
 
       NegativeCampaignCriterion criterion = new NegativeCampaignCriterion();
 
-      criterion.campaignId = new CampaignId();
-      criterion.campaignId.idSpecified = true;
-      criterion.campaignId.id = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+      criterion.campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
+      criterion.campaignIdSpecified = true;
 
       Placement placement = new Placement();
       placement.url = "http://www.example.com";
@@ -60,7 +59,7 @@ namespace com.google.api.adwords.samples.v200902 {
         if (results != null && results.value != null && results.value.Length > 0) {
           Placement result = results.value[0].criterion as Placement;
           Console.WriteLine("New negative campaign criterion with url = " +
-              "\"{0}\" and id = {1} was created.", result.url, result.id.id);
+              "\"{0}\" and id = {1} was created.", result.url, result.id);
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to create negative campaign criterion. Exception says \"{0}\"",

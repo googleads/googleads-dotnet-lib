@@ -15,9 +15,9 @@
 using System;
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200902.CampaignService;
+using com.google.api.adwords.v200906.CampaignService;
 
-namespace com.google.api.adwords.samples.v200902 {
+namespace com.google.api.adwords.samples.v200906 {
   /// <summary>
   /// This code sample creates a new campaign.
   /// </summary>
@@ -36,7 +36,7 @@ namespace com.google.api.adwords.samples.v200902 {
     /// </param>
     public override void Run(AdWordsUser user) {
       CampaignService service =
-          (CampaignService) user.GetService(ApiServices.v200902.CampaignService);
+          (CampaignService) user.GetService(ApiServices.v200906.CampaignService);
 
       Campaign campaign = new Campaign();
 
@@ -52,7 +52,6 @@ namespace com.google.api.adwords.samples.v200902 {
       // Required: Specify the currency and budget amount.
       Budget budget = new Budget();
       Money amount = new Money();
-      amount.currencyCode = "USD";
       amount.microAmountSpecified = true;
       amount.microAmount = 50000000;
 
@@ -68,6 +67,9 @@ namespace com.google.api.adwords.samples.v200902 {
       budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
       campaign.budget = budget;
 
+      // Optional: Specify an endDate for the campaign.
+      campaign.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd");
+
       // Define an Add operation to add the campaign.
       CampaignOperation campaignOperation = new CampaignOperation();
 
@@ -80,7 +82,7 @@ namespace com.google.api.adwords.samples.v200902 {
           service.mutate(new CampaignOperation[] {campaignOperation});
         if (results != null && results.value != null && results.value.Length > 0) {
           Console.WriteLine("New campaign with name = \"{0}\" and id = " +
-              "\"{1}\" was created.", results.value[0].name, results.value[0].id.id);
+              "\"{1}\" was created.", results.value[0].name, results.value[0].id);
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to create campaign. Exception says \"{0}\"", ex.Message);

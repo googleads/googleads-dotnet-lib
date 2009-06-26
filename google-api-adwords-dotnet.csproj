@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="src\v200906\generate.bat" />
     <EmbeddedResource Include="data\categories.csv">
     </EmbeddedResource>
     <EmbeddedResource Include="data\countries.csv">
@@ -87,13 +88,13 @@
     <Compile Include="src\v13\ReportService.cs" />
     <Compile Include="src\v13\SiteSuggestionService.cs" />
     <Compile Include="src\v13\TrafficEstimatorService.cs" />
-    <Compile Include="src\v200902\AdGroupAdService.cs" />
-    <Compile Include="src\v200902\AdGroupCriterionService.cs" />
-    <Compile Include="src\v200902\AdGroupService.cs" />
-    <Compile Include="src\v200902\CampaignCriterionService.cs" />
-    <Compile Include="src\v200902\CampaignService.cs" />
-    <Compile Include="src\v200902\CampaignTargetService.cs" />
-    <Compile Include="src\v200902\SoapHeaders.cs" />
+    <Compile Include="src\v200906\AdGroupAdService.cs" />
+    <Compile Include="src\v200906\AdGroupCriterionService.cs" />
+    <Compile Include="src\v200906\AdGroupService.cs" />
+    <Compile Include="src\v200906\CampaignCriterionService.cs" />
+    <Compile Include="src\v200906\CampaignService.cs" />
+    <Compile Include="src\v200906\CampaignTargetService.cs" />
+    <Compile Include="src\v200906\SoapHeaders.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

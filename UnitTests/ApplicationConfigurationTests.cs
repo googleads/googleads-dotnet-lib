@@ -56,8 +56,8 @@ namespace com.google.api.adwords.tests {
         StringBuilder builder = new StringBuilder();
         if (field.Name == "urlV13") {
           builder.Append("v13.Url");
-        } else if (field.Name == "urlV200902") {
-          builder.Append("v200902.Url");
+        } else if (field.Name == "urlV200906") {
+          builder.Append("v200906.Url");
         } else {
           builder.Append(field.Name);
           builder[0] = Char.ToUpper(builder[0]);

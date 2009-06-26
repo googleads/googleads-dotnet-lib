@@ -17,9 +17,9 @@ using System.IO;
 using System.Net;
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200902.AdGroupAdService;
+using com.google.api.adwords.v200906.AdGroupAdService;
 
-namespace com.google.api.adwords.samples.v200902 {
+namespace com.google.api.adwords.samples.v200906 {
   /// <summary>
   /// This code sample creates a new image ad given an existing ad group.
   /// To create an ad group, you can run AddAdGroup.cs.
@@ -41,8 +41,7 @@ namespace com.google.api.adwords.samples.v200902 {
     /// </param>
     public override void Run(AdWordsUser user) {
       AdGroupAdService service =
-          (AdGroupAdService) user.GetService(ApiServices.v200902.AdGroupAdService);
-      long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+          (AdGroupAdService) user.GetService(ApiServices.v200906.AdGroupAdService);
 
       // Create your image ad.
       ImageAd imageAd = new ImageAd();
@@ -73,9 +72,8 @@ namespace com.google.api.adwords.samples.v200902 {
 
       // Set the AdGroup Id.
       AdGroupAd adGroupAd = new AdGroupAd();
-      adGroupAd.adGroupId = new AdGroupId();
-      adGroupAd.adGroupId.idSpecified = true;
-      adGroupAd.adGroupId.id = adGroupId;
+      adGroupAd.adGroupId = long.Parse(_T("INSERT_ADGROUP_ID_HERE"));
+      adGroupAd.adGroupIdSpecified = true;
       adGroupAd.ad = imageAd;
 
       // Create the ADD Operation.
@@ -90,7 +88,7 @@ namespace com.google.api.adwords.samples.v200902 {
         if (result.value != null && result.value.Length > 0) {
           foreach (AdGroupAd tempAdGroupAd in result.value) {
             Console.WriteLine("New image ad with displayUrl = \"{0}\" and id = {1} was created.",
-                ((ImageAd) tempAdGroupAd.ad).displayUrl, tempAdGroupAd.ad.id.id);
+                ((ImageAd) tempAdGroupAd.ad).displayUrl, tempAdGroupAd.ad.id);
           }
         }
       } catch (Exception ex) {

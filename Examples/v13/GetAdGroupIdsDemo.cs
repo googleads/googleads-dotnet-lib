@@ -43,7 +43,7 @@ namespace com.google.api.adwords.samples.v13 {
           (AdGroupService) user.GetService(ApiServices.v13.AdGroupService);
 
       // Get all adGroups.
-      int campaignId = int.Parse("INSERT_CAMPAIGN_ID_HERE");
+      int campaignId = int.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
       AdGroup[] adGroups = adGroupService.getAllAdGroups(campaignId);
 
       if (adGroups != null) {

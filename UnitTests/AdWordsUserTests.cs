@@ -15,8 +15,8 @@
 using com.google.api.adwords.lib;
 using com.google.api.adwords.lib.util;
 using com.google.api.adwords.v13;
-using com.google.api.adwords.v200902;
-using com.google.api.adwords.v200902.AdGroupAdService;
+using com.google.api.adwords.v200906;
+using com.google.api.adwords.v200906.AdGroupAdService;
 
 using NUnit.Framework;
 
@@ -50,13 +50,13 @@ namespace com.google.api.adwords.tests {
     }
 
     /// <summary>
-    /// Test if <see cref="AdWordsUser"/> class creates a V200902 service correctly.
+    /// Test if <see cref="AdWordsUser"/> class creates a v200906 service correctly.
     /// </summary>
     [Test]
-    public void TestV200902ServiceCreation() {
+    public void TestV200906ServiceCreation() {
       AdGroupAdService service =
-          (AdGroupAdService) user.GetService(ApiServices.v200902.AdGroupAdService);
-      Assert.NotNull(service, "AdWordsUser could not create v200902.AdGroupAdService.");
+          (AdGroupAdService) user.GetService(ApiServices.v200906.AdGroupAdService);
+      Assert.NotNull(service, "AdWordsUser could not create v200906.AdGroupAdService.");
 
       // Check if RequestHeaders have the correct values.
       Assert.NotNull(service.RequestHeader, "RequestHeader must not be null.");
@@ -72,10 +72,10 @@ namespace com.google.api.adwords.tests {
       }
 
       // Check if the service url is correct.
-      Assert.That(string.Compare(ApplicationConfiguration.urlV200902 +
-        "/api/adwords/cm/v200902/AdGroupAdService", service.Url, true) == 0,
-        "Service url should be " + ApplicationConfiguration.urlV200902 +
-        "/api/adwords/cm/v200902/AdGroupAdService");
+      Assert.That(string.Compare(ApplicationConfiguration.urlV200906 +
+        "/api/adwords/cm/v200906/AdGroupAdService", service.Url, true) == 0,
+        "Service url should be " + ApplicationConfiguration.urlV200906 +
+        "/api/adwords/cm/v200906/AdGroupAdService");
 
       // Check if the service proxy is correct.
       if (ApplicationConfiguration.proxy != null) {
@@ -85,7 +85,7 @@ namespace com.google.api.adwords.tests {
     }
 
     /// <summary>
-    /// Test if <see cref="AdWordsUser"/> class creates a V200902 service correctly.
+    /// Test if <see cref="AdWordsUser"/> class creates a v13 service correctly.
     /// </summary>
     [Test]
     public void TestV13ServiceCreation() {

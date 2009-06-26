@@ -17,14 +17,14 @@ using System.Collections.Generic;
 
 using com.google.api.adwords.lib;
 using com.google.api.adwords.v13;
-using com.google.api.adwords.v200902.AdGroupCriterionService;
+using com.google.api.adwords.v200906.AdGroupCriterionService;
 
-using KeywordV200902 =
-    com.google.api.adwords.v200902.AdGroupCriterionService.Keyword;
+using KeywordV200906 =
+    com.google.api.adwords.v200906.AdGroupCriterionService.Keyword;
 
 namespace com.google.api.adwords.samples.both {
   /// <summary>
-  /// Shows how to use both v13 and v200902 APIs in a single sample.
+  /// Shows how to use both v13 and v200906 APIs in a single sample.
   /// </summary>
   class UsingKeywordSuggestionDemo : SampleBase{
     /// <summary>
@@ -32,7 +32,7 @@ namespace com.google.api.adwords.samples.both {
     /// </summary>
     public override string Description {
       get {
-        return "Shows how to use both v13 and v200902 APIs in a single sample.";
+        return "Shows how to use both v13 and v200906 APIs in a single sample.";
       }
     }
 
@@ -51,24 +51,23 @@ namespace com.google.api.adwords.samples.both {
       KeywordVariations variations = keywordToolService.getKeywordVariations(
           new SeedKeyword[] {seed}, true, new string[] {"en"}, new string[] {"US"});
 
-      // Add top 3 variations as keywords using v200902.
+      // Add top 3 variations as keywords using v200906.
       AdGroupCriterionService service =
-          (AdGroupCriterionService) user.GetService(ApiServices.v200902.AdGroupCriterionService);
+          (AdGroupCriterionService) user.GetService(ApiServices.v200906.AdGroupCriterionService);
 
       int count = (variations.moreSpecific.Length > 3) ? 3 : variations.moreSpecific.Length;
       List<AdGroupCriterionOperation> operations =  new List<AdGroupCriterionOperation>();
-      long adGroupId = long.Parse("INSERT_AD_GROUP_ID_HERE");
+      long adGroupId = long.Parse(_T("INSERT_ADGROUP_ID_HERE"));
 
       for (int i = 0; i < count; i++) {
-        KeywordV200902 keyword = new KeywordV200902();
+        KeywordV200906 keyword = new KeywordV200906();
         keyword.text = variations.moreSpecific[i].text;
         keyword.matchTypeSpecified = true;
         keyword.matchType = KeywordMatchType.BROAD;
 
         BiddableAdGroupCriterion criterion = new BiddableAdGroupCriterion();
-        criterion.adGroupId = new AdGroupId();
-        criterion.adGroupId.idSpecified = true;
-        criterion.adGroupId.id = adGroupId;
+        criterion.adGroupId = adGroupId;
+        criterion.adGroupIdSpecified = true;
         criterion.criterion = keyword;
 
         AdGroupCriterionOperation adGroupCriterionOperation = new AdGroupCriterionOperation();
@@ -84,9 +83,9 @@ namespace com.google.api.adwords.samples.both {
 
         if (results != null && results.value != null && results.value.Length > 0) {
           foreach (AdGroupCriterion criterion in results.value) {
-            KeywordV200902 result = criterion.criterion as KeywordV200902;
+            KeywordV200906 result = criterion.criterion as KeywordV200906;
             Console.WriteLine("New keyword with text = \"{0}\" and id = \"{1}\" was created.",
-                result.text, result.id.id);
+                result.text, result.id);
           }
         }
       } catch (Exception ex) {

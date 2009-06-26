@@ -16,9 +16,9 @@ using System;
 using System.Collections;
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200902.CampaignTargetService;
+using com.google.api.adwords.v200906.CampaignTargetService;
 
-namespace com.google.api.adwords.samples.v200902 {
+namespace com.google.api.adwords.samples.v200906 {
   /// <summary>
   /// This code sample adds geo, language, and network targeting to an
   /// existing campaign. To create a campaign, you can run AddCampaign.cs.
@@ -38,11 +38,9 @@ namespace com.google.api.adwords.samples.v200902 {
     /// </param>
     public override void Run(AdWordsUser user) {
       CampaignTargetService service =
-          (CampaignTargetService) user.GetService(ApiServices.v200902.CampaignTargetService);
+          (CampaignTargetService) user.GetService(ApiServices.v200906.CampaignTargetService);
 
-      CampaignId campaignId = new CampaignId();
-      campaignId.idSpecified = true;
-      campaignId.id = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+      long campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
 
       // Create a language target - for English language.
       LanguageTarget languageTarget = new LanguageTarget();
@@ -50,6 +48,7 @@ namespace com.google.api.adwords.samples.v200902 {
       LanguageTargetList languageTargetList = new LanguageTargetList();
       languageTargetList.targets = new LanguageTarget[] {languageTarget};
       languageTargetList.campaignId = campaignId;
+      languageTargetList.campaignIdSpecified = true;
 
       // Create a country target - include US, exclude metrocode 743.
       CountryTarget countryTarget = new CountryTarget();
@@ -64,6 +63,7 @@ namespace com.google.api.adwords.samples.v200902 {
       GeoTargetList geoTargetList = new GeoTargetList();
       geoTargetList.targets = new GeoTarget[] {countryTarget, metroTarget};
       geoTargetList.campaignId = campaignId;
+      geoTargetList.campaignIdSpecified = true;
 
       // Create a network target - Google Search.
       NetworkTarget networkTarget1 = new NetworkTarget();
@@ -76,6 +76,7 @@ namespace com.google.api.adwords.samples.v200902 {
       NetworkTargetList networkTargetList = new NetworkTargetList();
       networkTargetList.targets = new NetworkTarget[] {networkTarget1, networkTarget2};
       networkTargetList.campaignId = campaignId;
+      networkTargetList.campaignIdSpecified = true;
 
       TargetList[] targets =
           new TargetList[] {languageTargetList, geoTargetList, networkTargetList};
@@ -94,7 +95,7 @@ namespace com.google.api.adwords.samples.v200902 {
         service.mutate((CampaignTargetOperation[])
           campaignTargetOperations.ToArray(typeof(CampaignTargetOperation)));
           Console.WriteLine("Geo, language, and network targeting were " +
-              "successfully added to campaign id = \"{0}\".", campaignId.id);
+              "successfully added to campaign id = \"{0}\".", campaignId);
       } catch (Exception ex) {
         Console.WriteLine("Failed to create campaign targeting. " +
             "Exception says \"{0}\"", ex.Message);

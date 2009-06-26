@@ -15,9 +15,9 @@
 using System;
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200902.AdGroupCriterionService;
+using com.google.api.adwords.v200906.AdGroupCriterionService;
 
-namespace com.google.api.adwords.samples.v200902 {
+namespace com.google.api.adwords.samples.v200906 {
   /// <summary>
   /// This code sample retrieves all active, non-negative criteria across an
   /// entire account. To add keywords to an existing ad group, you can run
@@ -38,7 +38,7 @@ namespace com.google.api.adwords.samples.v200902 {
     /// </param>
     public override void Run(AdWordsUser user) {
       AdGroupCriterionService service =
-          (AdGroupCriterionService) user.GetService(ApiServices.v200902.AdGroupCriterionService);
+          (AdGroupCriterionService) user.GetService(ApiServices.v200906.AdGroupCriterionService);
 
       AdGroupCriterionSelector selector = new AdGroupCriterionSelector();
       selector.criterionUseSpecified = true;
@@ -50,8 +50,8 @@ namespace com.google.api.adwords.samples.v200902 {
         if (results != null && results.entries != null && results.entries.Length > 0) {
           foreach (AdGroupCriterion criterion in results.entries) {
             Console.WriteLine("Ad group id is \"{0}\", criterion id is " +
-                "\"{1}\" and type is \"{2}\"", criterion.adGroupId.id,
-                criterion.criterion.id.id, criterion.criterion.CriterionType);
+                "\"{1}\" and type is \"{2}\"", criterion.adGroupId,
+                criterion.criterion.id, criterion.criterion.CriterionType);
           }
           Console.WriteLine("Account has {0} non-negative criteria.\n", results.entries.Length);
         }

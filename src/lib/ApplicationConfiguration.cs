@@ -75,22 +75,22 @@ namespace com.google.api.adwords.lib {
                 proxyPassword, proxyDomain);
           }
           ApplicationConfiguration.proxy = proxy;
-          companyName = ReadSetting(settings, COMPANY_NAME, "");
         }
-
+        companyName = ReadSetting(settings, COMPANY_NAME, "");
         email = ReadSetting(settings, EMAIL, "");
         password = ReadSetting(settings, PASSWORD, "");
         clientEmail = ReadSetting(settings, CLIENT_EMAIL, "");
         clientCustomerId = ReadSetting(settings, CLIENT_CUSTOMER_ID, "");
         developerToken = ReadSetting(settings, DEVELOPER_TOKEN, "");
         applicationToken = ReadSetting(settings, APPLICATION_TOKEN, "");
+        maskCredentials = bool.Parse(ReadSetting(settings, MASK_CREDENTIALS, "true"));
 
         // v13 keys.
         urlV13 = ReadSetting(settings, URL_V13, "https://adwords.google.com");
 
-        // v200902 keys.
-        urlV200902 = ReadSetting(settings, URL_V200902,
-            "https://adwords-sandbox.google.com");
+        // v200906 keys.
+        urlV200906 = ReadSetting(settings, URL_V200906,
+            "https://adwords.google.com");
       }
       return null;
     }
@@ -153,12 +153,12 @@ namespace com.google.api.adwords.lib {
     public static String applicationToken;
 
     /// <summary>
-    /// Should the SOAP logs be written to console?
+    /// True, if the SOAP logs should be written to console.
     /// </summary>
     public static bool logToConsole;
 
     /// <summary>
-    /// Should the SOAP logs be written to file?
+    /// True, if the SOAP logs should be written to file.
     /// </summary>
     public static bool logToFile;
 
@@ -171,6 +171,11 @@ namespace com.google.api.adwords.lib {
     /// Developer's company name, to be used in useragent string.
     /// </summary>
     public static String companyName;
+
+    /// <summary>
+    /// True, if the credentials in the log file should be masked.
+    /// </summary>
+    public static bool maskCredentials;
 
     /// <summary>
     /// Key name for email.
@@ -243,6 +248,11 @@ namespace com.google.api.adwords.lib {
     internal const String COMPANY_NAME = "CompanyName";
 
     /// <summary>
+    /// Key name for maskCredentials.
+    /// </summary>
+    internal const String MASK_CREDENTIALS = "MaskCredentials";
+
+    /// <summary>
     /// Url for v13 API.
     /// </summary>
     public static String urlV13;
@@ -253,13 +263,13 @@ namespace com.google.api.adwords.lib {
     internal const String URL_V13 = "v13.Url";
 
     /// <summary>
-    /// Url for v200902 API.
+    /// Url for v200906 API.
     /// </summary>
-    public static String urlV200902;
+    public static String urlV200906;
 
     /// <summary>
-    /// Key name for v200902 Url.
+    /// Key name for v200906 Url.
     /// </summary>
-    internal const String URL_V200902 = "v200902.Url";
+    internal const String URL_V200906 = "v200906.Url";
   }
 }
