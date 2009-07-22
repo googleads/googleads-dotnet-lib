@@ -1,3 +1,6 @@
+4.1.0
+- Updated v200906 stub classes to match the latest wsdls.
+
 4.0.0
 - Removed support for v200902.
 - Added support for v200906.
