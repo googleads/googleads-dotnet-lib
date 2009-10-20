@@ -12,6 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
+using com.google.api.adwords.lib.util;
+
 using System;
 using System.Collections;
 using System.IO;
@@ -19,7 +23,6 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Web;
-using com.google.api.adwords.lib.util;
 
 namespace com.google.api.adwords.lib {
   /// <summary>
@@ -55,7 +58,7 @@ namespace com.google.api.adwords.lib {
     /// The source identifier string to be used with ClientLogin API.
     /// </summary>
     string SOURCE = ApplicationConfiguration.companyName + "-AWAPI DotNetLib-" +
-        DataUtilities.GetVersion();
+        ApplicationConfiguration.version;
 
     /// <summary>
     /// Public constructor.

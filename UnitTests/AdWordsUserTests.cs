@@ -12,11 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
 using com.google.api.adwords.lib;
 using com.google.api.adwords.lib.util;
 using com.google.api.adwords.v13;
 using com.google.api.adwords.v200906;
-using com.google.api.adwords.v200906.AdGroupAdService;
 
 using NUnit.Framework;
 
@@ -55,7 +56,7 @@ namespace com.google.api.adwords.tests {
     [Test]
     public void TestV200906ServiceCreation() {
       AdGroupAdService service =
-          (AdGroupAdService) user.GetService(ApiServices.v200906.AdGroupAdService);
+          (AdGroupAdService) user.GetService(AdWordsService.v200906.AdGroupAdService);
       Assert.NotNull(service, "AdWordsUser could not create v200906.AdGroupAdService.");
 
       // Check if RequestHeaders have the correct values.
@@ -72,9 +73,9 @@ namespace com.google.api.adwords.tests {
       }
 
       // Check if the service url is correct.
-      Assert.That(string.Compare(ApplicationConfiguration.urlV200906 +
+      Assert.That(string.Compare(ApplicationConfiguration.adWordsApiUrl +
         "/api/adwords/cm/v200906/AdGroupAdService", service.Url, true) == 0,
-        "Service url should be " + ApplicationConfiguration.urlV200906 +
+        "Service url should be " + ApplicationConfiguration.adWordsApiUrl +
         "/api/adwords/cm/v200906/AdGroupAdService");
 
       // Check if the service proxy is correct.
@@ -89,7 +90,7 @@ namespace com.google.api.adwords.tests {
     /// </summary>
     [Test]
     public void TestV13ServiceCreation() {
-      AdService service = (AdService) user.GetService(ApiServices.v13.AdService);
+      AdService service = (AdService) user.GetService(AdWordsService.v13.AdService);
       Assert.NotNull(service, "AdWordsUser could not create v13.AdService.");
 
       TestV13Header(ApplicationConfiguration.email, service.emailValue, "Email");
@@ -107,8 +108,9 @@ namespace com.google.api.adwords.tests {
           "Useragent");
 
       // Check if the service url is correct.
-      Assert.That(string.Compare(ApplicationConfiguration.urlV13 + "/api/adwords/v13/AdService",
-          service.Url, true) == 0, "Service url should be " + ApplicationConfiguration.urlV13 +
+      Assert.That(string.Compare(ApplicationConfiguration.legacyAdWordsApiUrl +
+          "/api/adwords/v13/AdService", service.Url, true) == 0,
+          "Service url should be " + ApplicationConfiguration.legacyAdWordsApiUrl +
           "/api/adwords/v13/AdService");
 
       // Check if the service proxy is correct.

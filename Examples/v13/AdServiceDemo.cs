@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
 using com.google.api.adwords.lib;
 using com.google.api.adwords.v13;
 
@@ -43,10 +45,10 @@ namespace com.google.api.adwords.samples.v13 {
 
       // Get the services.
       CampaignService campaignService =
-          (CampaignService) user.GetService(ApiServices.v13.CampaignService);
+          (CampaignService) user.GetService(AdWordsService.v13.CampaignService);
       AdGroupService adGroupService =
-          (AdGroupService) user.GetService(ApiServices.v13.AdGroupService);
-      AdService adService = (AdService) user.GetService(ApiServices.v13.AdService);
+          (AdGroupService) user.GetService(AdWordsService.v13.AdGroupService);
+      AdService adService = (AdService) user.GetService(AdWordsService.v13.AdService);
 
       // Create a new campaign and an ad group.  First create a
       // campaign, so we can get its id.

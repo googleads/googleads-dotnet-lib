@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
 using com.google.api.adwords.v13;
 
 using System;
@@ -45,7 +47,7 @@ namespace com.google.api.adwords.lib.util {
         DateTime endDate) {
       List<MethodQuotaUsage> methodQuotaUsage = new List<MethodQuotaUsage>();
       SortedList<string, string[]> serviceToMethodsMap = GetAllV13Methods();
-      InfoService service = (InfoService) user.GetService(ApiServices.v13.InfoService);
+      InfoService service = (InfoService) user.GetService(AdWordsService.v13.InfoService);
 
       foreach (string serviceName in serviceToMethodsMap.Keys) {
         string[] methods = (string[]) serviceToMethodsMap[serviceName];
@@ -61,17 +63,34 @@ namespace com.google.api.adwords.lib.util {
       return methodQuotaUsage;
     }
 
+    /// <summary>
+    /// Gets the quota usage for client accounts.
+    /// </summary>
+    /// <param name="user">The AdWordsUser object for which the quota usage
+    /// should be retrieved.</param>
+    /// <param name="startDate">Start date for the date range for which
+    /// results are to be retrieved.</param>
+    /// <param name="endDate">End date for the date range for which results are
+    /// to be retrieved.</param>
+    /// <param name="clientUsage">A map, with key as client name, and API
+    /// usage as value.</param>
+    /// <param name="totalUnits">The total units that could be accounted for.
+    /// </param>
+    /// <param name="diffUnits">The amount of units that could not be accounted
+    /// for. This difference can be attributed to accounts for which API calls
+    /// were made using this developer token, but the accounts themselves are
+    /// not linked under the main MCC.</param>
     public static void GetClientQuotaUsage(AdWordsUser user, DateTime startDate, DateTime endDate,
         out SortedList<string, long> clientUsage, out long totalUnits, out long diffUnits) {
       AccountService accountService =
-          (AccountService) user.GetService(ApiServices.v13.AccountService);
+          (AccountService) user.GetService(AdWordsService.v13.AccountService);
       AdWordsAccount rootUser = new AdWordsAccount();
       rootUser.email = accountService.emailValue.Value[0];
       rootUser.isManager = true;
       Hashtable allUsers = new Hashtable(StringComparer.InvariantCultureIgnoreCase);
       BuildUserGraph(accountService, rootUser, allUsers);
 
-      InfoService infoService = (InfoService) user.GetService(ApiServices.v13.InfoService);
+      InfoService infoService = (InfoService) user.GetService(AdWordsService.v13.InfoService);
       FetchUnitUsagesRecursively(infoService, rootUser, startDate, endDate);
 
       clientUsage = new SortedList<string, long>();

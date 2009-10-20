@@ -12,14 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
+using com.google.api.adwords.lib;
+
 using System;
 using System.Configuration;
 using System.Collections.Specialized;
 using System.IO;
 using System.Net;
 using System.Xml;
-
-using com.google.api.adwords.lib;
 
 namespace com.google.api.adwords.lib {
   /// <summary>
@@ -85,12 +87,11 @@ namespace com.google.api.adwords.lib {
         applicationToken = ReadSetting(settings, APPLICATION_TOKEN, "");
         maskCredentials = bool.Parse(ReadSetting(settings, MASK_CREDENTIALS, "true"));
 
-        // v13 keys.
-        urlV13 = ReadSetting(settings, URL_V13, "https://adwords.google.com");
+        // Legacy AdWords API keys.
+        legacyAdWordsApiUrl = ReadSetting(settings, LEGACY_ADWORDSAPI_URL, "https://adwords.google.com");
 
-        // v200906 keys.
-        urlV200906 = ReadSetting(settings, URL_V200906,
-            "https://adwords.google.com");
+        // AdWords API keys.
+        adWordsApiUrl = ReadSetting(settings, ADWORDSAPI_URL, "https://adwords.google.com");
       }
       return null;
     }
@@ -253,23 +254,28 @@ namespace com.google.api.adwords.lib {
     internal const String MASK_CREDENTIALS = "MaskCredentials";
 
     /// <summary>
-    /// Url for v13 API.
+    /// Url for Legacy AdWords API.
     /// </summary>
-    public static String urlV13;
+    public static String legacyAdWordsApiUrl;
 
     /// <summary>
-    /// Key name for v13 Url.
+    /// Key name for Legacy AdWords Api Url.
     /// </summary>
-    internal const String URL_V13 = "v13.Url";
+    internal const String LEGACY_ADWORDSAPI_URL = "LegacyAdWordsApi.Url";
 
     /// <summary>
-    /// Url for v200906 API.
+    /// Url for AdWords API.
     /// </summary>
-    public static String urlV200906;
+    public static String adWordsApiUrl;
 
     /// <summary>
-    /// Key name for v200906 Url.
+    /// Key name for AdWords Api Url.
     /// </summary>
-    internal const String URL_V200906 = "v200906.Url";
+    internal const String ADWORDSAPI_URL = "AdWordsApi.Url";
+
+    /// <summary>
+    /// The publicly released version number.
+    /// </summary>
+    public const String version = "5.0";
   }
 }

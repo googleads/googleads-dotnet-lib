@@ -12,9 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
+// Uncomment this key and recompile to make all the samples interactive
+// instead of manually replacing the INSERT_XXX fields in samples.
+
+#define INTERACTIVE
 
 using com.google.api.adwords.lib;
+
+using System;
 
 namespace com.google.api.adwords.samples {
   /// <summary>

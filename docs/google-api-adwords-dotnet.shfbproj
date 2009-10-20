@@ -30,7 +30,7 @@
     <CopyrightText>Copyright 2009, Google Inc. All Rights Reserved.</CopyrightText>
     <ApiFilter>
     </ApiFilter>
-    <MissingTags>Summary, Parameter, Returns, AutoDocumentCtors, TypeParameter</MissingTags>
+    <MissingTags>Parameter, Returns, TypeParameter</MissingTags>
     <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Internals, Protected, SealedProtected</VisibleItems>
     <RootNamespaceContainer>True</RootNamespaceContainer>
   </PropertyGroup>

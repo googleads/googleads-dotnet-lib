@@ -12,14 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
+using com.google.api.adwords.lib;
+using com.google.api.adwords.v13;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v13;
 
 namespace com.google.api.adwords.lib.util {
   /// <summary>
@@ -63,7 +65,7 @@ namespace com.google.api.adwords.lib.util {
     internal ClientAccount[] DownloadAllAccounts() {
       user.UseSandbox();
       AccountService accountService = (AccountService) user.GetService(
-          ApiServices.v13.AccountService);
+          AdWordsService.v13.AccountService);
       accountService.clientEmailValue.Value[0] = "";
 
       string[] clients = accountService.getClientAccounts();
@@ -84,7 +86,7 @@ namespace com.google.api.adwords.lib.util {
     /// <returns>The ClientAccount object representing this account.</returns>
     internal ClientAccount DownloadAccount(string clientEmail) {
       AccountService accountService =
-          (AccountService) user.GetService(ApiServices.v13.AccountService);
+          (AccountService) user.GetService(AdWordsService.v13.AccountService);
 
       accountService.clientEmailValue.Value[0] = clientEmail;
 
@@ -104,7 +106,7 @@ namespace com.google.api.adwords.lib.util {
     internal void UploadAllAccounts(ClientAccount[] accounts) {
       user.UseSandbox();
       AccountService accountService =
-          (AccountService) user.GetService(ApiServices.v13.AccountService);
+          (AccountService) user.GetService(AdWordsService.v13.AccountService);
       accountService.clientEmailValue.Value[0] = "";
 
       string[] clients = accountService.getClientAccounts();
@@ -120,7 +122,7 @@ namespace com.google.api.adwords.lib.util {
     /// <param name="account">The data to be restored to the accounts.</param>
     internal void UploadAccount(ClientAccount account) {
       AccountService accountService =
-          (AccountService) user.GetService(ApiServices.v13.AccountService);
+          (AccountService) user.GetService(AdWordsService.v13.AccountService);
       accountService.clientEmailValue.Value[0] = account.email;
 
       accountService.updateAccountInfo(account.accountInfo);
@@ -134,7 +136,7 @@ namespace com.google.api.adwords.lib.util {
     /// <param name="clientEmail">client account email.</param>
     private void SetAccountCampaigns(CampaignEx[] campaigns, string clientEmail) {
       CampaignService campaignService =
-          (CampaignService) user.GetService(ApiServices.v13.CampaignService);
+          (CampaignService) user.GetService(AdWordsService.v13.CampaignService);
       campaignService.clientEmailValue.Value[0] = clientEmail;
 
       foreach (CampaignEx campaignEx in campaigns) {
@@ -165,7 +167,7 @@ namespace com.google.api.adwords.lib.util {
     private void SetAdGroups(int campaignId, AdGroupEx[] adGroups, string[] languageTargeting,
         GeoTarget geoTargeting, string clientEmail) {
       AdGroupService adgroupService =
-          (AdGroupService) user.GetService(ApiServices.v13.AdGroupService);
+          (AdGroupService) user.GetService(AdWordsService.v13.AdGroupService);
       adgroupService.clientEmailValue.Value[0] = clientEmail;
 
       foreach (AdGroupEx adGroupEx in adGroups) {
@@ -189,7 +191,7 @@ namespace com.google.api.adwords.lib.util {
     /// <param name="clientEmail">client account email.</param>
     private void SetAds(long adGroupId, Ad[] ads, string[] languageTargeting,
         GeoTarget geoTargeting, string clientEmail) {
-      AdService adService = (AdService) user.GetService(ApiServices.v13.AdService);
+      AdService adService = (AdService) user.GetService(AdWordsService.v13.AdService);
       adService.clientEmailValue.Value[0] = clientEmail;
 
       Ad[] cleanAds = CheckAds(ads, clientEmail, languageTargeting, geoTargeting);
@@ -214,7 +216,7 @@ namespace com.google.api.adwords.lib.util {
     private void SetCriteria(long adGroupId, Criterion[] criteria, string[] languageTargeting,
         GeoTarget geoTargeting, string clientEmail) {
       CriterionService criterionService =
-          (CriterionService) user.GetService(ApiServices.v13.CriterionService);
+          (CriterionService) user.GetService(AdWordsService.v13.CriterionService);
       criterionService.clientEmailValue.Value[0] = clientEmail;
 
       foreach (Criterion criterion in criteria) {
@@ -245,7 +247,7 @@ namespace com.google.api.adwords.lib.util {
     private void SetCampaignCriteria(int campaignId, Criterion[] criteria,
         string[] languageTargeting, GeoTarget geoTargeting, string clientEmail) {
       CriterionService criterionService =
-          (CriterionService) user.GetService(ApiServices.v13.CriterionService);
+          (CriterionService) user.GetService(AdWordsService.v13.CriterionService);
       criterionService.clientEmailValue.Value[0] = clientEmail;
 
       foreach (Criterion criterion in criteria) {
@@ -272,7 +274,7 @@ namespace com.google.api.adwords.lib.util {
     /// Items that cannot be exempted are removed from the list.</returns>
     private Ad[] CheckAds(Ad[] ads, string clientEmail, string[] languageTargeting,
         GeoTarget geoTargeting) {
-      AdService adService = (AdService) user.GetService(ApiServices.v13.AdService);
+      AdService adService = (AdService) user.GetService(AdWordsService.v13.AdService);
       adService.clientEmailValue.Value[0] = clientEmail;
 
       foreach (Ad ad in ads) {
@@ -308,7 +310,7 @@ namespace com.google.api.adwords.lib.util {
     private Criterion[] CheckCriteria(Criterion[] criteria, string[] languageTargeting,
         GeoTarget geoTargeting, string clientEmail) {
       CriterionService criterionService =
-          (CriterionService) user.GetService(ApiServices.v13.CriterionService);
+          (CriterionService) user.GetService(AdWordsService.v13.CriterionService);
       criterionService.clientEmailValue.Value[0] = clientEmail;
 
       ApiError[] errors = criterionService.checkCriteria(criteria, languageTargeting,
@@ -336,7 +338,7 @@ namespace com.google.api.adwords.lib.util {
       List<CampaignEx> retVal = new List<CampaignEx>();
 
       CampaignService campaignService =
-          (CampaignService) user.GetService(ApiServices.v13.CampaignService);
+          (CampaignService) user.GetService(AdWordsService.v13.CampaignService);
       campaignService.clientEmailValue.Value[0] = clientEmail;
 
       Campaign[] campaigns = campaignService.getAllAdWordsCampaigns(0);
@@ -366,7 +368,7 @@ namespace com.google.api.adwords.lib.util {
       List<AdGroupEx> retVal = new List<AdGroupEx>();
 
       AdGroupService adgroupService =
-          (AdGroupService) user.GetService(ApiServices.v13.AdGroupService);
+          (AdGroupService) user.GetService(AdWordsService.v13.AdGroupService);
       adgroupService.clientEmailValue.Value[0] = clientEmail;
 
       AdGroup[] adgroups = adgroupService.getAllAdGroups(campaignId);
@@ -398,7 +400,7 @@ namespace com.google.api.adwords.lib.util {
     /// <returns>List of ads in the adgroup.</returns>
     private Ad[] GetAllAds(long adGroupId, string clientEmail) {
       AdService adService = (AdService) user.GetService(
-          ApiServices.v13.AdService);
+          AdWordsService.v13.AdService);
       adService.clientEmailValue.Value[0] = clientEmail;
 
       Ad[] ads = adService.getAllAds(new long[] {adGroupId});
@@ -433,7 +435,7 @@ namespace com.google.api.adwords.lib.util {
     /// <returns>List of criteria in the adgroup.</returns>
     private Criterion[] GetAdGroupCriteria(long adGroupId, string clientEmail) {
       CriterionService criterionService = (CriterionService) user.GetService(
-          ApiServices.v13.CriterionService);
+          AdWordsService.v13.CriterionService);
       criterionService.clientEmailValue.Value[0] = clientEmail;
       return criterionService.getAllCriteria(adGroupId);
     }
@@ -446,7 +448,7 @@ namespace com.google.api.adwords.lib.util {
     /// <returns>List of criteria in the campaign.</returns>
     private Criterion[] GetCampaignCriteria(int campaignId, string clientEmail) {
       CriterionService criterionService = (CriterionService) user.GetService(
-          ApiServices.v13.CriterionService);
+          AdWordsService.v13.CriterionService);
       criterionService.clientEmailValue.Value[0] = clientEmail;
       return criterionService.getCampaignNegativeCriteria(campaignId);
     }

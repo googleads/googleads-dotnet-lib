@@ -1,10 +1,15 @@
+5.0.0
+- Added support for v200909 services and added new samples.
+- Updated v200906 stub classes to match the latest wsdls.
+- Code has been refactored to make addition of new API services easier.
+
 4.1.0
 - Updated v200906 stub classes to match the latest wsdls.
 
 4.0.0
 - Removed support for v200902.
 - Added support for v200906.
-- TraceExtension will now mask developer and application tokens partially before saving to log. 
+- TraceExtension will now mask developer and application tokens partially before saving to log.
 - TraceExcension's masking behaviour can be changed using MaskCredentials flag in app.config.
 - v200906 will connect to adwords.google.com by default.
 - All INSERT_XXX strings are now wrapped around a method named _T. If you do a #define INTERACTIVE

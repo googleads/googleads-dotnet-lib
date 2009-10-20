@@ -12,11 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Text;
+// Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
 using com.google.api.adwords.v13;
+
+using System;
+using System.Text;
 
 namespace com.google.api.adwords.samples.v13 {
   /// <summary>
@@ -39,25 +41,27 @@ namespace com.google.api.adwords.samples.v13 {
     /// </param>
     public override void Run(AdWordsUser user) {
       // Get the service.
-      InfoService service = (InfoService) user.GetService(ApiServices.v13.InfoService);
+      InfoService service = (InfoService) user.GetService(AdWordsService.v13.InfoService);
 
       // Get the quota for this month.
       long usageQuota = service.getUsageQuotaThisMonth();
       Console.WriteLine("Usage quota for this month: " + usageQuota);
 
       // Get the quota used between January 1, 2009 and today.
-      long unitCount = service.getUnitCount(new DateTime(2009, 1, 1, 0, 0, 0), DateTime.Today);
+      long unitCount = service.getUnitCount(new DateTime(2009, 1, 1, 0, 0, 0),
+          DateTime.Today.ToUniversalTime());
       Console.WriteLine("Unit count between January 1, 2009 and today: {0}", unitCount);
 
       // Get the operation count used between January 1, 2009 and today.
       long operationCount =
-          service.getOperationCount(new DateTime(2009, 1, 1, 0, 0, 0), DateTime.Today);
+          service.getOperationCount(new DateTime(2009, 1, 1, 0, 0, 0),
+              DateTime.Today.ToUniversalTime());
       Console.WriteLine("Operation count between January 1, 2009 and today: {0}", operationCount);
 
       // Get the quota used between January 1, 2009 and today for
       // AccountService.getAccountInfo() call.
       long methodUnitCount = service.getUnitCountForMethod("AccountService", "getAccountInfo",
-          new DateTime(2009, 1, 1, 0, 0, 0), DateTime.Today);
+          new DateTime(2009, 1, 1, 0, 0, 0), DateTime.Today.ToUniversalTime());
       Console.WriteLine("Method unit count for AccountService.getAccountInfo between " +
           "January 1, 2009 and today: {0}", methodUnitCount);
     }

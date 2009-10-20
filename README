@@ -25,7 +25,7 @@ stored can be configured in the App.config file, using "LogPath" key.
 Demo programs in the Examples directory demonstrate how to use client
 library. To run an example, open the solution file google-api-adwords-dotnet.sln
 in Visual Studio, build the solution, and execute it on command line at
-Examples/bin/Debug.
+Examples\bin\Debug.
     > Examples.exe v13.AccountServiceDemo
     > Examples.exe v200902.AddCampaign
 
@@ -50,22 +50,29 @@ sandbox or with authentication credentials for your AdWords account, to make
 requests against production environment.
 
 How to make a release?
-1. If a new version is being added, create the stub classes for the new version
-as follows:
-  > wsdl.exe /namespace:com.google.api.adwords.vXX wsdl-url
+1. If a new version is being added, start by making a new wsdl_config.xml. You
+can use any existing ones as a reference.
 
-2. Create src/vXX directory and copy generated files into it. Build the project
-and remove all duplicate classes manually, until build is successful.
+2. Generate the stub classes as
+  > wsdl.exe /par:wsdl_config.xml /out:AdWordsApi.cs
 
-3. Update examples to appropriate API version.
+3. Cleanup the stub classes as
+  > csc tools\ProcessWsdlOutput.cs
+  > ProcessWsdlOutput.exe --file=AdWordsApi.cs
 
-4. Change the versions in AssemblyInfo.cs and Examples\AssemblyInfo.cs to
+4. Create src\vXX directory and copy wsdl_config.xml and AdWordsApi.cs into it.
+
+5. Create appropriate service entries in AdWordsService.cs
+
+6. Create/update examples to appropriate API version.
+
+7. Change the versions in AssemblyInfo.cs and Examples\AssemblyInfo.cs to
 v.v.v, where v.v.v is a version number (e.g., 2.1.0).
 
-5. Create a directory with a name awapi_dotnet_lib_v.v.v, where v.v.v is a
+8. Create a directory with a name awapi_dotnet_lib_v.v.v, where v.v.v is a
 version number (e.g., 2.1.0), and copy new release into it. Pack new release
 into a tarball and then gzip it,
-    > tar -cvf awapi_dotnet_lib_v.v.v.tar awapi_dotnet_lib_v.v.v/
+    > tar -cvf awapi_dotnet_lib_v.v.v.tar awapi_dotnet_lib_v.v.v\
     > gzip awapi_dotnet_lib_v.v.v.tar
 
 Where do I submit bug reports and feature requests?
@@ -80,9 +87,9 @@ Requires:
 
 Includes:
     - Examples          -- demo programs for the client library
-    - src/lib           -- core library
-    - src/vXX           -- classes for each API web service
-    - src/lib/util      -- utility classes
+    - src\lib           -- core library
+    - src\vXX           -- classes for each API web service
+    - src\lib\util      -- utility classes
 
 Author:
     chanezon@gmail.com (Patrick Chanezon)

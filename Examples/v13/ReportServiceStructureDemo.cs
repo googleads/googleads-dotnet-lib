@@ -12,13 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
+using com.google.api.adwords.lib;
+using com.google.api.adwords.v13;
+
 using System;
 using System.Text;
 using System.Threading;
 using System.Web.Services.Protocols;
-
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v13;
 
 namespace com.google.api.adwords.samples.v13 {
   /// <summary>
@@ -42,7 +44,7 @@ namespace com.google.api.adwords.samples.v13 {
     public override void Run(AdWordsUser user) {
       // Get the service.
       ReportService service =
-          (ReportService) user.GetService(ApiServices.v13.ReportService);
+          (ReportService) user.GetService(AdWordsService.v13.ReportService);
 
       // Create the report job.
       DefinedReportJob reportJob = new DefinedReportJob();

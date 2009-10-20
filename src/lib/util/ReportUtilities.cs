@@ -12,6 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
+using com.google.api.adwords.v13;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,8 +28,6 @@ using System.Text;
 using System.Threading;
 using System.Web.Services.Protocols;
 using System.Xml;
-
-using com.google.api.adwords.v13;
 
 namespace com.google.api.adwords.lib.util {
   /// <summary>
@@ -43,12 +45,12 @@ namespace com.google.api.adwords.lib.util {
     const int waitTime = 30000;
 
     /// <summary>
-    /// The callback delegate used by <see cref="beginDownloadReportAsCsv"/>
+    /// The callback delegate used by <see cref="BeginDownloadReportAsCsv"/>
     /// </summary>
     private GenerateReport csvReportFunction = null;
 
     /// <summary>
-    /// The callback delegate used by <see cref="beginDownloadReportAsXml"/>
+    /// The callback delegate used by <see cref="BeginDownloadReportAsXml"/>
     /// </summary>
     private GenerateReport xmlReportFunction = null;
 
@@ -81,7 +83,7 @@ namespace com.google.api.adwords.lib.util {
 
     /// <summary>
     /// An asynchronous way to download a report as CSV. See
-    /// <see cref="DownloadReportAsCsvDemo"/> for an example on how to use
+    /// DownloadReportAsCsvDemo for an example on how to use
     /// this method.
     /// </summary>
     /// <param name="reportJob">The report job to be run.</param>
@@ -97,11 +99,11 @@ namespace com.google.api.adwords.lib.util {
     }
 
     /// <summary>
-    /// This is the counterpart of <see cref="beginDownloadReportAsCsv"/>.
+    /// This is the counterpart of <see cref="BeginDownloadReportAsCsv"/>.
     /// Call this function to complete the asynchronous call.
     /// </summary>
     /// <param name="result">The IAsyncResult object, returned from
-    /// <see cref="beginDownloadReportAsCsv"/></param>
+    /// <see cref="BeginDownloadReportAsCsv"/></param>
     /// <remarks>This call should be enclosed in a try-catch block block,
     /// since any exception generated during the asynchronous call will
     /// be thrown at this stage.</remarks>
@@ -121,7 +123,7 @@ namespace com.google.api.adwords.lib.util {
 
     /// <summary>
     /// An asynchronous way to download a report as XML. See
-    /// <see cref="DownloadReportAsXmlDemo"/> for an example on how to use
+    /// DownloadReportAsXmlDemo for an example on how to use
     /// this method.
     /// </summary>
     /// <param name="reportJob">The report job to be run.</param>
@@ -130,7 +132,7 @@ namespace com.google.api.adwords.lib.util {
     /// <param name="callback">The callback to be called once the report
     /// is saved.</param>
     /// <returns>The IAsyncResult object associated with this asynchronous
-    /// call. See <see cref="endDownloadReportAsXml"/> to complete the
+    /// call. See <see cref="EndDownloadReportAsXml"/> to complete the
     /// call sequence.
     /// </returns>
     public IAsyncResult BeginDownloadReportAsXml(DefinedReportJob reportJob,
@@ -139,7 +141,7 @@ namespace com.google.api.adwords.lib.util {
     }
 
     /// <summary>
-    /// This is the counterpart of <see cref="endDownloadReportAsXml"/>.
+    /// This is the counterpart of <see cref="EndDownloadReportAsXml"/>.
     /// Call this function to complete the asynchronous call.
     /// </summary>
     /// <param name="result">The IAsyncResult object, returned from
@@ -234,7 +236,7 @@ namespace com.google.api.adwords.lib.util {
     private string GetReportXml(ReportJob reportJob) {
       try {
         ReportService service =
-            (ReportService) User.GetService(ApiServices.v13.ReportService);
+            (ReportService) User.GetService(AdWordsService.v13.ReportService);
         service.validateReportJob(reportJob);
 
         // Submit the request for the report.

@@ -12,9 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
 using com.google.api.adwords.lib;
 using com.google.api.adwords.v13;
-using com.google.api.adwords.v200906.CampaignService;
+using com.google.api.adwords.v200906;
 
 using NUnit.Framework;
 
@@ -23,9 +25,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 
-using CampaignServiceV200906 = com.google.api.adwords.v200906.CampaignService.CampaignService;
-using CampaignV200906 = com.google.api.adwords.v200906.CampaignService.Campaign;
-using CampaignStatusV200906 = com.google.api.adwords.v200906.CampaignService.CampaignStatus;
+using CampaignServiceV200906 = com.google.api.adwords.v200906.CampaignService;
+using CampaignV200906 = com.google.api.adwords.v200906.Campaign;
+using CampaignStatusV200906 = com.google.api.adwords.v200906.CampaignStatus;
 
 namespace com.google.api.adwords.tests {
   /// <summary>
@@ -40,7 +42,7 @@ namespace com.google.api.adwords.tests {
     public void TestV13ApiCalls() {
       AdWordsUser user = new AdWordsUser();
       AccountService accountService =
-          (AccountService) user.GetService(ApiServices.v13.AccountService);
+          (AccountService) user.GetService(AdWordsService.v13.AccountService);
       accountService.clientEmailValue = null;
       accountService.clientCustomerIdValue = null;
 
@@ -65,7 +67,7 @@ namespace com.google.api.adwords.tests {
       AdWordsUser user = new AdWordsUser();
 
       CampaignServiceV200906 service =
-          (CampaignServiceV200906) user.GetService(ApiServices.v200906.CampaignService);
+          (CampaignServiceV200906) user.GetService(AdWordsService.v200906.CampaignService);
 
       CampaignV200906 campaign = new CampaignV200906();
 
@@ -132,7 +134,7 @@ namespace com.google.api.adwords.tests {
     public void TestV13CustomExceptions() {
       AdWordsUser user = new AdWordsUser();
       AccountService accountService =
-          (AccountService) user.GetService(ApiServices.v13.AccountService);
+          (AccountService) user.GetService(AdWordsService.v13.AccountService);
       accountService.clientEmailValue = null;
       accountService.clientCustomerIdValue = null;
 

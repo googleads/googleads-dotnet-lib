@@ -12,11 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Text;
+// Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
 using com.google.api.adwords.v13;
+
+using System;
+using System.Text;
 
 namespace com.google.api.adwords.samples.v13 {
   /// <summary>
@@ -40,7 +42,7 @@ namespace com.google.api.adwords.samples.v13 {
     public override void Run(AdWordsUser user) {
       // Get the service.
       KeywordToolService service =
-          (KeywordToolService) user.GetService(ApiServices.v13.KeywordToolService);
+          (KeywordToolService) user.GetService(AdWordsService.v13.KeywordToolService);
 
       String site = "http://blog.chanezon.com";
 

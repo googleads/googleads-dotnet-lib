@@ -12,15 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Collections.Generic;
+// Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
 using com.google.api.adwords.v13;
-using com.google.api.adwords.v200906.AdGroupCriterionService;
+using com.google.api.adwords.v200906;
 
-using KeywordV200906 =
-    com.google.api.adwords.v200906.AdGroupCriterionService.Keyword;
+using System;
+using System.Collections.Generic;
+
+using KeywordV200906 = com.google.api.adwords.v200906.Keyword;
 
 namespace com.google.api.adwords.samples.both {
   /// <summary>
@@ -41,7 +42,7 @@ namespace com.google.api.adwords.samples.both {
     /// </summary>
     public override void Run(AdWordsUser user) {
       KeywordToolService keywordToolService =
-          (KeywordToolService) user.GetService(ApiServices.v13.KeywordToolService);
+          (KeywordToolService) user.GetService(AdWordsService.v13.KeywordToolService);
 
       // Use v13 KeywordToolService to get keyword variations.
       SeedKeyword seed = new SeedKeyword();
@@ -53,7 +54,7 @@ namespace com.google.api.adwords.samples.both {
 
       // Add top 3 variations as keywords using v200906.
       AdGroupCriterionService service =
-          (AdGroupCriterionService) user.GetService(ApiServices.v200906.AdGroupCriterionService);
+          (AdGroupCriterionService) user.GetService(AdWordsService.v200906.AdGroupCriterionService);
 
       int count = (variations.moreSpecific.Length > 3) ? 3 : variations.moreSpecific.Length;
       List<AdGroupCriterionOperation> operations =  new List<AdGroupCriterionOperation>();

@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -68,7 +70,7 @@ namespace com.google.api.adwords.lib.util {
     /// <summary>
     /// Reads the contents of the CSV string into memory.
     /// </summary>
-    /// <param name="fileName">Text to be parsed as csv file contents.</param>
+    /// <param name="contents">Text to be parsed as csv file contents.</param>
     /// <param name="hasHeaders">True, if the first line of the csv file contents
     /// is a header.</param>
     public void ReadFromString(string contents, bool hasHeaders) {
@@ -125,7 +127,7 @@ namespace com.google.api.adwords.lib.util {
     /// <summary>
     /// Parses a csv file and loads it into memory.
     /// </summary>
-    /// <param name="filepath">Full path to the csv file.</param>
+    /// <param name="filePath">Full path to the csv file.</param>
     /// <param name="hasHeaders">True, if the first line of the csv file is a header.</param>
     private void Load(string filePath, bool hasHeaders) {
       StreamReader reader = null;

@@ -8,6 +8,7 @@ using System.Web.Services.Protocols;
 using System.Web;
 using System.Runtime.Remoting.Messaging;
 using System.Runtime.CompilerServices;
+using System.Reflection;
 
 namespace com.google.api.adwords.lib {
   /// <summary>
@@ -76,10 +77,19 @@ namespace com.google.api.adwords.lib {
         case SoapMessageStage.AfterDeserialize:
           int units = 0;
           foreach (SoapHeader header in message.Headers) {
-            if (header.GetType() == Type.GetType(
-                "com.google.api.adwords.v13.units")) {
-              units = Int32.Parse(((
-                  com.google.api.adwords.v13.units)header).Value[0]);
+            if (header.GetType() == Type.GetType("com.google.api.adwords.v13.units")) {
+              PropertyInfo propInfo = header.GetType().GetProperty("Value");
+              if (propInfo != null) {
+                units = int.Parse(((string[]) propInfo.GetValue(header, null))[0]);
+              }
+            } else if (header.GetType() == Type.GetType("com.google.api.adwords.ResponseHeader")) {
+              PropertyInfo propInfo = header.GetType().GetProperty("units");
+              if (propInfo != null) {
+                long? unitsValue = (long?)propInfo.GetValue(header, null);
+                if (unitsValue != null) {
+                  units = (int) unitsValue.Value;
+                }
+              }
             }
           }
           AdWordsUser parent = null;

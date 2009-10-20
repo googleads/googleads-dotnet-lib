@@ -12,14 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
+using com.google.api.adwords.lib;
+using com.google.api.adwords.samples.both;
+using com.google.api.adwords.samples.v13;
+using com.google.api.adwords.samples.v200906;
+using com.google.api.adwords.samples.v200909;
+using com.google.api.adwords.v13;
+
 using System;
 using System.Collections;
 using System.Collections.Specialized;
-
-using com.google.api.adwords.lib;
-using com.google.api.adwords.samples.v13;
-using com.google.api.adwords.samples.v200906;
-using com.google.api.adwords.samples.both;
 
 namespace com.google.api.adwords.samples {
   /// <summary>
@@ -76,6 +80,15 @@ namespace com.google.api.adwords.samples {
       sampleMap.Add("v200906.UpdateAd", new UpdateAd());
       sampleMap.Add("v200906.AddAdGroupKeyword", new AddAdGroupKeyword());
       sampleMap.Add("v200906.GetActiveCriteria", new GetActiveCriteria());
+
+      // Add v200909 samples.
+      sampleMap.Add("v200909.AddBulkMutateJob", new AddBulkMutateJob());
+      sampleMap.Add("v200909.GetGeoLocation", new GetGeoLocation());
+      sampleMap.Add("v200909.AddCampaignAdExtension", new AddCampaignAdExtension());
+      sampleMap.Add("v200909.AddAdExtensionOverride", new AddAdExtensionOverride());
+      sampleMap.Add("v200909.GetTargetingIdeas", new GetTargetingIdeas());
+      sampleMap.Add("v200909.AddMobileImageAd", new AddMobileImageAd());
+      sampleMap.Add("v200909.GetApiUsage", new GetApiUsage());
 
       // Add combined examples.
       sampleMap.Add("both.UsingKeywordSuggestionDemo", new UsingKeywordSuggestionDemo());

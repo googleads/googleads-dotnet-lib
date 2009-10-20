@@ -12,43 +12,30 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
+using com.google.api.adwords.lib.util;
+using com.google.api.adwords;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Web.Services;
 using System.Web.Services.Protocols;
-using com.google.api.adwords.lib.util;
-using com.google.api.adwords.v200906;
 
 namespace com.google.api.adwords.lib {
   /// <summary>
-  /// Represents an AdWords API user. This class wraps features
-  /// like creating the services transparently, creating the login
-  /// token for v200906 and keeping track of API units used in a session.
+  /// Represents an AdWords API user.
   /// </summary>
-  public class AdWordsUser {
+  public partial class AdWordsUser {
     /// <summary>
-    /// Url for v13 API.
+    /// Stores all the registered services and their factories.
     /// </summary>
-    private string urlV13 = ApplicationConfiguration.urlV13;
-    /// <summary>
-    /// Url for v200906 API.
-    /// </summary>
-    private string urlV200906 = ApplicationConfiguration.urlV200906;
-
-    /// <summary>
-    /// The auth token to be used with v200906 services.
-    /// </summary>
-    private RequestHeader requestHeader = null;
-
-    /// <summary>
-    /// The overridden SOAP headers to be used with v13 services.
-    /// If the settings from App.config is not overridden, this
-    /// field will be null.
-    /// </summary>
-    private Dictionary<string, SoapHeader> headers = null;
+    private Dictionary<string, ServiceFactory> serviceFactoryMap =
+        new Dictionary<string, ServiceFactory>();
 
     /// <summary>
     /// An internal table to cache all the service objects created so far.
@@ -65,107 +52,45 @@ namespace com.google.api.adwords.lib {
     /// use all settings from App.config.
     /// </summary>
     public AdWordsUser() {
-      Initialize(ReadV200906HeadersFromConfig(), ReadV13HeadersFromConfig());
+      AdWordsService.RegisterServices(this);
     }
 
     /// <summary>
-    /// Public constructor. Use this version if you want to use v200906
-    /// services authentication from App.config, but want to override
-    /// v13 SOAP headers.
+    /// Register a service with AdWordsUser.
     /// </summary>
-    /// <param name="headers">The custom SOAP headers to be used
-    /// with v13 services.</param>
-    public AdWordsUser(Dictionary<string, string> headers) {
-      Initialize(MakeRequestHeaders(headers), MakeSoapHeaders(headers));
+    /// <param name="serviceId">A unique id for the service being registered.
+    /// </param>
+    /// <param name="serviceFactory">The factory that will create this
+    /// service.</param>
+    public void RegisterService(string serviceId, ServiceFactory serviceFactory) {
+      serviceFactoryMap.Add(serviceId, serviceFactory);
     }
 
     /// <summary>
-    /// Creates an object of the requested type of v200906 service.
+    /// Creates an object of the requested type of service.
     /// </summary>
-    /// <param name="v2009Service">The name of the service to be
-    /// created.</param>
-    /// <returns>An object of the requested type of v200906 service. The
+    /// <param name="serviceType">Signature of the service being requested.
+    /// </param>
+    /// <returns>An object of the requested type of service. The
     /// caller should cast this object to the desired type.</returns>
+    /// <example>
+    /// AdWordsUser user = new AdWordsUser();
+    /// CampaignService campaignService = (CampaignService)
+    ///     user.getService(AdWordsService.v200906.CampaignService);
+    /// </example>
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public object GetService(ApiServices.v200906 v2009Service) {
-      string serviceName = "v200906." + v2009Service.ToString();
-      if (!objectCache.ContainsKey(serviceName)) {
-        string serviceType = "com.google.api.adwords.v200906." +
-            v2009Service.ToString() + "." + v2009Service.ToString();
-        object service = Assembly.GetExecutingAssembly().
-            CreateInstance(serviceType);
-        objectCache[serviceName] = service;
-
-        Type type = service.GetType();
-        PropertyInfo propInfo = type.GetProperty("RequestHeader");
-        if (propInfo != null) {
-          propInfo.SetValue(service, requestHeader, null);
-        }
-
-        if (ApplicationConfiguration.proxy != null) {
-          propInfo = type.GetProperty("Proxy");
-          if (propInfo != null) {
-            propInfo.SetValue(service, ApplicationConfiguration.proxy, null);
-          }
-        }
-        if (!string.IsNullOrEmpty(urlV200906)) {
-          string fullUrl = urlV200906 +
-              "/api/adwords/cm/v200906/" + v2009Service.ToString();
-          propInfo = type.GetProperty("Url");
-          if (propInfo != null) {
-            propInfo.SetValue(service, fullUrl, null);
-          }
-        }
+    public object GetService(ServiceSignature serviceType) {
+      if (serviceType == null) {
+        throw new ArgumentException("Servicetype cannot be null.");
+      } else if (!serviceFactoryMap.ContainsKey(serviceType.id)) {
+        throw new ArgumentException("Unknown service type.");
+      } else if (objectCache.ContainsKey(serviceType.id)) {
+        return objectCache[serviceType.id];
+      } else {
+        object service = serviceFactoryMap[serviceType.id].CreateService(serviceType, this);
+        objectCache.Add(serviceType.id, service);
+        return service;
       }
-      return objectCache[serviceName];
-    }
-
-    /// <summary>
-    /// Creates an object of the requested type of v13 service.
-    /// </summary>
-    /// <param name="v13Service">The name of the service to be
-    /// created.</param>
-    /// <returns>An object of the requested type of v13 service. The
-    /// caller should cast this object to the desired type.</returns>
-    [MethodImpl(MethodImplOptions.Synchronized)]
-    public object GetService(ApiServices.v13 v13Service) {
-      string serviceName = "v13." + v13Service.ToString();
-      if (!objectCache.ContainsKey(serviceName)) {
-        string serviceType = "com.google.api.adwords.v13." + v13Service.ToString();
-        object service = Assembly.GetExecutingAssembly().CreateInstance(serviceType);
-        objectCache[serviceName] = service;
-        Type type = service.GetType();
-        PropertyInfo propInfo = null;
-
-        if (this.headers != null) {
-          foreach (string key in headers.Keys) {
-            propInfo = type.GetProperty(key);
-            if (propInfo != null) {
-              propInfo.SetValue(service, headers[key], null);
-            }
-          }
-        }
-
-        if (ApplicationConfiguration.proxy != null) {
-          propInfo = type.GetProperty("Proxy");
-          if (propInfo != null) {
-            propInfo.SetValue(service, ApplicationConfiguration.proxy, null);
-          }
-        }
-        if (!string.IsNullOrEmpty(urlV13)) {
-          string fullUrl = urlV13 + "/api/adwords/v13/" + v13Service.ToString();
-          propInfo = type.GetProperty("Url");
-          if (propInfo != null) {
-            propInfo.SetValue(service, fullUrl, null);
-          }
-        }
-        propInfo = type.GetProperty("Parent");
-        if (propInfo != null) {
-          propInfo.SetValue(service, this, null);
-        }
-
-      }
-      return objectCache[serviceName];
     }
 
     /// <summary>
@@ -194,115 +119,12 @@ namespace com.google.api.adwords.lib {
     }
 
     /// <summary>
-    /// Use sandbox for both v13 and v200906 API.
+    /// Turn on sandbox for all services in AdWordsUser.
     /// </summary>
     public void UseSandbox() {
-      urlV13 = "https://sandbox.google.com";
-      urlV200906 = "https://adwords-sandbox.google.com";
-    }
-
-    private RequestHeader ReadV200906HeadersFromConfig() {
-      requestHeader = new RequestHeader();
-      requestHeader.authToken =
-          new AuthToken(ApplicationConfiguration.email,
-              ApplicationConfiguration.password).GetToken();
-      if (!string.IsNullOrEmpty(ApplicationConfiguration.clientCustomerId)) {
-        requestHeader.clientCustomerId = ApplicationConfiguration.clientCustomerId;
+      foreach (string id in serviceFactoryMap.Keys) {
+        serviceFactoryMap[id].UseSandbox();
       }
-      requestHeader.clientEmail = ApplicationConfiguration.clientEmail;
-      requestHeader.developerToken = ApplicationConfiguration.developerToken;
-      requestHeader.applicationToken = ApplicationConfiguration.applicationToken;
-      requestHeader.userAgent = "AWAPI DotNetLib " + DataUtilities.GetVersion() +
-          " - " + ApplicationConfiguration.companyName;
-      return requestHeader;
-    }
-
-    private RequestHeader MakeRequestHeaders(Dictionary<string, string> headers) {
-      requestHeader = new RequestHeader();
-
-      Type type = typeof(RequestHeader);
-      if (!headers.ContainsKey("authToken")) {
-        requestHeader.authToken = new AuthToken(headers["email"], headers["password"]).GetToken();
-      }
-      foreach (string key in headers.Keys) {
-        PropertyInfo propInfo = type.GetProperty(key);
-        if (propInfo != null) {
-          propInfo.SetValue(requestHeader, headers[key], null);
-        }
-      }
-      return requestHeader;
-    }
-
-    /// <summary>
-    /// Loads the v13 headers from App.config
-    /// </summary>
-    /// <returns>A map, with key=headername and value=SoapHeader object.
-    /// </returns>
-    private Dictionary<string, SoapHeader> ReadV13HeadersFromConfig() {
-      headers = new Dictionary<string, SoapHeader>();
-      headers["emailValue"] = MakeSoapHeader("email",
-          ApplicationConfiguration.email);
-      headers["passwordValue"] = MakeSoapHeader("password",
-          ApplicationConfiguration.password);
-      headers["useragentValue"] = MakeSoapHeader("useragent",
-          "AWAPI DotNetLib " + DataUtilities.GetVersion() + " - " +
-          ApplicationConfiguration.companyName);
-      headers["developerTokenValue"] = MakeSoapHeader("developerToken",
-          ApplicationConfiguration.developerToken);
-      headers["applicationTokenValue"] = MakeSoapHeader("applicationToken",
-          ApplicationConfiguration.applicationToken);
-      headers["clientEmailValue"] = MakeSoapHeader("clientEmail",
-          ApplicationConfiguration.clientEmail);
-      if (!string.IsNullOrEmpty(ApplicationConfiguration.clientCustomerId)) {
-        headers["clientCustomerIdValue"] = MakeSoapHeader("clientCustomerId",
-            ApplicationConfiguration.clientCustomerId);
-      }
-      return headers;
-    }
-
-    /// <summary>
-    /// Convert a dictionary of string header values to SoapHeader objects.
-    /// </summary>
-    /// <param name="headers">The dictionary, with key as the header field name
-    /// and value as the header value.</param>
-    /// <returns>A dictionary, with key as header field name and value as a
-    /// SoapHeader object.</returns>
-    /// <remarks>This function is used by the constructors that accept header
-    /// values as string rather than SoapHeader objects.</remarks>
-    private Dictionary<string, SoapHeader> MakeSoapHeaders(Dictionary<string, string> headers) {
-      Dictionary<string, SoapHeader> soapHeaders = new Dictionary<string, SoapHeader>();
-      foreach (string key in headers.Keys) {
-        soapHeaders[key + "Value"] = MakeSoapHeader(key, headers[key]);
-      }
-      return soapHeaders;
-    }
-
-    /// <summary>
-    /// Creates a SoapHeader for use with v13 API.
-    /// </summary>
-    /// <param name="headerName">Name of the header.</param>
-    /// <param name="value">String value for the header.</param>
-    /// <returns>The SoapHeader object.</returns>
-    private SoapHeader MakeSoapHeader(string headerName, string value) {
-      string typeName = "com.google.api.adwords.v13." + headerName;
-      SoapHeader header = (SoapHeader) Assembly.GetExecutingAssembly().
-          CreateInstance(typeName);
-      PropertyInfo propInfo = header.GetType().GetProperty("Value");
-      if (propInfo != null) {
-        propInfo.SetValue(header, new string[] {value}, null);
-      }
-      return header;
-    }
-
-    /// <summary>
-    /// Initializes this object.
-    /// </summary>
-    /// <param name="requestHeader">RequestHeader to be used with v200906 services.</param>
-    /// <param name="headers">The SOAP headers to be used with v13 services.</param>
-    /// <remarks>This function is used by all constructors.</remarks>
-    private void Initialize(RequestHeader requestHeader, Dictionary<string, SoapHeader> headers) {
-      this.requestHeader = requestHeader;
-      this.headers = headers;
     }
   }
 }

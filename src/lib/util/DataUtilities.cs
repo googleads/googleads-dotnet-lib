@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -121,10 +123,11 @@ namespace com.google.api.adwords.lib.util {
 
       foreach (string[] item in reader.Records) {
         OpRates rates;
-        rates.serviceName = item[0];
-        rates.methodName = item[1];
-        rates.rate = int.Parse(item[2]);
-        rates.isPerItem = bool.Parse(item[3]);
+        rates.version = item[0];
+        rates.serviceName = item[1];
+        rates.methodName = item[2];
+        rates.rate = int.Parse(item[3]);
+        rates.isPerItem = bool.Parse(item[4]);
         retVal.Add(rates);
       }
       return retVal;

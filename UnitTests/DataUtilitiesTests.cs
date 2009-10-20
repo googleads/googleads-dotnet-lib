@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
 using com.google.api.adwords.lib;
 using com.google.api.adwords.lib.util;
 

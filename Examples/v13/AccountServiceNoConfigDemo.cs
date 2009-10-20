@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
 using com.google.api.adwords.lib;
 using com.google.api.adwords.lib.util;
 using com.google.api.adwords.v13;
@@ -49,8 +51,7 @@ namespace com.google.api.adwords.samples.v13 {
 
       headers.Add("email", "ENTER_YOUR_EMAIL_HERE");
       headers.Add("password", "ENTER_YOUR_PASSWORD_HERE");
-      headers.Add("useragent", "AWAPI DotNetLib " + DataUtilities.GetVersion() +
-          " - ENTER_YOUR_COMPANY_NAME_HERE");
+      headers.Add("useragent", "ENTER_YOUR_COMPANY_NAME_HERE");
       headers.Add("developerToken", "ENTER_YOUR_DEVELOPER_TOKEN_HERE");
       headers.Add("applicationToken", "ENTER_YOUR_APPLICATION_TOKEN_HERE");
       headers.Add("clientEmail", "ENTER_YOUR_CLIENT_EMAIL_HERE");
@@ -61,7 +62,7 @@ namespace com.google.api.adwords.samples.v13 {
       user.UseSandbox();
 
       // Get the service.
-      AccountService service = (AccountService) user.GetService(ApiServices.v13.AccountService);
+      AccountService service = (AccountService) user.GetService(AdWordsService.v13.AccountService);
 
       // Gets account's info.
       AccountInfo acctInfo = service.getAccountInfo();

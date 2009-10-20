@@ -1,0 +1,21 @@
+<wsdlParameters xmlns="http://microsoft.com/webReference/">
+	<sharetypes>true</sharetypes>
+	<documents>
+		<document>https://adwords.google.com/api/adwords/v13/AccountService?wsdl</document>
+		<document>https://adwords.google.com/api/adwords/v13/AdGroupService?wsdl</document>
+		<document>https://adwords.google.com/api/adwords/v13/AdService?wsdl</document>
+		<document>https://adwords.google.com/api/adwords/v13/CampaignService?wsdl</document>
+    <document>https://adwords.google.com/api/adwords/v13/CriterionService?wsdl</document>
+    <document>https://adwords.google.com/api/adwords/v13/InfoService?wsdl</document>
+		<document>https://adwords.google.com/api/adwords/v13/KeywordToolService?wsdl</document>
+		<document>https://adwords.google.com/api/adwords/v13/ReportService?wsdl</document>
+    <document>https://adwords.google.com/api/adwords/v13/SiteSuggestionService?wsdl</document>
+    <document>https://adwords.google.com/api/adwords/v13/TrafficEstimatorService?wsdl</document>
+  </documents>
+	<namespace>com.google.api.adwords.v13</namespace>
+	<webReferenceOptions>
+		<verbose>false</verbose>
+		<codeGenerationOptions>properties</codeGenerationOptions>
+		<style>client</style>
+	</webReferenceOptions>
+</wsdlParameters>

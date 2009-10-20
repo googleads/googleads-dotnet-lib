@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
 using System;
 
 namespace com.google.api.adwords.lib.util {
@@ -32,6 +34,7 @@ namespace com.google.api.adwords.lib.util {
     public string category;
   }
 
+  /// <summary>
   /// Represents a country or territory code you can use for targeting
   /// your ads. See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_countries.html">this page</a> for details.
   /// </summary>
@@ -47,6 +50,7 @@ namespace com.google.api.adwords.lib.util {
     public string code;
   }
 
+  /// <summary>
   /// Represents a currency code you can use to specify the currency of
   /// monetary values. See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_currency.html">this page</a> for details.
   /// </summary>
@@ -101,6 +105,11 @@ namespace com.google.api.adwords.lib.util {
     public string methodName;
 
     /// <summary>
+    /// Version of the API to which it belongs.
+    /// </summary>
+    public string version;
+
+    /// <summary>
     /// Rate of the API call.
     /// </summary>
     public int rate;
@@ -114,6 +123,7 @@ namespace com.google.api.adwords.lib.util {
     public bool isPerItem;
   }
 
+  /// <summary>
   /// Represents a time zone code used by AccountInfo.timeZoneId.
   /// See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_timezones.html">this page</a> for details.
   /// </summary>

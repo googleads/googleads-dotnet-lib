@@ -17,6 +17,9 @@ using System.Runtime.Serialization;
 
 
 namespace com.google.api.adwords.v13 {
+  /// <summary>
+  /// Custom exception class for wrapping AdWords API v13 Soap exceptions.
+  /// </summary>
   [Serializable]
   public class ApiException : ApplicationException {
     /// <summary>

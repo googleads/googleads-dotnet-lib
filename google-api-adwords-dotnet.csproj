@@ -37,7 +37,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="src\v200906\generate.bat" />
     <EmbeddedResource Include="data\categories.csv">
     </EmbeddedResource>
     <EmbeddedResource Include="data\countries.csv">
@@ -60,41 +59,47 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\lib\SoapServiceBase.cs" />
+    <Compile Include="src\v13\AdWordsApi.cs" />
+    <Compile Include="src\v200909\AdWordsApi.cs" />
     <Compile Include="src\AssemblyInfo.cs" />
     <Compile Include="src\lib\AdWordsUser.cs" />
-    <Compile Include="src\lib\ApiServices.cs" />
-    <Compile Include="src\lib\util\AccountManager.cs" />
-    <Compile Include="src\lib\util\UnitsUtilities.cs" />
-    <Compile Include="src\lib\util\ReportUtilities.cs" />
+    <Compile Include="src\lib\LegacyAdWordsApiServiceFactory.cs" />
+    <Compile Include="src\lib\AdWordsApiServiceFactory.cs" />
+    <Compile Include="src\lib\AdWordsService.cs" />
+    <Compile Include="src\lib\ServiceFactory.cs" />
+    <Compile Include="src\lib\ServiceSignature.cs" />
     <Compile Include="src\lib\ApplicationConfiguration.cs" />
     <Compile Include="src\lib\AuthToken.cs" />
     <Compile Include="src\lib\AuthTokenException.cs" />
+    <Compile Include="src\lib\util\AccountManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="src\lib\util\Archiver.cs" />
     <Compile Include="src\lib\util\ArchiveClasses.cs" />
     <Compile Include="src\lib\util\CommonStructs.cs" />
     <Compile Include="src\lib\util\CsvFile.cs" />
     <Compile Include="src\lib\ApiUnitsExtension.cs" />
     <Compile Include="src\lib\TraceExtension.cs" />
-    <Compile Include="src\lib\util\DataUtilities.cs" />
-    <Compile Include="src\v13\AccountService.cs" />
-    <Compile Include="src\v13\AdGroupService.cs" />
-    <Compile Include="src\v13\AdService.cs" />
+    <Compile Include="src\lib\util\DataUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\lib\util\ReportUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\lib\util\UnitsUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="src\v13\ApiExceptions.cs" />
-    <Compile Include="src\v13\CampaignService.cs" />
-    <Compile Include="src\v13\CriterionService.cs" />
-    <Compile Include="src\v13\CustomSoapService.cs" />
-    <Compile Include="src\v13\InfoService.cs" />
-    <Compile Include="src\v13\KeywordToolService.cs" />
-    <Compile Include="src\v13\ReportService.cs" />
-    <Compile Include="src\v13\SiteSuggestionService.cs" />
-    <Compile Include="src\v13\TrafficEstimatorService.cs" />
-    <Compile Include="src\v200906\AdGroupAdService.cs" />
-    <Compile Include="src\v200906\AdGroupCriterionService.cs" />
-    <Compile Include="src\v200906\AdGroupService.cs" />
-    <Compile Include="src\v200906\CampaignCriterionService.cs" />
-    <Compile Include="src\v200906\CampaignService.cs" />
-    <Compile Include="src\v200906\CampaignTargetService.cs" />
-    <Compile Include="src\v200906\SoapHeaders.cs" />
+    <Compile Include="src\v13\LegacyAdWordsApiService.cs">
+    </Compile>
+    <Compile Include="src\v200906\AdWordsApi.cs" />
+    <Compile Include="src\lib\AdWordsApiSoapHeaders.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\v13\wsdl_config.xml" />
+    <Content Include="src\v200906\wsdl_config.xml" />
+    <Content Include="src\v200909\wsdl_config.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

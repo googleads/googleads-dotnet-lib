@@ -12,12 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
+using com.google.api.adwords.v13;
+
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Xml;
-
-using com.google.api.adwords.v13;
 
 namespace com.google.api.adwords.lib.util {
   /// <summary>

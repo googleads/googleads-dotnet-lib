@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
 using com.google.api.adwords.lib;
 using com.google.api.adwords.v13;
 
@@ -40,7 +42,7 @@ namespace com.google.api.adwords.samples.v13 {
     public override void Run(AdWordsUser user) {
       // Get the service.
       AccountService service =
-          (AccountService) user.GetService(ApiServices.v13.AccountService);
+          (AccountService) user.GetService(AdWordsService.v13.AccountService);
       service.clientEmailValue = null;
 
       // Gets account's info.

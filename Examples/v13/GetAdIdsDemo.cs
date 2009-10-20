@@ -12,11 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Text;
+// Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
 using com.google.api.adwords.v13;
+
+using System;
+using System.Text;
 
 namespace com.google.api.adwords.samples.v13 {
   /// <summary>
@@ -39,7 +41,7 @@ namespace com.google.api.adwords.samples.v13 {
     /// </param>
     public override void Run(AdWordsUser user) {
       // Get the service.
-      AdService service = (AdService) user.GetService(ApiServices.v13.AdService);
+      AdService service = (AdService) user.GetService(AdWordsService.v13.AdService);
 
       // Get all ads.
       long[] adGroupIds = {long.Parse(_T("INSERT_ADGROUP_ID_HERE"))};
