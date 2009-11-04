@@ -125,9 +125,13 @@ namespace com.google.api.adwords.lib {
     /// </returns>
     private RequestHeader ReadHeadersFromConfig() {
       requestHeader = new RequestHeader();
-      requestHeader.authToken =
-          new AuthToken(ApplicationConfiguration.email,
-              ApplicationConfiguration.password).GetToken();
+      if (!string.IsNullOrEmpty(ApplicationConfiguration.email)) {
+        requestHeader.authToken =
+            new AuthToken(ApplicationConfiguration.email,
+                ApplicationConfiguration.password).GetToken();
+      } else {
+        requestHeader.authToken = "";
+      }
       if (!string.IsNullOrEmpty(ApplicationConfiguration.clientCustomerId)) {
         requestHeader.clientCustomerId = ApplicationConfiguration.clientCustomerId;
       }
