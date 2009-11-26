@@ -17,7 +17,6 @@
 using com.google.api.adwords.lib;
 using com.google.api.adwords.samples.both;
 using com.google.api.adwords.samples.v13;
-using com.google.api.adwords.samples.v200906;
 using com.google.api.adwords.samples.v200909;
 using com.google.api.adwords.v13;
 
@@ -69,19 +68,19 @@ namespace com.google.api.adwords.samples {
       sampleMap.Add("v13.ClientQuotaUsageDemo", new ClientQuotaUsageDemo());
 
 
-      // Add v200906 samples.
-      sampleMap.Add("v200906.AddCampaign", new AddCampaign());
-      sampleMap.Add("v200906.AddCampaignTarget", new AddCampaignTarget());
-      sampleMap.Add("v200906.AddNegativeCampaignPlacement", new AddNegativeCampaignPlacement());
-      sampleMap.Add("v200906.AddAdGroup", new AddAdGroup());
-      sampleMap.Add("v200906.AddImageAd", new AddImageAd());
-      sampleMap.Add("v200906.AddTextAd", new AddTextAd());
-      sampleMap.Add("v200906.GetAllAds", new GetAllAds());
-      sampleMap.Add("v200906.UpdateAd", new UpdateAd());
-      sampleMap.Add("v200906.AddAdGroupKeyword", new AddAdGroupKeyword());
-      sampleMap.Add("v200906.GetActiveCriteria", new GetActiveCriteria());
-
       // Add v200909 samples.
+      sampleMap.Add("v200909.AddCampaign", new AddCampaign());
+      sampleMap.Add("v200909.AddCampaignTarget", new AddCampaignTarget());
+      sampleMap.Add("v200909.AddNegativeCampaignPlacement", new AddNegativeCampaignPlacement());
+      sampleMap.Add("v200909.AddAdGroup", new AddAdGroup());
+      sampleMap.Add("v200909.AddImageAd", new AddImageAd());
+      sampleMap.Add("v200909.AddTextAd", new AddTextAd());
+      sampleMap.Add("v200909.GetAllAds", new GetAllAds());
+      sampleMap.Add("v200909.UpdateAd", new UpdateAd());
+      sampleMap.Add("v200909.AddAdGroupKeyword", new AddAdGroupKeyword());
+      sampleMap.Add("v200909.GetActiveCriteria", new GetActiveCriteria());
+      sampleMap.Add("v200909.GetAllActiveCampaigns", new GetAllActiveCampaigns());
+      sampleMap.Add("v200909.GetAllDisapprovedAds", new GetAllDisapprovedAds());
       sampleMap.Add("v200909.AddBulkMutateJob", new AddBulkMutateJob());
       sampleMap.Add("v200909.GetGeoLocation", new GetGeoLocation());
       sampleMap.Add("v200909.AddCampaignAdExtension", new AddCampaignAdExtension());
@@ -89,6 +88,7 @@ namespace com.google.api.adwords.samples {
       sampleMap.Add("v200909.GetTargetingIdeas", new GetTargetingIdeas());
       sampleMap.Add("v200909.AddMobileImageAd", new AddMobileImageAd());
       sampleMap.Add("v200909.GetApiUsage", new GetApiUsage());
+      sampleMap.Add("v200909.AddAdParam", new AddAdParam());
 
       // Add combined examples.
       sampleMap.Add("both.UsingKeywordSuggestionDemo", new UsingKeywordSuggestionDemo());

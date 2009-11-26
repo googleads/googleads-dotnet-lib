@@ -144,6 +144,8 @@ namespace com.google.api.adwords.lib {
             AdWordsService.MakeServiceSignature("v200909", "cm", "CampaignTargetService");
         GeoLocationService =
             AdWordsService.MakeServiceSignature("v200909", "cm", "GeoLocationService");
+        AdParamService =
+            AdWordsService.MakeServiceSignature("v200909", "cm", "AdParamService");
         InfoService =
             AdWordsService.MakeServiceSignature("v200909", "info", "InfoService");
         TargetingIdeaService =
@@ -208,6 +210,12 @@ namespace com.google.api.adwords.lib {
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature GeoLocationService;
+
+      /// <summary>
+      /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/AdParamService.html">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature AdParamService;
 
       /// <summary>
       /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/InfoService.html">

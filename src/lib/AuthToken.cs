@@ -14,8 +14,6 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib.util;
-
 using System;
 using System.Collections;
 using System.IO;

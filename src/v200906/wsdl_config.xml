@@ -2,11 +2,11 @@
   <sharetypes>true</sharetypes>
   <documents>
     <document>https://adwords.google.com/api/adwords/cm/v200906/AdGroupAdService?wsdl</document>
-    <document>https://adwords.google.com/api/adwords/cm/v200906/AdGroupCriterionService?wsdl</document>
     <document>https://adwords.google.com/api/adwords/cm/v200906/AdGroupService?wsdl</document>
     <document>https://adwords.google.com/api/adwords/cm/v200906/CampaignCriterionService?wsdl</document>
     <document>https://adwords.google.com/api/adwords/cm/v200906/CampaignService?wsdl</document>
     <document>https://adwords.google.com/api/adwords/cm/v200906/CampaignTargetService?wsdl</document>
+    <document>https://adwords.google.com/api/adwords/cm/v200906/AdGroupCriterionService?wsdl</document>
   </documents>
   <namespace>com.google.api.adwords.v200906</namespace>
   <webReferenceOptions>

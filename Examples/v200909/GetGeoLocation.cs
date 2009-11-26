@@ -54,10 +54,12 @@ namespace com.google.api.adwords.samples.v200909 {
       address2.countryCode = "US";
 
       try {
-        GeoLocation[] locations = geoService.get(new Address[] {address1, address2});
+        GeoLocationSelector selector = new GeoLocationSelector();
+        selector.addresses = new Address[] {address1, address2};
+        GeoLocation[] locations = geoService.get(selector);
         if (locations != null) {
           foreach (GeoLocation location in locations) {
-            Console.WriteLine("The address {0}, {1} is located at co-ordinates ({2}, {3})",
+            Console.WriteLine("The address {0}, {1} is located at coordinates ({2}, {3})",
                 location.address.streetAddress, location.address.countryCode,
                 location.geoPoint.latitudeInMicroDegrees,
                 location.geoPoint.longitudeInMicroDegrees);

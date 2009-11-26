@@ -15,12 +15,12 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200906;
+using com.google.api.adwords.v200909;
 
 using System;
 using System.Collections;
 
-namespace com.google.api.adwords.samples.v200906 {
+namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
   /// This code sample adds geo, language, and network targeting to an
   /// existing campaign. To create a campaign, you can run AddCampaign.cs.
@@ -42,7 +42,7 @@ namespace com.google.api.adwords.samples.v200906 {
     /// </param>
     public override void Run(AdWordsUser user) {
       CampaignTargetService service =
-          (CampaignTargetService) user.GetService(AdWordsService.v200906.CampaignTargetService);
+          (CampaignTargetService) user.GetService(AdWordsService.v200909.CampaignTargetService);
 
       long campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
 

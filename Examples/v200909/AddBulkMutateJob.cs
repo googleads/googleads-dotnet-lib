@@ -299,7 +299,7 @@ namespace com.google.api.adwords.samples.v200909 {
 
       // Generate a campaign name.
       string campaignName =
-          string.Format("Campaign - {0}", DateTime.Now.ToString("yyyy-M-d H:m:s"));
+          string.Format("Campaign - {0}", DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff"));
       campaign.name = string.Format(campaignName);
 
       // Required: Set the campaign status.
@@ -365,7 +365,8 @@ namespace com.google.api.adwords.samples.v200909 {
       adGroup.status = AdGroupStatus.ENABLED;
 
       // Optional: set a name for AdGroup.
-      string adGroupName = string.Format("AdGroup - {0}", DateTime.Now.ToString("yyyy-M-d H:m:s"));
+      string adGroupName =
+          string.Format("AdGroup - {0}", DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff"));
       adGroup.name = adGroupName;
 
       // Optional: Create a Manual CPC Bid.

@@ -15,11 +15,11 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200906;
+using com.google.api.adwords.v200909;
 
 using System;
 
-namespace com.google.api.adwords.samples.v200906 {
+namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
   /// This code sample retrieves all active, non-negative criteria across an
   /// entire account. To add keywords to an existing ad group, you can run
@@ -42,7 +42,7 @@ namespace com.google.api.adwords.samples.v200906 {
     /// </param>
     public override void Run(AdWordsUser user) {
       AdGroupCriterionService service =
-          (AdGroupCriterionService) user.GetService(AdWordsService.v200906.AdGroupCriterionService);
+          (AdGroupCriterionService) user.GetService(AdWordsService.v200909.AdGroupCriterionService);
 
       AdGroupCriterionSelector selector = new AdGroupCriterionSelector();
       selector.criterionUseSpecified = true;

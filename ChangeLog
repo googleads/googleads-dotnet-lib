@@ -1,3 +1,10 @@
+5.1.0
+- Added support for AdParamService.
+- Added an improved code patcher.
+- Fixed issue 20, 22 on code site.
+- Upgraded all code samples to v200909.
+- Logging class rewritten so that there are combined logs for http requests and soap requests.
+
 5.0.0
 - Added support for v200909 services and added new samples.
 - Updated v200906 stub classes to match the latest wsdls.

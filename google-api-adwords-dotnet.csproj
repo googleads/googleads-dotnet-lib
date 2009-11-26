@@ -90,11 +90,10 @@
     <Compile Include="src\lib\util\UnitsUtilities.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="src\v13\ApiExceptions.cs" />
+    <Compile Include="src\v13\LegacyAdWordsApiExceptions.cs" />
     <Compile Include="src\v13\LegacyAdWordsApiService.cs">
     </Compile>
     <Compile Include="src\v200906\AdWordsApi.cs" />
-    <Compile Include="src\lib\AdWordsApiSoapHeaders.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="src\v13\wsdl_config.xml" />

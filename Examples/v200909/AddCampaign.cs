@@ -15,11 +15,11 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200906;
+using com.google.api.adwords.v200909;
 
 using System;
 
-namespace com.google.api.adwords.samples.v200906 {
+namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
   /// This code sample creates a new campaign.
   /// </summary>
@@ -40,7 +40,7 @@ namespace com.google.api.adwords.samples.v200906 {
     /// </param>
     public override void Run(AdWordsUser user) {
       CampaignService service =
-          (CampaignService) user.GetService(AdWordsService.v200906.CampaignService);
+          (CampaignService) user.GetService(AdWordsService.v200909.CampaignService);
 
       Campaign campaign = new Campaign();
 

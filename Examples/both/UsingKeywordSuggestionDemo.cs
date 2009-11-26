@@ -16,16 +16,16 @@
 
 using com.google.api.adwords.lib;
 using com.google.api.adwords.v13;
-using com.google.api.adwords.v200906;
+using com.google.api.adwords.v200909;
 
 using System;
 using System.Collections.Generic;
 
-using KeywordV200906 = com.google.api.adwords.v200906.Keyword;
+using Keywordv200909 = com.google.api.adwords.v200909.Keyword;
 
 namespace com.google.api.adwords.samples.both {
   /// <summary>
-  /// Shows how to use both v13 and v200906 APIs in a single sample.
+  /// Shows how to use both v13 and v200909 APIs in a single sample.
   /// </summary>
   class UsingKeywordSuggestionDemo : SampleBase{
     /// <summary>
@@ -33,7 +33,7 @@ namespace com.google.api.adwords.samples.both {
     /// </summary>
     public override string Description {
       get {
-        return "Shows how to use both v13 and v200906 APIs in a single sample.";
+        return "Shows how to use both v13 and v200909 APIs in a single sample.";
       }
     }
 
@@ -52,16 +52,16 @@ namespace com.google.api.adwords.samples.both {
       KeywordVariations variations = keywordToolService.getKeywordVariations(
           new SeedKeyword[] {seed}, true, new string[] {"en"}, new string[] {"US"});
 
-      // Add top 3 variations as keywords using v200906.
+      // Add top 3 variations as keywords using v200909.
       AdGroupCriterionService service =
-          (AdGroupCriterionService) user.GetService(AdWordsService.v200906.AdGroupCriterionService);
+          (AdGroupCriterionService) user.GetService(AdWordsService.v200909.AdGroupCriterionService);
 
       int count = (variations.moreSpecific.Length > 3) ? 3 : variations.moreSpecific.Length;
       List<AdGroupCriterionOperation> operations =  new List<AdGroupCriterionOperation>();
       long adGroupId = long.Parse(_T("INSERT_ADGROUP_ID_HERE"));
 
       for (int i = 0; i < count; i++) {
-        KeywordV200906 keyword = new KeywordV200906();
+        Keywordv200909 keyword = new Keywordv200909();
         keyword.text = variations.moreSpecific[i].text;
         keyword.matchTypeSpecified = true;
         keyword.matchType = KeywordMatchType.BROAD;
@@ -84,7 +84,7 @@ namespace com.google.api.adwords.samples.both {
 
         if (results != null && results.value != null && results.value.Length > 0) {
           foreach (AdGroupCriterion criterion in results.value) {
-            KeywordV200906 result = criterion.criterion as KeywordV200906;
+            Keywordv200909 result = criterion.criterion as Keywordv200909;
             Console.WriteLine("New keyword with text = \"{0}\" and id = \"{1}\" was created.",
                 result.text, result.id);
           }

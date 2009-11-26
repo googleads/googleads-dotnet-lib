@@ -4,13 +4,14 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Net;
+using System.Runtime.CompilerServices;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
+using System.Threading;
 using System.Web;
 using System.Web.Services;
 using System.Web.Services.Protocols;
 using System.Xml;
-using System.Runtime.CompilerServices;
-using System.Runtime.Remoting.Messaging;
 
 namespace com.google.api.adwords.lib {
   /// <summary>
@@ -31,7 +32,12 @@ namespace com.google.api.adwords.lib {
     /// <summary>
     /// The filename to which we log the SOAP messages.
     /// </summary>
-    private string fileName;
+    private string soapFileName;
+
+    /// <summary>
+    /// The filename to which we log the HTTP requests.
+    /// </summary>
+    private string httpFileName;
 
     /// <summary>
     /// Should we log the SOAP messages to file?
@@ -42,16 +48,6 @@ namespace com.google.api.adwords.lib {
     /// Should we log the SOAP messages to console?
     /// </summary>
     private bool logToConsole;
-
-    /// <summary>
-    /// Content type of input SOAP messages.
-    /// </summary>
-    string inputContentType;
-
-    /// <summary>
-    /// Content type of output SOAP messages.
-    /// </summary>
-    string outputContentType;
 
     /// <summary>
     /// Save the Stream representing the SOAP request or SOAP response into
@@ -106,7 +102,8 @@ namespace com.google.api.adwords.lib {
         if (!Directory.Exists(logPath)) {
           Directory.CreateDirectory(logPath);
         }
-        fileName = logPath + WebServiceType.FullName + ".log";
+        soapFileName = logPath + "soap_xml.log";
+        httpFileName = logPath + "http_logs.log";
       } else {
         logPath = "";  // default location for SOAP logs
       }
@@ -124,183 +121,176 @@ namespace com.google.api.adwords.lib {
     public override void ProcessMessage(SoapMessage message) {
       switch (message.Stage) {
         case SoapMessageStage.BeforeSerialize:
-          outputContentType = message.ContentType;
           break;
         case SoapMessageStage.AfterSerialize:
-          if (logToFile && !string.IsNullOrEmpty(fileName)) {
-            StreamWriter writer = new StreamWriter(fileName, true);
-            WriteOutput(writer, message);
-            writer.Close();
-          }
-          if (logToConsole == true) {
-            WriteOutput(Console.Out, message);
-          }
           CopyContentsToOldStream();
-          outputContentType = "";
+          SaveStreamContents(true);
           break;
         case SoapMessageStage.BeforeDeserialize:
-          inputContentType = message.ContentType;
           CopyContentsFromOldStream();
-          if (logToFile && !string.IsNullOrEmpty(fileName)) {
-            StreamWriter writer = new StreamWriter(fileName, true);
-            WriteInput(writer, message);
-            writer.Close();
-          }
-          if (logToConsole == true) {
-            WriteInput(Console.Out, message);
-          }
-          inputContentType = "";
+          SaveStreamContents(false);
           break;
         case SoapMessageStage.AfterDeserialize:
+          PerformLogging();
           break;
         default: throw new Exception("Invalid stage");
       }
     }
 
     /// <summary>
-    /// Writes an outgoing SOAP message to a textwriter.
+    /// Perform the SOAP and HTTP logging.
     /// </summary>
-    /// <param name="textWriter">The textwriter to which the message is
-    /// to be written.</param>
-    /// <param name="message">The message to be written.</param>
-    private void WriteOutput(TextWriter textWriter, SoapMessage message) {
-      newStream.Position = 0;
-      string soapString =
-          (message is SoapServerMessage) ? "SoapResponse" : "SoapRequest";
+    private void PerformLogging() {
+      AdWordsUser user = null;
+      SoapServiceBase service = null;
+      String soapRequest = null;
+      String soapResponse = null;
 
-      string soapHeaderString = "";
-
-      if (message is SoapClientMessage) {
-        SoapClientMessage clientMessage = (SoapClientMessage)message;
-        HttpWebClientProtocol hwcp =
-            (HttpWebClientProtocol)clientMessage.Client;
-
-        // Gather the header information
-        System.Uri uri = new Uri(message.Url);
-        String host = uri.Host;
-        String port = uri.Port.ToString();
-        String path = uri.LocalPath;
-        String userAgent = hwcp.UserAgent;
-        String contentLength = clientMessage.Stream.Length.ToString();
-        String soapAction = clientMessage.MethodInfo.BeginMethodInfo.Name;
-
-        soapHeaderString += "POST " + path + " HTTP/1.0\n";
-        soapHeaderString += "Host: " + host + ":" + port + "\n";
-        soapHeaderString += "User-agent: " + userAgent + "\n";
-        soapHeaderString += "Content-type: " + outputContentType + "\n";
-        soapHeaderString += "Content-length: " + contentLength + "\n";
-        soapHeaderString += "SOAPAction: \"" + soapAction + "\"";
+      if (HttpContext.Current != null) {
+        user = (AdWordsUser) HttpContext.Current.Items["AdWordsParent"];
+        service = (SoapServiceBase) HttpContext.Current.Items["SoapService"];
+        soapRequest = (string) HttpContext.Current.Items["SoapRequest"];
+        soapResponse = (string) HttpContext.Current.Items["SoapResponse"];
+      } else {
+        user = (AdWordsUser) CallContext.GetData("AdWordsParent");
+        service = (SoapServiceBase) CallContext.GetData("SoapService");
+        soapRequest = (string) CallContext.GetData("SoapRequest");
+        soapResponse = (string) CallContext.GetData("SoapResponse");
       }
 
-      MemoryStream cleanStream = new MemoryStream();
-      CopyAndCleanXmlStream(newStream, cleanStream);
-
-      MemoryStream w = new MemoryStream();
-      StreamWriter writer = new StreamWriter(w);
-      writer.WriteLine("-----" + soapString + " at " + DateTime.Now + "-----");
-      writer.WriteLine(soapHeaderString);
-      writer.WriteLine("--------------------------------------------------");
-      writer.Flush();
-      Copy(cleanStream, w);
-      writer.WriteLine("--------------------------------------------------");
-      writer.Flush();
-      writer.Close();
-      cleanStream.Close();
-      textWriter.WriteLine(Encoding.UTF8.GetString(w.ToArray()));
-    }
-
-    /// <summary>
-    /// Copy the contents from new stream to old stream.
-    /// </summary>
-    private void CopyContentsToOldStream() {
-      newStream.Position = 0;
-      Copy(newStream, oldStream);
-    }
-
-    /// <summary>
-    /// Copy the contents from old stream to new stream.
-    /// </summary>
-    private void CopyContentsFromOldStream() {
-      Copy(oldStream, newStream);
-      newStream.Position = 0;
-    }
-
-    /// <summary>
-    /// Writes an outgoing SOAP message to a textwriter.
-    /// </summary>
-    /// <param name="textWriter">The textwriter to which the message is
-    /// to be written.</param>
-    /// <param name="message">The message to be written.</param>
-    private void WriteInput(TextWriter textWriter, SoapMessage message) {
-      string soapHeaderString = "";
-
-      if (message is SoapClientMessage) {
-        // Gather the header information
-        SoapClientMessage clientMessage = (SoapClientMessage)message;
-
-        String contentLength = newStream.Length.ToString();
-        String soapAction = clientMessage.MethodInfo.BeginMethodInfo.Name;
-
-        soapHeaderString += "Content-type: " + inputContentType + "\n";
-        soapHeaderString += "Content-length: " + contentLength + "\n";
-        soapHeaderString += "SOAPAction: \"" + soapAction + "\"";
+      if (user == null || service == null || soapRequest == null || soapResponse == null) {
+        return;
       }
-
-      string soapString =
-          (message is SoapServerMessage) ? "SoapRequest" : "SoapResponse";
-
-      MemoryStream cleanStream = new MemoryStream();
-      CopyAndCleanXmlStream(newStream, cleanStream);
-      MemoryStream w = new MemoryStream();
-      StreamWriter writer = new StreamWriter(w);
-
-      writer.WriteLine("-----" + soapString +  " at " + DateTime.Now + "-----");
-      writer.WriteLine(soapHeaderString);
-      writer.WriteLine("--------------------------------------------------");
-      writer.Flush();
-      Copy(cleanStream, w);
-      writer.WriteLine("--------------------------------------------------");
-      writer.Flush();
-      writer.Close();
-      cleanStream.Close();
-      textWriter.WriteLine(Encoding.UTF8.GetString(w.ToArray()));
-    }
-
-    /// <summary>
-    /// Load the XML from oldStream and save a human readable version
-    /// in cleanedUpStream.
-    /// </summary>
-    /// <param name="oldStream">The old stream from which the contents
-    /// are to be copied.</param>
-    /// <param name="cleanedUpStream">The new stream, which holds the
-    /// formatted xml contents.</param>
-    private void CopyAndCleanXmlStream(Stream oldStream,
-        Stream cleanedUpStream) {
-      // Save the position of oldStream before reading it
-      long oldPosition = oldStream.Position;
-      oldStream.Position = 0;
-
-      // Load the XML writer
-      XmlTextWriter xmlWriter = new XmlTextWriter(cleanedUpStream,
-          System.Text.Encoding.UTF8);
-      xmlWriter.Indentation = 2;
-      xmlWriter.IndentChar = ' ';
-      xmlWriter.Formatting = Formatting.Indented;
-
-      // Load the XML from oldStream and write to cleanedUpStream
-      XmlTextReader xmlReader = new XmlTextReader(oldStream);
-      XmlDocument xml = new XmlDocument();
-      xml.Load(xmlReader);
 
       if (ApplicationConfiguration.maskCredentials) {
-        MaskCredentialsInLogs(xml);
+        XmlDocument xDoc = new XmlDocument();
+        xDoc.LoadXml(soapRequest);
+        MaskCredentialsInLogs(xDoc);
+        soapRequest = xDoc.OuterXml;
       }
-      xml.WriteTo(xmlWriter);
-      xmlWriter.Flush();
-      cleanedUpStream.Flush();
 
-      cleanedUpStream.Position = 0;
-      oldStream.Position = oldPosition;
+      string formattedSoapRequest = FormatSoapRequest(service.Request, soapRequest);
+      string formattedSoapResponse = FormatSoapResponse(service.Response, soapResponse);
+      string formattedHttpRequest = FormatHttpRequest(soapRequest);
+      string formattedHttpResponse = FormatHttpResponse(soapResponse);
+
+      string soapLog = formattedSoapRequest + formattedSoapResponse;
+      string httpLog = string.Format("host={0},url={1},{2},{3}", service.Request.RequestUri.Host,
+          service.Request.RequestUri.AbsolutePath, formattedHttpRequest, formattedHttpResponse);
+
+      if (logToFile) {
+        WriteToFile(soapFileName, soapLog);
+        WriteToFile(httpFileName, httpLog);
+      }
+    }
+
+    /// <summary>
+    /// Writes a log string into a specified log file.
+    /// </summary>
+    /// <param name="fileName">The file to which the log text should be written.</param>
+    /// <param name="logText">The log text to be written to the file.</param>
+    private void WriteToFile(string fileName, string logText) {
+      for (int i = 0; i < 3; i++) {
+        try {
+          StreamWriter writer = new StreamWriter(fileName, true);
+          writer.WriteLine(logText);
+          writer.Close();
+          break;
+        } catch (Exception) {
+          Thread.Sleep(100 + new Random().Next(1000));
+        }
+      }
+    }
+
+    /// <summary>
+    /// Create a formatted http request text, to be written into HTTP logs.
+    /// </summary>
+    /// <param name="soapRequest">The request xml for this SOAP call.</param>
+    /// <returns>A formatted string that represents the HTTP request.</returns>
+    private string FormatHttpRequest(string soapRequest) {
+      XmlDocument xDoc = new XmlDocument();
+      xDoc.LoadXml(soapRequest);
+      XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
+      xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
+      XmlNode methodNode =
+          xDoc.SelectSingleNode("soap:Envelope/soap:Body/*", xmlns);
+      string operators = "None";
+      if (methodNode.Name == "mutate") {
+        operators = "";
+        foreach (XmlNode child in methodNode.ChildNodes) {
+          if (child.Name == "operations") {
+            foreach (XmlNode grandChild in child.ChildNodes) {
+              if (grandChild.Name == "operator") {
+                operators += grandChild.InnerText + "|";
+              }
+            }
+          }
+        }
+        operators = operators.TrimEnd('|');
+      }
+      return string.Format("method={0},operator={1}", methodNode.Name, operators);
+    }
+
+    /// <summary>
+    /// Create a formatted http response text, to be written into HTTP logs.
+    /// </summary>
+    /// <param name="soapResponse">The response xml for this SOAP call.</param>
+    /// <returns>A formatted string that represents the HTTP response.</returns>
+    private string FormatHttpResponse(string soapResponse) {
+      XmlDocument xDoc = new XmlDocument();
+      xDoc.LoadXml(soapResponse);
+      XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
+      xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
+      XmlNodeList childNodes =
+          xDoc.SelectNodes("soap:Envelope/soap:Header/*", xmlns);
+      if (childNodes.Count == 1 && childNodes[0].Name == "ResponseHeader") {
+        childNodes = childNodes[0].ChildNodes;
+      }
+      StringBuilder responseText = new StringBuilder();
+      foreach (XmlNode childNode in childNodes) {
+        if (childNode is XmlElement) {
+          responseText.AppendFormat("{0}={1},", childNode.Name, childNode.InnerText);
+        }
+      }
+      return responseText.ToString().TrimEnd(',');
+    }
+
+    /// <summary>
+    /// Create a formatted soap request text, to be written into SOAP logs.
+    /// </summary>
+    /// <param name="webRequest">The web request for this SOAP call.</param>
+    /// <param name="soapRequest">The request xml for this SOAP call.</param>
+    /// <returns>A formatted string that represents the SOAP request.</returns>
+    private string FormatSoapRequest(WebRequest webRequest, string soapRequest) {
+      StringBuilder builder = new StringBuilder();
+      builder.AppendFormat("-----------------BEGIN API CALL---------------------\r\n");
+      builder.AppendFormat("\r\nRequest\r\n");
+      builder.AppendFormat("-------\r\n\r\n");
+      builder.AppendFormat("{0} {1}\r\n", webRequest.Method, webRequest.RequestUri.AbsolutePath);
+      foreach (string key in webRequest.Headers) {
+        builder.AppendFormat("{0}: {1}\r\n", key, webRequest.Headers[key]);
+      }
+      builder.AppendFormat("\r\n{0}\r\n", soapRequest);
+      return builder.ToString();
+    }
+
+    /// <summary>
+    /// Create a formatted soap response text, to be written into SOAP logs.
+    /// </summary>
+    /// <param name="webResponse">The web response for this SOAP call.</param>
+    /// <param name="soapResponse">The response xml for this SOAP call.</param>
+    /// <returns>A formatted string that represents the SOAP response.</returns>
+    private string FormatSoapResponse(WebResponse webResponse, string soapResponse) {
+      StringBuilder builder = new StringBuilder();
+      builder.AppendFormat("\r\nResponse\r\n");
+      builder.AppendFormat("--------\r\n\r\n");
+
+      foreach (string key in webResponse.Headers) {
+        builder.AppendFormat("{0}: {1}\r\n", key, webResponse.Headers[key]);
+      }
+      builder.AppendFormat("\r\n{0}\r\n", soapResponse);
+      builder.AppendFormat("-----------------END API CALL-----------------------\r\n");
+      return builder.ToString();
     }
 
     /// <summary>
@@ -347,6 +337,42 @@ namespace com.google.api.adwords.lib {
             break;
         }
       }
+    }
+
+    /// <summary>
+    /// Save the contents of the Soap stream into CallContext.
+    /// </summary>
+    /// <param name="isRequest">True, if the Soap stream contains the http
+    /// request.</param>
+    /// <remarks>We store the stream contents to callcontext rather than dumping
+    /// it immediately to file, to ensure that request and response xmls appear
+    /// as a pair when making multithreaded calls.</remarks>
+    private void SaveStreamContents(bool isRequest) {
+      MemoryStream memStream = (MemoryStream) newStream;
+      string key = isRequest ? "SoapRequest" : "SoapResponse";
+      string value = Encoding.UTF8.GetString(memStream.ToArray());
+
+      if (HttpContext.Current != null) {
+        HttpContext.Current.Items.Add(key, value);
+      } else {
+        CallContext.SetData(key, value);
+      }
+    }
+
+    /// <summary>
+    /// Copy the contents from new stream to old stream.
+    /// </summary>
+    private void CopyContentsToOldStream() {
+      newStream.Position = 0;
+      Copy(newStream, oldStream);
+    }
+
+    /// <summary>
+    /// Copy the contents from old stream to new stream.
+    /// </summary>
+    private void CopyContentsFromOldStream() {
+      Copy(oldStream, newStream);
+      newStream.Position = 0;
     }
 
     /// <summary>

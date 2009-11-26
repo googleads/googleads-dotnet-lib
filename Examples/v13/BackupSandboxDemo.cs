@@ -41,7 +41,7 @@ namespace com.google.api.adwords.samples.v13 {
     /// </param>
     public override void Run(AdWordsUser user) {
       DataUtilities.DownloadSandboxContents(user, "C:\\SandboxBackup-" +
-          DateTime.Now.ToString("yyyy-M-d H-m-s") + ".xml");
+          DateTime.Now.ToString("yyyy-M-d H-m-s.ffffff") + ".xml");
     }
   }
 }

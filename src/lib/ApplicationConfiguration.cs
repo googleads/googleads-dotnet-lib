@@ -276,6 +276,6 @@ namespace com.google.api.adwords.lib {
     /// <summary>
     /// The publicly released version number.
     /// </summary>
-    public const String version = "5.0";
+    public const String version = "5.1";
   }
 }

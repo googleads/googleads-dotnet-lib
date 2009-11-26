@@ -93,7 +93,9 @@ namespace com.google.api.adwords.samples.v200909 {
       GeoLocationService geoService =
           (GeoLocationService) user.GetService(AdWordsService.v200909.GeoLocationService);
 
-      return geoService.get(new Address[] {address})[0];
+      GeoLocationSelector selector = new GeoLocationSelector();
+      selector.addresses = new Address[] {address};
+      return geoService.get(selector)[0];
     }
   }
 }

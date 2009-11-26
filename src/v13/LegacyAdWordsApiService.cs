@@ -101,12 +101,12 @@ namespace com.google.api.adwords.v13 {
             ConstructorInfo ci = targetType.GetConstructor(new Type[]
                 {typeof(int), typeof(string), typeof(Exception)});
             if (ci != null) {
-              return (ApiException) ci.Invoke(new object[] {code, message, ex});
+              return (LegacyAdWordsApiException) ci.Invoke(new object[] {code, message, ex});
             }
           }
         }
       }
-      return new ApiException(-1, "Unknown exception encountered", ex);
+      return new LegacyAdWordsApiException(-1, "Unknown exception encountered", ex);
     }
   }
 }

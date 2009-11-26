@@ -15,10 +15,14 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using System;
+using System.IO;
 using System.Net;
 using System.Runtime.Remoting.Messaging;
+using System.Text;
 using System.Web;
 using System.Web.Services.Protocols;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace com.google.api.adwords.lib {
   /// <summary>
@@ -121,8 +125,10 @@ namespace com.google.api.adwords.lib {
       try {
         if (HttpContext.Current != null) {
           HttpContext.Current.Items.Add("AdWordsParent", this.Parent);
+          HttpContext.Current.Items.Add("SoapService", this);
         } else {
           CallContext.SetData("AdWordsParent", this.Parent);
+          CallContext.SetData("SoapService", this);
         }
         return base.Invoke(methodName, parameters);
       } catch (SoapException ex) {
@@ -130,8 +136,10 @@ namespace com.google.api.adwords.lib {
       } finally {
         if (HttpContext.Current != null) {
           HttpContext.Current.Items.Remove("AdWordsParent");
+          HttpContext.Current.Items.Remove("SoapService");
         } else {
           CallContext.FreeNamedDataSlot("AdWordsParent");
+          CallContext.FreeNamedDataSlot("SoapService");
         }
       }
     }

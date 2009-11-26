@@ -15,11 +15,11 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200906;
+using com.google.api.adwords.v200909;
 
 using System;
 
-namespace com.google.api.adwords.samples.v200906 {
+namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
   /// This code sample updates an ad's status given an existing ad group and ad.
   /// </summary>
@@ -40,7 +40,7 @@ namespace com.google.api.adwords.samples.v200906 {
     /// </param>
     public override void Run(AdWordsUser user) {
       AdGroupAdService service =
-          (AdGroupAdService) user.GetService(AdWordsService.v200906.AdGroupAdService);
+          (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);
 
       // Update your Ad.
       AdGroupAd adGroupAd = new AdGroupAd();

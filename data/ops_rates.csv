@@ -108,6 +108,12 @@ v200909,AdGroupCriterionService,mutate.SET,3,true
 v200909,AdGroupService,get,1,true
 v200909,AdGroupService,mutate.ADD,1,true
 v200909,AdGroupService,mutate.SET,5,true
+v200909,AdParamService,get,0.1,true
+v200909,AdParamService,mutate.SET,0.1,true
+v200909,AdParamService,mutate.REMOVE,0.1,true
+v200909,BulkMutateJobService,get,1,true
+v200909,BulkMutateJobService,mutate.ADD,1,true
+v200909,BulkMutateJobService,mutate.SET,1,true
 v200909,CampaignAdExtensionService,get,1,true
 v200909,CampaignAdExtensionService,mutate.ADD,1,true
 v200909,CampaignAdExtensionService,mutate.REMOVE,1,true

@@ -85,10 +85,10 @@ namespace com.google.api.adwords.samples.v200909 {
       try {
         TargetingIdeaPage results = service.get(selector);
 
-        if (results != null && results.ideas != null) {
+        if (results != null && results.entries != null) {
           Console.WriteLine("There are a total of {0} suggestions. The first {1} results " +
-              "are displayed below.", results.totalNumEntries, results.ideas.Length);
-          foreach (TargetingIdeaPage.TargetingIdea idea in results.ideas) {
+              "are displayed below.", results.totalNumEntries, results.entries.Length);
+          foreach (TargetingIdea idea in results.entries) {
             foreach (Type_AttributeMapEntry entry in idea.data) {
               if (entry.value is KeywordAttribute) {
                 KeywordAttribute keywordIdea = (KeywordAttribute) entry.value;

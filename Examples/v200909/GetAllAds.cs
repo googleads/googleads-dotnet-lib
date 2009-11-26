@@ -15,11 +15,11 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200906;
+using com.google.api.adwords.v200909;
 
 using System;
 
-namespace com.google.api.adwords.samples.v200906 {
+namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
   /// This code sample retrieves all ads given an existing ad group. To add
   /// ads to an existing ad group, you can run AddTextAd.cs.
@@ -41,7 +41,7 @@ namespace com.google.api.adwords.samples.v200906 {
     /// </param>
     public override void Run(AdWordsUser user) {
       AdGroupAdService service =
-          (AdGroupAdService) user.GetService(AdWordsService.v200906.AdGroupAdService);
+          (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);
 
       // Create a selector and set the filters.
       AdGroupAdSelector selector = new AdGroupAdSelector();
@@ -52,12 +52,12 @@ namespace com.google.api.adwords.samples.v200906 {
 
         if (page != null && page.entries != null) {
           foreach (AdGroupAd tempAdGroupAd in page.entries) {
-            Console.WriteLine("Ad status is {0} and id is {1}", tempAdGroupAd.ad.id,
-                tempAdGroupAd.status);
+            Console.WriteLine("Ad status is {0} and id is {1}", tempAdGroupAd.status,
+                tempAdGroupAd.ad.id);
           }
         }
       } catch (Exception ex) {
-        Console.WriteLine("Failed to create Ad(s). Exception says \"{0}\"", ex.Message);
+        Console.WriteLine("Failed to get Ad(s). Exception says \"{0}\"", ex.Message);
       }
     }
   }

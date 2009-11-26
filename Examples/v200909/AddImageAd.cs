@@ -15,13 +15,13 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200906;
+using com.google.api.adwords.v200909;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.samples.v200906 {
+namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
   /// This code sample creates a new image ad given an existing ad group.
   /// To create an ad group, you can run AddAdGroup.cs.
@@ -43,7 +43,7 @@ namespace com.google.api.adwords.samples.v200906 {
     /// </param>
     public override void Run(AdWordsUser user) {
       AdGroupAdService service =
-          (AdGroupAdService) user.GetService(AdWordsService.v200906.AdGroupAdService);
+          (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);
 
       // Create your image ad.
       ImageAd imageAd = new ImageAd();
