@@ -23,7 +23,9 @@ using System.Text;
 
 namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
-  /// This sample shows how to override an existing AdExtension.
+  /// This example illustrates how to override a campaign ad extension. To create
+  /// an ad, run AddAds.cs. To create a campaign ad extension, run
+  /// AddCampaignAdExtension.cs.
   /// </summary>
   class AddAdExtensionOverride : SampleBase {
     /// <summary>
@@ -40,51 +42,52 @@ namespace com.google.api.adwords.samples.v200909 {
     /// </summary>
     /// <param name="user">The AdWords user object running the sample.</param>
     public override void Run(AdWordsUser user) {
+      // Get the AdExtensionOverrideService.
       AdExtensionOverrideService adExtensionOverrideService =
           (AdExtensionOverrideService) user.GetService(AdWordsService.v200909.
               AdExtensionOverrideService);
 
+      long adId = long.Parse(_T("INSERT_AD_ID_HERE"));
+      long campaignAdExtensionId = long.Parse(_T("INSERT_CAMPAIGN_AD_EXTENSION_ID_HERE"));
+
+      Address address = new Address();
+      address.streetAddress = "1600 Amphitheatre Parkway";
+      address.cityName = "Mountain View";
+      address.provinceCode = "CA";
+      address.postalCode = "94043";
+      address.countryCode = "US";
+
+      GeoLocationService geoService =
+          (GeoLocationService) user.GetService(AdWordsService.v200909.GeoLocationService);
+
+      GeoLocationSelector selector = new GeoLocationSelector();
+      selector.addresses = new Address[] {address};
+      GeoLocation location = geoService.get(selector)[0];
+
+      LocationExtension extension = new LocationExtension();
+      extension.id = campaignAdExtensionId;
+      extension.idSpecified = true;
+      extension.address = location.address;
+      extension.geoPoint = location.geoPoint;
+      extension.encodedLocation = location.encodedLocation;
+      extension.source = LocationExtensionSource.ADWORDS_FRONTEND;
+      extension.sourceSpecified = true;
+      extension.phoneNumber = "1-800-555-5556";
+
+      AdExtensionOverride adOverride = new AdExtensionOverride();
+      adOverride.adExtension = extension;
+      adOverride.adIdSpecified = true;
+      adOverride.adId = adId;
+
+
       AdExtensionOverrideOperation operation = new AdExtensionOverrideOperation();
       operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
-
-      operation.operand = new AdExtensionOverride();
-      operation.operand.adIdSpecified = true;
-      operation.operand.adId = long.Parse(_T("INSERT_AD_ID_HERE"));
-
-      Address address = new Address();
-      address.streetAddress = "1600 Amphitheatre Pkwy, Mountain View";
-      address.countryCode = "US";
-
-      GeoLocation location = GetLocationForAddress(user, address);
-
-      LocationExtension locationExtension = new LocationExtension();
-
-      locationExtension.idSpecified = true;
-      locationExtension.id = long.Parse(_T("INSERT_LOCATION_EXTENSION_ID_HERE"));
-
-      // Note: Do not populate an address directly. Instead, use
-      // GeoLocationService to obtain the location of an address,
-      // and use the address as per the location it returns.
-      locationExtension.address = location.address;
-      locationExtension.geoPoint = location.geoPoint;
-      locationExtension.encodedLocation = location.encodedLocation;
-      locationExtension.sourceSpecified = true;
-      locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND;
-
-      // Optional: Apply this override within 20 kms.
-      operation.operand.overrideInfo = new OverrideInfo();
-      operation.operand.overrideInfo.Item = new LocationOverrideInfo();
-      operation.operand.overrideInfo.Item.radiusSpecified = true;
-      operation.operand.overrideInfo.Item.radius = 20;
-      operation.operand.overrideInfo.Item.radiusUnitsSpecified = true;
-      operation.operand.overrideInfo.Item.radiusUnits = LocationOverrideInfoRadiusUnits.KILOMETERS;
-
-      operation.operand.adExtension = locationExtension;
+      operation.operand = adOverride;
 
       try {
-        AdExtensionOverrideReturnValue retval =
-            adExtensionOverrideService.mutate(new AdExtensionOverrideOperation[] {operation});
+        AdExtensionOverrideReturnValue retval = adExtensionOverrideService.mutate(
+            new AdExtensionOverrideOperation[] {operation});
 
         if (retval != null && retval.value != null && retval.value.Length > 0) {
           AdExtensionOverride adExtensionOverride = retval.value[0];
@@ -94,15 +97,6 @@ namespace com.google.api.adwords.samples.v200909 {
       } catch (Exception ex) {
         Console.WriteLine("Failed to override AdExtension. Exception says \"{0}\"", ex.Message);
       }
-    }
-
-    private GeoLocation GetLocationForAddress(AdWordsUser user, Address address) {
-      GeoLocationService geoService =
-          (GeoLocationService) user.GetService(AdWordsService.v200909.GeoLocationService);
-
-      GeoLocationSelector selector = new GeoLocationSelector();
-      selector.addresses = new Address[] {address};
-      return geoService.get(selector)[0];
     }
   }
 }

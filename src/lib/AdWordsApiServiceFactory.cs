@@ -81,6 +81,7 @@ namespace com.google.api.adwords.lib {
       if (propInfo != null) {
         propInfo.SetValue(service, user, null);
       }
+
       return service;
     }
 
@@ -382,9 +383,19 @@ namespace com.google.api.adwords {
         if (value != null) {
           if (value is bool) {
             // Since we do custom serialization, remember to send bool
-            // as true, not True.
+            // in lower case.
             value = value.ToString().ToLower();
           }
+
+          if (value is string) {
+            // Should not send an empty field (e.g. clientEmail) to the server.
+            if (string.IsNullOrEmpty(value.ToString())) {
+              value = null;
+            }
+          }
+        }
+
+        if (value != null) {
           if (String.IsNullOrEmpty(targetNamespace)) {
             writer.WriteElementString(propInfo.Name, value.ToString());
           } else {
@@ -525,11 +536,5 @@ namespace com.google.api.adwords {
     public void WriteXml(XmlWriter writer) {
       return;
     }
-  }
-
-  /// <summary>
-  /// Base class for all AdWords API services.
-  /// </summary>
-  public class AdWordsApiService : SoapServiceBase {
   }
 }

@@ -49,5 +49,9 @@ namespace com.google.api.adwords.samples {
       return prompt;
 #endif
     }
+
+    protected string GetTimeStamp() {
+      return (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds.ToString();
+    }
   }
 }

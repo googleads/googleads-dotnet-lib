@@ -93,13 +93,23 @@ namespace com.google.api.adwords.lib {
             }
           }
           AdWordsUser parent = null;
+          SoapServiceBase service = null;
+          string methodName = null;
           if (HttpContext.Current != null) {
             parent = HttpContext.Current.Items["AdWordsParent"] as AdWordsUser;
+            service = HttpContext.Current.Items["SoapService"] as SoapServiceBase;
+            methodName = HttpContext.Current.Items["SoapMethod"] as string;
           } else {
             parent = CallContext.GetData("AdWordsParent") as AdWordsUser;
+            service = CallContext.GetData("SoapService") as SoapServiceBase;
+            methodName = CallContext.GetData("SoapMethod") as string;
           }
           if (parent != null) {
-            parent.AddUnits(units);
+            ApiUnitsEntry entry = new ApiUnitsEntry();
+            entry.SoapService = service;
+            entry.SoapMethod = methodName;
+            entry.Units = units;
+            parent.AddUnits(entry);
           }
           break;
         default:

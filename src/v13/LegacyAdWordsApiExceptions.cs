@@ -25,6 +25,14 @@ namespace com.google.api.adwords.v13 {
     /// <summary>
     /// public constructor.
     /// </summary>
+    public LegacyAdWordsApiException()
+      : base() {
+      this.errorCode = 0;
+    }
+
+    /// <summary>
+    /// public constructor.
+    /// </summary>
     /// <param name="errorCode">Error code for this API exception.</param>
     public LegacyAdWordsApiException(int errorCode)
       : base() {

@@ -6124,4 +6124,3618 @@ namespace com.google.api.adwords.v200906 {
       }
     }
   }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum AdErrorReason {
+
+    /// <remarks/>
+    APPROXIMATELY_TOO_LONG,
+
+    /// <remarks/>
+    APPROXIMATELY_TOO_SHORT,
+
+    /// <remarks/>
+    CANNOT_SET_BUSINESS_NAME_IF_URL_SET,
+
+    /// <remarks/>
+    CUSTOMER_NOT_APPROVED_MOBILEADS,
+
+    /// <remarks/>
+    CUSTOMER_NOT_APPROVED_THIRDPARTY_ADS,
+
+    /// <remarks/>
+    CUSTOMER_NOT_APPROVED_THIRDPARTY_REDIRECT_ADS,
+
+    /// <remarks/>
+    CUSTOMER_NOT_ELIGIBLE_FOR_UPDATING_BEACON_URL,
+
+    /// <remarks/>
+    DIMENSION_ALREADY_IN_UNION,
+
+    /// <remarks/>
+    DIMENSION_MUST_BE_SET,
+
+    /// <remarks/>
+    DIMENSION_NOT_IN_UNION,
+
+    /// <remarks/>
+    DOMESTIC_PHONE_NUMBER_FORMAT,
+
+    /// <remarks/>
+    EMERGENCY_PHONE_NUMBER,
+
+    /// <remarks/>
+    EMPTY_FIELD,
+
+    /// <remarks/>
+    INCONSISTENT_STATUS_IN_TEMPLATE_UNION,
+
+    /// <remarks/>
+    INCORRECT_LENGTH,
+
+    /// <remarks/>
+    INVALID_AD_ADDRESS_CAMPAIGN_TARGET,
+
+    /// <remarks/>
+    INVALID_ATTRIBUTES_FOR_MOBILE_IMAGE,
+
+    /// <remarks/>
+    INVALID_ATTRIBUTES_FOR_MOBILE_TEXT,
+
+    /// <remarks/>
+    INVALID_COUNTRY_CODE,
+
+    /// <remarks/>
+    INVALID_INPUT,
+
+    /// <remarks/>
+    INVALID_MARKUP_LANGUAGE,
+
+    /// <remarks/>
+    INVALID_MOBILE_CARRIER,
+
+    /// <remarks/>
+    INVALID_MOBILE_CARRIER_TARGET,
+
+    /// <remarks/>
+    INVALID_NUMBER_OF_ELEMENTS,
+
+    /// <remarks/>
+    INVALID_PHONE_NUMBER_FORMAT,
+
+    /// <remarks/>
+    INVALID_TEMPLATE_DATA,
+
+    /// <remarks/>
+    INVALID_TEMPLATE_ELEMENT_FIELD_TYPE,
+
+    /// <remarks/>
+    INVALID_TEMPLATE_ID,
+
+    /// <remarks/>
+    LINE_TOO_WIDE,
+
+    /// <remarks/>
+    MARKUP_LANGUAGES_PRESENT,
+
+    /// <remarks/>
+    MISSING_ADDRESS_COMPONENT,
+
+    /// <remarks/>
+    MISSING_ADVERTISEMENT_NAME,
+
+    /// <remarks/>
+    MISSING_DESCRIPTION1,
+
+    /// <remarks/>
+    MISSING_DESCRIPTION2,
+
+    /// <remarks/>
+    MISSING_DESTINATION_URL,
+
+    /// <remarks/>
+    MISSING_DIMENSION,
+
+    /// <remarks/>
+    MISSING_DISPLAY_URL,
+
+    /// <remarks/>
+    MISSING_HEADLINE,
+
+    /// <remarks/>
+    MISSING_HEIGHT,
+
+    /// <remarks/>
+    MISSING_IMAGE,
+
+    /// <remarks/>
+    MISSING_MARKUP_LANGUAGES,
+
+    /// <remarks/>
+    MISSING_MOBILE_CARRIER,
+
+    /// <remarks/>
+    MISSING_PHONE,
+
+    /// <remarks/>
+    MISSING_REQUIRED_TEMPLATE_FIELDS,
+
+    /// <remarks/>
+    MISSING_TEMPLATE_FIELD_VALUE,
+
+    /// <remarks/>
+    MISSING_TEXT,
+
+    /// <remarks/>
+    MISSING_URL_AND_PHONE,
+
+    /// <remarks/>
+    MISSING_VISIBLE_URL,
+
+    /// <remarks/>
+    MISSING_WIDTH,
+
+    /// <remarks/>
+    MUST_USE_TEMP_AD_UNION_ID_ON_ADD,
+
+    /// <remarks/>
+    TOO_LONG,
+
+    /// <remarks/>
+    TOO_SHORT,
+
+    /// <remarks/>
+    UNION_DIMENSIONS_CANNOT_CHANGE,
+
+    /// <remarks/>
+    UNKNOWN_ADDRESS_COMPONENT,
+
+    /// <remarks/>
+    UNKNOWN_FIELD_NAME,
+
+    /// <remarks/>
+    UNKNOWN_UNIQUE_NAME,
+
+    /// <remarks/>
+    UNSUPPORTED_DIMENSIONS,
+
+    /// <remarks/>
+    URL_INVALID_TOP_LEVEL_DOMAIN,
+
+    /// <remarks/>
+    URL_MALFORMED,
+
+    /// <remarks/>
+    URL_NO_HOST,
+
+    /// <remarks/>
+    URL_NO_SCHEME,
+
+    /// <remarks/>
+    URL_NO_TOP_LEVEL_DOMAIN,
+
+    /// <remarks/>
+    URL_PATH_NOT_ALLOWED,
+
+    /// <remarks/>
+    URL_PORT_NOT_ALLOWED,
+
+    /// <remarks/>
+    URL_QUERY_NOT_ALLOWED,
+
+    /// <remarks/>
+    USER_DOES_NOT_HAVE_ACCESS_TO_TEMPLATE,
+
+    /// <remarks/>
+    INVALID_FORMAT,
+
+    /// <remarks/>
+    ELEMENT_NOT_PRESENT,
+
+    /// <remarks/>
+    IMAGE_ERROR,
+
+    /// <remarks/>
+    VALUE_NOT_IN_RANGE,
+
+    /// <remarks/>
+    FIELD_NOT_PRESENT,
+
+    /// <remarks/>
+    ADDRESS_NOT_COMPLETE,
+
+    /// <remarks/>
+    ADDRESS_INVALID,
+
+    /// <remarks/>
+    VIDEO_RETRIEVAL_ERROR,
+
+    /// <remarks/>
+    AUDIO_ERROR,
+
+    /// <remarks/>
+    INVALID_YOUTUBE_DISPLAY_URL,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupAdError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum AdGroupAdErrorReason {
+
+    /// <remarks/>
+    AD_NOT_UNDER_ADGROUP,
+
+    /// <remarks/>
+    CANNOT_OPERATE_ON_DELETED_ADGROUPAD,
+
+    /// <remarks/>
+    CANNOT_CREATE_DEPRECATED_ADS,
+
+    /// <remarks/>
+    EMPTY_FIELD,
+
+    /// <remarks/>
+    ENTITY_REFERENCED_IN_MULTIPLE_OPS,
+
+    /// <remarks/>
+    UNSUPPORTED_OPERATION,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupCriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum AdGroupCriterionErrorReason {
+
+    /// <remarks/>
+    INVALID_ID_FILTER_TYPE,
+
+    /// <remarks/>
+    ID_FILTERS_HAVE_DIFF_FIELDS_SET,
+
+    /// <remarks/>
+    INAPPLICABLE_FILTER_SPECIFIED,
+
+    /// <remarks/>
+    TOO_MANY_OPERTAIONS,
+
+    /// <remarks/>
+    CANT_UPDATE_NEGATIVE,
+
+    /// <remarks/>
+    TYPE_MISMATCH,
+
+    /// <remarks/>
+    CONCRETE_TYPE_REQUIRED,
+
+    /// <remarks/>
+    BID_INCOMPATIBLE_WITH_ADGROUP,
+
+    /// <remarks/>
+    NETWORK_NOT_OVERRIDABLE,
+
+    /// <remarks/>
+    CURRENCY_MISMATCH,
+
+    /// <remarks/>
+    CRITERION_NOT_TARGETED,
+
+    /// <remarks/>
+    CANNOT_TARGET_AND_EXCLUDE,
+
+    /// <remarks/>
+    ILLEGAL_URL,
+
+    /// <remarks/>
+    NO_EFFECTIVE_BID_FOR_THIS_CRITERION,
+
+    /// <remarks/>
+    INVALID_KEYWORD_TEXT,
+
+    /// <remarks/>
+    INVALID_DESTINATION_URL,
+
+    /// <remarks/>
+    KEYWORD_LEVEL_BID_NOT_SUPPORTED_FOR_MANUALCPM,
+
+    /// <remarks/>
+    INVALID_USER_STATUS,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum AdGroupServiceErrorReason {
+
+    /// <remarks/>
+    ADGROUP_CAMPAIGN_MISMATCH,
+
+    /// <remarks/>
+    DUPLICATE_ADGROUP_NAME,
+
+    /// <remarks/>
+    INVALID_ADGROUP_ID,
+
+    /// <remarks/>
+    INVALID_ADGROUP_NAME,
+
+    /// <remarks/>
+    USE_SET_OPERATOR_AND_MARK_STATUS_TO_DELETED,
+
+    /// <remarks/>
+    ADVERTISER_NOT_ON_CONTENT_NETWORK,
+
+    /// <remarks/>
+    BID_EXCEEDS_AUTO_BUDGET,
+
+    /// <remarks/>
+    BID_EXCEEDS_CUSTOM_BUDGET,
+
+    /// <remarks/>
+    BID_EXCEEDS_DAILY_BUDGET,
+
+    /// <remarks/>
+    BID_EXCEEDS_MONTHLY_BUDGET,
+
+    /// <remarks/>
+    BID_TOO_BIG,
+
+    /// <remarks/>
+    BID_TOO_SMALL,
+
+    /// <remarks/>
+    BID_TYPE_AND_BIDDING_STRATEGY_MISMATCH,
+
+    /// <remarks/>
+    BIDS_NOT_REQUIRED,
+
+    /// <remarks/>
+    ILLEGAL_MANUAL_BID,
+
+    /// <remarks/>
+    INCOMPATIBLE_WITH_KEYWORD_AND_SITE_VBB,
+
+    /// <remarks/>
+    INCOMPATIBLE_WITH_KEYWORD_CPC,
+
+    /// <remarks/>
+    INCOMPATIBLE_WITH_KEYWORD_CPC_AND_SITE_CPC,
+
+    /// <remarks/>
+    INCOMPATIBLE_WITH_KEYWORD_CPM,
+
+    /// <remarks/>
+    INCOMPATIBLE_WITH_KEYWORD_CPM_AND_SITE_CPM,
+
+    /// <remarks/>
+    INCOMPATIBLE_WITH_SITE_CPC,
+
+    /// <remarks/>
+    INCOMPATIBLE_WITH_SITE_CPM,
+
+    /// <remarks/>
+    INCOMPATIBLE_WITH_VBB,
+
+    /// <remarks/>
+    INCOMPATIBLE_WITH_SITE_VBB,
+
+    /// <remarks/>
+    INVALID_BID,
+
+    /// <remarks/>
+    MISSING_ADGROUP_NAME,
+
+    /// <remarks/>
+    MISSING_BID,
+
+    /// <remarks/>
+    MULTIPLE_BID_TYPES,
+
+    /// <remarks/>
+    NO_CAMPAIGN_BUDGET,
+
+    /// <remarks/>
+    NOT_WHITELISTED_FOR_SITE_CPC,
+
+    /// <remarks/>
+    SEPARATE_CONTENT_BIDS_INAPPLICABLE,
+
+    /// <remarks/>
+    SEPARATE_CONTENT_BIDS_NOT_ENABLED,
+
+    /// <remarks/>
+    TOO_MANY_FRACTION_DIGITS,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AuthenticationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum AuthenticationErrorReason {
+
+    /// <remarks/>
+    AUTHENTICATION_FAILED,
+
+    /// <remarks/>
+    CLIENT_CUSTOMER_ID_IS_REQUIRED,
+
+    /// <remarks/>
+    CLIENT_EMAIL_REQUIRED,
+
+    /// <remarks/>
+    CLIENT_CUSTOMER_ID_INVALID,
+
+    /// <remarks/>
+    CLIENT_EMAIL_INVALID,
+
+    /// <remarks/>
+    CLIENT_EMAIL_FAILED_TO_AUTHENTICATE,
+
+    /// <remarks/>
+    CUSTOMER_NOT_FOUND,
+
+    /// <remarks/>
+    GOOGLE_ACCOUNT_DELETED,
+
+    /// <remarks/>
+    GOOGLE_ACCOUNT_COOKIE_INVALID,
+
+    /// <remarks/>
+    FAILED_TO_AUTHENTICATE_GOOGLE_ACCOUNT,
+
+    /// <remarks/>
+    GOOGLE_ACCOUNT_USER_AND_ADS_USER_MISMATCH,
+
+    /// <remarks/>
+    LOGIN_COOKIE_REQUIRED,
+
+    /// <remarks/>
+    NOT_ADS_USER,
+
+    /// <remarks/>
+    OAUTH_TOKEN_INVALID,
+
+    /// <remarks/>
+    OAUTH_TOKEN_EXPIRED,
+
+    /// <remarks/>
+    OAUTH_TOKEN_DISABLED,
+
+    /// <remarks/>
+    OAUTH_TOKEN_REVOKED,
+
+    /// <remarks/>
+    OAUTH_TOKEN_HEADER_INVALID,
+
+    /// <remarks/>
+    LOGIN_COOKIE_INVALID,
+
+    /// <remarks/>
+    FAILED_TO_RETRIEVE_LOGIN_COOKIE,
+
+    /// <remarks/>
+    USER_ID_INVALID,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AuthorizationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum AuthorizationErrorReason {
+
+    /// <remarks/>
+    UNABLE_TO_AUTHORIZE,
+
+    /// <remarks/>
+    NO_ADWORDS_ACCOUNT_FOR_CUSTOMER,
+
+    /// <remarks/>
+    USER_PERMISSION_DENIED,
+
+    /// <remarks/>
+    EFFECTIVE_USER_PERMISSION_DENIED,
+
+    /// <remarks/>
+    USER_HAS_READONLY_PERMISSION,
+
+    /// <remarks/>
+    NO_CUSTOMER_FOUND,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BiddingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum BiddingErrorReason {
+
+    /// <remarks/>
+    BID_AMOUNT_REQUIRED,
+
+    /// <remarks/>
+    BID_INCOMPATIBLE_WITH_ADGROUP,
+
+    /// <remarks/>
+    BID_UNIVERSAL_CRITERIA_EXPECTED,
+
+    /// <remarks/>
+    BIDS_DO_NOT_FULFILL_SPEC,
+
+    /// <remarks/>
+    BID_TOO_SMALL,
+
+    /// <remarks/>
+    BID_TOO_BIG,
+
+    /// <remarks/>
+    BID_TOO_MANY_FRACTIONAL_DIGITS,
+
+    /// <remarks/>
+    NETWORK_NOT_OVERRIDEABLE,
+
+    /// <remarks/>
+    NON_POSITIVE_BID,
+
+    /// <remarks/>
+    CURRENCY_MISMATCH,
+
+    /// <remarks/>
+    BID_TOO_HIGH_FOR_DAILY_BUDGET,
+
+    /// <remarks/>
+    BID_TOO_HIGH_FOR_MONTHLY_BUDGET,
+
+    /// <remarks/>
+    ADGROUPS_DO_NOT_MATCH_CONSTRAINT,
+
+    /// <remarks/>
+    NETWORK_SETTINGS_DO_NOT_SUPPORT_TRANSITION,
+
+    /// <remarks/>
+    UNSUPPORTED_STYLE_TRANSITION,
+
+    /// <remarks/>
+    UNSUPPORTED_PROXY_BIDDER_STRATEGY_TRANSITION,
+
+    /// <remarks/>
+    TRANSITION_DOES_NOT_SUPPORT_OPTION,
+
+    /// <remarks/>
+    TRANSITION_DOES_NOT_SUPPORT_GOAL,
+
+    /// <remarks/>
+    PROXY_BIDDER_STRATEGY_INCOMPATIBLE_WITH_STYLE,
+
+    /// <remarks/>
+    GOAL_DOES_NOT_FULFILL_SPEC,
+
+    /// <remarks/>
+    GOAL_VALIDATION_FAILED,
+
+    /// <remarks/>
+    UNSUPPORTED_STYLE,
+
+    /// <remarks/>
+    BAD_BID_COMBINATION,
+
+    /// <remarks/>
+    CANNOT_TARGET_UNIVERSE,
+
+    /// <remarks/>
+    NO_DESTINATION_URL_SPECIFIED,
+
+    /// <remarks/>
+    NO_EFFECTIVE_BID,
+
+    /// <remarks/>
+    CRITERION_NOT_TARGETED,
+
+    /// <remarks/>
+    CANNOT_EXCLUDE_DEFAULT,
+
+    /// <remarks/>
+    CANNOT_TARGET_AND_EXCLUDE,
+
+    /// <remarks/>
+    ILLEGAL_URL,
+
+    /// <remarks/>
+    BID_TO_POSITION_NOT_ENABLED,
+
+    /// <remarks/>
+    POSITION_PREFERENCE_NOT_ENABLED,
+
+    /// <remarks/>
+    POSITION_PREFERENCE_NOT_SUPPORTED_FOR_CRITERIA_TYPE,
+
+    /// <remarks/>
+    PREFERRED_POSITION_OUT_OF_RANGE,
+
+    /// <remarks/>
+    BOTTOM_POSITION_OUT_OF_RANGE,
+
+    /// <remarks/>
+    PREFERRED_POSITION_CANNOT_BE_HIGHER_THAN_BOTTOM,
+
+    /// <remarks/>
+    CAMPAIGN_ALREADY_SET,
+
+    /// <remarks/>
+    PROXY_NOT_ENABLED,
+
+    /// <remarks/>
+    CANNOT_UPDATE_SITE_BIDS_WHILE_PROXY_BIDDING,
+
+    /// <remarks/>
+    MUST_EXCLUDE_0_TO_17_WITH_OTHER_AGE_EXCLUSIONS,
+
+    /// <remarks/>
+    AUCTION_STRATEGY_INCOMPATIBLE_WITH_PROXY_BIDDER,
+
+    /// <remarks/>
+    CAMPAIGN_MUST_HAVE_A_BUDGET_TO_ENABLE_BUDGET_OPTIMIZER,
+
+    /// <remarks/>
+    CANNOT_SET_CONTENT_BID_WITHOUT_SETTING_KEYWORD_MAX_CPC_AS_WELL,
+
+    /// <remarks/>
+    PAY_PER_CONVERSION_NOT_AVAILABLE_FOR_CUSTOMER,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BiddingTransitionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum BiddingTransitionErrorReason {
+
+    /// <remarks/>
+    BID_TO_POSITION_ENABLED,
+
+    /// <remarks/>
+    BIDDING_STRATEGY_NOT_AVAILABLE_FOR_ACCOUNT_TYPE,
+
+    /// <remarks/>
+    BUDGET_OPTIMIZER_IS_ENABLED,
+
+    /// <remarks/>
+    CONVERSION_OPTIMIZER_IS_ENABLED,
+
+    /// <remarks/>
+    CONVERSION_TRACKING_NOT_ENABLED,
+
+    /// <remarks/>
+    CONVERSION_TRACKING_NOT_AVAILABLE_FOR_ACCOUNT_TYPE,
+
+    /// <remarks/>
+    USE_POSITION_PREFERENCE_IN_MANUALCPC_INSTEAD_TO_DISABLE_POSITION_PREFERENCE,
+
+    /// <remarks/>
+    INVALID_BID,
+
+    /// <remarks/>
+    CANNOT_SET_EXPLICIT_BID,
+
+    /// <remarks/>
+    EXPLICIT_BID_REQUIRED_FOR_TRANSITION,
+
+    /// <remarks/>
+    EXPLICIT_BID_TYPE_DOES_NOT_MATCH_CAMPAIGN_BIDDING_STRATEGY,
+
+    /// <remarks/>
+    MISSING_REQUIRED_BID,
+
+    /// <remarks/>
+    INVALID_STATUS,
+
+    /// <remarks/>
+    IS_CPM_CAMPAIGN,
+
+    /// <remarks/>
+    NOT_THE_PREVIOUS_BIDDING_STRATEGY,
+
+    /// <remarks/>
+    NOT_ENOUGH_CONVERSION_DATA,
+
+    /// <remarks/>
+    NOT_ENOUGH_CONVERSIONS,
+
+    /// <remarks/>
+    OPTED_IN_SEARCH,
+
+    /// <remarks/>
+    PROXY_BIDDING_ON,
+
+    /// <remarks/>
+    SITE_REMNANT_RESERVATION_ALLOWED,
+
+    /// <remarks/>
+    TRANSITION_TO_ITSELF,
+
+    /// <remarks/>
+    UNKNOWN_BIDDING_STRATEGY,
+
+    /// <remarks/>
+    UNSUPPORTED_TRANSITION,
+
+    /// <remarks/>
+    VCG_ENABLED,
+
+    /// <remarks/>
+    BIDDING_TRANSITION_FAILED,
+
+    /// <remarks/>
+    ACCELERATED_DELIVERY_NOT_SUPPORTED_FOR_BUDGET_OPTIMIZER,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BudgetError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum BudgetErrorReason {
+
+    /// <remarks/>
+    MONEY_AMOUNT_IN_WRONG_CURRENCY,
+
+    /// <remarks/>
+    MONEY_AMOUNT_LESS_THAN_CURRENCY_MINIMUM_CPC,
+
+    /// <remarks/>
+    MONEY_AMOUNT_LESS_THAN_MAXIMUM_AD_GROUP_CPM,
+
+    /// <remarks/>
+    MONEY_AMOUNT_LESS_THAN_MAXIMUM_SITE_CPM,
+
+    /// <remarks/>
+    MONEY_AMOUNT_LESS_THAN_MINIMUM_AD_GROUP_CPC,
+
+    /// <remarks/>
+    MONEY_AMOUNT_LESS_THAN_MINIMUM_CRITERIA_CPC,
+
+    /// <remarks/>
+    MONEY_AMOUNT_TOO_LARGE,
+
+    /// <remarks/>
+    NEGATIVE_MONEY_AMOUNT,
+
+    /// <remarks/>
+    NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT,
+
+    /// <remarks/>
+    INVALID_BUDGET_SCHEDULE,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BulkMutateJobError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum BulkMutateJobErrorReason {
+
+    /// <remarks/>
+    CAN_RETURN_RESULT_FOR_ONLY_COMPLETED_JOBS,
+
+    /// <remarks/>
+    CAN_RETURN_RESULT_FOR_ONLY_ONE_JOB,
+
+    /// <remarks/>
+    CANNOT_UPDATE_JOB_ONCE_ALL_REQUEST_PARTS_ARE_RECEIVED,
+
+    /// <remarks/>
+    INVALID_SCOPING_ENTITY_TYPE,
+
+    /// <remarks/>
+    MISSING_SCOPING_ENTITY_FOR_OPERATION_STREAM,
+
+    /// <remarks/>
+    MORE_THAN_ONE_SCOPING_ENTITY_TYPE,
+
+    /// <remarks/>
+    PAYLOAD_STORE_UNAVAILABLE,
+
+    /// <remarks/>
+    REQUEST_PART_IS_OUT_OF_ORDER,
+
+    /// <remarks/>
+    TOO_MANY_OPERATION_STREAMS_IN_REQUEST_PART,
+
+    /// <remarks/>
+    TOO_MANY_OPERATIONS_IN_JOB,
+
+    /// <remarks/>
+    TOO_MANY_OPERATIONS_IN_REQUEST_PART,
+
+    /// <remarks/>
+    TOO_MANY_RESULTS_TO_STORE,
+
+    /// <remarks/>
+    TOO_MANY_SCOPING_ENTITIES,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignCriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum CampaignCriterionErrorReason {
+
+    /// <remarks/>
+    CRITERIA_QUOTA_EXCEEDED,
+
+    /// <remarks/>
+    CONCRETE_TYPE_REQUIRED,
+
+    /// <remarks/>
+    ID_FILTERS_HAVE_DIFF_FIELDS_SET,
+
+    /// <remarks/>
+    INVALID_EXCLUDED_CATEGORY,
+
+    /// <remarks/>
+    INVALID_KEYWORD_TEXT,
+
+    /// <remarks/>
+    INVALID_PLACEMENT_URL,
+
+    /// <remarks/>
+    TOO_MANY_OPERTAIONS,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum CampaignErrorReason {
+
+    /// <remarks/>
+    AFTER_MAXIMUM_ALLOWABLE_DATE,
+
+    /// <remarks/>
+    CANNOT_GO_BACK_TO_INCOMPLETE,
+
+    /// <remarks/>
+    CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED,
+
+    /// <remarks/>
+    CANNOT_SET_ACCELERATED_DELIVERY_FOR_BUDGET_OPTIMIZER_CAMPAIGN,
+
+    /// <remarks/>
+    CANNOT_SET_DATE_TO_PAST,
+
+    /// <remarks/>
+    CANNOT_SET_POSITION_PREFERENCE_IF_NOT_SEARCH_TARGETED,
+
+    /// <remarks/>
+    CURRENCY_NOT_VALID_FOR_ACCOUNT,
+
+    /// <remarks/>
+    DUPLICATE_CAMPAIGN_NAME,
+
+    /// <remarks/>
+    INCOMPATIBLE_CAMPAIGN_FIELD,
+
+    /// <remarks/>
+    INVALID_CAMPAIGN_NAME,
+
+    /// <remarks/>
+    INVALID_AD_SERVING_OPTIMIZATION_STATUS,
+
+    /// <remarks/>
+    KEYWORD_QUOTA_EXCEEDED,
+
+    /// <remarks/>
+    MAX_IMPRESSIONS_NOT_IN_RANGE,
+
+    /// <remarks/>
+    START_DATE_AFTER_END_DATE,
+
+    /// <remarks/>
+    TIME_UNIT_NOT_SUPPORTED,
+
+    /// <remarks/>
+    USE_BIDDING_TRANSITION_FIELD_INSTEAD_TO_SWITCH_BIDDING_STRATEGY,
+
+    /// <remarks/>
+    CANNOT_CHANGE_CAMPAIGN_TYPE,
+
+    /// <remarks/>
+    INVALID_OPERATION_IF_SERVING_STATUS_HAS_ENDED,
+
+    /// <remarks/>
+    CANNOT_CHANGE_TV_CAMPAIGN,
+
+    /// <remarks/>
+    CANNOT_ADD_CAMPAIGN_WITH_CONVERSION_OPTIMIZER_BIDDING_STRATEGY,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ClientTermsError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum ClientTermsErrorReason {
+
+    /// <remarks/>
+    INCOMPLETE_SIGNUP_CURRENT_ADWORDS_TNC_NOT_AGREED,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DatabaseError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum DatabaseErrorReason {
+
+    /// <remarks/>
+    CONCURRENT_MODIFICATION,
+
+    /// <remarks/>
+    PERMISSION_DENIED,
+
+    /// <remarks/>
+    CAMPAIGN_PRODUCT_NOT_SUPPORTED,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DateError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum DateErrorReason {
+
+    /// <remarks/>
+    INVALID_FIELD_VALUES_IN_DATE,
+
+    /// <remarks/>
+    INVALID_STRING_DATE,
+
+    /// <remarks/>
+    INVALID_STRING_DATE_RANGE,
+
+    /// <remarks/>
+    INVALID_STRING_DATE_TIME,
+
+    /// <remarks/>
+    EARLIER_THAN_MINIMUM_DATE,
+
+    /// <remarks/>
+    LATER_THAN_MAXIMUM_DATE,
+
+    /// <remarks/>
+    DATE_RANGE_MINIMUM_DATE_LATER_THAN_MAXIMUM_DATE,
+
+    /// <remarks/>
+    DATE_RANGE_MINIMUM_AND_MAXIMUM_DATES_BOTH_NULL,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DistinctError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum DistinctErrorReason {
+
+    /// <remarks/>
+    DUPLICATE_ELEMENT,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityAccessDenied.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum EntityAccessDeniedReason {
+
+    /// <remarks/>
+    READ_ACCESS_DENIED,
+
+    /// <remarks/>
+    WRITE_ACCESS_DENIED,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityCountLimitExceeded.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum EntityCountLimitExceededReason {
+
+    /// <remarks/>
+    ACCOUNT_LIMIT,
+
+    /// <remarks/>
+    CAMPAIGN_LIMIT,
+
+    /// <remarks/>
+    ADGROUP_LIMIT,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityNotFound.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum EntityNotFoundReason {
+
+    /// <remarks/>
+    INVALID_ID,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "IdError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum IdErrorReason {
+
+    /// <remarks/>
+    NOT_FOUND,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ImageError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum ImageErrorReason {
+
+    /// <remarks/>
+    INVALID_IMAGE,
+
+    /// <remarks/>
+    STORAGE_ERROR,
+
+    /// <remarks/>
+    BAD_REQUEST,
+
+    /// <remarks/>
+    UNEXPECTED_SIZE,
+
+    /// <remarks/>
+    ANIMATED_NOT_ALLOWED,
+
+    /// <remarks/>
+    ANIMATION_TOO_LONG,
+
+    /// <remarks/>
+    SERVER_ERROR,
+
+    /// <remarks/>
+    CMYK_JPEG_NOT_ALLOWED,
+
+    /// <remarks/>
+    FLASH_NOT_ALLOWED,
+
+    /// <remarks/>
+    FLASH_WITHOUT_CLICKTAG,
+
+    /// <remarks/>
+    ANIMATED_VISUAL_EFFECT,
+
+    /// <remarks/>
+    FLASH_ERROR,
+
+    /// <remarks/>
+    LAYOUT_PROBLEM,
+
+    /// <remarks/>
+    PROBLEM_READING_IMAGE_FILE,
+
+    /// <remarks/>
+    ERROR_STORING_IMAGE,
+
+    /// <remarks/>
+    FLASH_HAS_NETWORK_OBJECTS,
+
+    /// <remarks/>
+    FLASH_HAS_NETWORK_METHODS,
+
+    /// <remarks/>
+    FLASH_HAS_URL,
+
+    /// <remarks/>
+    FLASH_HAS_MOUSE_TRACKING,
+
+    /// <remarks/>
+    FLASH_HAS_RANDOM_NUM,
+
+    /// <remarks/>
+    FLASH_SELF_TARGETS,
+
+    /// <remarks/>
+    FLASH_BAD_GETURL_TARGET,
+
+    /// <remarks/>
+    FLASH_VERSION_NOT_SUPPORTED,
+
+    /// <remarks/>
+    FILE_TOO_LARGE,
+
+    /// <remarks/>
+    IMAGE_DATA_TOO_LARGE,
+
+    /// <remarks/>
+    IMAGE_PROCESSING_ERROR,
+
+    /// <remarks/>
+    IMAGE_TOO_SMALL,
+
+    /// <remarks/>
+    INVALID_INPUT,
+
+    /// <remarks/>
+    PROBLEM_READING_FILE,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InternalApiError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum InternalApiErrorReason {
+
+    /// <remarks/>
+    UNEXPECTED_INTERNAL_API_ERROR,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "JobError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum JobErrorReason {
+
+    /// <remarks/>
+    DUPLICATE_JOB_KEY_FOR_CUSTOMER,
+
+    /// <remarks/>
+    JOB_TYPE_NOT_SUPPORTED,
+
+    /// <remarks/>
+    PREREQUISITE_JOB_FAILED,
+
+    /// <remarks/>
+    SELECTOR_CANNOT_USE_BOTH_JOB_IDS_AND_JOB_KEYS,
+
+    /// <remarks/>
+    TOO_MANY_PREREQUISITE_JOBS,
+
+    /// <remarks/>
+    TOO_MANY_JOBS_IN_QUEUE,
+
+    /// <remarks/>
+    WORKFLOW_FAILURE,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LoasAuthenticationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum LoasAuthenticationErrorReason {
+
+    /// <remarks/>
+    PROTOCOL_MISMATCH,
+
+    /// <remarks/>
+    SECURITY_LEVEL_MISMATCH,
+
+    /// <remarks/>
+    CLIENT_NOT_AUTHORIZED,
+
+    /// <remarks/>
+    ADS_USER_NOT_FOUND,
+
+    /// <remarks/>
+    NOT_INTERNAL_USER,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MediaError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum MediaErrorReason {
+
+    /// <remarks/>
+    CANNOT_ADD_STANDARD_ICON,
+
+    /// <remarks/>
+    DUPLICATE_MEDIA,
+
+    /// <remarks/>
+    EMPTY_FIELD,
+
+    /// <remarks/>
+    ENTITY_REFERENCED_IN_MULTIPLE_OPS,
+
+    /// <remarks/>
+    FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE,
+
+    /// <remarks/>
+    INVALID_MEDIA_ID,
+
+    /// <remarks/>
+    INVALID_MEDIA_TYPE,
+
+    /// <remarks/>
+    INVALID_MEDIA_SUB_TYPE,
+
+    /// <remarks/>
+    INVALID_REFERENCE_ID,
+
+    /// <remarks/>
+    MEDIA_TYPE_DOES_NOT_MATCH_OBJECT_TYPE,
+
+    /// <remarks/>
+    NO_FIELDS_SPECIFIED,
+
+    /// <remarks/>
+    NULL_REFERENCE_ID_AND_MEDIA_ID,
+
+    /// <remarks/>
+    TOO_LONG,
+
+    /// <remarks/>
+    UNSUPPORTED_OPERATION,
+
+    /// <remarks/>
+    UNSUPPORTED_TYPE,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NewEntityCreationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum NewEntityCreationErrorReason {
+
+    /// <remarks/>
+    CANNOT_SET_ID_FOR_ADD,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotEmptyError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum NotEmptyErrorReason {
+
+    /// <remarks/>
+    EMPTY_LIST,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotWhitelistedError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum NotWhitelistedErrorReason {
+
+    /// <remarks/>
+    CUSTOMER_NOT_WHITELISTED_FOR_API,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NullError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum NullErrorReason {
+
+    /// <remarks/>
+    NULL_CONTENT,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OperationAccessDenied.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum OperationAccessDeniedReason {
+
+    /// <remarks/>
+    ACTION_NOT_PERMITTED,
+
+    /// <remarks/>
+    ADD_OPERATION_NOT_PERMITTED,
+
+    /// <remarks/>
+    REMOVE_OPERATION_NOT_PERMITTED,
+
+    /// <remarks/>
+    SET_OPERATION_NOT_PERMITTED,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OperatorError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum OperatorErrorReason {
+
+    /// <remarks/>
+    OPERATOR_NOT_SUPPORTED,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PagingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum PagingErrorReason {
+
+    /// <remarks/>
+    START_INDEX_CANNOT_BE_NEGATIVE,
+
+    /// <remarks/>
+    NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PolicyViolationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum PolicyViolationErrorReason {
+
+    /// <remarks/>
+    POLICY_ERROR,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "QuotaCheckError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum QuotaCheckErrorReason {
+
+    /// <remarks/>
+    INVALID_TOKEN_HEADER,
+
+    /// <remarks/>
+    ACCOUNT_DELINQUENT,
+
+    /// <remarks/>
+    ACCOUNT_INACCESSIBLE,
+
+    /// <remarks/>
+    ACCOUNT_INACTIVE,
+
+    /// <remarks/>
+    INCOMPLETE_SIGNUP,
+
+    /// <remarks/>
+    INCOMPLETE_SIGNUP_APP_INFO_MISSING,
+
+    /// <remarks/>
+    INCOMPLETE_SIGNUP_APP_INFO_PENDING,
+
+    /// <remarks/>
+    INCOMPLETE_SIGNUP_APP_INFO_REJECTED,
+
+    /// <remarks/>
+    INCOMPLETE_SIGNUP_LATEST_NETAPI_TNC_NOT_AGREED,
+
+    /// <remarks/>
+    INCOMPLETE_SIGNUP_NO_BILLING_INFO,
+
+    /// <remarks/>
+    INCOMPLETE_SIGNUP_USER_INFO_MISSING,
+
+    /// <remarks/>
+    INCOMPLETE_SIGNUP_USER_INFO_PENDING,
+
+    /// <remarks/>
+    INCOMPLETE_SIGNUP_USER_INFO_REJECTED,
+
+    /// <remarks/>
+    MONTHLY_BUDGET_REACHED,
+
+    /// <remarks/>
+    QUOTA_EXCEEDED,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "QuotaError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum QuotaErrorReason {
+
+    /// <remarks/>
+    TOO_MANY_ADGROUPS_PER_CAMPAIGN,
+
+    /// <remarks/>
+    TOO_MANY_CAMPAIGNS_PER_ACCOUNT,
+
+    /// <remarks/>
+    TOO_MANY_CONVERSION_TYPES_PER_ACCOUNT,
+
+    /// <remarks/>
+    TOO_MANY_KEYWORDS_PER_ADGROUP,
+
+    /// <remarks/>
+    TOO_MANY_KEYWORDS_PER_CAMPAIGN,
+
+    /// <remarks/>
+    TOO_MANY_KEYWORDS_PER_CUSTOMER,
+
+    /// <remarks/>
+    TOO_MANY_SITES_PER_ADGROUP,
+
+    /// <remarks/>
+    TOO_MANY_SITES_PER_CAMPAIGN,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "QuotaExceededError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum QuotaExceededErrorReason {
+
+    /// <remarks/>
+    QUOTA_EXCEEDED,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RangeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum RangeErrorReason {
+
+    /// <remarks/>
+    TOO_LOW,
+
+    /// <remarks/>
+    TOO_HIGH,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReadOnlyError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum ReadOnlyErrorReason {
+
+    /// <remarks/>
+    READ_ONLY,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RegionCodeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum RegionCodeErrorReason {
+
+    /// <remarks/>
+    INVALID_REGION_CODE,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum RequiredErrorReason {
+
+    /// <remarks/>
+    REQUIRED,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SizeLimitError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum SizeLimitErrorReason {
+
+    /// <remarks/>
+    REQUEST_SIZE_LIMIT_EXCEEDED,
+
+    /// <remarks/>
+    RESPONSE_SIZE_LIMIT_EXCEEDED,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StatsQueryError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum StatsQueryErrorReason {
+
+    /// <remarks/>
+    DATE_NOT_IN_VALID_RANGE,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StringLengthError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum StringLengthErrorReason {
+
+    /// <remarks/>
+    TOO_SHORT,
+
+    /// <remarks/>
+    TOO_LONG,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TargetError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum TargetErrorReason {
+
+    /// <remarks/>
+    AD_SCHEDULE_ADVANCED_INCOMPATIBLE_WITH_CONVERSION_OPTIMIZER,
+
+    /// <remarks/>
+    AD_SCHEDULE_BID_MULTIPLIER_MALFORMED,
+
+    /// <remarks/>
+    AD_SCHEDULE_BID_MULTIPLIER_TOO_BIG,
+
+    /// <remarks/>
+    AD_SCHEDULE_BID_MULTIPLIER_TOO_SMALL,
+
+    /// <remarks/>
+    AD_SCHEDULE_BID_MULTIPLIER_TOO_MANY_FRACTION_DIGITS,
+
+    /// <remarks/>
+    AD_SCHEDULE_EXCEEDED_INTERVALS_PER_DAY_LIMIT,
+
+    /// <remarks/>
+    AD_SCHEDULE_EXCEEDS_PAST_END_OF_WEEK,
+
+    /// <remarks/>
+    AD_SCHEDULE_INCOMPATIBILITY,
+
+    /// <remarks/>
+    AD_SCHEDULE_INCOMPATIBLE_WITH_BUDGET_OPTIMIZER,
+
+    /// <remarks/>
+    AD_SCHEDULE_INTERVAL_CANNOT_SPAN_MULTIPLE_DAYS,
+
+    /// <remarks/>
+    AD_SCHEDULE_INVALID_DAY_OF_THE_WEEK,
+
+    /// <remarks/>
+    AD_SCHEDULE_INVALID_TIME_INTERVAL,
+
+    /// <remarks/>
+    AD_SCHEDULE_NO_INTERVALS_WHILE_ENABLED,
+
+    /// <remarks/>
+    AD_SCHEDULE_NOT_MULTIPLE_OF_15_MINUTES,
+
+    /// <remarks/>
+    AD_SCHEDULE_TIME_INTERVALS_OVERLAP,
+
+    /// <remarks/>
+    CANNOT_EXCLUDE_CITY,
+
+    /// <remarks/>
+    CANNOT_EXCLUDE_IF_NOT_TARGETED,
+
+    /// <remarks/>
+    CANNOT_EXCLUDE_METRO,
+
+    /// <remarks/>
+    CANNOT_EXCLUDE_PROVINCE,
+
+    /// <remarks/>
+    CANNOT_OPT_OUT_GOOGLE_SEARCH_WHILE_BID_TO_POSITION_ENABLE,
+
+    /// <remarks/>
+    CANNOT_TARGET_AGE_WITHOUT_GENDER,
+
+    /// <remarks/>
+    CANNOT_TARGET_CITY,
+
+    /// <remarks/>
+    CANNOT_TARGET_COUNTRY,
+
+    /// <remarks/>
+    CANNOT_TARGET_COVERAGE,
+
+    /// <remarks/>
+    CANNOT_TARGET_GENDER_WITHOUT_AGE,
+
+    /// <remarks/>
+    CANNOT_TARGET_GOOGLE_SEARCH_FOR_CPM_CAMPAIGN,
+
+    /// <remarks/>
+    CANNOT_TARGET_LANGUAGE,
+
+    /// <remarks/>
+    CANNOT_TARGET_METRO,
+
+    /// <remarks/>
+    CANNOT_TARGET_PROVINCE,
+
+    /// <remarks/>
+    CANNOT_TARGET_SEARCH_SYNDICATION_WITHOUT_GOOGLE_SEARCH,
+
+    /// <remarks/>
+    CANNOT_TARGET_SYNDICATABLE_TYPES,
+
+    /// <remarks/>
+    DEMOGRAPHIC_BID_MODIFIER_SHOULD_BE_IN_BETWEEN_0_AND_500,
+
+    /// <remarks/>
+    INVALID_CITY_CODE,
+
+    /// <remarks/>
+    INVALID_CITYNAME_LENGTH,
+
+    /// <remarks/>
+    INVALID_LANGUAGE_CODE,
+
+    /// <remarks/>
+    INVALID_LATITUDE,
+
+    /// <remarks/>
+    INVALID_LONGITUDE,
+
+    /// <remarks/>
+    INVALID_METRO_CODE,
+
+    /// <remarks/>
+    INVALID_POSTALCODE_LENGTH,
+
+    /// <remarks/>
+    INVALID_PROVINCE_CODE,
+
+    /// <remarks/>
+    INVALID_PROXIMITY_RADIUS,
+
+    /// <remarks/>
+    INVALID_REGIONCODE_LENGTH,
+
+    /// <remarks/>
+    INVALID_REGIONNAME_LENGTH,
+
+    /// <remarks/>
+    INVALID_STREETADDRESS_LENGTH,
+
+    /// <remarks/>
+    MULTIPLE_OCCURRENCES_OF_SAME_TARGET,
+
+    /// <remarks/>
+    POLYGON_DUPLICATE_VERTICES,
+
+    /// <remarks/>
+    POLYGON_EDGES_INTERSECT,
+
+    /// <remarks/>
+    POLYGON_TOO_FEW_VERTICES,
+
+    /// <remarks/>
+    POLYGON_TOO_LARGE,
+
+    /// <remarks/>
+    TARGET_IS_ENCLOSED_BY_ANOTHER_TARGET,
+
+    /// <remarks/>
+    TARGET_IS_EXCLUDED_BY_ANOTHER_TARGET,
+
+    /// <remarks/>
+    TARGETING_VALIDATION_FAILED,
+
+    /// <remarks/>
+    TARGETING_CROSS_COUNTRY_REGIONAL,
+
+    /// <remarks/>
+    TARGETING_EXCLUSION_NOT_SUPPORTED,
+
+    /// <remarks/>
+    TARGETING_INCOMPATIBLE_LOCATION_TYPES,
+
+    /// <remarks/>
+    TARGETING_NOT_SUPPORTED,
+
+    /// <remarks/>
+    TARGETING_TOO_MANY_REGIONS,
+
+    /// <remarks/>
+    TOO_MANY_EXCLUDED_LOCATIONS,
+
+    /// <remarks/>
+    TOO_MANY_TARGETED_LOCATIONS,
+
+    /// <remarks/>
+    WARNING_MAY_NOW_REQUIRE_CHINESE_APPROVAL,
+
+    /// <remarks/>
+    WARNING_NOW_REQUIRES_CHINESE_APPROVAL,
+
+    /// <remarks/>
+    WARNING_NOW_TARGETS_CHINA,
+
+    /// <remarks/>
+    WARNING_NOW_TARGETS_CHINESE,
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class ApiException : ApplicationException {
+
+    private ApiError[] errorsField;
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("errors")]
+    public ApiError[] errors {
+      get {
+        return this.errorsField;
+      }
+      set {
+        this.errorsField = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(StringLengthError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(StatsQueryError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SizeLimitError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequiredError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(RegionCodeError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReadOnlyError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(RangeError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuotaExceededError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuotaError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuotaCheckError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(PolicyViolationError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionPolicyError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(PagingError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(OperatorError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(OperationAccessDenied))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(NullError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotWhitelistedError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotEmptyError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(NewEntityCreationError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(MediaError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(JobError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(InternalApiError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(IdError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityNotFound))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityCountLimitExceeded))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignCriterionLimitExceeded))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionLimitExceeded))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdCountLimitExceeded))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityAccessDenied))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(DistinctError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(DatabaseError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClientTermsError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignCriterionError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(BulkMutateJobError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(BudgetError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(BiddingTransitionError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(BiddingError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthorizationError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthenticationError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupServiceError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdError))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public abstract partial class ApiError {
+
+    private string fieldPathField;
+
+    private string triggerField;
+
+    private string apiErrorTypeField;
+
+    /// <remarks/>
+    public string fieldPath {
+      get {
+        return this.fieldPathField;
+      }
+      set {
+        this.fieldPathField = value;
+      }
+    }
+
+    /// <remarks/>
+    public string trigger {
+      get {
+        return this.triggerField;
+      }
+      set {
+        this.triggerField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("ApiError.Type")]
+    public string ApiErrorType {
+      get {
+        return this.apiErrorTypeField;
+      }
+      set {
+        this.apiErrorTypeField = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class TargetError : ApiError {
+
+    private TargetErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public TargetErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class StringLengthError : ApiError {
+
+    private StringLengthErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public StringLengthErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class StatsQueryError : ApiError {
+
+    private StatsQueryErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public StatsQueryErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class SizeLimitError : ApiError {
+
+    private SizeLimitErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public SizeLimitErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class RequiredError : ApiError {
+
+    private RequiredErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public RequiredErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class RegionCodeError : ApiError {
+
+    private RegionCodeErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public RegionCodeErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class ReadOnlyError : ApiError {
+
+    private ReadOnlyErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public ReadOnlyErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class RangeError : ApiError {
+
+    private RangeErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public RangeErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class QuotaExceededError : ApiError {
+
+    private QuotaExceededErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public QuotaExceededErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class QuotaError : ApiError {
+
+    private QuotaErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    private int limitField;
+
+    private bool limitFieldSpecified;
+
+    /// <remarks/>
+    public QuotaErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <remarks/>
+    public int limit {
+      get {
+        return this.limitField;
+      }
+      set {
+        this.limitField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool limitSpecified {
+      get {
+        return this.limitFieldSpecified;
+      }
+      set {
+        this.limitFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class QuotaCheckError : ApiError {
+
+    private QuotaCheckErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public QuotaCheckErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionPolicyError))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class PolicyViolationError : ApiError {
+
+    private PolicyViolationKey keyField;
+
+    private string externalPolicyNameField;
+
+    private string externalPolicyUrlField;
+
+    private string externalPolicyDescriptionField;
+
+    private bool isExemptableField;
+
+    private bool isExemptableFieldSpecified;
+
+    private PolicyViolationErrorPart[] violatingPartsField;
+
+    /// <remarks/>
+    public PolicyViolationKey key {
+      get {
+        return this.keyField;
+      }
+      set {
+        this.keyField = value;
+      }
+    }
+
+    /// <remarks/>
+    public string externalPolicyName {
+      get {
+        return this.externalPolicyNameField;
+      }
+      set {
+        this.externalPolicyNameField = value;
+      }
+    }
+
+    /// <remarks/>
+    public string externalPolicyUrl {
+      get {
+        return this.externalPolicyUrlField;
+      }
+      set {
+        this.externalPolicyUrlField = value;
+      }
+    }
+
+    /// <remarks/>
+    public string externalPolicyDescription {
+      get {
+        return this.externalPolicyDescriptionField;
+      }
+      set {
+        this.externalPolicyDescriptionField = value;
+      }
+    }
+
+    /// <remarks/>
+    public bool isExemptable {
+      get {
+        return this.isExemptableField;
+      }
+      set {
+        this.isExemptableField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool isExemptableSpecified {
+      get {
+        return this.isExemptableFieldSpecified;
+      }
+      set {
+        this.isExemptableFieldSpecified = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("violatingParts")]
+    public PolicyViolationErrorPart[] violatingParts {
+      get {
+        return this.violatingPartsField;
+      }
+      set {
+        this.violatingPartsField = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PolicyViolationError.Part", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class PolicyViolationErrorPart {
+
+    private int indexField;
+
+    private bool indexFieldSpecified;
+
+    private int lengthField;
+
+    private bool lengthFieldSpecified;
+
+    /// <remarks/>
+    public int index {
+      get {
+        return this.indexField;
+      }
+      set {
+        this.indexField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool indexSpecified {
+      get {
+        return this.indexFieldSpecified;
+      }
+      set {
+        this.indexFieldSpecified = value;
+      }
+    }
+
+    /// <remarks/>
+    public int length {
+      get {
+        return this.lengthField;
+      }
+      set {
+        this.lengthField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool lengthSpecified {
+      get {
+        return this.lengthFieldSpecified;
+      }
+      set {
+        this.lengthFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class CriterionPolicyError : PolicyViolationError {
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class PagingError : ApiError {
+
+    private PagingErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public PagingErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class OperatorError : ApiError {
+
+    private OperatorErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public OperatorErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class OperationAccessDenied : ApiError {
+
+    private OperationAccessDeniedReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public OperationAccessDeniedReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class NullError : ApiError {
+
+    private NullErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public NullErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class NotWhitelistedError : ApiError {
+
+    private NotWhitelistedErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public NotWhitelistedErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class NotEmptyError : ApiError {
+
+    private NotEmptyErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public NotEmptyErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class NewEntityCreationError : ApiError {
+
+    private NewEntityCreationErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public NewEntityCreationErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class MediaError : ApiError {
+
+    private MediaErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public MediaErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class JobError : ApiError {
+
+    private JobErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public JobErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class InternalApiError : ApiError {
+
+    private InternalApiErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public InternalApiErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class ImageError : ApiError {
+
+    private ImageErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public ImageErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class IdError : ApiError {
+
+    private IdErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public IdErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class EntityNotFound : ApiError {
+
+    private EntityNotFoundReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public EntityNotFoundReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignCriterionLimitExceeded))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionLimitExceeded))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdCountLimitExceeded))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public abstract partial class EntityCountLimitExceeded : ApiError {
+
+    private EntityCountLimitExceededReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    private string enclosingIdField;
+
+    private int limitField;
+
+    private bool limitFieldSpecified;
+
+    /// <remarks/>
+    public EntityCountLimitExceededReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <remarks/>
+    public string enclosingId {
+      get {
+        return this.enclosingIdField;
+      }
+      set {
+        this.enclosingIdField = value;
+      }
+    }
+
+    /// <remarks/>
+    public int limit {
+      get {
+        return this.limitField;
+      }
+      set {
+        this.limitField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool limitSpecified {
+      get {
+        return this.limitFieldSpecified;
+      }
+      set {
+        this.limitFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class CampaignCriterionLimitExceeded : EntityCountLimitExceeded {
+
+    private CampaignCriterionLimitExceededCriteriaLimitType limitTypeField;
+
+    private bool limitTypeFieldSpecified;
+
+    /// <remarks/>
+    public CampaignCriterionLimitExceededCriteriaLimitType limitType {
+      get {
+        return this.limitTypeField;
+      }
+      set {
+        this.limitTypeField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool limitTypeSpecified {
+      get {
+        return this.limitTypeFieldSpecified;
+      }
+      set {
+        this.limitTypeFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignCriterionLimitExceeded.CriteriaLimitType", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum CampaignCriterionLimitExceededCriteriaLimitType {
+
+    /// <remarks/>
+    CAMPAIGN_NEGATIVE_KEYWORD,
+
+    /// <remarks/>
+    CAMPAIGN_NEGATIVE_WEBSITE,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class AdGroupCriterionLimitExceeded : EntityCountLimitExceeded {
+
+    private AdGroupCriterionLimitExceededCriteriaLimitType limitTypeField;
+
+    private bool limitTypeFieldSpecified;
+
+    /// <remarks/>
+    public AdGroupCriterionLimitExceededCriteriaLimitType limitType {
+      get {
+        return this.limitTypeField;
+      }
+      set {
+        this.limitTypeField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool limitTypeSpecified {
+      get {
+        return this.limitTypeFieldSpecified;
+      }
+      set {
+        this.limitTypeFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupCriterionLimitExceeded.CriteriaLimitType", Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public enum AdGroupCriterionLimitExceededCriteriaLimitType {
+
+    /// <remarks/>
+    ADGROUP_KEYWORD,
+
+    /// <remarks/>
+    ADGROUP_WEBSITE,
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class AdGroupAdCountLimitExceeded : EntityCountLimitExceeded {
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class EntityAccessDenied : ApiError {
+
+    private EntityAccessDeniedReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public EntityAccessDeniedReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class DistinctError : ApiError {
+
+    private DistinctErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public DistinctErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class DateError : ApiError {
+
+    private DateErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public DateErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class DatabaseError : ApiError {
+
+    private DatabaseErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public DatabaseErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class ClientTermsError : ApiError {
+
+    private ClientTermsErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public ClientTermsErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class CampaignError : ApiError {
+
+    private CampaignErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public CampaignErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class CampaignCriterionError : ApiError {
+
+    private CampaignCriterionErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public CampaignCriterionErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class BulkMutateJobError : ApiError {
+
+    private BulkMutateJobErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public BulkMutateJobErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class BudgetError : ApiError {
+
+    private BudgetErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public BudgetErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class BiddingTransitionError : ApiError {
+
+    private BiddingTransitionErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public BiddingTransitionErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class BiddingError : ApiError {
+
+    private BiddingErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public BiddingErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class AuthorizationError : ApiError {
+
+    private AuthorizationErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public AuthorizationErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class AuthenticationError : ApiError {
+
+    private AuthenticationErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public AuthenticationErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class AdGroupServiceError : ApiError {
+
+    private AdGroupServiceErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public AdGroupServiceErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class AdGroupCriterionError : ApiError {
+
+    private AdGroupCriterionErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public AdGroupCriterionErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class AdGroupAdError : ApiError {
+
+    private AdGroupAdErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public AdGroupAdErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class AdError : ApiError {
+
+    private AdErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <remarks/>
+    public AdErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  /// <remarks/>
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApiException))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.42")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v200906")]
+  public partial class ApplicationException {
+
+    private string messageField;
+
+    private string applicationExceptionTypeField;
+
+    /// <remarks/>
+    public string message {
+      get {
+        return this.messageField;
+      }
+      set {
+        this.messageField = value;
+      }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("ApplicationException.Type")]
+    public string ApplicationExceptionType {
+      get {
+        return this.applicationExceptionTypeField;
+      }
+      set {
+        this.applicationExceptionTypeField = value;
+      }
+    }
+  }
 }

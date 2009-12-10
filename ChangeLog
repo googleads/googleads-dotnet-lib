@@ -1,3 +1,8 @@
+6.0.0
+- Added support for ApiError.
+- Added better support for tracking Api cost.
+- Added new samples for v2009 APIs. Deprecated the old code samples.
+
 5.1.0
 - Added support for AdParamService.
 - Added an improved code patcher.

@@ -39,12 +39,15 @@ namespace com.google.api.adwords.samples.v200909 {
     /// <param name="user">The AdWords user object running the sample.
     /// </param>
     public override void Run(AdWordsUser user) {
+      // Get the AdGroupAdService.
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);
 
+      long campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
+
       // Create a selector and set the filters.
       AdGroupAdSelector selector = new AdGroupAdSelector();
-      selector.campaignIds = new long[] {long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"))};
+      selector.campaignIds = new long[] {campaignId};
 
       try {
         AdGroupAdPage page = service.get(selector);
@@ -61,7 +64,7 @@ namespace com.google.api.adwords.samples.v200909 {
           }
         }
       } catch (Exception ex) {
-        Console.WriteLine("Failed to create Ad(s). Exception says \"{0}\"", ex.Message);
+        Console.WriteLine("Failed to get Ad(s). Exception says \"{0}\"", ex.Message);
       }
     }
   }

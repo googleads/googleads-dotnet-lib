@@ -22,7 +22,7 @@ using System;
 namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
   /// This code sample retrieves all ads given an existing ad group. To add
-  /// ads to an existing ad group, you can run AddTextAd.cs.
+  /// ads to an existing ad group, you can run AddAds.cs.
   /// </summary>
   class GetAllAds : SampleBase {
     /// <summary>
@@ -40,20 +40,23 @@ namespace com.google.api.adwords.samples.v200909 {
     /// <param name="user">The AdWords user object running the sample.
     /// </param>
     public override void Run(AdWordsUser user) {
+      // Get the AdGroupAdService.
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);
 
+      long adGroupId = long.Parse(_T("INSERT_AD_GROUP_ID_HERE"));
+
       // Create a selector and set the filters.
       AdGroupAdSelector selector = new AdGroupAdSelector();
-      selector.adGroupIds = new long[] {long.Parse(_T("INSERT_ADGROUP_ID_HERE"))};
+      selector.adGroupIds = new long[] {adGroupId};
 
       try {
         AdGroupAdPage page = service.get(selector);
 
         if (page != null && page.entries != null) {
           foreach (AdGroupAd tempAdGroupAd in page.entries) {
-            Console.WriteLine("Ad status is {0} and id is {1}", tempAdGroupAd.status,
-                tempAdGroupAd.ad.id);
+            Console.WriteLine("Ad id is {0} and status is {1}", tempAdGroupAd.ad.id,
+                tempAdGroupAd.status);
           }
         }
       } catch (Exception ex) {

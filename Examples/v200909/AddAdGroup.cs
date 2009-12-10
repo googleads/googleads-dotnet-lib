@@ -18,11 +18,13 @@ using com.google.api.adwords.lib;
 using com.google.api.adwords.v200909;
 
 using System;
+using System.IO;
+using System.Net;
 
 namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
-  /// This code sample creates a new ad group given an existing campaign.
-  /// To create a campaign, you can run AddCampaign.cs.
+  /// This example illustrates how to create an ad group. To create a campaign, run
+  /// AddCampaign.cs.
   /// </summary>
   class AddAdGroup : SampleBase {
     /// <summary>
@@ -30,7 +32,8 @@ namespace com.google.api.adwords.samples.v200909 {
     /// </summary>
     public override string Description {
       get {
-        return "Create an Adgroup in a given Campaign";
+        return "This example illustrates how to create an ad group. To create a campaign, run "
+            + "AddCampaign.cs";
       }
     }
 
@@ -40,58 +43,44 @@ namespace com.google.api.adwords.samples.v200909 {
     /// <param name="user">The AdWords user object running the sample.
     /// </param>
     public override void Run(AdWordsUser user) {
-      AdGroupService service =
+      // Get the AdGroupService.
+      AdGroupService adGroupService =
           (AdGroupService) user.GetService(AdWordsService.v200909.AdGroupService);
 
+      long campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
+
       AdGroup adGroup = new AdGroup();
-
-      // Required: Set the campaign id.
-      adGroup.campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
-      adGroup.campaignIdSpecified = true;
-
-      // Optional: set the status of adgroup.
+      adGroup.name = string.Format("Earth to Mars Cruises #{0}", GetTimeStamp());
       adGroup.statusSpecified = true;
       adGroup.status = AdGroupStatus.ENABLED;
+      adGroup.campaignIdSpecified = true;
+      adGroup.campaignId = campaignId;
 
-      // Optional: set a name for adgroup.
-      string adGroupName = string.Format("AdGroup - {0}",
-          DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff"));
-      adGroup.name = adGroupName;
-
-      // Optional: Create a Manual CPC Bid.
       ManualCPCAdGroupBids bids = new ManualCPCAdGroupBids();
 
-      // Set the keyword content max cpc.
-      bids.keywordContentMaxCpc = new Bid();
+      Bid keywordMaxCpc = new Bid();
+      keywordMaxCpc.amount = new Money();
+      keywordMaxCpc.amount.microAmountSpecified = true;
+      keywordMaxCpc.amount.microAmount = 10000000;
+      bids.keywordMaxCpc = keywordMaxCpc;
 
-      Money kwdContentMaxCpc = new Money();
-      kwdContentMaxCpc.microAmountSpecified = true;
-      kwdContentMaxCpc.microAmount = 100000;
-      bids.keywordContentMaxCpc.amount = kwdContentMaxCpc;
-
-      // Set the keyword max cpc.
-      bids.keywordMaxCpc = new Bid();
-      Money kwdMaxCpc = new Money();
-      kwdMaxCpc.microAmountSpecified = true;
-      kwdMaxCpc.microAmount = 150000;
-      bids.keywordMaxCpc.amount = kwdMaxCpc;
-
-      // Set the manual bid to the adgroup.
       adGroup.bids = bids;
 
-      AdGroupOperation adGroupOperation = new AdGroupOperation();
-      adGroupOperation.operatorSpecified = true;
-      adGroupOperation.@operator = Operator.ADD;
-      adGroupOperation.operand = adGroup;
+      AdGroupOperation operation = new AdGroupOperation();
+      operation.operatorSpecified = true;
+      operation.@operator = Operator.ADD;
+      operation.operand = adGroup;
 
       try {
-        AdGroupReturnValue results = service.mutate(new AdGroupOperation[] {adGroupOperation});
-        if (results != null && results.value != null && results.value.Length > 0) {
-          Console.WriteLine("New ad group with name = \"{0}\" and id = \"{1}\" was created.",
-              results.value[0].name, results.value[0].id);
+        AdGroupReturnValue retVal = adGroupService.mutate(new AdGroupOperation[] {operation});
+        if (retVal != null && retVal.value != null) {
+          foreach (AdGroup adGroupValue in retVal.value) {
+            Console.WriteLine("Ad group with id = '{0}' and name = '{1}' was created.",
+                adGroupValue.id, adGroupValue.name);
+          }
         }
       } catch (Exception ex) {
-        Console.WriteLine("Failed to create ad group. Exception says \"{0}\"", ex.Message);
+        Console.WriteLine("Failed to create ad group(s). Exception says \"{0}\"", ex.Message);
       }
     }
   }

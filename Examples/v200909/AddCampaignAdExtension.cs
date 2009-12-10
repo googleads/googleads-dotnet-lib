@@ -41,61 +41,73 @@ namespace com.google.api.adwords.samples.v200909 {
     /// </summary>
     /// <param name="user">The AdWords user object running the sample.</param>
     public override void Run(AdWordsUser user) {
+      // Get the CampaignAdExtensionService.
       CampaignAdExtensionService campaignExtensionService =
           (CampaignAdExtensionService) user.GetService(AdWordsService.v200909.
           CampaignAdExtensionService);
 
-      CampaignAdExtensionOperation operation = new CampaignAdExtensionOperation();
-      operation.operatorSpecified = true;
-      operation.@operator = Operator.ADD;
+      long campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
 
-      CampaignAdExtension extension = new CampaignAdExtension();
-      extension.campaignIdSpecified = true;
-      extension.campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
-      extension.statusSpecified = true;
-      extension.status = CampaignAdExtensionStatus.ACTIVE;
+      // Add location 1: 1600 Amphitheatre Pkwy, Mountain View, US.
+      Address address1 = new Address();
+      address1.streetAddress = "1600 Amphitheatre Parkway";
+      address1.cityName = "Mountain View";
+      address1.provinceCode = "CA";
+      address1.postalCode = "94043";
+      address1.countryCode = "US";
 
-      Address address = new Address();
-      address.streetAddress = "1600 Amphitheatre Pkwy, Mountain View";
-      address.countryCode = "US";
+      // Add location 2: 38 avenue de l'Opéra, 75002 Paris, FR
+      Address address2 = new Address();
+      address2.streetAddress = "38 avenue de l'Opéra";
+      address2.cityName = "Paris";
+      address2.postalCode = "75002";
+      address2.countryCode = "FR";
 
-      GeoLocation location = GetLocationForAddress(user, address);
-
-      LocationExtension locationExtension = new LocationExtension();
-
-      // Note: Do not populate an address directly. Instead, use
-      // GeoLocationService to obtain the location of an address,
-      // and use the address as per the location it returns.
-      locationExtension.address = location.address;
-      locationExtension.geoPoint = location.geoPoint;
-      locationExtension.encodedLocation = location.encodedLocation;
-      locationExtension.sourceSpecified = true;
-      locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND;
-
-      extension.adExtension = locationExtension;
-      operation.operand = extension;
-
-      try {
-        CampaignAdExtensionReturnValue retval =
-            campaignExtensionService.mutate(new CampaignAdExtensionOperation[] {operation});
-        if (retval != null && retval.value != null && retval.value.Length > 0) {
-          CampaignAdExtension campaignExtension = retval.value[0];
-          Console.WriteLine("Created a campaign ad extension with id = \"{0}\" and " +
-              "status = \"{1}\"", campaignExtension.adExtension.id, campaignExtension.status);
-        }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to obtain location of the given address. " +
-            "Exception says \"{0}\"", ex.Message);
-      }
-    }
-
-    private GeoLocation GetLocationForAddress(AdWordsUser user, Address address) {
       GeoLocationService geoService =
           (GeoLocationService) user.GetService(AdWordsService.v200909.GeoLocationService);
 
       GeoLocationSelector selector = new GeoLocationSelector();
-      selector.addresses = new Address[] {address};
-      return geoService.get(selector)[0];
+      selector.addresses = new Address[] {address1, address2};
+      GeoLocation[] locations = geoService.get(selector);
+
+      List<CampaignAdExtensionOperation> operations = new List<CampaignAdExtensionOperation>();
+
+      foreach (GeoLocation location in locations) {
+        LocationExtension locationExtension = new LocationExtension();
+        locationExtension.address = location.address;
+        locationExtension.geoPoint = location.geoPoint;
+        locationExtension.encodedLocation = location.encodedLocation;
+        locationExtension.sourceSpecified = true;
+        locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND;
+
+        CampaignAdExtension extension = new CampaignAdExtension();
+        extension.campaignIdSpecified = true;
+        extension.campaignId = campaignId;
+        extension.statusSpecified = true;
+        extension.status = CampaignAdExtensionStatus.ACTIVE;
+        extension.adExtension = locationExtension;
+
+        CampaignAdExtensionOperation operation = new CampaignAdExtensionOperation();
+        operation.operatorSpecified = true;
+        operation.@operator = Operator.ADD;
+        operation.operand = extension;
+
+        operations.Add(operation);
+      }
+
+      try {
+        CampaignAdExtensionReturnValue retval =
+            campaignExtensionService.mutate(operations.ToArray());
+        if (retval != null && retval.value != null && retval.value.Length > 0) {
+          foreach (CampaignAdExtension campaignExtension in retval.value) {
+            Console.WriteLine("Created a campaign ad extension with id = \"{0}\" and " +
+                "status = \"{1}\"", campaignExtension.adExtension.id, campaignExtension.status);
+          }
+        }
+      } catch (Exception ex) {
+        Console.WriteLine("Failed to add campaign ad extensions. Exception says \"{0}\"",
+            ex.Message);
+      }
     }
   }
 }

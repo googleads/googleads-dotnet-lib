@@ -126,9 +126,11 @@ namespace com.google.api.adwords.lib {
         if (HttpContext.Current != null) {
           HttpContext.Current.Items.Add("AdWordsParent", this.Parent);
           HttpContext.Current.Items.Add("SoapService", this);
+          HttpContext.Current.Items.Add("SoapMethod", methodName);
         } else {
           CallContext.SetData("AdWordsParent", this.Parent);
           CallContext.SetData("SoapService", this);
+          CallContext.SetData("SoapMethod", methodName);
         }
         return base.Invoke(methodName, parameters);
       } catch (SoapException ex) {
@@ -137,9 +139,12 @@ namespace com.google.api.adwords.lib {
         if (HttpContext.Current != null) {
           HttpContext.Current.Items.Remove("AdWordsParent");
           HttpContext.Current.Items.Remove("SoapService");
+          HttpContext.Current.Items.Remove("SoapMethod");
+
         } else {
           CallContext.FreeNamedDataSlot("AdWordsParent");
           CallContext.FreeNamedDataSlot("SoapService");
+          CallContext.FreeNamedDataSlot("SoapMethod");
         }
       }
     }

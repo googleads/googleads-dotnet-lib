@@ -79,6 +79,7 @@ namespace com.google.api.adwords.lib {
       if (propInfo != null) {
         propInfo.SetValue(service, user, null);
       }
+
       return service;
     }
 

@@ -22,7 +22,9 @@ using com.google.api.adwords.v13;
 
 using System;
 using System.Collections;
-using System.Collections.Specialized;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 namespace com.google.api.adwords.samples {
   /// <summary>
@@ -32,8 +34,8 @@ namespace com.google.api.adwords.samples {
     /// <summary>
     /// A map to hold the code samples to be executed.
     /// </summary>
-    static OrderedDictionary sampleMap = new OrderedDictionary(
-        StringComparer.InvariantCultureIgnoreCase);
+    static SortedDictionary<string, SampleBase> sampleMap =
+        new SortedDictionary<string, SampleBase>(StringComparer.InvariantCultureIgnoreCase);
 
     /// <summary>
     /// A flag to keep track of whether help message was shown earlier.
@@ -67,28 +69,43 @@ namespace com.google.api.adwords.samples {
       sampleMap.Add("v13.MethodQuotaUsageDemo", new MethodQuotaUsageDemo());
       sampleMap.Add("v13.ClientQuotaUsageDemo", new ClientQuotaUsageDemo());
 
-
       // Add v200909 samples.
-      sampleMap.Add("v200909.AddCampaign", new AddCampaign());
-      sampleMap.Add("v200909.AddCampaignTarget", new AddCampaignTarget());
-      sampleMap.Add("v200909.AddNegativeCampaignPlacement", new AddNegativeCampaignPlacement());
-      sampleMap.Add("v200909.AddAdGroup", new AddAdGroup());
-      sampleMap.Add("v200909.AddImageAd", new AddImageAd());
-      sampleMap.Add("v200909.AddTextAd", new AddTextAd());
-      sampleMap.Add("v200909.GetAllAds", new GetAllAds());
-      sampleMap.Add("v200909.UpdateAd", new UpdateAd());
-      sampleMap.Add("v200909.AddAdGroupKeyword", new AddAdGroupKeyword());
-      sampleMap.Add("v200909.GetActiveCriteria", new GetActiveCriteria());
-      sampleMap.Add("v200909.GetAllActiveCampaigns", new GetAllActiveCampaigns());
-      sampleMap.Add("v200909.GetAllDisapprovedAds", new GetAllDisapprovedAds());
-      sampleMap.Add("v200909.AddBulkMutateJob", new AddBulkMutateJob());
-      sampleMap.Add("v200909.GetGeoLocation", new GetGeoLocation());
-      sampleMap.Add("v200909.AddCampaignAdExtension", new AddCampaignAdExtension());
-      sampleMap.Add("v200909.AddAdExtensionOverride", new AddAdExtensionOverride());
-      sampleMap.Add("v200909.GetTargetingIdeas", new GetTargetingIdeas());
+      sampleMap.Add("v200909.AddAds", new AddAds());
       sampleMap.Add("v200909.AddMobileImageAd", new AddMobileImageAd());
-      sampleMap.Add("v200909.GetApiUsage", new GetApiUsage());
-      sampleMap.Add("v200909.AddAdParam", new AddAdParam());
+      sampleMap.Add("v200909.AddCampaignAdExtension", new AddCampaignAdExtension());
+      sampleMap.Add("v200909.PerformBulkMutateJob", new PerformBulkMutateJob());
+      sampleMap.Add("v200909.GetAllAds", new GetAllAds());
+      sampleMap.Add("v200909.GetAllCampaignAdExtensions",
+          new GetAllCampaignAdExtensions());
+      sampleMap.Add("v200909.GetAllDisapprovedAds", new GetAllDisapprovedAds());
+      sampleMap.Add("v200909.UpdateAd", new UpdateAd());
+      sampleMap.Add("v200909.GetAllCampaigns", new GetAllCampaigns());
+      sampleMap.Add("v200909.GetAllPausedCampaigns", new GetAllPausedCampaigns());
+      sampleMap.Add("v200909.AddCampaign", new AddCampaign());
+      sampleMap.Add("v200909.UpdateCampaign", new UpdateCampaign());
+      sampleMap.Add("v200909.SetCampaignTargets", new SetCampaignTargets());
+      sampleMap.Add("v200909.GetAllCampaignTargets", new GetAllCampaignTargets());
+      sampleMap.Add("v200909.GetAllAdGroups", new GetAllAdGroups());
+      sampleMap.Add("v200909.AddAdGroup", new AddAdGroup());
+      sampleMap.Add("v200909.UpdateAdGroup", new UpdateAdGroup());
+      sampleMap.Add("v200909.GetAllAdGroupCriteria", new GetAllAdGroupCriteria());
+      sampleMap.Add("v200909.GetAllActiveAdGroupCriteria", new GetAllActiveAdGroupCriteria());
+      sampleMap.Add("v200909.AddAdGroupCriteria", new AddAdGroupCriteria());
+      sampleMap.Add("v200909.UpdateAdGroupCriterion", new UpdateAdGroupCriterion());
+      sampleMap.Add("v200909.AddNegativeCampaignCriterion", new AddNegativeCampaignCriterion());
+      sampleMap.Add("v200909.GetTotalUsageUnitsPerMonth", new GetTotalUsageUnitsPerMonth());
+      sampleMap.Add("v200909.GetOperationCount", new GetOperationCount());
+      sampleMap.Add("v200909.GetUnitCount", new GetUnitCount());
+      sampleMap.Add("v200909.GetMethodCost", new GetMethodCost());
+      sampleMap.Add("v200909.GetRelatedKeywords", new GetRelatedKeywords());
+      sampleMap.Add("v200909.GetRelatedPlacements", new GetRelatedPlacements());
+      sampleMap.Add("v200909.CheckCampaigns", new CheckCampaigns());
+      sampleMap.Add("v200909.GetAllAdExtensionOverrides", new GetAllAdExtensionOverrides());
+      sampleMap.Add("v200909.AddAdExtensionOverride", new AddAdExtensionOverride());
+      sampleMap.Add("v200909.GetGeoLocationInfo", new GetGeoLocationInfo());
+      sampleMap.Add("v200909.SetAdParams", new SetAdParams());
+      sampleMap.Add("v200909.GetConversionOptimizerEligibility",
+          new GetConversionOptimizerEligibility());
 
       // Add combined examples.
       sampleMap.Add("both.UsingKeywordSuggestionDemo", new UsingKeywordSuggestionDemo());
@@ -108,7 +125,7 @@ namespace com.google.api.adwords.samples {
 
       if (string.Compare(args[0], "--all", true) == 0) {
         foreach (string key in sampleMap.Keys) {
-          SampleBase sample = (SampleBase) sampleMap[key];
+          SampleBase sample = sampleMap[key];
           Console.WriteLine(sample.Description);
           sample.Run(user);
           Console.WriteLine("Press [Enter] to continue");
@@ -117,7 +134,7 @@ namespace com.google.api.adwords.samples {
       } else if (string.Compare(args[0], "--v13all", true) == 0) {
         foreach (string key in sampleMap.Keys) {
           if (key.StartsWith("v13")) {
-            SampleBase sample = (SampleBase) sampleMap[key];
+            SampleBase sample = sampleMap[key];
             Console.WriteLine(sample.Description);
             sample.Run(user);
             Console.WriteLine("Press [Enter] to continue");
@@ -127,7 +144,7 @@ namespace com.google.api.adwords.samples {
       } else if (string.Compare(args[0], "--v2009all", true) == 0) {
         foreach (string key in sampleMap.Keys) {
           if (key.StartsWith("v2009")) {
-            SampleBase sample = (SampleBase) sampleMap[key];
+            SampleBase sample = sampleMap[key];
             Console.WriteLine(sample.Description);
             sample.Run(user);
             Console.WriteLine("Press [Enter] to continue");
@@ -136,8 +153,8 @@ namespace com.google.api.adwords.samples {
         }
       } else {
         foreach (string cmdArgs in args) {
-          if (sampleMap.Contains(cmdArgs)) {
-            SampleBase sample = (SampleBase) sampleMap[cmdArgs];
+          if (sampleMap.ContainsKey(cmdArgs)) {
+            SampleBase sample = sampleMap[cmdArgs];
             Console.WriteLine(sample.Description);
             sample.Run(user);
             Console.WriteLine("Press [Enter] to continue");
@@ -157,16 +174,19 @@ namespace com.google.api.adwords.samples {
       } else {
         helpShown = true;
       }
+      string exeName = Path.GetFileName(Assembly.GetExecutingAssembly().Location);
       Console.WriteLine("Runs AdWords API code samples");
-      Console.WriteLine("Usage :");
-      Console.WriteLine("google-adwordsapi-dotnet-samples.exe or " +
-          "google-adwordsapi-dotnet-samples.exe  --help\nPrints this help message.\n");
-      Console.WriteLine("google-adwordsapi-dotnet-samples  --all\nRun all code samples.\n");
-      Console.WriteLine("google-adwordsapi-dotnet-samples samplename1 [samplename2 ...]\n" +
-          "Run specific code samples. Samplename can be one of the following:\n");
+      Console.WriteLine("Usage : {0} [flags]\n", exeName);
+      Console.WriteLine("Available flags\n");
+      Console.WriteLine("--help\t\t : Prints this help message.", exeName);
+      Console.WriteLine("--all\t\t : Run all code samples.", exeName);
+      Console.WriteLine("samplename1 [samplename2 ...] : " +
+          "Run specific code samples. Samplename can be one of the following:\n", exeName);
       foreach (string key in sampleMap.Keys) {
-        Console.WriteLine(key);
+        Console.WriteLine("{0} : {1}", key, sampleMap[key].Description);
       }
+      Console.WriteLine("Press [Enter] to continue");
+      Console.ReadLine();
     }
   }
 }

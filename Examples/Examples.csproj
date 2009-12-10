@@ -34,7 +34,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="v200909\AddMobileImageAd.cs" />
     <Compile Include="both\UsingKeywordSuggestionDemo.cs" />
+    <Compile Include="v200909\AddAdExtensionOverride.cs" />
+    <Compile Include="v200909\AddAdGroup.cs" />
+    <Compile Include="v200909\AddAdGroupCriteria.cs" />
+    <Compile Include="v200909\AddCampaign.cs" />
+    <Compile Include="v200909\AddCampaignAdExtension.cs" />
+    <Compile Include="v200909\AddNegativeCampaignCriterion.cs" />
+    <Compile Include="v200909\CheckCampaigns.cs" />
+    <Compile Include="v200909\GetAllActiveAdGroupCriteria.cs" />
+    <Compile Include="v200909\GetAllAdExtensionOverrides.cs" />
+    <Compile Include="v200909\GetAllAdGroupCriteria.cs" />
+    <Compile Include="v200909\GetAllAdGroups.cs" />
+    <Compile Include="v200909\GetAllAds.cs" />
+    <Compile Include="v200909\AddAds.cs" />
+    <Compile Include="v200909\GetAllCampaigns.cs" />
+    <Compile Include="v200909\GetAllCampaignTargets.cs" />
+    <Compile Include="v200909\GetAllPausedCampaigns.cs" />
+    <Compile Include="v200909\GetConversionOptimizerEligibility.cs" />
+    <Compile Include="v200909\GetGeoLocationInfo.cs" />
+    <Compile Include="v200909\GetMethodCost.cs" />
+    <Compile Include="v200909\GetOperationCount.cs" />
+    <Compile Include="v200909\GetRelatedKeywords.cs" />
+    <Compile Include="v200909\GetRelatedPlacements.cs" />
+    <Compile Include="v200909\GetTotalUsageUnitsPerMonth.cs" />
+    <Compile Include="v200909\GetUnitCount.cs" />
+    <Compile Include="v200909\PerformBulkMutateJob.cs" />
+    <Compile Include="v200909\GetAllCampaignAdExtensions.cs" />
+    <Compile Include="v200909\SetAdParams.cs" />
+    <Compile Include="v200909\SetCampaignTargets.cs" />
+    <Compile Include="v200909\UpdateAdGroup.cs" />
+    <Compile Include="v200909\UpdateAdGroupCriterion.cs" />
+    <Compile Include="v200909\UpdateCampaign.cs" />
     <Compile Include="v13\ClientQuotaUsageDemo.cs" />
     <Compile Include="v13\AccountServiceDemo.cs" />
     <Compile Include="v13\AccountServiceNoConfigDemo.cs" />
@@ -57,27 +89,9 @@
     <Compile Include="v13\ReportServiceStructureDemo.cs" />
     <Compile Include="v13\RestoreSandboxDemo.cs" />
     <Compile Include="v13\SiteSuggestionServiceDemo.cs" />
-    <Compile Include="v200909\GetAllActiveCampaigns.cs" />
     <Compile Include="v200909\GetAllDisapprovedAds.cs" />
-    <Compile Include="v200909\AddAdExtensionOverride.cs" />
-    <Compile Include="v200909\AddAdParam.cs" />
-    <Compile Include="v200909\AddBulkMutateJob.cs" />
-    <Compile Include="v200909\AddImageAd.cs" />
-    <Compile Include="v200909\AddTextAd.cs" />
-    <Compile Include="v200909\GetAllAds.cs" />
     <Compile Include="v200909\UpdateAd.cs" />
-    <Compile Include="v200909\AddAdGroupKeyword.cs" />
-    <Compile Include="v200909\GetActiveCriteria.cs" />
-    <Compile Include="v200909\AddAdGroup.cs" />
-    <Compile Include="v200909\AddNegativeCampaignPlacement.cs" />
-    <Compile Include="v200909\AddCampaign.cs" />
-    <Compile Include="v200909\AddCampaignTarget.cs" />
     <Compile Include="SampleBase.cs" />
-    <Compile Include="v200909\AddCampaignAdExtension.cs" />
-    <Compile Include="v200909\AddMobileImageAd.cs" />
-    <Compile Include="v200909\GetApiUsage.cs" />
-    <Compile Include="v200909\GetGeoLocation.cs" />
-    <Compile Include="v200909\GetTargetingIdeas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

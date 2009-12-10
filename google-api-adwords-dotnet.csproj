@@ -59,6 +59,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\lib\AdWordsApiException.cs" />
+    <Compile Include="src\lib\AdWordsApiService.cs" />
+    <Compile Include="src\lib\ApiUnitsEntry.cs" />
     <Compile Include="src\lib\SoapServiceBase.cs" />
     <Compile Include="src\v13\AdWordsApi.cs" />
     <Compile Include="src\v200909\AdWordsApi.cs" />

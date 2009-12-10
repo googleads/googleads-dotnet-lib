@@ -39,21 +39,26 @@ namespace com.google.api.adwords.samples.v200909 {
     /// <param name="user">The AdWords user object running the sample.
     /// </param>
     public override void Run(AdWordsUser user) {
+      // Get the AdGroupAdService.
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);
+
+      long adGroupId = long.Parse(_T("INSERT_AD_GROUP_ID_HERE"));
+      long adId = long.Parse(_T("INSERT_AD_ID_HERE"));
+      AdGroupAdStatus status = (AdGroupAdStatus) Enum.Parse(typeof(AdGroupAdStatus),
+          _T("INSERT_AD_GROUP_AD_STATUS_HERE"));
 
       // Update your Ad.
       AdGroupAd adGroupAd = new AdGroupAd();
 
       adGroupAd.statusSpecified = true;
-      adGroupAd.status =
-          (AdGroupAdStatus) Enum.Parse(typeof(AdGroupAdStatus), _T("INSERT_ADGROUP_STATUS_HERE"));
+      adGroupAd.status = status;
 
-      adGroupAd.adGroupId = long.Parse(_T("INSERT_ADGROUP_ID_HERE"));
+      adGroupAd.adGroupId = adGroupId;
       adGroupAd.adGroupIdSpecified = true;
 
       adGroupAd.ad = new Ad();
-      adGroupAd.ad.id = long.Parse(_T("INSERT_AD_ID_HERE"));
+      adGroupAd.ad.id = adId;
       adGroupAd.ad.idSpecified = true;
 
       AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();

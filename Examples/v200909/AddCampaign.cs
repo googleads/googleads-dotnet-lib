@@ -18,10 +18,12 @@ using com.google.api.adwords.lib;
 using com.google.api.adwords.v200909;
 
 using System;
+using System.IO;
+using System.Net;
 
 namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
-  /// This code sample creates a new campaign.
+  /// This example adds a campaign. To get campaigns, run GetAllCampaigns.cs.
   /// </summary>
   class AddCampaign : SampleBase {
     /// <summary>
@@ -29,7 +31,7 @@ namespace com.google.api.adwords.samples.v200909 {
     /// </summary>
     public override string Description {
       get {
-        return "Create a new Campaign";
+        return "This example adds a campaign. To get campaigns, run GetAllCampaigns.cs.";
       }
     }
 
@@ -39,57 +41,49 @@ namespace com.google.api.adwords.samples.v200909 {
     /// <param name="user">The AdWords user object running the sample.
     /// </param>
     public override void Run(AdWordsUser user) {
-      CampaignService service =
+      // Get the CampaignService.
+      CampaignService campaignService =
           (CampaignService) user.GetService(AdWordsService.v200909.CampaignService);
 
+      // Create campaign.
       Campaign campaign = new Campaign();
-
-      // Generate a campaign name.
-      string campaignName =
-          string.Format("Campaign - {0}", DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff"));
-      campaign.name = string.Format(campaignName);
-
-      // Required: Set the campaign status.
-      campaign.status = CampaignStatus.ACTIVE;
+      campaign.name = "Interplanetary Cruise #" + GetTimeStamp();
       campaign.statusSpecified = true;
-
-      // Required: Specify the currency and budget amount.
-      Budget budget = new Budget();
-      Money amount = new Money();
-      amount.microAmountSpecified = true;
-      amount.microAmount = 50000000;
-
-      budget.amount = amount;
-
-      // Required: Specify the bidding strategy.
+      campaign.status = CampaignStatus.PAUSED;
       campaign.biddingStrategy = new ManualCPC();
 
-      // Optional: Specify the budget period and delivery method.
+      Budget budget = new Budget();
       budget.periodSpecified = true;
       budget.period = BudgetBudgetPeriod.DAILY;
       budget.deliveryMethodSpecified = true;
       budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
+      budget.amount = new Money();
+      budget.amount.microAmountSpecified = true;
+      budget.amount.microAmount = 50000000;
+
       campaign.budget = budget;
 
-      // Optional: Specify an endDate for the campaign.
-      campaign.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd");
-
-      // Define an Add operation to add the campaign.
-      CampaignOperation campaignOperation = new CampaignOperation();
-
-      campaignOperation.operatorSpecified = true;
-      campaignOperation.@operator = Operator.ADD;
-      campaignOperation.operand = campaign;
+      // Create operations.
+      CampaignOperation operation = new CampaignOperation();
+      operation.operatorSpecified = true;
+      operation.@operator = Operator.ADD;
+      operation.operand = campaign;
 
       try {
-        CampaignReturnValue results =
-          service.mutate(new CampaignOperation[] {campaignOperation});
-        if (results != null && results.value != null && results.value.Length > 0) {
-          Console.WriteLine("New campaign with name = \"{0}\" and id = " +
-              "\"{1}\" was created.", results.value[0].name, results.value[0].id);
+        // Add campaign.
+        CampaignReturnValue result = campaignService.mutate((new CampaignOperation[] {operation}));
+
+        // Display campaigns.
+        if (result != null && result.value != null) {
+         foreach (Campaign campaignResult in result.value) {
+           Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was added.",
+              campaignResult.name, campaignResult.id);
+         }
+        } else {
+          Console.WriteLine("No campaigns were added.");
         }
       } catch (Exception ex) {
-        Console.WriteLine("Failed to create campaign. Exception says \"{0}\"", ex.Message);
+        Console.WriteLine("Failed to add Campaign. Exception says \"{0}\"", ex.Message);
       }
     }
   }

@@ -45,7 +45,7 @@ namespace com.google.api.adwords.lib {
     /// <summary>
     /// Units consumed for API calls during this session.
     /// </summary>
-    private int units = 0;
+    private List<ApiUnitsEntry> units = new List<ApiUnitsEntry>();
 
     /// <summary>
     /// Public constructor. Use this version if you want the library to
@@ -98,8 +98,8 @@ namespace com.google.api.adwords.lib {
     /// </summary>
     /// <param name="addUnits">The amount of units to be added.</param>
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public void AddUnits(int addUnits) {
-      units += addUnits;
+    public void AddUnits(ApiUnitsEntry addUnits) {
+      units.Add(addUnits);
     }
 
     /// <summary>
@@ -107,15 +107,33 @@ namespace com.google.api.adwords.lib {
     /// </summary>
     /// <returns>The units used by the services of this object,
     /// or 0 if no units are consumed.</returns>
+    [MethodImpl(MethodImplOptions.Synchronized)]
     public int GetUnits() {
-      return units;
+      int totalUnits = 0;
+      foreach (ApiUnitsEntry entry in units) {
+        totalUnits += entry.Units;
+      }
+      return totalUnits;
+    }
+
+    [MethodImpl(MethodImplOptions.Synchronized)]
+    public int GetUnitsForLastOperation() {
+      if (units.Count == 0) {
+        return 0;
+      } else {
+        return units[units.Count - 1].Units;
+      }
     }
 
     /// <summary>
     /// Resets the units consumed by the services of this object.
     /// </summary>
     public void ResetUnits() {
-      units = 0;
+      units.RemoveAll(new Predicate<ApiUnitsEntry>(
+          delegate(ApiUnitsEntry entry) {
+            return true;
+          }
+      ));
     }
 
     /// <summary>
