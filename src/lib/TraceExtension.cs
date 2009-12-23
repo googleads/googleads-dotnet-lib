@@ -348,6 +348,18 @@ namespace com.google.api.adwords.lib {
     /// it immediately to file, to ensure that request and response xmls appear
     /// as a pair when making multithreaded calls.</remarks>
     private void SaveStreamContents(bool isRequest) {
+      bool isAdWordsCall = false;
+
+      if (HttpContext.Current != null) {
+        isAdWordsCall = HttpContext.Current.Items.Contains("AdWordsParent");
+      } else {
+        isAdWordsCall = CallContext.GetData("AdWordsParent") != null;
+      }
+
+      if (!isAdWordsCall) {
+        return;
+      }
+
       MemoryStream memStream = (MemoryStream) newStream;
       string key = isRequest ? "SoapRequest" : "SoapResponse";
       string value = Encoding.UTF8.GetString(memStream.ToArray());

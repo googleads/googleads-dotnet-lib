@@ -79,6 +79,7 @@ namespace com.google.api.adwords.lib {
           ApplicationConfiguration.proxy = proxy;
         }
         companyName = ReadSetting(settings, COMPANY_NAME, "");
+        authToken = ReadSetting(settings, AUTHTOKEN, "");
         email = ReadSetting(settings, EMAIL, "");
         password = ReadSetting(settings, PASSWORD, "");
         clientEmail = ReadSetting(settings, CLIENT_EMAIL, "");
@@ -117,6 +118,11 @@ namespace com.google.api.adwords.lib {
         return defaultValue;
       }
     }
+
+    /// <summary>
+    /// Authtoken to be used in making API calls.
+    /// </summary>
+    public static String authToken;
 
     /// <summary>
     /// Email to be used in getting AuthToken.
@@ -177,6 +183,11 @@ namespace com.google.api.adwords.lib {
     /// True, if the credentials in the log file should be masked.
     /// </summary>
     public static bool maskCredentials;
+
+    /// <summary>
+    /// Key name for authToken.
+    /// </summary>
+    internal const String AUTHTOKEN = "AuthToken";
 
     /// <summary>
     /// Key name for email.
@@ -276,6 +287,6 @@ namespace com.google.api.adwords.lib {
     /// <summary>
     /// The publicly released version number.
     /// </summary>
-    public const String version = "6.0";
+    public const String version = "6.1";
   }
 }
