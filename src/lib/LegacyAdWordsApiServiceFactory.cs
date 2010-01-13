@@ -127,7 +127,10 @@ namespace com.google.api.adwords.lib {
     public Dictionary<string, SoapHeader> MakeSoapHeaders(Dictionary<string, string> headers) {
       Dictionary<string, SoapHeader> soapHeaders = new Dictionary<string, SoapHeader>();
       foreach (string key in headers.Keys) {
-        soapHeaders[key + "Value"] = MakeSoapHeader(key, headers[key]);
+        SoapHeader tempHeader = MakeSoapHeader(key, headers[key]);
+        if (tempHeader != null) {
+          soapHeaders[key + "Value"] = tempHeader;
+        }
       }
       return soapHeaders;
     }
@@ -142,9 +145,11 @@ namespace com.google.api.adwords.lib {
       string typeName = "com.google.api.adwords.v13." + headerName;
       SoapHeader header = (SoapHeader) Assembly.GetExecutingAssembly().
           CreateInstance(typeName);
-      PropertyInfo propInfo = header.GetType().GetProperty("Value");
-      if (propInfo != null) {
-        propInfo.SetValue(header, new string[] {value}, null);
+      if (header != null) {
+        PropertyInfo propInfo = header.GetType().GetProperty("Value");
+        if (propInfo != null) {
+          propInfo.SetValue(header, new string[] { value }, null);
+        }
       }
       return header;
     }
