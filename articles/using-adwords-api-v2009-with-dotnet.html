@@ -1,0 +1,2096 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<base target="_top">
+<style type="text/css">
+  
+
+/* default css */
+
+table {
+  font-size: 1em;
+  line-height: inherit;
+  border-collapse: collapse;
+}
+
+
+tr {
+  
+  text-align: left;
+  
+}
+
+
+div, address, ol, ul, li, option, select {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+
+pre {
+  font-family: Courier New;
+  white-space: pre-wrap;
+  margin:0;
+}
+
+body {
+  margin: 6px;
+  padding: 0px;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+  background-color: #ffffff;
+  color: #000;
+}
+
+
+img {
+  -moz-force-broken-image-icon: 1;
+}
+
+@media screen {
+  html.pageview {
+    background-color: #f3f3f3 !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  
+
+  body {
+    min-height: 1100px;
+    
+    counter-reset: __goog_page__;
+  }
+  * html body {
+    height: 1100px;
+  }
+  .pageview body {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
+    width: 648px !important;
+    margin: 15px auto 25px;
+    padding: 40px 50px;
+  }
+  /* IE6 */
+  * html {
+    overflow-y: scroll;
+  }
+  * html.pageview body {
+    overflow-x: auto;
+  }
+  /* Prevent repaint errors when scrolling in Safari. This "Star-7" css hack
+     targets Safari 3.1, but not WebKit nightlies and presumably Safari 4.
+     That's OK because this bug is fixed in WebKit nightlies/Safari 4 :-). */
+  html*#wys_frame::before {
+    content: '\A0';
+    position: fixed;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+  }
+  
+
+  
+    
+    .writely-callout-data {
+      display: none;
+    }
+    
+
+    .writely-footnote-marker {
+      background-image: url('MISSING');
+      background-color: transparent;
+      background-repeat: no-repeat;
+      width: 7px;
+      overflow: hidden;
+      height: 16px;
+      vertical-align: top;
+
+      
+      -moz-user-select: none;
+    }
+    .editor .writely-footnote-marker {
+      cursor: move;
+    }
+    .writely-footnote-marker-highlight {
+      background-position: -15px 0;
+      -moz-user-select: text;
+    }
+    .writely-footnote-hide-selection ::-moz-selection, .writely-footnote-hide-selection::-moz-selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection ::selection, .writely-footnote-hide-selection::selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection {
+      cursor: move;
+    }
+
+    /* Comments */
+    .writely-comment-yellow {
+      background-color: #ffffd7;
+    }
+    .writely-comment-orange {
+      background-color: #ffe3c0;
+    }
+    .writely-comment-pink {
+      background-color: #ffd7ff;
+    }
+    .writely-comment-green {
+      background-color: #d7ffd7;
+    }
+    .writely-comment-blue {
+      background-color: #d7ffff;
+    }
+    .writely-comment-purple {
+      background-color: #eed7ff;
+    }
+
+  
+
+
+  
+  .br_fix span+br:not(:-moz-last-node) {
+    
+    position:relative;
+    
+    left: -1ex
+    
+  }
+
+  
+  #cb-p-tgt {
+    font-size: 8pt;
+    padding: .4em;
+    background-color: #ddd;
+    color: #333;
+  }
+  #cb-p-tgt-can {
+    text-decoration: underline;
+    color: #36c;
+    font-weight: bold;
+    margin-left: 2em;
+  }
+  #cb-p-tgt .spin {
+    width: 16px;
+    height: 16px;
+    background: url(//ssl.gstatic.com/docs/clipboard/spin_16o.gif) no-repeat;
+  }
+}
+
+h6 { font-size: 8pt }
+h5 { font-size: 8pt }
+h4 { font-size: 10pt }
+h3 { font-size: 12pt }
+h2 { font-size: 14pt }
+h1 { font-size: 18pt }
+
+blockquote {padding: 10px; border: 1px #DDD dashed }
+
+.webkit-indent-blockquote { border: none; }
+
+a img {border: 0}
+
+.pb {
+  border-width: 0;
+  page-break-after: always;
+  /* We don't want this to be resizeable, so enforce a width and height
+     using !important */
+  height: 1px !important;
+  width: 100% !important;
+}
+
+.editor .pb {
+  border-top: 1px dashed #C0C0C0;
+  border-bottom: 1px dashed #C0C0C0;
+}
+
+div.google_header, div.google_footer {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+/* Table of contents */
+.editor div.writely-toc {
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+}
+.writely-toc > ol {
+  padding-left: 3em;
+  font-weight: bold;
+}
+ol.writely-toc-subheading {
+  padding-left: 1em;
+  font-weight: normal;
+}
+/* IE6 only */
+* html writely-toc ol {
+  list-style-position: inside;
+}
+.writely-toc-none {
+  list-style-type: none;
+}
+.writely-toc-decimal {
+  list-style-type: decimal;
+}
+.writely-toc-upper-alpha {
+  list-style-type: upper-alpha;
+}
+.writely-toc-lower-alpha {
+  list-style-type: lower-alpha;
+}
+.writely-toc-upper-roman {
+  list-style-type: upper-roman;
+}
+.writely-toc-lower-roman {
+  list-style-type: lower-roman;
+}
+.writely-toc-disc {
+  list-style-type: disc;
+}
+
+/* Ordered lists converted to numbered lists can preserve ordered types, and
+   vice versa. This is confusing, so disallow it */
+ul[type="i"], ul[type="I"], ul[type="1"], ul[type="a"], ul[type="A"] {
+  list-style-type: disc;
+}
+
+ol[type="disc"], ol[type="circle"], ol[type="square"] {
+  list-style-type: decimal;
+}
+
+/* end default css */
+
+
+  /* default print css */
+  @media print {
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    div.google_header, div.google_footer {
+      display: block;
+      min-height: 0;
+      border: none;
+    }
+
+    div.google_header {
+      flow: static(header);
+    }
+
+    /* used to insert page numbers */
+    div.google_header::before, div.google_footer::before {
+      position: absolute;
+      top: 0;
+    }
+
+    div.google_footer {
+      flow: static(footer);
+    }
+
+    /* always consider this element at the start of the doc */
+    div#google_footer {
+      flow: static(footer, start);
+    }
+
+    span.google_pagenumber {
+      content: counter(page);
+    }
+
+    span.google_pagecount {
+      content: counter(pages);
+    }
+
+    .endnotes {
+      page: endnote;
+    }
+
+    /* MLA specifies that endnotes title should be 1" margin from the top of the page. */
+    @page endnote {
+      margin-top: 1in;
+    }
+
+    callout.google_footnote {
+      
+      display: prince-footnote;
+      footnote-style-position: inside;
+      /* These styles keep the footnote from taking on the style of the text
+         surrounding the footnote marker. They can be overridden in the
+         document CSS. */
+      color: #000;
+      font-family: Verdana;
+      font-size: 10.0pt;
+      font-weight: normal;
+    }
+
+    /* Table of contents */
+    #WritelyTableOfContents a::after {
+      content: leader('.') target-counter(attr(href), page);
+    }
+
+    #WritelyTableOfContents a {
+      text-decoration: none;
+      color: black;
+    }
+
+    /* Comments */
+    .writely-comment-yellow {
+      background-color: #ffffd7;
+    }
+    .writely-comment-orange {
+      background-color: #ffe3c0;
+    }
+    .writely-comment-pink {
+      background-color: #ffd7ff;
+    }
+    .writely-comment-green {
+      background-color: #d7ffd7;
+    }
+    .writely-comment-blue {
+      background-color: #d7ffff;
+    }
+    .writely-comment-purple {
+      background-color: #eed7ff;
+    }
+  }
+
+  @page {
+    @top {
+      content: flow(header);
+    }
+    @bottom {
+      content: flow(footer);
+    }
+    @footnotes {
+      border-top: solid black thin;
+      padding-top: 8pt;
+    }
+  }
+  /* end default print css */
+
+
+/* custom css */
+
+
+/* end custom css */
+
+/* ui edited css */
+
+body {
+  font-family: Verdana;
+  
+  font-size: 10.0pt;
+  line-height: normal;
+  background-color: #ffffff;
+}
+/* end ui edited css */
+
+
+/* editor CSS */
+.editor a:visited {color: #551A8B}
+.editor table.zeroBorder {border: 1px dotted gray}
+.editor table.zeroBorder td {border: 1px dotted gray}
+.editor table.zeroBorder th {border: 1px dotted gray}
+
+
+.editor div.google_header, .editor div.google_footer {
+  border: 2px #DDDDDD dashed;
+  position: static;
+  width: 100%;
+  min-height: 2em;
+}
+
+.editor .misspell {background-color: yellow}
+
+.editor .writely-comment {
+  font-size: 9pt;
+  line-height: 1.4;
+  padding: 1px;
+  border: 1px dashed #C0C0C0
+}
+
+
+/* end editor CSS */
+
+</style>
+
+  
+  <title>making adwords api v2009 work with visual studio 2005</title>
+
+</head>
+
+<body 
+    
+    >
+    
+    
+    
+<div style=TEXT-ALIGN:center>
+  <b><u><font size=5>Making AdWords API v2009 work with .NET</font></u></b>
+</div>
+<div style=TEXT-ALIGN:left>
+  <b><br>
+  </b>
+</div>
+<div style=TEXT-ALIGN:left>
+  <u><b><font face=Arial><font size=5>Table of Contents</font></font></b></u>
+</div>
+<div style=TEXT-ALIGN:left>
+  <b><br>
+  </b>
+</div>
+<div class=writely-toc id=WritelyTableOfContents toctype=none+none>
+  <ol class=writely-toc-none>
+    <li>
+      <a href=#Overview_4724121196195483_08384913112968206 target=_self>Overview</a>
+    </li>
+    <li>
+      <a href=#Getting_an_AuthToken_339035766_26398987602442503 target=_self>Getting an AuthToken</a>
+    </li>
+    <li>
+      <a href=#Making_an_API_call_43760214187_20601573772728443 target=_self>Making an API call</a>
+    </li>
+    <ol class="writely-toc-none writely-toc-subheading" style=MARGIN-LEFT:0pt>
+      <li>
+        <a href=#Option_1_Make_a_raw_API_call_0_07284117676317692 target=_self>Option 1: Make a raw API call</a>
+      </li>
+      <li>
+        <a href=#Option_2_Use_a_wsdl_code_gener_9651888282969594 target=_self>Option 2: Use a wsdl code generator (wsdl.exe) and Microsoft .NET SOAP classes</a>
+      </li>
+      <ol class="writely-toc-none writely-toc-subheading" style=MARGIN-LEFT:0pt>
+        <li>
+          <a href=#a_Xml_namespace_collision_betw_6276120478287339 target=_self>a. Xml namespace collision between SoapHeader class and System.Web.Services.Protocols.SoapHeader</a>
+        </li>
+        <li>
+          <a href=#c_Visual_Studio_doesn_t_reuse__012301644310355186 target=_self>c. Visual Studio doesn't reuse types from different wsdls.</a>
+        </li>
+        <ol class="writely-toc-none writely-toc-subheading" style=MARGIN-LEFT:0pt>
+          <li>
+            <a href=#1_Order_of_wsdls_in_the_comman_2561222091317177 target=_self>1. Order of wsdls in the command line matters</a>
+          </li>
+          <li>
+            <a href=#2_RequestHeader_and_ResponseHe_15468021482229233 target=_self>2. RequestHeader and ResponseHeader classes aren't generated properly</a>
+          </li>
+        </ol>
+        <li>
+          <a href=#d_wsdl_exe_doesn_t_identify_So_1585259484127164 target=_self>d. wsdl.exe doesn't identify Soap:Fault</a>
+        </li>
+        <li>
+          <a href=#e_wsdl_exe_doesn_t_provide_a_m_9834850756451488 target=_self>e. wsdl.exe doesn't provide a mechanism for logging SOAP Xml</a>
+        </li>
+        <li>
+          <a href=#f_wsdl_exe_doesn_t_provide_a_m_9166571944952011 target=_self>f. wsdl.exe doesn't provide a mechanism for accessing the underlying WebRequest</a>
+        </li>
+        <li>
+          <a href=#g_wsdl_exe_doesn_t_provide_a_s_19426726829260588 target=_self>g. wsdl.exe doesn't provide a single interception point for AdWords API calls</a>
+        </li>
+        <li>
+          <a href=#h_Miscellaneous_annoyances_673_8156194929033518 target=_self>h. Miscellaneous annoyances</a>
+        </li>
+      </ol>
+    </ol>
+    <li>
+      <a href=#Writing_a_custom_code_generato target=_self>Writing a custom code generator</a>
+    </li>
+    <ol class="writely-toc-none writely-toc-subheading" style=MARGIN-LEFT:0pt>
+      <ol class="writely-toc-none writely-toc-subheading" style=MARGIN-LEFT:0pt>
+        <li>
+          <a href=#a_Develop_an_application_that__42682237830013037 target=_self>a. Develop an application that can patch the code generated by wsdl.exe</a>
+        </li>
+        <li>
+          <a href=#b_Write_a_code_filter_for_wsdl_1016429178416729 target=_self>b. Write a code filter for wsdl.exe</a>
+        </li>
+        <li>
+          <a href=#c_Write_a_code_generator_to_re_6704486459493637 target=_self>c. Write a code generator to replace wsdl.exe</a>
+        </li>
+      </ol>
+    </ol>
+    <li>
+      <a href=#Conclusion_5682769902050495 target=_self>Conclusion</a>
+    </li>
+  </ol>
+</div>
+<h1>
+  <a id=Overview_4724121196195483_08384913112968206 name=Overview_4724121196195483_08384913112968206></a>Overview
+</h1>
+<div>
+  While using AdWords API v2009 with .NET languages (C#, VB.NET, etc.), we recommend you to use the <a href=http://code.google.com/p/google-api-adwords-dotnet id=h6.7 title="AdWords API .NET client library">AdWords API .NET client library</a>. But in case you don't want to use the client library, but rather want to write your own custom solution, this document explains how you can get that done. All the code samples are written in C#, but can be easily translated to VB.NET or Managed C++.
+</div>
+<h1>
+  <a id=Getting_an_AuthToken_339035766_26398987602442503 name=Getting_an_AuthToken_339035766_26398987602442503></a>Getting an AuthToken
+</h1>
+AdWords API v2009 requires you to authenticate using a secure token you acquire through the Google <a href=http://code.google.com/apis/accounts/docs/AuthForInstalledApps.html id=a6eb title=ClientLogin>ClientLogin</a> API. The typical C# code would look something like this:<br>
+<br>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>private</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>static</font> <font color=#0000ff>string</font> GetAuthToken() {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; WebRequest webRequest = HttpWebRequest.Create(<font color=#a31515>"https://www.google.com/accounts/ClientLogin"</font>);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; webRequest.Method = <font color=#a31515>"POST"</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; webRequest.ContentType = <font color=#a31515>"application/x-www-form-urlencoded"</font>;</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>string</font> postParams =</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#a31515>"accountType="</font> + HttpUtility.UrlEncode(<font color=#a31515>"GOOGLE"</font>) +</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#a31515>"&amp;Email="</font> + HttpUtility.UrlEncode(<font color=#a31515>"INSERT_LOGIN_EMAIL_HERE"</font>) +</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#a31515>"&amp;Passwd="</font> + HttpUtility.UrlEncode(<font color=#a31515>"INSERT_PASSWORD_HERE"</font>) +</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#a31515>"&amp;service="</font> + HttpUtility.UrlEncode(<font color=#a31515>"adwords"</font>) +</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#a31515>"&amp;source="</font> + HttpUtility.UrlEncode(<font color=#0000ff>string</font>.Format(<font color=#a31515>"{0}-{1}-{2}"</font>, <font color=#a31515>"YOUR_COMPANY_NAME"</font>,</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#a31515>"YOUR_APP_NAME"</font>, <font color=#a31515>"YOUR_VERSION_ID"</font>));</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>byte</font>[] postBytes = Encoding.UTF8.GetBytes(postParams);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; webRequest.ContentLength = postBytes.Length;</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>using</font> (Stream strmReq = webRequest.GetRequestStream()) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; strmReq.Write(postBytes, 0, postBytes.Length);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>string</font> retVal = <font color=#a31515>""</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>try</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; WebResponse response = webRequest.GetResponse();</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>using</font> (StreamReader reader = <font color=#0000ff>new</font> StreamReader(response.GetResponseStream())) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>string</font> sResponse = reader.ReadToEnd();</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>string</font>[] splits = sResponse.Split(<font color=#a31515>'\n'</font>);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>foreach</font> (<font color=#0000ff>string</font> split <font color=#0000ff>in</font> splits) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>string</font>[] subsplits = split.Split(<font color=#a31515>'='</font>);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#0000ff>if</font> (subsplits.Length &gt;= 2 &amp;&amp; subsplits[0] == <font color=#a31515>"Auth"</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; retVal = subsplits[1];</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; } <font color=#0000ff>catch</font> (WebException ex) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>throw</font> <font color=#0000ff>new</font> ApplicationException(<font color=#a31515>"Could not generate auth token."</font>, ex);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>return</font> retVal;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>}</font></font>
+</p>
+<h1>
+  <a id=Making_an_API_call_43760214187_20601573772728443 name=Making_an_API_call_43760214187_20601573772728443></a>Making an API call
+</h1>
+<h2>
+  <a id=Option_1_Make_a_raw_API_call_0_07284117676317692 name=Option_1_Make_a_raw_API_call_0_07284117676317692></a>Option 1: Make a raw API call
+</h2>
+If you want to stick to raw HTTP calls and choose not to use SOAP code generators (like wsdl.exe) or any SOAP framework provided by Microsoft .NET, then you can construct the raw SOAP xml and POST it to the appropriate webservice endpoint. For example, the following C# code snippet shows how to create a campaign using a raw HTTP POST to v200909 CampaignService.<br>
+<br>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>private</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>static</font> <font color=#0000ff>void</font> CreateCampaign() {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>string</font> authToken = GetAuthToken();</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>string</font> requestXml = <font color=#0000ff>string</font>.Format(<font color=#a31515>@"</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;?xml version='1.0' encoding='utf-8'?&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;soap:Envelope xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/' </font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xmlns:xsd='http://www.w3.org/2001/XMLSchema'&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;soap:Header&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;RequestHeader xmlns='https://adwords.google.com/api/adwords/cm/v200909'&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;applicationToken&gt;{0}&lt;/applicationToken&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;authToken&gt;{1}&lt;/authToken&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;clientEmail&gt;{2}&lt;/clientEmail&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;developerToken&gt;{3}&lt;/developerToken&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;userAgent&gt;{4}&lt;/userAgent&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/RequestHeader&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/soap:Header&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;soap:Body&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;mutate xmlns='https://adwords.google.com/api/adwords/cm/v200909'&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;operations&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;operator&gt;ADD&lt;/operator&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;operand&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;name&gt;Interplanetary Cruise#111&lt;/name&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;status&gt;PAUSED&lt;/status&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;budget&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;period&gt;DAILY&lt;/period&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;amount&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;microAmount&gt;50000000&lt;/microAmount&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/amount&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;deliveryMethod&gt;STANDARD&lt;/deliveryMethod&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/budget&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;biddingStrategy xsi:type='ManualCPC' /&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/operand&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/operations&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/mutate&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/soap:Body&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#a31515><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/soap:Envelope&gt;"</font></font></font><font face="'courier new'"><font size=2>,</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#a31515>"INSERT_APPLICATION_TOKEN_HERE"</font>, authToken, <font color=#a31515>"INSERT_CLIENT_EMAIL_HERE"</font>,</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#a31515>"INSERT_DEVELOPER_TOKEN_HERE"</font>, <font color=#a31515>"INSERT_USERAGENT_HERE"</font>).Trim();</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; WebRequest webRequest = HttpWebRequest.Create(</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#a31515>"https://adwords.google.com/api/adwords/cm/v200909/CampaignService"</font>);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; webRequest.Method = <font color=#a31515>"POST"</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; webRequest.ContentType = <font color=#a31515>"text/xml; charset=utf-8"</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; webRequest.Headers.Add(<font color=#a31515>"SOAPAction"</font>, <font color=#a31515>""</font>);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>byte</font>[] postBytes = Encoding.UTF8.GetBytes(requestXml);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; webRequest.ContentLength = postBytes.Length;</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>using</font> (Stream strmReq = webRequest.GetRequestStream()) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; strmReq.Write(postBytes, 0, postBytes.Length);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>try</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; WebResponse response = webRequest.GetResponse();</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>using</font> (StreamReader reader = <font color=#0000ff>new</font> StreamReader(response.GetResponseStream())) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>string</font> responseXml = reader.ReadToEnd();</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlDocument xDoc = <font color=#0000ff>new</font> XmlDocument();</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xDoc.LoadXml(responseXml);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNamespaceManager xmlns = <font color=#0000ff>new</font> XmlNamespaceManager(xDoc.NameTable);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xmlns.AddNamespace(<font color=#a31515>"soap"</font>, <font color=#a31515>"http://schemas.xmlsoap.org/soap/envelope/"</font>);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xmlns.AddNamespace(<font color=#a31515>"v2009"</font>, <font color=#a31515>"https://adwords.google.com/api/adwords/cm/v200909"</font>);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlElement faultNode = </font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (XmlElement) xDoc.SelectSingleNode(<font color=#a31515>"soap:Envelope/soap:Body/soap:Fault"</font>, xmlns);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (faultNode != <font color=#0000ff>null</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000>// Something went wrong with API call. Parse faultNode for more details.</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <font color=#0000ff>else</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlElement mutateResponseNode = (XmlElement) xDoc.SelectSingleNode(</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#a31515>"soap:Envelope/soap:Body/v2009:mutateResponse"</font>, xmlns);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000>// Parse mutateResponseNode contents to get the campaign id.</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; } <font color=#0000ff>catch</font> (WebException ex) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>throw</font> <font color=#0000ff>new</font> ApplicationException(<font color=#a31515>"Could not make Api call."</font>, ex);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>}</font></font>
+</p>
+<br>
+The benefit of this approach is that you have finer control over items like SOAP request or response xmls, the underlying HTTP connection and its settings, etc. The downside is that you will end up doing a lot of plumbing code like constructing the request xml, parsing the response xml, etc.&nbsp;<br>
+<h2>
+  <a id=Option_2_Use_a_wsdl_code_gener_9651888282969594 name=Option_2_Use_a_wsdl_code_gener_9651888282969594></a>Option 2: Use a wsdl code generator (wsdl.exe) and Microsoft .NET SOAP classes
+</h2>
+<div>
+  This is the approach taken by most developers, given the amount of support that Microsoft .NET framework provides for making SOAP calls. However, Visual Studio doesn't generate a stub class that can readily be used by any C# program (details are discussed later in this document). The alternative is to run wsdl.exe from command line, generate the stub classes, modify them appropriately and then include it in your project. Some of these incompatibilities and suggested workarounds are discussed below. Note that some of them are required fixes, whereas others are optional, nice-to-have items.
+</div>
+<h3>
+  <a id=a_Xml_namespace_collision_betw_6276120478287339 name=a_Xml_namespace_collision_betw_6276120478287339></a>a. Xml namespace collision between SoapHeader class and System.Web.Services.Protocols.SoapHeader
+</h3>
+This is likely the first error you will run into if you add a web reference to the AdWords API service from within Visual Studio and try to make an API call. The issue manifests itself as a runtime exception. You will get <font face="'Courier New'">InvalidOperationException </font>with the error message like: "<font face="'Courier New'">Method CampaignService.get cannot be reflected.</font>". If you dig into the innerException, you will find that "<font face="'Courier New'">There was an error reflecting 'SoapHeader'.</font>". This itself doesn't tell you much, so let's take a look at <font face="'Courier New'">Reference.cs</font> generated by Visual Studio.<br>
+<br>
+<p>
+  <font face="'courier new'"><font color=#808080><font size=2>///</font></font></font> <font face="'courier new'"><font color=#808080><font size=2>&lt;remarks/&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>[System.CodeDom.Compiler.<font color=#2b91af>GeneratedCodeAttribute</font>(<font color=#a31515>"System.Xml"</font>, <font color=#a31515>"2.0.50727.3082"</font>)]</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>[System.<font color=#2b91af>SerializableAttribute</font>()]</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>[System.Diagnostics.<font color=#2b91af>DebuggerStepThroughAttribute</font>()]</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>[System.ComponentModel.<font color=#2b91af>DesignerCategoryAttribute</font>(<font color=#a31515>"code"</font>)]</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>[System.Xml.Serialization.<font color=#2b91af>XmlTypeAttribute</font>(Namespace=<font color=#a31515>"https://adwords.google.com/api/adwords/cm/v200909"</font>)]</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>[System.Xml.Serialization.<font color=#2b91af>XmlRootAttribute</font>(<font color=#a31515>"RequestHeader"</font>, Namespace=<font color=#a31515>"https://adwords.google.com/api/adwords/cm/v200909"</font>, IsNullable=<font color=#0000ff>false</font>)]</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2><font color=#0000ff>public</font> <font color=#0000ff>partial</font> <font color=#0000ff>class</font> <font color=#2b91af>SoapHeader</font> : System.Web.Services.Protocols.<font color=#2b91af>SoapHeader</font> {</font></font>
+</p>
+<p>
+  <font size=2><font face="'courier new'">&nbsp;&nbsp;<font color=#0000ff>private</font> <font color=#0000ff>string</font> applicationTokenField;</font></font>
+</p>
+<p>
+  <font size=2><font face="'courier new'">&nbsp;&nbsp;<font color=#0000ff>private</font> <font color=#0000ff>string</font> authTokenField;</font></font>
+</p>
+<p>
+  <font face="'Courier New'"><font size=2>&nbsp;&nbsp;...</font></font>
+</p>
+<p>
+  <font face="'Courier New'"><font size=2>}</font></font>
+</p>
+<br>
+So, we have a class named <font face="'courier new'"><font color=#2b91af>SoapHeader</font>&nbsp;</font>derived from another class named <font face="'courier new'"><font color=#2b91af>SoapHeader</font></font>. May be <a href=http://msdn.microsoft.com/en-us/library/system.xml.serialization.xmlserializer.aspx id=gz_q title=XmlSerializer>XmlSerializer</a> doesn't like this. A quick code snippet confirms this theory.<br>
+<br>
+<p>
+  <font face="'courier new'"><font color=#2b91af><font size=2>XmlSerializer</font></font></font><font face="'courier new'"><font size=2> serializer = <font color=#0000ff>new</font> <font color=#2b91af>XmlSerializer</font>(<font color=#0000ff>typeof</font>(<font color=#2b91af>ConsoleApplication3.com.google.adwords.SoapHeader</font>));</font></font>
+</p>
+<p>
+  <br>
+</p>
+<div>
+  This throws the following exception:
+</div>
+<br>
+<div>
+  <font face="'Courier New'">System.InvalidOperationException:&nbsp;</font>
+</div>
+<div>
+  <font face="'Courier New'">There was an error reflecting type 'ConsoleApplication3.com.google.adwords.SoapHeader'.<br>
+  <br>
+  </font>
+</div>
+<div>
+  <font face="'Courier New'">Types 'System.Web.Services.Protocols.SoapHeader' and 'ConsoleApplication3.com.google.adwords.SoapHeader' both use the</font>
+</div>
+<div>
+  <font face="'Courier New'">XML type name, 'SoapHeader', from namespace 'https://adwords.google.com/api/adwords/cm/v200909'. Use XML attributes to</font>
+</div>
+<div>
+  <font face="'Courier New'">specify a unique XML name and/or namespace for the type.</font>
+</div>
+<br>
+A quick search on Google brings up this <a href=http://msdn.microsoft.com/en-us/magazine/cc164122.aspx id=gyyg title=article>article</a> that explains the issue:&nbsp;<br>
+<br>
+<div>
+  To summarize, XmlSerializer requires that two classes with same name should not just be in 2 different namespaces, they should also be in two different xml namespaces. The suggested workaround from the article is to add an <a href=http://msdn.microsoft.com/en-us/library/system.xml.serialization.xmltypeattribute.aspx id=n6mn title=XmlTypeAttribute>XmlTypeAttribute</a> to define a new xml namespace for the duplicate type. But since our class is derived from <a href=http://msdn.microsoft.com/en-us/library/system.web.services.protocols.soapheader.aspx id=vy_7 title=SoapHeader>SoapHeader</a> (a framework class which we have no control upon), that fix won't work. The alternate workaround (i.e. rename our class) works.
+</div>
+<br>
+<p style=MARGIN-LEFT:0px;MARGIN-RIGHT:0px>
+  <font face="'courier new'"><font color=#808080><font size=2>///</font></font></font>&nbsp;<font face="'courier new'"><font color=#808080><font size=2>&lt;remarks/&gt;</font></font></font>
+</p>
+<p style=MARGIN-LEFT:0px;MARGIN-RIGHT:0px>
+  <font face="'courier new'"><font size=2>[System.CodeDom.Compiler.<font color=#2b91af>GeneratedCodeAttribute</font>(<font color=#a31515>"System.Xml"</font>,&nbsp;<font color=#a31515>"2.0.50727.3082"</font>)]</font></font>
+</p>
+<p style=MARGIN-LEFT:0px;MARGIN-RIGHT:0px>
+  <font face="'courier new'"><font size=2>[System.<font color=#2b91af>SerializableAttribute</font>()]</font></font>
+</p>
+<p style=MARGIN-LEFT:0px;MARGIN-RIGHT:0px>
+  <font face="'courier new'"><font size=2>[System.Diagnostics.<font color=#2b91af>DebuggerStepThroughAttribute</font>()]</font></font>
+</p>
+<p style=MARGIN-LEFT:0px;MARGIN-RIGHT:0px>
+  <font face="'courier new'"><font size=2>[System.ComponentModel.<font color=#2b91af>DesignerCategoryAttribute</font>(<font color=#a31515>"code"</font>)]</font></font>
+</p>
+<p style=MARGIN-LEFT:0px;MARGIN-RIGHT:0px>
+  <font face="'courier new'"><font size=2>[System.Xml.Serialization.<font color=#2b91af>XmlTypeAttribute</font>(Namespace=<font color=#a31515>"https://adwords.google.com/api/adwords/cm/v200909"</font>)]</font></font>
+</p>
+<p style=MARGIN-LEFT:0px;MARGIN-RIGHT:0px>
+  <font size=2><font face="'courier new'"><font color=#0000ff>public</font>&nbsp;<font color=#0000ff>partial</font>&nbsp;<font color=#0000ff>class</font>&nbsp;<font color=#2b91af>RequestHeader</font>&nbsp;: System.Web.Services.Protocols.<font color=#2b91af>SoapHeader</font>&nbsp;{</font></font>
+</p>
+<p style=MARGIN-LEFT:0px;MARGIN-RIGHT:0px>
+  <font size=2><font face="'courier new'">&nbsp;&nbsp;<font color=#0000ff>private</font>&nbsp;<font color=#0000ff>string</font>&nbsp;applicationTokenField;</font></font>
+</p>
+<p style=MARGIN-LEFT:0px;MARGIN-RIGHT:0px>
+  <font size=2><font face="'courier new'">&nbsp;&nbsp;<font color=#0000ff>private</font>&nbsp;<font color=#0000ff>string</font>&nbsp;authTokenField;</font></font>
+</p>
+<p style=MARGIN-LEFT:0px;MARGIN-RIGHT:0px>
+  <font face="'Courier New'"><font size=2>&nbsp;&nbsp;...</font></font>
+</p>
+<p style=MARGIN-LEFT:0px;MARGIN-RIGHT:0px>
+  <font face="'Courier New'"><font size=2>}</font></font>
+</p>
+<br>
+<div>
+  <font size=3><b>b. wsdl.exe doesn't generate some types properly.</b></font>
+</div>
+<br>
+This issue shows up in <a href=http://code.google.com/apis/adwords/v2009/docs/reference/TargetingIdeaService.html id=nnnc title=TargetingIdeaService>TargetingIdeaService</a>, <a href=http://code.google.com/apis/adwords/v2009/docs/reference/BulkMutateJobService.html id=smoj title=BulkMutateJobService>BulkMutateJobService</a> and <a href=http://code.google.com/apis/adwords/v2009/docs/reference/GeoLocationService.html id=yg_4 title=GeoLocationService>GeoLocationService</a>. For instance, the generated stub class for BulkMutateJobService throws the following exception at runtime:<br>
+<br>
+<div>
+  <font face="'Courier New'">Unable to generate a temporary class (result=1).</font>
+</div>
+<div>
+  <font face="'Courier New'">error CS0030: Cannot convert type 'ConsoleApplication3.com.google.adwords2.OperationResult[]' to 'ConsoleApplication3.com.google.adwords2.OperationResult'</font>
+</div>
+<div>
+  <font face="'Courier New'">error CS0029: Cannot implicitly convert type 'ConsoleApplication3.com.google.adwords2.OperationResult' to 'ConsoleApplication3.com.google.adwords2.OperationResult[]'</font>
+</div>
+<br>
+The issue here is that wsdl.exe tries to simplify the generated code by collapsing some types into simpler types and modifying the related types appropriately. Unfortunately, the resultant code doesn't work properly at runtime. The case is best explained by the following example:<br>
+<br>
+<div>
+  <b><u>Expected code</u></b>
+</div>
+<br>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>public</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>partial</font> <font color=#0000ff>class</font> <font color=#2b91af>BulkMutateResult</font> {</font></font>
+</p>
+<p>
+  <font size=2><font face="'courier new'">&nbsp;&nbsp;<font color=#0000ff>private</font> <font color=#0000ff>int</font> partIndexField;</font></font>
+</p>
+<p>
+  <font size=2><font face="'courier new'">&nbsp;&nbsp;<font color=#0000ff>private</font> <font color=#0000ff>bool</font> partIndexFieldSpecified;</font></font>
+</p>
+<p>
+  <font size=2><font face="'courier new'">&nbsp;&nbsp;<font color=#0000ff>private</font> <font color=#2b91af>OperationStreamResult</font>[] operationStreamResultsField;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;...</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>}</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>public</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>partial</font> <font color=#0000ff>class</font> <font color=#2b91af>OperationStreamResult</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>private</font> <font color=#2b91af>OperationResult</font>[] operationResultsField;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>}</font></font>
+</p>
+<br>
+<b><u>Simplified code:</u></b><br>
+<br>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>public</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>partial</font> <font color=#0000ff>class</font> <font color=#2b91af>BulkMutateResult</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>private</font> <font color=#0000ff>int</font> partIndexField;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>private</font> <font color=#0000ff>bool</font> partIndexFieldSpecified;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>private</font> <font face="'courier new'"><font color=#2b91af><font size=2>OperationResult</font></font></font>[][] operationStreamResultsField;</font></font>
+</p>
+<p>
+  <font face="'Courier New'"><font size=2>&nbsp;&nbsp;...</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>}</font></font>
+</p>
+<br>
+<div>
+  In this case, wsdl.exe decided that since <font face="'courier new'"><font color=#2b91af>OperationStreamResult</font>&nbsp;</font>is a type that has only one field, it is safe to ignore the type and convert every reference of <font face="'courier new'"><font color=#2b91af>OperationStreamResult</font>&nbsp;</font>into an <font face="'courier new'"><font color=#2b91af><font size=2>OperationResult</font></font></font><font face="'courier new'"><font size=2>[]</font></font>. Unfortunately, this optimization triggers another issue with XmlSerializer, where it <a href=http://msdn.microsoft.com/en-us/library/aa302290.aspx id=tffk title="cannot deserialize">cannot deserialize</a> a jagged array unless the serialization type of jagged array elements is mentioned properly.
+</div>
+<br>
+There are 2 ways to fix this issue:<br>
+<br>
+<div>
+  1. Fix the buggy optimized code: Here, you need to change type to which jagged array is deserialized. For instance, the changes required to fix the definition of OperationStreamResults property is highlighted.
+</div>
+<br>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>public</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>class</font> <font color=#2b91af>BulkMutateResult</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font> <font color=#808080>&lt;remarks/&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; [System.Xml.Serialization.<font color=#2b91af>XmlArrayItemAttribute</font>(<font color=#a31515>"operationResults"</font>, <font color=#0000ff>typeof</font>(<font color=#2b91af>OperationResult</font><b><font style=BACKGROUND-COLOR:#ffff00>[]</font></b>), IsNullable = <font color=#0000ff>false</font>)]</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>public</font> <font color=#2b91af>OperationResult</font>[][] operationStreamResults {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>get</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> <font color=#0000ff>this</font>.operationStreamResultsField;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>set</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>this</font>.operationStreamResultsField = <font color=#0000ff>value</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>}</font></font>
+</p>
+<br>
+This fix does not address the issue that the generated method signature will be different from the documented method signature.<br>
+<br>
+<div>
+  2. Modify the wsdl so as to break the optimization condition: In this approach, you need to download the wsdl, identify all complex types which have only one member variable, and add a dummy element to that type. For instance, the changes made to OperationStreamResult definition in BulkMutateJobService.wsdl are highlighted.
+</div>
+<br>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>&lt;</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>complexType</font></font></font> <font face="'courier new'"><font color=#ff0000><font size=2>name</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>=</font></font></font><font face="'courier new'"><font size=2>"<font color=#0000ff>OperationStreamResult</font>"<font color=#0000ff>&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>&nbsp; &lt;</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>sequence</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>&nbsp;&nbsp;&nbsp; &lt;</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>element</font></font></font> <font face="'courier new'"><font color=#ff0000><font size=2>maxOccurs</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>=</font></font></font><font face="'courier new'"><font size=2>"<font color=#0000ff>unbounded</font>" <font color=#ff0000>minOccurs</font><font color=#0000ff>=</font>"<font color=#0000ff>0</font>"</font></font>
+</p>
+<p>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="'courier new'"><font color=#ff0000><font size=2>name</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>=</font></font></font><font face="'courier new'"><font size=2>"<font color=#0000ff>operationResults</font>" <font color=#ff0000>type</font><font color=#0000ff>=</font>"<font color=#0000ff>tns:OperationResult</font>"<font color=#0000ff>&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>&nbsp;&nbsp;&nbsp; &lt;/</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>element</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>&nbsp;&nbsp;&nbsp; <font style=BACKGROUND-COLOR:#ffff00>&lt;</font></font></font></font><font face="'courier new'"><font color=#a31515><font size=2><font style=BACKGROUND-COLOR:#ffff00>element&nbsp;</font></font></font></font><font face="'courier new'"><font color=#ff0000><font size=2><font style=BACKGROUND-COLOR:#ffff00>maxOccurs</font></font></font></font><font face="'courier new'"><font color=#0000ff><font size=2><font style=BACKGROUND-COLOR:#ffff00>=</font></font></font></font><font face="'courier new'"><font size=2><font style=BACKGROUND-COLOR:#ffff00>"</font><font color=#0000ff><font style=BACKGROUND-COLOR:#ffff00>1</font></font><font style=BACKGROUND-COLOR:#ffff00>"&nbsp;</font><font color=#ff0000><font style=BACKGROUND-COLOR:#ffff00>minOccurs</font></font><font color=#0000ff><font style=BACKGROUND-COLOR:#ffff00>=</font></font><font style=BACKGROUND-COLOR:#ffff00>"</font><font color=#0000ff><font style=BACKGROUND-COLOR:#ffff00>1</font></font><font style=BACKGROUND-COLOR:#ffff00>"&nbsp;</font><font color=#ff0000><font style=BACKGROUND-COLOR:#ffff00>name</font></font><font color=#0000ff><font style=BACKGROUND-COLOR:#ffff00>=</font></font><font style=BACKGROUND-COLOR:#ffff00>"</font><font color=#0000ff><font style=BACKGROUND-COLOR:#ffff00>dummy</font></font><font style=BACKGROUND-COLOR:#ffff00>"&nbsp;</font><font color=#ff0000><font style=BACKGROUND-COLOR:#ffff00>type</font></font><font color=#0000ff><font style=BACKGROUND-COLOR:#ffff00>=</font></font><font style=BACKGROUND-COLOR:#ffff00>"</font><font color=#0000ff><font style=BACKGROUND-COLOR:#ffff00>xsd:string</font></font><font style=BACKGROUND-COLOR:#ffff00>"<font style=BACKGROUND-COLOR:#ffff00>&nbsp;&nbsp;</font><font face="'courier new'"><font color=#ff0000><font size=2><font style=BACKGROUND-COLOR:#ffff00>xmlns</font></font></font></font><font face="'courier new'"><font color=#0000ff><font size=2><font style=BACKGROUND-COLOR:#ffff00>=</font></font></font></font><font face="'courier new'"><font size=2><font style=BACKGROUND-COLOR:#ffff00>"</font><font color=#0000ff><font style=BACKGROUND-COLOR:#ffff00>http://www.w3.org/2001/XMLSchema</font></font><font style=BACKGROUND-COLOR:#ffff00>"</font><font color=#0000ff><font style=BACKGROUND-COLOR:#ffff00>/&gt;</font></font></font></font></font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>&nbsp; &lt;/</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>sequence</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>&lt;/</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>complexType</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>&gt;</font></font></font>
+</p>
+<p>
+  <br>
+</p>
+<p>
+  Unfortunately, wsdl.exe doesn't provide a command line flag to turn off this behaviour.
+</p>
+<h3>
+  <a id=c_Visual_Studio_doesn_t_reuse__012301644310355186 name=c_Visual_Studio_doesn_t_reuse__012301644310355186></a>c. Visual Studio doesn't reuse types from different wsdls.
+</h3>
+AdWords API is designed to reuse types from various webservices as much as possible. However, Visual Studio can only generate code from one wsdl at a time, so you will end up with a lot of duplicate classes. While this will not prevent you from making an API call, you will end up fully qualifying (as opposed to importing namespaces with <font color=#0000ff><font face="'Courier New'">using </font></font>keyword) most of the AdWords API types if you use more than a service in your application.<br>
+<br>
+<div>
+  Fortunately, wsdl.exe provides a command line flag named /sharetypes which will allow you to combine common types from multiple wsdls. For instance, if you want to reuse types from CampaignService and AdGroupService, the command to run is:
+</div>
+<br>
+<div>
+  <font face="'Courier New'">wsdl.exe /sharetypes /out:AdWordsApi.cs&nbsp;</font><a href=https://adwords.google.com/api/adwords/cm/v200909/CampaignService?wsdl><font face="'Courier New'">https://adwords.google.com/api/adwords/cm/v200909/CampaignService?wsdl</font></a> <a href=https://adwords.google.com/api/adwords/cm/v200909/CampaignService?wsdl><font face="'Courier New'">https://adwords.google.com/api/adwords/cm/v200909/AdGroupService?wsdl</font></a>&nbsp;<br>
+  <br>
+</div>
+While this works fine, it also introduces two additional issues.<br>
+<h4>
+  <a id=1_Order_of_wsdls_in_the_comman_2561222091317177 name=1_Order_of_wsdls_in_the_comman_2561222091317177></a>1. Order of wsdls in the command line matters
+</h4>
+<div>
+  wsdl.exe tends to drop derived types in wsdls if it has encountered the basetype in an earlier wsdl. This is best illustrated using the following example:
+</div>
+<br>
+<a href=http://code.google.com/apis/adwords/v2009/docs/reference/CampaignCriterionService.Criterion.html id=xnck title=Criterion>Criterion</a>&nbsp;has 3 classes derived from it, namely <a href=http://code.google.com/apis/adwords/v2009/docs/reference/CampaignCriterionService.Keyword.html id=feag title=Keyword>Keyword</a>, <a href=http://code.google.com/apis/adwords/v2009/docs/reference/CampaignCriterionService.Placement.html id=ubsa title=Placement>Placement</a> and <a href=http://code.google.com/apis/adwords/v2009/docs/reference/CampaignCriterionService.ContentLabel.html id=tu_t title=ContentLabel>ContentLabel</a>. AdGroupCriterionService has the definition of Criterion, Keyword and Placement. CampaignCriterionService has definition of Criterion, Keyword, Placement and ContentLabel. So if you run wsdl.exe as<br>
+<br>
+<div>
+  <font face="'Courier New'">wsdl.exe /sharetypes /out:AdWordsApi.cs&nbsp;</font><a href=https://adwords.google.com/api/adwords/cm/v200909/CampaignService?wsdl><font face="'Courier New'">https://.../AdGroupCriterionService?wsdl</font></a>&nbsp;<a href=https://adwords.google.com/api/adwords/cm/v200909/CampaignService?wsdl><font face="'Courier New'">https://.../CampaignCriterionService?wsdl</font></a>&nbsp;<br>
+  <br>
+</div>
+then wsdl.exe doesn't generate the stub classes for ContentLabel. However, running it as&nbsp;<br>
+<br>
+<div>
+  <font face="'Courier New'">wsdl.exe /sharetypes /out:AdWordsApi.cs&nbsp;</font><a href=https://adwords.google.com/api/adwords/cm/v200909/CampaignService?wsdl><font face="'Courier New'">https://.../CampaignCriterionService?wsdl</font></a>&nbsp;<a href=https://adwords.google.com/api/adwords/cm/v200909/CampaignService?wsdl><font face="'Courier New'">https://.../AdGroupCriterionService?wsdl</font></a>&nbsp;<br>
+</div>
+<br>
+generates all the types.&nbsp;<br>
+<br>
+<div>
+  Fortunately, <a href=http://code.google.com/apis/adwords/v2009/docs/reference/BulkMutateJobService.html id=y8gq title=BulkMutateJobService>BulkMutateJobService</a> refers to all the individual types defined in other campaign management services. So making it the first parameter should address this issue, at least for all services under /cm/ and /job namespaces.
+</div>
+<h4>
+  <a id=2_RequestHeader_and_ResponseHe_15468021482229233 name=2_RequestHeader_and_ResponseHe_15468021482229233></a>2. RequestHeader and ResponseHeader classes aren't generated properly
+</h4>
+When making an API request to a particular service, AdWords API expects the RequestHeader node to be in the same namespace as the service, and the inner nodes to be in /cm/ namespace. So a typical request to InfoService (in /info/ namespace) looks like this:<br>
+<br>
+<div>
+  <p>
+    <font face="'courier new'"><font color=#0000ff><font size=2>&lt;?</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>xml</font></font></font> <font face="'courier new'"><font color=#ff0000><font size=2>version</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>=</font></font></font><font face="'courier new'"><font size=2>"<font color=#0000ff>1.0</font>" <font color=#ff0000>encoding</font><font color=#0000ff>=</font>"<font color=#0000ff>utf-8</font>"<font color=#0000ff>?&gt;</font></font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font color=#0000ff><font size=2>&lt;</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>soap:Envelope</font></font></font> <font face="'courier new'"><font color=#ff0000><font size=2>xmlns:soap</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>=</font></font></font><font face="'courier new'"><font size=2>"<font color=#0000ff>http://schemas.xmlsoap.org/soap/envelope/</font>" </font></font>
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="'courier new'"><font color=#ff0000><font size=2>xmlns:xsi</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>=</font></font></font><font face="'courier new'"><font size=2>"<font color=#0000ff>http://www.w3.org/2001/XMLSchema-instance</font>" </font></font>
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="'courier new'"><font color=#ff0000><font size=2>xmlns:xsd</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>=</font></font></font><font face="'courier new'"><font size=2>"<font color=#0000ff>http://www.w3.org/2001/XMLSchema</font>"<font color=#0000ff>&gt;</font></font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font color=#0000ff><font size=2>&nbsp; &lt;</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>soap:Header</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>&gt;</font></font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font color=#0000ff><font size=2>&nbsp;&nbsp;&nbsp; &lt;</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>RequestHeader</font></font></font> <font face="'courier new'"><font color=#ff0000><font size=2>xmlns</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>=</font></font></font><font face="'courier new'"><font size=2>"<font color=#0000ff>https://adwords.google.com/api/adwords/info/v200909</font>"</font></font>
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="'courier new'"><font color=#ff0000><font size=2>xmlns:ns2</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>=</font></font></font><font face="'courier new'"><font size=2>"<font color=#0000ff>https://adwords.google.com/api/adwords/cm/v200909</font>"<font color=#0000ff>&gt;</font></font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font color=#0000ff><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>ns2:applicationToken</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>&gt;</font></font></font><font face="'courier new'"><font size=2>*******<font color=#0000ff>&lt;/</font><font color=#a31515>ns2:applicationToken</font><font color=#0000ff>&gt;</font></font></font>
+  </p>
+  <p>
+    <font color=#0000ff face="'Courier New'"><font size=2>&nbsp;&nbsp; &nbsp; &nbsp;...</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font color=#0000ff><font size=2>&nbsp;&nbsp; &nbsp;&lt;/</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>RequestHeader</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>&gt;</font></font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font color=#0000ff><font size=2>&nbsp; &lt;/</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>soap:Header</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>&gt;</font></font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font color=#0000ff><font size=2>&nbsp;&nbsp;...</font></font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font color=#0000ff><font size=2>&lt;/</font></font></font><font face="'courier new'"><font color=#a31515><font size=2>soap:Envelope</font></font></font><font face="'courier new'"><font color=#0000ff><font size=2>&gt;</font></font></font>
+  </p>
+  <br>
+  Note how &lt;<font face="'courier new'"><font color=#a31515><font size=2>applicationToken</font></font></font>&gt; is in "<font face="'courier new'"><font color=#0000ff><font size=2>https://adwords.google.com/api/adwords/cm/v200909</font></font></font>" namespace. The C# generated code looks like:
+</div>
+<br>
+<p>
+  <font face="'courier new'"><font size=2>[System.Xml.Serialization.<font color=#2b91af>XmlTypeAttribute</font>(Namespace = <font color=#a31515>"https://adwords.google.com/api/adwords/cm/v200909"</font>)]</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>[System.Xml.Serialization.<font color=#2b91af>XmlRootAttribute</font>(<font color=#a31515>"RequestHeader"</font>, Namespace = <font color=#a31515>"https://adwords.google.com/api/adwords/cm/v200909"</font>, IsNullable = <font color=#0000ff>false</font>)]</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>public</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>partial</font> <font color=#0000ff>class</font> <font color=#2b91af>RequestHeader</font> : System.Web.Services.Protocols.<font color=#2b91af>SoapHeader</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>public</font> <font color=#0000ff>string</font> applicationToken {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; ...</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; ...</font></font>
+</p>
+<font face="'courier new'"><font size=2>}</font></font><br>
+<br>
+<div>
+  If you generate stub classes for individual services, then wsdl.exe handles this case properly. But when using /sharetypes flag, wsdl.exe ignores this aspect and generates classes as per the first definition of RequestHeader it sees. So your API calls will not work against all services.
+</div>
+<br>
+<div>
+  There are 2 ways to fix this issue:
+</div>
+<br>
+<div>
+  a. Create duplicate RequestHeader and ResponseHeader classes for each unique xml namespace (i.e. /cm, /job, /o and /info).&nbsp;<br>
+</div>
+<br>
+<div>
+  b. Write a custom serialization for RequestHeader: XmlSerializer allows you to define your own serializer, by removing all XmlAttributes and implementing <a href=http://msdn.microsoft.com/en-us/library/system.xml.serialization.ixmlserializable.aspx id=yna4 title=IXmlSerializable>IXmlSerializable</a> interface instead. A sample implementation is given below:
+</div>
+<br>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>public</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>class</font> <font color=#2b91af>RequestHeader</font> : <font color=#2b91af>SoapHeader</font>, <font color=#2b91af>IXmlSerializable</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font> <font color=#808080>&lt;summary&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font><font color=#008000> The xml namespace under which the members should be serialized.</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font> <font color=#808080>&lt;/summary&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>public</font> <font color=#0000ff>string</font> targetNamespace;</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font> <font color=#808080>&lt;summary&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font><font color=#008000> Gets the schema for this object.</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font> <font color=#808080>&lt;/summary&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>public</font> <font color=#2b91af>XmlSchema</font> GetSchema() {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> <font color=#0000ff>null</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font> <font color=#808080>&lt;summary&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font><font color=#008000> Deserialize the object from xml.</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font> <font color=#808080>&lt;/summary&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>public</font> <font color=#0000ff>void</font> ReadXml(<font color=#2b91af>XmlReader</font> reader) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font> <font color=#808080>&lt;summary&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font><font color=#008000> Serialize the object into an xml.</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#808080>///</font> <font color=#808080>&lt;/summary&gt;</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>public</font> <font color=#0000ff>void</font> WriteXml(<font color=#2b91af>XmlWriter</font> writer) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>string</font>[] headersToSerialize = {<font color=#a31515>"applicationToken"</font>, <font color=#a31515>"authToken"</font>, <font color=#a31515>"clientCustomerId"</font>,</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#a31515>"clientEmail"</font>, <font color=#a31515>"developerToken"</font>, <font color=#a31515>"userAgent"</font>, <font color=#a31515>"validateOnly"</font>};</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>foreach</font> (<font color=#0000ff>string</font> headerName <font color=#0000ff>in</font> headersToSerialize) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#2b91af>PropertyInfo</font> propInfo = <font color=#0000ff>this</font>.GetType().GetProperty(headerName);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>object</font> value = propInfo.GetValue(<font color=#0000ff>this</font>, <font color=#0000ff>null</font>);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (value != <font color=#0000ff>null</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (value <font color=#0000ff>is</font> <font color=#0000ff>bool</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000>// Since we do custom serialization, remember to send bool</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000>// in lower case.</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value = value.ToString().ToLower();</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (value <font color=#0000ff>is</font> <font color=#0000ff>string</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000>// Should not send an empty field (e.g. clientEmail) to the server.</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (<font color=#0000ff>string</font>.IsNullOrEmpty(value.ToString())) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value = <font color=#0000ff>null</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (value != <font color=#0000ff>null</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (<font color=#2b91af>String</font>.IsNullOrEmpty(targetNamespace)) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer.WriteElementString(propInfo.Name, value.ToString());</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <font color=#0000ff>else</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer.WriteElementString(propInfo.Name, targetNamespace, value.ToString());</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<font face="'courier new'"><font size=2>}</font></font><br>
+<br>
+<div>
+  You can obtain the target namespace by looking at <a href=http://msdn.microsoft.com/en-us/library/system.web.services.webservicebindingattribute.aspx id=ohk3 title=WebServiceBindingAttribute>WebServiceBindingAttribute</a> for the service object.
+</div>
+<br>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>private</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>static</font> <font color=#0000ff>string</font> GetDefaultNamespace(<font color=#2b91af>SoapHttpClientProtocol</font> service) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>object</font>[] attributes = service.GetType().GetCustomAttributes(<font color=#0000ff>false</font>);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>foreach</font> (<font color=#0000ff>object</font> attribute <font color=#0000ff>in</font> attributes) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (attribute <font color=#0000ff>is</font> <font color=#2b91af>WebServiceBindingAttribute</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#2b91af>WebServiceBindingAttribute</font> binding = (<font color=#2b91af>WebServiceBindingAttribute</font>) attribute;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> binding.Namespace;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>return</font> <font color=#a31515>""</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>}</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>private</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>static</font> <font color=#0000ff>string</font> GetRequestHeaderNameSpace(<font color=#2b91af>SoapHttpClientProtocol</font> service, <font color=#0000ff>string</font> apiVersion) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>string</font> bindingNs = GetDefaultNamespace(service);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>string</font> delimiter = <font color=#a31515>"/api/adwords/"</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>string</font> xmlns = bindingNs.Substring(0, bindingNs.IndexOf(delimiter) + delimiter.Length);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; xmlns += <font color=#a31515>"cm/"</font> + apiVersion;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>if</font> (xmlns == bindingNs) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; xmlns = <font color=#a31515>""</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>return</font> xmlns;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>}</font></font>
+</p>
+<br>
+Combined, your code will look like:<br>
+<br>
+<p>
+  <font face="'courier new'"><font color=#2b91af><font size=2>InfoService</font></font></font><font face="'courier new'"><font size=2> infoService = <font color=#0000ff>new</font> <font color=#2b91af>InfoService</font>();</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>infoService.RequestHeader.TargetNamespace = GetRequestHeaderNameSpace(infoService, <font color=#a31515>"v200909"</font>);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>...</font></font>
+</p>
+<br>
+<div>
+  There are 2 additional items to note while writing your own serializer for RequestHeader:
+</div>
+<br>
+<div>
+  (i) Do not send any null values to the server.
+</div>
+<div>
+  (ii) Make sure you serialize bool as true/false, instead of True/False
+</div>
+<br>
+<div>
+  Finally, note that when using /sharetypes flag with wsdl.exe, it expects all the wsdl paths to be fully qualified urls. In case you have to download and modify the wsdls locally for some reason, then you need to run the command as&nbsp;
+</div>
+<br>
+<div>
+  <font face="'Courier New'">wsdl.exe /sharetypes file:///C:/CampaignService.wsdl file:///C:/AdGroupService.wsdl ...</font>
+</div>
+<br>
+<div>
+  Use of absolute path (i.e. C:\CampaignService.wsdl) won't work in this case.
+</div>
+<h3>
+  <a id=d_wsdl_exe_doesn_t_identify_So_1585259484127164 name=d_wsdl_exe_doesn_t_identify_So_1585259484127164></a>d. wsdl.exe doesn't identify Soap:Fault
+</h3>
+<div>
+  Unlike many other Soap libraries, .NET framework doesn't handle Soap:Fault properly. Instead of generating stub classes for various exception classes in wsdl and throwing those exception objects, wsdl.exe generates code that throws a <a href=http://msdn.microsoft.com/en-us/library/system.web.services.protocols.soapexception.aspx id=ulzr title=SoapException>SoapException</a> or <a href=http://msdn.microsoft.com/en-us/library/system.web.services.protocols.soapheaderexception.aspx id=g185 title=SoapHeaderException>SoapHeaderException</a> class. Since AdWords API heavily relies on Soap:Fault, error handling is a pain for .NET developers.
+</div>
+<br>
+However, since BulkMutateJobService uses the various exception objects as return values as well as exception objects, wsdl.exe will generate stub classes for all common exception types if you specify BulkMutateJobService as one of the service parameters to wsdl.exe. The catch is that the generated code still throws SoapException, and you have to manually deserialize the code into an <a href=http://code.google.com/apis/adwords/v2009/docs/reference/CampaignService.ApiException.html id=ay.t title=ApiException>ApiException</a> object. The following code shows how it can be done.<br>
+<br>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>private</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>static</font> <font color=#2b91af>ApiException</font> GetApiException(<font color=#2b91af>SoapHttpClientProtocol</font> service, <font color=#2b91af>SoapException</font> ex) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>string</font> defaultNs = GetDefaultNamespace(service);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#2b91af>ApiException</font> retVal = <font color=#0000ff>null</font>;</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>if</font> (!<font color=#0000ff>string</font>.IsNullOrEmpty(defaultNs)) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#008000>// Extract the ApiExceptionFault node.</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#2b91af>XmlNamespaceManager</font> xmlns = <font color=#0000ff>new</font> <font color=#2b91af>XmlNamespaceManager</font>(ex.Detail.OwnerDocument.NameTable);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; xmlns.AddNamespace(<font color=#a31515>"api"</font>, defaultNs);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#2b91af>XmlElement</font> faultNode = (<font color=#2b91af>XmlElement</font>) ex.Detail.SelectSingleNode(</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#a31515>"api:ApiExceptionFault"</font>, xmlns);</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (faultNode != <font color=#0000ff>null</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000>// Make a stream out of the node contents.</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#2b91af>MemoryStream</font> memStream = <font color=#0000ff>new</font> <font color=#2b91af>MemoryStream</font>();</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>byte</font>[] bytes = <font color=#2b91af>Encoding</font>.UTF8.GetBytes(faultNode.OuterXml);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; memStream.Write(bytes, 0, bytes.Length);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; memStream.Seek(0, <font color=#2b91af>SeekOrigin</font>.Begin);</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>try</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000>// Manually deserialize the stream contents into an ApiException object.</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#2b91af>Type</font> ApiExceptionType = <font color=#0000ff>typeof</font>(<font color=#2b91af>ApiException</font>);</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (ApiExceptionType != <font color=#0000ff>null</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#2b91af>XmlSerializer</font> serializer = <font color=#0000ff>new</font> <font color=#2b91af>XmlSerializer</font>(ApiExceptionType,</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>new</font> <font color=#2b91af>XmlAttributeOverrides</font>(), <font color=#0000ff>new</font> <font color=#2b91af>Type</font>[] { },</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>new</font> <font color=#2b91af>XmlRootAttribute</font>(<font color=#a31515>"ApiExceptionFault"</font>), defaultNs);</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; retVal = (<font color=#2b91af>ApiException</font>) serializer.Deserialize(memStream);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <font color=#0000ff>catch</font> (<font color=#2b91af>Exception</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000>// deserialization failed, but we can safely ignore it.</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>return</font> retVal;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>}</font></font>
+</p>
+<br>
+<div>
+  Now, your API calls will look like:
+</div>
+<br>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>try</font></font></font><font face="'courier new'"><font size=2> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; service.get(<font color=#0000ff>null</font>);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>} <font color=#0000ff>catch</font> (<font color=#2b91af>SoapException</font> ex) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#2b91af>ApiException</font> apiException = GetApiException(service, ex);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>if</font> (apiException != <font color=#0000ff>null</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>foreach</font> (<font color=#2b91af>ApiError</font> error <font color=#0000ff>in</font> apiException.errors) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (error <font color=#0000ff>is</font> <font color=#2b91af>PolicyViolationError</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000>// handle policy violation</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <font color=#0000ff>else</font> <font color=#0000ff>if</font> (error <font color=#0000ff>is</font> <font color=#2b91af>AuthorizationError</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000>// handle authorization error</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  &nbsp;&nbsp; &nbsp; &nbsp;<font face="'courier new'"><font color=#008000><font size=2>// and so on...</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>}</font></font>
+</p>
+<br>
+<div>
+  You still can't catch the right exception object, but at this stage, it would be easy to map certain types of <a href=http://code.google.com/apis/adwords/v2009/docs/reference/CampaignService.ApiError.html id=r19h title=ApiError>ApiError</a> objects to a custom exception in your application.
+</div>
+<h3>
+  <a id=e_wsdl_exe_doesn_t_provide_a_m_9834850756451488 name=e_wsdl_exe_doesn_t_provide_a_m_9834850756451488></a>e. wsdl.exe doesn't provide a mechanism for logging SOAP Xml
+</h3>
+wsdl.exe doesn't provide a direct way to log the outgoing and incoming SOAP xml. While this is not a common requirement for many applications, this is a nice-to-have feature in your application, so you can probably debug a hard-to-catch error on your production server.<br>
+<br>
+The .NET SOAP framework allows you to intercept outgoing and incoming SOAP messages using <a href=http://msdn.microsoft.com/en-us/library/system.web.services.protocols.soapextension.aspx id=d6w9 title=SoapExtensions>SoapExtensions</a>.&nbsp;<a href=http://msdn.microsoft.com/en-us/library/esw638yk%28VS.71%29.aspx>http://msdn.microsoft.com/en-us/library/esw638yk(VS.71).aspx</a>&nbsp;gives a nice introduction on how this may be done. A few things to keep in mind while writing a logger are:<br>
+<br>
+<div>
+  a. A single SoapExtension object may be reused by the framework for multiple API calls. So it is probably a bad idea to add static member variables to this class, or make assumptions about the values of member variables.
+</div>
+<div>
+  b. Make sure you are logging only your messages. This is relevant if you are writing an ASP.NET webservice, but do not want to log your own incoming SOAP messages.
+</div>
+<div>
+  c. If you are writing to a file, beware of file locks when making multithread calls.
+</div>
+<div>
+  d. If you are writing a multithreaded application, make sure you log the SOAP request and response in pairs. Storing xml request in <a href=http://msdn.microsoft.com/en-us/library/system.web.httpcontext.current.aspx id=r3wh title=HttpContext.Current>HttpContext.Current</a> or <a href=http://msdn.microsoft.com/en-us/library/system.runtime.remoting.messaging.callcontext.aspx id=clh9 title=CallContext>CallContext</a>&nbsp;&nbsp;will help you pair it with xml response later. I strongly recommend you read this <a href=http://piers7.blogspot.com/2005/11/threadstatic-callcontext-and_02.html id=ipn1 title=blogpost>blogpost</a>&nbsp;on CallContext if you are developing an ASP.NET application and plan to take this approach.
+</div>
+<br>
+If you are debugging code in your development environment, and just want to capture the SOAP logs, then you probably don't need this solution. You can simply install <a href=http://www.fiddler2.com/fiddler2/ id=zj8d title=Fiddler>Fiddler</a>, and it will capture the traffic for you. In case it doesn't, just set the <a href=http://msdn.microsoft.com/en-us/library/system.web.services.protocols.httpwebclientprotocol.proxy.aspx id=py_b title=proxy>Proxy</a> field of your service to point to http://localhost:8888, the default proxy endpoint for Fiddler.<br>
+<h3>
+  <a id=f_wsdl_exe_doesn_t_provide_a_m_9166571944952011 name=f_wsdl_exe_doesn_t_provide_a_m_9166571944952011></a>f. wsdl.exe doesn't provide a mechanism for accessing the underlying WebRequest
+</h3>
+<div>
+  When wsdl.exe generates stub code, it derives all service classes from <a href=http://msdn.microsoft.com/en-us/library/system.web.services.protocols.soaphttpclientprotocol.aspx id=wnzv title=SoapHttpClientProtocol>SoapHttpClientProtocol</a> class. While you can customize a few aspects of the service object's web connection, the generated code doesn't give you full control to the underlying WebRequest object. The following code shows how you can overcome this limitation.
+</div>
+<br>
+<div>
+  First, create your own service class by extending SoapHttpClientProtocol. Now derive all your service classes from this base class. Finally, override the GetWebRequest and GetWebResponse objects to get hold of the underlying web request and response objects.<br>
+  <br>
+  <p>
+    <font face="'courier new'"><font color=#0000ff><font size=2>public</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>class</font> <font face="'courier new'"><font size=2><font color=#2b91af>AdWordsApiService</font>&nbsp;</font></font>: <font color=#2b91af>SoapHttpClientProtocol</font> {</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>public</font> <font color=#2b91af>WebRequest</font> Request {</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>get</font> {</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> request;</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>set</font> {</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; request = <font color=#0000ff>value</font>;</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+  </p>
+  <p>
+    &nbsp;
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>public</font> <font color=#2b91af>WebResponse</font> Response {</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>get</font> {</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> response;</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>set</font> {</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; response = <font color=#0000ff>value</font>;</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+  </p>
+  <p>
+    &nbsp;
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>protected</font> <font color=#0000ff>override</font> <font color=#2b91af>WebRequest</font> GetWebRequest(<font color=#2b91af>Uri</font> uri) {</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; request = <font color=#0000ff>base</font>.GetWebRequest(uri);</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> request;</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+  </p>
+  <p>
+    &nbsp;
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>protected</font> <font color=#0000ff>override</font> <font color=#2b91af>WebResponse</font> GetWebResponse(<font color=#2b91af>WebRequest</font> request) {</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; response = <font color=#0000ff>base</font>.GetWebResponse(request);</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> response;</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+  </p>
+  <p>
+    &nbsp;
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>protected</font> <font color=#0000ff>override</font> <font color=#2b91af>WebResponse</font> GetWebResponse(<font color=#2b91af>WebRequest</font> request, <font color=#2b91af>IAsyncResult</font> result) {</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; response = <font color=#0000ff>base</font>.GetWebResponse(request, result);</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> response;</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+  </p>
+  <p>
+    &nbsp;
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>private</font> <font color=#2b91af>WebRequest</font> request = <font color=#0000ff>null</font>;</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>private</font> <font color=#2b91af>WebResponse</font> response = <font color=#0000ff>null</font>;</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>}</font></font>
+  </p>
+  <br>
+  <p>
+    <font face="'courier new'"><font color=#0000ff><font size=2>public</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>partial</font> <font color=#0000ff>class</font> <font color=#2b91af>BulkMutateJobService</font> : <font color=#2b91af>AdWordsApiService</font> {</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>...</font></font>
+  </p>
+  <p>
+    <font face="'courier new'"><font size=2>}</font></font>
+  </p>
+  <h3>
+    <a id=g_wsdl_exe_doesn_t_provide_a_s_19426726829260588 name=g_wsdl_exe_doesn_t_provide_a_s_19426726829260588></a>g. wsdl.exe doesn't provide a single interception point for AdWords API calls
+  </h3>
+</div>
+The stub class generated by wsdl.exe doesn't allow you to intercept all API calls to AdWords API server. One way to address this issue is to write a custom base class for your Service classes, and then implement a custom <a href=http://msdn.microsoft.com/en-us/library/system.web.services.protocols.soaphttpclientprotocol.invoke.aspx id=lyor title=Invoke>Invoke</a>.<br>
+<br>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>public</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>class</font> <font color=#2b91af>AdWordsApiService</font> : <font color=#2b91af>SoapHttpClientProtocol</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>delegate</font> <font color=#0000ff>object</font>[] <font color=#2b91af>CallMethod</font>(<font color=#0000ff>string</font> methodName, <font color=#0000ff>object</font>[] parameters);</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>protected</font> <font color=#0000ff>new</font> <font color=#0000ff>object</font>[] Invoke(<font color=#0000ff>string</font> methodName, <font color=#0000ff>object</font>[] parameters) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> Call(methodName, parameters);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>protected</font> <font color=#0000ff>new</font> <font color=#2b91af>IAsyncResult</font> BeginInvoke(<font color=#0000ff>string</font> methodName, <font color=#0000ff>object</font>[] parameters,</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#2b91af>AsyncCallback</font> callback, <font color=#0000ff>object</font> asyncState) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#2b91af>CallMethod</font> apiFunction = <font color=#0000ff>new</font> <font color=#2b91af>CallMethod</font>(Call);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> apiFunction.BeginInvoke(methodName, parameters, callback, apiFunction);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>protected</font> <font color=#0000ff>new</font> <font color=#0000ff>object</font>[] EndInvoke(<font color=#2b91af>IAsyncResult</font> asyncResult) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#2b91af>CallMethod</font> apiFunction = (<font color=#2b91af>CallMethod</font>) asyncResult.AsyncState;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> apiFunction.EndInvoke(asyncResult);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>private</font> <font color=#0000ff>object</font>[] Call(<font color=#0000ff>string</font> methodName, <font color=#0000ff>object</font>[] parameters) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>try</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> <font color=#0000ff>base</font>.Invoke(methodName, parameters);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; } <font color=#0000ff>catch</font> (<font color=#2b91af>SoapException</font> ex) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>throw</font> GetCustomException(ex);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>}</font></font>
+</p>
+<br>
+One benefit of having a common interception point is that you can now add custom code to handle situations common to all API calls. For instance, the following code shows how to handle AuthToken expiration transparently:<br>
+<br>
+<p>
+  <font face="'courier new'"><font color=#0000ff><font size=2>public</font></font></font><font face="'courier new'"><font size=2> <font color=#0000ff>class</font> <font color=#2b91af>AdWordsApiService</font> : <font color=#2b91af>SoapHttpClientProtocol</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>private</font> <font color=#0000ff>object</font>[] Call(<font color=#0000ff>string</font> methodName, <font color=#0000ff>object</font>[] parameters) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>try</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> <font color=#0000ff>base</font>.Invoke(methodName, parameters);</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; } <font color=#0000ff>catch</font> (<font color=#2b91af>SoapException</font> ex) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (isAuthTokenExpirationException(ex)) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000>// generate fresh auth token, retry call</font></font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <font color=#0000ff>else</font> {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>throw</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; <font color=#0000ff>private</font> <font color=#0000ff>bool</font> isAuthTokenExpirationException(<font color=#2b91af>SoapException</font> ex) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#2b91af>ApiException</font> apiException = GetApiException(ex);</font></font>
+</p>
+<p>
+  &nbsp;
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (apiException != <font color=#0000ff>null</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>foreach</font> (<font color=#2b91af>ApiError</font> error <font color=#0000ff>in</font> apiException.errors) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (error <font color=#0000ff>is</font> <font color=#2b91af>AuthenticationError</font>) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#2b91af>AuthenticationError</font> authError = (<font color=#2b91af>AuthenticationError</font>) error;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>if</font> (authError.reason == <font color=#2b91af>AuthenticationErrorReason</font>.GOOGLE_ACCOUNT_COOKIE_INVALID) {</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> <font color=#0000ff>true</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp;&nbsp;&nbsp; <font color=#0000ff>return</font> <font color=#0000ff>false</font>;</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>&nbsp; }</font></font>
+</p>
+<p>
+  <font face="'courier new'"><font size=2>}</font></font>
+</p>
+<h3>
+  <a id=h_Miscellaneous_annoyances_673_8156194929033518 name=h_Miscellaneous_annoyances_673_8156194929033518></a>h. Miscellaneous items
+</h3>
+<div>
+  Finally, there are a few minor points to keep in mind while working with AdWords API. mostly because of the name collision between .NET types / keywords.
+</div>
+<br>
+<div>
+  1. <a href=http://code.google.com/apis/adwords/v2009/docs/reference/CampaignService.Operation.html id=pf.u title=Operation>Operation</a> class has a member variable named operator, which conflicts with the keyword "operator" in C#. wsdl.exe creates a workaround by naming the variable as @operator, but if your application will be used by multiple programming languages, you might want to consider changing this name to something more acceptable in multiple programming languages.
+</div>
+<div>
+  2. AdWords API has a type named <a href=http://code.google.com/apis/adwords/v2009/docs/reference/CampaignService.ApplicationException.html id=afzz title=ApplicationException>ApplicationException</a>, which may cause name conflicts with <a href=http://msdn.microsoft.com/en-us/library/system.applicationexception.aspx id=o8dd title=System.ApplicationException>System.ApplicationException</a>. Make sure you fully qualify the types whenever applicable.
+</div>
+<h1>
+  <a id=Writing_a_custom_code_generato name=Writing_a_custom_code_generato></a>Writing a custom code generator
+</h1>
+<div>
+  After seeing so many custom enhancements to an autogenerated code, one would naturally wonder whether it is feasible to make so many changes in their code every time one regenerates the stub classes. An ideal way to address this issue is to have a custom code generator. There are possibly three ways of doing this:
+</div>
+<h3>
+  <a id=a_Develop_an_application_that__42682237830013037 name=a_Develop_an_application_that__42682237830013037></a>a. Develop an application that can patch the code generated by wsdl.exe
+</h3>
+<div>
+  This is the approach used by AdWords API .NET client library. It post-processes the output from wsdl.exe to patch many of these issues. You can see the source code at&nbsp;<a href=http://code.google.com/p/google-api-adwords-dotnet/source/browse/#svn/trunk/tools>http://code.google.com/p/google-api-adwords-dotnet/source/browse/#svn/trunk/tools</a>
+</div>
+<h3>
+  <a id=b_Write_a_code_filter_for_wsdl_1016429178416729 name=b_Write_a_code_filter_for_wsdl_1016429178416729></a>b. Write a code filter for wsdl.exe
+</h3>
+<div>
+  Wsdl.exe allows you to write custom code generator for types of your choice. If you are interested in this option, you can take a look at <a href=http://msdn.microsoft.com/en-us/library/system.xml.serialization.advanced.schemaimporterextension.aspx id=kz:. title=SchemaImporterExtension>SchemaImporterExtension</a> class in .NET.
+</div>
+<h3>
+  <a id=c_Write_a_code_generator_to_re_6704486459493637 name=c_Write_a_code_generator_to_re_6704486459493637></a>c. Write a code generator to replace wsdl.exe
+</h3>
+<div>
+  If you find the above approaches insufficient, you can always choose to write your own code generator. Mono's <a href=http://anonsvn.mono-project.com/viewvc/trunk/ id=w6t- title="source code">source code</a> is a nice place to get started. You might wish to start by looking at source code for <a href=http://anonsvn.mono-project.com/viewvc/trunk/mcs/tools/wsdl/ id=fr1n title=wsdl.exe>wsdl.exe</a>, <a href=http://anonsvn.mono-project.com/viewvc/trunk/mcs/class/System.Web.Services/ id=i-4c title=System.Web.Services>System.Web.Services</a>&nbsp;and <a href=http://anonsvn.mono-project.com/viewvc/trunk/mcs/class/System.XML/System.Xml.Serialization/ id=mja5 title=System.Xml.Serialization>System.Xml.Serialization</a>.
+</div>
+<h1>
+  <a id=Conclusion_5682769902050495 name=Conclusion_5682769902050495></a>Conclusion
+</h1>
+Given the number of SOAP libraries and frameworks available in the market, it is a difficult task to write a SOAP service that works fine across multiple programming languages and frameworks. .NET has strong support for SOAP, and leaves just enough override points to extend the framework when you run into limitations. In this document, I have discussed some of these mechanisms to overcome the bugs and limitations of the framework when working with AdWords API. Hope you found this useful, and that you will provide feedback and additional points on our forum.<br>
+<br>
+<br>
+<br></body>
+</html>
