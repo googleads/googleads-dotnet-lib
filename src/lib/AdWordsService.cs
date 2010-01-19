@@ -17,6 +17,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Web.Services.Protocols;
 
 namespace com.google.api.adwords.lib {
   /// <summary>
@@ -343,15 +344,24 @@ namespace com.google.api.adwords.lib {
     /// </summary>
     /// <param name="headers">The headers as a set of key-value pairs.</param>
     public AdWordsUser(Dictionary<string, string> headers) : this() {
+      Dictionary<string, SoapHeader> legacyHeader = null;
+      RequestHeader requestHeader = null;
+
       foreach (string id in serviceFactoryMap.Keys) {
         ServiceFactory serviceFactory = serviceFactoryMap[id];
         if (serviceFactory is LegacyAdWordsApiServiceFactory) {
           LegacyAdWordsApiServiceFactory legacyFactory =
                 (serviceFactory as LegacyAdWordsApiServiceFactory);
-          legacyFactory.Headers = legacyFactory.MakeSoapHeaders(headers);
+          if (legacyHeader == null) {
+            legacyHeader = legacyFactory.MakeSoapHeaders(headers);
+          }
+          legacyFactory.Headers = legacyHeader;
         } else if (serviceFactory is AdWordsApiServiceFactory) {
           AdWordsApiServiceFactory awapiFactory = (serviceFactory as AdWordsApiServiceFactory);
-          awapiFactory.RequestHeader = awapiFactory.MakeRequestHeaders(headers);
+          if (requestHeader == null) {
+            requestHeader = awapiFactory.MakeRequestHeaders(headers);
+          }
+          awapiFactory.RequestHeader = requestHeader;
         }
       }
     }
