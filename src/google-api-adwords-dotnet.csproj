@@ -38,24 +38,34 @@
   <ItemGroup>
     <None Include="App.config" />
     <EmbeddedResource Include="..\data\categories.csv">
+      <Link>data\categories.csv</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="..\data\countries.csv">
+      <Link>data\countries.csv</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="..\data\currencies.csv">
+      <Link>data\currencies.csv</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="..\data\languages.csv">
+      <Link>data\languages.csv</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="..\data\ops_rates.csv">
+      <Link>data\ops_rates.csv</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="..\data\timezones.csv">
+      <Link>data\timezones.csv</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="..\data\us_cities.csv">
+      <Link>data\us_cities.csv</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="..\data\us_metros.csv">
+      <Link>data\us_metros.csv</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="..\data\world_cities.csv">
+      <Link>data\world_cities.csv</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="..\data\world_regions.csv">
+      <Link>data\world_regions.csv</Link>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
