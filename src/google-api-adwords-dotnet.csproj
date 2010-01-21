@@ -1,0 +1,114 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B701ED76-54AE-4591-86DE-EDCD0D8DAC6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.google.api.adwords</RootNamespace>
+    <AssemblyName>google-api-adwords-dotnet</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EmbeddedResource Include="..\data\categories.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\countries.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\currencies.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\languages.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\ops_rates.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\timezones.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\us_cities.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\us_metros.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\world_cities.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\world_regions.csv">
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="lib\AdWordsApiException.cs" />
+    <Compile Include="lib\AdWordsApiService.cs" />
+    <Compile Include="lib\ApiUnitsEntry.cs" />
+    <Compile Include="lib\SoapServiceBase.cs" />
+    <Compile Include="v13\AdWordsApi.cs" />
+    <Compile Include="v200909\AdWordsApi.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="lib\AdWordsUser.cs" />
+    <Compile Include="lib\LegacyAdWordsApiServiceFactory.cs" />
+    <Compile Include="lib\AdWordsApiServiceFactory.cs" />
+    <Compile Include="lib\AdWordsService.cs" />
+    <Compile Include="lib\ServiceFactory.cs" />
+    <Compile Include="lib\ServiceSignature.cs" />
+    <Compile Include="lib\ApplicationConfiguration.cs" />
+    <Compile Include="lib\AuthToken.cs" />
+    <Compile Include="lib\AuthTokenException.cs" />
+    <Compile Include="lib\util\AccountManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\util\Archiver.cs" />
+    <Compile Include="lib\util\ArchiveClasses.cs" />
+    <Compile Include="lib\util\CommonStructs.cs" />
+    <Compile Include="lib\util\CsvFile.cs" />
+    <Compile Include="lib\ApiUnitsExtension.cs" />
+    <Compile Include="lib\TraceExtension.cs" />
+    <Compile Include="lib\util\DataUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\util\ReportUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\util\UnitsUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v13\LegacyAdWordsApiExceptions.cs" />
+    <Compile Include="v13\LegacyAdWordsApiService.cs">
+    </Compile>
+    <Compile Include="v200906\AdWordsApi.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="v13\wsdl_config.xml" />
+    <Content Include="v200906\wsdl_config.xml" />
+    <Content Include="v200909\wsdl_config.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

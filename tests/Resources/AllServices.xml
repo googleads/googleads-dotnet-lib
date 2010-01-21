@@ -1,0 +1,2334 @@
+<li style="padding-top: 0pt; padding-bottom: 0pt;">
+  <div class="tlw-title tlw-branch">
+    <a title="Collapse v200909 (latest)" class="tlw-control" href="javascript:void(0)">
+      <img class="tlw-control tlw-minus" alt="Collapse v200909 (latest)" src="/images/cleardot.gif"/>
+    </a>
+    <span class="tlw-title">v200909 (latest)</span>
+  </div>
+  <ul id="0-sub-0" style="display: block;">
+    <li style="padding-top: 0pt; padding-bottom: 0pt;">
+      <div class="tlw-title tlw-branch">
+        <a title="Expand AdExtensionOverrideService" class="tlw-control" href="javascript:void(0)">
+          <img class="tlw-control tlw-plus" alt="Expand AdExtensionOverrideService" src="/images/cleardot.gif"/>
+        </a>
+        <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.html">AdExtensionOverrideService</a>
+      </div>
+      <ul id="0-sub-1" style="display: none;">
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand AdExtension" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand AdExtension" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.AdExtension.html">AdExtension</a>
+          </div>
+          <ul id="0-sub-2" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.LocationExtension.html">LocationExtension</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.AdExtensionOverride.html">AdExtensionOverride</a>
+        </li>
+        <li>
+          <a title="AdExtensionOverrideOperation" href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.AdExtensionOverrideOperation.html">AdExtensionOverrideOp...</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.AdExtensionOverridePage.html">AdExtensionOverridePage</a>
+        </li>
+        <li>
+          <a title="AdExtensionOverrideReturnValue" href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.AdExtensionOverrideReturnValue.html">AdExtensionOverrideRe...</a>
+        </li>
+        <li>
+          <a title="AdExtensionOverrideSelector" href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.AdExtensionOverrideSelector.html">AdExtensionOverrideSe...</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.AdExtensionOverrideStats.html">AdExtensionOverrideStats</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.Address.html">Address</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand ApiError" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand ApiError" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.ApiError.html">ApiError</a>
+          </div>
+          <ul id="0-sub-3" style="display: none;">
+            <li>
+              <a title="AdExtensionOverrideError" href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.AdExtensionOverrideError.html">AdExtensionOverride...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.AuthenticationError.html">AuthenticationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.AuthorizationError.html">AuthorizationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.ClientTermsError.html">ClientTermsError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.DistinctError.html">DistinctError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.InternalApiError.html">InternalApiError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.NotEmptyError.html">NotEmptyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.NotWhitelistedError.html">NotWhitelistedError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.NullError.html">NullError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.QuotaCheckError.html">QuotaCheckError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.QuotaExceededError.html">QuotaExceededError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.ReadOnlyError.html">ReadOnlyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.RequiredError.html">RequiredError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.SizeLimitError.html">SizeLimitError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.StringLengthError.html">StringLengthError</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.ApiException.html">ApiException</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.GeoPoint.html">GeoPoint</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.LocationOverrideInfo.html">LocationOverrideInfo</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.Money.html">Money</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.OverrideInfo.html">OverrideInfo</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdExtensionOverrideService.Paging.html">Paging</a>
+        </li>
+      </ul>
+    </li>
+    <li style="padding-top: 0pt; padding-bottom: 0pt;">
+      <div class="tlw-title tlw-branch">
+        <a title="Expand AdGroupAdService" class="tlw-control" href="javascript:void(0)">
+          <img class="tlw-control tlw-plus" alt="Expand AdGroupAdService" src="/images/cleardot.gif"/>
+        </a>
+        <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.html">AdGroupAdService</a>
+      </div>
+      <ul id="0-sub-4" style="display: none;">
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand Ad" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand Ad" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.Ad.html">Ad</a>
+          </div>
+          <ul id="0-sub-5" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.DeprecatedAd.html">DeprecatedAd</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.ImageAd.html">ImageAd</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.LocalBusinessAd.html">LocalBusinessAd</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.MobileAd.html">MobileAd</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.MobileImageAd.html">MobileImageAd</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.TemplateAd.html">TemplateAd</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.TextAd.html">TextAd</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AdGroupAd.html">AdGroupAd</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AdGroupAdOperation.html">AdGroupAdOperation</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AdGroupAdPage.html">AdGroupAdPage</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AdGroupAdReturnValue.html">AdGroupAdReturnValue</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AdGroupAdSelector.html">AdGroupAdSelector</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AdStats.html">AdStats</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AdStatsSelector.html">AdStatsSelector</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand AdUnionId" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand AdUnionId" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AdUnionId.html">AdUnionId</a>
+          </div>
+          <ul id="0-sub-6" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.TempAdUnionId.html">TempAdUnionId</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.Address.html">Address</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand ApiError" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand ApiError" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.ApiError.html">ApiError</a>
+          </div>
+          <ul id="0-sub-7" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AdError.html">AdError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AdGroupAdError.html">AdGroupAdError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AuthenticationError.html">AuthenticationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AuthorizationError.html">AuthorizationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.ClientTermsError.html">ClientTermsError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.DatabaseError.html">DatabaseError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.DateError.html">DateError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.DistinctError.html">DistinctError</a>
+            </li>
+            <li style="padding-top: 0pt; padding-bottom: 0pt;">
+              <div class="tlw-title tlw-branch">
+                <a title="Expand EntityCountLimitExc..." class="tlw-control" href="javascript:void(0)">
+                  <img class="tlw-control tlw-plus" alt="Expand EntityCountLimitExc..." src="/images/cleardot.gif"/>
+                </a>
+                <a title="EntityCountLimitExceeded" href="/apis/adwords/v2009/docs/reference/AdGroupAdService.EntityCountLimitExceeded.html">EntityCountLimitExc...</a>
+              </div>
+              <ul id="0-sub-8" style="display: none;">
+                <li>
+                  <a title="AdGroupAdCountLimitExceeded" href="/apis/adwords/v2009/docs/reference/AdGroupAdService.AdGroupAdCountLimitExceeded.html">AdGroupAdCountLim...</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.EntityNotFound.html">EntityNotFound</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.IdError.html">IdError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.ImageError.html">ImageError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.InternalApiError.html">InternalApiError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.MediaError.html">MediaError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.NewEntityCreationError.html">NewEntityCreationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.NotEmptyError.html">NotEmptyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.NotWhitelistedError.html">NotWhitelistedError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.NullError.html">NullError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.OperationAccessDenied.html">OperationAccessDenied</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.PagingError.html">PagingError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.PolicyViolationError.html">PolicyViolationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.QuotaCheckError.html">QuotaCheckError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.QuotaExceededError.html">QuotaExceededError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.ReadOnlyError.html">ReadOnlyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.RequiredError.html">RequiredError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.SizeLimitError.html">SizeLimitError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.StatsQueryError.html">StatsQueryError</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.ApiException.html">ApiException</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.DateRange.html">DateRange</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.Dimensions.html">Dimensions</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.ExemptionRequest.html">ExemptionRequest</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.GeoPoint.html">GeoPoint</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand Media" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand Media" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.Media.html">Media</a>
+          </div>
+          <ul id="0-sub-9" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.Audio.html">Audio</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.Image.html">Image</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.Video.html">Video</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a title="Media_MediaExtendedCapabilityType_Media_MediaExtendedCapabilityStateMapEntry" href="/apis/adwords/v2009/docs/reference/AdGroupAdService.Media_MediaExtendedCapabilityType_Media_MediaExtendedCapabilityStateMapEntry.html">Media_MediaExtendedCa...</a>
+        </li>
+        <li>
+          <a title="Media_Size_DimensionsMapEntry" href="/apis/adwords/v2009/docs/reference/AdGroupAdService.Media_Size_DimensionsMapEntry.html">Media_Size_Dimensions...</a>
+        </li>
+        <li>
+          <a title="Media_Size_StringMapEntry" href="/apis/adwords/v2009/docs/reference/AdGroupAdService.Media_Size_StringMapEntry.html">Media_Size_StringMapE...</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.Money.html">Money</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.Paging.html">Paging</a>
+        </li>
+        <li>
+          <a title="PolicyViolationError.Part" href="/apis/adwords/v2009/docs/reference/AdGroupAdService.PolicyViolationError.Part.html">PolicyViolationError....</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.PolicyViolationKey.html">PolicyViolationKey</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.ProximityTarget.html">ProximityTarget</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.TemplateElement.html">TemplateElement</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupAdService.TemplateElementField.html">TemplateElementField</a>
+        </li>
+      </ul>
+    </li>
+    <li style="padding-top: 0pt; padding-bottom: 0pt;">
+      <div class="tlw-title tlw-branch">
+        <a title="Expand AdGroupCriterionService" class="tlw-control" href="javascript:void(0)">
+          <img class="tlw-control tlw-plus" alt="Expand AdGroupCriterionService" src="/images/cleardot.gif"/>
+        </a>
+        <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.html">AdGroupCriterionService</a>
+      </div>
+      <ul id="0-sub-10" style="display: none;">
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand AdGroupCriterion" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand AdGroupCriterion" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.AdGroupCriterion.html">AdGroupCriterion</a>
+          </div>
+          <ul id="0-sub-11" style="display: none;">
+            <li>
+              <a title="BiddableAdGroupCriterion" href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.BiddableAdGroupCriterion.html">BiddableAdGroupCrit...</a>
+            </li>
+            <li>
+              <a title="NegativeAdGroupCriterion" href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.NegativeAdGroupCriterion.html">NegativeAdGroupCrit...</a>
+            </li>
+          </ul>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand AdGroupCriterionBids" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand AdGroupCriterionBids" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.AdGroupCriterionBids.html">AdGroupCriterionBids</a>
+          </div>
+          <ul id="0-sub-12" style="display: none;">
+            <li>
+              <a title="BudgetOptimizerAdGroupCriterionBids" href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.BudgetOptimizerAdGroupCriterionBids.html">BudgetOptimizerAdGr...</a>
+            </li>
+            <li>
+              <a title="ConversionOptimizerAdGroupCriterionBids" href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.ConversionOptimizerAdGroupCriterionBids.html">ConversionOptimizer...</a>
+            </li>
+            <li>
+              <a title="ManualCPCAdGroupCriterionBids" href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.ManualCPCAdGroupCriterionBids.html">ManualCPCAdGroupCri...</a>
+            </li>
+            <li>
+              <a title="ManualCPMAdGroupCriterionBids" href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.ManualCPMAdGroupCriterionBids.html">ManualCPMAdGroupCri...</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.AdGroupCriterionIdFilter.html">AdGroupCriterionIdFilter</a>
+        </li>
+        <li>
+          <a title="AdGroupCriterionOperation" href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.AdGroupCriterionOperation.html">AdGroupCriterionOpera...</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.AdGroupCriterionPage.html">AdGroupCriterionPage</a>
+        </li>
+        <li>
+          <a title="AdGroupCriterionReturnValue" href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.AdGroupCriterionReturnValue.html">AdGroupCriterionRetur...</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.AdGroupCriterionSelector.html">AdGroupCriterionSelector</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand ApiError" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand ApiError" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.ApiError.html">ApiError</a>
+          </div>
+          <ul id="0-sub-13" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.AdGroupCriterionError.html">AdGroupCriterionError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.AuthenticationError.html">AuthenticationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.AuthorizationError.html">AuthorizationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.BiddingError.html">BiddingError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.ClientTermsError.html">ClientTermsError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.DatabaseError.html">DatabaseError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.DateError.html">DateError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.DistinctError.html">DistinctError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.EntityAccessDenied.html">EntityAccessDenied</a>
+            </li>
+            <li style="padding-top: 0pt; padding-bottom: 0pt;">
+              <div class="tlw-title tlw-branch">
+                <a title="Expand EntityCountLimitExc..." class="tlw-control" href="javascript:void(0)">
+                  <img class="tlw-control tlw-plus" alt="Expand EntityCountLimitExc..." src="/images/cleardot.gif"/>
+                </a>
+                <a title="EntityCountLimitExceeded" href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.EntityCountLimitExceeded.html">EntityCountLimitExc...</a>
+              </div>
+              <ul id="0-sub-14" style="display: none;">
+                <li>
+                  <a title="AdGroupCriterionLimitExceeded" href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.AdGroupCriterionLimitExceeded.html">AdGroupCriterionL...</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.EntityNotFound.html">EntityNotFound</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.InternalApiError.html">InternalApiError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.NewEntityCreationError.html">NewEntityCreationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.NotEmptyError.html">NotEmptyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.NotWhitelistedError.html">NotWhitelistedError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.NullError.html">NullError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.OperationAccessDenied.html">OperationAccessDenied</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.PagingError.html">PagingError</a>
+            </li>
+            <li style="padding-top: 0pt; padding-bottom: 0pt;">
+              <div class="tlw-title tlw-branch">
+                <a title="Expand PolicyViolationError" class="tlw-control" href="javascript:void(0)">
+                  <img class="tlw-control tlw-plus" alt="Expand PolicyViolationError" src="/images/cleardot.gif"/>
+                </a>
+                <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.PolicyViolationError.html">PolicyViolationError</a>
+              </div>
+              <ul id="0-sub-15" style="display: none;">
+                <li>
+                  <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.CriterionPolicyError.html">CriterionPolicyError</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.QuotaCheckError.html">QuotaCheckError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.QuotaExceededError.html">QuotaExceededError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.ReadOnlyError.html">ReadOnlyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.RequiredError.html">RequiredError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.SizeLimitError.html">SizeLimitError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.StatsQueryError.html">StatsQueryError</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.ApiException.html">ApiException</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.Bid.html">Bid</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand Criterion" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand Criterion" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.Criterion.html">Criterion</a>
+          </div>
+          <ul id="0-sub-16" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.Keyword.html">Keyword</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.Placement.html">Placement</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.DateRange.html">DateRange</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.ExemptionRequest.html">ExemptionRequest</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.Money.html">Money</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.Paging.html">Paging</a>
+        </li>
+        <li>
+          <a title="PolicyViolationError.Part" href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.PolicyViolationError.Part.html">PolicyViolationError....</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.PolicyViolationKey.html">PolicyViolationKey</a>
+        </li>
+        <li>
+          <a title="PositionPreferenceAdGroupCriterionBids" href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.PositionPreferenceAdGroupCriterionBids.html">PositionPreferenceAdG...</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.QualityInfo.html">QualityInfo</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.Stats.html">Stats</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupCriterionService.StatsSelector.html">StatsSelector</a>
+        </li>
+      </ul>
+    </li>
+    <li style="padding-top: 0pt; padding-bottom: 0pt;">
+      <div class="tlw-title tlw-branch">
+        <a title="Expand AdGroupService" class="tlw-control" href="javascript:void(0)">
+          <img class="tlw-control tlw-plus" alt="Expand AdGroupService" src="/images/cleardot.gif"/>
+        </a>
+        <a href="/apis/adwords/v2009/docs/reference/AdGroupService.html">AdGroupService</a>
+      </div>
+      <ul id="0-sub-17" style="display: none;">
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupService.AdGroup.html">AdGroup</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand AdGroupBids" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand AdGroupBids" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/AdGroupService.AdGroupBids.html">AdGroupBids</a>
+          </div>
+          <ul id="0-sub-18" style="display: none;">
+            <li>
+              <a title="BudgetOptimizerAdGroupBids" href="/apis/adwords/v2009/docs/reference/AdGroupService.BudgetOptimizerAdGroupBids.html">BudgetOptimizerAdGr...</a>
+            </li>
+            <li>
+              <a title="ConversionOptimizerAdGroupBids" href="/apis/adwords/v2009/docs/reference/AdGroupService.ConversionOptimizerAdGroupBids.html">ConversionOptimizer...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.ManualCPCAdGroupBids.html">ManualCPCAdGroupBids</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.ManualCPMAdGroupBids.html">ManualCPMAdGroupBids</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupService.AdGroupOperation.html">AdGroupOperation</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupService.AdGroupPage.html">AdGroupPage</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupService.AdGroupReturnValue.html">AdGroupReturnValue</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupService.AdGroupSelector.html">AdGroupSelector</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand ApiError" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand ApiError" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/AdGroupService.ApiError.html">ApiError</a>
+          </div>
+          <ul id="0-sub-19" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.AdGroupServiceError.html">AdGroupServiceError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.AuthenticationError.html">AuthenticationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.AuthorizationError.html">AuthorizationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.BiddingError.html">BiddingError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.ClientTermsError.html">ClientTermsError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.DatabaseError.html">DatabaseError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.DateError.html">DateError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.DistinctError.html">DistinctError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.EntityNotFound.html">EntityNotFound</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.InternalApiError.html">InternalApiError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.NewEntityCreationError.html">NewEntityCreationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.NotEmptyError.html">NotEmptyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.NotWhitelistedError.html">NotWhitelistedError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.NullError.html">NullError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.OperationAccessDenied.html">OperationAccessDenied</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.OperatorError.html">OperatorError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.QuotaCheckError.html">QuotaCheckError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.QuotaError.html">QuotaError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.QuotaExceededError.html">QuotaExceededError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.ReadOnlyError.html">ReadOnlyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.RequiredError.html">RequiredError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.SizeLimitError.html">SizeLimitError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/AdGroupService.StatsQueryError.html">StatsQueryError</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupService.ApiException.html">ApiException</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupService.Bid.html">Bid</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupService.DateRange.html">DateRange</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupService.Money.html">Money</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupService.Paging.html">Paging</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupService.Stats.html">Stats</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/AdGroupService.StatsSelector.html">StatsSelector</a>
+        </li>
+      </ul>
+    </li>
+    <li style="padding-top: 0pt; padding-bottom: 0pt;">
+      <div class="tlw-title tlw-branch">
+        <a title="Expand BulkMutateJobService" class="tlw-control" href="javascript:void(0)">
+          <img class="tlw-control tlw-plus" alt="Expand BulkMutateJobService" src="/images/cleardot.gif"/>
+        </a>
+        <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.html">BulkMutateJobService</a>
+      </div>
+      <ul id="0-sub-20" style="display: none;">
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand Ad" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand Ad" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Ad.html">Ad</a>
+          </div>
+          <ul id="0-sub-21" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.DeprecatedAd.html">DeprecatedAd</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ImageAd.html">ImageAd</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.LocalBusinessAd.html">LocalBusinessAd</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.MobileAd.html">MobileAd</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.MobileImageAd.html">MobileImageAd</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.TemplateAd.html">TemplateAd</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.TextAd.html">TextAd</a>
+            </li>
+          </ul>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand AdExtension" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand AdExtension" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdExtension.html">AdExtension</a>
+          </div>
+          <ul id="0-sub-22" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.LocationExtension.html">LocationExtension</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdExtensionOverride.html">AdExtensionOverride</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroup.html">AdGroup</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroupAd.html">AdGroupAd</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand AdGroupBids" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand AdGroupBids" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroupBids.html">AdGroupBids</a>
+          </div>
+          <ul id="0-sub-23" style="display: none;">
+            <li>
+              <a title="BudgetOptimizerAdGroupBids" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BudgetOptimizerAdGroupBids.html">BudgetOptimizerAdGr...</a>
+            </li>
+            <li>
+              <a title="ConversionOptimizerAdGroupBids" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ConversionOptimizerAdGroupBids.html">ConversionOptimizer...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ManualCPCAdGroupBids.html">ManualCPCAdGroupBids</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ManualCPMAdGroupBids.html">ManualCPMAdGroupBids</a>
+            </li>
+          </ul>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand AdGroupCriterion" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand AdGroupCriterion" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroupCriterion.html">AdGroupCriterion</a>
+          </div>
+          <ul id="0-sub-24" style="display: none;">
+            <li>
+              <a title="BiddableAdGroupCriterion" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BiddableAdGroupCriterion.html">BiddableAdGroupCrit...</a>
+            </li>
+            <li>
+              <a title="NegativeAdGroupCriterion" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.NegativeAdGroupCriterion.html">NegativeAdGroupCrit...</a>
+            </li>
+          </ul>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand AdGroupCriterionBids" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand AdGroupCriterionBids" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroupCriterionBids.html">AdGroupCriterionBids</a>
+          </div>
+          <ul id="0-sub-25" style="display: none;">
+            <li>
+              <a title="BudgetOptimizerAdGroupCriterionBids" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BudgetOptimizerAdGroupCriterionBids.html">BudgetOptimizerAdGr...</a>
+            </li>
+            <li>
+              <a title="ConversionOptimizerAdGroupCriterionBids" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ConversionOptimizerAdGroupCriterionBids.html">ConversionOptimizer...</a>
+            </li>
+            <li>
+              <a title="ManualCPCAdGroupCriterionBids" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ManualCPCAdGroupCriterionBids.html">ManualCPCAdGroupCri...</a>
+            </li>
+            <li>
+              <a title="ManualCPMAdGroupCriterionBids" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ManualCPMAdGroupCriterionBids.html">ManualCPMAdGroupCri...</a>
+            </li>
+          </ul>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand AdUnionId" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand AdUnionId" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdUnionId.html">AdUnionId</a>
+          </div>
+          <ul id="0-sub-26" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.TempAdUnionId.html">TempAdUnionId</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Address.html">Address</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand ApiError" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand ApiError" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ApiError.html">ApiError</a>
+          </div>
+          <ul id="0-sub-27" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdError.html">AdError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroupAdError.html">AdGroupAdError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroupCriterionError.html">AdGroupCriterionError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroupServiceError.html">AdGroupServiceError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AuthenticationError.html">AuthenticationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AuthorizationError.html">AuthorizationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BiddingError.html">BiddingError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BiddingTransitionError.html">BiddingTransitionError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BudgetError.html">BudgetError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BulkMutateJobError.html">BulkMutateJobError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.CampaignCriterionError.html">CampaignCriterionError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.CampaignError.html">CampaignError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ClientTermsError.html">ClientTermsError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.DatabaseError.html">DatabaseError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.DateError.html">DateError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.DistinctError.html">DistinctError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.EntityAccessDenied.html">EntityAccessDenied</a>
+            </li>
+            <li style="padding-top: 0pt; padding-bottom: 0pt;">
+              <div class="tlw-title tlw-branch">
+                <a title="Expand EntityCountLimitExc..." class="tlw-control" href="javascript:void(0)">
+                  <img class="tlw-control tlw-plus" alt="Expand EntityCountLimitExc..." src="/images/cleardot.gif"/>
+                </a>
+                <a title="EntityCountLimitExceeded" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.EntityCountLimitExceeded.html">EntityCountLimitExc...</a>
+              </div>
+              <ul id="0-sub-28" style="display: none;">
+                <li>
+                  <a title="AdGroupAdCountLimitExceeded" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroupAdCountLimitExceeded.html">AdGroupAdCountLim...</a>
+                </li>
+                <li>
+                  <a title="AdGroupCriterionLimitExceeded" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroupCriterionLimitExceeded.html">AdGroupCriterionL...</a>
+                </li>
+                <li>
+                  <a title="CampaignCriterionLimitExceeded" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.CampaignCriterionLimitExceeded.html">CampaignCriterion...</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.EntityNotFound.html">EntityNotFound</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.IdError.html">IdError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ImageError.html">ImageError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.InternalApiError.html">InternalApiError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.JobError.html">JobError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.MediaError.html">MediaError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.NewEntityCreationError.html">NewEntityCreationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.NotEmptyError.html">NotEmptyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.NotWhitelistedError.html">NotWhitelistedError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.NullError.html">NullError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.OperationAccessDenied.html">OperationAccessDenied</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.OperatorError.html">OperatorError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.PagingError.html">PagingError</a>
+            </li>
+            <li style="padding-top: 0pt; padding-bottom: 0pt;">
+              <div class="tlw-title tlw-branch">
+                <a title="Expand PolicyViolationError" class="tlw-control" href="javascript:void(0)">
+                  <img class="tlw-control tlw-plus" alt="Expand PolicyViolationError" src="/images/cleardot.gif"/>
+                </a>
+                <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.PolicyViolationError.html">PolicyViolationError</a>
+              </div>
+              <ul id="0-sub-29" style="display: none;">
+                <li>
+                  <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.CriterionPolicyError.html">CriterionPolicyError</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.QuotaCheckError.html">QuotaCheckError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.QuotaError.html">QuotaError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.QuotaExceededError.html">QuotaExceededError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.RangeError.html">RangeError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ReadOnlyError.html">ReadOnlyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.RegionCodeError.html">RegionCodeError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.RequiredError.html">RequiredError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.SizeLimitError.html">SizeLimitError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.StatsQueryError.html">StatsQueryError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.StringLengthError.html">StringLengthError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.TargetError.html">TargetError</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ApiErrorReason.html">ApiErrorReason</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ApiException.html">ApiException</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Bid.html">Bid</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand BiddingStrategy" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand BiddingStrategy" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BiddingStrategy.html">BiddingStrategy</a>
+          </div>
+          <ul id="0-sub-30" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BudgetOptimizer.html">BudgetOptimizer</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ConversionOptimizer.html">ConversionOptimizer</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ManualCPC.html">ManualCPC</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ManualCPM.html">ManualCPM</a>
+            </li>
+          </ul>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand BiddingTransition" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand BiddingTransition" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BiddingTransition.html">BiddingTransition</a>
+          </div>
+          <ul id="0-sub-31" style="display: none;">
+            <li>
+              <a title="ConversionOptimizerBiddingTransition" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ConversionOptimizerBiddingTransition.html">ConversionOptimizer...</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BillingSummary.html">BillingSummary</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Budget.html">Budget</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BulkMutateJobEvent.html">BulkMutateJobEvent</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BulkMutateJobPolicy.html">BulkMutateJobPolicy</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BulkMutateJobSelector.html">BulkMutateJobSelector</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BulkMutateRequest.html">BulkMutateRequest</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BulkMutateResult.html">BulkMutateResult</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Campaign.html">Campaign</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand CampaignCriterion" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand CampaignCriterion" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.CampaignCriterion.html">CampaignCriterion</a>
+          </div>
+          <ul id="0-sub-32" style="display: none;">
+            <li>
+              <a title="NegativeCampaignCriterion" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.NegativeCampaignCriterion.html">NegativeCampaignCri...</a>
+            </li>
+          </ul>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand Criterion" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand Criterion" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Criterion.html">Criterion</a>
+          </div>
+          <ul id="0-sub-33" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ContentLabel.html">ContentLabel</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Keyword.html">Keyword</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Placement.html">Placement</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Dimensions.html">Dimensions</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.EntityId.html">EntityId</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ExemptionRequest.html">ExemptionRequest</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.FrequencyCap.html">FrequencyCap</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.GeoPoint.html">GeoPoint</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand Job" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand Job" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Job.html">Job</a>
+          </div>
+          <ul id="0-sub-34" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BulkMutateJob.html">BulkMutateJob</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.JobContext.html">JobContext</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand JobStats" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand JobStats" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.JobStats.html">JobStats</a>
+          </div>
+          <ul id="0-sub-35" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BulkMutateJobStats.html">BulkMutateJobStats</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.LocationOverrideInfo.html">LocationOverrideInfo</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand Media" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand Media" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Media.html">Media</a>
+          </div>
+          <ul id="0-sub-36" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Audio.html">Audio</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Image.html">Image</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Video.html">Video</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a title="Media_MediaExtendedCapabilityType_Media_MediaExtendedCapabilityStateMapEntry" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Media_MediaExtendedCapabilityType_Media_MediaExtendedCapabilityStateMapEntry.html">Media_MediaExtendedCa...</a>
+        </li>
+        <li>
+          <a title="Media_Size_DimensionsMapEntry" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Media_Size_DimensionsMapEntry.html">Media_Size_Dimensions...</a>
+        </li>
+        <li>
+          <a title="Media_Size_StringMapEntry" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Media_Size_StringMapEntry.html">Media_Size_StringMapE...</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Money.html">Money</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Operand.html">Operand</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand Operation" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand Operation" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Operation.html">Operation</a>
+          </div>
+          <ul id="0-sub-37" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroupAdOperation.html">AdGroupAdOperation</a>
+            </li>
+            <li>
+              <a title="AdGroupCriterionOperation" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroupCriterionOperation.html">AdGroupCriterionOpe...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdGroupOperation.html">AdGroupOperation</a>
+            </li>
+            <li>
+              <a title="CampaignCriterionOperation" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.CampaignCriterionOperation.html">CampaignCriterionOp...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.CampaignOperation.html">CampaignOperation</a>
+            </li>
+            <li>
+              <a title="CampaignTargetOperation" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.CampaignTargetOperation.html">CampaignTargetOpera...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.JobOperation.html">JobOperation</a>
+            </li>
+          </ul>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand OperationResult" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand OperationResult" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.OperationResult.html">OperationResult</a>
+          </div>
+          <ul id="0-sub-38" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.BatchFailureResult.html">BatchFailureResult</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.FailureResult.html">FailureResult</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.LostResult.html">LostResult</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ReturnValueResult.html">ReturnValueResult</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.UnprocessedResult.html">UnprocessedResult</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.OperationStream.html">OperationStream</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.OperationStreamResult.html">OperationStreamResult</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.OverrideInfo.html">OverrideInfo</a>
+        </li>
+        <li>
+          <a title="PolicyViolationError.Part" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.PolicyViolationError.Part.html">PolicyViolationError....</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.PolicyViolationKey.html">PolicyViolationKey</a>
+        </li>
+        <li>
+          <a title="PositionPreferenceAdGroupCriterionBids" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.PositionPreferenceAdGroupCriterionBids.html">PositionPreferenceAdG...</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.QualityInfo.html">QualityInfo</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand Stats" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand Stats" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Stats.html">Stats</a>
+          </div>
+          <ul id="0-sub-39" style="display: none;">
+            <li>
+              <a title="AdExtensionOverrideStats" href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdExtensionOverrideStats.html">AdExtensionOverride...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdStats.html">AdStats</a>
+            </li>
+          </ul>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand Target" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand Target" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.Target.html">Target</a>
+          </div>
+          <ul id="0-sub-40" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdScheduleTarget.html">AdScheduleTarget</a>
+            </li>
+            <li style="padding-top: 0pt; padding-bottom: 0pt;">
+              <div class="tlw-title tlw-branch">
+                <a title="Expand DemographicTarget" class="tlw-control" href="javascript:void(0)">
+                  <img class="tlw-control tlw-plus" alt="Expand DemographicTarget" src="/images/cleardot.gif"/>
+                </a>
+                <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.DemographicTarget.html">DemographicTarget</a>
+              </div>
+              <ul id="0-sub-41" style="display: none;">
+                <li>
+                  <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AgeTarget.html">AgeTarget</a>
+                </li>
+                <li>
+                  <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.GenderTarget.html">GenderTarget</a>
+                </li>
+              </ul>
+            </li>
+            <li style="padding-top: 0pt; padding-bottom: 0pt;">
+              <div class="tlw-title tlw-branch">
+                <a title="Expand GeoTarget" class="tlw-control" href="javascript:void(0)">
+                  <img class="tlw-control tlw-plus" alt="Expand GeoTarget" src="/images/cleardot.gif"/>
+                </a>
+                <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.GeoTarget.html">GeoTarget</a>
+              </div>
+              <ul id="0-sub-42" style="display: none;">
+                <li>
+                  <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.CityTarget.html">CityTarget</a>
+                </li>
+                <li>
+                  <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.CountryTarget.html">CountryTarget</a>
+                </li>
+                <li>
+                  <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.MetroTarget.html">MetroTarget</a>
+                </li>
+                <li>
+                  <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.PolygonTarget.html">PolygonTarget</a>
+                </li>
+                <li>
+                  <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ProvinceTarget.html">ProvinceTarget</a>
+                </li>
+                <li>
+                  <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.ProximityTarget.html">ProximityTarget</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.LanguageTarget.html">LanguageTarget</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.NetworkTarget.html">NetworkTarget</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.PlatformTarget.html">PlatformTarget</a>
+            </li>
+          </ul>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand TargetList" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand TargetList" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.TargetList.html">TargetList</a>
+          </div>
+          <ul id="0-sub-43" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.AdScheduleTargetList.html">AdScheduleTargetList</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.DemographicTargetList.html">DemographicTargetList</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.GeoTargetList.html">GeoTargetList</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.LanguageTargetList.html">LanguageTargetList</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.NetworkTargetList.html">NetworkTargetList</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.PlatformTargetList.html">PlatformTargetList</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.TemplateElement.html">TemplateElement</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/BulkMutateJobService.TemplateElementField.html">TemplateElementField</a>
+        </li>
+      </ul>
+    </li>
+    <li style="padding-top: 0pt; padding-bottom: 0pt;">
+      <div class="tlw-title tlw-branch">
+        <a title="Expand CampaignAdExtensionService" class="tlw-control" href="javascript:void(0)">
+          <img class="tlw-control tlw-plus" alt="Expand CampaignAdExtensionService" src="/images/cleardot.gif"/>
+        </a>
+        <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.html">CampaignAdExtensionService</a>
+      </div>
+      <ul id="0-sub-44" style="display: none;">
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand AdExtension" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand AdExtension" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.AdExtension.html">AdExtension</a>
+          </div>
+          <ul id="0-sub-45" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.LocationExtension.html">LocationExtension</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.Address.html">Address</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand ApiError" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand ApiError" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.ApiError.html">ApiError</a>
+          </div>
+          <ul id="0-sub-46" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.AdExtensionError.html">AdExtensionError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.AuthenticationError.html">AuthenticationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.AuthorizationError.html">AuthorizationError</a>
+            </li>
+            <li>
+              <a title="CampaignAdExtensionError" href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.CampaignAdExtensionError.html">CampaignAdExtension...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.ClientTermsError.html">ClientTermsError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.DatabaseError.html">DatabaseError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.DistinctError.html">DistinctError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.EntityNotFound.html">EntityNotFound</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.InternalApiError.html">InternalApiError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.NotEmptyError.html">NotEmptyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.NotWhitelistedError.html">NotWhitelistedError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.NullError.html">NullError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.OperatorError.html">OperatorError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.PagingError.html">PagingError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.QuotaCheckError.html">QuotaCheckError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.QuotaExceededError.html">QuotaExceededError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.ReadOnlyError.html">ReadOnlyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.RequiredError.html">RequiredError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.SizeLimitError.html">SizeLimitError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.StringLengthError.html">StringLengthError</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.ApiException.html">ApiException</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.CampaignAdExtension.html">CampaignAdExtension</a>
+        </li>
+        <li>
+          <a title="CampaignAdExtensionOperation" href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.CampaignAdExtensionOperation.html">CampaignAdExtensionOp...</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.CampaignAdExtensionPage.html">CampaignAdExtensionPage</a>
+        </li>
+        <li>
+          <a title="CampaignAdExtensionReturnValue" href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.CampaignAdExtensionReturnValue.html">CampaignAdExtensionRe...</a>
+        </li>
+        <li>
+          <a title="CampaignAdExtensionSelector" href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.CampaignAdExtensionSelector.html">CampaignAdExtensionSe...</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.GeoPoint.html">GeoPoint</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignAdExtensionService.Paging.html">Paging</a>
+        </li>
+      </ul>
+    </li>
+    <li style="padding-top: 0pt; padding-bottom: 0pt;">
+      <div class="tlw-title tlw-branch">
+        <a title="Expand CampaignCriterionService" class="tlw-control" href="javascript:void(0)">
+          <img class="tlw-control tlw-plus" alt="Expand CampaignCriterionService" src="/images/cleardot.gif"/>
+        </a>
+        <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.html">CampaignCriterionService</a>
+      </div>
+      <ul id="0-sub-47" style="display: none;">
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand ApiError" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand ApiError" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.ApiError.html">ApiError</a>
+          </div>
+          <ul id="0-sub-48" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.AuthenticationError.html">AuthenticationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.AuthorizationError.html">AuthorizationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.CampaignCriterionError.html">CampaignCriterionError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.ClientTermsError.html">ClientTermsError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.DatabaseError.html">DatabaseError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.DistinctError.html">DistinctError</a>
+            </li>
+            <li style="padding-top: 0pt; padding-bottom: 0pt;">
+              <div class="tlw-title tlw-branch">
+                <a title="Expand EntityCountLimitExc..." class="tlw-control" href="javascript:void(0)">
+                  <img class="tlw-control tlw-plus" alt="Expand EntityCountLimitExc..." src="/images/cleardot.gif"/>
+                </a>
+                <a title="EntityCountLimitExceeded" href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.EntityCountLimitExceeded.html">EntityCountLimitExc...</a>
+              </div>
+              <ul id="0-sub-49" style="display: none;">
+                <li>
+                  <a title="CampaignCriterionLimitExceeded" href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.CampaignCriterionLimitExceeded.html">CampaignCriterion...</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.EntityNotFound.html">EntityNotFound</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.InternalApiError.html">InternalApiError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.NewEntityCreationError.html">NewEntityCreationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.NotEmptyError.html">NotEmptyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.NotWhitelistedError.html">NotWhitelistedError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.NullError.html">NullError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.OperatorError.html">OperatorError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.PagingError.html">PagingError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.QuotaCheckError.html">QuotaCheckError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.QuotaExceededError.html">QuotaExceededError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.ReadOnlyError.html">ReadOnlyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.RequiredError.html">RequiredError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.SizeLimitError.html">SizeLimitError</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.ApiException.html">ApiException</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand CampaignCriterion" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand CampaignCriterion" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.CampaignCriterion.html">CampaignCriterion</a>
+          </div>
+          <ul id="0-sub-50" style="display: none;">
+            <li>
+              <a title="NegativeCampaignCriterion" href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.NegativeCampaignCriterion.html">NegativeCampaignCri...</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a title="CampaignCriterionIdFilter" href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.CampaignCriterionIdFilter.html">CampaignCriterionIdFi...</a>
+        </li>
+        <li>
+          <a title="CampaignCriterionOperation" href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.CampaignCriterionOperation.html">CampaignCriterionOper...</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.CampaignCriterionPage.html">CampaignCriterionPage</a>
+        </li>
+        <li>
+          <a title="CampaignCriterionReturnValue" href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.CampaignCriterionReturnValue.html">CampaignCriterionRetu...</a>
+        </li>
+        <li>
+          <a title="CampaignCriterionSelector" href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.CampaignCriterionSelector.html">CampaignCriterionSele...</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand Criterion" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand Criterion" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.Criterion.html">Criterion</a>
+          </div>
+          <ul id="0-sub-51" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.ContentLabel.html">ContentLabel</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.Keyword.html">Keyword</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.Placement.html">Placement</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignCriterionService.Paging.html">Paging</a>
+        </li>
+      </ul>
+    </li>
+    <li style="padding-top: 0pt; padding-bottom: 0pt;">
+      <div class="tlw-title tlw-branch">
+        <a title="Expand CampaignService" class="tlw-control" href="javascript:void(0)">
+          <img class="tlw-control tlw-plus" alt="Expand CampaignService" src="/images/cleardot.gif"/>
+        </a>
+        <a href="/apis/adwords/v2009/docs/reference/CampaignService.html">CampaignService</a>
+      </div>
+      <ul id="0-sub-52" style="display: none;">
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand AdGroupBids" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand AdGroupBids" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignService.AdGroupBids.html">AdGroupBids</a>
+          </div>
+          <ul id="0-sub-53" style="display: none;">
+            <li>
+              <a title="BudgetOptimizerAdGroupBids" href="/apis/adwords/v2009/docs/reference/CampaignService.BudgetOptimizerAdGroupBids.html">BudgetOptimizerAdGr...</a>
+            </li>
+            <li>
+              <a title="ConversionOptimizerAdGroupBids" href="/apis/adwords/v2009/docs/reference/CampaignService.ConversionOptimizerAdGroupBids.html">ConversionOptimizer...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.ManualCPCAdGroupBids.html">ManualCPCAdGroupBids</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.ManualCPMAdGroupBids.html">ManualCPMAdGroupBids</a>
+            </li>
+          </ul>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand ApiError" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand ApiError" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignService.ApiError.html">ApiError</a>
+          </div>
+          <ul id="0-sub-54" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.AuthenticationError.html">AuthenticationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.AuthorizationError.html">AuthorizationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.BiddingError.html">BiddingError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.BiddingTransitionError.html">BiddingTransitionError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.BudgetError.html">BudgetError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.CampaignError.html">CampaignError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.ClientTermsError.html">ClientTermsError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.DatabaseError.html">DatabaseError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.DateError.html">DateError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.DistinctError.html">DistinctError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.EntityNotFound.html">EntityNotFound</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.InternalApiError.html">InternalApiError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.NewEntityCreationError.html">NewEntityCreationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.NotEmptyError.html">NotEmptyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.NotWhitelistedError.html">NotWhitelistedError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.NullError.html">NullError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.OperationAccessDenied.html">OperationAccessDenied</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.OperatorError.html">OperatorError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.QuotaCheckError.html">QuotaCheckError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.QuotaError.html">QuotaError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.QuotaExceededError.html">QuotaExceededError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.RangeError.html">RangeError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.ReadOnlyError.html">ReadOnlyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.RequiredError.html">RequiredError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.SizeLimitError.html">SizeLimitError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.StatsQueryError.html">StatsQueryError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.StringLengthError.html">StringLengthError</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.ApiException.html">ApiException</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.Bid.html">Bid</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand BiddingStrategy" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand BiddingStrategy" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignService.BiddingStrategy.html">BiddingStrategy</a>
+          </div>
+          <ul id="0-sub-55" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.BudgetOptimizer.html">BudgetOptimizer</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.ConversionOptimizer.html">ConversionOptimizer</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.ManualCPC.html">ManualCPC</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignService.ManualCPM.html">ManualCPM</a>
+            </li>
+          </ul>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand BiddingTransition" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand BiddingTransition" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignService.BiddingTransition.html">BiddingTransition</a>
+          </div>
+          <ul id="0-sub-56" style="display: none;">
+            <li>
+              <a title="ConversionOptimizerBiddingTransition" href="/apis/adwords/v2009/docs/reference/CampaignService.ConversionOptimizerBiddingTransition.html">ConversionOptimizer...</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.Budget.html">Budget</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.Campaign.html">Campaign</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.CampaignOperation.html">CampaignOperation</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.CampaignPage.html">CampaignPage</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.CampaignReturnValue.html">CampaignReturnValue</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.CampaignSelector.html">CampaignSelector</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.DateRange.html">DateRange</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.FrequencyCap.html">FrequencyCap</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.Money.html">Money</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.Paging.html">Paging</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.Stats.html">Stats</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignService.StatsSelector.html">StatsSelector</a>
+        </li>
+      </ul>
+    </li>
+    <li style="padding-top: 0pt; padding-bottom: 0pt;">
+      <div class="tlw-title tlw-branch">
+        <a title="Expand CampaignTargetService" class="tlw-control" href="javascript:void(0)">
+          <img class="tlw-control tlw-plus" alt="Expand CampaignTargetService" src="/images/cleardot.gif"/>
+        </a>
+        <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.html">CampaignTargetService</a>
+      </div>
+      <ul id="0-sub-57" style="display: none;">
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.AdScheduleTarget.html">AdScheduleTarget</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.Address.html">Address</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand ApiError" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand ApiError" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.ApiError.html">ApiError</a>
+          </div>
+          <ul id="0-sub-58" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.AuthenticationError.html">AuthenticationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.AuthorizationError.html">AuthorizationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.BiddingError.html">BiddingError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.CampaignError.html">CampaignError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.ClientTermsError.html">ClientTermsError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.DatabaseError.html">DatabaseError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.DistinctError.html">DistinctError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.EntityNotFound.html">EntityNotFound</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.InternalApiError.html">InternalApiError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.NotEmptyError.html">NotEmptyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.NotWhitelistedError.html">NotWhitelistedError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.NullError.html">NullError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.OperationAccessDenied.html">OperationAccessDenied</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.OperatorError.html">OperatorError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.QuotaCheckError.html">QuotaCheckError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.QuotaError.html">QuotaError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.QuotaExceededError.html">QuotaExceededError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.RangeError.html">RangeError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.RegionCodeError.html">RegionCodeError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.RequiredError.html">RequiredError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.SizeLimitError.html">SizeLimitError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.StringLengthError.html">StringLengthError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.TargetError.html">TargetError</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.ApiException.html">ApiException</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.CampaignTargetOperation.html">CampaignTargetOperation</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.CampaignTargetPage.html">CampaignTargetPage</a>
+        </li>
+        <li>
+          <a title="CampaignTargetReturnValue" href="/apis/adwords/v2009/docs/reference/CampaignTargetService.CampaignTargetReturnValue.html">CampaignTargetReturnV...</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.CampaignTargetSelector.html">CampaignTargetSelector</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand DemographicTarget" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand DemographicTarget" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.DemographicTarget.html">DemographicTarget</a>
+          </div>
+          <ul id="0-sub-59" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.AgeTarget.html">AgeTarget</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.GenderTarget.html">GenderTarget</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.GeoPoint.html">GeoPoint</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand GeoTarget" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand GeoTarget" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.GeoTarget.html">GeoTarget</a>
+          </div>
+          <ul id="0-sub-60" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.CityTarget.html">CityTarget</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.CountryTarget.html">CountryTarget</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.MetroTarget.html">MetroTarget</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.PolygonTarget.html">PolygonTarget</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.ProvinceTarget.html">ProvinceTarget</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.ProximityTarget.html">ProximityTarget</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.LanguageTarget.html">LanguageTarget</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.NetworkTarget.html">NetworkTarget</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.PlatformTarget.html">PlatformTarget</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand TargetList" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand TargetList" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.TargetList.html">TargetList</a>
+          </div>
+          <ul id="0-sub-61" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.AdScheduleTargetList.html">AdScheduleTargetList</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.DemographicTargetList.html">DemographicTargetList</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.GeoTargetList.html">GeoTargetList</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.LanguageTargetList.html">LanguageTargetList</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.NetworkTargetList.html">NetworkTargetList</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/CampaignTargetService.PlatformTargetList.html">PlatformTargetList</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li style="padding-top: 0pt; padding-bottom: 0pt;">
+      <div class="tlw-title tlw-branch">
+        <a title="Expand GeoLocationService" class="tlw-control" href="javascript:void(0)">
+          <img class="tlw-control tlw-plus" alt="Expand GeoLocationService" src="/images/cleardot.gif"/>
+        </a>
+        <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.html">GeoLocationService</a>
+      </div>
+      <ul id="0-sub-62" style="display: none;">
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.Address.html">Address</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand ApiError" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand ApiError" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.ApiError.html">ApiError</a>
+          </div>
+          <ul id="0-sub-63" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.AuthenticationError.html">AuthenticationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.AuthorizationError.html">AuthorizationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.ClientTermsError.html">ClientTermsError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.GeoLocationError.html">GeoLocationError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.InternalApiError.html">InternalApiError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.NotEmptyError.html">NotEmptyError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.NotWhitelistedError.html">NotWhitelistedError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.NullError.html">NullError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.QuotaCheckError.html">QuotaCheckError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.QuotaExceededError.html">QuotaExceededError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.RegionCodeError.html">RegionCodeError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.RequiredError.html">RequiredError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.SizeLimitError.html">SizeLimitError</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.StringLengthError.html">StringLengthError</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.ApiException.html">ApiException</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand GeoLocation" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand GeoLocation" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.GeoLocation.html">GeoLocation</a>
+          </div>
+          <ul id="0-sub-64" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.InvalidGeoLocation.html">InvalidGeoLocation</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.GeoLocationSelector.html">GeoLocationSelector</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/GeoLocationService.GeoPoint.html">GeoPoint</a>
+        </li>
+      </ul>
+    </li>
+    <li style="padding-top: 0pt; padding-bottom: 0pt;">
+      <div class="tlw-title tlw-branch">
+        <a title="Expand InfoService" class="tlw-control" href="javascript:void(0)">
+          <img class="tlw-control tlw-plus" alt="Expand InfoService" src="/images/cleardot.gif"/>
+        </a>
+        <a href="/apis/adwords/v2009/docs/reference/InfoService.html">InfoService</a>
+      </div>
+      <ul id="0-sub-65" style="display: none;">
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/InfoService.ApiUsageInfo.html">ApiUsageInfo</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/InfoService.ApiUsageRecord.html">ApiUsageRecord</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/InfoService.InfoSelector.html">InfoSelector</a>
+        </li>
+      </ul>
+    </li>
+    <li style="padding-top: 0pt; padding-bottom: 0pt;">
+      <div class="tlw-title tlw-branch">
+        <a title="Expand TargetingIdeaService" class="tlw-control" href="javascript:void(0)">
+          <img class="tlw-control tlw-plus" alt="Expand TargetingIdeaService" src="/images/cleardot.gif"/>
+        </a>
+        <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.html">TargetingIdeaService</a>
+      </div>
+      <ul id="0-sub-66" style="display: none;">
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.AdFormatSpec.html">AdFormatSpec</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand Attribute" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand Attribute" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.Attribute.html">Attribute</a>
+          </div>
+          <ul id="0-sub-67" style="display: none;">
+            <li>
+              <a title="AdFormatSpecListAttribute" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.AdFormatSpecListAttribute.html">AdFormatSpecListAtt...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.BooleanAttribute.html">BooleanAttribute</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.DoubleAttribute.html">DoubleAttribute</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.IdeaTypeAttribute.html">IdeaTypeAttribute</a>
+            </li>
+            <li>
+              <a title="InStreamAdInfoAttribute" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.InStreamAdInfoAttribute.html">InStreamAdInfoAttri...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.IntegerAttribute.html">IntegerAttribute</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.IntegerSetAttribute.html">IntegerSetAttribute</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.KeywordAttribute.html">KeywordAttribute</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.LongAttribute.html">LongAttribute</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.LongRangeAttribute.html">LongRangeAttribute</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.MoneyAttribute.html">MoneyAttribute</a>
+            </li>
+            <li>
+              <a title="MonthlySearchVolumeAttribute" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.MonthlySearchVolumeAttribute.html">MonthlySearchVolume...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.PlacementAttribute.html">PlacementAttribute</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.PlacementTypeAttribute.html">PlacementTypeAttribute</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.StringAttribute.html">StringAttribute</a>
+            </li>
+            <li>
+              <a title="WebpageDescriptorAttribute" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.WebpageDescriptorAttribute.html">WebpageDescriptorAt...</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.InStreamAdInfo.html">InStreamAdInfo</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.LongComparisonOperation.html">LongComparisonOperation</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.MonthlySearchVolume.html">MonthlySearchVolume</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.Range.html">Range</a>
+        </li>
+        <li style="padding-top: 0pt; padding-bottom: 0pt;">
+          <div class="tlw-title tlw-branch">
+            <a title="Expand SearchParameter" class="tlw-control" href="javascript:void(0)">
+              <img class="tlw-control tlw-plus" alt="Expand SearchParameter" src="/images/cleardot.gif"/>
+            </a>
+            <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.SearchParameter.html">SearchParameter</a>
+          </div>
+          <ul id="0-sub-68" style="display: none;">
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.AdTypeSearchParameter.html">AdTypeSearchParameter</a>
+            </li>
+            <li>
+              <a title="AverageTargetedMonthlySearchesSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.AverageTargetedMonthlySearchesSearchParameter.html">AverageTargetedMont...</a>
+            </li>
+            <li>
+              <a title="CompetitionSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.CompetitionSearchParameter.html">CompetitionSearchPa...</a>
+            </li>
+            <li>
+              <a title="CountryTargetSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.CountryTargetSearchParameter.html">CountryTargetSearch...</a>
+            </li>
+            <li>
+              <a title="ExcludedKeywordSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.ExcludedKeywordSearchParameter.html">ExcludedKeywordSear...</a>
+            </li>
+            <li>
+              <a title="GlobalMonthlySearchesSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.GlobalMonthlySearchesSearchParameter.html">GlobalMonthlySearch...</a>
+            </li>
+            <li>
+              <a title="IncludeAdultContentSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.IncludeAdultContentSearchParameter.html">IncludeAdultContent...</a>
+            </li>
+            <li>
+              <a title="KeywordCategoryIdSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.KeywordCategoryIdSearchParameter.html">KeywordCategoryIdSe...</a>
+            </li>
+            <li>
+              <a title="KeywordMatchTypeSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.KeywordMatchTypeSearchParameter.html">KeywordMatchTypeSea...</a>
+            </li>
+            <li>
+              <a title="LanguageTargetSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.LanguageTargetSearchParameter.html">LanguageTargetSearc...</a>
+            </li>
+            <li>
+              <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.MobileSearchParameter.html">MobileSearchParameter</a>
+            </li>
+            <li>
+              <a title="NgramGroupsSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.NgramGroupsSearchParameter.html">NgramGroupsSearchPa...</a>
+            </li>
+            <li>
+              <a title="PlacementTypeSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.PlacementTypeSearchParameter.html">PlacementTypeSearch...</a>
+            </li>
+            <li>
+              <a title="RelatedToKeywordSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.RelatedToKeywordSearchParameter.html">RelatedToKeywordSea...</a>
+            </li>
+            <li>
+              <a title="RelatedToUrlSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.RelatedToUrlSearchParameter.html">RelatedToUrlSearchP...</a>
+            </li>
+            <li>
+              <a title="SeedAdGroupIdSearchParameter" href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.SeedAdGroupIdSearchParameter.html">SeedAdGroupIdSearch...</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.TargetingIdea.html">TargetingIdea</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.TargetingIdeaPage.html">TargetingIdeaPage</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.TargetingIdeaSelector.html">TargetingIdeaSelector</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.Type_AttributeMapEntry.html">Type_AttributeMapEntry</a>
+        </li>
+        <li>
+          <a href="/apis/adwords/v2009/docs/reference/TargetingIdeaService.WebpageDescriptor.html">WebpageDescriptor</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>

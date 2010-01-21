@@ -1,3 +1,8 @@
+6.2.0
+- Added more unit tests.
+- Regenerated stub classes for v200909.
+- Fix for issues 26, 27, 28 on code site.
+
 6.1.0
 - Added code samples to show how to use the library in an ASP.NET website or webservice project.
 - Fix for issue 23, 24, 25 on code site.

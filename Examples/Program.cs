@@ -26,7 +26,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
-using SamplePair = System.Collections.Generic.KeyValuePair<string, 
+using SamplePair = System.Collections.Generic.KeyValuePair<string,
     com.google.api.adwords.samples.SampleBase>;
 
 namespace com.google.api.adwords.samples {
@@ -38,7 +38,7 @@ namespace com.google.api.adwords.samples {
     /// A map to hold the code samples to be executed.
     /// </summary>
     static List<SamplePair> sampleMap = new List<SamplePair>();
-    
+
     /// <summary>
     /// A flag to keep track of whether help message was shown earlier.
     /// </summary>
@@ -51,6 +51,11 @@ namespace com.google.api.adwords.samples {
     /// Static constructor to initialize the sample map.
     /// </summary>
     static Program() {
+      Dictionary<string, string> headers = new Dictionary<string, string>();
+      headers.Add("email", "foo");
+
+      AdWordsUser user = new AdWordsUser(headers);
+
       // Add v13 samples.
       RegisterSample("v13.AccountServiceDemo", new AccountServiceDemo());
       RegisterSample("v13.AccountServiceNoConfigDemo", new AccountServiceNoConfigDemo());
@@ -80,10 +85,10 @@ namespace com.google.api.adwords.samples {
       RegisterSample("v200909.GetAllCampaigns", new GetAllCampaigns());
       RegisterSample("v200909.GetAllPausedCampaigns", new GetAllPausedCampaigns());
       RegisterSample("v200909.CheckCampaigns", new CheckCampaigns());
-      
+
       RegisterSample("v200909.SetCampaignTargets", new SetCampaignTargets());
       RegisterSample("v200909.GetAllCampaignTargets", new GetAllCampaignTargets());
-      
+
       RegisterSample("v200909.AddAdGroup", new AddAdGroup());
       RegisterSample("v200909.UpdateAdGroup", new UpdateAdGroup());
       RegisterSample("v200909.GetAllAdGroups", new GetAllAdGroups());
@@ -103,9 +108,9 @@ namespace com.google.api.adwords.samples {
       RegisterSample("v200909.UpdateAdGroupCriterion", new UpdateAdGroupCriterion());
       RegisterSample("v200909.GetAllAdGroupCriteria", new GetAllAdGroupCriteria());
       RegisterSample("v200909.GetAllActiveAdGroupCriteria", new GetAllActiveAdGroupCriteria());
-      
+
       RegisterSample("v200909.AddNegativeCampaignCriterion", new AddNegativeCampaignCriterion());
-      
+
       RegisterSample("v200909.GetRelatedKeywords", new GetRelatedKeywords());
       RegisterSample("v200909.GetRelatedPlacements", new GetRelatedPlacements());
 
@@ -115,7 +120,7 @@ namespace com.google.api.adwords.samples {
       RegisterSample("v200909.GetGeoLocationInfo", new GetGeoLocationInfo());
       RegisterSample("v200909.GetConversionOptimizerEligibility",
           new GetConversionOptimizerEligibility());
-      
+
       RegisterSample("v200909.GetTotalUsageUnitsPerMonth", new GetTotalUsageUnitsPerMonth());
       RegisterSample("v200909.GetOperationCount", new GetOperationCount());
       RegisterSample("v200909.GetUnitCount", new GetUnitCount());

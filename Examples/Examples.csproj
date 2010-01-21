@@ -97,7 +97,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\google-api-adwords-dotnet.csproj">
+    <ProjectReference Include="..\src\google-api-adwords-dotnet.csproj">
       <Project>{B701ED76-54AE-4591-86DE-EDCD0D8DAC6C}</Project>
       <Name>google-api-adwords-dotnet</Name>
     </ProjectReference>

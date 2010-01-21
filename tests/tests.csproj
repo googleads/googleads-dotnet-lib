@@ -39,24 +39,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationConfigurationTests.cs" />
-    <Compile Include="AdWordsUserTests.cs" />
-    <Compile Include="CsvFileTests.cs" />
-    <Compile Include="DataUtilitiesTests.cs" />
-    <Compile Include="ReportUtilitiesTests.cs" />
+    <Compile Include="ClassMap.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClassMap.resx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\ApplicationConfigurationTests.cs" />
+    <Compile Include="lib\AdWordsUserTests.cs" />
+    <Compile Include="lib\util\CsvFileTests.cs" />
+    <Compile Include="lib\util\DataUtilitiesTests.cs" />
+    <Compile Include="lib\util\ReportUtilitiesTests.cs" />
+    <Compile Include="v13\AccountServiceTests.cs" />
+    <Compile Include="v13\AdGroupServiceTests.cs" />
+    <Compile Include="BaseTests.cs" />
+    <Compile Include="v13\AdServiceTests.cs" />
+    <Compile Include="v13\CriterionServiceTests.cs" />
+    <Compile Include="v13\InfoServiceTests.cs" />
+    <Compile Include="v13\KeywordToolServiceTests.cs" />
+    <Compile Include="v13\ReportServiceTests.cs" />
     <Compile Include="ServiceTests.cs" />
+    <Compile Include="v13\SiteSuggestionServiceTests.cs" />
+    <Compile Include="v13\TrafficEstimatorServiceTests.cs" />
+    <Compile Include="v200906\AdGroupAdServiceTests.cs" />
+    <Compile Include="v200906\AdGroupCriterionServiceTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestUtils.cs" />
+    <Compile Include="v200906\AdGroupServiceTests.cs" />
+    <Compile Include="v200906\CampaignCriterionServiceTests.cs" />
+    <Compile Include="v200909\AdExtensionOverrideServiceTests.cs" />
+    <Compile Include="v200909\AdGroupAdServiceTests.cs" />
+    <Compile Include="v200909\AdGroupCriterionServiceTests.cs" />
+    <Compile Include="v200909\AdGroupServiceTests.cs" />
+    <Compile Include="v200909\BulkMutateJobServiceTests.cs" />
+    <Compile Include="v200909\TargetingIdeaServiceTests.cs" />
+    <Compile Include="v200909\TypeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\google-api-adwords-dotnet.csproj">
+    <None Include="README" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ClassMap.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClassMap.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AllServices.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\google-api-adwords-dotnet.csproj">
       <Project>{B701ED76-54AE-4591-86DE-EDCD0D8DAC6C}</Project>
       <Name>google-api-adwords-dotnet</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="README" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

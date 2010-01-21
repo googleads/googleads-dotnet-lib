@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -36,6 +36,13 @@ namespace com.google.api.adwords.tests {
   [TestFixture]
   public class ServiceTests {
     /// <summary>
+    /// Default public constructor.
+    /// </summary>
+    public ServiceTests()
+      : base() {
+    }
+
+    /// <summary>
     /// Test if v13 API calls can be made successfully.
     /// </summary>
     [Test]
@@ -55,7 +62,7 @@ namespace com.google.api.adwords.tests {
       Assert.AreEqual(clients.Length, 5);
       for(int i=0;i<clients.Length;i++) {
         Assert.AreEqual(clients[i],
-            string.Format("client_{0}+{1}", i+1, accountService.emailValue.Value[0]));
+            string.Format("client_{0}+{1}", i + 1, accountService.emailValue.Value[0]));
       }
     }
 
@@ -73,7 +80,7 @@ namespace com.google.api.adwords.tests {
 
       // Generate a campaign name.
       string campaignName =
-        string.Format("Campaign - {0}", DateTime.Now.ToString("yyyy-M-d H:m:s"));
+        string.Format("Campaign - {0}", DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff"));
       campaign.name = string.Format(campaignName);
 
       // Required: Set the campaign status.

@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,12 +25,24 @@ using System.Collections.Generic;
 using System.Xml;
 using System.IO;
 
-namespace com.google.api.adwords.tests {
+namespace com.google.api.adwords.tests.lib.util {
   /// <summary>
   /// UnitTests for <see cref="ReportUtilities"/> class.
   /// </summary>
   [TestFixture]
   public class ReportUtilitiesTests {
+    /// <summary>
+    /// Setup the test accounts.
+    /// </summary>
+    [SetUp]
+    public void Setup() {
+      AdWordsUser user = new AdWordsUser();
+      AccountService accountService =
+          (AccountService) user.GetService(AdWordsService.v13.AccountService);
+      accountService.clientEmailValue = null;
+      string[] clients = accountService.getClientAccounts();
+    }
+
     /// <summary>
     /// Test for ReportUtilities.DownloadReportAsXml.
     /// </summary>

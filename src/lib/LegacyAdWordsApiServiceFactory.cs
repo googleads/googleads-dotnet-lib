@@ -148,7 +148,7 @@ namespace com.google.api.adwords.lib {
       if (header != null) {
         PropertyInfo propInfo = header.GetType().GetProperty("Value");
         if (propInfo != null) {
-          propInfo.SetValue(header, new string[] { value }, null);
+          propInfo.SetValue(header, new string[] {value}, null);
         }
       }
       return header;

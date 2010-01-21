@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ using System.Xml;
 
 using NUnit.Framework;
 
-namespace com.google.api.adwords.tests {
+namespace com.google.api.adwords.tests.lib {
   /// <summary>
   /// UnitTests for <see cref="ApplicationConfiguration"/> class.
   /// </summary>

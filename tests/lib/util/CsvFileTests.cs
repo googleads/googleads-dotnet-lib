@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,9 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib.util;
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v13;
+using com.google.api.adwords.lib.util;
 
 using NUnit.Framework;
 
@@ -25,7 +24,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 
-namespace com.google.api.adwords.tests {
+namespace com.google.api.adwords.tests.lib.util {
   /// <summary>
   /// UnitTests for <see cref="CsvFile"/> class.
   /// </summary>

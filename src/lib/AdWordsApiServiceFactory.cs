@@ -57,7 +57,7 @@ namespace com.google.api.adwords.lib {
       Type type = service.GetType();
       PropertyInfo propInfo = type.GetProperty("RequestHeader");
       if (propInfo != null) {
-        propInfo.SetValue(service, requestHeader, null);
+        propInfo.SetValue(service, requestHeader.Clone(), null);
 
         FixRequestHeaderNameSpace(awapiSignature, service);
 
@@ -108,9 +108,17 @@ namespace com.google.api.adwords.lib {
             xmlns = "";
           }
 
-          PropertyInfo wsPropInfo = requestHeader.GetType().GetProperty("TargetNamespace");
-          if (wsPropInfo != null) {
-            wsPropInfo.SetValue(requestHeader, xmlns, null);
+          RequestHeader svcRequestHeader = null;
+          PropertyInfo propInfo = service.GetType().GetProperty("RequestHeader");
+          if (propInfo != null) {
+            svcRequestHeader = (RequestHeader) propInfo.GetValue(service, null);
+
+            if (svcRequestHeader != null) {
+              PropertyInfo wsPropInfo = svcRequestHeader.GetType().GetProperty("TargetNamespace");
+              if (wsPropInfo != null) {
+                wsPropInfo.SetValue(svcRequestHeader, xmlns, null);
+              }
+            }
           }
         }
       }
@@ -216,7 +224,7 @@ namespace com.google.api.adwords {
   /// <summary>
   /// Soap Request header for AdWords API services.
   /// </summary>
-  public class RequestHeader : SoapHeader, IXmlSerializable {
+  public class RequestHeader : SoapHeader, IXmlSerializable, ICloneable {
     /// <summary>
     /// Application token.
     /// </summary>
@@ -408,6 +416,23 @@ namespace com.google.api.adwords {
         }
       }
     }
+
+    #region ICloneable Members
+
+    public object Clone() {
+      RequestHeader header = new RequestHeader();
+      header.applicationToken = this.applicationToken;
+      header.authToken = this.authToken;
+      header.clientCustomerId = this.clientCustomerId;
+      header.clientEmail = this.clientEmail;
+      header.developerToken = this.developerToken;
+      header.targetNamespace = this.targetNamespace;
+      header.userAgent = this.userAgent;
+      header.validateOnly = this.validateOnly;
+      return header;
+    }
+
+    #endregion
   }
 
   /// <summary>

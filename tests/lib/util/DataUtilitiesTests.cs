@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
-namespace com.google.api.adwords.tests {
+namespace com.google.api.adwords.tests.lib.util {
   /// <summary>
   /// UnitTests for <see cref="DataUtilities"/> class.
   /// </summary>
@@ -87,7 +87,7 @@ namespace com.google.api.adwords.tests {
       Assert.NotNull(opRates, "OpRates list cannot be null.");
 
       // Remember to fix this test case whenever ops_rates.csv changes.
-      Assert.That(opRates.Count == 66);
+      Assert.That(opRates.Count == 90);
     }
 
     /// <summary>
