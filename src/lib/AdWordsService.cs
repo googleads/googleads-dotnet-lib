@@ -27,7 +27,7 @@ namespace com.google.api.adwords.lib {
     /// <summary>
     /// Creates a service creation parameter for defining an AdWords service.
     /// </summary>
-    /// <param name="version">Service version, for instance, v200906.</param>
+    /// <param name="version">Service version, for instance, v200909.</param>
     /// <param name="groupName">Group name, for instance, cm.</param>
     /// <param name="serviceName">Service name, for instance, CampaignService.
     /// </param>
@@ -58,63 +58,6 @@ namespace com.google.api.adwords.lib {
       param.version = version;
 
       return param;
-    }
-
-    /// <summary>
-    /// All the services available in v200906.
-    /// </summary>
-    public class v200906 {
-      /// <summary>
-      /// Static constructor to initialize the service constants.
-      /// </summary>
-      static v200906() {
-        AdGroupAdService = AdWordsService.MakeServiceSignature("v200906", "cm", "AdGroupAdService");
-        AdGroupCriterionService =
-            AdWordsService.MakeServiceSignature("v200906", "cm", "AdGroupCriterionService");
-        AdGroupService =
-            AdWordsService.MakeServiceSignature("v200906", "cm", "AdGroupService");
-        CampaignCriterionService =
-            AdWordsService.MakeServiceSignature("v200906", "cm", "CampaignCriterionService");
-        CampaignService =
-            AdWordsService.MakeServiceSignature("v200906", "cm", "CampaignService");
-        CampaignTargetService =
-            AdWordsService.MakeServiceSignature("v200906", "cm", "CampaignTargetService");
-      }
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/AdGroupAdService.html">
-      /// this page </a> for details.
-      /// </summary>
-      public static readonly ServiceSignature AdGroupAdService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/AdGroupCriterionService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature AdGroupCriterionService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/AdGroupService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature AdGroupService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/CampaignCriterionService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature CampaignCriterionService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/CampaignService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature CampaignService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/CampaignTargetService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature CampaignTargetService;
     }
 
     /// <summary>
@@ -320,9 +263,9 @@ namespace com.google.api.adwords.lib {
     /// <param name="user">The user object to which service type registration
     /// should be done.</param>
     internal static void RegisterServices(AdWordsUser user) {
-      Type[] enumTypes = {typeof(v13), typeof(v200906), typeof(v200909)};
+      Type[] enumTypes = {typeof(v13), typeof(v200909)};
       ServiceFactory[] factories = {new LegacyAdWordsApiServiceFactory(),
-          new AdWordsApiServiceFactory(), new AdWordsApiServiceFactory()};
+          new AdWordsApiServiceFactory()};
 
       for (int i = 0; i < enumTypes.Length; i++) {
         Type enumType = enumTypes[i];

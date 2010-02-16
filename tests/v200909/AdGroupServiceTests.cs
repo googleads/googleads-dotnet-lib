@@ -67,7 +67,7 @@ namespace com.google.api.adwords.tests.v200909 {
     [SetUp]
     public void Init() {
       AdWordsUser user = new AdWordsUser();
-      adGroupService = (AdGroupService) user.GetService(AdWordsService.v200906.AdGroupService);
+      adGroupService = (AdGroupService) user.GetService(AdWordsService.v200909.AdGroupService);
       TestUtils utils = new TestUtils();
       cpcCampaignId = utils.CreateCampaign(user, true);
       cpmCampaignId = utils.CreateCampaign(user, false);
@@ -76,7 +76,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can add an ad group for keywords using v200906.
+    /// Test whether we can add an ad group for keywords using v200909.
     /// </summary>
     [Test]
     public void TestAddAdGroupKeyword() {
@@ -103,7 +103,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can add an ad group for placements using v200906.
+    /// Test whether we can add an ad group for placements using v200909.
     /// </summary>
     [Test]
     public void TestAddAdGroupPlacement() {
@@ -130,7 +130,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can add an ad group for all criteria types v200906.
+    /// Test whether we can add an ad group for all criteria types v200909.
     /// </summary>
     [Test]
     public void TestAddAdGroupKeywordPlacement() {
@@ -165,7 +165,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can fetch an existing ad group using v200906.
+    /// Test whether we can fetch an existing ad group using v200909.
     /// </summary>
     [Test]
     public void TestGetAdGroup() {
@@ -178,7 +178,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can fetch all existing ad groups using v200906.
+    /// Test whether we can fetch all existing ad groups using v200909.
     /// </summary>
     [Test]
     public void TestGetAdGroups() {
@@ -190,7 +190,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can update an existing ad group using v200906.
+    /// Test whether we can update an existing ad group using v200909.
     /// </summary>
     [Test]
     public void TestUpdateAdGroup() {

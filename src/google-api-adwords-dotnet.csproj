@@ -18,6 +18,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\google-api-adwords-dotnet.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -106,11 +107,9 @@
     <Compile Include="v13\LegacyAdWordsApiExceptions.cs" />
     <Compile Include="v13\LegacyAdWordsApiService.cs">
     </Compile>
-    <Compile Include="v200906\AdWordsApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="v13\wsdl_config.xml" />
-    <Content Include="v200906\wsdl_config.xml" />
     <Content Include="v200909\wsdl_config.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

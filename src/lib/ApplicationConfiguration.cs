@@ -32,6 +32,24 @@ namespace com.google.api.adwords.lib {
     /// Static constructor for the object.
     /// </summary>
     static ApplicationConfiguration() {
+      logPath = "C:\\";
+      logToConsole = false;
+      logToFile = false;
+      proxy = null;
+      companyName = "";
+
+      authToken = "";
+      email = "";
+      password = "";
+      clientEmail = "";
+      clientCustomerId = "";
+      developerToken = "";
+      applicationToken = "";
+      maskCredentials = true;
+
+      legacyAdWordsApiUrl = "https://adwords.google.com";
+      adWordsApiUrl = "https://adwords.google.com";
+
       Object obj = ConfigurationManager.GetSection("AdWordsApi");
     }
 
@@ -56,11 +74,9 @@ namespace com.google.api.adwords.lib {
         // Read Application settings from configuration file.
 
         // Common keys.
-        logPath = ReadSetting(settings, LOG_PATH, "C:\\");
-        logToConsole = bool.Parse(
-            ReadSetting(settings, LOG_TO_CONSOLE, "false"));
-        logToFile = bool.Parse(
-            ReadSetting(settings, LOG_TO_FILE, "false"));
+        logPath = ReadSetting(settings, LOG_PATH, logPath);
+        logToConsole = bool.Parse(ReadSetting(settings, LOG_TO_CONSOLE, logToConsole.ToString()));
+        logToFile = bool.Parse(ReadSetting(settings, LOG_TO_FILE, logToFile.ToString()));
 
         string proxyUrl = ReadSetting(settings, PROXY_SERVER, "");
 
@@ -78,21 +94,22 @@ namespace com.google.api.adwords.lib {
           }
           ApplicationConfiguration.proxy = proxy;
         }
-        companyName = ReadSetting(settings, COMPANY_NAME, "");
-        authToken = ReadSetting(settings, AUTHTOKEN, "");
-        email = ReadSetting(settings, EMAIL, "");
-        password = ReadSetting(settings, PASSWORD, "");
-        clientEmail = ReadSetting(settings, CLIENT_EMAIL, "");
-        clientCustomerId = ReadSetting(settings, CLIENT_CUSTOMER_ID, "");
-        developerToken = ReadSetting(settings, DEVELOPER_TOKEN, "");
-        applicationToken = ReadSetting(settings, APPLICATION_TOKEN, "");
-        maskCredentials = bool.Parse(ReadSetting(settings, MASK_CREDENTIALS, "true"));
+        companyName = ReadSetting(settings, COMPANY_NAME, companyName);
+        authToken = ReadSetting(settings, AUTHTOKEN, authToken);
+        email = ReadSetting(settings, EMAIL, email);
+        password = ReadSetting(settings, PASSWORD, password);
+        clientEmail = ReadSetting(settings, CLIENT_EMAIL, clientEmail);
+        clientCustomerId = ReadSetting(settings, CLIENT_CUSTOMER_ID, clientCustomerId);
+        developerToken = ReadSetting(settings, DEVELOPER_TOKEN, developerToken);
+        applicationToken = ReadSetting(settings, APPLICATION_TOKEN, applicationToken);
+        maskCredentials = bool.Parse(ReadSetting(settings, MASK_CREDENTIALS,
+            maskCredentials.ToString()));
 
         // Legacy AdWords API keys.
-        legacyAdWordsApiUrl = ReadSetting(settings, LEGACY_ADWORDSAPI_URL, "https://adwords.google.com");
+        legacyAdWordsApiUrl = ReadSetting(settings, LEGACY_ADWORDSAPI_URL, legacyAdWordsApiUrl);
 
         // AdWords API keys.
-        adWordsApiUrl = ReadSetting(settings, ADWORDSAPI_URL, "https://adwords.google.com");
+        adWordsApiUrl = ReadSetting(settings, ADWORDSAPI_URL, adWordsApiUrl);
       }
       return null;
     }
@@ -287,6 +304,6 @@ namespace com.google.api.adwords.lib {
     /// <summary>
     /// The publicly released version number.
     /// </summary>
-    public const String version = "6.2";
+    public const String version = "7.0";
   }
 }

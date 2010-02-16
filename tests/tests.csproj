@@ -18,6 +18,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\UnitTests.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -60,13 +61,7 @@
     <Compile Include="ServiceTests.cs" />
     <Compile Include="v13\SiteSuggestionServiceTests.cs" />
     <Compile Include="v13\TrafficEstimatorServiceTests.cs" />
-    <Compile Include="v200906\AdGroupAdServiceTests.cs" />
-    <Compile Include="v200906\AdGroupCriterionServiceTests.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="TestUtils.cs" />
-    <Compile Include="v200906\AdGroupServiceTests.cs" />
-    <Compile Include="v200906\CampaignCriterionServiceTests.cs" />
     <Compile Include="v200909\AdExtensionOverrideServiceTests.cs" />
     <Compile Include="v200909\AdGroupAdServiceTests.cs" />
     <Compile Include="v200909\AdGroupCriterionServiceTests.cs" />

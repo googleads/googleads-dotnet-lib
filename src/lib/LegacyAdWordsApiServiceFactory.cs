@@ -104,8 +104,13 @@ namespace com.google.api.adwords.lib {
       headers["useragentValue"] = MakeSoapHeader("useragent", Useragent);
       headers["developerTokenValue"] = MakeSoapHeader("developerToken",
           ApplicationConfiguration.developerToken);
-      headers["applicationTokenValue"] = MakeSoapHeader("applicationToken",
-          ApplicationConfiguration.applicationToken);
+
+      // Application token is now optional.
+      if (!string.IsNullOrEmpty(ApplicationConfiguration.applicationToken)) {
+        headers["applicationTokenValue"] = MakeSoapHeader("applicationToken",
+            ApplicationConfiguration.applicationToken);
+      }
+
       headers["clientEmailValue"] = MakeSoapHeader("clientEmail",
           ApplicationConfiguration.clientEmail);
       if (!string.IsNullOrEmpty(ApplicationConfiguration.clientCustomerId)) {

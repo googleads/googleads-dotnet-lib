@@ -30,7 +30,6 @@ using System.Reflection;
 using System.Web.Services.Protocols;
 using System.Xml;
 
-using v200906_AdGroupAdService = com.google.api.adwords.v200906.AdGroupAdService;
 using v200909_AdGroupAdService = com.google.api.adwords.v200909.AdGroupAdService;
 
 namespace com.google.api.adwords.tests.lib {
@@ -57,7 +56,7 @@ namespace com.google.api.adwords.tests.lib {
     }
 
     /// <summary>
-    /// Test if <see cref="AdWordsUser"/> class creates a v200906 service correctly.
+    /// Test if <see cref="AdWordsUser"/> class creates a v200909 service correctly.
     /// </summary>
     [Test]
     public void TestV200909ServiceCreation() {
@@ -80,44 +79,9 @@ namespace com.google.api.adwords.tests.lib {
 
       // Check if the service url is correct.
       Assert.That(string.Compare(ApplicationConfiguration.adWordsApiUrl +
-        "/api/adwords/cm/v200906/AdGroupAdService", service.Url, true) == 0,
+        "/api/adwords/cm/v200909/AdGroupAdService", service.Url, true) == 0,
         "Service url should be " + ApplicationConfiguration.adWordsApiUrl +
-        "/api/adwords/cm/v200906/AdGroupAdService");
-
-      // Check if the service proxy is correct.
-      if (ApplicationConfiguration.proxy != null) {
-        Assert.AreEqual(service.Proxy, ApplicationConfiguration.proxy,
-            "Service proxy should be same as ApplicationConfiguration.Proxy.");
-      }
-    }
-
-    /// <summary>
-    /// Test if <see cref="AdWordsUser"/> class creates a v200906 service correctly.
-    /// </summary>
-    [Test]
-    public void TestV200906ServiceCreation() {
-      v200906_AdGroupAdService service =
-          (v200906_AdGroupAdService) user.GetService(AdWordsService.v200906.AdGroupAdService);
-      Assert.NotNull(service, "AdWordsUser could not create v200906.AdGroupAdService.");
-
-      // Check if RequestHeaders have the correct values.
-      Assert.NotNull(service.RequestHeader, "RequestHeader must not be null.");
-      Assert.IsFalse(string.IsNullOrEmpty(service.RequestHeader.authToken),
-          "AuthToken must not be null.");
-      if (!string.IsNullOrEmpty(ApplicationConfiguration.clientEmail)) {
-        Assert.AreEqual(service.RequestHeader.clientEmail.ToLower(),
-            ApplicationConfiguration.clientEmail.ToLower());
-      }
-      if (!string.IsNullOrEmpty(ApplicationConfiguration.clientCustomerId)) {
-        Assert.AreEqual(service.RequestHeader.clientCustomerId.ToLower(),
-            ApplicationConfiguration.clientCustomerId.ToLower());
-      }
-
-      // Check if the service url is correct.
-      Assert.That(string.Compare(ApplicationConfiguration.adWordsApiUrl +
-        "/api/adwords/cm/v200906/AdGroupAdService", service.Url, true) == 0,
-        "Service url should be " + ApplicationConfiguration.adWordsApiUrl +
-        "/api/adwords/cm/v200906/AdGroupAdService");
+        "/api/adwords/cm/v200909/AdGroupAdService");
 
       // Check if the service proxy is correct.
       if (ApplicationConfiguration.proxy != null) {

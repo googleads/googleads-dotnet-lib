@@ -1,3 +1,9 @@
+7.0.0
+- Removed support for v200906.
+- Application tokens are now optional.
+- You can now use the library without an app.config, using AdWordsUser(headers) constructor alone.
+- Fix for issue 32 on code site.
+
 6.2.0
 - Added more unit tests.
 - Regenerated stub classes for v200909.

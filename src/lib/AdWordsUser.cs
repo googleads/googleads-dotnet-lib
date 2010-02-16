@@ -76,7 +76,7 @@ namespace com.google.api.adwords.lib {
     /// <example>
     /// AdWordsUser user = new AdWordsUser();
     /// CampaignService campaignService = (CampaignService)
-    ///     user.getService(AdWordsService.v200906.CampaignService);
+    ///     user.getService(AdWordsService.v200909.CampaignService);
     /// </example>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public object GetService(ServiceSignature serviceType) {

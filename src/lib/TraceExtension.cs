@@ -151,11 +151,15 @@ namespace com.google.api.adwords.lib {
         service = (SoapServiceBase) HttpContext.Current.Items["SoapService"];
         soapRequest = (string) HttpContext.Current.Items["SoapRequest"];
         soapResponse = (string) HttpContext.Current.Items["SoapResponse"];
+        HttpContext.Current.Items.Remove("SoapRequest");
+        HttpContext.Current.Items.Remove("SoapResponse");
       } else {
         user = (AdWordsUser) CallContext.GetData("AdWordsParent");
         service = (SoapServiceBase) CallContext.GetData("SoapService");
         soapRequest = (string) CallContext.GetData("SoapRequest");
         soapResponse = (string) CallContext.GetData("SoapResponse");
+        CallContext.FreeNamedDataSlot("SoapRequest");
+        CallContext.FreeNamedDataSlot("SoapResponse");
       }
 
       if (user == null || service == null || soapRequest == null || soapResponse == null) {

@@ -16,7 +16,6 @@
 
 using com.google.api.adwords.lib;
 using com.google.api.adwords.v13;
-using com.google.api.adwords.v200906;
 
 using NUnit.Framework;
 
@@ -24,10 +23,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
-
-using CampaignServiceV200906 = com.google.api.adwords.v200906.CampaignService;
-using CampaignV200906 = com.google.api.adwords.v200906.Campaign;
-using CampaignStatusV200906 = com.google.api.adwords.v200906.CampaignStatus;
 
 namespace com.google.api.adwords.tests {
   /// <summary>
@@ -64,74 +59,6 @@ namespace com.google.api.adwords.tests {
         Assert.AreEqual(clients[i],
             string.Format("client_{0}+{1}", i + 1, accountService.emailValue.Value[0]));
       }
-    }
-
-    /// <summary>
-    /// Test if v200906 API calls can be made successfully.
-    /// </summary>
-    [Test]
-    public void Testv200906ApiCalls() {
-      AdWordsUser user = new AdWordsUser();
-
-      CampaignServiceV200906 service =
-          (CampaignServiceV200906) user.GetService(AdWordsService.v200906.CampaignService);
-
-      CampaignV200906 campaign = new CampaignV200906();
-
-      // Generate a campaign name.
-      string campaignName =
-        string.Format("Campaign - {0}", DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff"));
-      campaign.name = string.Format(campaignName);
-
-      // Required: Set the campaign status.
-      campaign.status = CampaignStatusV200906.ACTIVE;
-      campaign.statusSpecified = true;
-
-      // Required: Specify the currency and budget amount.
-      Budget budget = new Budget();
-      Money amount = new Money();
-      amount.microAmountSpecified = true;
-      amount.microAmount = 50000000;
-
-      budget.amount = amount;
-
-      // Required: Specify the bidding strategy.
-      campaign.biddingStrategy = new ManualCPC();
-
-      // Optional: Specify the budget period and delivery method.
-      budget.periodSpecified = true;
-      budget.period = BudgetBudgetPeriod.DAILY;
-      budget.deliveryMethodSpecified = true;
-      budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
-      campaign.budget = budget;
-
-      // Define an Add operation to add the campaign.
-      CampaignOperation campaignOperation = new CampaignOperation();
-      campaignOperation.operatorSpecified = true;
-      campaignOperation.@operator = Operator.ADD;
-      campaignOperation.operand = campaign;
-
-      CampaignReturnValue results = null;
-
-      Assert.DoesNotThrow(
-          delegate() {
-            results = service.mutate(new CampaignOperation[] {campaignOperation});
-          },
-          "CampaignService.mutate() should not throw an exception.");
-
-      Assert.NotNull(results);
-      Assert.NotNull(results.value);
-      Assert.Greater(results.value.Length, 0);
-
-      Console.WriteLine("New campaign with name = \"{0}\" and id = " +
-          "\"{1}\" was created.", results.value[0].name, results.value[0].id);
-      Assert.AreEqual(results.value[0].name, campaign.name);
-      Assert.AreEqual(results.value[0].status, campaign.status);
-      Assert.AreEqual(results.value[0].budget.amount.microAmount,
-          campaign.budget.amount.microAmount);
-      Assert.AreEqual(results.value[0].budget.period, campaign.budget.period);
-      Assert.AreEqual(results.value[0].budget.deliveryMethod, campaign.budget.deliveryMethod);
-      Assert.That(results.value[0].biddingStrategy is ManualCPC);
     }
 
     /// <summary>

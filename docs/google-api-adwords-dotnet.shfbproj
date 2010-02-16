@@ -18,16 +18,12 @@
     <HtmlHelpName>google-api-adwords-dotnet</HtmlHelpName>
     <HelpFileFormat>HtmlHelp1x</HelpFileFormat>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\Examples\bin\Debug\Examples.exe" />
-      <DocumentationSource sourceFile="..\Examples\bin\Debug\Examples.xml" />
-      <DocumentationSource sourceFile="..\Examples\bin\Debug\google-api-adwords-dotnet.dll" />
-      <DocumentationSource sourceFile="..\Examples\bin\Debug\google-api-adwords-dotnet.xml" />
-      <DocumentationSource sourceFile="..\UnitTests\bin\Debug\UnitTests.dll" />
-      <DocumentationSource sourceFile="..\UnitTests\bin\Debug\UnitTests.xml" />
-    </DocumentationSources>
+      <DocumentationSource sourceFile="..\Examples\Examples.csproj" />
+      <DocumentationSource sourceFile="..\src\google-api-adwords-dotnet.csproj" />
+      <DocumentationSource sourceFile="..\tests\tests.csproj" /></DocumentationSources>
     <HelpTitle>AdWords API .NET client library</HelpTitle>
     <NamingMethod>MemberName</NamingMethod>
-    <CopyrightText>Copyright 2009, Google Inc. All Rights Reserved.</CopyrightText>
+    <CopyrightText>Copyright 2010, Google Inc. All Rights Reserved.</CopyrightText>
     <ApiFilter>
     </ApiFilter>
     <MissingTags>Parameter, Returns, TypeParameter</MissingTags>
@@ -41,18 +37,15 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Examples\Examples.csproj">
-      <Name>Examples</Name>
-      <Project>{6E314C85-32A9-4015-AC92-FBCF7BB52454}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\google-api-adwords-dotnet.csproj">
-      <Name>google-api-adwords-dotnet</Name>
-      <Project>{B701ED76-54AE-4591-86DE-EDCD0D8DAC6C}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\UnitTests\UnitTests.csproj">
-      <Name>UnitTests</Name>
-      <Project>{E78FA064-1C11-4BCF-9C12-9AAACD01FAF5}</Project>
-    </ProjectReference>
+    <Reference Include="Examples">
+      <HintPath>..\Examples\bin\Debug\Examples.exe</HintPath>
+    </Reference>
+    <Reference Include="google-api-adwords-dotnet">
+      <HintPath>..\src\bin\Debug\google-api-adwords-dotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="UnitTests">
+      <HintPath>..\tests\bin\Debug\UnitTests.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <!-- Import the SHFB build targets -->
   <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />

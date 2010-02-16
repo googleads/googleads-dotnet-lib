@@ -77,7 +77,7 @@ namespace com.google.api.adwords.tests.v200909 {
     [SetUp]
     public void Init() {
       adGroupCriterionService =
-          (AdGroupCriterionService) user.GetService(AdWordsService.v200906.AdGroupCriterionService);
+          (AdGroupCriterionService) user.GetService(AdWordsService.v200909.AdGroupCriterionService);
 
       campaignId = utils.CreateCampaign(user, true);
       keywordAdGroupId = utils.CreateAdGroup(user, campaignId);
@@ -87,7 +87,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can add an ad group criterion keyword using v200906.
+    /// Test whether we can add an ad group criterion keyword using v200909.
     /// </summary>
     [Test]
     public void TestAddCriterionKeyword() {
@@ -109,7 +109,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can add an ad group criterion placement using v200906.
+    /// Test whether we can add an ad group criterion placement using v200909.
     /// </summary>
     [Test]
     public void TestAddCriterionPlacement() {
@@ -129,7 +129,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can add cross ad group keywords using v200906.
+    /// Test whether we can add cross ad group keywords using v200909.
     /// </summary>
     [Test]
     public void TestAddKeywordCrossAdGroup() {
@@ -162,7 +162,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can fetch active and paused criteria using v200906.
+    /// Test whether we can fetch active and paused criteria using v200909.
     /// </summary>
     [Test]
     public void TestGetAllActivePausedCriteria() {
@@ -175,7 +175,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can fetch criteria at campaign level using v200906.
+    /// Test whether we can fetch criteria at campaign level using v200909.
     /// </summary>
     [Test]
     public void TestGetAllCriteriaCampaignLevel() {
@@ -189,7 +189,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can fetch criterion at criterion level using v200906.
+    /// Test whether we can fetch criterion at criterion level using v200909.
     /// </summary>
     [Test]
     public void TestGetCriterion() {
@@ -205,7 +205,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can delete criterion at ad group level using v200906.
+    /// Test whether we can delete criterion at ad group level using v200909.
     /// </summary>
     [Test]
     public void TestDeleteCriterion() {
@@ -226,7 +226,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Test whether we can update a keyword using v200906.
+    /// Test whether we can update a keyword using v200909.
     /// </summary>
     [Test]
     public void TestUpdateCriterionKeyword() {

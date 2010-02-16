@@ -51,11 +51,6 @@ namespace com.google.api.adwords.samples {
     /// Static constructor to initialize the sample map.
     /// </summary>
     static Program() {
-      Dictionary<string, string> headers = new Dictionary<string, string>();
-      headers.Add("email", "foo");
-
-      AdWordsUser user = new AdWordsUser(headers);
-
       // Add v13 samples.
       RegisterSample("v13.AccountServiceDemo", new AccountServiceDemo());
       RegisterSample("v13.AccountServiceNoConfigDemo", new AccountServiceNoConfigDemo());

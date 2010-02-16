@@ -41,7 +41,7 @@ namespace com.google.api.adwords.lib {
     /// Create a service of desired type.
     /// </summary>
     /// <param name="signature">The service creation signature, for instance,
-    /// ApiServices.v200906.CampaignService.</param>
+    /// ApiServices.v200909.CampaignService.</param>
     /// <param name="user">The user for which this service is being created.
     /// </param>
     /// <returns>The service object.</returns>
@@ -154,7 +154,11 @@ namespace com.google.api.adwords.lib {
       }
       requestHeader.clientEmail = ApplicationConfiguration.clientEmail;
       requestHeader.developerToken = ApplicationConfiguration.developerToken;
-      requestHeader.applicationToken = ApplicationConfiguration.applicationToken;
+
+      // Application token is now optional.
+      if (!string.IsNullOrEmpty(ApplicationConfiguration.applicationToken)) {
+        requestHeader.applicationToken = ApplicationConfiguration.applicationToken;
+      }
       requestHeader.userAgent = Useragent;
       return requestHeader;
     }
@@ -209,7 +213,7 @@ namespace com.google.api.adwords.lib {
   /// </summary>
   class AdWordsApiServiceSignature : ServiceSignature {
     /// <summary>
-    /// The service version, for instance, v200906.
+    /// The service version, for instance, v200909.
     /// </summary>
     public string version;
 

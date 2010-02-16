@@ -56,14 +56,9 @@ namespace com.google.api.adwords.tests.lib {
 
       foreach (FieldInfo field in fields) {
         StringBuilder builder = new StringBuilder();
-        if (field.Name == "urlV13") {
-          builder.Append("v13.Url");
-        } else if (field.Name == "urlV200906") {
-          builder.Append("v200906.Url");
-        } else {
-          builder.Append(field.Name);
-          builder[0] = Char.ToUpper(builder[0]);
-        }
+        builder.Append(field.Name);
+        builder[0] = Char.ToUpper(builder[0]);
+
         string keyName = builder.ToString();
         if (!string.IsNullOrEmpty((string) collection[keyName]) && field.GetValue(null) != null) {
           string failMessage =
