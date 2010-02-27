@@ -1,3 +1,7 @@
+7.1.0
+- Fix for issue 37, 38 on code site.
+- v200909 API calls are gzip compressed at HTTP level.
+
 7.0.0
 - Removed support for v200906.
 - Application tokens are now optional.

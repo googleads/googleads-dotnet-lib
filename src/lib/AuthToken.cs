@@ -88,7 +88,6 @@ namespace com.google.api.adwords.lib {
           "&source=" + HttpUtility.UrlEncode(SOURCE);
 
       byte[] postBytes = Encoding.UTF8.GetBytes(postParams);
-      webRequest.ContentLength = postBytes.Length;
 
       Stream strmReq = webRequest.GetRequestStream();
       strmReq.Write(postBytes, 0, postBytes.Length);

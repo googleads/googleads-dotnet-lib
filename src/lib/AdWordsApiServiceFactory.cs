@@ -82,6 +82,11 @@ namespace com.google.api.adwords.lib {
         propInfo.SetValue(service, user, null);
       }
 
+      propInfo = type.GetProperty("EnableDecompression");
+      if (propInfo != null) {
+        propInfo.SetValue(service, ApplicationConfiguration.enableGzipCompression, null);
+      }
+
       return service;
     }
 

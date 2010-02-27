@@ -46,6 +46,7 @@ namespace com.google.api.adwords.lib {
       developerToken = "";
       applicationToken = "";
       maskCredentials = true;
+      enableGzipCompression = true;
 
       legacyAdWordsApiUrl = "https://adwords.google.com";
       adWordsApiUrl = "https://adwords.google.com";
@@ -104,6 +105,8 @@ namespace com.google.api.adwords.lib {
         applicationToken = ReadSetting(settings, APPLICATION_TOKEN, applicationToken);
         maskCredentials = bool.Parse(ReadSetting(settings, MASK_CREDENTIALS,
             maskCredentials.ToString()));
+        enableGzipCompression = bool.Parse(ReadSetting(settings, ENABLE_GZIP_COMPRESSION,
+            enableGzipCompression.ToString()));
 
         // Legacy AdWords API keys.
         legacyAdWordsApiUrl = ReadSetting(settings, LEGACY_ADWORDSAPI_URL, legacyAdWordsApiUrl);
@@ -200,6 +203,17 @@ namespace com.google.api.adwords.lib {
     /// True, if the credentials in the log file should be masked.
     /// </summary>
     public static bool maskCredentials;
+
+    /// <summary>
+    /// True, if gzip compression should be turned on for SOAP requests and
+    /// responses.
+    /// </summary>
+    public static bool enableGzipCompression;
+
+    /// <summary>
+    /// Key name for authToken.
+    /// </summary>
+    internal const String ENABLE_GZIP_COMPRESSION = "EnableGzipCompression";
 
     /// <summary>
     /// Key name for authToken.
@@ -304,6 +318,6 @@ namespace com.google.api.adwords.lib {
     /// <summary>
     /// The publicly released version number.
     /// </summary>
-    public const String version = "7.0";
+    public const String version = "7.1";
   }
 }
