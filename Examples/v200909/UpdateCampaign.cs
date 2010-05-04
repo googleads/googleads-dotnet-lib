@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,22 +23,23 @@ using System.Net;
 
 namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
-  /// This example updates a campaign. To get campaigns, run GetAllCampaigns.cs.
+  /// This code example updates a campaign. To get campaigns, run
+  /// GetAllCampaigns.cs.
   /// </summary>
   class UpdateCampaign : SampleBase {
     /// <summary>
-    /// Returns a description about the sample code.
+    /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This example updates a campaign. To get campaigns, run GetAllCampaigns.cs.";
+        return "This code example updates a campaign. To get campaigns, run GetAllCampaigns.cs.";
       }
     }
 
     /// <summary>
     /// Run the sample code.
     /// </summary>
-    /// <param name="user">The AdWords user object running the sample.
+    /// <param name="user">The AdWords user object running the code example.
     /// </param>
     public override void Run(AdWordsUser user) {
       // Get the CampaignService.

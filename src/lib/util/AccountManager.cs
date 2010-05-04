@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 using com.google.api.adwords.lib;
 using com.google.api.adwords.v13;
+using com.google.api.adwords.v200909;
 
 using System;
 using System.Collections;
@@ -35,16 +36,16 @@ namespace com.google.api.adwords.lib.util {
   /// can be used to save a sandbox account contents into an XML file
   /// and later restore it.
   /// </summary>
-  internal class AccountManager {
+  public class AccountManager {
     /// <summary>
     /// AdWords user associated with this class.
     /// </summary>
-    internal AdWordsUser user = null;
+    AdWordsUser user = null;
 
     /// <summary>
     /// Default constructor for AccountManager.
     /// </summary>
-    internal AccountManager() {
+    public AccountManager() {
       user = new AdWordsUser();
     }
 
@@ -52,7 +53,7 @@ namespace com.google.api.adwords.lib.util {
     /// Overloaded constructor for AccountManager.
     /// </summary>
     /// <param name="user">The AdWordsUser to be associated with this manager.</param>
-    internal AccountManager(AdWordsUser user) {
+    public AccountManager(AdWordsUser user) {
       this.user = user;
     }
 
@@ -62,7 +63,7 @@ namespace com.google.api.adwords.lib.util {
     /// by getClientAccounts method of AccountService.
     /// </summary>
     /// <returns>An array of ClientAccount objects.</returns>
-    internal ClientAccount[] DownloadAllAccounts() {
+    public ClientAccount[] DownloadAllAccounts() {
       user.UseSandbox();
       AccountService accountService = (AccountService) user.GetService(
           AdWordsService.v13.AccountService);
@@ -84,16 +85,16 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <param name="clientEmail">The clientEmail for the account.</param>
     /// <returns>The ClientAccount object representing this account.</returns>
-    internal ClientAccount DownloadAccount(string clientEmail) {
+    public ClientAccount DownloadAccount(string clientEmail) {
       AccountService accountService =
           (AccountService) user.GetService(AdWordsService.v13.AccountService);
 
       accountService.clientEmailValue.Value[0] = clientEmail;
 
       ClientAccount account = new ClientAccount();
-      account.email = clientEmail;
-      account.accountInfo = accountService.getAccountInfo();
-      account.campaigns = new List<CampaignEx>(GetAccountCampaigns(clientEmail));
+      account.Email = clientEmail;
+      account.AccountInfo = accountService.getAccountInfo();
+      account.Campaigns = new List<LocalCampaign>(GetAccountCampaigns(clientEmail));
       return account;
     }
 
@@ -123,10 +124,10 @@ namespace com.google.api.adwords.lib.util {
     internal void UploadAccount(ClientAccount account) {
       AccountService accountService =
           (AccountService) user.GetService(AdWordsService.v13.AccountService);
-      accountService.clientEmailValue.Value[0] = account.email;
+      accountService.clientEmailValue.Value[0] = account.Email;
 
-      accountService.updateAccountInfo(account.accountInfo);
-      SetAccountCampaigns(account.campaigns.ToArray(), account.email);
+      accountService.updateAccountInfo(account.AccountInfo);
+      SetAccountCampaigns(account.Campaigns.ToArray(), account.Email);
     }
 
     /// <summary>
@@ -134,104 +135,215 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <param name="campaigns">The campaigns to be restored.</param>
     /// <param name="clientEmail">client account email.</param>
-    private void SetAccountCampaigns(CampaignEx[] campaigns, string clientEmail) {
+    private void SetAccountCampaigns(LocalCampaign[] campaigns, string clientEmail) {
       CampaignService campaignService =
-          (CampaignService) user.GetService(AdWordsService.v13.CampaignService);
-      campaignService.clientEmailValue.Value[0] = clientEmail;
+          (CampaignService) user.GetService(AdWordsService.v200909.CampaignService);
+      campaignService.RequestHeader.clientEmail = clientEmail;
 
-      foreach (CampaignEx campaignEx in campaigns) {
-        campaignEx.campaign.id = 0;
-        if (campaignEx.campaign.startDay < DateTime.Today) {
-          campaignEx.campaign.startDay = DateTime.Today;
+      foreach (LocalCampaign localCampaign in campaigns) {
+        // clear readonly fields.
+        localCampaign.Campaign.idSpecified = false;
+        localCampaign.Campaign.stats = null;
+        localCampaign.Campaign.servingStatusSpecified = false;
+
+        DateTime startDay = DateTime.ParseExact(localCampaign.Campaign.startDate, "yyyyMMdd", null);
+        DateTime endDay = DateTime.ParseExact(localCampaign.Campaign.endDate, "yyyyMMdd", null);
+
+        if (startDay < DateTime.Today) {
+          localCampaign.Campaign.startDate = DateTime.Today.ToString("yyyyMMdd");
         }
-        if (campaignEx.campaign.status == CampaignStatus.Active ||
-            campaignEx.campaign.status == CampaignStatus.Paused) {
-          Campaign newCampaign = campaignService.addCampaign(campaignEx.campaign);
-          SetAdGroups(newCampaign.id, campaignEx.adGroups.ToArray(), newCampaign.languageTargeting,
-              newCampaign.geoTargeting, clientEmail);
-          SetCampaignCriteria(newCampaign.id, campaignEx.criteria.ToArray(),
-              newCampaign.languageTargeting, newCampaign.geoTargeting, clientEmail);
+        if (endDay > new DateTime(2037, 12, 30)) {
+          localCampaign.Campaign.endDate = null;
+        }
+        if (localCampaign.Campaign.status == com.google.api.adwords.v200909.CampaignStatus.ACTIVE ||
+            localCampaign.Campaign.status == com.google.api.adwords.v200909.CampaignStatus.PAUSED) {
+          CampaignOperation operation = new CampaignOperation();
+          operation.operatorSpecified = true;
+          operation.@operator = Operator.ADD;
+          operation.operand = localCampaign.Campaign;
+          try {
+            CampaignReturnValue result = campaignService.mutate(
+                new CampaignOperation[] { operation });
+
+            if (result != null && result.value != null) {
+              foreach (Campaign newCampaign in result.value) {
+                SetAdGroups(newCampaign.id, localCampaign.AdGroups.ToArray(), clientEmail);
+                SetCampaignCriteria(newCampaign.id, localCampaign.CampaignCriteria.ToArray(),
+                    clientEmail);
+                SetCampaignTargets(newCampaign.id, localCampaign.CampaignTargets.ToArray(),
+                    clientEmail);
+              }
+            }
+          } catch (Exception ex) {
+            throw new System.ApplicationException("Could not add campaign(s). See inner exception" +
+                " for details.", ex);
+          }
         }
       }
     }
 
     /// <summary>
-    /// Restores adgroups in a campaign.
+    /// Sets the campaign targets for a given campaign.
+    /// </summary>
+    /// <param name="campaignId">The campaign id.</param>
+    /// <param name="targetLists">The list of campaign targets.</param>
+    /// <param name="clientEmail">client account email.</param>
+    private void SetCampaignTargets(long campaignId, TargetList[] targetLists, string clientEmail) {
+      CampaignTargetService campaignTargetService =
+          (CampaignTargetService) user.GetService(AdWordsService.v200909.CampaignTargetService);
+      campaignTargetService.RequestHeader.clientEmail = clientEmail;
+
+      List<CampaignTargetOperation> operations = new List<CampaignTargetOperation>();
+
+      foreach (TargetList targetList in targetLists) {
+        targetList.campaignIdSpecified = true;
+        targetList.campaignId = campaignId;
+
+        CampaignTargetOperation targetOperation = new CampaignTargetOperation();
+        targetOperation.operatorSpecified = true;
+        targetOperation.@operator = Operator.SET;
+        targetOperation.operand = targetList;
+        operations.Add(targetOperation);
+      }
+      try {
+        campaignTargetService.mutate(operations.ToArray());
+      } catch (Exception ex) {
+        throw new System.ApplicationException("Could not add campaign target(s). See inner" +
+            " exception for details.", ex);
+      }
+    }
+
+    /// <summary>
+    /// Restores ad groups in a campaign.
     /// </summary>
     /// <param name="campaignId">Campaign id.</param>
     /// <param name="adGroups">The list of adgroups to be added to
     /// this campaign.</param>
-    /// <param name="languageTargeting">Campaign's language targeting.</param>
-    /// <param name="geoTargeting">Campaign's geo targeting.</param>
     /// <param name="clientEmail">client account email.</param>
-    private void SetAdGroups(int campaignId, AdGroupEx[] adGroups, string[] languageTargeting,
-        GeoTarget geoTargeting, string clientEmail) {
-      AdGroupService adgroupService =
-          (AdGroupService) user.GetService(AdWordsService.v13.AdGroupService);
-      adgroupService.clientEmailValue.Value[0] = clientEmail;
+    private void SetAdGroups(long campaignId, LocalAdGroup[] adGroups, string clientEmail) {
+      AdGroupService adGroupService =
+          (AdGroupService) user.GetService(AdWordsService.v200909.AdGroupService);
+      adGroupService.RequestHeader.clientEmail = clientEmail;
 
-      foreach (AdGroupEx adGroupEx in adGroups) {
-        adGroupEx.adgroup.campaignId = campaignId;
+      foreach (LocalAdGroup localAdGroup in adGroups) {
+        localAdGroup.AdGroup.campaignId = campaignId;
+        localAdGroup.AdGroup.campaignIdSpecified = true;
 
-        AdGroup newAdGroup = adgroupService.addAdGroup(campaignId, adGroupEx.adgroup);
-        SetAds(newAdGroup.id, adGroupEx.ads.ToArray(), languageTargeting,
-            geoTargeting, clientEmail);
-        SetCriteria(newAdGroup.id, adGroupEx.criteria.ToArray(), languageTargeting,
-            geoTargeting, clientEmail);
+        // Clear the readonly fields.
+        localAdGroup.AdGroup.campaignName = null;
+        localAdGroup.AdGroup.idSpecified = false;
+
+        AdGroupOperation operation = new AdGroupOperation();
+        operation.operatorSpecified = true;
+        operation.@operator = Operator.ADD;
+        operation.operand = localAdGroup.AdGroup;
+
+        AdGroupReturnValue retval = null;
+
+        try {
+          retval = adGroupService.mutate(new AdGroupOperation[] { operation });
+
+          if (retval != null && retval.value != null) {
+            foreach (AdGroup adGroupValue in retval.value) {
+              SetAds(adGroupValue.id, localAdGroup.Ads.ToArray(), clientEmail);
+              SetCriteria(adGroupValue.id, localAdGroup.Criteria.ToArray(), clientEmail);
+            }
+          }
+        } catch (Exception ex) {
+          throw new System.ApplicationException("Could not add adgroup(s). See inner exception" +
+              " for details.", ex);
+        }
       }
     }
 
     /// <summary>
-    /// Restores ads in an adgroup.
+    /// Restores ads in an ad group.
     /// </summary>
     /// <param name="adGroupId">AdGroup Id.</param>
-    /// <param name="ads">Ads to be added to the adgroup.</param>
-    /// <param name="languageTargeting">Campaign's language targeting.</param>
-    /// <param name="geoTargeting">Campaign's geo targeting.</param>
+    /// <param name="adGroupAds">AdGroup Ads to be added to the adgroup.</param>
     /// <param name="clientEmail">client account email.</param>
-    private void SetAds(long adGroupId, Ad[] ads, string[] languageTargeting,
-        GeoTarget geoTargeting, string clientEmail) {
-      AdService adService = (AdService) user.GetService(AdWordsService.v13.AdService);
-      adService.clientEmailValue.Value[0] = clientEmail;
+    private void SetAds(long adGroupId, AdGroupAd[] adGroupAds, string clientEmail) {
+      AdGroupAdService adService =
+          (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);
+      adService.RequestHeader.clientEmail = clientEmail;
 
-      Ad[] cleanAds = CheckAds(ads, clientEmail, languageTargeting, geoTargeting);
+      List<AdGroupAdOperation> operations = new List<AdGroupAdOperation>();
 
-      if (cleanAds.Length > 0) {
-        foreach (Ad ad in cleanAds) {
-          ad.adGroupId = adGroupId;
-        }
-        Ad[] newAds = adService.addAds(cleanAds);
+      foreach (AdGroupAd adGroupAd in adGroupAds) {
+        // Clear readonly fields.
+        adGroupAd.stats = null;
+        adGroupAd.ad.idSpecified = false;
+        adGroupAd.ad.approvalStatusSpecified = false;
+        adGroupAd.ad.disapprovalReasons = null;
+
+        adGroupAd.adGroupIdSpecified = true;
+        adGroupAd.adGroupId = adGroupId;
+
+        AdGroupAdOperation operation = new AdGroupAdOperation();
+        operation.operatorSpecified = true;
+        operation.@operator = Operator.ADD;
+        operation.operand = adGroupAd;
+        operations.Add(operation);
+      }
+
+      try {
+        adService.mutate(operations.ToArray());
+      } catch (Exception ex) {
+        throw new System.ApplicationException("Could not add adgroup(s). See inner exception" +
+            " for details.", ex);
       }
     }
 
     /// <summary>
-    /// Restores criteria in an adgroup.
+    /// Restores criteria in an ad group.
     /// </summary>
     /// <param name="adGroupId">AdGroup Id.</param>
     /// <param name="criteria">The list of criteria to be added to
-    /// the adgroup.</param>
-    /// <param name="languageTargeting">Campaign's language targeting.</param>
-    /// <param name="geoTargeting">Campaign's geo targeting.</param>
+    /// the ad group.</param>
     /// <param name="clientEmail">client account email.</param>
-    private void SetCriteria(long adGroupId, Criterion[] criteria, string[] languageTargeting,
-        GeoTarget geoTargeting, string clientEmail) {
-      CriterionService criterionService =
-          (CriterionService) user.GetService(AdWordsService.v13.CriterionService);
-      criterionService.clientEmailValue.Value[0] = clientEmail;
+    private void SetCriteria(long adGroupId, AdGroupCriterion[] adGroupCriteria,
+        string clientEmail) {
+      AdGroupCriterionService criterionService =
+          (AdGroupCriterionService) user.GetService(AdWordsService.v200909.AdGroupCriterionService);
+      criterionService.RequestHeader.clientEmail = clientEmail;
 
-      foreach (Criterion criterion in criteria) {
-        criterion.adGroupId = 0;
-        criterion.id = 0;
-      }
-
-      Criterion[] cleanCriteria = CheckCriteria(criteria, languageTargeting,
-          geoTargeting, clientEmail);
-
-      if (cleanCriteria.Length > 0) {
-        foreach (Criterion criterion in cleanCriteria) {
-          criterion.adGroupId = adGroupId;
+      List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
+      foreach (AdGroupCriterion adGroupCriterion in adGroupCriteria) {
+        // Clear the readonly fields.
+        if (adGroupCriterion is BiddableAdGroupCriterion) {
+          BiddableAdGroupCriterion biddableAgc = (BiddableAdGroupCriterion) adGroupCriterion;
+          biddableAgc.approvalStatusSpecified = false;
+          biddableAgc.qualityInfo = null;
+          biddableAgc.systemServingStatusSpecified = false;
+          biddableAgc.firstPageCpc = null;
+          biddableAgc.stats = null;
+          if (biddableAgc.bids is ManualCPCAdGroupCriterionBids) {
+            ManualCPCAdGroupCriterionBids manualCpcAgcBids =
+                (ManualCPCAdGroupCriterionBids) biddableAgc.bids;
+            manualCpcAgcBids.bidSourceSpecified = false;
+          } else if (biddableAgc.bids is ManualCPMAdGroupCriterionBids) {
+            ManualCPMAdGroupCriterionBids manualCpmAgcBids =
+                (ManualCPMAdGroupCriterionBids) biddableAgc.bids;
+            manualCpmAgcBids.bidSourceSpecified = false;
+          }
         }
-        Criterion[] newCriteria = criterionService.addCriteria(cleanCriteria);
+
+        adGroupCriterion.criterion.idSpecified = false;
+
+        adGroupCriterion.adGroupIdSpecified = true;
+        adGroupCriterion.adGroupId = adGroupId;
+
+        AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
+        operation.@operator = Operator.ADD;
+        operation.operatorSpecified = true;
+        operation.operand = adGroupCriterion;
+        operations.Add(operation);
+      }
+      try {
+        criterionService.mutate(operations.ToArray());
+      } catch (Exception ex) {
+        throw new System.ApplicationException("Could not add adgroup(s). See inner exception" +
+            " for details.", ex);
       }
     }
 
@@ -240,93 +352,35 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <param name="campaignId">The campaign id.</param>
     /// <param name="criteria">The list of criteria to be added to
-    /// the adgroup.</param>
-    /// <param name="languageTargeting">Campaign's language targeting.</param>
-    /// <param name="geoTargeting">Campaign's geo targeting.</param>
+    /// the campaign.</param>
     /// <param name="clientEmail">client account email.</param>
-    private void SetCampaignCriteria(int campaignId, Criterion[] criteria,
-        string[] languageTargeting, GeoTarget geoTargeting, string clientEmail) {
-      CriterionService criterionService =
-          (CriterionService) user.GetService(AdWordsService.v13.CriterionService);
-      criterionService.clientEmailValue.Value[0] = clientEmail;
+    private void SetCampaignCriteria(long campaignId, CampaignCriterion[] campaignCriteria,
+        string clientEmail) {
+      CampaignCriterionService criterionService = (CampaignCriterionService) user.GetService(
+          AdWordsService.v200909.CampaignCriterionService);
+      criterionService.RequestHeader.clientEmail = clientEmail;
 
-      foreach (Criterion criterion in criteria) {
-        criterion.adGroupId = 0;
-        criterion.id = 0;
+      List<CampaignCriterionOperation> operations = new List<CampaignCriterionOperation>();
+
+      foreach (CampaignCriterion campaignCriterion in campaignCriteria) {
+        // Clear the readonly fields.
+        campaignCriterion.criterion.idSpecified = false;
+
+        campaignCriterion.campaignIdSpecified = true;
+        campaignCriterion.campaignId = campaignId;
+
+        CampaignCriterionOperation operation = new CampaignCriterionOperation();
+        operation.@operator = Operator.ADD;
+        operation.operatorSpecified = true;
+        operation.operand = campaignCriterion;
+        operations.Add(operation);
       }
-
-      Criterion[] cleanCriteria = CheckCriteria(criteria, languageTargeting,
-          geoTargeting, clientEmail);
-
-      if (cleanCriteria.Length > 0) {
-        criterionService.setCampaignNegativeCriteria(campaignId, cleanCriteria);
+      try {
+        criterionService.mutate(operations.ToArray());
+      } catch (Exception ex) {
+        throw new System.ApplicationException("Could not add adgroup(s). See inner exception" +
+            " for details.", ex);
       }
-    }
-
-    /// <summary>
-    /// Checks the ads for policy violation prior to adding them in an adgroup.
-    /// </summary>
-    /// <param name="ads">The list of ads to be checked.</param>
-    /// <param name="languageTargeting">Campaign's language targeting.</param>
-    /// <param name="geoTargeting">Campaign's geo targeting.</param>
-    /// <param name="clientEmail">client account email.</param>
-    /// <returns>List of ads, with exemption request added if applicable.
-    /// Items that cannot be exempted are removed from the list.</returns>
-    private Ad[] CheckAds(Ad[] ads, string clientEmail, string[] languageTargeting,
-        GeoTarget geoTargeting) {
-      AdService adService = (AdService) user.GetService(AdWordsService.v13.AdService);
-      adService.clientEmailValue.Value[0] = clientEmail;
-
-      foreach (Ad ad in ads) {
-        ad.adGroupId = 0;
-        ad.id = 0;
-      }
-
-      ApiError[] errors = adService.checkAds(ads, languageTargeting, geoTargeting);
-
-      if (errors != null) {
-        foreach (ApiError error in errors) {
-          if (error.isExemptable) {
-            ads[error.index].exemptionRequest = "Imported using SandboxRestoreTool.";
-          } else {
-            Console.WriteLine("Could not import Ad");
-            ads[error.index] = null;
-          }
-        }
-      }
-      return (Ad[]) EliminateNulls(new ArrayList(ads)).ToArray(typeof(Ad));
-    }
-
-    /// <summary>
-    /// Checks the criteria for policy violations prior to adding them
-    /// in an adgroup or campaign.
-    /// </summary>
-    /// <param name="criteria">List of criteria to be checked.</param>
-    /// <param name="languageTargeting">Campaign's language targeting.</param>
-    /// <param name="geoTargeting">Campaign's geo targeting.</param>
-    /// <param name="clientEmail">client account email.</param>
-    /// <returns>List of criteria, with exemption request added if applicable.
-    /// Items that cannot be exempted are removed from the list.</returns>
-    private Criterion[] CheckCriteria(Criterion[] criteria, string[] languageTargeting,
-        GeoTarget geoTargeting, string clientEmail) {
-      CriterionService criterionService =
-          (CriterionService) user.GetService(AdWordsService.v13.CriterionService);
-      criterionService.clientEmailValue.Value[0] = clientEmail;
-
-      ApiError[] errors = criterionService.checkCriteria(criteria, languageTargeting,
-          geoTargeting);
-
-      if (errors != null) {
-        foreach (ApiError error in errors) {
-          if (error.isExemptable) {
-            criteria[error.index].exemptionRequest = "Imported using SandboxRestoreTool.";
-          } else {
-            Console.WriteLine("Could not import Criterion");
-            criteria[error.index] = null;
-          }
-        }
-      }
-      return (Criterion[]) EliminateNulls(new ArrayList(criteria)).ToArray(typeof(Criterion));
     }
 
     /// <summary>
@@ -334,28 +388,36 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <param name="clientEmail">client account email.</param>
     /// <returns>List of campaigns in the account.</returns>
-    private CampaignEx[] GetAccountCampaigns(string clientEmail) {
-      List<CampaignEx> retVal = new List<CampaignEx>();
+    private LocalCampaign[] GetAccountCampaigns(string clientEmail) {
+      List<LocalCampaign> retval = new List<LocalCampaign>();
 
       CampaignService campaignService =
-          (CampaignService) user.GetService(AdWordsService.v13.CampaignService);
-      campaignService.clientEmailValue.Value[0] = clientEmail;
+          (CampaignService) user.GetService(AdWordsService.v200909.CampaignService);
+      campaignService.RequestHeader.clientEmail = clientEmail;
 
-      Campaign[] campaigns = campaignService.getAllAdWordsCampaigns(0);
+      // Get all campaigns.
+      CampaignPage page = campaignService.get(new CampaignSelector());
 
-      if (campaigns != null) {
-        foreach (Campaign campaign in campaigns) {
-          CampaignEx campaignex = new CampaignEx();
-          campaignex.campaign = campaign;
-          campaignex.adGroups = new List<AdGroupEx>(GetAdGroups(campaign.id, clientEmail));
-          Criterion[] criterionArray = GetCampaignCriteria(campaign.id, clientEmail);
-          if (criterionArray != null) {
-            campaignex.criteria = new List<Criterion>(criterionArray);
+      // Display campaigns.
+      if (page != null && page.entries != null) {
+        if (page.entries.Length > 0) {
+          foreach (Campaign campaign in page.entries) {
+            LocalCampaign localCampaign = new LocalCampaign();
+            localCampaign.Campaign = campaign;
+            localCampaign.AdGroups = new List<LocalAdGroup>(GetAdGroups(campaign.id, clientEmail));
+            CampaignCriterion[] campaignCriteria = GetCampaignCriteria(campaign.id, clientEmail);
+            if (campaignCriteria != null) {
+              localCampaign.CampaignCriteria = new List<CampaignCriterion>(campaignCriteria);
+            }
+            TargetList[] targetsArray = GetCampaignTargets(campaign.id, clientEmail);
+            if (targetsArray != null) {
+              localCampaign.CampaignTargets = new List<TargetList>(targetsArray);
+            }
+            retval.Add(localCampaign);
           }
-          retVal.Add(campaignex);
         }
       }
-      return retVal.ToArray();
+      return retval.ToArray();
     }
 
     /// <summary>
@@ -363,33 +425,36 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <param name="campaignId">Campaign Id.</param>
     /// <param name="clientEmail">client account email.</param>
-    /// <returns>List of adgroups in the campaign.</returns>
-    private AdGroupEx[] GetAdGroups(int campaignId, string clientEmail) {
-      List<AdGroupEx> retVal = new List<AdGroupEx>();
+    /// <returns>List of ad groups in the campaign.</returns>
+    private LocalAdGroup[] GetAdGroups(long campaignId, string clientEmail) {
+      List<LocalAdGroup> retval = new List<LocalAdGroup>();
 
-      AdGroupService adgroupService =
-          (AdGroupService) user.GetService(AdWordsService.v13.AdGroupService);
-      adgroupService.clientEmailValue.Value[0] = clientEmail;
+      AdGroupService adGroupService =
+          (AdGroupService) user.GetService(AdWordsService.v200909.AdGroupService);
+      adGroupService.RequestHeader.clientEmail = clientEmail;
 
-      AdGroup[] adgroups = adgroupService.getAllAdGroups(campaignId);
+      AdGroupSelector adGroupSelector = new AdGroupSelector();
+      adGroupSelector.campaignIdSpecified = true;
+      adGroupSelector.campaignId = campaignId;
 
-      if (adgroups != null) {
-        foreach (AdGroup adgroup in adgroups) {
-          AdGroupEx adgroupex = new AdGroupEx();
+      AdGroupPage page = adGroupService.get(adGroupSelector);
+      if (page != null && page.entries != null) {
+        foreach (AdGroup adGroup in page.entries) {
+          LocalAdGroup adgroupex = new LocalAdGroup();
 
-          adgroupex.adgroup = adgroup;
-          Ad[] adArray = GetAllAds(adgroup.id, clientEmail);
-          if (adArray != null) {
-            adgroupex.ads = new List<Ad>(adArray);
+          adgroupex.AdGroup = adGroup;
+          AdGroupAd[] ads = GetAllAds(adGroup.id, clientEmail);
+          if (ads != null) {
+            adgroupex.Ads = new List<AdGroupAd>(ads);
           }
-          Criterion[] criterionArray = GetAdGroupCriteria(adgroup.id, clientEmail);
-          if (criterionArray != null) {
-            adgroupex.criteria = new List<Criterion>(criterionArray);
+          AdGroupCriterion[] adGroupCriteria = GetAdGroupCriteria(adGroup.id, clientEmail);
+          if (adGroupCriteria != null) {
+            adgroupex.Criteria = new List<AdGroupCriterion>(adGroupCriteria);
           }
-          retVal.Add(adgroupex);
+          retval.Add(adgroupex);
         }
       }
-      return retVal.ToArray();
+      return retval.ToArray();
     }
 
     /// <summary>
@@ -398,33 +463,27 @@ namespace com.google.api.adwords.lib.util {
     /// <param name="adGroupId">The AdGroup Id.</param>
     /// <param name="clientEmail">client account email.</param>
     /// <returns>List of ads in the adgroup.</returns>
-    private Ad[] GetAllAds(long adGroupId, string clientEmail) {
-      AdService adService = (AdService) user.GetService(
-          AdWordsService.v13.AdService);
-      adService.clientEmailValue.Value[0] = clientEmail;
+    private AdGroupAd[] GetAllAds(long adGroupId, string clientEmail) {
+      AdGroupAdService service =
+          (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);
 
-      Ad[] ads = adService.getAllAds(new long[] {adGroupId});
-      if (ads != null) {
-        foreach (Ad ad in ads) {
-          if (ad is ImageAd && (ad as ImageAd).image != null) {
-            (ad as ImageAd).image.data = FetchImage((ad as ImageAd).image.imageUrl);
-          } else if (ad is VideoAd && (ad as VideoAd).image != null) {
-            (ad as VideoAd).image.data = FetchImage((ad as VideoAd).image.imageUrl);
-          } else if (ad is MobileImageAd && (ad as MobileImageAd).image != null) {
-            (ad as MobileImageAd).image.data = FetchImage((ad as MobileImageAd).image.imageUrl);
-          } else if (ad is CommerceAd && (ad as CommerceAd).productImage != null) {
-            (ad as CommerceAd).productImage.data =
-                FetchImage((ad as CommerceAd).productImage.imageUrl);
-          } else if (ad is LocalBusinessAd && (ad as LocalBusinessAd).customIcon != null) {
-            (ad as LocalBusinessAd).customIcon.data =
-                FetchImage((ad as LocalBusinessAd).customIcon.imageUrl);
-          } else if (ad is LocalBusinessAd && (ad as LocalBusinessAd).businessImage != null) {
-            (ad as LocalBusinessAd).businessImage.data =
-                FetchImage((ad as LocalBusinessAd).businessImage.imageUrl);
+      AdGroupAdSelector selector = new AdGroupAdSelector();
+      selector.adGroupIds = new long[] { adGroupId };
+
+      List<AdGroupAd> retval = new List<AdGroupAd>();
+      AdGroupAdPage page = service.get(selector);
+
+      if (page != null && page.entries != null) {
+        foreach (AdGroupAd adGroupAd in page.entries) {
+          // TODO(Anash): ImageAd and MobileImageAd gives mediaId, which cannot be
+          // downloaded yet with v200909.
+          if (adGroupAd.ad is TextAd) {
+            retval.Add(adGroupAd);
           }
         }
       }
-      return ads;
+
+      return retval.ToArray();
     }
 
     /// <summary>
@@ -433,11 +492,26 @@ namespace com.google.api.adwords.lib.util {
     /// <param name="adGroupId">The AdGroup Id.</param>
     /// <param name="clientEmail">client account email.</param>
     /// <returns>List of criteria in the adgroup.</returns>
-    private Criterion[] GetAdGroupCriteria(long adGroupId, string clientEmail) {
-      CriterionService criterionService = (CriterionService) user.GetService(
-          AdWordsService.v13.CriterionService);
-      criterionService.clientEmailValue.Value[0] = clientEmail;
-      return criterionService.getAllCriteria(adGroupId);
+    private AdGroupCriterion[] GetAdGroupCriteria(long adGroupId, string clientEmail) {
+      AdGroupCriterionService criterionService = (AdGroupCriterionService) user.GetService(
+          AdWordsService.v200909.AdGroupCriterionService);
+      AdGroupCriterionSelector selector = new AdGroupCriterionSelector();
+
+      AdGroupCriterionIdFilter filter = new AdGroupCriterionIdFilter();
+      filter.adGroupIdSpecified = true;
+      filter.adGroupId = adGroupId;
+      selector.idFilters = new AdGroupCriterionIdFilter[] { filter };
+
+      criterionService.RequestHeader.clientEmail = clientEmail;
+
+      AdGroupCriterionPage page = criterionService.get(selector);
+      List<AdGroupCriterion> retval = new List<AdGroupCriterion>();
+      if (page != null && page.entries != null) {
+        foreach (AdGroupCriterion adGroupCriterion in page.entries) {
+          retval.Add(adGroupCriterion);
+        }
+      }
+      return retval.ToArray();
     }
 
     /// <summary>
@@ -446,11 +520,53 @@ namespace com.google.api.adwords.lib.util {
     /// <param name="campaignId">The campaign id.</param>
     /// <param name="clientEmail">client account email.</param>
     /// <returns>List of criteria in the campaign.</returns>
-    private Criterion[] GetCampaignCriteria(int campaignId, string clientEmail) {
-      CriterionService criterionService = (CriterionService) user.GetService(
-          AdWordsService.v13.CriterionService);
-      criterionService.clientEmailValue.Value[0] = clientEmail;
-      return criterionService.getCampaignNegativeCriteria(campaignId);
+    private CampaignCriterion[] GetCampaignCriteria(long campaignId, string clientEmail) {
+      CampaignCriterionService criterionService = (CampaignCriterionService) user.GetService(
+          AdWordsService.v200909.CampaignCriterionService);
+      CampaignCriterionSelector selector = new CampaignCriterionSelector();
+
+      CampaignCriterionIdFilter filter = new CampaignCriterionIdFilter();
+      filter.campaignIdSpecified = true;
+      filter.campaignId = campaignId;
+      selector.idFilters = new CampaignCriterionIdFilter[] { filter };
+
+      criterionService.RequestHeader.clientEmail = clientEmail;
+
+      CampaignCriterionPage page = criterionService.get(selector);
+      List<CampaignCriterion> retval = new List<CampaignCriterion>();
+      if (page != null && page.entries != null) {
+        foreach (CampaignCriterion campaignCriterion in page.entries) {
+          retval.Add(campaignCriterion);
+        }
+      }
+      return retval.ToArray();
+    }
+
+    /// <summary>
+    /// Retrieves the list of all targets for a campaign.
+    /// </summary>
+    /// <param name="campaignId">Id of the campaign for which targets
+    /// are retrieved.</param>
+    /// <param name="clientEmail">client account email.</param>
+    /// <returns>List of targets for the campaign.</returns>
+    private TargetList[] GetCampaignTargets(long campaignId, string clientEmail) {
+      CampaignTargetService targetService = (CampaignTargetService) user.GetService(
+          AdWordsService.v200909.CampaignTargetService);
+      CampaignTargetSelector selector = new CampaignTargetSelector();
+      selector.campaignIds = new long[] { campaignId };
+
+      targetService.RequestHeader.clientEmail = clientEmail;
+
+      CampaignTargetPage page = targetService.get(selector);
+
+      List<TargetList> retval = new List<TargetList>();
+      // Display campaigns.
+      if (page != null && page.entries != null) {
+        foreach (TargetList targetList in page.entries) {
+          retval.Add(targetList);
+        }
+      }
+      return retval.ToArray();
     }
 
     /// <summary>
@@ -474,22 +590,6 @@ namespace com.google.api.adwords.lib.util {
       }
       responseStream.Close();
       return memStream.ToArray();
-    }
-
-    /// <summary>
-    /// Eliminate null elements in an array.
-    /// </summary>
-    /// <param name="aryItems">Input array.</param>
-    /// <returns>Output array, which is the input array, minus all null elements.
-    /// </returns>
-    private static ArrayList EliminateNulls(ArrayList aryItems) {
-      ArrayList retVal = new ArrayList();
-      foreach (object item in aryItems) {
-        if (item != null) {
-          retVal.Add(item);
-        }
-      }
-      return retVal;
     }
   }
 }

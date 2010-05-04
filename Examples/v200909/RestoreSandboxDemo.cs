@@ -15,24 +15,26 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using com.google.api.adwords.lib.util;
 
 using System;
-using System.IO;
-using System.Net;
+using System.Collections.Generic;
+using System.Xml;
 
 namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
-  /// This code example gets all campaigns. To add a campaign, run
-  /// AddCampaign.cs.
+  /// This code example shows how to restore an entire sandbox account.
+  /// You should run BackupSandboxDemo.cs first to obtain the input file
+  /// for this code example.
   /// </summary>
-  class GetAllCampaigns : SampleBase {
+  class RestoreSandboxDemo : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all campaigns. To add a campaign, run AddCampaign.cs.";
+        return "This code example shows how to restore an entire sandbox account. You should run" +
+            " BackupSandboxDemo.cs first to obtain the input file for this code example.";
       }
     }
 
@@ -42,28 +44,17 @@ namespace com.google.api.adwords.samples.v200909 {
     /// <param name="user">The AdWords user object running the code example.
     /// </param>
     public override void Run(AdWordsUser user) {
-      // Get the CampaignService.
-      CampaignService campaignService =
-          (CampaignService) user.GetService(AdWordsService.v200909.CampaignService);
+      user.UseSandbox();
+      DataUtilities.RestoreSandboxContents(user, string.Format("{0}\\SandboxBackup.xml",
+          GetHomeDir()));
+    }
 
-      try {
-        // Get all campaigns.
-        CampaignPage page = campaignService.get(new CampaignSelector());
-
-        // Display campaigns.
-        if (page!= null && page.entries != null) {
-         if (page.entries.Length > 0) {
-           foreach (Campaign campaign in page.entries) {
-             Console.WriteLine("Campaign with id = '{0}', name = '{1}' and status = '{2}'" +
-               " was found.", campaign.id, campaign.name, campaign.status);
-           }
-         } else {
-           Console.WriteLine("No campaigns were found.");
-         }
-        }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to retrieve Campaign(s). Exception says \"{0}\"", ex.Message);
-      }
+    /// <summary>
+    /// Gets the current user's home directory.
+    /// </summary>
+    /// <returns>The current user's home directory.</returns>
+    public static String GetHomeDir() {
+      return Environment.GetEnvironmentVariable("USERPROFILE");
     }
   }
 }

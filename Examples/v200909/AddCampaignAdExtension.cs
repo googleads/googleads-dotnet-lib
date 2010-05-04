@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,23 +23,25 @@ using System.Text;
 
 namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
-  /// This sample shows how to add an Ad Extension to an existing campaign. To
-  /// create a campaign, you can use the AddCampaign sample.
+  /// This code example shows how to add an Ad Extension to an existing campaign. To
+  /// create a campaign, run AddCampaign.cs.
   /// </summary>
   class AddCampaignAdExtension : SampleBase {
     /// <summary>
-    /// Returns a description about the sample code.
+    /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This sample shows how to add an Ad Extension to an existing campaign.";
+        return "This code example shows how to add an Ad Extension to an existing campaign. To" +
+            " create a campaign, run AddCampaign.cs.";
       }
     }
 
     /// <summary>
-    /// Run the sample code.
+    /// Run the code example.
     /// </summary>
-    /// <param name="user">The AdWords user object running the sample.</param>
+    /// <param name="user">The AdWords user object running the code example.
+    /// </param>
     public override void Run(AdWordsUser user) {
       // Get the CampaignAdExtensionService.
       CampaignAdExtensionService campaignExtensionService =
@@ -56,9 +58,9 @@ namespace com.google.api.adwords.samples.v200909 {
       address1.postalCode = "94043";
       address1.countryCode = "US";
 
-      // Add location 2: 38 avenue de l'Opéra, 75002 Paris, FR
+      // Add location 2: 38 avenue de l'OpÃ©ra, 75002 Paris, FR
       Address address2 = new Address();
-      address2.streetAddress = "38 avenue de l'Opéra";
+      address2.streetAddress = "38 avenue de l'OpÃ©ra";
       address2.cityName = "Paris";
       address2.postalCode = "75002";
       address2.countryCode = "FR";

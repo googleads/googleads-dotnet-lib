@@ -37,6 +37,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Compile Include="v200909\AdWordsService.v200909.cs" />
+    <Compile Include="v13\AdWordsService.v13.cs" />
     <EmbeddedResource Include="..\data\categories.csv">
       <Link>data\categories.csv</Link>
     </EmbeddedResource>
@@ -73,6 +75,10 @@
     <Compile Include="lib\AdWordsApiService.cs" />
     <Compile Include="lib\ApiUnitsEntry.cs" />
     <Compile Include="lib\SoapServiceBase.cs" />
+    <Compile Include="lib\util\AccountManager.cs" />
+    <Compile Include="lib\util\ArchiveClasses.cs" />
+    <Compile Include="lib\util\Archiver.cs" />
+    <Compile Include="lib\util\UnitsUtilities.cs" />
     <Compile Include="v13\AdWordsApi.cs" />
     <Compile Include="v200909\AdWordsApi.cs" />
     <Compile Include="AssemblyInfo.cs" />
@@ -85,11 +91,6 @@
     <Compile Include="lib\ApplicationConfiguration.cs" />
     <Compile Include="lib\AuthToken.cs" />
     <Compile Include="lib\AuthTokenException.cs" />
-    <Compile Include="lib\util\AccountManager.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="lib\util\Archiver.cs" />
-    <Compile Include="lib\util\ArchiveClasses.cs" />
     <Compile Include="lib\util\CommonStructs.cs" />
     <Compile Include="lib\util\CsvFile.cs" />
     <Compile Include="lib\ApiUnitsExtension.cs" />
@@ -98,9 +99,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="lib\util\ReportUtilities.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="lib\util\UnitsUtilities.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="v13\LegacyAdWordsApiExceptions.cs" />

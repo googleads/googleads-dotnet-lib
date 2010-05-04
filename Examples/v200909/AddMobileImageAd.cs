@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,22 +25,23 @@ using System.IO;
 
 namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
-  /// This sample shows how to create a Mobile Image Ad.
+  /// This code example shows how to create a Mobile Image Ad.
   /// </summary>
   class AddMobileImageAd : SampleBase {
     /// <summary>
-    /// Returns a description about the sample code.
+    /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This sample shows how to create a Mobile Image Ad.";
+        return "This code example shows how to create a Mobile Image Ad.";
       }
     }
 
     /// <summary>
-    /// Run the sample code.
+    /// Run the code example.
     /// </summary>
-    /// <param name="user">The AdWords user object running the sample.</param>
+    /// <param name="user">The AdWords user object running the code example.
+    /// </param>
     public override void Run(AdWordsUser user) {
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);

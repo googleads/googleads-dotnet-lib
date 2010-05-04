@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -41,8 +41,8 @@ namespace com.google.api.adwords.lib.util {
 
       foreach (string[] item in reader.Records) {
         Category category;
-        category.path = item[0];
-        category.category = item[1];
+        category.category = item[0];
+        category.path = item[1];
         retVal.Add(category);
       }
       return retVal;
@@ -122,13 +122,34 @@ namespace com.google.api.adwords.lib.util {
       List<OpRates> retVal = new List<OpRates>();
 
       foreach (string[] item in reader.Records) {
-        OpRates rates;
+        OpRates rates = new OpRates();
         rates.version = item[0];
         rates.serviceName = item[1];
         rates.methodName = item[2];
         rates.rate = int.Parse(item[3]);
         rates.isPerItem = bool.Parse(item[4]);
         retVal.Add(rates);
+      }
+      return retVal;
+    }
+
+    /// <summary>
+    /// Gets the cost in units for all operations available in AdWords API.
+    /// See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_ratesheet.html">this page</a> for details.
+    /// </summary>
+    /// <returns>A list of OpRates objects.</returns>
+    public static List<ApiMethod> GetAllMethods() {
+      string csvContents = GetCsv("ops_rates.csv");
+      CsvFile reader = new CsvFile();
+      reader.ReadFromString(csvContents, true);
+      List<ApiMethod> retVal = new List<ApiMethod>();
+
+      foreach (string[] item in reader.Records) {
+        ApiMethod method = new ApiMethod();
+        method.version = item[0];
+        method.serviceName = item[1];
+        method.methodName = item[2];
+        retVal.Add(method);
       }
       return retVal;
     }
@@ -245,54 +266,6 @@ namespace com.google.api.adwords.lib.util {
     }
 
     /// <summary>
-    /// Saves the contents of a sandbox account into an XML.
-    /// </summary>
-    /// <param name="user">The AdWordsUser to be used for downloading sandbox contents.</param>
-    /// <param name="fileName">The XML file to which the dump is to be
-    /// saved.</param>
-    public static void DownloadSandboxContents(AdWordsUser user, string fileName) {
-      AccountManager manager = new AccountManager(user);
-      ClientAccount[] allClients = manager.DownloadAllAccounts();
-
-      XmlDocument xDoc = null;
-
-      xDoc = new XmlDocument();
-      xDoc.LoadXml("<accounts/>");
-
-      Archiver archiver = new Archiver();
-
-      foreach (ClientAccount account in allClients) {
-        XmlElement xClient = xDoc.CreateElement("account");
-        archiver.SerializeAccount(xClient, account);
-        xDoc.DocumentElement.AppendChild(xClient);
-      }
-      xDoc.Save(fileName);
-    }
-
-    /// <summary>
-    /// Restores the contents of a sandbox account from an XML.
-    /// </summary>
-    /// <param name="fileName">The XML file containing a sandbox dump.</param>
-    /// <param name="user">The AdWordsUser to be used for uploading file contents to the sandbox.
-    /// </param>
-    public static void RestoreSandboxContents(AdWordsUser user, string fileName) {
-      XmlDocument xDoc = new XmlDocument();
-      xDoc.Load(fileName);
-
-      Archiver archiver = new Archiver();
-      List<ClientAccount> allClients = new List<ClientAccount>();
-
-      XmlNodeList xClients = xDoc.SelectNodes("accounts/account");
-
-      foreach (XmlElement xClient in xClients) {
-        allClients.Add(archiver.DeSerializeAccount(xClient));
-      }
-
-      AccountManager manager = new AccountManager(user);
-      manager.UploadAllAccounts(allClients.ToArray());
-    }
-
-    /// <summary>
     /// Load an embedded csv into memory.
     /// </summary>
     /// <param name="csvName">The csv filename to be loaded.</param>
@@ -324,6 +297,54 @@ namespace com.google.api.adwords.lib.util {
         }
       }
       return contents;
+    }
+
+    /// <summary>
+    /// Saves the contents of a sandbox account into an XML.
+    /// </summary>
+    /// <param name="user">The AdWordsUser to be used for downloading sandbox contents.</param>
+    /// <param name="fileName">The XML file to which the dump is to be
+    /// saved.</param>
+    public static void DownloadSandboxContents(AdWordsUser user, string fileName) {
+      AccountManager manager = new AccountManager(user);
+      ClientAccount[] allClients = manager.DownloadAllAccounts();
+
+      XmlDocument xDoc = null;
+
+      xDoc = new XmlDocument();
+      xDoc.LoadXml("<Accounts/>");
+
+      Archiver archiver = new Archiver();
+
+      foreach (ClientAccount account in allClients) {
+        XmlElement xClient = xDoc.CreateElement("Account");
+        archiver.SerializeAccount(xClient, account);
+        xDoc.DocumentElement.AppendChild(xClient);
+      }
+      xDoc.Save(fileName);
+    }
+
+    /// <summary>
+    /// Restores the contents of a sandbox account from an XML.
+    /// </summary>
+    /// <param name="fileName">The XML file containing a sandbox dump.</param>
+    /// <param name="user">The AdWordsUser to be used for uploading file contents to the sandbox.
+    /// </param>
+    public static void RestoreSandboxContents(AdWordsUser user, string fileName) {
+      XmlDocument xDoc = new XmlDocument();
+      xDoc.Load(fileName);
+
+      Archiver archiver = new Archiver();
+      List<ClientAccount> allClients = new List<ClientAccount>();
+
+      XmlNodeList xClients = xDoc.SelectNodes("Accounts/Account");
+
+      foreach (XmlElement xClient in xClients) {
+        allClients.Add(archiver.DeSerializeAccount(xClient));
+      }
+
+      AccountManager manager = new AccountManager(user);
+      manager.UploadAllAccounts(allClients.ToArray());
     }
   }
 }

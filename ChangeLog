@@ -1,3 +1,8 @@
+8.0.0
+- Removed support for all the deprecated v13 services.
+- Ported all utility classes to use the new v200909 API instead of deprecated
+  v13 services.
+
 7.1.0
 - Fix for issue 37, 38 on code site.
 - v200909 API calls are gzip compressed at HTTP level.
@@ -5,7 +10,8 @@
 7.0.0
 - Removed support for v200906.
 - Application tokens are now optional.
-- You can now use the library without an app.config, using AdWordsUser(headers) constructor alone.
+- You can now use the library without an app.config, using AdWordsUser(headers)
+  constructor alone.
 - Fix for issue 32 on code site.
 
 6.2.0
@@ -14,7 +20,8 @@
 - Fix for issues 26, 27, 28 on code site.
 
 6.1.0
-- Added code samples to show how to use the library in an ASP.NET website or webservice project.
+- Added code samples to show how to use the library in an ASP.NET website or
+  webservice project.
 - Fix for issue 23, 24, 25 on code site.
 - The library works when request xml validation turned on v2009 servers.
 
@@ -28,7 +35,8 @@
 - Added an improved code patcher.
 - Fixed issue 20, 22 on code site.
 - Upgraded all code samples to v200909.
-- Logging class rewritten so that there are combined logs for http requests and soap requests.
+- Logging class rewritten so that there are combined logs for http requests and
+  soap requests.
 
 5.0.0
 - Added support for v200909 services and added new samples.
@@ -41,36 +49,43 @@
 4.0.0
 - Removed support for v200902.
 - Added support for v200906.
-- TraceExtension will now mask developer and application tokens partially before saving to log.
-- TraceExcension's masking behaviour can be changed using MaskCredentials flag in app.config.
+- TraceExtension will now mask developer and application tokens partially before
+  saving to log.
+- TraceExcension's masking behaviour can be changed using MaskCredentials flag
+  in app.config.
 - v200906 will connect to adwords.google.com by default.
-- All INSERT_XXX strings are now wrapped around a method named _T. If you do a #define INTERACTIVE
-  in SampleBase.cs, all code samples will accept input from Console.
+- All INSERT_XXX strings are now wrapped around a method named _T. If you do a
+  #define INTERACTIVE in SampleBase.cs, all code samples will accept input
+  from Console.
 
 3.1.1
 - Regenerated stub classes for v200902.
 
 3.1.0
-- All the samples now have INSERT_XXX placeholders for various items like adGroupId, campaignId,
-  etc. You have to substitute correct values before running these samples.
-- Added unit tests that are compatible with NUnit. See UnitTests/README for details.
-- TraceExtension now masks out password and authToken from SOAP logs before saving them on disk.
+- All the samples now have INSERT_XXX placeholders for various items like
+  adGroupId, campaignId, etc. You have to substitute correct values before
+  running these samples.
+- Added unit tests that are compatible with NUnit. See UnitTests/README for
+  details.
+- TraceExtension now masks out password and authToken from SOAP logs before
+  saving them on disk.
 - AdWordsUser has new constructors.
-- Data csvs are now embedded as resources within the assembly. Hence dataFilePath key in app.config
-  has been removed.
-- Added UnitsUtilities to provide helper functions for retrieving API usage in units. You can now
-  retrieve unit usage for your account broken down by method name, or by individual accounts linked
-  under your MCC.
+- Data csvs are now embedded as resources within the assembly. Hence
+  dataFilePath key in app.config has been removed.
+- Added UnitsUtilities to provide helper functions for retrieving API usage
+  in units. You can now retrieve unit usage for your account broken down by
+  method name, or by individual accounts linked under your MCC.
 - Documentation for the project is now available at /doc in chm format.
 
 3.0.2
-- Fixed issue 15 in issue tracker (TraceExtension corrupts response xml if logging is turned off).
+- Fixed issue 15 in issue tracker (TraceExtension corrupts response xml if
+  logging is turned off).
 - Fixed Examples.csproj.
 - Fixed issue 16 in issue tracker (Some csvs did not escape commas properly.)
-- Fixed issue 17 in issue tracker (checkAds() and checkCriteria() choke if ApiError has textLength
-  and textIndex as null in SOAP Response xml.
-- Fixed issue 13 in issue tracker (GetAllJobs() choke if a StructureReport is present in Report
-  Center.
+- Fixed issue 17 in issue tracker (checkAds() and checkCriteria() choke if
+  ApiError has textLength and textIndex as null in SOAP Response xml.
+- Fixed issue 13 in issue tracker (GetAllJobs() choke if a StructureReport
+  is present in Report Center.
 
 3.0.1
 - Fixed a few documentation bugs in the source code.
@@ -120,8 +135,8 @@
   using v11.
 
 0.10.1:
-- Fix for setting clientEmail when initializing AdWordsUser object with
-  headers, http://code.google.com/p/google-api-adwords-dotnet/issues/detail?id=5.
+- Fix for setting clientEmail when initializing AdWordsUser object with headers,
+  http://code.google.com/p/google-api-adwords-dotnet/issues/detail?id=5.
 
 0.10.0:
 - Removed no longer supported v8.
@@ -133,8 +148,8 @@
 
 0.9.0:
 - Removed no longer supported v7.
-- Fix for multiple re initialization of AdWordsUser object in the same
-  instance, (http://code.google.com/p/google-api-adwords-dotnet/issues/detail?id=3).
+- Fix for multiple re initialization of AdWordsUser object in the same instance,
+  (http://code.google.com/p/google-api-adwords-dotnet/issues/detail?id=3).
 - Removed support for "token" header, which was present in pre-v8 versions.
 
 0.8.0:
@@ -157,10 +172,12 @@
 - Added support for v9.  Made v9 lib's default version.
 - Removed no longer supported v6.
 - Renamed AdServiceDemo example into GetAdIdsDemo.
-- Converted CreativeServiceDemo example into AdServiceDemo.  CreativeService was removed in v9.
+- Converted CreativeServiceDemo example into AdServiceDemo. CreativeService was
+  removed in v9.
 
 0.6: api.sgrinberg@gmail.com
-- Fixed endDate bug in example code.  new DateTime() defaults to "1/1/0001 12:00:00 AM", not today.
+- Fixed endDate bug in example code.  new DateTime() defaults to
+  "1/1/0001 12:00:00 AM", not today.
 - Removed no longer supported v5.
 
 0.5: api.sgrinberg@gmail.com

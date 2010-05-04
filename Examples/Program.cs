@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -54,25 +54,12 @@ namespace com.google.api.adwords.samples {
       // Add v13 samples.
       RegisterSample("v13.AccountServiceDemo", new AccountServiceDemo());
       RegisterSample("v13.AccountServiceNoConfigDemo", new AccountServiceNoConfigDemo());
-      RegisterSample("v13.CampaignServiceDemo", new CampaignServiceDemo());
-      RegisterSample("v13.CampaignServiceWebsiteDemo", new CampaignServiceWebsiteDemo());
-      RegisterSample("v13.GetCampaignIdsDemo", new GetCampaignIdsDemo());
-      RegisterSample("v13.GetAdGroupIdsDemo", new GetAdGroupIdsDemo());
-      RegisterSample("v13.AdServiceDemo", new AdServiceDemo());
-      RegisterSample("v13.GetAdIdsDemo", new GetAdIdsDemo());
-      RegisterSample("v13.KeywordToolDemo", new KeywordToolDemo());
       RegisterSample("v13.KeywordEstimateDemo", new KeywordEstimateDemo());
       RegisterSample("v13.CheckKeywordTrafficDemo", new CheckKeywordTrafficDemo());
-      RegisterSample("v13.SiteSuggestionServiceDemo", new SiteSuggestionServiceDemo());
-      RegisterSample("v13.InfoServiceDemo", new InfoServiceDemo());
       RegisterSample("v13.ReportServiceKeywordDemo", new ReportServiceKeywordDemo());
       RegisterSample("v13.ReportServiceStructureDemo", new ReportServiceStructureDemo());
       RegisterSample("v13.DownloadReportAsCsvDemo", new DownloadReportAsCsvDemo());
       RegisterSample("v13.DownloadReportAsXmlDemo", new DownloadReportAsXmlDemo());
-      RegisterSample("v13.BackupSandboxDemo", new BackupSandboxDemo());
-      RegisterSample("v13.RestoreSandboxDemo", new RestoreSandboxDemo());
-      RegisterSample("v13.MethodQuotaUsageDemo", new MethodQuotaUsageDemo());
-      RegisterSample("v13.ClientQuotaUsageDemo", new ClientQuotaUsageDemo());
 
       // Add v200909 samples.
       RegisterSample("v200909.AddCampaign", new AddCampaign());
@@ -121,8 +108,12 @@ namespace com.google.api.adwords.samples {
       RegisterSample("v200909.GetUnitCount", new GetUnitCount());
       RegisterSample("v200909.GetMethodCost", new GetMethodCost());
 
+      RegisterSample("v200909.BackupSandboxDemo", new BackupSandboxDemo());
+      RegisterSample("v200909.RestoreSandboxDemo", new RestoreSandboxDemo());
+      RegisterSample("v200909.MethodApiUnitsUsageDemo", new MethodApiUnitsUsageDemo());
+
       // Add combined examples.
-      RegisterSample("both.UsingKeywordSuggestionDemo", new UsingKeywordSuggestionDemo());
+      RegisterSample("both.UsingTrafficEstimatorDemo", new UsingTrafficEstimatorDemo());
     }
 
     /// <summary>
@@ -139,33 +130,21 @@ namespace com.google.api.adwords.samples {
 
       if (string.Compare(args[0], "--all", true) == 0) {
         foreach(SamplePair pair in sampleMap) {
-          SampleBase sample = pair.Value;
-          Console.WriteLine(sample.Description);
-          sample.Run(user);
-          Console.WriteLine("Press [Enter] to continue");
-          Console.ReadLine();
+          RunASample(user, pair.Value);
         }
       } else if (string.Compare(args[0], "--v13all", true) == 0) {
         List<SamplePair> matchingItems = sampleMap.FindAll(delegate(SamplePair pair) {
             return pair.Key.StartsWith("v13");
         });
         foreach (SamplePair matchingItem in matchingItems) {
-          SampleBase sample = matchingItem.Value;
-          Console.WriteLine(sample.Description);
-          sample.Run(user);
-          Console.WriteLine("Press [Enter] to continue");
-          Console.ReadLine();
+          RunASample(user, matchingItem.Value);
         }
       } else if (string.Compare(args[0], "--v2009all", true) == 0) {
         List<SamplePair> matchingItems = sampleMap.FindAll(delegate(SamplePair pair) {
           return pair.Key.StartsWith("v2009");
         });
         foreach (SamplePair matchingItem in matchingItems) {
-          SampleBase sample = matchingItem.Value;
-          Console.WriteLine(sample.Description);
-          sample.Run(user);
-          Console.WriteLine("Press [Enter] to continue");
-          Console.ReadLine();
+          RunASample(user, matchingItem.Value);
         }
       } else {
         foreach (string cmdArgs in args) {
@@ -174,17 +153,33 @@ namespace com.google.api.adwords.samples {
           });
 
           if (matchingPair.Key != null) {
-            SampleBase sample = matchingPair.Value;
-            Console.WriteLine(sample.Description);
-            sample.Run(user);
-            Console.WriteLine("Press [Enter] to continue");
-            Console.ReadLine();
+            RunASample(user, matchingPair.Value);
           } else {
             ShowUsage();
           }
         }
       }
     }
+
+    /// <summary>
+    /// Runs a code sample.
+    /// </summary>
+    /// <param name="user">The user whose credentials should be used for
+    /// running the sample.</param>
+    /// <param name="sample">The code sample to run.</param>
+    private static void RunASample(AdWordsUser user, SampleBase sample) {
+      try {
+        Console.WriteLine(sample.Description);
+        sample.Run(user);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code sample.\n{0} at\n{1}",
+            ex.Message, ex.StackTrace);
+      } finally {
+        Console.WriteLine("Press [Enter] to continue");
+        Console.ReadLine();
+      }
+    }
+
     /// <summary>
     /// Prints program usage message.
     /// </summary>

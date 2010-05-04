@@ -15,23 +15,26 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
+using com.google.api.adwords.v13;
 using com.google.api.adwords.v200909;
 
 using System;
-using System.IO;
-using System.Net;
+using System.Collections.Generic;
 
-namespace com.google.api.adwords.samples.v200909 {
+using Keywordv200909 = com.google.api.adwords.v200909.Keyword;
+
+namespace com.google.api.adwords.samples.both {
   /// <summary>
-  /// This code example retrieves keywords that are related to a given keyword.
+  /// This code example shows how to use both v13 and v200909 APIs in a
+  /// single method.
   /// </summary>
-  class GetRelatedKeywords : SampleBase {
+  class UsingTrafficEstimatorDemo : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example retrieves keywords that are related to a given keyword.";
+        return "Shows how to use both v13 and v200909 APIs in a single method.";
       }
     }
 
@@ -53,10 +56,10 @@ namespace com.google.api.adwords.samples.v200909 {
       keyword.matchType = KeywordMatchType.EXACT;
 
       RelatedToKeywordSearchParameter searchParameter = new RelatedToKeywordSearchParameter();
-      searchParameter.keywords = new Keyword[] {keyword};
+      searchParameter.keywords = new Keyword[] { keyword };
 
       TargetingIdeaSelector selector = new TargetingIdeaSelector();
-      selector.searchParameters = new SearchParameter[] {searchParameter};
+      selector.searchParameters = new SearchParameter[] { searchParameter };
       selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
       selector.requestTypeSpecified = true;
@@ -70,6 +73,7 @@ namespace com.google.api.adwords.samples.v200909 {
 
       selector.paging = paging;
 
+      List<Keyword> suggestions = new List<Keyword>();
       try {
         TargetingIdeaPage page = targetingIdeaService.get(selector);
 
@@ -78,21 +82,56 @@ namespace com.google.api.adwords.samples.v200909 {
             " entries are displayed below: \n", page.totalNumEntries, keywordText,
             page.entries.Length);
 
-          foreach(TargetingIdea idea in page.entries) {
+          foreach (TargetingIdea idea in page.entries) {
             foreach (Type_AttributeMapEntry entry in idea.data) {
               if (entry.key == AttributeType.KEYWORD) {
                 KeywordAttribute kwdAttribute = entry.value as KeywordAttribute;
-                Console.WriteLine("Related keyword with text = '{0}' and match type = '{1}'" +
-                  " was found.", kwdAttribute.value.text, kwdAttribute.value.matchType);
+                suggestions.Add(kwdAttribute.value);
               }
             }
           }
         } else {
           Console.WriteLine("No related keywords were found for your keyword.");
         }
+        TrafficEstimatorService service = (TrafficEstimatorService) user.GetService(
+            AdWordsService.v13.TrafficEstimatorService);
+        List<KeywordTrafficRequest> keywordTrafficRequests = new List<KeywordTrafficRequest>();
+
+        foreach (Keyword suggestion in suggestions) {
+          KeywordTrafficRequest trafficRequest = new KeywordTrafficRequest();
+          trafficRequest.keywordText = suggestion.text;
+
+          switch (suggestion.matchType) {
+            case KeywordMatchType.BROAD:
+              trafficRequest.keywordType = KeywordType.Broad;
+              break;
+
+            case KeywordMatchType.EXACT:
+              trafficRequest.keywordType = KeywordType.Exact;
+              break;
+
+            case KeywordMatchType.PHRASE:
+              trafficRequest.keywordType = KeywordType.Phrase;
+              break;
+
+          }
+          trafficRequest.language = "en_US";
+          keywordTrafficRequests.Add(trafficRequest);
+        }
+
+        KeywordTraffic[] traffics = service.checkKeywordTraffic(keywordTrafficRequests.ToArray());
+
+        if (traffics != null) {
+          for (int i = 0; i < traffics.Length; i++) {
+            Console.WriteLine("Keyword is '{0}' and traffic estimate is '{1}'",
+              suggestions[i].text, traffics[i]);
+          }
+        } else {
+          Console.WriteLine("Could not estimate traffic for keywords.");
+        }
       } catch (Exception ex) {
-        Console.WriteLine("Failed to retrieve related keywords. Exception says \"{0}\"",
-            ex.Message);
+        Console.WriteLine("Failed to retrieve traffic estimates for related keywords. " +
+            "Exception says \"{0}\"", ex.Message);
       }
     }
   }

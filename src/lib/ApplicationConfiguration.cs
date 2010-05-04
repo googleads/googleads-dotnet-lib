@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -318,6 +318,6 @@ namespace com.google.api.adwords.lib {
     /// <summary>
     /// The publicly released version number.
     /// </summary>
-    public const String version = "7.1";
+    public const String version = "8.0.0";
   }
 }

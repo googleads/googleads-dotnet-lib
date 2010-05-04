@@ -15,23 +15,28 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using com.google.api.adwords.lib.util;
+using com.google.api.adwords.v13;
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
-  /// This code example retrieves all ads given an existing ad group. To add
-  /// ads to an existing ad group, run AddAds.cs.
+  /// This code example displays API method usage for this month for all methods provided
+  /// by the AdWords API. Note that this data is not in real time and is refreshed
+  /// every few hours.
   /// </summary>
-  class GetAllAds : SampleBase {
+  class MethodApiUnitsUsageDemo : SampleBase {
     /// <summary>
     /// Returns a description about the sample code.
     /// </summary>
     public override string Description {
       get {
-        return "This code example retrieves all ads given an existing ad group. To add " +
-            "ads to an existing ad group, run AddAds.cs.";
+        return "This code example displays API method usage for this month for all methods" +
+            " provided by the AdWords API. Note that this data is not in real time and is" +
+            " refreshed every few hours.";
       }
     }
 
@@ -41,28 +46,15 @@ namespace com.google.api.adwords.samples.v200909 {
     /// <param name="user">The AdWords user object running the code example.
     /// </param>
     public override void Run(AdWordsUser user) {
-      // Get the AdGroupAdService.
-      AdGroupAdService service =
-          (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);
+      user.ResetUnits();
+      List<MethodQuotaUsage> methodQuotaUsage = UnitsUtilities.GetMethodQuotaUsage(user,
+          DateTime.Now.AddMonths(-1), DateTime.Now);
 
-      long adGroupId = long.Parse(_T("INSERT_AD_GROUP_ID_HERE"));
-
-      // Create a selector and set the filters.
-      AdGroupAdSelector selector = new AdGroupAdSelector();
-      selector.adGroupIds = new long[] {adGroupId};
-
-      try {
-        AdGroupAdPage page = service.get(selector);
-
-        if (page != null && page.entries != null) {
-          foreach (AdGroupAd tempAdGroupAd in page.entries) {
-            Console.WriteLine("Ad id is {0} and status is {1}", tempAdGroupAd.ad.id,
-                tempAdGroupAd.status);
-          }
-        }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to get Ad(s). Exception says \"{0}\"", ex.Message);
+      foreach (MethodQuotaUsage usage in methodQuotaUsage) {
+        Console.WriteLine("{0,-50} - {1}", usage.serviceName + "." + usage.methodName,
+            usage.units);
       }
+      Console.WriteLine("\nTotal Quota unit cost for this run: {0}.\n", user.GetUnits());
     }
   }
 }

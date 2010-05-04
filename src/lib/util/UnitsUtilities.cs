@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.v13;
+using com.google.api.adwords.v200909;
 
 using System;
 using System.Collections;
@@ -46,17 +47,33 @@ namespace com.google.api.adwords.lib.util {
     public static List<MethodQuotaUsage> GetMethodQuotaUsage(AdWordsUser user, DateTime startDate,
         DateTime endDate) {
       List<MethodQuotaUsage> methodQuotaUsage = new List<MethodQuotaUsage>();
-      SortedList<string, string[]> serviceToMethodsMap = GetAllV13Methods();
-      InfoService service = (InfoService) user.GetService(AdWordsService.v13.InfoService);
+      SortedList<string, List<string>> serviceToMethodsMap = GetAllMethods();
+      InfoService service = (InfoService) user.GetService(AdWordsService.v200909.InfoService);
 
       foreach (string serviceName in serviceToMethodsMap.Keys) {
-        string[] methods = (string[]) serviceToMethodsMap[serviceName];
+        List<string> methods = serviceToMethodsMap[serviceName];
 
         foreach (string methodName in methods) {
+          InfoSelector selector = new InfoSelector();
+          selector.apiUsageTypeSpecified = true;
+          selector.apiUsageType = ApiUsageType.UNIT_COUNT;
+          selector.dateRange = new DateRange();
+          selector.dateRange.min = startDate.ToString("YYYYMMDD");
+          selector.dateRange.max = endDate.ToString("YYYYMMDD");
+          selector.serviceName = serviceName;
+          if (methodName.Contains(".")) {
+            string[] splits = methodName.Split('.');
+            selector.methodName = splits[0];
+            selector.operatorSpecified = true;
+            selector.@operator = (Operator) Enum.Parse(typeof(Operator), splits[1]);
+          } else {
+            selector.methodName = methodName;
+          }
+
           MethodQuotaUsage temp = new MethodQuotaUsage();
           temp.methodName = methodName;
           temp.serviceName = serviceName;
-          temp.units = service.getUnitCountForMethod(serviceName, methodName, startDate, endDate);
+          temp.units = service.get(selector).cost;
           methodQuotaUsage.Add(temp);
         }
       }
@@ -90,14 +107,22 @@ namespace com.google.api.adwords.lib.util {
       Hashtable allUsers = new Hashtable(StringComparer.InvariantCultureIgnoreCase);
       BuildUserGraph(accountService, rootUser, allUsers);
 
-      InfoService infoService = (InfoService) user.GetService(AdWordsService.v13.InfoService);
+      InfoService infoService = (InfoService) user.GetService(AdWordsService.v200909.InfoService);
       FetchUnitUsagesRecursively(infoService, rootUser, startDate, endDate);
 
       clientUsage = new SortedList<string, long>();
       foreach (string email in allUsers.Keys) {
         clientUsage[email] = GetUnits((AdWordsAccount) allUsers[email], allUsers);
       }
-      totalUnits = infoService.getUnitCount(startDate, endDate);
+
+      InfoSelector selector = new InfoSelector();
+      selector.apiUsageTypeSpecified = true;
+      selector.apiUsageType = ApiUsageType.UNIT_COUNT;
+      selector.dateRange = new DateRange();
+      selector.dateRange.min = startDate.ToString("YYYYMMDD");
+      selector.dateRange.max = endDate.ToString("YYYYMMDD");
+
+      totalUnits = infoService.get(selector).cost;
       diffUnits = totalUnits - clientUsage[rootUser.email];
       return;
     }
@@ -107,47 +132,16 @@ namespace com.google.api.adwords.lib.util {
     /// </summary>
     /// <returns>A sorted map, with key as service name and value as an array of
     /// method names.</returns>
-    public static SortedList<string, string[]> GetAllV13Methods() {
-      SortedList<string, string[]> serviceToMethodsMap = new SortedList<string, string[]>();
+    public static SortedList<string, List<string>> GetAllMethods() {
+      List<ApiMethod> methods = DataUtilities.GetAllMethods();
+      SortedList<string, List<string>> serviceToMethodsMap = new SortedList<string, List<string>>();
 
-      serviceToMethodsMap.Add("AccountService",
-          new String[] {"getAccountInfo", "getClientAccountInfos", "getClientAccounts",
-          "getMccAlerts", "updateAccountInfo"});
-      serviceToMethodsMap.Add("AdGroupService",
-          new String[] {"addAdGroup", "addAdGroupList", "getActiveAdGroups", "getAdGroup",
-          "getAdGroupList", "getAdGroupStats", "getAllAdGroups", "updateAdGroup",
-          "updateAdGroupList"});
-      serviceToMethodsMap.Add("AdService",
-          new String[] {"addAds", "checkAds", "findBusinesses", "getActiveAds",
-          "getAd", "getAdStats", "getAllAds", "getMyBusinesses",
-          "getMyVideos", "updateAds"});
-      serviceToMethodsMap.Add("CampaignService",
-          new String[] {"addCampaign", "addCampaignList", "getActiveAdWordsCampaigns",
-          "getAllAdWordsCampaigns", "getCampaign", "getCampaignList", "getCampaignStats",
-          "getConversionOptimizerEligibility", "getOptimizeAdServing",
-          "getRecommendedBudgetList", "setOptimizeAdServing", "updateCampaign",
-          "updateCampaignList"});
-      serviceToMethodsMap.Add("CriterionService",
-          new String[] {"addCriteria", "checkCriteria", "getAllCriteria",
-          "getCampaignNegativeCriteria", "getCriteria", "getCriterionStats",
-          "removeCriteria", "setCampaignNegativeCriteria", "updateCriteria"});
-      serviceToMethodsMap.Add("InfoService",
-          new String[] {"getFreeUsageQuotaThisMonth", "getMethodCost", "getOperationCount",
-          "getOperationsQuotaThisMonth", "getUnitCount", "getUnitCountForClients",
-          "getUnitCountForMethod", "getUsageQuotaThisMonth"});
-      serviceToMethodsMap.Add("KeywordToolService",
-          new String[] {"getKeywordsFromSite", "getKeywordVariations"});
-      serviceToMethodsMap.Add("ReportService",
-          new String[] {"deleteReport", "getAllJobs", "getGzipReportDownloadUrl",
-          "getReportDownloadUrl", "getReportJobStatus", "scheduleReportJob",
-          "validateReportJob"});
-      serviceToMethodsMap.Add("SiteSuggestionService",
-          new String[] {"getSitesByCategoryName", "getSitesByDemographics",
-          "getSitesByTopics", "getSitesByUrls"});
-      serviceToMethodsMap.Add("TrafficEstimatorService",
-          new String[] {"checkKeywordTraffic", "estimateAdGroupList",
-          "estimateCampaignList", "estimateKeywordList"});
-
+      foreach (ApiMethod method in methods) {
+        if (!serviceToMethodsMap.ContainsKey(method.serviceName)) {
+          serviceToMethodsMap.Add(method.serviceName, new List<string>());
+        }
+        serviceToMethodsMap[method.serviceName].Add(method.methodName);
+      }
       return serviceToMethodsMap;
     }
 
@@ -216,25 +210,38 @@ namespace com.google.api.adwords.lib.util {
 
     private static void FetchUnitUsagesRecursively(InfoService infoService, AdWordsAccount account,
         DateTime startDate, DateTime endDate) {
-      clientEmail oldClientEmail = infoService.clientEmailValue;
+      string oldClientEmail = infoService.RequestHeader.clientEmail;
+      startDate = new DateTime(2009, 1, 1);
+      infoService.RequestHeader.clientEmail = account.email;
 
-      infoService.clientEmailValue = new clientEmail();
-      infoService.clientEmailValue.Value = new string[] {account.email};
+      InfoSelector selector = new InfoSelector();
+      selector.apiUsageTypeSpecified = true;
+      selector.apiUsageType = ApiUsageType.UNIT_COUNT_FOR_CLIENTS;
+      selector.dateRange = new DateRange();
+      selector.dateRange.min = startDate.ToString("yyyyMMdd");
+      selector.dateRange.max = endDate.ToString("yyyyMMdd");
 
-      ClientUsageRecord[] clientUsages =
-          infoService.getUnitCountForClients(null, startDate, endDate);
+      ApiUsageInfo usageInfo = null;
+      try {
+        usageInfo = infoService.get(selector);
+      } catch (Exception ex){
+        string temp = ex.StackTrace;
+      }
       foreach (AdWordsAccount child in account.children) {
-        foreach (ClientUsageRecord clientUsage in clientUsages) {
-          if (child.email == clientUsage.clientEmail) {
-            child.units = clientUsage.quotaUnits;
-            break;
+        if (usageInfo.apiUsageRecords != null) {
+          foreach (ApiUsageRecord usageRecord in usageInfo.apiUsageRecords) {
+            if (child.email == usageRecord.clientEmail) {
+              child.units = usageRecord.cost;
+              break;
+            }
           }
         }
+
         if (child.isManager) {
           FetchUnitUsagesRecursively(infoService, child, startDate, endDate);
         }
       }
-      infoService.clientEmailValue = oldClientEmail;
+      infoService.RequestHeader.clientEmail = oldClientEmail;
     }
 
     private static string[] GetAllUsersFromGraph(AdWordsAccount rootUser) {

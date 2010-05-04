@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -90,10 +90,9 @@ namespace com.google.api.adwords.lib.util {
   }
 
   /// <summary>
-  /// Represents the cost in units for an operation in AdWords API.
-  /// See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_ratesheet.html">this page</a> for details.
+  /// Represents a method in AdWords API.
   /// </summary>
-  public struct OpRates {
+  public class ApiMethod {
     /// <summary>
     /// Name of the service.
     /// </summary>
@@ -108,7 +107,13 @@ namespace com.google.api.adwords.lib.util {
     /// Version of the API to which it belongs.
     /// </summary>
     public string version;
+  }
 
+  /// <summary>
+  /// Represents the cost in units for an operation in AdWords API.
+  /// See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_ratesheet.html">this page</a> for details.
+  /// </summary>
+  public class OpRates : ApiMethod {
     /// <summary>
     /// Rate of the API call.
     /// </summary>

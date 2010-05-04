@@ -104,7 +104,7 @@ v200909,CampaignCriterionService,mutate.SET,1,true
 v200909,CampaignService,get,1,true
 v200909,CampaignService,mutate.ADD,1,true
 v200909,CampaignService,mutate.SET,1,true
-v200909,CampaignTargetService,get,1,true
+v200909,CampaignTargetService,get,0.1,true
 v200909,CampaignTargetService,mutate.SET,1,true
 v200909,GeoLocationService,get,1,true
 v200909,InfoService,get,1,true

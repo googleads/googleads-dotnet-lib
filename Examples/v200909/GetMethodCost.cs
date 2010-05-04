@@ -1,4 +1,4 @@
-// Copyright 2009, Google Inc. All Rights Reserved.
+// Copyright 2010, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,25 +23,25 @@ using System.Net;
 
 namespace com.google.api.adwords.samples.v200909 {
   /// <summary>
-  /// This example retrieves the cost, in API units per operation, of the given
-  /// method on a specific date for the developer token being used to make this
-  /// call.
+  /// This code example retrieves the cost, in API units per operation, of the
+  /// given method on a specific date for the developer token being used to
+  /// make this call.
   /// </summary>
   class GetMethodCost : SampleBase {
     /// <summary>
-    /// Returns a description about the sample code.
+    /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This example retrieves the cost, in API units per operation, of the given " +
+        return "This code example retrieves the cost, in API units per operation, of the given " +
             "method on a specific date for the developer token being used to make this call.";
       }
     }
 
     /// <summary>
-    /// Run the sample code.
+    /// Run the code example.
     /// </summary>
-    /// <param name="user">The AdWords user object running the sample.
+    /// <param name="user">The AdWords user object running the code example.
     /// </param>
     public override void Run(AdWordsUser user) {
       // Get the InfoService.

@@ -50,15 +50,9 @@
     <Compile Include="lib\util\DataUtilitiesTests.cs" />
     <Compile Include="lib\util\ReportUtilitiesTests.cs" />
     <Compile Include="v13\AccountServiceTests.cs" />
-    <Compile Include="v13\AdGroupServiceTests.cs" />
     <Compile Include="BaseTests.cs" />
-    <Compile Include="v13\AdServiceTests.cs" />
-    <Compile Include="v13\CriterionServiceTests.cs" />
-    <Compile Include="v13\InfoServiceTests.cs" />
-    <Compile Include="v13\KeywordToolServiceTests.cs" />
     <Compile Include="v13\ReportServiceTests.cs" />
     <Compile Include="ServiceTests.cs" />
-    <Compile Include="v13\SiteSuggestionServiceTests.cs" />
     <Compile Include="v13\TrafficEstimatorServiceTests.cs" />
     <Compile Include="TestUtils.cs" />
     <Compile Include="v200909\AdExtensionOverrideServiceTests.cs" />

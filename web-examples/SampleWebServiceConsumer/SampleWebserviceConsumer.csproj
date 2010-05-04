@@ -43,14 +43,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Web References\remoteservice\Reference.cs">
+    <Compile Include="Web_References\remoteservice\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <WebReferences Include="Web References\" />
+    <WebReferences Include="Web_References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -62,7 +62,7 @@
   <ItemGroup>
     <WebReferenceUrl Include="http://localhost:3393/SampleWebService/SampleWebService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\remoteservice\</RelPath>
+      <RelPath>Web_References\remoteservice\</RelPath>
       <UpdateFromURL>http://localhost:3393/SampleWebService/SampleWebService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
@@ -73,12 +73,12 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\remoteservice\Reference.map">
+    <None Include="Web_References\remoteservice\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\remoteservice\SampleWebService.disco" />
-    <None Include="Web References\remoteservice\SampleWebService.wsdl" />
+    <None Include="Web_References\remoteservice\SampleWebService.disco" />
+    <None Include="Web_References\remoteservice\SampleWebService.wsdl" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -95,8 +95,8 @@ namespace com.google.api.adwords.tests.lib {
     /// </summary>
     [Test]
     public void TestV13ServiceCreation() {
-      AdService service = (AdService) user.GetService(AdWordsService.v13.AdService);
-      Assert.NotNull(service, "AdWordsUser could not create v13.AdService.");
+      AccountService service = (AccountService) user.GetService(AdWordsService.v13.AccountService);
+      Assert.NotNull(service, "AdWordsUser could not create v13.AccountService.");
 
       TestV13Header(ApplicationConfiguration.email, service.emailValue, "Email");
       TestV13Header(ApplicationConfiguration.password, service.passwordValue, "Password");
@@ -114,9 +114,9 @@ namespace com.google.api.adwords.tests.lib {
 
       // Check if the service url is correct.
       Assert.That(string.Compare(ApplicationConfiguration.legacyAdWordsApiUrl +
-          "/api/adwords/v13/AdService", service.Url, true) == 0,
+          "/api/adwords/v13/AccountService", service.Url, true) == 0,
           "Service url should be " + ApplicationConfiguration.legacyAdWordsApiUrl +
-          "/api/adwords/v13/AdService");
+          "/api/adwords/v13/AccountService");
 
       // Check if the service proxy is correct.
       if (ApplicationConfiguration.proxy != null) {
