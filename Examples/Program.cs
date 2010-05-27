@@ -15,10 +15,6 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.samples.both;
-using com.google.api.adwords.samples.v13;
-using com.google.api.adwords.samples.v200909;
-using com.google.api.adwords.v13;
 
 using System;
 using System.Collections;
@@ -27,9 +23,9 @@ using System.IO;
 using System.Reflection;
 
 using SamplePair = System.Collections.Generic.KeyValuePair<string,
-    com.google.api.adwords.samples.SampleBase>;
+    com.google.api.adwords.examples.SampleBase>;
 
-namespace com.google.api.adwords.samples {
+namespace com.google.api.adwords.examples {
   /// <summary>
   /// The Main class for this application.
   /// </summary>
@@ -52,68 +48,148 @@ namespace com.google.api.adwords.samples {
     /// </summary>
     static Program() {
       // Add v13 samples.
-      RegisterSample("v13.AccountServiceDemo", new AccountServiceDemo());
-      RegisterSample("v13.AccountServiceNoConfigDemo", new AccountServiceNoConfigDemo());
-      RegisterSample("v13.KeywordEstimateDemo", new KeywordEstimateDemo());
-      RegisterSample("v13.CheckKeywordTrafficDemo", new CheckKeywordTrafficDemo());
-      RegisterSample("v13.ReportServiceKeywordDemo", new ReportServiceKeywordDemo());
-      RegisterSample("v13.ReportServiceStructureDemo", new ReportServiceStructureDemo());
-      RegisterSample("v13.DownloadReportAsCsvDemo", new DownloadReportAsCsvDemo());
-      RegisterSample("v13.DownloadReportAsXmlDemo", new DownloadReportAsXmlDemo());
+      RegisterSample("v13.AccountServiceDemo", new v13.AccountServiceDemo());
+      RegisterSample("v13.AccountServiceNoConfigDemo", new v13.AccountServiceNoConfigDemo());
+      RegisterSample("v13.KeywordEstimateDemo", new v13.KeywordEstimateDemo());
+      RegisterSample("v13.CheckKeywordTrafficDemo", new v13.CheckKeywordTrafficDemo());
+      RegisterSample("v13.ReportServiceKeywordDemo", new v13.ReportServiceKeywordDemo());
+      RegisterSample("v13.ReportServiceStructureDemo", new v13.ReportServiceStructureDemo());
+      RegisterSample("v13.DownloadReportAsCsvDemo", new v13.DownloadReportAsCsvDemo());
+      RegisterSample("v13.DownloadReportAsXmlDemo", new v13.DownloadReportAsXmlDemo());
 
       // Add v200909 samples.
-      RegisterSample("v200909.AddCampaign", new AddCampaign());
-      RegisterSample("v200909.UpdateCampaign", new UpdateCampaign());
-      RegisterSample("v200909.GetAllCampaigns", new GetAllCampaigns());
-      RegisterSample("v200909.GetAllPausedCampaigns", new GetAllPausedCampaigns());
-      RegisterSample("v200909.CheckCampaigns", new CheckCampaigns());
+      RegisterSample("v200909.AddCampaign", new v200909.AddCampaign());
+      RegisterSample("v200909.UpdateCampaign", new v200909.UpdateCampaign());
+      RegisterSample("v200909.GetAllCampaigns", new v200909.GetAllCampaigns());
+      RegisterSample("v200909.GetCampaign", new v200909.GetCampaign());
+      RegisterSample("v200909.GetAllPausedCampaigns", new v200909.GetAllPausedCampaigns());
+      RegisterSample("v200909.CheckCampaigns", new v200909.CheckCampaigns());
+      RegisterSample("v200909.DeleteCampaign", new v200909.DeleteCampaign());
 
-      RegisterSample("v200909.SetCampaignTargets", new SetCampaignTargets());
-      RegisterSample("v200909.GetAllCampaignTargets", new GetAllCampaignTargets());
+      RegisterSample("v200909.SetCampaignTargets", new v200909.SetCampaignTargets());
+      RegisterSample("v200909.GetAllCampaignTargets", new v200909.GetAllCampaignTargets());
 
-      RegisterSample("v200909.AddAdGroup", new AddAdGroup());
-      RegisterSample("v200909.UpdateAdGroup", new UpdateAdGroup());
-      RegisterSample("v200909.GetAllAdGroups", new GetAllAdGroups());
+      RegisterSample("v200909.AddAdGroup", new v200909.AddAdGroup());
+      RegisterSample("v200909.UpdateAdGroup", new v200909.UpdateAdGroup());
+      RegisterSample("v200909.GetAllAdGroups", new v200909.GetAllAdGroups());
+      RegisterSample("v200909.DeleteAdGroup", new v200909.DeleteAdGroup());
 
-      RegisterSample("v200909.AddAds", new AddAds());
-      RegisterSample("v200909.UpdateAd", new UpdateAd());
-      RegisterSample("v200909.AddMobileImageAd", new AddMobileImageAd());
-      RegisterSample("v200909.GetAllAds", new GetAllAds());
-      RegisterSample("v200909.GetAllDisapprovedAds", new GetAllDisapprovedAds());
+      RegisterSample("v200909.AddAds", new v200909.AddAds());
+      RegisterSample("v200909.UpdateAd", new v200909.UpdateAd());
+      RegisterSample("v200909.AddMobileImageAd", new v200909.AddMobileImageAd());
+      RegisterSample("v200909.GetAllAds", new v200909.GetAllAds());
+      RegisterSample("v200909.GetAllDisapprovedAds", new v200909.GetAllDisapprovedAds());
+      RegisterSample("v200909.DeleteAd", new v200909.DeleteAd());
 
-      RegisterSample("v200909.AddCampaignAdExtension", new AddCampaignAdExtension());
-      RegisterSample("v200909.PerformBulkMutateJob", new PerformBulkMutateJob());
+      RegisterSample("v200909.AddCampaignAdExtension", new v200909.AddCampaignAdExtension());
+      RegisterSample("v200909.PerformBulkMutateJob", new v200909.PerformBulkMutateJob());
       RegisterSample("v200909.GetAllCampaignAdExtensions",
-          new GetAllCampaignAdExtensions());
+          new v200909.GetAllCampaignAdExtensions());
 
-      RegisterSample("v200909.AddAdGroupCriteria", new AddAdGroupCriteria());
-      RegisterSample("v200909.UpdateAdGroupCriterion", new UpdateAdGroupCriterion());
-      RegisterSample("v200909.GetAllAdGroupCriteria", new GetAllAdGroupCriteria());
-      RegisterSample("v200909.GetAllActiveAdGroupCriteria", new GetAllActiveAdGroupCriteria());
+      RegisterSample("v200909.AddAdGroupCriteria", new v200909.AddAdGroupCriteria());
+      RegisterSample("v200909.UpdateAdGroupCriterion", new v200909.UpdateAdGroupCriterion());
+      RegisterSample("v200909.GetAllAdGroupCriteria", new v200909.GetAllAdGroupCriteria());
+      RegisterSample("v200909.GetAllActiveAdGroupCriteria",
+          new v200909.GetAllActiveAdGroupCriteria());
+      RegisterSample("v200909.DeleteAdGroupCriterion", new v200909.DeleteAdGroupCriterion());
 
-      RegisterSample("v200909.AddNegativeCampaignCriterion", new AddNegativeCampaignCriterion());
+      RegisterSample("v200909.AddNegativeCampaignCriterion",
+          new v200909.AddNegativeCampaignCriterion());
 
-      RegisterSample("v200909.GetRelatedKeywords", new GetRelatedKeywords());
-      RegisterSample("v200909.GetRelatedPlacements", new GetRelatedPlacements());
+      RegisterSample("v200909.GetRelatedKeywords", new v200909.GetRelatedKeywords());
+      RegisterSample("v200909.GetRelatedPlacements", new v200909.GetRelatedPlacements());
 
-      RegisterSample("v200909.AddAdExtensionOverride", new AddAdExtensionOverride());
-      RegisterSample("v200909.GetAllAdExtensionOverrides", new GetAllAdExtensionOverrides());
-      RegisterSample("v200909.SetAdParams", new SetAdParams());
-      RegisterSample("v200909.GetGeoLocationInfo", new GetGeoLocationInfo());
+      RegisterSample("v200909.AddAdExtensionOverride", new v200909.AddAdExtensionOverride());
+      RegisterSample("v200909.GetAllAdExtensionOverrides",
+          new v200909.GetAllAdExtensionOverrides());
+      RegisterSample("v200909.SetAdParams", new v200909.SetAdParams());
+      RegisterSample("v200909.GetGeoLocationInfo", new v200909.GetGeoLocationInfo());
       RegisterSample("v200909.GetConversionOptimizerEligibility",
-          new GetConversionOptimizerEligibility());
+          new v200909.GetConversionOptimizerEligibility());
 
-      RegisterSample("v200909.GetTotalUsageUnitsPerMonth", new GetTotalUsageUnitsPerMonth());
-      RegisterSample("v200909.GetOperationCount", new GetOperationCount());
-      RegisterSample("v200909.GetUnitCount", new GetUnitCount());
-      RegisterSample("v200909.GetMethodCost", new GetMethodCost());
+      RegisterSample("v200909.GetTotalUsageUnitsPerMonth",
+          new v200909.GetTotalUsageUnitsPerMonth());
+      RegisterSample("v200909.GetOperationCount", new v200909.GetOperationCount());
+      RegisterSample("v200909.GetUnitCount", new v200909.GetUnitCount());
+      RegisterSample("v200909.GetMethodCost", new v200909.GetMethodCost());
 
-      RegisterSample("v200909.BackupSandboxDemo", new BackupSandboxDemo());
-      RegisterSample("v200909.RestoreSandboxDemo", new RestoreSandboxDemo());
-      RegisterSample("v200909.MethodApiUnitsUsageDemo", new MethodApiUnitsUsageDemo());
+      RegisterSample("v200909.BackupSandboxDemo", new v200909.BackupSandboxDemo());
+      RegisterSample("v200909.RestoreSandboxDemo", new v200909.RestoreSandboxDemo());
+      RegisterSample("v200909.MethodApiUnitsUsageDemo", new v200909.MethodApiUnitsUsageDemo());
+
+      // Add v201003 samples.
+      RegisterSample("v201003.AddCampaign", new v201003.AddCampaign());
+      RegisterSample("v201003.UpdateCampaign", new v201003.UpdateCampaign());
+      RegisterSample("v201003.GetAllCampaigns", new v201003.GetAllCampaigns());
+      RegisterSample("v201003.GetCampaign", new v201003.GetCampaign());
+      RegisterSample("v201003.GetAllPausedCampaigns", new v201003.GetAllPausedCampaigns());
+      RegisterSample("v201003.CheckCampaigns", new v201003.CheckCampaigns());
+      RegisterSample("v201003.DeleteCampaign", new v201003.DeleteCampaign());
+
+      RegisterSample("v201003.SetCampaignTargets", new v201003.SetCampaignTargets());
+      RegisterSample("v201003.GetAllCampaignTargets", new v201003.GetAllCampaignTargets());
+
+      RegisterSample("v201003.AddAdGroup", new v201003.AddAdGroup());
+      RegisterSample("v201003.UpdateAdGroup", new v201003.UpdateAdGroup());
+      RegisterSample("v201003.GetAllAdGroups", new v201003.GetAllAdGroups());
+      RegisterSample("v201003.DeleteAdGroup", new v201003.DeleteAdGroup());
+
+      RegisterSample("v201003.AddAds", new v201003.AddAds());
+      RegisterSample("v201003.UpdateAd", new v201003.UpdateAd());
+      RegisterSample("v201003.AddMobileImageAd", new v201003.AddMobileImageAd());
+      RegisterSample("v201003.GetAllAds", new v201003.GetAllAds());
+      RegisterSample("v201003.GetAllDisapprovedAds", new v201003.GetAllDisapprovedAds());
+      RegisterSample("v201003.DeleteAd", new v201003.DeleteAd());
+
+      RegisterSample("v201003.AddCampaignAdExtension", new v201003.AddCampaignAdExtension());
+      RegisterSample("v201003.PerformBulkMutateJob", new v201003.PerformBulkMutateJob());
+      RegisterSample("v201003.GetAllCampaignAdExtensions",
+          new v201003.GetAllCampaignAdExtensions());
+
+      RegisterSample("v201003.AddAdGroupCriteria", new v201003.AddAdGroupCriteria());
+      RegisterSample("v201003.UpdateAdGroupCriterion", new v201003.UpdateAdGroupCriterion());
+      RegisterSample("v201003.GetAllAdGroupCriteria", new v201003.GetAllAdGroupCriteria());
+      RegisterSample("v201003.GetAllActiveAdGroupCriteria",
+          new v201003.GetAllActiveAdGroupCriteria());
+      RegisterSample("v201003.DeleteAdGroupCriterion", new v201003.DeleteAdGroupCriterion());
+
+      RegisterSample("v201003.AddNegativeCampaignCriterion",
+          new v201003.AddNegativeCampaignCriterion());
+
+      RegisterSample("v201003.GetRelatedKeywords", new v201003.GetRelatedKeywords());
+      RegisterSample("v201003.GetRelatedPlacements", new v201003.GetRelatedPlacements());
+
+      RegisterSample("v201003.AddAdExtensionOverride", new v201003.AddAdExtensionOverride());
+      RegisterSample("v201003.GetAllAdExtensionOverrides",
+          new v201003.GetAllAdExtensionOverrides());
+      RegisterSample("v201003.SetAdParams", new v201003.SetAdParams());
+      RegisterSample("v201003.GetGeoLocationInfo", new v201003.GetGeoLocationInfo());
+      RegisterSample("v201003.GetConversionOptimizerEligibility",
+          new v201003.GetConversionOptimizerEligibility());
+
+      RegisterSample("v201003.GetTotalUsageUnitsPerMonth",
+          new v201003.GetTotalUsageUnitsPerMonth());
+      RegisterSample("v201003.GetOperationCount", new v201003.GetOperationCount());
+      RegisterSample("v201003.GetUnitCount", new v201003.GetUnitCount());
+      RegisterSample("v201003.GetMethodCost", new v201003.GetMethodCost());
+
+      RegisterSample("v201003.BackupSandboxDemo", new v201003.BackupSandboxDemo());
+      RegisterSample("v201003.RestoreSandboxDemo", new v201003.RestoreSandboxDemo());
+      RegisterSample("v201003.MethodApiUnitsUsageDemo", new v201003.MethodApiUnitsUsageDemo());
+
+      RegisterSample("v201003.GetCriterionBidLandscape", new v201003.GetCriterionBidLandscape());
+      RegisterSample("v201003.GetAllReportDefinitions", new v201003.GetAllReportDefinitions());
+      RegisterSample("v201003.GetReportFields", new v201003.GetReportFields());
+      RegisterSample("v201003.DownloadReport", new v201003.DownloadReport());
+      RegisterSample("v201003.AddKeywordsPerformanceReportDefinition",
+          new v201003.AddKeywordsPerformanceReportDefinition());
+
+      RegisterSample("v201003.UploadImage", new v201003.UploadImage());
+      RegisterSample("v201003.GetAllImages", new v201003.GetAllImages());
+      RegisterSample("v201003.GetAllVideos", new v201003.GetAllVideos());
 
       // Add combined examples.
-      RegisterSample("both.UsingTrafficEstimatorDemo", new UsingTrafficEstimatorDemo());
+      RegisterSample("both.UsingTrafficEstimatorDemo", new both.UsingTrafficEstimatorDemo());
     }
 
     /// <summary>
@@ -139,9 +215,16 @@ namespace com.google.api.adwords.samples {
         foreach (SamplePair matchingItem in matchingItems) {
           RunASample(user, matchingItem.Value);
         }
-      } else if (string.Compare(args[0], "--v2009all", true) == 0) {
+      } else if (string.Compare(args[0], "--v200909all", true) == 0) {
         List<SamplePair> matchingItems = sampleMap.FindAll(delegate(SamplePair pair) {
-          return pair.Key.StartsWith("v2009");
+          return pair.Key.StartsWith("v200909");
+        });
+        foreach (SamplePair matchingItem in matchingItems) {
+          RunASample(user, matchingItem.Value);
+        }
+      } else if (string.Compare(args[0], "--v201003all", true) == 0) {
+        List<SamplePair> matchingItems = sampleMap.FindAll(delegate(SamplePair pair) {
+          return pair.Key.StartsWith("v201003");
         });
         foreach (SamplePair matchingItem in matchingItems) {
           RunASample(user, matchingItem.Value);

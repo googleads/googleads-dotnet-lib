@@ -21,7 +21,7 @@ using com.google.api.adwords.v200909;
 using System;
 using System.Threading;
 
-namespace com.google.api.adwords.samples.v200909 {
+namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example shows how to add ads and keywords using the
   /// BulkMutateJobService.
@@ -81,40 +81,27 @@ namespace com.google.api.adwords.samples.v200909 {
       adOpStream.operations = new Operation[] {adGroupAdOperation};
 
       // Create AdGroupCriterionOperations to add keywords.
-      // First keyword.
-      AdGroupCriterionOperation adGroupCriterionOperation1 = new AdGroupCriterionOperation();
-      adGroupCriterionOperation1.@operator = Operator.ADD;
-      adGroupCriterionOperation1.operatorSpecified = true;
+      AdGroupCriterionOperation[] adGroupCriterionOperations = new AdGroupCriterionOperation[100];
 
-      Keyword keyword1 = new Keyword();
-      keyword1.text = "mars";
-      keyword1.matchTypeSpecified = true;
-      keyword1.matchType = KeywordMatchType.BROAD;
+      for (int i = 0; i < 100; i++) {
+        Keyword keyword = new Keyword();
+        keyword.text = string.Format("mars cruise {0}", i);
+        keyword.matchTypeSpecified = true;
+        keyword.matchType = KeywordMatchType.BROAD;
 
-      BiddableAdGroupCriterion criterion1 = new BiddableAdGroupCriterion();
-      criterion1.adGroupId = adGroupId;
-      criterion1.adGroupIdSpecified = true;
-      criterion1.criterion = keyword1;
+        BiddableAdGroupCriterion criterion = new BiddableAdGroupCriterion();
+        criterion.adGroupId = adGroupId;
+        criterion.adGroupIdSpecified = true;
+        criterion.criterion = keyword;
 
-      adGroupCriterionOperation1.operand = criterion1;
+        AdGroupCriterionOperation adGroupCriterionOperation = new AdGroupCriterionOperation();
+        adGroupCriterionOperation.@operator = Operator.ADD;
+        adGroupCriterionOperation.operatorSpecified = true;
 
-      // Second keyword.
-      AdGroupCriterionOperation adGroupCriterionOperation2 = new AdGroupCriterionOperation();
-      adGroupCriterionOperation2.@operator = Operator.ADD;
-      adGroupCriterionOperation2.operatorSpecified = true;
-
-      Keyword keyword2 = new Keyword();
-      keyword2.text = "cruise";
-      keyword2.matchTypeSpecified = true;
-      keyword2.matchType = KeywordMatchType.BROAD;
-
-      BiddableAdGroupCriterion criterion2 = new BiddableAdGroupCriterion();
-      criterion2.adGroupId = adGroupId;
-      criterion2.adGroupIdSpecified = true;
-      criterion2.criterion = keyword2;
-
-      adGroupCriterionOperation2.operand = criterion2;
-
+        adGroupCriterionOperation.operand = criterion;
+        adGroupCriterionOperations[i] = adGroupCriterionOperation;
+      }
+      
       // Add those operation into the second stream.
       OperationStream keywordOpStream = new OperationStream();
 
@@ -124,8 +111,7 @@ namespace com.google.api.adwords.samples.v200909 {
       keywordOpStream.scopingEntityId.value = campaignId;
       keywordOpStream.scopingEntityId.valueSpecified = true;
 
-      keywordOpStream.operations = new Operation[] {adGroupCriterionOperation1,
-          adGroupCriterionOperation2};
+      keywordOpStream.operations = adGroupCriterionOperations;
 
       // Create a job.
 

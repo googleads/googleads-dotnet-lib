@@ -20,7 +20,7 @@ using com.google.api.adwords.v13;
 using System;
 using System.Text;
 
-namespace com.google.api.adwords.samples.v13 {
+namespace com.google.api.adwords.examples.v13 {
   /// <summary>
   /// This code example checks a batch of keywords to see whether they will
   /// get any traffic.

@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Xml;
 
-namespace com.google.api.adwords.samples.v200909 {
+namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example shows how to restore an entire sandbox account.
   /// You should run BackupSandboxDemo.cs first to obtain the input file

@@ -10,8 +10,8 @@
 
 namespace com.google.api.adwords.tests {
     using System;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -23,15 +23,15 @@ namespace com.google.api.adwords.tests {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class ClassMap {
-
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal ClassMap() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -45,7 +45,7 @@ namespace com.google.api.adwords.tests {
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -59,7 +59,26 @@ namespace com.google.api.adwords.tests {
                 resourceCulture = value;
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;li style=&quot;padding-top: 0pt; padding-bottom: 0pt;&quot;&gt;
+        ///  &lt;div class=&quot;tlw-title tlw-branch&quot;&gt;
+        ///    &lt;a title=&quot;Collapse v200909 (latest)&quot; class=&quot;tlw-control&quot; href=&quot;javascript:void(0)&quot;&gt;
+        ///      &lt;img class=&quot;tlw-control tlw-minus&quot; alt=&quot;Collapse v200909 (latest)&quot; src=&quot;/images/cleardot.gif&quot;/&gt;
+        ///    &lt;/a&gt;
+        ///    &lt;span class=&quot;tlw-title&quot;&gt;v200909 (latest)&lt;/span&gt;
+        ///  &lt;/div&gt;
+        ///  &lt;ul id=&quot;0-sub-0&quot; style=&quot;display: block;&quot;&gt;
+        ///    &lt;li style=&quot;padding-top: 0pt; padding-bottom: 0pt;&quot;&gt;
+        ///      &lt;div class=&quot;tlw-title tlw-branch&quot;&gt;
+        ///        &lt;a title=&quot;Expa [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string V200909 {
+            get {
+                return ResourceManager.GetString("V200909", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to &lt;li style=&quot;padding-top: 0pt; padding-bottom: 0pt;&quot;&gt;
         ///  &lt;div class=&quot;tlw-title tlw-branch&quot;&gt;
@@ -73,9 +92,9 @@ namespace com.google.api.adwords.tests {
         ///      &lt;div class=&quot;tlw-title tlw-branch&quot;&gt;
         ///        &lt;a t [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string V200909 {
+        internal static string V201003 {
             get {
-                return ResourceManager.GetString("V200909", resourceCulture);
+                return ResourceManager.GetString("V201003", resourceCulture);
             }
         }
     }

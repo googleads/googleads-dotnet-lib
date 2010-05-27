@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.samples.v200909 {
+namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example illustrates how to override a campaign ad extension.
   /// To create an ad, run AddAds.cs. To create a campaign ad extension, run

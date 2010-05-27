@@ -59,6 +59,9 @@ namespace com.google.api.adwords.tools {
         DownloadWsdl(wsdlUri.AbsoluteUri, localPath);
         Uri localUri = new Uri(localPath);
         wsdlUrlNode.Value = localUri.AbsoluteUri;
+        if (serviceName.EndsWith(".wsdl")) {
+          serviceName = serviceName.Substring(0, serviceName.Length - 5);
+        }
 
         switch (serviceName) {
           case "TargetingIdeaService":
