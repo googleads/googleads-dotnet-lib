@@ -151,7 +151,7 @@ namespace com.google.api.adwords.lib {
         if (!string.IsNullOrEmpty(ApplicationConfiguration.email)) {
           requestHeader.authToken =
               new AuthToken(ApplicationConfiguration.email,
-                  ApplicationConfiguration.password).GetToken();
+                  ApplicationConfiguration.password, ApplicationConfiguration.proxy).GetToken();
         } else {
           requestHeader.authToken = "";
         }
@@ -193,7 +193,8 @@ namespace com.google.api.adwords.lib {
 
       Type type = typeof(RequestHeader);
       if (!headers.ContainsKey("authToken")) {
-        requestHeader.authToken = new AuthToken(headers["email"], headers["password"]).GetToken();
+        requestHeader.authToken = new AuthToken(headers["email"], headers["password"],
+            ApplicationConfiguration.proxy).GetToken();
       }
       foreach (string key in headers.Keys) {
         PropertyInfo propInfo = type.GetProperty(key);

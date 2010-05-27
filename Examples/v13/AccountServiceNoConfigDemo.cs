@@ -25,7 +25,7 @@ using System.Text;
 using System.Web.Services.Protocols;
 using System.Reflection;
 
-namespace com.google.api.adwords.samples.v13 {
+namespace com.google.api.adwords.examples.v13 {
   /// <summary>
   /// This code example displays some of the account's info. It also
   /// demonstrates how to override the app.config settings.

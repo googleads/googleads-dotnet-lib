@@ -50,6 +50,11 @@ namespace com.google.api.adwords.lib {
     private bool logToConsole;
 
     /// <summary>
+    /// Should we only log SOAP messages corresponding to an error?
+    /// </summary>
+    private bool logErrorsOnly;
+
+    /// <summary>
     /// Save the Stream representing the SOAP request or SOAP response into
     /// a local memory buffer.
     /// </summary>
@@ -111,6 +116,7 @@ namespace com.google.api.adwords.lib {
       // should we log to console as well?
 
       logToConsole = ApplicationConfiguration.logToConsole;
+      logErrorsOnly = ApplicationConfiguration.logErrorsOnly;
     }
 
     /// <summary>
@@ -182,9 +188,18 @@ namespace com.google.api.adwords.lib {
       string httpLog = string.Format("host={0},url={1},{2},{3}", service.Request.RequestUri.Host,
           service.Request.RequestUri.AbsolutePath, formattedHttpRequest, formattedHttpResponse);
 
-      if (logToFile) {
-        WriteToFile(soapFileName, soapLog);
-        WriteToFile(httpFileName, httpLog);
+      bool isError = service.Response is HttpWebResponse &&
+          (service.Response as HttpWebResponse).StatusCode == HttpStatusCode.InternalServerError;
+
+      if (!logErrorsOnly || logErrorsOnly && isError) {
+        if (logToFile) {
+          WriteToFile(soapFileName, soapLog);
+          WriteToFile(httpFileName, httpLog);
+        }
+        if (logToConsole) {
+          WriteToStream(Console.Out, soapLog);
+          WriteToStream(Console.Out, httpLog);
+        }
       }
     }
 
@@ -199,6 +214,23 @@ namespace com.google.api.adwords.lib {
           StreamWriter writer = new StreamWriter(fileName, true);
           writer.WriteLine(logText);
           writer.Close();
+          break;
+        } catch (Exception) {
+          Thread.Sleep(100 + new Random().Next(1000));
+        }
+      }
+    }
+
+    /// <summary>
+    /// Writes a log string into a specified stream.
+    /// </summary>
+    /// <param name="fileName">The text writer to which the log text should
+    /// be written.</param>
+    /// <param name="logText">The log text to be written to the stream.</param>
+    private void WriteToStream(TextWriter writer, string logText) {
+      for (int i = 0; i < 3; i++) {
+        try {
+          writer.WriteLine(logText);
           break;
         } catch (Exception) {
           Thread.Sleep(100 + new Random().Next(1000));

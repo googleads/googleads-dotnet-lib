@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.v13;
+using com.google.api.adwords.v201003;
 
 using System;
 using System.Collections;
@@ -25,6 +26,7 @@ using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web.Services.Protocols;
 using System.Xml;
@@ -77,8 +79,12 @@ namespace com.google.api.adwords.lib.util {
     /// Returns the user associated with this object.
     /// </summary>
     public AdWordsUser User {
-      get {return user;}
-      set {user = value;}
+      get {
+        return user;
+      }
+      set {
+        user = value;
+      }
     }
 
     /// <summary>
@@ -252,7 +258,7 @@ namespace com.google.api.adwords.lib.util {
         }
 
         if (status == ReportJobStatus.Failed) {
-          throw new ApplicationException("Report generation failed.");
+          throw new System.ApplicationException("Report generation failed.");
         } else {
           // Download the report.
           String url = service.getReportDownloadUrl(jobId);
@@ -277,8 +283,73 @@ namespace com.google.api.adwords.lib.util {
           return Encoding.UTF8.GetString(memStream.ToArray());
         }
       } catch (SoapException e) {
-        throw new ApplicationException(
+        throw new System.ApplicationException(
             "Report generation failed. See innerException for details.", e);
+      }
+    }
+
+    /// <summary>
+    /// Downloads a new instance of a report to a file.
+    /// </summary>
+    /// <param name="reportDefinitionId">The id of the ReportDefinition to
+    /// download.</param>
+    /// <param name="filePath">The path of the file to download the report
+    /// to.</param>
+    public void DownloadReportDefinition(long reportDefinitionId, string filePath) {
+      string url = string.Format("{0}/api/adwords/reportdownload?__rd={1}",
+          ApplicationConfiguration.adWordsApiUrl, reportDefinitionId);
+
+      ReportDefinitionService service = (ReportDefinitionService) user.GetService(
+         AdWordsService.v201003.ReportDefinitionService);
+
+      WebRequest request = HttpWebRequest.Create(url);
+
+      if (!string.IsNullOrEmpty(service.RequestHeader.clientCustomerId)) {
+        request.Headers.Add("clientCustomerId: " + service.RequestHeader.clientCustomerId);
+      } else if (!string.IsNullOrEmpty(service.RequestHeader.clientEmail)) {
+        request.Headers.Add("clientEmail: " + service.RequestHeader.clientEmail);
+      }
+
+      if (!string.IsNullOrEmpty(service.RequestHeader.authToken)) {
+        request.Headers.Add("Authorization: GoogleLogin auth=" + service.RequestHeader.authToken);
+      }
+
+      if (ApplicationConfiguration.proxy != null) {
+        request.Proxy = ApplicationConfiguration.proxy;
+      }
+
+      try {
+        WebResponse response = request.GetResponse();
+        int bufferSize = 2 << 20;
+        FileStream outputStream = File.Create(filePath);
+
+        using (Stream responseStream = response.GetResponseStream()) {
+          byte[] strmBuffer = new byte[bufferSize];
+
+          int bytesRead = responseStream.Read(strmBuffer, 0, bufferSize);
+          while (bytesRead != 0) {
+            outputStream.Write(strmBuffer, 0, bytesRead);
+            bytesRead = responseStream.Read(strmBuffer, 0, bufferSize);
+          }
+        }
+        outputStream.Close();
+
+        using (StreamReader reader = new StreamReader(filePath)) {
+          while (!reader.EndOfStream) {
+            string contents = reader.ReadLine();
+            if (!string.IsNullOrEmpty(contents)) {
+              if (Regex.IsMatch(contents, "\\!\\!\\!([^\\|]*)\\|\\|\\|(.*)")) {
+                throw new System.ApplicationException("Failed to download report. Exception " +
+                    "says \"" + contents + "\"");
+              } else {
+                break;
+              }
+            }
+          }
+        }
+      } catch (Exception ex) {
+        throw new System.ApplicationException("Failed to download report. See inner exception" +
+            " for details.", ex);
       }
     }
   }

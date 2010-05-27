@@ -23,7 +23,7 @@ using System.Text;
 using System.Net;
 using System.IO;
 
-namespace com.google.api.adwords.samples.v200909 {
+namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example shows how to create a Mobile Image Ad.
   /// </summary>

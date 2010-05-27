@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 using Keywordv200909 = com.google.api.adwords.v200909.Keyword;
 
-namespace com.google.api.adwords.samples.both {
+namespace com.google.api.adwords.examples.both {
   /// <summary>
   /// This code example shows how to use both v13 and v200909 APIs in a
   /// single method.

@@ -44,6 +44,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClassMap.resx</DependentUpon>
     </Compile>
+    <Compile Include="v200909\TestUtils.cs" />
+    <Compile Include="v201003\AdExtensionOverrideServiceTests.cs" />
+    <Compile Include="v201003\AdGroupCriterionServiceTests.cs" />
+    <Compile Include="v201003\AdGroupServiceTests.cs" />
+    <Compile Include="v201003\TargetingIdeaServiceTests.cs" />
+    <Compile Include="v201003\TestUtils.cs" />
+    <Compile Include="v201003\TypeTests.cs" />
     <Compile Include="lib\ApplicationConfigurationTests.cs" />
     <Compile Include="lib\AdWordsUserTests.cs" />
     <Compile Include="lib\util\CsvFileTests.cs" />
@@ -54,12 +61,9 @@
     <Compile Include="v13\ReportServiceTests.cs" />
     <Compile Include="ServiceTests.cs" />
     <Compile Include="v13\TrafficEstimatorServiceTests.cs" />
-    <Compile Include="TestUtils.cs" />
     <Compile Include="v200909\AdExtensionOverrideServiceTests.cs" />
-    <Compile Include="v200909\AdGroupAdServiceTests.cs" />
     <Compile Include="v200909\AdGroupCriterionServiceTests.cs" />
     <Compile Include="v200909\AdGroupServiceTests.cs" />
-    <Compile Include="v200909\BulkMutateJobServiceTests.cs" />
     <Compile Include="v200909\TargetingIdeaServiceTests.cs" />
     <Compile Include="v200909\TypeTests.cs" />
   </ItemGroup>
@@ -77,13 +81,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AllServices.xml" />
+    <None Include="Resources\AllServicesV200909.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\google-api-adwords-dotnet.csproj">
       <Project>{B701ED76-54AE-4591-86DE-EDCD0D8DAC6C}</Project>
       <Name>google-api-adwords-dotnet</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AllServicesV201003.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

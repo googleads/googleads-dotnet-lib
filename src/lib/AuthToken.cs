@@ -38,6 +38,11 @@ namespace com.google.api.adwords.lib {
     string password;
 
     /// <summary>
+    /// The HTTP web proxy to be used when making Http requests.
+    /// </summary>
+    WebProxy proxy;
+
+    /// <summary>
     /// Url endpoint for ClientLogin API.
     /// </summary>
     const string URL = "https://www.google.com/accounts/ClientLogin";
@@ -63,9 +68,10 @@ namespace com.google.api.adwords.lib {
     /// </summary>
     /// <param name="email">Email to be used for authentication.</param>
     /// <param name="password">Password to be used for authentication</param>
-    public AuthToken(string email, string password) {
+    public AuthToken(string email, string password, WebProxy proxy) {
       this.email = email;
       this.password = password;
+      this.proxy = proxy;
     }
 
     /// <summary>
@@ -79,6 +85,10 @@ namespace com.google.api.adwords.lib {
       WebRequest webRequest = HttpWebRequest.Create(URL);
       webRequest.Method = "POST";
       webRequest.ContentType = "application/x-www-form-urlencoded";
+
+      if (this.proxy != null) {
+        webRequest.Proxy = this.proxy;
+      }
 
       string postParams =
           "accountType=" + HttpUtility.UrlEncode(ACCOUNT_TYPE) +

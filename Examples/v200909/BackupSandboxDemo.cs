@@ -20,11 +20,11 @@ using com.google.api.adwords.lib.util;
 using System;
 using System.Xml;
 
-namespace com.google.api.adwords.samples.v200909 {
+namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example shows how to backup a sandbox account.
   /// </summary>
-  class BackupSandboxDemo : SampleBase{
+  class BackupSandboxDemo : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -43,14 +43,6 @@ namespace com.google.api.adwords.samples.v200909 {
       user.UseSandbox();
       DataUtilities.DownloadSandboxContents(user, string.Format("{0}\\SandboxBackup-{1}.xml",
           GetHomeDir(), DateTime.Now.ToString("yyyy-M-d H-m-s.ffffff")));
-    }
-
-    /// <summary>
-    /// Gets the current user's home directory.
-    /// </summary>
-    /// <returns>The current user's home directory.</returns>
-    public static String GetHomeDir() {
-      return Environment.GetEnvironmentVariable("USERPROFILE");
     }
   }
 }

@@ -66,9 +66,9 @@ namespace com.google.api.adwords.lib {
     /// <param name="user">The user object to which service type registration
     /// should be done.</param>
     internal static void RegisterServices(AdWordsUser user) {
-      Type[] enumTypes = {typeof(v13), typeof(v200909)};
+      Type[] enumTypes = {typeof(v13), typeof(v200909), typeof(v201003)};
       ServiceFactory[] factories = {new LegacyAdWordsApiServiceFactory(),
-          new AdWordsApiServiceFactory()};
+          new AdWordsApiServiceFactory(), new AdWordsApiServiceFactory()};
 
       for (int i = 0; i < enumTypes.Length; i++) {
         Type enumType = enumTypes[i];

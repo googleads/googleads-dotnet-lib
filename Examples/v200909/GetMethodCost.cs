@@ -21,7 +21,7 @@ using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.samples.v200909 {
+namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example retrieves the cost, in API units per operation, of the
   /// given method on a specific date for the developer token being used to

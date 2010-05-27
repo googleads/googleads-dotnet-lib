@@ -169,6 +169,7 @@ namespace com.google.api.adwords.lib {
     /// <returns>The WebRequest instance.</returns>
     protected override WebRequest GetWebRequest(Uri uri) {
       request = base.GetWebRequest(uri);
+      (request as HttpWebRequest).ServicePoint.Expect100Continue = false;
       return request;
     }
 

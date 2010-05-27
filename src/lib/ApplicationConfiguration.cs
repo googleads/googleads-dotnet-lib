@@ -35,6 +35,7 @@ namespace com.google.api.adwords.lib {
       logPath = "C:\\";
       logToConsole = false;
       logToFile = false;
+      logErrorsOnly = false;
       proxy = null;
       companyName = "";
 
@@ -78,6 +79,8 @@ namespace com.google.api.adwords.lib {
         logPath = ReadSetting(settings, LOG_PATH, logPath);
         logToConsole = bool.Parse(ReadSetting(settings, LOG_TO_CONSOLE, logToConsole.ToString()));
         logToFile = bool.Parse(ReadSetting(settings, LOG_TO_FILE, logToFile.ToString()));
+        logErrorsOnly = bool.Parse(ReadSetting(settings, LOG_ERRORS_ONLY,
+            logErrorsOnly.ToString()));
 
         string proxyUrl = ReadSetting(settings, PROXY_SERVER, "");
 
@@ -190,6 +193,12 @@ namespace com.google.api.adwords.lib {
     public static bool logToFile;
 
     /// <summary>
+    /// True, if only the SOAP logs that correspond to an error
+    /// should be logged.
+    /// </summary>
+    public static bool logErrorsOnly;
+
+    /// <summary>
     /// Web proxy to be used with the services.
     /// </summary>
     public static WebProxy proxy;
@@ -266,6 +275,11 @@ namespace com.google.api.adwords.lib {
     internal const String LOG_TO_FILE = "LogToFile";
 
     /// <summary>
+    /// Key name for logErrorsOnly
+    /// </summary>
+    internal const String LOG_ERRORS_ONLY = "LogErrorsOnly";
+
+    /// <summary>
     /// Key name for proxyServer
     /// </summary>
     internal const String PROXY_SERVER = "ProxyServer";
@@ -318,6 +332,6 @@ namespace com.google.api.adwords.lib {
     /// <summary>
     /// The publicly released version number.
     /// </summary>
-    public const String version = "8.0.0";
+    public const String version = "9.0.0";
   }
 }

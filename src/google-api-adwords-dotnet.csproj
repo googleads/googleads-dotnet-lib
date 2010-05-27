@@ -71,6 +71,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="lib\util\MediaUtilities.cs" />
+    <Compile Include="v201003\AdWordsApi.cs" />
+    <Compile Include="v201003\AdWordsService.v201003.cs" />
     <Compile Include="lib\AdWordsApiException.cs" />
     <Compile Include="lib\AdWordsApiService.cs" />
     <Compile Include="lib\ApiUnitsEntry.cs" />
@@ -106,6 +109,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="v201003\wsdl_config.xml" />
     <Content Include="v13\wsdl_config.xml" />
     <Content Include="v200909\wsdl_config.xml" />
   </ItemGroup>

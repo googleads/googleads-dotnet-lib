@@ -1,3 +1,6 @@
+9.0.0
+- Added support for v201003 services.
+
 8.0.0
 - Removed support for all the deprecated v13 services.
 - Ported all utility classes to use the new v200909 API instead of deprecated

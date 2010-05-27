@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.samples.v200909 {
+namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example shows how to add an Ad Extension to an existing campaign. To
   /// create a campaign, run AddCampaign.cs.

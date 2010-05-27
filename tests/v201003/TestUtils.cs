@@ -15,7 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using com.google.api.adwords.v201003;
 
 using NUnit.Framework;
 
@@ -25,9 +25,9 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-namespace com.google.api.adwords.tests {
+namespace com.google.api.adwords.tests.v201003 {
   /// <summary>
-  /// A utility class to assist the testing of v200909 services.
+  /// A utility class to assist the testing of v201003 services.
   /// </summary>
   class TestUtils {
     /// <summary>
@@ -37,7 +37,7 @@ namespace com.google.api.adwords.tests {
     /// <returns>The campaign id.</returns>
     public long CreateCampaign(AdWordsUser user, bool cpc) {
       CampaignService campaignService =
-          (CampaignService) user.GetService(AdWordsService.v200909.CampaignService);
+          (CampaignService) user.GetService(AdWordsService.v201003.CampaignService);
       long campaignId = 0;
 
       CampaignOperation campaignOperation = new CampaignOperation();
@@ -78,7 +78,7 @@ namespace com.google.api.adwords.tests {
     /// <returns>The adgroup id.</returns>
     public long CreateAdGroup(AdWordsUser user, long campaignId) {
       AdGroupService adGroupService =
-          (AdGroupService) user.GetService(AdWordsService.v200909.AdGroupService);
+          (AdGroupService) user.GetService(AdWordsService.v201003.AdGroupService);
       long adGroupId = 0;
 
       AdGroupOperation adGroupOperation = new AdGroupOperation();
@@ -114,7 +114,7 @@ namespace com.google.api.adwords.tests {
     public long CreateTextAd(AdWordsUser user, long adGroupId) {
       long adId = 0;
       AdGroupAdService adGroupAdService =
-          (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);
+          (AdGroupAdService) user.GetService(AdWordsService.v201003.AdGroupAdService);
       AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
       adGroupAdOperation.operatorSpecified = true;
       adGroupAdOperation.@operator = Operator.ADD;
@@ -146,7 +146,7 @@ namespace com.google.api.adwords.tests {
     public long CreateTestKeyword(AdWordsUser user, long adGroupId) {
       long keywordId = 0;
       AdGroupCriterionService adGroupCriterionService =
-         (AdGroupCriterionService) user.GetService(AdWordsService.v200909.AdGroupCriterionService);
+         (AdGroupCriterionService) user.GetService(AdWordsService.v201003.AdGroupCriterionService);
 
       AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
       operation.@operator = Operator.ADD;
@@ -172,7 +172,7 @@ namespace com.google.api.adwords.tests {
     public long CreateCampaignNegativeKeyword(AdWordsUser user, long campaignId) {
       long keywordId = 0;
       CampaignCriterionService service = (CampaignCriterionService) user.GetService(
-          AdWordsService.v200909.CampaignCriterionService);
+          AdWordsService.v201003.CampaignCriterionService);
 
       NegativeCampaignCriterion criterion = new NegativeCampaignCriterion();
 
@@ -225,7 +225,7 @@ namespace com.google.api.adwords.tests {
       long campaignAdExtensionId = 0;
 
       CampaignAdExtensionService campaignExtensionService =
-          (CampaignAdExtensionService) user.GetService(AdWordsService.v200909.
+          (CampaignAdExtensionService) user.GetService(AdWordsService.v201003.
                CampaignAdExtensionService);
 
       CampaignAdExtensionOperation operation = new CampaignAdExtensionOperation();
@@ -268,7 +268,7 @@ namespace com.google.api.adwords.tests {
 
     public GeoLocation GetLocationForAddress(AdWordsUser user, Address address) {
       GeoLocationService geoService =
-          (GeoLocationService) user.GetService(AdWordsService.v200909.GeoLocationService);
+          (GeoLocationService) user.GetService(AdWordsService.v201003.GeoLocationService);
 
       GeoLocationSelector selector = new GeoLocationSelector();
       selector.addresses = new Address[] {address};

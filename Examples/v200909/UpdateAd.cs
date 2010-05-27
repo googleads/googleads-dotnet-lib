@@ -19,7 +19,7 @@ using com.google.api.adwords.v200909;
 
 using System;
 
-namespace com.google.api.adwords.samples.v200909 {
+namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example updates an ad's status given an existing ad group
   /// and ad.

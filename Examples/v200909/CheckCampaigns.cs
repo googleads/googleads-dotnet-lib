@@ -22,7 +22,7 @@ using System.IO;
 using System.Net;
 using System.Web.Services.Protocols;
 
-namespace com.google.api.adwords.samples.v200909 {
+namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example shows how to use the validateOnly header to validate
   /// an API request. No objects will be created, but exceptions will

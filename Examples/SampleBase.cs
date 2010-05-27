@@ -23,7 +23,7 @@ using com.google.api.adwords.lib;
 
 using System;
 
-namespace com.google.api.adwords.samples {
+namespace com.google.api.adwords.examples {
   /// <summary>
   /// This abstract class represents a code sample.
   /// </summary>
@@ -52,6 +52,14 @@ namespace com.google.api.adwords.samples {
 
     protected string GetTimeStamp() {
       return (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds.ToString();
+    }
+
+    /// <summary>
+    /// Gets the current user's home directory.
+    /// </summary>
+    /// <returns>The current user's home directory.</returns>
+    protected String GetHomeDir() {
+      return Environment.GetEnvironmentVariable("USERPROFILE");
     }
   }
 }

@@ -22,7 +22,7 @@ using System;
 using System.IO;
 using System.Web.Services.Protocols;
 
-namespace com.google.api.adwords.samples.v13 {
+namespace com.google.api.adwords.examples.v13 {
   /// <summary>
   /// This code example shows how to use AdWordsUtilities to download a report
   /// in CSV format.
