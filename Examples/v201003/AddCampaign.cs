@@ -24,6 +24,8 @@ using System.Net;
 namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example adds a campaign. To get campaigns, run GetAllCampaigns.cs.
+  ///
+  /// Tags: CampaignService.mutate
   /// </summary>
   class AddCampaign : SampleBase {
     /// <summary>

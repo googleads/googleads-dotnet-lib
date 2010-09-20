@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example updates the bid of an ad group criterion. To get
   /// ad group criteria, run GetAllAdGroupCriteria.cs.
+  ///
+  /// Tags: AdGroupCriterionService.mutate
   /// </summary>
   class UpdateAdGroupCriterion : SampleBase {
     /// <summary>
@@ -38,7 +40,7 @@ namespace com.google.api.adwords.examples.v200909 {
     }
 
     /// <summary>
-    /// Run the sample code.
+    /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
     /// </param>

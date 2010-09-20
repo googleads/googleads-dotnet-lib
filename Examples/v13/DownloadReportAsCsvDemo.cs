@@ -33,8 +33,8 @@ namespace com.google.api.adwords.examples.v13 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example shows how to use AdWordsUtilities to download a report" +
-            " in CSV format.";
+        return "This code example shows how to use AdWordsUtilities to download a report in " +
+            "CSV format.";
       }
     }
 

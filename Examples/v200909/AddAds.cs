@@ -27,6 +27,8 @@ namespace com.google.api.adwords.examples.v200909 {
   /// ad to a given ad group. To get ad_group, run GetAllAdGroups.cs. To get
   /// all videos, run GetAllVideos.cs. To upload video, see
   /// http://adwords.google.com/support/aw/bin/answer.py?hl=en&answer=39454.
+  ///
+  /// Tags: AdGroupAdService.mutate
   /// </summary>
   class AddAds : SampleBase {
     /// <summary>

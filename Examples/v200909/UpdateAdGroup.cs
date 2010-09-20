@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example illustrates how to update an ad group, setting its
   /// status to 'PAUSED'. To create an ad group, run AddAdGroup.cs.
+  ///
+  /// Tags: AdGroupService.mutate
   /// </summary>
   class UpdateAdGroup : SampleBase {
     /// <summary>

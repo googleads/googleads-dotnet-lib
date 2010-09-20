@@ -1,8 +1,8 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{E78FA064-1C11-4BCF-9C12-9AAACD01FAF5}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -18,6 +18,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -27,11 +30,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.5.0.9122, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files\NUnit 2.5\bin\net-1.1\framework\nunit.framework.dll</HintPath>
-    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.5.10112, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -39,33 +43,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassMap.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClassMap.resx</DependentUpon>
-    </Compile>
+    <Compile Include="v201008\AdExtensionOverrideServiceTests.cs" />
+    <Compile Include="v201008\AdGroupAdServiceTests.cs" />
+    <Compile Include="v201008\AdGroupCriterionServiceTests.cs" />
+    <Compile Include="v201008\AdGroupServiceTests.cs" />
+    <Compile Include="v201008\AdParamServiceTests.cs" />
+    <Compile Include="v201008\BidLandscapeServiceTests.cs" />
+    <Compile Include="v201008\CampaignAdExtensionServiceTests.cs" />
+    <Compile Include="v201008\CampaignCriterionServiceTests.cs" />
+    <Compile Include="v201008\CampaignServiceTests.cs" />
+    <Compile Include="v201008\CampaignTargetServiceTests.cs" />
+    <Compile Include="v201008\GeoLocationServiceTests.cs" />
+    <Compile Include="v201008\InfoServiceTests.cs" />
+    <Compile Include="v201008\MediaServiceTests.cs" />
+    <Compile Include="v201008\ReportDefinitionServiceTests.cs" />
+    <Compile Include="v201008\TargetingIdeaServiceTests.cs" />
+    <Compile Include="v201008\TestUtils.cs" />
+    <Compile Include="v200909\AdParamServiceTests.cs" />
+    <Compile Include="v200909\BulkMutateJobServiceTests.cs" />
+    <Compile Include="v200909\CampaignServiceTests.cs" />
+    <Compile Include="v200909\AdGroupAdServiceTests.cs" />
+    <Compile Include="v200909\CampaignAdExtensionServiceTests.cs" />
+    <Compile Include="v200909\CampaignTargetServiceTests.cs" />
+    <Compile Include="v200909\CampaignCriterionServiceTests.cs" />
+    <Compile Include="v200909\InfoServiceTests.cs" />
+    <Compile Include="v200909\GeoLocationServiceTests.cs" />
     <Compile Include="v200909\TestUtils.cs" />
     <Compile Include="v201003\AdExtensionOverrideServiceTests.cs" />
+    <Compile Include="v201003\AdGroupAdServiceTests.cs" />
     <Compile Include="v201003\AdGroupCriterionServiceTests.cs" />
     <Compile Include="v201003\AdGroupServiceTests.cs" />
+    <Compile Include="v201003\AdParamServiceTests.cs" />
+    <Compile Include="v201003\BidLandscapeServiceTests.cs" />
+    <Compile Include="v201003\CampaignAdExtensionServiceTests.cs" />
+    <Compile Include="v201003\CampaignCriterionServiceTests.cs" />
+    <Compile Include="v201003\CampaignServiceTests.cs" />
+    <Compile Include="v201003\CampaignTargetServiceTests.cs" />
+    <Compile Include="v201003\InfoServiceTests.cs" />
+    <Compile Include="v201003\ReportDefinitionServiceTests.cs" />
+    <Compile Include="v201003\MediaServiceTests.cs" />
+    <Compile Include="v201003\GeoLocationServiceTests.cs" />
     <Compile Include="v201003\TargetingIdeaServiceTests.cs" />
     <Compile Include="v201003\TestUtils.cs" />
-    <Compile Include="v201003\TypeTests.cs" />
     <Compile Include="lib\ApplicationConfigurationTests.cs" />
     <Compile Include="lib\AdWordsUserTests.cs" />
     <Compile Include="lib\util\CsvFileTests.cs" />
-    <Compile Include="lib\util\DataUtilitiesTests.cs" />
     <Compile Include="lib\util\ReportUtilitiesTests.cs" />
     <Compile Include="v13\AccountServiceTests.cs" />
     <Compile Include="BaseTests.cs" />
     <Compile Include="v13\ReportServiceTests.cs" />
-    <Compile Include="ServiceTests.cs" />
+    <Compile Include="v13\ServiceTests.cs" />
     <Compile Include="v13\TrafficEstimatorServiceTests.cs" />
     <Compile Include="v200909\AdExtensionOverrideServiceTests.cs" />
     <Compile Include="v200909\AdGroupCriterionServiceTests.cs" />
     <Compile Include="v200909\AdGroupServiceTests.cs" />
     <Compile Include="v200909\TargetingIdeaServiceTests.cs" />
-    <Compile Include="v200909\TypeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -74,28 +106,19 @@
     <None Include="README" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ClassMap.resx">
-      <SubType>Designer</SubType>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ClassMap.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AllServicesV200909.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\src\google-api-adwords-dotnet.csproj">
       <Project>{B701ED76-54AE-4591-86DE-EDCD0D8DAC6C}</Project>
       <Name>google-api-adwords-dotnet</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AllServicesV201003.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

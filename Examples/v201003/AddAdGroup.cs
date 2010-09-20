@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example illustrates how to create an ad group. To create a
   /// campaign, run AddCampaign.cs.
+  ///
+  /// Tags: AdGroupService.mutate
   /// </summary>
   class AddAdGroup : SampleBase {
     /// <summary>

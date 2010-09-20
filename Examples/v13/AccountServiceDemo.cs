@@ -22,7 +22,7 @@ using System.Text;
 
 namespace com.google.api.adwords.examples.v13 {
   /// <summary>
-  /// This code example displays some of the account's info.
+  /// This code example displays some of the client account's info.
   /// </summary>
   class AccountServiceDemo : SampleBase {
     /// <summary>
@@ -30,7 +30,7 @@ namespace com.google.api.adwords.examples.v13 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example displays some of the account's info.";
+        return "This code example displays some of the client account's info.";
       }
     }
 

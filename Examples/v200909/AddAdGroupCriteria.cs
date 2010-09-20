@@ -23,8 +23,10 @@ using System.Net;
 
 namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
-  /// This code example adds a keyword and a placement to an ad group. To
-  /// get ad groups, run GetAllAdGroups.cs.
+  /// This code example adds a keyword and a placement to an ad group. To get
+  /// ad groups, run GetAllAdGroups.cs.
+  ///
+  /// Tags: AdGroupCriterionService.mutate
   /// </summary>
   class AddAdGroupCriteria : SampleBase {
     /// <summary>

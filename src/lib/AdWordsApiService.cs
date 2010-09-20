@@ -41,7 +41,8 @@ namespace com.google.api.adwords {
       AdWordsApiException retVal = new AdWordsApiException(null, ex.Message, ex);
 
       string defaultNs = GetDefaultNamespace();
-      if (!string.IsNullOrEmpty(defaultNs)) {
+
+      if (!string.IsNullOrEmpty(defaultNs) && ex.Detail != null) {
         // Extract the ApiExceptionFault node.
         XmlNamespaceManager xmlns = new XmlNamespaceManager(ex.Detail.OwnerDocument.NameTable);
         xmlns.AddNamespace("api", defaultNs);

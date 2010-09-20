@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example gets all paused campaigns. To add a campaign, run
   /// AddCampaign.cs.
+  ///
+  /// Tags: CampaignService.get
   /// </summary>
   class GetAllPausedCampaigns : SampleBase {
     /// <summary>

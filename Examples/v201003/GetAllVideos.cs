@@ -23,8 +23,10 @@ using System.Text;
 
 namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
-  /// This example gets all videos. To upload video, see
+  /// This code example gets all videos. To upload video, see
   /// http://adwords.google.com/support/aw/bin/answer.py?hl=en&answer=39454.
+  ///
+  /// Tags: MediaService.get
   /// </summary>
   class GetAllVideos : SampleBase {
     /// <summary>
@@ -32,7 +34,7 @@ namespace com.google.api.adwords.examples.v201003 {
     /// </summary>
     public override string Description {
       get {
-        return "This example gets all videos. To upload video, see " +
+        return "This code example gets all videos. To upload video, see " +
             "http://adwords.google.com/support/aw/bin/answer.py?hl=en&answer=39454.";
       }
     }

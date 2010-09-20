@@ -26,6 +26,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// This code example illustrates how to override a campaign ad extension.
   /// To create an ad, run AddAds.cs. To create a campaign ad extension, run
   /// AddCampaignAdExtension.cs.
+  ///
+  /// Tags: GeoLocationService.get, AdExtensionOverrideService.mutate
   /// </summary>
   class AddAdExtensionOverride : SampleBase {
     /// <summary>

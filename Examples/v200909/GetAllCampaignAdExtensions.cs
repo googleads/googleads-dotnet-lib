@@ -23,8 +23,10 @@ using System.Text;
 
 namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
-  /// This code example shows how to retrieve all Ad Extensions in a Campaign.
+  /// This code example shows how to retrieve all Ad Extensions in a campaign.
   /// To create a Campaign Ad Extension, run AddCampaignAdExtensionOverride.cs.
+  ///
+  /// Tags: CampaignAdExtensionService.get
   /// </summary>
   class GetAllCampaignAdExtensions : SampleBase {
     /// <summary>
@@ -32,7 +34,7 @@ namespace com.google.api.adwords.examples.v200909 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example shows how to retrieve all Ad Extensions in a Campaign. " +
+        return "This code example shows how to retrieve all Ad Extensions in a campaign. " +
             "To create a Campaign Ad Extension, run AddCampaignAdExtensionOverride.cs.";
       }
     }

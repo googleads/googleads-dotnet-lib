@@ -25,7 +25,7 @@ namespace com.google.api.adwords.lib {
   /// </summary>
   public partial class AdWordsService {
     /// <summary>
-    /// All the services availble in v13.
+    /// All the services available in v13.
     /// </summary>
     public class v13 {
       /// <summary>

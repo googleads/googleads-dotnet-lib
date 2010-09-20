@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example creates a new negative campaign criterion. To create
   /// campaign, run AddCampaign.cs.
+  ///
+  /// Tags: CampaignCriterionService.mutate
   /// </summary>
   class AddNegativeCampaignCriterion : SampleBase {
     /// <summary>

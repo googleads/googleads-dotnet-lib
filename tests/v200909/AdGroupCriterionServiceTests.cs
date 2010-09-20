@@ -32,43 +32,32 @@ namespace com.google.api.adwords.tests.v200909 {
     /// <summary>
     /// AdGroupCriterionService object to be used in this test.
     /// </summary>
-    AdGroupCriterionService adGroupCriterionService;
+    private AdGroupCriterionService adGroupCriterionService;
 
     /// <summary>
     /// The campaign id to be used for tests.
     /// </summary>
-    long campaignId = 0;
+    private long campaignId = 0;
 
     /// <summary>
     /// The AdGroup id to be used for tests (keyword operations).
     /// </summary>
-    long keywordAdGroupId = 0;
+    private long keywordAdGroupId = 0;
 
     /// <summary>
     /// The AdGroup id to be used for tests (placement operations).
     /// </summary>
-    long placementAdGroupId = 0;
+    private long placementAdGroupId = 0;
 
     /// <summary>
     /// The keyword id to be used for tests.
     /// </summary>
-    long keywordId = 0;
-
-    /// <summary>
-    /// The AdWords user to be used for tests.
-    /// </summary>
-    AdWordsUser user = new AdWordsUser();
-
-    /// <summary>
-    /// Utility class to assist in tests.
-    /// </summary>
-    TestUtils utils = new TestUtils();
+    private long keywordId = 0;
 
     /// <summary>
     /// Default public constructor.
     /// </summary>
-    public AdGroupCriterionServiceTests()
-      : base() {
+    public AdGroupCriterionServiceTests() : base() {
     }
 
     /// <summary>
@@ -76,6 +65,7 @@ namespace com.google.api.adwords.tests.v200909 {
     /// </summary>
     [SetUp]
     public void Init() {
+      TestUtils utils = new TestUtils();
       adGroupCriterionService =
           (AdGroupCriterionService) user.GetService(AdWordsService.v200909.AdGroupCriterionService);
 
@@ -83,7 +73,7 @@ namespace com.google.api.adwords.tests.v200909 {
       keywordAdGroupId = utils.CreateAdGroup(user, campaignId);
       placementAdGroupId = utils.CreateAdGroup(user, campaignId);
 
-      keywordId = utils.CreateTestKeyword(user, keywordAdGroupId);
+      keywordId = utils.CreateKeyword(user, keywordAdGroupId);
     }
 
     /// <summary>
@@ -209,8 +199,6 @@ namespace com.google.api.adwords.tests.v200909 {
     /// </summary>
     [Test]
     public void TestDeleteCriterion() {
-      long tempKeyword = utils.CreateTestKeyword(user, keywordAdGroupId);
-
       AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
       operation.operatorSpecified = true;
       operation.@operator = Operator.REMOVE;

@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example adds geo, language, and network targeting to an
   /// existing campaign. To get a campaign, run GetAllCampaigns.cs.
+  ///
+  /// Tags: CampaignTargetService.mutate
   /// </summary>
   class SetCampaignTargets : SampleBase {
     /// <summary>

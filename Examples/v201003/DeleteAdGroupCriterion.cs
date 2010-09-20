@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example deletes a campaign by setting the status to 'DELETED'.
   /// To get campaigns, run GetAllCampaigns.cs.
+  ///
+  /// Tags: AdGroupCriterionService.mutate
   /// </summary>
   class DeleteAdGroupCriterion : SampleBase {
     /// <summary>
@@ -43,29 +45,29 @@ namespace com.google.api.adwords.examples.v201003 {
     /// <param name="user">The AdWords user object running the code example.
     /// </param>
     public override void Run(AdWordsUser user) {
-        // Get the AdGroupCriterionService.
-        AdGroupCriterionService adGroupCriterionService = (AdGroupCriterionService)user.GetService(
-            AdWordsService.v201003.AdGroupCriterionService);
+      // Get the AdGroupCriterionService.
+      AdGroupCriterionService adGroupCriterionService = (AdGroupCriterionService)user.GetService(
+          AdWordsService.v201003.AdGroupCriterionService);
 
-        long adGroupId = long.Parse(_T("INSERT_AD_GROUP_ID_HERE"));
-        long criterionId = long.Parse(_T("INSERT_CRITERION_ID_HERE"));
+      long adGroupId = long.Parse(_T("INSERT_AD_GROUP_ID_HERE"));
+      long criterionId = long.Parse(_T("INSERT_CRITERION_ID_HERE"));
 
-        // Create base class criterion to avoid setting keyword and placement specific
-        // fields.
-        Criterion criterion = new Criterion();
-        criterion.id = criterionId;
+      // Create base class criterion to avoid setting keyword and placement specific
+      // fields.
+      Criterion criterion = new Criterion();
+      criterion.id = criterionId;
       criterion.idSpecified = true;
 
-        // Create ad group criterion.
-        BiddableAdGroupCriterion adGroupCriterion = new BiddableAdGroupCriterion();
-        adGroupCriterion.adGroupId = adGroupId;
+      // Create ad group criterion.
+      BiddableAdGroupCriterion adGroupCriterion = new BiddableAdGroupCriterion();
+      adGroupCriterion.adGroupId = adGroupId;
       adGroupCriterion.adGroupIdSpecified = true;
-        adGroupCriterion.criterion = criterion;
+      adGroupCriterion.criterion = criterion;
 
-        // Create operations.
-        AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-        operation.operand = adGroupCriterion;
-        operation.@operator = Operator.REMOVE;
+      // Create operations.
+      AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
+      operation.operand = adGroupCriterion;
+      operation.@operator = Operator.REMOVE;
       operation.operatorSpecified = true;
 
       try {
@@ -75,13 +77,13 @@ namespace com.google.api.adwords.examples.v201003 {
 
         // Display ad group criteria.
         if (result != null && result.value != null && result.value.Length > 0) {
-         foreach (AdGroupCriterion temp in result.value) {
-           Console.WriteLine("Ad group criterion with ad group id = \"{0}\", criterion id = " +
-                "\"{1}\" and type = \"{2}\" was deleted.", temp.adGroupId, temp.criterion.id,
-                temp.criterion.CriterionType);
-         }
+          foreach (AdGroupCriterion temp in result.value) {
+            Console.WriteLine("Ad group criterion with ad group id = \"{0}\", criterion id = " +
+                 "\"{1}\" and type = \"{2}\" was deleted.", temp.adGroupId, temp.criterion.id,
+                 temp.criterion.CriterionType);
+          }
         } else {
-         Console.WriteLine("No ad group criteria were deleted.");
+          Console.WriteLine("No ad group criteria were deleted.");
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to delete ad group criteria. Exception says \"{0}\"", ex.Message);

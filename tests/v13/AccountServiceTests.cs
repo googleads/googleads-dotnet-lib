@@ -32,13 +32,12 @@ namespace com.google.api.adwords.tests.v13 {
     /// <summary>
     /// AccountService object to be used in this test.
     /// </summary>
-    AccountService accountService;
+    private AccountService accountService;
 
     /// <summary>
     /// Default public constructor.
     /// </summary>
-    public AccountServiceTests()
-      : base() {
+    public AccountServiceTests() : base() {
     }
 
     /// <summary>
@@ -46,7 +45,6 @@ namespace com.google.api.adwords.tests.v13 {
     /// </summary>
     [SetUp]
     public void Init() {
-      AdWordsUser user = new AdWordsUser();
       accountService = (AccountService) user.GetService(AdWordsService.v13.AccountService);
     }
 
@@ -90,8 +88,11 @@ namespace com.google.api.adwords.tests.v13 {
     public void TestGetMccAlerts() {
       accountService.clientEmailValue = null;
 
-      object results = accountService.getMccAlerts();
-      Assert.That(results == null || results is MccAlert[]);
+      MccAlert[] alerts = null;
+      Assert.DoesNotThrow(delegate() {
+        alerts = accountService.getMccAlerts();
+      });
+      Assert.That(alerts == null || alerts.Length > 0);
     }
 
     /// <summary>
@@ -108,8 +109,10 @@ namespace com.google.api.adwords.tests.v13 {
       info.emailPromotionsPreferences.marketResearchEnabled  = false;
       info.emailPromotionsPreferences.newsletterEnabled  = false;
       info.emailPromotionsPreferences.promotionsEnabled  = false;
-      accountService.updateAccountInfo(info);
-      Assert.Pass();
+
+      Assert.DoesNotThrow(delegate() {
+        accountService.updateAccountInfo(info);
+      });
     }
   }
 }

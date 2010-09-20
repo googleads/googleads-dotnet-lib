@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example gets all ad group criteria in an account. To add ad
   /// group criteria, run AddAdGroupCriteria.cs.
+  ///
+  /// Tags: AdGroupCriterionService.get
   /// </summary>
   class GetAllAdGroupCriteria : SampleBase {
     /// <summary>
@@ -47,24 +49,39 @@ namespace com.google.api.adwords.examples.v200909 {
       AdGroupCriterionService adGroupCriterionService =
           (AdGroupCriterionService) user.GetService(AdWordsService.v200909.AdGroupCriterionService);
 
+      AdGroupCriterionSelector selector = new AdGroupCriterionSelector();
+
       try {
         // Get all ad group criteria.
-        AdGroupCriterionPage adGroupCriterionPage = adGroupCriterionService.get(
-            new AdGroupCriterionSelector());
+        AdGroupCriterionPage adGroupCriterionPage = adGroupCriterionService.get(selector);
 
         if (adGroupCriterionPage != null && adGroupCriterionPage.entries != null) {
           // Display ad group criteria.
           foreach (AdGroupCriterion adGroupCriterion in adGroupCriterionPage.entries) {
+            bool isNegative = (adGroupCriterion is NegativeAdGroupCriterion);
             if (adGroupCriterion.criterion is Keyword) {
               Keyword keyword = (Keyword) adGroupCriterion.criterion;
-              Console.WriteLine("Keyword ad group criterion with ad group ID = '{0}', criterion" +
-                  "ID = '{1}', text = '{2}' and matchType = '{3} was found.",
-                  adGroupCriterion.adGroupId, keyword.id, keyword.text, keyword.matchType);
+              if (isNegative) {
+                Console.WriteLine("Negative keyword ad group criterion with ad group ID = '{0}'," +
+                    " criterion ID = '{1}', and text = '{2}' was found.",
+                    adGroupCriterion.adGroupId, keyword.id, keyword.text);
+              } else {
+                Console.WriteLine("Keyword ad group criterion with ad group ID = '{0}'," +
+                    " criterion ID = '{1}', text = '{2}' and matchType = '{3} was found.",
+                    adGroupCriterion.adGroupId, keyword.id, keyword.text, keyword.matchType);
+              }
             } else if (adGroupCriterion.criterion is Placement) {
-              Placement placement = (Placement) adGroupCriterion.criterion;
-              Console.WriteLine("Placement ad group criterion with ad group ID = '{0}', criterion" +
-                  " ID = '{1}' and url = '{2}' was found.", adGroupCriterion.adGroupId,
-                  placement.id, placement.url);
+              Placement placement = (Placement)adGroupCriterion.criterion;
+              if (isNegative) {
+                Console.WriteLine("Negative placement ad group criterion with ad group ID = " +
+                    "'{0}', criterion ID = '{1}' and url = '{2}' was found.",
+                    adGroupCriterion.adGroupId, placement.id, placement.url);
+              } else {
+                Console.WriteLine("Placement ad group criterion with ad group ID = '{0}', " +
+                    "criterion ID = '{1}' and url = '{2}' was found.", adGroupCriterion.adGroupId,
+                    placement.id, placement.url);
+
+              }
             }
           }
         } else {

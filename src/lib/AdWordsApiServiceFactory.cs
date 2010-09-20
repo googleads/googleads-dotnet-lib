@@ -273,6 +273,12 @@ namespace com.google.api.adwords {
     private bool? validateOnlyField;
 
     /// <summary>
+    /// If true, the API will try to commit as many error free operations as
+    /// possible and report the other operations' errors
+    /// </summary>
+    private bool? partialFailureField;
+
+    /// <summary>
     /// The xml namespace under which the members should be serialized.
     /// </summary>
     private string targetNamespace;
@@ -362,6 +368,19 @@ namespace com.google.api.adwords {
     }
 
     /// <summary>
+    /// Gets or sets whether the API should try to commit as many error free
+    /// operations as possible and report the other operations' errors.
+    /// </summary>
+    public bool? partialFailure {
+      get {
+        return partialFailureField;
+      }
+      set {
+        partialFailureField = value;
+      }
+    }
+
+    /// <summary>
     /// Gets or sets the target namespace under which the child
     /// nodes should be serialized.
     /// </summary>
@@ -400,7 +419,7 @@ namespace com.google.api.adwords {
     /// should be written.</param>
     public void WriteXml(XmlWriter writer) {
       string[] headersToSerialize = {"applicationToken", "authToken", "clientCustomerId",
-        "clientEmail", "developerToken", "userAgent", "validateOnly"};
+        "clientEmail", "developerToken", "userAgent", "validateOnly", "partialFailure"};
       foreach (string headerName in headersToSerialize) {
         PropertyInfo propInfo = this.GetType().GetProperty(headerName);
         object value = propInfo.GetValue(this, null);
@@ -441,6 +460,7 @@ namespace com.google.api.adwords {
       header.targetNamespace = this.targetNamespace;
       header.userAgent = this.userAgent;
       header.validateOnly = this.validateOnly;
+      header.partialFailure = this.partialFailure;
       return header;
     }
 

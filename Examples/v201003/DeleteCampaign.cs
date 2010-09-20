@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example deletes a campaign by setting the status to 'DELETED'.
   /// To get campaigns, run GetAllCampaigns.cs.
+  ///
+  /// Tags: CampaignService.mutate
   /// </summary>
   class DeleteCampaign : SampleBase {
     /// <summary>

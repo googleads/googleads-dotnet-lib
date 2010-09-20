@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example updates a campaign. To get campaigns, run
   /// GetAllCampaigns.cs.
+  ///
+  /// Tags: CampaignService.mutate
   /// </summary>
   class UpdateCampaign : SampleBase {
     /// <summary>
@@ -37,7 +39,7 @@ namespace com.google.api.adwords.examples.v201003 {
     }
 
     /// <summary>
-    /// Run the sample code.
+    /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
     /// </param>

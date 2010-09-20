@@ -80,6 +80,8 @@ namespace com.google.api.adwords.examples {
       RegisterSample("v200909.GetAllAds", new v200909.GetAllAds());
       RegisterSample("v200909.GetAllDisapprovedAds", new v200909.GetAllDisapprovedAds());
       RegisterSample("v200909.DeleteAd", new v200909.DeleteAd());
+      RegisterSample("v200909.HandlePolicyViolationError",
+          new v200909.HandlePolicyViolationError());
 
       RegisterSample("v200909.AddCampaignAdExtension", new v200909.AddCampaignAdExtension());
       RegisterSample("v200909.PerformBulkMutateJob", new v200909.PerformBulkMutateJob());
@@ -140,6 +142,8 @@ namespace com.google.api.adwords.examples {
       RegisterSample("v201003.GetAllAds", new v201003.GetAllAds());
       RegisterSample("v201003.GetAllDisapprovedAds", new v201003.GetAllDisapprovedAds());
       RegisterSample("v201003.DeleteAd", new v201003.DeleteAd());
+      RegisterSample("v201003.HandlePolicyViolationError",
+          new v201003.HandlePolicyViolationError());
 
       RegisterSample("v201003.AddCampaignAdExtension", new v201003.AddCampaignAdExtension());
       RegisterSample("v201003.PerformBulkMutateJob", new v201003.PerformBulkMutateJob());
@@ -155,6 +159,8 @@ namespace com.google.api.adwords.examples {
 
       RegisterSample("v201003.AddNegativeCampaignCriterion",
           new v201003.AddNegativeCampaignCriterion());
+      RegisterSample("v201003.GetAllNegativeCampaignCriteria",
+          new v201003.GetAllNegativeCampaignCriteria());
 
       RegisterSample("v201003.GetRelatedKeywords", new v201003.GetRelatedKeywords());
       RegisterSample("v201003.GetRelatedPlacements", new v201003.GetRelatedPlacements());
@@ -187,6 +193,94 @@ namespace com.google.api.adwords.examples {
       RegisterSample("v201003.UploadImage", new v201003.UploadImage());
       RegisterSample("v201003.GetAllImages", new v201003.GetAllImages());
       RegisterSample("v201003.GetAllVideos", new v201003.GetAllVideos());
+
+      RegisterSample("v201003.AddSiteLinks", new v201003.AddSiteLinks());
+      RegisterSample("v201003.DeleteSitelinks", new v201003.DeleteSitelinks());
+
+      // Add v201008 samples.
+      RegisterSample("v201008.AddCampaign", new v201008.AddCampaign());
+      RegisterSample("v201008.UpdateCampaign", new v201008.UpdateCampaign());
+      RegisterSample("v201008.GetAllCampaigns", new v201008.GetAllCampaigns());
+      RegisterSample("v201008.GetCampaign", new v201008.GetCampaign());
+      RegisterSample("v201008.GetAllPausedCampaigns", new v201008.GetAllPausedCampaigns());
+      RegisterSample("v201008.CheckCampaigns", new v201008.CheckCampaigns());
+      RegisterSample("v201008.DeleteCampaign", new v201008.DeleteCampaign());
+
+      RegisterSample("v201008.SetCampaignTargets", new v201008.SetCampaignTargets());
+      RegisterSample("v201008.GetAllCampaignTargets", new v201008.GetAllCampaignTargets());
+
+      RegisterSample("v201008.AddAdGroup", new v201008.AddAdGroup());
+      RegisterSample("v201008.UpdateAdGroup", new v201008.UpdateAdGroup());
+      RegisterSample("v201008.GetAllAdGroups", new v201008.GetAllAdGroups());
+      RegisterSample("v201008.DeleteAdGroup", new v201008.DeleteAdGroup());
+
+      RegisterSample("v201008.AddAds", new v201008.AddAds());
+      RegisterSample("v201008.UpdateAd", new v201008.UpdateAd());
+      RegisterSample("v201008.AddMobileImageAd", new v201008.AddMobileImageAd());
+      RegisterSample("v201008.GetAllAds", new v201008.GetAllAds());
+      RegisterSample("v201008.GetAllDisapprovedAds", new v201008.GetAllDisapprovedAds());
+      RegisterSample("v201008.DeleteAd", new v201008.DeleteAd());
+      RegisterSample("v201008.HandlePolicyViolationError",
+          new v201008.HandlePolicyViolationError());
+
+      RegisterSample("v201008.AddCampaignAdExtension", new v201008.AddCampaignAdExtension());
+      RegisterSample("v201008.PerformBulkMutateJob", new v201008.PerformBulkMutateJob());
+      RegisterSample("v201008.GetAllCampaignAdExtensions",
+          new v201008.GetAllCampaignAdExtensions());
+
+      RegisterSample("v201008.AddAdGroupCriteria", new v201008.AddAdGroupCriteria());
+      RegisterSample("v201008.UpdateAdGroupCriterion", new v201008.UpdateAdGroupCriterion());
+      RegisterSample("v201008.GetAllAdGroupCriteria", new v201008.GetAllAdGroupCriteria());
+      RegisterSample("v201008.GetAllActiveAdGroupCriteria",
+          new v201008.GetAllActiveAdGroupCriteria());
+      RegisterSample("v201008.DeleteAdGroupCriterion", new v201008.DeleteAdGroupCriterion());
+
+      RegisterSample("v201008.AddNegativeCampaignCriterion",
+          new v201008.AddNegativeCampaignCriterion());
+      RegisterSample("v201008.GetAllNegativeCampaignCriteria",
+          new v201008.GetAllNegativeCampaignCriteria());
+
+      RegisterSample("v201008.GetRelatedKeywords", new v201008.GetRelatedKeywords());
+      RegisterSample("v201008.GetRelatedPlacements", new v201008.GetRelatedPlacements());
+
+      RegisterSample("v201008.AddAdExtensionOverride", new v201008.AddAdExtensionOverride());
+      RegisterSample("v201008.GetAllAdExtensionOverrides",
+          new v201008.GetAllAdExtensionOverrides());
+      RegisterSample("v201008.SetAdParams", new v201008.SetAdParams());
+      RegisterSample("v201008.GetGeoLocationInfo", new v201008.GetGeoLocationInfo());
+      RegisterSample("v201008.GetConversionOptimizerEligibility",
+          new v201008.GetConversionOptimizerEligibility());
+
+      RegisterSample("v201008.GetTotalUsageUnitsPerMonth",
+          new v201008.GetTotalUsageUnitsPerMonth());
+      RegisterSample("v201008.GetOperationCount", new v201008.GetOperationCount());
+      RegisterSample("v201008.GetUnitCount", new v201008.GetUnitCount());
+      RegisterSample("v201008.GetMethodCost", new v201008.GetMethodCost());
+
+      RegisterSample("v201008.BackupSandboxDemo", new v201008.BackupSandboxDemo());
+      RegisterSample("v201008.RestoreSandboxDemo", new v201008.RestoreSandboxDemo());
+      RegisterSample("v201008.MethodApiUnitsUsageDemo", new v201008.MethodApiUnitsUsageDemo());
+
+      RegisterSample("v201008.GetCriterionBidLandscape", new v201008.GetCriterionBidLandscape());
+      RegisterSample("v201008.GetAllReportDefinitions", new v201008.GetAllReportDefinitions());
+      RegisterSample("v201008.GetReportFields", new v201008.GetReportFields());
+      RegisterSample("v201008.DownloadReport", new v201008.DownloadReport());
+      RegisterSample("v201008.AddKeywordsPerformanceReportDefinition",
+          new v201008.AddKeywordsPerformanceReportDefinition());
+
+      RegisterSample("v201008.UploadImage", new v201008.UploadImage());
+      RegisterSample("v201008.GetAllImages", new v201008.GetAllImages());
+      RegisterSample("v201008.GetAllVideos", new v201008.GetAllVideos());
+
+      RegisterSample("v201008.AddSiteLinks", new v201008.AddSiteLinks());
+      RegisterSample("v201008.DeleteSitelinks", new v201008.DeleteSitelinks());
+
+      RegisterSample("v201008.AddExperiment", new v201008.AddExperiment());
+      RegisterSample("v201008.GetAllExperiments", new v201008.GetAllExperiments());
+      RegisterSample("v201008.PromoteExperiment", new v201008.PromoteExperiment());
+      RegisterSample("v201008.DeleteExperiment", new v201008.DeleteExperiment());
+
+      RegisterSample("v201008.GetTrafficEstimates", new v201008.GetTrafficEstimates());
 
       // Add combined examples.
       RegisterSample("both.UsingTrafficEstimatorDemo", new both.UsingTrafficEstimatorDemo());

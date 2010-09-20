@@ -1,8 +1,8 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B701ED76-54AE-4591-86DE-EDCD0D8DAC6C}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -18,6 +18,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -26,6 +29,22 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -39,39 +58,13 @@
     <None Include="App.config" />
     <Compile Include="v200909\AdWordsService.v200909.cs" />
     <Compile Include="v13\AdWordsService.v13.cs" />
-    <EmbeddedResource Include="..\data\categories.csv">
-      <Link>data\categories.csv</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\data\countries.csv">
-      <Link>data\countries.csv</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\data\currencies.csv">
-      <Link>data\currencies.csv</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\data\languages.csv">
-      <Link>data\languages.csv</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\data\ops_rates.csv">
-      <Link>data\ops_rates.csv</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\data\timezones.csv">
-      <Link>data\timezones.csv</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\data\us_cities.csv">
-      <Link>data\us_cities.csv</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\data\us_metros.csv">
-      <Link>data\us_metros.csv</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\data\world_cities.csv">
-      <Link>data\world_cities.csv</Link>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\data\world_regions.csv">
-      <Link>data\world_regions.csv</Link>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="lib\util\ErrorUtilities.cs" />
+    <Compile Include="v201008\AdWordsApi.cs" />
+    <Compile Include="v201008\AdWordsService.v201008.cs" />
     <Compile Include="lib\util\MediaUtilities.cs" />
+    <Compile Include="v200909\AdWordsApi.cs" />
     <Compile Include="v201003\AdWordsApi.cs" />
     <Compile Include="v201003\AdWordsService.v201003.cs" />
     <Compile Include="lib\AdWordsApiException.cs" />
@@ -83,7 +76,6 @@
     <Compile Include="lib\util\Archiver.cs" />
     <Compile Include="lib\util\UnitsUtilities.cs" />
     <Compile Include="v13\AdWordsApi.cs" />
-    <Compile Include="v200909\AdWordsApi.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="lib\AdWordsUser.cs" />
     <Compile Include="lib\LegacyAdWordsApiServiceFactory.cs" />
@@ -107,11 +99,6 @@
     <Compile Include="v13\LegacyAdWordsApiExceptions.cs" />
     <Compile Include="v13\LegacyAdWordsApiService.cs">
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="v201003\wsdl_config.xml" />
-    <Content Include="v13\wsdl_config.xml" />
-    <Content Include="v200909\wsdl_config.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

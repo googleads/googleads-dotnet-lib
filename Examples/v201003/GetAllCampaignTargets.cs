@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example gets all campaign targets. To set a campaign target,
   /// run SetCampaignTargets.cs.
+  ///
+  /// Tags: CampaignTargetService.get
   /// </summary>
   class GetAllCampaignTargets : SampleBase {
     /// <summary>

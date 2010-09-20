@@ -7,20 +7,21 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7985fc8e-a464-4b06-84e7-eb89386793ed}</ProjectGuid>
-    <SHFBSchemaVersion>1.8.0.0</SHFBSchemaVersion>
+    <SHFBSchemaVersion>1.8.0.3</SHFBSchemaVersion>
     <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual
          Studio adds them anyway -->
     <AssemblyName>Documentation</AssemblyName>
     <RootNamespace>Documentation</RootNamespace>
     <Name>Documentation</Name>
     <!-- SHFB properties -->
-    <OutputPath>.\</OutputPath>
+    <OutputPath>.\chm\</OutputPath>
     <HtmlHelpName>google-api-adwords-dotnet</HtmlHelpName>
-    <HelpFileFormat>HtmlHelp1x</HelpFileFormat>
+    <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
     <DocumentationSources>
       <DocumentationSource sourceFile="..\Examples\Examples.csproj" />
       <DocumentationSource sourceFile="..\src\google-api-adwords-dotnet.csproj" />
-      <DocumentationSource sourceFile="..\tests\tests.csproj" /></DocumentationSources>
+      <DocumentationSource sourceFile="..\tests\tests.csproj" />
+    </DocumentationSources>
     <HelpTitle>AdWords API .NET client library</HelpTitle>
     <NamingMethod>MemberName</NamingMethod>
     <CopyrightText>Copyright 2010, Google Inc. All Rights Reserved.</CopyrightText>

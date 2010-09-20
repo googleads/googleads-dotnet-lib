@@ -25,10 +25,12 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example shows how to add ads and keywords using the
   /// BulkMutateJobService.
+  ///
+  /// Tags: BulkMutateJobService.mutate
   /// </summary>
   class PerformBulkMutateJob : SampleBase {
     /// <summary>
-    /// Returns a description about the sample code.
+    /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
@@ -101,7 +103,7 @@ namespace com.google.api.adwords.examples.v201003 {
         adGroupCriterionOperation.operand = criterion;
         adGroupCriterionOperations[i] = adGroupCriterionOperation;
       }
-      
+
       // Add those operation into the second stream.
       OperationStream keywordOpStream = new OperationStream();
 

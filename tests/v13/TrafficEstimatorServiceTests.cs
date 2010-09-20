@@ -32,13 +32,12 @@ namespace com.google.api.adwords.tests.v13 {
     /// <summary>
     /// TrafficEstimatorService object to be used in this test.
     /// </summary>
-    TrafficEstimatorService trafficEstimatorService;
+    private TrafficEstimatorService trafficEstimatorService;
 
     /// <summary>
     /// Default public constructor.
     /// </summary>
-    public TrafficEstimatorServiceTests()
-      : base() {
+    public TrafficEstimatorServiceTests() : base() {
     }
 
     /// <summary>
@@ -46,7 +45,6 @@ namespace com.google.api.adwords.tests.v13 {
     /// </summary>
     [SetUp]
     public void Init() {
-      AdWordsUser user = new AdWordsUser();
       trafficEstimatorService =
           (TrafficEstimatorService) user.GetService(AdWordsService.v13.TrafficEstimatorService);
     }
@@ -60,8 +58,12 @@ namespace com.google.api.adwords.tests.v13 {
       request.keywordText = "Flowers";
       request.keywordType = KeywordType.Broad;
       request.language = "en";
-      Assert.That(trafficEstimatorService.checkKeywordTraffic(new KeywordTrafficRequest[] {request})
-          is KeywordTraffic[]);
+      KeywordTraffic[] results = null;
+      Assert.DoesNotThrow(delegate() {
+        results = trafficEstimatorService.checkKeywordTraffic(
+            new KeywordTrafficRequest[] { request });
+      });
+      Assert.That(results == null || results.Length > 0); 
     }
 
     /// <summary>
@@ -82,9 +84,13 @@ namespace com.google.api.adwords.tests.v13 {
 
       request.keywordRequests = new KeywordRequest[] {keywordRequest};
       request.maxCpc = 1000000;
+      request.maxCpcSpecified = true;
 
-      Assert.That(trafficEstimatorService.estimateAdGroupList(new AdGroupRequest[] {request})
-          is AdGroupEstimate[]);
+      AdGroupEstimate[] estimates = null;
+      Assert.DoesNotThrow(delegate() {
+        estimates = trafficEstimatorService.estimateAdGroupList(new AdGroupRequest[] { request });
+      });
+      Assert.That(estimates == null || estimates.Length > 0);
     }
 
     /// <summary>
@@ -111,12 +117,17 @@ namespace com.google.api.adwords.tests.v13 {
       request.geoTargeting = new GeoTarget();
       request.geoTargeting.cityTargets = new CityTargets();
       request.geoTargeting.cityTargets.cities = new string[] {"New York, NY US"};
+      request.adGroupRequests = new AdGroupRequest[] {adGroupRequest};
 
       request.languageTargeting = new string[] {"en"};
       request.networkTargeting =
           new NetworkType[] {NetworkType.GoogleSearch, NetworkType.SearchNetwork};
-      Assert.That(trafficEstimatorService.estimateCampaignList(new CampaignRequest[] {request})
-          is CampaignEstimate[]);
+
+      CampaignEstimate[] estimates = null;
+      Assert.DoesNotThrow(delegate() {
+        estimates = trafficEstimatorService.estimateCampaignList(new CampaignRequest[] { request });
+      });
+      Assert.That(estimates == null || estimates.Length > 0);
     }
 
     /// <summary>
@@ -142,8 +153,13 @@ namespace com.google.api.adwords.tests.v13 {
       request2.typeSpecified = true;
       request2.type = KeywordType.Broad;
 
-      Assert.That(trafficEstimatorService.estimateKeywordList(
-          new KeywordRequest[] {request1, request2}) is KeywordEstimate[]);
+      KeywordEstimate[] estimates = null;
+
+      Assert.DoesNotThrow(delegate() {
+        estimates = trafficEstimatorService.estimateKeywordList(
+          new KeywordRequest[] { request1, request2 });
+      });
+      Assert.That(estimates == null || estimates.Length > 0);
     }
   }
 }

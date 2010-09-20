@@ -26,6 +26,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// This code example illustrates how to create a text ad with ad parameters.
   /// To add an ad group, run AddAdGroup.cs. To add an ad group criterion,
   /// run AddAdGroupCriterion.cs.
+  ///
+  /// Tags: AdGroupAdService.mutate, AdParamService.mutate
   /// </summary>
   class SetAdParams : SampleBase {
     /// <summary>

@@ -14,12 +14,13 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using com.google.api.adwords.lib;
+using com.google.api.adwords.v13;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
-
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v13;
+using System.Threading;
 
 namespace com.google.api.adwords.tests {
   /// <summary>
@@ -27,10 +28,16 @@ namespace com.google.api.adwords.tests {
   /// </summary>
   class BaseTests {
     /// <summary>
+    /// The AdWords user to be used for tests.
+    /// </summary>
+    protected AdWordsUser user = new AdWordsUser();
+
+    /// <summary>
     /// Default public constructor.
     /// </summary>
     public BaseTests() {
-      AdWordsUser user = new AdWordsUser();
+      // Make sure we don't hit the authtoken endpoint really bad.
+      Thread.Sleep(2000);
       AccountService accountService =
           (AccountService) user.GetService(AdWordsService.v13.AccountService);
       accountService.clientEmailValue = null;

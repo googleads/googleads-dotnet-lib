@@ -24,8 +24,8 @@ using System.Web.Services.Protocols;
 
 namespace com.google.api.adwords.examples.v13 {
   /// <summary>
-  /// This code example schedules keyword report and retrives its
-  /// destination url.
+  /// This code example schedules a keyword report and retrives its destination
+  /// url.
   /// </summary>
   class ReportServiceKeywordDemo : SampleBase {
     /// <summary>
@@ -33,7 +33,7 @@ namespace com.google.api.adwords.examples.v13 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example schedules keyword report and retrives its destination url.";
+        return "This code example schedules a keyword report and retrives its destination url.";
       }
     }
 

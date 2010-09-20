@@ -32,23 +32,22 @@ namespace com.google.api.adwords.tests.v200909 {
     /// <summary>
     /// TargetingIdeaService object to be used in this test.
     /// </summary>
-    TargetingIdeaService targetingIdeaService;
+    private TargetingIdeaService targetingIdeaService;
 
     /// <summary>
     /// AdGroupId to be used for test cases.
     /// </summary>
-    long adGroupId;
+    private long adGroupId;
 
     /// <summary>
     /// CampaignId to be used for test cases.
     /// </summary>
-    long campaignId;
+    private long campaignId;
 
     /// <summary>
     /// Default public constructor.
     /// </summary>
-    public TargetingIdeaServiceTests()
-      : base() {
+    public TargetingIdeaServiceTests() : base() {
     }
 
     /// <summary>
@@ -56,11 +55,9 @@ namespace com.google.api.adwords.tests.v200909 {
     /// </summary>
     [SetUp]
     public void Init() {
-      AdWordsUser user = new AdWordsUser();
+      TestUtils utils = new TestUtils();
       targetingIdeaService =
           (TargetingIdeaService) user.GetService(AdWordsService.v200909.TargetingIdeaService);
-
-      TestUtils utils = new TestUtils();
       campaignId = utils.CreateCampaign(user, true);
       adGroupId = utils.CreateAdGroup(user, campaignId);
     }
@@ -71,7 +68,11 @@ namespace com.google.api.adwords.tests.v200909 {
     [Test]
     public void TestGetEmptySelector() {
       TargetingIdeaSelector selector = new TargetingIdeaSelector();
-      Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
+      TargetingIdeaPage page = null;
+
+      Assert.Throws(typeof(AdWordsApiException), delegate() {
+        page = targetingIdeaService.get(selector);
+      });
     }
 
     /// <summary>
@@ -286,6 +287,49 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
+    /// Test whether we can request global monthly search parameter.
+    /// </summary>
+    [Test]
+    public void TestGlobalMonthlySearchesSearchParameter() {
+      TargetingIdeaSelector selector = new TargetingIdeaSelector();
+
+      Keyword keyword = new Keyword();
+      keyword.text = "media player";
+      keyword.matchTypeSpecified = true;
+      keyword.matchType = KeywordMatchType.EXACT;
+
+      GlobalMonthlySearchesSearchParameter globalSearchParam =
+          new GlobalMonthlySearchesSearchParameter();
+      globalSearchParam.operation = new LongComparisonOperation();
+      globalSearchParam.operation.minimumSpecified = true;
+      globalSearchParam.operation.minimum = 1000;
+      globalSearchParam.operation.maximumSpecified = true;
+      globalSearchParam.operation.maximum = 10000;
+
+      RelatedToKeywordSearchParameter relatedToSearchParam =
+          new RelatedToKeywordSearchParameter();
+
+      relatedToSearchParam.keywords = new Keyword[] { keyword };
+
+      selector.searchParameters =
+          new SearchParameter[] {globalSearchParam, relatedToSearchParam};
+
+      selector.ideaTypeSpecified = true;
+      selector.ideaType = IdeaType.KEYWORD;
+
+      selector.requestTypeSpecified = true;
+      selector.requestType = RequestType.IDEAS;
+
+      selector.paging = new Paging();
+      selector.paging.startIndexSpecified = true;
+      selector.paging.startIndex = 0;
+      selector.paging.numberResultsSpecified = true;
+      selector.paging.numberResults = 1;
+
+      Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
+    }
+
+    /// <summary>
     /// Test whether we can request include adult content search parameter.
     /// </summary>
     [Test]
@@ -416,10 +460,10 @@ namespace com.google.api.adwords.tests.v200909 {
           new LanguageTargetSearchParameter();
 
       LanguageTarget target1 = new LanguageTarget();
-      target1.languageCode = "cn";
+      target1.languageCode = "zh_CN";
 
       LanguageTarget target2 = new LanguageTarget();
-      target2.languageCode = "jp";
+      target2.languageCode = "ja";
 
       langTargetSearchParam.languageTargets = new LanguageTarget[] {target1, target2};
 
@@ -666,7 +710,7 @@ namespace com.google.api.adwords.tests.v200909 {
     /// Test whether we can request bulk keyword ideas.
     /// </summary>
     [Test]
-    public void testGetBulkKeywordIdeas() {
+    public void TestGetBulkKeywordIdeas() {
       TargetingIdeaSelector selector = new TargetingIdeaSelector();
 
       RelatedToKeywordSearchParameter relatedToKeywordSearchParam =

@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example retrieves the number of operations recorded for the
   /// developer token being used to make this call over the given date range.
+  ///
+  /// Tags: InfoService.get
   /// </summary>
   class GetOperationCount : SampleBase {
     /// <summary>

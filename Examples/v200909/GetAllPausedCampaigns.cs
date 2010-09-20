@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example gets all paused campaigns. To add a campaign, run
   /// AddCampaign.cs.
+  ///
+  /// Tags: CampaignService.get
   /// </summary>
   class GetAllPausedCampaigns : SampleBase {
     /// <summary>
@@ -32,8 +34,8 @@ namespace com.google.api.adwords.examples.v200909 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all paused campaigns. To add a campaign, run" +
-            " AddCampaign.cs.";
+        return "This code example gets all paused campaigns. To add a campaign, run " +
+            "AddCampaign.cs.";
       }
     }
 

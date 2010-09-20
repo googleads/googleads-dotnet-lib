@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using com.google.api.adwords.lib;
+using com.google.api.adwords.lib.util;
 using com.google.api.adwords.v200909;
 
 using NUnit.Framework;
@@ -24,6 +25,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Threading;
 
 namespace com.google.api.adwords.tests.v200909 {
   /// <summary>
@@ -71,6 +73,141 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
+    /// Creates an ad extension override for running further tests.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="campaignAdExtensionId">The campaign ad extension id to be
+    /// overridden.</param>
+    /// <param name="adId">The ad for which the ad extension should be
+    /// overridden.</param>
+    /// <param name="location">The overridden address.</param>
+    /// <returns>The override id.</returns>
+    public long CreateAdExtensionOverride(AdWordsUser user, long campaignAdExtensionId, long adId,
+        GeoLocation location) {
+      AdExtensionOverrideService adExtensionOverrideService =
+          (AdExtensionOverrideService)user.GetService(
+              AdWordsService.v200909.AdExtensionOverrideService);
+
+      AdExtensionOverrideOperation operation = new AdExtensionOverrideOperation();
+      operation.operatorSpecified = true;
+      operation.@operator = Operator.ADD;
+
+      operation.operand = new AdExtensionOverride();
+      operation.operand.adIdSpecified = true;
+      operation.operand.adId = adId;
+
+      LocationExtension locationExtension = new LocationExtension();
+
+      locationExtension.idSpecified = true;
+      locationExtension.id = campaignAdExtensionId;
+
+      // Note: Do not populate an address directly. Instead, use
+      // GeoLocationService to obtain the location of an address,
+      // and use the address as per the location it returns.
+      locationExtension.address = location.address;
+      locationExtension.geoPoint = location.geoPoint;
+      locationExtension.encodedLocation = location.encodedLocation;
+      locationExtension.sourceSpecified = true;
+      locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND;
+
+      // Optional: Apply this override within 20 kms.
+      operation.operand.overrideInfo = new OverrideInfo();
+      operation.operand.overrideInfo.Item = new LocationOverrideInfo();
+      operation.operand.overrideInfo.Item.radiusSpecified = true;
+      operation.operand.overrideInfo.Item.radius = 20;
+      operation.operand.overrideInfo.Item.radiusUnitsSpecified = true;
+      operation.operand.overrideInfo.Item.radiusUnits = LocationOverrideInfoRadiusUnits.KILOMETERS;
+
+      operation.operand.adExtension = locationExtension;
+
+      AdExtensionOverrideReturnValue retval = adExtensionOverrideService.mutate(
+          new AdExtensionOverrideOperation[] { operation });
+      return retval.value[0].adExtension.id;
+    }
+
+    /// <summary>
+    /// Sets test targets for a campaign for running further tests.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="campaignId">The campaign id for which the targets are set.
+    /// </param>
+    /// <returns>The list of campaign targets.</returns>
+    public TargetList[] SetCampaignTargets(AdWordsUser user, long campaignId) {
+      // Get the CampaignTargetService.
+      CampaignTargetService campaignTargetService =
+          (CampaignTargetService)user.GetService(AdWordsService.v200909.CampaignTargetService);
+
+      // Create language targets.
+      LanguageTargetList langTargetList = new LanguageTargetList();
+      langTargetList.campaignIdSpecified = true;
+      langTargetList.campaignId = campaignId;
+
+      LanguageTarget langTarget1 = new LanguageTarget();
+      langTarget1.languageCode = "fr";
+
+      LanguageTarget langTarget2 = new LanguageTarget();
+      langTarget2.languageCode = "ja";
+
+      langTargetList.targets = new LanguageTarget[] {langTarget1,langTarget2};
+
+      // Create language target set operation.
+      CampaignTargetOperation langTargetOperation = new CampaignTargetOperation();
+      langTargetOperation.operatorSpecified = true;
+      langTargetOperation.@operator = Operator.SET;
+      langTargetOperation.operand = langTargetList;
+
+      // Create geo targets.
+      GeoTargetList geoTargetList = new GeoTargetList();
+      geoTargetList.campaignIdSpecified = true;
+      geoTargetList.campaignId = campaignId;
+
+      CountryTarget geoTarget1 = new CountryTarget();
+      geoTarget1.countryCode = "US";
+
+      CountryTarget geoTarget2 = new CountryTarget();
+      geoTarget2.countryCode = "JP";
+
+      // Create geo target set operation.
+      CampaignTargetOperation geoTargetOperation = new CampaignTargetOperation();
+      geoTargetOperation.operatorSpecified = true;
+      geoTargetOperation.@operator = Operator.SET;
+      geoTargetOperation.operand = geoTargetList;
+
+      // Create network targets.
+      NetworkTargetList networkTargetList = new NetworkTargetList();
+      networkTargetList.campaignIdSpecified = true;
+      networkTargetList.campaignId = campaignId;
+
+      // Specifying GOOGLE_SEARCH is necessary if you want to target SEARCH_NETWORK.
+      NetworkTarget networkTarget1 = new NetworkTarget();
+      networkTarget1.networkCoverageTypeSpecified = true;
+      networkTarget1.networkCoverageType = NetworkCoverageType.GOOGLE_SEARCH;
+
+      NetworkTarget networkTarget2 = new NetworkTarget();
+      networkTarget2.networkCoverageTypeSpecified = true;
+      networkTarget2.networkCoverageType = NetworkCoverageType.SEARCH_NETWORK;
+
+      networkTargetList.targets = new NetworkTarget[] {networkTarget1, networkTarget2};
+
+      // Create network target set operation.
+      CampaignTargetOperation networkTargetOperation = new CampaignTargetOperation();
+      networkTargetOperation.operatorSpecified = true;
+      networkTargetOperation.@operator = Operator.SET;
+      networkTargetOperation.operand = networkTargetList;
+
+      // Set campaign targets.
+      CampaignTargetReturnValue result =
+          campaignTargetService.mutate(new CampaignTargetOperation[] {
+              geoTargetOperation, langTargetOperation,networkTargetOperation});
+
+      if (result != null && result.value != null) {
+        return result.value;
+      } else {
+        return new TargetList[] {};
+      }
+    }
+
+    /// <summary>
     /// Creates a test adgroup for running further tests.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
@@ -109,9 +246,12 @@ namespace com.google.api.adwords.tests.v200909 {
     /// Creates a test textad for running further tests.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="adGroupId">The AdGroup id for which the ad is created.</param>
+    /// <param name="adGroupId">The adgroup id for which the ad is created.
+    /// </param>
+    /// <param name="hasAdParam">True, if an ad param placeholder should be
+    /// added.</param>
     /// <returns>The text ad id.</returns>
-    public long CreateTextAd(AdWordsUser user, long adGroupId) {
+    public long CreateTextAd(AdWordsUser user, long adGroupId, bool hasAdParam) {
       long adId = 0;
       AdGroupAdService adGroupAdService =
           (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);
@@ -122,11 +262,17 @@ namespace com.google.api.adwords.tests.v200909 {
       adGroupAdOperation.operand.adGroupIdSpecified = true;
       adGroupAdOperation.operand.adGroupId = adGroupId;
       TextAd ad = new TextAd();
-      ad.url = "http://www.example.com";
-      ad.displayUrl = "example.com";
-      ad.description1 = "Visit the Red Planet in style.";
-      ad.description2 = "Low-gravity fun for everyone!";
+
       ad.headline = "Luxury Cruise to Mars";
+      ad.description1 = "Visit the Red Planet in style.";
+      if (hasAdParam) {
+        ad.description2 = "Low-gravity fun for {param1:cheap}!";
+      } else {
+        ad.description2 = "Low-gravity fun for everyone!";
+      }
+      ad.displayUrl = "example.com";
+      ad.url = "http://www.example.com";
+
       adGroupAdOperation.operand.ad = ad;
 
       AdGroupAdReturnValue retVal =
@@ -138,12 +284,44 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
+    /// Sets an adparam for running further tests.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="adGroupId">The adgroup id to which criterionId belongs.
+    /// </param>
+    /// <param name="criterionId">The criterion id to which adparam is set.
+    /// </param>
+    public void SetAdParam(AdWordsUser user, long adGroupId, long criterionId) {
+      AdParamService adParamService =
+          (AdParamService) user.GetService(AdWordsService.v200909.AdParamService);
+
+      // Prepare for setting ad parameters.
+      AdParam adParam = new AdParam();
+      adParam.adGroupIdSpecified = true;
+      adParam.adGroupId = adGroupId;
+      adParam.criterionIdSpecified = true;
+      adParam.criterionId = criterionId;
+      adParam.paramIndex = 1;
+      adParam.paramIndexSpecified = true;
+      adParam.insertionText = "$100";
+
+      AdParamOperation adParamOperation = new AdParamOperation();
+      adParamOperation.operatorSpecified = true;
+      adParamOperation.@operator = Operator.SET;
+      adParamOperation.operand = adParam;
+
+      // Set ad parameters.
+      AdParam[] newAdParams = adParamService.mutate(new AdParamOperation[] {adParamOperation});
+      return;
+    }
+
+    /// <summary>
     /// Creates a keyword for running further tests.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="adGroupId">The AdGroup id for which the keyword is created.</param>
+    /// <param name="adGroupId">The adgroup id for which the keyword is created.</param>
     /// <returns>The keyword id.</returns>
-    public long CreateTestKeyword(AdWordsUser user, long adGroupId) {
+    public long CreateKeyword(AdWordsUser user, long adGroupId) {
       long keywordId = 0;
       AdGroupCriterionService adGroupCriterionService =
          (AdGroupCriterionService) user.GetService(AdWordsService.v200909.AdGroupCriterionService);
@@ -169,6 +347,13 @@ namespace com.google.api.adwords.tests.v200909 {
       return keywordId;
     }
 
+    /// <summary>
+    /// Creates a campaign negative keyword for running further tests.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="campaignId">The campaign id for which the keyword is
+    /// created.</param>
+    /// <returns>The keyword id.</returns>
     public long CreateCampaignNegativeKeyword(AdWordsUser user, long campaignId) {
       long keywordId = 0;
       CampaignCriterionService service = (CampaignCriterionService) user.GetService(
@@ -199,33 +384,18 @@ namespace com.google.api.adwords.tests.v200909 {
       return keywordId;
     }
 
-    public byte[] GetSandboxImage() {
-      string imageUrl = "https://sandbox.google.com/sandboximages/image.jpg";
-
-      WebRequest request = HttpWebRequest.Create(imageUrl);
-      WebResponse response = request.GetResponse();
-
-      Stream responseStream = response.GetResponseStream();
-
-      MemoryStream memStream = new MemoryStream();
-      byte[] strmBuffer = new byte[4096];
-
-      int bytesRead = responseStream.Read(strmBuffer, 0, 4096);
-      while (bytesRead != 0) {
-        memStream.Write(strmBuffer, 0, bytesRead);
-        bytesRead = responseStream.Read(strmBuffer, 0, 4096);
-      }
-      responseStream.Close();
-
-      return memStream.ToArray();
-
-    }
-
+    /// <summary>
+    /// Creates a campaign ad extension for running further tests.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="campaignId">The campaign id for which extension is
+    /// created.</param>
+    /// <returns>The campaign ad extension id.</returns>
     public long CreateCampaignAdExtension(AdWordsUser user, long campaignId) {
       long campaignAdExtensionId = 0;
 
       CampaignAdExtensionService campaignExtensionService =
-          (CampaignAdExtensionService) user.GetService(AdWordsService.v200909.
+          (CampaignAdExtensionService)user.GetService(AdWordsService.v200909.
                CampaignAdExtensionService);
 
       CampaignAdExtensionOperation operation = new CampaignAdExtensionOperation();
@@ -266,6 +436,22 @@ namespace com.google.api.adwords.tests.v200909 {
       return campaignAdExtensionId;
     }
 
+    /// <summary>
+    /// Returns an image which can be used for creating image ads.
+    /// </summary>
+    /// <returns>The image data, as an array of bytes.</returns>
+    public byte[] GetSandboxImage() {
+      return MediaUtilities.GetAssetDataFromUrl(
+          "https://sandbox.google.com/sandboximages/image.jpg");
+    }
+
+    /// <summary>
+    /// Gets the geo location for a given address.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="address">The address for which geolocation should be
+    /// fetched.</param>
+    /// <returns>Geo location for the address.</returns>
     public GeoLocation GetLocationForAddress(AdWordsUser user, Address address) {
       GeoLocationService geoService =
           (GeoLocationService) user.GetService(AdWordsService.v200909.GeoLocationService);
@@ -273,6 +459,15 @@ namespace com.google.api.adwords.tests.v200909 {
       GeoLocationSelector selector = new GeoLocationSelector();
       selector.addresses = new Address[] {address};
       return geoService.get(selector)[0];
+    }
+
+    /// <summary>
+    /// Gets the current timestamp.
+    /// </summary>
+    /// <returns>The timestamp as a string.</returns>
+    public string GetTimeStamp() {
+      Thread.Sleep(100);
+      return (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds.ToString();
     }
   }
 }
