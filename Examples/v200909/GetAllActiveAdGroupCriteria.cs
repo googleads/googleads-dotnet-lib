@@ -23,9 +23,11 @@ using System.Net;
 
 namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
-  /// This code example gets all active ad group criteria in an ad group.
-  /// To add ad group criteria, run AddAdGroupCriteria.cs. To get ad groups
-  /// in an account, run GetAllAdGroups.cs.
+  /// This code example gets all active ad group criteria in an ad group. To
+  /// add ad group criteria, run AddAdGroupCriteria.cs. To get ad groups in an
+  /// account, run GetAllAdGroups.cs.
+  ///
+  /// Tags: AdGroupCriterionService.get
   /// </summary>
   class GetAllActiveAdGroupCriteria : SampleBase {
     /// <summary>
@@ -33,8 +35,8 @@ namespace com.google.api.adwords.examples.v200909 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all active ad group criteria in an ad group. To add " +
-            "ad group criteria, run AddAdGroupCriteria.cs. To get ad groups in an account, run " +
+        return "This code example gets all active ad group criteria in an ad group. To add ad " +
+            "group criteria, run AddAdGroupCriteria.cs. To get ad groups in an account, run " +
             "GetAllAdGroups.cs.";
       }
     }
@@ -64,8 +66,7 @@ namespace com.google.api.adwords.examples.v200909 {
 
       try {
         // Get all ad group criteria.
-        AdGroupCriterionPage adGroupCriterionPage = adGroupCriterionService.get(
-            selector);
+        AdGroupCriterionPage adGroupCriterionPage = adGroupCriterionService.get(selector);
 
         if (adGroupCriterionPage != null && adGroupCriterionPage.entries != null) {
           // Display ad group criteria.

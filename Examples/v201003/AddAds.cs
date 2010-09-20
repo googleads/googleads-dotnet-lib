@@ -23,10 +23,12 @@ using System.Net;
 
 namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
-  /// This example adds a text, image ad, and template (Click to Play Video)
-  /// ad to a given ad group. To get ad_group, run GetAllAdGroups.cs. To get
-  /// all videos, run GetAllVideos.cs. To upload video, see
+  /// This code example adds a text, image ad, and template (Click to Play
+  /// Video) ad to a given ad group. To get ad_group, run GetAllAdGroups.cs.
+  /// To get all videos, run GetAllVideos.cs. To upload video, see
   /// http://adwords.google.com/support/aw/bin/answer.py?hl=en&answer=39454.
+  ///
+  /// Tags: AdGroupAdService.mutate
   /// </summary>
   class AddAds : SampleBase {
     /// <summary>
@@ -34,7 +36,7 @@ namespace com.google.api.adwords.examples.v201003 {
     /// </summary>
     public override string Description {
       get {
-        return "This example adds a text, image ad, and template (Click to Play Video) " +
+        return "This code example adds a text, image ad, and template (Click to Play Video) " +
             "ad to a given ad group. To get ad_group, run GetAllAdGroups.cs. To get " +
             "all videos, run GetAllVideos.cs. To upload video, see " +
             "http://adwords.google.com/support/aw/bin/answer.py?hl=en&answer=39454.";

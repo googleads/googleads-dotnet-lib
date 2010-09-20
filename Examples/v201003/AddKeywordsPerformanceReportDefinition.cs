@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example adds a keywords performance report. To get ad groups,
   /// run GetAllAdGroups.cs. To get report fields, run GetReportFields.cs.
+  ///
+  /// Tags: ReportDefinitionService.mutate
   /// </summary>
   class AddKeywordsPerformanceReportDefinition : SampleBase {
     /// <summary>

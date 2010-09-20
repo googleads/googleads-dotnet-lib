@@ -26,6 +26,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// This code example illustrates how to retrieve all the ad extension
   /// overrides for an existing campaign. To create an ad extension override
   /// run AddAdExtensionOverride.cs.
+  ///
+  /// Tags: AdExtensionOverrideService.get
   /// </summary>
   class GetAllAdExtensionOverrides : SampleBase {
     /// <summary>

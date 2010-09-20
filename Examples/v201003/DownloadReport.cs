@@ -24,7 +24,7 @@ using System.Text;
 
 namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
-  /// This example gets and downloads a report from a report definition.
+  /// This code example gets and downloads a report from a report definition.
   /// To get a report definition, run AddKeywordsPerformanceReportDefinition.cs.
   /// Currently, there is only production support for report download.
   /// </summary>
@@ -34,7 +34,7 @@ namespace com.google.api.adwords.examples.v201003 {
     /// </summary>
     public override string Description {
       get {
-        return "This example gets and downloads a report from a report definition. " +
+        return "This code example gets and downloads a report from a report definition. " +
             "To get a report definition, run AddKeywordsPerformanceReportDefinition.cs. " +
             "Currently, there is only production support for report download.";
       }

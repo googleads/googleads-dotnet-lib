@@ -26,6 +26,8 @@ namespace com.google.api.adwords.examples.v200909 {
   /// This code example shows how to check for conversion optimizer eligibility
   /// by attempting to set the bidding transition with the validate only header
   /// set to true.
+  ///
+  /// Tags: CampaignService.mutate
   /// </summary>
   class GetConversionOptimizerEligibility : SampleBase {
     /// <summary>

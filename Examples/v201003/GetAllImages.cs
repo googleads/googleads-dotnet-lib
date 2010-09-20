@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example gets all images. To upload an image, run
   /// UploadImage.cs.
+  ///
+  /// Tags: MediaService.get
   /// </summary>
   class GetAllImages : SampleBase {
     /// <summary>

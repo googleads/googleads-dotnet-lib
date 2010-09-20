@@ -32,33 +32,32 @@ namespace com.google.api.adwords.tests.v201003 {
     /// <summary>
     /// AdGroupService object to be used in this test.
     /// </summary>
-    AdGroupService adGroupService;
+    private AdGroupService adGroupService;
 
     /// <summary>
     /// The campaign id for which tests are run. (cpc operations)
     /// </summary>
-    long cpcCampaignId = 0;
+    private long cpcCampaignId = 0;
 
     /// <summary>
     /// The campaign id for which tests are run. (cpm operations)
     /// </summary>
-    long cpmCampaignId = 0;
+    private long cpmCampaignId = 0;
 
     /// <summary>
     /// The adgroup id for which tests are run.
     /// </summary>
-    long adGroupId1 = 0;
+    private long adGroupId1 = 0;
 
     /// <summary>
     /// The adgroup id for which tests are run.
     /// </summary>
-    long adGroupId2 = 0;
+    private long adGroupId2 = 0;
 
     /// <summary>
     /// Default public constructor.
     /// </summary>
-    public AdGroupServiceTests()
-      : base() {
+    public AdGroupServiceTests() : base() {
     }
 
     /// <summary>
@@ -66,9 +65,8 @@ namespace com.google.api.adwords.tests.v201003 {
     /// </summary>
     [SetUp]
     public void Init() {
-      AdWordsUser user = new AdWordsUser();
-      adGroupService = (AdGroupService) user.GetService(AdWordsService.v201003.AdGroupService);
       TestUtils utils = new TestUtils();
+      adGroupService = (AdGroupService) user.GetService(AdWordsService.v201003.AdGroupService);
       cpcCampaignId = utils.CreateCampaign(user, true);
       cpmCampaignId = utils.CreateCampaign(user, false);
       adGroupId1 = utils.CreateAdGroup(user, cpcCampaignId);

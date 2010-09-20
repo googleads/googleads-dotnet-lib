@@ -26,6 +26,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// This code example gets a bid landscape for an ad group and a criterion.
   /// To get ad groups, run GetAllAdGroups.cs. To get criteria, run
   /// GetAllAdGroupCriteria.cs.
+  ///
+  /// Tags: BidLandscapeService.getBidLandscape
   /// </summary>
   class GetCriterionBidLandscape : SampleBase {
     /// <summary>

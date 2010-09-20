@@ -32,9 +32,12 @@ namespace com.google.api.adwords.tests.v13 {
     /// <summary>
     /// ReportService object to be used in this test.
     /// </summary>
-    ReportService reportService;
+    private ReportService reportService;
 
-    enum ReportJobIds {
+    /// <summary>
+    /// Predefined report ids for the AdWords sandbox.
+    /// </summary>
+    private enum ReportJobIds {
       Pending = 11,
       InProgress = 22,
       Completed = 33,
@@ -44,8 +47,7 @@ namespace com.google.api.adwords.tests.v13 {
     /// <summary>
     /// Default public constructor.
     /// </summary>
-    public ReportServiceTests()
-      : base() {
+    public ReportServiceTests() : base() {
     }
 
     /// <summary>
@@ -53,9 +55,7 @@ namespace com.google.api.adwords.tests.v13 {
     /// </summary>
     [SetUp]
     public void Init() {
-      AdWordsUser user = new AdWordsUser();
-      reportService =
-          (ReportService) user.GetService(AdWordsService.v13.ReportService);
+      reportService = (ReportService) user.GetService(AdWordsService.v13.ReportService);
     }
 
     /// <summary>
@@ -63,8 +63,9 @@ namespace com.google.api.adwords.tests.v13 {
     /// </summary>
     [Test]
     public void TestDeleteReport() {
-      reportService.deleteReport((long) ReportJobIds.Failed);
-      Assert.Pass();
+      Assert.DoesNotThrow(delegate() {
+        reportService.deleteReport((long)ReportJobIds.Failed);
+      });
     }
 
     /// <summary>
@@ -72,7 +73,9 @@ namespace com.google.api.adwords.tests.v13 {
     /// </summary>
     [Test]
     public void TestGetAllJobs() {
-      Assert.That(reportService.getAllJobs() is ReportJob[]);
+      Assert.DoesNotThrow(delegate() {
+        ReportJob[] jobs = reportService.getAllJobs();
+      });
     }
 
     /// <summary>
@@ -80,7 +83,11 @@ namespace com.google.api.adwords.tests.v13 {
     /// </summary>
     [Test]
     public void TestGetGzipReportDownloadUrl() {
-      Assert.That(reportService.getGzipReportDownloadUrl((long) ReportJobIds.Completed) is string);
+      string reportDownloadUrl = null;
+      Assert.DoesNotThrow(delegate() {
+        reportDownloadUrl = reportService.getGzipReportDownloadUrl((long)ReportJobIds.Completed);
+      });
+      Assert.IsNotNullOrEmpty(reportDownloadUrl);
     }
 
     /// <summary>
@@ -88,7 +95,11 @@ namespace com.google.api.adwords.tests.v13 {
     /// </summary>
     [Test]
     public void TestGetReportDownloadUrl() {
-      Assert.That(reportService.getReportDownloadUrl((long) ReportJobIds.Completed) is string);
+      string reportDownloadUrl = null;
+      Assert.DoesNotThrow(delegate() {
+        reportDownloadUrl = reportService.getReportDownloadUrl((long)ReportJobIds.Completed);
+      });
+      Assert.IsNotNullOrEmpty(reportDownloadUrl);
     }
 
     /// <summary>
@@ -96,7 +107,11 @@ namespace com.google.api.adwords.tests.v13 {
     /// </summary>
     [Test]
     public void TestGetReportJobStatus() {
-      Assert.That(reportService.getReportJobStatus((long) ReportJobIds.Pending) is ReportJobStatus);
+      ReportJobStatus status = ReportJobStatus.Pending;
+      Assert.DoesNotThrow(delegate() {
+        status = reportService.getReportJobStatus((long) ReportJobIds.Completed);
+      });
+      Assert.AreEqual(status, ReportJobStatus.Completed);
     }
 
     /// <summary>
@@ -120,7 +135,9 @@ namespace com.google.api.adwords.tests.v13 {
       reportJob.startDay = new DateTime(2008, 1, 1);
       reportJob.selectedReportType = "Campaign";
 
-      Assert.That(reportService.scheduleReportJob(reportJob) is long);
+      Assert.DoesNotThrow(delegate() {
+        reportService.scheduleReportJob(reportJob);
+      });
     }
 
     /// <summary>
@@ -144,8 +161,9 @@ namespace com.google.api.adwords.tests.v13 {
       reportJob.startDay = new DateTime(2008, 1, 1);
       reportJob.selectedReportType = "Campaign";
 
-      reportService.validateReportJob(reportJob);
-      Assert.Pass();
+      Assert.DoesNotThrow(delegate() {
+        reportService.validateReportJob(reportJob);
+      });
     }
 
     /// <summary>
@@ -159,8 +177,9 @@ namespace com.google.api.adwords.tests.v13 {
       reportJob.selectedColumns = new string[] {"CampaignId", "AdGroupId", "KeywordId", "Keyword"};
       reportJob.selectedReportType = "Structure";
 
-      reportService.validateReportJob(reportJob);
-      Assert.Pass();
+      Assert.DoesNotThrow(delegate() {
+        reportService.validateReportJob(reportJob);
+      });
     }
   }
 }

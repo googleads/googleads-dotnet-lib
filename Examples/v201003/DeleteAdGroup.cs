@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example deletes an ad group by setting the status to 'DELETED'.
   /// To get ad groups, run GetAllAdGroups.cs.
+  ///
+  /// Tags: AdGroupService.mutate
   /// </summary>
   class DeleteAdGroup : SampleBase {
     /// <summary>

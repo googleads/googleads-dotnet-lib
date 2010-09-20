@@ -32,38 +32,47 @@ namespace com.google.api.adwords.tests.v201003 {
     /// <summary>
     /// AdGroupAdService object to be used in this test.
     /// </summary>
-    AdExtensionOverrideService adExtensionOverrideService;
+    private AdExtensionOverrideService adExtensionOverrideService;
 
     /// <summary>
     /// The campaign id for which tests are run.
     /// </summary>
-    long campaignId = 0;
+    private long campaignId = 0;
 
     /// <summary>
     /// The adgroup id for which tests are run.
     /// </summary>
-    long adGroupId = 0;
+    private long adGroupId = 0;
 
     /// <summary>
-    /// The Ad id for which tests are run.
+    /// The Ad id 1 for which tests are run.
     /// </summary>
-    long adId = 0;
+    private long adIdNoOverride = 0;
+
+    /// <summary>
+    /// The Ad id 2 for which tests are run.
+    /// </summary>
+    private long adId = 0;
 
     /// <summary>
     /// Campaign extension id for the test campaign.
     /// </summary>
-    long campaignAdExtensionId = 0;
+    private long campaignAdExtensionId = 0;
 
     /// <summary>
-    /// The AdWords user to be used for tests.
+    /// Ad extension override id for the test ad.
     /// </summary>
-    AdWordsUser user = new AdWordsUser();
+    private long adExtensionOverrideId = 0;
+
+    /// <summary>
+    /// The geo location for running tests.
+    /// </summary>
+    private GeoLocation location = null;
 
     /// <summary>
     /// Default public constructor.
     /// </summary>
-    public AdExtensionOverrideServiceTests()
-      : base() {
+    public AdExtensionOverrideServiceTests() : base() {
     }
 
     /// <summary>
@@ -76,8 +85,18 @@ namespace com.google.api.adwords.tests.v201003 {
           AdWordsService.v201003.AdExtensionOverrideService);
       campaignId = utils.CreateCampaign(user, true);
       adGroupId = utils.CreateAdGroup(user, campaignId);
-      adId = utils.CreateTextAd(user, adGroupId);
+      adIdNoOverride = utils.CreateTextAd(user, adGroupId, false);
       campaignAdExtensionId = utils.CreateCampaignAdExtension(user, campaignId);
+      
+      Address address = new Address();
+      address.streetAddress = "1600 Amphitheatre Pkwy, Mountain View";
+      address.countryCode = "US";
+
+      location = utils.GetLocationForAddress(user, address);
+
+      adId = utils.CreateTextAd(user, adGroupId, false);
+      adExtensionOverrideId = utils.CreateAdExtensionOverride(user, campaignAdExtensionId, adId,
+          location);
     }
 
     /// <summary>
@@ -91,13 +110,7 @@ namespace com.google.api.adwords.tests.v201003 {
 
       operation.operand = new AdExtensionOverride();
       operation.operand.adIdSpecified = true;
-      operation.operand.adId = adId;
-
-      Address address = new Address();
-      address.streetAddress = "1600 Amphitheatre Pkwy, Mountain View";
-      address.countryCode = "US";
-
-      GeoLocation location = new TestUtils().GetLocationForAddress(user, address);
+      operation.operand.adId = adIdNoOverride;
 
       LocationExtension locationExtension = new LocationExtension();
 
@@ -123,8 +136,19 @@ namespace com.google.api.adwords.tests.v201003 {
 
       operation.operand.adExtension = locationExtension;
 
-      Assert.That(adExtensionOverrideService.mutate(
-          new AdExtensionOverrideOperation[] {operation}) is AdExtensionOverrideReturnValue);
+      AdExtensionOverrideReturnValue retval = null;
+
+      Assert.DoesNotThrow(delegate() {
+        retval = adExtensionOverrideService.mutate(new AdExtensionOverrideOperation[] {operation});
+      });
+      Assert.NotNull(retval);
+      Assert.NotNull(retval.value);
+      Assert.AreEqual(retval.value.Length, 1);
+      Assert.NotNull(retval.value[0]);
+      Assert.AreEqual(retval.value[0].adId, adIdNoOverride);
+      Assert.NotNull(retval.value[0].adExtension);
+      Assert.That(retval.value[0].adExtension is LocationExtension);
+      Assert.AreEqual((retval.value[0].adExtension as LocationExtension).id, campaignAdExtensionId);
     }
 
     /// <summary>
@@ -135,7 +159,16 @@ namespace com.google.api.adwords.tests.v201003 {
       AdExtensionOverrideSelector selector = new AdExtensionOverrideSelector();
       selector.campaignIds = new long[] {campaignId};
       selector.statuses = new AdExtensionOverrideStatus[] {AdExtensionOverrideStatus.ACTIVE};
-      Assert.That(adExtensionOverrideService.get(selector) is AdExtensionOverridePage);
+      AdExtensionOverridePage page = null;
+      Assert.DoesNotThrow(delegate() {
+        page = adExtensionOverrideService.get(selector);
+      });
+      Assert.NotNull(page);
+      Assert.NotNull(page.entries);
+      Assert.NotNull(page.entries[0]);
+      Assert.AreEqual(page.entries[0].adId, adId);
+      Assert.That(page.entries[0].adExtension is LocationExtension);
+      Assert.AreEqual((page.entries[0].adExtension as LocationExtension).id, campaignAdExtensionId);
     }
   }
 }

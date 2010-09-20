@@ -1,8 +1,8 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6E314C85-32A9-4015-AC92-FBCF7BB52454}</ProjectGuid>
     <OutputType>Exe</OutputType>
@@ -18,6 +18,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -27,6 +30,22 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -34,6 +53,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="v200909\HandlePolicyViolationError.cs" />
+    <Compile Include="v201003\AddSiteLinks.cs" />
+    <Compile Include="v201003\GetAllNegativeCampaignCriteria.cs" />
+    <Compile Include="v201003\HandlePolicyViolationError.cs" />
+    <Compile Include="v201003\DeleteSiteLinks.cs" />
+    <Compile Include="v201008\AddAdExtensionOverride.cs" />
+    <Compile Include="v201008\AddAdGroup.cs" />
+    <Compile Include="v201008\AddAdGroupCriteria.cs" />
+    <Compile Include="v201008\AddAds.cs" />
+    <Compile Include="v201008\AddCampaign.cs" />
+    <Compile Include="v201008\AddCampaignAdExtension.cs" />
+    <Compile Include="v201008\AddExperiment.cs" />
+    <Compile Include="v201008\AddKeywordsPerformanceReportDefinition.cs" />
+    <Compile Include="v201008\AddMobileImageAd.cs" />
+    <Compile Include="v201008\AddNegativeCampaignCriterion.cs" />
+    <Compile Include="v201008\AddSiteLinks.cs" />
+    <Compile Include="v201008\BackupSandboxDemo.cs" />
+    <Compile Include="v201008\CheckCampaigns.cs" />
+    <Compile Include="v201008\ClientApiUnitsUsageDemo.cs" />
+    <Compile Include="v201008\DeleteAd.cs" />
+    <Compile Include="v201008\DeleteAdGroup.cs" />
+    <Compile Include="v201008\DeleteAdGroupCriterion.cs" />
+    <Compile Include="v201008\DeleteCampaign.cs" />
+    <Compile Include="v201008\DeleteExperiment.cs" />
+    <Compile Include="v201008\DownloadReport.cs" />
+    <Compile Include="v201008\GetAllActiveAdGroupCriteria.cs" />
+    <Compile Include="v201008\GetAllAdExtensionOverrides.cs" />
+    <Compile Include="v201008\GetAllAdGroupCriteria.cs" />
+    <Compile Include="v201008\GetAllAdGroups.cs" />
+    <Compile Include="v201008\GetAllAds.cs" />
+    <Compile Include="v201008\GetAllCampaignAdExtensions.cs" />
+    <Compile Include="v201008\GetAllNegativeCampaignCriteria.cs" />
+    <Compile Include="v201008\GetAllCampaigns.cs" />
+    <Compile Include="v201008\GetAllCampaignTargets.cs" />
+    <Compile Include="v201008\GetAllDisapprovedAds.cs" />
+    <Compile Include="v201008\GetAllExperiments.cs" />
+    <Compile Include="v201008\GetAllImages.cs" />
+    <Compile Include="v201008\GetAllPausedCampaigns.cs" />
+    <Compile Include="v201008\GetAllReportDefinitions.cs" />
+    <Compile Include="v201008\GetAllVideos.cs" />
+    <Compile Include="v201008\GetCampaign.cs" />
+    <Compile Include="v201008\GetConversionOptimizerEligibility.cs" />
+    <Compile Include="v201008\GetCriterionBidLandscape.cs" />
+    <Compile Include="v201008\GetGeoLocationInfo.cs" />
+    <Compile Include="v201008\GetMethodCost.cs" />
+    <Compile Include="v201008\GetOperationCount.cs" />
+    <Compile Include="v201008\GetRelatedKeywords.cs" />
+    <Compile Include="v201008\GetRelatedPlacements.cs" />
+    <Compile Include="v201008\GetReportFields.cs" />
+    <Compile Include="v201008\GetTotalUsageUnitsPerMonth.cs" />
+    <Compile Include="v201008\GetTrafficEstimates.cs" />
+    <Compile Include="v201008\GetUnitCount.cs" />
+    <Compile Include="v201008\HandlePolicyViolationError.cs" />
+    <Compile Include="v201008\MethodApiUnitsUsageDemo.cs" />
+    <Compile Include="v201008\PerformBulkMutateJob.cs" />
+    <Compile Include="v201008\PromoteExperiment.cs" />
+    <Compile Include="v201008\DeleteSiteLinks.cs" />
+    <Compile Include="v201008\RestoreSandboxDemo.cs" />
+    <Compile Include="v201008\SetAdParams.cs" />
+    <Compile Include="v201008\SetCampaignTargets.cs" />
+    <Compile Include="v201008\UpdateAd.cs" />
+    <Compile Include="v201008\UpdateAdGroup.cs" />
+    <Compile Include="v201008\UpdateAdGroupCriterion.cs" />
+    <Compile Include="v201008\UpdateCampaign.cs" />
+    <Compile Include="v201008\UploadImage.cs" />
     <Compile Include="v200909\AddMobileImageAd.cs" />
     <Compile Include="both\UsingTrafficEstimatorDemo.cs" />
     <Compile Include="v200909\AddAdExtensionOverride.cs" />

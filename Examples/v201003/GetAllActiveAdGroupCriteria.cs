@@ -26,6 +26,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// This code example gets all active ad group criteria in an ad group.
   /// To add ad group criteria, run AddAdGroupCriteria.cs. To get ad groups
   /// in an account, run GetAllAdGroups.cs.
+  ///
+  /// Tags: AdGroupCriterionService.get
   /// </summary>
   class GetAllActiveAdGroupCriteria : SampleBase {
     /// <summary>
@@ -64,8 +66,7 @@ namespace com.google.api.adwords.examples.v201003 {
 
       try {
         // Get all ad group criteria.
-        AdGroupCriterionPage adGroupCriterionPage = adGroupCriterionService.get(
-            selector);
+        AdGroupCriterionPage adGroupCriterionPage = adGroupCriterionService.get(selector);
 
         if (adGroupCriterionPage != null && adGroupCriterionPage.entries != null) {
           // Display ad group criteria.

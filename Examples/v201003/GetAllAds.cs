@@ -23,10 +23,12 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example retrieves all ads given an existing ad group. To add
   /// ads to an existing ad group, run AddAds.cs.
+  ///
+  /// Tags: AdGroupAdService.get
   /// </summary>
   class GetAllAds : SampleBase {
     /// <summary>
-    /// Returns a description about the sample code.
+    /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {

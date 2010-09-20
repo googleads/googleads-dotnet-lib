@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example retrieves urls that have content keywords related
   /// to a given website.
+  ///
+  /// Tags: TargetingIdeaService.get
   /// </summary>
   class GetRelatedPlacements : SampleBase {
     /// <summary>

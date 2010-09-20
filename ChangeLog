@@ -1,3 +1,11 @@
+10.0.0
+- Added support for v201008 services.
+- Added test cases for all v201003 and v200909 services.
+- Added test cases for all v201008 services except ExperimentService and
+  TrafficEstimatorService.
+- Removed data csvs from distribution since they are available for download from
+  code.google.com now.
+
 9.0.0
 - Added support for v201003 services.
 

@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example shows how to add an Ad Extension to an existing campaign. To
   /// create a campaign, run AddCampaign.cs.
+  ///
+  /// Tags: GeoLocationService.get, CampaignAdExtensionService.mutate
   /// </summary>
   class AddCampaignAdExtension : SampleBase {
     /// <summary>

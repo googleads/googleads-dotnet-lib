@@ -22,6 +22,8 @@ using System;
 namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example retrieves all the disapproved ads in a given campaign.
+  ///
+  /// Tags: AdGroupAdService.get
   /// </summary>
   class GetAllDisapprovedAds : SampleBase {
     /// <summary>

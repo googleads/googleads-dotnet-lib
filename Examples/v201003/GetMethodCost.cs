@@ -26,6 +26,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// This code example retrieves the cost, in API units per operation, of the
   /// given method on a specific date for the developer token being used to
   /// make this call.
+  ///
+  /// Tags: InfoService.get
   /// </summary>
   class GetMethodCost : SampleBase {
     /// <summary>

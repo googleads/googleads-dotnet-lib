@@ -26,6 +26,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// This code example retrieves the total number of API units for this entire
   /// month that can be used by the developer token being used to make
   /// this call.
+  ///
+  /// Tags: InfoService.get
   /// </summary>
   class GetTotalUsageUnitsPerMonth : SampleBase {
     /// <summary>

@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example deletes an ad using the 'REMOVE' operator. To get ads,
   /// run GetAllAds.cs.
+  ///
+  /// Tags: AdGroupAdService.mutate
   /// </summary>
   class DeleteAd : SampleBase {
     /// <summary>

@@ -28,7 +28,7 @@ using System.Reflection;
 namespace com.google.api.adwords.examples.v13 {
   /// <summary>
   /// This code example displays some of the account's info. It also
-  /// demonstrates how to override the app.config settings.
+  /// demonstrates how to override the settings from App.config.
   /// </summary>
   class AccountServiceNoConfigDemo: SampleBase {
     /// <summary>
@@ -36,8 +36,8 @@ namespace com.google.api.adwords.examples.v13 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example displays some of the account's info. It also" +
-            " demonstrates how to override the app.config settings.";
+        return "This code example displays some of the account's info. It also demonstrates how " +
+            "to override the settings from App.config.";
       }
     }
 
@@ -47,7 +47,7 @@ namespace com.google.api.adwords.examples.v13 {
     /// <param name="user">The AdWords user object running the code example.
     /// </param>
     public override void Run(AdWordsUser user) {
-      // Declare the headers
+      // Declare the headers.
       Dictionary<string, string> headers = new Dictionary<string, string>();
 
       headers.Add("email", "ENTER_YOUR_EMAIL_HERE");

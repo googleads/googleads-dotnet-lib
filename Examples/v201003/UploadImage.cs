@@ -25,6 +25,8 @@ using System.Text;
 namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example uploads an image. To get images, run GetAllImages.cs.
+  ///
+  /// Tags: MediaService.upload
   /// </summary>
   class UploadImage : SampleBase {
     /// <summary>

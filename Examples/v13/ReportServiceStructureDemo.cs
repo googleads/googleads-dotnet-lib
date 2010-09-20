@@ -24,7 +24,7 @@ using System.Web.Services.Protocols;
 
 namespace com.google.api.adwords.examples.v13 {
   /// <summary>
-  /// This code example schedules structure report and retrives its
+  /// This code example schedules a structure report and retrives its
   /// destination url.
   /// </summary>
   class ReportServiceStructureDemo : SampleBase {
@@ -33,7 +33,7 @@ namespace com.google.api.adwords.examples.v13 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example schedules structure report and retrives its destination url.";
+        return "This code example schedules a structure report and retrives its destination url.";
       }
     }
 

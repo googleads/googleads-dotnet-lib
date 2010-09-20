@@ -27,6 +27,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// This code example shows how to use the validateOnly header to validate
   /// an API request. No objects will be created, but exceptions will
   /// still be thrown.
+  ///
+  /// Tags: CampaignService.mutate
   /// </summary>
   class CheckCampaigns : SampleBase {
     /// <summary>

@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example gets all report definitions. To add a report
   /// definition, run AddKeywordsPerformanceReportDefinition.cs.
+  ///
+  /// Tags: ReportDefinitionService.get
   /// </summary>
   class GetAllReportDefinitions : SampleBase {
     /// <summary>

@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example illustrates how to create an ad group. To create a
   /// campaign, run AddCampaign.cs.
+  ///
+  /// Tags: AdGroupService.mutate
   /// </summary>
   class AddAdGroup : SampleBase {
     /// <summary>
@@ -32,8 +34,8 @@ namespace com.google.api.adwords.examples.v200909 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example illustrates how to create an ad group. To create a campaign, run "
-            + "AddCampaign.cs";
+        return "This code example illustrates how to create an ad group. To create a " +
+            "campaign, run AddCampaign.cs";
       }
     }
 

@@ -23,8 +23,10 @@ using System.Net;
 
 namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
-  /// This code example retrieves urls that have content keywords related
-  /// to a given website.
+  /// This code example retrieves urls that have content keywords related to a
+  /// given website.
+  ///
+  /// Tags: TargetingIdeaService.get
   /// </summary>
   class GetRelatedPlacements : SampleBase {
     /// <summary>

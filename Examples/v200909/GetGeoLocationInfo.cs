@@ -24,6 +24,8 @@ using System.Net;
 namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example gets geo location information for addresses.
+  ///
+  /// Tags: GeoLocationService.get
   /// </summary>
   class GetGeoLocationInfo : SampleBase {
     /// <summary>

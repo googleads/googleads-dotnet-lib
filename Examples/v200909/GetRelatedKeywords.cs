@@ -24,6 +24,8 @@ using System.Net;
 namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example retrieves keywords that are related to a given keyword.
+  ///
+  /// Tags: TargetingIdeaService.get
   /// </summary>
   class GetRelatedKeywords : SampleBase {
     /// <summary>

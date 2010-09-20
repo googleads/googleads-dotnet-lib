@@ -28,230 +28,46 @@ namespace com.google.api.adwords.lib.util {
   /// </summary>
   public class DataUtilities {
     /// <summary>
-    /// Gets all the category codes that can be used with
-    /// SiteSuggestionService.getSitesByCategoryName.
-    /// See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_categories.html">this page</a> for details.
+    /// Gets all the methods available in AdWords API.
     /// </summary>
-    /// <returns>A list of Category objects.</returns>
-    public static List<Category> GetAllCategories() {
-      string csvContents = GetCsv("categories.csv");
-      CsvFile reader = new CsvFile();
-      reader.ReadFromString(csvContents, true);
-      List<Category> retVal = new List<Category>();
-
-      foreach (string[] item in reader.Records) {
-        Category category;
-        category.category = item[0];
-        category.path = item[1];
-        retVal.Add(category);
-      }
-      return retVal;
-    }
-
-    /// <summary>
-    /// Gets all the country and territory codes you can use for targeting
-    /// your ads. See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_countries.html">this page</a> for details.
-    /// </summary>
-    /// <returns>A list of Country objects.</returns>
-    public static List<Country> GetAllCountries() {
-      string csvContents = GetCsv("countries.csv");
-      CsvFile reader = new CsvFile();
-      reader.ReadFromString(csvContents, true);
-      List<Country> retVal = new List<Country>();
-
-      foreach (string[] item in reader.Records) {
-        Country country;
-        country.name = item[0];
-        country.code = item[1];
-        retVal.Add(country);
-      }
-      return retVal;
-    }
-
-    /// <summary>
-    /// Gets all the currency codes you can use to specify the currency of
-    /// monetary values. See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_currency.html">this page</a> for details.
-    /// </summary>
-    /// <returns>A list of Currency objects.</returns>
-    public static List<Currency> GetAllCurrencies() {
-      string csvContents = GetCsv("currencies.csv");
-      CsvFile reader = new CsvFile();
-      reader.ReadFromString(csvContents, true);
-      List<Currency> retVal = new List<Currency>();
-
-      foreach (string[] item in reader.Records) {
-        Currency currency;
-        currency.code = item[0];
-        currency.name = item[1];
-        retVal.Add(currency);
-      }
-      return retVal;
-    }
-
-    /// <summary>
-    /// Gets all the language codes you can use while targeting ads. You can
-    /// also use this list to set the preferred language for the AdWords web
-    /// interface for a user. See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_languages.html">this page</a> for details.
-    /// </summary>
-    /// <returns>A list of Language objects.</returns>
-    public static List<Language> GetAllLanguages() {
-      string csvContents = GetCsv("languages.csv");
-      CsvFile reader = new CsvFile();
-      reader.ReadFromString(csvContents, true);
-      List<Language> retVal = new List<Language>();
-
-      foreach (string[] item in reader.Records) {
-        Language language;
-        language.name = item[0];
-        language.criteriaCode = item[1];
-        language.displayCode = item[2];
-        retVal.Add(language);
-      }
-      return retVal;
-    }
-
-    /// <summary>
-    /// Gets the cost in units for all operations available in AdWords API.
-    /// See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_ratesheet.html">this page</a> for details.
-    /// </summary>
-    /// <returns>A list of OpRates objects.</returns>
-    public static List<OpRates> GetAllOpRates() {
-      string csvContents = GetCsv("ops_rates.csv");
-      CsvFile reader = new CsvFile();
-      reader.ReadFromString(csvContents, true);
-      List<OpRates> retVal = new List<OpRates>();
-
-      foreach (string[] item in reader.Records) {
-        OpRates rates = new OpRates();
-        rates.version = item[0];
-        rates.serviceName = item[1];
-        rates.methodName = item[2];
-        rates.rate = int.Parse(item[3]);
-        rates.isPerItem = bool.Parse(item[4]);
-        retVal.Add(rates);
-      }
-      return retVal;
-    }
-
-    /// <summary>
-    /// Gets the cost in units for all operations available in AdWords API.
-    /// See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_ratesheet.html">this page</a> for details.
-    /// </summary>
-    /// <returns>A list of OpRates objects.</returns>
+    /// <returns>A list of ApiMethod objects.</returns>
     public static List<ApiMethod> GetAllMethods() {
-      string csvContents = GetCsv("ops_rates.csv");
-      CsvFile reader = new CsvFile();
-      reader.ReadFromString(csvContents, true);
       List<ApiMethod> retVal = new List<ApiMethod>();
 
-      foreach (string[] item in reader.Records) {
-        ApiMethod method = new ApiMethod();
-        method.version = item[0];
-        method.serviceName = item[1];
-        method.methodName = item[2];
-        retVal.Add(method);
-      }
-      return retVal;
-    }
+      Type[] childTypes = typeof(AdWordsService).GetNestedTypes();
 
-    /// <summary>
-    /// Gets the list of time zone codes used by AccountInfo.timeZoneId.
-    /// See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_timezones.html">this page</a> for details.
-    /// </summary>
-    /// <returns>A list of OpRates objects.</returns>
-    public static List<Timezone> GetAllTimezones() {
-      string csvContents = GetCsv("timezones.csv");
-      CsvFile reader = new CsvFile();
-      reader.ReadFromString(csvContents, true);
-      List<Timezone> retVal = new List<Timezone>();
+      foreach (Type childType in childTypes) {
+        FieldInfo[] fieldInfos = childType.GetFields(BindingFlags.Static | BindingFlags.Public);
+        foreach (FieldInfo fieldInfo in fieldInfos) {
+          if (fieldInfo.FieldType != typeof(ServiceSignature)) {
+            continue;
+          }
+          ServiceSignature signature = (ServiceSignature) fieldInfo.GetValue(null);
+          string version = "";
+          if (signature is AdWordsApiServiceSignature) {
+            version = (signature as AdWordsApiServiceSignature).version;
+          } else if (signature is LegacyAdwordsApiServiceSignature) {
+            version = (signature as LegacyAdwordsApiServiceSignature).version;
+          }
 
-      foreach (string[] item in reader.Records) {
-        Timezone rates;
-        rates.code = item[0];
-        retVal.Add(rates);
-      }
-      return retVal;
-    }
+          if(string.IsNullOrEmpty(version)) {
+            continue;
+          }
 
-    /// <summary>
-    /// Gets the values you can use for targeting ads at cities in the
-    /// United States. See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_us_cities.html">this page</a> for details.
-    /// </summary>
-    /// <returns>A list of OpRates objects.</returns>
-    public static List<UsCity> GetAllUsCities() {
-      string csvContents = GetCsv("us_cities.csv");
-      CsvFile reader = new CsvFile();
-      reader.ReadFromString(csvContents, true);
-      List<UsCity> retVal = new List<UsCity>();
-
-      foreach (string[] item in reader.Records) {
-        UsCity city;
-        city.state = item[0];
-        city.code = item[1];
-        retVal.Add(city);
-      }
-      return retVal;
-    }
-
-    /// <summary>
-    /// Gets the the values you can use to target ads at metropolitan regions
-    /// in the United States. See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_us_metros.html">this page</a> for details.
-    /// </summary>
-    /// <returns>A list of UsMetro objects.</returns>
-    public static List<UsMetro> GetAllUsMetros() {
-      string csvContents = GetCsv("us_metros.csv");
-      CsvFile reader = new CsvFile();
-      reader.ReadFromString(csvContents, true);
-      List<UsMetro> retVal = new List<UsMetro>();
-
-      foreach (string[] item in reader.Records) {
-        UsMetro metro;
-        metro.state = item[0];
-        metro.metro = item[1];
-        metro.code = item[2];
-        retVal.Add(metro);
-      }
-      return retVal;
-    }
-
-    /// <summary>
-    /// Gets the values you can use for targeting ads at cities across the
-    /// world. See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_cities.html">this page</a> for details.
-    /// </summary>
-    /// <returns>A list of WorldCity objects.</returns>
-    public static List<WorldCity> GetAllWorldCities() {
-      string csvContents = GetCsv("world_cities.csv");
-      CsvFile reader = new CsvFile();
-      reader.ReadFromString(csvContents, true);
-      List<WorldCity> retVal = new List<WorldCity>();
-
-      foreach (string[] item in reader.Records) {
-        WorldCity worldcity;
-        worldcity.country = item[0];
-        worldcity.code = item[1];
-        retVal.Add(worldcity);
-      }
-      return retVal;
-    }
-
-    /// <summary>
-    /// This page lists the region codes that you can use to target ads at
-    /// specific geographical regions of the world.
-    /// See <a href="http://code.google.com/apis/adwords/docs/developer/adwords_api_regions.html">this page</a> for details.
-    /// </summary>
-    /// <returns>A list of WorldCity objects.</returns>
-    public static List<WorldRegion> GetAllWorldRegions() {
-      string csvContents = GetCsv("world_regions.csv");
-      CsvFile reader = new CsvFile();
-      reader.ReadFromString(csvContents, true);
-      List<WorldRegion> retVal = new List<WorldRegion>();
-
-      foreach (string[] item in reader.Records) {
-        WorldRegion worldregion;
-        worldregion.country = item[0];
-        worldregion.code = item[1];
-        worldregion.region = item[2];
-        retVal.Add(worldregion);
+          Type serviceType = Type.GetType("com.google.api.adwords." + version + "." +
+              signature.serviceName);
+          MethodInfo[] methodInfos = serviceType.GetMethods(BindingFlags.Public |
+              BindingFlags.Instance | BindingFlags.DeclaredOnly);
+          foreach (MethodInfo methodInfo in methodInfos) {
+            if (!methodInfo.IsSpecialName) {
+              ApiMethod method = new ApiMethod();
+              method.version = version;
+              method.serviceName = signature.serviceName;
+              method.methodName = methodInfo.Name;
+              retVal.Add(method);
+            }
+          }
+        }
       }
       return retVal;
     }

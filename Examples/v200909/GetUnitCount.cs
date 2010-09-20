@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
   /// This code example retrieves the number of API units recorded for the
   /// developer token being used to make this call over the given date range.
+  ///
+  /// Tags: InfoService.get
   /// </summary>
   class GetUnitCount : SampleBase {
     /// <summary>

@@ -23,8 +23,10 @@ using System.Text;
 
 namespace com.google.api.adwords.examples.v200909 {
   /// <summary>
-  /// This code example shows how to add an Ad Extension to an existing campaign. To
-  /// create a campaign, run AddCampaign.cs.
+  /// This code example shows how to add an Ad Extension to an existing
+  /// campaign. To create a campaign, run AddCampaign.cs.
+  ///
+  /// Tags: GeoLocationService.get, CampaignAdExtensionService.mutate
   /// </summary>
   class AddCampaignAdExtension : SampleBase {
     /// <summary>
@@ -32,8 +34,8 @@ namespace com.google.api.adwords.examples.v200909 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example shows how to add an Ad Extension to an existing campaign. To" +
-            " create a campaign, run AddCampaign.cs.";
+        return "This code example shows how to add an Ad Extension to an existing campaign. To " +
+            "create a campaign, run AddCampaign.cs.";
       }
     }
 

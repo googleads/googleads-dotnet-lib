@@ -132,10 +132,9 @@ namespace com.google.api.adwords.lib {
     /// <returns></returns>
     private AuthTokenException ExtractException(WebException ex) {
       Hashtable tblResponse = null;
-      WebResponse response = null;
-
-      response = ex.Response;
-      tblResponse = ParseResponse(response);
+      using (WebResponse response = ex.Response) {
+        tblResponse = ParseResponse(response);
+      }
 
       string url = "";
       string error = "";

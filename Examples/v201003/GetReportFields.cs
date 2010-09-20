@@ -24,6 +24,8 @@ using System.Net;
 namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example gets report fields.
+  ///
+  /// Tags: ReportDefinitionService.getReportFields
   /// </summary>
   class GetReportFields : SampleBase {
     /// <summary>

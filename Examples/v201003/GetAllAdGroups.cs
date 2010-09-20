@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example illustrates how to retrieve all the ad groups for a
   /// campaign. To create an ad group, run AddAdGroup.cs.
+  ///
+  /// Tags: AdGroupService.get
   /// </summary>
   class GetAllAdGroups : SampleBase {
     /// <summary>

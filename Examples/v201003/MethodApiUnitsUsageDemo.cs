@@ -29,7 +29,7 @@ namespace com.google.api.adwords.examples.v201003 {
   /// </summary>
   class MethodApiUnitsUsageDemo : SampleBase {
     /// <summary>
-    /// Returns a description about the sample code.
+    /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {

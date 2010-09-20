@@ -25,6 +25,8 @@ namespace com.google.api.adwords.examples.v201003 {
   /// <summary>
   /// This code example shows how to retrieve all Ad Extensions in a Campaign.
   /// To create a Campaign Ad Extension, run AddCampaignAdExtensionOverride.cs.
+  ///
+  /// Tags: CampaignAdExtensionService.get
   /// </summary>
   class GetAllCampaignAdExtensions : SampleBase {
     /// <summary>
