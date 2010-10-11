@@ -1,3 +1,7 @@
+10.1.0
+- Added support for new services in v201008 - ServicedAccountService,
+  CustomerSyncService, UserListService, AlertService.
+
 10.0.0
 - Added support for v201008 services.
 - Added test cases for all v201003 and v200909 services.
