@@ -225,6 +225,9 @@ namespace com.google.api.adwords.examples {
 
       RegisterSample("v201008.AddCampaignAdExtension", new v201008.AddCampaignAdExtension());
       RegisterSample("v201008.PerformBulkMutateJob", new v201008.PerformBulkMutateJob());
+      RegisterSample("v201008.GetAllBulkMutateJobs", new v201008.GetAllBulkMutateJobs());
+      RegisterSample("v201008.DeleteBulkMutateJob", new v201008.DeleteBulkMutateJob());
+
       RegisterSample("v201008.GetAllCampaignAdExtensions",
           new v201008.GetAllCampaignAdExtensions());
 
@@ -281,6 +284,15 @@ namespace com.google.api.adwords.examples {
       RegisterSample("v201008.DeleteExperiment", new v201008.DeleteExperiment());
 
       RegisterSample("v201008.GetTrafficEstimates", new v201008.GetTrafficEstimates());
+      RegisterSample("v201008.GetCampaignAlerts", new v201008.GetCampaignAlerts());
+      RegisterSample("v201008.GetAccountHierarchy", new v201008.GetAccountHierarchy());
+
+      RegisterSample("v201008.AddUserList", new v201008.AddUserList());
+      RegisterSample("v201008.DeleteUserList", new v201008.DeleteUserList());
+      RegisterSample("v201008.GetAllUserLists", new v201008.GetAllUserLists());
+      RegisterSample("v201008.UpdateUserList", new v201008.UpdateUserList());
+
+      RegisterSample("v201008.GetAllAccountChanges", new v201008.GetAllAccountChanges());
 
       // Add combined examples.
       RegisterSample("both.UsingTrafficEstimatorDemo", new both.UsingTrafficEstimatorDemo());

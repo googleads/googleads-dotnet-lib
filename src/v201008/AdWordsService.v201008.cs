@@ -42,6 +42,8 @@ namespace com.google.api.adwords.lib {
             AdWordsService.MakeServiceSignature("v201008", "cm", "AdGroupService");
         AdParamService =
             AdWordsService.MakeServiceSignature("v201008", "cm", "AdParamService");
+        AlertService =
+            AdWordsService.MakeServiceSignature("v201008", "mcm", "AlertService");
         BidLandscapeService =
             AdWordsService.MakeServiceSignature("v201008", "cm", "BidLandscapeService");
         BulkMutateJobService =
@@ -54,6 +56,8 @@ namespace com.google.api.adwords.lib {
             AdWordsService.MakeServiceSignature("v201008", "cm", "CampaignService");
         CampaignTargetService =
             AdWordsService.MakeServiceSignature("v201008", "cm", "CampaignTargetService");
+        CustomerSyncService =
+            AdWordsService.MakeServiceSignature("v201008", "ch", "CustomerSyncService");
         ExperimentService =
             AdWordsService.MakeServiceSignature("v201008", "cm", "ExperimentService");
         GeoLocationService =
@@ -64,10 +68,14 @@ namespace com.google.api.adwords.lib {
             AdWordsService.MakeServiceSignature("v201008", "cm", "MediaService");
         ReportDefinitionService =
             AdWordsService.MakeServiceSignature("v201008", "cm", "ReportDefinitionService");
+        ServicedAccountService =
+            AdWordsService.MakeServiceSignature("v201008", "mcm", "ServicedAccountService");
         TargetingIdeaService =
             AdWordsService.MakeServiceSignature("v201008", "o", "TargetingIdeaService");
         TrafficEstimatorService =
             AdWordsService.MakeServiceSignature("v201008", "o", "TrafficEstimatorService");
+        UserListService =
+            AdWordsService.MakeServiceSignature("v201008", "cm", "UserListService");
       }
 
       /// <summary>
@@ -99,6 +107,12 @@ namespace com.google.api.adwords.lib {
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature AdParamService;
+
+      /// <summary>
+      /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/AlertService.html">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature AlertService;
 
       /// <summary>
       /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/BidLandscapeService.html">
@@ -136,6 +150,12 @@ namespace com.google.api.adwords.lib {
       public static readonly ServiceSignature CampaignTargetService;
 
       /// <summary>
+      /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/CustomerSyncService.html">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature CustomerSyncService;
+
+      /// <summary>
       /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/ExperimentService.html">
       /// this page</a> for details.
       /// </summary>
@@ -166,6 +186,12 @@ namespace com.google.api.adwords.lib {
       public static readonly ServiceSignature ReportDefinitionService;
 
       /// <summary>
+      /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/ServicedAccountService.html">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature ServicedAccountService;
+
+      /// <summary>
       /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/TargetingIdeaService.html">
       /// this page</a> for details.
       /// </summary>
@@ -176,6 +202,12 @@ namespace com.google.api.adwords.lib {
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature TrafficEstimatorService;
+
+      /// <summary>
+      /// See <a href="http://code.google.com/apis/adwords/v2009/docs/reference/UserListService.html">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature UserListService;
     }
   }
 }

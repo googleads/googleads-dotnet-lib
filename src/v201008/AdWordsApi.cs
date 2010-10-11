@@ -18,7 +18,6 @@ namespace com.google.api.adwords.v201008 {
   using System.Web.Services.Protocols;
   using System;
   using System.Diagnostics;
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -85,6 +84,7 @@ CampaignOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignTargetReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExperimentReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdExtensionOverrideReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserListReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupReturnValue))]
@@ -1708,6 +1708,7 @@ CampaignOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExperimentOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReportDefinitionOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdExtensionOverrideOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserListOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupOperation))]
@@ -1798,7 +1799,10 @@ CampaignOperation[] operations) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignTargetPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExperimentPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoStatsPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdExtensionOverridePage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserListPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupPage))]
@@ -2093,7 +2097,11 @@ CampaignOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(IdError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityAccessDenied))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficEstimatorError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdExtensionOverrideError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ServicedAccountError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomerSyncError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserListError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PagingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdCountLimitExceeded))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdError))]
@@ -7855,6 +7863,7 @@ ReportDefinitionOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Product))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Vertical))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionUserList))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionUserInterest))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Placement))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Keyword))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
@@ -8089,6 +8098,47 @@ ReportDefinitionOperation[] operations) {
   public enum CriterionUserListMembershipStatus {
     OPEN,
     CLOSED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class CriterionUserInterest : Criterion {
+    private long userInterestIdField;
+
+    private bool userInterestIdFieldSpecified;
+
+    private string userInterestNameField;
+
+    public long userInterestId {
+      get {
+        return this.userInterestIdField;
+      }
+      set {
+        this.userInterestIdField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool userInterestIdSpecified {
+      get {
+        return this.userInterestIdFieldSpecified;
+      }
+      set {
+        this.userInterestIdFieldSpecified = value;
+      }
+    }
+
+    public string userInterestName {
+      get {
+        return this.userInterestNameField;
+      }
+      set {
+        this.userInterestNameField = value;
+      }
+    }
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
@@ -10387,6 +10437,428 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "AlertServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class AlertService : AdWordsApiService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public AlertService() {
+      this.Url = "https://adwords.google.com/api/adwords/mcm/v201008/AlertService";
+    }
+
+    public RequestHeader RequestHeader {
+      get {
+        return this.requestHeaderField;
+      }
+      set {
+        this.requestHeaderField = value;
+      }
+    }
+
+    public ResponseHeader ResponseHeader {
+      get {
+        return this.responseHeaderField;
+      }
+      set {
+        this.responseHeaderField = value;
+      }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201008", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201008", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public AlertPage get(AlertSelector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((AlertPage) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public partial class Detail {
+    private string triggerTimeField;
+
+    public string triggerTime {
+      get {
+        return this.triggerTimeField;
+      }
+      set {
+        this.triggerTimeField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public partial class Alert {
+    private AlertSeverity alertSeverityField;
+
+    private bool alertSeverityFieldSpecified;
+
+    private AlertType alertTypeField;
+
+    private bool alertTypeFieldSpecified;
+
+    private long clientCustomerIdField;
+
+    private bool clientCustomerIdFieldSpecified;
+
+    private Detail[] detailsField;
+
+    public AlertSeverity alertSeverity {
+      get {
+        return this.alertSeverityField;
+      }
+      set {
+        this.alertSeverityField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool alertSeveritySpecified {
+      get {
+        return this.alertSeverityFieldSpecified;
+      }
+      set {
+        this.alertSeverityFieldSpecified = value;
+      }
+    }
+
+    public AlertType alertType {
+      get {
+        return this.alertTypeField;
+      }
+      set {
+        this.alertTypeField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool alertTypeSpecified {
+      get {
+        return this.alertTypeFieldSpecified;
+      }
+      set {
+        this.alertTypeFieldSpecified = value;
+      }
+    }
+
+    public long clientCustomerId {
+      get {
+        return this.clientCustomerIdField;
+      }
+      set {
+        this.clientCustomerIdField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool clientCustomerIdSpecified {
+      get {
+        return this.clientCustomerIdFieldSpecified;
+      }
+      set {
+        this.clientCustomerIdFieldSpecified = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("details")]
+    public Detail[] details {
+      get {
+        return this.detailsField;
+      }
+      set {
+        this.detailsField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public enum AlertSeverity {
+    GREEN,
+    YELLOW,
+    RED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public enum AlertType {
+    ACCOUNT_ON_TARGET,
+    DECLINED_PAYMENT,
+    CREDIT_CARD_EXPIRING,
+    ACCOUNT_BUDGET_ENDING,
+    CAMPAIGN_ENDING,
+    PAYMENT_NOT_ENTERED,
+    MISSING_BANK_REFERENCE_NUMBER,
+    CAMPAIGN_ENDED,
+    KEYWORD_BELOW_MIN_CPC,
+    ACCOUNT_BUDGET_BURN_RATE,
+    USER_INVITE_PENDING,
+    USER_INVITE_ACCEPTED,
+    MANAGER_LINK_PENDING,
+    ZERO_DAILY_SPENDING_LIMIT,
+    TV_ACCOUNT_ON_TARGET,
+    TV_ACCOUNT_BUDGET_ENDING,
+    TV_ZERO_DAILY_SPENDING_LIMIT,
+    UNKNOWN
+  }
+
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertPage))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public abstract partial class NoStatsPage : Page {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public partial class AlertPage : NoStatsPage {
+    private Alert[] entriesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public Alert[] entries {
+      get {
+        return this.entriesField;
+      }
+      set {
+        this.entriesField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public partial class AlertQuery {
+    private ClientSpec clientSpecField;
+
+    private bool clientSpecFieldSpecified;
+
+    private FilterSpec filterSpecField;
+
+    private bool filterSpecFieldSpecified;
+
+    private AlertType[] typesField;
+
+    private AlertSeverity[] severitiesField;
+
+    private TriggerTimeSpec triggerTimeSpecField;
+
+    private bool triggerTimeSpecFieldSpecified;
+
+    private long[] clientCustomerIdsField;
+
+    public ClientSpec clientSpec {
+      get {
+        return this.clientSpecField;
+      }
+      set {
+        this.clientSpecField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool clientSpecSpecified {
+      get {
+        return this.clientSpecFieldSpecified;
+      }
+      set {
+        this.clientSpecFieldSpecified = value;
+      }
+    }
+
+    public FilterSpec filterSpec {
+      get {
+        return this.filterSpecField;
+      }
+      set {
+        this.filterSpecField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool filterSpecSpecified {
+      get {
+        return this.filterSpecFieldSpecified;
+      }
+      set {
+        this.filterSpecFieldSpecified = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("types")]
+    public AlertType[] types {
+      get {
+        return this.typesField;
+      }
+      set {
+        this.typesField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("severities")]
+    public AlertSeverity[] severities {
+      get {
+        return this.severitiesField;
+      }
+      set {
+        this.severitiesField = value;
+      }
+    }
+
+    public TriggerTimeSpec triggerTimeSpec {
+      get {
+        return this.triggerTimeSpecField;
+      }
+      set {
+        this.triggerTimeSpecField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool triggerTimeSpecSpecified {
+      get {
+        return this.triggerTimeSpecFieldSpecified;
+      }
+      set {
+        this.triggerTimeSpecFieldSpecified = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("clientCustomerIds")]
+    public long[] clientCustomerIds {
+      get {
+        return this.clientCustomerIdsField;
+      }
+      set {
+        this.clientCustomerIdsField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public enum ClientSpec {
+    ALL,
+    DIRECT,
+    ID_LIST,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public enum FilterSpec {
+    ALL,
+    ONLY_SUBMANAGERS,
+    ONLY_LEAF_CLIENTS,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public enum TriggerTimeSpec {
+    ALL_TIME,
+    LAST_24_HOURS,
+    LAST_7_DAYS
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public partial class AlertSelector {
+    private AlertQuery queryField;
+
+    private Paging pagingField;
+
+    public AlertQuery query {
+      get {
+        return this.queryField;
+      }
+      set {
+        this.queryField = value;
+      }
+    }
+
+    public Paging paging {
+      get {
+        return this.pagingField;
+      }
+      set {
+        this.pagingField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public partial class AlertError : ApiError {
+    private AlertErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public AlertErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AlertError.Reason", Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public enum AlertErrorReason {
+    NO_CLIENT_IDS_SELECTED,
+    INVALID_CLIENT_ID_SELECTED,
+    INVALID_CLIENT_ID_FORMAT,
+    UNAVAILABLE,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AdExtensionOverrideServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
@@ -11247,6 +11719,1581 @@ AdExtensionOverrideOperation[] operations) {
     RADIUS_TOO_LARGE,
     RADIUS_TOO_SMALL,
     UNKNOWN_ADEXTENSION_OVERRIDE
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "ServicedAccountServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class ServicedAccountService : AdWordsApiService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public ServicedAccountService() {
+      this.Url = "https://adwords.google.com/api/adwords/mcm/v201008/ServicedAccountService";
+    }
+
+    public RequestHeader RequestHeader {
+      get {
+        return this.requestHeaderField;
+      }
+      set {
+        this.requestHeaderField = value;
+      }
+    }
+
+    public ResponseHeader ResponseHeader {
+      get {
+        return this.responseHeaderField;
+      }
+      set {
+        this.responseHeaderField = value;
+      }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201008", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201008", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public ServicedAccountGraph get(ServicedAccountSelector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((ServicedAccountGraph) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public partial class CustomerId {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    public long id {
+      get {
+        return this.idField;
+      }
+      set {
+        this.idField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool idSpecified {
+      get {
+        return this.idFieldSpecified;
+      }
+      set {
+        this.idFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public partial class Link {
+    private CustomerId managerIdField;
+
+    private CustomerId clientIdField;
+
+    private ServiceType serviceTypeField;
+
+    private bool serviceTypeFieldSpecified;
+
+    private LinkType typeOfLinkField;
+
+    private bool typeOfLinkFieldSpecified;
+
+    private string descriptiveNameField;
+
+    private string linkTypeField;
+
+    public CustomerId managerId {
+      get {
+        return this.managerIdField;
+      }
+      set {
+        this.managerIdField = value;
+      }
+    }
+
+    public CustomerId clientId {
+      get {
+        return this.clientIdField;
+      }
+      set {
+        this.clientIdField = value;
+      }
+    }
+
+    public ServiceType serviceType {
+      get {
+        return this.serviceTypeField;
+      }
+      set {
+        this.serviceTypeField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool serviceTypeSpecified {
+      get {
+        return this.serviceTypeFieldSpecified;
+      }
+      set {
+        this.serviceTypeFieldSpecified = value;
+      }
+    }
+
+    public LinkType typeOfLink {
+      get {
+        return this.typeOfLinkField;
+      }
+      set {
+        this.typeOfLinkField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool typeOfLinkSpecified {
+      get {
+        return this.typeOfLinkFieldSpecified;
+      }
+      set {
+        this.typeOfLinkFieldSpecified = value;
+      }
+    }
+
+    public string descriptiveName {
+      get {
+        return this.descriptiveNameField;
+      }
+      set {
+        this.descriptiveNameField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("Link.Type")]
+    public string LinkType {
+      get {
+        return this.linkTypeField;
+      }
+      set {
+        this.linkTypeField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public enum ServiceType {
+    UI_AND_API,
+    API_ONLY,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public enum LinkType {
+    ESTABLISHED,
+    INVITATION,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public partial class Account {
+    private long customerIdField;
+
+    private bool customerIdFieldSpecified;
+
+    private string loginField;
+
+    private string companyNameField;
+
+    private bool canManageClientsField;
+
+    private bool canManageClientsFieldSpecified;
+
+    public long customerId {
+      get {
+        return this.customerIdField;
+      }
+      set {
+        this.customerIdField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool customerIdSpecified {
+      get {
+        return this.customerIdFieldSpecified;
+      }
+      set {
+        this.customerIdFieldSpecified = value;
+      }
+    }
+
+    public string login {
+      get {
+        return this.loginField;
+      }
+      set {
+        this.loginField = value;
+      }
+    }
+
+    public string companyName {
+      get {
+        return this.companyNameField;
+      }
+      set {
+        this.companyNameField = value;
+      }
+    }
+
+    public bool canManageClients {
+      get {
+        return this.canManageClientsField;
+      }
+      set {
+        this.canManageClientsField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool canManageClientsSpecified {
+      get {
+        return this.canManageClientsFieldSpecified;
+      }
+      set {
+        this.canManageClientsFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public partial class ServicedAccountGraph {
+    private Account[] accountsField;
+
+    private Link[] linksField;
+
+    [System.Xml.Serialization.XmlElementAttribute("accounts")]
+    public Account[] accounts {
+      get {
+        return this.accountsField;
+      }
+      set {
+        this.accountsField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("links")]
+    public Link[] links {
+      get {
+        return this.linksField;
+      }
+      set {
+        this.linksField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public partial class ServicedAccountSelector {
+    private long[] customerIdsField;
+
+    private bool enablePagingField;
+
+    private bool enablePagingFieldSpecified;
+
+    private ServiceType[] serviceTypesField;
+
+    private bool submanagersOnlyField;
+
+    private bool submanagersOnlyFieldSpecified;
+
+    [System.Xml.Serialization.XmlElementAttribute("customerIds")]
+    public long[] customerIds {
+      get {
+        return this.customerIdsField;
+      }
+      set {
+        this.customerIdsField = value;
+      }
+    }
+
+    public bool enablePaging {
+      get {
+        return this.enablePagingField;
+      }
+      set {
+        this.enablePagingField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool enablePagingSpecified {
+      get {
+        return this.enablePagingFieldSpecified;
+      }
+      set {
+        this.enablePagingFieldSpecified = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("serviceTypes")]
+    public ServiceType[] serviceTypes {
+      get {
+        return this.serviceTypesField;
+      }
+      set {
+        this.serviceTypesField = value;
+      }
+    }
+
+    public bool submanagersOnly {
+      get {
+        return this.submanagersOnlyField;
+      }
+      set {
+        this.submanagersOnlyField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool submanagersOnlySpecified {
+      get {
+        return this.submanagersOnlyFieldSpecified;
+      }
+      set {
+        this.submanagersOnlyFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public partial class ServicedAccountError : ApiError {
+    private ServicedAccountErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public ServicedAccountErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ServicedAccountError.Reason", Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  public enum ServicedAccountErrorReason {
+    BAD_IDS,
+    NOT_AUTHORIZED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "CustomerSyncServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class CustomerSyncService : AdWordsApiService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public CustomerSyncService() {
+      this.Url = "https://adwords.google.com/api/adwords/ch/v201008/CustomerSyncService";
+    }
+
+    public RequestHeader RequestHeader {
+      get {
+        return this.requestHeaderField;
+      }
+      set {
+        this.requestHeaderField = value;
+      }
+    }
+
+    public ResponseHeader ResponseHeader {
+      get {
+        return this.responseHeaderField;
+      }
+      set {
+        this.responseHeaderField = value;
+      }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/ch/v201008", ResponseNamespace = "https://adwords.google.com/api/adwords/ch/v201008", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public CustomerChangeData get(CustomerSyncSelector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((CustomerChangeData) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  public partial class AdGroupChangeData {
+    private long adGroupIdField;
+
+    private bool adGroupIdFieldSpecified;
+
+    private ChangeStatus adGroupChangeStatusField;
+
+    private bool adGroupChangeStatusFieldSpecified;
+
+    private long[] changedAdsField;
+
+    private long[] changedCriteriaField;
+
+    private long[] deletedCriteriaField;
+
+    public long adGroupId {
+      get {
+        return this.adGroupIdField;
+      }
+      set {
+        this.adGroupIdField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool adGroupIdSpecified {
+      get {
+        return this.adGroupIdFieldSpecified;
+      }
+      set {
+        this.adGroupIdFieldSpecified = value;
+      }
+    }
+
+    public ChangeStatus adGroupChangeStatus {
+      get {
+        return this.adGroupChangeStatusField;
+      }
+      set {
+        this.adGroupChangeStatusField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool adGroupChangeStatusSpecified {
+      get {
+        return this.adGroupChangeStatusFieldSpecified;
+      }
+      set {
+        this.adGroupChangeStatusFieldSpecified = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("changedAds")]
+    public long[] changedAds {
+      get {
+        return this.changedAdsField;
+      }
+      set {
+        this.changedAdsField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("changedCriteria")]
+    public long[] changedCriteria {
+      get {
+        return this.changedCriteriaField;
+      }
+      set {
+        this.changedCriteriaField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("deletedCriteria")]
+    public long[] deletedCriteria {
+      get {
+        return this.deletedCriteriaField;
+      }
+      set {
+        this.deletedCriteriaField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  public enum ChangeStatus {
+    FIELDS_UNCHANGED,
+    FIELDS_CHANGED,
+    NEW
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  public partial class CampaignChangeData {
+    private long campaignIdField;
+
+    private bool campaignIdFieldSpecified;
+
+    private ChangeStatus campaignChangeStatusField;
+
+    private bool campaignChangeStatusFieldSpecified;
+
+    private AdGroupChangeData[] changedAdGroupsField;
+
+    private long[] addedCampaignCriteriaField;
+
+    private long[] deletedCampaignCriteriaField;
+
+    private long[] addedAdExtensionsField;
+
+    private long[] deletedAdExtensionsField;
+
+    private bool campaignTargetingChangedField;
+
+    private bool campaignTargetingChangedFieldSpecified;
+
+    public long campaignId {
+      get {
+        return this.campaignIdField;
+      }
+      set {
+        this.campaignIdField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool campaignIdSpecified {
+      get {
+        return this.campaignIdFieldSpecified;
+      }
+      set {
+        this.campaignIdFieldSpecified = value;
+      }
+    }
+
+    public ChangeStatus campaignChangeStatus {
+      get {
+        return this.campaignChangeStatusField;
+      }
+      set {
+        this.campaignChangeStatusField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool campaignChangeStatusSpecified {
+      get {
+        return this.campaignChangeStatusFieldSpecified;
+      }
+      set {
+        this.campaignChangeStatusFieldSpecified = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("changedAdGroups")]
+    public AdGroupChangeData[] changedAdGroups {
+      get {
+        return this.changedAdGroupsField;
+      }
+      set {
+        this.changedAdGroupsField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("addedCampaignCriteria")]
+    public long[] addedCampaignCriteria {
+      get {
+        return this.addedCampaignCriteriaField;
+      }
+      set {
+        this.addedCampaignCriteriaField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("deletedCampaignCriteria")]
+    public long[] deletedCampaignCriteria {
+      get {
+        return this.deletedCampaignCriteriaField;
+      }
+      set {
+        this.deletedCampaignCriteriaField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("addedAdExtensions")]
+    public long[] addedAdExtensions {
+      get {
+        return this.addedAdExtensionsField;
+      }
+      set {
+        this.addedAdExtensionsField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("deletedAdExtensions")]
+    public long[] deletedAdExtensions {
+      get {
+        return this.deletedAdExtensionsField;
+      }
+      set {
+        this.deletedAdExtensionsField = value;
+      }
+    }
+
+    public bool campaignTargetingChanged {
+      get {
+        return this.campaignTargetingChangedField;
+      }
+      set {
+        this.campaignTargetingChangedField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool campaignTargetingChangedSpecified {
+      get {
+        return this.campaignTargetingChangedFieldSpecified;
+      }
+      set {
+        this.campaignTargetingChangedFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  public partial class CustomerChangeData {
+    private CampaignChangeData[] changedCampaignsField;
+
+    private string lastChangeTimestampField;
+
+    [System.Xml.Serialization.XmlElementAttribute("changedCampaigns")]
+    public CampaignChangeData[] changedCampaigns {
+      get {
+        return this.changedCampaignsField;
+      }
+      set {
+        this.changedCampaignsField = value;
+      }
+    }
+
+    public string lastChangeTimestamp {
+      get {
+        return this.lastChangeTimestampField;
+      }
+      set {
+        this.lastChangeTimestampField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class DateTimeRange {
+    private string minField;
+
+    private string maxField;
+
+    public string min {
+      get {
+        return this.minField;
+      }
+      set {
+        this.minField = value;
+      }
+    }
+
+    public string max {
+      get {
+        return this.maxField;
+      }
+      set {
+        this.maxField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  public partial class CustomerSyncSelector {
+    private DateTimeRange dateTimeRangeField;
+
+    private long[] campaignIdsField;
+
+    public DateTimeRange dateTimeRange {
+      get {
+        return this.dateTimeRangeField;
+      }
+      set {
+        this.dateTimeRangeField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignIds")]
+    public long[] campaignIds {
+      get {
+        return this.campaignIdsField;
+      }
+      set {
+        this.campaignIdsField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  public partial class CustomerSyncError : ApiError {
+    private CustomerSyncErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    private long campaignIdField;
+
+    private bool campaignIdFieldSpecified;
+
+    public CustomerSyncErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+
+    public long campaignId {
+      get {
+        return this.campaignIdField;
+      }
+      set {
+        this.campaignIdField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool campaignIdSpecified {
+      get {
+        return this.campaignIdFieldSpecified;
+      }
+      set {
+        this.campaignIdFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomerSyncError.Reason", Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  public enum CustomerSyncErrorReason {
+    INVALID_CAMPAIGN_ID,
+    INVALID_DATE_RANGE,
+    TOO_MANY_CHANGES
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "UserListServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class UserListService : AdWordsApiService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public UserListService() {
+      this.Url = "https://adwords.google.com/api/adwords/cm/v201008/UserListService";
+    }
+
+    public RequestHeader RequestHeader {
+      get {
+        return this.requestHeaderField;
+      }
+      set {
+        this.requestHeaderField = value;
+      }
+    }
+
+    public ResponseHeader ResponseHeader {
+      get {
+        return this.responseHeaderField;
+      }
+      set {
+        this.responseHeaderField = value;
+      }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201008", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201008", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public UserListPage get(UserListSelector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((UserListPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201008", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201008", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public UserListReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
+UserListOperation[] operations) {
+      object[] results = this.Invoke("mutate", new object[] { operations });
+      return ((UserListReturnValue) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class UserListReturnValue : ListReturnValue {
+    private UserList[] valueField;
+
+    [System.Xml.Serialization.XmlElementAttribute("value")]
+    public UserList[] value {
+      get {
+        return this.valueField;
+      }
+      set {
+        this.valueField = value;
+      }
+    }
+  }
+
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(RemarketingUserList))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(LogicalUserList))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExternalRemarketingUserList))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public abstract partial class UserList {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private bool isReadOnlyField;
+
+    private bool isReadOnlyFieldSpecified;
+
+    private string nameField;
+
+    private string descriptionField;
+
+    private UserListMembershipStatus statusField;
+
+    private bool statusFieldSpecified;
+
+    private long membershipLifeSpanField;
+
+    private bool membershipLifeSpanFieldSpecified;
+
+    private long sizeField;
+
+    private bool sizeFieldSpecified;
+
+    private SizeRange sizeRangeField;
+
+    private bool sizeRangeFieldSpecified;
+
+    private UserListType typeField;
+
+    private bool typeFieldSpecified;
+
+    private string userListTypeField;
+
+    public long id {
+      get {
+        return this.idField;
+      }
+      set {
+        this.idField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool idSpecified {
+      get {
+        return this.idFieldSpecified;
+      }
+      set {
+        this.idFieldSpecified = value;
+      }
+    }
+
+    public bool isReadOnly {
+      get {
+        return this.isReadOnlyField;
+      }
+      set {
+        this.isReadOnlyField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool isReadOnlySpecified {
+      get {
+        return this.isReadOnlyFieldSpecified;
+      }
+      set {
+        this.isReadOnlyFieldSpecified = value;
+      }
+    }
+
+    public string name {
+      get {
+        return this.nameField;
+      }
+      set {
+        this.nameField = value;
+      }
+    }
+
+    public string description {
+      get {
+        return this.descriptionField;
+      }
+      set {
+        this.descriptionField = value;
+      }
+    }
+
+    public UserListMembershipStatus status {
+      get {
+        return this.statusField;
+      }
+      set {
+        this.statusField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool statusSpecified {
+      get {
+        return this.statusFieldSpecified;
+      }
+      set {
+        this.statusFieldSpecified = value;
+      }
+    }
+
+    public long membershipLifeSpan {
+      get {
+        return this.membershipLifeSpanField;
+      }
+      set {
+        this.membershipLifeSpanField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool membershipLifeSpanSpecified {
+      get {
+        return this.membershipLifeSpanFieldSpecified;
+      }
+      set {
+        this.membershipLifeSpanFieldSpecified = value;
+      }
+    }
+
+    public long size {
+      get {
+        return this.sizeField;
+      }
+      set {
+        this.sizeField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool sizeSpecified {
+      get {
+        return this.sizeFieldSpecified;
+      }
+      set {
+        this.sizeFieldSpecified = value;
+      }
+    }
+
+    public SizeRange sizeRange {
+      get {
+        return this.sizeRangeField;
+      }
+      set {
+        this.sizeRangeField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool sizeRangeSpecified {
+      get {
+        return this.sizeRangeFieldSpecified;
+      }
+      set {
+        this.sizeRangeFieldSpecified = value;
+      }
+    }
+
+    public UserListType type {
+      get {
+        return this.typeField;
+      }
+      set {
+        this.typeField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool typeSpecified {
+      get {
+        return this.typeFieldSpecified;
+      }
+      set {
+        this.typeFieldSpecified = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("UserList.Type")]
+    public string UserListType {
+      get {
+        return this.userListTypeField;
+      }
+      set {
+        this.userListTypeField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public enum UserListMembershipStatus {
+    OPEN,
+    CLOSED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public enum SizeRange {
+    LESS_THAN_FIVE_HUNDRED,
+    LESS_THAN_ONE_THOUSAND,
+    ONE_THOUSAND_TO_TEN_THOUSAND,
+    TEN_THOUSAND_TO_FIFTY_THOUSAND,
+    FIFTY_THOUSAND_TO_ONE_HUNDRED_THOUSAND,
+    ONE_HUNDRED_THOUSAND_TO_THREE_HUNDRED_THOUSAND,
+    THREE_HUNDRED_THOUSAND_TO_FIVE_HUNDRED_THOUSAND,
+    FIVE_HUNDRED_THOUSAND_TO_ONE_MILLION,
+    ONE_MILLION_TO_TWO_MILLION,
+    TWO_MILLION_TO_THREE_MILLION,
+    THREE_MILLION_TO_FIVE_MILLION,
+    FIVE_MILLION_TO_TEN_MILLION,
+    TEN_MILLION_TO_TWENTY_MILLION,
+    TWENTY_MILLION_TO_THIRTY_MILLION,
+    THIRTY_MILLION_TO_FIFTY_MILLION,
+    OVER_FIFTY_MILLION
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserList.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public enum UserListType {
+    EXTERNAL_REMARKETING,
+    LOGICAL,
+    REMARKETING,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class RemarketingUserList : UserList {
+    private UserListConversionType[] conversionTypesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("conversionTypes")]
+    public UserListConversionType[] conversionTypes {
+      get {
+        return this.conversionTypesField;
+      }
+      set {
+        this.conversionTypesField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class UserListConversionType {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private string nameField;
+
+    private UserListConversionTypeCategory categoryField;
+
+    private bool categoryFieldSpecified;
+
+    public long id {
+      get {
+        return this.idField;
+      }
+      set {
+        this.idField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool idSpecified {
+      get {
+        return this.idFieldSpecified;
+      }
+      set {
+        this.idFieldSpecified = value;
+      }
+    }
+
+    public string name {
+      get {
+        return this.nameField;
+      }
+      set {
+        this.nameField = value;
+      }
+    }
+
+    public UserListConversionTypeCategory category {
+      get {
+        return this.categoryField;
+      }
+      set {
+        this.categoryField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool categorySpecified {
+      get {
+        return this.categoryFieldSpecified;
+      }
+      set {
+        this.categoryFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListConversionType.Category", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public enum UserListConversionTypeCategory {
+    BOOMERANG_EVENT,
+    OTHER
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class LogicalUserList : UserList {
+    private UserListLogicalRule[] rulesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("rules")]
+    public UserListLogicalRule[] rules {
+      get {
+        return this.rulesField;
+      }
+      set {
+        this.rulesField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class UserListLogicalRule {
+    private UserListLogicalRuleOperator operatorField;
+
+    private bool operatorFieldSpecified;
+
+    private LogicalUserListOperand[] ruleOperandsField;
+
+    public UserListLogicalRuleOperator @operator {
+      get {
+        return this.operatorField;
+      }
+      set {
+        this.operatorField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool operatorSpecified {
+      get {
+        return this.operatorFieldSpecified;
+      }
+      set {
+        this.operatorFieldSpecified = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("ruleOperands")]
+    public LogicalUserListOperand[] ruleOperands {
+      get {
+        return this.ruleOperandsField;
+      }
+      set {
+        this.ruleOperandsField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListLogicalRule.Operator", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public enum UserListLogicalRuleOperator {
+    ALL,
+    ANY,
+    NONE,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class LogicalUserListOperand {
+    private object itemField;
+
+    [System.Xml.Serialization.XmlElementAttribute("UserInterest", typeof(UserInterest))]
+    [System.Xml.Serialization.XmlElementAttribute("UserList", typeof(UserList))]
+    public object Item {
+      get {
+        return this.itemField;
+      }
+      set {
+        this.itemField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class UserInterest {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private string nameField;
+
+    private SizeRange sizeRangeField;
+
+    private bool sizeRangeFieldSpecified;
+
+    public long id {
+      get {
+        return this.idField;
+      }
+      set {
+        this.idField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool idSpecified {
+      get {
+        return this.idFieldSpecified;
+      }
+      set {
+        this.idFieldSpecified = value;
+      }
+    }
+
+    public string name {
+      get {
+        return this.nameField;
+      }
+      set {
+        this.nameField = value;
+      }
+    }
+
+    public SizeRange sizeRange {
+      get {
+        return this.sizeRangeField;
+      }
+      set {
+        this.sizeRangeField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool sizeRangeSpecified {
+      get {
+        return this.sizeRangeFieldSpecified;
+      }
+      set {
+        this.sizeRangeFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class ExternalRemarketingUserList : UserList {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class UserListOperation : Operation {
+    private UserList operandField;
+
+    public UserList operand {
+      get {
+        return this.operandField;
+      }
+      set {
+        this.operandField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class UserListPage : Page {
+    private UserList[] entriesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public UserList[] entries {
+      get {
+        return this.entriesField;
+      }
+      set {
+        this.entriesField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class UserListSelector {
+    private long[] userListIdsField;
+
+    private UserListType[] userListTypesField;
+
+    private UserListMembershipStatus[] userListStatusesField;
+
+    private bool includeUserInterestsField;
+
+    private bool includeUserInterestsFieldSpecified;
+
+    private Paging pagingField;
+
+    [System.Xml.Serialization.XmlElementAttribute("userListIds")]
+    public long[] userListIds {
+      get {
+        return this.userListIdsField;
+      }
+      set {
+        this.userListIdsField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("userListTypes")]
+    public UserListType[] userListTypes {
+      get {
+        return this.userListTypesField;
+      }
+      set {
+        this.userListTypesField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("userListStatuses")]
+    public UserListMembershipStatus[] userListStatuses {
+      get {
+        return this.userListStatusesField;
+      }
+      set {
+        this.userListStatusesField = value;
+      }
+    }
+
+    public bool includeUserInterests {
+      get {
+        return this.includeUserInterestsField;
+      }
+      set {
+        this.includeUserInterestsField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool includeUserInterestsSpecified {
+      get {
+        return this.includeUserInterestsFieldSpecified;
+      }
+      set {
+        this.includeUserInterestsFieldSpecified = value;
+      }
+    }
+
+    public Paging paging {
+      get {
+        return this.pagingField;
+      }
+      set {
+        this.pagingField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public partial class UserListError : ApiError {
+    private UserListErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public UserListErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  public enum UserListErrorReason {
+    EXTERNAL_REMARKETING_USER_LIST_MUTATE_NOT_SUPPORTED,
+    CONCRETE_TYPE_REQUIRED,
+    CONVERSION_TYPE_ID_REQUIRED,
+    DUPLICATE_CONVERSION_TYPES,
+    INVALID_CONVERSION_TYPE,
+    INVALID_DESCRIPTION,
+    INVALID_NAME,
+    INVALID_USER_INTEREST_LOGICAL_RULE_OPERAND,
+    INVALID_USER_LIST_LOGICAL_RULE_OPERAND,
+    MEMBERSHIP_LIFE_SPAN_NOT_POSITIVE,
+    NAME_ALREADY_USED,
+    NEW_CONVERSION_TYPE_NAME_REQUIRED,
+    OWNERSHIP_REQUIRED_FOR_SET,
+    REMOVE_NOT_SUPPORTED,
+    USER_LIST_SERVICE_ERROR
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
