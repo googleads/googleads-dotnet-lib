@@ -53,8 +53,11 @@ namespace com.google.api.adwords.examples.v201008 {
       // Create the alert query.
       AlertQuery query = new AlertQuery();
       query.filterSpec = FilterSpec.ALL;
+      query.filterSpecSpecified = true;
       query.clientSpec = ClientSpec.ALL;
+      query.clientSpecSpecified = true;
       query.triggerTimeSpec = TriggerTimeSpec.ALL_TIME;
+      query.triggerTimeSpecSpecified = true;
       query.severities = new AlertSeverity[] {AlertSeverity.GREEN, AlertSeverity.YELLOW,
           AlertSeverity.RED};
       query.types = new AlertType[] {AlertType.CAMPAIGN_ENDING, AlertType.CAMPAIGN_ENDED};
@@ -64,7 +67,9 @@ namespace com.google.api.adwords.examples.v201008 {
       selector.query = query;
       selector.paging = new Paging();
       selector.paging.startIndex = 0;
+      selector.paging.startIndexSpecified = true;
       selector.paging.numberResults = 10;
+      selector.paging.numberResultsSpecified = true;
 
       try {
         AlertPage page = alertService.get(selector);

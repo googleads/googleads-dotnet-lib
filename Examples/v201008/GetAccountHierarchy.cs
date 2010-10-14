@@ -54,6 +54,7 @@ namespace com.google.api.adwords.examples.v201008 {
       selector.serviceTypes = new ServiceType[] {ServiceType.UI_AND_API,
           ServiceType.API_ONLY};
       selector.enablePaging = false;
+      selector.enablePagingSpecified = true;
 
       try {
         ServicedAccountGraph graph = servicedAccountService.get(selector);

@@ -1,3 +1,6 @@
+10.2.0
+- Fixed missing xxxSpecified = true in code examples (Issue 48).
+
 10.1.0
 - Added support for new services in v201008 - ServicedAccountService,
   CustomerSyncService, UserListService, AlertService.
