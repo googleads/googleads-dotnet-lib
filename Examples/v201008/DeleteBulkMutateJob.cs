@@ -58,11 +58,13 @@ namespace com.google.api.adwords.examples.v201008 {
       // Create BulkMutateJob.
       BulkMutateJob bulkMutateJob = new BulkMutateJob();
       bulkMutateJob.id = bulkMutateJobId;
+      bulkMutateJob.idSpecified = true;
 
       // Create operation.
       JobOperation operation = new JobOperation();
       operation.operand = bulkMutateJob;
       operation.@operator = Operator.REMOVE;
+      operation.operatorSpecified = true;
 
       try {
         // Delete bulk mutate job.

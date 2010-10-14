@@ -57,11 +57,13 @@ namespace com.google.api.adwords.examples.v201008 {
       // a 'get' on it first.
       RemarketingUserList userList = new RemarketingUserList();
       userList.id = userListId;
+      userList.idSpecified = true;
       userList.description = "Last updated at #" + GetTimeStamp();
 
       UserListOperation operation = new UserListOperation();
       operation.operand = userList;
       operation.@operator = Operator.SET;
+      operation.operatorSpecified = true;
 
       try {
         // Update user list.

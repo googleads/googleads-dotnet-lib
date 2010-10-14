@@ -53,6 +53,7 @@ namespace com.google.api.adwords.examples.v201008 {
       // Create selector.
       BulkMutateJobSelector selector = new BulkMutateJobSelector();
       selector.includeStats = true;
+      selector.includeStatsSpecified = true;
 
       try {
         // Get all bulk mutate jobs.

@@ -51,7 +51,9 @@ namespace com.google.api.adwords.examples.v201008 {
       userList.name = "Mars cruise customers #" + GetTimeStamp();
       userList.description = "A list of mars cruise customers in the last year.";
       userList.status = UserListMembershipStatus.OPEN;
+      userList.statusSpecified = true;
       userList.membershipLifeSpan = 365;
+      userList.membershipLifeSpanSpecified = true;
 
       UserListConversionType conversionType = new UserListConversionType();
       conversionType.name = userList.name;
@@ -60,6 +62,7 @@ namespace com.google.api.adwords.examples.v201008 {
       UserListOperation operation = new UserListOperation();
       operation.operand = userList;
       operation.@operator = Operator.ADD;
+      operation.operatorSpecified = true;
 
       try {
         // Add user list.

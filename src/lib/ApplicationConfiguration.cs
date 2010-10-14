@@ -332,6 +332,6 @@ namespace com.google.api.adwords.lib {
     /// <summary>
     /// The publicly released version number.
     /// </summary>
-    public const String version = "10.1.0";
+    public const String version = "10.2.0";
   }
 }
