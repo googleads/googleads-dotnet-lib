@@ -219,7 +219,7 @@ Configuring the client library
 
 The client library may be configured using the settings exposed by App.config.
 For a detailed list of all the available configuration options, you can refer
-to TODO(Anash): Add wiki link here.
+to https://code.google.com/p/google-api-dfp-dotnet/wiki/UnderstandingAppConfig
 
 
 Miscellaneous
