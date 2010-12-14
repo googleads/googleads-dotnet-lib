@@ -1,0 +1,241 @@
+Google's DoubleClick for Publishers API DotNet Client Library
+=============================================================
+
+Google's DoubleClick for Publishers (DFP) API service lets developers design
+computer programs that interact directly with the DFP platform. With these
+applications, advertisers and third parties can more efficiently -- and
+creatively -- manage their large or complex DFP accounts
+
+The DFP API DotNet Client Library makes it easier to write .NET clients to
+programmatically access DFP accounts. All client library classes and
+utilities are in the "Google.Api.Ads.Dfp" namespace or sub-namespaces.
+The library is compatible with .NET SDK 2.0 and above. When using the library,
+you needn't worry about downloading WSDLs and such, since the library contains
+stub classes for all the supported services and takes care of details like SOAP
+marshalling and unmarshalling, SOAP logging, etc. The complete documentation for
+the DFP API is available from http://code.google.com/apis/dfp/docs/start.html.
+
+
+What's in the client library?
+-----------------------------
+
+The client library provides full access to all the functionality of the DFP
+API web services plus more. It includes:
+
+  - Data classes: The client library provides all the necessary data classes.
+    For example, it provides the Campaign data class for encapsulating campaign
+    data. These classes are generated automatically from WSDLs using wsdl.exe
+    and post-processed to provide features like
+    - Not having to specify xxxSpecified = true for each nullable property.
+    - Being able to treat SOAP faults as DFP exceptions rather than as
+      generic SoapExceptions.
+    - Reusing types across multiple services.
+
+  - DfpUser class: The DfpUser class provides methods for setting credentials
+    for accessing DFP accounts as well as for creating instances of the DFP
+    Service classes.
+
+  - Helpful utilities: The utilities located under
+    Google.Api.Ads.Dfp.Utils help you build statements, convert date strings
+    into datetime objects, etc.
+
+  - SOAP extensions: The client library provides you SOAP extensions that will
+    log http messages, SOAP request and response xmls, etc.
+
+
+How do I start?
+---------------
+
+The client library is provided as a Visual Studio project (source distribution)
+as well as a precompiled .NET assembly (binary distribution). You may continue
+reading the the appropriate section below, depending on the distribution you
+downloaded from the site.
+
+
+Binary distribution
+-------------------
+
+The binary distribution of DFP API DotNet client library consists of a
+precompiled version of the library as a .NET assembly, code examples for using
+the library, and library documentation. If you are interested in just using
+the library and not in its internals, you should download this distribution.
+
+The contents of this distribution are as follows:
+
+  \
+    \docs
+      - Documentation xmls for Google.Dfp.dll and Dfp.Examples.exe.
+      - Prebuilt help files for the client library in chm format.
+    \lib
+      - Precompiled library, Google.Dfp.dll.
+    \examples
+      - Client library examples, provided as a Visual Studio project.
+    README
+    ChangeLog
+    COPYING
+
+The examples folder contains code examples for all the major functionality
+supported by the library for all the supported versions of the API. To run
+the examples,
+
+- Open examples\Dfp.Examples.csproj in Visual Studio 2005/2008.
+- Open App.config and edit the following keys:
+  - ApplicationName: ENTER_YOUR_APPLICATION_NAME_HERE.
+  - Email: ENTER_YOUR_EMAIL_HERE.
+  - Password: ENTER_YOUR_PASSWORD_HERE.
+
+- Save and close App.config.
+- Open the Properties dialog for the Dfp.Examples project (Right click
+  the Dfp.Examples project in the Solution Explorer and select the
+  Properties option from the context menu.).
+- Navigate to the Debug Tab and enter the command line options. The command line
+  options are of the form version.examplename. For instance,
+  v201004.CreateCompanies is the command line option to run
+  v201004\CompanyService\CreateCompanies.cs.
+- Compile and run the Dfp.Examples project.
+
+Alternatively, each code example has a main() method, so you can set the
+appropriate code example as the Startup object (Select the Application tab on
+the Dfp.Examples Properties dialog and pick the desired class from the
+"Startup object" dropdown.).
+
+You can use the library in a new project as follows:
+
+- Create a new Visual Studio project of your choice (For instance, a C# Windows
+  application).
+- Copy Google.Dfp.dll to your project directory. If you have a folder for
+  keeping referenced libraries, then you may copy the assembly to this folder,
+  otherwise it is a good practice to create one (e.g \lib) to keep the
+  referenced assembly.
+- Add a reference to the library and to System.Web.Services in your project.
+- Copy examples\App.config to your project directory and add it to your project.
+  Edit the required keys in App.config. If your application has its own
+  App.config, then you can copy configuration/DfpApi,
+  configuration/system.web, configuration/configSections/section(
+  name="DfpApi"), and configuration/system.net nodes into your App.config.
+- Make a call to the library as follows:
+
+  DfpUser user = new DfpUser();
+  CompanyService service = (CompanyService) user.GetService(
+      DfpService.v201004.CompanyService);
+  // make more calls to service class.
+
+All the supported services in the client library are available as
+DfpService.vxxx.ServiceName, where vxxx is the API version (v201004, v201010)
+and ServiceName is the name of the service you want to create.
+
+Finally, if you wish to use this assembly in another .NET compatible language
+like VB.NET, then you may do so without any issues. The library is almost
+CLSCompliant (with the exception of Predicate.Operator.EQUALS, which has a name
+collision with Enum.Equals).
+
+
+Source distribution
+-------------------
+
+The source distribution of the Dfp API DotNet client library consists of
+individual Visual Studio projects for the client library, code examples and
+test cases, documentation for using the library, and support libraries and tools
+for compiling and running the library. If you are interested in the library
+internals you should download this distribution.
+
+The contents of this distribution are as follows:
+
+  /
+    /data
+       Data CSVs required by the library.
+    /docs
+      - Prebuilt help files for the client library in .CHM format.
+      - A .sbproj (Sandcastle project) for building the documentation.
+    /examples
+      - Client library examples, provided as a Visual Studio project.
+    /lib
+      - External client libraries referenced by various projects in the source
+        distribution.
+    /src
+      - Client library source, provided as a Visual Studio project.
+    /tests
+      - NAnt test cases for the library, provided as a Visual Studio project
+    README
+    ChangeLog
+    COPYING
+    Dfp.2005.sln
+    Dfp.2008.sln
+
+To compile and run the project:
+
+- Open Dfp.2005.sln or Dfp.2008.sln depending on the version of
+  Visual Studio you are using.
+- Open App.config under the Dfp.Examples project and edit the following
+  keys:
+  - ApplicationName: ENTER_YOUR_APPLICATION_NAME_HERE.
+  - Email: ENTER_YOUR_EMAIL_HERE.
+  - Password: ENTER_YOUR_PASSWORD_HERE.
+
+- Save and close App.config.
+- Open the Properties dialog for the Dfp.Examples project (Right click
+  the Dfp.Examples project in the Solution Explorer and select the
+  Properties option from the context menu.).
+- Navigate to the Debug tab and enter the command line options. The command line
+  options are of the form version.examplename. For instance,
+  v201004.CreateCompanies is the command line option to run
+  v201004\CompanyService\CreateCompanies.cs.
+- Set the Dfp.Examples project as the Startup project.
+- Compile and run the Dfp.Examples project.
+
+Alternatively, each code example has a main() method, so you can set the
+appropriate code example as the Startup object (Select the Application tab on
+the Dfp.Examples Properties dialog and pick the desired class from the
+"Startup object" dropdown.).
+
+To run the test cases, you need to download and install the latest version of
+NUnit from http://www.nunit.org/. Once you have installed NUnit, you can
+compile and run the test cases as follows:
+
+- Right click the Dfp.Tests project and choose References from the context
+  menu.
+  From the references dialog, add a reference to the nunit.framework assembly.
+- Right click the Dfp.Tests project and choose Properties. Navigate to the
+  Debug tab and choose "Start external program". Browse to the path for
+  nunit.exe and pick it as the Startup application.
+- Open App.config under the Dfp.Tests project and edit the following keys:
+  - ApplicationName: ENTER_YOUR_APPLICATION_NAME_HERE.
+  - Email: ENTER_YOUR_EMAIL_HERE.
+  - Password: ENTER_YOUR_PASSWORD_HERE.
+  - DfpApi.Server: https://sandbox.google.com
+
+- It is recommended that you run the test cases against a sandbox account. See
+  http://code.google.com/apis/dfp/docs/environments.html for details on using
+  the Dfp API Sandbox.
+- Set Dfp.Tests project as the startup project and run the project.
+
+If you wish to add the DFP client library as part of your workspace, then
+you need to copy \src folder and \data folder to your workspace folder and then
+add Dfp.csproj to your .sln.
+
+
+Configuring the client library
+------------------------------
+
+The client library may be configured using the settings exposed by App.config.
+For a detailed list of all the available configuration options, you can refer
+to https://code.google.com/p/google-api-dfp-dotnet/wiki/UnderstandingAppConfig
+
+
+Miscellaneous
+-------------
+
+Requires:
+    - .NET Framework 2.0 (or above)
+                        -- http://msdn2.microsoft.com/en-us/netframework/default.aspx
+    - Visual Studio     -- http://msdn2.microsoft.com/en-us/vstudio/default.aspx
+    - Google Account    -- https://www.google.com/accounts/NewAccount
+
+Bug tracker:
+    - https://code.google.com/p/google-api-dfp-dotnet/issues/list
+
+Support forum:
+    - http://groups.google.com/group/google-doubleclick-for-publishers-api/
+
+Author:
+    api.anash@gmail.com (Anash P. Oommen)
