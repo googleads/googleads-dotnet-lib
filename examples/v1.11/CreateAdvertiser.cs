@@ -68,7 +68,6 @@ namespace Google.Api.Ads.Dfa.Examples.v111 {
       advertiser.id = 0;
       advertiser.advertiserGroupId = 0;
       advertiser.approved = true;
-      advertiser.floodlightEnabled = true;
 
       try {
         // Create advertiser.

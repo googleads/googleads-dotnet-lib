@@ -290,9 +290,13 @@ namespace Google.Api.Ads.Common.Lib {
     /// <returns>The fault node.</returns>
     protected static XmlElement GetFaultNode(SoapException exception, string ns,
         string nodeName) {
-      XmlNamespaceManager xmlns = new XmlNamespaceManager(exception.Detail.OwnerDocument.NameTable);
-      xmlns.AddNamespace("api", ns);
-      return (XmlElement) exception.Detail.SelectSingleNode("api:" + nodeName, xmlns);
+      if (exception.Detail == null) {
+        return null;
+      } else {
+        XmlNamespaceManager xmlns = new XmlNamespaceManager(exception.Detail.OwnerDocument.NameTable);
+        xmlns.AddNamespace("api", ns);
+        return (XmlElement) exception.Detail.SelectSingleNode("api:" + nodeName, xmlns);
+      }
     }
   }
 }

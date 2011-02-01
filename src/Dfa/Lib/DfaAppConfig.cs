@@ -50,6 +50,11 @@ namespace Google.Api.Ads.Dfa.Lib {
     private const string PASSWORD = "Password";
 
     /// <summary>
+    /// Key name for applicationName.
+    /// </summary>
+    private const string APPLICATION_NAME = "ApplicationName";
+
+    /// <summary>
     /// Key name for DFA API URL.
     /// </summary>
     private const string DFAAPI_SERVER = "DfaApi.Server";
@@ -73,6 +78,11 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// Password to be used in getting authToken.
     /// </summary>
     private string password;
+
+    /// <summary>
+    /// Application name.
+    /// </summary>
+    private string applicationName;
 
     /// <summary>
     /// URL for DFA API.
@@ -122,6 +132,18 @@ namespace Google.Api.Ads.Dfa.Lib {
     }
 
     /// <summary>
+    /// Gets or sets the application name.
+    /// </summary>
+    public string ApplicationName {
+      get {
+        return applicationName;
+      }
+      set {
+        applicationName = value;
+      }
+    }
+
+    /// <summary>
     /// Gets or sets URL for DFA API.
     /// </summary>
     public string DfaApiServer {
@@ -153,6 +175,7 @@ namespace Google.Api.Ads.Dfa.Lib {
       authToken = "";
       userName = "";
       password = "";
+      applicationName = "";
       enableGzipCompression = true;
       shortNameField = "DfaApi-DotNet";
 
@@ -171,6 +194,7 @@ namespace Google.Api.Ads.Dfa.Lib {
       authToken = ReadSetting(settings, AUTHTOKEN, authToken);
       userName = ReadSetting(settings, USERNAME, userName);
       password = ReadSetting(settings, PASSWORD, password);
+      applicationName = ReadSetting(settings, APPLICATION_NAME, applicationName);
       enableGzipCompression = bool.Parse(ReadSetting(settings, ENABLE_GZIP_COMPRESSION,
           enableGzipCompression.ToString()));
 

@@ -11,7 +11,6 @@
     <document>https://advertisersapi.doubleclick.net/v1.11/api/dfa-api/creativefield?wsdl</document>
     <document>https://advertisersapi.doubleclick.net/v1.11/api/dfa-api/creativegroup?wsdl</document>
     <document>https://advertisersapi.doubleclick.net/v1.11/api/dfa-api/login?wsdl</document>
-    <document>https://advertisersapi.doubleclick.net/v1.11/api/dfa-api/mediaorder?wsdl</document>
     <document>https://advertisersapi.doubleclick.net/v1.11/api/dfa-api/network?wsdl</document>
     <document>https://advertisersapi.doubleclick.net/v1.11/api/dfa-api/placement?wsdl</document>
     <document>https://advertisersapi.doubleclick.net/v1.11/api/dfa-api/site?wsdl</document>
@@ -37,6 +36,7 @@
       </webref:webReferenceOptions>
     </webref:wsdlParameters>
   </generatecode>
+  <mergecode/>
   <processcode>
     <addusingstatement namespace="Google.Api.Ads.Dfa.Lib"/>
     <changebasetypefordeclaration typename="AdRemoteService"
@@ -77,10 +77,6 @@
         newbasetype="DfaSoapClient"/>
 
     <changebasetypefordeclaration typename="LoginRemoteService"
-        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
-        newbasetype="DfaSoapClient"/>
-
-    <changebasetypefordeclaration typename="MediaOrderRemoteService"
         oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
         newbasetype="DfaSoapClient"/>
 

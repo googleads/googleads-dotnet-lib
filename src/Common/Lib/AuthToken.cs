@@ -209,7 +209,9 @@ namespace Google.Api.Ads.Common.Lib {
         // Enum does not have a tryParse.
       }
 
-      return new AuthTokenException(errCode, url, captchaToken, captchaUrl,
+      string info = tblResponse.ContainsKey("Info") ? tblResponse["Info"] : String.Empty;
+
+      return new AuthTokenException(errCode, url, captchaToken, captchaUrl, info,
           CommonErrorMessages.AuthTokenLoginFailed, ex);
     }
 

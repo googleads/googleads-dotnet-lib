@@ -60,7 +60,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     public override SoapListener[] GetDefaultListeners() {
       // Order is important, WseSecurityListener should get the first shot, so
       // DfaTraceListener writes log with header.
-      return new SoapListener[] {WseSecurityListener.Instance, DfaTraceListener.Instance};
+      return new SoapListener[] {SoapHeaderListener.Instance, DfaTraceListener.Instance};
     }
   }
 }

@@ -37,6 +37,9 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// </summary>
     private DfaAppConfig config = new DfaAppConfig();
 
+    /// <summary>
+    /// The user token to be sent as part of Soap Headers.
+    /// </summary>
     private UserToken authToken = null;
 
     Dictionary<string, string> headers = new Dictionary<string, string>();
@@ -100,10 +103,28 @@ namespace Google.Api.Ads.Dfa.Lib {
         if (authToken == null) {
           authToken = GetAuthenticationToken(signature, user, serverUrl);
         }
+
         service.GetType().GetProperty("Token").SetValue(service, authToken, null);
+        if (Convert.ToDecimal(signature.Version.Substring(1)) > 1.11M) {
+          service.GetType().GetProperty("RequestHeader").SetValue(service,
+              GetRequestHeader(), null);
+          SetRequestHeaderNameSpace(signature as DfaServiceSignature, service);
+        }
       }
 
       return service;
+    }
+
+    /// <summary>
+    /// Gets the request header.
+    /// </summary>
+    /// <returns>The request header.</returns>
+    private RequestHeader GetRequestHeader() {
+      RequestHeader reqHeader = new RequestHeader();
+      if (headers.ContainsKey("applicationName")) {
+        reqHeader.ApplicationName = config.Signature + "|" + headers["applicationName"];
+      }
+      return reqHeader;
     }
 
     /// <summary>
@@ -133,6 +154,39 @@ namespace Google.Api.Ads.Dfa.Lib {
             userProfile.GetType().GetProperty("token").GetValue(userProfile, null).ToString());
       } catch (Exception ex) {
         throw new DfaException("Failed to authenticate user. See inner exception for details.", ex);
+      }
+    }
+
+    /// <summary>
+    /// Sets the request header namespace in outgoing Soap Requests.
+    /// </summary>
+    /// <param name="signature">The service creation parameters.</param>
+    /// <param name="service">The service object for which RequestHeader
+    /// needs to be patched.</param>
+    private static void SetRequestHeaderNameSpace(DfaServiceSignature signature,
+        AdsClient service) {
+      // Set the header namespace prefix. For all /cm services, the members
+      // shouldn't have xmlns. For all other services, the members should have
+      // /cm as xmlns.
+      object[] attributes = service.GetType().GetCustomAttributes(false);
+      foreach (object attribute in attributes) {
+        if (attribute is WebServiceBindingAttribute) {
+          WebServiceBindingAttribute binding = (WebServiceBindingAttribute) attribute;
+
+          string xmlns = binding.Namespace;
+          RequestHeader svcRequestHeader = null;
+          PropertyInfo propInfo = service.GetType().GetProperty("RequestHeader");
+          if (propInfo != null) {
+            svcRequestHeader = (RequestHeader) propInfo.GetValue(service, null);
+
+            if (svcRequestHeader != null) {
+              PropertyInfo wsPropInfo = svcRequestHeader.GetType().GetProperty("TargetNamespace");
+              if (wsPropInfo != null) {
+                wsPropInfo.SetValue(svcRequestHeader, xmlns, null);
+              }
+            }
+          }
+        }
       }
     }
 
@@ -176,6 +230,7 @@ namespace Google.Api.Ads.Dfa.Lib {
 
       configHeaders["userName"] = dfaConfig.UserName;
       configHeaders["password"] = dfaConfig.Password;
+      configHeaders["applicationName"] = dfaConfig.ApplicationName;
 
       return configHeaders;
     }

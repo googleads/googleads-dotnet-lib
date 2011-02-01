@@ -82,11 +82,15 @@
     <Compile Include="Dfa\Lib\DfaSoapClient.cs" />
     <Compile Include="Dfa\Lib\DfaTraceListener.cs" />
     <Compile Include="Dfa\Lib\DfaUser.cs" />
+    <Compile Include="Dfa\Lib\RequestHeader.cs" />
+    <Compile Include="Dfa\Lib\ResponseHeader.cs" />
+    <Compile Include="Dfa\Lib\SoapHeaderListener.cs" />
     <Compile Include="Dfa\Lib\UserToken.cs" />
-    <Compile Include="Dfa\Lib\WseSecurityListener.cs" />
     <Compile Include="Dfa\Util\ApiCodes\ErrorCode.cs" />
     <Compile Include="Dfa\v111\DfaApi.cs" />
     <Compile Include="Dfa\v111\DfaServiceV111.cs" />
+    <Compile Include="Dfa\v112\DfaApi.cs" />
+    <Compile Include="Dfa\v112\DfaServiceV112.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Common\CommonErrorMessages.Designer.cs">

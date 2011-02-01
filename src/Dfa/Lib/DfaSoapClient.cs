@@ -39,13 +39,45 @@ namespace Google.Api.Ads.Dfa.Lib {
     UserToken token = null;
 
     /// <summary>
+    /// The optional request header for sending additional details.
+    /// </summary>
+    RequestHeader requestHeader = null;
+
+    /// <summary>
+    /// The response header from DFA server.
+    /// </summary>
+    ResponseHeader responseHeader = null;
+
+    /// <summary>
+    /// Gets or sets the request header.
+    /// </summary>
+    public RequestHeader RequestHeader {
+      get {
+        return requestHeader;
+      } set {
+        requestHeader = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the response header.
+    /// </summary>
+    public ResponseHeader ResponseHeader {
+      get {
+        return responseHeader;
+      }
+      set {
+        responseHeader = value;
+      }
+    }
+
+    /// <summary>
     /// Gets or sets the token for authentication purposes.
     /// </summary>
     public UserToken Token {
       get {
         return token;
-      }
-      set {
+      } set {
         token = value;
       }
     }
@@ -63,10 +95,14 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// </returns>
     protected override object[] MakeApiCall(string methodName, object[] parameters) {
       try {
+        ContextStore.AddKey("RequestHeader", requestHeader);
         ContextStore.AddKey("Token", token);
         return base.MakeApiCall(methodName, parameters);
       } finally {
-        ContextStore.AddKey("Token", token);
+        this.ResponseHeader = (ResponseHeader) ContextStore.GetValue("ResponseHeader");
+        ContextStore.RemoveKey("RequestHeader");
+        ContextStore.RemoveKey("ResponseHeader");
+        ContextStore.RemoveKey("Token");
       }
     }
 
@@ -84,16 +120,20 @@ namespace Google.Api.Ads.Dfa.Lib {
       object apiException = Activator.CreateInstance(Type.GetType(
           this.GetType().Namespace + ".ApiException"));
       XmlNode faultNode = ex.Detail.SelectSingleNode(nodeName);
-      ErrorCode errorCode = new ErrorCode();
-      foreach (XmlElement xNode in faultNode.SelectNodes("*")) {
-        switch (xNode.Name) {
-          case "errorCode":
-            errorCode.Code = int.Parse(xNode.InnerText);
-            break;
+      ErrorCode errorCode = null;
 
-          case "errorMessage":
-            errorCode.Description = xNode.InnerText;
-            break;
+      if (faultNode != null) {
+        errorCode = new ErrorCode();
+        foreach (XmlElement xNode in faultNode.SelectNodes("*")) {
+          switch (xNode.Name) {
+            case "errorCode":
+              errorCode.Code = int.Parse(xNode.InnerText);
+              break;
+
+            case "errorMessage":
+              errorCode.Description = xNode.InnerText;
+              break;
+          }
         }
       }
       return new DfaApiException(errorCode, ex.Message, ex);

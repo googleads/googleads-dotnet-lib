@@ -90,12 +90,6 @@ namespace Google.Api.Ads.Dfa.Lib {
       public static readonly ServiceSignature LoginRemoteService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/dfa/docs/reference/current/mediaorder/service.html">
-      /// this page </a> for details.
-      /// </summary>
-      public static readonly ServiceSignature MediaOrderRemoteService;
-
-      /// <summary>
       /// See <a href="http://code.google.com/apis/dfa/docs/reference/current/network/service.html">
       /// this page </a> for details.
       /// </summary>
@@ -173,8 +167,6 @@ namespace Google.Api.Ads.Dfa.Lib {
         CreativeGroupRemoteService = DfaService.MakeServiceSignature("v1.11",
             "CreativeGroupRemoteService");
         LoginRemoteService = DfaService.MakeServiceSignature("v1.11", "LoginRemoteService");
-        MediaOrderRemoteService = DfaService.MakeServiceSignature("v1.11",
-            "MediaOrderRemoteService");
         NetworkRemoteService = DfaService.MakeServiceSignature("v1.11", "NetworkRemoteService");
         PlacementRemoteService = DfaService.MakeServiceSignature("v1.11", "PlacementRemoteService");
         SiteRemoteService = DfaService.MakeServiceSignature("v1.11", "SiteRemoteService");
