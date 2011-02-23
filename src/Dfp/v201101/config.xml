@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<actions xmlns="http://code.google.com/p/google-api-adwords-dotnet">
+  <downloadwsdl>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/CompanyService?wsdl</document>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/CreativeService?wsdl</document>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/CustomTargetingService?wsdl</document>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/ForecastService?wsdl</document>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/InventoryService?wsdl</document>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/LineItemService?wsdl</document>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/LineItemCreativeAssociationService?wsdl</document>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/NetworkService?wsdl</document>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/OrderService?wsdl</document>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/PlacementService?wsdl</document>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/PublisherQueryLanguageService?wsdl</document>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/ReportService?wsdl</document>
+    <document>https://sandbox.google.com/apis/ads/publisher/v201101/UserService?wsdl</document>
+  </downloadwsdl>
+  <processwsdl>
+    <patchminoccurs servicename="CreativeService" methodname="getCreative"/>
+    <patchminoccurs servicename="OrderService" methodname="getOrder"/>
+    <patchminoccurs servicename="LineItemService" methodname="getLineItem"/>
+    <patchminoccurs servicename="PlacementService" methodname="getPlacement"/>
+    <patchminoccurs servicename="CompanyService" methodname="getCompany"/>
+    <patchminoccurs servicename="LineItemCreativeAssociationService" methodname="getLineItemCreativeAssociation"/>
+    <patchminoccurs servicename="UserService" methodname="getUser"/>
+    <patchminoccurs servicename="ReportService" methodname="getReportDownloadURL"/>
+    <patchminoccurs servicename="ReportService" methodname="getReportJob"/>
+    <patchminoccurs servicename="ForecastService" methodname="getForecastById"/>
+    <patchwithdummy servicename="PublisherQueryLanguageService" typename="Row"/>
+    <patchforapiexception typename="SoapRequestHeader" prefix="tns"/>
+  </processwsdl>
+  <generatecode>
+    <webref:wsdlParameters xmlns:webref="http://microsoft.com/webReference/">
+      <webref:sharetypes>true</webref:sharetypes>
+      <webref:documents/>
+      <webref:namespace>Google.Api.Ads.Dfp.v201101</webref:namespace>
+      <webref:webReferenceOptions>
+        <webref:verbose>false</webref:verbose>
+        <webref:codeGenerationOptions>properties</webref:codeGenerationOptions>
+        <webref:style>client</webref:style>
+      </webref:webReferenceOptions>
+    </webref:wsdlParameters>
+  </generatecode>
+  <mergecode/>
+  <processcode>
+    <addusingstatement namespace="Google.Api.Ads.Dfp.Lib"/>
+
+    <changebasetypefordeclaration typename="CompanyService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changebasetypefordeclaration typename="CreativeService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changebasetypefordeclaration typename="CustomTargetingService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changebasetypefordeclaration typename="ForecastService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changebasetypefordeclaration typename="InventoryService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changebasetypefordeclaration typename="LineItemService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changebasetypefordeclaration typename="LineItemCreativeAssociationService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changebasetypefordeclaration typename="NetworkService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changebasetypefordeclaration typename="OrderService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changebasetypefordeclaration typename="PlacementService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changebasetypefordeclaration typename="PublisherQueryLanguageService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changebasetypefordeclaration typename="ReportService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changebasetypefordeclaration typename="UserService"
+        oldbasetype="System.Web.Services.Protocols.SoapHttpClientProtocol"
+        newbasetype="DfpSoapClient"/>
+    <changeallreferenceoftype oldtypename="SoapRequestHeader" newtypename="RequestHeader"/>
+    <changeallreferenceoftype oldtypename="SoapResponseHeader" newtypename="ResponseHeader"/>
+    <removeTypeDeclaration typename="SoapRequestHeader"/>
+    <removeTypeDeclaration typename="SoapResponseHeader"/>
+    <patchxxxspecified />
+  </processcode>
+</actions>
