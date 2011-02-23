@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -131,10 +131,10 @@ namespace Google.Api.Ads.Dfp.Tests.v201010 {
       lineItem.creativeSizes = new Size[] {size};
 
       // Set the length of the line item to run.
-      lineItem.startDateTime = DateTimeUtilities.FromString("20100901 00:00:00");
+      lineItem.startDateTime = DateTimeUtilities.FromDateTime(System.DateTime.Today.AddDays(1));
       lineItem.startDateTime.timeZoneID = "America/New_York";
 
-      lineItem.endDateTime = DateTimeUtilities.FromString("20100930 00:00:00");
+      lineItem.endDateTime = DateTimeUtilities.FromDateTime(System.DateTime.Today.AddMonths(1));
       lineItem.endDateTime.timeZoneID = "America/New_York";
 
       // Set the cost per unit to $2.
