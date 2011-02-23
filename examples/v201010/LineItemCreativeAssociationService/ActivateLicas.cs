@@ -23,17 +23,17 @@ using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.v201010 {
   /// <summary>
-  /// This code example deactivates all LICAs for the line item. To determine
-  /// which LICAs exist, run GetAllLicas.cs.
+  /// This code example activates all deactivated LICAs for the line item. To
+  /// determine which LICAs exist, run GetAllLicas.cs.
   /// </summary>
-  class DeactivateLicas : SampleBase {
+  class ActivateLicas : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example deactivates all LICAs for the line item. To determine which " +
-            "LICAs exist, run GetAllLicas.cs.";
+        return "This code example activates all deactivated LICAs for the line item. To " +
+            "determine which LICAs exist, run GetAllLicas.cs.";
       }
     }
 
@@ -42,7 +42,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      SampleBase codeExample = new DeactivateLicas();
+      SampleBase codeExample = new ActivateLicas();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -61,7 +61,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
 
       String statementText = "WHERE lineItemId = :lineItemId and status = :status LIMIT 500";
       Statement statement = new StatementBuilder("").AddParam("lineItemId", lineItemId).
-          AddParam("status", LineItemCreativeAssociationStatus.ACTIVE.ToString()).ToStatement();
+          AddParam("status", LineItemCreativeAssociationStatus.INACTIVE.ToString()).ToStatement();
 
       // Sets defaults for page and offset.
       LineItemCreativeAssociationPage page = new LineItemCreativeAssociationPage();
@@ -80,7 +80,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
             int i = page.startIndex;
             foreach (LineItemCreativeAssociation lica in page.results) {
               Console.WriteLine("{0}) LICA with line item ID = '{1}', creative ID ='{2}' and " +
-                  "status ='{3}' will be deactivated.", i, lica.lineItemId, lica.creativeId,
+                  "status ='{3}' will be activated.", i, lica.lineItemId, lica.creativeId,
                   lica.status);
               i++;
               creativeIds.Add(lica.creativeId.ToString());
@@ -90,7 +90,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
           offset += 500;
         } while (offset < page.totalResultSetSize);
 
-        Console.WriteLine("Number of LICAs to be deactivated: {0}", creativeIds.ToArray());
+        Console.WriteLine("Number of LICAs to be activated: {0}", creativeIds.Count);
 
         if (creativeIds.Count > 0) {
           // Create action Statement.
@@ -100,8 +100,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
               AddParam("lineItemId", lineItemId).ToStatement();
 
           // Create action.
-          DeactivateLineItemCreativeAssociations action =
-              new DeactivateLineItemCreativeAssociations();
+          ActivateLineItemCreativeAssociations action =
+              new ActivateLineItemCreativeAssociations();
 
           // Perform action.
           UpdateResult result =
@@ -109,13 +109,13 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
 
           // Display results.
           if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of LICAs deactivated: {0}" + result.numChanges);
+            Console.WriteLine("Number of LICAs activated: {0}", result.numChanges);
           } else {
-            Console.WriteLine("No LICAs were deactivated.");
+            Console.WriteLine("No LICAs were activated.");
           }
         }
       } catch (Exception ex) {
-        Console.WriteLine("Failed to deactivate LICAs. Exception says \"{0}\"", ex.Message);
+        Console.WriteLine("Failed to activate LICAs. Exception says \"{0}\"", ex.Message);
       }
     }
   }

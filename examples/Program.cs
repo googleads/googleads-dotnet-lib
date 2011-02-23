@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -67,6 +67,7 @@ namespace Google.Api.Ads.Dfp.Examples {
       RegisterSample("v201004.GetInventoryTree", new v201004.GetInventoryTree());
       RegisterSample("v201004.UpdateAdUnits", new v201004.UpdateAdUnits());
       RegisterSample("v201004.CreateLicas", new v201004.CreateLicas());
+      RegisterSample("v201004.ActivateLicas", new v201004.ActivateLicas());
       RegisterSample("v201004.DeactivateLicas", new v201004.DeactivateLicas());
       RegisterSample("v201004.GetAllLicas", new v201004.GetAllLicas());
       RegisterSample("v201004.GetLica", new v201004.GetLica());
@@ -126,6 +127,7 @@ namespace Google.Api.Ads.Dfp.Examples {
       RegisterSample("v201010.GetInventoryTree", new v201010.GetInventoryTree());
       RegisterSample("v201010.UpdateAdUnits", new v201010.UpdateAdUnits());
       RegisterSample("v201010.CreateLicas", new v201010.CreateLicas());
+      RegisterSample("v201010.ActivateLicas", new v201010.ActivateLicas());
       RegisterSample("v201010.DeactivateLicas", new v201010.DeactivateLicas());
       RegisterSample("v201010.GetAllLicas", new v201010.GetAllLicas());
       RegisterSample("v201010.GetLica", new v201010.GetLica());
@@ -164,6 +166,87 @@ namespace Google.Api.Ads.Dfp.Examples {
       RegisterSample("v201010.GetForecastById", new v201010.GetForecastById());
       RegisterSample("v201010.GetAllNetworks", new v201010.GetAllNetworks());
       RegisterSample("v201010.GetCurrentNetwork", new v201010.GetCurrentNetwork());
+
+      // Add v201101 code examples.
+      RegisterSample("v201101.CreateCompanies", new v201101.CreateCompanies());
+      RegisterSample("v201101.GetAllCompanies", new v201101.GetAllCompanies());
+      RegisterSample("v201101.GetCompaniesByStatement", new v201101.GetCompaniesByStatement());
+      RegisterSample("v201101.GetCompany", new v201101.GetCompany());
+      RegisterSample("v201101.UpdateCompanies", new v201101.UpdateCompanies());
+      RegisterSample("v201101.CreateCreatives", new v201101.CreateCreatives());
+      RegisterSample("v201101.CopyImageCreatives", new v201101.CopyImageCreatives());
+      RegisterSample("v201101.GetAllCreatives", new v201101.GetAllCreatives());
+      RegisterSample("v201101.GetCreative", new v201101.GetCreative());
+      RegisterSample("v201101.GetCreativesByStatement", new v201101.GetCreativesByStatement());
+      RegisterSample("v201101.UpdateCreatives", new v201101.UpdateCreatives());
+      RegisterSample("v201101.CreateAdUnits", new v201101.CreateAdUnits());
+      RegisterSample("v201101.DeActivateAdUnits", new v201101.DeActivateAdUnits());
+      RegisterSample("v201101.GetAdUnit", new v201101.GetAdUnit());
+      RegisterSample("v201101.GetAdUnitsByStatement", new v201101.GetAdUnitsByStatement());
+      RegisterSample("v201101.GetAllAdUnits", new v201101.GetAllAdUnits());
+      RegisterSample("v201101.GetInventoryTree", new v201101.GetInventoryTree());
+      RegisterSample("v201101.UpdateAdUnits", new v201101.UpdateAdUnits());
+      RegisterSample("v201101.CreateLicas", new v201101.CreateLicas());
+      RegisterSample("v201101.ActivateLicas", new v201101.ActivateLicas());
+      RegisterSample("v201101.DeactivateLicas", new v201101.DeactivateLicas());
+      RegisterSample("v201101.GetAllLicas", new v201101.GetAllLicas());
+      RegisterSample("v201101.GetLica", new v201101.GetLica());
+      RegisterSample("v201101.GetLicasByStatement", new v201101.GetLicasByStatement());
+      RegisterSample("v201101.UpdateLicas", new v201101.UpdateLicas());
+      RegisterSample("v201101.ActivateLineItem", new v201101.ActivateLineItem());
+      RegisterSample("v201101.CreateLineItems", new v201101.CreateLineItems());
+      RegisterSample("v201101.GetAllLineItems", new v201101.GetAllLineItems());
+      RegisterSample("v201101.GetLineItem", new v201101.GetLineItem());
+      RegisterSample("v201101.GetLineItemsByStatement", new v201101.GetLineItemsByStatement());
+      RegisterSample("v201101.UpdateLineItems", new v201101.UpdateLineItems());
+      RegisterSample("v201101.ApproveOrder", new v201101.ApproveOrder());
+      RegisterSample("v201101.CreateOrders", new v201101.CreateOrders());
+      RegisterSample("v201101.GetAllOrders", new v201101.GetAllOrders());
+      RegisterSample("v201101.GetOrder", new v201101.GetOrder());
+      RegisterSample("v201101.GetOrdersByStatement", new v201101.GetOrdersByStatement());
+      RegisterSample("v201101.UpdateOrders", new v201101.UpdateOrders());
+      RegisterSample("v201101.CreatePlacements", new v201101.CreatePlacements());
+      RegisterSample("v201101.DeactivatePlacement", new v201101.DeactivatePlacement());
+      RegisterSample("v201101.GetAllPlacements", new v201101.GetAllPlacements());
+      RegisterSample("v201101.GetPlacement", new v201101.GetPlacement());
+      RegisterSample("v201101.GetPlacementsByStatement", new v201101.GetPlacementsByStatement());
+      RegisterSample("v201101.UpdatePlacements", new v201101.UpdatePlacements());
+      RegisterSample("v201101.CreateUsers", new v201101.CreateUsers());
+      RegisterSample("v201101.DeactivateUser", new v201101.DeactivateUser());
+      RegisterSample("v201101.GetAllRoles", new v201101.GetAllRoles());
+      RegisterSample("v201101.GetAllUsers", new v201101.GetAllUsers());
+      RegisterSample("v201101.GetUser", new v201101.GetUser());
+      RegisterSample("v201101.GetUsersByStatement", new v201101.GetUsersByStatement());
+      RegisterSample("v201101.UpdateUsers", new v201101.UpdateUsers());
+      RegisterSample("v201101.RunInventoryReport", new v201101.RunInventoryReport());
+      RegisterSample("v201101.RunDeliveryReport", new v201101.RunDeliveryReport());
+      RegisterSample("v201101.RunSalesReport", new v201101.RunSalesReport());
+      RegisterSample("v201101.RunSalesReport", new v201101.DownloadReport());
+      RegisterSample("v201101.GetForecast", new v201101.GetForecast());
+      RegisterSample("v201101.GetForecastById", new v201101.GetForecastById());
+      RegisterSample("v201101.GetAllNetworks", new v201101.GetAllNetworks());
+      RegisterSample("v201101.GetCurrentNetwork", new v201101.GetCurrentNetwork());
+
+      RegisterSample("v201101.CreateCustomTargetingKeysAndValues",
+          new v201101.CreateCustomTargetingKeysAndValues());
+      RegisterSample("v201101.GetAllCustomTargetingKeysAndValues",
+          new v201101.GetAllCustomTargetingKeysAndValues());
+      RegisterSample("v201101.GetCustomTargetingKeysByStatement",
+          new v201101.GetCustomTargetingKeysByStatement());
+      RegisterSample("v201101.GetCustomTargetingValuesByStatement",
+          new v201101.GetCustomTargetingValuesByStatement());
+      RegisterSample("v201101.UpdateCustomTargetingKeys", new v201101.UpdateCustomTargetingKeys());
+      RegisterSample("v201101.UpdateCustomTargetingValues",
+          new v201101.UpdateCustomTargetingValues());
+      RegisterSample("v201101.DeleteCustomTargetingValues",
+          new v201101.DeleteCustomTargetingValues());
+      RegisterSample("v201101.DeleteCustomTargetingKeys", new v201101.DeleteCustomTargetingKeys());
+      RegisterSample("v201101.TargetCustomCriteria", new v201101.TargetCustomCriteria());
+
+      RegisterSample("v201101.GetAllCities", new v201101.GetAllCities());
+      RegisterSample("v201101.GetAllMetros", new v201101.GetAllMetros());
+      RegisterSample("v201101.GetAllRegions", new v201101.GetAllRegions());
+      RegisterSample("v201101.GetAllCountries", new v201101.GetAllCountries());
     }
 
     /// <summary>
@@ -195,6 +278,17 @@ namespace Google.Api.Ads.Dfp.Examples {
       } else if (string.Compare(args[0], "--v201010all", true) == 0) {
         List<SamplePair> matchingItems = sampleMap.FindAll(delegate(SamplePair pair) {
           return pair.Key.StartsWith("v201010");
+        });
+        foreach (SamplePair matchingItem in matchingItems) {
+          SampleBase sample = matchingItem.Value;
+          Console.WriteLine(sample.Description);
+          sample.Run(user);
+          Console.WriteLine("Press [Enter] to continue");
+          Console.ReadLine();
+        }
+      } else if (string.Compare(args[0], "--v201101all", true) == 0) {
+        List<SamplePair> matchingItems = sampleMap.FindAll(delegate(SamplePair pair) {
+          return pair.Key.StartsWith("v201101");
         });
         foreach (SamplePair matchingItem in matchingItems) {
           SampleBase sample = matchingItem.Value;

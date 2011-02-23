@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -94,8 +94,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
 
         if (orderIds.Count > 0) {
           // Create action Statement.
-          statement = new StatementBuilder("WHERE id IN (:ids)").AddParam("ids", string.Join(",",
-              orderIds.ToArray())).ToStatement();
+          statement = new StatementBuilder(
+              string.Format("WHERE id IN ({0})", string.Join(",", orderIds.ToArray()))).
+              ToStatement();
 
           // Create action.
           ApproveAndOverbookOrders action = new ApproveAndOverbookOrders();

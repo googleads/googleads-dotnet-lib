@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
       // Set the order that all created line items will belong to and the
       // placement ID to target.
       long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
-      long[] targetPlacementIds = new long[] { long.Parse("INSERT_PLACEMENT_ID_HERE") };
+      long[] targetPlacementIds = new long[] { long.Parse(_T("INSERT_PLACEMENT_ID_HERE")) };
 
       // Create an array to store local line item objects.
       LineItem[] lineItems = new LineItem[5];
@@ -91,7 +91,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
 
         // Set the length of the line item to run.
         lineItem.startType = LineItemSummaryStartType.IMMEDIATELY;
-        lineItem.endDateTime = DateTimeUtilities.FromString("20110901 00:00:00");
+        lineItem.endDateTime = DateTimeUtilities.FromDateTime(System.DateTime.Today.AddMonths(1));
 
         // Set the cost per unit to $2.
         lineItem.costType = CostType.CPM;

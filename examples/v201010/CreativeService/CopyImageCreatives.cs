@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -58,12 +58,24 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
       CreativeService creativeService =
           (CreativeService) user.GetService(DfpService.v201010.CreativeService);
 
-      long creativeId = long.Parse(_T("INSERT_IMAGE_CREATIVE_ID_HERE"));
+      long[] creativeIds = new long[] {long.Parse(_T("INSERT_IMAGE_CREATIVE_ID_HERE"))};
+
+      // Build a comma separated list of creativeIds. Note that if you are using
+      // .NET 4.0 or above, you could use the newly introduced
+      // String.Join<T>(string separator, IEnumerable<T> values) method to
+      // perform this task.
+      string[] creativeIdTexts = new string[creativeIds.Length];
+      for (int i = 0; i < creativeIdTexts.Length; i++) {
+        creativeIdTexts[i] = creativeIds[i].ToString();
+      }
+
+      string commaSeparatedCreativeIds = string.Join(",", creativeIdTexts);
 
       // Create the statement to filter image creatives by id.
-      Statement statement =
-          new StatementBuilder("WHERE id IN (" + creativeId.ToString() + ") and creativeType = " +
-              ":creativeType LIMIT 500").AddParam("creativeType", "ImageCreative").ToStatement();
+      Statement statement = new StatementBuilder(
+          string.Format("WHERE id IN ({0}) and creativeType = :creativeType LIMIT 500",
+              commaSeparatedCreativeIds)).AddParam("creativeType", "ImageCreative").
+              ToStatement();
 
       try {
         // Retrieve all creatives which match.

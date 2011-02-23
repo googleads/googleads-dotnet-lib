@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -125,7 +125,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
         if (placements != null) {
           foreach (Placement placement in placements) {
             Console.Write("A placement with ID = '{0}', name ='{1}', and containing " +
-                "ad units {", placement.id, placement.name);
+                "ad units {{", placement.id, placement.name);
 
             if (placement.targetedAdUnitIds != null) {
               foreach (string adUnitId in placement.targetedAdUnitIds) {
