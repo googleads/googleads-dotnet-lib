@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// an existing line item and a set of creative ids. For small business
   /// networks, the creative ids must represent new or copied creatives as
   /// creatives cannot be used for more than one line item. For premium
-  /// solution networks, the creative ids can represent any creatvie. To copy
+  /// solution networks, the creative ids can represent any creative. To copy
   /// creatives, run CopyImageCreatives.cs. To determine which LICAs exist, run
   /// GetAllLicasExample.cs.
   /// </summary>
@@ -40,7 +40,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
             "existing line item and a set of creative ids. For small business networks, the " +
             "creative ids must represent new or copied creatives as creatives cannot be used " +
             "for more than one line item. For premium solution networks, the creative ids can " +
-            "represent any creatvie. To copy creatives, run CopyImageCreatives.cs. To determine " +
+            "represent any creative. To copy creatives, run CopyImageCreatives.cs. To determine " +
             "which LICAs exist, run GetAllLicasExample.cs.";
       }
     }

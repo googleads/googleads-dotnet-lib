@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -94,9 +94,10 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
 
         if (creativeIds.Count > 0) {
           // Create action Statement.
-          statement = new StatementBuilder("WHERE lineItemId = :lineItemId and creativeId " +
-              "IN (:ids)").AddParam("lineItemId", lineItemId).AddParam("ids", string.Join(",",
-                  creativeIds.ToArray())).ToStatement();
+          statement = new StatementBuilder(
+              string.Format("WHERE lineItemId = :lineItemId and creativeId IN ({0})",
+                  string.Join(",", creativeIds.ToArray()))).
+              AddParam("lineItemId", lineItemId).ToStatement();
 
           // Create action.
           DeactivateLineItemCreativeAssociations action =

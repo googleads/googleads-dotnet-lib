@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -92,8 +92,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
 
         if (adUnitIds.Count > 0) {
           // Create action Statement.
-          statement = new StatementBuilder("WHERE id IN (:ids)").AddParam("ids",
-              String.Join(",", adUnitIds.ToArray())).ToStatement();
+          statement = new StatementBuilder(
+              string.Format("WHERE id IN ({0})", string.Join(",", adUnitIds.ToArray()))).
+              ToStatement();
 
           // Create action.
           DeactivateAdUnits action = new DeactivateAdUnits();

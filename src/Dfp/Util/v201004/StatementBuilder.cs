@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -44,6 +44,17 @@ namespace Google.Api.Ads.Dfp.Util.v201004 {
       statement = new Statement();
       statement.query = query;
       paramEntries = new List<String_ParamMapEntry>();
+    }
+
+    /// <summary>
+    /// Gets or sets the statement query.
+    /// </summary>
+    public string Query {
+      get {
+        return statement.query;
+      } set {
+        statement.query = value;
+      }
     }
 
     /// <summary>

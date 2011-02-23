@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -105,6 +105,23 @@ namespace Google.Api.Ads.Common.Util {
           writer.Close();
         }
       }
+    }
+
+    /// <summary>
+    /// Writes the contents of the CsvFile object into a string.
+    /// </summary>
+    /// <returns>The CsvFile object contents as a string.</returns>
+    public string WriteToString() {
+      StringWriter writer = new StringWriter();
+      if (Headers != null) {
+        StringBuilder builder = ConvertRowToCsvString(Headers.ToArray());
+        writer.WriteLine(builder.ToString().TrimEnd(','));
+      }
+      foreach (string[] row in Records) {
+        StringBuilder builder = ConvertRowToCsvString(row);
+        writer.WriteLine(builder.ToString().TrimEnd(','));
+      }
+      return writer.ToString();
     }
 
     /// <summary>

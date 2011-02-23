@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
           if (page.results != null && page.results.Length > 0) {
             int i = page.startIndex;
             foreach (User usr in page.results) {
-              Console.WriteLine("{0}) User with ID = '{1}', email = '{1}', and role = '{2}'" +
+              Console.WriteLine("{0}) User with ID = '{1}', email = '{2}', and role = '{3}'" +
                   " was found.", i, usr.id, usr.email, usr.roleName);
               i++;
             }

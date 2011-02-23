@@ -84,10 +84,15 @@
     <Compile Include="Dfp\Util\v201004\StatementBuilder.cs" />
     <Compile Include="Dfp\Util\v201010\DateTimeUtilities.cs" />
     <Compile Include="Dfp\Util\v201010\StatementBuilder.cs" />
+    <Compile Include="Dfp\Util\v201101\DateTimeUtilities.cs" />
+    <Compile Include="Dfp\Util\v201101\PqlUtilities.cs" />
+    <Compile Include="Dfp\Util\v201101\StatementBuilder.cs" />
     <Compile Include="Dfp\v201004\DfpApi.cs" />
     <Compile Include="Dfp\v201004\DfpServiceV201004.cs" />
     <Compile Include="Dfp\v201010\DfpApi.cs" />
     <Compile Include="Dfp\v201010\DfpServiceV201010.cs" />
+    <Compile Include="Dfp\v201101\DfpApi.cs" />
+    <Compile Include="Dfp\v201101\DfpServiceV201101.cs" />
     <Compile Include="Dfp\RequestHeader.cs" />
     <Compile Include="Dfp\ResponseHeader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
