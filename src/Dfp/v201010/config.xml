@@ -24,7 +24,7 @@
     <patchminoccurs servicename="ReportService" methodname="getReportDownloadURL"/>
     <patchminoccurs servicename="ReportService" methodname="getReportJob"/>
     <patchminoccurs servicename="ForecastService" methodname="getForecastById"/>
-    <patchforapiexception typename="SoapRequestHeader"/>
+    <patchforapiexception typename="SoapRequestHeader" prefix="tns"/>
   </processwsdl>
   <generatecode>
     <webref:wsdlParameters xmlns:webref="http://microsoft.com/webReference/">

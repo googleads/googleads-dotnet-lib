@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -545,6 +545,7 @@ namespace Google.Api.Ads.Dfp.v201010 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InternalApiError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CommonError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthenticationError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApiVersionError))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -575,11 +576,12 @@ namespace Google.Api.Ads.Dfp.v201010 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitHierarchyError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LineItemCreativeAssociationOperationError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LineItemCreativeAssociationError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(StringLengthError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeoTargetingError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(OrderError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(OrderActionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidEmailError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(StringLengthError))]
   public abstract partial class ApiError {
     private string fieldPathField;
 
@@ -1006,6 +1008,45 @@ namespace Google.Api.Ads.Dfp.v201010 {
     NETWORK_NOT_FOUND,
     NETWORK_CODE_REQUIRED,
     CONNECTION_ERROR
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
+  public partial class ApiVersionError : ApiError {
+    private ApiVersionErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public ApiVersionErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ApiVersionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
+  public enum ApiVersionErrorReason {
+    UPDATE_TO_NEWER_VERSION
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApiException))]
@@ -2189,12 +2230,12 @@ Creative[] creatives) {
     }
   }
 
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(HasDestinationUrlCreative))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageCreative))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashCreative))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageRedirectCreative))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashRedirectCreative))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ThirdPartyCreative))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(HasDestinationUrlCreative))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageRedirectCreative))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageCreative))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashRedirectCreative))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashCreative))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2379,10 +2420,78 @@ Creative[] creatives) {
     }
   }
 
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageCreative))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashCreative))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
+  public partial class ThirdPartyCreative : Creative {
+    private string snippetField;
+
+    private string expandedSnippetField;
+
+    private ThirdPartyCreativeFormatStatus formatStatusField;
+
+    private bool formatStatusFieldSpecified;
+
+    public string snippet {
+      get {
+        return this.snippetField;
+      }
+      set {
+        this.snippetField = value;
+      }
+    }
+
+    public string expandedSnippet {
+      get {
+        return this.expandedSnippetField;
+      }
+      set {
+        this.expandedSnippetField = value;
+      }
+    }
+
+    public ThirdPartyCreativeFormatStatus formatStatus {
+      get {
+        return this.formatStatusField;
+      }
+      set {
+        this.formatStatusField = value;
+        this.formatStatusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool formatStatusSpecified {
+      get {
+        return this.formatStatusFieldSpecified;
+      }
+      set {
+        this.formatStatusFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ThirdPartyCreative.FormatStatus", Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
+  public enum ThirdPartyCreativeFormatStatus {
+    EMPTY,
+    UNRECOGNIZED,
+    RECOGNIZED,
+    RECOGNIZED_NO_MACROS_NECESSARY,
+    DISALLOWED,
+    ADSENSE,
+    MAY_REQUIRE_MANUAL_MACROS,
+    ALREADY_HAS_MACROS
+  }
+
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageRedirectCreative))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageCreative))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashRedirectCreative))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashCreative))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2397,6 +2506,24 @@ Creative[] creatives) {
       }
       set {
         this.destinationUrlField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
+  public partial class ImageRedirectCreative : HasDestinationUrlCreative {
+    private string imageUrlField;
+
+    public string imageUrl {
+      get {
+        return this.imageUrlField;
+      }
+      set {
+        this.imageUrlField = value;
       }
     }
   }
@@ -2474,6 +2601,46 @@ Creative[] creatives) {
       }
       set {
         this.imageUrlField = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
+  public partial class FlashRedirectCreative : HasDestinationUrlCreative {
+    private string flashUrlField;
+
+    private string fallbackUrlField;
+
+    private string fallbackPreviewUrlField;
+
+    public string flashUrl {
+      get {
+        return this.flashUrlField;
+      }
+      set {
+        this.flashUrlField = value;
+      }
+    }
+
+    public string fallbackUrl {
+      get {
+        return this.fallbackUrlField;
+      }
+      set {
+        this.fallbackUrlField = value;
+      }
+    }
+
+    public string fallbackPreviewUrl {
+      get {
+        return this.fallbackPreviewUrlField;
+      }
+      set {
+        this.fallbackPreviewUrlField = value;
       }
     }
   }
@@ -2612,132 +2779,6 @@ Creative[] creatives) {
         this.fallbackAssetSizeField = value;
       }
     }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
-  public partial class ImageRedirectCreative : HasDestinationUrlCreative {
-    private string imageUrlField;
-
-    public string imageUrl {
-      get {
-        return this.imageUrlField;
-      }
-      set {
-        this.imageUrlField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
-  public partial class FlashRedirectCreative : HasDestinationUrlCreative {
-    private string flashUrlField;
-
-    private string fallbackUrlField;
-
-    private string fallbackPreviewUrlField;
-
-    public string flashUrl {
-      get {
-        return this.flashUrlField;
-      }
-      set {
-        this.flashUrlField = value;
-      }
-    }
-
-    public string fallbackUrl {
-      get {
-        return this.fallbackUrlField;
-      }
-      set {
-        this.fallbackUrlField = value;
-      }
-    }
-
-    public string fallbackPreviewUrl {
-      get {
-        return this.fallbackPreviewUrlField;
-      }
-      set {
-        this.fallbackPreviewUrlField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
-  public partial class ThirdPartyCreative : Creative {
-    private string snippetField;
-
-    private string expandedSnippetField;
-
-    private ThirdPartyCreativeFormatStatus formatStatusField;
-
-    private bool formatStatusFieldSpecified;
-
-    public string snippet {
-      get {
-        return this.snippetField;
-      }
-      set {
-        this.snippetField = value;
-      }
-    }
-
-    public string expandedSnippet {
-      get {
-        return this.expandedSnippetField;
-      }
-      set {
-        this.expandedSnippetField = value;
-      }
-    }
-
-    public ThirdPartyCreativeFormatStatus formatStatus {
-      get {
-        return this.formatStatusField;
-      }
-      set {
-        this.formatStatusField = value;
-        this.formatStatusSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool formatStatusSpecified {
-      get {
-        return this.formatStatusFieldSpecified;
-      }
-      set {
-        this.formatStatusFieldSpecified = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ThirdPartyCreative.FormatStatus", Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
-  public enum ThirdPartyCreativeFormatStatus {
-    EMPTY,
-    UNRECOGNIZED,
-    RECOGNIZED,
-    RECOGNIZED_NO_MACROS_NECESSARY,
-    DISALLOWED,
-    ADSENSE,
-    MAY_REQUIRE_MANUAL_MACROS,
-    ALREADY_HAS_MACROS
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
@@ -4536,7 +4577,9 @@ Creative[] creatives) {
   public enum RequiredNumberErrorReason {
     REQUIRED,
     TOO_LARGE,
-    TOO_SMALL
+    TOO_SMALL,
+    TOO_LARGE_WITH_DETAILS,
+    TOO_SMALL_WITH_DETAILS
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
@@ -6473,6 +6516,46 @@ LineItem[] lineItems) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
+  public partial class StringLengthError : ApiError {
+    private StringLengthErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public StringLengthErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StringLengthError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
+  public enum StringLengthErrorReason {
+    TOO_LONG,
+    TOO_SHORT
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
   public partial class GeoTargetingError : ApiError {
     private GeoTargetingErrorReason reasonField;
 
@@ -6506,6 +6589,67 @@ LineItem[] lineItems) {
   public enum GeoTargetingErrorReason {
     TARGETED_LOCATIONS_NOT_EXCLUDABLE,
     EXCLUDED_LOCATIONS_CANNOT_HAVE_CHILDREN_TARGETED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
+  public partial class CustomTargetingError : ApiError {
+    private CustomTargetingErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public CustomTargetingErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
+  public enum CustomTargetingErrorReason {
+    KEY_NOT_FOUND,
+    KEY_COUNT_TOO_LARGE,
+    KEY_NAME_DUPLICATE,
+    KEY_NAME_EMPTY,
+    KEY_NAME_INVALID_LENGTH,
+    KEY_NAME_INVALID_CHARS,
+    KEY_DISPLAY_NAME_INVALID_LENGTH,
+    VALUE_NOT_FOUND,
+    GET_VALUES_BY_STATEMENT_MUST_CONTAIN_KEY_ID,
+    VALUE_COUNT_FOR_KEY_TOO_LARGE,
+    VALUE_NAME_DUPLICATE,
+    VALUE_NAME_EMPTY,
+    VALUE_NAME_INVALID_LENGTH,
+    VALUE_NAME_INVALID_CHARS,
+    VALUE_DISPLAY_NAME_INVALID_LENGTH,
+    VALUE_MATCH_TYPE_NOT_ALLOWED,
+    VALUE_MATCH_TYPE_NOT_EXACT_FOR_PREDEFINED_KEY,
+    KEY_WITH_MISSING_VALUES,
+    CANNOT_OR_DIFFERENT_KEYS,
+    CANNOT_AND_SAME_KEYS,
+    INVALID_TARGETING_EXPRESSION,
+    DELETED_KEY_CANNOT_BE_USED_FOR_TARGETING,
+    DELETED_VALUE_CANNOT_BE_USED_FOR_TARGETING
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
@@ -7807,13 +7951,9 @@ Placement[] placements) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
   public partial class SiteTargetingInfo {
     private string targetingDescriptionField;
-
     private string targetingSiteNameField;
-
     private string targetingAdLocationField;
-
     private string siteTargetingInfoTypeField;
-
     public string targetingDescription {
       get {
         return this.targetingDescriptionField;
@@ -7822,7 +7962,6 @@ Placement[] placements) {
         this.targetingDescriptionField = value;
       }
     }
-
     public string targetingSiteName {
       get {
         return this.targetingSiteNameField;
@@ -7831,7 +7970,6 @@ Placement[] placements) {
         this.targetingSiteNameField = value;
       }
     }
-
     public string targetingAdLocation {
       get {
         return this.targetingAdLocationField;
@@ -7840,7 +7978,6 @@ Placement[] placements) {
         this.targetingAdLocationField = value;
       }
     }
-
     [System.Xml.Serialization.XmlElementAttribute("SiteTargetingInfo.Type")]
     public string SiteTargetingInfoType {
       get {
@@ -7850,45 +7987,5 @@ Placement[] placements) {
         this.siteTargetingInfoTypeField = value;
       }
     }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
-  public partial class StringLengthError : ApiError {
-    private StringLengthErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public StringLengthErrorReason reason {
-      get {
-        return this.reasonField;
-      }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StringLengthError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201010")]
-  public enum StringLengthErrorReason {
-    TOO_LONG,
-    TOO_SHORT
   }
 }

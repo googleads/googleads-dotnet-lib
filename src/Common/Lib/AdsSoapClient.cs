@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -290,9 +290,15 @@ namespace Google.Api.Ads.Common.Lib {
     /// <returns>The fault node.</returns>
     protected static XmlElement GetFaultNode(SoapException exception, string ns,
         string nodeName) {
-      XmlNamespaceManager xmlns = new XmlNamespaceManager(exception.Detail.OwnerDocument.NameTable);
-      xmlns.AddNamespace("api", ns);
-      return (XmlElement) exception.Detail.SelectSingleNode("api:" + nodeName, xmlns);
+      // Issue 1: Exception.Detail could be null. Can happen if SoapException
+      // is a SoapHeaderException.
+      if (exception.Detail == null) {
+        return null;
+      } else {
+        XmlNamespaceManager xmlns = new XmlNamespaceManager(exception.Detail.OwnerDocument.NameTable);
+        xmlns.AddNamespace("api", ns);
+        return (XmlElement) exception.Detail.SelectSingleNode("api:" + nodeName, xmlns);
+      }
     }
   }
 }

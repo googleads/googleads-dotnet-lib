@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -44,6 +44,11 @@ namespace Google.Api.Ads.Common.Lib {
     /// this url should be presented to the users to unlock their accounts.
     /// </summary>
     private Uri captchaUrl;
+
+    /// <summary>
+    /// Additional error information field.
+    /// </summary>
+    private string info;
 
     /// <summary>
     /// A url that describes the error for this exception.
@@ -95,12 +100,25 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
+    /// Gets or sets the additional error information field.
+    /// </summary>
+    /// <value>The info.</value>
+    public string Info {
+      get {
+        return info;
+      }
+      set {
+        info = value;
+      }
+    }
+
+    /// <summary>
     /// Public constructor.
     /// </summary>
     /// <param name="standardErrorCode">The error code for this exception.
     /// </param>
     public AuthTokenException(AuthTokenErrorCode standardErrorCode)
-        : this(standardErrorCode, null, String.Empty, null, String.Empty, null) {
+        : this(standardErrorCode, null, String.Empty, null, String.Empty, String.Empty, null) {
     }
 
     /// <summary>
@@ -110,7 +128,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </param>
     /// <param name="errorUrl">The error url for this exception.</param>
     public AuthTokenException(AuthTokenErrorCode standardErrorCode, Uri errorUrl)
-        : this(standardErrorCode, errorUrl, String.Empty, null, String.Empty, null) {
+        : this(standardErrorCode, errorUrl, String.Empty, null, String.Empty, String.Empty, null) {
     }
 
     /// <summary>
@@ -123,7 +141,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="captchaUrl">The captcha url, if applicable.</param>
     public AuthTokenException(AuthTokenErrorCode standardErrorCode, Uri errorUrl,
         string captchaToken, Uri captchaUrl)
-        : this(standardErrorCode, errorUrl, captchaToken, captchaUrl, String.Empty, null) {
+        : this(standardErrorCode, errorUrl, captchaToken, captchaUrl, String.Empty, String.Empty,
+            null) {
     }
 
     /// <summary>
@@ -134,11 +153,27 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="errorUrl">The error url for this exception.</param>
     /// <param name="captchaToken">The captcha token, if applicable.</param>
     /// <param name="captchaUrl">The captcha url, if applicable.</param>
+    /// <param name="info">Additional information about the error code.</param>
+    public AuthTokenException(AuthTokenErrorCode standardErrorCode, Uri errorUrl,
+        string captchaToken, Uri captchaUrl, string info)
+      : this(standardErrorCode, errorUrl, captchaToken, captchaUrl, info, 
+           String.Empty, null) {
+    }
+
+    /// <summary>
+    /// Public constructor.
+    /// </summary>
+    /// <param name="standardErrorCode">The error code for this exception.
+    /// </param>
+    /// <param name="errorUrl">The error url for this exception.</param>
+    /// <param name="captchaToken">The captcha token, if applicable.</param>
+    /// <param name="captchaUrl">The captcha url, if applicable.</param>
+    /// <param name="info">Additional information about the error code.</param>
     /// <param name="message">An additional error message for this exception,
     /// added by the code throwing this exception.</param>
     public AuthTokenException(AuthTokenErrorCode standardErrorCode, Uri errorUrl,
-        string captchaToken, Uri captchaUrl, string message)
-        : this(standardErrorCode, errorUrl, captchaToken, captchaUrl,
+        string captchaToken, Uri captchaUrl, string info, string message)
+        : this(standardErrorCode, errorUrl, captchaToken, captchaUrl, info,
             message, null) {
     }
 
@@ -150,17 +185,20 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="errorUrl">The error url for this exception.</param>
     /// <param name="captchaToken">The captcha token, if applicable.</param>
     /// <param name="captchaUrl">The captcha url, if applicable.</param>
+    /// <param name="info">Additional information about the error code.</param>
     /// <param name="message">An additional error message for this exception,
     /// added by the code throwing this exception.</param>
     /// <param name="innerException">An inner exception that this exception
     /// will wrap around.</param>
     public AuthTokenException(AuthTokenErrorCode standardErrorCode, Uri errorUrl,
-        string captchaToken, Uri captchaUrl, string message, Exception innerException)
+        string captchaToken, Uri captchaUrl, string info, string message,
+        Exception innerException)
         : base(message, innerException) {
       this.errorCode = standardErrorCode;
       this.errorUrl = errorUrl;
       this.captchaToken = captchaToken;
       this.captchaUrl = captchaUrl;
+      this.info = info;
     }
 
     /// <summary>
@@ -183,6 +221,7 @@ namespace Google.Api.Ads.Common.Lib {
       this.errorUrl = (Uri) info.GetValue("ErrorUrl", typeof(Uri));
       this.captchaToken = (string) info.GetValue("CaptchaToken", typeof(string));
       this.captchaUrl = (Uri) info.GetValue("CaptchaUrl", typeof(Uri));
+      this.info = (string) info.GetValue("Info", typeof(string));
     }
 
     /// <summary>
@@ -203,6 +242,7 @@ namespace Google.Api.Ads.Common.Lib {
       info.AddValue("ErrorUrl", errorUrl, typeof(Uri));
       info.AddValue("CaptchaToken", captchaToken, typeof(string));
       info.AddValue("CaptchaUrl", captchaUrl, typeof(Uri));
+      info.AddValue("Info", this.info, typeof(string));
     }
   }
 }

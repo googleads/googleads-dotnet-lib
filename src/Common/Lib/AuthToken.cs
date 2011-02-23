@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Url endpoint for ClientLogin API.
     /// </summary>
     private readonly Uri URL = new Uri("https://www.google.com/accounts/ClientLogin");
+    //private readonly Uri URL = new Uri("https://www.google.com/accounts/ClientLogin");
 
     /// <summary>
     /// The prefix to be appended for captcha urls.
@@ -209,7 +210,9 @@ namespace Google.Api.Ads.Common.Lib {
         // Enum does not have a tryParse.
       }
 
-      return new AuthTokenException(errCode, url, captchaToken, captchaUrl,
+      string info = tblResponse.ContainsKey("Info") ? tblResponse["Info"] : String.Empty;
+
+      return new AuthTokenException(errCode, url, captchaToken, captchaUrl, info,
           CommonErrorMessages.AuthTokenLoginFailed, ex);
     }
 

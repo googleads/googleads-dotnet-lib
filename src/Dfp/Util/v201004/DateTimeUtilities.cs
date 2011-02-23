@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,9 +34,18 @@ namespace Google.Api.Ads.Dfp.Util.v201004 {
     /// <returns>A Dfp Datetime object.</returns>
     public static DfpDateTime FromString(string dateString) {
       System.DateTime dateTime = System.DateTime.ParseExact(dateString, "yyyyMMdd HH:mm:ss", null);
+      return FromDateTime(dateTime);
+    }
+
+    /// <summary>
+    /// Converts a System.DateTime object to a date object.
+    /// </summary>
+    /// <param name="dateTime">The DateTime object.</param>
+    /// <returns>A Dfp Datetime object.</returns>
+    public static DfpDateTime FromDateTime(System.DateTime dateTime) {
       DfpDateTime retval = new DfpDateTime();
       retval.date = new Date();
-      retval.date.year = dateTime.Year;;
+      retval.date.year = dateTime.Year;
       retval.date.month = dateTime.Month;
       retval.date.day = dateTime.Day;
       retval.hour = dateTime.Hour;
