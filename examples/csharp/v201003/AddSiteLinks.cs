@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v201003 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201003 {
   /// <summary>
   /// This code example shows how to add site links to an existing
   /// campaign. To create a campaign, run AddCampaign.cs.
@@ -37,6 +37,16 @@ namespace com.google.api.adwords.examples.v201003 {
         return "This code example shows how to add site links to an existing campaign. To " +
             "create a campaign, run AddCampaign.cs.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new AddSiteLinks();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -71,11 +81,9 @@ namespace com.google.api.adwords.examples.v201003 {
       CampaignAdExtension campaignAdExtension = new CampaignAdExtension();
       campaignAdExtension.adExtension = siteLinkExtension;
       campaignAdExtension.campaignId = campaignId;
-      campaignAdExtension.campaignIdSpecified = true;
 
       CampaignAdExtensionOperation operation = new CampaignAdExtensionOperation();
       operation.@operator = Operator.ADD;
-      operation.operatorSpecified = true;
       operation.operand = campaignAdExtension;
 
       try {

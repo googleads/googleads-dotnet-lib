@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v201003 {
+namespace Google.Api.Ads.AdWords.Tests.v201003 {
   /// <summary>
   /// UnitTests for <see cref="InfoServiceTests"/> class.
   /// </summary>
@@ -56,7 +56,6 @@ namespace com.google.api.adwords.tests.v201003 {
     [Test]
     public void TestGetFreeUsageUnitsPerMonth() {
       InfoSelector selector = new InfoSelector();
-      selector.apiUsageTypeSpecified = true;
       selector.apiUsageType = ApiUsageType.FREE_USAGE_API_UNITS_PER_MONTH;
 
       ApiUsageInfo usageInfo = null;
@@ -73,7 +72,6 @@ namespace com.google.api.adwords.tests.v201003 {
     [Test]
     public void TestGetTotalUsageUnitsPerMonth() {
       InfoSelector selector = new InfoSelector();
-      selector.apiUsageTypeSpecified = true;
       selector.apiUsageType = ApiUsageType.TOTAL_USAGE_API_UNITS_PER_MONTH;
 
       ApiUsageInfo usageInfo = null;
@@ -90,7 +88,6 @@ namespace com.google.api.adwords.tests.v201003 {
     [Test]
     public void TestGetOperationCount() {
       InfoSelector selector = new InfoSelector();
-      selector.apiUsageTypeSpecified = true;
       selector.apiUsageType = ApiUsageType.OPERATION_COUNT;
       selector.dateRange = new DateRange();
       selector.dateRange.min = DateTime.Today.ToString("yyyyMMdd");
@@ -110,7 +107,6 @@ namespace com.google.api.adwords.tests.v201003 {
     [Test]
     public void TestGetUnitCount() {
       InfoSelector selector = new InfoSelector();
-      selector.apiUsageTypeSpecified = true;
       selector.apiUsageType = ApiUsageType.OPERATION_COUNT;
       selector.dateRange = new DateRange();
       selector.dateRange.min = DateTime.Today.ToString("yyyyMMdd");
@@ -130,7 +126,6 @@ namespace com.google.api.adwords.tests.v201003 {
     [Test]
     public void TestGetUnitCountForMethod() {
       InfoSelector selector = new InfoSelector();
-      selector.apiUsageTypeSpecified = true;
       selector.apiUsageType = ApiUsageType.UNIT_COUNT;
       selector.dateRange = new DateRange();
       selector.dateRange.min = DateTime.Today.ToString("yyyyMMdd");
@@ -150,7 +145,6 @@ namespace com.google.api.adwords.tests.v201003 {
     [Test]
     public void TestGetUnitCountForClients() {
       InfoSelector selector = new InfoSelector();
-      selector.apiUsageTypeSpecified = true;
       selector.apiUsageType = ApiUsageType.UNIT_COUNT_FOR_CLIENTS;
       selector.dateRange = new DateRange();
       selector.dateRange.min = DateTime.Today.ToString("yyyyMMdd");
@@ -170,14 +164,12 @@ namespace com.google.api.adwords.tests.v201003 {
     [Test]
     public void TestGetMethodCost() {
       InfoSelector selector = new InfoSelector();
-      selector.apiUsageTypeSpecified = true;
       selector.apiUsageType = ApiUsageType.METHOD_COST;
       selector.dateRange = new DateRange();
       selector.dateRange.min = DateTime.Today.ToString("yyyyMMdd");
       selector.dateRange.max = DateTime.Today.ToString("yyyyMMdd");
       selector.serviceName = "AdGroupService";
       selector.methodName = "mutate";
-      selector.operatorSpecified = true;
       selector.@operator = Operator.SET;
 
       ApiUsageInfo usageInfo = null;

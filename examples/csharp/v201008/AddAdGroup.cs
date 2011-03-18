@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example illustrates how to create an ad group. To create a
   /// campaign, run AddCampaign.cs.
@@ -34,9 +34,19 @@ namespace com.google.api.adwords.examples.v201008 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example illustrates how to create an ad group. To create a campaign, run "
-            + "AddCampaign.cs";
+        return "This code example illustrates how to create an ad group. To create a " +
+            "campaign, run AddCampaign.cs";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new AddAdGroup();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -53,23 +63,19 @@ namespace com.google.api.adwords.examples.v201008 {
 
       AdGroup adGroup = new AdGroup();
       adGroup.name = string.Format("Earth to Mars Cruises #{0}", GetTimeStamp());
-      adGroup.statusSpecified = true;
       adGroup.status = AdGroupStatus.ENABLED;
-      adGroup.campaignIdSpecified = true;
       adGroup.campaignId = campaignId;
 
       ManualCPCAdGroupBids bids = new ManualCPCAdGroupBids();
 
       Bid keywordMaxCpc = new Bid();
       keywordMaxCpc.amount = new Money();
-      keywordMaxCpc.amount.microAmountSpecified = true;
       keywordMaxCpc.amount.microAmount = 10000000;
       bids.keywordMaxCpc = keywordMaxCpc;
 
       adGroup.bids = bids;
 
       AdGroupOperation operation = new AdGroupOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
       operation.operand = adGroup;
 

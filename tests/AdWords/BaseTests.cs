@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,15 +14,15 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v13;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v13;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace com.google.api.adwords.tests {
+namespace Google.Api.Ads.AdWords.Tests {
   /// <summary>
   /// Base class for all test suites.
   /// </summary>
@@ -35,6 +35,12 @@ namespace com.google.api.adwords.tests {
     /// <summary>
     /// Default public constructor.
     /// </summary>
+    /// <remarks>The constructor adds a 2000 ms delay between running individual
+    /// tests so that we don't hit the ClientLogin server frequently and cause
+    /// it throw captcha errors. You shouldn't do this in your code, instead
+    /// you should generate an authtoken, set it in your App.config and reuse
+    /// it to avoid performance issues.
+    /// </remarks>
     public BaseTests() {
       // Make sure we don't hit the authtoken endpoint really bad.
       Thread.Sleep(2000);

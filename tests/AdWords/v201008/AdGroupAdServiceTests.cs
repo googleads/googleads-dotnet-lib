@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,9 +14,9 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.lib.util;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.Common.Util;
+using Google.Api.Ads.AdWords.v201008;
 
 using NUnit.Framework;
 
@@ -24,7 +24,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v201008 {
+namespace Google.Api.Ads.AdWords.Tests.v201008 {
   /// <summary>
   /// UnitTests for <see cref="AdGroupAdService"/> class.
   /// </summary>
@@ -62,7 +62,7 @@ namespace com.google.api.adwords.tests.v201008 {
     public void Init() {
       TestUtils utils = new TestUtils();
       adGroupAdService = (AdGroupAdService)user.GetService(AdWordsService.v201008.AdGroupAdService);
-      campaignId = utils.CreateCampaign(user, true);
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
       adGroupId = utils.CreateAdGroup(user, campaignId);
       adId = utils.CreateTextAd(user, adGroupId, false);
     }
@@ -82,23 +82,21 @@ namespace com.google.api.adwords.tests.v201008 {
 
       AdGroupAd textadGroupAd = new AdGroupAd();
       textadGroupAd.adGroupId = adGroupId;
-      textadGroupAd.adGroupIdSpecified = true;
       textadGroupAd.ad = textAd;
 
       AdGroupAdOperation textAdOperation = new AdGroupAdOperation();
-      textAdOperation.operatorSpecified = true;
       textAdOperation.@operator = Operator.ADD;
       textAdOperation.operand = textadGroupAd;
 
-      AdGroupAdReturnValue result = adGroupAdService.mutate(
+      AdGroupAdReturnValue retVal = adGroupAdService.mutate(
           new AdGroupAdOperation[] {textAdOperation});
 
-      Assert.NotNull(result);
-      Assert.NotNull(result.value);
-      Assert.AreEqual(result.value.Length, 1);
-      Assert.NotNull(result.value[0]);
-      Assert.NotNull(result.value[0].ad);
-      Assert.That(result.value[0].ad is TextAd);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.NotNull(retVal.value[0].ad);
+      Assert.That(retVal.value[0].ad is TextAd);
     }
 
     /// <summary>
@@ -116,11 +114,9 @@ namespace com.google.api.adwords.tests.v201008 {
 
       AdGroupAd textadGroupAd = new AdGroupAd();
       textadGroupAd.adGroupId = adGroupId;
-      textadGroupAd.adGroupIdSpecified = true;
       textadGroupAd.ad = textAd;
 
       AdGroupAdOperation textAdOperation = new AdGroupAdOperation();
-      textAdOperation.operatorSpecified = true;
       textAdOperation.@operator = Operator.ADD;
       textAdOperation.operand = textadGroupAd;
 
@@ -137,15 +133,15 @@ namespace com.google.api.adwords.tests.v201008 {
       textAdOperation.exemptionRequests =
           new ExemptionRequest[] {exemptionRequest1, exemptionRequest2};
 
-      AdGroupAdReturnValue result = adGroupAdService.mutate(
+      AdGroupAdReturnValue retVal = adGroupAdService.mutate(
           new AdGroupAdOperation[] {textAdOperation});
 
-      Assert.NotNull(result);
-      Assert.NotNull(result.value);
-      Assert.AreEqual(result.value.Length, 1);
-      Assert.NotNull(result.value[0]);
-      Assert.NotNull(result.value[0].ad);
-      Assert.That(result.value[0].ad is TextAd);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.NotNull(retVal.value[0].ad);
+      Assert.That(retVal.value[0].ad is TextAd);
     }
 
     /// <summary>
@@ -165,24 +161,22 @@ namespace com.google.api.adwords.tests.v201008 {
       // Set the AdGroup Id.
       AdGroupAd imageAdGroupAd = new AdGroupAd();
       imageAdGroupAd.adGroupId = adGroupId;
-      imageAdGroupAd.adGroupIdSpecified = true;
       imageAdGroupAd.ad = imageAd;
 
       // Create the ADD Operation.
       AdGroupAdOperation imageAdOperation = new AdGroupAdOperation();
-      imageAdOperation.operatorSpecified = true;
       imageAdOperation.@operator = Operator.ADD;
       imageAdOperation.operand = imageAdGroupAd;
 
-      AdGroupAdReturnValue result = adGroupAdService.mutate(
+      AdGroupAdReturnValue retVal = adGroupAdService.mutate(
           new AdGroupAdOperation[] {imageAdOperation});
 
-      Assert.NotNull(result);
-      Assert.NotNull(result.value);
-      Assert.AreEqual(result.value.Length, 1);
-      Assert.NotNull(result.value[0]);
-      Assert.NotNull(result.value[0].ad);
-      Assert.That(result.value[0].ad is ImageAd);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.NotNull(retVal.value[0].ad);
+      Assert.That(retVal.value[0].ad is ImageAd);
     }
 
     /// <summary>
@@ -212,24 +206,22 @@ namespace com.google.api.adwords.tests.v201008 {
       // Set the AdGroup Id.
       AdGroupAd adGroupAd = new AdGroupAd();
       adGroupAd.adGroupId = adGroupId;
-      adGroupAd.adGroupIdSpecified = true;
       adGroupAd.ad = mobileImageId;
 
       // Create the ADD Operation.
       AdGroupAdOperation mobileAdOperation = new AdGroupAdOperation();
-      mobileAdOperation.operatorSpecified = true;
       mobileAdOperation.@operator = Operator.ADD;
       mobileAdOperation.operand = adGroupAd;
 
-      AdGroupAdReturnValue result = adGroupAdService.mutate(
+      AdGroupAdReturnValue retVal = adGroupAdService.mutate(
           new AdGroupAdOperation[] {mobileAdOperation});
 
-      Assert.NotNull(result);
-      Assert.NotNull(result.value);
-      Assert.AreEqual(result.value.Length, 1);
-      Assert.NotNull(result.value[0]);
-      Assert.NotNull(result.value[0].ad);
-      Assert.That(result.value[0].ad is MobileImageAd);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.NotNull(retVal.value[0].ad);
+      Assert.That(retVal.value[0].ad is MobileImageAd);
     }
 
     /// <summary>
@@ -281,34 +273,29 @@ namespace com.google.api.adwords.tests.v201008 {
     public void TestUpdateAd() {
       // Update your Ad.
       AdGroupAd adGroupAd = new AdGroupAd();
-
-      adGroupAd.statusSpecified = true;
       adGroupAd.status = AdGroupAdStatus.DISABLED;
 
       adGroupAd.adGroupId = adGroupId;
-      adGroupAd.adGroupIdSpecified = true;
 
       adGroupAd.ad = new Ad();
       adGroupAd.ad.id = adId;
-      adGroupAd.ad.idSpecified = true;
 
       AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
-      adGroupAdOperation.operatorSpecified = true;
       adGroupAdOperation.@operator = Operator.SET;
       adGroupAdOperation.operand = adGroupAd;
 
-      AdGroupAdReturnValue result = adGroupAdService.mutate(
+      AdGroupAdReturnValue retVal = adGroupAdService.mutate(
           new AdGroupAdOperation[]{adGroupAdOperation});
 
-      Assert.NotNull(result);
-      Assert.NotNull(result.value);
-      Assert.AreEqual(result.value.Length, 1);
-      Assert.NotNull(result.value[0]);
-      Assert.AreEqual(result.value[0].adGroupId, adGroupId);
-      Assert.NotNull(result.value[0].ad);
-      Assert.AreEqual(result.value[0].ad.id, adId);
-      Assert.That(result.value[0].ad is TextAd);
-      Assert.AreEqual(result.value[0].status, AdGroupAdStatus.DISABLED);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.AreEqual(retVal.value[0].adGroupId, adGroupId);
+      Assert.NotNull(retVal.value[0].ad);
+      Assert.AreEqual(retVal.value[0].ad.id, adId);
+      Assert.That(retVal.value[0].ad is TextAd);
+      Assert.AreEqual(retVal.value[0].status, AdGroupAdStatus.DISABLED);
     }
 
     /// <summary>
@@ -319,32 +306,29 @@ namespace com.google.api.adwords.tests.v201008 {
       // Create base class ad to avoid setting type specific fields.
       Ad ad = new Ad();
       ad.id = adId;
-      ad.idSpecified = true;
 
       // Create ad group ad.
       AdGroupAd adGroupAd = new AdGroupAd();
       adGroupAd.adGroupId = adGroupId;
-      adGroupAd.adGroupIdSpecified = true;
 
       adGroupAd.ad = ad;
 
       // Create operations.
       AdGroupAdOperation operation = new AdGroupAdOperation();
       operation.operand = adGroupAd;
-      operation.operatorSpecified = true;
       operation.@operator = Operator.REMOVE;
 
-      AdGroupAdReturnValue result = null;
+      AdGroupAdReturnValue retVal = null;
       Assert.DoesNotThrow(delegate() {
-        result = adGroupAdService.mutate(new AdGroupAdOperation[] {operation});
+        retVal = adGroupAdService.mutate(new AdGroupAdOperation[] {operation});
       });
-      Assert.NotNull(result);
-      Assert.NotNull(result.value);
-      Assert.AreEqual(result.value.Length, 1);
-      Assert.NotNull(result.value[0]);
-      Assert.AreEqual(result.value[0].adGroupId, adGroupId);
-      Assert.NotNull(result.value[0].ad);
-      Assert.AreEqual(result.value[0].ad.id, adId);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.AreEqual(retVal.value[0].adGroupId, adGroupId);
+      Assert.NotNull(retVal.value[0].ad);
+      Assert.AreEqual(retVal.value[0].ad.id, adId);
     }
   }
 }

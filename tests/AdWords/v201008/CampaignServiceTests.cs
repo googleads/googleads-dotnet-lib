@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v201008 {
+namespace Google.Api.Ads.AdWords.Tests.v201008 {
   /// <summary>
   /// UnitTests for <see cref="CampaignService"/> class.
   /// </summary>
@@ -57,8 +57,8 @@ namespace com.google.api.adwords.tests.v201008 {
     public void Init() {
       TestUtils utils = new TestUtils();
       campaignService = (CampaignService)user.GetService(AdWordsService.v201008.CampaignService);
-      campaignId1 = utils.CreateCampaign(user, true);
-      campaignId2 = utils.CreateCampaign(user, true);
+      campaignId1 = utils.CreateCampaign(user, new ManualCPC());
+      campaignId2 = utils.CreateCampaign(user, new ManualCPC());
     }
 
     /// <summary>
@@ -69,24 +69,19 @@ namespace com.google.api.adwords.tests.v201008 {
       // Create campaign.
       Campaign campaign = new Campaign();
       campaign.name = "Test Campaign #" + new TestUtils().GetTimeStamp();
-      campaign.statusSpecified = true;
       campaign.status = CampaignStatus.PAUSED;
       campaign.biddingStrategy = new ManualCPC();
 
       Budget budget = new Budget();
-      budget.periodSpecified = true;
       budget.period = BudgetBudgetPeriod.DAILY;
-      budget.deliveryMethodSpecified = true;
       budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
       budget.amount = new Money();
-      budget.amount.microAmountSpecified = true;
       budget.amount.microAmount = 1000000;
 
       campaign.budget = budget;
 
       // Create operations.
       CampaignOperation operation = new CampaignOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
       operation.operand = campaign;
 
@@ -130,25 +125,22 @@ namespace com.google.api.adwords.tests.v201008 {
       // Create campaign with updated budget.
       Campaign campaign = new Campaign();
       campaign.id = campaignId1;
-      campaign.idSpecified = true;
 
       Budget budget = new Budget();
-      budget.deliveryMethodSpecified = true;
       budget.deliveryMethod = BudgetBudgetDeliveryMethod.ACCELERATED;
       campaign.budget = budget;
 
       // Create operation.
       CampaignOperation operation = new CampaignOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.SET;
       operation.operand = campaign;
 
-      CampaignReturnValue result = campaignService.mutate((new CampaignOperation[] {operation}));
-      Assert.NotNull(result);
-      Assert.NotNull(result.value);
-      Assert.AreEqual(result.value.Length, 1);
-      Assert.NotNull(result.value[0]);
-      Assert.AreEqual(result.value[0].id, campaignId1);
+      CampaignReturnValue retVal = campaignService.mutate((new CampaignOperation[] {operation}));
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.AreEqual(retVal.value[0].id, campaignId1);
     }
 
     /// <summary>
@@ -159,26 +151,23 @@ namespace com.google.api.adwords.tests.v201008 {
       // Create campaign with DELETED status.
       Campaign campaign = new Campaign();
       campaign.id = campaignId1;
-      campaign.idSpecified = true;
       campaign.status = CampaignStatus.DELETED;
-      campaign.statusSpecified = true;
 
       // Create operations.
       CampaignOperation operation = new CampaignOperation();
       operation.operand = campaign;
       operation.@operator = Operator.SET;
-      operation.operatorSpecified = true;
 
-      CampaignReturnValue result = null;
+      CampaignReturnValue retVal = null;
 
       Assert.DoesNotThrow(delegate() {
-        result = campaignService.mutate(new CampaignOperation[] { operation });
+        retVal = campaignService.mutate(new CampaignOperation[] {operation});
       });
-      Assert.NotNull(result);
-      Assert.NotNull(result.value);
-      Assert.AreEqual(result.value.Length, 1);
-      Assert.NotNull(result.value[0]);
-      Assert.AreEqual(result.value[0].id, campaignId1);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.AreEqual(retVal.value[0].id, campaignId1);
     }
   }
 }

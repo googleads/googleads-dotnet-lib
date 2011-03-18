@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v201003 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201003 {
   /// <summary>
   /// This code example creates a new negative campaign criterion. To create
   /// campaign, run AddCampaign.cs.
@@ -40,6 +40,16 @@ namespace com.google.api.adwords.examples.v201003 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new AddNegativeCampaignCriterion();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -53,26 +63,23 @@ namespace com.google.api.adwords.examples.v201003 {
       long campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
 
       NegativeCampaignCriterion negativeCriterion = new NegativeCampaignCriterion();
-      negativeCriterion.campaignIdSpecified = true;
       negativeCriterion.campaignId = campaignId;
 
       Keyword keyword = new Keyword();
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.BROAD;
       keyword.text = "jupiter cruise";
 
       negativeCriterion.criterion = keyword;
 
       CampaignCriterionOperation operation = new CampaignCriterionOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
       operation.operand = negativeCriterion;
 
       try {
-        CampaignCriterionReturnValue result = campaignCriterionService.mutate(
+        CampaignCriterionReturnValue retVal = campaignCriterionService.mutate(
             new CampaignCriterionOperation[]{operation});
-        if (result != null && result.value != null) {
-          foreach (CampaignCriterion campaignCriterion in result.value) {
+        if (retVal != null && retVal.value != null) {
+          foreach (CampaignCriterion campaignCriterion in retVal.value) {
             Keyword tempKeyword = (Keyword)campaignCriterion.criterion;
 
             Console.WriteLine("New negative campaign criterion with id = '{0}' and text = '{1}'" +

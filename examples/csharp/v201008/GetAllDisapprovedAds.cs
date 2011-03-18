@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example retrieves all the disapproved ads in a given campaign.
   ///
@@ -33,6 +33,16 @@ namespace com.google.api.adwords.examples.v201008 {
       get {
         return "This code example retrieves all the disapproved ads in a given campaign.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new GetAllDisapprovedAds();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>

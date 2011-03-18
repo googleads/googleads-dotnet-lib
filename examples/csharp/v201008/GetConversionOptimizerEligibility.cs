@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,20 +14,19 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
-  /// This code example shows how to check for conversion optimizer eligibility
-  /// by attempting to set the bidding transition with the validate only header
-  /// set to true.
+  /// This code example shows how to check if a campaign is eligible for
+  /// conversion optimizer.
   ///
-  /// Tags: CampaignService.mutate
+  /// Tags: CampaignService.get
   /// </summary>
   class GetConversionOptimizerEligibility : SampleBase {
     /// <summary>
@@ -35,10 +34,19 @@ namespace com.google.api.adwords.examples.v201008 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example shows how to check for conversion optimizer eligibility by" +
-            " attempting to set the bidding transition with the validate only header set to" +
-            " true.";
+        return "This code example shows how to check if a campaign is eligible for conversion " +
+            "optimizer.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new GetConversionOptimizerEligibility();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -50,59 +58,28 @@ namespace com.google.api.adwords.examples.v201008 {
       // Get the CampaignService.
       CampaignService campaignService =
           (CampaignService) user.GetService(AdWordsService.v201008.CampaignService);
-      // Turn on validation mode.
-      campaignService.RequestHeader.validateOnly = true;
 
       long campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
 
-      // Create campaign.
-      Campaign campaign = new Campaign();
-      campaign.id = campaignId;
-      campaign.idSpecified = true;
-
-      // Create bidding transition.
-      ConversionOptimizerBiddingTransition conversionOptimizerBiddingTransition
-          = new ConversionOptimizerBiddingTransition();
-
-      // Create conversion optimizer bidding strategy.
-      ConversionOptimizer conversionOptimizer = new ConversionOptimizer();
-      conversionOptimizer.pricingModel = PricingModel.CONVERSIONS;
-      conversionOptimizer.pricingModelSpecified = true;
-      conversionOptimizerBiddingTransition.targetBiddingStrategy = conversionOptimizer;
-
-      // Create converstion optimizer ad group bids.
-      ConversionOptimizerAdGroupBids conversionOptimizerAdGroupBids
-          = new ConversionOptimizerAdGroupBids();
-      conversionOptimizerBiddingTransition.explicitAdGroupBids = conversionOptimizerAdGroupBids;
-
-      // Create operations.
-      CampaignOperation operation = new CampaignOperation();
-      operation.biddingTransition = conversionOptimizerBiddingTransition;
-      operation.operatorSpecified = true;
-      operation.@operator = Operator.SET;
-      operation.operand = campaign;
-
-      CampaignOperation[] operations = new CampaignOperation[] {operation};
+      CampaignSelector selector = new CampaignSelector();
+      selector.ids = new long[] {campaignId};
 
       try {
-        // Check that campaign is eligible for conversion optimization.
-        CampaignReturnValue result = campaignService.mutate(operations);
-
-        Console.WriteLine("Campaign with id = '{0}' is eligible to use conversion optimizer.",
-            campaign.id);
-      } catch (AdWordsApiException ex) {
-        ApiException apiException = ex.ApiException as ApiException;
-        if (apiException != null) {
-          foreach (ApiError error in apiException.errors) {
-            if (error is BiddingTransitionError) {
-              BiddingTransitionError biddingTransitionError = (BiddingTransitionError) error;
+        CampaignPage page = campaignService.get(selector);
+        if (page != null && page.entries != null && page.entries.Length > 0) {
+          Campaign campaign = page.entries[0];
+          if (campaign.conversionOptimizerEligibility.eligible == true) {
+            Console.WriteLine("Campaign with id = '{0}' is eligible to use conversion optimizer.",
+                campaign.id);
+          } else {
+            foreach (ConversionOptimizerEligibilityRejectionReason reason in
+                campaign.conversionOptimizerEligibility.rejectionReasons) {
               Console.WriteLine("Campaign with id = '{0}' is not eligible to use conversion" +
-                  " optimizer for reason '{1}'.", campaign.id, biddingTransitionError.reason);
+                  " optimizer for reason '{1}'.", campaign.id, reason);
             }
           }
         } else {
-          Console.WriteLine("Campaign with id = '{0}' is not eligible to use conversion" +
-            " optimizer. Exception says '{1}'", ex.Message);
+          Console.WriteLine("No campaigns were found.");
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to get conversion optimizer eligibility for campaign(s). " +

@@ -1,4 +1,4 @@
-﻿// Copyright 2010, Google Inc. All Rights Reserved.
+﻿// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v201003 {
+namespace Google.Api.Ads.AdWords.Tests.v201003 {
   /// <summary>
   /// UnitTests for <see cref="ReportDefinitionService"/> class.
   /// </summary>
@@ -63,7 +63,7 @@ namespace com.google.api.adwords.tests.v201003 {
       TestUtils utils = new TestUtils();
       reportDefinitionService = (ReportDefinitionService)user.GetService(
           AdWordsService.v201003.ReportDefinitionService);
-      campaignId = utils.CreateCampaign(user, true);
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
       adGroupId = utils.CreateAdGroup(user, campaignId);
       criterionId = utils.CreateKeyword(user, adGroupId);
     }
@@ -329,14 +329,13 @@ namespace com.google.api.adwords.tests.v201003 {
       Predicate adGroupPredicate = new Predicate();
       adGroupPredicate.field = "AdGroupId";
       adGroupPredicate.@operator = PredicateOperator.EQUALS;
-      adGroupPredicate.operatorSpecified = true;
-      adGroupPredicate.values = new string[] { adGroupId.ToString() };
+      adGroupPredicate.values = new string[] {adGroupId.ToString()};
 
       // Create selector.
       Selector selector = new Selector();
       selector.fields = new string[] {"AdGroupId", "Id", "KeywordText", "KeywordMatchType",
       "Impressions", "Clicks", "Cost"};
-      selector.predicates = new Predicate[] { adGroupPredicate };
+      selector.predicates = new Predicate[] {adGroupPredicate};
       selector.dateRange = new DateRange();
       selector.dateRange.min = "20100101";
       selector.dateRange.max = DateTime.Today.ToString("yyyyMMdd");
@@ -346,24 +345,20 @@ namespace com.google.api.adwords.tests.v201003 {
       reportDefinition.reportName = "Keywords performance report #" +
           new TestUtils().GetTimeStamp();
       reportDefinition.dateRangeType = ReportDefinitionDateRangeType.CUSTOM_DATE;
-      reportDefinition.dateRangeTypeSpecified = true;
       reportDefinition.reportType = ReportDefinitionReportType.KEYWORDS_PERFORMANCE_REPORT;
-      reportDefinition.reportTypeSpecified = true;
       reportDefinition.downloadFormat = DownloadFormat.XML;
-      reportDefinition.downloadFormatSpecified = true;
       reportDefinition.selector = selector;
 
       // Create operations.
       ReportDefinitionOperation operation = new ReportDefinitionOperation();
       operation.operand = reportDefinition;
       operation.@operator = Operator.ADD;
-      operation.operatorSpecified = true;
 
       ReportDefinition[] result = null;
 
       Assert.DoesNotThrow(delegate() {
         // Add report definition.
-        result = reportDefinitionService.mutate(new ReportDefinitionOperation[] { operation });
+        result = reportDefinitionService.mutate(new ReportDefinitionOperation[] {operation});
       });
 
       Assert.NotNull(result);
@@ -381,11 +376,9 @@ namespace com.google.api.adwords.tests.v201003 {
       long reportId = new TestUtils().CreateKeywordPerformanceReport(user, adGroupId);
 
       ReportDefinition reportDefinition = new ReportDefinition();
-      reportDefinition.idSpecified = true;
       reportDefinition.id = reportId;
 
       ReportDefinitionOperation operation = new ReportDefinitionOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.REMOVE;
       operation.operand = reportDefinition;
 

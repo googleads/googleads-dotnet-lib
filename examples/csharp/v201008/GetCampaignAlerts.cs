@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,15 +14,15 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Globalization;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example illustrates how to retrieve campaign alerts for a user.
   /// The alerts are restricted to a maximum of 10 entries.
@@ -41,6 +41,16 @@ namespace com.google.api.adwords.examples.v201008 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new GetCampaignAlerts();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -53,11 +63,8 @@ namespace com.google.api.adwords.examples.v201008 {
       // Create the alert query.
       AlertQuery query = new AlertQuery();
       query.filterSpec = FilterSpec.ALL;
-      query.filterSpecSpecified = true;
       query.clientSpec = ClientSpec.ALL;
-      query.clientSpecSpecified = true;
       query.triggerTimeSpec = TriggerTimeSpec.ALL_TIME;
-      query.triggerTimeSpecSpecified = true;
       query.severities = new AlertSeverity[] {AlertSeverity.GREEN, AlertSeverity.YELLOW,
           AlertSeverity.RED};
       query.types = new AlertType[] {AlertType.CAMPAIGN_ENDING, AlertType.CAMPAIGN_ENDED};
@@ -67,9 +74,7 @@ namespace com.google.api.adwords.examples.v201008 {
       selector.query = query;
       selector.paging = new Paging();
       selector.paging.startIndex = 0;
-      selector.paging.startIndexSpecified = true;
       selector.paging.numberResults = 10;
-      selector.paging.numberResultsSpecified = true;
 
       try {
         AlertPage page = alertService.get(selector);

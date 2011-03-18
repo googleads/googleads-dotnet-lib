@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,19 +14,21 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.lib.util;
-using com.google.api.adwords.v13;
+using Google.Api.Ads.AdWords.Examples;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.Util;
+using Google.Api.Ads.AdWords.Util.Units;
 
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
-namespace com.google.api.adwords.examples.v200909 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v200909 {
   /// <summary>
-  /// This code example displays API method usage for this month for all methods provided
-  /// by the AdWords API. Note that this data is not in real time and is refreshed
-  /// every few hours.
+  /// This code example displays API method usage for this month for all methods
+  /// provided by the AdWords API. Note that this data is not in real time and
+  /// is refreshed every few hours.
   /// </summary>
   class MethodApiUnitsUsageDemo : SampleBase {
     /// <summary>
@@ -41,6 +43,16 @@ namespace com.google.api.adwords.examples.v200909 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new MethodApiUnitsUsageDemo();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -51,8 +63,8 @@ namespace com.google.api.adwords.examples.v200909 {
           DateTime.Now.AddMonths(-1), DateTime.Now);
 
       foreach (MethodQuotaUsage usage in methodQuotaUsage) {
-        Console.WriteLine("{0,-50} - {1}", usage.serviceName + "." + usage.methodName,
-            usage.units);
+        Console.WriteLine("{0,-50} - {1}", usage.ServiceName + "." + usage.MethodName,
+            usage.Units);
       }
       Console.WriteLine("\nTotal Quota unit cost for this run: {0}.\n", user.GetUnits());
     }

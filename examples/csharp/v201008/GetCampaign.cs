@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example gets a campaign by id. To add a campaign, run
   /// AddCampaign.cs.
@@ -37,6 +37,16 @@ namespace com.google.api.adwords.examples.v201008 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new GetCampaign();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -49,7 +59,7 @@ namespace com.google.api.adwords.examples.v201008 {
       long campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
 
       CampaignSelector selector = new CampaignSelector();
-      selector.ids = new long[] { campaignId };
+      selector.ids = new long[] {campaignId};
 
       try {
         // Get campaign.

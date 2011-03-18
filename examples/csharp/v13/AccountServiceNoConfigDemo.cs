@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,9 +14,9 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.lib.util;
-using com.google.api.adwords.v13;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.Util;
+using Google.Api.Ads.AdWords.v13;
 
 using System;
 using System.Collections;
@@ -25,7 +25,7 @@ using System.Text;
 using System.Web.Services.Protocols;
 using System.Reflection;
 
-namespace com.google.api.adwords.examples.v13 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v13 {
   /// <summary>
   /// This code example displays some of the account's info. It also
   /// demonstrates how to override the settings from App.config.
@@ -59,11 +59,10 @@ namespace com.google.api.adwords.examples.v13 {
 
       // Create a custom AdWordsUser.
       user = new AdWordsUser(headers);
-      // Remove this line if you want to run this sample against production account.
-      user.UseSandbox();
 
       // Get the service.
-      AccountService service = (AccountService) user.GetService(AdWordsService.v13.AccountService);
+      AccountService service = (AccountService) user.GetService(AdWordsService.v13.AccountService,
+          "https://sandbox.google.com");
 
       // Gets account's info.
       AccountInfo acctInfo = service.getAccountInfo();

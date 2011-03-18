@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,36 +18,45 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.lib {
+namespace Google.Api.Ads.Common.Lib {
   /// <summary>
   /// Interface to a factory which can create a particular group of services.
   /// For every new service supported, you need an implementation of this
-  /// interface. See <see cref="LegacyAdWordsApiServiceFactory"/> for a
-  /// reference implementation.
+  /// interface.
   /// </summary>
   public abstract class ServiceFactory {
+    /// <summary>
+    /// Gets an app.config reader suitable for this factory.
+    /// </summary>
+    public abstract AppConfigBase AppConfig {
+      get;
+    }
+
     /// <summary>
     /// Create a service object.
     /// </summary>
     /// <param name="signature">Signature of the service being created.</param>
     /// <param name="user">The user for which the service is being created.
+    /// <param name="serverUrl">The server to which the API calls should be
+    /// made.</param>
     /// </param>
     /// <returns>An object of the desired service type.</returns>
-    public abstract object CreateService(ServiceSignature signature, AdWordsUser user);
+    public abstract AdsClient CreateService(ServiceSignature signature, AdsUser user,
+        Uri serverUrl);
 
     /// <summary>
-    /// Switch all the services created by this factory to sandbox mode.
+    /// Create SOAP headers based on a set of key-value pairs.
     /// </summary>
-    public abstract void UseSandbox();
+    /// <param name="headers">A dictionary, with key-value pairs as headername,
+    /// headervalue.</param>
+    public abstract void SetHeaders(Dictionary<string, string> headers);
 
     /// <summary>
-    /// Gets a useragent string that can be used with the library.
+    /// Reads the headers from App.config.
     /// </summary>
-    protected static string Useragent {
-      get {
-        return "AWAPI DotNetLib " + ApplicationConfiguration.version +
-             " - " + ApplicationConfiguration.companyName;
-      }
-    }
+    /// <param name="config">The configuration class.</param>
+    /// <returns>A dictionary, with key-value pairs as headername,
+    /// headervalue.</returns>
+    public abstract Dictionary<string, string> ReadHeadersFromConfig(AppConfigBase config);
   }
 }

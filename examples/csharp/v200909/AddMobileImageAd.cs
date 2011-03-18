@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using System;
 using System.Collections.Generic;
@@ -23,7 +23,7 @@ using System.Text;
 using System.Net;
 using System.IO;
 
-namespace com.google.api.adwords.examples.v200909 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v200909 {
   /// <summary>
   /// This code example shows how to create a Mobile Image Ad.
   /// </summary>
@@ -35,6 +35,16 @@ namespace com.google.api.adwords.examples.v200909 {
       get {
         return "This code example shows how to create a Mobile Image Ad.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new AddMobileImageAd();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -66,20 +76,18 @@ namespace com.google.api.adwords.examples.v200909 {
       // Set the AdGroup Id.
       AdGroupAd adGroupAd = new AdGroupAd();
       adGroupAd.adGroupId = long.Parse(_T("INSERT_ADGROUP_ID_HERE"));
-      adGroupAd.adGroupIdSpecified = true;
       adGroupAd.ad = mobileImageId;
 
       // Create the ADD Operation.
       AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
-      adGroupAdOperation.operatorSpecified = true;
       adGroupAdOperation.@operator = Operator.ADD;
       adGroupAdOperation.operand = adGroupAd;
 
       try {
-        AdGroupAdReturnValue result =
+        AdGroupAdReturnValue retVal =
             service.mutate(new AdGroupAdOperation[] {adGroupAdOperation});
-        if (result.value != null && result.value.Length > 0) {
-          foreach (AdGroupAd tempAdGroupAd in result.value) {
+        if (retVal.value != null && retVal.value.Length > 0) {
+          foreach (AdGroupAd tempAdGroupAd in retVal.value) {
             Console.WriteLine("New mobile image ad with displayUrl = \"{0}\" and id = {1}" +
                 " was created.", ((MobileImageAd) tempAdGroupAd.ad).displayUrl,
                 tempAdGroupAd.ad.id);

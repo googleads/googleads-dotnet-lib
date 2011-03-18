@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v200909 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v200909 {
   /// <summary>
   /// This code example adds a campaign. To get campaigns, run
   /// GetAllCampaigns.cs.
@@ -39,6 +39,16 @@ namespace com.google.api.adwords.examples.v200909 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new AddCampaign();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -51,34 +61,29 @@ namespace com.google.api.adwords.examples.v200909 {
       // Create campaign.
       Campaign campaign = new Campaign();
       campaign.name = "Interplanetary Cruise #" + GetTimeStamp();
-      campaign.statusSpecified = true;
       campaign.status = CampaignStatus.PAUSED;
       campaign.biddingStrategy = new ManualCPC();
 
       Budget budget = new Budget();
-      budget.periodSpecified = true;
       budget.period = BudgetBudgetPeriod.DAILY;
-      budget.deliveryMethodSpecified = true;
       budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
       budget.amount = new Money();
-      budget.amount.microAmountSpecified = true;
       budget.amount.microAmount = 50000000;
 
       campaign.budget = budget;
 
       // Create operations.
       CampaignOperation operation = new CampaignOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
       operation.operand = campaign;
 
       try {
         // Add campaign.
-        CampaignReturnValue result = campaignService.mutate((new CampaignOperation[] {operation}));
+        CampaignReturnValue retVal = campaignService.mutate((new CampaignOperation[] {operation}));
 
         // Display campaigns.
-        if (result != null && result.value != null) {
-         foreach (Campaign campaignResult in result.value) {
+        if (retVal != null && retVal.value != null) {
+         foreach (Campaign campaignResult in retVal.value) {
            Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was added.",
               campaignResult.name, campaignResult.id);
          }

@@ -1,9 +1,0 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="com.google.api.adwords.websamples.Properties" GeneratedClassName="Settings">
-  <Profiles />
-  <Settings>
-    <Setting Name="webserviceclient_localhost_MyWebService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:3393/SampleWebService/SampleWebService.asmx</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>

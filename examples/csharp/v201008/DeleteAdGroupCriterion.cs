@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,17 +14,17 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
-  /// This code example deletes a campaign by setting the status to 'DELETED'.
-  /// To get campaigns, run GetAllCampaigns.cs.
+  /// This code example deletes an ad group criterion using the 'REMOVE'
+  /// operator. To get ad group criteria, run GetAllAdGroupCriteria.cs.
   ///
   /// Tags: AdGroupCriterionService.mutate
   /// </summary>
@@ -34,9 +34,19 @@ namespace com.google.api.adwords.examples.v201008 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example deletes a campaign by setting the status to 'DELETED'. " +
-            "To get campaigns, run GetAllCampaigns.cs.";
+        return "This code example deletes an ad group criterion using the 'REMOVE' operator. " +
+            "To get ad group criteria, run GetAllAdGroupCriteria.cs.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new DeleteAdGroupCriterion();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -56,28 +66,25 @@ namespace com.google.api.adwords.examples.v201008 {
       // fields.
       Criterion criterion = new Criterion();
       criterion.id = criterionId;
-      criterion.idSpecified = true;
 
       // Create ad group criterion.
       BiddableAdGroupCriterion adGroupCriterion = new BiddableAdGroupCriterion();
       adGroupCriterion.adGroupId = adGroupId;
-      adGroupCriterion.adGroupIdSpecified = true;
       adGroupCriterion.criterion = criterion;
 
       // Create operations.
       AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
       operation.operand = adGroupCriterion;
       operation.@operator = Operator.REMOVE;
-      operation.operatorSpecified = true;
 
       try {
         // Delete ad group criteria.
-        AdGroupCriterionReturnValue result = adGroupCriterionService.mutate(
+        AdGroupCriterionReturnValue retVal = adGroupCriterionService.mutate(
             new AdGroupCriterionOperation[] {operation});
 
         // Display ad group criteria.
-        if (result != null && result.value != null && result.value.Length > 0) {
-          foreach (AdGroupCriterion temp in result.value) {
+        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+          foreach (AdGroupCriterion temp in retVal.value) {
             Console.WriteLine("Ad group criterion with ad group id = \"{0}\", criterion id = " +
                  "\"{1}\" and type = \"{2}\" was deleted.", temp.adGroupId, temp.criterion.id,
                  temp.criterion.CriterionType);

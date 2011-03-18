@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example adds a text, image ad, and template (Click to Play
-  /// Video) ad to a given ad group. To get ad_group, run GetAllAdGroups.cs.
+  /// Video) ad to a given ad group. To get ad group, run GetAllAdGroups.cs.
   /// To get all videos, run GetAllVideos.cs. To upload video, see
-  /// http://adwords.google.com/support/aw/bin/answer.py?hl=en&answer=39454.
+  /// http://adwords.google.com/support/aw/bin/answer.py?hl=en&amp;answer=39454.
   ///
   /// Tags: AdGroupAdService.mutate
   /// </summary>
@@ -37,10 +37,20 @@ namespace com.google.api.adwords.examples.v201008 {
     public override string Description {
       get {
         return "This code example adds a text, image ad, and template (Click to Play Video) " +
-            "ad to a given ad group. To get ad_group, run GetAllAdGroups.cs. To get " +
+            "ad to a given ad group. To getadgroup, run GetAllAdGroups.cs. To get " +
             "all videos, run GetAllVideos.cs. To upload video, see " +
             "http://adwords.google.com/support/aw/bin/answer.py?hl=en&answer=39454.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new AddAds();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -66,11 +76,9 @@ namespace com.google.api.adwords.examples.v201008 {
 
       AdGroupAd textadGroupAd = new AdGroupAd();
       textadGroupAd.adGroupId = adGroupId;
-      textadGroupAd.adGroupIdSpecified = true;
       textadGroupAd.ad = textAd;
 
       AdGroupAdOperation textAdOperation = new AdGroupAdOperation();
-      textAdOperation.operatorSpecified = true;
       textAdOperation.@operator = Operator.ADD;
       textAdOperation.operand = textadGroupAd;
 
@@ -103,18 +111,15 @@ namespace com.google.api.adwords.examples.v201008 {
       // Set the AdGroup Id.
       AdGroupAd imageAdGroupAd = new AdGroupAd();
       imageAdGroupAd.adGroupId = adGroupId;
-      imageAdGroupAd.adGroupIdSpecified = true;
       imageAdGroupAd.ad = imageAd;
 
       // Create the ADD Operation.
       AdGroupAdOperation imageAdOperation = new AdGroupAdOperation();
-      imageAdOperation.operatorSpecified = true;
       imageAdOperation.@operator = Operator.ADD;
       imageAdOperation.operand = imageAdGroupAd;
 
       // Create your video ad.
       TemplateAd templateAd = new TemplateAd();
-      templateAd.templateIdSpecified = true;
       templateAd.templateId = 9;
 
       TemplateElement templateElement = new TemplateElement();
@@ -123,13 +128,11 @@ namespace com.google.api.adwords.examples.v201008 {
 
       // Create the template field "startImage".
       TemplateElementField imageField = new TemplateElementField();
-      imageField.typeSpecified = true;
       imageField.type = TemplateElementFieldType.IMAGE;
       imageField.name = "startImage";
 
       Image image = new Image();
 
-      image.typeSpecified = true;
       image.type = MediaMediaType.IMAGE;
       image.name = "Starting Image";
       image.data = memStream.ToArray();
@@ -137,21 +140,17 @@ namespace com.google.api.adwords.examples.v201008 {
 
       // Create the template field "displayUrlColor".
       TemplateElementField displayUrlColorField = new TemplateElementField();
-      displayUrlColorField.typeSpecified = true;
       displayUrlColorField.type = TemplateElementFieldType.ENUM;
       displayUrlColorField.fieldText = "#ffffff";
       displayUrlColorField.name = "displayUrlColor";
 
       // Create the template field "video".
       TemplateElementField videoField = new TemplateElementField();
-      videoField.typeSpecified = true;
       videoField.type = TemplateElementFieldType.VIDEO;
       videoField.name = "video";
 
       Video video = new Video();
-      video.mediaIdSpecified = true;
       video.mediaId = videoMediaId;
-      video.typeSpecified = true;
       video.type = MediaMediaType.VIDEO;
 
       videoField.fieldMedia = video;
@@ -161,9 +160,7 @@ namespace com.google.api.adwords.examples.v201008 {
 
       // Set the dimension, name, url and displayurl for video ad.
       templateAd.dimensions = new Dimensions();
-      templateAd.dimensions.widthSpecified = true;
       templateAd.dimensions.width = 300;
-      templateAd.dimensions.heightSpecified = true;
       templateAd.dimensions.height = 250;
 
       templateAd.name = "VideoAdTemplateExample";
@@ -173,22 +170,20 @@ namespace com.google.api.adwords.examples.v201008 {
       // Set the AdGroup Id.
       AdGroupAd videoAdGroupAd = new AdGroupAd();
       videoAdGroupAd.adGroupId = adGroupId;
-      videoAdGroupAd.adGroupIdSpecified = true;
       videoAdGroupAd.ad = templateAd;
 
       // Create the ADD Operation.
       AdGroupAdOperation videoAdOperation = new AdGroupAdOperation();
-      videoAdOperation.operatorSpecified = true;
       videoAdOperation.@operator = Operator.ADD;
       videoAdOperation.operand = videoAdGroupAd;
 
-      AdGroupAdReturnValue result = null;
+      AdGroupAdReturnValue retVal = null;
       try {
-        result = service.mutate(new AdGroupAdOperation[] {textAdOperation, imageAdOperation,
+        retVal = service.mutate(new AdGroupAdOperation[] {textAdOperation, imageAdOperation,
             videoAdOperation});
 
-        if (result != null && result.value != null && result.value.Length > 0) {
-          foreach (AdGroupAd tempAdGroupAd in result.value) {
+        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+          foreach (AdGroupAd tempAdGroupAd in retVal.value) {
             Console.WriteLine("New ad with id = \"{0}\" and displayUrl = \"{1}\" was created.",
                 tempAdGroupAd.ad.id, tempAdGroupAd.ad.displayUrl);
           }

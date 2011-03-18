@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Google.Api.Ads</RootNamespace>
+    <AssemblyName>AdWords</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="AdWords\Lib\AdWordsApiException.cs" />
+    <Compile Include="AdWords\Lib\AdWordsAppConfig.cs" />
+    <Compile Include="AdWords\Lib\AdWordsException.cs" />
+    <Compile Include="AdWords\Lib\AdWordsService.cs" />
+    <Compile Include="AdWords\Lib\AdWordsServiceFactory.cs" />
+    <Compile Include="AdWords\Lib\AdWordsServiceSignature.cs" />
+    <Compile Include="AdWords\Lib\AdWordsSoapClient.cs" />
+    <Compile Include="AdWords\Lib\AdWordsTraceListener.cs" />
+    <Compile Include="AdWords\Lib\AdWordsUnitsListener.cs" />
+    <Compile Include="AdWords\Lib\AdWordsUser.cs" />
+    <Compile Include="AdWords\Lib\ApiUnitsEntry.cs" />
+    <Compile Include="AdWords\Lib\LegacyAdWordsServiceFactory.cs" />
+    <Compile Include="AdWords\Lib\LegacyAdwordsServiceSignature.cs" />
+    <Compile Include="AdWords\Util\ApiCodes\ApiMethod.cs" />
+    <Compile Include="AdWords\Util\ApiCodes\CodeUtilities.cs" />
+    <Compile Include="AdWords\Util\Data\AccountManager.cs" />
+    <Compile Include="AdWords\Util\Data\ClientAccount.cs" />
+    <Compile Include="AdWords\Util\Data\DataUtilities.cs" />
+    <Compile Include="AdWords\Util\Data\LocalAdGroup.cs" />
+    <Compile Include="AdWords\Util\Data\LocalCampaign.cs" />
+    <Compile Include="AdWords\Util\Data\SandboxSerializationException.cs" />
+    <Compile Include="AdWords\Util\Units\AdWordsAccount.cs" />
+    <Compile Include="AdWords\Util\Units\ClientQuotaUsage.cs" />
+    <Compile Include="AdWords\Util\Units\MethodQuotaUsage.cs" />
+    <Compile Include="AdWords\Util\Units\UnitsUtilities.cs" />
+    <Compile Include="AdWords\Util\ErrorUtilities.cs" />
+    <Compile Include="AdWords\Util\ReportsException.cs" />
+    <Compile Include="AdWords\Util\ReportUtilities.cs" />
+    <Compile Include="AdWords\v13\AccountException.cs" />
+    <Compile Include="AdWords\v13\AdWordsApi.cs" />
+    <Compile Include="AdWords\v13\AdWordsServiceV13.cs" />
+    <Compile Include="AdWords\v13\BillingException.cs" />
+    <Compile Include="AdWords\v13\ConcurrencyException.cs" />
+    <Compile Include="AdWords\v13\ExceededLimitsException.cs" />
+    <Compile Include="AdWords\v13\GoogleInternalException.cs" />
+    <Compile Include="AdWords\v13\InvalidOperationException.cs" />
+    <Compile Include="AdWords\v13\InvalidParameterException.cs" />
+    <Compile Include="AdWords\v13\InvalidRequestException.cs" />
+    <Compile Include="AdWords\v13\LegacyAdWordsApiException.cs" />
+    <Compile Include="AdWords\v13\LegacyAdWordsSoapClient.cs" />
+    <Compile Include="AdWords\v13\PermissionException.cs" />
+    <Compile Include="AdWords\v13\PolicyViolationException.cs" />
+    <Compile Include="AdWords\v13\SandboxException.cs" />
+    <Compile Include="AdWords\v13\WebPageException.cs" />
+    <Compile Include="AdWords\v200909\AdWordsApi.cs" />
+    <Compile Include="AdWords\v200909\AdWordsServiceV200909.cs" />
+    <Compile Include="AdWords\v201003\AdWordsApi.cs" />
+    <Compile Include="AdWords\v201003\AdWordsServiceV201003.cs" />
+    <Compile Include="AdWords\v201008\AdWordsApi.cs" />
+    <Compile Include="AdWords\v201008\AdWordsServiceV201008.cs" />
+    <Compile Include="AdWords\v201101\AdWordsApi.cs" />
+    <Compile Include="AdWords\v201101\AdWordsServiceV201101.cs" />
+    <Compile Include="AdWords\RequestHeader.cs" />
+    <Compile Include="AdWords\ResponseHeader.cs" />
+    <Compile Include="Common\Lib\AdsClient.cs" />
+    <Compile Include="Common\Lib\AdsException.cs" />
+    <Compile Include="Common\Lib\AdsService.cs" />
+    <Compile Include="Common\Lib\AdsSoapClient.cs" />
+    <Compile Include="Common\Lib\AdsUser.cs" />
+    <Compile Include="Common\Lib\AppConfigBase.cs" />
+    <Compile Include="Common\Lib\AuthToken.cs" />
+    <Compile Include="Common\Lib\AuthTokenErrorCode.cs" />
+    <Compile Include="Common\Lib\AuthTokenException.cs" />
+    <Compile Include="Common\Lib\ContextStore.cs" />
+    <Compile Include="Common\Lib\ServiceFactory.cs" />
+    <Compile Include="Common\Lib\ServiceSignature.cs" />
+    <Compile Include="Common\Lib\SoapHeaderBase.cs" />
+    <Compile Include="Common\Lib\SoapListener.cs" />
+    <Compile Include="Common\Lib\SoapListenerExtension.cs" />
+    <Compile Include="Common\Lib\SoapListenerExtensionAttribute.cs" />
+    <Compile Include="Common\Lib\TraceListener.cs" />
+    <Compile Include="Common\Util\CsvException.cs" />
+    <Compile Include="Common\Util\CsvFile.cs" />
+    <Compile Include="Common\Util\MediaUtilities.cs" />
+    <Compile Include="Common\Util\SerializationUtilities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Properties.cs" />
+    <Compile Include="AdWords\AdWordsErrorMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdWordsErrorMessages.resx</DependentUpon>
+      <CustomToolNamespace>Google.Api.Ads.AdWords</CustomToolNamespace>
+    </Compile>
+    <Compile Include="Common\CommonErrorMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonErrorMessages.resx</DependentUpon>
+      <CustomToolNamespace>Google.Api.Ads.AdWords</CustomToolNamespace>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AdWords\AdWordsErrorMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdWordsErrorMessages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\CommonErrorMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonErrorMessages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

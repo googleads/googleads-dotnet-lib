@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v200909 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v200909 {
   /// <summary>
   /// This code example retrieves the total number of API units for this entire
   /// month that can be used by the developer token being used to make
@@ -41,6 +41,16 @@ namespace com.google.api.adwords.examples.v200909 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new GetTotalUsageUnitsPerMonth();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -50,7 +60,6 @@ namespace com.google.api.adwords.examples.v200909 {
       InfoService infoService = (InfoService) user.GetService(AdWordsService.v200909.InfoService);
 
       InfoSelector selector = new InfoSelector();
-      selector.apiUsageTypeSpecified = true;
       selector.apiUsageType = ApiUsageType.TOTAL_USAGE_API_UNITS_PER_MONTH;
 
       try {

@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v13;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v13;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v13 {
+namespace Google.Api.Ads.AdWords.Tests.v13 {
   /// <summary>
   /// Unittest for TrafficEstimatorService.
   /// </summary>
@@ -61,9 +61,9 @@ namespace com.google.api.adwords.tests.v13 {
       KeywordTraffic[] results = null;
       Assert.DoesNotThrow(delegate() {
         results = trafficEstimatorService.checkKeywordTraffic(
-            new KeywordTrafficRequest[] { request });
+            new KeywordTrafficRequest[] {request});
       });
-      Assert.That(results == null || results.Length > 0); 
+      Assert.That(results == null || results.Length > 0);
     }
 
     /// <summary>
@@ -74,21 +74,17 @@ namespace com.google.api.adwords.tests.v13 {
       AdGroupRequest request = new AdGroupRequest();
 
       KeywordRequest keywordRequest = new KeywordRequest();
-      keywordRequest.maxCpcSpecified = true;
       keywordRequest.maxCpc = 1000000;
-      keywordRequest.negativeSpecified = true;
       keywordRequest.negative = false;
-      keywordRequest.typeSpecified = true;
       keywordRequest.type = KeywordType.Broad;
       keywordRequest.text = "Flowers";
 
       request.keywordRequests = new KeywordRequest[] {keywordRequest};
       request.maxCpc = 1000000;
-      request.maxCpcSpecified = true;
 
       AdGroupEstimate[] estimates = null;
       Assert.DoesNotThrow(delegate() {
-        estimates = trafficEstimatorService.estimateAdGroupList(new AdGroupRequest[] { request });
+        estimates = trafficEstimatorService.estimateAdGroupList(new AdGroupRequest[] {request});
       });
       Assert.That(estimates == null || estimates.Length > 0);
     }
@@ -102,16 +98,12 @@ namespace com.google.api.adwords.tests.v13 {
       AdGroupRequest adGroupRequest = new AdGroupRequest();
 
       KeywordRequest keywordRequest = new KeywordRequest();
-      keywordRequest.maxCpcSpecified = true;
       keywordRequest.maxCpc = 1000000;
-      keywordRequest.negativeSpecified = true;
       keywordRequest.negative = false;
-      keywordRequest.typeSpecified = true;
       keywordRequest.type = KeywordType.Broad;
       keywordRequest.text = "Flowers";
 
       adGroupRequest.keywordRequests = new KeywordRequest[] {keywordRequest};
-      adGroupRequest.maxCpcSpecified = true;
       adGroupRequest.maxCpc = 1000000;
 
       request.geoTargeting = new GeoTarget();
@@ -125,7 +117,7 @@ namespace com.google.api.adwords.tests.v13 {
 
       CampaignEstimate[] estimates = null;
       Assert.DoesNotThrow(delegate() {
-        estimates = trafficEstimatorService.estimateCampaignList(new CampaignRequest[] { request });
+        estimates = trafficEstimatorService.estimateCampaignList(new CampaignRequest[] {request});
       });
       Assert.That(estimates == null || estimates.Length > 0);
     }
@@ -136,28 +128,22 @@ namespace com.google.api.adwords.tests.v13 {
     [Test]
     public void TestEstimateKeywordList() {
       KeywordRequest request1 = new KeywordRequest();
-      request1.maxCpcSpecified = true;
       request1.maxCpc = 1000000;
-      request1.negativeSpecified = true;
       request1.negative = false;
       request1.text = "Flowers";
-      request1.typeSpecified = true;
       request1.type = KeywordType.Broad;
 
       KeywordRequest request2 = new KeywordRequest();
-      request2.maxCpcSpecified = true;
       request2.maxCpc = 2000000;
-      request2.negativeSpecified = true;
       request2.negative = false;
       request2.text = "House";
-      request2.typeSpecified = true;
       request2.type = KeywordType.Broad;
 
       KeywordEstimate[] estimates = null;
 
       Assert.DoesNotThrow(delegate() {
         estimates = trafficEstimatorService.estimateKeywordList(
-          new KeywordRequest[] { request1, request2 });
+          new KeywordRequest[] {request1, request2});
       });
       Assert.That(estimates == null || estimates.Length > 0);
     }

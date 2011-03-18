@@ -1,4 +1,4 @@
-﻿// Copyright 2010, Google Inc. All Rights Reserved.
+﻿// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v200909 {
+namespace Google.Api.Ads.AdWords.Tests.v200909 {
   /// <summary>
   /// UnitTests for <see cref="AdParamService"/> class.
   /// </summary>
@@ -73,7 +73,7 @@ namespace com.google.api.adwords.tests.v200909 {
       TestUtils utils = new TestUtils();
       adParamService = (AdParamService)user.GetService(AdWordsService.v200909.AdParamService);
 
-      campaignId = utils.CreateCampaign(user, true);
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
       adGroupId = utils.CreateAdGroup(user, campaignId);
       adId = utils.CreateTextAd(user, adGroupId, true);
       keywordId = utils.CreateKeyword(user, adGroupId);
@@ -120,16 +120,12 @@ namespace com.google.api.adwords.tests.v200909 {
     public void TestCreateAdParam() {
       // Prepare for setting ad parameters.
       AdParam adParam = new AdParam();
-      adParam.adGroupIdSpecified = true;
       adParam.adGroupId = adGroupId;
-      adParam.criterionIdSpecified = true;
       adParam.criterionId = keywordIdNoParam;
       adParam.paramIndex = 1;
-      adParam.paramIndexSpecified = true;
       adParam.insertionText = "$100";
 
       AdParamOperation adParamOperation = new AdParamOperation();
-      adParamOperation.operatorSpecified = true;
       adParamOperation.@operator = Operator.SET;
       adParamOperation.operand = adParam;
 
@@ -137,7 +133,7 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Assert.DoesNotThrow(delegate() {
         // Set ad parameters.
-        newAdParams = adParamService.mutate(new AdParamOperation[] { adParamOperation });
+        newAdParams = adParamService.mutate(new AdParamOperation[] {adParamOperation});
       });
       Assert.NotNull(newAdParams);
       Assert.AreEqual(newAdParams.Length, 1);
@@ -154,16 +150,12 @@ namespace com.google.api.adwords.tests.v200909 {
     public void TestUpdateAdParam() {
       // Prepare for setting ad parameters.
       AdParam adParam = new AdParam();
-      adParam.adGroupIdSpecified = true;
       adParam.adGroupId = adGroupId;
-      adParam.criterionIdSpecified = true;
       adParam.criterionId = keywordId;
       adParam.paramIndex = 1;
-      adParam.paramIndexSpecified = true;
       adParam.insertionText = "$39";
 
       AdParamOperation adParamOperation = new AdParamOperation();
-      adParamOperation.operatorSpecified = true;
       adParamOperation.@operator = Operator.SET;
       adParamOperation.operand = adParam;
 
@@ -182,15 +174,11 @@ namespace com.google.api.adwords.tests.v200909 {
     public void TestRemoveAdParam() {
       // Prepare for setting ad parameters.
       AdParam adParam = new AdParam();
-      adParam.adGroupIdSpecified = true;
       adParam.adGroupId = adGroupId;
-      adParam.criterionIdSpecified = true;
       adParam.criterionId = keywordId;
       adParam.paramIndex = 1;
-      adParam.paramIndexSpecified = true;
 
       AdParamOperation priceOperation = new AdParamOperation();
-      priceOperation.operatorSpecified = true;
       priceOperation.@operator = Operator.REMOVE;
       priceOperation.operand = adParam;
 

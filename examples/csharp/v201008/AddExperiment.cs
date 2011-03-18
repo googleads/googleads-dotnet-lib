@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example creates an experiment using a query percentage of 10,
   /// which defines what fraction of auctions should go to the control split
@@ -44,6 +44,16 @@ namespace com.google.api.adwords.examples.v201008 {
             "groups. To get campaigns, run GetAllCampaigns.cs. To get ad groups, run " +
             "GetAllAdGroups.cs. To get criteria, run GetAllAdGroupCriteria.cs.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new AddExperiment();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -71,16 +81,13 @@ namespace com.google.api.adwords.examples.v201008 {
       // Create experiment.
       Experiment experiment = new Experiment();
       experiment.campaignId = campaignId;
-      experiment.campaignIdSpecified = true;
       experiment.name = "Interplanetary Cruise #" + GetTimeStamp();
       experiment.queryPercentage = 10;
-      experiment.queryPercentageSpecified = true;
       experiment.startDateTime = DateTime.Now.ToString("yyyyMMdd HHmmss");
 
       // Create operation.
       ExperimentOperation experimentOperation = new ExperimentOperation();
       experimentOperation.@operator = Operator.ADD;
-      experimentOperation.operatorSpecified = true;
       experimentOperation.operand = experiment;
 
       try {
@@ -101,7 +108,6 @@ namespace com.google.api.adwords.examples.v201008 {
           // Set ad group for the experiment.
           AdGroup adGroup = new AdGroup();
           adGroup.id = adGroupId;
-          adGroup.idSpecified = true;
 
           // Create experiment bid multiplier rule that will modify ad group bid
           // for the experiment.
@@ -109,14 +115,11 @@ namespace com.google.api.adwords.examples.v201008 {
               new ManualCPCAdGroupExperimentBidMultipliers();
           adGroupBidMultiplier.maxCpcMultiplier = new BidMultiplier();
           adGroupBidMultiplier.maxCpcMultiplier.multiplier = 1.5;
-          adGroupBidMultiplier.maxCpcMultiplier.multiplierSpecified = true;
 
           // Set experiment data to the ad group.
           AdGroupExperimentData adGroupExperimentData = new AdGroupExperimentData();
           adGroupExperimentData.experimentId = experimentId;
-          adGroupExperimentData.experimentIdSpecified = true;
           adGroupExperimentData.experimentDeltaStatus = ExperimentDeltaStatus.MODIFIED;
-          adGroupExperimentData.experimentDeltaStatusSpecified = true;
           adGroupExperimentData.experimentBidMultipliers = adGroupBidMultiplier;
 
           adGroup.experimentData = adGroupExperimentData;
@@ -125,7 +128,6 @@ namespace com.google.api.adwords.examples.v201008 {
           AdGroupOperation adGroupOperation = new AdGroupOperation();
           adGroupOperation.operand = adGroup;
           adGroupOperation.@operator = Operator.SET;
-          adGroupOperation.operatorSpecified = true;
 
           // Update ad group.
           AdGroupReturnValue adGroupRetVal = adGroupService.mutate(new AdGroupOperation[] {
@@ -145,7 +147,6 @@ namespace com.google.api.adwords.examples.v201008 {
           // Set ad group criteria for the experiment.
           Criterion criterion = new Criterion();
           criterion.id = criterionId;
-          criterion.idSpecified = true;
 
           BiddableAdGroupCriterion adGroupCriterion = new BiddableAdGroupCriterion();
           adGroupCriterion.adGroupId = adGroupId;
@@ -157,15 +158,12 @@ namespace com.google.api.adwords.examples.v201008 {
               new ManualCPCAdGroupCriterionExperimentBidMultiplier();
           bidMultiplier.maxCpcMultiplier = new BidMultiplier();
           bidMultiplier.maxCpcMultiplier.multiplier = 1.5;
-          bidMultiplier.maxCpcMultiplier.multiplierSpecified = true;
 
           // Set experiment data to the criterion.
           BiddableAdGroupCriterionExperimentData adGroupCriterionExperimentData =
               new BiddableAdGroupCriterionExperimentData();
           adGroupCriterionExperimentData.experimentId = experimentId;
-          adGroupCriterionExperimentData.experimentIdSpecified = true;
           adGroupCriterionExperimentData.experimentDeltaStatus = ExperimentDeltaStatus.MODIFIED;
-          adGroupCriterionExperimentData.experimentDeltaStatusSpecified = true;
           adGroupCriterionExperimentData.experimentBidMultiplier = bidMultiplier;
 
           adGroupCriterion.experimentData = adGroupCriterionExperimentData;
@@ -174,7 +172,6 @@ namespace com.google.api.adwords.examples.v201008 {
           AdGroupCriterionOperation adGroupCriterionOperation = new AdGroupCriterionOperation();
           adGroupCriterionOperation.operand = adGroupCriterion;
           adGroupCriterionOperation.@operator = Operator.SET;
-          adGroupCriterionOperation.operatorSpecified = true;
 
           // Update ad group criteria.
           AdGroupCriterionReturnValue adGroupCriterionRetVal = adGroupCriterionService.mutate(

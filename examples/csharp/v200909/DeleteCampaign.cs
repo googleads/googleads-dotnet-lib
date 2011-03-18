@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v200909 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v200909 {
   /// <summary>
   /// This code example deletes a campaign by setting the status to 'DELETED'.
   /// To get campaigns, run GetAllCampaigns.cs.
@@ -40,6 +40,16 @@ namespace com.google.api.adwords.examples.v200909 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new DeleteCampaign();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -54,23 +64,20 @@ namespace com.google.api.adwords.examples.v200909 {
       // Create campaign with DELETED status.
       Campaign campaign = new Campaign();
       campaign.id = campaignId;
-      campaign.idSpecified = true;
       campaign.status = CampaignStatus.DELETED;
-      campaign.statusSpecified = true;
 
       // Create operations.
       CampaignOperation operation = new CampaignOperation();
       operation.operand = campaign;
       operation.@operator = Operator.SET;
-      operation.operatorSpecified = true;
 
       try {
         // Delete campaign.
-        CampaignReturnValue result = campaignService.mutate(new CampaignOperation[] { operation });
+        CampaignReturnValue retVal = campaignService.mutate(new CampaignOperation[] {operation});
 
         // Display campaigns.
-        if (result != null && result.value != null && result.value.Length > 0) {
-          foreach (Campaign temp in result.value) {
+        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+          foreach (Campaign temp in retVal.value) {
             Console.WriteLine("Campaign with name = \"{0}\" and id = \"{1}\" was deleted.",
                temp.name, temp.id);
           }

@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using System;
 
-namespace com.google.api.adwords.examples.v201003 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201003 {
   /// <summary>
   /// This code example updates an ad's status given an existing ad group
   /// and ad.
@@ -34,6 +34,16 @@ namespace com.google.api.adwords.examples.v201003 {
       get {
         return "This code example updates an ad's status given an existing ad group and ad.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new UpdateAd();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -53,25 +63,19 @@ namespace com.google.api.adwords.examples.v201003 {
 
       // Update your Ad.
       AdGroupAd adGroupAd = new AdGroupAd();
-
-      adGroupAd.statusSpecified = true;
       adGroupAd.status = status;
-
       adGroupAd.adGroupId = adGroupId;
-      adGroupAd.adGroupIdSpecified = true;
 
       adGroupAd.ad = new Ad();
       adGroupAd.ad.id = adId;
-      adGroupAd.ad.idSpecified = true;
 
       AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
-      adGroupAdOperation.operatorSpecified = true;
       adGroupAdOperation.@operator = Operator.SET;
       adGroupAdOperation.operand = adGroupAd;
       try {
-        AdGroupAdReturnValue result = service.mutate(new AdGroupAdOperation[]{adGroupAdOperation});
-        if (result.value != null && result.value.Length > 0) {
-          AdGroupAd tempAdGroupAd = result.value[0];
+        AdGroupAdReturnValue retVal = service.mutate(new AdGroupAdOperation[]{adGroupAdOperation});
+        if (retVal.value != null && retVal.value.Length > 0) {
+          AdGroupAd tempAdGroupAd = retVal.value[0];
           Console.WriteLine("Status of ad with id \"{0}\" was set to \"{1}\"",
               tempAdGroupAd.ad.id, tempAdGroupAd.status);
         }

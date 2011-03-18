@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example gets a bid landscape for an ad group and a criterion.
   /// To get ad groups, run GetAllAdGroups.cs. To get criteria, run
@@ -39,6 +39,16 @@ namespace com.google.api.adwords.examples.v201008 {
             "To get ad groups, run GetAllAdGroups.cs. To get criteria, run " +
             "GetAllAdGroupCriteria.cs.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new GetCriterionBidLandscape();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -60,16 +70,14 @@ namespace com.google.api.adwords.examples.v201008 {
       // Create id filter.
       BidLandscapeIdFilter idFilter = new BidLandscapeIdFilter();
       idFilter.adGroupId = adGroupId;
-      idFilter.adGroupIdSpecified = true;
       idFilter.criterionId = criterionId;
-      idFilter.criterionIdSpecified = true;
       selector.idFilters = new BidLandscapeIdFilter[] {idFilter};
 
       try {
         // Get bid landscape for ad group criteria.
         BidLandscape[] bidLandscapes = bidLandscapeService.getBidLandscape(selector);
 
-        // Displsay bid landscapes.
+        // Display bid landscapes.
         if (bidLandscapes != null && bidLandscapes.Length > 0) {
           foreach (BidLandscape bidLandscape in bidLandscapes) {
             if (bidLandscape is CriterionBidLandscape) {

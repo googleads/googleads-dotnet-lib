@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example deletes an ad group by setting the status to 'DELETED'.
   /// To get ad groups, run GetAllAdGroups.cs.
@@ -40,6 +40,16 @@ namespace com.google.api.adwords.examples.v201008 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new DeleteAdGroup();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -54,23 +64,20 @@ namespace com.google.api.adwords.examples.v201008 {
       // Create ad group with DELETED status.
       AdGroup adGroup = new AdGroup();
       adGroup.id = adGroupId;
-      adGroup.idSpecified = true;
-      adGroup.statusSpecified = true;
       adGroup.status = AdGroupStatus.DELETED;
 
       // Create operations.
       AdGroupOperation operation = new AdGroupOperation();
       operation.operand = adGroup;
-      operation.operatorSpecified = true;
       operation.@operator = Operator.SET;
 
       try {
         // Update ad group.
-        AdGroupReturnValue result = adGroupService.mutate(new AdGroupOperation[] { operation });
+        AdGroupReturnValue retVal = adGroupService.mutate(new AdGroupOperation[] {operation});
 
         // Display ad groups.
-        if (result != null && result.value != null && result.value.Length > 0) {
-          foreach (AdGroup temp in result.value) {
+        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+          foreach (AdGroup temp in retVal.value) {
             Console.WriteLine("Ad group with name = \"{0}\" and id = \"{1}\" was deleted.",
                 temp.name, temp.id);
           }

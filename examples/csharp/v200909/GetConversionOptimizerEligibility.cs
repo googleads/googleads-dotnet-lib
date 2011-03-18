@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v200909 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v200909 {
   /// <summary>
   /// This code example shows how to check for conversion optimizer eligibility
   /// by attempting to set the bidding transition with the validate only header
@@ -42,6 +42,16 @@ namespace com.google.api.adwords.examples.v200909 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new GetConversionOptimizerEligibility();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -58,7 +68,6 @@ namespace com.google.api.adwords.examples.v200909 {
       // Create campaign.
       Campaign campaign = new Campaign();
       campaign.id = campaignId;
-      campaign.idSpecified = true;
 
       // Create bidding transition.
       ConversionOptimizerBiddingTransition conversionOptimizerBiddingTransition
@@ -67,7 +76,6 @@ namespace com.google.api.adwords.examples.v200909 {
       // Create conversion optimizer bidding strategy.
       ConversionOptimizer conversionOptimizer = new ConversionOptimizer();
       conversionOptimizer.pricingModel = PricingModel.CONVERSIONS;
-      conversionOptimizer.pricingModelSpecified = true;
       conversionOptimizerBiddingTransition.targetBiddingStrategy = conversionOptimizer;
 
       // Create converstion optimizer ad group bids.
@@ -78,7 +86,6 @@ namespace com.google.api.adwords.examples.v200909 {
       // Create operations.
       CampaignOperation operation = new CampaignOperation();
       operation.biddingTransition = conversionOptimizerBiddingTransition;
-      operation.operatorSpecified = true;
       operation.@operator = Operator.SET;
       operation.operand = campaign;
 
@@ -86,7 +93,7 @@ namespace com.google.api.adwords.examples.v200909 {
 
       try {
         // Check that campaign is eligible for conversion optimization.
-        CampaignReturnValue result = campaignService.mutate(operations);
+        CampaignReturnValue retVal = campaignService.mutate(operations);
 
         Console.WriteLine("Campaign with id = '{0}' is eligible to use conversion optimizer.",
             campaign.id);

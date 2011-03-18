@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v200909 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v200909 {
   /// <summary>
   /// This code example shows how to add an Ad Extension to an existing
   /// campaign. To create a campaign, run AddCampaign.cs.
@@ -37,6 +37,16 @@ namespace com.google.api.adwords.examples.v200909 {
         return "This code example shows how to add an Ad Extension to an existing campaign. To " +
             "create a campaign, run AddCampaign.cs.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new AddCampaignAdExtension();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -81,18 +91,14 @@ namespace com.google.api.adwords.examples.v200909 {
         locationExtension.address = location.address;
         locationExtension.geoPoint = location.geoPoint;
         locationExtension.encodedLocation = location.encodedLocation;
-        locationExtension.sourceSpecified = true;
         locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND;
 
         CampaignAdExtension extension = new CampaignAdExtension();
-        extension.campaignIdSpecified = true;
         extension.campaignId = campaignId;
-        extension.statusSpecified = true;
         extension.status = CampaignAdExtensionStatus.ACTIVE;
         extension.adExtension = locationExtension;
 
         CampaignAdExtensionOperation operation = new CampaignAdExtensionOperation();
-        operation.operatorSpecified = true;
         operation.@operator = Operator.ADD;
         operation.operand = extension;
 
@@ -100,10 +106,10 @@ namespace com.google.api.adwords.examples.v200909 {
       }
 
       try {
-        CampaignAdExtensionReturnValue retval =
+        CampaignAdExtensionReturnValue retVal =
             campaignExtensionService.mutate(operations.ToArray());
-        if (retval != null && retval.value != null && retval.value.Length > 0) {
-          foreach (CampaignAdExtension campaignExtension in retval.value) {
+        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+          foreach (CampaignAdExtension campaignExtension in retVal.value) {
             Console.WriteLine("Created a campaign ad extension with id = \"{0}\" and " +
                 "status = \"{1}\"", campaignExtension.adExtension.id, campaignExtension.status);
           }

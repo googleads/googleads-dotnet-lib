@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.lib.util;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.Util;
+using Google.Api.Ads.AdWords.v200909;
 
 using System;
 using System.Threading;
 
-namespace com.google.api.adwords.examples.v200909 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v200909 {
   /// <summary>
   /// This code example shows how to add ads and keywords using the
   /// BulkMutateJobService.
@@ -40,6 +40,16 @@ namespace com.google.api.adwords.examples.v200909 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new PerformBulkMutateJob();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -54,7 +64,6 @@ namespace com.google.api.adwords.examples.v200909 {
 
       // Create an AdGroupAdOperation to add a text ad.
       AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
-      adGroupAdOperation.operatorSpecified = true;
       adGroupAdOperation.@operator = Operator.ADD;
 
       TextAd textAd = new TextAd();
@@ -66,7 +75,6 @@ namespace com.google.api.adwords.examples.v200909 {
 
       AdGroupAd adGroupAd = new AdGroupAd();
       adGroupAd.adGroupId = adGroupId;
-      adGroupAd.adGroupIdSpecified = true;
       adGroupAd.ad = textAd;
 
       adGroupAdOperation.operand = adGroupAd;
@@ -76,9 +84,7 @@ namespace com.google.api.adwords.examples.v200909 {
 
       adOpStream.scopingEntityId = new EntityId();
       adOpStream.scopingEntityId.type = EntityIdType.CAMPAIGN_ID;
-      adOpStream.scopingEntityId.typeSpecified = true;
       adOpStream.scopingEntityId.value = campaignId;
-      adOpStream.scopingEntityId.valueSpecified = true;
 
       adOpStream.operations = new Operation[] {adGroupAdOperation};
 
@@ -88,17 +94,14 @@ namespace com.google.api.adwords.examples.v200909 {
       for (int i = 0; i < 100; i++) {
         Keyword keyword = new Keyword();
         keyword.text = string.Format("mars cruise {0}", i);
-        keyword.matchTypeSpecified = true;
         keyword.matchType = KeywordMatchType.BROAD;
 
         BiddableAdGroupCriterion criterion = new BiddableAdGroupCriterion();
         criterion.adGroupId = adGroupId;
-        criterion.adGroupIdSpecified = true;
         criterion.criterion = keyword;
 
         AdGroupCriterionOperation adGroupCriterionOperation = new AdGroupCriterionOperation();
         adGroupCriterionOperation.@operator = Operator.ADD;
-        adGroupCriterionOperation.operatorSpecified = true;
 
         adGroupCriterionOperation.operand = criterion;
         adGroupCriterionOperations[i] = adGroupCriterionOperation;
@@ -109,9 +112,7 @@ namespace com.google.api.adwords.examples.v200909 {
 
       keywordOpStream.scopingEntityId = new EntityId();
       keywordOpStream.scopingEntityId.type = EntityIdType.CAMPAIGN_ID;
-      keywordOpStream.scopingEntityId.typeSpecified = true;
       keywordOpStream.scopingEntityId.value = campaignId;
-      keywordOpStream.scopingEntityId.valueSpecified = true;
 
       keywordOpStream.operations = adGroupCriterionOperations;
 
@@ -123,19 +124,16 @@ namespace com.google.api.adwords.examples.v200909 {
 
       bulkJob = new BulkMutateJob();
       bulkJob.numRequestParts = 2;
-      bulkJob.numRequestPartsSpecified = true;
 
       // b. Create a part of the job.
 
       BulkMutateRequest bulkRequest1 = new BulkMutateRequest();
       bulkRequest1.partIndex = 0;
-      bulkRequest1.partIndexSpecified = true;
       bulkRequest1.operationStreams = new OperationStream[] {adOpStream};
       bulkJob.request = bulkRequest1;
 
       // c. Create job operation.
       JobOperation jobOperation1 = new JobOperation();
-      jobOperation1.operatorSpecified = true;
       jobOperation1.@operator = Operator.ADD;
       jobOperation1.operand = bulkJob;
 
@@ -152,17 +150,14 @@ namespace com.google.api.adwords.examples.v200909 {
 
       // Note: since we already created a job earlier, this time we modify it.
       bulkJob = new BulkMutateJob();
-      bulkJob.idSpecified = true;
       bulkJob.id = bulkJobId;
 
       BulkMutateRequest bulkRequest2 = new BulkMutateRequest();
       bulkRequest2.partIndex = 1;
-      bulkRequest2.partIndexSpecified = true;
       bulkRequest2.operationStreams = new OperationStream[] {keywordOpStream};
       bulkJob.request = bulkRequest2;
 
       JobOperation jobOperation2 = new JobOperation();
-      jobOperation2.operatorSpecified = true;
       jobOperation2.@operator = Operator.SET;
       jobOperation2.operand = bulkJob;
 
@@ -207,7 +202,6 @@ namespace com.google.api.adwords.examples.v200909 {
           BulkMutateJobSelector selector = new BulkMutateJobSelector();
           selector.jobIds = new long[] {bulkJobId};
           selector.resultPartIndex = i;
-          selector.resultPartIndexSpecified = true;
 
           BulkMutateJob[] allJobParts = bmjService.get(selector);
           foreach (BulkMutateJob jobPart in allJobParts) {

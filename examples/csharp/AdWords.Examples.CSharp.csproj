@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C1DE791-767A-4599-A0B9-51D6D2DFCC81}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Google.Api.Ads.AdWords.Examples.CSharp</RootNamespace>
+    <AssemblyName>AdWords.Examples.CSharp</AssemblyName>
+    <StartupObject>Google.Api.Ads.AdWords.Examples.CSharp.Program</StartupObject>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\Properties\Properties.cs">
+      <Link>Properties\Properties.cs</Link>
+    </Compile>
+    <Compile Include="Both\UsingTrafficEstimatorDemo.cs" />
+    <Compile Include="v201101\AddAdExtensionOverride.cs" />
+    <Compile Include="v201101\AddAdGroup.cs" />
+    <Compile Include="v201101\AddAdGroupCriteria.cs" />
+    <Compile Include="v201101\AddAds.cs" />
+    <Compile Include="v201101\AddCampaign.cs" />
+    <Compile Include="v201101\AddCampaignAdExtension.cs" />
+    <Compile Include="v201101\AddExperiment.cs" />
+    <Compile Include="v201101\AddKeywordsPerformanceReportDefinition.cs" />
+    <Compile Include="v201101\AddLogicalUserList.cs" />
+    <Compile Include="v201101\AddMobileImageAd.cs" />
+    <Compile Include="v201101\AddNegativeCampaignCriterion.cs" />
+    <Compile Include="v201101\AddSiteLinks.cs" />
+    <Compile Include="v201101\AddUserList.cs" />
+    <Compile Include="v201101\BackupSandboxDemo.cs" />
+    <Compile Include="v201101\CheckCampaigns.cs" />
+    <Compile Include="v201101\ClientApiUnitsUsageDemo.cs" />
+    <Compile Include="v201101\GetAdGroupBidLandscape.cs" />
+    <Compile Include="v201101\DeleteAd.cs" />
+    <Compile Include="v201101\DeleteAdGroup.cs" />
+    <Compile Include="v201101\DeleteAdGroupCriterion.cs" />
+    <Compile Include="v201101\DeleteBulkMutateJob.cs" />
+    <Compile Include="v201101\DeleteCampaign.cs" />
+    <Compile Include="v201101\DeleteExperiment.cs" />
+    <Compile Include="v201101\DeleteSitelinks.cs" />
+    <Compile Include="v201101\DeleteUserList.cs" />
+    <Compile Include="v201101\DownloadReport.cs" />
+    <Compile Include="v201101\GetAccountHierarchy.cs" />
+    <Compile Include="v201101\GetAllAccountChanges.cs" />
+    <Compile Include="v201101\GetAllActiveAdGroupCriteria.cs" />
+    <Compile Include="v201101\GetAllAdExtensionOverrides.cs" />
+    <Compile Include="v201101\GetAllAdGroupCriteria.cs" />
+    <Compile Include="v201101\GetAllAdGroups.cs" />
+    <Compile Include="v201101\GetAllAds.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleBase.cs" />
+    <Compile Include="v13\AccountServiceDemo.cs" />
+    <Compile Include="v13\AccountServiceNoConfigDemo.cs" />
+    <Compile Include="v13\CheckKeywordTrafficDemo.cs" />
+    <Compile Include="v13\DownloadReportAsCsvDemo.cs" />
+    <Compile Include="v13\DownloadReportAsXmlDemo.cs" />
+    <Compile Include="v13\KeywordEstimateDemo.cs" />
+    <Compile Include="v13\ReportServiceKeywordDemo.cs" />
+    <Compile Include="v13\ReportServiceStructureDemo.cs" />
+    <Compile Include="v200909\AddAdExtensionOverride.cs" />
+    <Compile Include="v200909\AddAdGroup.cs" />
+    <Compile Include="v200909\AddAdGroupCriteria.cs" />
+    <Compile Include="v200909\AddAds.cs" />
+    <Compile Include="v200909\AddCampaign.cs" />
+    <Compile Include="v200909\AddCampaignAdExtension.cs" />
+    <Compile Include="v200909\AddMobileImageAd.cs" />
+    <Compile Include="v200909\AddNegativeCampaignCriterion.cs" />
+    <Compile Include="v200909\BackupSandboxDemo.cs" />
+    <Compile Include="v200909\CheckCampaigns.cs" />
+    <Compile Include="v200909\ClientApiUnitsUsageDemo.cs" />
+    <Compile Include="v200909\DeleteAd.cs" />
+    <Compile Include="v200909\DeleteAdGroup.cs" />
+    <Compile Include="v200909\DeleteAdGroupCriterion.cs" />
+    <Compile Include="v200909\DeleteCampaign.cs" />
+    <Compile Include="v200909\GetAllActiveAdGroupCriteria.cs" />
+    <Compile Include="v200909\GetAllAdExtensionOverrides.cs" />
+    <Compile Include="v200909\GetAllAdGroupCriteria.cs" />
+    <Compile Include="v200909\GetAllAdGroups.cs" />
+    <Compile Include="v200909\GetAllAds.cs" />
+    <Compile Include="v200909\GetAllCampaignAdExtensions.cs" />
+    <Compile Include="v200909\GetAllCampaigns.cs" />
+    <Compile Include="v200909\GetAllCampaignTargets.cs" />
+    <Compile Include="v200909\GetAllDisapprovedAds.cs" />
+    <Compile Include="v200909\GetAllPausedCampaigns.cs" />
+    <Compile Include="v200909\GetCampaign.cs" />
+    <Compile Include="v200909\GetConversionOptimizerEligibility.cs" />
+    <Compile Include="v200909\GetGeoLocationInfo.cs" />
+    <Compile Include="v200909\GetMethodCost.cs" />
+    <Compile Include="v200909\GetOperationCount.cs" />
+    <Compile Include="v200909\GetRelatedKeywords.cs" />
+    <Compile Include="v200909\GetRelatedPlacements.cs" />
+    <Compile Include="v200909\GetTotalUsageUnitsPerMonth.cs" />
+    <Compile Include="v200909\GetUnitCount.cs" />
+    <Compile Include="v200909\HandlePolicyViolationError.cs" />
+    <Compile Include="v200909\MethodApiUnitsUsageDemo.cs" />
+    <Compile Include="v200909\PerformBulkMutateJob.cs" />
+    <Compile Include="v200909\RestoreSandboxDemo.cs" />
+    <Compile Include="v200909\SetAdParams.cs" />
+    <Compile Include="v200909\SetCampaignTargets.cs" />
+    <Compile Include="v200909\UpdateAd.cs" />
+    <Compile Include="v200909\UpdateAdGroup.cs" />
+    <Compile Include="v200909\UpdateAdGroupCriterion.cs" />
+    <Compile Include="v200909\UpdateCampaign.cs" />
+    <Compile Include="v201003\AddAdExtensionOverride.cs" />
+    <Compile Include="v201003\AddAdGroup.cs" />
+    <Compile Include="v201003\AddAdGroupCriteria.cs" />
+    <Compile Include="v201003\AddAds.cs" />
+    <Compile Include="v201003\AddCampaign.cs" />
+    <Compile Include="v201003\AddCampaignAdExtension.cs" />
+    <Compile Include="v201003\AddKeywordsPerformanceReportDefinition.cs" />
+    <Compile Include="v201003\AddMobileImageAd.cs" />
+    <Compile Include="v201003\AddNegativeCampaignCriterion.cs" />
+    <Compile Include="v201003\AddSiteLinks.cs" />
+    <Compile Include="v201003\BackupSandboxDemo.cs" />
+    <Compile Include="v201003\CheckCampaigns.cs" />
+    <Compile Include="v201003\ClientApiUnitsUsageDemo.cs" />
+    <Compile Include="v201003\HandlePolicyViolationError.cs" />
+    <Compile Include="v201003\DeleteAd.cs" />
+    <Compile Include="v201003\DeleteAdGroup.cs" />
+    <Compile Include="v201003\DeleteAdGroupCriterion.cs" />
+    <Compile Include="v201003\DeleteCampaign.cs" />
+    <Compile Include="v201003\DownloadReport.cs" />
+    <Compile Include="v201003\GetAllActiveAdGroupCriteria.cs" />
+    <Compile Include="v201003\GetAllAdExtensionOverrides.cs" />
+    <Compile Include="v201003\GetAllAdGroupCriteria.cs" />
+    <Compile Include="v201003\GetAllAdGroups.cs" />
+    <Compile Include="v201003\GetAllAds.cs" />
+    <Compile Include="v201003\GetAllCampaignAdExtensions.cs" />
+    <Compile Include="v201003\GetAllNegativeCampaignCriteria.cs" />
+    <Compile Include="v201003\GetAllCampaigns.cs" />
+    <Compile Include="v201003\GetAllCampaignTargets.cs" />
+    <Compile Include="v201003\GetAllDisapprovedAds.cs" />
+    <Compile Include="v201003\GetAllImages.cs" />
+    <Compile Include="v201003\GetAllPausedCampaigns.cs" />
+    <Compile Include="v201003\GetAllReportDefinitions.cs" />
+    <Compile Include="v201003\GetAllVideos.cs" />
+    <Compile Include="v201003\GetCampaign.cs" />
+    <Compile Include="v201003\GetConversionOptimizerEligibility.cs" />
+    <Compile Include="v201003\GetCriterionBidLandscape.cs" />
+    <Compile Include="v201003\GetGeoLocationInfo.cs" />
+    <Compile Include="v201003\GetMethodCost.cs" />
+    <Compile Include="v201003\GetOperationCount.cs" />
+    <Compile Include="v201003\GetRelatedKeywords.cs" />
+    <Compile Include="v201003\GetRelatedPlacements.cs" />
+    <Compile Include="v201003\GetReportFields.cs" />
+    <Compile Include="v201003\GetTotalUsageUnitsPerMonth.cs" />
+    <Compile Include="v201003\GetUnitCount.cs" />
+    <Compile Include="v201003\MethodApiUnitsUsageDemo.cs" />
+    <Compile Include="v201003\PerformBulkMutateJob.cs" />
+    <Compile Include="v201003\DeleteSiteLinks.cs" />
+    <Compile Include="v201003\RestoreSandboxDemo.cs" />
+    <Compile Include="v201003\SetAdParams.cs" />
+    <Compile Include="v201003\SetCampaignTargets.cs" />
+    <Compile Include="v201003\UpdateAd.cs" />
+    <Compile Include="v201003\UpdateAdGroup.cs" />
+    <Compile Include="v201003\UpdateAdGroupCriterion.cs" />
+    <Compile Include="v201003\UpdateCampaign.cs" />
+    <Compile Include="v201003\UploadImage.cs" />
+    <Compile Include="v201008\AddAdExtensionOverride.cs" />
+    <Compile Include="v201008\AddAdGroup.cs" />
+    <Compile Include="v201008\AddAdGroupCriteria.cs" />
+    <Compile Include="v201008\AddAds.cs" />
+    <Compile Include="v201008\AddCampaign.cs" />
+    <Compile Include="v201008\AddCampaignAdExtension.cs" />
+    <Compile Include="v201008\AddExperiment.cs" />
+    <Compile Include="v201008\AddKeywordsPerformanceReportDefinition.cs" />
+    <Compile Include="v201008\AddMobileImageAd.cs" />
+    <Compile Include="v201008\AddNegativeCampaignCriterion.cs" />
+    <Compile Include="v201008\AddSiteLinks.cs" />
+    <Compile Include="v201008\BackupSandboxDemo.cs" />
+    <Compile Include="v201008\CheckCampaigns.cs" />
+    <Compile Include="v201008\ClientApiUnitsUsageDemo.cs" />
+    <Compile Include="v201008\AddUserList.cs" />
+    <Compile Include="v201008\AddLogicalUserList.cs" />
+    <Compile Include="v201008\GetAllAccountChanges.cs" />
+    <Compile Include="v201008\HandlePartialFailures.cs" />
+    <Compile Include="v201008\UpdateUserList.cs" />
+    <Compile Include="v201008\GetAllUserLists.cs" />
+    <Compile Include="v201008\DeleteUserList.cs" />
+    <Compile Include="v201008\GetAllBulkMutateJobs.cs" />
+    <Compile Include="v201008\DeleteBulkMutateJob.cs" />
+    <Compile Include="v201008\GetAccountHierarchy.cs" />
+    <Compile Include="v201008\GetCampaignAlerts.cs" />
+    <Compile Include="v201008\DeleteAd.cs" />
+    <Compile Include="v201008\DeleteAdGroup.cs" />
+    <Compile Include="v201008\DeleteAdGroupCriterion.cs" />
+    <Compile Include="v201008\DeleteCampaign.cs" />
+    <Compile Include="v201008\DeleteExperiment.cs" />
+    <Compile Include="v201008\DownloadReport.cs" />
+    <Compile Include="v201008\GetAllActiveAdGroupCriteria.cs" />
+    <Compile Include="v201008\GetAllAdExtensionOverrides.cs" />
+    <Compile Include="v201008\GetAllAdGroupCriteria.cs" />
+    <Compile Include="v201008\GetAllAdGroups.cs" />
+    <Compile Include="v201008\GetAllAds.cs" />
+    <Compile Include="v201008\GetAllCampaignAdExtensions.cs" />
+    <Compile Include="v201008\GetAllNegativeCampaignCriteria.cs" />
+    <Compile Include="v201008\GetAllCampaigns.cs" />
+    <Compile Include="v201008\GetAllCampaignTargets.cs" />
+    <Compile Include="v201008\GetAllDisapprovedAds.cs" />
+    <Compile Include="v201008\GetAllExperiments.cs" />
+    <Compile Include="v201008\GetAllImages.cs" />
+    <Compile Include="v201008\GetAllPausedCampaigns.cs" />
+    <Compile Include="v201008\GetAllReportDefinitions.cs" />
+    <Compile Include="v201008\GetAllVideos.cs" />
+    <Compile Include="v201008\GetCampaign.cs" />
+    <Compile Include="v201008\GetConversionOptimizerEligibility.cs" />
+    <Compile Include="v201008\GetCriterionBidLandscape.cs" />
+    <Compile Include="v201008\GetGeoLocationInfo.cs" />
+    <Compile Include="v201008\GetMethodCost.cs" />
+    <Compile Include="v201008\GetOperationCount.cs" />
+    <Compile Include="v201008\GetRelatedKeywords.cs" />
+    <Compile Include="v201008\GetRelatedPlacements.cs" />
+    <Compile Include="v201008\GetReportFields.cs" />
+    <Compile Include="v201008\GetTotalUsageUnitsPerMonth.cs" />
+    <Compile Include="v201008\GetTrafficEstimates.cs" />
+    <Compile Include="v201008\GetUnitCount.cs" />
+    <Compile Include="v201008\HandlePolicyViolationError.cs" />
+    <Compile Include="v201008\MethodApiUnitsUsageDemo.cs" />
+    <Compile Include="v201008\PerformBulkMutateJob.cs" />
+    <Compile Include="v201008\PromoteExperiment.cs" />
+    <Compile Include="v201008\DeleteSitelinks.cs" />
+    <Compile Include="v201008\RestoreSandboxDemo.cs" />
+    <Compile Include="v201008\SetAdParams.cs" />
+    <Compile Include="v201008\SetCampaignTargets.cs" />
+    <Compile Include="v201008\UpdateAd.cs" />
+    <Compile Include="v201008\UpdateAdGroup.cs" />
+    <Compile Include="v201008\UpdateAdGroupCriterion.cs" />
+    <Compile Include="v201008\UpdateCampaign.cs" />
+    <Compile Include="v201008\UploadImage.cs" />
+    <Compile Include="v201101\GetBulkMutateJob.cs" />
+    <Compile Include="v201101\GetAllCampaignAdExtensions.cs" />
+    <Compile Include="v201101\GetAllCampaigns.cs" />
+    <Compile Include="v201101\GetAllCampaignTargets.cs" />
+    <Compile Include="v201101\GetAllDisapprovedAds.cs" />
+    <Compile Include="v201101\GetAllExperiments.cs" />
+    <Compile Include="v201101\GetAllImages.cs" />
+    <Compile Include="v201101\GetAllNegativeCampaignCriteria.cs" />
+    <Compile Include="v201101\GetAllPausedCampaigns.cs" />
+    <Compile Include="v201101\GetAllReportDefinitions.cs" />
+    <Compile Include="v201101\GetAllUserLists.cs" />
+    <Compile Include="v201101\GetAllVideos.cs" />
+    <Compile Include="v201101\GetCampaign.cs" />
+    <Compile Include="v201101\GetCampaignAlerts.cs" />
+    <Compile Include="v201101\GetConversionOptimizerEligibility.cs" />
+    <Compile Include="v201101\GetCriterionBidLandscape.cs" />
+    <Compile Include="v201101\GetGeoLocationInfo.cs" />
+    <Compile Include="v201101\GetMethodCost.cs" />
+    <Compile Include="v201101\GetOperationCount.cs" />
+    <Compile Include="v201101\GetRelatedKeywords.cs" />
+    <Compile Include="v201101\GetRelatedPlacements.cs" />
+    <Compile Include="v201101\GetReportFields.cs" />
+    <Compile Include="v201101\GetTotalUsageUnitsPerMonth.cs" />
+    <Compile Include="v201101\GetTrafficEstimates.cs" />
+    <Compile Include="v201101\GetUnitCount.cs" />
+    <Compile Include="v201101\HandlePartialFailures.cs" />
+    <Compile Include="v201101\HandlePolicyViolationError.cs" />
+    <Compile Include="v201101\MethodApiUnitsUsageDemo.cs" />
+    <Compile Include="v201101\PerformBulkMutateJob.cs" />
+    <Compile Include="v201101\PromoteExperiment.cs" />
+    <Compile Include="v201101\RestoreSandboxDemo.cs" />
+    <Compile Include="v201101\SetAdParams.cs" />
+    <Compile Include="v201101\SetCampaignTargets.cs" />
+    <Compile Include="v201101\UpdateAd.cs" />
+    <Compile Include="v201101\UpdateAdGroup.cs" />
+    <Compile Include="v201101\UpdateAdGroupCriterion.cs" />
+    <Compile Include="v201101\UpdateCampaign.cs" />
+    <Compile Include="v201101\UpdateUserList.cs" />
+    <Compile Include="v201101\UploadImage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+          <ProjectReference Include="..\..\src\AdWords.csproj">
+            <Name>AdWords</Name>
+          </ProjectReference></ItemGroup>
+</Project>

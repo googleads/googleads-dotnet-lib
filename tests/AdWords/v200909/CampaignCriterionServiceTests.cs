@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v200909 {
+namespace Google.Api.Ads.AdWords.Tests.v200909 {
   /// <summary>
   /// UnitTests for <see cref="CampaignCriterionService"/> class.
   /// </summary>
@@ -53,7 +53,7 @@ namespace com.google.api.adwords.tests.v200909 {
       TestUtils utils = new TestUtils();
       campaignCriterionService = (CampaignCriterionService)user.GetService(
           AdWordsService.v200909.CampaignCriterionService);
-      campaignId = utils.CreateCampaign(user, true);
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
     }
 
     /// <summary>
@@ -62,30 +62,27 @@ namespace com.google.api.adwords.tests.v200909 {
     [Test]
     public void TestAddCampaignNegativeCriterion() {
       NegativeCampaignCriterion negativeCriterion = new NegativeCampaignCriterion();
-      negativeCriterion.campaignIdSpecified = true;
       negativeCriterion.campaignId = campaignId;
 
       Keyword keyword = new Keyword();
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.BROAD;
       keyword.text = "jupiter cruise";
 
       negativeCriterion.criterion = keyword;
 
       CampaignCriterionOperation operation = new CampaignCriterionOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
       operation.operand = negativeCriterion;
 
-      CampaignCriterionReturnValue result = null;
+      CampaignCriterionReturnValue retVal = null;
 
       Assert.DoesNotThrow(delegate() {
-        result = campaignCriterionService.mutate(new CampaignCriterionOperation[] { operation });
+        retVal = campaignCriterionService.mutate(new CampaignCriterionOperation[] {operation});
       });
-      Assert.NotNull(result);
-      Assert.NotNull(result.value);
-      Assert.AreEqual(result.value.Length, 1);
-      Assert.NotNull(result.value[0]);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
     }
 
     /// <summary>
@@ -96,7 +93,6 @@ namespace com.google.api.adwords.tests.v200909 {
       long criterionId = new TestUtils().CreateCampaignNegativeKeyword(user, campaignId);
       CampaignCriterionSelector selector = new CampaignCriterionSelector();
       CampaignCriterionIdFilter filter = new CampaignCriterionIdFilter();
-      filter.campaignIdSpecified = true;
       filter.campaignId = campaignId;
       selector.idFilters = new CampaignCriterionIdFilter[] {filter};
 
@@ -123,29 +119,26 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Criterion criterion = new Criterion();
       criterion.id = criterionId;
-      criterion.idSpecified = true;
 
       // Create ad group criterion.
       CampaignCriterion campaignCriterion = new CampaignCriterion();
       campaignCriterion.campaignId = campaignId;
-      campaignCriterion.campaignIdSpecified = true;
       campaignCriterion.criterion = criterion;
 
       // Create operations.
       CampaignCriterionOperation operation = new CampaignCriterionOperation();
       operation.operand = campaignCriterion;
       operation.@operator = Operator.REMOVE;
-      operation.operatorSpecified = true;
 
-      CampaignCriterionReturnValue retval = null;
+      CampaignCriterionReturnValue retVal = null;
 
       Assert.DoesNotThrow(delegate() {
-        retval = campaignCriterionService.mutate(new CampaignCriterionOperation[] {operation});
+        retVal = campaignCriterionService.mutate(new CampaignCriterionOperation[] {operation});
       });
-      Assert.NotNull(retval);
-      Assert.NotNull(retval.value);
-      Assert.AreEqual(retval.value.Length, 1);
-      Assert.NotNull(retval.value[0]);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
     }
   }
 }

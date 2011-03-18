@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This example promotes an experiment, which permanently applies all the
   /// experiment changes made to its related ad groups, criteria and ads. To get
@@ -42,6 +42,16 @@ namespace com.google.api.adwords.examples.v201008 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new PromoteExperiment();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -56,14 +66,11 @@ namespace com.google.api.adwords.examples.v201008 {
       // Set experiment's status to PROMOTED.
       Experiment experiment = new Experiment();
       experiment.id = experimentId;
-      experiment.idSpecified = true;
       experiment.status = ExperimentStatus.PROMOTED;
-      experiment.statusSpecified = true;
 
       // Create operation.
       ExperimentOperation operation = new ExperimentOperation();
       operation.@operator = Operator.SET;
-      operation.operatorSpecified = true;
       operation.operand = experiment;
 
       try {

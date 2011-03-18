@@ -1,9 +1,26 @@
-10.2.0
-- Fixed missing xxxSpecified = true in code examples (Issue 48).
+12.0.0
+- Added support for v201101.
 
-10.1.0
+11.3.0
+- Fixed issues 39, 50, 52.
+- Added support for returnMoneyInMicros header.
+- Added code example for handling partial failures.
+- Fixed v201008\GetConversionOptimizerEligibility.cs to use the newly introduced
+  conversionOptimizerEligibility field in Campaign class.
+- Added vb.net code examples for v13 and v201008 versions of the API.
+
+11.2.0
+- Fixed issues 47, 49 on codesite.
+
+11.1.0
 - Added support for new services in v201008 - ServicedAccountService,
   CustomerSyncService, UserListService, AlertService.
+- Fixed issues 38, 42, 43, 44, 45, 46 on codesite.
+
+11.0.0
+- Restructured client library to have a common framework.
+- The library no longer requires you to specify xxxSpecified = true when setting
+  a property that is nilable in wsdl but non-nilable in C#.
 
 10.0.0
 - Added support for v201008 services.

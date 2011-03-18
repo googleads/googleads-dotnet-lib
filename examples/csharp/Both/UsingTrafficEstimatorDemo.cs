@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,16 +14,16 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v13;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v13;
+using Google.Api.Ads.AdWords.v200909;
 
 using System;
 using System.Collections.Generic;
 
-using Keywordv200909 = com.google.api.adwords.v200909.Keyword;
+using Keywordv200909 = Google.Api.Ads.AdWords.v200909.Keyword;
 
-namespace com.google.api.adwords.examples.both {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.Both {
   /// <summary>
   /// This code example shows how to use both v13 and v200909 APIs in a
   /// single method.
@@ -52,24 +52,19 @@ namespace com.google.api.adwords.examples.both {
 
       Keyword keyword = new Keyword();
       keyword.text = keywordText;
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.EXACT;
 
       RelatedToKeywordSearchParameter searchParameter = new RelatedToKeywordSearchParameter();
-      searchParameter.keywords = new Keyword[] { keyword };
+      searchParameter.keywords = new Keyword[] {keyword};
 
       TargetingIdeaSelector selector = new TargetingIdeaSelector();
-      selector.searchParameters = new SearchParameter[] { searchParameter };
-      selector.ideaTypeSpecified = true;
+      selector.searchParameters = new SearchParameter[] {searchParameter};
       selector.ideaType = IdeaType.KEYWORD;
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       Paging paging = new Paging();
       paging.startIndex = 0;
-      paging.startIndexSpecified = true;
       paging.numberResults = 10;
-      paging.numberResultsSpecified = true;
 
       selector.paging = paging;
 

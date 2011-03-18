@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example gets all account changes between the two dates
   /// specified, for all campaigns.
@@ -37,6 +37,16 @@ namespace com.google.api.adwords.examples.v201008 {
         return "This code example gets all account changes between the two dates specified, " +
             "for all campaigns.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new GetAllAccountChanges();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -79,13 +89,13 @@ namespace com.google.api.adwords.examples.v201008 {
               Console.WriteLine("  Added ad extensions: {0}", GetFormattedList(
                   campaignChanges.addedAdExtensions));
               Console.WriteLine("  Added campaign criteria: {0}",
-                     GetFormattedList(campaignChanges.addedCampaignCriteria));
+                  GetFormattedList(campaignChanges.addedCampaignCriteria));
               Console.WriteLine("  Added campaign targeting: {0}",
                   campaignChanges.campaignTargetingChanged? "yes" : "no");
               Console.WriteLine("  Deleted ad extensions: {0}",
-                     GetFormattedList(campaignChanges.deletedAdExtensions));
+                  GetFormattedList(campaignChanges.deletedAdExtensions));
               Console.WriteLine("  Deleted campaign criteria: {0}",
-                     GetFormattedList(campaignChanges.deletedCampaignCriteria));
+                  GetFormattedList(campaignChanges.deletedCampaignCriteria));
 
               if (campaignChanges.changedAdGroups != null) {
                 foreach (AdGroupChangeData adGroupChanges in campaignChanges.changedAdGroups) {
@@ -95,11 +105,11 @@ namespace com.google.api.adwords.examples.v201008 {
                       adGroupChanges.adGroupChangeStatus);
                   if (adGroupChanges.adGroupChangeStatus != ChangeStatus.NEW) {
                     Console.WriteLine("    Ads changed: {0}",
-                           GetFormattedList(adGroupChanges.changedAds));
+                        GetFormattedList(adGroupChanges.changedAds));
                     Console.WriteLine("    Criteria changed: {0}",
-                           GetFormattedList(adGroupChanges.changedCriteria));
+                        GetFormattedList(adGroupChanges.changedCriteria));
                     Console.WriteLine("    Criteria deleted: {0}",
-                           GetFormattedList(adGroupChanges.deletedCriteria));
+                        GetFormattedList(adGroupChanges.deletedCriteria));
                   }
                 }
               }

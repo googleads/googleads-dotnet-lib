@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v201003 {
+namespace Google.Api.Ads.AdWords.Tests.v201003 {
   /// <summary>
   /// UnitTests for <see cref="CampaignTargetService"/> class.
   /// </summary>
@@ -50,10 +50,10 @@ namespace com.google.api.adwords.tests.v201003 {
     /// </summary>
     [SetUp]
     public void Init() {
-	  TestUtils utils = new TestUtils();
+      TestUtils utils = new TestUtils();
       campaignTargetService = (CampaignTargetService) user.GetService(
           AdWordsService.v201003.CampaignTargetService);
-      campaignId = utils.CreateCampaign(user, true);
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
     }
 
     /// <summary>
@@ -80,43 +80,35 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestAddAdScheduleTarget() {
       // Create schedule targets.
       AdScheduleTargetList scheduleTargetList = new AdScheduleTargetList();
-      scheduleTargetList.campaignIdSpecified = true;
       scheduleTargetList.campaignId = campaignId;
 
 
       AdScheduleTarget scheduleTarget = new AdScheduleTarget();
-      scheduleTarget.dayOfWeekSpecified = true;
-      scheduleTarget.dayOfWeek = adwords.v201003.DayOfWeek.MONDAY;
-      scheduleTarget.startHourSpecified = true;
+      scheduleTarget.dayOfWeek = Google.Api.Ads.AdWords.v201003.DayOfWeek.MONDAY;
       scheduleTarget.startHour = 8;
-      scheduleTarget.startMinuteSpecified = true;
       scheduleTarget.startMinute = 0;
-      scheduleTarget.endHourSpecified = true;
       scheduleTarget.endHour = 17;
-      scheduleTarget.endMinuteSpecified = true;
       scheduleTarget.endMinute = 0;
-      scheduleTarget.bidMultiplierSpecified = true;
       scheduleTarget.bidMultiplier = 1.0;
 
       scheduleTargetList.targets = new AdScheduleTarget[] {scheduleTarget};
 
       // Create ad schedule target set operation.
       CampaignTargetOperation scheduleTargetOperation = new CampaignTargetOperation();
-      scheduleTargetOperation.operatorSpecified = true;
       scheduleTargetOperation.@operator = Operator.SET;
       scheduleTargetOperation.operand = scheduleTargetList;
 
-      CampaignTargetReturnValue retval = null;
+      CampaignTargetReturnValue retVal = null;
 
       Assert.DoesNotThrow(delegate() {
-        retval = campaignTargetService.mutate(
+        retVal = campaignTargetService.mutate(
             new CampaignTargetOperation[] {scheduleTargetOperation});
       });
-      Assert.NotNull(retval);
-      Assert.NotNull(retval.value);
-      Assert.AreEqual(retval.value.Length, 1);
-      Assert.NotNull(retval.value[0]);
-      Assert.That(retval.value[0] is AdScheduleTargetList);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.That(retVal.value[0] is AdScheduleTargetList);
     }
 
     /// <summary>
@@ -126,36 +118,32 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestAddDemographicTarget() {
       // Create demographic targets.
       DemographicTargetList demographicTargetList = new DemographicTargetList();
-      demographicTargetList.campaignIdSpecified = true;
       demographicTargetList.campaignId = campaignId;
 
       AgeTarget ageTarget = new AgeTarget();
-      ageTarget.ageSpecified = true;
       ageTarget.age = AgeTargetAge.AGE_18_24;
 
       GenderTarget genderTarget = new GenderTarget();
-      genderTarget.genderSpecified = true;
       genderTarget.gender = GenderTargetGender.FEMALE;
 
       demographicTargetList.targets = new DemographicTarget[] {ageTarget, genderTarget};
 
       // Create demographic target set operation.
       CampaignTargetOperation demographicTargetOperation = new CampaignTargetOperation();
-      demographicTargetOperation.operatorSpecified = true;
       demographicTargetOperation.@operator = Operator.SET;
       demographicTargetOperation.operand = demographicTargetList;
 
-      CampaignTargetReturnValue retval = null;
+      CampaignTargetReturnValue retVal = null;
 
       Assert.DoesNotThrow(delegate() {
-        retval = campaignTargetService.mutate(
+        retVal = campaignTargetService.mutate(
             new CampaignTargetOperation[] {demographicTargetOperation});
       });
-      Assert.NotNull(retval);
-      Assert.NotNull(retval.value);
-      Assert.AreEqual(retval.value.Length, 1);
-      Assert.NotNull(retval.value[0]);
-      Assert.That(retval.value[0] is DemographicTargetList);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.That(retVal.value[0] is DemographicTargetList);
     }
 
     /// <summary>
@@ -165,7 +153,6 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestAddGeoTarget() {
       // Create geo targets.
       GeoTargetList geoTargetList = new GeoTargetList();
-      geoTargetList.campaignIdSpecified = true;
       geoTargetList.campaignId = campaignId;
 
       CityTarget cityTarget = new CityTarget();
@@ -176,21 +163,20 @@ namespace com.google.api.adwords.tests.v201003 {
 
       // Create geo target set operation.
       CampaignTargetOperation geoTargetOperation = new CampaignTargetOperation();
-      geoTargetOperation.operatorSpecified = true;
       geoTargetOperation.@operator = Operator.SET;
       geoTargetOperation.operand = geoTargetList;
 
-      CampaignTargetReturnValue retval = null;
+      CampaignTargetReturnValue retVal = null;
 
       Assert.DoesNotThrow(delegate() {
-        retval = campaignTargetService.mutate(
+        retVal = campaignTargetService.mutate(
             new CampaignTargetOperation[] {geoTargetOperation});
       });
-      Assert.NotNull(retval);
-      Assert.NotNull(retval.value);
-      Assert.AreEqual(retval.value.Length, 1);
-      Assert.NotNull(retval.value[0]);
-      Assert.That(retval.value[0] is GeoTargetList);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.That(retVal.value[0] is GeoTargetList);
     }
 
     /// <summary>
@@ -200,31 +186,29 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestAddLanguageTarget() {
       // Create language targets.
       LanguageTargetList langTargetList = new LanguageTargetList();
-      langTargetList.campaignIdSpecified = true;
       langTargetList.campaignId = campaignId;
 
       LanguageTarget langTarget = new LanguageTarget();
       langTarget.languageCode = "en";
 
-      langTargetList.targets = new LanguageTarget[] { langTarget };
+      langTargetList.targets = new LanguageTarget[] {langTarget};
 
       // Create language target set operation.
       CampaignTargetOperation langTargetOperation = new CampaignTargetOperation();
-      langTargetOperation.operatorSpecified = true;
       langTargetOperation.@operator = Operator.SET;
       langTargetOperation.operand = langTargetList;
 
-      CampaignTargetReturnValue retval = null;
+      CampaignTargetReturnValue retVal = null;
 
       Assert.DoesNotThrow(delegate() {
-        retval = campaignTargetService.mutate(
-            new CampaignTargetOperation[] { langTargetOperation });
+        retVal = campaignTargetService.mutate(
+            new CampaignTargetOperation[] {langTargetOperation});
       });
-      Assert.NotNull(retval);
-      Assert.NotNull(retval.value);
-      Assert.AreEqual(retval.value.Length, 1);
-      Assert.NotNull(retval.value[0]);
-      Assert.That(retval.value[0] is LanguageTargetList);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.That(retVal.value[0] is LanguageTargetList);
     }
 
     /// <summary>
@@ -233,7 +217,6 @@ namespace com.google.api.adwords.tests.v201003 {
     [Test]
     public void TestAddMobileTarget() {
       MobileTargetList mobileTargetList = new MobileTargetList();
-      mobileTargetList.campaignIdSpecified = true;
       mobileTargetList.campaignId = campaignId;
 
       // Target devices - iPhone, iPad.
@@ -256,28 +239,27 @@ namespace com.google.api.adwords.tests.v201003 {
       mobileCarrierTarget3.carrierName = "AT&T";
       mobileCarrierTarget3.countryCode = "US";
 
-      mobileTargetList.targets = new MobileTarget[] { mobilePlatformTarget1, mobilePlatformTarget2,
+      mobileTargetList.targets = new MobileTarget[] {mobilePlatformTarget1, mobilePlatformTarget2,
           mobileCarrierTarget1, mobileCarrierTarget2, mobileCarrierTarget3};
 
       // Create mobile target set operation.
       CampaignTargetOperation mobileTargetOperation = new CampaignTargetOperation();
-      mobileTargetOperation.operatorSpecified = true;
       mobileTargetOperation.@operator = Operator.SET;
       mobileTargetOperation.operand = mobileTargetList;
 
-      CampaignTargetReturnValue retval = null;
+      CampaignTargetReturnValue retVal = null;
 
       Assert.DoesNotThrow(delegate() {
-        retval = campaignTargetService.mutate(
-            new CampaignTargetOperation[] { mobileTargetOperation });
+        retVal = campaignTargetService.mutate(
+            new CampaignTargetOperation[] {mobileTargetOperation});
       });
-      Assert.NotNull(retval);
-      Assert.NotNull(retval.value);
-      Assert.AreEqual(retval.value.Length, 1);
-      Assert.NotNull(retval.value[0]);
-      Assert.That(retval.value[0] is MobileTargetList);
-      Assert.NotNull((retval.value[0] as MobileTargetList).targets);
-      Assert.AreEqual((retval.value[0] as MobileTargetList).targets.Length, 5);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.That(retVal.value[0] is MobileTargetList);
+      Assert.NotNull((retVal.value[0] as MobileTargetList).targets);
+      Assert.AreEqual((retVal.value[0] as MobileTargetList).targets.Length, 5);
     }
 
     /// <summary>
@@ -287,37 +269,33 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestAddNetworkTarget() {
       // Create network targets.
       NetworkTargetList networkTargetList = new NetworkTargetList();
-      networkTargetList.campaignIdSpecified = true;
       networkTargetList.campaignId = campaignId;
 
       // Specifying GOOGLE_SEARCH is necessary if you want to target SEARCH_NETWORK.
       NetworkTarget networkTarget1 = new NetworkTarget();
-      networkTarget1.networkCoverageTypeSpecified = true;
       networkTarget1.networkCoverageType = NetworkCoverageType.GOOGLE_SEARCH;
 
       NetworkTarget networkTarget2 = new NetworkTarget();
-      networkTarget2.networkCoverageTypeSpecified = true;
       networkTarget2.networkCoverageType = NetworkCoverageType.SEARCH_NETWORK;
 
-      networkTargetList.targets = new NetworkTarget[] { networkTarget1, networkTarget2 };
+      networkTargetList.targets = new NetworkTarget[] {networkTarget1, networkTarget2};
 
       // Create network target set operation.
       CampaignTargetOperation networkTargetOperation = new CampaignTargetOperation();
-      networkTargetOperation.operatorSpecified = true;
       networkTargetOperation.@operator = Operator.SET;
       networkTargetOperation.operand = networkTargetList;
 
-      CampaignTargetReturnValue retval = null;
+      CampaignTargetReturnValue retVal = null;
 
       Assert.DoesNotThrow(delegate() {
-        retval = campaignTargetService.mutate(
-            new CampaignTargetOperation[] { networkTargetOperation });
+        retVal = campaignTargetService.mutate(
+            new CampaignTargetOperation[] {networkTargetOperation});
       });
-      Assert.NotNull(retval);
-      Assert.NotNull(retval.value);
-      Assert.AreEqual(retval.value.Length, 1);
-      Assert.NotNull(retval.value[0]);
-      Assert.That(retval.value[0] is NetworkTargetList);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.That(retVal.value[0] is NetworkTargetList);
     }
 
     /// <summary>
@@ -327,32 +305,28 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestAddPlatformTarget() {
       // Create platform targets.
       PlatformTargetList platformTargetList = new PlatformTargetList();
-      platformTargetList.campaignIdSpecified = true;
       platformTargetList.campaignId = campaignId;
 
       PlatformTarget platformTarget = new PlatformTarget();
-      platformTarget.platformTypeSpecified = true;
       platformTarget.platformType = PlatformType.HIGH_END_MOBILE;
-
       platformTargetList.targets = new PlatformTarget[] {platformTarget};
 
       // Create platform target set operation.
       CampaignTargetOperation platformTargetOperation = new CampaignTargetOperation();
-      platformTargetOperation.operatorSpecified = true;
       platformTargetOperation.@operator = Operator.SET;
       platformTargetOperation.operand = platformTargetList;
 
-      CampaignTargetReturnValue retval = null;
+      CampaignTargetReturnValue retVal = null;
 
       Assert.DoesNotThrow(delegate() {
-        retval = campaignTargetService.mutate(
+        retVal = campaignTargetService.mutate(
             new CampaignTargetOperation[] {platformTargetOperation});
       });
-      Assert.NotNull(retval);
-      Assert.NotNull(retval.value);
-      Assert.AreEqual(retval.value.Length, 1);
-      Assert.NotNull(retval.value[0]);
-      Assert.That(retval.value[0] is PlatformTargetList);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.That(retVal.value[0] is PlatformTargetList);
     }
 
     /// <summary>
@@ -366,12 +340,11 @@ namespace com.google.api.adwords.tests.v201003 {
 
       // Create ad schedule target operation.
       CampaignTargetOperation adScheduleTargetOperation = new CampaignTargetOperation();
-      adScheduleTargetOperation.operatorSpecified = true;
       adScheduleTargetOperation.@operator = Operator.SET;
       adScheduleTargetOperation.operand = adScheduleTargetList;
 
       Assert.DoesNotThrow(delegate() {
-        CampaignTargetReturnValue retval = campaignTargetService.mutate(
+        CampaignTargetReturnValue retVal = campaignTargetService.mutate(
             new CampaignTargetOperation[] {adScheduleTargetOperation});
       });
     }
@@ -383,17 +356,16 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestRemoveAllDemographicTargets() {
       DemographicTargetList demographicTargetList = new DemographicTargetList();
       demographicTargetList.campaignId = campaignId;
-      demographicTargetList.targets = new DemographicTarget[] { };
+      demographicTargetList.targets = new DemographicTarget[] {};
 
       // Create demographic target operation.
       CampaignTargetOperation demographicTargetOperation = new CampaignTargetOperation();
-      demographicTargetOperation.operatorSpecified = true;
       demographicTargetOperation.@operator = Operator.SET;
       demographicTargetOperation.operand = demographicTargetList;
 
       Assert.DoesNotThrow(delegate() {
-        CampaignTargetReturnValue retval = campaignTargetService.mutate(
-            new CampaignTargetOperation[] { demographicTargetOperation });
+        CampaignTargetReturnValue retVal = campaignTargetService.mutate(
+            new CampaignTargetOperation[] {demographicTargetOperation});
       });
     }
 
@@ -404,17 +376,16 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestRemoveAllGeoTargets() {
       GeoTargetList geoTargetList = new GeoTargetList();
       geoTargetList.campaignId = campaignId;
-      geoTargetList.targets = new GeoTarget[] { };
+      geoTargetList.targets = new GeoTarget[] {};
 
       // Create geo target operation.
       CampaignTargetOperation geoTargetOperation = new CampaignTargetOperation();
-      geoTargetOperation.operatorSpecified = true;
       geoTargetOperation.@operator = Operator.SET;
       geoTargetOperation.operand = geoTargetList;
 
       Assert.DoesNotThrow(delegate() {
-        CampaignTargetReturnValue retval = campaignTargetService.mutate(
-            new CampaignTargetOperation[] { geoTargetOperation });
+        CampaignTargetReturnValue retVal = campaignTargetService.mutate(
+            new CampaignTargetOperation[] {geoTargetOperation});
       });
     }
 
@@ -425,17 +396,16 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestRemoveAllLanguageTargets() {
       LanguageTargetList languageTargetList = new LanguageTargetList();
       languageTargetList.campaignId = campaignId;
-      languageTargetList.targets = new LanguageTarget[] { };
+      languageTargetList.targets = new LanguageTarget[] {};
 
       // Create language target operation.
       CampaignTargetOperation languageTargetOperation = new CampaignTargetOperation();
-      languageTargetOperation.operatorSpecified = true;
       languageTargetOperation.@operator = Operator.SET;
       languageTargetOperation.operand = languageTargetList;
 
       Assert.DoesNotThrow(delegate() {
-        CampaignTargetReturnValue retval = campaignTargetService.mutate(
-            new CampaignTargetOperation[] { languageTargetOperation });
+        CampaignTargetReturnValue retVal = campaignTargetService.mutate(
+            new CampaignTargetOperation[] {languageTargetOperation});
       });
     }
 
@@ -446,17 +416,16 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestRemoveAllMobileTargets() {
       MobileTargetList mobileTargetList = new MobileTargetList();
       mobileTargetList.campaignId = campaignId;
-      mobileTargetList.targets = new MobileTarget[] { };
+      mobileTargetList.targets = new MobileTarget[] {};
 
       // Create mobile target operation.
       CampaignTargetOperation mobileTargetOperation = new CampaignTargetOperation();
-      mobileTargetOperation.operatorSpecified = true;
       mobileTargetOperation.@operator = Operator.SET;
       mobileTargetOperation.operand = mobileTargetList;
 
       Assert.DoesNotThrow(delegate() {
-        CampaignTargetReturnValue retval = campaignTargetService.mutate(
-            new CampaignTargetOperation[] { mobileTargetOperation });
+        CampaignTargetReturnValue retVal = campaignTargetService.mutate(
+            new CampaignTargetOperation[] {mobileTargetOperation});
       });
     }
 
@@ -467,17 +436,16 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestRemoveAllNetworkTargets() {
       NetworkTargetList networkTargetList = new NetworkTargetList();
       networkTargetList.campaignId = campaignId;
-      networkTargetList.targets = new NetworkTarget[] { };
+      networkTargetList.targets = new NetworkTarget[] {};
 
       // Create network target operation.
       CampaignTargetOperation networkTargetOperation = new CampaignTargetOperation();
-      networkTargetOperation.operatorSpecified = true;
       networkTargetOperation.@operator = Operator.SET;
       networkTargetOperation.operand = networkTargetList;
 
       Assert.DoesNotThrow(delegate() {
-        CampaignTargetReturnValue retval = campaignTargetService.mutate(
-            new CampaignTargetOperation[] { networkTargetOperation });
+        CampaignTargetReturnValue retVal = campaignTargetService.mutate(
+            new CampaignTargetOperation[] {networkTargetOperation});
       });
     }
 
@@ -488,17 +456,16 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestRemoveAllPlatformTargets() {
       PlatformTargetList platformTargetList = new PlatformTargetList();
       platformTargetList.campaignId = campaignId;
-      platformTargetList.targets = new PlatformTarget[] { };
+      platformTargetList.targets = new PlatformTarget[] {};
 
       // Create platform target operation.
       CampaignTargetOperation platformTargetOperation = new CampaignTargetOperation();
-      platformTargetOperation.operatorSpecified = true;
       platformTargetOperation.@operator = Operator.SET;
       platformTargetOperation.operand = platformTargetList;
 
       Assert.DoesNotThrow(delegate() {
-        CampaignTargetReturnValue retval = campaignTargetService.mutate(
-            new CampaignTargetOperation[] { platformTargetOperation });
+        CampaignTargetReturnValue retVal = campaignTargetService.mutate(
+            new CampaignTargetOperation[] {platformTargetOperation});
       });
     }
   }

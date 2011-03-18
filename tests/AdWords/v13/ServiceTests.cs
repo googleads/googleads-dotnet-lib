@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v13;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v13;
 
 using NUnit.Framework;
 
@@ -24,12 +24,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 
-namespace com.google.api.adwords.tests.v13 {
+namespace Google.Api.Ads.AdWords.Tests.v13 {
   /// <summary>
   /// UnitTests for various AdWords services.
   /// </summary>
   [TestFixture]
   public class ServiceTests {
+    /// <summary>
+    /// Config object to be used in tests.
+    /// </summary>
+    AdWordsAppConfig config = new AdWordsAppConfig();
+
     /// <summary>
     /// Default public constructor.
     /// </summary>
@@ -76,14 +81,14 @@ namespace com.google.api.adwords.tests.v13 {
         typeof(AccountException), typeof(BillingException), typeof(GoogleInternalException),
         typeof(WebPageException), typeof(SandboxException), typeof(InvalidRequestException),
         typeof(PolicyViolationException),
-        typeof(com.google.api.adwords.v13.InvalidOperationException),
+        typeof(Google.Api.Ads.AdWords.v13.InvalidOperationException),
         typeof(InvalidParameterException), typeof(PermissionException),
         typeof(ConcurrencyException), typeof(ExceededLimitsException)
       };
 
       for (int i = 0; i < errorCodes.Length; i++) {
         accountService.emailValue.Value[0] =
-            string.Format("{0}++{1}", ApplicationConfiguration.email, errorCodes[i]);
+            string.Format("{0}++{1}", config.Email, errorCodes[i]);
         Assert.Throws(
             exceptionTypes[i],
             delegate() {

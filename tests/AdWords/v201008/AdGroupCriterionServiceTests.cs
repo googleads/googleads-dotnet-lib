@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v201008 {
+namespace Google.Api.Ads.AdWords.Tests.v201008 {
   /// <summary>
   /// UnitTests for <see cref="AdGroupCriterionService"/> class.
   /// </summary>
@@ -69,7 +69,7 @@ namespace com.google.api.adwords.tests.v201008 {
       adGroupCriterionService =
           (AdGroupCriterionService) user.GetService(AdWordsService.v201008.AdGroupCriterionService);
 
-      campaignId = utils.CreateCampaign(user, true);
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
       keywordAdGroupId = utils.CreateAdGroup(user, campaignId);
       placementAdGroupId = utils.CreateAdGroup(user, campaignId);
 
@@ -82,15 +82,12 @@ namespace com.google.api.adwords.tests.v201008 {
     [Test]
     public void TestAddCriterionKeyword() {
       AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
       operation.operand = new BiddableAdGroupCriterion();
       operation.operand.adGroupId = keywordAdGroupId;
-      operation.operand.adGroupIdSpecified = true;
 
       Keyword keyword = new Keyword();
       keyword.matchType = KeywordMatchType.BROAD;
-      keyword.matchTypeSpecified = true;
       keyword.text = "mars cruise";
       operation.operand.criterion = keyword;
 
@@ -104,11 +101,9 @@ namespace com.google.api.adwords.tests.v201008 {
     [Test]
     public void TestAddCriterionPlacement() {
       AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
       operation.operand = new BiddableAdGroupCriterion();
       operation.operand.adGroupId = placementAdGroupId;
-      operation.operand.adGroupIdSpecified = true;
 
       Placement placement = new Placement();
       placement.url = "www.example.com";
@@ -124,24 +119,19 @@ namespace com.google.api.adwords.tests.v201008 {
     [Test]
     public void TestAddKeywordCrossAdGroup() {
       AdGroupCriterionOperation operation1 = new AdGroupCriterionOperation();
-      operation1.operatorSpecified = true;
       operation1.@operator = Operator.ADD;
       operation1.operand = new BiddableAdGroupCriterion();
       operation1.operand.adGroupId = keywordAdGroupId;
-      operation1.operand.adGroupIdSpecified = true;
 
       Keyword keyword = new Keyword();
       keyword.matchType = KeywordMatchType.BROAD;
-      keyword.matchTypeSpecified = true;
       keyword.text = "mars cruise";
       operation1.operand.criterion = keyword;
 
       AdGroupCriterionOperation operation2 = new AdGroupCriterionOperation();
-      operation2.operatorSpecified = true;
       operation2.@operator = Operator.ADD;
       operation2.operand = new BiddableAdGroupCriterion();
       operation2.operand.adGroupId = placementAdGroupId;
-      operation2.operand.adGroupIdSpecified = true;
 
       Placement placement = new Placement();
       placement.url = "www.example.com";
@@ -158,7 +148,6 @@ namespace com.google.api.adwords.tests.v201008 {
     public void TestGetAllActivePausedCriteria() {
       AdGroupCriterionSelector selector = new AdGroupCriterionSelector();
       selector.criterionUse = CriterionUse.BIDDABLE;
-      selector.criterionUseSpecified = true;
       selector.userStatuses = new UserStatus[] {UserStatus.ACTIVE, UserStatus.PAUSED};
 
       Assert.That(adGroupCriterionService.get(selector) is AdGroupCriterionPage);
@@ -171,7 +160,6 @@ namespace com.google.api.adwords.tests.v201008 {
     public void TestGetAllCriteriaCampaignLevel() {
       AdGroupCriterionSelector selector = new AdGroupCriterionSelector();
       AdGroupCriterionIdFilter filter = new AdGroupCriterionIdFilter();
-      filter.campaignIdSpecified = true;
       filter.campaignId = campaignId;
       selector.idFilters = new AdGroupCriterionIdFilter[] {filter};
 
@@ -185,9 +173,7 @@ namespace com.google.api.adwords.tests.v201008 {
     public void TestGetCriterion() {
       AdGroupCriterionSelector selector = new AdGroupCriterionSelector();
       AdGroupCriterionIdFilter filter = new AdGroupCriterionIdFilter();
-      filter.adGroupIdSpecified = true;
       filter.adGroupId = keywordAdGroupId;
-      filter.criterionIdSpecified = true;
       filter.criterionId = keywordId;
       selector.idFilters = new AdGroupCriterionIdFilter[] {filter};
 
@@ -200,13 +186,10 @@ namespace com.google.api.adwords.tests.v201008 {
     [Test]
     public void TestDeleteCriterion() {
       AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.REMOVE;
       operation.operand = new BiddableAdGroupCriterion();
       operation.operand.adGroupId = keywordAdGroupId;
-      operation.operand.adGroupIdSpecified = true;
       operation.operand.criterion = new Criterion();
-      operation.operand.criterion.idSpecified = true;
       operation.operand.criterion.id = keywordId;
 
       Assert.That(adGroupCriterionService.mutate(new AdGroupCriterionOperation[] {operation})
@@ -219,15 +202,11 @@ namespace com.google.api.adwords.tests.v201008 {
     [Test]
     public void TestUpdateCriterionKeyword() {
       AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.SET;
       operation.operand = new BiddableAdGroupCriterion();
       operation.operand.adGroupId = keywordAdGroupId;
-      operation.operand.adGroupIdSpecified = true;
-      (operation.operand as BiddableAdGroupCriterion).userStatusSpecified = true;
       (operation.operand as BiddableAdGroupCriterion).userStatus = UserStatus.PAUSED;
       operation.operand.criterion = new Criterion();
-      operation.operand.criterion.idSpecified = true;
       operation.operand.criterion.id = keywordId;
 
       Assert.That(adGroupCriterionService.mutate(new AdGroupCriterionOperation[] {operation})

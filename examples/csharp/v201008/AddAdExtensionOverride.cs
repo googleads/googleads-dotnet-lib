@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example illustrates how to override a campaign ad extension.
   /// To create an ad, run AddAds.cs. To create a campaign ad extension, run
@@ -39,6 +39,16 @@ namespace com.google.api.adwords.examples.v201008 {
             " To create an ad, run AddAds.cs. To create a campaign ad extension, run" +
             " AddCampaignAdExtension.cs.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new AddAdExtensionOverride();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -71,31 +81,27 @@ namespace com.google.api.adwords.examples.v201008 {
 
       LocationExtension extension = new LocationExtension();
       extension.id = campaignAdExtensionId;
-      extension.idSpecified = true;
       extension.address = location.address;
       extension.geoPoint = location.geoPoint;
       extension.encodedLocation = location.encodedLocation;
       extension.source = LocationExtensionSource.ADWORDS_FRONTEND;
-      extension.sourceSpecified = true;
       extension.phoneNumber = "1-800-555-5556";
 
       AdExtensionOverride adOverride = new AdExtensionOverride();
       adOverride.adExtension = extension;
-      adOverride.adIdSpecified = true;
       adOverride.adId = adId;
 
 
       AdExtensionOverrideOperation operation = new AdExtensionOverrideOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
       operation.operand = adOverride;
 
       try {
-        AdExtensionOverrideReturnValue retval = adExtensionOverrideService.mutate(
+        AdExtensionOverrideReturnValue retVal = adExtensionOverrideService.mutate(
             new AdExtensionOverrideOperation[] {operation});
 
-        if (retval != null && retval.value != null && retval.value.Length > 0) {
-          AdExtensionOverride adExtensionOverride = retval.value[0];
+        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+          AdExtensionOverride adExtensionOverride = retVal.value[0];
           Console.WriteLine("Overrode Ad Extension with id = \"{0}\" in Ad id = \"{1}\"",
               adExtensionOverride.adExtension.id, adExtensionOverride.adId);
         }

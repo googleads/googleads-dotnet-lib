@@ -1,4 +1,4 @@
-﻿// Copyright 2010, Google Inc. All Rights Reserved.
+﻿// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v200909 {
+namespace Google.Api.Ads.AdWords.Tests.v200909 {
   /// <summary>
   /// UnitTests for <see cref="GeoLocationService"/> class.
   /// </summary>

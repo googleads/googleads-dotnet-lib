@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using NUnit.Framework;
 
@@ -23,9 +23,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
-using com.google.api.adwords.lib.util;
 
-namespace com.google.api.adwords.tests.v200909 {
+namespace Google.Api.Ads.AdWords.Tests.v200909 {
   /// <summary>
   /// UnitTests for <see cref="BulkMutateJobService"/> class.
   /// </summary>
@@ -60,7 +59,7 @@ namespace com.google.api.adwords.tests.v200909 {
       bulkMutateJobService = (BulkMutateJobService) user.GetService(
           AdWordsService.v200909.BulkMutateJobService);
       TestUtils utils = new TestUtils();
-      campaignId = utils.CreateCampaign(user, true);
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
       adGroupId = utils.CreateAdGroup(user, campaignId);
     }
 
@@ -97,7 +96,6 @@ namespace com.google.api.adwords.tests.v200909 {
       for (int i = 0; i < 120; i++) {
         // Create an AdGroupAdOperation to add a text ad.
         AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
-        adGroupAdOperation.operatorSpecified = true;
         adGroupAdOperation.@operator = Operator.ADD;
 
         TextAd textAd = new TextAd();
@@ -109,7 +107,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
         AdGroupAd adGroupAd = new AdGroupAd();
         adGroupAd.adGroupId = adGroupId;
-        adGroupAd.adGroupIdSpecified = true;
         adGroupAd.ad = textAd;
 
         adGroupAdOperation.operand = adGroupAd;
@@ -120,9 +117,7 @@ namespace com.google.api.adwords.tests.v200909 {
 
       opStream.scopingEntityId = new EntityId();
       opStream.scopingEntityId.type = EntityIdType.CAMPAIGN_ID;
-      opStream.scopingEntityId.typeSpecified = true;
       opStream.scopingEntityId.value = campaignId;
-      opStream.scopingEntityId.valueSpecified = true;
 
       opStream.operations = adGroupAdOperations;
 
@@ -130,19 +125,16 @@ namespace com.google.api.adwords.tests.v200909 {
 
       bulkJob = new BulkMutateJob();
       bulkJob.numRequestParts = 1;
-      bulkJob.numRequestPartsSpecified = true;
 
       // b. Create a part of the job.
 
       BulkMutateRequest bulkRequest = new BulkMutateRequest();
       bulkRequest.partIndex = 0;
-      bulkRequest.partIndexSpecified = true;
       bulkRequest.operationStreams = new OperationStream[] {opStream};
       bulkJob.request = bulkRequest;
 
       // c. Create job operation.
       JobOperation jobOperation = new JobOperation();
-      jobOperation.operatorSpecified = true;
       jobOperation.@operator = Operator.ADD;
       jobOperation.operand = bulkJob;
 
@@ -182,7 +174,6 @@ namespace com.google.api.adwords.tests.v200909 {
         for (int j = 0; j < 20; j++) {
           // Create an AdGroupAdOperation to add a text ad.
           AdGroupAdOperation operation = new AdGroupAdOperation();
-          operation.operatorSpecified = true;
           operation.@operator = Operator.ADD;
 
           TextAd textAd = new TextAd();
@@ -194,7 +185,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
           AdGroupAd adGroupAd = new AdGroupAd();
           adGroupAd.adGroupId = adGroupId;
-          adGroupAd.adGroupIdSpecified = true;
           adGroupAd.ad = textAd;
 
           operation.operand = adGroupAd;
@@ -204,9 +194,7 @@ namespace com.google.api.adwords.tests.v200909 {
 
         operationStream.scopingEntityId = new EntityId();
         operationStream.scopingEntityId.type = EntityIdType.CAMPAIGN_ID;
-        operationStream.scopingEntityId.typeSpecified = true;
         operationStream.scopingEntityId.value = campaignId;
-        operationStream.scopingEntityId.valueSpecified = true;
 
         operationStream.operations = operations;
         operationStreams[i] = operationStream;
@@ -216,19 +204,16 @@ namespace com.google.api.adwords.tests.v200909 {
 
       bulkJob = new BulkMutateJob();
       bulkJob.numRequestParts = 1;
-      bulkJob.numRequestPartsSpecified = true;
 
       // b. Create a part of the job.
 
       BulkMutateRequest bulkRequest = new BulkMutateRequest();
       bulkRequest.partIndex = 0;
-      bulkRequest.partIndexSpecified = true;
       bulkRequest.operationStreams = operationStreams;
       bulkJob.request = bulkRequest;
 
       // c. Create job operation.
       JobOperation jobOperation = new JobOperation();
-      jobOperation.operatorSpecified = true;
       jobOperation.@operator = Operator.ADD;
       jobOperation.operand = bulkJob;
 

@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,22 +18,89 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.lib {
+namespace Google.Api.Ads.Common.Lib {
   /// <summary>
   /// Defines an API signature object. This class is used as a support class
-  /// to assist AdWordsUser in creating a service object.
+  /// to assist AdsUser in creating a service object.
   /// </summary>
-  public class ServiceSignature {
+  public abstract class ServiceSignature {
     /// <summary>
-    /// A unique id to distinguish the service represented by this signature
-    /// object. This can be any value of your choice, and is used by
-    /// AdWordsUser for tracking the services it created.
+    /// The various protocols supported by the library.
     /// </summary>
-    public string id;
+    public enum SupportedProtocols {
+      SOAP,
+      WSE
+    }
+
+    /// <summary>
+    /// The supported protocol.
+    /// </summary>
+    SupportedProtocols supportedProtocol;
+
+    /// <summary>
+    /// The service version.
+    /// </summary>
+    private string version;
 
     /// <summary>
     /// The name of the service.
     /// </summary>
-    public string serviceName;
+    private string serviceName;
+
+    /// <summary>
+    /// A unique id to distinguish the service represented by this signature
+    /// object.
+    /// </summary>
+    public string Id {
+      get {
+        return version + "." + serviceName;
+      }
+    }
+
+    /// <summary>
+    /// Gets the service version.
+    /// </summary>
+    public string Version {
+      get {
+        return version;
+      }
+    }
+
+    /// <summary>
+    /// Gets the service name.
+    /// </summary>
+    public string ServiceName {
+      get {
+        return serviceName;
+      }
+    }
+
+    /// <summary>
+    /// Gets the supported protocol.
+    /// </summary>
+    public SupportedProtocols SupportedProtocol {
+      get {
+        return supportedProtocol;
+      }
+    }
+
+    /// <summary>
+    /// Gets the type of service.
+    /// </summary>
+    public abstract Type ServiceType {
+      get;
+    }
+
+    /// <summary>
+    /// Protected constructor.
+    /// </summary>
+    /// <param name="version">Service version.</param>
+    /// <param name="serviceName">Service name.</param>
+    /// <param name="protocol">The supported protocol.</param>
+    protected ServiceSignature(string version, string serviceName, SupportedProtocols protocol) {
+      this.version = version;
+      this.serviceName = serviceName;
+      this.supportedProtocol = protocol;
+    }
   }
 }

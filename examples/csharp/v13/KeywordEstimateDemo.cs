@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,13 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v13;
+using Google.Api.Ads.AdWords.Examples;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v13;
 
 using System;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v13 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v13 {
   /// <summary>
   /// This code example estimates traffic for a given keyword.
   /// </summary>
@@ -48,9 +49,7 @@ namespace com.google.api.adwords.examples.v13 {
       KeywordRequest myKeyword = new KeywordRequest();
       myKeyword.text = "flowers";
       myKeyword.maxCpc = 50000;
-      myKeyword.maxCpcSpecified = true;
       myKeyword.type = KeywordType.Broad;
-      myKeyword.typeSpecified = true;
 
       // To estimate more keywords, create more KeywordRequest objects
       // and add them to the list of keyword to estimate.

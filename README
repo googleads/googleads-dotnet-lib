@@ -1,83 +1,237 @@
-﻿
-AdWords API DotNet Client Library
+﻿AdWords API DotNet Client Library
+=================================
 
 Google's AdWords API service lets developers design computer programs that
 interact directly with the AdWords platform. With these applications,
 advertisers and third-parties can more efficiently - and creatively - manage
 their large or complex AdWords accounts and campaigns.
 
-AdWords API DotNet Client Library makes it easier to write .NET clients to
-programmatically access AdWords accounts. The client library is provided as a
-Visual Studio project that contains the generated stubs, with v13 classes in
-com.google.api.adwords.v13 namespace and v200902 classes in
-com.google.api.adwords.v200902.ServiceName namespace. There is no need to worry
-about accessing the WSDL for the web services, this is done through the classes
-in the client library. All duplicate classes generated from WSDL have been
-removed. This is done automatically with wsdl.exe from .NET SDK 2.0. The client
-library is compatible with .NET SDK 2.0 and above. Two useful SOAPExtension
-classes are provided. The ApiUnitsExtension takes care of API units accounting
-for all services. The TraceExtension logs all SOAP requests and responses to
-log files or to console. You can configure logging using various keys in the
-App.config file. You can turn console logging on or off using "LogToConsole"
-key, and file logging using "LogToFile" key. The place where log files are
-stored can be configured in the App.config file, using "LogPath" key.
+The AdWords API DotNet Client Library makes it easier to write .NET clients to
+programmatically access AdWords accounts. All client library classes and
+utilities are in the "Google.Api.Ads.AdWords" namespace or sub-namespaces.
+The library is compatible with .NET SDK 2.0 and above. When using the library,
+you needn't worry about downloading WSDLs and such, since the library contains
+stub classes for all the supported services and takes care of details like SOAP
+marshalling and unmarshalling, SOAP logging, etc. The complete documentation for
+the AdWords API is available from
+http://www.google.com/apis/adwords/developer/index.html.
 
-Demo programs in the Examples directory demonstrate how to use client
-library. To run an example, open the solution file google-api-adwords-dotnet.sln
-in Visual Studio, build the solution, and execute it on command line at
-Examples\bin\Debug.
-    > Examples.exe v13.AccountServiceDemo
-    > Examples.exe v200902.AddCampaign
 
-You can get the list of all the commandline options by running Examples.exe
-without any command line options.
+What's in the client library?
+-----------------------------
 
-In the .NET 2.0 SOAP layer primitive types do not get serialized by default.
-.NET has no way of specifying null for a variable of a primitive type. If a
-primitive type variable is a binding to a SOAP paramer defined in the WSDL as
-nillable="true", in order for the variable to be serialized you need to set a
-variable <parameterName>Specified to true in order for it to be serialized.
-    newCampaign.budgetAmount = 1000000L;
-    newCampaign.budgetAmountSpecified = true;
-The members <parameterName>Specified are an artifact of the .NET SOAP library
-and are not present in the original WSDL.
+The client library provides full access to all the functionality of the AdWords
+API web services plus more. It includes:
+
+  - Data classes: The client library provides all the necessary data classes.
+    For example, it provides the Campaign data class for encapsulating campaign
+    data. These classes are generated automatically from WSDLs using wsdl.exe
+    and post-processed to provide features like
+    - Not having to specify xxxSpecified = true for each nullable property.
+    - Being able to treat SOAP faults as AdWords exceptions rather than as
+      generic SoapExceptions.
+    - Reusing types across multiple services.
+
+  - AdWordsUser class: The AdWordsUser class provides methods for setting
+    credentials for accessing AdWords accounts as well as for creating instances
+    of the AdWords Service classes.
+
+  - Helpful utilities: The utilities located under
+    Google.Api.Ads.AdWords.Utils help you download reports, retrieve detailed
+    information about api units usage, get helpful data such as city codes and
+    method unit cost, backup or restore accounts, etc.
+
+  - SOAP extensions: The client library provides you SOAP extensions that will
+    log http messages, SOAP request and response xmls, keep track of API units
+    used, etc.
+
 
 How do I start?
-If you don't have one already, sign up for a Google Account at
-https://www.google.com/accounts/NewAccount. Update App.config with
-authentication credentials for your Google Account, to make requests against
-sandbox or with authentication credentials for your AdWords account, to make
-requests against production environment.
+---------------
 
-How to make a release?
-1. If a new version is being added, start by making a new wsdl_config.xml. You
-can use any existing ones as a reference.
+The client library is provided as a Visual Studio project (source distribution)
+as well as a precompiled .NET assembly (binary distribution). You may continue
+reading the the appropriate section below, depending on the distribution you
+downloaded from the site.
 
-2. Generate the stub classes as
-  > wsdl.exe /par:wsdl_config.xml /out:AdWordsApi.cs
 
-3. Cleanup the stub classes as
-  > csc tools\ProcessWsdlOutput.cs
-  > ProcessWsdlOutput.exe --file=AdWordsApi.cs
+Binary distribution
+-------------------
 
-4. Create src\vXX directory and copy wsdl_config.xml and AdWordsApi.cs into it.
+The binary distribution of AdWords API DotNet client library consists of a
+precompiled version of the library as a .NET assembly, code examples for using
+the library, and library documentation. If you are interested in just using
+the library and not in its internals, you should download this distribution.
 
-5. Create appropriate service entries in AdWordsService.cs
+The contents of this distribution are as follows:
 
-6. Create/update examples to appropriate API version.
+  \
+    \docs
+      - Documentation xmls for Google.AdWords.dll and AdWords.Examples.exe.
+      - Prebuilt help files for the client library in chm format.
+    \lib
+      - Precompiled library, Google.AdWords.dll.
+    \examples
+      - Client library examples, provided as a Visual Studio project.
+    README
+    ChangeLog
+    COPYING
 
-7. Change the versions in AssemblyInfo.cs and Examples\AssemblyInfo.cs to
-v.v.v, where v.v.v is a version number (e.g., 2.1.0).
+The examples folder contains code examples for all the major functionality
+supported by the library for all the supported versions of the API. To run
+the examples,
 
-8. Create a directory with a name awapi_dotnet_lib_v.v.v, where v.v.v is a
-version number (e.g., 2.1.0), and copy new release into it. Pack new release
-into a tarball and then gzip it,
-    > tar -cvf awapi_dotnet_lib_v.v.v.tar awapi_dotnet_lib_v.v.v\
-    > gzip awapi_dotnet_lib_v.v.v.tar
+- Open examples\AdWords.Examples.csproj in Visual Studio 2005/2008.
+- Open App.config and edit the following keys:
+  - UserAgent: ENTER_YOUR_COMPANY_OR_APPLICATION_NAME_HERE.
+  - Email: ENTER_YOUR_EMAIL_HERE.
+  - Password: ENTER_YOUR_PASSWORD_HERE.
+  - ClientEmail: ENTER_YOUR_CLIENT_EMAIL_HERE.
+  - DeveloperToken: ENTER_YOUR_DEVELOPER_TOKEN_HERE.
 
-Where do I submit bug reports and feature requests?
-Bug reports and feature requests can be submitted at
-http://code.google.com/p/google-api-adwords-dotnet/issues/list.
+- Save and close App.config.
+- Open the Properties dialog for the AdWords.Examples project (Right click
+  the AdWords.Examples project in the Solution Explorer and select the
+  Properties option from the context menu.).
+- Navigate to the Debug Tab and enter the command line options. The command line
+  options are of the form version.examplename. For instance,
+  v201003.AddCampaign is the command line option to run v201003\AddCampaign.cs.
+- Compile and run the AdWords.Examples project.
+
+Alternatively, each code example has a main() method, so you can set the
+appropriate code example as the Startup object (Select the Application tab on
+the AdWords.Examples Properties dialog and pick the desired class from the
+"Startup object" dropdown.).
+
+You can use the library in a new project as follows:
+
+- Create a new Visual Studio project of your choice (For instance, a C# Windows
+  application).
+- Copy Google.AdWords.dll to your project directory. If you have a folder for
+  keeping referenced libraries, then you may copy the assembly to this folder,
+  otherwise it is a good practice to create one (e.g \lib) to keep the
+  referenced assembly.
+- Add a reference to the library and to System.Web.Services in your project.
+- Copy examples\App.config to your project directory and add it to your project.
+  Edit the required keys in App.config. If your application has its own
+  App.config, then you can copy configuration/AdWordsApi,
+  configuration/system.web, configuration/configSections/section(
+  name="AdWordsApi"), and configuration/system.net nodes into your App.config.
+- Make a call to the library as follows:
+
+  AdWordsUser user = new AdWordsUser();
+  CampaignService service = (CampaignService) user.GetService(
+      AdWordsService.v201003.CampaignService);
+  // make more calls to service class.
+
+All the supported services in the client library are available as
+AdWordsService.vxxx.ServiceName, where vxxx is the API version (v13, v200909,
+v201003) and ServiceName is the name of the service you want to create.
+
+Finally, if you wish to use this assembly in another .NET compatible language
+like VB.NET, then you may do so without any issues. The library is almost
+CLSCompliant (with the exception of Predicate.Operator.EQUALS, which has a name
+collision with Enum.Equals).
+
+
+Source distribution
+-------------------
+
+The source distribution of the AdWords API DotNet client library consists of
+individual Visual Studio projects for the client library, code examples and
+test cases, documentation for using the library, and support libraries and tools
+for compiling and running the library. If you are interested in the library
+internals you should download this distribution.
+
+The contents of this distribution are as follows:
+
+  /
+    /data
+       Data CSVs required by the library.
+    /docs
+      - Prebuilt help files for the client library in .CHM format.
+      - A .sbproj (Sandcastle project) for building the documentation.
+    /examples
+      - Client library examples, provided as a Visual Studio project.
+    /lib
+      - External client libraries referenced by various projects in the source
+        distribution.
+    /src
+      - Client library source, provided as a Visual Studio project.
+    /tests
+      - NAnt test cases for the library, provided as a Visual Studio project
+    README
+    ChangeLog
+    COPYING
+    AdWords.2005.sln
+    AdWords.2008.sln
+
+To compile and run the project:
+
+- Open AdWords.2005.sln or AdWords.2008.sln depending on the version of
+  Visual Studio you are using.
+- Open App.config under the AdWords.Examples project and edit the following
+  keys:
+  - UserAgent: ENTER_YOUR_COMPANY_OR_APPLICATION_NAME_HERE.
+  - Email: ENTER_YOUR_EMAIL_HERE.
+  - Password: ENTER_YOUR_PASSWORD_HERE.
+  - ClientEmail: ENTER_YOUR_CLIENT_EMAIL_HERE.
+  - DeveloperToken: ENTER_YOUR_DEVELOPER_TOKEN_HERE.
+
+- Save and close App.config.
+- Open the Properties dialog for the AdWords.Examples project (Right click
+  the AdWords.Examples project in the Solution Explorer and select the
+  Properties option from the context menu.).
+- Navigate to the Debug tab and enter the command line options. The command line
+  options are of the form version.examplename. For instance,
+  v201003.AddCampaign is the command line option to run v201003\AddCampaign.cs.
+- Set the AdWords.Examples project as the Startup project.
+- Compile and run the AdWords.Examples project.
+
+Alternatively, each code example has a main() method, so you can set the
+appropriate code example as the Startup object (Select the Application tab on
+the AdWords.Examples Properties dialog and pick the desired class from the
+"Startup object" dropdown.).
+
+To run the test cases, you need to download and install the latest version of
+NUnit from http://www.nunit.org/. Once you have installed NUnit, you can
+compile and run the test cases as follows:
+
+- Right click the AdWords.Tests project and choose References from the context
+  menu.
+  From the references dialog, add a reference to the nunit.framework assembly.
+- Right click the AdWords.Tests project and choose Properties. Navigate to the
+  Debug tab and choose "Start external program". Browse to the path for
+  nunit.exe and pick it as the Startup application.
+- Open App.config under the AdWords.Tests project and edit the following keys:
+  - UserAgent: ENTER_YOUR_COMPANY_OR_APPLICATION_NAME_HERE.
+  - Email: ENTER_YOUR_EMAIL_HERE.
+  - Password: ENTER_YOUR_PASSWORD_HERE.
+  - ClientEmail: ENTER_YOUR_CLIENT_EMAIL_HERE.
+  - LegacyAdWordsApi.Server: https://sandbox.google.com
+  - AdWordsApi.Server: https://adwords-sandbox.google.com
+  - DeveloperToken: ENTER_YOUR_DEVELOPER_TOKEN_HERE.
+
+- It is recommended that you run the test cases against a sandbox account. See
+  http://code.google.com/apis/adwords/docs/developer/adwords_api_sandbox.html
+  for details on using the AdWords API Sandbox.
+- Set AdWords.Tests project as the startup project and run the project.
+
+If you wish to add the AdWords client library as part of your workspace, then
+you need to copy \src folder and \data folder to your workspace folder and then
+add AdWords.csproj to your .sln.
+
+
+Configuring the client library
+------------------------------
+
+The client library may be configured using the settings exposed by App.config.
+For a detailed list of all the available configuration options, you can refer
+to http://code.google.com/p/google-api-adwords-dotnet/wiki/UnderstandingAppConfig
+
+
+Miscellaneous
+-------------
 
 Requires:
     - .NET Framework 2.0 (or above)
@@ -85,16 +239,11 @@ Requires:
     - Visual Studio     -- http://msdn2.microsoft.com/en-us/vstudio/default.aspx
     - Google Account    -- https://www.google.com/accounts/NewAccount
 
-Includes:
-    - Examples          -- demo programs for the client library
-    - src\lib           -- core library
-    - src\vXX           -- classes for each API web service
-    - src\lib\util      -- utility classes
+Bug tracker:
+    - http://code.google.com/p/google-api-adwords-dotnet/issues/list
+
+Support forum:
+    - https://groups.google.com/group/adwords-api?pli=1
 
 Author:
-    chanezon@gmail.com (Patrick Chanezon)
-
-Maintainers:
-    api.jeffy@gmail.com (Jeffrey Posnick)
-    api.arogal@gmail.com (Adam Rogal)
     api.anash@gmail.com (Anash P. Oommen)

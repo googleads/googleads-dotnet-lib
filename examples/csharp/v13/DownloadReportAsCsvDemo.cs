@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,15 +14,15 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.lib.util;
-using com.google.api.adwords.v13;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.Util;
+using Google.Api.Ads.AdWords.v13;
 
 using System;
 using System.IO;
 using System.Web.Services.Protocols;
 
-namespace com.google.api.adwords.examples.v13 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v13 {
   /// <summary>
   /// This code example shows how to use AdWordsUtilities to download a report
   /// in CSV format.
@@ -50,12 +50,11 @@ namespace com.google.api.adwords.examples.v13 {
       DefinedReportJob reportJob = new DefinedReportJob();
       reportJob.name = "Keyword Report";
       reportJob.selectedReportType = "Keyword";
-      reportJob.aggregationTypes = new String[] {"Daily"};
+      reportJob.aggregationTypes = new string[] {"Daily"};
       reportJob.adWordsType = AdWordsType.SearchOnly;
-      reportJob.adWordsTypeSpecified = true;
       reportJob.endDay = DateTime.Today;  // defaults to today
       reportJob.startDay = new DateTime(2009, 1, 1);
-      reportJob.selectedColumns = new String[] {
+      reportJob.selectedColumns = new string[] {
           "Campaign", "AdGroup", "Keyword", "KeywordStatus", "KeywordMinCPC",
           "KeywordDestUrlDisplay", "Impressions", "Clicks", "CTR",
           "AveragePosition"};

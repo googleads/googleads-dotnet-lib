@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v201008 {
+namespace Google.Api.Ads.AdWords.Tests.v201008 {
   /// <summary>
   /// UnitTests for <see cref="CampaignAdExtensionService"/> class.
   /// </summary>
@@ -48,7 +48,7 @@ namespace com.google.api.adwords.tests.v201008 {
     /// The geo location for running tests.
     /// </summary>
     private GeoLocation location = null;
-    
+
     /// <summary>
     /// Default public constructor.
     /// </summary>
@@ -63,7 +63,7 @@ namespace com.google.api.adwords.tests.v201008 {
       TestUtils utils = new TestUtils();
       campaignAdExtensionService = (CampaignAdExtensionService)user.GetService(
           AdWordsService.v201008.CampaignAdExtensionService);
-      campaignId = utils.CreateCampaign(user, true);
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
       campaignAdExtensionId = utils.CreateCampaignAdExtension(user, campaignId);
 
       Address address = new Address();
@@ -79,13 +79,10 @@ namespace com.google.api.adwords.tests.v201008 {
     [Test]
     public void TestAddCampaignAdExtension() {
       CampaignAdExtensionOperation operation = new CampaignAdExtensionOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
 
       CampaignAdExtension extension = new CampaignAdExtension();
-      extension.campaignIdSpecified = true;
       extension.campaignId = campaignId;
-      extension.statusSpecified = true;
       extension.status = CampaignAdExtensionStatus.ACTIVE;
 
       LocationExtension locationExtension = new LocationExtension();
@@ -96,20 +93,19 @@ namespace com.google.api.adwords.tests.v201008 {
       locationExtension.address = location.address;
       locationExtension.geoPoint = location.geoPoint;
       locationExtension.encodedLocation = location.encodedLocation;
-      locationExtension.sourceSpecified = true;
       locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND;
 
       extension.adExtension = locationExtension;
       operation.operand = extension;
-      CampaignAdExtensionReturnValue retval =
+      CampaignAdExtensionReturnValue retVal =
           campaignAdExtensionService.mutate(new CampaignAdExtensionOperation[] {operation});
-      Assert.NotNull(retval);
-      Assert.NotNull(retval.value);
-      Assert.AreEqual(retval.value.Length, 1);
-      Assert.NotNull(retval.value[0]);
-      Assert.AreEqual(retval.value[0].campaignId, campaignId);
-      Assert.NotNull(retval.value[0].adExtension);
-      Assert.That(retval.value[0].adExtension is LocationExtension);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.AreEqual(retVal.value[0].campaignId, campaignId);
+      Assert.NotNull(retVal.value[0].adExtension);
+      Assert.That(retVal.value[0].adExtension is LocationExtension);
     }
 
     /// <summary>
@@ -136,29 +132,26 @@ namespace com.google.api.adwords.tests.v201008 {
     [Test]
     public void TestDeleteCampaignAdExtension() {
       CampaignAdExtension campaignAdExtension = new CampaignAdExtension();
-      campaignAdExtension.campaignIdSpecified = true;
       campaignAdExtension.campaignId = campaignId;
       campaignAdExtension.adExtension = new AdExtension();
-      campaignAdExtension.adExtension.idSpecified = true;
       campaignAdExtension.adExtension.id = campaignAdExtensionId;
 
       CampaignAdExtensionOperation operation = new CampaignAdExtensionOperation();
       operation.operand = campaignAdExtension;
-      operation.operatorSpecified = true;
       operation.@operator = Operator.REMOVE;
 
-      CampaignAdExtensionReturnValue retval = null;
+      CampaignAdExtensionReturnValue retVal = null;
 
       Assert.DoesNotThrow(delegate() {
-        retval = campaignAdExtensionService.mutate(new CampaignAdExtensionOperation[] {operation});
+        retVal = campaignAdExtensionService.mutate(new CampaignAdExtensionOperation[] {operation});
       });
-      Assert.NotNull(retval);
-      Assert.NotNull(retval.value);
-      Assert.AreEqual(retval.value.Length, 1);
-      Assert.NotNull(retval.value[0]);
-      Assert.AreEqual(retval.value[0].campaignId, campaignId);
-      Assert.NotNull(retval.value[0].adExtension);
-      Assert.AreEqual(retval.value[0].adExtension.id, campaignAdExtensionId);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.AreEqual(retVal.value[0].campaignId, campaignId);
+      Assert.NotNull(retVal.value[0].adExtension);
+      Assert.AreEqual(retVal.value[0].adExtension.id, campaignAdExtensionId);
     }
   }
 }

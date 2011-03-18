@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v201003 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201003 {
   /// <summary>
   /// This code example adds a keywords performance report. To get ad groups,
   /// run GetAllAdGroups.cs. To get report fields, run GetReportFields.cs.
@@ -37,6 +37,16 @@ namespace com.google.api.adwords.examples.v201003 {
         return "This code example adds a keywords performance report. To get ad groups, " +
             "run GetAllAdGroups.cs. To get report fields, run GetReportFields.cs.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new AddKeywordsPerformanceReportDefinition();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -57,14 +67,13 @@ namespace com.google.api.adwords.examples.v201003 {
       Predicate adGroupPredicate = new Predicate();
       adGroupPredicate.field = "AdGroupId";
       adGroupPredicate.@operator = PredicateOperator.EQUALS;
-      adGroupPredicate.operatorSpecified = true;
-      adGroupPredicate.values = new string[] { adGroupId.ToString() };
+      adGroupPredicate.values = new string[] {adGroupId.ToString()};
 
       // Create selector.
       Selector selector = new Selector();
       selector.fields = new string[] {"AdGroupId", "Id", "KeywordText", "KeywordMatchType",
       "Impressions", "Clicks", "Cost"};
-      selector.predicates = new Predicate[] { adGroupPredicate };
+      selector.predicates = new Predicate[] {adGroupPredicate};
       selector.dateRange = new DateRange();
       selector.dateRange.min = startDate;
       selector.dateRange.max = endDate;
@@ -73,23 +82,19 @@ namespace com.google.api.adwords.examples.v201003 {
       ReportDefinition reportDefinition = new ReportDefinition();
       reportDefinition.reportName = "Keywords performance report #" + GetTimeStamp();
       reportDefinition.dateRangeType = ReportDefinitionDateRangeType.CUSTOM_DATE;
-      reportDefinition.dateRangeTypeSpecified = true;
       reportDefinition.reportType = ReportDefinitionReportType.KEYWORDS_PERFORMANCE_REPORT;
-      reportDefinition.reportTypeSpecified = true;
       reportDefinition.downloadFormat = DownloadFormat.XML;
-      reportDefinition.downloadFormatSpecified = true;
       reportDefinition.selector = selector;
 
       // Create operations.
       ReportDefinitionOperation operation = new ReportDefinitionOperation();
       operation.operand = reportDefinition;
       operation.@operator = Operator.ADD;
-      operation.operatorSpecified = true;
 
       try {
         // Add report definition.
         ReportDefinition[] result = reportDefinitionService.mutate(
-            new ReportDefinitionOperation[] { operation });
+            new ReportDefinitionOperation[] {operation});
 
         // Display report definitions.
         if (result != null) {

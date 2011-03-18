@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example illustrates how to update a user list, setting its
   /// description. To create a user list, run AddUserList.cs.
@@ -37,6 +37,16 @@ namespace com.google.api.adwords.examples.v201008 {
         return "This code example illustrates how to update a user list, setting its " +
             "description. To create a user list, run AddUserList.cs.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new UpdateUserList();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -57,13 +67,11 @@ namespace com.google.api.adwords.examples.v201008 {
       // a 'get' on it first.
       RemarketingUserList userList = new RemarketingUserList();
       userList.id = userListId;
-      userList.idSpecified = true;
       userList.description = "Last updated at #" + GetTimeStamp();
 
       UserListOperation operation = new UserListOperation();
       operation.operand = userList;
       operation.@operator = Operator.SET;
-      operation.operatorSpecified = true;
 
       try {
         // Update user list.

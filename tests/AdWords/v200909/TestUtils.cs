@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,9 +14,9 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.lib.util;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.Common.Util;
+using Google.Api.Ads.AdWords.v200909;
 
 using NUnit.Framework;
 
@@ -27,7 +27,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 
-namespace com.google.api.adwords.tests.v200909 {
+namespace Google.Api.Ads.AdWords.Tests.v200909 {
   /// <summary>
   /// A utility class to assist the testing of v200909 services.
   /// </summary>
@@ -36,32 +36,24 @@ namespace com.google.api.adwords.tests.v200909 {
     /// Creates a test campaign for running further tests.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
+    /// <param name="biddingStrategy">The bidding strategy to be used.</param>
     /// <returns>The campaign id.</returns>
-    public long CreateCampaign(AdWordsUser user, bool cpc) {
+    public long CreateCampaign(AdWordsUser user, BiddingStrategy biddingStrategy) {
       CampaignService campaignService =
           (CampaignService) user.GetService(AdWordsService.v200909.CampaignService);
       long campaignId = 0;
 
       CampaignOperation campaignOperation = new CampaignOperation();
-      campaignOperation.operatorSpecified = true;
       campaignOperation.@operator = Operator.ADD;
       campaignOperation.operand = new Campaign();
       campaignOperation.operand.name =
           string.Format("Campaign {0}", DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff"));
-      campaignOperation.operand.statusSpecified = true;
       campaignOperation.operand.status = CampaignStatus.PAUSED;
-      if (cpc == true) {
-        campaignOperation.operand.biddingStrategy = new ManualCPC();
-      } else {
-        campaignOperation.operand.biddingStrategy = new ManualCPM();
-      }
+      campaignOperation.operand.biddingStrategy = biddingStrategy;
       campaignOperation.operand.budget = new Budget();
       campaignOperation.operand.budget.period = BudgetBudgetPeriod.DAILY;
-      campaignOperation.operand.budget.periodSpecified = true;
       campaignOperation.operand.budget.amount = new Money();
-      campaignOperation.operand.budget.amount.microAmountSpecified = true;
       campaignOperation.operand.budget.amount.microAmount = 100000000;
-      campaignOperation.operand.budget.deliveryMethodSpecified = true;
       campaignOperation.operand.budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
 
       CampaignReturnValue retVal =
@@ -89,16 +81,12 @@ namespace com.google.api.adwords.tests.v200909 {
               AdWordsService.v200909.AdExtensionOverrideService);
 
       AdExtensionOverrideOperation operation = new AdExtensionOverrideOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
 
       operation.operand = new AdExtensionOverride();
-      operation.operand.adIdSpecified = true;
       operation.operand.adId = adId;
 
       LocationExtension locationExtension = new LocationExtension();
-
-      locationExtension.idSpecified = true;
       locationExtension.id = campaignAdExtensionId;
 
       // Note: Do not populate an address directly. Instead, use
@@ -107,22 +95,19 @@ namespace com.google.api.adwords.tests.v200909 {
       locationExtension.address = location.address;
       locationExtension.geoPoint = location.geoPoint;
       locationExtension.encodedLocation = location.encodedLocation;
-      locationExtension.sourceSpecified = true;
       locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND;
 
       // Optional: Apply this override within 20 kms.
       operation.operand.overrideInfo = new OverrideInfo();
       operation.operand.overrideInfo.Item = new LocationOverrideInfo();
-      operation.operand.overrideInfo.Item.radiusSpecified = true;
       operation.operand.overrideInfo.Item.radius = 20;
-      operation.operand.overrideInfo.Item.radiusUnitsSpecified = true;
       operation.operand.overrideInfo.Item.radiusUnits = LocationOverrideInfoRadiusUnits.KILOMETERS;
 
       operation.operand.adExtension = locationExtension;
 
-      AdExtensionOverrideReturnValue retval = adExtensionOverrideService.mutate(
-          new AdExtensionOverrideOperation[] { operation });
-      return retval.value[0].adExtension.id;
+      AdExtensionOverrideReturnValue retVal = adExtensionOverrideService.mutate(
+          new AdExtensionOverrideOperation[] {operation});
+      return retVal.value[0].adExtension.id;
     }
 
     /// <summary>
@@ -139,7 +124,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
       // Create language targets.
       LanguageTargetList langTargetList = new LanguageTargetList();
-      langTargetList.campaignIdSpecified = true;
       langTargetList.campaignId = campaignId;
 
       LanguageTarget langTarget1 = new LanguageTarget();
@@ -152,13 +136,11 @@ namespace com.google.api.adwords.tests.v200909 {
 
       // Create language target set operation.
       CampaignTargetOperation langTargetOperation = new CampaignTargetOperation();
-      langTargetOperation.operatorSpecified = true;
       langTargetOperation.@operator = Operator.SET;
       langTargetOperation.operand = langTargetList;
 
       // Create geo targets.
       GeoTargetList geoTargetList = new GeoTargetList();
-      geoTargetList.campaignIdSpecified = true;
       geoTargetList.campaignId = campaignId;
 
       CountryTarget geoTarget1 = new CountryTarget();
@@ -169,39 +151,34 @@ namespace com.google.api.adwords.tests.v200909 {
 
       // Create geo target set operation.
       CampaignTargetOperation geoTargetOperation = new CampaignTargetOperation();
-      geoTargetOperation.operatorSpecified = true;
       geoTargetOperation.@operator = Operator.SET;
       geoTargetOperation.operand = geoTargetList;
 
       // Create network targets.
       NetworkTargetList networkTargetList = new NetworkTargetList();
-      networkTargetList.campaignIdSpecified = true;
       networkTargetList.campaignId = campaignId;
 
       // Specifying GOOGLE_SEARCH is necessary if you want to target SEARCH_NETWORK.
       NetworkTarget networkTarget1 = new NetworkTarget();
-      networkTarget1.networkCoverageTypeSpecified = true;
       networkTarget1.networkCoverageType = NetworkCoverageType.GOOGLE_SEARCH;
 
       NetworkTarget networkTarget2 = new NetworkTarget();
-      networkTarget2.networkCoverageTypeSpecified = true;
       networkTarget2.networkCoverageType = NetworkCoverageType.SEARCH_NETWORK;
 
       networkTargetList.targets = new NetworkTarget[] {networkTarget1, networkTarget2};
 
       // Create network target set operation.
       CampaignTargetOperation networkTargetOperation = new CampaignTargetOperation();
-      networkTargetOperation.operatorSpecified = true;
       networkTargetOperation.@operator = Operator.SET;
       networkTargetOperation.operand = networkTargetList;
 
       // Set campaign targets.
-      CampaignTargetReturnValue result =
+      CampaignTargetReturnValue retVal =
           campaignTargetService.mutate(new CampaignTargetOperation[] {
               geoTargetOperation, langTargetOperation,networkTargetOperation});
 
-      if (result != null && result.value != null) {
-        return result.value;
+      if (retVal != null && retVal.value != null) {
+        return retVal.value;
       } else {
         return new TargetList[] {};
       }
@@ -219,10 +196,8 @@ namespace com.google.api.adwords.tests.v200909 {
       long adGroupId = 0;
 
       AdGroupOperation adGroupOperation = new AdGroupOperation();
-      adGroupOperation.operatorSpecified = true;
       adGroupOperation.@operator = Operator.ADD;
       adGroupOperation.operand = new AdGroup();
-      adGroupOperation.operand.campaignIdSpecified = true;
       adGroupOperation.operand.campaignId = campaignId;
       adGroupOperation.operand.name =
           string.Format("AdGroup {0}", DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff"));
@@ -231,7 +206,6 @@ namespace com.google.api.adwords.tests.v200909 {
       ManualCPCAdGroupBids bids = new ManualCPCAdGroupBids();
       bids.keywordMaxCpc = new Bid();
       bids.keywordMaxCpc.amount = new Money();
-      bids.keywordMaxCpc.amount.microAmountSpecified = true;
       bids.keywordMaxCpc.amount.microAmount = 1000000;
       adGroupOperation.operand.bids = bids;
 
@@ -256,10 +230,8 @@ namespace com.google.api.adwords.tests.v200909 {
       AdGroupAdService adGroupAdService =
           (AdGroupAdService) user.GetService(AdWordsService.v200909.AdGroupAdService);
       AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
-      adGroupAdOperation.operatorSpecified = true;
       adGroupAdOperation.@operator = Operator.ADD;
       adGroupAdOperation.operand = new AdGroupAd();
-      adGroupAdOperation.operand.adGroupIdSpecified = true;
       adGroupAdOperation.operand.adGroupId = adGroupId;
       TextAd ad = new TextAd();
 
@@ -297,16 +269,12 @@ namespace com.google.api.adwords.tests.v200909 {
 
       // Prepare for setting ad parameters.
       AdParam adParam = new AdParam();
-      adParam.adGroupIdSpecified = true;
       adParam.adGroupId = adGroupId;
-      adParam.criterionIdSpecified = true;
       adParam.criterionId = criterionId;
       adParam.paramIndex = 1;
-      adParam.paramIndexSpecified = true;
       adParam.insertionText = "$100";
 
       AdParamOperation adParamOperation = new AdParamOperation();
-      adParamOperation.operatorSpecified = true;
       adParamOperation.@operator = Operator.SET;
       adParamOperation.operand = adParam;
 
@@ -328,14 +296,11 @@ namespace com.google.api.adwords.tests.v200909 {
 
       AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
       operation.@operator = Operator.ADD;
-      operation.operatorSpecified = true;
       operation.operand = new BiddableAdGroupCriterion();
       operation.operand.adGroupId = adGroupId;
-      operation.operand.adGroupIdSpecified = true;
 
       Keyword keyword = new Keyword();
       keyword.matchType = KeywordMatchType.BROAD;
-      keyword.matchTypeSpecified = true;
       keyword.text = "mars cruise";
 
       operation.operand.criterion = keyword;
@@ -348,7 +313,7 @@ namespace com.google.api.adwords.tests.v200909 {
     }
 
     /// <summary>
-    /// Creates a campaign negative keyword for running further tests.
+    /// Creates a negative campaign keyword for running further tests.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     /// <param name="campaignId">The campaign id for which the keyword is
@@ -362,24 +327,21 @@ namespace com.google.api.adwords.tests.v200909 {
       NegativeCampaignCriterion criterion = new NegativeCampaignCriterion();
 
       criterion.campaignId = campaignId;
-      criterion.campaignIdSpecified = true;
 
       Keyword keyword = new Keyword();
       keyword.matchType = KeywordMatchType.BROAD;
-      keyword.matchTypeSpecified = true;
       keyword.text = "mars cruise";
 
       criterion.criterion = keyword;
 
       CampaignCriterionOperation campaignCriterionOperation = new CampaignCriterionOperation();
-      campaignCriterionOperation.operatorSpecified = true;
       campaignCriterionOperation.@operator = Operator.ADD;
       campaignCriterionOperation.operand = criterion;
 
-      CampaignCriterionReturnValue results =
+      CampaignCriterionReturnValue retVal =
           service.mutate(new CampaignCriterionOperation[] {campaignCriterionOperation});
-      if (results != null && results.value != null && results.value.Length > 0) {
-        keywordId = (results.value[0].criterion as Keyword).id;
+      if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+        keywordId = (retVal.value[0].criterion as Keyword).id;
       }
       return keywordId;
     }
@@ -399,13 +361,10 @@ namespace com.google.api.adwords.tests.v200909 {
                CampaignAdExtensionService);
 
       CampaignAdExtensionOperation operation = new CampaignAdExtensionOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
 
       CampaignAdExtension extension = new CampaignAdExtension();
-      extension.campaignIdSpecified = true;
       extension.campaignId = campaignId;
-      extension.statusSpecified = true;
       extension.status = CampaignAdExtensionStatus.ACTIVE;
 
       Address address = new Address();
@@ -422,15 +381,14 @@ namespace com.google.api.adwords.tests.v200909 {
       locationExtension.address = location.address;
       locationExtension.geoPoint = location.geoPoint;
       locationExtension.encodedLocation = location.encodedLocation;
-      locationExtension.sourceSpecified = true;
       locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND;
 
       extension.adExtension = locationExtension;
       operation.operand = extension;
-      CampaignAdExtensionReturnValue retval =
+      CampaignAdExtensionReturnValue retVal =
           campaignExtensionService.mutate(new CampaignAdExtensionOperation[] {operation});
-      if (retval != null && retval.value != null && retval.value.Length > 0) {
-        CampaignAdExtension campaignExtension = retval.value[0];
+      if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+        CampaignAdExtension campaignExtension = retVal.value[0];
         campaignAdExtensionId = campaignExtension.adExtension.id;
       }
       return campaignAdExtensionId;

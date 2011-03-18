@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v200909 {
+namespace Google.Api.Ads.AdWords.Tests.v200909 {
   /// <summary>
   /// Unittest for TargetingIdeaService.
   /// </summary>
@@ -58,7 +58,7 @@ namespace com.google.api.adwords.tests.v200909 {
       TestUtils utils = new TestUtils();
       targetingIdeaService =
           (TargetingIdeaService) user.GetService(AdWordsService.v200909.TargetingIdeaService);
-      campaignId = utils.CreateCampaign(user, true);
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
       adGroupId = utils.CreateAdGroup(user, campaignId);
     }
 
@@ -68,10 +68,8 @@ namespace com.google.api.adwords.tests.v200909 {
     [Test]
     public void TestGetEmptySelector() {
       TargetingIdeaSelector selector = new TargetingIdeaSelector();
-      TargetingIdeaPage page = null;
-
       Assert.Throws(typeof(AdWordsApiException), delegate() {
-        page = targetingIdeaService.get(selector);
+        targetingIdeaService.get(selector);
       });
     }
 
@@ -91,16 +89,11 @@ namespace com.google.api.adwords.tests.v200909 {
       selector.searchParameters = new SearchParameter[] {
         adtypeSearchParam, relatedToUrlSearchParam};
 
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.PLACEMENT;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -116,11 +109,7 @@ namespace com.google.api.adwords.tests.v200909 {
       AverageTargetedMonthlySearchesSearchParameter avgMonthlySearchParam =
           new AverageTargetedMonthlySearchesSearchParameter();
       avgMonthlySearchParam.operation = new LongComparisonOperation();
-
-      avgMonthlySearchParam.operation.minimumSpecified = true;
       avgMonthlySearchParam.operation.minimum = 1;
-
-      avgMonthlySearchParam.operation.maximumSpecified = true;
       avgMonthlySearchParam.operation.maximum = 50;
 
       RelatedToKeywordSearchParameter relatedToKeywordSearchParam =
@@ -128,24 +117,17 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "flower shop";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.BROAD;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
 
       selector.searchParameters =
           new SearchParameter[] {avgMonthlySearchParam, relatedToKeywordSearchParam};
-
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -167,7 +149,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "cash for clunkers";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.BROAD;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
@@ -175,16 +156,11 @@ namespace com.google.api.adwords.tests.v200909 {
       selector.searchParameters =
           new SearchParameter[] {competitionSearchParam, relatedToKeywordSearchParam};
 
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -212,24 +188,17 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "global economy";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.BROAD;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
 
       selector.searchParameters =
           new SearchParameter[] {countryTargetSearchParam, relatedToKeywordSearchParam};
-
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -246,7 +215,6 @@ namespace com.google.api.adwords.tests.v200909 {
       ExcludedKeywordSearchParameter excludedKwdSearchParam = new ExcludedKeywordSearchParameter();
       keyword = new Keyword();
       keyword.text = "media player";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.EXACT;
 
       excludedKwdSearchParam.keywords = new Keyword[] {keyword};
@@ -262,7 +230,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
       keyword = new Keyword();
       keyword.text = "dvd player";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.BROAD;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
@@ -271,16 +238,11 @@ namespace com.google.api.adwords.tests.v200909 {
           new SearchParameter[] {excludedKwdSearchParam, kwdMatchTypeSearchParam,
               relatedToKeywordSearchParam};
 
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -295,35 +257,26 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "media player";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.EXACT;
 
       GlobalMonthlySearchesSearchParameter globalSearchParam =
           new GlobalMonthlySearchesSearchParameter();
       globalSearchParam.operation = new LongComparisonOperation();
-      globalSearchParam.operation.minimumSpecified = true;
       globalSearchParam.operation.minimum = 1000;
-      globalSearchParam.operation.maximumSpecified = true;
       globalSearchParam.operation.maximum = 10000;
 
       RelatedToKeywordSearchParameter relatedToSearchParam =
           new RelatedToKeywordSearchParameter();
 
-      relatedToSearchParam.keywords = new Keyword[] { keyword };
+      relatedToSearchParam.keywords = new Keyword[] {keyword};
 
       selector.searchParameters =
           new SearchParameter[] {globalSearchParam, relatedToSearchParam};
-
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -344,7 +297,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "books";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.EXACT;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
@@ -352,16 +304,11 @@ namespace com.google.api.adwords.tests.v200909 {
       selector.searchParameters =
           new SearchParameter[] {includeAdultContentParam, relatedToKeywordSearchParam};
 
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -376,8 +323,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
       KeywordCategoryIdSearchParameter kwdCategoryIdSearchParameter =
           new KeywordCategoryIdSearchParameter();
-
-      kwdCategoryIdSearchParameter.categoryIdSpecified = true;
       kwdCategoryIdSearchParameter.categoryId = 5;
 
       RelatedToKeywordSearchParameter relatedToKeywordSearchParam =
@@ -385,24 +330,17 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "rent video";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.EXACT;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
 
       selector.searchParameters =
           new SearchParameter[] {kwdCategoryIdSearchParameter, relatedToKeywordSearchParam};
-
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -426,7 +364,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "cars";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.EXACT;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
@@ -434,16 +371,11 @@ namespace com.google.api.adwords.tests.v200909 {
       selector.searchParameters =
           new SearchParameter[] {kwdMatchTypeSearchParam, relatedToKeywordSearchParam};
 
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -472,7 +404,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "global economy";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.EXACT;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
@@ -480,16 +411,11 @@ namespace com.google.api.adwords.tests.v200909 {
       selector.searchParameters =
           new SearchParameter[] {langTargetSearchParam, relatedToKeywordSearchParam};
 
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -509,7 +435,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "movie theater";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.EXACT;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
@@ -517,16 +442,11 @@ namespace com.google.api.adwords.tests.v200909 {
       selector.searchParameters =
           new SearchParameter[] {mobileSearchParameter, relatedToKeywordSearchParam};
 
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -547,7 +467,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "presidential vote";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.EXACT;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
@@ -555,16 +474,11 @@ namespace com.google.api.adwords.tests.v200909 {
       selector.searchParameters =
           new SearchParameter[] {nGramGroupsSearchParameter, relatedToKeywordSearchParam};
 
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -586,7 +500,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "iron man";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.EXACT;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
@@ -594,16 +507,11 @@ namespace com.google.api.adwords.tests.v200909 {
       selector.searchParameters =
           new SearchParameter[] {placementTypeSearchParam, relatedToKeywordSearchParam};
 
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.PLACEMENT;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -621,7 +529,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "flowers";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.EXACT;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
@@ -629,16 +536,11 @@ namespace com.google.api.adwords.tests.v200909 {
       selector.searchParameters =
           new SearchParameter[] {relatedToKeywordSearchParam};
 
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -654,22 +556,16 @@ namespace com.google.api.adwords.tests.v200909 {
       RelatedToUrlSearchParameter relatedToUrlSearchParameter =
           new RelatedToUrlSearchParameter();
       relatedToUrlSearchParameter.urls = new string[] {"http://finance.google.com"};
-      relatedToUrlSearchParameter.includeSubUrlsSpecified = true;
       relatedToUrlSearchParameter.includeSubUrls = false;
 
       selector.searchParameters =
           new SearchParameter[] {relatedToUrlSearchParameter};
 
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -685,22 +581,15 @@ namespace com.google.api.adwords.tests.v200909 {
       SeedAdGroupIdSearchParameter seedAdGroupIdSearchParameter =
           new SeedAdGroupIdSearchParameter();
 
-      seedAdGroupIdSearchParameter.adGroupIdSpecified = true;
       seedAdGroupIdSearchParameter.adGroupId = adGroupId;
 
       selector.searchParameters =
           new SearchParameter[] {seedAdGroupIdSearchParameter};
-
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
@@ -718,7 +607,6 @@ namespace com.google.api.adwords.tests.v200909 {
 
       Keyword keyword = new Keyword();
       keyword.text = "presidential vote";
-      keyword.matchTypeSpecified = true;
       keyword.matchType = KeywordMatchType.EXACT;
 
       relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
@@ -726,22 +614,16 @@ namespace com.google.api.adwords.tests.v200909 {
       RelatedToUrlSearchParameter relatedToUrlSearchParameter =
           new RelatedToUrlSearchParameter();
       relatedToUrlSearchParameter.urls = new string[] {"http://finance.google.com"};
-      relatedToUrlSearchParameter.includeSubUrlsSpecified = true;
       relatedToUrlSearchParameter.includeSubUrls = false;
 
       selector.searchParameters =
           new SearchParameter[] {relatedToKeywordSearchParam, relatedToUrlSearchParameter};
 
-      selector.ideaTypeSpecified = true;
       selector.ideaType = IdeaType.KEYWORD;
-
-      selector.requestTypeSpecified = true;
       selector.requestType = RequestType.IDEAS;
 
       selector.paging = new Paging();
-      selector.paging.startIndexSpecified = true;
       selector.paging.startIndex = 0;
-      selector.paging.numberResultsSpecified = true;
       selector.paging.numberResults = 1;
 
       Assert.That(targetingIdeaService.getBulkKeywordIdeas(selector) is TargetingIdeaPage);

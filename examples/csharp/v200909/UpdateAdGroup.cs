@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v200909 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v200909 {
   /// <summary>
   /// This code example illustrates how to update an ad group, setting its
   /// status to 'PAUSED'. To create an ad group, run AddAdGroup.cs.
@@ -40,6 +40,16 @@ namespace com.google.api.adwords.examples.v200909 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new UpdateAdGroup();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -52,13 +62,10 @@ namespace com.google.api.adwords.examples.v200909 {
       long adGroupId = long.Parse(_T("INSERT_AD_GROUP_ID_HERE"));
 
       AdGroup adGroup = new AdGroup();
-      adGroup.statusSpecified = true;
       adGroup.status = AdGroupStatus.PAUSED;
-      adGroup.idSpecified = true;
       adGroup.id = adGroupId;
 
       AdGroupOperation operation = new AdGroupOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.SET;
       operation.operand = adGroup;
 

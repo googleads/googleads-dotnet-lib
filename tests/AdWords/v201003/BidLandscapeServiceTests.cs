@@ -1,4 +1,4 @@
-﻿// Copyright 2010, Google Inc. All Rights Reserved.
+﻿// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v201003 {
+namespace Google.Api.Ads.AdWords.Tests.v201003 {
   /// <summary>
   /// UnitTests for <see cref="BidLandScapeService"/> class.
   /// </summary>
@@ -63,7 +63,7 @@ namespace com.google.api.adwords.tests.v201003 {
       bidLandscapeService = (BidLandscapeService)user.GetService(
           AdWordsService.v201003.BidLandscapeService);
       TestUtils utils = new TestUtils();
-      campaignId = utils.CreateCampaign(user, true);
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
       adGroupId = utils.CreateAdGroup(user, campaignId);
       criterionId = utils.CreateKeyword(user, adGroupId);
     }
@@ -80,9 +80,7 @@ namespace com.google.api.adwords.tests.v201003 {
       // Create id filter.
       BidLandscapeIdFilter idFilter = new BidLandscapeIdFilter();
       idFilter.adGroupId = adGroupId;
-      idFilter.adGroupIdSpecified = true;
       idFilter.criterionId = criterionId;
-      idFilter.criterionIdSpecified = true;
       selector.idFilters = new BidLandscapeIdFilter[] {idFilter};
 
       // Get bid landscape for ad group criteria.

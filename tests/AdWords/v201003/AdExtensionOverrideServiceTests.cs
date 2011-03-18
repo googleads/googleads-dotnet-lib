@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v201003 {
+namespace Google.Api.Ads.AdWords.Tests.v201003 {
   /// <summary>
   /// UnitTests for <see cref="AdExtensionOverrideService"/> class.
   /// </summary>
@@ -83,11 +83,11 @@ namespace com.google.api.adwords.tests.v201003 {
       TestUtils utils = new TestUtils();
       adExtensionOverrideService = (AdExtensionOverrideService) user.GetService(
           AdWordsService.v201003.AdExtensionOverrideService);
-      campaignId = utils.CreateCampaign(user, true);
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
       adGroupId = utils.CreateAdGroup(user, campaignId);
       adIdNoOverride = utils.CreateTextAd(user, adGroupId, false);
       campaignAdExtensionId = utils.CreateCampaignAdExtension(user, campaignId);
-      
+
       Address address = new Address();
       address.streetAddress = "1600 Amphitheatre Pkwy, Mountain View";
       address.countryCode = "US";
@@ -105,16 +105,12 @@ namespace com.google.api.adwords.tests.v201003 {
     [Test]
     public void TestAddAdExtensionOverride() {
       AdExtensionOverrideOperation operation = new AdExtensionOverrideOperation();
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
 
       operation.operand = new AdExtensionOverride();
-      operation.operand.adIdSpecified = true;
       operation.operand.adId = adIdNoOverride;
 
       LocationExtension locationExtension = new LocationExtension();
-
-      locationExtension.idSpecified = true;
       locationExtension.id = campaignAdExtensionId;
 
       // Note: Do not populate an address directly. Instead, use
@@ -123,32 +119,29 @@ namespace com.google.api.adwords.tests.v201003 {
       locationExtension.address = location.address;
       locationExtension.geoPoint = location.geoPoint;
       locationExtension.encodedLocation = location.encodedLocation;
-      locationExtension.sourceSpecified = true;
       locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND;
 
       // Optional: Apply this override within 20 kms.
       operation.operand.overrideInfo = new OverrideInfo();
       operation.operand.overrideInfo.Item = new LocationOverrideInfo();
-      operation.operand.overrideInfo.Item.radiusSpecified = true;
       operation.operand.overrideInfo.Item.radius = 20;
-      operation.operand.overrideInfo.Item.radiusUnitsSpecified = true;
       operation.operand.overrideInfo.Item.radiusUnits = LocationOverrideInfoRadiusUnits.KILOMETERS;
 
       operation.operand.adExtension = locationExtension;
 
-      AdExtensionOverrideReturnValue retval = null;
+      AdExtensionOverrideReturnValue retVal = null;
 
       Assert.DoesNotThrow(delegate() {
-        retval = adExtensionOverrideService.mutate(new AdExtensionOverrideOperation[] {operation});
+        retVal = adExtensionOverrideService.mutate(new AdExtensionOverrideOperation[] {operation});
       });
-      Assert.NotNull(retval);
-      Assert.NotNull(retval.value);
-      Assert.AreEqual(retval.value.Length, 1);
-      Assert.NotNull(retval.value[0]);
-      Assert.AreEqual(retval.value[0].adId, adIdNoOverride);
-      Assert.NotNull(retval.value[0].adExtension);
-      Assert.That(retval.value[0].adExtension is LocationExtension);
-      Assert.AreEqual((retval.value[0].adExtension as LocationExtension).id, campaignAdExtensionId);
+      Assert.NotNull(retVal);
+      Assert.NotNull(retVal.value);
+      Assert.AreEqual(retVal.value.Length, 1);
+      Assert.NotNull(retVal.value[0]);
+      Assert.AreEqual(retVal.value[0].adId, adIdNoOverride);
+      Assert.NotNull(retVal.value[0].adExtension);
+      Assert.That(retVal.value[0].adExtension is LocationExtension);
+      Assert.AreEqual((retVal.value[0].adExtension as LocationExtension).id, campaignAdExtensionId);
     }
 
     /// <summary>

@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v201003 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201003 {
   /// <summary>
   /// This code example adds geo, language, and network targeting to an
   /// existing campaign. To get a campaign, run GetAllCampaigns.cs.
@@ -40,6 +40,16 @@ namespace com.google.api.adwords.examples.v201003 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new SetCampaignTargets();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -53,7 +63,6 @@ namespace com.google.api.adwords.examples.v201003 {
 
       // Create language targets.
       LanguageTargetList langTargetList = new LanguageTargetList();
-      langTargetList.campaignIdSpecified = true;
       langTargetList.campaignId = campaignId;
 
       LanguageTarget langTarget1 = new LanguageTarget();
@@ -66,13 +75,11 @@ namespace com.google.api.adwords.examples.v201003 {
 
       // Create language target set operation.
       CampaignTargetOperation langTargetOperation = new CampaignTargetOperation();
-      langTargetOperation.operatorSpecified = true;
       langTargetOperation.@operator = Operator.SET;
       langTargetOperation.operand = langTargetList;
 
       // Create geo targets.
       GeoTargetList geoTargetList = new GeoTargetList();
-      geoTargetList.campaignIdSpecified = true;
       geoTargetList.campaignId = campaignId;
 
       CountryTarget geoTarget1 = new CountryTarget();
@@ -83,41 +90,36 @@ namespace com.google.api.adwords.examples.v201003 {
 
       // Create geo target set operation.
       CampaignTargetOperation geoTargetOperation = new CampaignTargetOperation();
-      geoTargetOperation.operatorSpecified = true;
       geoTargetOperation.@operator = Operator.SET;
       geoTargetOperation.operand = geoTargetList;
 
       // Create network targets.
       NetworkTargetList networkTargetList = new NetworkTargetList();
-      networkTargetList.campaignIdSpecified = true;
       networkTargetList.campaignId = campaignId;
 
       // Specifying GOOGLE_SEARCH is necessary if you want to target SEARCH_NETWORK.
       NetworkTarget networkTarget1 = new NetworkTarget();
-      networkTarget1.networkCoverageTypeSpecified = true;
       networkTarget1.networkCoverageType = NetworkCoverageType.GOOGLE_SEARCH;
 
       NetworkTarget networkTarget2 = new NetworkTarget();
-      networkTarget2.networkCoverageTypeSpecified = true;
       networkTarget2.networkCoverageType = NetworkCoverageType.SEARCH_NETWORK;
 
       networkTargetList.targets = new NetworkTarget[] {networkTarget1, networkTarget2};
 
       // Create network target set operation.
       CampaignTargetOperation networkTargetOperation = new CampaignTargetOperation();
-      networkTargetOperation.operatorSpecified = true;
       networkTargetOperation.@operator = Operator.SET;
       networkTargetOperation.operand = networkTargetList;
 
       try {
         // Set campaign targets.
-        CampaignTargetReturnValue result =
+        CampaignTargetReturnValue retVal =
             campaignTargetService.mutate(new CampaignTargetOperation[] {
                 geoTargetOperation, langTargetOperation,networkTargetOperation});
 
-        if (result != null && result.value != null) {
+        if (retVal != null && retVal.value != null) {
           // Display campaign targets.
-          foreach (TargetList targetList in result.value) {
+          foreach (TargetList targetList in retVal.value) {
             Console.WriteLine("Campaign target of type '{0}' was set to Campaign with" +
                 " id = '{1}'.", targetList.TargetListType, targetList.campaignId);
           }

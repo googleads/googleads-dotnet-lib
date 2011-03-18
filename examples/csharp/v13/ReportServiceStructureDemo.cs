@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,15 +14,15 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v13;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v13;
 
 using System;
 using System.Text;
 using System.Threading;
 using System.Web.Services.Protocols;
 
-namespace com.google.api.adwords.examples.v13 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v13 {
   /// <summary>
   /// This code example schedules a structure report and retrives its
   /// destination url.
@@ -51,8 +51,8 @@ namespace com.google.api.adwords.examples.v13 {
       DefinedReportJob reportJob = new DefinedReportJob();
       reportJob.name = "Structure Report";
       reportJob.selectedReportType = "Structure";
-      reportJob.aggregationTypes = new String[] {"Keyword"};
-      reportJob.selectedColumns = new String[] {
+      reportJob.aggregationTypes = new string[] {"Keyword"};
+      reportJob.selectedColumns = new string[] {
           "Campaign", "CampaignId", "AdGroup", "AdGroupId", "Keyword", "KeywordId",
           "KeywordStatus", "MaximumCPC"};
 
@@ -79,7 +79,7 @@ namespace com.google.api.adwords.examples.v13 {
           Console.WriteLine("The report is ready!");
 
           // Download the report.
-          String url = service.getReportDownloadUrl(jobId);
+          string url = service.getReportDownloadUrl(jobId);
           Console.WriteLine("Download it at url {0}", url);
         }
       } catch (SoapException e) {

@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example illustrates how to create a user list.
   ///
@@ -38,6 +38,16 @@ namespace com.google.api.adwords.examples.v201008 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new AddUserList();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -51,9 +61,7 @@ namespace com.google.api.adwords.examples.v201008 {
       userList.name = "Mars cruise customers #" + GetTimeStamp();
       userList.description = "A list of mars cruise customers in the last year.";
       userList.status = UserListMembershipStatus.OPEN;
-      userList.statusSpecified = true;
       userList.membershipLifeSpan = 365;
-      userList.membershipLifeSpanSpecified = true;
 
       UserListConversionType conversionType = new UserListConversionType();
       conversionType.name = userList.name;
@@ -62,7 +70,6 @@ namespace com.google.api.adwords.examples.v201008 {
       UserListOperation operation = new UserListOperation();
       operation.operand = userList;
       operation.@operator = Operator.ADD;
-      operation.operatorSpecified = true;
 
       try {
         // Add user list.

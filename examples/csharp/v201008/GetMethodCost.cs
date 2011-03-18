@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example retrieves the cost, in API units per operation, of the
   /// given method on a specific date for the developer token being used to
@@ -41,6 +41,16 @@ namespace com.google.api.adwords.examples.v201008 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new GetMethodCost();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -55,7 +65,6 @@ namespace com.google.api.adwords.examples.v201008 {
       Operator @operator = Operator.SET;
 
       InfoSelector selector = new InfoSelector();
-      selector.apiUsageTypeSpecified = true;
       selector.apiUsageType = ApiUsageType.METHOD_COST;
       selector.dateRange = new DateRange();
       selector.dateRange.min = today.ToString("yyyyMMdd");
@@ -63,7 +72,6 @@ namespace com.google.api.adwords.examples.v201008 {
       selector.serviceName = serviceName;
       selector.methodName = methodName;
       selector.@operator = @operator;
-      selector.operatorSpecified = true;
 
       try {
         ApiUsageInfo info = infoService.get(selector);

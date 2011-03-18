@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,17 +14,17 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v201003 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201003 {
   /// <summary>
   /// This code example gets all videos. To upload video, see
-  /// http://adwords.google.com/support/aw/bin/answer.py?hl=en&answer=39454.
+  /// http://adwords.google.com/support/aw/bin/answer.py?hl=en&amp;answer=39454.
   ///
   /// Tags: MediaService.get
   /// </summary>
@@ -40,6 +40,16 @@ namespace com.google.api.adwords.examples.v201003 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new GetAllVideos();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -52,7 +62,6 @@ namespace com.google.api.adwords.examples.v201003 {
       // Create selector.
       MediaSelector selector = new MediaSelector();
       selector.mediaType = MediaMediaType.VIDEO;
-      selector.mediaTypeSpecified = true;
 
       try {
         // Get all images.
@@ -70,22 +79,6 @@ namespace com.google.api.adwords.examples.v201003 {
       } catch (Exception ex) {
         Console.WriteLine("Failed to get all images. Exception says \"{0}\"", ex.Message);
       }
-    }
-
-    /// <summary>
-    /// Converts an array of Media_Size_DimensionsMapEntry into a dictionary.
-    /// </summary>
-    /// <param name="dimensions">The array of Media_Size_DimensionsMapEntry to be
-    /// converted into a dictionary.</param>
-    /// <returns>A dictionary with key as MediaSize, and value as Dimensions.
-    /// </returns>
-    private Dictionary<MediaSize, Dimensions> CreateMediaDimensionMap(
-        Media_Size_DimensionsMapEntry[] dimensions) {
-      Dictionary<MediaSize, Dimensions> mediaMap = new Dictionary<MediaSize, Dimensions>();
-      foreach (Media_Size_DimensionsMapEntry dimension in dimensions) {
-        mediaMap.Add(dimension.key, dimension.value);
-      }
-      return mediaMap;
     }
   }
 }

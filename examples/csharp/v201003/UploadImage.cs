@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,15 +14,15 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.lib.util;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.Common.Util;
+using Google.Api.Ads.AdWords.v201003;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.examples.v201003 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201003 {
   /// <summary>
   /// This code example uploads an image. To get images, run GetAllImages.cs.
   ///
@@ -36,6 +36,16 @@ namespace com.google.api.adwords.examples.v201003 {
       get {
         return "This code example uploads an image. To get images, run GetAllImages.cs.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new UploadImage();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -53,12 +63,11 @@ namespace com.google.api.adwords.examples.v201003 {
       image.data = MediaUtilities.GetAssetDataFromUrl(
           "https://sandbox.google.com/sandboximages/image.jpg");
       image.mediaTypeDb = MediaMediaType.IMAGE;
-      image.mediaTypeDbSpecified = true;
       image.name = "Sample Image";
 
       try {
         // Upload image.
-        Media[] result = mediaService.upload(new Media[] { image });
+        Media[] result = mediaService.upload(new Media[] {image});
 
         // Display image details.
         if (result != null && result.Length > 0) {

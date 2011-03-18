@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v201003 {
+namespace Google.Api.Ads.AdWords.Tests.v201003 {
   /// <summary>
   /// UnitTests for <see cref="MediaService"/> class.
   /// </summary>
@@ -56,7 +56,6 @@ namespace com.google.api.adwords.tests.v201003 {
       // Create selector.
       MediaSelector selector = new MediaSelector();
       selector.mediaType = MediaMediaType.IMAGE;
-      selector.mediaTypeSpecified = true;
 
       // Get all images.
       MediaPage page = mediaService.get(selector);
@@ -75,11 +74,10 @@ namespace com.google.api.adwords.tests.v201003 {
       Image image = new Image();
       image.data = utils.GetSandboxImage();
       image.mediaTypeDb = MediaMediaType.IMAGE;
-      image.mediaTypeDbSpecified = true;
       image.name = "Sample Image #" + utils.GetTimeStamp();
 
       // Upload image.
-      Media[] result = mediaService.upload(new Media[] { image });
+      Media[] result = mediaService.upload(new Media[] {image});
 
       Assert.NotNull(result);
       Assert.AreEqual(result.Length, 1);

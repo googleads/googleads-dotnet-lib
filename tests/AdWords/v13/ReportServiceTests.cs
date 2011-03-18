@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v13;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v13;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v13 {
+namespace Google.Api.Ads.AdWords.Tests.v13 {
   /// <summary>
   /// Unittest for ReportService.
   /// </summary>
@@ -121,14 +121,11 @@ namespace com.google.api.adwords.tests.v13 {
     public void TestScheduleDefinedReportJob() {
       DefinedReportJob reportJob = new DefinedReportJob();
       reportJob.adWordsType = AdWordsType.SearchOnly;
-      reportJob.adWordsTypeSpecified = true;
       reportJob.aggregationTypes = new string[] {"Daily"};
       reportJob.campaignStatuses =
           new CampaignStatus[]{CampaignStatus.Active | CampaignStatus.Paused};
       reportJob.crossClient = false;
-      reportJob.crossClientSpecified = true;
       reportJob.endDay = new DateTime(2008, 1, 31);
-      reportJob.includeZeroImpressionSpecified = true;
       reportJob.includeZeroImpression = false;
       reportJob.name = "Test Report";
       reportJob.selectedColumns = new string[] {"Campaign", "CampaignId", "CPC", "CTR"};
@@ -147,14 +144,11 @@ namespace com.google.api.adwords.tests.v13 {
     public void TestValidateReportJob() {
       DefinedReportJob reportJob = new DefinedReportJob();
       reportJob.adWordsType = AdWordsType.SearchOnly;
-      reportJob.adWordsTypeSpecified = true;
       reportJob.aggregationTypes = new string[] {"Daily"};
       reportJob.campaignStatuses =
           new CampaignStatus[]{CampaignStatus.Active | CampaignStatus.Paused};
       reportJob.crossClient = false;
-      reportJob.crossClientSpecified = true;
       reportJob.endDay = new DateTime(2008, 1, 31);
-      reportJob.includeZeroImpressionSpecified = true;
       reportJob.includeZeroImpression = false;
       reportJob.name = "Test Report";
       reportJob.selectedColumns = new string[] {"Campaign", "CampaignId", "CPC", "CTR"};

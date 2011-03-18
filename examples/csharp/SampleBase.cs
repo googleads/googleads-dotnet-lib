@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,26 +19,27 @@
 
 #define INTERACTIVE
 
-using com.google.api.adwords.lib;
+using Google.Api.Ads.AdWords.Lib;
 
 using System;
+using System.Threading;
 
-namespace com.google.api.adwords.examples {
+namespace Google.Api.Ads.AdWords.Examples.CSharp {
   /// <summary>
-  /// This abstract class represents a code sample.
+  /// This abstract class represents a code example.
   /// </summary>
   abstract class SampleBase {
     /// <summary>
-    /// Returns a description about the sample code.
+    /// Returns a description about the code example.
     /// </summary>
     public abstract string Description {
       get;
     }
 
     /// <summary>
-    /// Run the sample code.
+    /// Run the code example.
     /// </summary>
-    /// <param name="user">AdWords user object running the sample.</param>
+    /// <param name="user">AdWords user running the code example.</param>
     public abstract void Run(AdWordsUser user);
 
     protected string _T(string prompt) {
@@ -50,8 +51,14 @@ namespace com.google.api.adwords.examples {
 #endif
     }
 
+    /// <summary>
+    /// Gets the current timestamp as a string.
+    /// </summary>
+    /// <returns>The current timestamp as a string.</returns>
     protected string GetTimeStamp() {
-      return (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds.ToString();
+      Thread.Sleep(100);
+      return (System.DateTime.UtcNow - new System.DateTime(1970, 1, 1)).TotalMilliseconds.
+          ToString();
     }
 
     /// <summary>

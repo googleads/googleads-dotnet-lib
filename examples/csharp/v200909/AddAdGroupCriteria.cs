@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v200909;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v200909;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v200909 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v200909 {
   /// <summary>
   /// This code example adds a keyword and a placement to an ad group. To get
   /// ad groups, run GetAllAdGroups.cs.
@@ -40,6 +40,16 @@ namespace com.google.api.adwords.examples.v200909 {
     }
 
     /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new AddAdGroupCriteria();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
+    }
+
+    /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The AdWords user object running the code example.
@@ -55,12 +65,10 @@ namespace com.google.api.adwords.examples.v200909 {
       Keyword keyword = new Keyword();
       keyword.text = "mars cruise";
       keyword.matchType = KeywordMatchType.BROAD;
-      keyword.matchTypeSpecified = true;
 
       // Create biddable ad group criterion.
       AdGroupCriterion keywordCriterion = new BiddableAdGroupCriterion();
       keywordCriterion.adGroupId = adGroupId;
-      keywordCriterion.adGroupIdSpecified = true;
       keywordCriterion.criterion = keyword;
 
       // Create placement.
@@ -70,26 +78,23 @@ namespace com.google.api.adwords.examples.v200909 {
       // Create biddable ad group criterion.
       AdGroupCriterion placementCriterion = new BiddableAdGroupCriterion();
       placementCriterion.adGroupId = adGroupId;
-      placementCriterion.adGroupIdSpecified = true;
       placementCriterion.criterion = placement;
 
       // Create operations.
       AdGroupCriterionOperation keywordOperation = new AdGroupCriterionOperation();
       keywordOperation.@operator = Operator.ADD;
-      keywordOperation.operatorSpecified = true;
       keywordOperation.operand = keywordCriterion;
 
       AdGroupCriterionOperation placementOperation = new AdGroupCriterionOperation();
       placementOperation.@operator = Operator.ADD;
-      placementOperation.operatorSpecified = true;
       placementOperation.operand = placementCriterion;
 
       try {
-        AdGroupCriterionReturnValue result = adGroupCriterionService.mutate(
+        AdGroupCriterionReturnValue retVal = adGroupCriterionService.mutate(
             new AdGroupCriterionOperation[] {keywordOperation, placementOperation});
 
-        if (result != null && result.value != null) {
-          foreach (AdGroupCriterion adGroupCriterion in result.value) {
+        if (retVal != null && retVal.value != null) {
+          foreach (AdGroupCriterion adGroupCriterion in retVal.value) {
             Console.WriteLine("Ad group criterion with ad group id = '{0}, criterion id = '{1} " +
                 "and type = '{2}' was created.", adGroupCriterion.adGroupId,
                 adGroupCriterion.criterion.id, adGroupCriterion.criterion.CriterionType);

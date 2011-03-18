@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201003;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201003;
 
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.google.api.adwords.tests.v201003 {
+namespace Google.Api.Ads.AdWords.Tests.v201003 {
   /// <summary>
   /// UnitTests for <see cref="AdGroupService"/> class.
   /// </summary>
@@ -67,8 +67,8 @@ namespace com.google.api.adwords.tests.v201003 {
     public void Init() {
       TestUtils utils = new TestUtils();
       adGroupService = (AdGroupService) user.GetService(AdWordsService.v201003.AdGroupService);
-      cpcCampaignId = utils.CreateCampaign(user, true);
-      cpmCampaignId = utils.CreateCampaign(user, false);
+      cpcCampaignId = utils.CreateCampaign(user, new ManualCPC());
+      cpmCampaignId = utils.CreateCampaign(user, new ManualCPM());
       adGroupId1 = utils.CreateAdGroup(user, cpcCampaignId);
       adGroupId2 = utils.CreateAdGroup(user, cpcCampaignId);
     }
@@ -80,20 +80,16 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestAddAdGroupKeyword() {
       AdGroupOperation operation = new AdGroupOperation();
 
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
       operation.operand = new AdGroup();
-      operation.operand.campaignIdSpecified = true;
       operation.operand.campaignId = cpcCampaignId;
       operation.operand.name =
           string.Format("AdGroup {0}", DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff"));
-      operation.operand.statusSpecified = true;
       operation.operand.status = AdGroupStatus.ENABLED;
 
       ManualCPCAdGroupBids bids = new ManualCPCAdGroupBids();
       bids.keywordMaxCpc = new Bid();
       bids.keywordMaxCpc.amount = new Money();
-      bids.keywordMaxCpc.amount.microAmountSpecified = true;
       bids.keywordMaxCpc.amount.microAmount = 180000;
       operation.operand.bids = bids;
 
@@ -107,20 +103,16 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestAddAdGroupPlacement() {
       AdGroupOperation operation = new AdGroupOperation();
 
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
       operation.operand = new AdGroup();
-      operation.operand.campaignIdSpecified = true;
       operation.operand.campaignId = cpcCampaignId;
       operation.operand.name =
           string.Format("AdGroup {0}", DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff"));
-      operation.operand.statusSpecified = true;
       operation.operand.status = AdGroupStatus.ENABLED;
 
       ManualCPCAdGroupBids bids = new ManualCPCAdGroupBids();
       bids.siteMaxCpc = new Bid();
       bids.siteMaxCpc.amount = new Money();
-      bids.siteMaxCpc.amount.microAmountSpecified = true;
       bids.siteMaxCpc.amount.microAmount = 150000;
       operation.operand.bids = bids;
 
@@ -134,26 +126,21 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestAddAdGroupKeywordPlacement() {
       AdGroupOperation operation = new AdGroupOperation();
 
-      operation.operatorSpecified = true;
       operation.@operator = Operator.ADD;
       operation.operand = new AdGroup();
-      operation.operand.campaignIdSpecified = true;
       operation.operand.campaignId = cpcCampaignId;
       operation.operand.name =
           string.Format("AdGroup {0}", DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff"));
-      operation.operand.statusSpecified = true;
       operation.operand.status = AdGroupStatus.ENABLED;
 
       ManualCPCAdGroupBids bids = new ManualCPCAdGroupBids();
 
       bids.siteMaxCpc = new Bid();
       bids.siteMaxCpc.amount = new Money();
-      bids.siteMaxCpc.amount.microAmountSpecified = true;
       bids.siteMaxCpc.amount.microAmount = 1000000;
 
       bids.keywordMaxCpc = new Bid();
       bids.keywordMaxCpc.amount = new Money();
-      bids.keywordMaxCpc.amount.microAmountSpecified = true;
       bids.keywordMaxCpc.amount.microAmount = 180000;
 
       operation.operand.bids = bids;
@@ -192,18 +179,14 @@ namespace com.google.api.adwords.tests.v201003 {
     public void TestUpdateAdGroup() {
       AdGroupOperation operation = new AdGroupOperation();
       operation.@operator = Operator.SET;
-      operation.operatorSpecified = true;
       operation.operand = new AdGroup();
       operation.operand.campaignId = cpcCampaignId;
-      operation.operand.idSpecified = true;
       operation.operand.id = adGroupId1;
-      operation.operand.statusSpecified = true;
       operation.operand.status = AdGroupStatus.PAUSED;
 
       ManualCPCAdGroupBids bids = new ManualCPCAdGroupBids();
       bids.keywordMaxCpc = new Bid();
       bids.keywordMaxCpc.amount = new Money();
-      bids.keywordMaxCpc.amount.microAmountSpecified = true;
       bids.keywordMaxCpc.amount.microAmount = 200000;
 
       operation.operand.bids = bids;

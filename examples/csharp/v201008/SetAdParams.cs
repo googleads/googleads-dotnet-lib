@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using com.google.api.adwords.lib;
-using com.google.api.adwords.v201008;
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201008;
 
 using System;
 using System.IO;
 using System.Net;
 
-namespace com.google.api.adwords.examples.v201008 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
   /// <summary>
   /// This code example illustrates how to create a text ad with ad parameters.
   /// To add an ad group, run AddAdGroup.cs. To add an ad group criterion,
@@ -39,6 +39,16 @@ namespace com.google.api.adwords.examples.v201008 {
             " To add an ad group, run AddAdGroup.cs. To add an ad group criterion," +
             " run AddAdGroupCriterion.cs.";
       }
+    }
+
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      SampleBase codeExample = new SetAdParams();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser());
     }
 
     /// <summary>
@@ -64,18 +74,13 @@ namespace com.google.api.adwords.examples.v201008 {
       textAd.description2 = "Only {param2:a few} seats left!";
 
       AdGroupAd adOperand = new AdGroupAd();
-      adOperand.adGroupIdSpecified = true;
       adOperand.adGroupId = adGroupId;
-
       adOperand.status = AdGroupAdStatus.ENABLED;
-      adOperand.statusSpecified = true;
       adOperand.ad = textAd;
 
       AdGroupAdOperation adOperation = new AdGroupAdOperation();
-
       adOperation.operand = adOperand;
       adOperation.@operator = Operator.ADD;
-      adOperation.operatorSpecified = true;
 
       try {
         AdGroupAdReturnValue retVal =
@@ -94,30 +99,22 @@ namespace com.google.api.adwords.examples.v201008 {
 
       // Prepare for setting ad parameters.
       AdParam priceParam = new AdParam();
-      priceParam.adGroupIdSpecified = true;
       priceParam.adGroupId = adGroupId;
-      priceParam.criterionIdSpecified = true;
       priceParam.criterionId = criterionId;
       priceParam.paramIndex = 1;
-      priceParam.paramIndexSpecified = true;
       priceParam.insertionText = "$100";
 
       AdParamOperation priceOperation = new AdParamOperation();
-      priceOperation.operatorSpecified = true;
       priceOperation.@operator = Operator.SET;
       priceOperation.operand = priceParam;
 
       AdParam seatParam = new AdParam();
-      seatParam.adGroupIdSpecified = true;
       seatParam.adGroupId = adGroupId;
-      seatParam.criterionIdSpecified = true;
       seatParam.criterionId = criterionId;
       seatParam.paramIndex = 2;
-      seatParam.paramIndexSpecified = true;
       seatParam.insertionText = "50";
 
       AdParamOperation seatOperation = new AdParamOperation();
-      seatOperation.operatorSpecified = true;
       seatOperation.@operator = Operator.SET;
       seatOperation.operand = seatParam;
 
