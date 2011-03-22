@@ -27,7 +27,7 @@
     </DocumentationSources>
     <HelpTitle>DFA API .NET client library</HelpTitle>
     <NamingMethod>MemberName</NamingMethod>
-    <CopyrightText>Copyright 2010, Google Inc. All Rights Reserved.</CopyrightText>
+    <CopyrightText>Copyright 2011, Google Inc. All Rights Reserved.</CopyrightText>
     <ApiFilter>
     </ApiFilter>
     <MissingTags>Parameter, Returns, TypeParameter</MissingTags>

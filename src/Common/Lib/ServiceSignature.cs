@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -51,7 +51,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// A unique id to distinguish the service represented by this signature
     /// object.
     /// </summary>
-    public string Id {
+    public string id {
       get {
         return version + "." + serviceName;
       }
