@@ -1,3 +1,7 @@
+2.0.0
+- Added support for v1.13
+- All version-specific namespaces, classes and files made consistent in naming.
+
 1.0.0
 - Released the first version of client library.
 - Added support for v1.11, v1.12.

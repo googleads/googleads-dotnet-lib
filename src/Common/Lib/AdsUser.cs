@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -118,7 +118,7 @@ namespace Google.Api.Ads.Common.Lib {
           foreach (FieldInfo field in fields) {
             ServiceSignature signature = field.GetValue(null) as ServiceSignature;
             if (signature != null) {
-              RegisterService(signature.Id, serviceFactory);
+              RegisterService(signature.id, serviceFactory);
             }
           }
         }
@@ -222,11 +222,11 @@ namespace Google.Api.Ads.Common.Lib {
     public AdsClient GetService(ServiceSignature serviceSignature, Uri serverUrl) {
       if (serviceSignature == null) {
         throw new ArgumentNullException("serviceSignature");
-      } else if (!serviceFactoryMap.ContainsKey(serviceSignature.Id)) {
+      } else if (!serviceFactoryMap.ContainsKey(serviceSignature.id)) {
         throw new ArgumentException(string.Format(
             CommonErrorMessages.UnregisteredServiceTypeRequested, serviceSignature.ServiceName));
       } else {
-        return serviceFactoryMap[serviceSignature.Id].CreateService(serviceSignature,
+        return serviceFactoryMap[serviceSignature.id].CreateService(serviceSignature,
             this, serverUrl);
       }
     }

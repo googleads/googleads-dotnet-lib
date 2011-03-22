@@ -1,4 +1,4 @@
-// Copyright 2010, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,114 +48,176 @@ namespace Google.Api.Ads.Dfa.Examples {
     /// </summary>
     static Program() {
       // Add v1.11 examples.
-      RegisterSample("v111.AddAdvertiserUserFilter", new v111.AddAdvertiserUserFilter());
-      RegisterSample("v111.AssignAdvertisersToAdvertiserGroup",
-          new v111.AssignAdvertisersToAdvertiserGroup());
-      RegisterSample("v111.AssignCreativesToPlacements", new v111.AssignCreativesToPlacements());
-      RegisterSample("v111.Authenticate", new v111.Authenticate());
-      RegisterSample("v111.CreateAdvertiser", new v111.CreateAdvertiser());
-      RegisterSample("v111.CreateAdvertiserGroup", new v111.CreateAdvertiserGroup());
-      RegisterSample("v111.CreateCampaign", new v111.CreateCampaign());
-      RegisterSample("v111.CreateContentCategory", new v111.CreateContentCategory());
-      RegisterSample("v111.CreateCreativeField", new v111.CreateCreativeField());
-      RegisterSample("v111.CreateCreativeFieldValue", new v111.CreateCreativeFieldValue());
-      RegisterSample("v111.CreateCreativeGroup", new v111.CreateCreativeGroup());
-      RegisterSample("v111.CreateFlashInpageCreative", new v111.CreateFlashInpageCreative());
-      RegisterSample("v111.CreateHTMLAsset", new v111.CreateHTMLAsset());
-      RegisterSample("v111.CreateImageAsset", new v111.CreateImageAsset());
-      RegisterSample("v111.CreateMobileAsset", new v111.CreateMobileAsset());
-      RegisterSample("v111.CreateMobileCreative", new v111.CreateMobileCreative());
-      RegisterSample("v111.CreatePlacement", new v111.CreatePlacement());
-      RegisterSample("v111.CreatePlacementStrategy", new v111.CreatePlacementStrategy());
-      RegisterSample("v111.CreateRotationGroup", new v111.CreateRotationGroup());
-      RegisterSample("v111.CreateSpotlightActivity", new v111.CreateSpotlightActivity());
-      RegisterSample("v111.CreateSpotlightActivityGroup", new v111.CreateSpotlightActivityGroup());
-      RegisterSample("v111.CreateSubnetwork", new v111.CreateSubnetwork());
-      RegisterSample("v111.CreateUserRole", new v111.CreateUserRole());
-      RegisterSample("v111.DownloadTags", new v111.DownloadTags());
-      RegisterSample("v111.GetActivityGroups", new v111.GetActivityGroups());
-      RegisterSample("v111.GetActivityTypes", new v111.GetActivityTypes());
-      RegisterSample("v111.GetAdTypes", new v111.GetAdTypes());
-      RegisterSample("v111.GetAdTypesNoConfig", new v111.GetAdTypesNoConfig());
-      RegisterSample("v111.GetAdvertiserGroups", new v111.GetAdvertiserGroups());
-      RegisterSample("v111.GetAdvertisers", new v111.GetAdvertisers());
-      RegisterSample("v111.GetAvailablePermissions", new v111.GetAvailablePermissions());
-      RegisterSample("v111.GetCampaigns", new v111.GetCampaigns());
-      RegisterSample("v111.GetChangeLogForAdvertiser", new v111.GetChangeLogForAdvertiser());
-      RegisterSample("v111.GetChangeLogObjectTypes", new v111.GetChangeLogObjectTypes());
-      RegisterSample("v111.GetContentCategories", new v111.GetContentCategories());
-      RegisterSample("v111.GetCountries", new v111.GetCountries());
-      RegisterSample("v111.GetCreativeField", new v111.GetCreativeField());
-      RegisterSample("v111.GetCreativeFieldValues", new v111.GetCreativeFieldValues());
-      RegisterSample("v111.GetCreativeGroups", new v111.GetCreativeGroups());
-      RegisterSample("v111.GetCreatives", new v111.GetCreatives());
-      RegisterSample("v111.GetCreativeTypes", new v111.GetCreativeTypes());
-      RegisterSample("v111.GetDFASite", new v111.GetDFASite());
-      RegisterSample("v111.GetPlacements", new v111.GetPlacements());
-      RegisterSample("v111.GetPlacementStrategies", new v111.GetPlacementStrategies());
-      RegisterSample("v111.GetPlacementTypes", new v111.GetPlacementTypes());
-      RegisterSample("v111.GetPricingTypes", new v111.GetPricingTypes());
-      RegisterSample("v111.GetSize", new v111.GetSize());
-      RegisterSample("v111.GetSubnetworks", new v111.GetSubnetworks());
-      RegisterSample("v111.GetTagMethodTypes", new v111.GetTagMethodTypes());
-      RegisterSample("v111.GetUserFilterTypes", new v111.GetUserFilterTypes());
-      RegisterSample("v111.GetUserRoles", new v111.GetUserRoles());
-      RegisterSample("v111.GetUsers", new v111.GetUsers());
+      RegisterSample("v1_11.AddAdvertiserUserFilter", new v1_11.AddAdvertiserUserFilter());
+      RegisterSample("v1_11.AssignAdvertisersToAdvertiserGroup",
+          new v1_11.AssignAdvertisersToAdvertiserGroup());
+      RegisterSample("v1_11.AssignCreativesToPlacements", new v1_11.AssignCreativesToPlacements());
+      RegisterSample("v1_11.Authenticate", new v1_11.Authenticate());
+      RegisterSample("v1_11.CreateAdvertiser", new v1_11.CreateAdvertiser());
+      RegisterSample("v1_11.CreateAdvertiserGroup", new v1_11.CreateAdvertiserGroup());
+      RegisterSample("v1_11.CreateCampaign", new v1_11.CreateCampaign());
+      RegisterSample("v1_11.CreateContentCategory", new v1_11.CreateContentCategory());
+      RegisterSample("v1_11.CreateCreativeField", new v1_11.CreateCreativeField());
+      RegisterSample("v1_11.CreateCreativeFieldValue", new v1_11.CreateCreativeFieldValue());
+      RegisterSample("v1_11.CreateCreativeGroup", new v1_11.CreateCreativeGroup());
+      RegisterSample("v1_11.CreateFlashInpageCreative", new v1_11.CreateFlashInpageCreative());
+      RegisterSample("v1_11.CreateHTMLAsset", new v1_11.CreateHTMLAsset());
+      RegisterSample("v1_11.CreateImageAsset", new v1_11.CreateImageAsset());
+      RegisterSample("v1_11.CreateMobileAsset", new v1_11.CreateMobileAsset());
+      RegisterSample("v1_11.CreateMobileCreative", new v1_11.CreateMobileCreative());
+      RegisterSample("v1_11.CreatePlacement", new v1_11.CreatePlacement());
+      RegisterSample("v1_11.CreatePlacementStrategy", new v1_11.CreatePlacementStrategy());
+      RegisterSample("v1_11.CreateRotationGroup", new v1_11.CreateRotationGroup());
+      RegisterSample("v1_11.CreateSpotlightActivity", new v1_11.CreateSpotlightActivity());
+      RegisterSample("v1_11.CreateSpotlightActivityGroup",
+          new v1_11.CreateSpotlightActivityGroup());
+      RegisterSample("v1_11.CreateSubnetwork", new v1_11.CreateSubnetwork());
+      RegisterSample("v1_11.CreateUserRole", new v1_11.CreateUserRole());
+      RegisterSample("v1_11.DownloadTags", new v1_11.DownloadTags());
+      RegisterSample("v1_11.GetActivityGroups", new v1_11.GetActivityGroups());
+      RegisterSample("v1_11.GetActivityTypes", new v1_11.GetActivityTypes());
+      RegisterSample("v1_11.GetAdTypes", new v1_11.GetAdTypes());
+      RegisterSample("v1_11.GetAdTypesNoConfig", new v1_11.GetAdTypesNoConfig());
+      RegisterSample("v1_11.GetAdvertiserGroups", new v1_11.GetAdvertiserGroups());
+      RegisterSample("v1_11.GetAdvertisers", new v1_11.GetAdvertisers());
+      RegisterSample("v1_11.GetAvailablePermissions", new v1_11.GetAvailablePermissions());
+      RegisterSample("v1_11.GetCampaigns", new v1_11.GetCampaigns());
+      RegisterSample("v1_11.GetChangeLogForAdvertiser", new v1_11.GetChangeLogForAdvertiser());
+      RegisterSample("v1_11.GetChangeLogObjectTypes", new v1_11.GetChangeLogObjectTypes());
+      RegisterSample("v1_11.GetContentCategories", new v1_11.GetContentCategories());
+      RegisterSample("v1_11.GetCountries", new v1_11.GetCountries());
+      RegisterSample("v1_11.GetCreativeField", new v1_11.GetCreativeField());
+      RegisterSample("v1_11.GetCreativeFieldValues", new v1_11.GetCreativeFieldValues());
+      RegisterSample("v1_11.GetCreativeGroups", new v1_11.GetCreativeGroups());
+      RegisterSample("v1_11.GetCreatives", new v1_11.GetCreatives());
+      RegisterSample("v1_11.GetCreativeTypes", new v1_11.GetCreativeTypes());
+      RegisterSample("v1_11.GetDFASite", new v1_11.GetDFASite());
+      RegisterSample("v1_11.GetPlacements", new v1_11.GetPlacements());
+      RegisterSample("v1_11.GetPlacementStrategies", new v1_11.GetPlacementStrategies());
+      RegisterSample("v1_11.GetPlacementTypes", new v1_11.GetPlacementTypes());
+      RegisterSample("v1_11.GetPricingTypes", new v1_11.GetPricingTypes());
+      RegisterSample("v1_11.GetSize", new v1_11.GetSize());
+      RegisterSample("v1_11.GetSubnetworks", new v1_11.GetSubnetworks());
+      RegisterSample("v1_11.GetTagMethodTypes", new v1_11.GetTagMethodTypes());
+      RegisterSample("v1_11.GetUserFilterTypes", new v1_11.GetUserFilterTypes());
+      RegisterSample("v1_11.GetUserRoles", new v1_11.GetUserRoles());
+      RegisterSample("v1_11.GetUsers", new v1_11.GetUsers());
 
       // Add v1.12 examples.
-      RegisterSample("v112.AddAdvertiserUserFilter", new v112.AddAdvertiserUserFilter());
-      RegisterSample("v112.AssignAdvertisersToAdvertiserGroup",
-          new v112.AssignAdvertisersToAdvertiserGroup());
-      RegisterSample("v112.AssignCreativesToPlacements", new v112.AssignCreativesToPlacements());
-      RegisterSample("v112.Authenticate", new v112.Authenticate());
-      RegisterSample("v112.CreateAdvertiser", new v112.CreateAdvertiser());
-      RegisterSample("v112.CreateAdvertiserGroup", new v112.CreateAdvertiserGroup());
-      RegisterSample("v112.CreateCampaign", new v112.CreateCampaign());
-      RegisterSample("v112.CreateContentCategory", new v112.CreateContentCategory());
-      RegisterSample("v112.CreateCreativeField", new v112.CreateCreativeField());
-      RegisterSample("v112.CreateCreativeFieldValue", new v112.CreateCreativeFieldValue());
-      RegisterSample("v112.CreateCreativeGroup", new v112.CreateCreativeGroup());
-      RegisterSample("v112.CreateFlashInpageCreative", new v112.CreateFlashInpageCreative());
-      RegisterSample("v112.CreateHTMLAsset", new v112.CreateHTMLAsset());
-      RegisterSample("v112.CreateImageAsset", new v112.CreateImageAsset());
-      RegisterSample("v112.CreateMobileAsset", new v112.CreateMobileAsset());
-      RegisterSample("v112.CreateMobileCreative", new v112.CreateMobileCreative());
-      RegisterSample("v112.CreatePlacement", new v112.CreatePlacement());
-      RegisterSample("v112.CreatePlacementStrategy", new v112.CreatePlacementStrategy());
-      RegisterSample("v112.CreateRotationGroup", new v112.CreateRotationGroup());
-      RegisterSample("v112.CreateSpotlightActivity", new v112.CreateSpotlightActivity());
-      RegisterSample("v112.CreateSpotlightActivityGroup", new v112.CreateSpotlightActivityGroup());
-      RegisterSample("v112.CreateSubnetwork", new v112.CreateSubnetwork());
-      RegisterSample("v112.CreateUserRole", new v112.CreateUserRole());
-      RegisterSample("v112.DownloadTags", new v112.DownloadTags());
-      RegisterSample("v112.GetActivityGroups", new v112.GetActivityGroups());
-      RegisterSample("v112.GetActivityTypes", new v112.GetActivityTypes());
-      RegisterSample("v112.GetAdTypes", new v112.GetAdTypes());
-      RegisterSample("v112.GetAdTypesNoConfig", new v112.GetAdTypesNoConfig());
-      RegisterSample("v112.GetAdvertiserGroups", new v112.GetAdvertiserGroups());
-      RegisterSample("v112.GetAdvertisers", new v112.GetAdvertisers());
-      RegisterSample("v112.GetAvailablePermissions", new v112.GetAvailablePermissions());
-      RegisterSample("v112.GetCampaigns", new v112.GetCampaigns());
-      RegisterSample("v112.GetChangeLogForAdvertiser", new v112.GetChangeLogForAdvertiser());
-      RegisterSample("v112.GetChangeLogObjectTypes", new v112.GetChangeLogObjectTypes());
-      RegisterSample("v112.GetContentCategories", new v112.GetContentCategories());
-      RegisterSample("v112.GetCountries", new v112.GetCountries());
-      RegisterSample("v112.GetCreativeField", new v112.GetCreativeField());
-      RegisterSample("v112.GetCreativeFieldValues", new v112.GetCreativeFieldValues());
-      RegisterSample("v112.GetCreativeGroups", new v112.GetCreativeGroups());
-      RegisterSample("v112.GetCreatives", new v112.GetCreatives());
-      RegisterSample("v112.GetCreativeTypes", new v112.GetCreativeTypes());
-      RegisterSample("v112.GetDFASite", new v112.GetDFASite());
-      RegisterSample("v112.GetPlacements", new v112.GetPlacements());
-      RegisterSample("v112.GetPlacementStrategies", new v112.GetPlacementStrategies());
-      RegisterSample("v112.GetPlacementTypes", new v112.GetPlacementTypes());
-      RegisterSample("v112.GetPricingTypes", new v112.GetPricingTypes());
-      RegisterSample("v112.GetSize", new v112.GetSize());
-      RegisterSample("v112.GetSubnetworks", new v112.GetSubnetworks());
-      RegisterSample("v112.GetTagMethodTypes", new v112.GetTagMethodTypes());
-      RegisterSample("v112.GetUserFilterTypes", new v112.GetUserFilterTypes());
-      RegisterSample("v112.GetUserRoles", new v112.GetUserRoles());
-      RegisterSample("v112.GetUsers", new v112.GetUsers());
+      RegisterSample("v1_12.AddAdvertiserUserFilter", new v1_12.AddAdvertiserUserFilter());
+      RegisterSample("v1_12.AssignAdvertisersToAdvertiserGroup",
+          new v1_12.AssignAdvertisersToAdvertiserGroup());
+      RegisterSample("v1_12.AssignCreativesToPlacements", new v1_12.AssignCreativesToPlacements());
+      RegisterSample("v1_12.Authenticate", new v1_12.Authenticate());
+      RegisterSample("v1_12.CreateAdvertiser", new v1_12.CreateAdvertiser());
+      RegisterSample("v1_12.CreateAdvertiserGroup", new v1_12.CreateAdvertiserGroup());
+      RegisterSample("v1_12.CreateCampaign", new v1_12.CreateCampaign());
+      RegisterSample("v1_12.CreateContentCategory", new v1_12.CreateContentCategory());
+      RegisterSample("v1_12.CreateCreativeField", new v1_12.CreateCreativeField());
+      RegisterSample("v1_12.CreateCreativeFieldValue", new v1_12.CreateCreativeFieldValue());
+      RegisterSample("v1_12.CreateCreativeGroup", new v1_12.CreateCreativeGroup());
+      RegisterSample("v1_12.CreateFlashInpageCreative", new v1_12.CreateFlashInpageCreative());
+      RegisterSample("v1_12.CreateHTMLAsset", new v1_12.CreateHTMLAsset());
+      RegisterSample("v1_12.CreateImageAsset", new v1_12.CreateImageAsset());
+      RegisterSample("v1_12.CreateMobileAsset", new v1_12.CreateMobileAsset());
+      RegisterSample("v1_12.CreateMobileCreative", new v1_12.CreateMobileCreative());
+      RegisterSample("v1_12.CreatePlacement", new v1_12.CreatePlacement());
+      RegisterSample("v1_12.CreatePlacementStrategy", new v1_12.CreatePlacementStrategy());
+      RegisterSample("v1_12.CreateRotationGroup", new v1_12.CreateRotationGroup());
+      RegisterSample("v1_12.CreateSpotlightActivity", new v1_12.CreateSpotlightActivity());
+      RegisterSample("v1_12.CreateSpotlightActivityGroup",
+          new v1_12.CreateSpotlightActivityGroup());
+      RegisterSample("v1_12.CreateSubnetwork", new v1_12.CreateSubnetwork());
+      RegisterSample("v1_12.CreateUserRole", new v1_12.CreateUserRole());
+      RegisterSample("v1_12.DownloadTags", new v1_12.DownloadTags());
+      RegisterSample("v1_12.GetActivityGroups", new v1_12.GetActivityGroups());
+      RegisterSample("v1_12.GetActivityTypes", new v1_12.GetActivityTypes());
+      RegisterSample("v1_12.GetAdTypes", new v1_12.GetAdTypes());
+      RegisterSample("v1_12.GetAdTypesNoConfig", new v1_12.GetAdTypesNoConfig());
+      RegisterSample("v1_12.GetAdvertiserGroups", new v1_12.GetAdvertiserGroups());
+      RegisterSample("v1_12.GetAdvertisers", new v1_12.GetAdvertisers());
+      RegisterSample("v1_12.GetAvailablePermissions", new v1_12.GetAvailablePermissions());
+      RegisterSample("v1_12.GetCampaigns", new v1_12.GetCampaigns());
+      RegisterSample("v1_12.GetChangeLogForAdvertiser", new v1_12.GetChangeLogForAdvertiser());
+      RegisterSample("v1_12.GetChangeLogObjectTypes", new v1_12.GetChangeLogObjectTypes());
+      RegisterSample("v1_12.GetContentCategories", new v1_12.GetContentCategories());
+      RegisterSample("v1_12.GetCountries", new v1_12.GetCountries());
+      RegisterSample("v1_12.GetCreativeField", new v1_12.GetCreativeField());
+      RegisterSample("v1_12.GetCreativeFieldValues", new v1_12.GetCreativeFieldValues());
+      RegisterSample("v1_12.GetCreativeGroups", new v1_12.GetCreativeGroups());
+      RegisterSample("v1_12.GetCreatives", new v1_12.GetCreatives());
+      RegisterSample("v1_12.GetCreativeTypes", new v1_12.GetCreativeTypes());
+      RegisterSample("v1_12.GetDFASite", new v1_12.GetDFASite());
+      RegisterSample("v1_12.GetPlacements", new v1_12.GetPlacements());
+      RegisterSample("v1_12.GetPlacementStrategies", new v1_12.GetPlacementStrategies());
+      RegisterSample("v1_12.GetPlacementTypes", new v1_12.GetPlacementTypes());
+      RegisterSample("v1_12.GetPricingTypes", new v1_12.GetPricingTypes());
+      RegisterSample("v1_12.GetSize", new v1_12.GetSize());
+      RegisterSample("v1_12.GetSubnetworks", new v1_12.GetSubnetworks());
+      RegisterSample("v1_12.GetTagMethodTypes", new v1_12.GetTagMethodTypes());
+      RegisterSample("v1_12.GetUserFilterTypes", new v1_12.GetUserFilterTypes());
+      RegisterSample("v1_12.GetUserRoles", new v1_12.GetUserRoles());
+      RegisterSample("v1_12.GetUsers", new v1_12.GetUsers());
+
+      // Add v1.13 examples.
+      RegisterSample("v1_13.AddAdvertiserUserFilter", new v1_13.AddAdvertiserUserFilter());
+      RegisterSample("v1_13.AssignAdvertisersToAdvertiserGroup",
+          new v1_13.AssignAdvertisersToAdvertiserGroup());
+      RegisterSample("v1_13.AssignCreativesToPlacements", new v1_13.AssignCreativesToPlacements());
+      RegisterSample("v1_13.Authenticate", new v1_13.Authenticate());
+      RegisterSample("v1_13.CreateAdvertiser", new v1_13.CreateAdvertiser());
+      RegisterSample("v1_13.CreateAdvertiserGroup", new v1_13.CreateAdvertiserGroup());
+      RegisterSample("v1_13.CreateCampaign", new v1_13.CreateCampaign());
+      RegisterSample("v1_13.CreateContentCategory", new v1_13.CreateContentCategory());
+      RegisterSample("v1_13.CreateCreativeField", new v1_13.CreateCreativeField());
+      RegisterSample("v1_13.CreateCreativeFieldValue", new v1_13.CreateCreativeFieldValue());
+      RegisterSample("v1_13.CreateCreativeGroup", new v1_13.CreateCreativeGroup());
+      RegisterSample("v1_13.CreateFlashInpageCreative", new v1_13.CreateFlashInpageCreative());
+      RegisterSample("v1_13.CreateHTMLAsset", new v1_13.CreateHTMLAsset());
+      RegisterSample("v1_13.CreateImageAsset", new v1_13.CreateImageAsset());
+      RegisterSample("v1_13.CreateMobileAsset", new v1_13.CreateMobileAsset());
+      RegisterSample("v1_13.CreateMobileCreative", new v1_13.CreateMobileCreative());
+      RegisterSample("v1_13.CreatePlacement", new v1_13.CreatePlacement());
+      RegisterSample("v1_13.CreatePlacementStrategy", new v1_13.CreatePlacementStrategy());
+      RegisterSample("v1_13.CreateRotationGroup", new v1_13.CreateRotationGroup());
+      RegisterSample("v1_13.CreateSpotlightActivity", new v1_13.CreateSpotlightActivity());
+      RegisterSample("v1_13.CreateSpotlightActivityGroup",
+          new v1_13.CreateSpotlightActivityGroup());
+      RegisterSample("v1_13.CreateSubnetwork", new v1_13.CreateSubnetwork());
+      RegisterSample("v1_13.CreateUserRole", new v1_13.CreateUserRole());
+      RegisterSample("v1_13.DownloadTags", new v1_13.DownloadTags());
+      RegisterSample("v1_13.GetActivityGroups", new v1_13.GetActivityGroups());
+      RegisterSample("v1_13.GetActivityTypes", new v1_13.GetActivityTypes());
+      RegisterSample("v1_13.GetAdTypes", new v1_13.GetAdTypes());
+      RegisterSample("v1_13.GetAdTypesNoConfig", new v1_13.GetAdTypesNoConfig());
+      RegisterSample("v1_13.GetAdvertiserGroups", new v1_13.GetAdvertiserGroups());
+      RegisterSample("v1_13.GetAdvertisers", new v1_13.GetAdvertisers());
+      RegisterSample("v1_13.GetAvailablePermissions", new v1_13.GetAvailablePermissions());
+      RegisterSample("v1_13.GetCampaigns", new v1_13.GetCampaigns());
+      RegisterSample("v1_13.GetChangeLogForAdvertiser", new v1_13.GetChangeLogForAdvertiser());
+      RegisterSample("v1_13.GetChangeLogObjectTypes", new v1_13.GetChangeLogObjectTypes());
+      RegisterSample("v1_13.GetContentCategories", new v1_13.GetContentCategories());
+      RegisterSample("v1_13.GetCountries", new v1_13.GetCountries());
+      RegisterSample("v1_13.GetCreativeField", new v1_13.GetCreativeField());
+      RegisterSample("v1_13.GetCreativeFieldValues", new v1_13.GetCreativeFieldValues());
+      RegisterSample("v1_13.GetCreativeGroups", new v1_13.GetCreativeGroups());
+      RegisterSample("v1_13.GetCreatives", new v1_13.GetCreatives());
+      RegisterSample("v1_13.GetCreativeTypes", new v1_13.GetCreativeTypes());
+      RegisterSample("v1_13.GetDFASite", new v1_13.GetDFASite());
+      RegisterSample("v1_13.GetPlacements", new v1_13.GetPlacements());
+      RegisterSample("v1_13.GetPlacementStrategies", new v1_13.GetPlacementStrategies());
+      RegisterSample("v1_13.GetPlacementTypes", new v1_13.GetPlacementTypes());
+      RegisterSample("v1_13.GetPricingTypes", new v1_13.GetPricingTypes());
+      RegisterSample("v1_13.GetSize", new v1_13.GetSize());
+      RegisterSample("v1_13.GetSubnetworks", new v1_13.GetSubnetworks());
+      RegisterSample("v1_13.GetTagMethodTypes", new v1_13.GetTagMethodTypes());
+      RegisterSample("v1_13.GetUserFilterTypes", new v1_13.GetUserFilterTypes());
+      RegisterSample("v1_13.GetUserRoles", new v1_13.GetUserRoles());
+      RegisterSample("v1_13.GetUsers", new v1_13.GetUsers());
+      RegisterSample("v1_13.GetReport", new v1_13.GetReport());
+      RegisterSample("v1_13.GetReports", new v1_13.GetReports());
+      RegisterSample("v1_13.RunDeferredReport", new v1_13.RunDeferredReport());
+      RegisterSample("v1_13.RCReport", new v1_13.RCReport());
     }
 
     /// <summary>
@@ -174,16 +236,23 @@ namespace Google.Api.Ads.Dfa.Examples {
         foreach(SamplePair pair in sampleMap) {
           RunASample(user, pair.Value);
         }
-      } else if (string.Compare(args[0], "--v111all", true) == 0) {
+      } else if (string.Compare(args[0], "--v1_11all", true) == 0) {
         List<SamplePair> matchingItems = sampleMap.FindAll(delegate(SamplePair pair) {
-          return pair.Key.StartsWith("v111");
+          return pair.Key.StartsWith("v1_11");
         });
         foreach (SamplePair matchingItem in matchingItems) {
           RunASample(user, matchingItem.Value);
         }
-      } else if (string.Compare(args[0], "--v112all", true) == 0) {
+      } else if (string.Compare(args[0], "--v1_12all", true) == 0) {
         List<SamplePair> matchingItems = sampleMap.FindAll(delegate(SamplePair pair) {
-          return pair.Key.StartsWith("v112");
+          return pair.Key.StartsWith("v1_12");
+        });
+        foreach (SamplePair matchingItem in matchingItems) {
+          RunASample(user, matchingItem.Value);
+        }
+      } else if (string.Compare(args[0], "--v1_13all", true) == 0) {
+        List<SamplePair> matchingItems = sampleMap.FindAll(delegate(SamplePair pair) {
+          return pair.Key.StartsWith("v1_13");
         });
         foreach (SamplePair matchingItem in matchingItems) {
           RunASample(user, matchingItem.Value);
