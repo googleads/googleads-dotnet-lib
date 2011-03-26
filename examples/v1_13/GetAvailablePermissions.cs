@@ -67,7 +67,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create UserRoleRemoteService instance.
       UserRoleRemoteService service = (UserRoleRemoteService) user.GetService(
-          DfaService.v1_12.UserRoleRemoteService);
+          DfaService.v1_13.UserRoleRemoteService);
 
       long subnetworkId = long.Parse(_T("INSERT_SUBNETWORK_ID_HERE"));
 

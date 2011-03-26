@@ -60,7 +60,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create SpotlightRemoteService instance.
       SpotlightRemoteService service = (SpotlightRemoteService) user.GetService(
-          DfaService.v1_12.SpotlightRemoteService);
+          DfaService.v1_13.SpotlightRemoteService);
 
       long spotlightConfigurationId = long.Parse(_T("INSERT_SPOTLIGHT_CONFIGURATION_ID_HERE"));
       int activityType = int.Parse(_T("INSERT_ACTIVITY_TYPE_HERE"));

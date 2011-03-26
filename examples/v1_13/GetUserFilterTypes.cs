@@ -56,7 +56,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create UserRemoteService instance.
       UserRemoteService service = (UserRemoteService) user.GetService(
-          DfaService.v1_12.UserRemoteService);
+          DfaService.v1_13.UserRemoteService);
 
       try {
         // Get user filter criteria types.

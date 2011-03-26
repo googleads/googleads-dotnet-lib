@@ -71,7 +71,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create LoginRemoteService instance.
       LoginRemoteService service = (LoginRemoteService) user.GetService(
-          DfaService.v1_12.LoginRemoteService);
+          DfaService.v1_13.LoginRemoteService);
 
       // Provide user name and password.
       String username = _T("INSERT_USER_NAME_HERE");

@@ -80,7 +80,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
 
       // Create AdRemoteService instance.
       AdRemoteService service = (AdRemoteService) user1.GetService(
-          DfaService.v1_12.AdRemoteService);
+          DfaService.v1_13.AdRemoteService);
 
       try {
         // Get ad types.

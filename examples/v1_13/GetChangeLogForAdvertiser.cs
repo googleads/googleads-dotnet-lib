@@ -64,7 +64,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create ChangeLogRemoteService instance.
       ChangeLogRemoteService service = (ChangeLogRemoteService) user.GetService(
-          DfaService.v1_12.ChangeLogRemoteService);
+          DfaService.v1_13.ChangeLogRemoteService);
 
       long advertiserId = long.Parse(_T("INSERT_ADVERTISER_ID_HERE"));
 

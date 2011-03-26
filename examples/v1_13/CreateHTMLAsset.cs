@@ -58,7 +58,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create CreativeRemoteService instance.
       CreativeRemoteService service = (CreativeRemoteService) user.GetService(
-          DfaService.v1_12.CreativeRemoteService);
+          DfaService.v1_13.CreativeRemoteService);
 
       long advertiserId = long.Parse(_T("INSERT_ADVERTISER_ID_HERE"));
       string assetName = _T("INSERT_SWF_ASSET_NAME_HERE");

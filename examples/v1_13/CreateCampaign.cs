@@ -58,7 +58,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create CampaignRemoteService instance.
       CampaignRemoteService service = (CampaignRemoteService) user.GetService(
-          DfaService.v1_12.CampaignRemoteService);
+          DfaService.v1_13.CampaignRemoteService);
 
       long advertiserId = long.Parse(_T("INSERT_ADVERTISER_ID_HERE"));
       string campaignName = _T("INSERT_CAMPAIGN_NAME_HERE");

@@ -58,7 +58,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create CreativeFieldRemoteService instance.
       CreativeFieldRemoteService service = (CreativeFieldRemoteService) user.GetService(
-          DfaService.v1_12.CreativeFieldRemoteService);
+          DfaService.v1_13.CreativeFieldRemoteService);
 
       long creativeFieldId = long.Parse(_T("INSERT_CREATIVE_FIELD_ID_HERE"));
       String creativeFieldValueName = _T("INSERT_CREATIVE_FIELD_VALUE_NAME_HERE");

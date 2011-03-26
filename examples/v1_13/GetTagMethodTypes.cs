@@ -56,7 +56,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create SpotlightRemoteService instance.
       SpotlightRemoteService service = (SpotlightRemoteService) user.GetService(
-          DfaService.v1_12.SpotlightRemoteService);
+          DfaService.v1_13.SpotlightRemoteService);
 
       try {
         // Get method types.

@@ -50,7 +50,7 @@ namespace Google.Api.Ads.Dfa.Lib {
         // Version takes the form of vx.yz, but since since it is not a valid
         // identifier in C#, we generate namespace as vxyz (i.e. without
         // periods).
-        return Version.Replace(".", "");
+        return Version.Replace(".", "_");
       }
     }
 

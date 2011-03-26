@@ -1,3 +1,6 @@
+2.1.0
+- Fixed issue 1 on codesite.
+
 2.0.0
 - Added support for v1.13
 - All version-specific namespaces, classes and files made consistent in naming.

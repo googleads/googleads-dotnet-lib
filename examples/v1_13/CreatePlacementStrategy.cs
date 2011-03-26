@@ -56,7 +56,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create PlacementStrategyRemoteService instance.
       PlacementStrategyRemoteService service = (PlacementStrategyRemoteService) user.GetService(
-          DfaService.v1_12.PlacementStrategyRemoteService);
+          DfaService.v1_13.PlacementStrategyRemoteService);
 
       String placementStrategyName = _T("INSERT_PLACEMENT_STRATEGY_NAME_HERE");
 

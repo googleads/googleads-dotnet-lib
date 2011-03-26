@@ -59,7 +59,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create UserRemoteService instance.
       UserRemoteService service = (UserRemoteService) user.GetService(
-          DfaService.v1_12.UserRemoteService);
+          DfaService.v1_13.UserRemoteService);
 
       String searchString = _T("INSERT_SEARCH_STRING_CRITERIA_HERE");
 

@@ -58,7 +58,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create PlacementRemoteService instance.
       PlacementRemoteService service = (PlacementRemoteService) user.GetService(
-          DfaService.v1_12.PlacementRemoteService);
+          DfaService.v1_13.PlacementRemoteService);
 
       String searchString = _T("INSERT_SEARCH_STRING_HERE");
 

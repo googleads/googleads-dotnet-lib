@@ -64,7 +64,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create PlacementRemoteService instance.
       PlacementRemoteService service = (PlacementRemoteService) user.GetService(
-          DfaService.v1_12.PlacementRemoteService);
+          DfaService.v1_13.PlacementRemoteService);
       string placementName = _T("INSERT_PLACEMENT_NAME_HERE");
       long dfaSiteId = long.Parse(_T("INSERT_DFA_SITE_ID_HERE"));
       long campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));

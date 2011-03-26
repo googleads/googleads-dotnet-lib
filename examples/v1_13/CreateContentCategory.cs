@@ -57,7 +57,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create ContentCategoryRemoteService instance.
       ContentCategoryRemoteService service = (ContentCategoryRemoteService) user.GetService(
-          DfaService.v1_12.ContentCategoryRemoteService);
+          DfaService.v1_13.ContentCategoryRemoteService);
 
       string contentCategoryName = _T("INSERT_CONTENT_CATEGORY_NAME_HERE");
       string contentCategoryDescription = _T("INSERT_CONTENT_CATEGORY_DESCRIPTION_HERE");

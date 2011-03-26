@@ -63,7 +63,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create AdRemoteService instance.
       AdRemoteService service = (AdRemoteService) user.GetService(
-          DfaService.v1_12.AdRemoteService);
+          DfaService.v1_13.AdRemoteService);
 
       long campaignId = long.Parse(_T("INSERT_CAMPAIGN_ID_HERE"));
       long sizeId = long.Parse(_T("INSERT_SIZE_ID_HERE"));

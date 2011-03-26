@@ -56,7 +56,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create SizeRemoteService instance.
       SizeRemoteService service = (SizeRemoteService) user.GetService(
-          DfaService.v1_12.SizeRemoteService);
+          DfaService.v1_13.SizeRemoteService);
 
       int width = int.Parse(_T("INSERT_WIDTH_HERE"));
       int height = int.Parse(_T("INSERT_HEIGHT_HERE"));

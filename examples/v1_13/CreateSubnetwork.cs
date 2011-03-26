@@ -60,7 +60,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create SubnetworkRemoteService instance.
       SubnetworkRemoteService service = (SubnetworkRemoteService) user.GetService(
-          DfaService.v1_12.SubnetworkRemoteService);
+          DfaService.v1_13.SubnetworkRemoteService);
 
       long networkId = long.Parse(_T("INSERT_NETWORK_ID_HERE"));
       String subnetworkName = _T("INSERT_SUBNETWORK_NAME_HERE");

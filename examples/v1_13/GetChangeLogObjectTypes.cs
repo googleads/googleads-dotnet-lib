@@ -56,7 +56,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create ChangeLogRemoteService instance.
       ChangeLogRemoteService service = (ChangeLogRemoteService) user.GetService(
-          DfaService.v1_12.ChangeLogRemoteService);
+          DfaService.v1_13.ChangeLogRemoteService);
 
       try {
         // Get change log object types

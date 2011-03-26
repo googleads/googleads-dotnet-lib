@@ -58,7 +58,7 @@ namespace Google.Api.Ads.Dfa.Examples.v1_13 {
     public override void Run(DfaUser user) {
       // Create CreativeRemoteService instance.
       CreativeRemoteService service = (CreativeRemoteService) user.GetService(
-          DfaService.v1_12.CreativeRemoteService);
+          DfaService.v1_13.CreativeRemoteService);
 
       try {
         // Get creative types.
