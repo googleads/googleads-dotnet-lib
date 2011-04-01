@@ -18,6 +18,7 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201101
 
 Imports System
+Imports System.Collections.Generic
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
   ''' <summary>
@@ -54,6 +55,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
       ' Get the UserListService.
       Dim userListService As UserListService = user.GetService( _
           AdWordsService.v201101.UserListService)
+      
+      ' Get the ConversionTrackerService.
+      Dim conversionTrackerService As ConversionTrackerService = user.GetService( _
+          AdWordsService.v201101.ConversionTrackerService)
 
       Dim userList As New RemarketingUserList
       userList.name = ("Mars cruise customers #" & GetTimeStamp)
@@ -71,13 +76,55 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
 
       Try
         ' Add user list.
-        Dim retval As UserListReturnValue = userListService.mutate( _
-            New UserListOperation() {operation})
-        If ((Not retval Is Nothing) AndAlso (Not retval.value Is Nothing) AndAlso _
-            (retval.value.Length > 0)) Then
-          Dim tempUserList As UserList = retval.value(0)
-          Console.WriteLine("User list with name ""{0}"" and id {1} was added.", _
-              tempUserList.name, tempUserList.id)
+        Dim retval As UserListReturnValue = userListService.mutate(New UserListOperation() _
+            {operation})
+        Dim userLists As UserList() = Nothing
+
+        If ((Not retval Is Nothing) AndAlso (Not retval.value Is Nothing) And _
+            retval.value.Length > 0) Then
+          userLists = retval.value
+          Dim conversionIds As New List(Of String)
+          For Each tempUserList As RemarketingUserList In userLists
+            If (Not tempUserList.conversionTypes Is Nothing) Then
+              For Each tempConversionType As UserListConversionType In userList.conversionTypes
+                conversionIds.Add(tempConversionType.id.ToString)
+              Next
+            End If
+          Next
+          Dim conversionsMap As New Dictionary(Of Long, ConversionTracker)
+
+          If (conversionIds.Count > 0) Then
+            Dim conversionTypePredicate As New Predicate
+            conversionTypePredicate.field = "Id"
+            conversionTypePredicate.operator = PredicateOperator.IN
+            conversionTypePredicate.values = conversionIds.ToArray
+
+            Dim selector As New Selector
+            selector.fields = New String() {"Id"}
+            selector.predicates = New Predicate() {conversionTypePredicate}
+
+            Dim page As ConversionTrackerPage = conversionTrackerService.get(selector)
+            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+              For Each tracker As ConversionTracker In page.entries
+                conversionsMap.Item(tracker.id) = tracker
+              Next
+            End If
+          End If
+
+          For Each tempUserList As RemarketingUserList In userLists
+            Console.WriteLine("User list with name '{0}' and id '{1}' was added.", _
+                tempUserList.name, tempUserList.id)
+
+            If (Not tempUserList.conversionTypes Is Nothing) Then
+              For Each tempConversionType As UserListConversionType In tempUserList.conversionTypes
+                Dim conversionTracker As AdWordsConversionTracker = _
+                    DirectCast(conversionsMap.Item(tempConversionType.id),  _
+                        AdWordsConversionTracker)
+                Console.WriteLine("Conversion type code snippet associated to the list:\n{0}\n", _
+                    conversionTracker.snippet)
+              Next
+            End If
+          Next
         Else
           Console.WriteLine("No user lists were added.")
         End If

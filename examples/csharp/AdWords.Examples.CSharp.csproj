@@ -59,6 +59,10 @@
     <Compile Include="v201101\BackupSandboxDemo.cs" />
     <Compile Include="v201101\CheckCampaigns.cs" />
     <Compile Include="v201101\ClientApiUnitsUsageDemo.cs" />
+    <Compile Include="v201101\AddConversionTracker.cs" />
+    <Compile Include="v201101\UpdateConversionTracker.cs" />
+    <Compile Include="v201101\GetAllConversionTrackers.cs" />
+    <Compile Include="v201101\GetKeywordOpportunities.cs" />
     <Compile Include="v201101\GetAdGroupBidLandscape.cs" />
     <Compile Include="v201101\DeleteAd.cs" />
     <Compile Include="v201101\DeleteAdGroup.cs" />

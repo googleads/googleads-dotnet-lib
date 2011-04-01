@@ -269,6 +269,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
 
       RegisterSample("v201101.GetAllAccountChanges", New v201101.GetAllAccountChanges)
       RegisterSample("v201101.HandlePartialFailures", New v201101.HandlePartialFailures)
+      RegisterSample("v201101.GetKeywordOpportunities", New v201101.GetKeywordOpportunities())
+      RegisterSample("v201101.AddConversion", New v201101.AddConversionTracker())
+      RegisterSample("v201101.GetAllConversions", New v201101.GetAllConversionTrackers())
+      RegisterSample("v201101.UpdateConversion", New v201101.UpdateConversionTracker())
 
       ' Add combined examples.
       RegisterSample("Both.UsingTrafficEstimatorDemo", New Both.UsingTrafficEstimatorDemo)

@@ -22,7 +22,7 @@ Imports System
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
   ''' <summary>
   ''' This code example shows how to add site links to an existing
-  ''' campaign. To create a campaign, run AddCampaign.cs.
+  ''' campaign. To create a campaign, run AddCampaign.vb.
   '''
   ''' Tags: CampaignAdExtensionService.mutate
   ''' </summary>
@@ -34,7 +34,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
     Public Overrides ReadOnly Property Description() As String
       Get
         Return "This code example shows how to add site links to an existing campaign. To " & _
-            "create a campaign, run AddCampaign.cs."
+            "create a campaign, run AddCampaign.vb."
       End Get
     End Property
 
