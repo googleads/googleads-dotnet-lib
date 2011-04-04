@@ -102,9 +102,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201101 {
           foreach(TargetingIdea idea in page.entries) {
             foreach (Type_AttributeMapEntry entry in idea.data) {
               if (entry.key == AttributeType.CRITERION) {
-                KeywordAttribute kwdAttribute = entry.value as KeywordAttribute;
+                CriterionAttribute kwdAttribute = entry.value as CriterionAttribute;
                 Console.WriteLine("Related keyword with text = '{0}' and match type = '{1}'" +
-                  " was found.", kwdAttribute.value.text, kwdAttribute.value.matchType);
+                  " was found.", (kwdAttribute.value as Keyword).text,
+                  (kwdAttribute.value as Keyword).matchType);
               }
             }
           }

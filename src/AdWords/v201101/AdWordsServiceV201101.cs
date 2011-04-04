@@ -72,6 +72,12 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature BulkMutateJobService;
 
       /// <summary>
+      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201101/BulkOpportunityService.html">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature BulkOpportunityService;
+
+      /// <summary>
       /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201101/CampaignAdExtensionService.html">
       /// this page</a> for details.
       /// </summary>
@@ -93,6 +99,12 @@ namespace Google.Api.Ads.AdWords.Lib {
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature CampaignTargetService;
+
+      /// <summary>
+      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201101/ConversionTrackerService.html">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature ConversionTrackerService;
 
       /// <summary>
       /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201101/CustomerSyncService.html">
@@ -183,6 +195,8 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201101", "mcm", "AlertService");
         BulkMutateJobService =
             AdWordsService.MakeServiceSignature("v201101", "job", "BulkMutateJobService");
+        BulkOpportunityService =
+            AdWordsService.MakeServiceSignature("v201101", "o", "BulkOpportunityService");
         CampaignAdExtensionService =
             AdWordsService.MakeServiceSignature("v201101", "cm", "CampaignAdExtensionService");
         CampaignCriterionService =
@@ -191,6 +205,8 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201101", "cm", "CampaignService");
         CampaignTargetService =
             AdWordsService.MakeServiceSignature("v201101", "cm", "CampaignTargetService");
+        ConversionTrackerService =
+            AdWordsService.MakeServiceSignature("v201101", "cm", "ConversionTrackerService");
         CustomerSyncService =
             AdWordsService.MakeServiceSignature("v201101", "ch", "CustomerSyncService");
         DataService =

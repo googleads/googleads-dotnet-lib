@@ -55,7 +55,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201101 {
     public override void Run(AdWordsUser user) {
       // Get the UserListService.
       UserListService userListService =
-          (UserListService) user.GetService(AdWordsService.v201101.UserListService);
+          (UserListService)user.GetService(AdWordsService.v201101.UserListService);
+
+      // Get the ConversionTrackerService.
+      ConversionTrackerService conversionTrackerService =
+          (ConversionTrackerService)user.GetService(AdWordsService.v201101.
+              ConversionTrackerService);
 
       RemarketingUserList userList = new RemarketingUserList();
       userList.name = "Mars cruise customers #" + GetTimeStamp();
@@ -74,10 +79,59 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201101 {
       try {
         // Add user list.
         UserListReturnValue retval = userListService.mutate(new UserListOperation[] {operation});
+        UserList[] userLists = null;
         if (retval != null && retval.value != null & retval.value.Length > 0) {
-          UserList tempUserList = retval.value[0];
-          Console.WriteLine("User list with name \"{0}\" and id {1} was added.",
-              tempUserList.name, tempUserList.id);
+          userLists = retval.value;
+          // Get all conversion snippets
+          List<string> conversionIds = new List<string>();
+          foreach (RemarketingUserList tempUserList in userLists) {
+            if (tempUserList.conversionTypes != null) {
+              foreach (UserListConversionType tempConversionType in userList.conversionTypes) {
+                conversionIds.Add(tempConversionType.id.ToString());
+              }
+            }
+          }
+
+          Dictionary<long, ConversionTracker> conversionsMap =
+              new Dictionary<long, ConversionTracker>();
+
+          if (conversionIds.Count > 0) {
+            // Create selector.
+            Predicate conversionTypePredicate = new Predicate();
+            conversionTypePredicate.field = "Id";
+            conversionTypePredicate.@operator = PredicateOperator.IN;
+            conversionTypePredicate.values = conversionIds.ToArray();
+
+            Selector selector = new Selector();
+            selector.fields = new string[] {"Id"};
+            selector.predicates = new Predicate[] {conversionTypePredicate};
+
+            // Get all conversion trackers.
+            ConversionTrackerPage page = conversionTrackerService.get(selector);
+
+            if (page != null && page.entries != null) {
+              foreach (ConversionTracker tracker in page.entries) {
+                conversionsMap[tracker.id] = tracker;
+              }
+            }
+          }
+
+          // Display results.
+          foreach (RemarketingUserList tempUserList in userLists) {
+            Console.WriteLine("User list with name '{0}' and id '{1}' was added.",
+               tempUserList.name, tempUserList.id);
+
+            // Display user list associated conversion code snippets.
+            if (tempUserList.conversionTypes != null) {
+              foreach (UserListConversionType tempConversionType
+                  in tempUserList.conversionTypes) {
+                AdWordsConversionTracker conversionTracker =
+                    (AdWordsConversionTracker)conversionsMap[tempConversionType.id];
+                Console.WriteLine("Conversion type code snippet associated to the list:\n{0}\n",
+                  conversionTracker.snippet);
+              }
+            }
+          }
         } else {
           Console.WriteLine("No user lists were added.");
         }

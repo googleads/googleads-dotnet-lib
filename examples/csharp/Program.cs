@@ -400,6 +400,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
 
       RegisterSample("v201101.GetAllAccountChanges", new v201101.GetAllAccountChanges());
       RegisterSample("v201101.HandlePartialFailures", new v201101.HandlePartialFailures());
+      RegisterSample("v201101.GetKeywordOpportunities", new v201101.GetKeywordOpportunities());
+      RegisterSample("v201101.AddConversion", new v201101.AddConversionTracker());
+      RegisterSample("v201101.GetAllConversions", new v201101.GetAllConversionTrackers());
+      RegisterSample("v201101.UpdateConversion", new v201101.UpdateConversionTracker());
 
       // Add combined examples.
       RegisterSample("Both.UsingTrafficEstimatorDemo", new Both.UsingTrafficEstimatorDemo());

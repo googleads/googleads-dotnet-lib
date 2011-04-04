@@ -62,6 +62,7 @@
     <Compile Include="v201101\AddAds.vb" />
     <Compile Include="v201101\AddCampaign.vb" />
     <Compile Include="v201101\AddCampaignAdExtension.vb" />
+    <Compile Include="v201101\AddConversionTracker.vb" />
     <Compile Include="v201101\AddExperiment.vb" />
     <Compile Include="v201101\AddKeywordsPerformanceReportDefinition.vb" />
     <Compile Include="v201101\AddLogicalUserList.vb" />
@@ -89,6 +90,7 @@
     <Compile Include="v201101\GetAllAdGroupCriteria.vb" />
     <Compile Include="v201101\GetAllAdGroups.vb" />
     <Compile Include="v201101\GetAllAds.vb" />
+    <Compile Include="v201101\GetAllConversionTrackers.vb" />
     <Compile Include="v201101\GetBulkMutateJob.vb" />
     <Compile Include="v201101\GetAllCampaignAdExtensions.vb" />
     <Compile Include="v201101\GetAllCampaigns.vb" />
@@ -106,6 +108,7 @@
     <Compile Include="v201101\GetConversionOptimizerEligibility.vb" />
     <Compile Include="v201101\GetCriterionBidLandscape.vb" />
     <Compile Include="v201101\GetGeoLocationInfo.vb" />
+    <Compile Include="v201101\GetKeywordOpportunities.vb" />
     <Compile Include="v201101\GetMethodCost.vb" />
     <Compile Include="v201101\GetOperationCount.vb" />
     <Compile Include="v201101\GetRelatedKeywords.vb" />
@@ -126,6 +129,7 @@
     <Compile Include="v201101\UpdateAdGroup.vb" />
     <Compile Include="v201101\UpdateAdGroupCriterion.vb" />
     <Compile Include="v201101\UpdateCampaign.vb" />
+    <Compile Include="v201101\UpdateConversionTracker.vb" />
     <Compile Include="v201101\UpdateUserList.vb" />
     <Compile Include="v201101\UploadImage.vb" />
     <Compile Include="Program.vb" />
