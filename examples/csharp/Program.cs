@@ -23,9 +23,9 @@ using System.IO;
 using System.Reflection;
 
 using SamplePair = System.Collections.Generic.KeyValuePair<string,
-    Google.Api.Ads.Dfa.Examples.SampleBase>;
+    Google.Api.Ads.Dfa.Examples.CSharp.SampleBase>;
 
-namespace Google.Api.Ads.Dfa.Examples {
+namespace Google.Api.Ads.Dfa.Examples.CSharp {
   /// <summary>
   /// The Main class for this application.
   /// </summary>

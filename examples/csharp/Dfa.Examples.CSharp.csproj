@@ -7,9 +7,9 @@
     <ProjectGuid>{65E3CAA4-8EE5-414A-AC88-02E4F33EC954}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Google.Api.Ads.Dfa.Examples</RootNamespace>
-    <AssemblyName>Dfa.Examples</AssemblyName>
-    <StartupObject>Google.Api.Ads.Dfa.Examples.Program</StartupObject>
+    <RootNamespace>Google.Api.Ads.Dfa.Examples.CSharp</RootNamespace>
+    <AssemblyName>Dfa.Examples.CSharp</AssemblyName>
+    <StartupObject>Google.Api.Ads.Dfa.Examples.CSharp.Program</StartupObject>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -38,7 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\src\Properties\Properties.cs">
+    <Compile Include="..\..\src\Properties\Properties.cs">
       <Link>Properties\Properties.cs</Link>
     </Compile>
     <Compile Include="v1_11\AddAdvertiserUserFilter.cs" />
@@ -209,7 +209,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
@@ -217,7 +217,7 @@
   </Target>
   -->
   <ItemGroup>
-          <ProjectReference Include="..\src\Dfa.csproj">
+          <ProjectReference Include="..\..\src\Dfa.csproj">
             <Name>Dfa</Name>
           </ProjectReference></ItemGroup>
 </Project>

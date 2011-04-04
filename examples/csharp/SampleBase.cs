@@ -24,7 +24,7 @@ using Google.Api.Ads.Dfa.Lib;
 using System;
 using System.Threading;
 
-namespace Google.Api.Ads.Dfa.Examples {
+namespace Google.Api.Ads.Dfa.Examples.CSharp {
   /// <summary>
   /// This abstract class represents a code example.
   /// </summary>
