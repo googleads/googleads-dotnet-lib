@@ -48,9 +48,8 @@ namespace Google.Api.Ads.Dfa.Lib {
     public string VersionNamespace {
       get {
         // Version takes the form of vx.yz, but since since it is not a valid
-        // identifier in C#, we generate namespace as vxyz (i.e. without
-        // periods).
-        return Version.Replace(".", "");
+        // identifier in C#, we generate namespace as vx_yz.
+        return Version.Replace(".", "_");
       }
     }
 

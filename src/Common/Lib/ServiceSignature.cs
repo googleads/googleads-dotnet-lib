@@ -51,7 +51,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// A unique id to distinguish the service represented by this signature
     /// object.
     /// </summary>
-    public string id {
+    public string Id {
       get {
         return version + "." + serviceName;
       }

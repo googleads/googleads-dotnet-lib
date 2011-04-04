@@ -118,7 +118,7 @@ namespace Google.Api.Ads.Common.Lib {
           foreach (FieldInfo field in fields) {
             ServiceSignature signature = field.GetValue(null) as ServiceSignature;
             if (signature != null) {
-              RegisterService(signature.id, serviceFactory);
+              RegisterService(signature.Id, serviceFactory);
             }
           }
         }
@@ -222,11 +222,11 @@ namespace Google.Api.Ads.Common.Lib {
     public AdsClient GetService(ServiceSignature serviceSignature, Uri serverUrl) {
       if (serviceSignature == null) {
         throw new ArgumentNullException("serviceSignature");
-      } else if (!serviceFactoryMap.ContainsKey(serviceSignature.id)) {
+      } else if (!serviceFactoryMap.ContainsKey(serviceSignature.Id)) {
         throw new ArgumentException(string.Format(
             CommonErrorMessages.UnregisteredServiceTypeRequested, serviceSignature.ServiceName));
       } else {
-        return serviceFactoryMap[serviceSignature.id].CreateService(serviceSignature,
+        return serviceFactoryMap[serviceSignature.Id].CreateService(serviceSignature,
             this, serverUrl);
       }
     }

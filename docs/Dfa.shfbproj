@@ -18,8 +18,8 @@
     <HtmlHelpName>google-api-dfa-dotnet</HtmlHelpName>
     <HelpFileFormat>HtmlHelp1x</HelpFileFormat>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\bin\DFA.Examples.exe" />
-      <DocumentationSource sourceFile="..\bin\DFA.Examples.xml" />
+      <DocumentationSource sourceFile="..\bin\DFA.Examples.CSharp.exe" />
+      <DocumentationSource sourceFile="..\bin\DFA.Examples.CSharp.xml" />
       <DocumentationSource sourceFile="..\bin\DFA.Tests.dll" />
       <DocumentationSource sourceFile="..\bin\DFA.Tests.xml" />
       <DocumentationSource sourceFile="..\bin\Google.DFA.dll" />
