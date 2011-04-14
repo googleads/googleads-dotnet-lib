@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 namespace Google.Api.Ads.Dfp.v201101 {
+  using Google.Api.Ads.Dfp.Headers;
   using Google.Api.Ads.Dfp.Lib;
 
   using System;
@@ -62,7 +63,7 @@ namespace Google.Api.Ads.Dfp.v201101 {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Placement createPlacement(Placement placement) {
-      object[] results = this.Invoke("createPlacement", new object[] { placement });
+      object[] results = this.Invoke("createPlacement", new object[] {placement});
       return ((Placement) (results[0]));
     }
 
@@ -72,7 +73,7 @@ namespace Google.Api.Ads.Dfp.v201101 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Placement[] createPlacements([System.Xml.Serialization.XmlElementAttribute("placements")]
 Placement[] placements) {
-      object[] results = this.Invoke("createPlacements", new object[] { placements });
+      object[] results = this.Invoke("createPlacements", new object[] {placements});
       return ((Placement[]) (results[0]));
     }
 
@@ -81,7 +82,7 @@ Placement[] placements) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Placement getPlacement(long placementId) {
-      object[] results = this.Invoke("getPlacement", new object[] { placementId });
+      object[] results = this.Invoke("getPlacement", new object[] {placementId});
       return ((Placement) (results[0]));
     }
 
@@ -90,7 +91,7 @@ Placement[] placements) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public PlacementPage getPlacementsByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getPlacementsByStatement", new object[] { filterStatement });
+      object[] results = this.Invoke("getPlacementsByStatement", new object[] {filterStatement});
       return ((PlacementPage) (results[0]));
     }
 
@@ -99,7 +100,7 @@ Placement[] placements) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performPlacementAction(PlacementAction placementAction, Statement filterStatement) {
-      object[] results = this.Invoke("performPlacementAction", new object[] { placementAction, filterStatement });
+      object[] results = this.Invoke("performPlacementAction", new object[] {placementAction, filterStatement});
       return ((UpdateResult) (results[0]));
     }
 
@@ -108,7 +109,7 @@ Placement[] placements) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Placement updatePlacement(Placement placement) {
-      object[] results = this.Invoke("updatePlacement", new object[] { placement });
+      object[] results = this.Invoke("updatePlacement", new object[] {placement});
       return ((Placement) (results[0]));
     }
 
@@ -118,7 +119,7 @@ Placement[] placements) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Placement[] updatePlacements([System.Xml.Serialization.XmlElementAttribute("placements")]
 Placement[] placements) {
-      object[] results = this.Invoke("updatePlacements", new object[] { placements });
+      object[] results = this.Invoke("updatePlacements", new object[] {placements});
       return ((Placement[]) (results[0]));
     }
   }
@@ -1515,7 +1516,7 @@ Placement[] placements) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public ResultSet select(Statement selectStatement) {
-      object[] results = this.Invoke("select", new object[] { selectStatement });
+      object[] results = this.Invoke("select", new object[] {selectStatement});
       return ((ResultSet) (results[0]));
     }
   }
@@ -2527,7 +2528,7 @@ Placement[] placements) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public string getReportDownloadURL(long reportJobId, ExportFormat exportFormat) {
-      object[] results = this.Invoke("getReportDownloadURL", new object[] { reportJobId, exportFormat });
+      object[] results = this.Invoke("getReportDownloadURL", new object[] {reportJobId, exportFormat});
       return ((string) (results[0]));
     }
 
@@ -2536,7 +2537,7 @@ Placement[] placements) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public ReportJob getReportJob(long reportJobId) {
-      object[] results = this.Invoke("getReportJob", new object[] { reportJobId });
+      object[] results = this.Invoke("getReportJob", new object[] {reportJobId});
       return ((ReportJob) (results[0]));
     }
 
@@ -2545,7 +2546,7 @@ Placement[] placements) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public ReportJob runReportJob(ReportJob reportJob) {
-      object[] results = this.Invoke("runReportJob", new object[] { reportJob });
+      object[] results = this.Invoke("runReportJob", new object[] {reportJob});
       return ((ReportJob) (results[0]));
     }
   }
@@ -3115,7 +3116,7 @@ Placement[] placements) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public User createUser(User user) {
-      object[] results = this.Invoke("createUser", new object[] { user });
+      object[] results = this.Invoke("createUser", new object[] {user});
       return ((User) (results[0]));
     }
 
@@ -3125,7 +3126,7 @@ Placement[] placements) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public User[] createUsers([System.Xml.Serialization.XmlElementAttribute("users")]
 User[] users) {
-      object[] results = this.Invoke("createUsers", new object[] { users });
+      object[] results = this.Invoke("createUsers", new object[] {users});
       return ((User[]) (results[0]));
     }
 
@@ -3143,7 +3144,7 @@ User[] users) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public User getUser(long userId) {
-      object[] results = this.Invoke("getUser", new object[] { userId });
+      object[] results = this.Invoke("getUser", new object[] {userId});
       return ((User) (results[0]));
     }
 
@@ -3152,7 +3153,7 @@ User[] users) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UserPage getUsersByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getUsersByStatement", new object[] { filterStatement });
+      object[] results = this.Invoke("getUsersByStatement", new object[] {filterStatement});
       return ((UserPage) (results[0]));
     }
 
@@ -3161,7 +3162,7 @@ User[] users) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performUserAction(UserAction userAction, Statement filterStatement) {
-      object[] results = this.Invoke("performUserAction", new object[] { userAction, filterStatement });
+      object[] results = this.Invoke("performUserAction", new object[] {userAction, filterStatement});
       return ((UpdateResult) (results[0]));
     }
 
@@ -3170,7 +3171,7 @@ User[] users) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public User updateUser(User user) {
-      object[] results = this.Invoke("updateUser", new object[] { user });
+      object[] results = this.Invoke("updateUser", new object[] {user});
       return ((User) (results[0]));
     }
 
@@ -3180,7 +3181,7 @@ User[] users) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public User[] updateUsers([System.Xml.Serialization.XmlElementAttribute("users")]
 User[] users) {
-      object[] results = this.Invoke("updateUsers", new object[] { users });
+      object[] results = this.Invoke("updateUsers", new object[] {users});
       return ((User[]) (results[0]));
     }
   }
@@ -3562,7 +3563,7 @@ User[] users) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Company[] createCompanies([System.Xml.Serialization.XmlElementAttribute("companies")]
 Company[] companies) {
-      object[] results = this.Invoke("createCompanies", new object[] { companies });
+      object[] results = this.Invoke("createCompanies", new object[] {companies});
       return ((Company[]) (results[0]));
     }
 
@@ -3571,7 +3572,7 @@ Company[] companies) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Company createCompany(Company company) {
-      object[] results = this.Invoke("createCompany", new object[] { company });
+      object[] results = this.Invoke("createCompany", new object[] {company});
       return ((Company) (results[0]));
     }
 
@@ -3580,7 +3581,7 @@ Company[] companies) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CompanyPage getCompaniesByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getCompaniesByStatement", new object[] { filterStatement });
+      object[] results = this.Invoke("getCompaniesByStatement", new object[] {filterStatement});
       return ((CompanyPage) (results[0]));
     }
 
@@ -3589,7 +3590,7 @@ Company[] companies) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Company getCompany(long companyId) {
-      object[] results = this.Invoke("getCompany", new object[] { companyId });
+      object[] results = this.Invoke("getCompany", new object[] {companyId});
       return ((Company) (results[0]));
     }
 
@@ -3599,7 +3600,7 @@ Company[] companies) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Company[] updateCompanies([System.Xml.Serialization.XmlElementAttribute("companies")]
 Company[] companies) {
-      object[] results = this.Invoke("updateCompanies", new object[] { companies });
+      object[] results = this.Invoke("updateCompanies", new object[] {companies});
       return ((Company[]) (results[0]));
     }
 
@@ -3608,7 +3609,7 @@ Company[] companies) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Company updateCompany(Company company) {
-      object[] results = this.Invoke("updateCompany", new object[] { company });
+      object[] results = this.Invoke("updateCompany", new object[] {company});
       return ((Company) (results[0]));
     }
   }
@@ -3802,7 +3803,7 @@ Company[] companies) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Creative createCreative(Creative creative) {
-      object[] results = this.Invoke("createCreative", new object[] { creative });
+      object[] results = this.Invoke("createCreative", new object[] {creative});
       return ((Creative) (results[0]));
     }
 
@@ -3812,7 +3813,7 @@ Company[] companies) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Creative[] createCreatives([System.Xml.Serialization.XmlElementAttribute("creatives")]
 Creative[] creatives) {
-      object[] results = this.Invoke("createCreatives", new object[] { creatives });
+      object[] results = this.Invoke("createCreatives", new object[] {creatives});
       return ((Creative[]) (results[0]));
     }
 
@@ -3821,7 +3822,7 @@ Creative[] creatives) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Creative getCreative(long creativeId) {
-      object[] results = this.Invoke("getCreative", new object[] { creativeId });
+      object[] results = this.Invoke("getCreative", new object[] {creativeId});
       return ((Creative) (results[0]));
     }
 
@@ -3830,7 +3831,7 @@ Creative[] creatives) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CreativePage getCreativesByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getCreativesByStatement", new object[] { filterStatement });
+      object[] results = this.Invoke("getCreativesByStatement", new object[] {filterStatement});
       return ((CreativePage) (results[0]));
     }
 
@@ -3839,7 +3840,7 @@ Creative[] creatives) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Creative updateCreative(Creative creative) {
-      object[] results = this.Invoke("updateCreative", new object[] { creative });
+      object[] results = this.Invoke("updateCreative", new object[] {creative});
       return ((Creative) (results[0]));
     }
 
@@ -3849,7 +3850,7 @@ Creative[] creatives) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Creative[] updateCreatives([System.Xml.Serialization.XmlElementAttribute("creatives")]
 Creative[] creatives) {
-      object[] results = this.Invoke("updateCreatives", new object[] { creatives });
+      object[] results = this.Invoke("updateCreatives", new object[] {creatives});
       return ((Creative[]) (results[0]));
     }
   }
@@ -4523,7 +4524,7 @@ Creative[] creatives) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomTargetingKey[] createCustomTargetingKeys([System.Xml.Serialization.XmlElementAttribute("keys")]
 CustomTargetingKey[] keys) {
-      object[] results = this.Invoke("createCustomTargetingKeys", new object[] { keys });
+      object[] results = this.Invoke("createCustomTargetingKeys", new object[] {keys});
       return ((CustomTargetingKey[]) (results[0]));
     }
 
@@ -4533,7 +4534,7 @@ CustomTargetingKey[] keys) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomTargetingValue[] createCustomTargetingValues([System.Xml.Serialization.XmlElementAttribute("values")]
 CustomTargetingValue[] values) {
-      object[] results = this.Invoke("createCustomTargetingValues", new object[] { values });
+      object[] results = this.Invoke("createCustomTargetingValues", new object[] {values});
       return ((CustomTargetingValue[]) (results[0]));
     }
 
@@ -4542,7 +4543,7 @@ CustomTargetingValue[] values) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomTargetingKeyPage getCustomTargetingKeysByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getCustomTargetingKeysByStatement", new object[] { filterStatement });
+      object[] results = this.Invoke("getCustomTargetingKeysByStatement", new object[] {filterStatement});
       return ((CustomTargetingKeyPage) (results[0]));
     }
 
@@ -4551,7 +4552,7 @@ CustomTargetingValue[] values) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomTargetingValuePage getCustomTargetingValuesByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getCustomTargetingValuesByStatement", new object[] { filterStatement });
+      object[] results = this.Invoke("getCustomTargetingValuesByStatement", new object[] {filterStatement});
       return ((CustomTargetingValuePage) (results[0]));
     }
 
@@ -4560,7 +4561,7 @@ CustomTargetingValue[] values) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performCustomTargetingKeyAction(CustomTargetingKeyAction customTargetingKeyAction, Statement filterStatement) {
-      object[] results = this.Invoke("performCustomTargetingKeyAction", new object[] { customTargetingKeyAction, filterStatement });
+      object[] results = this.Invoke("performCustomTargetingKeyAction", new object[] {customTargetingKeyAction, filterStatement});
       return ((UpdateResult) (results[0]));
     }
 
@@ -4569,7 +4570,7 @@ CustomTargetingValue[] values) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performCustomTargetingValueAction(CustomTargetingValueAction customTargetingValueAction, Statement filterStatement) {
-      object[] results = this.Invoke("performCustomTargetingValueAction", new object[] { customTargetingValueAction, filterStatement });
+      object[] results = this.Invoke("performCustomTargetingValueAction", new object[] {customTargetingValueAction, filterStatement});
       return ((UpdateResult) (results[0]));
     }
 
@@ -4579,7 +4580,7 @@ CustomTargetingValue[] values) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomTargetingKey[] updateCustomTargetingKeys([System.Xml.Serialization.XmlElementAttribute("keys")]
 CustomTargetingKey[] keys) {
-      object[] results = this.Invoke("updateCustomTargetingKeys", new object[] { keys });
+      object[] results = this.Invoke("updateCustomTargetingKeys", new object[] {keys});
       return ((CustomTargetingKey[]) (results[0]));
     }
 
@@ -4589,7 +4590,7 @@ CustomTargetingKey[] keys) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomTargetingValue[] updateCustomTargetingValues([System.Xml.Serialization.XmlElementAttribute("values")]
 CustomTargetingValue[] values) {
-      object[] results = this.Invoke("updateCustomTargetingValues", new object[] { values });
+      object[] results = this.Invoke("updateCustomTargetingValues", new object[] {values});
       return ((CustomTargetingValue[]) (results[0]));
     }
   }
@@ -5101,7 +5102,7 @@ CustomTargetingValue[] values) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Forecast getForecast(LineItem lineItem) {
-      object[] results = this.Invoke("getForecast", new object[] { lineItem });
+      object[] results = this.Invoke("getForecast", new object[] {lineItem});
       return ((Forecast) (results[0]));
     }
 
@@ -5110,7 +5111,7 @@ CustomTargetingValue[] values) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Forecast getForecastById(long lineItemId) {
-      object[] results = this.Invoke("getForecastById", new object[] { lineItemId });
+      object[] results = this.Invoke("getForecastById", new object[] {lineItemId});
       return ((Forecast) (results[0]));
     }
   }
@@ -6819,7 +6820,7 @@ CustomTargetingValue[] values) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnit createAdUnit(AdUnit adUnit) {
-      object[] results = this.Invoke("createAdUnit", new object[] { adUnit });
+      object[] results = this.Invoke("createAdUnit", new object[] {adUnit});
       return ((AdUnit) (results[0]));
     }
 
@@ -6829,7 +6830,7 @@ CustomTargetingValue[] values) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnit[] createAdUnits([System.Xml.Serialization.XmlElementAttribute("adUnits")]
 AdUnit[] adUnits) {
-      object[] results = this.Invoke("createAdUnits", new object[] { adUnits });
+      object[] results = this.Invoke("createAdUnits", new object[] {adUnits});
       return ((AdUnit[]) (results[0]));
     }
 
@@ -6838,7 +6839,7 @@ AdUnit[] adUnits) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnit getAdUnit(string adUnitId) {
-      object[] results = this.Invoke("getAdUnit", new object[] { adUnitId });
+      object[] results = this.Invoke("getAdUnit", new object[] {adUnitId});
       return ((AdUnit) (results[0]));
     }
 
@@ -6847,7 +6848,7 @@ AdUnit[] adUnits) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnitPage getAdUnitsByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getAdUnitsByStatement", new object[] { filterStatement });
+      object[] results = this.Invoke("getAdUnitsByStatement", new object[] {filterStatement});
       return ((AdUnitPage) (results[0]));
     }
 
@@ -6856,7 +6857,7 @@ AdUnit[] adUnits) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performAdUnitAction(AdUnitAction adUnitAction, Statement filterStatement) {
-      object[] results = this.Invoke("performAdUnitAction", new object[] { adUnitAction, filterStatement });
+      object[] results = this.Invoke("performAdUnitAction", new object[] {adUnitAction, filterStatement});
       return ((UpdateResult) (results[0]));
     }
 
@@ -6865,7 +6866,7 @@ AdUnit[] adUnits) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnit updateAdUnit(AdUnit adUnit) {
-      object[] results = this.Invoke("updateAdUnit", new object[] { adUnit });
+      object[] results = this.Invoke("updateAdUnit", new object[] {adUnit});
       return ((AdUnit) (results[0]));
     }
 
@@ -6875,7 +6876,7 @@ AdUnit[] adUnits) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnit[] updateAdUnits([System.Xml.Serialization.XmlElementAttribute("adUnits")]
 AdUnit[] adUnits) {
-      object[] results = this.Invoke("updateAdUnits", new object[] { adUnits });
+      object[] results = this.Invoke("updateAdUnits", new object[] {adUnits});
       return ((AdUnit[]) (results[0]));
     }
   }
@@ -7537,7 +7538,7 @@ AdUnit[] adUnits) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItem createLineItem(LineItem lineItem) {
-      object[] results = this.Invoke("createLineItem", new object[] { lineItem });
+      object[] results = this.Invoke("createLineItem", new object[] {lineItem});
       return ((LineItem) (results[0]));
     }
 
@@ -7547,7 +7548,7 @@ AdUnit[] adUnits) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItem[] createLineItems([System.Xml.Serialization.XmlElementAttribute("lineItems")]
 LineItem[] lineItems) {
-      object[] results = this.Invoke("createLineItems", new object[] { lineItems });
+      object[] results = this.Invoke("createLineItems", new object[] {lineItems});
       return ((LineItem[]) (results[0]));
     }
 
@@ -7556,7 +7557,7 @@ LineItem[] lineItems) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItem getLineItem(long lineItemId) {
-      object[] results = this.Invoke("getLineItem", new object[] { lineItemId });
+      object[] results = this.Invoke("getLineItem", new object[] {lineItemId});
       return ((LineItem) (results[0]));
     }
 
@@ -7565,7 +7566,7 @@ LineItem[] lineItems) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemPage getLineItemsByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getLineItemsByStatement", new object[] { filterStatement });
+      object[] results = this.Invoke("getLineItemsByStatement", new object[] {filterStatement});
       return ((LineItemPage) (results[0]));
     }
 
@@ -7574,7 +7575,7 @@ LineItem[] lineItems) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performLineItemAction(LineItemAction lineItemAction, Statement filterStatement) {
-      object[] results = this.Invoke("performLineItemAction", new object[] { lineItemAction, filterStatement });
+      object[] results = this.Invoke("performLineItemAction", new object[] {lineItemAction, filterStatement});
       return ((UpdateResult) (results[0]));
     }
 
@@ -7583,7 +7584,7 @@ LineItem[] lineItems) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItem updateLineItem(LineItem lineItem) {
-      object[] results = this.Invoke("updateLineItem", new object[] { lineItem });
+      object[] results = this.Invoke("updateLineItem", new object[] {lineItem});
       return ((LineItem) (results[0]));
     }
 
@@ -7593,7 +7594,7 @@ LineItem[] lineItems) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItem[] updateLineItems([System.Xml.Serialization.XmlElementAttribute("lineItems")]
 LineItem[] lineItems) {
-      object[] results = this.Invoke("updateLineItems", new object[] { lineItems });
+      object[] results = this.Invoke("updateLineItems", new object[] {lineItems});
       return ((LineItem[]) (results[0]));
     }
   }
@@ -7861,7 +7862,7 @@ LineItem[] lineItems) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemCreativeAssociation createLineItemCreativeAssociation(LineItemCreativeAssociation lineItemCreativeAssociation) {
-      object[] results = this.Invoke("createLineItemCreativeAssociation", new object[] { lineItemCreativeAssociation });
+      object[] results = this.Invoke("createLineItemCreativeAssociation", new object[] {lineItemCreativeAssociation});
       return ((LineItemCreativeAssociation) (results[0]));
     }
 
@@ -7871,7 +7872,7 @@ LineItem[] lineItems) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemCreativeAssociation[] createLineItemCreativeAssociations([System.Xml.Serialization.XmlElementAttribute("lineItemCreativeAssociations")]
 LineItemCreativeAssociation[] lineItemCreativeAssociations) {
-      object[] results = this.Invoke("createLineItemCreativeAssociations", new object[] { lineItemCreativeAssociations });
+      object[] results = this.Invoke("createLineItemCreativeAssociations", new object[] {lineItemCreativeAssociations});
       return ((LineItemCreativeAssociation[]) (results[0]));
     }
 
@@ -7880,7 +7881,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemCreativeAssociation getLineItemCreativeAssociation(long lineItemId, long creativeId) {
-      object[] results = this.Invoke("getLineItemCreativeAssociation", new object[] { lineItemId, creativeId });
+      object[] results = this.Invoke("getLineItemCreativeAssociation", new object[] {lineItemId, creativeId});
       return ((LineItemCreativeAssociation) (results[0]));
     }
 
@@ -7889,7 +7890,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemCreativeAssociationPage getLineItemCreativeAssociationsByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getLineItemCreativeAssociationsByStatement", new object[] { filterStatement });
+      object[] results = this.Invoke("getLineItemCreativeAssociationsByStatement", new object[] {filterStatement});
       return ((LineItemCreativeAssociationPage) (results[0]));
     }
 
@@ -7898,7 +7899,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performLineItemCreativeAssociationAction(LineItemCreativeAssociationAction lineItemCreativeAssociationAction, Statement filterStatement) {
-      object[] results = this.Invoke("performLineItemCreativeAssociationAction", new object[] { lineItemCreativeAssociationAction, filterStatement });
+      object[] results = this.Invoke("performLineItemCreativeAssociationAction", new object[] {lineItemCreativeAssociationAction, filterStatement});
       return ((UpdateResult) (results[0]));
     }
 
@@ -7907,7 +7908,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemCreativeAssociation updateLineItemCreativeAssociation(LineItemCreativeAssociation lineItemCreativeAssociation) {
-      object[] results = this.Invoke("updateLineItemCreativeAssociation", new object[] { lineItemCreativeAssociation });
+      object[] results = this.Invoke("updateLineItemCreativeAssociation", new object[] {lineItemCreativeAssociation});
       return ((LineItemCreativeAssociation) (results[0]));
     }
 
@@ -7917,7 +7918,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemCreativeAssociation[] updateLineItemCreativeAssociations([System.Xml.Serialization.XmlElementAttribute("lineItemCreativeAssociations")]
 LineItemCreativeAssociation[] lineItemCreativeAssociations) {
-      object[] results = this.Invoke("updateLineItemCreativeAssociations", new object[] { lineItemCreativeAssociations });
+      object[] results = this.Invoke("updateLineItemCreativeAssociations", new object[] {lineItemCreativeAssociations});
       return ((LineItemCreativeAssociation[]) (results[0]));
     }
   }
@@ -8408,7 +8409,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Network updateNetwork(Network network) {
-      object[] results = this.Invoke("updateNetwork", new object[] { network });
+      object[] results = this.Invoke("updateNetwork", new object[] {network});
       return ((Network) (results[0]));
     }
   }
@@ -8550,7 +8551,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Order createOrder(Order order) {
-      object[] results = this.Invoke("createOrder", new object[] { order });
+      object[] results = this.Invoke("createOrder", new object[] {order});
       return ((Order) (results[0]));
     }
 
@@ -8560,7 +8561,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Order[] createOrders([System.Xml.Serialization.XmlElementAttribute("orders")]
 Order[] orders) {
-      object[] results = this.Invoke("createOrders", new object[] { orders });
+      object[] results = this.Invoke("createOrders", new object[] {orders});
       return ((Order[]) (results[0]));
     }
 
@@ -8569,7 +8570,7 @@ Order[] orders) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Order getOrder(long orderId) {
-      object[] results = this.Invoke("getOrder", new object[] { orderId });
+      object[] results = this.Invoke("getOrder", new object[] {orderId});
       return ((Order) (results[0]));
     }
 
@@ -8578,7 +8579,7 @@ Order[] orders) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public OrderPage getOrdersByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getOrdersByStatement", new object[] { filterStatement });
+      object[] results = this.Invoke("getOrdersByStatement", new object[] {filterStatement});
       return ((OrderPage) (results[0]));
     }
 
@@ -8587,7 +8588,7 @@ Order[] orders) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performOrderAction(OrderAction orderAction, Statement filterStatement) {
-      object[] results = this.Invoke("performOrderAction", new object[] { orderAction, filterStatement });
+      object[] results = this.Invoke("performOrderAction", new object[] {orderAction, filterStatement});
       return ((UpdateResult) (results[0]));
     }
 
@@ -8596,7 +8597,7 @@ Order[] orders) {
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201101", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201101", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Order updateOrder(Order order) {
-      object[] results = this.Invoke("updateOrder", new object[] { order });
+      object[] results = this.Invoke("updateOrder", new object[] {order});
       return ((Order) (results[0]));
     }
 
@@ -8606,7 +8607,7 @@ Order[] orders) {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Order[] updateOrders([System.Xml.Serialization.XmlElementAttribute("orders")]
 Order[] orders) {
-      object[] results = this.Invoke("updateOrders", new object[] { orders });
+      object[] results = this.Invoke("updateOrders", new object[] {orders});
       return ((Order[]) (results[0]));
     }
   }

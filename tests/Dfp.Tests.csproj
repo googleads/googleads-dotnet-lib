@@ -51,7 +51,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.5.5.10112, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="nunit.framework, Version=2.5.5.10112, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\nunit\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -122,6 +125,17 @@
     <Compile Include="Dfp\v201101\ReportServiceTests.cs" />
     <Compile Include="Dfp\v201101\TestUtils.cs" />
     <Compile Include="Dfp\v201101\UserServiceTests.cs" />
+    <Compile Include="Dfp\v201103\CompanyServiceTests.cs" />
+    <Compile Include="Dfp\v201103\CreativeServiceTests.cs" />
+    <Compile Include="Dfp\v201103\ForecastServiceTests.cs" />
+    <Compile Include="Dfp\v201103\InventoryServiceTests.cs" />
+    <Compile Include="Dfp\v201103\LineItemCreativeAssociationServiceTests.cs" />
+    <Compile Include="Dfp\v201103\LineItemServiceTests.cs" />
+    <Compile Include="Dfp\v201103\OrderServiceTests.cs" />
+    <Compile Include="Dfp\v201103\PlacementServiceTests.cs" />
+    <Compile Include="Dfp\v201103\ReportServiceTests.cs" />
+    <Compile Include="Dfp\v201103\TestUtils.cs" />
+    <Compile Include="Dfp\v201103\UserServiceTests.cs" />
     <Compile Include="Dfp\BaseTests.cs" />
   </ItemGroup>
   <ItemGroup>

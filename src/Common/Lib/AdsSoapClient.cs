@@ -295,7 +295,8 @@ namespace Google.Api.Ads.Common.Lib {
       if (exception.Detail == null) {
         return null;
       } else {
-        XmlNamespaceManager xmlns = new XmlNamespaceManager(exception.Detail.OwnerDocument.NameTable);
+        XmlNamespaceManager xmlns =
+            new XmlNamespaceManager(exception.Detail.OwnerDocument.NameTable);
         xmlns.AddNamespace("api", ns);
         return (XmlElement) exception.Detail.SelectSingleNode("api:" + nodeName, xmlns);
       }

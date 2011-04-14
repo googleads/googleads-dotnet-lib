@@ -247,6 +247,84 @@ namespace Google.Api.Ads.Dfp.Examples {
       RegisterSample("v201101.GetAllMetros", new v201101.GetAllMetros());
       RegisterSample("v201101.GetAllRegions", new v201101.GetAllRegions());
       RegisterSample("v201101.GetAllCountries", new v201101.GetAllCountries());
+
+      // Add v201103 code examples.
+      RegisterSample("v201103.CreateCompanies", new v201103.CreateCompanies());
+      RegisterSample("v201103.GetAllCompanies", new v201103.GetAllCompanies());
+      RegisterSample("v201103.GetCompaniesByStatement", new v201103.GetCompaniesByStatement());
+      RegisterSample("v201103.GetCompany", new v201103.GetCompany());
+      RegisterSample("v201103.UpdateCompanies", new v201103.UpdateCompanies());
+      RegisterSample("v201103.CreateCreatives", new v201103.CreateCreatives());
+      RegisterSample("v201103.CopyImageCreatives", new v201103.CopyImageCreatives());
+      RegisterSample("v201103.GetAllCreatives", new v201103.GetAllCreatives());
+      RegisterSample("v201103.GetCreative", new v201103.GetCreative());
+      RegisterSample("v201103.GetCreativesByStatement", new v201103.GetCreativesByStatement());
+      RegisterSample("v201103.UpdateCreatives", new v201103.UpdateCreatives());
+      RegisterSample("v201103.CreateAdUnits", new v201103.CreateAdUnits());
+      RegisterSample("v201103.DeActivateAdUnits", new v201103.DeActivateAdUnits());
+      RegisterSample("v201103.GetAdUnit", new v201103.GetAdUnit());
+      RegisterSample("v201103.GetAdUnitsByStatement", new v201103.GetAdUnitsByStatement());
+      RegisterSample("v201103.GetAllAdUnits", new v201103.GetAllAdUnits());
+      RegisterSample("v201103.GetInventoryTree", new v201103.GetInventoryTree());
+      RegisterSample("v201103.UpdateAdUnits", new v201103.UpdateAdUnits());
+      RegisterSample("v201103.CreateLicas", new v201103.CreateLicas());
+      RegisterSample("v201103.ActivateLicas", new v201103.ActivateLicas());
+      RegisterSample("v201103.DeactivateLicas", new v201103.DeactivateLicas());
+      RegisterSample("v201103.GetAllLicas", new v201103.GetAllLicas());
+      RegisterSample("v201103.GetLica", new v201103.GetLica());
+      RegisterSample("v201103.GetLicasByStatement", new v201103.GetLicasByStatement());
+      RegisterSample("v201103.UpdateLicas", new v201103.UpdateLicas());
+      RegisterSample("v201103.ActivateLineItem", new v201103.ActivateLineItem());
+      RegisterSample("v201103.CreateLineItems", new v201103.CreateLineItems());
+      RegisterSample("v201103.GetAllLineItems", new v201103.GetAllLineItems());
+      RegisterSample("v201103.GetLineItem", new v201103.GetLineItem());
+      RegisterSample("v201103.GetLineItemsByStatement", new v201103.GetLineItemsByStatement());
+      RegisterSample("v201103.UpdateLineItems", new v201103.UpdateLineItems());
+      RegisterSample("v201103.ApproveOrder", new v201103.ApproveOrder());
+      RegisterSample("v201103.CreateOrders", new v201103.CreateOrders());
+      RegisterSample("v201103.GetAllOrders", new v201103.GetAllOrders());
+      RegisterSample("v201103.GetOrder", new v201103.GetOrder());
+      RegisterSample("v201103.GetOrdersByStatement", new v201103.GetOrdersByStatement());
+      RegisterSample("v201103.UpdateOrders", new v201103.UpdateOrders());
+      RegisterSample("v201103.CreatePlacements", new v201103.CreatePlacements());
+      RegisterSample("v201103.DeactivatePlacement", new v201103.DeactivatePlacement());
+      RegisterSample("v201103.GetAllPlacements", new v201103.GetAllPlacements());
+      RegisterSample("v201103.GetPlacement", new v201103.GetPlacement());
+      RegisterSample("v201103.GetPlacementsByStatement", new v201103.GetPlacementsByStatement());
+      RegisterSample("v201103.UpdatePlacements", new v201103.UpdatePlacements());
+      RegisterSample("v201103.CreateUsers", new v201103.CreateUsers());
+      RegisterSample("v201103.DeactivateUser", new v201103.DeactivateUser());
+      RegisterSample("v201103.GetAllRoles", new v201103.GetAllRoles());
+      RegisterSample("v201103.GetAllUsers", new v201103.GetAllUsers());
+      RegisterSample("v201103.GetUser", new v201103.GetUser());
+      RegisterSample("v201103.GetUsersByStatement", new v201103.GetUsersByStatement());
+      RegisterSample("v201103.UpdateUsers", new v201103.UpdateUsers());
+      RegisterSample("v201103.RunInventoryReport", new v201103.RunInventoryReport());
+      RegisterSample("v201103.RunDeliveryReport", new v201103.RunDeliveryReport());
+      RegisterSample("v201103.RunSalesReport", new v201103.RunSalesReport());
+      RegisterSample("v201103.RunSalesReport", new v201103.DownloadReport());
+      RegisterSample("v201103.GetForecast", new v201103.GetForecast());
+      RegisterSample("v201103.GetForecastById", new v201103.GetForecastById());
+      RegisterSample("v201103.GetAllNetworks", new v201103.GetAllNetworks());
+      RegisterSample("v201103.GetCurrentNetwork", new v201103.GetCurrentNetwork());
+
+      RegisterSample("v201103.CreateCustomTargetingKeysAndValues",
+          new v201103.CreateCustomTargetingKeysAndValues());
+      RegisterSample("v201103.GetAllCustomTargetingKeysAndValues",
+          new v201103.GetAllCustomTargetingKeysAndValues());
+      RegisterSample("v201103.GetCustomTargetingKeysByStatement",
+          new v201103.GetCustomTargetingKeysByStatement());
+      RegisterSample("v201103.GetCustomTargetingValuesByStatement",
+          new v201103.GetCustomTargetingValuesByStatement());
+      RegisterSample("v201103.UpdateCustomTargetingKeys", new v201103.UpdateCustomTargetingKeys());
+      RegisterSample("v201103.UpdateCustomTargetingValues",
+          new v201103.UpdateCustomTargetingValues());
+      RegisterSample("v201103.TargetCustomCriteria", new v201103.TargetCustomCriteria());
+
+      RegisterSample("v201103.GetAllCities", new v201103.GetAllCities());
+      RegisterSample("v201103.GetAllMetros", new v201103.GetAllMetros());
+      RegisterSample("v201103.GetAllRegions", new v201103.GetAllRegions());
+      RegisterSample("v201103.GetAllCountries", new v201103.GetAllCountries());
     }
 
     /// <summary>

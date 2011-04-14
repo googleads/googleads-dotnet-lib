@@ -35,7 +35,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// Url endpoint for ClientLogin API.
     /// </summary>
     private readonly Uri URL = new Uri("https://www.google.com/accounts/ClientLogin");
-    //private readonly Uri URL = new Uri("https://www.google.com/accounts/ClientLogin");
 
     /// <summary>
     /// The prefix to be appended for captcha urls.

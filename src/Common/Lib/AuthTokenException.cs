@@ -156,8 +156,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="info">Additional information about the error code.</param>
     public AuthTokenException(AuthTokenErrorCode standardErrorCode, Uri errorUrl,
         string captchaToken, Uri captchaUrl, string info)
-      : this(standardErrorCode, errorUrl, captchaToken, captchaUrl, info, 
-           String.Empty, null) {
+      : this(standardErrorCode, errorUrl, captchaToken, captchaUrl, info,
+            String.Empty, null) {
     }
 
     /// <summary>
