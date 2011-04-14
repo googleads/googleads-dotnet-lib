@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <!-- The configuration and platform will be used to determine which
          assemblies to include from solution and project documentation
@@ -7,7 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7985fc8e-a464-4b06-84e7-eb89386793ed}</ProjectGuid>
-    <SHFBSchemaVersion>1.8.0.0</SHFBSchemaVersion>
+    <SHFBSchemaVersion>1.9.3.0</SHFBSchemaVersion>
     <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual
          Studio adds them anyway -->
     <AssemblyName>Documentation</AssemblyName>
@@ -16,17 +17,18 @@
     <!-- SHFB properties -->
     <OutputPath>.\</OutputPath>
     <HtmlHelpName>google-api-dfp-dotnet</HtmlHelpName>
-    <HelpFileFormat>HtmlHelp1x</HelpFileFormat>
+    <HelpFileFormat>HtmlHelp1</HelpFileFormat>
     <DocumentationSources>
       <DocumentationSource sourceFile="..\bin\DFP.Examples.exe" />
-<DocumentationSource sourceFile="..\bin\DFP.Examples.xml" />
-<DocumentationSource sourceFile="..\bin\DFP.Tests.dll" />
-<DocumentationSource sourceFile="..\bin\DFP.Tests.xml" />
-<DocumentationSource sourceFile="..\bin\Google.DFP.dll" />
-<DocumentationSource sourceFile="..\bin\Google.DFP.xml" /></DocumentationSources>
+      <DocumentationSource sourceFile="..\bin\DFP.Examples.xml" />
+      <DocumentationSource sourceFile="..\bin\DFP.Tests.dll" />
+      <DocumentationSource sourceFile="..\bin\DFP.Tests.xml" />
+      <DocumentationSource sourceFile="..\bin\Google.DFP.dll" />
+      <DocumentationSource sourceFile="..\bin\Google.DFP.xml" />
+    </DocumentationSources>
     <HelpTitle>DFP API .NET client library</HelpTitle>
     <NamingMethod>MemberName</NamingMethod>
-    <CopyrightText>Copyright 2010, Google Inc. All Rights Reserved.</CopyrightText>
+    <CopyrightText>Copyright 2011, Google Inc. All Rights Reserved.</CopyrightText>
     <ApiFilter>
     </ApiFilter>
     <MissingTags>Parameter, Returns, TypeParameter</MissingTags>

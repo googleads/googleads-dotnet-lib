@@ -108,23 +108,6 @@ namespace Google.Api.Ads.Common.Util {
     }
 
     /// <summary>
-    /// Writes the contents of the CsvFile object into a string.
-    /// </summary>
-    /// <returns>The CsvFile object contents as a string.</returns>
-    public string WriteToString() {
-      StringWriter writer = new StringWriter();
-      if (Headers != null) {
-        StringBuilder builder = ConvertRowToCsvString(Headers.ToArray());
-        writer.WriteLine(builder.ToString().TrimEnd(','));
-      }
-      foreach (string[] row in Records) {
-        StringBuilder builder = ConvertRowToCsvString(row);
-        writer.WriteLine(builder.ToString().TrimEnd(','));
-      }
-      return writer.ToString();
-    }
-
-    /// <summary>
     /// Converts a csv row item collection into a csv string.
     /// </summary>
     /// <param name="rowItems">An array of string items which represents

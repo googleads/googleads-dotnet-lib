@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Dfp.Headers;
 
 using System;
 using System.Collections.Generic;
@@ -116,20 +117,35 @@ namespace Google.Api.Ads.Dfp.Lib {
 
       DfpServiceSignature dfpapiSignature = signature as DfpServiceSignature;
 
-      AdsSoapClient service = (AdsSoapClient) Activator.CreateInstance(dfpapiSignature.ServiceType);
+      AdsSoapClient service = (AdsSoapClient) Activator.CreateInstance(
+          dfpapiSignature.ServiceType);
       PropertyInfo propInfo = dfpapiSignature.ServiceType.GetProperty("RequestHeader");
+
       if (propInfo != null) {
-        propInfo.SetValue(service, requestHeader.Clone(), null);
+        RequestHeader cloneHeader = (RequestHeader)requestHeader.Clone();
+        cloneHeader.Version = dfpapiSignature.Version;
 
-        if (config.Proxy != null) {
-          service.Proxy = config.Proxy;
+        // If there is an authToken, initialize the right field based on
+        // whether the requested service is >= 201103 or not.
+        if (requestHeader.authToken != null) {
+          if (string.Compare(dfpapiSignature.Version, "v201103") < 0) {
+            cloneHeader.authentication = null;
+          } else {
+            cloneHeader.authToken = null;
+          }
         }
-
-        service.Url = string.Format("{0}apis/ads/publisher/{1}/{2}",
-            serverUrl, dfpapiSignature.Version, dfpapiSignature.ServiceName);
-
-        service.User = user;
+        propInfo.SetValue(service, cloneHeader, null);
       }
+
+      if (config.Proxy != null) {
+        service.Proxy = config.Proxy;
+      }
+
+      service.Url = string.Format("{0}apis/ads/publisher/{1}/{2}",
+          serverUrl, dfpapiSignature.Version, dfpapiSignature.ServiceName);
+
+      service.User = user;
+
       return service;
     }
 
@@ -165,8 +181,14 @@ namespace Google.Api.Ads.Dfp.Lib {
 
       Type type = typeof(RequestHeader);
       if (!headers.ContainsKey("authToken")) {
+        // Since the authentication header structure is different for v201103
+        // and higher versions, we initalize both fields, and later null out
+        // the unwanted field during CreateService.
         requestHeader.authToken = new AuthToken(config, "gam", headers["email"],
             headers["password"]).GetToken();
+        ClientLogin clientLogin = new ClientLogin();
+        clientLogin.token = requestHeader.authToken;
+        requestHeader.authentication = clientLogin;
       }
       foreach (string key in headers.Keys) {
         PropertyInfo propInfo = type.GetProperty(key);

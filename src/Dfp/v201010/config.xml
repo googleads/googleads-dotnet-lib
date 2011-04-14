@@ -40,6 +40,7 @@
   </generatecode>
   <mergecode/>
   <processcode>
+    <addusingstatement namespace="Google.Api.Ads.Dfp.Headers"/>
     <addusingstatement namespace="Google.Api.Ads.Dfp.Lib"/>
 
     <changebasetypefordeclaration typename="CreativeService"
