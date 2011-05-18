@@ -1,3 +1,7 @@
+12.2.0
+- Added support for Cross client reports.
+- ReportUtilities was moved to Google.Api.Ads.AdWords.Util.Reports namespace.
+
 12.1.0
 - Added support for BulkOpportunityService and ConversionTrackerService.
 

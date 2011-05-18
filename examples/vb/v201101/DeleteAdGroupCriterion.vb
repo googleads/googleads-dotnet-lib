@@ -21,8 +21,8 @@ Imports System
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
   ''' <summary>
-  ''' This code example deletes a campaign by setting the status to 'DELETED'.
-  ''' To get campaigns, run GetAllCampaigns.vb.
+  ''' This code example deletes an ad group criterion using the 'REMOVE'
+  ''' operator. To get ad group criteria, run GetAllAdGroupCriteria.vb.
   '''
   ''' Tags: AdGroupCriterionService.mutate
   ''' </summary>
@@ -33,8 +33,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example deletes a campaign by setting the status to 'DELETED'. " & _
-            "To get campaigns, run GetAllCampaigns.vb."
+        Return "This code example deletes an ad group criterion using the 'REMOVE' operator. " & _
+            "To get ad group criteria, run GetAllAdGroupCriteria.vb."
       End Get
     End Property
 

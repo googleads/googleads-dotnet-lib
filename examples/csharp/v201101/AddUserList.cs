@@ -55,7 +55,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201101 {
     public override void Run(AdWordsUser user) {
       // Get the UserListService.
       UserListService userListService =
-          (UserListService)user.GetService(AdWordsService.v201101.UserListService);
+          (UserListService) user.GetService(AdWordsService.v201101.UserListService);
 
       // Get the ConversionTrackerService.
       ConversionTrackerService conversionTrackerService =

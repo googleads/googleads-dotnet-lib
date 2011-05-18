@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,7 +10,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Google.Api.Ads</RootNamespace>
     <AssemblyName>AdWords</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,6 +54,11 @@
   </Target>
   -->
   <ItemGroup>
+    <Compile Include="AdWords\Headers\AdWordsSoapHeader.cs" />
+    <Compile Include="AdWords\Headers\RequestHeader.cs" />
+    <Compile Include="AdWords\Headers\RequestHeaderStub.cs" />
+    <Compile Include="AdWords\Headers\ResponseHeader.cs" />
+    <Compile Include="AdWords\Headers\ResponseHeaderStub.cs" />
     <Compile Include="AdWords\Lib\AdWordsApiException.cs" />
     <Compile Include="AdWords\Lib\AdWordsAppConfig.cs" />
     <Compile Include="AdWords\Lib\AdWordsException.cs" />
@@ -71,13 +80,19 @@
     <Compile Include="AdWords\Util\Data\LocalAdGroup.cs" />
     <Compile Include="AdWords\Util\Data\LocalCampaign.cs" />
     <Compile Include="AdWords\Util\Data\SandboxSerializationException.cs" />
+    <Compile Include="AdWords\Util\Reports\ClientReport.cs" />
+    <Compile Include="AdWords\Util\Reports\LegacyReportUtilities.cs" />
+    <Compile Include="AdWords\Util\Reports\MccReport.cs" />
+    <Compile Include="AdWords\Util\Reports\MccReportResponse.cs" />
+    <Compile Include="AdWords\Util\Reports\MccReportStatus.cs" />
+    <Compile Include="AdWords\Util\Reports\Report.cs" />
+    <Compile Include="AdWords\Util\Reports\ReportsException.cs" />
+    <Compile Include="AdWords\Util\Reports\ReportUtilities.cs" />
     <Compile Include="AdWords\Util\Units\AdWordsAccount.cs" />
     <Compile Include="AdWords\Util\Units\ClientQuotaUsage.cs" />
     <Compile Include="AdWords\Util\Units\MethodQuotaUsage.cs" />
     <Compile Include="AdWords\Util\Units\UnitsUtilities.cs" />
     <Compile Include="AdWords\Util\ErrorUtilities.cs" />
-    <Compile Include="AdWords\Util\ReportsException.cs" />
-    <Compile Include="AdWords\Util\ReportUtilities.cs" />
     <Compile Include="AdWords\v13\AccountException.cs" />
     <Compile Include="AdWords\v13\AdWordsApi.cs" />
     <Compile Include="AdWords\v13\AdWordsServiceV13.cs" />
@@ -102,8 +117,6 @@
     <Compile Include="AdWords\v201008\AdWordsServiceV201008.cs" />
     <Compile Include="AdWords\v201101\AdWordsApi.cs" />
     <Compile Include="AdWords\v201101\AdWordsServiceV201101.cs" />
-    <Compile Include="AdWords\RequestHeader.cs" />
-    <Compile Include="AdWords\ResponseHeader.cs" />
     <Compile Include="Common\Lib\AdsClient.cs" />
     <Compile Include="Common\Lib\AdsException.cs" />
     <Compile Include="Common\Lib\AdsService.cs" />

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,7 +10,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Google.Api.Ads.AdWords.Tests</RootNamespace>
     <AssemblyName>AdWords.Tests</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,6 +58,7 @@
   -->
   <ItemGroup>
     <Compile Include="AdWords\Properties\AssemblyInfo.cs" />
+    <Compile Include="AdWords\Properties\Properties.cs" />
     <Compile Include="AdWords\v13\AccountServiceTests.cs" />
     <Compile Include="AdWords\v13\ReportServiceTests.cs" />
     <Compile Include="AdWords\v13\ServiceTests.cs" />
@@ -127,8 +132,7 @@
     <Compile Include="Common\Util\CsvFileTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\AdWords.csproj">
-      <Name>AdWords</Name>
-    </ProjectReference>
-  </ItemGroup>
+          <ProjectReference Include="..\src\AdWords.csproj">
+            <Name>AdWords</Name>
+          </ProjectReference></ItemGroup>
 </Project>

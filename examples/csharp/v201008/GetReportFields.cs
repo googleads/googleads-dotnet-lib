@@ -57,7 +57,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
       ReportDefinitionService reportDefinitionService = (ReportDefinitionService) user.GetService(
           AdWordsService.v201008.ReportDefinitionService);
 
-      // The type of the report to get fields for. Ex: KEYWORDS_PERFORMANCE_REPORT
+      // The type of the report to get fields for.
+      // E.g.: KEYWORDS_PERFORMANCE_REPORT
       ReportDefinitionReportType reportType = (ReportDefinitionReportType) Enum.Parse(
           typeof(ReportDefinitionReportType), _T("INSERT_REPORT_TYPE_HERE"));
 

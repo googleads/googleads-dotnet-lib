@@ -15,9 +15,11 @@
 ' Author: api.anash@gmail.com (Anash P. Oommen)
 
 Imports Google.Api.Ads.AdWords.Lib
-Imports Google.Api.Ads.AdWords.Util
+Imports Google.Api.Ads.AdWords.Util.Reports
+Imports Google.Api.Ads.Common.Lib
 
 Imports System
+Imports System.IO
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
   ''' <summary>
@@ -56,9 +58,20 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
       Dim reportDefinitionId As Long = Long.Parse(_T("INSERT_REPORT_DEFINITION_ID_HERE"))
       Dim fileName As String = _T("INSERT_OUTPUT_FILE_NAME_HERE")
       Dim path As String = (GetHomeDir() & "\"c & fileName)
+
       Try
-        Dim reportUtil As New ReportUtilities(user)
-        reportUtil.DownloadReportDefinition(reportDefinitionId, path)
+        Dim reportUtilities As New ReportUtilities(user)
+        ' If you know that your report is small enough to fit in memory, then
+        ' you can instead use
+        ' Dim report as ClientReport = reportUtilities.GetClientReport( _
+        '     new AdWordsAppConfig(), reportDefinitionId)
+        '
+        ' ' Binary report file (e.g. zip format)
+        ' byte[] reportBytes = report.Contents;
+        '
+        ' ' Text report file (e.g. xml format)
+        ' string reportText = report.Text;
+        reportUtilities.DownloadClientReport(reportDefinitionId, path)
         Console.WriteLine("Report with definition id '{0}' was downloaded to '{1}'.", _
             reportDefinitionId, path)
       Catch ex As Exception

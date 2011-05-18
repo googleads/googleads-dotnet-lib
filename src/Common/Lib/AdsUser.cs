@@ -35,6 +35,23 @@ namespace Google.Api.Ads.Common.Lib {
     List<SoapListener> listeners = new List<SoapListener>();
 
     /// <summary>
+    /// The application configuration for this user.
+    /// </summary>
+    private AppConfigBase config;
+
+    /// <summary>
+    /// Gets or sets the application configuration for this user.
+    /// </summary>
+    public AppConfigBase Config {
+      get {
+        return config;
+      }
+      set {
+        config = value;
+      }
+    }
+
+    /// <summary>
     /// Gets the listeners.
     /// </summary>
     public List<SoapListener> Listeners {
@@ -53,21 +70,38 @@ namespace Google.Api.Ads.Common.Lib {
     /// Protected constructor. Use this version from a derived class if you want
     /// the library to use all settings from App.config.
     /// </summary>
-    protected AdsUser() {
+    protected AdsUser(AppConfigBase config) : this (config, null) {
+    }
+
+    /// <summary>
+    /// Protected constructor. Use this version from a derived class if you want
+    /// the library to use all settings from App.config.
+    /// </summary>
+    /// <remarks>This constructor exists for backward compatibility purposes.
+    /// </remarks>
+    protected AdsUser(AppConfigBase config, Dictionary<string, string> headers) {
+      this.config = config;
+      MergeValuesFromHeaders(config, headers);
       RegisterServices(GetServiceTypes());
       listeners.AddRange(GetDefaultListeners());
       SetHeadersFromConfig();
     }
 
     /// <summary>
-    /// Protected parameterized constructor. Use this version if you want to
-    /// construct an AdsUser with a custom set of headers.
+    /// Merges the values from headers and config into config instance.
     /// </summary>
-    /// <param name="headers">The custom set of headers.</param>
-    protected AdsUser(Dictionary<string, string> headers) {
-      RegisterServices(GetServiceTypes());
-      listeners.AddRange(GetDefaultListeners());
-      SetHeaders(headers);
+    /// <param name="config">The appication configuration to use.</param>
+    /// <param name="headers">The configuration headers.</param>
+    private void MergeValuesFromHeaders(AppConfigBase config, Dictionary<string, string> headers) {
+      if (headers != null) {
+        Type configType = config.GetType();
+        foreach (string key in headers.Keys) {
+          PropertyInfo propInfo = configType.GetProperty(key);
+          if (propInfo != null) {
+            propInfo.SetValue(config, headers[key], null);
+          }
+        }
+      }
     }
 
     /// <summary>
@@ -143,18 +177,7 @@ namespace Google.Api.Ads.Common.Lib {
     protected void SetHeadersFromConfig() {
       List<ServiceFactory> uniqueFactories = GetUniqueFactories();
       foreach (ServiceFactory uniqueFactory in uniqueFactories) {
-        uniqueFactory.SetHeaders(uniqueFactory.ReadHeadersFromConfig(uniqueFactory.AppConfig));
-      }
-    }
-
-    /// <summary>
-    /// Set the user headers.
-    /// </summary>
-    /// <param name="headers">The headers as a set of key-value pairs.</param>
-    protected void SetHeaders(Dictionary<string, string> headers) {
-      List<ServiceFactory> uniqueFactories = GetUniqueFactories();
-      foreach (ServiceFactory uniqueFactory in uniqueFactories) {
-        uniqueFactory.SetHeaders(headers);
+        uniqueFactory.AppConfig = config;
       }
     }
 

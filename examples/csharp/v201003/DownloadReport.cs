@@ -15,11 +15,13 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.Util;
+using Google.Api.Ads.AdWords.Util.Reports;
 using Google.Api.Ads.AdWords.v201003;
+using Google.Api.Ads.Common.Lib;
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201003 {
@@ -61,9 +63,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201003 {
       string path = GetHomeDir() + '\\' + fileName;
 
       try {
-        // Download report.
-        new ReportUtilities(user).DownloadReportDefinition(reportDefinitionId, path);
-
+        // If you know that your report is small enough to fit in memory, then
+        // you can instead use
+        // ClientReport report = new ReportUtilities().GetClientReport(
+        //     new AdWordsAppConfig(), reportDefinitionId);
+        //
+        // // Binary report file (e.g. zip format)
+        // byte[] reportBytes = report.Contents;
+        //
+        // // Text report file (e.g. xml format)
+        // string reportText = report.Text;
+        new ReportUtilities(user).DownloadClientReport(reportDefinitionId, path);
         Console.WriteLine("Report with definition id '{0}' was downloaded to '{1}'.",
             reportDefinitionId, path);
       } catch (Exception ex) {

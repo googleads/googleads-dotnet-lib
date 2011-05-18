@@ -35,37 +35,12 @@ namespace Google.Api.Ads.AdWords.Lib {
     private Dictionary<string, SoapHeader> headers;
 
     /// <summary>
-    /// The config class to be used with this object.
-    /// </summary>
-    private AdWordsAppConfig config = new AdWordsAppConfig();
-
-    /// <summary>
     /// Gets a useragent string that can be used with the library.
     /// </summary>
     protected string Useragent {
       get {
-        return String.Join("", new string[] {config.Signature, "|", config.UserAgent});
-      }
-    }
-
-    /// <summary>
-    /// Gets an app.config reader suitable for this factory.
-    /// </summary>
-    public override AppConfigBase AppConfig {
-      get {
-        return config;
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the SOAP Headers.
-    /// </summary>
-    public Dictionary<string, SoapHeader> Headers {
-      get {
-        return headers;
-      }
-      set {
-        headers = value;
+        AdWordsAppConfig awConfig = (AdWordsAppConfig) AppConfig;
+        return String.Join("", new string[] {awConfig.Signature, "|", awConfig.UserAgent});
       }
     }
 
@@ -86,8 +61,9 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <returns>The service object.</returns>
     public override AdsClient CreateService(ServiceSignature signature, AdsUser user,
         Uri serverUrl) {
+      AdWordsAppConfig awConfig = (AdWordsAppConfig) AppConfig;
       if (serverUrl == null) {
-        serverUrl = new Uri(config.LegacyAdWordsApiServer);
+        serverUrl = new Uri(awConfig.LegacyAdWordsApiServer);
       }
 
       if (user == null) {
@@ -101,8 +77,7 @@ namespace Google.Api.Ads.AdWords.Lib {
       if (!(signature is LegacyAdwordsServiceSignature)) {
         throw new ArgumentException("Expecting a LegacyAdwordsApiServiceSignature object.");
       }
-      LegacyAdwordsServiceSignature awapiSignature =
-          (LegacyAdwordsServiceSignature) signature;
+      LegacyAdwordsServiceSignature awapiSignature = (LegacyAdwordsServiceSignature) signature;
 
       AdsClient service = (AdsClient) Activator.CreateInstance(awapiSignature.ServiceType);
 
@@ -118,10 +93,10 @@ namespace Google.Api.Ads.AdWords.Lib {
         }
       }
 
-      if (config.Proxy != null) {
-        service.Proxy = config.Proxy;
+      if (awConfig.Proxy != null) {
+        service.Proxy = awConfig.Proxy;
       }
-      service.Timeout = config.Timeout;
+      service.Timeout = awConfig.Timeout;
       service.Url = String.Join("", new string[] {serverUrl.AbsoluteUri, "api/adwords/",
           awapiSignature.Version, "/", awapiSignature.ServiceName});
 
@@ -130,53 +105,24 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
-    /// Create SOAP headers based on a set of key-value pairs.
-    /// </summary>
-    /// <param name="headers">A dictionary, with key-value pairs as headername,
-    /// headervalue.</param>
-    public override void SetHeaders(Dictionary<string, string> headers) {
-      this.headers = MakeSoapHeaders(headers);
-    }
-
-    /// <summary>
     /// Reads the headers from App.config.
     /// </summary>
     /// <param name="config">The configuration class.</param>
-    /// <returns>A dictionary, with key-value pairs as headername, headervalue.</returns>
-    public override Dictionary<string, string> ReadHeadersFromConfig(AppConfigBase config) {
+    protected override void ReadHeadersFromConfig(AppConfigBase config) {
       AdWordsAppConfig awConfig = (AdWordsAppConfig) config;
-      Dictionary<string, string> configHeaders = new Dictionary<string, string>();
-      configHeaders["email"] = awConfig.Email;
-      configHeaders["password"] = awConfig.Password;
-      configHeaders["useragent"] = Useragent;
-      configHeaders["developerToken"] = awConfig.DeveloperToken;
-      configHeaders["applicationToken"] = awConfig.ApplicationToken;
-      configHeaders["clientEmail"] = awConfig.ClientEmail;
-      if (!string.IsNullOrEmpty(awConfig.ClientCustomerId)) {
-        configHeaders["clientCustomerId"] = awConfig.ClientCustomerId;
+      this.headers = new Dictionary<string, SoapHeader>();
+      this.headers["emailValue"] = MakeSoapHeader("email", awConfig.Email);
+      this.headers["passwordValue"] = MakeSoapHeader("password", awConfig.Password);
+      this.headers["clientEmailValue"] = MakeSoapHeader("clientEmail", awConfig.ClientEmail);
+      if (string.IsNullOrEmpty(awConfig.ClientCustomerId)) {
+        this.headers["clientCustomerIdValue"] = MakeSoapHeader("clientCustomerId",
+            awConfig.ClientCustomerId);
       }
-      return configHeaders;
-    }
-
-    /// <summary>
-    /// Convert a dictionary of string header values to SoapHeader objects.
-    /// </summary>
-    /// <param name="headers">The dictionary, with key as the header field name
-    /// and value as the header value.</param>
-    /// <returns>A dictionary, with key as header field name and value as a
-    /// SoapHeader object.</returns>
-    /// <remarks>This function is used by the constructors that accept header
-    /// values as string rather than SoapHeader objects.</remarks>
-    private static Dictionary<string, SoapHeader> MakeSoapHeaders(
-        Dictionary<string, string> headers) {
-      Dictionary<string, SoapHeader> soapHeaders = new Dictionary<string, SoapHeader>();
-      foreach (string key in headers.Keys) {
-        SoapHeader soapHeader = MakeSoapHeader(key, headers[key]);
-        if (soapHeader != null) {
-          soapHeaders[key + "Value"] = soapHeader;
-        }
-      }
-      return soapHeaders;
+      this.headers["developerTokenValue"] = MakeSoapHeader("developerToken",
+          awConfig.DeveloperToken);
+      this.headers["applicationTokenValue"] = MakeSoapHeader("applicationToken",
+          awConfig.ApplicationToken);
+      this.headers["useragentValue"] = MakeSoapHeader("useragent", Useragent);
     }
 
     /// <summary>

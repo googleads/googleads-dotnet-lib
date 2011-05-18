@@ -80,10 +80,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201003 {
             new CampaignCriterionOperation[]{operation});
         if (retVal != null && retVal.value != null) {
           foreach (CampaignCriterion campaignCriterion in retVal.value) {
-            Keyword tempKeyword = (Keyword)campaignCriterion.criterion;
+            Keyword negativeKeyword = (Keyword) campaignCriterion.criterion;
 
             Console.WriteLine("New negative campaign criterion with id = '{0}' and text = '{1}'" +
-                " was added to campaign with id = '{2}'.", tempKeyword.id,  tempKeyword.text,
+                " was added to campaign with id = '{2}'.", negativeKeyword.id, negativeKeyword.text,
                 campaignCriterion.campaignId);
           }
         } else {

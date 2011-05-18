@@ -15,12 +15,13 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 namespace Google.Api.Ads.AdWords.v201101 {
+  using Google.Api.Ads.AdWords.Headers;
   using Google.Api.Ads.AdWords.Lib;
 
+  using System.Web.Services.Protocols;
   using System;
   using System.ComponentModel;
   using System.Diagnostics;
-  using System.Web.Services.Protocols;
   using System.Web.Services;
   using System.Xml.Serialization;
 
@@ -42,21 +43,13 @@ namespace Google.Api.Ads.AdWords.v201101 {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -100,12 +93,8 @@ CampaignCriterionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("ListReturnValue.Type")]
     public string ListReturnValueType {
-      get {
-        return this.listReturnValueTypeField;
-      }
-      set {
-        this.listReturnValueTypeField = value;
-      }
+      get { return this.listReturnValueTypeField; }
+      set { this.listReturnValueTypeField = value; }
     }
   }
 
@@ -119,12 +108,8 @@ CampaignCriterionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public CampaignCriterion[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -144,9 +129,7 @@ CampaignCriterionOperation[] operations) {
     private string campaignCriterionTypeField;
 
     public long campaignId {
-      get {
-        return this.campaignIdField;
-      }
+      get { return this.campaignIdField; }
       set {
         this.campaignIdField = value;
         this.campaignIdSpecified = true;
@@ -156,31 +139,19 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool campaignIdSpecified {
-      get {
-        return this.campaignIdFieldSpecified;
-      }
-      set {
-        this.campaignIdFieldSpecified = value;
-      }
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
     }
 
     public Criterion criterion {
-      get {
-        return this.criterionField;
-      }
-      set {
-        this.criterionField = value;
-      }
+      get { return this.criterionField; }
+      set { this.criterionField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("CampaignCriterion.Type")]
     public string CampaignCriterionType {
-      get {
-        return this.campaignCriterionTypeField;
-      }
-      set {
-        this.campaignCriterionTypeField = value;
-      }
+      get { return this.campaignCriterionTypeField; }
+      set { this.campaignCriterionTypeField = value; }
     }
   }
 
@@ -204,9 +175,7 @@ CampaignCriterionOperation[] operations) {
     private string criterionTypeField;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -216,22 +185,14 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("Criterion.Type")]
     public string CriterionType {
-      get {
-        return this.criterionTypeField;
-      }
-      set {
-        this.criterionTypeField = value;
-      }
+      get { return this.criterionTypeField; }
+      set { this.criterionTypeField = value; }
     }
   }
 
@@ -245,12 +206,8 @@ CampaignCriterionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("path")]
     public string[] path {
-      get {
-        return this.pathField;
-      }
-      set {
-        this.pathField = value;
-      }
+      get { return this.pathField; }
+      set { this.pathField = value; }
     }
   }
 
@@ -271,9 +228,7 @@ CampaignCriterionOperation[] operations) {
     private bool userListMembershipStatusFieldSpecified;
 
     public long userListId {
-      get {
-        return this.userListIdField;
-      }
+      get { return this.userListIdField; }
       set {
         this.userListIdField = value;
         this.userListIdSpecified = true;
@@ -283,27 +238,17 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool userListIdSpecified {
-      get {
-        return this.userListIdFieldSpecified;
-      }
-      set {
-        this.userListIdFieldSpecified = value;
-      }
+      get { return this.userListIdFieldSpecified; }
+      set { this.userListIdFieldSpecified = value; }
     }
 
     public string userListName {
-      get {
-        return this.userListNameField;
-      }
-      set {
-        this.userListNameField = value;
-      }
+      get { return this.userListNameField; }
+      set { this.userListNameField = value; }
     }
 
     public CriterionUserListMembershipStatus userListMembershipStatus {
-      get {
-        return this.userListMembershipStatusField;
-      }
+      get { return this.userListMembershipStatusField; }
       set {
         this.userListMembershipStatusField = value;
         this.userListMembershipStatusSpecified = true;
@@ -313,12 +258,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool userListMembershipStatusSpecified {
-      get {
-        return this.userListMembershipStatusFieldSpecified;
-      }
-      set {
-        this.userListMembershipStatusFieldSpecified = value;
-      }
+      get { return this.userListMembershipStatusFieldSpecified; }
+      set { this.userListMembershipStatusFieldSpecified = value; }
     }
   }
 
@@ -343,9 +284,7 @@ CampaignCriterionOperation[] operations) {
     private string userInterestNameField;
 
     public long userInterestId {
-      get {
-        return this.userInterestIdField;
-      }
+      get { return this.userInterestIdField; }
       set {
         this.userInterestIdField = value;
         this.userInterestIdSpecified = true;
@@ -355,21 +294,13 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool userInterestIdSpecified {
-      get {
-        return this.userInterestIdFieldSpecified;
-      }
-      set {
-        this.userInterestIdFieldSpecified = value;
-      }
+      get { return this.userInterestIdFieldSpecified; }
+      set { this.userInterestIdFieldSpecified = value; }
     }
 
     public string userInterestName {
-      get {
-        return this.userInterestNameField;
-      }
-      set {
-        this.userInterestNameField = value;
-      }
+      get { return this.userInterestNameField; }
+      set { this.userInterestNameField = value; }
     }
   }
 
@@ -385,21 +316,13 @@ CampaignCriterionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("conditions")]
     public ProductCondition[] conditions {
-      get {
-        return this.conditionsField;
-      }
-      set {
-        this.conditionsField = value;
-      }
+      get { return this.conditionsField; }
+      set { this.conditionsField = value; }
     }
 
     public string text {
-      get {
-        return this.textField;
-      }
-      set {
-        this.textField = value;
-      }
+      get { return this.textField; }
+      set { this.textField = value; }
     }
   }
 
@@ -414,21 +337,13 @@ CampaignCriterionOperation[] operations) {
     private ProductConditionOperand operandField;
 
     public string argument {
-      get {
-        return this.argumentField;
-      }
-      set {
-        this.argumentField = value;
-      }
+      get { return this.argumentField; }
+      set { this.argumentField = value; }
     }
 
     public ProductConditionOperand operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -441,12 +356,8 @@ CampaignCriterionOperation[] operations) {
     private string operandField;
 
     public string operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -459,12 +370,8 @@ CampaignCriterionOperation[] operations) {
     private string urlField;
 
     public string url {
-      get {
-        return this.urlField;
-      }
-      set {
-        this.urlField = value;
-      }
+      get { return this.urlField; }
+      set { this.urlField = value; }
     }
   }
 
@@ -481,18 +388,12 @@ CampaignCriterionOperation[] operations) {
     private bool matchTypeFieldSpecified;
 
     public string text {
-      get {
-        return this.textField;
-      }
-      set {
-        this.textField = value;
-      }
+      get { return this.textField; }
+      set { this.textField = value; }
     }
 
     public KeywordMatchType matchType {
-      get {
-        return this.matchTypeField;
-      }
+      get { return this.matchTypeField; }
       set {
         this.matchTypeField = value;
         this.matchTypeSpecified = true;
@@ -502,12 +403,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool matchTypeSpecified {
-      get {
-        return this.matchTypeFieldSpecified;
-      }
-      set {
-        this.matchTypeFieldSpecified = value;
-      }
+      get { return this.matchTypeFieldSpecified; }
+      set { this.matchTypeFieldSpecified = value; }
     }
   }
 
@@ -531,9 +428,7 @@ CampaignCriterionOperation[] operations) {
     private bool contentLabelTypeFieldSpecified;
 
     public ContentLabelType contentLabelType {
-      get {
-        return this.contentLabelTypeField;
-      }
+      get { return this.contentLabelTypeField; }
       set {
         this.contentLabelTypeField = value;
         this.contentLabelTypeSpecified = true;
@@ -543,12 +438,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool contentLabelTypeSpecified {
-      get {
-        return this.contentLabelTypeFieldSpecified;
-      }
-      set {
-        this.contentLabelTypeFieldSpecified = value;
-      }
+      get { return this.contentLabelTypeFieldSpecified; }
+      set { this.contentLabelTypeFieldSpecified = value; }
     }
   }
 
@@ -609,9 +500,7 @@ CampaignCriterionOperation[] operations) {
     private string operationTypeField;
 
     public Operator @operator {
-      get {
-        return this.operatorField;
-      }
+      get { return this.operatorField; }
       set {
         this.operatorField = value;
         this.operatorSpecified = true;
@@ -621,22 +510,14 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool operatorSpecified {
-      get {
-        return this.operatorFieldSpecified;
-      }
-      set {
-        this.operatorFieldSpecified = value;
-      }
+      get { return this.operatorFieldSpecified; }
+      set { this.operatorFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("Operation.Type")]
     public string OperationType {
-      get {
-        return this.operationTypeField;
-      }
-      set {
-        this.operationTypeField = value;
-      }
+      get { return this.operationTypeField; }
+      set { this.operationTypeField = value; }
     }
   }
 
@@ -658,12 +539,8 @@ CampaignCriterionOperation[] operations) {
     private CampaignCriterion operandField;
 
     public CampaignCriterion operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -695,9 +572,7 @@ CampaignCriterionOperation[] operations) {
     private string pageTypeField;
 
     public int totalNumEntries {
-      get {
-        return this.totalNumEntriesField;
-      }
+      get { return this.totalNumEntriesField; }
       set {
         this.totalNumEntriesField = value;
         this.totalNumEntriesSpecified = true;
@@ -707,22 +582,14 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool totalNumEntriesSpecified {
-      get {
-        return this.totalNumEntriesFieldSpecified;
-      }
-      set {
-        this.totalNumEntriesFieldSpecified = value;
-      }
+      get { return this.totalNumEntriesFieldSpecified; }
+      set { this.totalNumEntriesFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("Page.Type")]
     public string PageType {
-      get {
-        return this.pageTypeField;
-      }
-      set {
-        this.pageTypeField = value;
-      }
+      get { return this.pageTypeField; }
+      set { this.pageTypeField = value; }
     }
   }
 
@@ -736,12 +603,8 @@ CampaignCriterionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public CampaignCriterion[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -760,9 +623,7 @@ CampaignCriterionOperation[] operations) {
     private bool numberResultsFieldSpecified;
 
     public int startIndex {
-      get {
-        return this.startIndexField;
-      }
+      get { return this.startIndexField; }
       set {
         this.startIndexField = value;
         this.startIndexSpecified = true;
@@ -772,18 +633,12 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool startIndexSpecified {
-      get {
-        return this.startIndexFieldSpecified;
-      }
-      set {
-        this.startIndexFieldSpecified = value;
-      }
+      get { return this.startIndexFieldSpecified; }
+      set { this.startIndexFieldSpecified = value; }
     }
 
     public int numberResults {
-      get {
-        return this.numberResultsField;
-      }
+      get { return this.numberResultsField; }
       set {
         this.numberResultsField = value;
         this.numberResultsSpecified = true;
@@ -793,12 +648,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool numberResultsSpecified {
-      get {
-        return this.numberResultsFieldSpecified;
-      }
-      set {
-        this.numberResultsFieldSpecified = value;
-      }
+      get { return this.numberResultsFieldSpecified; }
+      set { this.numberResultsFieldSpecified = value; }
     }
   }
 
@@ -815,18 +666,12 @@ CampaignCriterionOperation[] operations) {
     private bool sortOrderFieldSpecified;
 
     public string field {
-      get {
-        return this.fieldField;
-      }
-      set {
-        this.fieldField = value;
-      }
+      get { return this.fieldField; }
+      set { this.fieldField = value; }
     }
 
     public SortOrder sortOrder {
-      get {
-        return this.sortOrderField;
-      }
+      get { return this.sortOrderField; }
       set {
         this.sortOrderField = value;
         this.sortOrderSpecified = true;
@@ -836,12 +681,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool sortOrderSpecified {
-      get {
-        return this.sortOrderFieldSpecified;
-      }
-      set {
-        this.sortOrderFieldSpecified = value;
-      }
+      get { return this.sortOrderFieldSpecified; }
+      set { this.sortOrderFieldSpecified = value; }
     }
   }
 
@@ -864,21 +705,13 @@ CampaignCriterionOperation[] operations) {
     private string maxField;
 
     public string min {
-      get {
-        return this.minField;
-      }
-      set {
-        this.minField = value;
-      }
+      get { return this.minField; }
+      set { this.minField = value; }
     }
 
     public string max {
-      get {
-        return this.maxField;
-      }
-      set {
-        this.maxField = value;
-      }
+      get { return this.maxField; }
+      set { this.maxField = value; }
     }
   }
 
@@ -897,18 +730,12 @@ CampaignCriterionOperation[] operations) {
     private string[] valuesField;
 
     public string field {
-      get {
-        return this.fieldField;
-      }
-      set {
-        this.fieldField = value;
-      }
+      get { return this.fieldField; }
+      set { this.fieldField = value; }
     }
 
     public PredicateOperator @operator {
-      get {
-        return this.operatorField;
-      }
+      get { return this.operatorField; }
       set {
         this.operatorField = value;
         this.operatorSpecified = true;
@@ -918,22 +745,14 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool operatorSpecified {
-      get {
-        return this.operatorFieldSpecified;
-      }
-      set {
-        this.operatorFieldSpecified = value;
-      }
+      get { return this.operatorFieldSpecified; }
+      set { this.operatorFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("values")]
     public string[] values {
-      get {
-        return this.valuesField;
-      }
-      set {
-        this.valuesField = value;
-      }
+      get { return this.valuesField; }
+      set { this.valuesField = value; }
     }
   }
 
@@ -976,50 +795,30 @@ CampaignCriterionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("fields")]
     public string[] fields {
-      get {
-        return this.fieldsField;
-      }
-      set {
-        this.fieldsField = value;
-      }
+      get { return this.fieldsField; }
+      set { this.fieldsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("predicates")]
     public Predicate[] predicates {
-      get {
-        return this.predicatesField;
-      }
-      set {
-        this.predicatesField = value;
-      }
+      get { return this.predicatesField; }
+      set { this.predicatesField = value; }
     }
 
     public DateRange dateRange {
-      get {
-        return this.dateRangeField;
-      }
-      set {
-        this.dateRangeField = value;
-      }
+      get { return this.dateRangeField; }
+      set { this.dateRangeField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("ordering")]
     public OrderBy[] ordering {
-      get {
-        return this.orderingField;
-      }
-      set {
-        this.orderingField = value;
-      }
+      get { return this.orderingField; }
+      set { this.orderingField = value; }
     }
 
     public Paging paging {
-      get {
-        return this.pagingField;
-      }
-      set {
-        this.pagingField = value;
-      }
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
     }
   }
 
@@ -1114,40 +913,24 @@ CampaignCriterionOperation[] operations) {
     private string apiErrorTypeField;
 
     public string fieldPath {
-      get {
-        return this.fieldPathField;
-      }
-      set {
-        this.fieldPathField = value;
-      }
+      get { return this.fieldPathField; }
+      set { this.fieldPathField = value; }
     }
 
     public string trigger {
-      get {
-        return this.triggerField;
-      }
-      set {
-        this.triggerField = value;
-      }
+      get { return this.triggerField; }
+      set { this.triggerField = value; }
     }
 
     public string errorString {
-      get {
-        return this.errorStringField;
-      }
-      set {
-        this.errorStringField = value;
-      }
+      get { return this.errorStringField; }
+      set { this.errorStringField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("ApiError.Type")]
     public string ApiErrorType {
-      get {
-        return this.apiErrorTypeField;
-      }
-      set {
-        this.apiErrorTypeField = value;
-      }
+      get { return this.apiErrorTypeField; }
+      set { this.apiErrorTypeField = value; }
     }
   }
 
@@ -1162,9 +945,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public SizeLimitErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1174,12 +955,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1203,9 +980,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public SelectorErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1215,12 +990,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1252,9 +1023,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public RequiredErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1264,12 +1033,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1291,9 +1056,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public RequestErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1303,12 +1066,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1331,9 +1090,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public ReadOnlyErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1343,12 +1100,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1378,9 +1131,7 @@ CampaignCriterionOperation[] operations) {
     private bool retryAfterSecondsFieldSpecified;
 
     public RateExceededErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1390,36 +1141,22 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
 
     public string rateName {
-      get {
-        return this.rateNameField;
-      }
-      set {
-        this.rateNameField = value;
-      }
+      get { return this.rateNameField; }
+      set { this.rateNameField = value; }
     }
 
     public string rateScope {
-      get {
-        return this.rateScopeField;
-      }
-      set {
-        this.rateScopeField = value;
-      }
+      get { return this.rateScopeField; }
+      set { this.rateScopeField = value; }
     }
 
     public int retryAfterSeconds {
-      get {
-        return this.retryAfterSecondsField;
-      }
+      get { return this.retryAfterSecondsField; }
       set {
         this.retryAfterSecondsField = value;
         this.retryAfterSecondsSpecified = true;
@@ -1429,12 +1166,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool retryAfterSecondsSpecified {
-      get {
-        return this.retryAfterSecondsFieldSpecified;
-      }
-      set {
-        this.retryAfterSecondsFieldSpecified = value;
-      }
+      get { return this.retryAfterSecondsFieldSpecified; }
+      set { this.retryAfterSecondsFieldSpecified = value; }
     }
   }
 
@@ -1456,9 +1189,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public RangeErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1468,12 +1199,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1496,9 +1223,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public QuotaCheckErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1508,12 +1233,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1546,9 +1267,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public PagingErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1558,12 +1277,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1587,9 +1302,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public OperatorErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1599,12 +1312,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1626,9 +1335,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public OperationAccessDeniedReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1638,12 +1345,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1670,9 +1373,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public NullErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1682,12 +1383,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1709,9 +1406,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public NotWhitelistedErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1721,12 +1416,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1748,9 +1439,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public NotEmptyErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1760,12 +1449,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1787,9 +1472,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public NewEntityCreationErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1799,12 +1482,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1826,9 +1505,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public InternalApiErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1838,12 +1515,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1866,9 +1539,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public EntityNotFoundReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1878,12 +1549,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -1914,9 +1581,7 @@ CampaignCriterionOperation[] operations) {
     private bool limitFieldSpecified;
 
     public EntityCountLimitExceededReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -1926,27 +1591,17 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
 
     public string enclosingId {
-      get {
-        return this.enclosingIdField;
-      }
-      set {
-        this.enclosingIdField = value;
-      }
+      get { return this.enclosingIdField; }
+      set { this.enclosingIdField = value; }
     }
 
     public int limit {
-      get {
-        return this.limitField;
-      }
+      get { return this.limitField; }
       set {
         this.limitField = value;
         this.limitSpecified = true;
@@ -1956,12 +1611,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool limitSpecified {
-      get {
-        return this.limitFieldSpecified;
-      }
-      set {
-        this.limitFieldSpecified = value;
-      }
+      get { return this.limitFieldSpecified; }
+      set { this.limitFieldSpecified = value; }
     }
   }
 
@@ -1988,9 +1639,7 @@ CampaignCriterionOperation[] operations) {
     private bool limitTypeFieldSpecified;
 
     public CampaignCriterionLimitExceededCriteriaLimitType limitType {
-      get {
-        return this.limitTypeField;
-      }
+      get { return this.limitTypeField; }
       set {
         this.limitTypeField = value;
         this.limitTypeSpecified = true;
@@ -2000,12 +1649,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool limitTypeSpecified {
-      get {
-        return this.limitTypeFieldSpecified;
-      }
-      set {
-        this.limitTypeFieldSpecified = value;
-      }
+      get { return this.limitTypeFieldSpecified; }
+      set { this.limitTypeFieldSpecified = value; }
     }
   }
 
@@ -2029,9 +1674,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public DistinctErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -2041,12 +1684,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -2069,9 +1708,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public DatabaseErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -2081,12 +1718,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -2113,9 +1746,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public CriterionErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -2125,12 +1756,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -2170,9 +1797,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public ClientTermsErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -2182,12 +1807,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -2209,9 +1830,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public CampaignCriterionErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -2221,12 +1840,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -2257,9 +1872,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public AuthorizationErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -2269,12 +1882,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -2301,9 +1910,7 @@ CampaignCriterionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public AuthenticationErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -2313,12 +1920,8 @@ CampaignCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -2361,22 +1964,14 @@ CampaignCriterionOperation[] operations) {
     private string applicationExceptionTypeField;
 
     public string message {
-      get {
-        return this.messageField;
-      }
-      set {
-        this.messageField = value;
-      }
+      get { return this.messageField; }
+      set { this.messageField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("ApplicationException.Type")]
     public string ApplicationExceptionType {
-      get {
-        return this.applicationExceptionTypeField;
-      }
-      set {
-        this.applicationExceptionTypeField = value;
-      }
+      get { return this.applicationExceptionTypeField; }
+      set { this.applicationExceptionTypeField = value; }
     }
   }
 
@@ -2390,12 +1985,8 @@ CampaignCriterionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("errors")]
     public ApiError[] errors {
-      get {
-        return this.errorsField;
-      }
-      set {
-        this.errorsField = value;
-      }
+      get { return this.errorsField; }
+      set { this.errorsField = value; }
     }
   }
 
@@ -2419,21 +2010,13 @@ CampaignCriterionOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -2466,12 +2049,8 @@ CampaignOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public Campaign[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -2518,9 +2097,7 @@ CampaignOperation[] operations) {
     private NetworkSetting networkSettingField;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -2530,27 +2107,17 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public CampaignStatus status {
-      get {
-        return this.statusField;
-      }
+      get { return this.statusField; }
       set {
         this.statusField = value;
         this.statusSpecified = true;
@@ -2560,18 +2127,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool statusSpecified {
-      get {
-        return this.statusFieldSpecified;
-      }
-      set {
-        this.statusFieldSpecified = value;
-      }
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
     }
 
     public ServingStatus servingStatus {
-      get {
-        return this.servingStatusField;
-      }
+      get { return this.servingStatusField; }
       set {
         this.servingStatusField = value;
         this.servingStatusSpecified = true;
@@ -2581,72 +2142,42 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool servingStatusSpecified {
-      get {
-        return this.servingStatusFieldSpecified;
-      }
-      set {
-        this.servingStatusFieldSpecified = value;
-      }
+      get { return this.servingStatusFieldSpecified; }
+      set { this.servingStatusFieldSpecified = value; }
     }
 
     public string startDate {
-      get {
-        return this.startDateField;
-      }
-      set {
-        this.startDateField = value;
-      }
+      get { return this.startDateField; }
+      set { this.startDateField = value; }
     }
 
     public string endDate {
-      get {
-        return this.endDateField;
-      }
-      set {
-        this.endDateField = value;
-      }
+      get { return this.endDateField; }
+      set { this.endDateField = value; }
     }
 
     public Budget budget {
-      get {
-        return this.budgetField;
-      }
-      set {
-        this.budgetField = value;
-      }
+      get { return this.budgetField; }
+      set { this.budgetField = value; }
     }
 
     public BiddingStrategy biddingStrategy {
-      get {
-        return this.biddingStrategyField;
-      }
-      set {
-        this.biddingStrategyField = value;
-      }
+      get { return this.biddingStrategyField; }
+      set { this.biddingStrategyField = value; }
     }
 
     public ConversionOptimizerEligibility conversionOptimizerEligibility {
-      get {
-        return this.conversionOptimizerEligibilityField;
-      }
-      set {
-        this.conversionOptimizerEligibilityField = value;
-      }
+      get { return this.conversionOptimizerEligibilityField; }
+      set { this.conversionOptimizerEligibilityField = value; }
     }
 
     public CampaignStats campaignStats {
-      get {
-        return this.campaignStatsField;
-      }
-      set {
-        this.campaignStatsField = value;
-      }
+      get { return this.campaignStatsField; }
+      set { this.campaignStatsField = value; }
     }
 
     public AdServingOptimizationStatus adServingOptimizationStatus {
-      get {
-        return this.adServingOptimizationStatusField;
-      }
+      get { return this.adServingOptimizationStatusField; }
       set {
         this.adServingOptimizationStatusField = value;
         this.adServingOptimizationStatusSpecified = true;
@@ -2656,40 +2187,24 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adServingOptimizationStatusSpecified {
-      get {
-        return this.adServingOptimizationStatusFieldSpecified;
-      }
-      set {
-        this.adServingOptimizationStatusFieldSpecified = value;
-      }
+      get { return this.adServingOptimizationStatusFieldSpecified; }
+      set { this.adServingOptimizationStatusFieldSpecified = value; }
     }
 
     public FrequencyCap frequencyCap {
-      get {
-        return this.frequencyCapField;
-      }
-      set {
-        this.frequencyCapField = value;
-      }
+      get { return this.frequencyCapField; }
+      set { this.frequencyCapField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("settings")]
     public Setting[] settings {
-      get {
-        return this.settingsField;
-      }
-      set {
-        this.settingsField = value;
-      }
+      get { return this.settingsField; }
+      set { this.settingsField = value; }
     }
 
     public NetworkSetting networkSetting {
-      get {
-        return this.networkSettingField;
-      }
-      set {
-        this.networkSettingField = value;
-      }
+      get { return this.networkSettingField; }
+      set { this.networkSettingField = value; }
     }
   }
 
@@ -2730,9 +2245,7 @@ CampaignOperation[] operations) {
     private bool deliveryMethodFieldSpecified;
 
     public BudgetBudgetPeriod period {
-      get {
-        return this.periodField;
-      }
+      get { return this.periodField; }
       set {
         this.periodField = value;
         this.periodSpecified = true;
@@ -2742,27 +2255,17 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool periodSpecified {
-      get {
-        return this.periodFieldSpecified;
-      }
-      set {
-        this.periodFieldSpecified = value;
-      }
+      get { return this.periodFieldSpecified; }
+      set { this.periodFieldSpecified = value; }
     }
 
     public Money amount {
-      get {
-        return this.amountField;
-      }
-      set {
-        this.amountField = value;
-      }
+      get { return this.amountField; }
+      set { this.amountField = value; }
     }
 
     public BudgetBudgetDeliveryMethod deliveryMethod {
-      get {
-        return this.deliveryMethodField;
-      }
+      get { return this.deliveryMethodField; }
       set {
         this.deliveryMethodField = value;
         this.deliveryMethodSpecified = true;
@@ -2772,12 +2275,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool deliveryMethodSpecified {
-      get {
-        return this.deliveryMethodFieldSpecified;
-      }
-      set {
-        this.deliveryMethodFieldSpecified = value;
-      }
+      get { return this.deliveryMethodFieldSpecified; }
+      set { this.deliveryMethodFieldSpecified = value; }
     }
   }
 
@@ -2800,9 +2299,7 @@ CampaignOperation[] operations) {
     private bool microAmountFieldSpecified;
 
     public long microAmount {
-      get {
-        return this.microAmountField;
-      }
+      get { return this.microAmountField; }
       set {
         this.microAmountField = value;
         this.microAmountSpecified = true;
@@ -2812,12 +2309,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool microAmountSpecified {
-      get {
-        return this.microAmountFieldSpecified;
-      }
-      set {
-        this.microAmountFieldSpecified = value;
-      }
+      get { return this.microAmountFieldSpecified; }
+      set { this.microAmountFieldSpecified = value; }
     }
   }
 
@@ -2835,12 +2328,8 @@ CampaignOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("ComparableValue.Type")]
     public string ComparableValueType {
-      get {
-        return this.comparableValueTypeField;
-      }
-      set {
-        this.comparableValueTypeField = value;
-      }
+      get { return this.comparableValueTypeField; }
+      set { this.comparableValueTypeField = value; }
     }
   }
 
@@ -2865,9 +2354,7 @@ CampaignOperation[] operations) {
     private bool numberFieldSpecified;
 
     public long number {
-      get {
-        return this.numberField;
-      }
+      get { return this.numberField; }
       set {
         this.numberField = value;
         this.numberSpecified = true;
@@ -2877,12 +2364,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool numberSpecified {
-      get {
-        return this.numberFieldSpecified;
-      }
-      set {
-        this.numberFieldSpecified = value;
-      }
+      get { return this.numberFieldSpecified; }
+      set { this.numberFieldSpecified = value; }
     }
   }
 
@@ -2897,9 +2380,7 @@ CampaignOperation[] operations) {
     private bool numberFieldSpecified;
 
     public double number {
-      get {
-        return this.numberField;
-      }
+      get { return this.numberField; }
       set {
         this.numberField = value;
         this.numberSpecified = true;
@@ -2909,12 +2390,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool numberSpecified {
-      get {
-        return this.numberFieldSpecified;
-      }
-      set {
-        this.numberFieldSpecified = value;
-      }
+      get { return this.numberFieldSpecified; }
+      set { this.numberFieldSpecified = value; }
     }
   }
 
@@ -2941,12 +2418,8 @@ CampaignOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("BiddingStrategy.Type")]
     public string BiddingStrategyType {
-      get {
-        return this.biddingStrategyTypeField;
-      }
-      set {
-        this.biddingStrategyTypeField = value;
-      }
+      get { return this.biddingStrategyTypeField; }
+      set { this.biddingStrategyTypeField = value; }
     }
   }
 
@@ -2963,9 +2436,7 @@ CampaignOperation[] operations) {
     private Money bidCeilingField;
 
     public bool enhancedCpcEnabled {
-      get {
-        return this.enhancedCpcEnabledField;
-      }
+      get { return this.enhancedCpcEnabledField; }
       set {
         this.enhancedCpcEnabledField = value;
         this.enhancedCpcEnabledSpecified = true;
@@ -2975,21 +2446,13 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool enhancedCpcEnabledSpecified {
-      get {
-        return this.enhancedCpcEnabledFieldSpecified;
-      }
-      set {
-        this.enhancedCpcEnabledFieldSpecified = value;
-      }
+      get { return this.enhancedCpcEnabledFieldSpecified; }
+      set { this.enhancedCpcEnabledFieldSpecified = value; }
     }
 
     public Money bidCeiling {
-      get {
-        return this.bidCeilingField;
-      }
-      set {
-        this.bidCeilingField = value;
-      }
+      get { return this.bidCeilingField; }
+      set { this.bidCeilingField = value; }
     }
   }
 
@@ -3024,9 +2487,7 @@ CampaignOperation[] operations) {
     private bool positionPreferenceFieldSpecified;
 
     public bool enhancedCpcEnabled {
-      get {
-        return this.enhancedCpcEnabledField;
-      }
+      get { return this.enhancedCpcEnabledField; }
       set {
         this.enhancedCpcEnabledField = value;
         this.enhancedCpcEnabledSpecified = true;
@@ -3036,18 +2497,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool enhancedCpcEnabledSpecified {
-      get {
-        return this.enhancedCpcEnabledFieldSpecified;
-      }
-      set {
-        this.enhancedCpcEnabledFieldSpecified = value;
-      }
+      get { return this.enhancedCpcEnabledFieldSpecified; }
+      set { this.enhancedCpcEnabledFieldSpecified = value; }
     }
 
     public PositionPreference positionPreference {
-      get {
-        return this.positionPreferenceField;
-      }
+      get { return this.positionPreferenceField; }
       set {
         this.positionPreferenceField = value;
         this.positionPreferenceSpecified = true;
@@ -3057,12 +2512,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool positionPreferenceSpecified {
-      get {
-        return this.positionPreferenceFieldSpecified;
-      }
-      set {
-        this.positionPreferenceFieldSpecified = value;
-      }
+      get { return this.positionPreferenceFieldSpecified; }
+      set { this.positionPreferenceFieldSpecified = value; }
     }
   }
 
@@ -3093,9 +2544,7 @@ CampaignOperation[] operations) {
     private bool deduplicationModeFieldSpecified;
 
     public PricingModel pricingModel {
-      get {
-        return this.pricingModelField;
-      }
+      get { return this.pricingModelField; }
       set {
         this.pricingModelField = value;
         this.pricingModelSpecified = true;
@@ -3105,18 +2554,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool pricingModelSpecified {
-      get {
-        return this.pricingModelFieldSpecified;
-      }
-      set {
-        this.pricingModelFieldSpecified = value;
-      }
+      get { return this.pricingModelFieldSpecified; }
+      set { this.pricingModelFieldSpecified = value; }
     }
 
     public ConversionOptimizerBidType conversionOptimizerBidType {
-      get {
-        return this.conversionOptimizerBidTypeField;
-      }
+      get { return this.conversionOptimizerBidTypeField; }
       set {
         this.conversionOptimizerBidTypeField = value;
         this.conversionOptimizerBidTypeSpecified = true;
@@ -3126,18 +2569,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool conversionOptimizerBidTypeSpecified {
-      get {
-        return this.conversionOptimizerBidTypeFieldSpecified;
-      }
-      set {
-        this.conversionOptimizerBidTypeFieldSpecified = value;
-      }
+      get { return this.conversionOptimizerBidTypeFieldSpecified; }
+      set { this.conversionOptimizerBidTypeFieldSpecified = value; }
     }
 
     public ConversionDeduplicationMode deduplicationMode {
-      get {
-        return this.deduplicationModeField;
-      }
+      get { return this.deduplicationModeField; }
       set {
         this.deduplicationModeField = value;
         this.deduplicationModeSpecified = true;
@@ -3147,12 +2584,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool deduplicationModeSpecified {
-      get {
-        return this.deduplicationModeFieldSpecified;
-      }
-      set {
-        this.deduplicationModeFieldSpecified = value;
-      }
+      get { return this.deduplicationModeFieldSpecified; }
+      set { this.deduplicationModeFieldSpecified = value; }
     }
   }
 
@@ -3194,9 +2627,7 @@ CampaignOperation[] operations) {
     private ConversionOptimizerEligibilityRejectionReason[] rejectionReasonsField;
 
     public bool eligible {
-      get {
-        return this.eligibleField;
-      }
+      get { return this.eligibleField; }
       set {
         this.eligibleField = value;
         this.eligibleSpecified = true;
@@ -3206,22 +2637,14 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool eligibleSpecified {
-      get {
-        return this.eligibleFieldSpecified;
-      }
-      set {
-        this.eligibleFieldSpecified = value;
-      }
+      get { return this.eligibleFieldSpecified; }
+      set { this.eligibleFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("rejectionReasons")]
     public ConversionOptimizerEligibilityRejectionReason[] rejectionReasons {
-      get {
-        return this.rejectionReasonsField;
-      }
-      set {
-        this.rejectionReasonsField = value;
-      }
+      get { return this.rejectionReasonsField; }
+      set { this.rejectionReasonsField = value; }
     }
   }
 
@@ -3331,27 +2754,17 @@ CampaignOperation[] operations) {
     private string statsTypeField;
 
     public string startDate {
-      get {
-        return this.startDateField;
-      }
-      set {
-        this.startDateField = value;
-      }
+      get { return this.startDateField; }
+      set { this.startDateField = value; }
     }
 
     public string endDate {
-      get {
-        return this.endDateField;
-      }
-      set {
-        this.endDateField = value;
-      }
+      get { return this.endDateField; }
+      set { this.endDateField = value; }
     }
 
     public StatsNetwork network {
-      get {
-        return this.networkField;
-      }
+      get { return this.networkField; }
       set {
         this.networkField = value;
         this.networkSpecified = true;
@@ -3361,18 +2774,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool networkSpecified {
-      get {
-        return this.networkFieldSpecified;
-      }
-      set {
-        this.networkFieldSpecified = value;
-      }
+      get { return this.networkFieldSpecified; }
+      set { this.networkFieldSpecified = value; }
     }
 
     public long clicks {
-      get {
-        return this.clicksField;
-      }
+      get { return this.clicksField; }
       set {
         this.clicksField = value;
         this.clicksSpecified = true;
@@ -3382,18 +2789,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool clicksSpecified {
-      get {
-        return this.clicksFieldSpecified;
-      }
-      set {
-        this.clicksFieldSpecified = value;
-      }
+      get { return this.clicksFieldSpecified; }
+      set { this.clicksFieldSpecified = value; }
     }
 
     public long impressions {
-      get {
-        return this.impressionsField;
-      }
+      get { return this.impressionsField; }
       set {
         this.impressionsField = value;
         this.impressionsSpecified = true;
@@ -3403,27 +2804,17 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool impressionsSpecified {
-      get {
-        return this.impressionsFieldSpecified;
-      }
-      set {
-        this.impressionsFieldSpecified = value;
-      }
+      get { return this.impressionsFieldSpecified; }
+      set { this.impressionsFieldSpecified = value; }
     }
 
     public Money cost {
-      get {
-        return this.costField;
-      }
-      set {
-        this.costField = value;
-      }
+      get { return this.costField; }
+      set { this.costField = value; }
     }
 
     public double averagePosition {
-      get {
-        return this.averagePositionField;
-      }
+      get { return this.averagePositionField; }
       set {
         this.averagePositionField = value;
         this.averagePositionSpecified = true;
@@ -3433,36 +2824,22 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool averagePositionSpecified {
-      get {
-        return this.averagePositionFieldSpecified;
-      }
-      set {
-        this.averagePositionFieldSpecified = value;
-      }
+      get { return this.averagePositionFieldSpecified; }
+      set { this.averagePositionFieldSpecified = value; }
     }
 
     public Money averageCpc {
-      get {
-        return this.averageCpcField;
-      }
-      set {
-        this.averageCpcField = value;
-      }
+      get { return this.averageCpcField; }
+      set { this.averageCpcField = value; }
     }
 
     public Money averageCpm {
-      get {
-        return this.averageCpmField;
-      }
-      set {
-        this.averageCpmField = value;
-      }
+      get { return this.averageCpmField; }
+      set { this.averageCpmField = value; }
     }
 
     public double ctr {
-      get {
-        return this.ctrField;
-      }
+      get { return this.ctrField; }
       set {
         this.ctrField = value;
         this.ctrSpecified = true;
@@ -3472,18 +2849,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool ctrSpecified {
-      get {
-        return this.ctrFieldSpecified;
-      }
-      set {
-        this.ctrFieldSpecified = value;
-      }
+      get { return this.ctrFieldSpecified; }
+      set { this.ctrFieldSpecified = value; }
     }
 
     public long conversions {
-      get {
-        return this.conversionsField;
-      }
+      get { return this.conversionsField; }
       set {
         this.conversionsField = value;
         this.conversionsSpecified = true;
@@ -3493,18 +2864,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool conversionsSpecified {
-      get {
-        return this.conversionsFieldSpecified;
-      }
-      set {
-        this.conversionsFieldSpecified = value;
-      }
+      get { return this.conversionsFieldSpecified; }
+      set { this.conversionsFieldSpecified = value; }
     }
 
     public double conversionRate {
-      get {
-        return this.conversionRateField;
-      }
+      get { return this.conversionRateField; }
       set {
         this.conversionRateField = value;
         this.conversionRateSpecified = true;
@@ -3514,27 +2879,17 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool conversionRateSpecified {
-      get {
-        return this.conversionRateFieldSpecified;
-      }
-      set {
-        this.conversionRateFieldSpecified = value;
-      }
+      get { return this.conversionRateFieldSpecified; }
+      set { this.conversionRateFieldSpecified = value; }
     }
 
     public Money costPerConversion {
-      get {
-        return this.costPerConversionField;
-      }
-      set {
-        this.costPerConversionField = value;
-      }
+      get { return this.costPerConversionField; }
+      set { this.costPerConversionField = value; }
     }
 
     public long conversionsManyPerClick {
-      get {
-        return this.conversionsManyPerClickField;
-      }
+      get { return this.conversionsManyPerClickField; }
       set {
         this.conversionsManyPerClickField = value;
         this.conversionsManyPerClickSpecified = true;
@@ -3544,18 +2899,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool conversionsManyPerClickSpecified {
-      get {
-        return this.conversionsManyPerClickFieldSpecified;
-      }
-      set {
-        this.conversionsManyPerClickFieldSpecified = value;
-      }
+      get { return this.conversionsManyPerClickFieldSpecified; }
+      set { this.conversionsManyPerClickFieldSpecified = value; }
     }
 
     public double conversionRateManyPerClick {
-      get {
-        return this.conversionRateManyPerClickField;
-      }
+      get { return this.conversionRateManyPerClickField; }
       set {
         this.conversionRateManyPerClickField = value;
         this.conversionRateManyPerClickSpecified = true;
@@ -3565,27 +2914,17 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool conversionRateManyPerClickSpecified {
-      get {
-        return this.conversionRateManyPerClickFieldSpecified;
-      }
-      set {
-        this.conversionRateManyPerClickFieldSpecified = value;
-      }
+      get { return this.conversionRateManyPerClickFieldSpecified; }
+      set { this.conversionRateManyPerClickFieldSpecified = value; }
     }
 
     public Money costPerConversionManyPerClick {
-      get {
-        return this.costPerConversionManyPerClickField;
-      }
-      set {
-        this.costPerConversionManyPerClickField = value;
-      }
+      get { return this.costPerConversionManyPerClickField; }
+      set { this.costPerConversionManyPerClickField = value; }
     }
 
     public long viewThroughConversions {
-      get {
-        return this.viewThroughConversionsField;
-      }
+      get { return this.viewThroughConversionsField; }
       set {
         this.viewThroughConversionsField = value;
         this.viewThroughConversionsSpecified = true;
@@ -3595,18 +2934,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool viewThroughConversionsSpecified {
-      get {
-        return this.viewThroughConversionsFieldSpecified;
-      }
-      set {
-        this.viewThroughConversionsFieldSpecified = value;
-      }
+      get { return this.viewThroughConversionsFieldSpecified; }
+      set { this.viewThroughConversionsFieldSpecified = value; }
     }
 
     public long totalConvValue {
-      get {
-        return this.totalConvValueField;
-      }
+      get { return this.totalConvValueField; }
       set {
         this.totalConvValueField = value;
         this.totalConvValueSpecified = true;
@@ -3616,18 +2949,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool totalConvValueSpecified {
-      get {
-        return this.totalConvValueFieldSpecified;
-      }
-      set {
-        this.totalConvValueFieldSpecified = value;
-      }
+      get { return this.totalConvValueFieldSpecified; }
+      set { this.totalConvValueFieldSpecified = value; }
     }
 
     public double valuePerConv {
-      get {
-        return this.valuePerConvField;
-      }
+      get { return this.valuePerConvField; }
       set {
         this.valuePerConvField = value;
         this.valuePerConvSpecified = true;
@@ -3637,18 +2964,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool valuePerConvSpecified {
-      get {
-        return this.valuePerConvFieldSpecified;
-      }
-      set {
-        this.valuePerConvFieldSpecified = value;
-      }
+      get { return this.valuePerConvFieldSpecified; }
+      set { this.valuePerConvFieldSpecified = value; }
     }
 
     public double valuePerConvManyPerClick {
-      get {
-        return this.valuePerConvManyPerClickField;
-      }
+      get { return this.valuePerConvManyPerClickField; }
       set {
         this.valuePerConvManyPerClickField = value;
         this.valuePerConvManyPerClickSpecified = true;
@@ -3658,18 +2979,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool valuePerConvManyPerClickSpecified {
-      get {
-        return this.valuePerConvManyPerClickFieldSpecified;
-      }
-      set {
-        this.valuePerConvManyPerClickFieldSpecified = value;
-      }
+      get { return this.valuePerConvManyPerClickFieldSpecified; }
+      set { this.valuePerConvManyPerClickFieldSpecified = value; }
     }
 
     public long invalidClicks {
-      get {
-        return this.invalidClicksField;
-      }
+      get { return this.invalidClicksField; }
       set {
         this.invalidClicksField = value;
         this.invalidClicksSpecified = true;
@@ -3679,18 +2994,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool invalidClicksSpecified {
-      get {
-        return this.invalidClicksFieldSpecified;
-      }
-      set {
-        this.invalidClicksFieldSpecified = value;
-      }
+      get { return this.invalidClicksFieldSpecified; }
+      set { this.invalidClicksFieldSpecified = value; }
     }
 
     public double invalidClickRate {
-      get {
-        return this.invalidClickRateField;
-      }
+      get { return this.invalidClickRateField; }
       set {
         this.invalidClickRateField = value;
         this.invalidClickRateSpecified = true;
@@ -3700,22 +3009,14 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool invalidClickRateSpecified {
-      get {
-        return this.invalidClickRateFieldSpecified;
-      }
-      set {
-        this.invalidClickRateFieldSpecified = value;
-      }
+      get { return this.invalidClickRateFieldSpecified; }
+      set { this.invalidClickRateFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("Stats.Type")]
     public string StatsType {
-      get {
-        return this.statsTypeField;
-      }
-      set {
-        this.statsTypeField = value;
-      }
+      get { return this.statsTypeField; }
+      set { this.statsTypeField = value; }
     }
   }
 
@@ -3761,9 +3062,7 @@ CampaignOperation[] operations) {
     private bool levelFieldSpecified;
 
     public long impressions {
-      get {
-        return this.impressionsField;
-      }
+      get { return this.impressionsField; }
       set {
         this.impressionsField = value;
         this.impressionsSpecified = true;
@@ -3773,18 +3072,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool impressionsSpecified {
-      get {
-        return this.impressionsFieldSpecified;
-      }
-      set {
-        this.impressionsFieldSpecified = value;
-      }
+      get { return this.impressionsFieldSpecified; }
+      set { this.impressionsFieldSpecified = value; }
     }
 
     public TimeUnit timeUnit {
-      get {
-        return this.timeUnitField;
-      }
+      get { return this.timeUnitField; }
       set {
         this.timeUnitField = value;
         this.timeUnitSpecified = true;
@@ -3794,18 +3087,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool timeUnitSpecified {
-      get {
-        return this.timeUnitFieldSpecified;
-      }
-      set {
-        this.timeUnitFieldSpecified = value;
-      }
+      get { return this.timeUnitFieldSpecified; }
+      set { this.timeUnitFieldSpecified = value; }
     }
 
     public Level level {
-      get {
-        return this.levelField;
-      }
+      get { return this.levelField; }
       set {
         this.levelField = value;
         this.levelSpecified = true;
@@ -3815,12 +3102,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool levelSpecified {
-      get {
-        return this.levelFieldSpecified;
-      }
-      set {
-        this.levelFieldSpecified = value;
-      }
+      get { return this.levelFieldSpecified; }
+      set { this.levelFieldSpecified = value; }
     }
   }
 
@@ -3858,12 +3141,8 @@ CampaignOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("Setting.Type")]
     public string SettingType {
-      get {
-        return this.settingTypeField;
-      }
-      set {
-        this.settingTypeField = value;
-      }
+      get { return this.settingTypeField; }
+      set { this.settingTypeField = value; }
     }
   }
 
@@ -3878,9 +3157,7 @@ CampaignOperation[] operations) {
     private bool optInFieldSpecified;
 
     public bool optIn {
-      get {
-        return this.optInField;
-      }
+      get { return this.optInField; }
       set {
         this.optInField = value;
         this.optInSpecified = true;
@@ -3890,12 +3167,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool optInSpecified {
-      get {
-        return this.optInFieldSpecified;
-      }
-      set {
-        this.optInFieldSpecified = value;
-      }
+      get { return this.optInFieldSpecified; }
+      set { this.optInFieldSpecified = value; }
     }
   }
 
@@ -3914,9 +3187,7 @@ CampaignOperation[] operations) {
     private bool negativeGeoTargetTypeFieldSpecified;
 
     public GeoTargetTypeSettingPositiveGeoTargetType positiveGeoTargetType {
-      get {
-        return this.positiveGeoTargetTypeField;
-      }
+      get { return this.positiveGeoTargetTypeField; }
       set {
         this.positiveGeoTargetTypeField = value;
         this.positiveGeoTargetTypeSpecified = true;
@@ -3926,18 +3197,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool positiveGeoTargetTypeSpecified {
-      get {
-        return this.positiveGeoTargetTypeFieldSpecified;
-      }
-      set {
-        this.positiveGeoTargetTypeFieldSpecified = value;
-      }
+      get { return this.positiveGeoTargetTypeFieldSpecified; }
+      set { this.positiveGeoTargetTypeFieldSpecified = value; }
     }
 
     public GeoTargetTypeSettingNegativeGeoTargetType negativeGeoTargetType {
-      get {
-        return this.negativeGeoTargetTypeField;
-      }
+      get { return this.negativeGeoTargetTypeField; }
       set {
         this.negativeGeoTargetTypeField = value;
         this.negativeGeoTargetTypeSpecified = true;
@@ -3947,12 +3212,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool negativeGeoTargetTypeSpecified {
-      get {
-        return this.negativeGeoTargetTypeFieldSpecified;
-      }
-      set {
-        this.negativeGeoTargetTypeFieldSpecified = value;
-      }
+      get { return this.negativeGeoTargetTypeFieldSpecified; }
+      set { this.negativeGeoTargetTypeFieldSpecified = value; }
     }
   }
 
@@ -4000,9 +3261,7 @@ CampaignOperation[] operations) {
     private bool targetPartnerSearchNetworkFieldSpecified;
 
     public bool targetGoogleSearch {
-      get {
-        return this.targetGoogleSearchField;
-      }
+      get { return this.targetGoogleSearchField; }
       set {
         this.targetGoogleSearchField = value;
         this.targetGoogleSearchSpecified = true;
@@ -4012,18 +3271,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool targetGoogleSearchSpecified {
-      get {
-        return this.targetGoogleSearchFieldSpecified;
-      }
-      set {
-        this.targetGoogleSearchFieldSpecified = value;
-      }
+      get { return this.targetGoogleSearchFieldSpecified; }
+      set { this.targetGoogleSearchFieldSpecified = value; }
     }
 
     public bool targetSearchNetwork {
-      get {
-        return this.targetSearchNetworkField;
-      }
+      get { return this.targetSearchNetworkField; }
       set {
         this.targetSearchNetworkField = value;
         this.targetSearchNetworkSpecified = true;
@@ -4033,18 +3286,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool targetSearchNetworkSpecified {
-      get {
-        return this.targetSearchNetworkFieldSpecified;
-      }
-      set {
-        this.targetSearchNetworkFieldSpecified = value;
-      }
+      get { return this.targetSearchNetworkFieldSpecified; }
+      set { this.targetSearchNetworkFieldSpecified = value; }
     }
 
     public bool targetContentNetwork {
-      get {
-        return this.targetContentNetworkField;
-      }
+      get { return this.targetContentNetworkField; }
       set {
         this.targetContentNetworkField = value;
         this.targetContentNetworkSpecified = true;
@@ -4054,18 +3301,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool targetContentNetworkSpecified {
-      get {
-        return this.targetContentNetworkFieldSpecified;
-      }
-      set {
-        this.targetContentNetworkFieldSpecified = value;
-      }
+      get { return this.targetContentNetworkFieldSpecified; }
+      set { this.targetContentNetworkFieldSpecified = value; }
     }
 
     public bool targetContentContextual {
-      get {
-        return this.targetContentContextualField;
-      }
+      get { return this.targetContentContextualField; }
       set {
         this.targetContentContextualField = value;
         this.targetContentContextualSpecified = true;
@@ -4075,18 +3316,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool targetContentContextualSpecified {
-      get {
-        return this.targetContentContextualFieldSpecified;
-      }
-      set {
-        this.targetContentContextualFieldSpecified = value;
-      }
+      get { return this.targetContentContextualFieldSpecified; }
+      set { this.targetContentContextualFieldSpecified = value; }
     }
 
     public bool targetPartnerSearchNetwork {
-      get {
-        return this.targetPartnerSearchNetworkField;
-      }
+      get { return this.targetPartnerSearchNetworkField; }
       set {
         this.targetPartnerSearchNetworkField = value;
         this.targetPartnerSearchNetworkSpecified = true;
@@ -4096,12 +3331,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool targetPartnerSearchNetworkSpecified {
-      get {
-        return this.targetPartnerSearchNetworkFieldSpecified;
-      }
-      set {
-        this.targetPartnerSearchNetworkFieldSpecified = value;
-      }
+      get { return this.targetPartnerSearchNetworkFieldSpecified; }
+      set { this.targetPartnerSearchNetworkFieldSpecified = value; }
     }
   }
 
@@ -4114,12 +3345,8 @@ CampaignOperation[] operations) {
     private Money amountField;
 
     public Money amount {
-      get {
-        return this.amountField;
-      }
-      set {
-        this.amountField = value;
-      }
+      get { return this.amountField; }
+      set { this.amountField = value; }
     }
   }
 
@@ -4138,12 +3365,8 @@ CampaignOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("AdGroupBids.Type")]
     public string AdGroupBidsType {
-      get {
-        return this.adGroupBidsTypeField;
-      }
-      set {
-        this.adGroupBidsTypeField = value;
-      }
+      get { return this.adGroupBidsTypeField; }
+      set { this.adGroupBidsTypeField = value; }
     }
   }
 
@@ -4156,12 +3379,8 @@ CampaignOperation[] operations) {
     private Bid maxCpmField;
 
     public Bid maxCpm {
-      get {
-        return this.maxCpmField;
-      }
-      set {
-        this.maxCpmField = value;
-      }
+      get { return this.maxCpmField; }
+      set { this.maxCpmField = value; }
     }
   }
 
@@ -4182,36 +3401,22 @@ CampaignOperation[] operations) {
     private bool enhancedCpcEnabledFieldSpecified;
 
     public Bid keywordMaxCpc {
-      get {
-        return this.keywordMaxCpcField;
-      }
-      set {
-        this.keywordMaxCpcField = value;
-      }
+      get { return this.keywordMaxCpcField; }
+      set { this.keywordMaxCpcField = value; }
     }
 
     public Bid keywordContentMaxCpc {
-      get {
-        return this.keywordContentMaxCpcField;
-      }
-      set {
-        this.keywordContentMaxCpcField = value;
-      }
+      get { return this.keywordContentMaxCpcField; }
+      set { this.keywordContentMaxCpcField = value; }
     }
 
     public Bid siteMaxCpc {
-      get {
-        return this.siteMaxCpcField;
-      }
-      set {
-        this.siteMaxCpcField = value;
-      }
+      get { return this.siteMaxCpcField; }
+      set { this.siteMaxCpcField = value; }
     }
 
     public bool enhancedCpcEnabled {
-      get {
-        return this.enhancedCpcEnabledField;
-      }
+      get { return this.enhancedCpcEnabledField; }
       set {
         this.enhancedCpcEnabledField = value;
         this.enhancedCpcEnabledSpecified = true;
@@ -4221,12 +3426,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool enhancedCpcEnabledSpecified {
-      get {
-        return this.enhancedCpcEnabledFieldSpecified;
-      }
-      set {
-        this.enhancedCpcEnabledFieldSpecified = value;
-      }
+      get { return this.enhancedCpcEnabledFieldSpecified; }
+      set { this.enhancedCpcEnabledFieldSpecified = value; }
     }
   }
 
@@ -4247,18 +3448,12 @@ CampaignOperation[] operations) {
     private bool deduplicationModeFieldSpecified;
 
     public Bid targetCpa {
-      get {
-        return this.targetCpaField;
-      }
-      set {
-        this.targetCpaField = value;
-      }
+      get { return this.targetCpaField; }
+      set { this.targetCpaField = value; }
     }
 
     public ConversionOptimizerBidType conversionOptimizerBidType {
-      get {
-        return this.conversionOptimizerBidTypeField;
-      }
+      get { return this.conversionOptimizerBidTypeField; }
       set {
         this.conversionOptimizerBidTypeField = value;
         this.conversionOptimizerBidTypeSpecified = true;
@@ -4268,18 +3463,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool conversionOptimizerBidTypeSpecified {
-      get {
-        return this.conversionOptimizerBidTypeFieldSpecified;
-      }
-      set {
-        this.conversionOptimizerBidTypeFieldSpecified = value;
-      }
+      get { return this.conversionOptimizerBidTypeFieldSpecified; }
+      set { this.conversionOptimizerBidTypeFieldSpecified = value; }
     }
 
     public ConversionDeduplicationMode deduplicationMode {
-      get {
-        return this.deduplicationModeField;
-      }
+      get { return this.deduplicationModeField; }
       set {
         this.deduplicationModeField = value;
         this.deduplicationModeSpecified = true;
@@ -4289,12 +3478,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool deduplicationModeSpecified {
-      get {
-        return this.deduplicationModeFieldSpecified;
-      }
-      set {
-        this.deduplicationModeFieldSpecified = value;
-      }
+      get { return this.deduplicationModeFieldSpecified; }
+      set { this.deduplicationModeFieldSpecified = value; }
     }
   }
 
@@ -4313,27 +3498,17 @@ CampaignOperation[] operations) {
     private bool enhancedCpcEnabledFieldSpecified;
 
     public Bid proxyKeywordMaxCpc {
-      get {
-        return this.proxyKeywordMaxCpcField;
-      }
-      set {
-        this.proxyKeywordMaxCpcField = value;
-      }
+      get { return this.proxyKeywordMaxCpcField; }
+      set { this.proxyKeywordMaxCpcField = value; }
     }
 
     public Bid proxySiteMaxCpc {
-      get {
-        return this.proxySiteMaxCpcField;
-      }
-      set {
-        this.proxySiteMaxCpcField = value;
-      }
+      get { return this.proxySiteMaxCpcField; }
+      set { this.proxySiteMaxCpcField = value; }
     }
 
     public bool enhancedCpcEnabled {
-      get {
-        return this.enhancedCpcEnabledField;
-      }
+      get { return this.enhancedCpcEnabledField; }
       set {
         this.enhancedCpcEnabledField = value;
         this.enhancedCpcEnabledSpecified = true;
@@ -4343,12 +3518,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool enhancedCpcEnabledSpecified {
-      get {
-        return this.enhancedCpcEnabledFieldSpecified;
-      }
-      set {
-        this.enhancedCpcEnabledFieldSpecified = value;
-      }
+      get { return this.enhancedCpcEnabledFieldSpecified; }
+      set { this.enhancedCpcEnabledFieldSpecified = value; }
     }
   }
 
@@ -4363,9 +3534,7 @@ CampaignOperation[] operations) {
     private bool percentCpaFieldSpecified;
 
     public int percentCpa {
-      get {
-        return this.percentCpaField;
-      }
+      get { return this.percentCpaField; }
       set {
         this.percentCpaField = value;
         this.percentCpaSpecified = true;
@@ -4375,12 +3544,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool percentCpaSpecified {
-      get {
-        return this.percentCpaFieldSpecified;
-      }
-      set {
-        this.percentCpaFieldSpecified = value;
-      }
+      get { return this.percentCpaFieldSpecified; }
+      set { this.percentCpaFieldSpecified = value; }
     }
   }
 
@@ -4398,31 +3563,19 @@ CampaignOperation[] operations) {
     private string biddingTransitionTypeField;
 
     public BiddingStrategy targetBiddingStrategy {
-      get {
-        return this.targetBiddingStrategyField;
-      }
-      set {
-        this.targetBiddingStrategyField = value;
-      }
+      get { return this.targetBiddingStrategyField; }
+      set { this.targetBiddingStrategyField = value; }
     }
 
     public AdGroupBids explicitAdGroupBids {
-      get {
-        return this.explicitAdGroupBidsField;
-      }
-      set {
-        this.explicitAdGroupBidsField = value;
-      }
+      get { return this.explicitAdGroupBidsField; }
+      set { this.explicitAdGroupBidsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("BiddingTransition.Type")]
     public string BiddingTransitionType {
-      get {
-        return this.biddingTransitionTypeField;
-      }
-      set {
-        this.biddingTransitionTypeField = value;
-      }
+      get { return this.biddingTransitionTypeField; }
+      set { this.biddingTransitionTypeField = value; }
     }
   }
 
@@ -4437,9 +3590,7 @@ CampaignOperation[] operations) {
     private bool useSavedBidsFieldSpecified;
 
     public bool useSavedBids {
-      get {
-        return this.useSavedBidsField;
-      }
+      get { return this.useSavedBidsField; }
       set {
         this.useSavedBidsField = value;
         this.useSavedBidsSpecified = true;
@@ -4449,12 +3600,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool useSavedBidsSpecified {
-      get {
-        return this.useSavedBidsFieldSpecified;
-      }
-      set {
-        this.useSavedBidsFieldSpecified = value;
-      }
+      get { return this.useSavedBidsFieldSpecified; }
+      set { this.useSavedBidsFieldSpecified = value; }
     }
   }
 
@@ -4469,21 +3616,13 @@ CampaignOperation[] operations) {
     private Campaign operandField;
 
     public BiddingTransition biddingTransition {
-      get {
-        return this.biddingTransitionField;
-      }
-      set {
-        this.biddingTransitionField = value;
-      }
+      get { return this.biddingTransitionField; }
+      set { this.biddingTransitionField = value; }
     }
 
     public Campaign operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -4498,22 +3637,14 @@ CampaignOperation[] operations) {
     private Campaign[] entriesField;
 
     public Budget totalBudget {
-      get {
-        return this.totalBudgetField;
-      }
-      set {
-        this.totalBudgetField = value;
-      }
+      get { return this.totalBudgetField; }
+      set { this.totalBudgetField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public Campaign[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -4528,9 +3659,7 @@ CampaignOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public TargetErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -4540,12 +3669,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -4638,9 +3763,7 @@ CampaignOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public StringLengthErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -4650,12 +3773,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -4678,9 +3797,7 @@ CampaignOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public StatsQueryErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -4690,12 +3807,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -4717,9 +3830,7 @@ CampaignOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public SettingErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -4729,12 +3840,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -4759,9 +3866,7 @@ CampaignOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public RejectedErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -4771,12 +3876,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -4802,9 +3903,7 @@ CampaignOperation[] operations) {
     private bool limitFieldSpecified;
 
     public QuotaErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -4814,18 +3913,12 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
 
     public int limit {
-      get {
-        return this.limitField;
-      }
+      get { return this.limitField; }
       set {
         this.limitField = value;
         this.limitSpecified = true;
@@ -4835,12 +3928,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool limitSpecified {
-      get {
-        return this.limitFieldSpecified;
-      }
-      set {
-        this.limitFieldSpecified = value;
-      }
+      get { return this.limitFieldSpecified; }
+      set { this.limitFieldSpecified = value; }
     }
   }
 
@@ -4871,9 +3960,7 @@ CampaignOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public DateErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -4883,12 +3970,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -4917,9 +4000,7 @@ CampaignOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public CampaignErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -4929,12 +4010,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -4979,9 +4056,7 @@ CampaignOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public BudgetErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -4991,12 +4066,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -5029,9 +4100,7 @@ CampaignOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public BiddingTransitionErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -5041,12 +4110,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -5096,9 +4161,7 @@ CampaignOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public BiddingErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -5108,12 +4171,8 @@ CampaignOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -5193,21 +4252,13 @@ CampaignOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -5240,12 +4291,8 @@ CampaignTargetOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public TargetList[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -5269,9 +4316,7 @@ CampaignTargetOperation[] operations) {
     private string targetListTypeField;
 
     public long campaignId {
-      get {
-        return this.campaignIdField;
-      }
+      get { return this.campaignIdField; }
       set {
         this.campaignIdField = value;
         this.campaignIdSpecified = true;
@@ -5281,22 +4326,14 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool campaignIdSpecified {
-      get {
-        return this.campaignIdFieldSpecified;
-      }
-      set {
-        this.campaignIdFieldSpecified = value;
-      }
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("TargetList.Type")]
     public string TargetListType {
-      get {
-        return this.targetListTypeField;
-      }
-      set {
-        this.targetListTypeField = value;
-      }
+      get { return this.targetListTypeField; }
+      set { this.targetListTypeField = value; }
     }
   }
 
@@ -5310,12 +4347,8 @@ CampaignTargetOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("targets")]
     public PlatformTarget[] targets {
-      get {
-        return this.targetsField;
-      }
-      set {
-        this.targetsField = value;
-      }
+      get { return this.targetsField; }
+      set { this.targetsField = value; }
     }
   }
 
@@ -5330,9 +4363,7 @@ CampaignTargetOperation[] operations) {
     private bool platformTypeFieldSpecified;
 
     public PlatformType platformType {
-      get {
-        return this.platformTypeField;
-      }
+      get { return this.platformTypeField; }
       set {
         this.platformTypeField = value;
         this.platformTypeSpecified = true;
@@ -5342,12 +4373,8 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool platformTypeSpecified {
-      get {
-        return this.platformTypeFieldSpecified;
-      }
-      set {
-        this.platformTypeFieldSpecified = value;
-      }
+      get { return this.platformTypeFieldSpecified; }
+      set { this.platformTypeFieldSpecified = value; }
     }
   }
 
@@ -5386,12 +4413,8 @@ CampaignTargetOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("Target.Type")]
     public string TargetType {
-      get {
-        return this.targetTypeField;
-      }
-      set {
-        this.targetTypeField = value;
-      }
+      get { return this.targetTypeField; }
+      set { this.targetTypeField = value; }
     }
   }
 
@@ -5412,9 +4435,7 @@ CampaignTargetOperation[] operations) {
     private bool excludedFieldSpecified;
 
     public bool excluded {
-      get {
-        return this.excludedField;
-      }
+      get { return this.excludedField; }
       set {
         this.excludedField = value;
         this.excludedSpecified = true;
@@ -5424,12 +4445,8 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool excludedSpecified {
-      get {
-        return this.excludedFieldSpecified;
-      }
-      set {
-        this.excludedFieldSpecified = value;
-      }
+      get { return this.excludedFieldSpecified; }
+      set { this.excludedFieldSpecified = value; }
     }
   }
 
@@ -5456,18 +4473,12 @@ CampaignTargetOperation[] operations) {
     private bool allowServiceOfAddressFieldSpecified;
 
     public GeoPoint geoPoint {
-      get {
-        return this.geoPointField;
-      }
-      set {
-        this.geoPointField = value;
-      }
+      get { return this.geoPointField; }
+      set { this.geoPointField = value; }
     }
 
     public ProximityTargetDistanceUnits radiusDistanceUnits {
-      get {
-        return this.radiusDistanceUnitsField;
-      }
+      get { return this.radiusDistanceUnitsField; }
       set {
         this.radiusDistanceUnitsField = value;
         this.radiusDistanceUnitsSpecified = true;
@@ -5477,18 +4488,12 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool radiusDistanceUnitsSpecified {
-      get {
-        return this.radiusDistanceUnitsFieldSpecified;
-      }
-      set {
-        this.radiusDistanceUnitsFieldSpecified = value;
-      }
+      get { return this.radiusDistanceUnitsFieldSpecified; }
+      set { this.radiusDistanceUnitsFieldSpecified = value; }
     }
 
     public double radiusInUnits {
-      get {
-        return this.radiusInUnitsField;
-      }
+      get { return this.radiusInUnitsField; }
       set {
         this.radiusInUnitsField = value;
         this.radiusInUnitsSpecified = true;
@@ -5498,27 +4503,17 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool radiusInUnitsSpecified {
-      get {
-        return this.radiusInUnitsFieldSpecified;
-      }
-      set {
-        this.radiusInUnitsFieldSpecified = value;
-      }
+      get { return this.radiusInUnitsFieldSpecified; }
+      set { this.radiusInUnitsFieldSpecified = value; }
     }
 
     public Address address {
-      get {
-        return this.addressField;
-      }
-      set {
-        this.addressField = value;
-      }
+      get { return this.addressField; }
+      set { this.addressField = value; }
     }
 
     public bool allowServiceOfAddress {
-      get {
-        return this.allowServiceOfAddressField;
-      }
+      get { return this.allowServiceOfAddressField; }
       set {
         this.allowServiceOfAddressField = value;
         this.allowServiceOfAddressSpecified = true;
@@ -5528,12 +4523,8 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool allowServiceOfAddressSpecified {
-      get {
-        return this.allowServiceOfAddressFieldSpecified;
-      }
-      set {
-        this.allowServiceOfAddressFieldSpecified = value;
-      }
+      get { return this.allowServiceOfAddressFieldSpecified; }
+      set { this.allowServiceOfAddressFieldSpecified = value; }
     }
   }
 
@@ -5552,9 +4543,7 @@ CampaignTargetOperation[] operations) {
     private bool longitudeInMicroDegreesFieldSpecified;
 
     public int latitudeInMicroDegrees {
-      get {
-        return this.latitudeInMicroDegreesField;
-      }
+      get { return this.latitudeInMicroDegreesField; }
       set {
         this.latitudeInMicroDegreesField = value;
         this.latitudeInMicroDegreesSpecified = true;
@@ -5564,18 +4553,12 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool latitudeInMicroDegreesSpecified {
-      get {
-        return this.latitudeInMicroDegreesFieldSpecified;
-      }
-      set {
-        this.latitudeInMicroDegreesFieldSpecified = value;
-      }
+      get { return this.latitudeInMicroDegreesFieldSpecified; }
+      set { this.latitudeInMicroDegreesFieldSpecified = value; }
     }
 
     public int longitudeInMicroDegrees {
-      get {
-        return this.longitudeInMicroDegreesField;
-      }
+      get { return this.longitudeInMicroDegreesField; }
       set {
         this.longitudeInMicroDegreesField = value;
         this.longitudeInMicroDegreesSpecified = true;
@@ -5585,12 +4568,8 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool longitudeInMicroDegreesSpecified {
-      get {
-        return this.longitudeInMicroDegreesFieldSpecified;
-      }
-      set {
-        this.longitudeInMicroDegreesFieldSpecified = value;
-      }
+      get { return this.longitudeInMicroDegreesFieldSpecified; }
+      set { this.longitudeInMicroDegreesFieldSpecified = value; }
     }
   }
 
@@ -5623,66 +4602,38 @@ CampaignTargetOperation[] operations) {
     private string countryCodeField;
 
     public string streetAddress {
-      get {
-        return this.streetAddressField;
-      }
-      set {
-        this.streetAddressField = value;
-      }
+      get { return this.streetAddressField; }
+      set { this.streetAddressField = value; }
     }
 
     public string streetAddress2 {
-      get {
-        return this.streetAddress2Field;
-      }
-      set {
-        this.streetAddress2Field = value;
-      }
+      get { return this.streetAddress2Field; }
+      set { this.streetAddress2Field = value; }
     }
 
     public string cityName {
-      get {
-        return this.cityNameField;
-      }
-      set {
-        this.cityNameField = value;
-      }
+      get { return this.cityNameField; }
+      set { this.cityNameField = value; }
     }
 
     public string provinceCode {
-      get {
-        return this.provinceCodeField;
-      }
-      set {
-        this.provinceCodeField = value;
-      }
+      get { return this.provinceCodeField; }
+      set { this.provinceCodeField = value; }
     }
 
     public string provinceName {
-      get {
-        return this.provinceNameField;
-      }
-      set {
-        this.provinceNameField = value;
-      }
+      get { return this.provinceNameField; }
+      set { this.provinceNameField = value; }
     }
 
     public string postalCode {
-      get {
-        return this.postalCodeField;
-      }
-      set {
-        this.postalCodeField = value;
-      }
+      get { return this.postalCodeField; }
+      set { this.postalCodeField = value; }
     }
 
     public string countryCode {
-      get {
-        return this.countryCodeField;
-      }
-      set {
-        this.countryCodeField = value;
-      }
+      get { return this.countryCodeField; }
+      set { this.countryCodeField = value; }
     }
   }
 
@@ -5695,12 +4646,8 @@ CampaignTargetOperation[] operations) {
     private string provinceCodeField;
 
     public string provinceCode {
-      get {
-        return this.provinceCodeField;
-      }
-      set {
-        this.provinceCodeField = value;
-      }
+      get { return this.provinceCodeField; }
+      set { this.provinceCodeField = value; }
     }
   }
 
@@ -5714,12 +4661,8 @@ CampaignTargetOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("vertices")]
     public GeoPoint[] vertices {
-      get {
-        return this.verticesField;
-      }
-      set {
-        this.verticesField = value;
-      }
+      get { return this.verticesField; }
+      set { this.verticesField = value; }
     }
   }
 
@@ -5732,12 +4675,8 @@ CampaignTargetOperation[] operations) {
     private string metroCodeField;
 
     public string metroCode {
-      get {
-        return this.metroCodeField;
-      }
-      set {
-        this.metroCodeField = value;
-      }
+      get { return this.metroCodeField; }
+      set { this.metroCodeField = value; }
     }
   }
 
@@ -5750,12 +4689,8 @@ CampaignTargetOperation[] operations) {
     private string countryCodeField;
 
     public string countryCode {
-      get {
-        return this.countryCodeField;
-      }
-      set {
-        this.countryCodeField = value;
-      }
+      get { return this.countryCodeField; }
+      set { this.countryCodeField = value; }
     }
   }
 
@@ -5772,30 +4707,18 @@ CampaignTargetOperation[] operations) {
     private string countryCodeField;
 
     public string cityName {
-      get {
-        return this.cityNameField;
-      }
-      set {
-        this.cityNameField = value;
-      }
+      get { return this.cityNameField; }
+      set { this.cityNameField = value; }
     }
 
     public string provinceCode {
-      get {
-        return this.provinceCodeField;
-      }
-      set {
-        this.provinceCodeField = value;
-      }
+      get { return this.provinceCodeField; }
+      set { this.provinceCodeField = value; }
     }
 
     public string countryCode {
-      get {
-        return this.countryCodeField;
-      }
-      set {
-        this.countryCodeField = value;
-      }
+      get { return this.countryCodeField; }
+      set { this.countryCodeField = value; }
     }
   }
 
@@ -5812,9 +4735,7 @@ CampaignTargetOperation[] operations) {
     private bool bidModifierFieldSpecified;
 
     public int bidModifier {
-      get {
-        return this.bidModifierField;
-      }
+      get { return this.bidModifierField; }
       set {
         this.bidModifierField = value;
         this.bidModifierSpecified = true;
@@ -5824,12 +4745,8 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool bidModifierSpecified {
-      get {
-        return this.bidModifierFieldSpecified;
-      }
-      set {
-        this.bidModifierFieldSpecified = value;
-      }
+      get { return this.bidModifierFieldSpecified; }
+      set { this.bidModifierFieldSpecified = value; }
     }
   }
 
@@ -5844,9 +4761,7 @@ CampaignTargetOperation[] operations) {
     private bool genderFieldSpecified;
 
     public GenderTargetGender gender {
-      get {
-        return this.genderField;
-      }
+      get { return this.genderField; }
       set {
         this.genderField = value;
         this.genderSpecified = true;
@@ -5856,12 +4771,8 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool genderSpecified {
-      get {
-        return this.genderFieldSpecified;
-      }
-      set {
-        this.genderFieldSpecified = value;
-      }
+      get { return this.genderFieldSpecified; }
+      set { this.genderFieldSpecified = value; }
     }
   }
 
@@ -5884,9 +4795,7 @@ CampaignTargetOperation[] operations) {
     private bool ageFieldSpecified;
 
     public AgeTargetAge age {
-      get {
-        return this.ageField;
-      }
+      get { return this.ageField; }
       set {
         this.ageField = value;
         this.ageSpecified = true;
@@ -5896,12 +4805,8 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool ageSpecified {
-      get {
-        return this.ageFieldSpecified;
-      }
-      set {
-        this.ageFieldSpecified = value;
-      }
+      get { return this.ageFieldSpecified; }
+      set { this.ageFieldSpecified = value; }
     }
   }
 
@@ -5937,12 +4842,8 @@ CampaignTargetOperation[] operations) {
     private string platformNameField;
 
     public string platformName {
-      get {
-        return this.platformNameField;
-      }
-      set {
-        this.platformNameField = value;
-      }
+      get { return this.platformNameField; }
+      set { this.platformNameField = value; }
     }
   }
 
@@ -5957,21 +4858,13 @@ CampaignTargetOperation[] operations) {
     private string countryCodeField;
 
     public string carrierName {
-      get {
-        return this.carrierNameField;
-      }
-      set {
-        this.carrierNameField = value;
-      }
+      get { return this.carrierNameField; }
+      set { this.carrierNameField = value; }
     }
 
     public string countryCode {
-      get {
-        return this.countryCodeField;
-      }
-      set {
-        this.countryCodeField = value;
-      }
+      get { return this.countryCodeField; }
+      set { this.countryCodeField = value; }
     }
   }
 
@@ -5984,12 +4877,8 @@ CampaignTargetOperation[] operations) {
     private string languageCodeField;
 
     public string languageCode {
-      get {
-        return this.languageCodeField;
-      }
-      set {
-        this.languageCodeField = value;
-      }
+      get { return this.languageCodeField; }
+      set { this.languageCodeField = value; }
     }
   }
 
@@ -6024,9 +4913,7 @@ CampaignTargetOperation[] operations) {
     private bool bidMultiplierFieldSpecified;
 
     public DayOfWeek dayOfWeek {
-      get {
-        return this.dayOfWeekField;
-      }
+      get { return this.dayOfWeekField; }
       set {
         this.dayOfWeekField = value;
         this.dayOfWeekSpecified = true;
@@ -6036,18 +4923,12 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool dayOfWeekSpecified {
-      get {
-        return this.dayOfWeekFieldSpecified;
-      }
-      set {
-        this.dayOfWeekFieldSpecified = value;
-      }
+      get { return this.dayOfWeekFieldSpecified; }
+      set { this.dayOfWeekFieldSpecified = value; }
     }
 
     public int startHour {
-      get {
-        return this.startHourField;
-      }
+      get { return this.startHourField; }
       set {
         this.startHourField = value;
         this.startHourSpecified = true;
@@ -6057,18 +4938,12 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool startHourSpecified {
-      get {
-        return this.startHourFieldSpecified;
-      }
-      set {
-        this.startHourFieldSpecified = value;
-      }
+      get { return this.startHourFieldSpecified; }
+      set { this.startHourFieldSpecified = value; }
     }
 
     public MinuteOfHour startMinute {
-      get {
-        return this.startMinuteField;
-      }
+      get { return this.startMinuteField; }
       set {
         this.startMinuteField = value;
         this.startMinuteSpecified = true;
@@ -6078,18 +4953,12 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool startMinuteSpecified {
-      get {
-        return this.startMinuteFieldSpecified;
-      }
-      set {
-        this.startMinuteFieldSpecified = value;
-      }
+      get { return this.startMinuteFieldSpecified; }
+      set { this.startMinuteFieldSpecified = value; }
     }
 
     public int endHour {
-      get {
-        return this.endHourField;
-      }
+      get { return this.endHourField; }
       set {
         this.endHourField = value;
         this.endHourSpecified = true;
@@ -6099,18 +4968,12 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool endHourSpecified {
-      get {
-        return this.endHourFieldSpecified;
-      }
-      set {
-        this.endHourFieldSpecified = value;
-      }
+      get { return this.endHourFieldSpecified; }
+      set { this.endHourFieldSpecified = value; }
     }
 
     public MinuteOfHour endMinute {
-      get {
-        return this.endMinuteField;
-      }
+      get { return this.endMinuteField; }
       set {
         this.endMinuteField = value;
         this.endMinuteSpecified = true;
@@ -6120,18 +4983,12 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool endMinuteSpecified {
-      get {
-        return this.endMinuteFieldSpecified;
-      }
-      set {
-        this.endMinuteFieldSpecified = value;
-      }
+      get { return this.endMinuteFieldSpecified; }
+      set { this.endMinuteFieldSpecified = value; }
     }
 
     public double bidMultiplier {
-      get {
-        return this.bidMultiplierField;
-      }
+      get { return this.bidMultiplierField; }
       set {
         this.bidMultiplierField = value;
         this.bidMultiplierSpecified = true;
@@ -6141,12 +4998,8 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool bidMultiplierSpecified {
-      get {
-        return this.bidMultiplierFieldSpecified;
-      }
-      set {
-        this.bidMultiplierFieldSpecified = value;
-      }
+      get { return this.bidMultiplierFieldSpecified; }
+      set { this.bidMultiplierFieldSpecified = value; }
     }
   }
 
@@ -6191,12 +5044,8 @@ CampaignTargetOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("targets")]
     public MobileTarget[] targets {
-      get {
-        return this.targetsField;
-      }
-      set {
-        this.targetsField = value;
-      }
+      get { return this.targetsField; }
+      set { this.targetsField = value; }
     }
   }
 
@@ -6210,12 +5059,8 @@ CampaignTargetOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("targets")]
     public LanguageTarget[] targets {
-      get {
-        return this.targetsField;
-      }
-      set {
-        this.targetsField = value;
-      }
+      get { return this.targetsField; }
+      set { this.targetsField = value; }
     }
   }
 
@@ -6229,12 +5074,8 @@ CampaignTargetOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("targets")]
     public GeoTarget[] targets {
-      get {
-        return this.targetsField;
-      }
-      set {
-        this.targetsField = value;
-      }
+      get { return this.targetsField; }
+      set { this.targetsField = value; }
     }
   }
 
@@ -6248,12 +5089,8 @@ CampaignTargetOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("targets")]
     public DemographicTarget[] targets {
-      get {
-        return this.targetsField;
-      }
-      set {
-        this.targetsField = value;
-      }
+      get { return this.targetsField; }
+      set { this.targetsField = value; }
     }
   }
 
@@ -6267,12 +5104,8 @@ CampaignTargetOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("targets")]
     public AdScheduleTarget[] targets {
-      get {
-        return this.targetsField;
-      }
-      set {
-        this.targetsField = value;
-      }
+      get { return this.targetsField; }
+      set { this.targetsField = value; }
     }
   }
 
@@ -6285,12 +5118,8 @@ CampaignTargetOperation[] operations) {
     private TargetList operandField;
 
     public TargetList operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -6304,12 +5133,8 @@ CampaignTargetOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public TargetList[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -6325,21 +5150,13 @@ CampaignTargetOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("campaignIds")]
     public long[] campaignIds {
-      get {
-        return this.campaignIdsField;
-      }
-      set {
-        this.campaignIdsField = value;
-      }
+      get { return this.campaignIdsField; }
+      set { this.campaignIdsField = value; }
     }
 
     public string dummy {
-      get {
-        return this.dummyField;
-      }
-      set {
-        this.dummyField = value;
-      }
+      get { return this.dummyField; }
+      set { this.dummyField = value; }
     }
   }
 
@@ -6354,9 +5171,7 @@ CampaignTargetOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public RegionCodeErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -6366,12 +5181,8 @@ CampaignTargetOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -6401,21 +5212,13 @@ CampaignTargetOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -6448,12 +5251,8 @@ ConversionTrackerOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public ConversionTracker[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -6499,9 +5298,7 @@ ConversionTrackerOperation[] operations) {
     private string conversionTrackerTypeField;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -6511,27 +5308,17 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public ConversionTrackerStatus status {
-      get {
-        return this.statusField;
-      }
+      get { return this.statusField; }
       set {
         this.statusField = value;
         this.statusSpecified = true;
@@ -6541,18 +5328,12 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool statusSpecified {
-      get {
-        return this.statusFieldSpecified;
-      }
-      set {
-        this.statusFieldSpecified = value;
-      }
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
     }
 
     public ConversionTrackerCategory category {
-      get {
-        return this.categoryField;
-      }
+      get { return this.categoryField; }
       set {
         this.categoryField = value;
         this.categorySpecified = true;
@@ -6562,27 +5343,17 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool categorySpecified {
-      get {
-        return this.categoryFieldSpecified;
-      }
-      set {
-        this.categoryFieldSpecified = value;
-      }
+      get { return this.categoryFieldSpecified; }
+      set { this.categoryFieldSpecified = value; }
     }
 
     public ConversionTrackerStats stats {
-      get {
-        return this.statsField;
-      }
-      set {
-        this.statsField = value;
-      }
+      get { return this.statsField; }
+      set { this.statsField = value; }
     }
 
     public int viewthroughLookbackWindow {
-      get {
-        return this.viewthroughLookbackWindowField;
-      }
+      get { return this.viewthroughLookbackWindowField; }
       set {
         this.viewthroughLookbackWindowField = value;
         this.viewthroughLookbackWindowSpecified = true;
@@ -6592,18 +5363,12 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool viewthroughLookbackWindowSpecified {
-      get {
-        return this.viewthroughLookbackWindowFieldSpecified;
-      }
-      set {
-        this.viewthroughLookbackWindowFieldSpecified = value;
-      }
+      get { return this.viewthroughLookbackWindowFieldSpecified; }
+      set { this.viewthroughLookbackWindowFieldSpecified = value; }
     }
 
     public bool viewthroughConversionDeDupSearch {
-      get {
-        return this.viewthroughConversionDeDupSearchField;
-      }
+      get { return this.viewthroughConversionDeDupSearchField; }
       set {
         this.viewthroughConversionDeDupSearchField = value;
         this.viewthroughConversionDeDupSearchSpecified = true;
@@ -6613,18 +5378,12 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool viewthroughConversionDeDupSearchSpecified {
-      get {
-        return this.viewthroughConversionDeDupSearchFieldSpecified;
-      }
-      set {
-        this.viewthroughConversionDeDupSearchFieldSpecified = value;
-      }
+      get { return this.viewthroughConversionDeDupSearchFieldSpecified; }
+      set { this.viewthroughConversionDeDupSearchFieldSpecified = value; }
     }
 
     public bool isProductAdsChargeable {
-      get {
-        return this.isProductAdsChargeableField;
-      }
+      get { return this.isProductAdsChargeableField; }
       set {
         this.isProductAdsChargeableField = value;
         this.isProductAdsChargeableSpecified = true;
@@ -6634,18 +5393,12 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool isProductAdsChargeableSpecified {
-      get {
-        return this.isProductAdsChargeableFieldSpecified;
-      }
-      set {
-        this.isProductAdsChargeableFieldSpecified = value;
-      }
+      get { return this.isProductAdsChargeableFieldSpecified; }
+      set { this.isProductAdsChargeableFieldSpecified = value; }
     }
 
     public int productAdsChargeableConversionWindow {
-      get {
-        return this.productAdsChargeableConversionWindowField;
-      }
+      get { return this.productAdsChargeableConversionWindowField; }
       set {
         this.productAdsChargeableConversionWindowField = value;
         this.productAdsChargeableConversionWindowSpecified = true;
@@ -6655,22 +5408,14 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool productAdsChargeableConversionWindowSpecified {
-      get {
-        return this.productAdsChargeableConversionWindowFieldSpecified;
-      }
-      set {
-        this.productAdsChargeableConversionWindowFieldSpecified = value;
-      }
+      get { return this.productAdsChargeableConversionWindowFieldSpecified; }
+      set { this.productAdsChargeableConversionWindowFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("ConversionTracker.Type")]
     public string ConversionTrackerType {
-      get {
-        return this.conversionTrackerTypeField;
-      }
-      set {
-        this.conversionTrackerTypeField = value;
-      }
+      get { return this.conversionTrackerTypeField; }
+      set { this.conversionTrackerTypeField = value; }
     }
   }
 
@@ -6714,9 +5459,7 @@ ConversionTrackerOperation[] operations) {
     private bool numConvertedClicksFieldSpecified;
 
     public int numConversionEvents {
-      get {
-        return this.numConversionEventsField;
-      }
+      get { return this.numConversionEventsField; }
       set {
         this.numConversionEventsField = value;
         this.numConversionEventsSpecified = true;
@@ -6726,36 +5469,22 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool numConversionEventsSpecified {
-      get {
-        return this.numConversionEventsFieldSpecified;
-      }
-      set {
-        this.numConversionEventsFieldSpecified = value;
-      }
+      get { return this.numConversionEventsFieldSpecified; }
+      set { this.numConversionEventsFieldSpecified = value; }
     }
 
     public Money conversionValue {
-      get {
-        return this.conversionValueField;
-      }
-      set {
-        this.conversionValueField = value;
-      }
+      get { return this.conversionValueField; }
+      set { this.conversionValueField = value; }
     }
 
     public string mostRecentConversionDate {
-      get {
-        return this.mostRecentConversionDateField;
-      }
-      set {
-        this.mostRecentConversionDateField = value;
-      }
+      get { return this.mostRecentConversionDateField; }
+      set { this.mostRecentConversionDateField = value; }
     }
 
     public int numConvertedClicks {
-      get {
-        return this.numConvertedClicksField;
-      }
+      get { return this.numConvertedClicksField; }
       set {
         this.numConvertedClicksField = value;
         this.numConvertedClicksSpecified = true;
@@ -6765,12 +5494,8 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool numConvertedClicksSpecified {
-      get {
-        return this.numConvertedClicksFieldSpecified;
-      }
-      set {
-        this.numConvertedClicksFieldSpecified = value;
-      }
+      get { return this.numConvertedClicksFieldSpecified; }
+      set { this.numConvertedClicksFieldSpecified = value; }
     }
   }
 
@@ -6801,18 +5526,12 @@ ConversionTrackerOperation[] operations) {
     private string userRevenueValueField;
 
     public string snippet {
-      get {
-        return this.snippetField;
-      }
-      set {
-        this.snippetField = value;
-      }
+      get { return this.snippetField; }
+      set { this.snippetField = value; }
     }
 
     public AdWordsConversionTrackerMarkupLanguage markupLanguage {
-      get {
-        return this.markupLanguageField;
-      }
+      get { return this.markupLanguageField; }
       set {
         this.markupLanguageField = value;
         this.markupLanguageSpecified = true;
@@ -6822,18 +5541,12 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool markupLanguageSpecified {
-      get {
-        return this.markupLanguageFieldSpecified;
-      }
-      set {
-        this.markupLanguageFieldSpecified = value;
-      }
+      get { return this.markupLanguageFieldSpecified; }
+      set { this.markupLanguageFieldSpecified = value; }
     }
 
     public AdWordsConversionTrackerHttpProtocol httpProtocol {
-      get {
-        return this.httpProtocolField;
-      }
+      get { return this.httpProtocolField; }
       set {
         this.httpProtocolField = value;
         this.httpProtocolSpecified = true;
@@ -6843,18 +5556,12 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool httpProtocolSpecified {
-      get {
-        return this.httpProtocolFieldSpecified;
-      }
-      set {
-        this.httpProtocolFieldSpecified = value;
-      }
+      get { return this.httpProtocolFieldSpecified; }
+      set { this.httpProtocolFieldSpecified = value; }
     }
 
     public AdWordsConversionTrackerTextFormat textFormat {
-      get {
-        return this.textFormatField;
-      }
+      get { return this.textFormatField; }
       set {
         this.textFormatField = value;
         this.textFormatSpecified = true;
@@ -6864,39 +5571,23 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool textFormatSpecified {
-      get {
-        return this.textFormatFieldSpecified;
-      }
-      set {
-        this.textFormatFieldSpecified = value;
-      }
+      get { return this.textFormatFieldSpecified; }
+      set { this.textFormatFieldSpecified = value; }
     }
 
     public string conversionPageLanguage {
-      get {
-        return this.conversionPageLanguageField;
-      }
-      set {
-        this.conversionPageLanguageField = value;
-      }
+      get { return this.conversionPageLanguageField; }
+      set { this.conversionPageLanguageField = value; }
     }
 
     public string backgroundColor {
-      get {
-        return this.backgroundColorField;
-      }
-      set {
-        this.backgroundColorField = value;
-      }
+      get { return this.backgroundColorField; }
+      set { this.backgroundColorField = value; }
     }
 
     public string userRevenueValue {
-      get {
-        return this.userRevenueValueField;
-      }
-      set {
-        this.userRevenueValueField = value;
-      }
+      get { return this.userRevenueValueField; }
+      set { this.userRevenueValueField = value; }
     }
   }
 
@@ -6936,12 +5627,8 @@ ConversionTrackerOperation[] operations) {
     private ConversionTracker operandField;
 
     public ConversionTracker operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -6967,12 +5654,8 @@ ConversionTrackerOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public ConversionTracker[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -6987,9 +5670,7 @@ ConversionTrackerOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public ConversionTrackingErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -6999,12 +5680,8 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -7049,21 +5726,13 @@ ConversionTrackerOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
@@ -7097,9 +5766,7 @@ ConversionTrackerOperation[] operations) {
     private long[] deletedCriteriaField;
 
     public long adGroupId {
-      get {
-        return this.adGroupIdField;
-      }
+      get { return this.adGroupIdField; }
       set {
         this.adGroupIdField = value;
         this.adGroupIdSpecified = true;
@@ -7109,18 +5776,12 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupIdSpecified {
-      get {
-        return this.adGroupIdFieldSpecified;
-      }
-      set {
-        this.adGroupIdFieldSpecified = value;
-      }
+      get { return this.adGroupIdFieldSpecified; }
+      set { this.adGroupIdFieldSpecified = value; }
     }
 
     public ChangeStatus adGroupChangeStatus {
-      get {
-        return this.adGroupChangeStatusField;
-      }
+      get { return this.adGroupChangeStatusField; }
       set {
         this.adGroupChangeStatusField = value;
         this.adGroupChangeStatusSpecified = true;
@@ -7130,42 +5791,26 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupChangeStatusSpecified {
-      get {
-        return this.adGroupChangeStatusFieldSpecified;
-      }
-      set {
-        this.adGroupChangeStatusFieldSpecified = value;
-      }
+      get { return this.adGroupChangeStatusFieldSpecified; }
+      set { this.adGroupChangeStatusFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("changedAds")]
     public long[] changedAds {
-      get {
-        return this.changedAdsField;
-      }
-      set {
-        this.changedAdsField = value;
-      }
+      get { return this.changedAdsField; }
+      set { this.changedAdsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("changedCriteria")]
     public long[] changedCriteria {
-      get {
-        return this.changedCriteriaField;
-      }
-      set {
-        this.changedCriteriaField = value;
-      }
+      get { return this.changedCriteriaField; }
+      set { this.changedCriteriaField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("deletedCriteria")]
     public long[] deletedCriteria {
-      get {
-        return this.deletedCriteriaField;
-      }
-      set {
-        this.deletedCriteriaField = value;
-      }
+      get { return this.deletedCriteriaField; }
+      set { this.deletedCriteriaField = value; }
     }
   }
 
@@ -7207,9 +5852,7 @@ ConversionTrackerOperation[] operations) {
     private bool campaignTargetingChangedFieldSpecified;
 
     public long campaignId {
-      get {
-        return this.campaignIdField;
-      }
+      get { return this.campaignIdField; }
       set {
         this.campaignIdField = value;
         this.campaignIdSpecified = true;
@@ -7219,18 +5862,12 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool campaignIdSpecified {
-      get {
-        return this.campaignIdFieldSpecified;
-      }
-      set {
-        this.campaignIdFieldSpecified = value;
-      }
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
     }
 
     public ChangeStatus campaignChangeStatus {
-      get {
-        return this.campaignChangeStatusField;
-      }
+      get { return this.campaignChangeStatusField; }
       set {
         this.campaignChangeStatusField = value;
         this.campaignChangeStatusSpecified = true;
@@ -7240,68 +5877,42 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool campaignChangeStatusSpecified {
-      get {
-        return this.campaignChangeStatusFieldSpecified;
-      }
-      set {
-        this.campaignChangeStatusFieldSpecified = value;
-      }
+      get { return this.campaignChangeStatusFieldSpecified; }
+      set { this.campaignChangeStatusFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("changedAdGroups")]
     public AdGroupChangeData[] changedAdGroups {
-      get {
-        return this.changedAdGroupsField;
-      }
-      set {
-        this.changedAdGroupsField = value;
-      }
+      get { return this.changedAdGroupsField; }
+      set { this.changedAdGroupsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("addedCampaignCriteria")]
     public long[] addedCampaignCriteria {
-      get {
-        return this.addedCampaignCriteriaField;
-      }
-      set {
-        this.addedCampaignCriteriaField = value;
-      }
+      get { return this.addedCampaignCriteriaField; }
+      set { this.addedCampaignCriteriaField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("deletedCampaignCriteria")]
     public long[] deletedCampaignCriteria {
-      get {
-        return this.deletedCampaignCriteriaField;
-      }
-      set {
-        this.deletedCampaignCriteriaField = value;
-      }
+      get { return this.deletedCampaignCriteriaField; }
+      set { this.deletedCampaignCriteriaField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("addedAdExtensions")]
     public long[] addedAdExtensions {
-      get {
-        return this.addedAdExtensionsField;
-      }
-      set {
-        this.addedAdExtensionsField = value;
-      }
+      get { return this.addedAdExtensionsField; }
+      set { this.addedAdExtensionsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("deletedAdExtensions")]
     public long[] deletedAdExtensions {
-      get {
-        return this.deletedAdExtensionsField;
-      }
-      set {
-        this.deletedAdExtensionsField = value;
-      }
+      get { return this.deletedAdExtensionsField; }
+      set { this.deletedAdExtensionsField = value; }
     }
 
     public bool campaignTargetingChanged {
-      get {
-        return this.campaignTargetingChangedField;
-      }
+      get { return this.campaignTargetingChangedField; }
       set {
         this.campaignTargetingChangedField = value;
         this.campaignTargetingChangedSpecified = true;
@@ -7311,12 +5922,8 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool campaignTargetingChangedSpecified {
-      get {
-        return this.campaignTargetingChangedFieldSpecified;
-      }
-      set {
-        this.campaignTargetingChangedFieldSpecified = value;
-      }
+      get { return this.campaignTargetingChangedFieldSpecified; }
+      set { this.campaignTargetingChangedFieldSpecified = value; }
     }
   }
 
@@ -7332,21 +5939,13 @@ ConversionTrackerOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("changedCampaigns")]
     public CampaignChangeData[] changedCampaigns {
-      get {
-        return this.changedCampaignsField;
-      }
-      set {
-        this.changedCampaignsField = value;
-      }
+      get { return this.changedCampaignsField; }
+      set { this.changedCampaignsField = value; }
     }
 
     public string lastChangeTimestamp {
-      get {
-        return this.lastChangeTimestampField;
-      }
-      set {
-        this.lastChangeTimestampField = value;
-      }
+      get { return this.lastChangeTimestampField; }
+      set { this.lastChangeTimestampField = value; }
     }
   }
 
@@ -7361,21 +5960,13 @@ ConversionTrackerOperation[] operations) {
     private string maxField;
 
     public string min {
-      get {
-        return this.minField;
-      }
-      set {
-        this.minField = value;
-      }
+      get { return this.minField; }
+      set { this.minField = value; }
     }
 
     public string max {
-      get {
-        return this.maxField;
-      }
-      set {
-        this.maxField = value;
-      }
+      get { return this.maxField; }
+      set { this.maxField = value; }
     }
   }
 
@@ -7390,22 +5981,14 @@ ConversionTrackerOperation[] operations) {
     private long[] campaignIdsField;
 
     public DateTimeRange dateTimeRange {
-      get {
-        return this.dateTimeRangeField;
-      }
-      set {
-        this.dateTimeRangeField = value;
-      }
+      get { return this.dateTimeRangeField; }
+      set { this.dateTimeRangeField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("campaignIds")]
     public long[] campaignIds {
-      get {
-        return this.campaignIdsField;
-      }
-      set {
-        this.campaignIdsField = value;
-      }
+      get { return this.campaignIdsField; }
+      set { this.campaignIdsField = value; }
     }
   }
 
@@ -7424,9 +6007,7 @@ ConversionTrackerOperation[] operations) {
     private bool campaignIdFieldSpecified;
 
     public CustomerSyncErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -7436,18 +6017,12 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
 
     public long campaignId {
-      get {
-        return this.campaignIdField;
-      }
+      get { return this.campaignIdField; }
       set {
         this.campaignIdField = value;
         this.campaignIdSpecified = true;
@@ -7457,12 +6032,8 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool campaignIdSpecified {
-      get {
-        return this.campaignIdFieldSpecified;
-      }
-      set {
-        this.campaignIdFieldSpecified = value;
-      }
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
     }
   }
 
@@ -7493,21 +6064,13 @@ ConversionTrackerOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -7550,18 +6113,12 @@ ConversionTrackerOperation[] operations) {
     private bool impressionsFieldSpecified;
 
     public Money bid {
-      get {
-        return this.bidField;
-      }
-      set {
-        this.bidField = value;
-      }
+      get { return this.bidField; }
+      set { this.bidField = value; }
     }
 
     public long clicks {
-      get {
-        return this.clicksField;
-      }
+      get { return this.clicksField; }
       set {
         this.clicksField = value;
         this.clicksSpecified = true;
@@ -7571,36 +6128,22 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool clicksSpecified {
-      get {
-        return this.clicksFieldSpecified;
-      }
-      set {
-        this.clicksFieldSpecified = value;
-      }
+      get { return this.clicksFieldSpecified; }
+      set { this.clicksFieldSpecified = value; }
     }
 
     public Money cost {
-      get {
-        return this.costField;
-      }
-      set {
-        this.costField = value;
-      }
+      get { return this.costField; }
+      set { this.costField = value; }
     }
 
     public Money marginalCpc {
-      get {
-        return this.marginalCpcField;
-      }
-      set {
-        this.marginalCpcField = value;
-      }
+      get { return this.marginalCpcField; }
+      set { this.marginalCpcField = value; }
     }
 
     public long impressions {
-      get {
-        return this.impressionsField;
-      }
+      get { return this.impressionsField; }
       set {
         this.impressionsField = value;
         this.impressionsSpecified = true;
@@ -7610,12 +6153,8 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool impressionsSpecified {
-      get {
-        return this.impressionsFieldSpecified;
-      }
-      set {
-        this.impressionsFieldSpecified = value;
-      }
+      get { return this.impressionsFieldSpecified; }
+      set { this.impressionsFieldSpecified = value; }
     }
   }
 
@@ -7632,12 +6171,8 @@ ConversionTrackerOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("DataEntry.Type")]
     public string DataEntryType {
-      get {
-        return this.dataEntryTypeField;
-      }
-      set {
-        this.dataEntryTypeField = value;
-      }
+      get { return this.dataEntryTypeField; }
+      set { this.dataEntryTypeField = value; }
     }
   }
 
@@ -7664,9 +6199,7 @@ ConversionTrackerOperation[] operations) {
     private BidLandscapeLandscapePoint[] landscapePointsField;
 
     public long campaignId {
-      get {
-        return this.campaignIdField;
-      }
+      get { return this.campaignIdField; }
       set {
         this.campaignIdField = value;
         this.campaignIdSpecified = true;
@@ -7676,18 +6209,12 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool campaignIdSpecified {
-      get {
-        return this.campaignIdFieldSpecified;
-      }
-      set {
-        this.campaignIdFieldSpecified = value;
-      }
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
     }
 
     public long adGroupId {
-      get {
-        return this.adGroupIdField;
-      }
+      get { return this.adGroupIdField; }
       set {
         this.adGroupIdField = value;
         this.adGroupIdSpecified = true;
@@ -7697,40 +6224,24 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupIdSpecified {
-      get {
-        return this.adGroupIdFieldSpecified;
-      }
-      set {
-        this.adGroupIdFieldSpecified = value;
-      }
+      get { return this.adGroupIdFieldSpecified; }
+      set { this.adGroupIdFieldSpecified = value; }
     }
 
     public string startDate {
-      get {
-        return this.startDateField;
-      }
-      set {
-        this.startDateField = value;
-      }
+      get { return this.startDateField; }
+      set { this.startDateField = value; }
     }
 
     public string endDate {
-      get {
-        return this.endDateField;
-      }
-      set {
-        this.endDateField = value;
-      }
+      get { return this.endDateField; }
+      set { this.endDateField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("landscapePoints")]
     public BidLandscapeLandscapePoint[] landscapePoints {
-      get {
-        return this.landscapePointsField;
-      }
-      set {
-        this.landscapePointsField = value;
-      }
+      get { return this.landscapePointsField; }
+      set { this.landscapePointsField = value; }
     }
   }
 
@@ -7745,9 +6256,7 @@ ConversionTrackerOperation[] operations) {
     private bool criterionIdFieldSpecified;
 
     public long criterionId {
-      get {
-        return this.criterionIdField;
-      }
+      get { return this.criterionIdField; }
       set {
         this.criterionIdField = value;
         this.criterionIdSpecified = true;
@@ -7757,12 +6266,8 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool criterionIdSpecified {
-      get {
-        return this.criterionIdFieldSpecified;
-      }
-      set {
-        this.criterionIdFieldSpecified = value;
-      }
+      get { return this.criterionIdFieldSpecified; }
+      set { this.criterionIdFieldSpecified = value; }
     }
   }
 
@@ -7781,9 +6286,7 @@ ConversionTrackerOperation[] operations) {
     private bool landscapeCurrentFieldSpecified;
 
     public AdGroupBidLandscapeType type {
-      get {
-        return this.typeField;
-      }
+      get { return this.typeField; }
       set {
         this.typeField = value;
         this.typeSpecified = true;
@@ -7793,18 +6296,12 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool typeSpecified {
-      get {
-        return this.typeFieldSpecified;
-      }
-      set {
-        this.typeFieldSpecified = value;
-      }
+      get { return this.typeFieldSpecified; }
+      set { this.typeFieldSpecified = value; }
     }
 
     public bool landscapeCurrent {
-      get {
-        return this.landscapeCurrentField;
-      }
+      get { return this.landscapeCurrentField; }
       set {
         this.landscapeCurrentField = value;
         this.landscapeCurrentSpecified = true;
@@ -7814,12 +6311,8 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool landscapeCurrentSpecified {
-      get {
-        return this.landscapeCurrentFieldSpecified;
-      }
-      set {
-        this.landscapeCurrentFieldSpecified = value;
-      }
+      get { return this.landscapeCurrentFieldSpecified; }
+      set { this.landscapeCurrentFieldSpecified = value; }
     }
   }
 
@@ -7842,12 +6335,8 @@ ConversionTrackerOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public CriterionBidLandscape[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -7861,12 +6350,8 @@ ConversionTrackerOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public AdGroupBidLandscape[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -7881,9 +6366,7 @@ ConversionTrackerOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public DataErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -7893,12 +6376,8 @@ ConversionTrackerOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -7929,21 +6408,13 @@ ConversionTrackerOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -7976,12 +6447,8 @@ ExperimentOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public Experiment[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -8026,9 +6493,7 @@ ExperimentOperation[] operations) {
     private ExperimentSummaryStats experimentSummaryStatsField;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -8038,18 +6503,12 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public long controlId {
-      get {
-        return this.controlIdField;
-      }
+      get { return this.controlIdField; }
       set {
         this.controlIdField = value;
         this.controlIdSpecified = true;
@@ -8059,18 +6518,12 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool controlIdSpecified {
-      get {
-        return this.controlIdFieldSpecified;
-      }
-      set {
-        this.controlIdFieldSpecified = value;
-      }
+      get { return this.controlIdFieldSpecified; }
+      set { this.controlIdFieldSpecified = value; }
     }
 
     public long campaignId {
-      get {
-        return this.campaignIdField;
-      }
+      get { return this.campaignIdField; }
       set {
         this.campaignIdField = value;
         this.campaignIdSpecified = true;
@@ -8080,27 +6533,17 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool campaignIdSpecified {
-      get {
-        return this.campaignIdFieldSpecified;
-      }
-      set {
-        this.campaignIdFieldSpecified = value;
-      }
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
     }
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public ExperimentStatus status {
-      get {
-        return this.statusField;
-      }
+      get { return this.statusField; }
       set {
         this.statusField = value;
         this.statusSpecified = true;
@@ -8110,18 +6553,12 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool statusSpecified {
-      get {
-        return this.statusFieldSpecified;
-      }
-      set {
-        this.statusFieldSpecified = value;
-      }
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
     }
 
     public ExperimentServingStatus servingStatus {
-      get {
-        return this.servingStatusField;
-      }
+      get { return this.servingStatusField; }
       set {
         this.servingStatusField = value;
         this.servingStatusSpecified = true;
@@ -8131,18 +6568,12 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool servingStatusSpecified {
-      get {
-        return this.servingStatusFieldSpecified;
-      }
-      set {
-        this.servingStatusFieldSpecified = value;
-      }
+      get { return this.servingStatusFieldSpecified; }
+      set { this.servingStatusFieldSpecified = value; }
     }
 
     public int queryPercentage {
-      get {
-        return this.queryPercentageField;
-      }
+      get { return this.queryPercentageField; }
       set {
         this.queryPercentageField = value;
         this.queryPercentageSpecified = true;
@@ -8152,48 +6583,28 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool queryPercentageSpecified {
-      get {
-        return this.queryPercentageFieldSpecified;
-      }
-      set {
-        this.queryPercentageFieldSpecified = value;
-      }
+      get { return this.queryPercentageFieldSpecified; }
+      set { this.queryPercentageFieldSpecified = value; }
     }
 
     public string startDateTime {
-      get {
-        return this.startDateTimeField;
-      }
-      set {
-        this.startDateTimeField = value;
-      }
+      get { return this.startDateTimeField; }
+      set { this.startDateTimeField = value; }
     }
 
     public string endDateTime {
-      get {
-        return this.endDateTimeField;
-      }
-      set {
-        this.endDateTimeField = value;
-      }
+      get { return this.endDateTimeField; }
+      set { this.endDateTimeField = value; }
     }
 
     public string lastModifiedDateTime {
-      get {
-        return this.lastModifiedDateTimeField;
-      }
-      set {
-        this.lastModifiedDateTimeField = value;
-      }
+      get { return this.lastModifiedDateTimeField; }
+      set { this.lastModifiedDateTimeField = value; }
     }
 
     public ExperimentSummaryStats experimentSummaryStats {
-      get {
-        return this.experimentSummaryStatsField;
-      }
-      set {
-        this.experimentSummaryStatsField = value;
-      }
+      get { return this.experimentSummaryStatsField; }
+      set { this.experimentSummaryStatsField = value; }
     }
   }
 
@@ -8236,9 +6647,7 @@ ExperimentOperation[] operations) {
     private bool adGroupAdsCountFieldSpecified;
 
     public int adGroupsCount {
-      get {
-        return this.adGroupsCountField;
-      }
+      get { return this.adGroupsCountField; }
       set {
         this.adGroupsCountField = value;
         this.adGroupsCountSpecified = true;
@@ -8248,18 +6657,12 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupsCountSpecified {
-      get {
-        return this.adGroupsCountFieldSpecified;
-      }
-      set {
-        this.adGroupsCountFieldSpecified = value;
-      }
+      get { return this.adGroupsCountFieldSpecified; }
+      set { this.adGroupsCountFieldSpecified = value; }
     }
 
     public int adGroupCriteriaCount {
-      get {
-        return this.adGroupCriteriaCountField;
-      }
+      get { return this.adGroupCriteriaCountField; }
       set {
         this.adGroupCriteriaCountField = value;
         this.adGroupCriteriaCountSpecified = true;
@@ -8269,18 +6672,12 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupCriteriaCountSpecified {
-      get {
-        return this.adGroupCriteriaCountFieldSpecified;
-      }
-      set {
-        this.adGroupCriteriaCountFieldSpecified = value;
-      }
+      get { return this.adGroupCriteriaCountFieldSpecified; }
+      set { this.adGroupCriteriaCountFieldSpecified = value; }
     }
 
     public int adGroupAdsCount {
-      get {
-        return this.adGroupAdsCountField;
-      }
+      get { return this.adGroupAdsCountField; }
       set {
         this.adGroupAdsCountField = value;
         this.adGroupAdsCountSpecified = true;
@@ -8290,12 +6687,8 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupAdsCountSpecified {
-      get {
-        return this.adGroupAdsCountFieldSpecified;
-      }
-      set {
-        this.adGroupAdsCountFieldSpecified = value;
-      }
+      get { return this.adGroupAdsCountFieldSpecified; }
+      set { this.adGroupAdsCountFieldSpecified = value; }
     }
   }
 
@@ -8308,12 +6701,8 @@ ExperimentOperation[] operations) {
     private Experiment operandField;
 
     public Experiment operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -8327,12 +6716,8 @@ ExperimentOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public Experiment[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -8347,9 +6732,7 @@ ExperimentOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public ExperimentServiceErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -8359,12 +6742,8 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -8407,21 +6786,13 @@ ExperimentOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -8450,41 +6821,25 @@ ExperimentOperation[] operations) {
     private string geoLocationTypeField;
 
     public GeoPoint geoPoint {
-      get {
-        return this.geoPointField;
-      }
-      set {
-        this.geoPointField = value;
-      }
+      get { return this.geoPointField; }
+      set { this.geoPointField = value; }
     }
 
     public Address address {
-      get {
-        return this.addressField;
-      }
-      set {
-        this.addressField = value;
-      }
+      get { return this.addressField; }
+      set { this.addressField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
     public byte[] encodedLocation {
-      get {
-        return this.encodedLocationField;
-      }
-      set {
-        this.encodedLocationField = value;
-      }
+      get { return this.encodedLocationField; }
+      set { this.encodedLocationField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("GeoLocation.Type")]
     public string GeoLocationType {
-      get {
-        return this.geoLocationTypeField;
-      }
-      set {
-        this.geoLocationTypeField = value;
-      }
+      get { return this.geoLocationTypeField; }
+      set { this.geoLocationTypeField = value; }
     }
   }
 
@@ -8508,21 +6863,13 @@ ExperimentOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("addresses")]
     public Address[] addresses {
-      get {
-        return this.addressesField;
-      }
-      set {
-        this.addressesField = value;
-      }
+      get { return this.addressesField; }
+      set { this.addressesField = value; }
     }
 
     public string dummy {
-      get {
-        return this.dummyField;
-      }
-      set {
-        this.dummyField = value;
-      }
+      get { return this.dummyField; }
+      set { this.dummyField = value; }
     }
   }
 
@@ -8537,9 +6884,7 @@ ExperimentOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public GeoLocationErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -8549,12 +6894,8 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -8580,21 +6921,13 @@ ExperimentOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
@@ -8620,18 +6953,12 @@ ExperimentOperation[] operations) {
     private bool costFieldSpecified;
 
     public string clientEmail {
-      get {
-        return this.clientEmailField;
-      }
-      set {
-        this.clientEmailField = value;
-      }
+      get { return this.clientEmailField; }
+      set { this.clientEmailField = value; }
     }
 
     public long cost {
-      get {
-        return this.costField;
-      }
+      get { return this.costField; }
       set {
         this.costField = value;
         this.costSpecified = true;
@@ -8641,12 +6968,8 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool costSpecified {
-      get {
-        return this.costFieldSpecified;
-      }
-      set {
-        this.costFieldSpecified = value;
-      }
+      get { return this.costFieldSpecified; }
+      set { this.costFieldSpecified = value; }
     }
   }
 
@@ -8664,18 +6987,12 @@ ExperimentOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("apiUsageRecords")]
     public ApiUsageRecord[] apiUsageRecords {
-      get {
-        return this.apiUsageRecordsField;
-      }
-      set {
-        this.apiUsageRecordsField = value;
-      }
+      get { return this.apiUsageRecordsField; }
+      set { this.apiUsageRecordsField = value; }
     }
 
     public long cost {
-      get {
-        return this.costField;
-      }
+      get { return this.costField; }
       set {
         this.costField = value;
         this.costSpecified = true;
@@ -8685,12 +7002,8 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool costSpecified {
-      get {
-        return this.costFieldSpecified;
-      }
-      set {
-        this.costFieldSpecified = value;
-      }
+      get { return this.costFieldSpecified; }
+      set { this.costFieldSpecified = value; }
     }
   }
 
@@ -8717,27 +7030,17 @@ ExperimentOperation[] operations) {
     private bool apiUsageTypeFieldSpecified;
 
     public string serviceName {
-      get {
-        return this.serviceNameField;
-      }
-      set {
-        this.serviceNameField = value;
-      }
+      get { return this.serviceNameField; }
+      set { this.serviceNameField = value; }
     }
 
     public string methodName {
-      get {
-        return this.methodNameField;
-      }
-      set {
-        this.methodNameField = value;
-      }
+      get { return this.methodNameField; }
+      set { this.methodNameField = value; }
     }
 
     public Operator @operator {
-      get {
-        return this.operatorField;
-      }
+      get { return this.operatorField; }
       set {
         this.operatorField = value;
         this.operatorSpecified = true;
@@ -8747,37 +7050,23 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool operatorSpecified {
-      get {
-        return this.operatorFieldSpecified;
-      }
-      set {
-        this.operatorFieldSpecified = value;
-      }
+      get { return this.operatorFieldSpecified; }
+      set { this.operatorFieldSpecified = value; }
     }
 
     public DateRange dateRange {
-      get {
-        return this.dateRangeField;
-      }
-      set {
-        this.dateRangeField = value;
-      }
+      get { return this.dateRangeField; }
+      set { this.dateRangeField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("clientEmails")]
     public string[] clientEmails {
-      get {
-        return this.clientEmailsField;
-      }
-      set {
-        this.clientEmailsField = value;
-      }
+      get { return this.clientEmailsField; }
+      set { this.clientEmailsField = value; }
     }
 
     public ApiUsageType apiUsageType {
-      get {
-        return this.apiUsageTypeField;
-      }
+      get { return this.apiUsageTypeField; }
       set {
         this.apiUsageTypeField = value;
         this.apiUsageTypeSpecified = true;
@@ -8787,12 +7076,8 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool apiUsageTypeSpecified {
-      get {
-        return this.apiUsageTypeFieldSpecified;
-      }
-      set {
-        this.apiUsageTypeFieldSpecified = value;
-      }
+      get { return this.apiUsageTypeFieldSpecified; }
+      set { this.apiUsageTypeFieldSpecified = value; }
     }
   }
 
@@ -8819,9 +7104,7 @@ ExperimentOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public ApiUsageErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -8831,12 +7114,8 @@ ExperimentOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -8867,21 +7146,13 @@ ExperimentOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -8917,9 +7188,7 @@ Media[] media) {
     private string valueField;
 
     public MediaSize key {
-      get {
-        return this.keyField;
-      }
+      get { return this.keyField; }
       set {
         this.keyField = value;
         this.keySpecified = true;
@@ -8929,21 +7198,13 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool keySpecified {
-      get {
-        return this.keyFieldSpecified;
-      }
-      set {
-        this.keyFieldSpecified = value;
-      }
+      get { return this.keyFieldSpecified; }
+      set { this.keyFieldSpecified = value; }
     }
 
     public string value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -8972,9 +7233,7 @@ Media[] media) {
     private bool heightFieldSpecified;
 
     public int width {
-      get {
-        return this.widthField;
-      }
+      get { return this.widthField; }
       set {
         this.widthField = value;
         this.widthSpecified = true;
@@ -8984,18 +7243,12 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool widthSpecified {
-      get {
-        return this.widthFieldSpecified;
-      }
-      set {
-        this.widthFieldSpecified = value;
-      }
+      get { return this.widthFieldSpecified; }
+      set { this.widthFieldSpecified = value; }
     }
 
     public int height {
-      get {
-        return this.heightField;
-      }
+      get { return this.heightField; }
       set {
         this.heightField = value;
         this.heightSpecified = true;
@@ -9005,12 +7258,8 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool heightSpecified {
-      get {
-        return this.heightFieldSpecified;
-      }
-      set {
-        this.heightFieldSpecified = value;
-      }
+      get { return this.heightFieldSpecified; }
+      set { this.heightFieldSpecified = value; }
     }
   }
 
@@ -9027,9 +7276,7 @@ Media[] media) {
     private Dimensions valueField;
 
     public MediaSize key {
-      get {
-        return this.keyField;
-      }
+      get { return this.keyField; }
       set {
         this.keyField = value;
         this.keySpecified = true;
@@ -9039,21 +7286,13 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool keySpecified {
-      get {
-        return this.keyFieldSpecified;
-      }
-      set {
-        this.keyFieldSpecified = value;
-      }
+      get { return this.keyFieldSpecified; }
+      set { this.keyFieldSpecified = value; }
     }
 
     public Dimensions value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -9099,9 +7338,7 @@ Media[] media) {
     private string mediaTypeField;
 
     public long mediaId {
-      get {
-        return this.mediaIdField;
-      }
+      get { return this.mediaIdField; }
       set {
         this.mediaIdField = value;
         this.mediaIdSpecified = true;
@@ -9111,18 +7348,12 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool mediaIdSpecified {
-      get {
-        return this.mediaIdFieldSpecified;
-      }
-      set {
-        this.mediaIdFieldSpecified = value;
-      }
+      get { return this.mediaIdFieldSpecified; }
+      set { this.mediaIdFieldSpecified = value; }
     }
 
     public MediaMediaType type {
-      get {
-        return this.typeField;
-      }
+      get { return this.typeField; }
       set {
         this.typeField = value;
         this.typeSpecified = true;
@@ -9132,18 +7363,12 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool typeSpecified {
-      get {
-        return this.typeFieldSpecified;
-      }
-      set {
-        this.typeFieldSpecified = value;
-      }
+      get { return this.typeFieldSpecified; }
+      set { this.typeFieldSpecified = value; }
     }
 
     public long referenceId {
-      get {
-        return this.referenceIdField;
-      }
+      get { return this.referenceIdField; }
       set {
         this.referenceIdField = value;
         this.referenceIdSpecified = true;
@@ -9153,38 +7378,24 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool referenceIdSpecified {
-      get {
-        return this.referenceIdFieldSpecified;
-      }
-      set {
-        this.referenceIdFieldSpecified = value;
-      }
+      get { return this.referenceIdFieldSpecified; }
+      set { this.referenceIdFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("dimensions")]
     public Media_Size_DimensionsMapEntry[] dimensions {
-      get {
-        return this.dimensionsField;
-      }
-      set {
-        this.dimensionsField = value;
-      }
+      get { return this.dimensionsField; }
+      set { this.dimensionsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("urls")]
     public Media_Size_StringMapEntry[] urls {
-      get {
-        return this.urlsField;
-      }
-      set {
-        this.urlsField = value;
-      }
+      get { return this.urlsField; }
+      set { this.urlsField = value; }
     }
 
     public MediaMimeType mimeType {
-      get {
-        return this.mimeTypeField;
-      }
+      get { return this.mimeTypeField; }
       set {
         this.mimeTypeField = value;
         this.mimeTypeSpecified = true;
@@ -9194,36 +7405,22 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool mimeTypeSpecified {
-      get {
-        return this.mimeTypeFieldSpecified;
-      }
-      set {
-        this.mimeTypeFieldSpecified = value;
-      }
+      get { return this.mimeTypeFieldSpecified; }
+      set { this.mimeTypeFieldSpecified = value; }
     }
 
     public string sourceUrl {
-      get {
-        return this.sourceUrlField;
-      }
-      set {
-        this.sourceUrlField = value;
-      }
+      get { return this.sourceUrlField; }
+      set { this.sourceUrlField = value; }
     }
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public long fileSize {
-      get {
-        return this.fileSizeField;
-      }
+      get { return this.fileSizeField; }
       set {
         this.fileSizeField = value;
         this.fileSizeSpecified = true;
@@ -9233,31 +7430,19 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool fileSizeSpecified {
-      get {
-        return this.fileSizeFieldSpecified;
-      }
-      set {
-        this.fileSizeFieldSpecified = value;
-      }
+      get { return this.fileSizeFieldSpecified; }
+      set { this.fileSizeFieldSpecified = value; }
     }
 
     public string creationTime {
-      get {
-        return this.creationTimeField;
-      }
-      set {
-        this.creationTimeField = value;
-      }
+      get { return this.creationTimeField; }
+      set { this.creationTimeField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("Media.Type")]
     public string MediaType {
-      get {
-        return this.mediaTypeField;
-      }
-      set {
-        this.mediaTypeField = value;
-      }
+      get { return this.mediaTypeField; }
+      set { this.mediaTypeField = value; }
     }
   }
 
@@ -9313,9 +7498,7 @@ Media[] media) {
     private string youTubeVideoIdStringField;
 
     public long durationMillis {
-      get {
-        return this.durationMillisField;
-      }
+      get { return this.durationMillisField; }
       set {
         this.durationMillisField = value;
         this.durationMillisSpecified = true;
@@ -9325,27 +7508,17 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool durationMillisSpecified {
-      get {
-        return this.durationMillisFieldSpecified;
-      }
-      set {
-        this.durationMillisFieldSpecified = value;
-      }
+      get { return this.durationMillisFieldSpecified; }
+      set { this.durationMillisFieldSpecified = value; }
     }
 
     public string streamingUrl {
-      get {
-        return this.streamingUrlField;
-      }
-      set {
-        this.streamingUrlField = value;
-      }
+      get { return this.streamingUrlField; }
+      set { this.streamingUrlField = value; }
     }
 
     public bool readyToPlayOnTheWeb {
-      get {
-        return this.readyToPlayOnTheWebField;
-      }
+      get { return this.readyToPlayOnTheWebField; }
       set {
         this.readyToPlayOnTheWebField = value;
         this.readyToPlayOnTheWebSpecified = true;
@@ -9355,39 +7528,23 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool readyToPlayOnTheWebSpecified {
-      get {
-        return this.readyToPlayOnTheWebFieldSpecified;
-      }
-      set {
-        this.readyToPlayOnTheWebFieldSpecified = value;
-      }
+      get { return this.readyToPlayOnTheWebFieldSpecified; }
+      set { this.readyToPlayOnTheWebFieldSpecified = value; }
     }
 
     public string industryStandardCommercialIdentifier {
-      get {
-        return this.industryStandardCommercialIdentifierField;
-      }
-      set {
-        this.industryStandardCommercialIdentifierField = value;
-      }
+      get { return this.industryStandardCommercialIdentifierField; }
+      set { this.industryStandardCommercialIdentifierField = value; }
     }
 
     public string advertisingId {
-      get {
-        return this.advertisingIdField;
-      }
-      set {
-        this.advertisingIdField = value;
-      }
+      get { return this.advertisingIdField; }
+      set { this.advertisingIdField = value; }
     }
 
     public string youTubeVideoIdString {
-      get {
-        return this.youTubeVideoIdStringField;
-      }
-      set {
-        this.youTubeVideoIdStringField = value;
-      }
+      get { return this.youTubeVideoIdStringField; }
+      set { this.youTubeVideoIdStringField = value; }
     }
   }
 
@@ -9401,12 +7558,8 @@ Media[] media) {
 
     [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
     public byte[] data {
-      get {
-        return this.dataField;
-      }
-      set {
-        this.dataField = value;
-      }
+      get { return this.dataField; }
+      set { this.dataField = value; }
     }
   }
 
@@ -9427,9 +7580,7 @@ Media[] media) {
     private bool readyToPlayOnTheWebFieldSpecified;
 
     public long durationMillis {
-      get {
-        return this.durationMillisField;
-      }
+      get { return this.durationMillisField; }
       set {
         this.durationMillisField = value;
         this.durationMillisSpecified = true;
@@ -9439,27 +7590,17 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool durationMillisSpecified {
-      get {
-        return this.durationMillisFieldSpecified;
-      }
-      set {
-        this.durationMillisFieldSpecified = value;
-      }
+      get { return this.durationMillisFieldSpecified; }
+      set { this.durationMillisFieldSpecified = value; }
     }
 
     public string streamingUrl {
-      get {
-        return this.streamingUrlField;
-      }
-      set {
-        this.streamingUrlField = value;
-      }
+      get { return this.streamingUrlField; }
+      set { this.streamingUrlField = value; }
     }
 
     public bool readyToPlayOnTheWeb {
-      get {
-        return this.readyToPlayOnTheWebField;
-      }
+      get { return this.readyToPlayOnTheWebField; }
       set {
         this.readyToPlayOnTheWebField = value;
         this.readyToPlayOnTheWebSpecified = true;
@@ -9469,12 +7610,8 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool readyToPlayOnTheWebSpecified {
-      get {
-        return this.readyToPlayOnTheWebFieldSpecified;
-      }
-      set {
-        this.readyToPlayOnTheWebFieldSpecified = value;
-      }
+      get { return this.readyToPlayOnTheWebFieldSpecified; }
+      set { this.readyToPlayOnTheWebFieldSpecified = value; }
     }
   }
 
@@ -9492,18 +7629,12 @@ Media[] media) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public Media[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
 
     public int totalNumEntries {
-      get {
-        return this.totalNumEntriesField;
-      }
+      get { return this.totalNumEntriesField; }
       set {
         this.totalNumEntriesField = value;
         this.totalNumEntriesSpecified = true;
@@ -9513,12 +7644,8 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool totalNumEntriesSpecified {
-      get {
-        return this.totalNumEntriesFieldSpecified;
-      }
-      set {
-        this.totalNumEntriesFieldSpecified = value;
-      }
+      get { return this.totalNumEntriesFieldSpecified; }
+      set { this.totalNumEntriesFieldSpecified = value; }
     }
   }
 
@@ -9533,9 +7660,7 @@ Media[] media) {
     private bool reasonFieldSpecified;
 
     public VideoErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -9545,12 +7670,8 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -9583,9 +7704,7 @@ Media[] media) {
     private bool reasonFieldSpecified;
 
     public MediaErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -9595,12 +7714,8 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -9641,9 +7756,7 @@ Media[] media) {
     private bool reasonFieldSpecified;
 
     public ImageErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -9653,12 +7766,8 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -9708,9 +7817,7 @@ Media[] media) {
     private bool reasonFieldSpecified;
 
     public AudioErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -9720,12 +7827,8 @@ Media[] media) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -9761,21 +7864,13 @@ Media[] media) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -9808,12 +7903,8 @@ AdExtensionOverrideOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public AdExtensionOverride[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -9842,9 +7933,7 @@ AdExtensionOverrideOperation[] operations) {
     private AdExtensionOverrideStats statsField;
 
     public long adId {
-      get {
-        return this.adIdField;
-      }
+      get { return this.adIdField; }
       set {
         this.adIdField = value;
         this.adIdSpecified = true;
@@ -9854,36 +7943,22 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adIdSpecified {
-      get {
-        return this.adIdFieldSpecified;
-      }
-      set {
-        this.adIdFieldSpecified = value;
-      }
+      get { return this.adIdFieldSpecified; }
+      set { this.adIdFieldSpecified = value; }
     }
 
     public AdExtension adExtension {
-      get {
-        return this.adExtensionField;
-      }
-      set {
-        this.adExtensionField = value;
-      }
+      get { return this.adExtensionField; }
+      set { this.adExtensionField = value; }
     }
 
     public OverrideInfo overrideInfo {
-      get {
-        return this.overrideInfoField;
-      }
-      set {
-        this.overrideInfoField = value;
-      }
+      get { return this.overrideInfoField; }
+      set { this.overrideInfoField = value; }
     }
 
     public AdExtensionOverrideStatus status {
-      get {
-        return this.statusField;
-      }
+      get { return this.statusField; }
       set {
         this.statusField = value;
         this.statusSpecified = true;
@@ -9893,18 +7968,12 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool statusSpecified {
-      get {
-        return this.statusFieldSpecified;
-      }
-      set {
-        this.statusFieldSpecified = value;
-      }
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
     }
 
     public AdExtensionOverrideApprovalStatus approvalStatus {
-      get {
-        return this.approvalStatusField;
-      }
+      get { return this.approvalStatusField; }
       set {
         this.approvalStatusField = value;
         this.approvalStatusSpecified = true;
@@ -9914,21 +7983,13 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool approvalStatusSpecified {
-      get {
-        return this.approvalStatusFieldSpecified;
-      }
-      set {
-        this.approvalStatusFieldSpecified = value;
-      }
+      get { return this.approvalStatusFieldSpecified; }
+      set { this.approvalStatusFieldSpecified = value; }
     }
 
     public AdExtensionOverrideStats stats {
-      get {
-        return this.statsField;
-      }
-      set {
-        this.statsField = value;
-      }
+      get { return this.statsField; }
+      set { this.statsField = value; }
     }
   }
 
@@ -9950,9 +8011,7 @@ AdExtensionOverrideOperation[] operations) {
     private string adExtensionTypeField;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -9962,22 +8021,14 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("AdExtension.Type")]
     public string AdExtensionType {
-      get {
-        return this.adExtensionTypeField;
-      }
-      set {
-        this.adExtensionTypeField = value;
-      }
+      get { return this.adExtensionTypeField; }
+      set { this.adExtensionTypeField = value; }
     }
   }
 
@@ -10000,27 +8051,17 @@ AdExtensionOverrideOperation[] operations) {
     private bool shouldSyncUrlFieldSpecified;
 
     public string email {
-      get {
-        return this.emailField;
-      }
-      set {
-        this.emailField = value;
-      }
+      get { return this.emailField; }
+      set { this.emailField = value; }
     }
 
     public string authToken {
-      get {
-        return this.authTokenField;
-      }
-      set {
-        this.authTokenField = value;
-      }
+      get { return this.authTokenField; }
+      set { this.authTokenField = value; }
     }
 
     public long iconMediaId {
-      get {
-        return this.iconMediaIdField;
-      }
+      get { return this.iconMediaIdField; }
       set {
         this.iconMediaIdField = value;
         this.iconMediaIdSpecified = true;
@@ -10030,18 +8071,12 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool iconMediaIdSpecified {
-      get {
-        return this.iconMediaIdFieldSpecified;
-      }
-      set {
-        this.iconMediaIdFieldSpecified = value;
-      }
+      get { return this.iconMediaIdFieldSpecified; }
+      set { this.iconMediaIdFieldSpecified = value; }
     }
 
     public bool shouldSyncUrl {
-      get {
-        return this.shouldSyncUrlField;
-      }
+      get { return this.shouldSyncUrlField; }
       set {
         this.shouldSyncUrlField = value;
         this.shouldSyncUrlSpecified = true;
@@ -10051,12 +8086,8 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool shouldSyncUrlSpecified {
-      get {
-        return this.shouldSyncUrlFieldSpecified;
-      }
-      set {
-        this.shouldSyncUrlFieldSpecified = value;
-      }
+      get { return this.shouldSyncUrlFieldSpecified; }
+      set { this.shouldSyncUrlFieldSpecified = value; }
     }
   }
 
@@ -10075,9 +8106,7 @@ AdExtensionOverrideOperation[] operations) {
     private ProductConditionAndGroup[] productSelectionField;
 
     public int googleBaseCustomerId {
-      get {
-        return this.googleBaseCustomerIdField;
-      }
+      get { return this.googleBaseCustomerIdField; }
       set {
         this.googleBaseCustomerIdField = value;
         this.googleBaseCustomerIdSpecified = true;
@@ -10087,31 +8116,19 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool googleBaseCustomerIdSpecified {
-      get {
-        return this.googleBaseCustomerIdFieldSpecified;
-      }
-      set {
-        this.googleBaseCustomerIdFieldSpecified = value;
-      }
+      get { return this.googleBaseCustomerIdFieldSpecified; }
+      set { this.googleBaseCustomerIdFieldSpecified = value; }
     }
 
     public string advertiserName {
-      get {
-        return this.advertiserNameField;
-      }
-      set {
-        this.advertiserNameField = value;
-      }
+      get { return this.advertiserNameField; }
+      set { this.advertiserNameField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("productSelection")]
     public ProductConditionAndGroup[] productSelection {
-      get {
-        return this.productSelectionField;
-      }
-      set {
-        this.productSelectionField = value;
-      }
+      get { return this.productSelectionField; }
+      set { this.productSelectionField = value; }
     }
   }
 
@@ -10127,21 +8144,13 @@ AdExtensionOverrideOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("conditions")]
     public ProductCondition[] conditions {
-      get {
-        return this.conditionsField;
-      }
-      set {
-        this.conditionsField = value;
-      }
+      get { return this.conditionsField; }
+      set { this.conditionsField = value; }
     }
 
     public string dummy {
-      get {
-        return this.dummyField;
-      }
-      set {
-        this.dummyField = value;
-      }
+      get { return this.dummyField; }
+      set { this.dummyField = value; }
     }
   }
 
@@ -10155,12 +8164,8 @@ AdExtensionOverrideOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("sitelinks")]
     public Sitelink[] sitelinks {
-      get {
-        return this.sitelinksField;
-      }
-      set {
-        this.sitelinksField = value;
-      }
+      get { return this.sitelinksField; }
+      set { this.sitelinksField = value; }
     }
   }
 
@@ -10175,21 +8180,13 @@ AdExtensionOverrideOperation[] operations) {
     private string destinationUrlField;
 
     public string displayText {
-      get {
-        return this.displayTextField;
-      }
-      set {
-        this.displayTextField = value;
-      }
+      get { return this.displayTextField; }
+      set { this.displayTextField = value; }
     }
 
     public string destinationUrl {
-      get {
-        return this.destinationUrlField;
-      }
-      set {
-        this.destinationUrlField = value;
-      }
+      get { return this.destinationUrlField; }
+      set { this.destinationUrlField = value; }
     }
   }
 
@@ -10208,27 +8205,17 @@ AdExtensionOverrideOperation[] operations) {
     private bool isCallOnlyFieldSpecified;
 
     public string phoneNumber {
-      get {
-        return this.phoneNumberField;
-      }
-      set {
-        this.phoneNumberField = value;
-      }
+      get { return this.phoneNumberField; }
+      set { this.phoneNumberField = value; }
     }
 
     public string countryCode {
-      get {
-        return this.countryCodeField;
-      }
-      set {
-        this.countryCodeField = value;
-      }
+      get { return this.countryCodeField; }
+      set { this.countryCodeField = value; }
     }
 
     public bool isCallOnly {
-      get {
-        return this.isCallOnlyField;
-      }
+      get { return this.isCallOnlyField; }
       set {
         this.isCallOnlyField = value;
         this.isCallOnlySpecified = true;
@@ -10238,12 +8225,8 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool isCallOnlySpecified {
-      get {
-        return this.isCallOnlyFieldSpecified;
-      }
-      set {
-        this.isCallOnlyFieldSpecified = value;
-      }
+      get { return this.isCallOnlyFieldSpecified; }
+      set { this.isCallOnlyFieldSpecified = value; }
     }
   }
 
@@ -10276,55 +8259,33 @@ AdExtensionOverrideOperation[] operations) {
     private bool imageMediaIdFieldSpecified;
 
     public Address address {
-      get {
-        return this.addressField;
-      }
-      set {
-        this.addressField = value;
-      }
+      get { return this.addressField; }
+      set { this.addressField = value; }
     }
 
     public GeoPoint geoPoint {
-      get {
-        return this.geoPointField;
-      }
-      set {
-        this.geoPointField = value;
-      }
+      get { return this.geoPointField; }
+      set { this.geoPointField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
     public byte[] encodedLocation {
-      get {
-        return this.encodedLocationField;
-      }
-      set {
-        this.encodedLocationField = value;
-      }
+      get { return this.encodedLocationField; }
+      set { this.encodedLocationField = value; }
     }
 
     public string companyName {
-      get {
-        return this.companyNameField;
-      }
-      set {
-        this.companyNameField = value;
-      }
+      get { return this.companyNameField; }
+      set { this.companyNameField = value; }
     }
 
     public string phoneNumber {
-      get {
-        return this.phoneNumberField;
-      }
-      set {
-        this.phoneNumberField = value;
-      }
+      get { return this.phoneNumberField; }
+      set { this.phoneNumberField = value; }
     }
 
     public LocationExtensionSource source {
-      get {
-        return this.sourceField;
-      }
+      get { return this.sourceField; }
       set {
         this.sourceField = value;
         this.sourceSpecified = true;
@@ -10334,18 +8295,12 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool sourceSpecified {
-      get {
-        return this.sourceFieldSpecified;
-      }
-      set {
-        this.sourceFieldSpecified = value;
-      }
+      get { return this.sourceFieldSpecified; }
+      set { this.sourceFieldSpecified = value; }
     }
 
     public long iconMediaId {
-      get {
-        return this.iconMediaIdField;
-      }
+      get { return this.iconMediaIdField; }
       set {
         this.iconMediaIdField = value;
         this.iconMediaIdSpecified = true;
@@ -10355,18 +8310,12 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool iconMediaIdSpecified {
-      get {
-        return this.iconMediaIdFieldSpecified;
-      }
-      set {
-        this.iconMediaIdFieldSpecified = value;
-      }
+      get { return this.iconMediaIdFieldSpecified; }
+      set { this.iconMediaIdFieldSpecified = value; }
     }
 
     public long imageMediaId {
-      get {
-        return this.imageMediaIdField;
-      }
+      get { return this.imageMediaIdField; }
       set {
         this.imageMediaIdField = value;
         this.imageMediaIdSpecified = true;
@@ -10376,12 +8325,8 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool imageMediaIdSpecified {
-      get {
-        return this.imageMediaIdFieldSpecified;
-      }
-      set {
-        this.imageMediaIdFieldSpecified = value;
-      }
+      get { return this.imageMediaIdFieldSpecified; }
+      set { this.imageMediaIdFieldSpecified = value; }
     }
   }
 
@@ -10403,12 +8348,8 @@ AdExtensionOverrideOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("LocationOverrideInfo")]
     public LocationOverrideInfo Item {
-      get {
-        return this.itemField;
-      }
-      set {
-        this.itemField = value;
-      }
+      get { return this.itemField; }
+      set { this.itemField = value; }
     }
   }
 
@@ -10427,9 +8368,7 @@ AdExtensionOverrideOperation[] operations) {
     private bool radiusUnitsFieldSpecified;
 
     public int radius {
-      get {
-        return this.radiusField;
-      }
+      get { return this.radiusField; }
       set {
         this.radiusField = value;
         this.radiusSpecified = true;
@@ -10439,18 +8378,12 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool radiusSpecified {
-      get {
-        return this.radiusFieldSpecified;
-      }
-      set {
-        this.radiusFieldSpecified = value;
-      }
+      get { return this.radiusFieldSpecified; }
+      set { this.radiusFieldSpecified = value; }
     }
 
     public LocationOverrideInfoRadiusUnits radiusUnits {
-      get {
-        return this.radiusUnitsField;
-      }
+      get { return this.radiusUnitsField; }
       set {
         this.radiusUnitsField = value;
         this.radiusUnitsSpecified = true;
@@ -10460,12 +8393,8 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool radiusUnitsSpecified {
-      get {
-        return this.radiusUnitsFieldSpecified;
-      }
-      set {
-        this.radiusUnitsFieldSpecified = value;
-      }
+      get { return this.radiusUnitsFieldSpecified; }
+      set { this.radiusUnitsFieldSpecified = value; }
     }
   }
 
@@ -10511,12 +8440,8 @@ AdExtensionOverrideOperation[] operations) {
     private AdExtensionOverride operandField;
 
     public AdExtensionOverride operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -10530,12 +8455,8 @@ AdExtensionOverrideOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public AdExtensionOverride[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -10557,51 +8478,31 @@ AdExtensionOverrideOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("campaignIds")]
     public long[] campaignIds {
-      get {
-        return this.campaignIdsField;
-      }
-      set {
-        this.campaignIdsField = value;
-      }
+      get { return this.campaignIdsField; }
+      set { this.campaignIdsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("adIds")]
     public long[] adIds {
-      get {
-        return this.adIdsField;
-      }
-      set {
-        this.adIdsField = value;
-      }
+      get { return this.adIdsField; }
+      set { this.adIdsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("adExtensionIds")]
     public long[] adExtensionIds {
-      get {
-        return this.adExtensionIdsField;
-      }
-      set {
-        this.adExtensionIdsField = value;
-      }
+      get { return this.adExtensionIdsField; }
+      set { this.adExtensionIdsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("statuses")]
     public AdExtensionOverrideStatus[] statuses {
-      get {
-        return this.statusesField;
-      }
-      set {
-        this.statusesField = value;
-      }
+      get { return this.statusesField; }
+      set { this.statusesField = value; }
     }
 
     public Paging paging {
-      get {
-        return this.pagingField;
-      }
-      set {
-        this.pagingField = value;
-      }
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
     }
   }
 
@@ -10616,9 +8517,7 @@ AdExtensionOverrideOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public AdExtensionOverrideErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -10628,12 +8527,8 @@ AdExtensionOverrideOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -10673,21 +8568,13 @@ AdExtensionOverrideOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -10728,12 +8615,8 @@ ReportDefinitionOperation[] operations) {
     private ReportDefinition operandField;
 
     public ReportDefinition operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -10776,9 +8659,7 @@ ReportDefinitionOperation[] operations) {
     private ClientSelector[] clientSelectorsField;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -10788,36 +8669,22 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public Selector selector {
-      get {
-        return this.selectorField;
-      }
-      set {
-        this.selectorField = value;
-      }
+      get { return this.selectorField; }
+      set { this.selectorField = value; }
     }
 
     public string reportName {
-      get {
-        return this.reportNameField;
-      }
-      set {
-        this.reportNameField = value;
-      }
+      get { return this.reportNameField; }
+      set { this.reportNameField = value; }
     }
 
     public ReportDefinitionReportType reportType {
-      get {
-        return this.reportTypeField;
-      }
+      get { return this.reportTypeField; }
       set {
         this.reportTypeField = value;
         this.reportTypeSpecified = true;
@@ -10827,18 +8694,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reportTypeSpecified {
-      get {
-        return this.reportTypeFieldSpecified;
-      }
-      set {
-        this.reportTypeFieldSpecified = value;
-      }
+      get { return this.reportTypeFieldSpecified; }
+      set { this.reportTypeFieldSpecified = value; }
     }
 
     public bool hasAttachment {
-      get {
-        return this.hasAttachmentField;
-      }
+      get { return this.hasAttachmentField; }
       set {
         this.hasAttachmentField = value;
         this.hasAttachmentSpecified = true;
@@ -10848,18 +8709,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool hasAttachmentSpecified {
-      get {
-        return this.hasAttachmentFieldSpecified;
-      }
-      set {
-        this.hasAttachmentFieldSpecified = value;
-      }
+      get { return this.hasAttachmentFieldSpecified; }
+      set { this.hasAttachmentFieldSpecified = value; }
     }
 
     public ReportDefinitionDateRangeType dateRangeType {
-      get {
-        return this.dateRangeTypeField;
-      }
+      get { return this.dateRangeTypeField; }
       set {
         this.dateRangeTypeField = value;
         this.dateRangeTypeSpecified = true;
@@ -10869,18 +8724,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool dateRangeTypeSpecified {
-      get {
-        return this.dateRangeTypeFieldSpecified;
-      }
-      set {
-        this.dateRangeTypeFieldSpecified = value;
-      }
+      get { return this.dateRangeTypeFieldSpecified; }
+      set { this.dateRangeTypeFieldSpecified = value; }
     }
 
     public DownloadFormat downloadFormat {
-      get {
-        return this.downloadFormatField;
-      }
+      get { return this.downloadFormatField; }
       set {
         this.downloadFormatField = value;
         this.downloadFormatSpecified = true;
@@ -10890,27 +8739,17 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool downloadFormatSpecified {
-      get {
-        return this.downloadFormatFieldSpecified;
-      }
-      set {
-        this.downloadFormatFieldSpecified = value;
-      }
+      get { return this.downloadFormatFieldSpecified; }
+      set { this.downloadFormatFieldSpecified = value; }
     }
 
     public string creationTime {
-      get {
-        return this.creationTimeField;
-      }
-      set {
-        this.creationTimeField = value;
-      }
+      get { return this.creationTimeField; }
+      set { this.creationTimeField = value; }
     }
 
     public bool crossClient {
-      get {
-        return this.crossClientField;
-      }
+      get { return this.crossClientField; }
       set {
         this.crossClientField = value;
         this.crossClientSpecified = true;
@@ -10920,22 +8759,14 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool crossClientSpecified {
-      get {
-        return this.crossClientFieldSpecified;
-      }
-      set {
-        this.crossClientFieldSpecified = value;
-      }
+      get { return this.crossClientFieldSpecified; }
+      set { this.crossClientFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("clientSelectors")]
     public ClientSelector[] clientSelectors {
-      get {
-        return this.clientSelectorsField;
-      }
-      set {
-        this.clientSelectorsField = value;
-      }
+      get { return this.clientSelectorsField; }
+      set { this.clientSelectorsField = value; }
     }
   }
 
@@ -11005,22 +8836,14 @@ ReportDefinitionOperation[] operations) {
     private Predicate[] predicatesField;
 
     public string login {
-      get {
-        return this.loginField;
-      }
-      set {
-        this.loginField = value;
-      }
+      get { return this.loginField; }
+      set { this.loginField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("predicates")]
     public Predicate[] predicates {
-      get {
-        return this.predicatesField;
-      }
-      set {
-        this.predicatesField = value;
-      }
+      get { return this.predicatesField; }
+      set { this.predicatesField = value; }
     }
   }
 
@@ -11035,21 +8858,13 @@ ReportDefinitionOperation[] operations) {
     private string enumDisplayValueField;
 
     public string enumValue {
-      get {
-        return this.enumValueField;
-      }
-      set {
-        this.enumValueField = value;
-      }
+      get { return this.enumValueField; }
+      set { this.enumValueField = value; }
     }
 
     public string enumDisplayValue {
-      get {
-        return this.enumDisplayValueField;
-      }
-      set {
-        this.enumDisplayValueField = value;
-      }
+      get { return this.enumDisplayValueField; }
+      set { this.enumDisplayValueField = value; }
     }
   }
 
@@ -11080,55 +8895,33 @@ ReportDefinitionOperation[] operations) {
     private EnumValuePair[] enumValuePairsField;
 
     public string fieldName {
-      get {
-        return this.fieldNameField;
-      }
-      set {
-        this.fieldNameField = value;
-      }
+      get { return this.fieldNameField; }
+      set { this.fieldNameField = value; }
     }
 
     public string displayFieldName {
-      get {
-        return this.displayFieldNameField;
-      }
-      set {
-        this.displayFieldNameField = value;
-      }
+      get { return this.displayFieldNameField; }
+      set { this.displayFieldNameField = value; }
     }
 
     public string xmlAttributeName {
-      get {
-        return this.xmlAttributeNameField;
-      }
-      set {
-        this.xmlAttributeNameField = value;
-      }
+      get { return this.xmlAttributeNameField; }
+      set { this.xmlAttributeNameField = value; }
     }
 
     public string fieldType {
-      get {
-        return this.fieldTypeField;
-      }
-      set {
-        this.fieldTypeField = value;
-      }
+      get { return this.fieldTypeField; }
+      set { this.fieldTypeField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("enumValues")]
     public string[] enumValues {
-      get {
-        return this.enumValuesField;
-      }
-      set {
-        this.enumValuesField = value;
-      }
+      get { return this.enumValuesField; }
+      set { this.enumValuesField = value; }
     }
 
     public bool canSelect {
-      get {
-        return this.canSelectField;
-      }
+      get { return this.canSelectField; }
       set {
         this.canSelectField = value;
         this.canSelectSpecified = true;
@@ -11138,18 +8931,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool canSelectSpecified {
-      get {
-        return this.canSelectFieldSpecified;
-      }
-      set {
-        this.canSelectFieldSpecified = value;
-      }
+      get { return this.canSelectFieldSpecified; }
+      set { this.canSelectFieldSpecified = value; }
     }
 
     public bool canFilter {
-      get {
-        return this.canFilterField;
-      }
+      get { return this.canFilterField; }
       set {
         this.canFilterField = value;
         this.canFilterSpecified = true;
@@ -11159,22 +8946,14 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool canFilterSpecified {
-      get {
-        return this.canFilterFieldSpecified;
-      }
-      set {
-        this.canFilterFieldSpecified = value;
-      }
+      get { return this.canFilterFieldSpecified; }
+      set { this.canFilterFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("enumValuePairs")]
     public EnumValuePair[] enumValuePairs {
-      get {
-        return this.enumValuePairsField;
-      }
-      set {
-        this.enumValuePairsField = value;
-      }
+      get { return this.enumValuePairsField; }
+      set { this.enumValuePairsField = value; }
     }
   }
 
@@ -11192,18 +8971,12 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public ReportDefinition[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
 
     public int totalNumEntries {
-      get {
-        return this.totalNumEntriesField;
-      }
+      get { return this.totalNumEntriesField; }
       set {
         this.totalNumEntriesField = value;
         this.totalNumEntriesSpecified = true;
@@ -11213,12 +8986,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool totalNumEntriesSpecified {
-      get {
-        return this.totalNumEntriesFieldSpecified;
-      }
-      set {
-        this.totalNumEntriesFieldSpecified = value;
-      }
+      get { return this.totalNumEntriesFieldSpecified; }
+      set { this.totalNumEntriesFieldSpecified = value; }
     }
   }
 
@@ -11234,21 +9003,13 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("definitionIds")]
     public long[] definitionIds {
-      get {
-        return this.definitionIdsField;
-      }
-      set {
-        this.definitionIdsField = value;
-      }
+      get { return this.definitionIdsField; }
+      set { this.definitionIdsField = value; }
     }
 
     public Paging paging {
-      get {
-        return this.pagingField;
-      }
-      set {
-        this.pagingField = value;
-      }
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
     }
   }
 
@@ -11263,9 +9024,7 @@ ReportDefinitionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public ReportDefinitionErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -11275,12 +9034,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -11311,9 +9066,7 @@ ReportDefinitionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public CollectionSizeErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -11323,12 +9076,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -11355,21 +9104,13 @@ ReportDefinitionOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -11393,9 +9134,7 @@ ReportDefinitionOperation[] operations) {
     private bool idFieldSpecified;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -11405,12 +9144,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
   }
 
@@ -11437,27 +9172,17 @@ ReportDefinitionOperation[] operations) {
     private string linkTypeField;
 
     public CustomerId managerId {
-      get {
-        return this.managerIdField;
-      }
-      set {
-        this.managerIdField = value;
-      }
+      get { return this.managerIdField; }
+      set { this.managerIdField = value; }
     }
 
     public CustomerId clientId {
-      get {
-        return this.clientIdField;
-      }
-      set {
-        this.clientIdField = value;
-      }
+      get { return this.clientIdField; }
+      set { this.clientIdField = value; }
     }
 
     public ServiceType serviceType {
-      get {
-        return this.serviceTypeField;
-      }
+      get { return this.serviceTypeField; }
       set {
         this.serviceTypeField = value;
         this.serviceTypeSpecified = true;
@@ -11467,18 +9192,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool serviceTypeSpecified {
-      get {
-        return this.serviceTypeFieldSpecified;
-      }
-      set {
-        this.serviceTypeFieldSpecified = value;
-      }
+      get { return this.serviceTypeFieldSpecified; }
+      set { this.serviceTypeFieldSpecified = value; }
     }
 
     public LinkType typeOfLink {
-      get {
-        return this.typeOfLinkField;
-      }
+      get { return this.typeOfLinkField; }
       set {
         this.typeOfLinkField = value;
         this.typeOfLinkSpecified = true;
@@ -11488,31 +9207,19 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool typeOfLinkSpecified {
-      get {
-        return this.typeOfLinkFieldSpecified;
-      }
-      set {
-        this.typeOfLinkFieldSpecified = value;
-      }
+      get { return this.typeOfLinkFieldSpecified; }
+      set { this.typeOfLinkFieldSpecified = value; }
     }
 
     public string descriptiveName {
-      get {
-        return this.descriptiveNameField;
-      }
-      set {
-        this.descriptiveNameField = value;
-      }
+      get { return this.descriptiveNameField; }
+      set { this.descriptiveNameField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("Link.Type")]
     public string LinkType {
-      get {
-        return this.linkTypeField;
-      }
-      set {
-        this.linkTypeField = value;
-      }
+      get { return this.linkTypeField; }
+      set { this.linkTypeField = value; }
     }
   }
 
@@ -11557,9 +9264,7 @@ ReportDefinitionOperation[] operations) {
     private string dateTimeZoneField;
 
     public long customerId {
-      get {
-        return this.customerIdField;
-      }
+      get { return this.customerIdField; }
       set {
         this.customerIdField = value;
         this.customerIdSpecified = true;
@@ -11569,36 +9274,22 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool customerIdSpecified {
-      get {
-        return this.customerIdFieldSpecified;
-      }
-      set {
-        this.customerIdFieldSpecified = value;
-      }
+      get { return this.customerIdFieldSpecified; }
+      set { this.customerIdFieldSpecified = value; }
     }
 
     public string login {
-      get {
-        return this.loginField;
-      }
-      set {
-        this.loginField = value;
-      }
+      get { return this.loginField; }
+      set { this.loginField = value; }
     }
 
     public string companyName {
-      get {
-        return this.companyNameField;
-      }
-      set {
-        this.companyNameField = value;
-      }
+      get { return this.companyNameField; }
+      set { this.companyNameField = value; }
     }
 
     public bool canManageClients {
-      get {
-        return this.canManageClientsField;
-      }
+      get { return this.canManageClientsField; }
       set {
         this.canManageClientsField = value;
         this.canManageClientsSpecified = true;
@@ -11608,30 +9299,18 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool canManageClientsSpecified {
-      get {
-        return this.canManageClientsFieldSpecified;
-      }
-      set {
-        this.canManageClientsFieldSpecified = value;
-      }
+      get { return this.canManageClientsFieldSpecified; }
+      set { this.canManageClientsFieldSpecified = value; }
     }
 
     public string currencyCode {
-      get {
-        return this.currencyCodeField;
-      }
-      set {
-        this.currencyCodeField = value;
-      }
+      get { return this.currencyCodeField; }
+      set { this.currencyCodeField = value; }
     }
 
     public string dateTimeZone {
-      get {
-        return this.dateTimeZoneField;
-      }
-      set {
-        this.dateTimeZoneField = value;
-      }
+      get { return this.dateTimeZoneField; }
+      set { this.dateTimeZoneField = value; }
     }
   }
 
@@ -11647,22 +9326,14 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("accounts")]
     public Account[] accounts {
-      get {
-        return this.accountsField;
-      }
-      set {
-        this.accountsField = value;
-      }
+      get { return this.accountsField; }
+      set { this.accountsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("links")]
     public Link[] links {
-      get {
-        return this.linksField;
-      }
-      set {
-        this.linksField = value;
-      }
+      get { return this.linksField; }
+      set { this.linksField = value; }
     }
   }
 
@@ -11686,18 +9357,12 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("customerIds")]
     public long[] customerIds {
-      get {
-        return this.customerIdsField;
-      }
-      set {
-        this.customerIdsField = value;
-      }
+      get { return this.customerIdsField; }
+      set { this.customerIdsField = value; }
     }
 
     public bool enablePaging {
-      get {
-        return this.enablePagingField;
-      }
+      get { return this.enablePagingField; }
       set {
         this.enablePagingField = value;
         this.enablePagingSpecified = true;
@@ -11707,28 +9372,18 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool enablePagingSpecified {
-      get {
-        return this.enablePagingFieldSpecified;
-      }
-      set {
-        this.enablePagingFieldSpecified = value;
-      }
+      get { return this.enablePagingFieldSpecified; }
+      set { this.enablePagingFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("serviceTypes")]
     public ServiceType[] serviceTypes {
-      get {
-        return this.serviceTypesField;
-      }
-      set {
-        this.serviceTypesField = value;
-      }
+      get { return this.serviceTypesField; }
+      set { this.serviceTypesField = value; }
     }
 
     public bool submanagersOnly {
-      get {
-        return this.submanagersOnlyField;
-      }
+      get { return this.submanagersOnlyField; }
       set {
         this.submanagersOnlyField = value;
         this.submanagersOnlySpecified = true;
@@ -11738,12 +9393,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool submanagersOnlySpecified {
-      get {
-        return this.submanagersOnlyFieldSpecified;
-      }
-      set {
-        this.submanagersOnlyFieldSpecified = value;
-      }
+      get { return this.submanagersOnlyFieldSpecified; }
+      set { this.submanagersOnlyFieldSpecified = value; }
     }
   }
 
@@ -11758,9 +9409,7 @@ ReportDefinitionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public ServicedAccountErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -11770,12 +9419,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -11805,21 +9450,13 @@ ReportDefinitionOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -11852,21 +9489,13 @@ ReportDefinitionOperation[] operations) {
     private string titleField;
 
     public string url {
-      get {
-        return this.urlField;
-      }
-      set {
-        this.urlField = value;
-      }
+      get { return this.urlField; }
+      set { this.urlField = value; }
     }
 
     public string title {
-      get {
-        return this.titleField;
-      }
-      set {
-        this.titleField = value;
-      }
+      get { return this.titleField; }
+      set { this.titleField = value; }
     }
   }
 
@@ -11889,9 +9518,7 @@ ReportDefinitionOperation[] operations) {
     private bool countFieldSpecified;
 
     public int year {
-      get {
-        return this.yearField;
-      }
+      get { return this.yearField; }
       set {
         this.yearField = value;
         this.yearSpecified = true;
@@ -11901,18 +9528,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool yearSpecified {
-      get {
-        return this.yearFieldSpecified;
-      }
-      set {
-        this.yearFieldSpecified = value;
-      }
+      get { return this.yearFieldSpecified; }
+      set { this.yearFieldSpecified = value; }
     }
 
     public int month {
-      get {
-        return this.monthField;
-      }
+      get { return this.monthField; }
       set {
         this.monthField = value;
         this.monthSpecified = true;
@@ -11922,18 +9543,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool monthSpecified {
-      get {
-        return this.monthFieldSpecified;
-      }
-      set {
-        this.monthFieldSpecified = value;
-      }
+      get { return this.monthFieldSpecified; }
+      set { this.monthFieldSpecified = value; }
     }
 
     public long count {
-      get {
-        return this.countField;
-      }
+      get { return this.countField; }
       set {
         this.countField = value;
         this.countSpecified = true;
@@ -11943,12 +9558,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool countSpecified {
-      get {
-        return this.countFieldSpecified;
-      }
-      set {
-        this.countFieldSpecified = value;
-      }
+      get { return this.countFieldSpecified; }
+      set { this.countFieldSpecified = value; }
     }
   }
 
@@ -11963,21 +9574,13 @@ ReportDefinitionOperation[] operations) {
     private ComparableValue maxField;
 
     public ComparableValue min {
-      get {
-        return this.minField;
-      }
-      set {
-        this.minField = value;
-      }
+      get { return this.minField; }
+      set { this.minField = value; }
     }
 
     public ComparableValue max {
-      get {
-        return this.maxField;
-      }
-      set {
-        this.maxField = value;
-      }
+      get { return this.maxField; }
+      set { this.maxField = value; }
     }
   }
 
@@ -12012,9 +9615,7 @@ ReportDefinitionOperation[] operations) {
     private bool postRollPercentFieldSpecified;
 
     public int maxAdDuration {
-      get {
-        return this.maxAdDurationField;
-      }
+      get { return this.maxAdDurationField; }
       set {
         this.maxAdDurationField = value;
         this.maxAdDurationSpecified = true;
@@ -12024,18 +9625,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool maxAdDurationSpecified {
-      get {
-        return this.maxAdDurationFieldSpecified;
-      }
-      set {
-        this.maxAdDurationFieldSpecified = value;
-      }
+      get { return this.maxAdDurationFieldSpecified; }
+      set { this.maxAdDurationFieldSpecified = value; }
     }
 
     public int minAdDuration {
-      get {
-        return this.minAdDurationField;
-      }
+      get { return this.minAdDurationField; }
       set {
         this.minAdDurationField = value;
         this.minAdDurationSpecified = true;
@@ -12045,18 +9640,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool minAdDurationSpecified {
-      get {
-        return this.minAdDurationFieldSpecified;
-      }
-      set {
-        this.minAdDurationFieldSpecified = value;
-      }
+      get { return this.minAdDurationFieldSpecified; }
+      set { this.minAdDurationFieldSpecified = value; }
     }
 
     public int medianAdDuration {
-      get {
-        return this.medianAdDurationField;
-      }
+      get { return this.medianAdDurationField; }
       set {
         this.medianAdDurationField = value;
         this.medianAdDurationSpecified = true;
@@ -12066,18 +9655,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool medianAdDurationSpecified {
-      get {
-        return this.medianAdDurationFieldSpecified;
-      }
-      set {
-        this.medianAdDurationFieldSpecified = value;
-      }
+      get { return this.medianAdDurationFieldSpecified; }
+      set { this.medianAdDurationFieldSpecified = value; }
     }
 
     public double preRollPercent {
-      get {
-        return this.preRollPercentField;
-      }
+      get { return this.preRollPercentField; }
       set {
         this.preRollPercentField = value;
         this.preRollPercentSpecified = true;
@@ -12087,18 +9670,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool preRollPercentSpecified {
-      get {
-        return this.preRollPercentFieldSpecified;
-      }
-      set {
-        this.preRollPercentFieldSpecified = value;
-      }
+      get { return this.preRollPercentFieldSpecified; }
+      set { this.preRollPercentFieldSpecified = value; }
     }
 
     public double midRollPercent {
-      get {
-        return this.midRollPercentField;
-      }
+      get { return this.midRollPercentField; }
       set {
         this.midRollPercentField = value;
         this.midRollPercentSpecified = true;
@@ -12108,18 +9685,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool midRollPercentSpecified {
-      get {
-        return this.midRollPercentFieldSpecified;
-      }
-      set {
-        this.midRollPercentFieldSpecified = value;
-      }
+      get { return this.midRollPercentFieldSpecified; }
+      set { this.midRollPercentFieldSpecified = value; }
     }
 
     public double postRollPercent {
-      get {
-        return this.postRollPercentField;
-      }
+      get { return this.postRollPercentField; }
       set {
         this.postRollPercentField = value;
         this.postRollPercentSpecified = true;
@@ -12129,12 +9700,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool postRollPercentSpecified {
-      get {
-        return this.postRollPercentFieldSpecified;
-      }
-      set {
-        this.postRollPercentFieldSpecified = value;
-      }
+      get { return this.postRollPercentFieldSpecified; }
+      set { this.postRollPercentFieldSpecified = value; }
     }
   }
 
@@ -12149,9 +9716,7 @@ ReportDefinitionOperation[] operations) {
     private bool formatFieldSpecified;
 
     public SiteConstantsAdFormat format {
-      get {
-        return this.formatField;
-      }
+      get { return this.formatField; }
       set {
         this.formatField = value;
         this.formatSpecified = true;
@@ -12161,12 +9726,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool formatSpecified {
-      get {
-        return this.formatFieldSpecified;
-      }
-      set {
-        this.formatFieldSpecified = value;
-      }
+      get { return this.formatFieldSpecified; }
+      set { this.formatFieldSpecified = value; }
     }
   }
 
@@ -12211,12 +9772,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("Attribute.Type")]
     public string AttributeType {
-      get {
-        return this.attributeTypeField;
-      }
-      set {
-        this.attributeTypeField = value;
-      }
+      get { return this.attributeTypeField; }
+      set { this.attributeTypeField = value; }
     }
   }
 
@@ -12229,12 +9786,8 @@ ReportDefinitionOperation[] operations) {
     private WebpageDescriptor valueField;
 
     public WebpageDescriptor value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12247,12 +9800,8 @@ ReportDefinitionOperation[] operations) {
     private string valueField;
 
     public string value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12267,9 +9816,7 @@ ReportDefinitionOperation[] operations) {
     private bool valueFieldSpecified;
 
     public SiteConstantsPlacementType value {
-      get {
-        return this.valueField;
-      }
+      get { return this.valueField; }
       set {
         this.valueField = value;
         this.valueSpecified = true;
@@ -12279,12 +9826,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool valueSpecified {
-      get {
-        return this.valueFieldSpecified;
-      }
-      set {
-        this.valueFieldSpecified = value;
-      }
+      get { return this.valueFieldSpecified; }
+      set { this.valueFieldSpecified = value; }
     }
   }
 
@@ -12310,12 +9853,8 @@ ReportDefinitionOperation[] operations) {
     private Placement valueField;
 
     public Placement value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12330,9 +9869,7 @@ ReportDefinitionOperation[] operations) {
     private bool valueFieldSpecified;
 
     public OpportunityIdeaType value {
-      get {
-        return this.valueField;
-      }
+      get { return this.valueField; }
       set {
         this.valueField = value;
         this.valueSpecified = true;
@@ -12342,12 +9879,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool valueSpecified {
-      get {
-        return this.valueFieldSpecified;
-      }
-      set {
-        this.valueFieldSpecified = value;
-      }
+      get { return this.valueFieldSpecified; }
+      set { this.valueFieldSpecified = value; }
     }
   }
 
@@ -12370,12 +9903,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public MonthlySearchVolume[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12388,12 +9917,8 @@ ReportDefinitionOperation[] operations) {
     private Money valueField;
 
     public Money value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12406,12 +9931,8 @@ ReportDefinitionOperation[] operations) {
     private Range valueField;
 
     public Range value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12426,9 +9947,7 @@ ReportDefinitionOperation[] operations) {
     private bool valueFieldSpecified;
 
     public long value {
-      get {
-        return this.valueField;
-      }
+      get { return this.valueField; }
       set {
         this.valueField = value;
         this.valueSpecified = true;
@@ -12438,12 +9957,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool valueSpecified {
-      get {
-        return this.valueFieldSpecified;
-      }
-      set {
-        this.valueFieldSpecified = value;
-      }
+      get { return this.valueFieldSpecified; }
+      set { this.valueFieldSpecified = value; }
     }
   }
 
@@ -12456,12 +9971,8 @@ ReportDefinitionOperation[] operations) {
     private Keyword valueField;
 
     public Keyword value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12475,12 +9986,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public int[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12495,9 +10002,7 @@ ReportDefinitionOperation[] operations) {
     private bool valueFieldSpecified;
 
     public int value {
-      get {
-        return this.valueField;
-      }
+      get { return this.valueField; }
       set {
         this.valueField = value;
         this.valueSpecified = true;
@@ -12507,12 +10012,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool valueSpecified {
-      get {
-        return this.valueFieldSpecified;
-      }
-      set {
-        this.valueFieldSpecified = value;
-      }
+      get { return this.valueFieldSpecified; }
+      set { this.valueFieldSpecified = value; }
     }
   }
 
@@ -12525,12 +10026,8 @@ ReportDefinitionOperation[] operations) {
     private InStreamAdInfo valueField;
 
     public InStreamAdInfo value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12545,9 +10042,7 @@ ReportDefinitionOperation[] operations) {
     private bool valueFieldSpecified;
 
     public IdeaType value {
-      get {
-        return this.valueField;
-      }
+      get { return this.valueField; }
       set {
         this.valueField = value;
         this.valueSpecified = true;
@@ -12557,12 +10052,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool valueSpecified {
-      get {
-        return this.valueFieldSpecified;
-      }
-      set {
-        this.valueFieldSpecified = value;
-      }
+      get { return this.valueFieldSpecified; }
+      set { this.valueFieldSpecified = value; }
     }
   }
 
@@ -12585,9 +10076,7 @@ ReportDefinitionOperation[] operations) {
     private bool valueFieldSpecified;
 
     public double value {
-      get {
-        return this.valueField;
-      }
+      get { return this.valueField; }
       set {
         this.valueField = value;
         this.valueSpecified = true;
@@ -12597,12 +10086,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool valueSpecified {
-      get {
-        return this.valueFieldSpecified;
-      }
-      set {
-        this.valueFieldSpecified = value;
-      }
+      get { return this.valueFieldSpecified; }
+      set { this.valueFieldSpecified = value; }
     }
   }
 
@@ -12615,12 +10100,8 @@ ReportDefinitionOperation[] operations) {
     private Criterion valueField;
 
     public Criterion value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12635,9 +10116,7 @@ ReportDefinitionOperation[] operations) {
     private bool valueFieldSpecified;
 
     public bool value {
-      get {
-        return this.valueField;
-      }
+      get { return this.valueField; }
       set {
         this.valueField = value;
         this.valueSpecified = true;
@@ -12647,12 +10126,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool valueSpecified {
-      get {
-        return this.valueFieldSpecified;
-      }
-      set {
-        this.valueFieldSpecified = value;
-      }
+      get { return this.valueFieldSpecified; }
+      set { this.valueFieldSpecified = value; }
     }
   }
 
@@ -12665,12 +10140,8 @@ ReportDefinitionOperation[] operations) {
     private BidLandscape valueField;
 
     public BidLandscape value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12684,12 +10155,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public AdFormatSpec[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12706,9 +10173,7 @@ ReportDefinitionOperation[] operations) {
     private Attribute valueField;
 
     public AttributeType key {
-      get {
-        return this.keyField;
-      }
+      get { return this.keyField; }
       set {
         this.keyField = value;
         this.keySpecified = true;
@@ -12718,21 +10183,13 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool keySpecified {
-      get {
-        return this.keyFieldSpecified;
-      }
-      set {
-        this.keyFieldSpecified = value;
-      }
+      get { return this.keyFieldSpecified; }
+      set { this.keyFieldSpecified = value; }
     }
 
     public Attribute value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -12773,21 +10230,13 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("data")]
     public Type_AttributeMapEntry[] data {
-      get {
-        return this.dataField;
-      }
-      set {
-        this.dataField = value;
-      }
+      get { return this.dataField; }
+      set { this.dataField = value; }
     }
 
     public string dummy {
-      get {
-        return this.dummyField;
-      }
-      set {
-        this.dummyField = value;
-      }
+      get { return this.dummyField; }
+      set { this.dummyField = value; }
     }
   }
 
@@ -12804,9 +10253,7 @@ ReportDefinitionOperation[] operations) {
     private TargetingIdea[] entriesField;
 
     public int totalNumEntries {
-      get {
-        return this.totalNumEntriesField;
-      }
+      get { return this.totalNumEntriesField; }
       set {
         this.totalNumEntriesField = value;
         this.totalNumEntriesSpecified = true;
@@ -12816,22 +10263,14 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool totalNumEntriesSpecified {
-      get {
-        return this.totalNumEntriesFieldSpecified;
-      }
-      set {
-        this.totalNumEntriesFieldSpecified = value;
-      }
+      get { return this.totalNumEntriesFieldSpecified; }
+      set { this.totalNumEntriesFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public TargetingIdea[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -12850,9 +10289,7 @@ ReportDefinitionOperation[] operations) {
     private bool maximumFieldSpecified;
 
     public long minimum {
-      get {
-        return this.minimumField;
-      }
+      get { return this.minimumField; }
       set {
         this.minimumField = value;
         this.minimumSpecified = true;
@@ -12862,18 +10299,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool minimumSpecified {
-      get {
-        return this.minimumFieldSpecified;
-      }
-      set {
-        this.minimumFieldSpecified = value;
-      }
+      get { return this.minimumFieldSpecified; }
+      set { this.minimumFieldSpecified = value; }
     }
 
     public long maximum {
-      get {
-        return this.maximumField;
-      }
+      get { return this.maximumField; }
       set {
         this.maximumField = value;
         this.maximumSpecified = true;
@@ -12883,12 +10314,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool maximumSpecified {
-      get {
-        return this.maximumFieldSpecified;
-      }
-      set {
-        this.maximumFieldSpecified = value;
-      }
+      get { return this.maximumFieldSpecified; }
+      set { this.maximumFieldSpecified = value; }
     }
   }
 
@@ -12907,9 +10334,7 @@ ReportDefinitionOperation[] operations) {
     private bool maximumFieldSpecified;
 
     public double minimum {
-      get {
-        return this.minimumField;
-      }
+      get { return this.minimumField; }
       set {
         this.minimumField = value;
         this.minimumSpecified = true;
@@ -12919,18 +10344,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool minimumSpecified {
-      get {
-        return this.minimumFieldSpecified;
-      }
-      set {
-        this.minimumFieldSpecified = value;
-      }
+      get { return this.minimumFieldSpecified; }
+      set { this.minimumFieldSpecified = value; }
     }
 
     public double maximum {
-      get {
-        return this.maximumField;
-      }
+      get { return this.maximumField; }
       set {
         this.maximumField = value;
         this.maximumSpecified = true;
@@ -12940,12 +10359,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool maximumSpecified {
-      get {
-        return this.maximumFieldSpecified;
-      }
-      set {
-        this.maximumFieldSpecified = value;
-      }
+      get { return this.maximumFieldSpecified; }
+      set { this.maximumFieldSpecified = value; }
     }
   }
 
@@ -12977,12 +10392,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("SearchParameter.Type")]
     public string SearchParameterType {
-      get {
-        return this.searchParameterTypeField;
-      }
-      set {
-        this.searchParameterTypeField = value;
-      }
+      get { return this.searchParameterTypeField; }
+      set { this.searchParameterTypeField = value; }
     }
   }
 
@@ -12997,9 +10408,7 @@ ReportDefinitionOperation[] operations) {
     private bool adGroupIdFieldSpecified;
 
     public long adGroupId {
-      get {
-        return this.adGroupIdField;
-      }
+      get { return this.adGroupIdField; }
       set {
         this.adGroupIdField = value;
         this.adGroupIdSpecified = true;
@@ -13009,12 +10418,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupIdSpecified {
-      get {
-        return this.adGroupIdFieldSpecified;
-      }
-      set {
-        this.adGroupIdFieldSpecified = value;
-      }
+      get { return this.adGroupIdFieldSpecified; }
+      set { this.adGroupIdFieldSpecified = value; }
     }
   }
 
@@ -13027,12 +10432,8 @@ ReportDefinitionOperation[] operations) {
     private DoubleComparisonOperation operationField;
 
     public DoubleComparisonOperation operation {
-      get {
-        return this.operationField;
-      }
-      set {
-        this.operationField = value;
-      }
+      get { return this.operationField; }
+      set { this.operationField = value; }
     }
   }
 
@@ -13050,18 +10451,12 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("urls")]
     public string[] urls {
-      get {
-        return this.urlsField;
-      }
-      set {
-        this.urlsField = value;
-      }
+      get { return this.urlsField; }
+      set { this.urlsField = value; }
     }
 
     public bool includeSubUrls {
-      get {
-        return this.includeSubUrlsField;
-      }
+      get { return this.includeSubUrlsField; }
       set {
         this.includeSubUrlsField = value;
         this.includeSubUrlsSpecified = true;
@@ -13071,12 +10466,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool includeSubUrlsSpecified {
-      get {
-        return this.includeSubUrlsFieldSpecified;
-      }
-      set {
-        this.includeSubUrlsFieldSpecified = value;
-      }
+      get { return this.includeSubUrlsFieldSpecified; }
+      set { this.includeSubUrlsFieldSpecified = value; }
     }
   }
 
@@ -13090,12 +10481,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("keywords")]
     public Keyword[] keywords {
-      get {
-        return this.keywordsField;
-      }
-      set {
-        this.keywordsField = value;
-      }
+      get { return this.keywordsField; }
+      set { this.keywordsField = value; }
     }
   }
 
@@ -13109,12 +10496,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("placementTypes")]
     public SiteConstantsPlacementType[] placementTypes {
-      get {
-        return this.placementTypesField;
-      }
-      set {
-        this.placementTypesField = value;
-      }
+      get { return this.placementTypesField; }
+      set { this.placementTypesField = value; }
     }
   }
 
@@ -13128,12 +10511,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("languageTargets")]
     public LanguageTarget[] languageTargets {
-      get {
-        return this.languageTargetsField;
-      }
-      set {
-        this.languageTargetsField = value;
-      }
+      get { return this.languageTargetsField; }
+      set { this.languageTargetsField = value; }
     }
   }
 
@@ -13147,12 +10526,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("keywordMatchTypes")]
     public KeywordMatchType[] keywordMatchTypes {
-      get {
-        return this.keywordMatchTypesField;
-      }
-      set {
-        this.keywordMatchTypesField = value;
-      }
+      get { return this.keywordMatchTypesField; }
+      set { this.keywordMatchTypesField = value; }
     }
   }
 
@@ -13167,9 +10542,7 @@ ReportDefinitionOperation[] operations) {
     private bool categoryIdFieldSpecified;
 
     public int categoryId {
-      get {
-        return this.categoryIdField;
-      }
+      get { return this.categoryIdField; }
       set {
         this.categoryIdField = value;
         this.categoryIdSpecified = true;
@@ -13179,12 +10552,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool categoryIdSpecified {
-      get {
-        return this.categoryIdFieldSpecified;
-      }
-      set {
-        this.categoryIdFieldSpecified = value;
-      }
+      get { return this.categoryIdFieldSpecified; }
+      set { this.categoryIdFieldSpecified = value; }
     }
   }
 
@@ -13212,28 +10581,18 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("included")]
     public string[] included {
-      get {
-        return this.includedField;
-      }
-      set {
-        this.includedField = value;
-      }
+      get { return this.includedField; }
+      set { this.includedField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("excluded")]
     public string[] excluded {
-      get {
-        return this.excludedField;
-      }
-      set {
-        this.excludedField = value;
-      }
+      get { return this.excludedField; }
+      set { this.excludedField = value; }
     }
 
     public MatchAction priorityAction {
-      get {
-        return this.priorityActionField;
-      }
+      get { return this.priorityActionField; }
       set {
         this.priorityActionField = value;
         this.priorityActionSpecified = true;
@@ -13243,12 +10602,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool priorityActionSpecified {
-      get {
-        return this.priorityActionFieldSpecified;
-      }
-      set {
-        this.priorityActionFieldSpecified = value;
-      }
+      get { return this.priorityActionFieldSpecified; }
+      set { this.priorityActionFieldSpecified = value; }
     }
   }
 
@@ -13269,12 +10624,8 @@ ReportDefinitionOperation[] operations) {
     private LongComparisonOperation operationField;
 
     public LongComparisonOperation operation {
-      get {
-        return this.operationField;
-      }
-      set {
-        this.operationField = value;
-      }
+      get { return this.operationField; }
+      set { this.operationField = value; }
     }
   }
 
@@ -13288,12 +10639,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("keywords")]
     public Keyword[] keywords {
-      get {
-        return this.keywordsField;
-      }
-      set {
-        this.keywordsField = value;
-      }
+      get { return this.keywordsField; }
+      set { this.keywordsField = value; }
     }
   }
 
@@ -13308,9 +10655,7 @@ ReportDefinitionOperation[] operations) {
     private bool deviceTypeFieldSpecified;
 
     public DeviceType deviceType {
-      get {
-        return this.deviceTypeField;
-      }
+      get { return this.deviceTypeField; }
       set {
         this.deviceTypeField = value;
         this.deviceTypeSpecified = true;
@@ -13320,12 +10665,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool deviceTypeSpecified {
-      get {
-        return this.deviceTypeFieldSpecified;
-      }
-      set {
-        this.deviceTypeFieldSpecified = value;
-      }
+      get { return this.deviceTypeFieldSpecified; }
+      set { this.deviceTypeFieldSpecified = value; }
     }
   }
 
@@ -13348,12 +10689,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("countryTargets")]
     public CountryTarget[] countryTargets {
-      get {
-        return this.countryTargetsField;
-      }
-      set {
-        this.countryTargetsField = value;
-      }
+      get { return this.countryTargetsField; }
+      set { this.countryTargetsField = value; }
     }
   }
 
@@ -13367,12 +10704,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("levels")]
     public CompetitionSearchParameterLevel[] levels {
-      get {
-        return this.levelsField;
-      }
-      set {
-        this.levelsField = value;
-      }
+      get { return this.levelsField; }
+      set { this.levelsField = value; }
     }
   }
 
@@ -13394,12 +10727,8 @@ ReportDefinitionOperation[] operations) {
     private LongComparisonOperation operationField;
 
     public LongComparisonOperation operation {
-      get {
-        return this.operationField;
-      }
-      set {
-        this.operationField = value;
-      }
+      get { return this.operationField; }
+      set { this.operationField = value; }
     }
   }
 
@@ -13413,12 +10742,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("adTypes")]
     public SiteConstantsAdType[] adTypes {
-      get {
-        return this.adTypesField;
-      }
-      set {
-        this.adTypesField = value;
-      }
+      get { return this.adTypesField; }
+      set { this.adTypesField = value; }
     }
   }
 
@@ -13442,12 +10767,8 @@ ReportDefinitionOperation[] operations) {
     private DoubleComparisonOperation operationField;
 
     public DoubleComparisonOperation operation {
-      get {
-        return this.operationField;
-      }
-      set {
-        this.operationField = value;
-      }
+      get { return this.operationField; }
+      set { this.operationField = value; }
     }
   }
 
@@ -13477,18 +10798,12 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("searchParameters")]
     public SearchParameter[] searchParameters {
-      get {
-        return this.searchParametersField;
-      }
-      set {
-        this.searchParametersField = value;
-      }
+      get { return this.searchParametersField; }
+      set { this.searchParametersField = value; }
     }
 
     public IdeaType ideaType {
-      get {
-        return this.ideaTypeField;
-      }
+      get { return this.ideaTypeField; }
       set {
         this.ideaTypeField = value;
         this.ideaTypeSpecified = true;
@@ -13498,18 +10813,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool ideaTypeSpecified {
-      get {
-        return this.ideaTypeFieldSpecified;
-      }
-      set {
-        this.ideaTypeFieldSpecified = value;
-      }
+      get { return this.ideaTypeFieldSpecified; }
+      set { this.ideaTypeFieldSpecified = value; }
     }
 
     public RequestType requestType {
-      get {
-        return this.requestTypeField;
-      }
+      get { return this.requestTypeField; }
       set {
         this.requestTypeField = value;
         this.requestTypeSpecified = true;
@@ -13519,49 +10828,29 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool requestTypeSpecified {
-      get {
-        return this.requestTypeFieldSpecified;
-      }
-      set {
-        this.requestTypeFieldSpecified = value;
-      }
+      get { return this.requestTypeFieldSpecified; }
+      set { this.requestTypeFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("requestedAttributeTypes")]
     public AttributeType[] requestedAttributeTypes {
-      get {
-        return this.requestedAttributeTypesField;
-      }
-      set {
-        this.requestedAttributeTypesField = value;
-      }
+      get { return this.requestedAttributeTypesField; }
+      set { this.requestedAttributeTypesField = value; }
     }
 
     public Paging paging {
-      get {
-        return this.pagingField;
-      }
-      set {
-        this.pagingField = value;
-      }
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
     }
 
     public string localeCode {
-      get {
-        return this.localeCodeField;
-      }
-      set {
-        this.localeCodeField = value;
-      }
+      get { return this.localeCodeField; }
+      set { this.localeCodeField = value; }
     }
 
     public string currencyCode {
-      get {
-        return this.currencyCodeField;
-      }
-      set {
-        this.currencyCodeField = value;
-      }
+      get { return this.currencyCodeField; }
+      set { this.currencyCodeField = value; }
     }
   }
 
@@ -13588,9 +10877,7 @@ ReportDefinitionOperation[] operations) {
     private bool lengthFieldSpecified;
 
     public int index {
-      get {
-        return this.indexField;
-      }
+      get { return this.indexField; }
       set {
         this.indexField = value;
         this.indexSpecified = true;
@@ -13600,18 +10887,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool indexSpecified {
-      get {
-        return this.indexFieldSpecified;
-      }
-      set {
-        this.indexFieldSpecified = value;
-      }
+      get { return this.indexFieldSpecified; }
+      set { this.indexFieldSpecified = value; }
     }
 
     public int length {
-      get {
-        return this.lengthField;
-      }
+      get { return this.lengthField; }
       set {
         this.lengthField = value;
         this.lengthSpecified = true;
@@ -13621,12 +10902,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool lengthSpecified {
-      get {
-        return this.lengthFieldSpecified;
-      }
-      set {
-        this.lengthFieldSpecified = value;
-      }
+      get { return this.lengthFieldSpecified; }
+      set { this.lengthFieldSpecified = value; }
     }
   }
 
@@ -13641,21 +10918,13 @@ ReportDefinitionOperation[] operations) {
     private string violatingTextField;
 
     public string policyName {
-      get {
-        return this.policyNameField;
-      }
-      set {
-        this.policyNameField = value;
-      }
+      get { return this.policyNameField; }
+      set { this.policyNameField = value; }
     }
 
     public string violatingText {
-      get {
-        return this.violatingTextField;
-      }
-      set {
-        this.violatingTextField = value;
-      }
+      get { return this.violatingTextField; }
+      set { this.violatingTextField = value; }
     }
   }
 
@@ -13682,45 +10951,27 @@ ReportDefinitionOperation[] operations) {
     private PolicyViolationErrorPart[] violatingPartsField;
 
     public PolicyViolationKey key {
-      get {
-        return this.keyField;
-      }
-      set {
-        this.keyField = value;
-      }
+      get { return this.keyField; }
+      set { this.keyField = value; }
     }
 
     public string externalPolicyName {
-      get {
-        return this.externalPolicyNameField;
-      }
-      set {
-        this.externalPolicyNameField = value;
-      }
+      get { return this.externalPolicyNameField; }
+      set { this.externalPolicyNameField = value; }
     }
 
     public string externalPolicyUrl {
-      get {
-        return this.externalPolicyUrlField;
-      }
-      set {
-        this.externalPolicyUrlField = value;
-      }
+      get { return this.externalPolicyUrlField; }
+      set { this.externalPolicyUrlField = value; }
     }
 
     public string externalPolicyDescription {
-      get {
-        return this.externalPolicyDescriptionField;
-      }
-      set {
-        this.externalPolicyDescriptionField = value;
-      }
+      get { return this.externalPolicyDescriptionField; }
+      set { this.externalPolicyDescriptionField = value; }
     }
 
     public bool isExemptable {
-      get {
-        return this.isExemptableField;
-      }
+      get { return this.isExemptableField; }
       set {
         this.isExemptableField = value;
         this.isExemptableSpecified = true;
@@ -13730,22 +10981,14 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool isExemptableSpecified {
-      get {
-        return this.isExemptableFieldSpecified;
-      }
-      set {
-        this.isExemptableFieldSpecified = value;
-      }
+      get { return this.isExemptableFieldSpecified; }
+      set { this.isExemptableFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("violatingParts")]
     public PolicyViolationErrorPart[] violatingParts {
-      get {
-        return this.violatingPartsField;
-      }
-      set {
-        this.violatingPartsField = value;
-      }
+      get { return this.violatingPartsField; }
+      set { this.violatingPartsField = value; }
     }
   }
 
@@ -13768,9 +11011,7 @@ ReportDefinitionOperation[] operations) {
     private bool limitTypeFieldSpecified;
 
     public AdGroupCriterionLimitExceededCriteriaLimitType limitType {
-      get {
-        return this.limitTypeField;
-      }
+      get { return this.limitTypeField; }
       set {
         this.limitTypeField = value;
         this.limitTypeSpecified = true;
@@ -13780,12 +11021,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool limitTypeSpecified {
-      get {
-        return this.limitTypeFieldSpecified;
-      }
-      set {
-        this.limitTypeFieldSpecified = value;
-      }
+      get { return this.limitTypeFieldSpecified; }
+      set { this.limitTypeFieldSpecified = value; }
     }
   }
 
@@ -13808,9 +11045,7 @@ ReportDefinitionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public AdGroupCriterionErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -13820,12 +11055,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -13871,9 +11102,7 @@ ReportDefinitionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public TargetingIdeaErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -13883,12 +11112,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -13918,9 +11143,7 @@ ReportDefinitionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public MatchesRegexErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -13930,12 +11153,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -13958,9 +11177,7 @@ ReportDefinitionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public CurrencyCodeErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -13970,12 +11187,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -14005,21 +11218,13 @@ ReportDefinitionOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -14051,18 +11256,12 @@ ReportDefinitionOperation[] operations) {
     private Money totalCostField;
 
     public Money averageCpc {
-      get {
-        return this.averageCpcField;
-      }
-      set {
-        this.averageCpcField = value;
-      }
+      get { return this.averageCpcField; }
+      set { this.averageCpcField = value; }
     }
 
     public double averagePosition {
-      get {
-        return this.averagePositionField;
-      }
+      get { return this.averagePositionField; }
       set {
         this.averagePositionField = value;
         this.averagePositionSpecified = true;
@@ -14072,18 +11271,12 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool averagePositionSpecified {
-      get {
-        return this.averagePositionFieldSpecified;
-      }
-      set {
-        this.averagePositionFieldSpecified = value;
-      }
+      get { return this.averagePositionFieldSpecified; }
+      set { this.averagePositionFieldSpecified = value; }
     }
 
     public float clicksPerDay {
-      get {
-        return this.clicksPerDayField;
-      }
+      get { return this.clicksPerDayField; }
       set {
         this.clicksPerDayField = value;
         this.clicksPerDaySpecified = true;
@@ -14093,21 +11286,13 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool clicksPerDaySpecified {
-      get {
-        return this.clicksPerDayFieldSpecified;
-      }
-      set {
-        this.clicksPerDayFieldSpecified = value;
-      }
+      get { return this.clicksPerDayFieldSpecified; }
+      set { this.clicksPerDayFieldSpecified = value; }
     }
 
     public Money totalCost {
-      get {
-        return this.totalCostField;
-      }
-      set {
-        this.totalCostField = value;
-      }
+      get { return this.totalCostField; }
+      set { this.totalCostField = value; }
     }
   }
 
@@ -14124,12 +11309,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("Estimate.Type")]
     public string EstimateType {
-      get {
-        return this.estimateTypeField;
-      }
-      set {
-        this.estimateTypeField = value;
-      }
+      get { return this.estimateTypeField; }
+      set { this.estimateTypeField = value; }
     }
   }
 
@@ -14146,9 +11327,7 @@ ReportDefinitionOperation[] operations) {
     private AdGroupEstimate[] adGroupEstimatesField;
 
     public long campaignId {
-      get {
-        return this.campaignIdField;
-      }
+      get { return this.campaignIdField; }
       set {
         this.campaignIdField = value;
         this.campaignIdSpecified = true;
@@ -14158,22 +11337,14 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool campaignIdSpecified {
-      get {
-        return this.campaignIdFieldSpecified;
-      }
-      set {
-        this.campaignIdFieldSpecified = value;
-      }
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("adGroupEstimates")]
     public AdGroupEstimate[] adGroupEstimates {
-      get {
-        return this.adGroupEstimatesField;
-      }
-      set {
-        this.adGroupEstimatesField = value;
-      }
+      get { return this.adGroupEstimatesField; }
+      set { this.adGroupEstimatesField = value; }
     }
   }
 
@@ -14190,9 +11361,7 @@ ReportDefinitionOperation[] operations) {
     private KeywordEstimate[] keywordEstimatesField;
 
     public long adGroupId {
-      get {
-        return this.adGroupIdField;
-      }
+      get { return this.adGroupIdField; }
       set {
         this.adGroupIdField = value;
         this.adGroupIdSpecified = true;
@@ -14202,22 +11371,14 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupIdSpecified {
-      get {
-        return this.adGroupIdFieldSpecified;
-      }
-      set {
-        this.adGroupIdFieldSpecified = value;
-      }
+      get { return this.adGroupIdFieldSpecified; }
+      set { this.adGroupIdFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("keywordEstimates")]
     public KeywordEstimate[] keywordEstimates {
-      get {
-        return this.keywordEstimatesField;
-      }
-      set {
-        this.keywordEstimatesField = value;
-      }
+      get { return this.keywordEstimatesField; }
+      set { this.keywordEstimatesField = value; }
     }
   }
 
@@ -14236,9 +11397,7 @@ ReportDefinitionOperation[] operations) {
     private StatsEstimate maxField;
 
     public long criterionId {
-      get {
-        return this.criterionIdField;
-      }
+      get { return this.criterionIdField; }
       set {
         this.criterionIdField = value;
         this.criterionIdSpecified = true;
@@ -14248,30 +11407,18 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool criterionIdSpecified {
-      get {
-        return this.criterionIdFieldSpecified;
-      }
-      set {
-        this.criterionIdFieldSpecified = value;
-      }
+      get { return this.criterionIdFieldSpecified; }
+      set { this.criterionIdFieldSpecified = value; }
     }
 
     public StatsEstimate min {
-      get {
-        return this.minField;
-      }
-      set {
-        this.minField = value;
-      }
+      get { return this.minField; }
+      set { this.minField = value; }
     }
 
     public StatsEstimate max {
-      get {
-        return this.maxField;
-      }
-      set {
-        this.maxField = value;
-      }
+      get { return this.maxField; }
+      set { this.maxField = value; }
     }
   }
 
@@ -14287,21 +11434,13 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("campaignEstimates")]
     public CampaignEstimate[] campaignEstimates {
-      get {
-        return this.campaignEstimatesField;
-      }
-      set {
-        this.campaignEstimatesField = value;
-      }
+      get { return this.campaignEstimatesField; }
+      set { this.campaignEstimatesField = value; }
     }
 
     public string dummy {
-      get {
-        return this.dummyField;
-      }
-      set {
-        this.dummyField = value;
-      }
+      get { return this.dummyField; }
+      set { this.dummyField = value; }
     }
   }
 
@@ -14318,12 +11457,8 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("EstimateRequest.Type")]
     public string EstimateRequestType {
-      get {
-        return this.estimateRequestTypeField;
-      }
-      set {
-        this.estimateRequestTypeField = value;
-      }
+      get { return this.estimateRequestTypeField; }
+      set { this.estimateRequestTypeField = value; }
     }
   }
 
@@ -14342,9 +11477,7 @@ ReportDefinitionOperation[] operations) {
     private Target[] targetsField;
 
     public long campaignId {
-      get {
-        return this.campaignIdField;
-      }
+      get { return this.campaignIdField; }
       set {
         this.campaignIdField = value;
         this.campaignIdSpecified = true;
@@ -14354,32 +11487,20 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool campaignIdSpecified {
-      get {
-        return this.campaignIdFieldSpecified;
-      }
-      set {
-        this.campaignIdFieldSpecified = value;
-      }
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("adGroupEstimateRequests")]
     public AdGroupEstimateRequest[] adGroupEstimateRequests {
-      get {
-        return this.adGroupEstimateRequestsField;
-      }
-      set {
-        this.adGroupEstimateRequestsField = value;
-      }
+      get { return this.adGroupEstimateRequestsField; }
+      set { this.adGroupEstimateRequestsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("targets")]
     public Target[] targets {
-      get {
-        return this.targetsField;
-      }
-      set {
-        this.targetsField = value;
-      }
+      get { return this.targetsField; }
+      set { this.targetsField = value; }
     }
   }
 
@@ -14398,9 +11519,7 @@ ReportDefinitionOperation[] operations) {
     private Money maxCpcField;
 
     public long adGroupId {
-      get {
-        return this.adGroupIdField;
-      }
+      get { return this.adGroupIdField; }
       set {
         this.adGroupIdField = value;
         this.adGroupIdSpecified = true;
@@ -14410,31 +11529,19 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupIdSpecified {
-      get {
-        return this.adGroupIdFieldSpecified;
-      }
-      set {
-        this.adGroupIdFieldSpecified = value;
-      }
+      get { return this.adGroupIdFieldSpecified; }
+      set { this.adGroupIdFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("keywordEstimateRequests")]
     public KeywordEstimateRequest[] keywordEstimateRequests {
-      get {
-        return this.keywordEstimateRequestsField;
-      }
-      set {
-        this.keywordEstimateRequestsField = value;
-      }
+      get { return this.keywordEstimateRequestsField; }
+      set { this.keywordEstimateRequestsField = value; }
     }
 
     public Money maxCpc {
-      get {
-        return this.maxCpcField;
-      }
-      set {
-        this.maxCpcField = value;
-      }
+      get { return this.maxCpcField; }
+      set { this.maxCpcField = value; }
     }
   }
 
@@ -14449,21 +11556,13 @@ ReportDefinitionOperation[] operations) {
     private Money maxCpcField;
 
     public Keyword keyword {
-      get {
-        return this.keywordField;
-      }
-      set {
-        this.keywordField = value;
-      }
+      get { return this.keywordField; }
+      set { this.keywordField = value; }
     }
 
     public Money maxCpc {
-      get {
-        return this.maxCpcField;
-      }
-      set {
-        this.maxCpcField = value;
-      }
+      get { return this.maxCpcField; }
+      set { this.maxCpcField = value; }
     }
   }
 
@@ -14479,21 +11578,13 @@ ReportDefinitionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("campaignEstimateRequests")]
     public CampaignEstimateRequest[] campaignEstimateRequests {
-      get {
-        return this.campaignEstimateRequestsField;
-      }
-      set {
-        this.campaignEstimateRequestsField = value;
-      }
+      get { return this.campaignEstimateRequestsField; }
+      set { this.campaignEstimateRequestsField = value; }
     }
 
     public string dummy {
-      get {
-        return this.dummyField;
-      }
-      set {
-        this.dummyField = value;
-      }
+      get { return this.dummyField; }
+      set { this.dummyField = value; }
     }
   }
 
@@ -14508,9 +11599,7 @@ ReportDefinitionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public IdErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -14520,12 +11609,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -14547,9 +11632,7 @@ ReportDefinitionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public EntityAccessDeniedReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -14559,12 +11642,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -14587,9 +11666,7 @@ ReportDefinitionOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public TrafficEstimatorErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -14599,12 +11676,8 @@ ReportDefinitionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -14641,21 +11714,13 @@ ReportDefinitionOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -14688,12 +11753,8 @@ UserListOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public UserList[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -14749,9 +11810,7 @@ UserListOperation[] operations) {
     private string userListTypeField;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -14761,18 +11820,12 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public bool isReadOnly {
-      get {
-        return this.isReadOnlyField;
-      }
+      get { return this.isReadOnlyField; }
       set {
         this.isReadOnlyField = value;
         this.isReadOnlySpecified = true;
@@ -14782,36 +11835,22 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool isReadOnlySpecified {
-      get {
-        return this.isReadOnlyFieldSpecified;
-      }
-      set {
-        this.isReadOnlyFieldSpecified = value;
-      }
+      get { return this.isReadOnlyFieldSpecified; }
+      set { this.isReadOnlyFieldSpecified = value; }
     }
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public string description {
-      get {
-        return this.descriptionField;
-      }
-      set {
-        this.descriptionField = value;
-      }
+      get { return this.descriptionField; }
+      set { this.descriptionField = value; }
     }
 
     public UserListMembershipStatus status {
-      get {
-        return this.statusField;
-      }
+      get { return this.statusField; }
       set {
         this.statusField = value;
         this.statusSpecified = true;
@@ -14821,18 +11860,12 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool statusSpecified {
-      get {
-        return this.statusFieldSpecified;
-      }
-      set {
-        this.statusFieldSpecified = value;
-      }
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
     }
 
     public AccessReason accessReason {
-      get {
-        return this.accessReasonField;
-      }
+      get { return this.accessReasonField; }
       set {
         this.accessReasonField = value;
         this.accessReasonSpecified = true;
@@ -14842,18 +11875,12 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool accessReasonSpecified {
-      get {
-        return this.accessReasonFieldSpecified;
-      }
-      set {
-        this.accessReasonFieldSpecified = value;
-      }
+      get { return this.accessReasonFieldSpecified; }
+      set { this.accessReasonFieldSpecified = value; }
     }
 
     public AccountUserListStatus accountUserListStatus {
-      get {
-        return this.accountUserListStatusField;
-      }
+      get { return this.accountUserListStatusField; }
       set {
         this.accountUserListStatusField = value;
         this.accountUserListStatusSpecified = true;
@@ -14863,18 +11890,12 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool accountUserListStatusSpecified {
-      get {
-        return this.accountUserListStatusFieldSpecified;
-      }
-      set {
-        this.accountUserListStatusFieldSpecified = value;
-      }
+      get { return this.accountUserListStatusFieldSpecified; }
+      set { this.accountUserListStatusFieldSpecified = value; }
     }
 
     public long membershipLifeSpan {
-      get {
-        return this.membershipLifeSpanField;
-      }
+      get { return this.membershipLifeSpanField; }
       set {
         this.membershipLifeSpanField = value;
         this.membershipLifeSpanSpecified = true;
@@ -14884,18 +11905,12 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool membershipLifeSpanSpecified {
-      get {
-        return this.membershipLifeSpanFieldSpecified;
-      }
-      set {
-        this.membershipLifeSpanFieldSpecified = value;
-      }
+      get { return this.membershipLifeSpanFieldSpecified; }
+      set { this.membershipLifeSpanFieldSpecified = value; }
     }
 
     public long size {
-      get {
-        return this.sizeField;
-      }
+      get { return this.sizeField; }
       set {
         this.sizeField = value;
         this.sizeSpecified = true;
@@ -14905,18 +11920,12 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool sizeSpecified {
-      get {
-        return this.sizeFieldSpecified;
-      }
-      set {
-        this.sizeFieldSpecified = value;
-      }
+      get { return this.sizeFieldSpecified; }
+      set { this.sizeFieldSpecified = value; }
     }
 
     public SizeRange sizeRange {
-      get {
-        return this.sizeRangeField;
-      }
+      get { return this.sizeRangeField; }
       set {
         this.sizeRangeField = value;
         this.sizeRangeSpecified = true;
@@ -14926,18 +11935,12 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool sizeRangeSpecified {
-      get {
-        return this.sizeRangeFieldSpecified;
-      }
-      set {
-        this.sizeRangeFieldSpecified = value;
-      }
+      get { return this.sizeRangeFieldSpecified; }
+      set { this.sizeRangeFieldSpecified = value; }
     }
 
     public UserListType type {
-      get {
-        return this.typeField;
-      }
+      get { return this.typeField; }
       set {
         this.typeField = value;
         this.typeSpecified = true;
@@ -14947,22 +11950,14 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool typeSpecified {
-      get {
-        return this.typeFieldSpecified;
-      }
-      set {
-        this.typeFieldSpecified = value;
-      }
+      get { return this.typeFieldSpecified; }
+      set { this.typeFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("UserList.Type")]
     public string UserListType {
-      get {
-        return this.userListTypeField;
-      }
-      set {
-        this.userListTypeField = value;
-      }
+      get { return this.userListTypeField; }
+      set { this.userListTypeField = value; }
     }
   }
 
@@ -15034,12 +12029,8 @@ UserListOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("conversionTypes")]
     public UserListConversionType[] conversionTypes {
-      get {
-        return this.conversionTypesField;
-      }
-      set {
-        this.conversionTypesField = value;
-      }
+      get { return this.conversionTypesField; }
+      set { this.conversionTypesField = value; }
     }
   }
 
@@ -15060,9 +12051,7 @@ UserListOperation[] operations) {
     private bool categoryFieldSpecified;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -15072,27 +12061,17 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public UserListConversionTypeCategory category {
-      get {
-        return this.categoryField;
-      }
+      get { return this.categoryField; }
       set {
         this.categoryField = value;
         this.categorySpecified = true;
@@ -15102,12 +12081,8 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool categorySpecified {
-      get {
-        return this.categoryFieldSpecified;
-      }
-      set {
-        this.categoryFieldSpecified = value;
-      }
+      get { return this.categoryFieldSpecified; }
+      set { this.categoryFieldSpecified = value; }
     }
   }
 
@@ -15129,12 +12104,8 @@ UserListOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("rules")]
     public UserListLogicalRule[] rules {
-      get {
-        return this.rulesField;
-      }
-      set {
-        this.rulesField = value;
-      }
+      get { return this.rulesField; }
+      set { this.rulesField = value; }
     }
   }
 
@@ -15151,9 +12122,7 @@ UserListOperation[] operations) {
     private LogicalUserListOperand[] ruleOperandsField;
 
     public UserListLogicalRuleOperator @operator {
-      get {
-        return this.operatorField;
-      }
+      get { return this.operatorField; }
       set {
         this.operatorField = value;
         this.operatorSpecified = true;
@@ -15163,22 +12132,14 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool operatorSpecified {
-      get {
-        return this.operatorFieldSpecified;
-      }
-      set {
-        this.operatorFieldSpecified = value;
-      }
+      get { return this.operatorFieldSpecified; }
+      set { this.operatorFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("ruleOperands")]
     public LogicalUserListOperand[] ruleOperands {
-      get {
-        return this.ruleOperandsField;
-      }
-      set {
-        this.ruleOperandsField = value;
-      }
+      get { return this.ruleOperandsField; }
+      set { this.ruleOperandsField = value; }
     }
   }
 
@@ -15203,12 +12164,8 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlElementAttribute("UserInterest", typeof(UserInterest))]
     [System.Xml.Serialization.XmlElementAttribute("UserList", typeof(UserList))]
     public object Item {
-      get {
-        return this.itemField;
-      }
-      set {
-        this.itemField = value;
-      }
+      get { return this.itemField; }
+      set { this.itemField = value; }
     }
   }
 
@@ -15229,9 +12186,7 @@ UserListOperation[] operations) {
     private bool sizeRangeFieldSpecified;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -15241,27 +12196,17 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public SizeRange sizeRange {
-      get {
-        return this.sizeRangeField;
-      }
+      get { return this.sizeRangeField; }
       set {
         this.sizeRangeField = value;
         this.sizeRangeSpecified = true;
@@ -15271,12 +12216,8 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool sizeRangeSpecified {
-      get {
-        return this.sizeRangeFieldSpecified;
-      }
-      set {
-        this.sizeRangeFieldSpecified = value;
-      }
+      get { return this.sizeRangeFieldSpecified; }
+      set { this.sizeRangeFieldSpecified = value; }
     }
   }
 
@@ -15297,12 +12238,8 @@ UserListOperation[] operations) {
     private UserList operandField;
 
     public UserList operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -15316,12 +12253,8 @@ UserListOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public UserList[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -15336,9 +12269,7 @@ UserListOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public UserListErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -15348,12 +12279,8 @@ UserListOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -15399,21 +12326,13 @@ UserListOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -15446,12 +12365,8 @@ AdGroupAdOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public AdGroupAd[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -15476,9 +12391,7 @@ AdGroupAdOperation[] operations) {
     private AdStats statsField;
 
     public long adGroupId {
-      get {
-        return this.adGroupIdField;
-      }
+      get { return this.adGroupIdField; }
       set {
         this.adGroupIdField = value;
         this.adGroupIdSpecified = true;
@@ -15488,36 +12401,22 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupIdSpecified {
-      get {
-        return this.adGroupIdFieldSpecified;
-      }
-      set {
-        this.adGroupIdFieldSpecified = value;
-      }
+      get { return this.adGroupIdFieldSpecified; }
+      set { this.adGroupIdFieldSpecified = value; }
     }
 
     public Ad ad {
-      get {
-        return this.adField;
-      }
-      set {
-        this.adField = value;
-      }
+      get { return this.adField; }
+      set { this.adField = value; }
     }
 
     public AdGroupAdExperimentData experimentData {
-      get {
-        return this.experimentDataField;
-      }
-      set {
-        this.experimentDataField = value;
-      }
+      get { return this.experimentDataField; }
+      set { this.experimentDataField = value; }
     }
 
     public AdGroupAdStatus status {
-      get {
-        return this.statusField;
-      }
+      get { return this.statusField; }
       set {
         this.statusField = value;
         this.statusSpecified = true;
@@ -15527,29 +12426,21 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool statusSpecified {
-      get {
-        return this.statusFieldSpecified;
-      }
-      set {
-        this.statusFieldSpecified = value;
-      }
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
     }
 
     public AdStats stats {
-      get {
-        return this.statsField;
-      }
-      set {
-        this.statsField = value;
-      }
+      get { return this.statsField; }
+      set { this.statsField = value; }
     }
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateAd))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageAd))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(MobileImageAd))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RichMediaAd))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ThirdPartyRedirectAd))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(MobileImageAd))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TextAd))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductAd))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(MobileAd))]
@@ -15581,9 +12472,7 @@ AdGroupAdOperation[] operations) {
     private string adTypeField;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -15593,36 +12482,22 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public string url {
-      get {
-        return this.urlField;
-      }
-      set {
-        this.urlField = value;
-      }
+      get { return this.urlField; }
+      set { this.urlField = value; }
     }
 
     public string displayUrl {
-      get {
-        return this.displayUrlField;
-      }
-      set {
-        this.displayUrlField = value;
-      }
+      get { return this.displayUrlField; }
+      set { this.displayUrlField = value; }
     }
 
     public AdApprovalStatus approvalStatus {
-      get {
-        return this.approvalStatusField;
-      }
+      get { return this.approvalStatusField; }
       set {
         this.approvalStatusField = value;
         this.approvalStatusSpecified = true;
@@ -15632,28 +12507,18 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool approvalStatusSpecified {
-      get {
-        return this.approvalStatusFieldSpecified;
-      }
-      set {
-        this.approvalStatusFieldSpecified = value;
-      }
+      get { return this.approvalStatusFieldSpecified; }
+      set { this.approvalStatusFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("disapprovalReasons")]
     public string[] disapprovalReasons {
-      get {
-        return this.disapprovalReasonsField;
-      }
-      set {
-        this.disapprovalReasonsField = value;
-      }
+      get { return this.disapprovalReasonsField; }
+      set { this.disapprovalReasonsField = value; }
     }
 
     public bool trademarkDisapproved {
-      get {
-        return this.trademarkDisapprovedField;
-      }
+      get { return this.trademarkDisapprovedField; }
       set {
         this.trademarkDisapprovedField = value;
         this.trademarkDisapprovedSpecified = true;
@@ -15663,22 +12528,14 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool trademarkDisapprovedSpecified {
-      get {
-        return this.trademarkDisapprovedFieldSpecified;
-      }
-      set {
-        this.trademarkDisapprovedFieldSpecified = value;
-      }
+      get { return this.trademarkDisapprovedFieldSpecified; }
+      set { this.trademarkDisapprovedFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("Ad.Type")]
     public string AdType {
-      get {
-        return this.adTypeField;
-      }
-      set {
-        this.adTypeField = value;
-      }
+      get { return this.adTypeField; }
+      set { this.adTypeField = value; }
     }
   }
 
@@ -15717,9 +12574,7 @@ AdGroupAdOperation[] operations) {
     private bool durationFieldSpecified;
 
     public long templateId {
-      get {
-        return this.templateIdField;
-      }
+      get { return this.templateIdField; }
       set {
         this.templateIdField = value;
         this.templateIdSpecified = true;
@@ -15729,55 +12584,33 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool templateIdSpecified {
-      get {
-        return this.templateIdFieldSpecified;
-      }
-      set {
-        this.templateIdFieldSpecified = value;
-      }
+      get { return this.templateIdFieldSpecified; }
+      set { this.templateIdFieldSpecified = value; }
     }
 
     public AdUnionId adUnionId {
-      get {
-        return this.adUnionIdField;
-      }
-      set {
-        this.adUnionIdField = value;
-      }
+      get { return this.adUnionIdField; }
+      set { this.adUnionIdField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("templateElements")]
     public TemplateElement[] templateElements {
-      get {
-        return this.templateElementsField;
-      }
-      set {
-        this.templateElementsField = value;
-      }
+      get { return this.templateElementsField; }
+      set { this.templateElementsField = value; }
     }
 
     public Dimensions dimensions {
-      get {
-        return this.dimensionsField;
-      }
-      set {
-        this.dimensionsField = value;
-      }
+      get { return this.dimensionsField; }
+      set { this.dimensionsField = value; }
     }
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public int duration {
-      get {
-        return this.durationField;
-      }
+      get { return this.durationField; }
       set {
         this.durationField = value;
         this.durationSpecified = true;
@@ -15787,12 +12620,8 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool durationSpecified {
-      get {
-        return this.durationFieldSpecified;
-      }
-      set {
-        this.durationFieldSpecified = value;
-      }
+      get { return this.durationFieldSpecified; }
+      set { this.durationFieldSpecified = value; }
     }
   }
 
@@ -15810,9 +12639,7 @@ AdGroupAdOperation[] operations) {
     private string adUnionIdTypeField;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -15822,22 +12649,14 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("AdUnionId.Type")]
     public string AdUnionIdType {
-      get {
-        return this.adUnionIdTypeField;
-      }
-      set {
-        this.adUnionIdTypeField = value;
-      }
+      get { return this.adUnionIdTypeField; }
+      set { this.adUnionIdTypeField = value; }
     }
   }
 
@@ -15860,22 +12679,14 @@ AdGroupAdOperation[] operations) {
     private TemplateElementField[] fieldsField;
 
     public string uniqueName {
-      get {
-        return this.uniqueNameField;
-      }
-      set {
-        this.uniqueNameField = value;
-      }
+      get { return this.uniqueNameField; }
+      set { this.uniqueNameField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("fields")]
     public TemplateElementField[] fields {
-      get {
-        return this.fieldsField;
-      }
-      set {
-        this.fieldsField = value;
-      }
+      get { return this.fieldsField; }
+      set { this.fieldsField = value; }
     }
   }
 
@@ -15896,18 +12707,12 @@ AdGroupAdOperation[] operations) {
     private Media fieldMediaField;
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public TemplateElementFieldType type {
-      get {
-        return this.typeField;
-      }
+      get { return this.typeField; }
       set {
         this.typeField = value;
         this.typeSpecified = true;
@@ -15917,30 +12722,18 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool typeSpecified {
-      get {
-        return this.typeFieldSpecified;
-      }
-      set {
-        this.typeFieldSpecified = value;
-      }
+      get { return this.typeFieldSpecified; }
+      set { this.typeFieldSpecified = value; }
     }
 
     public string fieldText {
-      get {
-        return this.fieldTextField;
-      }
-      set {
-        this.fieldTextField = value;
-      }
+      get { return this.fieldTextField; }
+      set { this.fieldTextField = value; }
     }
 
     public Media fieldMedia {
-      get {
-        return this.fieldMediaField;
-      }
-      set {
-        this.fieldMediaField = value;
-      }
+      get { return this.fieldMediaField; }
+      set { this.fieldMediaField = value; }
     }
   }
 
@@ -15974,27 +12767,17 @@ AdGroupAdOperation[] operations) {
     private bool adToCopyImageFromFieldSpecified;
 
     public Image image {
-      get {
-        return this.imageField;
-      }
-      set {
-        this.imageField = value;
-      }
+      get { return this.imageField; }
+      set { this.imageField = value; }
     }
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public long adToCopyImageFrom {
-      get {
-        return this.adToCopyImageFromField;
-      }
+      get { return this.adToCopyImageFromField; }
       set {
         this.adToCopyImageFromField = value;
         this.adToCopyImageFromSpecified = true;
@@ -16004,13 +12787,49 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adToCopyImageFromSpecified {
-      get {
-        return this.adToCopyImageFromFieldSpecified;
-      }
-      set {
-        this.adToCopyImageFromFieldSpecified = value;
-      }
+      get { return this.adToCopyImageFromFieldSpecified; }
+      set { this.adToCopyImageFromFieldSpecified = value; }
     }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201101")]
+  public partial class MobileImageAd : Ad {
+    private MarkupLanguageType[] markupLanguagesField;
+
+    private string[] mobileCarriersField;
+
+    private Image imageField;
+
+    [System.Xml.Serialization.XmlElementAttribute("markupLanguages")]
+    public MarkupLanguageType[] markupLanguages {
+      get { return this.markupLanguagesField; }
+      set { this.markupLanguagesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("mobileCarriers")]
+    public string[] mobileCarriers {
+      get { return this.mobileCarriersField; }
+      set { this.mobileCarriersField = value; }
+    }
+
+    public Image image {
+      get { return this.imageField; }
+      set { this.imageField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201101")]
+  public enum MarkupLanguageType {
+    HTML,
+    CHTML,
+    XHTML,
+    WML
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ThirdPartyRedirectAd))]
@@ -16033,45 +12852,27 @@ AdGroupAdOperation[] operations) {
     private bool certifiedVendorFormatIdFieldSpecified;
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public Dimensions dimensions {
-      get {
-        return this.dimensionsField;
-      }
-      set {
-        this.dimensionsField = value;
-      }
+      get { return this.dimensionsField; }
+      set { this.dimensionsField = value; }
     }
 
     public string snippet {
-      get {
-        return this.snippetField;
-      }
-      set {
-        this.snippetField = value;
-      }
+      get { return this.snippetField; }
+      set { this.snippetField = value; }
     }
 
     public string impressionBeaconUrl {
-      get {
-        return this.impressionBeaconUrlField;
-      }
-      set {
-        this.impressionBeaconUrlField = value;
-      }
+      get { return this.impressionBeaconUrlField; }
+      set { this.impressionBeaconUrlField = value; }
     }
 
     public long certifiedVendorFormatId {
-      get {
-        return this.certifiedVendorFormatIdField;
-      }
+      get { return this.certifiedVendorFormatIdField; }
       set {
         this.certifiedVendorFormatIdField = value;
         this.certifiedVendorFormatIdSpecified = true;
@@ -16081,12 +12882,8 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool certifiedVendorFormatIdSpecified {
-      get {
-        return this.certifiedVendorFormatIdFieldSpecified;
-      }
-      set {
-        this.certifiedVendorFormatIdFieldSpecified = value;
-      }
+      get { return this.certifiedVendorFormatIdFieldSpecified; }
+      set { this.certifiedVendorFormatIdFieldSpecified = value; }
     }
   }
 
@@ -16111,9 +12908,7 @@ AdGroupAdOperation[] operations) {
     private VideoType[] videoTypesField;
 
     public bool isCookieTargeted {
-      get {
-        return this.isCookieTargetedField;
-      }
+      get { return this.isCookieTargetedField; }
       set {
         this.isCookieTargetedField = value;
         this.isCookieTargetedSpecified = true;
@@ -16123,18 +12918,12 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool isCookieTargetedSpecified {
-      get {
-        return this.isCookieTargetedFieldSpecified;
-      }
-      set {
-        this.isCookieTargetedFieldSpecified = value;
-      }
+      get { return this.isCookieTargetedFieldSpecified; }
+      set { this.isCookieTargetedFieldSpecified = value; }
     }
 
     public bool isUserInterestTargeted {
-      get {
-        return this.isUserInterestTargetedField;
-      }
+      get { return this.isUserInterestTargetedField; }
       set {
         this.isUserInterestTargetedField = value;
         this.isUserInterestTargetedSpecified = true;
@@ -16144,18 +12933,12 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool isUserInterestTargetedSpecified {
-      get {
-        return this.isUserInterestTargetedFieldSpecified;
-      }
-      set {
-        this.isUserInterestTargetedFieldSpecified = value;
-      }
+      get { return this.isUserInterestTargetedFieldSpecified; }
+      set { this.isUserInterestTargetedFieldSpecified = value; }
     }
 
     public bool isTagged {
-      get {
-        return this.isTaggedField;
-      }
+      get { return this.isTaggedField; }
       set {
         this.isTaggedField = value;
         this.isTaggedSpecified = true;
@@ -16165,22 +12948,14 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool isTaggedSpecified {
-      get {
-        return this.isTaggedFieldSpecified;
-      }
-      set {
-        this.isTaggedFieldSpecified = value;
-      }
+      get { return this.isTaggedFieldSpecified; }
+      set { this.isTaggedFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("videoTypes")]
     public VideoType[] videoTypes {
-      get {
-        return this.videoTypesField;
-      }
-      set {
-        this.videoTypesField = value;
-      }
+      get { return this.videoTypesField; }
+      set { this.videoTypesField = value; }
     }
   }
 
@@ -16199,58 +12974,6 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201101")]
-  public partial class MobileImageAd : Ad {
-    private MarkupLanguageType[] markupLanguagesField;
-
-    private string[] mobileCarriersField;
-
-    private Image imageField;
-
-    [System.Xml.Serialization.XmlElementAttribute("markupLanguages")]
-    public MarkupLanguageType[] markupLanguages {
-      get {
-        return this.markupLanguagesField;
-      }
-      set {
-        this.markupLanguagesField = value;
-      }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("mobileCarriers")]
-    public string[] mobileCarriers {
-      get {
-        return this.mobileCarriersField;
-      }
-      set {
-        this.mobileCarriersField = value;
-      }
-    }
-
-    public Image image {
-      get {
-        return this.imageField;
-      }
-      set {
-        this.imageField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201101")]
-  public enum MarkupLanguageType {
-    HTML,
-    CHTML,
-    XHTML,
-    WML
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201101")]
   public partial class TextAd : Ad {
     private string headlineField;
 
@@ -16259,30 +12982,18 @@ AdGroupAdOperation[] operations) {
     private string description2Field;
 
     public string headline {
-      get {
-        return this.headlineField;
-      }
-      set {
-        this.headlineField = value;
-      }
+      get { return this.headlineField; }
+      set { this.headlineField = value; }
     }
 
     public string description1 {
-      get {
-        return this.description1Field;
-      }
-      set {
-        this.description1Field = value;
-      }
+      get { return this.description1Field; }
+      set { this.description1Field = value; }
     }
 
     public string description2 {
-      get {
-        return this.description2Field;
-      }
-      set {
-        this.description2Field = value;
-      }
+      get { return this.description2Field; }
+      set { this.description2Field = value; }
     }
   }
 
@@ -16295,12 +13006,8 @@ AdGroupAdOperation[] operations) {
     private string promotionLineField;
 
     public string promotionLine {
-      get {
-        return this.promotionLineField;
-      }
-      set {
-        this.promotionLineField = value;
-      }
+      get { return this.promotionLineField; }
+      set { this.promotionLineField = value; }
     }
   }
 
@@ -16325,68 +13032,40 @@ AdGroupAdOperation[] operations) {
     private string phoneNumberField;
 
     public string headline {
-      get {
-        return this.headlineField;
-      }
-      set {
-        this.headlineField = value;
-      }
+      get { return this.headlineField; }
+      set { this.headlineField = value; }
     }
 
     public string description {
-      get {
-        return this.descriptionField;
-      }
-      set {
-        this.descriptionField = value;
-      }
+      get { return this.descriptionField; }
+      set { this.descriptionField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("markupLanguages")]
     public MarkupLanguageType[] markupLanguages {
-      get {
-        return this.markupLanguagesField;
-      }
-      set {
-        this.markupLanguagesField = value;
-      }
+      get { return this.markupLanguagesField; }
+      set { this.markupLanguagesField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("mobileCarriers")]
     public string[] mobileCarriers {
-      get {
-        return this.mobileCarriersField;
-      }
-      set {
-        this.mobileCarriersField = value;
-      }
+      get { return this.mobileCarriersField; }
+      set { this.mobileCarriersField = value; }
     }
 
     public string businessName {
-      get {
-        return this.businessNameField;
-      }
-      set {
-        this.businessNameField = value;
-      }
+      get { return this.businessNameField; }
+      set { this.businessNameField = value; }
     }
 
     public string countryCode {
-      get {
-        return this.countryCodeField;
-      }
-      set {
-        this.countryCodeField = value;
-      }
+      get { return this.countryCodeField; }
+      set { this.countryCodeField = value; }
     }
 
     public string phoneNumber {
-      get {
-        return this.phoneNumberField;
-      }
-      set {
-        this.phoneNumberField = value;
-      }
+      get { return this.phoneNumberField; }
+      set { this.phoneNumberField = value; }
     }
   }
 
@@ -16403,18 +13082,12 @@ AdGroupAdOperation[] operations) {
     private bool typeFieldSpecified;
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public DeprecatedAdType type {
-      get {
-        return this.typeField;
-      }
+      get { return this.typeField; }
       set {
         this.typeField = value;
         this.typeSpecified = true;
@@ -16424,12 +13097,8 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool typeSpecified {
-      get {
-        return this.typeFieldSpecified;
-      }
-      set {
-        this.typeFieldSpecified = value;
-      }
+      get { return this.typeFieldSpecified; }
+      set { this.typeFieldSpecified = value; }
     }
   }
 
@@ -16471,9 +13140,7 @@ AdGroupAdOperation[] operations) {
     private bool experimentDataStatusFieldSpecified;
 
     public long experimentId {
-      get {
-        return this.experimentIdField;
-      }
+      get { return this.experimentIdField; }
       set {
         this.experimentIdField = value;
         this.experimentIdSpecified = true;
@@ -16483,18 +13150,12 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool experimentIdSpecified {
-      get {
-        return this.experimentIdFieldSpecified;
-      }
-      set {
-        this.experimentIdFieldSpecified = value;
-      }
+      get { return this.experimentIdFieldSpecified; }
+      set { this.experimentIdFieldSpecified = value; }
     }
 
     public ExperimentDeltaStatus experimentDeltaStatus {
-      get {
-        return this.experimentDeltaStatusField;
-      }
+      get { return this.experimentDeltaStatusField; }
       set {
         this.experimentDeltaStatusField = value;
         this.experimentDeltaStatusSpecified = true;
@@ -16504,18 +13165,12 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool experimentDeltaStatusSpecified {
-      get {
-        return this.experimentDeltaStatusFieldSpecified;
-      }
-      set {
-        this.experimentDeltaStatusFieldSpecified = value;
-      }
+      get { return this.experimentDeltaStatusFieldSpecified; }
+      set { this.experimentDeltaStatusFieldSpecified = value; }
     }
 
     public ExperimentDataStatus experimentDataStatus {
-      get {
-        return this.experimentDataStatusField;
-      }
+      get { return this.experimentDataStatusField; }
       set {
         this.experimentDataStatusField = value;
         this.experimentDataStatusSpecified = true;
@@ -16525,12 +13180,8 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool experimentDataStatusSpecified {
-      get {
-        return this.experimentDataStatusFieldSpecified;
-      }
-      set {
-        this.experimentDataStatusFieldSpecified = value;
-      }
+      get { return this.experimentDataStatusFieldSpecified; }
+      set { this.experimentDataStatusFieldSpecified = value; }
     }
   }
 
@@ -16573,9 +13224,7 @@ AdGroupAdOperation[] operations) {
     private bool percentServedFieldSpecified;
 
     public double percentServed {
-      get {
-        return this.percentServedField;
-      }
+      get { return this.percentServedField; }
       set {
         this.percentServedField = value;
         this.percentServedSpecified = true;
@@ -16585,12 +13234,8 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool percentServedSpecified {
-      get {
-        return this.percentServedFieldSpecified;
-      }
-      set {
-        this.percentServedFieldSpecified = value;
-      }
+      get { return this.percentServedFieldSpecified; }
+      set { this.percentServedFieldSpecified = value; }
     }
   }
 
@@ -16603,12 +13248,8 @@ AdGroupAdOperation[] operations) {
     private PolicyViolationKey keyField;
 
     public PolicyViolationKey key {
-      get {
-        return this.keyField;
-      }
-      set {
-        this.keyField = value;
-      }
+      get { return this.keyField; }
+      set { this.keyField = value; }
     }
   }
 
@@ -16623,22 +13264,14 @@ AdGroupAdOperation[] operations) {
     private ExemptionRequest[] exemptionRequestsField;
 
     public AdGroupAd operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("exemptionRequests")]
     public ExemptionRequest[] exemptionRequests {
-      get {
-        return this.exemptionRequestsField;
-      }
-      set {
-        this.exemptionRequestsField = value;
-      }
+      get { return this.exemptionRequestsField; }
+      set { this.exemptionRequestsField = value; }
     }
   }
 
@@ -16652,12 +13285,8 @@ AdGroupAdOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public AdGroupAd[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -16680,9 +13309,7 @@ AdGroupAdOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public AdGroupAdErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -16692,12 +13319,8 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -16724,9 +13347,7 @@ AdGroupAdOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public AdErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -16736,12 +13357,8 @@ AdGroupAdOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -16854,21 +13471,13 @@ AdGroupAdOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -16903,22 +13512,14 @@ AdGroupCriterionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public AdGroupCriterion[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("partialFailureErrors")]
     public ApiError[] partialFailureErrors {
-      get {
-        return this.partialFailureErrorsField;
-      }
-      set {
-        this.partialFailureErrorsField = value;
-      }
+      get { return this.partialFailureErrorsField; }
+      set { this.partialFailureErrorsField = value; }
     }
   }
 
@@ -16943,9 +13544,7 @@ AdGroupCriterionOperation[] operations) {
     private string adGroupCriterionTypeField;
 
     public long adGroupId {
-      get {
-        return this.adGroupIdField;
-      }
+      get { return this.adGroupIdField; }
       set {
         this.adGroupIdField = value;
         this.adGroupIdSpecified = true;
@@ -16955,18 +13554,12 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupIdSpecified {
-      get {
-        return this.adGroupIdFieldSpecified;
-      }
-      set {
-        this.adGroupIdFieldSpecified = value;
-      }
+      get { return this.adGroupIdFieldSpecified; }
+      set { this.adGroupIdFieldSpecified = value; }
     }
 
     public CriterionUse criterionUse {
-      get {
-        return this.criterionUseField;
-      }
+      get { return this.criterionUseField; }
       set {
         this.criterionUseField = value;
         this.criterionUseSpecified = true;
@@ -16976,31 +13569,19 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool criterionUseSpecified {
-      get {
-        return this.criterionUseFieldSpecified;
-      }
-      set {
-        this.criterionUseFieldSpecified = value;
-      }
+      get { return this.criterionUseFieldSpecified; }
+      set { this.criterionUseFieldSpecified = value; }
     }
 
     public Criterion criterion {
-      get {
-        return this.criterionField;
-      }
-      set {
-        this.criterionField = value;
-      }
+      get { return this.criterionField; }
+      set { this.criterionField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("AdGroupCriterion.Type")]
     public string AdGroupCriterionType {
-      get {
-        return this.adGroupCriterionTypeField;
-      }
-      set {
-        this.adGroupCriterionTypeField = value;
-      }
+      get { return this.adGroupCriterionTypeField; }
+      set { this.adGroupCriterionTypeField = value; }
     }
   }
 
@@ -17051,9 +13632,7 @@ AdGroupCriterionOperation[] operations) {
     private Stats statsField;
 
     public UserStatus userStatus {
-      get {
-        return this.userStatusField;
-      }
+      get { return this.userStatusField; }
       set {
         this.userStatusField = value;
         this.userStatusSpecified = true;
@@ -17063,18 +13642,12 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool userStatusSpecified {
-      get {
-        return this.userStatusFieldSpecified;
-      }
-      set {
-        this.userStatusFieldSpecified = value;
-      }
+      get { return this.userStatusFieldSpecified; }
+      set { this.userStatusFieldSpecified = value; }
     }
 
     public SystemServingStatus systemServingStatus {
-      get {
-        return this.systemServingStatusField;
-      }
+      get { return this.systemServingStatusField; }
       set {
         this.systemServingStatusField = value;
         this.systemServingStatusSpecified = true;
@@ -17084,18 +13657,12 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool systemServingStatusSpecified {
-      get {
-        return this.systemServingStatusFieldSpecified;
-      }
-      set {
-        this.systemServingStatusFieldSpecified = value;
-      }
+      get { return this.systemServingStatusFieldSpecified; }
+      set { this.systemServingStatusFieldSpecified = value; }
     }
 
     public ApprovalStatus approvalStatus {
-      get {
-        return this.approvalStatusField;
-      }
+      get { return this.approvalStatusField; }
       set {
         this.approvalStatusField = value;
         this.approvalStatusSpecified = true;
@@ -17105,66 +13672,38 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool approvalStatusSpecified {
-      get {
-        return this.approvalStatusFieldSpecified;
-      }
-      set {
-        this.approvalStatusFieldSpecified = value;
-      }
+      get { return this.approvalStatusFieldSpecified; }
+      set { this.approvalStatusFieldSpecified = value; }
     }
 
     public string destinationUrl {
-      get {
-        return this.destinationUrlField;
-      }
-      set {
-        this.destinationUrlField = value;
-      }
+      get { return this.destinationUrlField; }
+      set { this.destinationUrlField = value; }
     }
 
     public AdGroupCriterionBids bids {
-      get {
-        return this.bidsField;
-      }
-      set {
-        this.bidsField = value;
-      }
+      get { return this.bidsField; }
+      set { this.bidsField = value; }
     }
 
     public BiddableAdGroupCriterionExperimentData experimentData {
-      get {
-        return this.experimentDataField;
-      }
-      set {
-        this.experimentDataField = value;
-      }
+      get { return this.experimentDataField; }
+      set { this.experimentDataField = value; }
     }
 
     public Bid firstPageCpc {
-      get {
-        return this.firstPageCpcField;
-      }
-      set {
-        this.firstPageCpcField = value;
-      }
+      get { return this.firstPageCpcField; }
+      set { this.firstPageCpcField = value; }
     }
 
     public QualityInfo qualityInfo {
-      get {
-        return this.qualityInfoField;
-      }
-      set {
-        this.qualityInfoField = value;
-      }
+      get { return this.qualityInfoField; }
+      set { this.qualityInfoField = value; }
     }
 
     public Stats stats {
-      get {
-        return this.statsField;
-      }
-      set {
-        this.statsField = value;
-      }
+      get { return this.statsField; }
+      set { this.statsField = value; }
     }
   }
 
@@ -17210,12 +13749,8 @@ AdGroupCriterionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("AdGroupCriterionBids.Type")]
     public string AdGroupCriterionBidsType {
-      get {
-        return this.adGroupCriterionBidsTypeField;
-      }
-      set {
-        this.adGroupCriterionBidsTypeField = value;
-      }
+      get { return this.adGroupCriterionBidsTypeField; }
+      set { this.adGroupCriterionBidsTypeField = value; }
     }
   }
 
@@ -17234,9 +13769,7 @@ AdGroupCriterionOperation[] operations) {
     private bool sourceFieldSpecified;
 
     public int percentCpa {
-      get {
-        return this.percentCpaField;
-      }
+      get { return this.percentCpaField; }
       set {
         this.percentCpaField = value;
         this.percentCpaSpecified = true;
@@ -17246,18 +13779,12 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool percentCpaSpecified {
-      get {
-        return this.percentCpaFieldSpecified;
-      }
-      set {
-        this.percentCpaFieldSpecified = value;
-      }
+      get { return this.percentCpaFieldSpecified; }
+      set { this.percentCpaFieldSpecified = value; }
     }
 
     public BidSource source {
-      get {
-        return this.sourceField;
-      }
+      get { return this.sourceField; }
       set {
         this.sourceField = value;
         this.sourceSpecified = true;
@@ -17267,12 +13794,8 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool sourceSpecified {
-      get {
-        return this.sourceFieldSpecified;
-      }
-      set {
-        this.sourceFieldSpecified = value;
-      }
+      get { return this.sourceFieldSpecified; }
+      set { this.sourceFieldSpecified = value; }
     }
   }
 
@@ -17297,18 +13820,12 @@ AdGroupCriterionOperation[] operations) {
     private bool bidSourceFieldSpecified;
 
     public Bid maxCpm {
-      get {
-        return this.maxCpmField;
-      }
-      set {
-        this.maxCpmField = value;
-      }
+      get { return this.maxCpmField; }
+      set { this.maxCpmField = value; }
     }
 
     public BidSource bidSource {
-      get {
-        return this.bidSourceField;
-      }
+      get { return this.bidSourceField; }
       set {
         this.bidSourceField = value;
         this.bidSourceSpecified = true;
@@ -17318,12 +13835,8 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool bidSourceSpecified {
-      get {
-        return this.bidSourceFieldSpecified;
-      }
-      set {
-        this.bidSourceFieldSpecified = value;
-      }
+      get { return this.bidSourceFieldSpecified; }
+      set { this.bidSourceFieldSpecified = value; }
     }
   }
 
@@ -17346,18 +13859,12 @@ AdGroupCriterionOperation[] operations) {
     private bool enhancedCpcEnabledFieldSpecified;
 
     public Bid maxCpc {
-      get {
-        return this.maxCpcField;
-      }
-      set {
-        this.maxCpcField = value;
-      }
+      get { return this.maxCpcField; }
+      set { this.maxCpcField = value; }
     }
 
     public BidSource bidSource {
-      get {
-        return this.bidSourceField;
-      }
+      get { return this.bidSourceField; }
       set {
         this.bidSourceField = value;
         this.bidSourceSpecified = true;
@@ -17367,27 +13874,17 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool bidSourceSpecified {
-      get {
-        return this.bidSourceFieldSpecified;
-      }
-      set {
-        this.bidSourceFieldSpecified = value;
-      }
+      get { return this.bidSourceFieldSpecified; }
+      set { this.bidSourceFieldSpecified = value; }
     }
 
     public PositionPreferenceAdGroupCriterionBids positionPreferenceBids {
-      get {
-        return this.positionPreferenceBidsField;
-      }
-      set {
-        this.positionPreferenceBidsField = value;
-      }
+      get { return this.positionPreferenceBidsField; }
+      set { this.positionPreferenceBidsField = value; }
     }
 
     public bool enhancedCpcEnabled {
-      get {
-        return this.enhancedCpcEnabledField;
-      }
+      get { return this.enhancedCpcEnabledField; }
       set {
         this.enhancedCpcEnabledField = value;
         this.enhancedCpcEnabledSpecified = true;
@@ -17397,12 +13894,8 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool enhancedCpcEnabledSpecified {
-      get {
-        return this.enhancedCpcEnabledFieldSpecified;
-      }
-      set {
-        this.enhancedCpcEnabledFieldSpecified = value;
-      }
+      get { return this.enhancedCpcEnabledFieldSpecified; }
+      set { this.enhancedCpcEnabledFieldSpecified = value; }
     }
   }
 
@@ -17423,18 +13916,12 @@ AdGroupCriterionOperation[] operations) {
     private bool bottomPositionFieldSpecified;
 
     public Bid proxyMaxCpc {
-      get {
-        return this.proxyMaxCpcField;
-      }
-      set {
-        this.proxyMaxCpcField = value;
-      }
+      get { return this.proxyMaxCpcField; }
+      set { this.proxyMaxCpcField = value; }
     }
 
     public int preferredPosition {
-      get {
-        return this.preferredPositionField;
-      }
+      get { return this.preferredPositionField; }
       set {
         this.preferredPositionField = value;
         this.preferredPositionSpecified = true;
@@ -17444,18 +13931,12 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool preferredPositionSpecified {
-      get {
-        return this.preferredPositionFieldSpecified;
-      }
-      set {
-        this.preferredPositionFieldSpecified = value;
-      }
+      get { return this.preferredPositionFieldSpecified; }
+      set { this.preferredPositionFieldSpecified = value; }
     }
 
     public int bottomPosition {
-      get {
-        return this.bottomPositionField;
-      }
+      get { return this.bottomPositionField; }
       set {
         this.bottomPositionField = value;
         this.bottomPositionSpecified = true;
@@ -17465,12 +13946,8 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool bottomPositionSpecified {
-      get {
-        return this.bottomPositionFieldSpecified;
-      }
-      set {
-        this.bottomPositionFieldSpecified = value;
-      }
+      get { return this.bottomPositionFieldSpecified; }
+      set { this.bottomPositionFieldSpecified = value; }
     }
   }
 
@@ -17495,18 +13972,12 @@ AdGroupCriterionOperation[] operations) {
     private bool enhancedCpcEnabledFieldSpecified;
 
     public Bid proxyBid {
-      get {
-        return this.proxyBidField;
-      }
-      set {
-        this.proxyBidField = value;
-      }
+      get { return this.proxyBidField; }
+      set { this.proxyBidField = value; }
     }
 
     public bool enhancedCpcEnabled {
-      get {
-        return this.enhancedCpcEnabledField;
-      }
+      get { return this.enhancedCpcEnabledField; }
       set {
         this.enhancedCpcEnabledField = value;
         this.enhancedCpcEnabledSpecified = true;
@@ -17516,12 +13987,8 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool enhancedCpcEnabledSpecified {
-      get {
-        return this.enhancedCpcEnabledFieldSpecified;
-      }
-      set {
-        this.enhancedCpcEnabledFieldSpecified = value;
-      }
+      get { return this.enhancedCpcEnabledFieldSpecified; }
+      set { this.enhancedCpcEnabledFieldSpecified = value; }
     }
   }
 
@@ -17546,9 +14013,7 @@ AdGroupCriterionOperation[] operations) {
     private AdGroupCriterionExperimentBidMultiplier experimentBidMultiplierField;
 
     public long experimentId {
-      get {
-        return this.experimentIdField;
-      }
+      get { return this.experimentIdField; }
       set {
         this.experimentIdField = value;
         this.experimentIdSpecified = true;
@@ -17558,18 +14023,12 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool experimentIdSpecified {
-      get {
-        return this.experimentIdFieldSpecified;
-      }
-      set {
-        this.experimentIdFieldSpecified = value;
-      }
+      get { return this.experimentIdFieldSpecified; }
+      set { this.experimentIdFieldSpecified = value; }
     }
 
     public ExperimentDeltaStatus experimentDeltaStatus {
-      get {
-        return this.experimentDeltaStatusField;
-      }
+      get { return this.experimentDeltaStatusField; }
       set {
         this.experimentDeltaStatusField = value;
         this.experimentDeltaStatusSpecified = true;
@@ -17579,18 +14038,12 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool experimentDeltaStatusSpecified {
-      get {
-        return this.experimentDeltaStatusFieldSpecified;
-      }
-      set {
-        this.experimentDeltaStatusFieldSpecified = value;
-      }
+      get { return this.experimentDeltaStatusFieldSpecified; }
+      set { this.experimentDeltaStatusFieldSpecified = value; }
     }
 
     public ExperimentDataStatus experimentDataStatus {
-      get {
-        return this.experimentDataStatusField;
-      }
+      get { return this.experimentDataStatusField; }
       set {
         this.experimentDataStatusField = value;
         this.experimentDataStatusSpecified = true;
@@ -17600,21 +14053,13 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool experimentDataStatusSpecified {
-      get {
-        return this.experimentDataStatusFieldSpecified;
-      }
-      set {
-        this.experimentDataStatusFieldSpecified = value;
-      }
+      get { return this.experimentDataStatusFieldSpecified; }
+      set { this.experimentDataStatusFieldSpecified = value; }
     }
 
     public AdGroupCriterionExperimentBidMultiplier experimentBidMultiplier {
-      get {
-        return this.experimentBidMultiplierField;
-      }
-      set {
-        this.experimentBidMultiplierField = value;
-      }
+      get { return this.experimentBidMultiplierField; }
+      set { this.experimentBidMultiplierField = value; }
     }
   }
 
@@ -17629,12 +14074,8 @@ AdGroupCriterionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("AdGroupCriterionExperimentBidMultiplier.Type")]
     public string AdGroupCriterionExperimentBidMultiplierType {
-      get {
-        return this.adGroupCriterionExperimentBidMultiplierTypeField;
-      }
-      set {
-        this.adGroupCriterionExperimentBidMultiplierTypeField = value;
-      }
+      get { return this.adGroupCriterionExperimentBidMultiplierTypeField; }
+      set { this.adGroupCriterionExperimentBidMultiplierTypeField = value; }
     }
   }
 
@@ -17651,18 +14092,12 @@ AdGroupCriterionOperation[] operations) {
     private bool multiplierSourceFieldSpecified;
 
     public BidMultiplier maxCpcMultiplier {
-      get {
-        return this.maxCpcMultiplierField;
-      }
-      set {
-        this.maxCpcMultiplierField = value;
-      }
+      get { return this.maxCpcMultiplierField; }
+      set { this.maxCpcMultiplierField = value; }
     }
 
     public MultiplierSource multiplierSource {
-      get {
-        return this.multiplierSourceField;
-      }
+      get { return this.multiplierSourceField; }
       set {
         this.multiplierSourceField = value;
         this.multiplierSourceSpecified = true;
@@ -17672,12 +14107,8 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool multiplierSourceSpecified {
-      get {
-        return this.multiplierSourceFieldSpecified;
-      }
-      set {
-        this.multiplierSourceFieldSpecified = value;
-      }
+      get { return this.multiplierSourceFieldSpecified; }
+      set { this.multiplierSourceFieldSpecified = value; }
     }
   }
 
@@ -17694,9 +14125,7 @@ AdGroupCriterionOperation[] operations) {
     private Bid multipliedBidField;
 
     public double multiplier {
-      get {
-        return this.multiplierField;
-      }
+      get { return this.multiplierField; }
       set {
         this.multiplierField = value;
         this.multiplierSpecified = true;
@@ -17706,21 +14135,13 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool multiplierSpecified {
-      get {
-        return this.multiplierFieldSpecified;
-      }
-      set {
-        this.multiplierFieldSpecified = value;
-      }
+      get { return this.multiplierFieldSpecified; }
+      set { this.multiplierFieldSpecified = value; }
     }
 
     public Bid multipliedBid {
-      get {
-        return this.multipliedBidField;
-      }
-      set {
-        this.multipliedBidField = value;
-      }
+      get { return this.multipliedBidField; }
+      set { this.multipliedBidField = value; }
     }
   }
 
@@ -17756,9 +14177,7 @@ AdGroupCriterionOperation[] operations) {
     private bool qualityScoreFieldSpecified;
 
     public bool isKeywordAdRelevanceAcceptable {
-      get {
-        return this.isKeywordAdRelevanceAcceptableField;
-      }
+      get { return this.isKeywordAdRelevanceAcceptableField; }
       set {
         this.isKeywordAdRelevanceAcceptableField = value;
         this.isKeywordAdRelevanceAcceptableSpecified = true;
@@ -17768,18 +14187,12 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool isKeywordAdRelevanceAcceptableSpecified {
-      get {
-        return this.isKeywordAdRelevanceAcceptableFieldSpecified;
-      }
-      set {
-        this.isKeywordAdRelevanceAcceptableFieldSpecified = value;
-      }
+      get { return this.isKeywordAdRelevanceAcceptableFieldSpecified; }
+      set { this.isKeywordAdRelevanceAcceptableFieldSpecified = value; }
     }
 
     public bool isLandingPageQualityAcceptable {
-      get {
-        return this.isLandingPageQualityAcceptableField;
-      }
+      get { return this.isLandingPageQualityAcceptableField; }
       set {
         this.isLandingPageQualityAcceptableField = value;
         this.isLandingPageQualityAcceptableSpecified = true;
@@ -17789,18 +14202,12 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool isLandingPageQualityAcceptableSpecified {
-      get {
-        return this.isLandingPageQualityAcceptableFieldSpecified;
-      }
-      set {
-        this.isLandingPageQualityAcceptableFieldSpecified = value;
-      }
+      get { return this.isLandingPageQualityAcceptableFieldSpecified; }
+      set { this.isLandingPageQualityAcceptableFieldSpecified = value; }
     }
 
     public bool isLandingPageLatencyAcceptable {
-      get {
-        return this.isLandingPageLatencyAcceptableField;
-      }
+      get { return this.isLandingPageLatencyAcceptableField; }
       set {
         this.isLandingPageLatencyAcceptableField = value;
         this.isLandingPageLatencyAcceptableSpecified = true;
@@ -17810,18 +14217,12 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool isLandingPageLatencyAcceptableSpecified {
-      get {
-        return this.isLandingPageLatencyAcceptableFieldSpecified;
-      }
-      set {
-        this.isLandingPageLatencyAcceptableFieldSpecified = value;
-      }
+      get { return this.isLandingPageLatencyAcceptableFieldSpecified; }
+      set { this.isLandingPageLatencyAcceptableFieldSpecified = value; }
     }
 
     public int qualityScore {
-      get {
-        return this.qualityScoreField;
-      }
+      get { return this.qualityScoreField; }
       set {
         this.qualityScoreField = value;
         this.qualityScoreSpecified = true;
@@ -17831,12 +14232,8 @@ AdGroupCriterionOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool qualityScoreSpecified {
-      get {
-        return this.qualityScoreFieldSpecified;
-      }
-      set {
-        this.qualityScoreFieldSpecified = value;
-      }
+      get { return this.qualityScoreFieldSpecified; }
+      set { this.qualityScoreFieldSpecified = value; }
     }
   }
 
@@ -17851,22 +14248,14 @@ AdGroupCriterionOperation[] operations) {
     private ExemptionRequest[] exemptionRequestsField;
 
     public AdGroupCriterion operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("exemptionRequests")]
     public ExemptionRequest[] exemptionRequests {
-      get {
-        return this.exemptionRequestsField;
-      }
-      set {
-        this.exemptionRequestsField = value;
-      }
+      get { return this.exemptionRequestsField; }
+      set { this.exemptionRequestsField = value; }
     }
   }
 
@@ -17880,12 +14269,8 @@ AdGroupCriterionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public AdGroupCriterion[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -17908,21 +14293,13 @@ AdGroupCriterionOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -17955,12 +14332,8 @@ AdGroupOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public AdGroup[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -17993,9 +14366,7 @@ AdGroupOperation[] operations) {
     private Stats statsField;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -18005,18 +14376,12 @@ AdGroupOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public long campaignId {
-      get {
-        return this.campaignIdField;
-      }
+      get { return this.campaignIdField; }
       set {
         this.campaignIdField = value;
         this.campaignIdSpecified = true;
@@ -18026,36 +14391,22 @@ AdGroupOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool campaignIdSpecified {
-      get {
-        return this.campaignIdFieldSpecified;
-      }
-      set {
-        this.campaignIdFieldSpecified = value;
-      }
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
     }
 
     public string campaignName {
-      get {
-        return this.campaignNameField;
-      }
-      set {
-        this.campaignNameField = value;
-      }
+      get { return this.campaignNameField; }
+      set { this.campaignNameField = value; }
     }
 
     public string name {
-      get {
-        return this.nameField;
-      }
-      set {
-        this.nameField = value;
-      }
+      get { return this.nameField; }
+      set { this.nameField = value; }
     }
 
     public AdGroupStatus status {
-      get {
-        return this.statusField;
-      }
+      get { return this.statusField; }
       set {
         this.statusField = value;
         this.statusSpecified = true;
@@ -18065,39 +14416,23 @@ AdGroupOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool statusSpecified {
-      get {
-        return this.statusFieldSpecified;
-      }
-      set {
-        this.statusFieldSpecified = value;
-      }
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
     }
 
     public AdGroupBids bids {
-      get {
-        return this.bidsField;
-      }
-      set {
-        this.bidsField = value;
-      }
+      get { return this.bidsField; }
+      set { this.bidsField = value; }
     }
 
     public AdGroupExperimentData experimentData {
-      get {
-        return this.experimentDataField;
-      }
-      set {
-        this.experimentDataField = value;
-      }
+      get { return this.experimentDataField; }
+      set { this.experimentDataField = value; }
     }
 
     public Stats stats {
-      get {
-        return this.statsField;
-      }
-      set {
-        this.statsField = value;
-      }
+      get { return this.statsField; }
+      set { this.statsField = value; }
     }
   }
 
@@ -18131,9 +14466,7 @@ AdGroupOperation[] operations) {
     private AdGroupExperimentBidMultipliers experimentBidMultipliersField;
 
     public long experimentId {
-      get {
-        return this.experimentIdField;
-      }
+      get { return this.experimentIdField; }
       set {
         this.experimentIdField = value;
         this.experimentIdSpecified = true;
@@ -18143,18 +14476,12 @@ AdGroupOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool experimentIdSpecified {
-      get {
-        return this.experimentIdFieldSpecified;
-      }
-      set {
-        this.experimentIdFieldSpecified = value;
-      }
+      get { return this.experimentIdFieldSpecified; }
+      set { this.experimentIdFieldSpecified = value; }
     }
 
     public ExperimentDeltaStatus experimentDeltaStatus {
-      get {
-        return this.experimentDeltaStatusField;
-      }
+      get { return this.experimentDeltaStatusField; }
       set {
         this.experimentDeltaStatusField = value;
         this.experimentDeltaStatusSpecified = true;
@@ -18164,18 +14491,12 @@ AdGroupOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool experimentDeltaStatusSpecified {
-      get {
-        return this.experimentDeltaStatusFieldSpecified;
-      }
-      set {
-        this.experimentDeltaStatusFieldSpecified = value;
-      }
+      get { return this.experimentDeltaStatusFieldSpecified; }
+      set { this.experimentDeltaStatusFieldSpecified = value; }
     }
 
     public ExperimentDataStatus experimentDataStatus {
-      get {
-        return this.experimentDataStatusField;
-      }
+      get { return this.experimentDataStatusField; }
       set {
         this.experimentDataStatusField = value;
         this.experimentDataStatusSpecified = true;
@@ -18185,21 +14506,13 @@ AdGroupOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool experimentDataStatusSpecified {
-      get {
-        return this.experimentDataStatusFieldSpecified;
-      }
-      set {
-        this.experimentDataStatusFieldSpecified = value;
-      }
+      get { return this.experimentDataStatusFieldSpecified; }
+      set { this.experimentDataStatusFieldSpecified = value; }
     }
 
     public AdGroupExperimentBidMultipliers experimentBidMultipliers {
-      get {
-        return this.experimentBidMultipliersField;
-      }
-      set {
-        this.experimentBidMultipliersField = value;
-      }
+      get { return this.experimentBidMultipliersField; }
+      set { this.experimentBidMultipliersField = value; }
     }
   }
 
@@ -18215,12 +14528,8 @@ AdGroupOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("AdGroupExperimentBidMultipliers.Type")]
     public string AdGroupExperimentBidMultipliersType {
-      get {
-        return this.adGroupExperimentBidMultipliersTypeField;
-      }
-      set {
-        this.adGroupExperimentBidMultipliersTypeField = value;
-      }
+      get { return this.adGroupExperimentBidMultipliersTypeField; }
+      set { this.adGroupExperimentBidMultipliersTypeField = value; }
     }
   }
 
@@ -18233,12 +14542,8 @@ AdGroupOperation[] operations) {
     private BidMultiplier maxCpmMultiplierField;
 
     public BidMultiplier maxCpmMultiplier {
-      get {
-        return this.maxCpmMultiplierField;
-      }
-      set {
-        this.maxCpmMultiplierField = value;
-      }
+      get { return this.maxCpmMultiplierField; }
+      set { this.maxCpmMultiplierField = value; }
     }
   }
 
@@ -18253,21 +14558,13 @@ AdGroupOperation[] operations) {
     private BidMultiplier maxContentCpcMultiplierField;
 
     public BidMultiplier maxCpcMultiplier {
-      get {
-        return this.maxCpcMultiplierField;
-      }
-      set {
-        this.maxCpcMultiplierField = value;
-      }
+      get { return this.maxCpcMultiplierField; }
+      set { this.maxCpcMultiplierField = value; }
     }
 
     public BidMultiplier maxContentCpcMultiplier {
-      get {
-        return this.maxContentCpcMultiplierField;
-      }
-      set {
-        this.maxContentCpcMultiplierField = value;
-      }
+      get { return this.maxContentCpcMultiplierField; }
+      set { this.maxContentCpcMultiplierField = value; }
     }
   }
 
@@ -18280,12 +14577,8 @@ AdGroupOperation[] operations) {
     private AdGroup operandField;
 
     public AdGroup operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -18299,12 +14592,8 @@ AdGroupOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public AdGroup[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -18323,9 +14612,7 @@ AdGroupOperation[] operations) {
     private bool adGroupIdFieldSpecified;
 
     public AdGroupServiceErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -18335,18 +14622,12 @@ AdGroupOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
 
     public long adGroupId {
-      get {
-        return this.adGroupIdField;
-      }
+      get { return this.adGroupIdField; }
       set {
         this.adGroupIdField = value;
         this.adGroupIdSpecified = true;
@@ -18356,12 +14637,8 @@ AdGroupOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupIdSpecified {
-      get {
-        return this.adGroupIdFieldSpecified;
-      }
-      set {
-        this.adGroupIdFieldSpecified = value;
-      }
+      get { return this.adGroupIdFieldSpecified; }
+      set { this.adGroupIdFieldSpecified = value; }
     }
   }
 
@@ -18397,21 +14674,13 @@ AdGroupOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -18443,12 +14712,8 @@ AdParamOperation[] operations) {
     private AdParam operandField;
 
     public AdParam operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -18473,9 +14738,7 @@ AdParamOperation[] operations) {
     private bool paramIndexFieldSpecified;
 
     public long adGroupId {
-      get {
-        return this.adGroupIdField;
-      }
+      get { return this.adGroupIdField; }
       set {
         this.adGroupIdField = value;
         this.adGroupIdSpecified = true;
@@ -18485,18 +14748,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool adGroupIdSpecified {
-      get {
-        return this.adGroupIdFieldSpecified;
-      }
-      set {
-        this.adGroupIdFieldSpecified = value;
-      }
+      get { return this.adGroupIdFieldSpecified; }
+      set { this.adGroupIdFieldSpecified = value; }
     }
 
     public long criterionId {
-      get {
-        return this.criterionIdField;
-      }
+      get { return this.criterionIdField; }
       set {
         this.criterionIdField = value;
         this.criterionIdSpecified = true;
@@ -18506,27 +14763,17 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool criterionIdSpecified {
-      get {
-        return this.criterionIdFieldSpecified;
-      }
-      set {
-        this.criterionIdFieldSpecified = value;
-      }
+      get { return this.criterionIdFieldSpecified; }
+      set { this.criterionIdFieldSpecified = value; }
     }
 
     public string insertionText {
-      get {
-        return this.insertionTextField;
-      }
-      set {
-        this.insertionTextField = value;
-      }
+      get { return this.insertionTextField; }
+      set { this.insertionTextField = value; }
     }
 
     public int paramIndex {
-      get {
-        return this.paramIndexField;
-      }
+      get { return this.paramIndexField; }
       set {
         this.paramIndexField = value;
         this.paramIndexSpecified = true;
@@ -18536,12 +14783,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool paramIndexSpecified {
-      get {
-        return this.paramIndexFieldSpecified;
-      }
-      set {
-        this.paramIndexFieldSpecified = value;
-      }
+      get { return this.paramIndexFieldSpecified; }
+      set { this.paramIndexFieldSpecified = value; }
     }
   }
 
@@ -18559,18 +14802,12 @@ AdParamOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public AdParam[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
 
     public int totalNumEntries {
-      get {
-        return this.totalNumEntriesField;
-      }
+      get { return this.totalNumEntriesField; }
       set {
         this.totalNumEntriesField = value;
         this.totalNumEntriesSpecified = true;
@@ -18580,12 +14817,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool totalNumEntriesSpecified {
-      get {
-        return this.totalNumEntriesFieldSpecified;
-      }
-      set {
-        this.totalNumEntriesFieldSpecified = value;
-      }
+      get { return this.totalNumEntriesFieldSpecified; }
+      set { this.totalNumEntriesFieldSpecified = value; }
     }
   }
 
@@ -18603,31 +14836,19 @@ AdParamOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("adGroupIds")]
     public long[] adGroupIds {
-      get {
-        return this.adGroupIdsField;
-      }
-      set {
-        this.adGroupIdsField = value;
-      }
+      get { return this.adGroupIdsField; }
+      set { this.adGroupIdsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("criteriaId")]
     public long[] criteriaId {
-      get {
-        return this.criteriaIdField;
-      }
-      set {
-        this.criteriaIdField = value;
-      }
+      get { return this.criteriaIdField; }
+      set { this.criteriaIdField = value; }
     }
 
     public Paging paging {
-      get {
-        return this.pagingField;
-      }
-      set {
-        this.pagingField = value;
-      }
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
     }
   }
 
@@ -18650,9 +14871,7 @@ AdParamOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public AdParamErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -18662,12 +14881,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -18700,21 +14915,13 @@ AdParamOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -18736,12 +14943,8 @@ AdParamOperation[] operations) {
     private string triggerTimeField;
 
     public string triggerTime {
-      get {
-        return this.triggerTimeField;
-      }
-      set {
-        this.triggerTimeField = value;
-      }
+      get { return this.triggerTimeField; }
+      set { this.triggerTimeField = value; }
     }
   }
 
@@ -18766,9 +14969,7 @@ AdParamOperation[] operations) {
     private Detail[] detailsField;
 
     public AlertSeverity alertSeverity {
-      get {
-        return this.alertSeverityField;
-      }
+      get { return this.alertSeverityField; }
       set {
         this.alertSeverityField = value;
         this.alertSeveritySpecified = true;
@@ -18778,18 +14979,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool alertSeveritySpecified {
-      get {
-        return this.alertSeverityFieldSpecified;
-      }
-      set {
-        this.alertSeverityFieldSpecified = value;
-      }
+      get { return this.alertSeverityFieldSpecified; }
+      set { this.alertSeverityFieldSpecified = value; }
     }
 
     public AlertType alertType {
-      get {
-        return this.alertTypeField;
-      }
+      get { return this.alertTypeField; }
       set {
         this.alertTypeField = value;
         this.alertTypeSpecified = true;
@@ -18799,18 +14994,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool alertTypeSpecified {
-      get {
-        return this.alertTypeFieldSpecified;
-      }
-      set {
-        this.alertTypeFieldSpecified = value;
-      }
+      get { return this.alertTypeFieldSpecified; }
+      set { this.alertTypeFieldSpecified = value; }
     }
 
     public long clientCustomerId {
-      get {
-        return this.clientCustomerIdField;
-      }
+      get { return this.clientCustomerIdField; }
       set {
         this.clientCustomerIdField = value;
         this.clientCustomerIdSpecified = true;
@@ -18820,22 +15009,14 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool clientCustomerIdSpecified {
-      get {
-        return this.clientCustomerIdFieldSpecified;
-      }
-      set {
-        this.clientCustomerIdFieldSpecified = value;
-      }
+      get { return this.clientCustomerIdFieldSpecified; }
+      set { this.clientCustomerIdFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("details")]
     public Detail[] details {
-      get {
-        return this.detailsField;
-      }
-      set {
-        this.detailsField = value;
-      }
+      get { return this.detailsField; }
+      set { this.detailsField = value; }
     }
   }
 
@@ -18882,12 +15063,8 @@ AdParamOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public Alert[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 
@@ -18918,9 +15095,7 @@ AdParamOperation[] operations) {
     private long[] clientCustomerIdsField;
 
     public ClientSpec clientSpec {
-      get {
-        return this.clientSpecField;
-      }
+      get { return this.clientSpecField; }
       set {
         this.clientSpecField = value;
         this.clientSpecSpecified = true;
@@ -18930,18 +15105,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool clientSpecSpecified {
-      get {
-        return this.clientSpecFieldSpecified;
-      }
-      set {
-        this.clientSpecFieldSpecified = value;
-      }
+      get { return this.clientSpecFieldSpecified; }
+      set { this.clientSpecFieldSpecified = value; }
     }
 
     public FilterSpec filterSpec {
-      get {
-        return this.filterSpecField;
-      }
+      get { return this.filterSpecField; }
       set {
         this.filterSpecField = value;
         this.filterSpecSpecified = true;
@@ -18951,38 +15120,24 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool filterSpecSpecified {
-      get {
-        return this.filterSpecFieldSpecified;
-      }
-      set {
-        this.filterSpecFieldSpecified = value;
-      }
+      get { return this.filterSpecFieldSpecified; }
+      set { this.filterSpecFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("types")]
     public AlertType[] types {
-      get {
-        return this.typesField;
-      }
-      set {
-        this.typesField = value;
-      }
+      get { return this.typesField; }
+      set { this.typesField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("severities")]
     public AlertSeverity[] severities {
-      get {
-        return this.severitiesField;
-      }
-      set {
-        this.severitiesField = value;
-      }
+      get { return this.severitiesField; }
+      set { this.severitiesField = value; }
     }
 
     public TriggerTimeSpec triggerTimeSpec {
-      get {
-        return this.triggerTimeSpecField;
-      }
+      get { return this.triggerTimeSpecField; }
       set {
         this.triggerTimeSpecField = value;
         this.triggerTimeSpecSpecified = true;
@@ -18992,31 +15147,19 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool triggerTimeSpecSpecified {
-      get {
-        return this.triggerTimeSpecFieldSpecified;
-      }
-      set {
-        this.triggerTimeSpecFieldSpecified = value;
-      }
+      get { return this.triggerTimeSpecFieldSpecified; }
+      set { this.triggerTimeSpecFieldSpecified = value; }
     }
 
     public string triggerTime {
-      get {
-        return this.triggerTimeField;
-      }
-      set {
-        this.triggerTimeField = value;
-      }
+      get { return this.triggerTimeField; }
+      set { this.triggerTimeField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("clientCustomerIds")]
     public long[] clientCustomerIds {
-      get {
-        return this.clientCustomerIdsField;
-      }
-      set {
-        this.clientCustomerIdsField = value;
-      }
+      get { return this.clientCustomerIdsField; }
+      set { this.clientCustomerIdsField = value; }
     }
   }
 
@@ -19061,21 +15204,13 @@ AdParamOperation[] operations) {
     private Paging pagingField;
 
     public AlertQuery query {
-      get {
-        return this.queryField;
-      }
-      set {
-        this.queryField = value;
-      }
+      get { return this.queryField; }
+      set { this.queryField = value; }
     }
 
     public Paging paging {
-      get {
-        return this.pagingField;
-      }
-      set {
-        this.pagingField = value;
-      }
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
     }
   }
 
@@ -19090,9 +15225,7 @@ AdParamOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public AlertErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -19102,12 +15235,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -19140,21 +15269,13 @@ AdParamOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -19197,12 +15318,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlElementAttribute("Target", typeof(Target))]
     [System.Xml.Serialization.XmlElementAttribute("TargetList", typeof(TargetList))]
     public object Item {
-      get {
-        return this.itemField;
-      }
-      set {
-        this.itemField = value;
-      }
+      get { return this.itemField; }
+      set { this.itemField = value; }
     }
   }
 
@@ -19237,9 +15354,7 @@ AdParamOperation[] operations) {
     private CampaignAdExtensionStats statsField;
 
     public long campaignId {
-      get {
-        return this.campaignIdField;
-      }
+      get { return this.campaignIdField; }
       set {
         this.campaignIdField = value;
         this.campaignIdSpecified = true;
@@ -19249,27 +15364,17 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool campaignIdSpecified {
-      get {
-        return this.campaignIdFieldSpecified;
-      }
-      set {
-        this.campaignIdFieldSpecified = value;
-      }
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
     }
 
     public AdExtension adExtension {
-      get {
-        return this.adExtensionField;
-      }
-      set {
-        this.adExtensionField = value;
-      }
+      get { return this.adExtensionField; }
+      set { this.adExtensionField = value; }
     }
 
     public CampaignAdExtensionStatus status {
-      get {
-        return this.statusField;
-      }
+      get { return this.statusField; }
       set {
         this.statusField = value;
         this.statusSpecified = true;
@@ -19279,18 +15384,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool statusSpecified {
-      get {
-        return this.statusFieldSpecified;
-      }
-      set {
-        this.statusFieldSpecified = value;
-      }
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
     }
 
     public CampaignAdExtensionApprovalStatus approvalStatus {
-      get {
-        return this.approvalStatusField;
-      }
+      get { return this.approvalStatusField; }
       set {
         this.approvalStatusField = value;
         this.approvalStatusSpecified = true;
@@ -19300,21 +15399,13 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool approvalStatusSpecified {
-      get {
-        return this.approvalStatusFieldSpecified;
-      }
-      set {
-        this.approvalStatusFieldSpecified = value;
-      }
+      get { return this.approvalStatusFieldSpecified; }
+      set { this.approvalStatusFieldSpecified = value; }
     }
 
     public CampaignAdExtensionStats stats {
-      get {
-        return this.statsField;
-      }
-      set {
-        this.statsField = value;
-      }
+      get { return this.statsField; }
+      set { this.statsField = value; }
     }
   }
 
@@ -19355,58 +15446,34 @@ AdParamOperation[] operations) {
     private string jobTypeField;
 
     public string customerJobKey {
-      get {
-        return this.customerJobKeyField;
-      }
-      set {
-        this.customerJobKeyField = value;
-      }
+      get { return this.customerJobKeyField; }
+      set { this.customerJobKeyField = value; }
     }
 
     public JobContext context {
-      get {
-        return this.contextField;
-      }
-      set {
-        this.contextField = value;
-      }
+      get { return this.contextField; }
+      set { this.contextField = value; }
     }
 
     public ApiErrorReason failureReason {
-      get {
-        return this.failureReasonField;
-      }
-      set {
-        this.failureReasonField = value;
-      }
+      get { return this.failureReasonField; }
+      set { this.failureReasonField = value; }
     }
 
     public JobStats stats {
-      get {
-        return this.statsField;
-      }
-      set {
-        this.statsField = value;
-      }
+      get { return this.statsField; }
+      set { this.statsField = value; }
     }
 
     public BillingSummary billingSummary {
-      get {
-        return this.billingSummaryField;
-      }
-      set {
-        this.billingSummaryField = value;
-      }
+      get { return this.billingSummaryField; }
+      set { this.billingSummaryField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("Job.Type")]
     public string JobType {
-      get {
-        return this.jobTypeField;
-      }
-      set {
-        this.jobTypeField = value;
-      }
+      get { return this.jobTypeField; }
+      set { this.jobTypeField = value; }
     }
   }
 
@@ -19423,18 +15490,12 @@ AdParamOperation[] operations) {
     private bool effectiveCustomerIdFieldSpecified;
 
     public string authenticatedUserEmail {
-      get {
-        return this.authenticatedUserEmailField;
-      }
-      set {
-        this.authenticatedUserEmailField = value;
-      }
+      get { return this.authenticatedUserEmailField; }
+      set { this.authenticatedUserEmailField = value; }
     }
 
     public long effectiveCustomerId {
-      get {
-        return this.effectiveCustomerIdField;
-      }
+      get { return this.effectiveCustomerIdField; }
       set {
         this.effectiveCustomerIdField = value;
         this.effectiveCustomerIdSpecified = true;
@@ -19444,12 +15505,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool effectiveCustomerIdSpecified {
-      get {
-        return this.effectiveCustomerIdFieldSpecified;
-      }
-      set {
-        this.effectiveCustomerIdFieldSpecified = value;
-      }
+      get { return this.effectiveCustomerIdFieldSpecified; }
+      set { this.effectiveCustomerIdFieldSpecified = value; }
     }
   }
 
@@ -19514,12 +15571,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlElementAttribute("StringLengthErrorReason", typeof(StringLengthErrorReason))]
     [System.Xml.Serialization.XmlElementAttribute("TargetErrorReason", typeof(TargetErrorReason))]
     public object Item {
-      get {
-        return this.itemField;
-      }
-      set {
-        this.itemField = value;
-      }
+      get { return this.itemField; }
+      set { this.itemField = value; }
     }
   }
 
@@ -19660,9 +15713,7 @@ AdParamOperation[] operations) {
     private string jobStatsTypeField;
 
     public int progressPercent {
-      get {
-        return this.progressPercentField;
-      }
+      get { return this.progressPercentField; }
       set {
         this.progressPercentField = value;
         this.progressPercentSpecified = true;
@@ -19672,18 +15723,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool progressPercentSpecified {
-      get {
-        return this.progressPercentFieldSpecified;
-      }
-      set {
-        this.progressPercentFieldSpecified = value;
-      }
+      get { return this.progressPercentFieldSpecified; }
+      set { this.progressPercentFieldSpecified = value; }
     }
 
     public long pendingTimeMillis {
-      get {
-        return this.pendingTimeMillisField;
-      }
+      get { return this.pendingTimeMillisField; }
       set {
         this.pendingTimeMillisField = value;
         this.pendingTimeMillisSpecified = true;
@@ -19693,18 +15738,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool pendingTimeMillisSpecified {
-      get {
-        return this.pendingTimeMillisFieldSpecified;
-      }
-      set {
-        this.pendingTimeMillisFieldSpecified = value;
-      }
+      get { return this.pendingTimeMillisFieldSpecified; }
+      set { this.pendingTimeMillisFieldSpecified = value; }
     }
 
     public long processingTimeMillis {
-      get {
-        return this.processingTimeMillisField;
-      }
+      get { return this.processingTimeMillisField; }
       set {
         this.processingTimeMillisField = value;
         this.processingTimeMillisSpecified = true;
@@ -19714,22 +15753,14 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool processingTimeMillisSpecified {
-      get {
-        return this.processingTimeMillisFieldSpecified;
-      }
-      set {
-        this.processingTimeMillisFieldSpecified = value;
-      }
+      get { return this.processingTimeMillisFieldSpecified; }
+      set { this.processingTimeMillisFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("JobStats.Type")]
     public string JobStatsType {
-      get {
-        return this.jobStatsTypeField;
-      }
-      set {
-        this.jobStatsTypeField = value;
-      }
+      get { return this.jobStatsTypeField; }
+      set { this.jobStatsTypeField = value; }
     }
   }
 
@@ -19752,9 +15783,7 @@ AdParamOperation[] operations) {
     private bool numUnprocessedOperationsFieldSpecified;
 
     public int numOperations {
-      get {
-        return this.numOperationsField;
-      }
+      get { return this.numOperationsField; }
       set {
         this.numOperationsField = value;
         this.numOperationsSpecified = true;
@@ -19764,18 +15793,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool numOperationsSpecified {
-      get {
-        return this.numOperationsFieldSpecified;
-      }
-      set {
-        this.numOperationsFieldSpecified = value;
-      }
+      get { return this.numOperationsFieldSpecified; }
+      set { this.numOperationsFieldSpecified = value; }
     }
 
     public int numFailedOperations {
-      get {
-        return this.numFailedOperationsField;
-      }
+      get { return this.numFailedOperationsField; }
       set {
         this.numFailedOperationsField = value;
         this.numFailedOperationsSpecified = true;
@@ -19785,18 +15808,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool numFailedOperationsSpecified {
-      get {
-        return this.numFailedOperationsFieldSpecified;
-      }
-      set {
-        this.numFailedOperationsFieldSpecified = value;
-      }
+      get { return this.numFailedOperationsFieldSpecified; }
+      set { this.numFailedOperationsFieldSpecified = value; }
     }
 
     public int numUnprocessedOperations {
-      get {
-        return this.numUnprocessedOperationsField;
-      }
+      get { return this.numUnprocessedOperationsField; }
       set {
         this.numUnprocessedOperationsField = value;
         this.numUnprocessedOperationsSpecified = true;
@@ -19806,12 +15823,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool numUnprocessedOperationsSpecified {
-      get {
-        return this.numUnprocessedOperationsFieldSpecified;
-      }
-      set {
-        this.numUnprocessedOperationsFieldSpecified = value;
-      }
+      get { return this.numUnprocessedOperationsFieldSpecified; }
+      set { this.numUnprocessedOperationsFieldSpecified = value; }
     }
   }
 
@@ -19830,9 +15843,7 @@ AdParamOperation[] operations) {
     private bool numUnitsFieldSpecified;
 
     public int numOperations {
-      get {
-        return this.numOperationsField;
-      }
+      get { return this.numOperationsField; }
       set {
         this.numOperationsField = value;
         this.numOperationsSpecified = true;
@@ -19842,18 +15853,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool numOperationsSpecified {
-      get {
-        return this.numOperationsFieldSpecified;
-      }
-      set {
-        this.numOperationsFieldSpecified = value;
-      }
+      get { return this.numOperationsFieldSpecified; }
+      set { this.numOperationsFieldSpecified = value; }
     }
 
     public long numUnits {
-      get {
-        return this.numUnitsField;
-      }
+      get { return this.numUnitsField; }
       set {
         this.numUnitsField = value;
         this.numUnitsSpecified = true;
@@ -19863,12 +15868,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool numUnitsSpecified {
-      get {
-        return this.numUnitsFieldSpecified;
-      }
-      set {
-        this.numUnitsFieldSpecified = value;
-      }
+      get { return this.numUnitsFieldSpecified; }
+      set { this.numUnitsFieldSpecified = value; }
     }
   }
 
@@ -19903,9 +15904,7 @@ AdParamOperation[] operations) {
     private bool numRequestPartsReceivedFieldSpecified;
 
     public long id {
-      get {
-        return this.idField;
-      }
+      get { return this.idField; }
       set {
         this.idField = value;
         this.idSpecified = true;
@@ -19915,36 +15914,22 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public BulkMutateJobPolicy policy {
-      get {
-        return this.policyField;
-      }
-      set {
-        this.policyField = value;
-      }
+      get { return this.policyField; }
+      set { this.policyField = value; }
     }
 
     public BulkMutateRequest request {
-      get {
-        return this.requestField;
-      }
-      set {
-        this.requestField = value;
-      }
+      get { return this.requestField; }
+      set { this.requestField = value; }
     }
 
     public BasicJobStatus status {
-      get {
-        return this.statusField;
-      }
+      get { return this.statusField; }
       set {
         this.statusField = value;
         this.statusSpecified = true;
@@ -19954,37 +15939,23 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool statusSpecified {
-      get {
-        return this.statusFieldSpecified;
-      }
-      set {
-        this.statusFieldSpecified = value;
-      }
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("history")]
     public BulkMutateJobEvent[] history {
-      get {
-        return this.historyField;
-      }
-      set {
-        this.historyField = value;
-      }
+      get { return this.historyField; }
+      set { this.historyField = value; }
     }
 
     public BulkMutateResult result {
-      get {
-        return this.resultField;
-      }
-      set {
-        this.resultField = value;
-      }
+      get { return this.resultField; }
+      set { this.resultField = value; }
     }
 
     public int numRequestParts {
-      get {
-        return this.numRequestPartsField;
-      }
+      get { return this.numRequestPartsField; }
       set {
         this.numRequestPartsField = value;
         this.numRequestPartsSpecified = true;
@@ -19994,18 +15965,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool numRequestPartsSpecified {
-      get {
-        return this.numRequestPartsFieldSpecified;
-      }
-      set {
-        this.numRequestPartsFieldSpecified = value;
-      }
+      get { return this.numRequestPartsFieldSpecified; }
+      set { this.numRequestPartsFieldSpecified = value; }
     }
 
     public int numRequestPartsReceived {
-      get {
-        return this.numRequestPartsReceivedField;
-      }
+      get { return this.numRequestPartsReceivedField; }
       set {
         this.numRequestPartsReceivedField = value;
         this.numRequestPartsReceivedSpecified = true;
@@ -20015,12 +15980,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool numRequestPartsReceivedSpecified {
-      get {
-        return this.numRequestPartsReceivedFieldSpecified;
-      }
-      set {
-        this.numRequestPartsReceivedFieldSpecified = value;
-      }
+      get { return this.numRequestPartsReceivedFieldSpecified; }
+      set { this.numRequestPartsReceivedFieldSpecified = value; }
     }
   }
 
@@ -20036,21 +15997,13 @@ AdParamOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("prerequisiteJobIds")]
     public long[] prerequisiteJobIds {
-      get {
-        return this.prerequisiteJobIdsField;
-      }
-      set {
-        this.prerequisiteJobIdsField = value;
-      }
+      get { return this.prerequisiteJobIdsField; }
+      set { this.prerequisiteJobIdsField = value; }
     }
 
     public string dummy {
-      get {
-        return this.dummyField;
-      }
-      set {
-        this.dummyField = value;
-      }
+      get { return this.dummyField; }
+      set { this.dummyField = value; }
     }
   }
 
@@ -20067,9 +16020,7 @@ AdParamOperation[] operations) {
     private OperationStream[] operationStreamsField;
 
     public int partIndex {
-      get {
-        return this.partIndexField;
-      }
+      get { return this.partIndexField; }
       set {
         this.partIndexField = value;
         this.partIndexSpecified = true;
@@ -20079,22 +16030,14 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool partIndexSpecified {
-      get {
-        return this.partIndexFieldSpecified;
-      }
-      set {
-        this.partIndexFieldSpecified = value;
-      }
+      get { return this.partIndexFieldSpecified; }
+      set { this.partIndexFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("operationStreams")]
     public OperationStream[] operationStreams {
-      get {
-        return this.operationStreamsField;
-      }
-      set {
-        this.operationStreamsField = value;
-      }
+      get { return this.operationStreamsField; }
+      set { this.operationStreamsField = value; }
     }
   }
 
@@ -20109,22 +16052,14 @@ AdParamOperation[] operations) {
     private Operation[] operationsField;
 
     public EntityId scopingEntityId {
-      get {
-        return this.scopingEntityIdField;
-      }
-      set {
-        this.scopingEntityIdField = value;
-      }
+      get { return this.scopingEntityIdField; }
+      set { this.scopingEntityIdField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("operations")]
     public Operation[] operations {
-      get {
-        return this.operationsField;
-      }
-      set {
-        this.operationsField = value;
-      }
+      get { return this.operationsField; }
+      set { this.operationsField = value; }
     }
   }
 
@@ -20143,9 +16078,7 @@ AdParamOperation[] operations) {
     private bool valueFieldSpecified;
 
     public EntityIdType type {
-      get {
-        return this.typeField;
-      }
+      get { return this.typeField; }
       set {
         this.typeField = value;
         this.typeSpecified = true;
@@ -20155,18 +16088,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool typeSpecified {
-      get {
-        return this.typeFieldSpecified;
-      }
-      set {
-        this.typeFieldSpecified = value;
-      }
+      get { return this.typeFieldSpecified; }
+      set { this.typeFieldSpecified = value; }
     }
 
     public long value {
-      get {
-        return this.valueField;
-      }
+      get { return this.valueField; }
       set {
         this.valueField = value;
         this.valueSpecified = true;
@@ -20176,12 +16103,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool valueSpecified {
-      get {
-        return this.valueFieldSpecified;
-      }
-      set {
-        this.valueFieldSpecified = value;
-      }
+      get { return this.valueFieldSpecified; }
+      set { this.valueFieldSpecified = value; }
     }
   }
 
@@ -20204,12 +16127,8 @@ AdParamOperation[] operations) {
     private Job operandField;
 
     public Job operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -20222,12 +16141,8 @@ AdParamOperation[] operations) {
     private CampaignAdExtension operandField;
 
     public CampaignAdExtension operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
+      get { return this.operandField; }
+      set { this.operandField = value; }
     }
   }
 
@@ -20252,9 +16167,7 @@ AdParamOperation[] operations) {
     private bool statusFieldSpecified;
 
     public BasicJobStatus status {
-      get {
-        return this.statusField;
-      }
+      get { return this.statusField; }
       set {
         this.statusField = value;
         this.statusSpecified = true;
@@ -20264,12 +16177,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool statusSpecified {
-      get {
-        return this.statusFieldSpecified;
-      }
-      set {
-        this.statusFieldSpecified = value;
-      }
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
     }
   }
 
@@ -20285,22 +16194,14 @@ AdParamOperation[] operations) {
     private string jobEventTypeField;
 
     public string dateTime {
-      get {
-        return this.dateTimeField;
-      }
-      set {
-        this.dateTimeField = value;
-      }
+      get { return this.dateTimeField; }
+      set { this.dateTimeField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("JobEvent.Type")]
     public string JobEventType {
-      get {
-        return this.jobEventTypeField;
-      }
-      set {
-        this.jobEventTypeField = value;
-      }
+      get { return this.jobEventTypeField; }
+      set { this.jobEventTypeField = value; }
     }
   }
 
@@ -20317,9 +16218,7 @@ AdParamOperation[] operations) {
     private OperationStreamResult[] operationStreamResultsField;
 
     public int partIndex {
-      get {
-        return this.partIndexField;
-      }
+      get { return this.partIndexField; }
       set {
         this.partIndexField = value;
         this.partIndexSpecified = true;
@@ -20329,22 +16228,14 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool partIndexSpecified {
-      get {
-        return this.partIndexFieldSpecified;
-      }
-      set {
-        this.partIndexFieldSpecified = value;
-      }
+      get { return this.partIndexFieldSpecified; }
+      set { this.partIndexFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("operationStreamResults")]
     public OperationStreamResult[] operationStreamResults {
-      get {
-        return this.operationStreamResultsField;
-      }
-      set {
-        this.operationStreamResultsField = value;
-      }
+      get { return this.operationStreamResultsField; }
+      set { this.operationStreamResultsField = value; }
     }
   }
 
@@ -20360,21 +16251,13 @@ AdParamOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("operationResults")]
     public OperationResult[] operationResults {
-      get {
-        return this.operationResultsField;
-      }
-      set {
-        this.operationResultsField = value;
-      }
+      get { return this.operationResultsField; }
+      set { this.operationResultsField = value; }
     }
 
     public string dummy {
-      get {
-        return this.dummyField;
-      }
-      set {
-        this.dummyField = value;
-      }
+      get { return this.dummyField; }
+      set { this.dummyField = value; }
     }
   }
 
@@ -20393,12 +16276,8 @@ AdParamOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("OperationResult.Type")]
     public string OperationResultType {
-      get {
-        return this.operationResultTypeField;
-      }
-      set {
-        this.operationResultTypeField = value;
-      }
+      get { return this.operationResultTypeField; }
+      set { this.operationResultTypeField = value; }
     }
   }
 
@@ -20419,12 +16298,8 @@ AdParamOperation[] operations) {
     private Operand returnValueField;
 
     public Operand returnValue {
-      get {
-        return this.returnValueField;
-      }
-      set {
-        this.returnValueField = value;
-      }
+      get { return this.returnValueField; }
+      set { this.returnValueField = value; }
     }
   }
 
@@ -20445,12 +16320,8 @@ AdParamOperation[] operations) {
     private ApiException causeField;
 
     public ApiException cause {
-      get {
-        return this.causeField;
-      }
-      set {
-        this.causeField = value;
-      }
+      get { return this.causeField; }
+      set { this.causeField = value; }
     }
   }
 
@@ -20465,9 +16336,7 @@ AdParamOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public JobErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -20477,12 +16346,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -20497,9 +16362,7 @@ AdParamOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public CampaignAdExtensionErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -20509,12 +16372,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -20529,9 +16388,7 @@ AdParamOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public BulkMutateJobErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -20541,12 +16398,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -20561,9 +16414,7 @@ AdParamOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public AdExtensionErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -20573,12 +16424,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -20593,9 +16440,7 @@ AdParamOperation[] operations) {
     private bool operationIndexInBatchFieldSpecified;
 
     public int operationIndexInBatch {
-      get {
-        return this.operationIndexInBatchField;
-      }
+      get { return this.operationIndexInBatchField; }
       set {
         this.operationIndexInBatchField = value;
         this.operationIndexInBatchSpecified = true;
@@ -20605,12 +16450,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool operationIndexInBatchSpecified {
-      get {
-        return this.operationIndexInBatchFieldSpecified;
-      }
-      set {
-        this.operationIndexInBatchFieldSpecified = value;
-      }
+      get { return this.operationIndexInBatchFieldSpecified; }
+      set { this.operationIndexInBatchFieldSpecified = value; }
     }
   }
 
@@ -20632,9 +16473,7 @@ AdParamOperation[] operations) {
     private string jobSelectorTypeField;
 
     public bool includeHistory {
-      get {
-        return this.includeHistoryField;
-      }
+      get { return this.includeHistoryField; }
       set {
         this.includeHistoryField = value;
         this.includeHistorySpecified = true;
@@ -20644,18 +16483,12 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool includeHistorySpecified {
-      get {
-        return this.includeHistoryFieldSpecified;
-      }
-      set {
-        this.includeHistoryFieldSpecified = value;
-      }
+      get { return this.includeHistoryFieldSpecified; }
+      set { this.includeHistoryFieldSpecified = value; }
     }
 
     public bool includeStats {
-      get {
-        return this.includeStatsField;
-      }
+      get { return this.includeStatsField; }
       set {
         this.includeStatsField = value;
         this.includeStatsSpecified = true;
@@ -20665,22 +16498,14 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool includeStatsSpecified {
-      get {
-        return this.includeStatsFieldSpecified;
-      }
-      set {
-        this.includeStatsFieldSpecified = value;
-      }
+      get { return this.includeStatsFieldSpecified; }
+      set { this.includeStatsFieldSpecified = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("JobSelector.Type")]
     public string JobSelectorType {
-      get {
-        return this.jobSelectorTypeField;
-      }
-      set {
-        this.jobSelectorTypeField = value;
-      }
+      get { return this.jobSelectorTypeField; }
+      set { this.jobSelectorTypeField = value; }
     }
   }
 
@@ -20700,28 +16525,18 @@ AdParamOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("jobIds")]
     public long[] jobIds {
-      get {
-        return this.jobIdsField;
-      }
-      set {
-        this.jobIdsField = value;
-      }
+      get { return this.jobIdsField; }
+      set { this.jobIdsField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("jobStatuses")]
     public BasicJobStatus[] jobStatuses {
-      get {
-        return this.jobStatusesField;
-      }
-      set {
-        this.jobStatusesField = value;
-      }
+      get { return this.jobStatusesField; }
+      set { this.jobStatusesField = value; }
     }
 
     public int resultPartIndex {
-      get {
-        return this.resultPartIndexField;
-      }
+      get { return this.resultPartIndexField; }
       set {
         this.resultPartIndexField = value;
         this.resultPartIndexSpecified = true;
@@ -20731,12 +16546,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool resultPartIndexSpecified {
-      get {
-        return this.resultPartIndexFieldSpecified;
-      }
-      set {
-        this.resultPartIndexFieldSpecified = value;
-      }
+      get { return this.resultPartIndexFieldSpecified; }
+      set { this.resultPartIndexFieldSpecified = value; }
     }
   }
 
@@ -20756,21 +16567,13 @@ AdParamOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -20796,9 +16599,7 @@ AdParamOperation[] operations) {
     private Attribute valueField;
 
     public OpportunityAttributeType key {
-      get {
-        return this.keyField;
-      }
+      get { return this.keyField; }
       set {
         this.keyField = value;
         this.keySpecified = true;
@@ -20808,21 +16609,13 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool keySpecified {
-      get {
-        return this.keyFieldSpecified;
-      }
-      set {
-        this.keyFieldSpecified = value;
-      }
+      get { return this.keyFieldSpecified; }
+      set { this.keyFieldSpecified = value; }
     }
 
     public Attribute value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -20859,21 +16652,13 @@ AdParamOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("data")]
     public OpportunityAttribute_AttributeMapEntry[] data {
-      get {
-        return this.dataField;
-      }
-      set {
-        this.dataField = value;
-      }
+      get { return this.dataField; }
+      set { this.dataField = value; }
     }
 
     public string dummy {
-      get {
-        return this.dummyField;
-      }
-      set {
-        this.dummyField = value;
-      }
+      get { return this.dummyField; }
+      set { this.dummyField = value; }
     }
   }
 
@@ -20889,21 +16674,13 @@ AdParamOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("opportunityIdeas")]
     public OpportunityIdea[] opportunityIdeas {
-      get {
-        return this.opportunityIdeasField;
-      }
-      set {
-        this.opportunityIdeasField = value;
-      }
+      get { return this.opportunityIdeasField; }
+      set { this.opportunityIdeasField = value; }
     }
 
     public string dummy {
-      get {
-        return this.dummyField;
-      }
-      set {
-        this.dummyField = value;
-      }
+      get { return this.dummyField; }
+      set { this.dummyField = value; }
     }
   }
 
@@ -20921,18 +16698,12 @@ AdParamOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public Opportunity[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
 
     public int totalNumEntries {
-      get {
-        return this.totalNumEntriesField;
-      }
+      get { return this.totalNumEntriesField; }
       set {
         this.totalNumEntriesField = value;
         this.totalNumEntriesSpecified = true;
@@ -20942,12 +16713,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool totalNumEntriesSpecified {
-      get {
-        return this.totalNumEntriesFieldSpecified;
-      }
-      set {
-        this.totalNumEntriesFieldSpecified = value;
-      }
+      get { return this.totalNumEntriesFieldSpecified; }
+      set { this.totalNumEntriesFieldSpecified = value; }
     }
   }
 
@@ -20965,31 +16732,19 @@ AdParamOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("ideaTypes")]
     public OpportunityIdeaType[] ideaTypes {
-      get {
-        return this.ideaTypesField;
-      }
-      set {
-        this.ideaTypesField = value;
-      }
+      get { return this.ideaTypesField; }
+      set { this.ideaTypesField = value; }
     }
 
     [System.Xml.Serialization.XmlElementAttribute("requestedAttributeTypes")]
     public OpportunityAttributeType[] requestedAttributeTypes {
-      get {
-        return this.requestedAttributeTypesField;
-      }
-      set {
-        this.requestedAttributeTypesField = value;
-      }
+      get { return this.requestedAttributeTypesField; }
+      set { this.requestedAttributeTypesField = value; }
     }
 
     public Paging paging {
-      get {
-        return this.pagingField;
-      }
-      set {
-        this.pagingField = value;
-      }
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
     }
   }
 
@@ -21004,9 +16759,7 @@ AdParamOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public OpportunityErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -21016,12 +16769,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -21044,9 +16793,7 @@ AdParamOperation[] operations) {
     private bool reasonFieldSpecified;
 
     public BulkOpportunityServiceErrorReason reason {
-      get {
-        return this.reasonField;
-      }
+      get { return this.reasonField; }
       set {
         this.reasonField = value;
         this.reasonSpecified = true;
@@ -21056,12 +16803,8 @@ AdParamOperation[] operations) {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
     }
   }
 
@@ -21094,21 +16837,13 @@ AdParamOperation[] operations) {
     }
 
     public RequestHeader RequestHeader {
-      get {
-        return this.requestHeaderField;
-      }
-      set {
-        this.requestHeaderField = value;
-      }
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
     }
 
     public ResponseHeader ResponseHeader {
-      get {
-        return this.responseHeaderField;
-      }
-      set {
-        this.responseHeaderField = value;
-      }
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -21141,12 +16876,8 @@ CampaignAdExtensionOperation[] operations) {
 
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public CampaignAdExtension[] value {
-      get {
-        return this.valueField;
-      }
-      set {
-        this.valueField = value;
-      }
+      get { return this.valueField; }
+      set { this.valueField = value; }
     }
   }
 
@@ -21159,12 +16890,8 @@ CampaignAdExtensionOperation[] operations) {
     private CampaignAdExtension[] entriesField;
     [System.Xml.Serialization.XmlElementAttribute("entries")]
     public CampaignAdExtension[] entries {
-      get {
-        return this.entriesField;
-      }
-      set {
-        this.entriesField = value;
-      }
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
     }
   }
 }
