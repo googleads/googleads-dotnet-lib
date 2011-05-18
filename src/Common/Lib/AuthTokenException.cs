@@ -157,7 +157,7 @@ namespace Google.Api.Ads.Common.Lib {
     public AuthTokenException(AuthTokenErrorCode standardErrorCode, Uri errorUrl,
         string captchaToken, Uri captchaUrl, string info)
       : this(standardErrorCode, errorUrl, captchaToken, captchaUrl, info,
-            String.Empty, null) {
+          String.Empty, null) {
     }
 
     /// <summary>
@@ -193,7 +193,7 @@ namespace Google.Api.Ads.Common.Lib {
     public AuthTokenException(AuthTokenErrorCode standardErrorCode, Uri errorUrl,
         string captchaToken, Uri captchaUrl, string info, string message,
         Exception innerException)
-        : base(message, innerException) {
+      : base(message, innerException) {
       this.errorCode = standardErrorCode;
       this.errorUrl = errorUrl;
       this.captchaToken = captchaToken;
