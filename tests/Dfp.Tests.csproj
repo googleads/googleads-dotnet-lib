@@ -136,6 +136,17 @@
     <Compile Include="Dfp\v201103\ReportServiceTests.cs" />
     <Compile Include="Dfp\v201103\TestUtils.cs" />
     <Compile Include="Dfp\v201103\UserServiceTests.cs" />
+    <Compile Include="Dfp\v201104\CompanyServiceTests.cs" />
+    <Compile Include="Dfp\v201104\CreativeServiceTests.cs" />
+    <Compile Include="Dfp\v201104\ForecastServiceTests.cs" />
+    <Compile Include="Dfp\v201104\InventoryServiceTests.cs" />
+    <Compile Include="Dfp\v201104\LineItemCreativeAssociationServiceTests.cs" />
+    <Compile Include="Dfp\v201104\LineItemServiceTests.cs" />
+    <Compile Include="Dfp\v201104\OrderServiceTests.cs" />
+    <Compile Include="Dfp\v201104\PlacementServiceTests.cs" />
+    <Compile Include="Dfp\v201104\ReportServiceTests.cs" />
+    <Compile Include="Dfp\v201104\TestUtils.cs" />
+    <Compile Include="Dfp\v201104\UserServiceTests.cs" />
     <Compile Include="Dfp\BaseTests.cs" />
   </ItemGroup>
   <ItemGroup>

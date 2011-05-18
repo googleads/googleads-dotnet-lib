@@ -34,7 +34,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// Public constructor. Use this version if you want the library to
     /// use all settings from App.config.
     /// </summary>
-    public DfpUser() : base() {
+    public DfpUser() : base(new DfpAppConfig()) {
     }
 
     /// <summary>
@@ -42,7 +42,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// a DfpUser with a custom set of headers.
     /// </summary>
     /// <param name="headers">The custom set of headers.</param>
-    public DfpUser(Dictionary<string, string> headers) : base(headers) {
+    public DfpUser(Dictionary<string, string> headers) : base(new DfpAppConfig(), headers) {
     }
 
     /// <summary>

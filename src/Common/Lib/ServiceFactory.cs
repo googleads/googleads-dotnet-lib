@@ -26,10 +26,21 @@ namespace Google.Api.Ads.Common.Lib {
   /// </summary>
   public abstract class ServiceFactory {
     /// <summary>
-    /// Gets an app.config reader suitable for this factory.
+    /// An App.config reader suitable for this factory.
     /// </summary>
-    public abstract AppConfigBase AppConfig {
-      get;
+    private AppConfigBase config;
+
+    /// <summary>
+    /// Gets an App.config reader suitable for this factory.
+    /// </summary>
+    public AppConfigBase AppConfig {
+      get {
+        return config;
+      }
+      set {
+        config = value;
+        ReadHeadersFromConfig(config);
+      }
     }
 
     /// <summary>
@@ -45,18 +56,9 @@ namespace Google.Api.Ads.Common.Lib {
         Uri serverUrl);
 
     /// <summary>
-    /// Create SOAP headers based on a set of key-value pairs.
-    /// </summary>
-    /// <param name="headers">A dictionary, with key-value pairs as headername,
-    /// headervalue.</param>
-    public abstract void SetHeaders(Dictionary<string, string> headers);
-
-    /// <summary>
     /// Reads the headers from App.config.
     /// </summary>
     /// <param name="config">The configuration class.</param>
-    /// <returns>A dictionary, with key-value pairs as headername,
-    /// headervalue.</returns>
-    public abstract Dictionary<string, string> ReadHeadersFromConfig(AppConfigBase config);
+    protected abstract void ReadHeadersFromConfig(AppConfigBase config);
   }
 }
