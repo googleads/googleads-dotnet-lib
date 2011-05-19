@@ -25,6 +25,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v13
   ''' </summary>
   Class AccountServiceDemo
     Inherits SampleBase
+    ''' <summary>
+    ''' Returns a description about the code example.
+    ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
         Return "This code example displays some of the client account's info."

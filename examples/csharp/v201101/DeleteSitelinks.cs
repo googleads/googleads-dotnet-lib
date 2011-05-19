@@ -81,6 +81,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201101 {
       };
 
       selector.predicates = new Predicate[] {campaignPredicate, statusPredicate};
+      selector.fields = new string[] {"AdExtensionId", "Status"};
 
       CampaignAdExtensionPage page = campaignExtensionService.get(selector);
       if (page != null && page.entries != null) {
@@ -107,7 +108,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201101 {
 
       try {
         CampaignAdExtensionReturnValue retVal =
-            campaignExtensionService.mutate(new CampaignAdExtensionOperation[] { operation });
+            campaignExtensionService.mutate(new CampaignAdExtensionOperation[] {operation});
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           foreach (CampaignAdExtension campaignExtension in retVal.value) {
             Console.WriteLine("Deleted a campaign ad extension with id = \"{0}\" and " +

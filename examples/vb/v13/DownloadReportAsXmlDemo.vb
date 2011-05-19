@@ -15,7 +15,7 @@
 ' Author: api.anash@gmail.com (Anash P. Oommen)
 
 Imports Google.Api.Ads.AdWords.Lib
-Imports Google.Api.Ads.AdWords.Util
+Imports Google.Api.Ads.AdWords.Util.Reports
 Imports Google.Api.Ads.AdWords.v13
 
 Imports System

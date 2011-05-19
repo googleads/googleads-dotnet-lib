@@ -14,6 +14,7 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using Google.Api.Ads.AdWords.Headers;
 using Google.Api.Ads.Common.Lib;
 
 using System;
@@ -38,37 +39,12 @@ namespace Google.Api.Ads.AdWords.Lib {
     private RequestHeader requestHeader;
 
     /// <summary>
-    /// The config class to be used with this object.
-    /// </summary>
-    private AdWordsAppConfig config = new AdWordsAppConfig();
-
-    /// <summary>
     /// Gets a useragent string that can be used with the library.
     /// </summary>
     protected string Useragent {
       get {
-        return String.Join("", new string[] {config.Signature, "|", config.UserAgent});
-      }
-    }
-
-    /// <summary>
-    /// Gets an App.config reader suitable for this factory.
-    /// </summary>
-    public override AppConfigBase AppConfig {
-      get {
-        return config;
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the Request Header.
-    /// </summary>
-    public RequestHeader RequestHeader {
-      get {
-        return requestHeader;
-      }
-      set {
-        requestHeader = value;
+        AdWordsAppConfig awConfig = (AdWordsAppConfig) AppConfig;
+        return String.Join("", new string[] {awConfig.Signature, "|", awConfig.UserAgent});
       }
     }
 
@@ -76,15 +52,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Default public constructor.
     /// </summary>
     public AdWordsServiceFactory() {
-    }
-
-    /// <summary>
-    /// Create SOAP headers based on a set of key-value pairs.
-    /// </summary>
-    /// <param name="headers">A dictionary, with key-value pairs as headername,
-    /// headervalue.</param>
-    public override void SetHeaders(Dictionary<string, string> headers) {
-      this.requestHeader = MakeRequestHeaders(headers);
     }
 
     /// <summary>
@@ -98,8 +65,9 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <returns>An object of the desired service type.</returns>
     public override AdsClient CreateService(ServiceSignature signature, AdsUser user,
         Uri serverUrl) {
+      AdWordsAppConfig awConfig = (AdWordsAppConfig) AppConfig;
       if (serverUrl == null) {
-        serverUrl = new Uri(config.AdWordsApiServer);
+        serverUrl = new Uri(awConfig.AdWordsApiServer);
       }
 
       if (user == null) {
@@ -120,14 +88,16 @@ namespace Google.Api.Ads.AdWords.Lib {
       AdsClient service = (AdsClient) Activator.CreateInstance(awapiSignature.ServiceType);
       PropertyInfo propInfo = awapiSignature.ServiceType.GetProperty("RequestHeader");
       if (propInfo != null) {
-        propInfo.SetValue(service, requestHeader.Clone(), null);
-        FixRequestHeaderNameSpace(awapiSignature, service);
+        RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
+        clonedHeader.Version = awapiSignature.Version;
+        clonedHeader.GroupName = awapiSignature.GroupName;
+        propInfo.SetValue(service, clonedHeader, null);
       }
 
-      if (config.Proxy != null) {
-        service.Proxy = config.Proxy;
+      if (awConfig.Proxy != null) {
+        service.Proxy = awConfig.Proxy;
       }
-      service.Timeout = config.Timeout;
+      service.Timeout = awConfig.Timeout;
       service.Url = string.Format("{0}api/adwords/{1}/{2}/{3}",
           serverUrl.AbsoluteUri, awapiSignature.GroupName, awapiSignature.Version,
           awapiSignature.ServiceName);
@@ -140,48 +110,19 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Reads the headers from App.config.
     /// </summary>
     /// <param name="config">The configuration class.</param>
-    /// <returns>A dictionary, with key-value pairs as headername, headervalue.</returns>
-    public override Dictionary<string, string> ReadHeadersFromConfig(AppConfigBase config) {
+    protected override void ReadHeadersFromConfig(AppConfigBase config) {
       AdWordsAppConfig awConfig = (AdWordsAppConfig) config;
-      Dictionary<string, string> configHeaders = new Dictionary<string, string>();
-      if (!string.IsNullOrEmpty(awConfig.AuthToken)) {
-        configHeaders["authToken"] = awConfig.AuthToken;
-      }
+      this.requestHeader = new RequestHeader();
 
-      configHeaders["email"] = awConfig.Email;
-      configHeaders["password"] = awConfig.Password;
+      this.requestHeader.authToken = string.IsNullOrEmpty(awConfig.AuthToken) ? new AuthToken(
+          awConfig, "adwords", awConfig.Email, awConfig.Password).GetToken() : awConfig.AuthToken;
 
-      if (!string.IsNullOrEmpty(awConfig.ClientCustomerId)) {
-        configHeaders["clientCustomerId"] = awConfig.ClientCustomerId;
+      this.requestHeader.clientEmail = awConfig.ClientEmail;
+      if (string.IsNullOrEmpty(requestHeader.clientEmail)) {
+        requestHeader.clientCustomerId = awConfig.ClientCustomerId;
       }
-      configHeaders["clientEmail"] = awConfig.ClientEmail;
-      configHeaders["developerToken"] = awConfig.DeveloperToken;
-      configHeaders["applicationToken"] = awConfig.ApplicationToken;
-      configHeaders["userAgent"] = Useragent;
-      return configHeaders;
-    }
-
-    /// <summary>
-    /// Make a request header given a set of key-value pairs.
-    /// </summary>
-    /// <param name="headers">A dictionary holding key-value pairs.</param>
-    /// <returns>A RequestHeader object, to be used with AdWords API services.
-    /// </returns>
-    private RequestHeader MakeRequestHeaders(Dictionary<string, string> headers) {
-      RequestHeader requestHeader = new RequestHeader();
-
-      Type type = typeof(RequestHeader);
-      if (!headers.ContainsKey("authToken")) {
-        requestHeader.authToken = new AuthToken(config, "adwords", headers["email"],
-            headers["password"]).GetToken();
-      }
-      foreach (string key in headers.Keys) {
-        PropertyInfo propInfo = type.GetProperty(key);
-        if (propInfo != null) {
-          propInfo.SetValue(requestHeader, headers[key], null);
-        }
-      }
-      return requestHeader;
+      requestHeader.developerToken = awConfig.DeveloperToken;
+      requestHeader.userAgent = Useragent;
     }
 
     /// <summary>

@@ -43,7 +43,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As SampleBase = New AddAdExtensionOverride
+      Dim codeExample As SampleBase = New GetAdGroupBidLandScape
       Console.WriteLine(codeExample.Description)
       codeExample.Run(New AdWordsUser)
     End Sub

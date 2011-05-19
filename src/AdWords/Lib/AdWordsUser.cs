@@ -39,7 +39,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Public constructor. Use this version if you want the library to
     /// use all settings from App.config.
     /// </summary>
-    public AdWordsUser() : base() {
+    public AdWordsUser() : base(new AdWordsAppConfig()) {
     }
 
     /// <summary>
@@ -47,7 +47,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// an AdWordsUser with a custom set of headers.
     /// </summary>
     /// <param name="headers">The custom set of headers.</param>
-    public AdWordsUser(Dictionary<string, string> headers) : base(headers) {
+    public AdWordsUser(Dictionary<string, string> headers) : base(new AdWordsAppConfig(), headers) {
     }
 
     /// <summary>

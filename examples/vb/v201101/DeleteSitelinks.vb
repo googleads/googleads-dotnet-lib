@@ -77,6 +77,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
       statusPredicate.values = New String() {CampaignAdExtensionStatus.ACTIVE.ToString}
 
       selector.predicates = New Predicate() {campaignPredicate, statusPredicate}
+      selector.fields = New String() {"AdExtensionId", "Status"}
 
       ' Get the campaign ad extension containing sitelinks.
       Dim page As CampaignAdExtensionPage = campaignExtensionService.get(selector)

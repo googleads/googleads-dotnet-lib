@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 namespace Google.Api.Ads.AdWords.v200909 {
+  using Google.Api.Ads.AdWords.Headers;
   using Google.Api.Ads.AdWords.Lib;
 
   using System;

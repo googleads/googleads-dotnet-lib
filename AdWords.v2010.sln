@@ -1,0 +1,51 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWords.Tests", "tests\AdWords.Tests.csproj", "{6D64AF43-1FC4-4128-9496-5ECE53F00B7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWords", "src\AdWords.csproj", "{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWords.Examples.CSharp", "examples\csharp\AdWords.Examples.CSharp.csproj", "{5C1DE791-767A-4599-A0B9-51D6D2DFCC81}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AdWords.Examples.VB", "examples\vb\AdWords.Examples.VB.vbproj", "{A4AE3724-C225-4F03-AC77-A71C1330D8DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D64AF43-1FC4-4128-9496-5ECE53F00B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D64AF43-1FC4-4128-9496-5ECE53F00B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D64AF43-1FC4-4128-9496-5ECE53F00B7F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6D64AF43-1FC4-4128-9496-5ECE53F00B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D64AF43-1FC4-4128-9496-5ECE53F00B7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D64AF43-1FC4-4128-9496-5ECE53F00B7F}.Release|x86.ActiveCfg = Release|Any CPU
+		{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}.Release|x86.ActiveCfg = Release|Any CPU
+		{5C1DE791-767A-4599-A0B9-51D6D2DFCC81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C1DE791-767A-4599-A0B9-51D6D2DFCC81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C1DE791-767A-4599-A0B9-51D6D2DFCC81}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5C1DE791-767A-4599-A0B9-51D6D2DFCC81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C1DE791-767A-4599-A0B9-51D6D2DFCC81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C1DE791-767A-4599-A0B9-51D6D2DFCC81}.Release|x86.ActiveCfg = Release|Any CPU
+		{A4AE3724-C225-4F03-AC77-A71C1330D8DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4AE3724-C225-4F03-AC77-A71C1330D8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4AE3724-C225-4F03-AC77-A71C1330D8DD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A4AE3724-C225-4F03-AC77-A71C1330D8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4AE3724-C225-4F03-AC77-A71C1330D8DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4AE3724-C225-4F03-AC77-A71C1330D8DD}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = examples\AdWords.Examples.csproj
+	EndGlobalSection
+EndGlobal

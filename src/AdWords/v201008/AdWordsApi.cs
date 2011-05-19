@@ -15,13 +15,15 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 namespace Google.Api.Ads.AdWords.v201008 {
+  using Google.Api.Ads.AdWords.Headers;
   using Google.Api.Ads.AdWords.Lib;
-  using System.Xml.Serialization;
-  using System.Web.Services;
-  using System.ComponentModel;
-  using System.Web.Services.Protocols;
+
   using System;
+  using System.ComponentModel;
   using System.Diagnostics;
+  using System.Web.Services;
+  using System.Web.Services.Protocols;
+  using System.Xml.Serialization;
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]

@@ -165,4 +165,8 @@
     <value>An API exception has occurred. See ApiException and InnerException fields for more details.</value>
     <comment>Used by AdWordsSoapClient while throwing AdWordsApiException.</comment>
   </data>
+  <data name="ReportNumPollsExceeded" xml:space="preserve">
+    <value>Report could not be downloaded after {0} polling attempts. Try requesting a report with lesser amount of data, increase the number of polling attempts, or use the asynchronous download methods.</value>
+    <comment>Used by ReportUtilites when number of polling attempts exceeds MaxPollingAttempts.</comment>
+  </data>
 </root>
