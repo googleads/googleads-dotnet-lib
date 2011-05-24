@@ -65,16 +65,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
         Dim page As CampaignPage = campaignService.get(selector)
 
         ' Display campaigns.
-        If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-          If (page.entries.Length > 0) Then
-            Dim campaign As Campaign
-            For Each campaign In page.entries
-              Console.WriteLine("Campaign with id = '{0}', name = '{1}' and status = '{2}' " & _
-                  "was found.", campaign.id, campaign.name, campaign.status)
-            Next
-          Else
-            Console.WriteLine("No campaigns were found.")
-          End If
+        If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing) AndAlso _
+            page.entries.Length > 0) Then
+          For Each campaign As Campaign In page.entries
+            Console.WriteLine("Campaign with id = '{0}', name = '{1}' and status = '{2}' " & _
+                "was found.", campaign.id, campaign.name, campaign.status)
+          Next
+        Else
+          Console.WriteLine("No campaigns were found.")
         End If
       Catch ex As Exception
         Console.WriteLine("Failed to retrieve Campaign(s). Exception says ""{0}""", ex.Message)

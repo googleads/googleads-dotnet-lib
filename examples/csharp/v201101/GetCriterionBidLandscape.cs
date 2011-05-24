@@ -77,7 +77,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201101 {
       Predicate criterionPredicate = new Predicate();
       criterionPredicate.field = "CriterionId";
       criterionPredicate.@operator = PredicateOperator.IN;
-      adGroupPredicate.values = new string[] {criterionId.ToString()};
+      criterionPredicate.values = new string[] {criterionId.ToString()};
 
       selector.predicates = new Predicate[] {adGroupPredicate, criterionPredicate};
 

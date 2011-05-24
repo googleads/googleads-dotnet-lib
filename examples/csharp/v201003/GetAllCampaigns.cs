@@ -63,15 +63,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201003 {
         CampaignPage page = campaignService.get(new CampaignSelector());
 
         // Display campaigns.
-        if (page!= null && page.entries != null) {
-         if (page.entries.Length > 0) {
-           foreach (Campaign campaign in page.entries) {
-             Console.WriteLine("Campaign with id = '{0}', name = '{1}' and status = '{2}'" +
-               " was found.", campaign.id, campaign.name, campaign.status);
-           }
-         } else {
-           Console.WriteLine("No campaigns were found.");
-         }
+        if (page != null && page.entries != null && page.entries.Length > 0) {
+          foreach (Campaign campaign in page.entries) {
+            Console.WriteLine("Campaign with id = '{0}', name = '{1}' and status = '{2}'" +
+              " was found.", campaign.id, campaign.name, campaign.status);
+          }
+        } else {
+          Console.WriteLine("No campaigns were found.");
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to retrieve Campaign(s). Exception says \"{0}\"", ex.Message);

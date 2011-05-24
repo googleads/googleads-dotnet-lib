@@ -74,7 +74,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
       Dim criterionPredicate As New Predicate
       criterionPredicate.field = "CriterionId"
       criterionPredicate.operator = PredicateOperator.IN
-      adGroupPredicate.values = New String() {criterionId.ToString}
+      criterionPredicate.values = New String() {criterionId.ToString}
 
       selector.predicates = New Predicate() {adGroupPredicate, criterionPredicate}
 
