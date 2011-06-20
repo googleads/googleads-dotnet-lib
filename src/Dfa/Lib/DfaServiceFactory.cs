@@ -33,40 +33,14 @@ namespace Google.Api.Ads.Dfa.Lib {
   /// </summary>
   public class DfaServiceFactory : ServiceFactory {
     /// <summary>
-    /// The config class to be used with this object.
-    /// </summary>
-    private DfaAppConfig config = new DfaAppConfig();
-
-    /// <summary>
     /// The user token to be sent as part of Soap Headers.
     /// </summary>
     private UserToken authToken = null;
-
-    Dictionary<string, string> headers = new Dictionary<string, string>();
-
-    /// <summary>
-    /// Gets an App.config reader suitable for this factory.
-    /// </summary>
-    public override AppConfigBase AppConfig {
-      get {
-        return config;
-      }
-    }
 
     /// <summary>
     /// Default public constructor.
     /// </summary>
     public DfaServiceFactory() {
-    }
-
-    /// <summary>
-    /// Create SOAP headers based on a set of key-value pairs.
-    /// </summary>
-    /// <param name="headers">A dictionary, with key-value pairs as headername,
-    /// headervalue.</param>
-    public override void SetHeaders(Dictionary<string, string> headers) {
-      this.headers = headers;
-      authToken = null;
     }
 
     /// <summary>
@@ -80,6 +54,8 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// <returns>An object of the desired service type.</returns>
     public override AdsClient CreateService(ServiceSignature signature, AdsUser user,
         Uri serverUrl) {
+      DfaAppConfig config = (DfaAppConfig) base.AppConfig;
+
       if (serverUrl == null) {
         serverUrl = new Uri(config.DfaApiServer);
       }
@@ -120,10 +96,9 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// </summary>
     /// <returns>The request header.</returns>
     private RequestHeader GetRequestHeader() {
+      DfaAppConfig config = (DfaAppConfig) base.AppConfig;
       RequestHeader reqHeader = new RequestHeader();
-      if (headers.ContainsKey("applicationName")) {
-        reqHeader.ApplicationName = config.Signature + "|" + headers["applicationName"];
-      }
+      reqHeader.ApplicationName = config.Signature + "|" + config.ApplicationName;
       return reqHeader;
     }
 
@@ -138,8 +113,10 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// <returns>A token which may be used for future API calls.</returns>
     private UserToken GetAuthenticationToken(ServiceSignature signature, AdsUser user,
         Uri serverUrl) {
-      if (headers.ContainsKey("authToken") && !String.IsNullOrEmpty(headers["authToken"])) {
-        return new UserToken(headers["userName"], headers["authToken"]);
+      DfaAppConfig config = (DfaAppConfig) base.AppConfig;
+
+      if (!String.IsNullOrEmpty(config.AuthToken)) {
+        return new UserToken(config.UserName, config.AuthToken);
       }
       try {
         DfaServiceSignature loginServiceSignature = new DfaServiceSignature(signature.Version,
@@ -148,7 +125,7 @@ namespace Google.Api.Ads.Dfa.Lib {
             serverUrl);
 
         object userProfile = loginService.GetType().GetMethod("authenticate").Invoke(
-            loginService, new object[] { headers["userName"], headers["password"] });
+            loginService, new object[] {config.UserName, config.Password});
         return new UserToken(
             userProfile.GetType().GetProperty("name").GetValue(userProfile, null).ToString(),
             userProfile.GetType().GetProperty("token").GetValue(userProfile, null).ToString());
@@ -201,6 +178,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// <returns>An object of the desired service type.</returns>
     private AdsClient CreateServiceWithoutAuthHeaders(ServiceSignature signature, AdsUser user,
         Uri serverUrl) {
+      DfaAppConfig config = (DfaAppConfig) base.AppConfig;
       DfaServiceSignature dfaapiSignature = signature as DfaServiceSignature;
 
       AdsClient service = (AdsClient) Activator.CreateInstance(dfaapiSignature.ServiceType);
@@ -220,19 +198,8 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// Reads the headers from App.config.
     /// </summary>
     /// <param name="config">The configuration class.</param>
-    /// <returns>A dictionary, with key-value pairs as headername, headervalue.</returns>
-    public override Dictionary<string, string> ReadHeadersFromConfig(AppConfigBase config) {
-      DfaAppConfig dfaConfig = (DfaAppConfig) config;
-      Dictionary<string, string> configHeaders = new Dictionary<string, string>();
-      if (!string.IsNullOrEmpty(dfaConfig.AuthToken)) {
-        configHeaders["authToken"] = dfaConfig.AuthToken;
-      }
-
-      configHeaders["userName"] = dfaConfig.UserName;
-      configHeaders["password"] = dfaConfig.Password;
-      configHeaders["applicationName"] = dfaConfig.ApplicationName;
-
-      return configHeaders;
+    protected override void ReadHeadersFromConfig(AppConfigBase config) {
+      // nothing to do here.
     }
   }
 }

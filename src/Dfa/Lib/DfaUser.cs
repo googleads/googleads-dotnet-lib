@@ -34,7 +34,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// Public constructor. Use this version if you want the library to
     /// use all settings from App.config.
     /// </summary>
-    public DfaUser() : base() {
+    public DfaUser() : base(new DfaAppConfig()) {
     }
 
     /// <summary>
@@ -42,7 +42,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// a DfaUser with a custom set of headers.
     /// </summary>
     /// <param name="headers">The custom set of headers.</param>
-    public DfaUser(Dictionary<string, string> headers) : base(headers) {
+    public DfaUser(Dictionary<string, string> headers) : base(new DfaAppConfig(), headers) {
     }
 
     /// <summary>
