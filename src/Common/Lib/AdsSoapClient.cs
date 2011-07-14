@@ -174,6 +174,8 @@ namespace Google.Api.Ads.Common.Lib {
         this.user.CleanupListeners();
         ContextStore.RemoveKey("SoapService");
         ContextStore.RemoveKey("SoapMethod");
+        this.lastRequest = null;
+        this.lastResponse = null;
       }
     }
 

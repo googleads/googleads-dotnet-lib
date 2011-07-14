@@ -81,17 +81,23 @@ namespace Google.Api.Ads.Common.Util {
     }
 
     /// <summary>
-    /// Copies a stream from source to destination.
+    /// Copies a stream from source to destination and returns the first n
+    /// bytes as preview.
     /// </summary>
     /// <param name="sourceStream">Source stream.</param>
     /// <param name="targetStream">Destination stream.</param>
+    /// <param name="maxPreviewBytes">The maximum number of preview bytes to
+    /// return.</param>
+    /// <returns>An array of bytes, whose max size is
+    /// <see cref="maxPreviewBytes"/>.</returns>
     /// <exception cref="ArgumentException">Thrown if source stream is not
     /// readable, or if the target stream is not writable.
     /// </exception>
     /// <exception cref="ArgumentNullException">
     /// Thrown if <paramref name="sourceStream"/> or
     /// <paramref name="targetStream"/> is null.</exception>
-    public static void CopyStream(Stream sourceStream, Stream targetStream) {
+    public static byte[] CopyStreamWithPreview(Stream sourceStream, Stream targetStream,
+        int maxPreviewBytes) {
       if (sourceStream == null) {
         throw new ArgumentNullException("sourceStream");
       }
@@ -110,11 +116,33 @@ namespace Google.Api.Ads.Common.Util {
 
       int bufferSize = 2 << 20;
       byte[] buffer = new byte[bufferSize];
+      List<Byte> byteArray = new List<byte>();
 
       int bytesRead = 0;
       while ((bytesRead = sourceStream.Read(buffer, 0, bufferSize)) != 0) {
+        int index = 0;
+        while (byteArray.Count < maxPreviewBytes && index < bytesRead) {
+          byteArray.Add(buffer[index]);
+          index++;
+        }
         targetStream.Write(buffer, 0, bytesRead);
       }
+      return byteArray.ToArray();
+    }
+
+    /// <summary>
+    /// Copies a stream from source to destination.
+    /// </summary>
+    /// <param name="sourceStream">Source stream.</param>
+    /// <param name="targetStream">Destination stream.</param>
+    /// <exception cref="ArgumentException">Thrown if source stream is not
+    /// readable, or if the target stream is not writable.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown if <paramref name="sourceStream"/> or
+    /// <paramref name="targetStream"/> is null.</exception>
+    public static void CopyStream(Stream sourceStream, Stream targetStream) {
+      CopyStreamWithPreview(sourceStream, targetStream, 0);
     }
   }
 }
