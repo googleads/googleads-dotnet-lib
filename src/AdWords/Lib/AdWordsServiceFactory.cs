@@ -114,11 +114,9 @@ namespace Google.Api.Ads.AdWords.Lib {
       AdWordsAppConfig awConfig = (AdWordsAppConfig) config;
       this.requestHeader = new RequestHeader();
 
-      this.requestHeader.authToken = string.IsNullOrEmpty(awConfig.AuthToken)? new AuthToken(
-          awConfig, "adwords", awConfig.Email, awConfig.Password).GetToken() : awConfig.AuthToken;
-
-      this.requestHeader.clientEmail = awConfig.ClientEmail;
-      if (string.IsNullOrEmpty(requestHeader.clientEmail)) {
+      if (!string.IsNullOrEmpty(awConfig.ClientEmail)) {
+        this.requestHeader.clientEmail = awConfig.ClientEmail;
+      } else if (!string.IsNullOrEmpty(awConfig.ClientCustomerId)) {
         requestHeader.clientCustomerId = awConfig.ClientCustomerId;
       }
       requestHeader.developerToken = awConfig.DeveloperToken;

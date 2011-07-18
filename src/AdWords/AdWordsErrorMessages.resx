@@ -169,4 +169,12 @@
     <value>Report could not be downloaded after {0} polling attempts. Try requesting a report with lesser amount of data, increase the number of polling attempts, or use the asynchronous download methods.</value>
     <comment>Used by ReportUtilites when number of polling attempts exceeds MaxPollingAttempts.</comment>
   </data>
+  <data name="FailedToSetAuthorizationHeader" xml:space="preserve">
+    <value>Could not set AuthToken for outgoing API call. Please check if service.RequestHeader is not null.</value>
+    <comment>Used by AdWordsSoapClient.MakeApiCall when setting authorization headers.</comment>
+  </data>
+  <data name="OAuthProviderCannotBeNull" xml:space="preserve">
+    <value>OAuth provider cannot be null when selecting Authorization method as "OAuth".</value>
+    <comment>Used by AdWordsSoapClient.MakeApiCall when setting authorization headers.</comment>
+  </data>
 </root>

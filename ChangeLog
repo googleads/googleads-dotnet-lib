@@ -1,3 +1,8 @@
+12.4.0
+- Added OAuth support and code examples.
+- Added support of AuthToken caching and expiration.
+- Fixed issues 51, 62, 65.
+
 12.3.0
 - Fixed the broken csproj and vbproj.
 - Fixed issues 27, 57, 59, 60.
