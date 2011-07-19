@@ -108,7 +108,8 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       byte[] preview = DownloadReportToStream(downloadUrl, config.Proxy, clientId, config.AuthToken,
           returnMoneyInMicros, memStream);
       if (!IsValidReport(preview)) {
-        throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid, null, null);
+        throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid + " - " +
+            ConvertPreviewBytesToString(preview), null, null);
       }
       retval.Contents = memStream.ToArray();
       return retval;
@@ -146,7 +147,8 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       byte[] preview = DownloadReportToDisk(downloadUrl, config.Proxy, clientId, config.AuthToken,
           returnMoneyInMicros, path);
       if (!IsValidReport(preview)) {
-        throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid, null, null);
+        throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid + " - " +
+            ConvertPreviewBytesToString(preview), null, null);
       }
     }
 
@@ -240,8 +242,8 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
             }
 
             if (!IsValidReport(preview)) {
-              throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid, null,
-                  reportResponse.ReportStatus);
+              throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid + " - " +
+                  ConvertPreviewBytesToString(preview), null, reportResponse.ReportStatus);
             }
 
             retval.ReportStatus = reportResponse.ReportStatus;
@@ -463,15 +465,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     }
 
     /// <summary>
-    /// Determines whether the report is valid or not.
+    /// Converts the preview bytes to string.
     /// </summary>
-    /// <param name="previewBytes">First n bytes of a report to be inspected
-    /// for report validity.
-    /// </param>
-    /// <returns>True if the report is valid, false otherwise.</returns>
-    private bool IsValidReport(byte[] previewBytes) {
+    /// <param name="previewBytes">The preview bytes.</param>
+    /// <returns>The preview bytes as a text.</returns>
+    private string ConvertPreviewBytesToString(byte[] previewBytes) {
       if (previewBytes == null) {
-        return false;
+        return "";
       }
 
       // It is possible that our byte array doesn't end at a valid utf-8 string
@@ -485,7 +485,18 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
 
       decoder.Convert(previewBytes, 0, previewBytes.Length, charArray, 0, charArray.Length, true,
           out bytesUsed, out charsUsed, out completed);
-      string previewString = new string(charArray, 0, charsUsed);
+      return new string(charArray, 0, charsUsed);
+    }
+
+    /// <summary>
+    /// Determines whether the report is valid or not.
+    /// </summary>
+    /// <param name="previewBytes">First n bytes of a report to be inspected
+    /// for report validity.
+    /// </param>
+    /// <returns>True if the report is valid, false otherwise.</returns>
+    private bool IsValidReport(byte[] previewBytes) {
+      string previewString = ConvertPreviewBytesToString(previewBytes);
       if (!string.IsNullOrEmpty(previewString)) {
         if (Regex.IsMatch(previewString, REPORT_ERROR_REGEX)) {
           return false;

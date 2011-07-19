@@ -301,6 +301,7 @@
     <Compile Include="v201101\GetUnitCount.cs" />
     <Compile Include="v201101\HandlePartialFailures.cs" />
     <Compile Include="v201101\HandlePolicyViolationError.cs" />
+    <Compile Include="v201101\HandleTwoFactorAuthorizationError.cs" />
     <Compile Include="v201101\MethodApiUnitsUsageDemo.cs" />
     <Compile Include="v201101\PerformBulkMutateJob.cs" />
     <Compile Include="v201101\PromoteExperiment.cs" />

@@ -57,6 +57,7 @@
     <Compile Include="AdWords\Headers\ResponseHeaderStub.cs" />
     <Compile Include="AdWords\Lib\AdWordsApiException.cs" />
     <Compile Include="AdWords\Lib\AdWordsAppConfig.cs" />
+    <Compile Include="AdWords\Lib\AdWordsAuthorizationMethod.cs" />
     <Compile Include="AdWords\Lib\AdWordsException.cs" />
     <Compile Include="AdWords\Lib\AdWordsService.cs" />
     <Compile Include="AdWords\Lib\AdWordsServiceFactory.cs" />
@@ -115,14 +116,18 @@
     <Compile Include="AdWords\v201101\AdWordsServiceV201101.cs" />
     <Compile Include="Common\Lib\AdsClient.cs" />
     <Compile Include="Common\Lib\AdsException.cs" />
+    <Compile Include="Common\Lib\AdsOAuthException.cs" />
+    <Compile Include="Common\Lib\AdsOAuthProvider.cs" />
     <Compile Include="Common\Lib\AdsService.cs" />
     <Compile Include="Common\Lib\AdsSoapClient.cs" />
     <Compile Include="Common\Lib\AdsUser.cs" />
     <Compile Include="Common\Lib\AppConfigBase.cs" />
     <Compile Include="Common\Lib\AuthToken.cs" />
+    <Compile Include="Common\Lib\AuthTokenCache.cs" />
     <Compile Include="Common\Lib\AuthTokenErrorCode.cs" />
     <Compile Include="Common\Lib\AuthTokenException.cs" />
     <Compile Include="Common\Lib\ContextStore.cs" />
+    <Compile Include="Common\Lib\DefaultAuthTokenCache.cs" />
     <Compile Include="Common\Lib\ServiceFactory.cs" />
     <Compile Include="Common\Lib\ServiceSignature.cs" />
     <Compile Include="Common\Lib\SoapHeaderBase.cs" />

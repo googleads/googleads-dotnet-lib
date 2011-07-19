@@ -35,6 +35,23 @@ namespace Google.Api.Ads.Common.Lib {
     List<SoapListener> listeners = new List<SoapListener>();
 
     /// <summary>
+    /// The OAuth provider.
+    /// </summary>
+    AdsOAuthProvider oAuthProvider = null;
+
+    /// <summary>
+    /// Gets or sets the OAuth provider.
+    /// </summary>
+    public AdsOAuthProvider OAuthProvider {
+      get {
+        return oAuthProvider;
+      }
+      set {
+        oAuthProvider = value;
+      }
+    }
+
+    /// <summary>
     /// The application configuration for this user.
     /// </summary>
     private AppConfigBase config;
@@ -96,7 +113,8 @@ namespace Google.Api.Ads.Common.Lib {
       if (headers != null) {
         Type configType = config.GetType();
         foreach (string key in headers.Keys) {
-          PropertyInfo propInfo = configType.GetProperty(key);
+          PropertyInfo propInfo = configType.GetProperty(key, BindingFlags.IgnoreCase |
+              BindingFlags.Public | BindingFlags.Instance);
           if (propInfo != null) {
             propInfo.SetValue(config, headers[key], null);
           }
@@ -213,7 +231,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </param>
     /// <returns>An object of the requested type of service. The
     /// caller should cast this object to the desired type.</returns>
-    public object GetService(ServiceSignature serviceSignature) {
+    public AdsClient GetService(ServiceSignature serviceSignature) {
       return GetService(serviceSignature, String.Empty);
     }
 
