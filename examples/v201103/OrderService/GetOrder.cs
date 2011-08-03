@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// <summary>
   /// This code example gets an order by its ID. To determine which orders
   /// exist, run GetAllOrders.cs.
+  ///
+  /// Tags: OrderService.getOrder
   /// </summary>
   class GetOrder : SampleBase {
     /// <summary>

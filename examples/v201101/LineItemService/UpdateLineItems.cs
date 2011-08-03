@@ -25,6 +25,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// <summary>
   /// This code example updates the delivery rate of all line items up to the
   /// first 500. To determine which line items exist, run GetAllLineItems.cs.
+  ///
+  /// Tags: LineItemService.getLineItemsByStatement
+  /// Tags: LineItemService.updateLineItems
   /// </summary>
   class UpdateLineItems : SampleBase {
     /// <summary>

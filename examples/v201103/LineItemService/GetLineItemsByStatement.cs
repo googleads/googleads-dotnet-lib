@@ -25,6 +25,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// This code example gets all line items for the given order. The Statement
   /// retrieves up to the maximum page size limit of 500. To create line items,
   /// run CreateLineItems.cs.
+  ///
+  /// Tags: LineItemService.getLineItemsByStatement
   /// </summary>
   class GetLineItemsByStatement : SampleBase {
     /// <summary>

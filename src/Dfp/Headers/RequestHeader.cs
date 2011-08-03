@@ -65,6 +65,18 @@ namespace Google.Api.Ads.Dfp.Headers {
     }
 
     /// <summary>
+    /// Gets or sets the OAuth token.
+    /// </summary>
+    public string oAuthToken {
+      get {
+        return stub.oAuthToken;
+      }
+      set {
+        stub.oAuthToken = value;
+      }
+    }
+
+    /// <summary>
     /// Gets or sets the network code.
     /// </summary>
     public string networkCode {

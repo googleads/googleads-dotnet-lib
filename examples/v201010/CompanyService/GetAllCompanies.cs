@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
   /// <summary>
   /// This code example gets all companies. To create companies, run
   /// CreateCompanies.cs.
+  ///
+  /// Tags: CompanyService.getCompaniesByStatement
   /// </summary>
   class GetAllCompanies : SampleBase {
     /// <summary>

@@ -24,6 +24,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// This code example gets all networks that you have access to with the
   /// current login credentials. A networkCode should be left out for this
   /// request.
+  ///
+  /// Tags: NetworkService.getAllNetworks
   /// </summary>
   class GetAllNetworks : SampleBase {
     /// <summary>

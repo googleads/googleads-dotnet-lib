@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// <summary>
   /// This code example gets all ad units. To create ad units, run
   /// CreateAdUnits.cs.
+  ///
+  /// Tags: InventoryService.getAdUnitsByStatement
   /// </summary>
   class GetAllAdUnits : SampleBase {
     /// <summary>

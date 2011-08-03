@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// <summary>
   /// This code example gets a user by its ID. To create users, run
   /// CreateUsers.cs.
+  ///
+  /// Tags: UserService.getUser
   /// </summary>
   class GetUser : SampleBase {
     /// <summary>

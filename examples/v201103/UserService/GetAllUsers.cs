@@ -22,6 +22,8 @@ using System;
 namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// <summary>
   /// This code example gets all users. To create users, run CreateUsers.cs.
+  ///
+  /// Tags: UserService.getUsersByStatement
   /// </summary>
   class GetAllUsers : SampleBase {
     /// <summary>

@@ -24,6 +24,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
   /// <summary>
   /// This code example creates new users. To determine which users
   /// exist, run GetAllUsers.cs.
+  ///
+  /// Tags: UserService.createUsers
   /// </summary>
   class CreateUsers : SampleBase {
     /// <summary>

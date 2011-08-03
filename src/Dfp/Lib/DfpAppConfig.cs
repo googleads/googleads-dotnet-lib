@@ -65,9 +65,30 @@ namespace Google.Api.Ads.Dfp.Lib {
     private const string DFPAPI_SERVER = "DfpApi.Server";
 
     /// <summary>
+    /// Key name for authorizationMethod.
+    /// </summary>
+    private const string AUTHORIZATION_METHOD = "AuthorizationMethod";
+
+    /// <summary>
+    /// Key name for oAuthConsumerKey.
+    /// </summary>
+    private const string OAUTH_CONSUMER_KEY = "OAuthConsumerKey";
+
+    /// <summary>
+    /// Key name for oAuthConsumerKey.
+    /// </summary>
+    private const string OAUTH_CONSUMER_SECRET = "OAuthConsumerSecret";
+
+    /// <summary>
     /// Default value for DFPAPI_SERVER.
     /// </summary>
     private const string DEFAULT_DFPAPI_SERVER = "https://www.google.com";
+
+    /// <summary>
+    /// Default value for authorizationMethod.
+    /// </summary>
+    private const DfpAuthorizationMethod DEFAULT_AUTHORIZATION_METHOD =
+        DfpAuthorizationMethod.ClientLogin;
 
     /// <summary>
     /// Authtoken to be used in making API calls.
@@ -104,6 +125,21 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// responses.
     /// </summary>
     private bool enableGzipCompression;
+
+    /// <summary>
+    /// Authorization method to be used when making API calls.
+    /// </summary>
+    private DfpAuthorizationMethod authorizationMethod;
+
+    /// <summary>
+    /// OAuth consumer key.
+    /// </summary>
+    private string oAuthConsumerKey;
+
+    /// <summary>
+    /// OAuth consumer value.
+    /// </summary>
+    private string oAuthConsumerSecret;
 
     /// <summary>
     /// Gets or sets the auth token to be used in SOAP headers.
@@ -191,6 +227,42 @@ namespace Google.Api.Ads.Dfp.Lib {
     }
 
     /// <summary>
+    /// Gets or sets the authorization method to be used when making API calls.
+    /// </summary>
+    public DfpAuthorizationMethod AuthorizationMethod {
+      get {
+        return authorizationMethod;
+      }
+      set {
+        authorizationMethod = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth consumer key.
+    /// </summary>
+    public string OAuthConsumerKey {
+      get {
+        return oAuthConsumerKey;
+      }
+      set {
+        oAuthConsumerKey = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth consumer secret.
+    /// </summary>
+    public string OAuthConsumerSecret {
+      get {
+        return oAuthConsumerSecret;
+      }
+      set {
+        oAuthConsumerSecret = value;
+      }
+    }
+
+    /// <summary>
     /// Public constructor.
     /// </summary>
     public DfpAppConfig() : base() {
@@ -201,8 +273,10 @@ namespace Google.Api.Ads.Dfp.Lib {
       applicationName = "";
       enableGzipCompression = true;
       shortNameField = "DfpApi-DotNet";
-
       dfpApiServer = DEFAULT_DFPAPI_SERVER;
+      oAuthConsumerKey = "";
+      oAuthConsumerSecret = "";
+      authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
 
       ReadSettings((Hashtable) ConfigurationManager.GetSection("DfpApi"));
     }
@@ -221,8 +295,17 @@ namespace Google.Api.Ads.Dfp.Lib {
       applicationName = ReadSetting(settings, APPLICATION_NAME, applicationName);
       enableGzipCompression = bool.Parse(ReadSetting(settings, ENABLE_GZIP_COMPRESSION,
           enableGzipCompression.ToString()));
-
       dfpApiServer = ReadSetting(settings, DFPAPI_SERVER, dfpApiServer);
+      oAuthConsumerKey = ReadSetting(settings, OAUTH_CONSUMER_KEY, oAuthConsumerKey);
+      oAuthConsumerSecret = ReadSetting(settings, OAUTH_CONSUMER_SECRET, oAuthConsumerSecret);
+
+      try {
+        authorizationMethod = (DfpAuthorizationMethod) Enum.Parse(
+            typeof(DfpAuthorizationMethod),
+            ReadSetting(settings, AUTHORIZATION_METHOD, authorizationMethod.ToString()));
+      } catch {
+        authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
+      }
     }
   }
 }

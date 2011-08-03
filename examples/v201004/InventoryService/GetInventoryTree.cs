@@ -25,6 +25,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// <summary>
   /// This code example retrieves a previously created ad units and creates
   /// a tree.
+  ///
+  /// Tags: InventoryService.getAdUnit, InventoryService.getAdUnitsByStatement
   /// </summary>
   class GetInventoryTree : SampleBase {
     /// <summary>

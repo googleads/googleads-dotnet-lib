@@ -25,6 +25,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// item and creative ID. To determine which line items exist, run
   /// GetAllLineItems.cs. To determine which creatives exit, run
   /// GetAllCreatives.cs.
+  ///
+  /// Tags: LineItemCreativeAssociationService.getLineItemCreativeAssociation
   /// </summary>
   class GetLica : SampleBase {
     /// <summary>

@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// <summary>
   /// This code example gets a forecast for an existing line item. To determine
   /// which line items exist, run GetAllLineItems.cs.
+  ///
+  /// Tags: ForecastService.getForecastById
   /// </summary>
   class GetForecastById : SampleBase {
     /// <summary>

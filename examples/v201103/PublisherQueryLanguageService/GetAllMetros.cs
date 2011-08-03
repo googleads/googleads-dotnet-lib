@@ -24,6 +24,8 @@ using Google.Api.Ads.Dfp.Util.v201103;
 namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// <summary>
   /// This code example gets all metros available to target.
+  ///
+  /// Tags: PublisherQueryLanguageService.select
   /// </summary>
   class GetAllMetros : SampleBase {
     /// <summary>

@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="Common\Util\CsvFileTests.cs" />
     <Compile Include="Dfp\Properties\AssemblyInfo.cs" />
+    <Compile Include="Dfp\Properties\Properties.cs" />
     <Compile Include="Dfp\v201004\CompanyServiceTests.cs" />
     <Compile Include="Dfp\v201004\CreativeServiceTests.cs" />
     <Compile Include="Dfp\v201004\ForecastServiceTests.cs" />
@@ -147,6 +148,17 @@
     <Compile Include="Dfp\v201104\ReportServiceTests.cs" />
     <Compile Include="Dfp\v201104\TestUtils.cs" />
     <Compile Include="Dfp\v201104\UserServiceTests.cs" />
+    <Compile Include="Dfp\v201107\CompanyServiceTests.cs" />
+    <Compile Include="Dfp\v201107\CreativeServiceTests.cs" />
+    <Compile Include="Dfp\v201107\ForecastServiceTests.cs" />
+    <Compile Include="Dfp\v201107\InventoryServiceTests.cs" />
+    <Compile Include="Dfp\v201107\LineItemCreativeAssociationServiceTests.cs" />
+    <Compile Include="Dfp\v201107\LineItemServiceTests.cs" />
+    <Compile Include="Dfp\v201107\OrderServiceTests.cs" />
+    <Compile Include="Dfp\v201107\PlacementServiceTests.cs" />
+    <Compile Include="Dfp\v201107\ReportServiceTests.cs" />
+    <Compile Include="Dfp\v201107\TestUtils.cs" />
+    <Compile Include="Dfp\v201107\UserServiceTests.cs" />
     <Compile Include="Dfp\BaseTests.cs" />
   </ItemGroup>
   <ItemGroup>

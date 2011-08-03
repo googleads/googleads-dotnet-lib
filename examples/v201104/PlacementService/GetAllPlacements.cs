@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201104 {
   /// <summary>
   /// This code example gets all placements. To create placements, run
   /// CreatePlacements.cs.
+  ///
+  /// Tags: PlacementService.getPlacementsByStatement
   /// </summary>
   class GetAllPlacements : SampleBase {
     /// <summary>

@@ -24,6 +24,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
   /// <summary>
   /// This code example gets the root ad unit. To create an ad unit, run
   /// CreateAdUnits.cs.
+  ///
+  /// Tags: InventoryService.getAdUnitsByStatement
+  /// Tags: NetworkService.getCurrentNetwork
   /// </summary>
   class GetAdUnitsByStatement : SampleBase {
     /// <summary>

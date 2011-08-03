@@ -31,6 +31,11 @@ namespace Google.Api.Ads.Dfp.Headers {
     public string authToken;
 
     /// <summary>
+    /// OAuth token.
+    /// </summary>
+    public string oAuthToken;
+
+    /// <summary>
     /// Network code.
     /// </summary>
     public string networkCode;

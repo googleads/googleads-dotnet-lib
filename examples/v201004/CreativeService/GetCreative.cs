@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// <summary>
   /// This code example gets a creative by its ID. To determine which creatives
   /// exist, run GetAllCreatives.cs.
+  ///
+  /// Tags: CreativeService.getCreative
   /// </summary>
   class GetCreative : SampleBase {
     /// <summary>

@@ -16,6 +16,7 @@
 
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util;
+using Google.Api.Ads.Dfp.Headers;
 
 using System;
 using System.IO;
@@ -31,6 +32,11 @@ namespace Google.Api.Ads.Dfp.Lib {
   /// Base class for DFP API services.
   /// </summary>
   public class DfpSoapClient : AdsSoapClient {
+    /// <summary>
+    /// The service name for use with ClientLogin server.
+    /// </summary>
+    private const string SERVICE_NAME = "gam";
+
     /// <summary>
     /// Gets a custom exception that wraps the SOAP exception thrown
     /// by the server.
@@ -56,6 +62,56 @@ namespace Google.Api.Ads.Dfp.Lib {
         }
       }
       return new DfpApiException(null, ex.Message, ex);
+    }
+
+    /// <summary>
+    /// This method makes the actual SOAP API call. It is a thin wrapper
+    /// over SOAPHttpClientProtocol:Invoke, and provide things like
+    /// protection from race condition.
+    /// </summary>
+    /// <param name="methodName">The name of the SOAP API method.</param>
+    /// <param name="parameters">The list of parameters for the SOAP API
+    /// method.</param>
+    /// <returns>
+    /// The results from calling the SOAP API method.
+    /// </returns>
+    protected override object[] MakeApiCall(string methodName, object[] parameters) {
+      DfpAppConfig config = this.User.Config as DfpAppConfig;
+      RequestHeader header = (RequestHeader) this.GetType().GetProperty("RequestHeader").
+          GetValue(this, null);
+
+      if (header == null) {
+        throw new DfpApiException(null, DfpErrorMessages.FailedToSetAuthorizationHeader);
+      }
+      if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth) {
+        if (this.User.OAuthProvider != null) {
+          AdsOAuthProvider provider = this.User.OAuthProvider;
+          provider.GenerateAccessToken();
+          string oAuthHeader = provider.GetAuthHeader(this.Url);
+
+          if (string.Compare(header.Version, "v201103") < 0) {
+            header.oAuthToken = oAuthHeader;
+          } else {
+            OAuth oAuth = new OAuth();
+            oAuth.parameters = oAuthHeader;
+            header.authentication = oAuth;
+          }
+        } else {
+          throw new DfpApiException(null, DfpErrorMessages.OAuthProviderCannotBeNull);
+        }
+      } else if (config.AuthorizationMethod == DfpAuthorizationMethod.ClientLogin) {
+        string authToken = (!string.IsNullOrEmpty(config.AuthToken)) ? config.AuthToken :
+            new AuthToken(config, SERVICE_NAME, config.Email, config.Password).GetToken();
+        if (string.Compare(header.Version, "v201103") < 0) {
+          header.authToken = authToken;
+        } else {
+          ClientLogin clientLogin = new ClientLogin();
+          clientLogin.token = authToken;
+          header.authentication = clientLogin;
+        }
+      }
+
+      return base.MakeApiCall(methodName, parameters);
     }
   }
 }

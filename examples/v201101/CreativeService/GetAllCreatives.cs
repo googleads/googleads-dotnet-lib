@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// <summary>
   /// This code example gets all creatives. To create creatives, run
   /// CreateCreatives.cs.
+  ///
+  /// Tags: CreativeService.getCreativesByStatement
   /// </summary>
   class GetAllCreatives : SampleBase {
     /// <summary>

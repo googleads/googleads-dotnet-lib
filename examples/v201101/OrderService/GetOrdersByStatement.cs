@@ -26,6 +26,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// retrieves up to the maximum page size limit of 500. To create orders, run
   /// CreateOrders.cs. To determine which companies are advertisers,
   /// run GetCompaniesByStatement.cs.
+  ///
+  /// Tags: OrderService.getOrdersByStatement
   /// </summary>
   class GetOrdersByStatement : SampleBase {
     /// <summary>

@@ -24,6 +24,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// <summary>
   /// This code example gets a forecast for a prospective line item. To
   /// determine which placements exist, run GetAllPlacements.cs.
+  ///
+  /// Tags: ForecastService.getForecast
   /// </summary>
   class GetForecast : SampleBase {
     /// <summary>

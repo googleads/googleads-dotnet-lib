@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
   /// <summary>
   /// This code example gets all roles. This example can be used to determine
   /// which role ID is needed when getting and creating users.
+  ///
+  /// Tags: UserService.getAllRoles
   /// </summary>
   class GetAllRoles : SampleBase {
     /// <summary>

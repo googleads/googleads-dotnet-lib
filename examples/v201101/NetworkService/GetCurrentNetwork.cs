@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// <summary>
   /// This code example gets the current network that you can make requests
   /// against.
+  ///
+  /// Tags: NetworkService.getCurrentNetwork
   /// </summary>
   class GetCurrentNetwork : SampleBase {
     /// <summary>

@@ -117,6 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="FailedToSetAuthorizationHeader" xml:space="preserve">
+    <value>Could not set AuthToken or OAuthHeader for outgoing API call. Please check if service.RequestHeader is not null.</value>
+    <comment>Used by DfpSoapClient.MakeApiCall when setting authorization headers.</comment>
+  </data>
+  <data name="OAuthProviderCannotBeNull" xml:space="preserve">
+    <value>OAuth provider cannot be null when selecting Authorization method as "OAuth".</value>
+    <comment>Used by DfpSoapClient.MakeApiCall when setting authorization headers.</comment>
+  </data>
   <data name="SignatureIsOfWrongType" xml:space="preserve">
     <value>Signature should be a {0} instance.</value>
     <comment>Used for ArgumentException by DfpServiceFactory.CreateService if the signature is not of desired type.</comment>

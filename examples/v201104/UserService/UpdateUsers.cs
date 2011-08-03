@@ -24,6 +24,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201104 {
   /// This code example updates all users by adding "Sr." to the end of each
   /// name (after a very large baby boom and lack of creativity). To
   /// determine which users exist, run GetAllUsers.cs.
+  ///
+  /// Tags: UserService.getUsersByStatement, UserService.updateUsers
   /// </summary>
   class UpdateUsers : SampleBase {
     /// <summary>

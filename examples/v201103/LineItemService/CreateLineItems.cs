@@ -26,6 +26,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// exist, run GetAllLineItems.cs. To determine which orders exist, run
   /// GetAllOrders.cs. To determine which placements exist, run
   /// GetAllPlacements.cs.
+  ///
+  /// Tags: LineItemService.createLineItems
   /// </summary>
   class CreateLineItems : SampleBase {
     /// <summary>

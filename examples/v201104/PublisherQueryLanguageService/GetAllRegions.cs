@@ -24,6 +24,8 @@ using Google.Api.Ads.Dfp.Util.v201104;
 namespace Google.Api.Ads.Dfp.Examples.v201104 {
   /// <summary>
   /// This code example gets all regions available to target.
+  ///
+  /// Tags: PublisherQueryLanguageService.select
   /// </summary>
   class GetAllRegions : SampleBase {
     /// <summary>

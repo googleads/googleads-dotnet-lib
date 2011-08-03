@@ -29,6 +29,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// items, approve the order to which they belong by running ApproveOrders.cs.
   /// To create LICAs, run CreateLicas.cs. To determine which line items exist,
   /// run GetAllLineItem.cs.
+  ///
+  /// Tags: LineItemService.getLineItemsByStatement
+  /// Tags: LineItemService.performLineItemAction
   /// </summary>
   class ActivateLineItem : SampleBase {
     /// <summary>

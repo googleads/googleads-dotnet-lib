@@ -27,6 +27,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// determine which custom targeting keys and values exist, run
   /// GetAllCustomTargetingKeysAndValues.cs. To target these custom targeting
   /// keys and values, run TargetCustomCriteria.cs.
+  ///
+  /// Tags: CustomTargetingService.createCustomTargetingKeys
+  /// Tags: CustomTargetingService.createCustomTargetingValues
   /// </summary>
   class CreateCustomTargetingKeysAndValues : SampleBase {
     /// <summary>

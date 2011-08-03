@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// <summary>
   /// This code example creates new orders. To determine which orders exist,
   /// run GetAllOrders.cs.
+  ///
+  /// Tags: OrderService.createOrders
   /// </summary>
   class CreateOrders : SampleBase {
     /// <summary>
