@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     ClientLogin,
 
     /// <summary>
-    /// OAuth 1.0 API.
+    /// OAuth 1.0a API.
     /// </summary>
     OAuth
   }

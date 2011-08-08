@@ -92,7 +92,7 @@ namespace Google.Api.Ads.Dfp.Lib {
           if (string.Compare(header.Version, "v201103") < 0) {
             header.oAuthToken = oAuthHeader;
           } else {
-            OAuth oAuth = new OAuth();
+            OAuth oAuth = (header.authentication as OAuth) ?? new OAuth();
             oAuth.parameters = oAuthHeader;
             header.authentication = oAuth;
           }
@@ -105,7 +105,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         if (string.Compare(header.Version, "v201103") < 0) {
           header.authToken = authToken;
         } else {
-          ClientLogin clientLogin = new ClientLogin();
+          ClientLogin clientLogin = (header.authentication as ClientLogin) ?? new ClientLogin();
           clientLogin.token = authToken;
           header.authentication = clientLogin;
         }
