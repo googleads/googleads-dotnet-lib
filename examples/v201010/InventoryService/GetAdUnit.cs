@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
   /// <summary>
   /// This code example gets an ad unit by its ID. To determine which ad units
   /// exist, run GetInventoryTree.cs or GetAllAdUnits.cs.
+  ///
+  /// Tags: InventoryService.getAdUnit
   /// </summary>
   class GetAdUnit : SampleBase {
     /// <summary>

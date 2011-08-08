@@ -24,6 +24,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// This code example gets all users sorted by name. The Statement retrieves
   /// up to the maximum page size limit of 500. To create new users,
   /// run CreateUsers.cs.
+  ///
+  /// Tags: UserService.getUsersByStatement
   /// </summary>
   class GetUsersByStatement : SampleBase {
     /// <summary>

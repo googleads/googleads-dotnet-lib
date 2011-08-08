@@ -25,6 +25,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// This code example creates new image creatives for a given advertiser. To
   /// determine which companies are advertisers, run GetCompaniesByStatement.cs.
   /// To determine which creatives already exist, run GetAllCreatives.cs.
+  ///
+  /// Tags: CreativeService.createCreatives
   /// </summary>
   class CreateCreatives : SampleBase {
     /// <summary>

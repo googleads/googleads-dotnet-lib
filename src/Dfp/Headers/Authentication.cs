@@ -23,7 +23,6 @@ namespace Google.Api.Ads.Dfp.Headers {
   /// </summary>
   [XmlIncludeAttribute(typeof(ClientLogin))]
   [XmlIncludeAttribute(typeof(OAuth))]
-  [XmlIncludeAttribute(typeof(GaiaService))]
   [XmlRootAttribute(Namespace = "https://www.google.com/apis/ads/publisher{version}")]
   public abstract class Authentication {
     /// <summary>

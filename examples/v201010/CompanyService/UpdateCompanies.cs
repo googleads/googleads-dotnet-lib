@@ -25,6 +25,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
   /// This code example updates the names of all companies that are advertisers
   /// by appending "LLC." up to the first 500. To determine which companies
   /// exist, run GetAllCompanies.cs.
+  ///
+  /// Tags: CompanyService.getCompaniesByStatement, CompanyService.updateCompanies
   /// </summary>
   class UpdateCompanies : SampleBase {
     /// <summary>

@@ -78,6 +78,11 @@ namespace Google.Api.Ads.Common.Lib {
     private const string TIMEOUT = "Timeout";
 
     /// <summary>
+    /// Key name for retryCount.
+    /// </summary>
+    private const string RETRYCOUNT = "RetryCount";
+
+    /// <summary>
     /// Path to which the SOAP logs are to be saved.
     /// </summary>
     private string logPath;
@@ -117,6 +122,30 @@ namespace Google.Api.Ads.Common.Lib {
     /// Timeout to be used for Ads services in milliseconds.
     /// </summary>
     private int timeout;
+
+    /// <summary>
+    /// Number of times to retry a call if an API call fails and can be retried.
+    /// </summary>
+    private int retryCount;
+
+    /// <summary>
+    /// Gets or sets the number of times to retry a call if an API call fails
+    /// and can be retried.
+    /// </summary>
+    public int RetryCount {
+      get {
+        return retryCount;
+      }
+      set {
+        retryCount = value;
+      }
+    }
+
+    /// <summary>
+    /// Default value for number of times to retry a call if an API call fails
+    /// and can be retried.
+    /// </summary>
+    private const int DEFAULT_RETRYCOUNT = 0;
 
     /// <summary>
     /// Default value for timeout for Ads services.
@@ -264,7 +293,9 @@ namespace Google.Api.Ads.Common.Lib {
       }
       maskCredentials = bool.Parse(ReadSetting(settings, MASK_CREDENTIALS,
           maskCredentials.ToString()));
-      timeout = int.Parse(ReadSetting(settings, TIMEOUT, timeout.ToString()));
+
+      int.TryParse(ReadSetting(settings, TIMEOUT, timeout.ToString()), out timeout);
+      int.TryParse(ReadSetting(settings, RETRYCOUNT, retryCount.ToString()), out retryCount);
     }
 
     /// <summary>

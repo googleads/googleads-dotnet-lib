@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// <summary>
   /// This code example gets a company by its ID. To determine which companies
   /// exist, run GetAllCompanies.cs.
+  ///
+  /// Tags: CompanyService.getCompany
   /// </summary>
   class GetCompany : SampleBase {
     /// <summary>

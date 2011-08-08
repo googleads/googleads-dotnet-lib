@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// <summary>
   /// This code example creates new companies. To determine which companies
   /// exist, run GetAllCompanies.cs.
+  ///
+  /// Tags: CompanyService.createCompanies
   /// </summary>
   class CreateCompanies : SampleBase {
     /// <summary>

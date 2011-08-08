@@ -26,6 +26,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
   /// This code example copies a given set of image creatives. This would
   /// typically be done to reuse creatives in a small business network. To
   /// determine which creatives exist, run GetAllCreatives.cs.
+  ///
+  /// Tags: CreativeService.getCreativesByStatement
+  /// Tags: CreativeService.createCreatives
   /// </summary>
   class CopyImageCreatives : SampleBase {
     /// <summary>

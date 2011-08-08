@@ -24,6 +24,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201104 {
   /// <summary>
   /// This code example runs a report equal to the "Sales by salespersons
   /// report" on the DFP website. To download the report run DownloadReport.cs.
+  ///
+  /// Tags: ReportService.runReportJob, ReportService.getReportJob
   /// </summary>
   class RunSalesReport : SampleBase {
     /// <summary>

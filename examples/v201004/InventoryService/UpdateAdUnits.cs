@@ -24,6 +24,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// This code example updates an ad unit by enabling AdSense to the first
   /// 500. To determine which ad units exist, run GetAllAdUnits.cs or
   /// GetInventoryTree.cs.
+  ///
+  /// Tags: InventoryService.getAdUnitsByStatement, InventoryService.updateAdUnits
   /// </summary>
   class UpdateAdUnits : SampleBase {
     /// <summary>

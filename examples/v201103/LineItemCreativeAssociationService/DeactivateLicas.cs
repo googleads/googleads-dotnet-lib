@@ -25,6 +25,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// <summary>
   /// This code example deactivates all LICAs for the line item. To determine
   /// which LICAs exist, run GetAllLicas.cs.
+  ///
+  /// Tags: LineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement
+  /// Tags: LineItemCreativeAssociationService.performLineItemCreativeAssociationAction
   /// </summary>
   class DeactivateLicas : SampleBase {
     /// <summary>

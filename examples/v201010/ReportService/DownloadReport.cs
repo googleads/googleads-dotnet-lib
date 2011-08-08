@@ -25,6 +25,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
   /// <summary>
   /// This code example downloads a completed report. To run a report, run
   /// RunDeliveryReport.cs.
+  ///
+  /// Tags: ReportService.getReportDownloadURL
   /// </summary>
   class DownloadReport : SampleBase {
     /// <summary>

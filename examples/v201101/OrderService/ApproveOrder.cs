@@ -25,6 +25,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// <summary>
   /// This code example approves and overbooks all draft orders. To determine
   /// which orders exist, run GetAllOrders.cs.
+  ///
+  /// Tags: OrderService.getOrdersByStatement, OrderService.performOrderAction
   /// </summary>
   class ApproveOrder : SampleBase {
     /// <summary>

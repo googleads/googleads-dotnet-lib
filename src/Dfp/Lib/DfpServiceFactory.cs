@@ -90,16 +90,6 @@ namespace Google.Api.Ads.Dfp.Lib {
       if (propInfo != null) {
         RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
         clonedHeader.Version = dfpapiSignature.Version;
-
-        // If there is an authToken, initialize the right field based on
-        // whether the requested service is >= 201103 or not.
-        if (requestHeader.authToken != null) {
-          if (string.Compare(dfpapiSignature.Version, "v201103") < 0) {
-            clonedHeader.authentication = null;
-          } else {
-            clonedHeader.authToken = null;
-          }
-        }
         propInfo.SetValue(service, clonedHeader, null);
       }
 
@@ -122,17 +112,6 @@ namespace Google.Api.Ads.Dfp.Lib {
       DfpAppConfig dfpConfig = (DfpAppConfig) config;
 
       this.requestHeader = new RequestHeader();
-
-      // Since the authentication header structure is different for v201103
-      // and higher versions, we initalize both fields, and later null out
-      // the unwanted field during CreateService.
-      this.requestHeader.authToken = (string.IsNullOrEmpty(dfpConfig.AuthToken))?
-          new AuthToken(config, "gam", dfpConfig.Email, dfpConfig.Password).GetToken() :
-              dfpConfig.AuthToken;
-
-      ClientLogin clientLogin = new ClientLogin();
-      clientLogin.token = requestHeader.authToken;
-      requestHeader.authentication = clientLogin;
       this.requestHeader.networkCode = dfpConfig.NetworkCode;
       this.requestHeader.applicationName = dfpConfig.ApplicationName;
     }

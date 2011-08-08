@@ -25,6 +25,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// <summary>
   /// This code example deactivates all active placements. To determine which
   /// placements exist, run GetAllPlacements.cs.
+  ///
+  /// Tags: PlacementService.getPlacementsByStatement
+  /// Tags: PlacementService.performPlacementAction
   /// </summary>
   class DeactivatePlacement : SampleBase {
     /// <summary>

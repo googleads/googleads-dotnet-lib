@@ -24,6 +24,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
   /// This code example creates new ad units under the effective root ad unit.
   /// To determine which ad units exist, run GetAdUnitTree.cs or
   /// GetAllAdUnits.cs.
+  ///
+  /// Tags: InventoryService.createAdUnits, NetworkService.getCurrentNetwork
   /// </summary>
   class CreateAdUnits : SampleBase {
     /// <summary>

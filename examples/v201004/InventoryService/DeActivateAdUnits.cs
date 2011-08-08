@@ -25,6 +25,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// <summary>
   /// This code example deactivates all active ad units. To determine which ad
   /// units exist, run GetAllAdUnits.cs or GetInventoryTree.cs.
+  ///
+  /// Tags: InventoryService.getAdUnitsByStatement
+  /// Tags: InventoryService.performAdUnitAction
   /// </summary>
   class DeActivateAdUnits : SampleBase {
     /// <summary>

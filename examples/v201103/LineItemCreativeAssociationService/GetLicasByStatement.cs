@@ -25,6 +25,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// This code example gets all line item creative associations for a given
   /// line item ID. The Statement retrieves up to the maximum page size limit of
   /// 500. To create LICAs, run CreateLicas.cs.
+  ///
+  /// Tags: LineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement
   /// </summary>
   class GetLicasByStatement : SampleBase {
     /// <summary>

@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// <summary>
   /// This code example gets a placement by its ID. To determine which
   /// placements exist, run GetAllPlacements.cs.
+  ///
+  /// Tags: PlacementService.getPlacement
   /// </summary>
   class GetPlacement : SampleBase {
     /// <summary>

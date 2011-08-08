@@ -28,6 +28,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201104 {
   /// determine which line items exist, run GetAllLineItems.cs. To determine
   /// which custom targeting keys and values exist, run
   /// GetAllCustomTargetingKeysAndValues.cs.
+  ///
+  /// Tags: LineItemService.getLineItem, LineItemService.updateLineItem
   /// </summary>
   class TargetCustomCriteria : SampleBase {
     /// <summary>

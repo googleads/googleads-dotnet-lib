@@ -24,6 +24,8 @@ using Google.Api.Ads.Dfp.Util.v201101;
 namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// <summary>
   /// This code example gets all cities available to target.
+  ///
+  /// Tags: PublisherQueryLanguageService.select
   /// </summary>
   class GetAllCities : SampleBase {
     /// <summary>

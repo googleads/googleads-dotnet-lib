@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// <summary>
   /// This code example gets all line items. To create line items, run
   /// CreateLineItems.cs.
+  ///
+  /// Tags: LineItemService.getLineItemsByStatement
   /// </summary>
   class GetAllLineItems : SampleBase {
     /// <summary>

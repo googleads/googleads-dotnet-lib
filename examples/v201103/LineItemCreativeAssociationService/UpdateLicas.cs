@@ -23,6 +23,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// <summary>
   /// This code example updates the destination URL of all LICAs up to the first
   /// 500. To determine which LICAs exist, run GetAllLicas.cs.
+  ///
+  /// Tags: LineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement
+  /// Tags: LineItemCreativeAssociationService.updateLineItemCreativeAssociations
   /// </summary>
   class UpdateLicas : SampleBase {
     /// <summary>

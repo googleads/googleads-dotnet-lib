@@ -26,6 +26,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// This code example gets all predefined custom targeting keys. The statement
   /// retrieves up to the maximum page size limit of 500. To create custom
   /// targeting keys, run CreateCustomTargetingKeysAndValues.cs.
+  ///
+  /// Tags: CustomTargetingService.getCustomTargetingKeysByStatement
   /// </summary>
   class GetCustomTargetingKeysByStatement : SampleBase {
     /// <summary>

@@ -25,6 +25,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
   /// This code example gets all companies that are advertisers. The Statement
   /// retrieves up to the maximum page size limit of 500. To create companies,
   /// run CreateCompanies.cs.
+  ///
+  /// Tags: CompanyService.getCompaniesByStatement
   /// </summary>
   class GetCompaniesByStatement : SampleBase {
     /// <summary>

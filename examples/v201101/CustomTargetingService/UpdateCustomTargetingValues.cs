@@ -26,6 +26,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// This code example updates the display name of each custom targeting value
   /// up to the first 500. To determine which custom targeting keys exist, run
   /// GetAllCustomTargetingKeysAndValues.cs.
+  ///
+  /// Tags: CustomTargetingService.getCustomTargetingValuesByStatement
+  /// Tags: CustomTargetingService.updateCustomTargetingValues
   /// </summary>
   class UpdateCustomTargetingValues : SampleBase {
     /// <summary>

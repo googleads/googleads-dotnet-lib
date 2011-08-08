@@ -24,6 +24,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201010 {
   /// <summary>
   /// This code example creates new placements for various ad unit sizes. To
   /// determine which placements exist, run GetAllPlacements.cs.
+  ///
+  /// Tags: InventoryService.getAdUnitsByStatement
+  /// Tags: PlacementService.createPlacements
   /// </summary>
   class CreatePlacements : SampleBase {
     /// <summary>

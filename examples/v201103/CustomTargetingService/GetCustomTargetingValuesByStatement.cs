@@ -28,6 +28,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// limit of 500. To create custom targeting values, run
   /// CreateCustomTargetingKeysAndValues.cs. To determine which custom
   /// targeting keys exist, run GetAllCustomTargetingKeysAndValues.cs.
+  ///
+  /// Tags: CustomTargetingService.getCustomTargetingValuesByStatement
   /// </summary>
   class GetCustomTargetingValuesByStatement : SampleBase {
     /// <summary>

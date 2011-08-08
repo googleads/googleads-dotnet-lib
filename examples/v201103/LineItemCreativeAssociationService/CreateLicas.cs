@@ -29,6 +29,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201103 {
   /// solution networks, the creative ids can represent any creative. To copy
   /// creatives, run CopyImageCreatives.cs. To determine which LICAs exist, run
   /// GetAllLicasExample.cs.
+  ///
+  /// Tags: LineItemCreativeAssociationService.createLineItemCreativeAssociations
   /// </summary>
   class CreateLicas : SampleBase {
     /// <summary>

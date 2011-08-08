@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// <summary>
   /// This code example gets a line item by its ID. To determine which line
   /// items exist, run GetAllLineItems.cs.
+  ///
+  /// Tags: LineItemService.getLineItem
   /// </summary>
   class GetLineItem : SampleBase {
     /// <summary>

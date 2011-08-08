@@ -50,14 +50,18 @@
   <ItemGroup>
     <Compile Include="Common\Lib\AdsClient.cs" />
     <Compile Include="Common\Lib\AdsException.cs" />
+    <Compile Include="Common\Lib\AdsOAuthException.cs" />
+    <Compile Include="Common\Lib\AdsOAuthProvider.cs" />
     <Compile Include="Common\Lib\AdsService.cs" />
     <Compile Include="Common\Lib\AdsSoapClient.cs" />
     <Compile Include="Common\Lib\AdsUser.cs" />
     <Compile Include="Common\Lib\AppConfigBase.cs" />
     <Compile Include="Common\Lib\AuthToken.cs" />
+    <Compile Include="Common\Lib\AuthTokenCache.cs" />
     <Compile Include="Common\Lib\AuthTokenErrorCode.cs" />
     <Compile Include="Common\Lib\AuthTokenException.cs" />
     <Compile Include="Common\Lib\ContextStore.cs" />
+    <Compile Include="Common\Lib\DefaultAuthTokenCache.cs" />
     <Compile Include="Common\Lib\ServiceFactory.cs" />
     <Compile Include="Common\Lib\ServiceSignature.cs" />
     <Compile Include="Common\Lib\SoapHeaderBase.cs" />
@@ -72,7 +76,6 @@
     <Compile Include="Dfp\Headers\Authentication.cs" />
     <Compile Include="Dfp\Headers\ClientLogin.cs" />
     <Compile Include="Dfp\Headers\DfpSoapHeader.cs" />
-    <Compile Include="Dfp\Headers\GaiaService.cs" />
     <Compile Include="Dfp\Headers\OAuth.cs" />
     <Compile Include="Dfp\Headers\RequestHeader.cs" />
     <Compile Include="Dfp\Headers\RequestHeaderStub.cs" />
@@ -80,6 +83,7 @@
     <Compile Include="Dfp\Headers\ResponseHeaderStub.cs" />
     <Compile Include="Dfp\Lib\DfpApiException.cs" />
     <Compile Include="Dfp\Lib\DfpAppConfig.cs" />
+    <Compile Include="Dfp\Lib\DfpAuthorizationMethod.cs" />
     <Compile Include="Dfp\Lib\DfpException.cs" />
     <Compile Include="Dfp\Lib\DfpService.cs" />
     <Compile Include="Dfp\Lib\DfpServiceFactory.cs" />
@@ -100,6 +104,9 @@
     <Compile Include="Dfp\Util\v201104\DateTimeUtilities.cs" />
     <Compile Include="Dfp\Util\v201104\PqlUtilities.cs" />
     <Compile Include="Dfp\Util\v201104\StatementBuilder.cs" />
+    <Compile Include="Dfp\Util\v201107\DateTimeUtilities.cs" />
+    <Compile Include="Dfp\Util\v201107\PqlUtilities.cs" />
+    <Compile Include="Dfp\Util\v201107\StatementBuilder.cs" />
     <Compile Include="Dfp\v201004\DfpApi.cs" />
     <Compile Include="Dfp\v201004\DfpServiceV201004.cs" />
     <Compile Include="Dfp\v201010\DfpApi.cs" />
@@ -110,6 +117,8 @@
     <Compile Include="Dfp\v201103\DfpServiceV201103.cs" />
     <Compile Include="Dfp\v201104\DfpApi.cs" />
     <Compile Include="Dfp\v201104\DfpServiceV201104.cs" />
+    <Compile Include="Dfp\v201107\DfpApi.cs" />
+    <Compile Include="Dfp\v201107\DfpServiceV201107.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Common\CommonErrorMessages.Designer.cs">

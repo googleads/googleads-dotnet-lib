@@ -24,6 +24,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// This code example updates all placements to allow for AdSense targeting
   /// up to the first 500. To determine which placements exist, run
   /// GetAllPlacements.cs.
+  ///
+  /// Tags: PlacementService.getPlacementsByStatement
+  /// Tags: PlacementService.updatePlacements
   /// </summary>
   class UpdatePlacements : SampleBase {
     /// <summary>

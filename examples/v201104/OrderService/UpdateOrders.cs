@@ -24,6 +24,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201104 {
   /// <summary>
   /// This code example updates the notes of each order up to the first 500.
   /// To determine which orders exist, run GetAllOrders.cs.
+  ///
+  /// Tags: OrderService.getOrdersByStatement, OrderService.updateOrders
   /// </summary>
   class UpdateOrders : SampleBase {
     /// <summary>

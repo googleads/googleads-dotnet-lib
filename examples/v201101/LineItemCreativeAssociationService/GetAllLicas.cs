@@ -23,6 +23,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201101 {
   /// <summary>
   /// This code example gets all line item creative associations (LICA). To
   /// create LICAs, run CreateLicas.cs.
+  ///
+  /// Tags: LineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement
   /// </summary>
   class GetAllLicas : SampleBase {
     /// <summary>

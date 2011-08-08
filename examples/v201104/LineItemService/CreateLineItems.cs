@@ -28,6 +28,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201104 {
   /// GetAllPlacements.cs. To determine the IDs for locations, run
   /// GetAllCities.cs, GetAllCountries.cs, GetAllMetros.cs, and
   /// GetAllRegions.cs.
+  ///
+  /// Tags: LineItemService.createLineItems
   /// </summary>
   class CreateLineItems : SampleBase {
     /// <summary>

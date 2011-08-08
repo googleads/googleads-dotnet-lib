@@ -25,6 +25,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201104 {
   /// This code example gets all image creatives. The Statement retrieves up to
   /// the maximum page size limit of 500. To create an image creative, run
   /// CreateCreatives.cs.
+  ///
+  /// Tags: CreativeService.getCreativesByStatement
+  /// Tags: CreativeService.updateCreatives
   /// </summary>
   class UpdateCreatives : SampleBase {
     /// <summary>

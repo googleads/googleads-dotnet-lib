@@ -22,6 +22,8 @@ using System;
 namespace Google.Api.Ads.Dfp.Examples.v201104 {
   /// <summary>
   /// This code example gets all orders. To create orders, run CreateOrders.cs.
+  ///
+  /// Tags: OrderService.getOrdersByStatement
   /// </summary>
   class GetAllOrders : SampleBase {
     /// <summary>

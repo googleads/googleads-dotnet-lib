@@ -24,6 +24,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201004 {
   /// <summary>
   /// This code example gets all active placements by using a Statement. To
   /// create a placement, run CreatePlacements.cs.
+  ///
+  /// Tags: PlacementService.getPlacementsByStatement
   /// </summary>
   class GetPlacementsByStatement : SampleBase {
     /// <summary>
