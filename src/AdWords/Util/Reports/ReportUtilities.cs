@@ -359,8 +359,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <returns>The parsed report response.</returns>
     private MccReportStatus ParseReportResponse(string contents) {
       MccReportStatus reportResponse = new MccReportStatus();
-      XmlDocument xDoc = new XmlDocument();
-      xDoc.LoadXml(contents);
+      XmlDocument xDoc = SerializationUtilities.LoadXml(contents);
 
       XmlNode node = null;
 

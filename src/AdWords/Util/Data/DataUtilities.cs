@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Collections;
@@ -41,10 +42,7 @@ namespace Google.Api.Ads.AdWords.Util.Data {
       AccountManager manager = new AccountManager(user);
       ClientAccount[] allClients = manager.DownloadAllAccounts();
 
-      XmlDocument xDoc = null;
-
-      xDoc = new XmlDocument();
-      xDoc.LoadXml("<Accounts/>");
+      XmlDocument xDoc = SerializationUtilities.LoadXml("<Accounts/>");
 
       foreach (ClientAccount account in allClients) {
         XmlElement xClient = xDoc.CreateElement("Account");

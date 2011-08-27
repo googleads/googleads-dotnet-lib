@@ -107,10 +107,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201101 {
       geoTargetOperation.@operator = Operator.SET;
       geoTargetOperation.operand = geoTargetList;
 
-      // Create network targets.
-      NetworkTargetList networkTargetList = new NetworkTargetList();
-      networkTargetList.campaignId = campaignId;
-
       // Set campaign targets.
       CampaignTargetReturnValue retVal =
           campaignTargetService.mutate(new CampaignTargetOperation[] {

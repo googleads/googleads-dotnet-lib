@@ -20,14 +20,13 @@
     <HelpFileFormat>HtmlHelp1</HelpFileFormat>
     <DocumentationSources>
       <DocumentationSource sourceFile="..\bin\AdWords.Examples.CSharp.exe" />
-      <DocumentationSource sourceFile="..\bin\AdWords.Examples.CSharp.xml" />
-      <DocumentationSource sourceFile="..\bin\AdWords.Examples.VB.exe" />
-      <DocumentationSource sourceFile="..\bin\AdWords.Examples.VB.xml" />
-      <DocumentationSource sourceFile="..\bin\AdWords.Tests.dll" />
-      <DocumentationSource sourceFile="..\bin\AdWords.Tests.xml" />
-      <DocumentationSource sourceFile="..\bin\Google.AdWords.dll" />
-      <DocumentationSource sourceFile="..\bin\Google.AdWords.xml" />
-    </DocumentationSources>
+<DocumentationSource sourceFile="..\bin\AdWords.Examples.CSharp.xml" />
+<DocumentationSource sourceFile="..\bin\AdWords.Examples.VB.exe" />
+<DocumentationSource sourceFile="..\bin\AdWords.Examples.VB.xml" />
+<DocumentationSource sourceFile="..\bin\AdWords.Tests.dll" />
+<DocumentationSource sourceFile="..\bin\AdWords.Tests.xml" />
+<DocumentationSource sourceFile="..\bin\Google.AdWords.dll" />
+<DocumentationSource sourceFile="..\bin\Google.AdWords.xml" /></DocumentationSources>
     <HelpTitle>AdWords API .NET client library</HelpTitle>
     <NamingMethod>MemberName</NamingMethod>
     <CopyrightText>Copyright 2011, Google Inc. All Rights Reserved.</CopyrightText>
