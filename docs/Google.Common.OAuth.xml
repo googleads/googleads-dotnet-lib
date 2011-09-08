@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Common.OAuth</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthException">
+            <summary>
+            Exception thrown when OAuth authentication with Ads server fails.
+            </summary>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthException.#ctor">
+            <summary>
+            Public constructor.
+            </summary>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthException.#ctor(System.String)">
+            <summary>
+            Public constructor.
+            </summary>
+            <param name="message">Error message for this API exception.</param>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthException.#ctor(System.String,System.Exception)">
+            <summary>
+            Public constructor.
+            </summary>
+            <param name="message">Error message for this API exception.</param>
+            <param name="innerException">Inner exception, if any.</param>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Protected constructor. Used by serialization frameworks while
+            deserializing an exception object.
+            </summary>
+            <param name="info">Info about the serialization context.</param>
+            <param name="context">A streaming context that represents the
+            serialization stream.</param>
+        </member>
+        <member name="T:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider">
+            <summary>
+            Provides OAuth authorization mechanism for Ads services using OAuth.Net
+            library.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider.RequestTokenUrl">
+            <summary>
+            The OAuth endpoint for obtaining request token.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider.AuthorizationUrl">
+            <summary>
+            The OAuth endpoint for authorizing request token.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider.AccessTokenUrl">
+            <summary>
+            The OAuth endpoint for obtaining access token.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider.DefaultOAuthConsumerKey">
+            <summary>
+            A default OAuth consumer key for testing purposes.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider.DefaultOAuthConsumerSecret">
+            <summary>
+            A default OAuth consumer secret for testing purposes.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider.SignatureMethod">
+            <summary>
+            Default signature method supported by this class.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider.OAuthVersion">
+            <summary>
+            OAuth version supported by this class.
+            </summary>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider"/>
+            class.
+            </summary>
+            <param name="scope">The OAuth scope.</param>
+            <param name="callbackUrl">The OAuth callback URL.</param>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider"/>
+            class.
+            </summary>
+            <param name="consumerKey">The OAuth consumer key.</param>
+            <param name="consumerSecret">The OAuth consumer secret.</param>
+            <param name="scope">The OAuth scope.</param>
+            <param name="callbackUrl">The callback URL.</param>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider.#ctor(OAuth.Net.Consumer.OAuthService,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider"/>
+            class.
+            </summary>
+            <param name="service">The OAuth service settings.</param>
+            <param name="callbackUrl">The callback URL.</param>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider.GetAuthHeader(System.String)">
+            <summary>
+            Gets the AuthorizationHeader value to be set on outgoing HTTP calls.
+            </summary>
+            <param name="apiCallUrl">The URL to which API call is being made.
+            </param>
+            <returns>The AuthorizationHeader value to be set on outgoing HTTP calls.
+            </returns>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsOAuthNetProvider.GenerateAccessToken">
+            <summary>
+            Generates the OAuth access token.
+            </summary>
+        </member>
+        <member name="T:Google.Api.Ads.Common.OAuth.Lib.AdsServiceComponent">
+            <summary>
+            This class stores the definition of a service component. This class is
+            used by AdsServiceLocator class for storing type definitions.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Ads.Common.OAuth.Lib.AdsServiceComponent.id">
+            <summary>
+            The component id.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Ads.Common.OAuth.Lib.AdsServiceComponent.serviceType">
+            <summary>
+            Type of the service.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Ads.Common.OAuth.Lib.AdsServiceComponent.instanceType">
+            <summary>
+            The underlying type of the service.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Ads.Common.OAuth.Lib.AdsServiceComponent.isDefault">
+            <summary>
+            True, if this is the default instance of serviceType.
+            </summary>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsServiceComponent.#ctor(System.String,System.Type,System.Type)">
+            <summary>
+            Default public constructor.
+            </summary>
+            <param name="id">The component id.</param>
+            <param name="serviceType">Type of the service.</param>
+            <param name="instanceType">The underlying type of the service.</param>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsServiceComponent.#ctor(System.String,System.Type,System.Type,System.Boolean)">
+            <summary>
+            Overloaded public constructor.
+            </summary>
+            <param name="id">The component id.</param>
+            <param name="serviceType">Type of the service.</param>
+            <param name="instanceType">The underlying type of the service.</param>
+            <param name="isDefault">True, if this is the default instance of
+            serviceType.</param>
+        </member>
+        <member name="P:Google.Api.Ads.Common.OAuth.Lib.AdsServiceComponent.Id">
+            <summary>
+            Gets the component id.
+            </summary>
+        </member>
+        <member name="P:Google.Api.Ads.Common.OAuth.Lib.AdsServiceComponent.ServiceType">
+            <summary>
+            Gets the type of the service.
+            </summary>
+        </member>
+        <member name="P:Google.Api.Ads.Common.OAuth.Lib.AdsServiceComponent.InstanceType">
+            <summary>
+            Gets the underlying type of the service.
+            </summary>
+        </member>
+        <member name="P:Google.Api.Ads.Common.OAuth.Lib.AdsServiceComponent.IsDefault">
+            <summary>
+            Gets a value indicating whether this instance is the default instance of
+            ServiceType.
+            </summary>
+        </member>
+        <member name="T:Google.Api.Ads.Common.OAuth.Lib.AdsServiceLocator">
+            <summary>
+            Provides a default implementation of Microsoft Common Service Locator, to
+            be used with OAuth.Net library.
+            </summary>
+            <remarks>OAuth.net library uses Microsoft Common Service Locator library
+            (http://commonservicelocator.codeplex.com/) for dependency injection. The
+            default library implementation uses Castle Project, which adds another
+            external library dependency on the Ads client libraries. To avoid this,
+            we are providing a simple replacement to suit just the need of OAuth.Net
+            library.</remarks>
+        </member>
+        <member name="F:Google.Api.Ads.Common.OAuth.Lib.AdsServiceLocator.serviceLookup">
+            <summary>
+            A map to store the registered types.
+            </summary>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsServiceLocator.#ctor">
+            <summary>
+            Default public constructor.
+            </summary>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsServiceLocator.RegisterDefaultServices">
+            <summary>
+            Registers the default set of services provided by this service locator.
+            </summary>
+            <remarks>These are the types required by OAuth.Net library.</remarks>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsServiceLocator.RegisterService(Google.Api.Ads.Common.OAuth.Lib.AdsServiceComponent)">
+            <summary>
+            Registers a service component with this locator.
+            </summary>
+            <param name="component">The component.</param>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsServiceLocator.GetAllInstances``1">
+            <summary>
+            Gets all instances of TService.
+            </summary>
+            <typeparam name="TService">The type of the service.</typeparam>
+            <returns>An enumerator that can be used to get all instances of
+            TService.</returns>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsServiceLocator.GetAllInstances(System.Type)">
+            <summary>
+            Gets all instances of service type.
+            </summary>
+            <param name="serviceType">Type of the service.</param>
+            <returns>An enumerator that can be used to get all instances of
+            service type.</returns>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsServiceLocator.GetInstance(System.Type)">
+            <summary>
+            Gets a default instance of the specified service type.
+            </summary>
+            <param name="serviceType">Type of the service.</param>
+            <returns>An instance of service type.</returns>
+            <exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">Thrown if the object cannot be
+            created. The inner exception contains more details about why the object
+            could not be created.</exception>
+            <remarks>This method never returns a null, failure to create an object
+            always causes an ActivationException to be thrown.</remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Google.Api.Ads.Common.OAuth.Lib.AdsServiceLocator.GetService(System.Type)" -->
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsServiceLocator.GetInstance``1">
+            <summary>
+            Gets a default instance of the specified service type.
+            </summary>
+            <typeparam name="TService">The type of the service.</typeparam>
+            <returns>An instance of service type.</returns>
+            <exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">Thrown if the object cannot be
+            created. The inner exception contains more details about why the object
+            could not be created.</exception>
+            <remarks>This method never returns a null, failure to create an object
+            always causes an ActivationException to be thrown.</remarks>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsServiceLocator.GetInstance``1(System.String)">
+            <summary>
+            Gets a instance of the specified service type, registered with an
+            identifier key.
+            </summary>
+            <typeparam name="TService">The type of the service.</typeparam>
+            <param name="key">The identifier key.</param>
+            <returns>An instance of service type.</returns>
+            <exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">Thrown if the object cannot be
+            created. The inner exception contains more details about why the object
+            could not be created.</exception>
+            <remarks>This method never returns a null, failure to create an object
+            always causes an ActivationException to be thrown.</remarks>
+        </member>
+        <member name="M:Google.Api.Ads.Common.OAuth.Lib.AdsServiceLocator.GetInstance(System.Type,System.String)">
+            <summary>
+            Gets a instance of the specified service type, registered with an
+            identifier key.
+            </summary>
+            <param name="serviceType">Type of the service.</param>
+            <param name="key">The identifier key.</param>
+            <returns>An instance of service type.</returns>
+            <exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">Thrown if the object cannot be
+            created. The inner exception contains more details about why the object
+            could not be created.</exception>
+            <remarks>This method never returns a null, failure to create an object
+            always causes an ActivationException to be thrown.</remarks>
+        </member>
+    </members>
+</doc>
