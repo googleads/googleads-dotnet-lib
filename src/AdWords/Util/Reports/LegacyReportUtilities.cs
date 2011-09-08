@@ -233,8 +233,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <returns>A CsvFile object, which contains the report in CSV format.
     /// </returns>
     private static CsvFile ConvertXmlToCsv(string reportXml) {
-      XmlDocument xDoc = new XmlDocument();
-      xDoc.LoadXml(reportXml);
+      XmlDocument xDoc = SerializationUtilities.LoadXml(reportXml);
       XmlNodeList xColumnNodes =
           xDoc.SelectNodes("/report/table/columns/column/@name");
 

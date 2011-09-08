@@ -72,7 +72,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201101 {
       // Create selector.
       Selector selector = new Selector();
       selector.fields = new string[] {"AdGroupId", "Id", "KeywordText", "KeywordMatchType",
-      "Impressions", "Clicks", "Cost"};
+          "Impressions", "Clicks", "Cost"};
       selector.predicates = new Predicate[] {adGroupPredicate};
       selector.dateRange = new DateRange();
       selector.dateRange.min = startDate;

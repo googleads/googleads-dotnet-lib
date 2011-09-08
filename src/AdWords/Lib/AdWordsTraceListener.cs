@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Globalization;
@@ -60,8 +61,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <param name="soapRequest">The request XML for this SOAP call.</param>
     /// <returns>A formatted string that represents the HTTP request.</returns>
     protected override string FormatHttpRequest(string soapRequest) {
-      XmlDocument xDoc = new XmlDocument();
-      xDoc.LoadXml(soapRequest);
+      XmlDocument xDoc = SerializationUtilities.LoadXml(soapRequest);
       XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
       xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
       XmlNode methodNode =
@@ -90,8 +90,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <param name="soapResponse">The response xml for this SOAP call.</param>
     /// <returns>A formatted string that represents the HTTP response.</returns>
     protected override string FormatHttpResponse(string soapResponse) {
-      XmlDocument xDoc = new XmlDocument();
-      xDoc.LoadXml(soapResponse);
+      XmlDocument xDoc = SerializationUtilities.LoadXml(soapResponse);
       XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
       xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
       XmlNodeList childNodes =

@@ -92,9 +92,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201101 {
           foreach (TargetingIdea idea in page.entries) {
             foreach (Type_AttributeMapEntry entry in idea.data) {
               if (entry.key == AttributeType.CRITERION) {
-                PlacementAttribute placementAttribute = entry.value as PlacementAttribute;
+                CriterionAttribute placementAttribute = entry.value as CriterionAttribute;
                 Console.WriteLine("Related content keywords were found at '{0}'.",
-                    placementAttribute.value.url);
+                    (placementAttribute.value as Placement).url);
               }
             }
           }

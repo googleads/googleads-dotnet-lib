@@ -95,9 +95,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
           For Each idea As TargetingIdea In page.entries
             For Each entry As Type_AttributeMapEntry In idea.data
               If (entry.key = AttributeType.CRITERION) Then
-                Dim kwdAttribute As KeywordAttribute = entry.value
+                Dim kwdAttribute As CriterionAttribute = entry.value
+                Dim relatedKeyword As Keyword = kwdAttribute.value
                 Console.WriteLine("Related keyword with text = '{0}' and match type = '{1}' " & _
-                    "was found.", kwdAttribute.value.text, kwdAttribute.value.matchType)
+                    "was found.", relatedKeyword.text, relatedKeyword.matchType)
               End If
             Next
           Next

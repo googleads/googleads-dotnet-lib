@@ -88,9 +88,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
           For Each idea As TargetingIdea In page.entries
             For Each entry As Type_AttributeMapEntry In idea.data
               If (entry.key = AttributeType.CRITERION) Then
-                Dim placementAttribute As PlacementAttribute = entry.value
+                Dim placementAttribute As CriterionAttribute = entry.value
+                Dim placement As Placement = placementAttribute.value
                 Console.WriteLine("Related content keywords were found at '{0}'.", _
-                    placementAttribute.value.url)
+                    placement.url)
               End If
             Next
           Next
