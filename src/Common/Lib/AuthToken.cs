@@ -77,6 +77,23 @@ namespace Google.Api.Ads.Common.Lib {
     private int timeout;
 
     /// <summary>
+    /// The cache for storing authtokens.
+    /// </summary>
+    private static AuthTokenCache cache = new DefaultAuthTokenCache();
+
+    /// <summary>
+    /// Gets or sets the cache for storing authtokens..
+    /// </summary>
+    public static AuthTokenCache Cache {
+      get {
+        return cache;
+      }
+      set {
+        cache = value;
+      }
+    }
+
+    /// <summary>
     /// Public constructor.
     /// </summary>
     /// <param name="email">Email to be used for authentication.</param>
@@ -136,6 +153,25 @@ namespace Google.Api.Ads.Common.Lib {
     /// then an AuthTokenException is thrown with appropriate error code.
     /// </exception>
     public string GetToken() {
+      string cachedToken = cache.GetToken(this.service, this.email, this.password);
+      if (cachedToken == null) {
+        lock (this.GetType()) {
+          cachedToken = cache.GetToken(this.service, this.email, this.password);
+          return (cachedToken != null) ? cachedToken : cache.AddToken(this.service, this.email,
+              this.password, GenerateToken());
+        }
+      }
+      return cachedToken;
+    }
+
+    /// <summary>
+    /// Generates a ClientLogin token for use with various Ads APIs.
+    /// </summary>
+    /// <returns>The token string.</returns>
+    /// <exception cref="AuthTokenException">If the token cannot be obtained,
+    /// then an AuthTokenException is thrown with appropriate error code.
+    /// </exception>
+    private string GenerateToken() {
       WebRequest webRequest = HttpWebRequest.Create(URL);
       webRequest.Method = "POST";
       webRequest.ContentType = "application/x-www-form-urlencoded";

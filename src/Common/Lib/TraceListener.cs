@@ -14,6 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using Google.Api.Ads.Common.Util;
+
 using System;
 using System.Globalization;
 using System.IO;
@@ -99,7 +101,7 @@ namespace Google.Api.Ads.Common.Lib {
         ContextStore.AddKey("SoapResponse", soapMessage.OuterXml);
       }
       if (direction == Direction.IN) {
-        PerformLogging(service, (string) ContextStore.GetValue("SoapRequest"), 
+        PerformLogging(service, (string) ContextStore.GetValue("SoapRequest"),
             (string) ContextStore.GetValue("SoapResponse"));
       }
     }
@@ -125,8 +127,7 @@ namespace Google.Api.Ads.Common.Lib {
       }
 
       if (config.MaskCredentials) {
-        XmlDocument xDoc = new XmlDocument();
-        xDoc.LoadXml(soapRequest);
+        XmlDocument xDoc = SerializationUtilities.LoadXml(soapRequest);
         MaskCredentialsInLogs(xDoc, GetFieldsToMask());
         soapRequest = xDoc.OuterXml;
       }
@@ -228,12 +229,17 @@ namespace Google.Api.Ads.Common.Lib {
       builder.AppendFormat("-----------------BEGIN API CALL---------------------\r\n");
       builder.AppendFormat("\r\nRequest\r\n");
       builder.AppendFormat("-------\r\n\r\n");
-      builder.AppendFormat("{0} {1}\r\n", webRequest.Method, webRequest.RequestUri.AbsolutePath);
+
+      StringBuilder headerBuilder = new StringBuilder();
+
+      headerBuilder.AppendFormat("{0} {1}\r\n", webRequest.Method,
+          webRequest.RequestUri.AbsolutePath);
       foreach (string key in webRequest.Headers) {
-        builder.AppendFormat("{0}: {1}\r\n", key, webRequest.Headers[key]);
+        headerBuilder.AppendFormat("{0}: {1}\r\n", key, webRequest.Headers[key]);
       }
-      builder.AppendFormat("TimeStamp: {0}\r\n", DateTime.Now.ToString("R"));
-      builder.AppendFormat("\r\n{0}\r\n", soapRequest);
+      headerBuilder.AppendFormat("TimeStamp: {0}\r\n", DateTime.Now.ToString("R"));
+      builder.AppendFormat("\r\n{0}\r\n", AppendHeadersToSoapXml(soapRequest,
+          headerBuilder.ToString()));
       return builder.ToString();
     }
 
@@ -248,13 +254,33 @@ namespace Google.Api.Ads.Common.Lib {
       builder.AppendFormat("\r\nResponse\r\n");
       builder.AppendFormat("--------\r\n\r\n");
 
+      StringBuilder headerBuilder = new StringBuilder();
       foreach (string key in webResponse.Headers) {
-        builder.AppendFormat("{0}: {1}\r\n", key, webResponse.Headers[key]);
+        headerBuilder.AppendFormat("{0}: {1}\r\n", key, webResponse.Headers[key]);
       }
-      builder.AppendFormat("TimeStamp: {0}\r\n", DateTime.Now.ToString("R"));
-      builder.AppendFormat("\r\n{0}\r\n", soapResponse);
+      headerBuilder.AppendFormat("TimeStamp: {0}\r\n", DateTime.Now.ToString("R"));
+      builder.AppendFormat("\r\n{0}\r\n", AppendHeadersToSoapXml(soapResponse,
+          headerBuilder.ToString()));
+
       builder.AppendFormat("-----------------END API CALL-----------------------\r\n");
       return builder.ToString();
+    }
+
+    /// <summary>
+    /// Appends the HTTP headers to SOAP xml.
+    /// </summary>
+    /// <param name="soapRequest">The SOAP request.</param>
+    /// <param name="headers">The HTTP headers.</param>
+    /// <returns>The modified SOAP xml for appending to the logs.</returns>
+    protected string AppendHeadersToSoapXml(string soapRequest, string headers) {
+      try {
+        XmlDocument xDoc = SerializationUtilities.LoadXml(soapRequest);
+        XmlComment comment = xDoc.CreateComment(headers);
+        xDoc.DocumentElement.InsertBefore(comment, xDoc.DocumentElement.FirstChild);
+        return xDoc.OuterXml;
+      } catch {
+        return string.Format("{0}\r\n{1}\r\n", headers, soapRequest);
+      }
     }
 
     /// <summary>

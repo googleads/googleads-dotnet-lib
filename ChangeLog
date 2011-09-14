@@ -1,3 +1,8 @@
+2.3.0
+- Fixed issues 2, 3, 4, 5
+- Added support for v1.15.
+- Removed support for v1.11 and v1.12.
+
 2.2.0
 - Added support for v1.14.
 
