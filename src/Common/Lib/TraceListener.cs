@@ -14,6 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using Google.Api.Ads.Common.Util;
+
 using System;
 using System.Globalization;
 using System.IO;
@@ -125,8 +127,7 @@ namespace Google.Api.Ads.Common.Lib {
       }
 
       if (config.MaskCredentials) {
-        XmlDocument xDoc = new XmlDocument();
-        xDoc.LoadXml(soapRequest);
+        XmlDocument xDoc = SerializationUtilities.LoadXml(soapRequest);
         MaskCredentialsInLogs(xDoc, GetFieldsToMask());
         soapRequest = xDoc.OuterXml;
       }
@@ -273,8 +274,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <returns>The modified SOAP xml for appending to the logs.</returns>
     protected string AppendHeadersToSoapXml(string soapRequest, string headers) {
       try {
-        XmlDocument xDoc = new XmlDocument();
-        xDoc.LoadXml(soapRequest);
+        XmlDocument xDoc = SerializationUtilities.LoadXml(soapRequest);
         XmlComment comment = xDoc.CreateComment(headers);
         xDoc.DocumentElement.InsertBefore(comment, xDoc.DocumentElement.FirstChild);
         return xDoc.OuterXml;
