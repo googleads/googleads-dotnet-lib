@@ -1,4 +1,4 @@
-﻿// Copyright 2011, Google Inc. All Rights Reserved.
+// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -88,8 +88,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="reader">The xml reader for reading the
     /// serialized xml.</param>
     public virtual void ReadXml(XmlReader reader) {
-      XmlDocument doc = new XmlDocument();
-      doc.LoadXml(reader.ReadOuterXml());
+      XmlDocument doc = SerializationUtilities.LoadXml(reader.ReadOuterXml());
 
       XmlNameTable xmlnt = doc.NameTable;
       XmlElement root = doc.CreateElement(XmlElementName, XmlNamespace);
@@ -125,8 +124,7 @@ namespace Google.Api.Ads.Common.Lib {
         }
       }
 
-      XmlDocument xDoc = new XmlDocument();
-      xDoc.LoadXml(contents);
+      XmlDocument xDoc = SerializationUtilities.LoadXml(contents);
       writer.WriteRaw(xDoc.DocumentElement.InnerXml);
     }
 

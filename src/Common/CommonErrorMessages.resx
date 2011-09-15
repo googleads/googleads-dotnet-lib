@@ -121,6 +121,10 @@
     <value>AuthToken login failed. See ErrorCode for more details.</value>
     <comment>Used by AuthToken when login fails.</comment>
   </data>
+  <data name="EmailCannotBeNull" xml:space="preserve">
+    <value>Email cannot be null</value>
+    <comment>Used by AuthTokenCache when an empty email is passed to it.</comment>
+  </data>
   <data name="InvalidStageForSoapMessage" xml:space="preserve">
     <value>Invalid stage for Soap message.</value>
     <comment>Used for ArgumentException by TraceExtension.ProcessMessage if message parameter has an invalid value for Stage field.</comment>
@@ -129,9 +133,20 @@
     <value>Could not locate factoryType field in Type {0}</value>
     <comment>Used for ArgumentException when AdsUser.RegisterServices cannot locate factoryType in a registered Service.</comment>
   </data>
+  <data name="OAuthExtensionNotLoaded" xml:space="preserve">
+    <value>Could not load an oauth extension class.</value>
+  </data>
+  <data name="PasswordCannotBeNull" xml:space="preserve">
+    <value>Password cannot be null</value>
+    <comment>Used by AuthTokenCache when an empty password is passed to it.</comment>
+  </data>
   <data name="QuotesNotClosedInCsvLine" xml:space="preserve">
     <value>Quotes not closed in csv record.</value>
     <comment>Used for CsvException by CsvFile.SplitCsvLine if text parameter has an unclosed quote.</comment>
+  </data>
+  <data name="ServiceCannotBeNull" xml:space="preserve">
+    <value>Service cannot be null</value>
+    <comment>Used by AuthTokenCache when an empty service is passed to it.</comment>
   </data>
   <data name="SoapListenerExtensionNotLoaded" xml:space="preserve">
     <value>The SoapListenerExtension class is not loaded. The most possible cause for this error is that you haven't registered Google.Api.Ads.Common.Lib.SoapListenerExtension as a soap extension under configuration/system.web/webServices/soapExtensionTypes in your your App.config or Web.config. See the sample App.config for details on how to register soap extensions.</value>

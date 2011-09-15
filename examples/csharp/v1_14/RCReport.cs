@@ -67,10 +67,13 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_14 {
       RCReport codeExample = new RCReport();
       Console.WriteLine(codeExample.Description);
       DfaUser user = new DfaUser();
-      ReportRemoteService service = (ReportRemoteService) user.GetService(
+      ReportRemoteService reportService = (ReportRemoteService) user.GetService(
           DfaService.v1_14.ReportRemoteService);
-      codeExample.ScheduleAndDownloadReport(service, args[0], args[1], long.Parse(args[2]),
-          args[3]);
+      LoginRemoteService loginService = (LoginRemoteService) user.GetService(
+          DfaService.v1_14.LoginRemoteService);
+
+      codeExample.ScheduleAndDownloadReport(loginService, reportService, args[0], args[1],
+          long.Parse(args[2]), args[3]);
     }
 
     /// <summary>
@@ -84,15 +87,19 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_14 {
       long queryId = long.Parse(_T("INSERT_QUERY_ID_HERE"));
       string filePath = _T("INSERT_PATH_TO_SAVE_REPORT_HERE");
 
-      ReportRemoteService service = (ReportRemoteService) user.GetService(
+      ReportRemoteService reportService = (ReportRemoteService) user.GetService(
           DfaService.v1_14.ReportRemoteService);
-      ScheduleAndDownloadReport(service, userName, password, queryId, filePath);
+      LoginRemoteService loginService = (LoginRemoteService) user.GetService(
+          DfaService.v1_14.LoginRemoteService);
+
+      ScheduleAndDownloadReport(loginService, reportService, userName, password, queryId, filePath);
     }
 
     /// <summary>
     /// Schedules and downloads a report.
     /// </summary>
-    /// <param name="service">The report service instance.</param>
+    /// <param name="loginService">The login service instance.</param>
+    /// <param name="reportService">The report service instance.</param>
     /// <param name="userName">The user name to be used for authentication
     /// purposes.</param>
     /// <param name="password">The password to be used for authentication
@@ -101,22 +108,23 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_14 {
     /// </param>
     /// <param name="filePath">The file path to which the downloaded report
     /// should be saved.</param>
-    public void ScheduleAndDownloadReport(ReportRemoteService service, string userName,
-        string password, long queryId, string filePath) {
+    public void ScheduleAndDownloadReport(LoginRemoteService loginService,
+        ReportRemoteService reportService, string userName, string password, long queryId,
+        string filePath) {
 
       // Override the credentials in App.config with the ones the user
       // provided.
-      string authToken = new LoginRemoteService().authenticate(userName, password).token;
+      string authToken = loginService.authenticate(userName, password).token;
 
-      service.Token.Username = userName;
-      service.Token.Password = authToken;
+      reportService.Token.Username = userName;
+      reportService.Token.Password = authToken;
 
       // Create report request and submit it to the server.
       ReportRequest reportRequest = new ReportRequest();
       reportRequest.queryId = queryId;
 
       try {
-        ReportInfo reportInfo = service.runDeferredReport(reportRequest);
+        ReportInfo reportInfo = reportService.runDeferredReport(reportRequest);
         long reportId = reportInfo.reportId;
         Console.WriteLine("Report with ID '{0}' has been scheduled.", reportId);
 
@@ -128,21 +136,22 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_14 {
           Console.WriteLine("Waiting 10 minutes before checking on report status.");
           // Wait 10 minutes.
           Thread.Sleep(TIME_BETWEEN_CHECKS);
-          reportInfo = service.getReport(reportRequest);
+          reportInfo = reportService.getReport(reportRequest);
           if (reportInfo.status.name == "ERROR") {
             throw new Exception("Deferred report failed with errors. Run in the UI to " +
                 "troubleshoot.");
           }
         }
 
-        using (StreamWriter writer = new StreamWriter(filePath)) {
-          writer.Write(Encoding.UTF8.GetString(
-              MediaUtilities.GetAssetDataFromUrl(reportInfo.url)));
-        }
+        FileStream fs = File.OpenWrite(filePath);
+        byte[] bytes = MediaUtilities.GetAssetDataFromUrl(reportInfo.url);
+        fs.Write(bytes, 0, bytes.Length);
+        fs.Close();
 
-        Console.WriteLine("Report download.");
+        Console.WriteLine("Report successfully downloaded to '{0}'.", filePath);
       } catch (Exception ex) {
-        Console.WriteLine("Failed to schedule report. Exception says \"{0}\"", ex.Message);
+        Console.WriteLine("Failed to schedule and download report. Exception says \"{0}\"",
+            ex.Message);
       }
     }
   }

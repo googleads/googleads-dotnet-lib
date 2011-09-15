@@ -160,23 +160,33 @@ namespace Google.Api.Ads.Common.Lib {
     /// method.</param>
     /// <returns>The results from calling the SOAP API method.</returns>
     protected virtual object[] MakeApiCall(string methodName, object[] parameters) {
-      try {
-        if (!IsSoapListenerLoaded()) {
-          throw new ApplicationException(CommonErrorMessages.SoapListenerExtensionNotLoaded);
+      int retryCount = this.user.Config.RetryCount;
+      while (retryCount >= 0) {
+        try {
+          if (!IsSoapListenerLoaded()) {
+            throw new ApplicationException(CommonErrorMessages.SoapListenerExtensionNotLoaded);
+          }
+          ContextStore.AddKey("SoapService", this);
+          ContextStore.AddKey("SoapMethod", methodName);
+          this.user.InitListeners();
+          return base.Invoke(methodName, parameters);
+        } catch (SoapException ex) {
+          Exception customException = GetCustomException(ex);
+          if (retryCount > 0 && ShouldRetry(customException)) {
+            retryCount--;
+            continue;
+          } else {
+            throw customException;
+          }
+        } finally {
+          this.user.CleanupListeners();
+          ContextStore.RemoveKey("SoapService");
+          ContextStore.RemoveKey("SoapMethod");
+          this.lastRequest = null;
+          this.lastResponse = null;
         }
-        ContextStore.AddKey("SoapService", this);
-        ContextStore.AddKey("SoapMethod", methodName);
-        this.user.InitListeners();
-        return base.Invoke(methodName, parameters);
-      } catch (SoapException ex) {
-        throw GetCustomException(ex);
-      } finally {
-        this.user.CleanupListeners();
-        ContextStore.RemoveKey("SoapService");
-        ContextStore.RemoveKey("SoapMethod");
-        this.lastRequest = null;
-        this.lastResponse = null;
       }
+      throw new ArgumentOutOfRangeException("Retry count cannot be negative.");
     }
 
     /// <summary>
@@ -205,6 +215,15 @@ namespace Google.Api.Ads.Common.Lib {
     /// should override this method.</remarks>
     protected virtual Exception GetCustomException(SoapException ex) {
       return ex;
+    }
+
+    /// <summary>
+    /// Whether the current API call should be retried or not.
+    /// </summary>
+    /// <param name="ex">The exception thrown from the previous call.</param>
+    /// <returns>True, if the current API call should be retried.</returns>
+    protected virtual bool ShouldRetry(Exception ex) {
+      return false;
     }
 
     /// <summary>

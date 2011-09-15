@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using System.Text;
+using System.Xml;
 
 namespace Google.Api.Ads.Common.Util {
   /// <summary>
@@ -26,6 +27,24 @@ namespace Google.Api.Ads.Common.Util {
   /// object as xml.
   /// </summary>
   public class SerializationUtilities {
+    /// <summary>
+    /// A mono-friendly version of XmlDocument::LoadXml.
+    /// </summary>
+    /// <param name="xmlText">The xml string to be loaded into DOM.</param>
+    /// <returns>The xml as XmlDocument.</returns>
+    public static XmlDocument LoadXml(string xmlText) {
+      XmlDocument xDoc = new XmlDocument();
+
+      try {
+        xDoc.LoadXml(xmlText);
+      } catch {
+        StringReader stringReader = new StringReader(xmlText);
+        stringReader.Read(); // skip BOM
+        xDoc.Load(stringReader);
+      }
+      return xDoc;
+    }
+
     /// <summary>
     /// Deserialize an object from xml.
     /// </summary>
