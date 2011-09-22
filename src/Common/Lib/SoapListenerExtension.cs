@@ -123,8 +123,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     /// <param name="direction">The direction of SOAP message.</param>
     private void CallListeners(SoapListener.Direction direction) {
-      XmlDocument document = new XmlDocument();
-      document.LoadXml(Encoding.UTF8.GetString(newStream.ToArray()));
+      XmlDocument document = SerializationUtilities.LoadXml(Encoding.UTF8.GetString(
+          newStream.ToArray()));
+
       AdsClient service = (AdsClient) ContextStore.GetValue("SoapService");
       if (service != null) {
         service.User.CallListeners(document, service, direction);
