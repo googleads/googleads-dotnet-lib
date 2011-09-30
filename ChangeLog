@@ -1,3 +1,7 @@
+12.6.0
+- Add propertychange listeners for AdWordsAppConfig class and modified
+  AdWordsUser to listen to configuration changes.
+
 12.5.0
 - Fixed a couple of mono incompatibility issues.
 - Library now allows you to retrieve and set Request and AccessTokens when

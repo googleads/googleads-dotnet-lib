@@ -194,7 +194,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return authToken;
       }
       set {
-        authToken = value;
+        SetPropertyField("AuthToken", ref authToken, value);
       }
     }
 
@@ -206,7 +206,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return email;
       }
       set {
-        email = value;
+        SetPropertyField("Email", ref email, value);
       }
     }
 
@@ -218,7 +218,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return password;
       }
       set {
-        password = value;
+        SetPropertyField("Password", ref password, value);
       }
     }
 
@@ -230,7 +230,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return clientEmail;
       }
       set {
-        clientEmail = value;
+        SetPropertyField("ClientEmail", ref clientEmail, value);
       }
     }
 
@@ -242,7 +242,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return clientCustomerId;
       }
       set {
-        clientCustomerId = value;
+        SetPropertyField("ClientCustomerId", ref clientCustomerId, value);
       }
     }
 
@@ -254,7 +254,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return developerToken;
       }
       set {
-        developerToken = value;
+        SetPropertyField("DeveloperToken", ref developerToken, value);
       }
     }
 
@@ -266,7 +266,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return applicationToken;
       }
       set {
-        applicationToken = value;
+        SetPropertyField("ApplicationToken", ref applicationToken, value);
       }
     }
 
@@ -278,7 +278,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return userAgent;
       }
       set {
-        userAgent = value;
+        SetPropertyField("UserAgent", ref userAgent, value);
       }
     }
 
@@ -290,7 +290,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return legacyAdWordsApiServer;
       }
       set {
-        legacyAdWordsApiServer = value;
+        SetPropertyField("LegacyAdWordsApiServer", ref legacyAdWordsApiServer, value);
       }
     }
 
@@ -302,7 +302,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return adWordsApiServer;
       }
       set {
-        adWordsApiServer = value;
+        SetPropertyField("AdWordsApiServer", ref adWordsApiServer, value);
       }
     }
 
@@ -315,7 +315,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return enableGzipCompression;
       }
       set {
-        enableGzipCompression = value;
+        SetPropertyField("EnableGzipCompression", ref enableGzipCompression, value);
       }
     }
 
@@ -327,7 +327,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return authorizationMethod;
       }
       set {
-        authorizationMethod = value;
+        SetPropertyField("AuthorizationMethod", ref authorizationMethod, value);
       }
     }
 
@@ -339,7 +339,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return oAuthConsumerKey;
       }
       set {
-        oAuthConsumerKey = value;
+        SetPropertyField("OAuthConsumerKey", ref oAuthConsumerKey, value);
       }
     }
 
@@ -351,7 +351,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         return oAuthConsumerSecret;
       }
       set {
-        oAuthConsumerSecret = value;
+        SetPropertyField("OAuthConsumerSecret", ref oAuthConsumerSecret, value);
       }
     }
 
