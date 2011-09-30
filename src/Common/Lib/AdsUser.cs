@@ -63,9 +63,6 @@ namespace Google.Api.Ads.Common.Lib {
       get {
         return config;
       }
-      set {
-        config = value;
-      }
     }
 
     /// <summary>
