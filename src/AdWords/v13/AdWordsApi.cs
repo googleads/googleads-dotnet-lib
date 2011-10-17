@@ -14,6 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+#pragma warning disable 1591
+
 namespace Google.Api.Ads.AdWords.v13 {
   using Google.Api.Ads.AdWords.Lib;
 
@@ -28,6 +30,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AccountServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AccountService : LegacyAdWordsSoapClient {
     private useragent useragentValueField;
 
@@ -249,6 +252,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
   [System.Xml.Serialization.XmlRootAttribute(Namespace = "https://adwords.google.com/api/adwords/v13", IsNullable = false)]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class clientEmail : System.Web.Services.Protocols.SoapHeader {
     private string[] valueField;
 
@@ -269,6 +273,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
   [System.Xml.Serialization.XmlRootAttribute(Namespace = "https://adwords.google.com/api/adwords/v13", IsNullable = false)]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class password : System.Web.Services.Protocols.SoapHeader {
     private string[] valueField;
 
@@ -289,6 +294,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
   [System.Xml.Serialization.XmlRootAttribute(Namespace = "https://adwords.google.com/api/adwords/v13", IsNullable = false)]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class responseTime : System.Web.Services.Protocols.SoapHeader {
     private string[] valueField;
 
@@ -309,6 +315,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
   [System.Xml.Serialization.XmlRootAttribute(Namespace = "https://adwords.google.com/api/adwords/v13", IsNullable = false)]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class email : System.Web.Services.Protocols.SoapHeader {
     private string[] valueField;
 
@@ -329,6 +336,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
   [System.Xml.Serialization.XmlRootAttribute(Namespace = "https://adwords.google.com/api/adwords/v13", IsNullable = false)]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class requestId : System.Web.Services.Protocols.SoapHeader {
     private string[] valueField;
 
@@ -349,6 +357,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
   [System.Xml.Serialization.XmlRootAttribute(Namespace = "https://adwords.google.com/api/adwords/v13", IsNullable = false)]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class units : System.Web.Services.Protocols.SoapHeader {
     private string[] valueField;
 
@@ -369,6 +378,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
   [System.Xml.Serialization.XmlRootAttribute(Namespace = "https://adwords.google.com/api/adwords/v13", IsNullable = false)]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class developerToken : System.Web.Services.Protocols.SoapHeader {
     private string[] valueField;
 
@@ -389,6 +399,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
   [System.Xml.Serialization.XmlRootAttribute(Namespace = "https://adwords.google.com/api/adwords/v13", IsNullable = false)]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class applicationToken : System.Web.Services.Protocols.SoapHeader {
     private string[] valueField;
 
@@ -409,6 +420,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
   [System.Xml.Serialization.XmlRootAttribute(Namespace = "https://adwords.google.com/api/adwords/v13", IsNullable = false)]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class operations : System.Web.Services.Protocols.SoapHeader {
     private string[] valueField;
 
@@ -429,6 +441,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
   [System.Xml.Serialization.XmlRootAttribute(Namespace = "https://adwords.google.com/api/adwords/v13", IsNullable = false)]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class useragent : System.Web.Services.Protocols.SoapHeader {
     private string[] valueField;
 
@@ -449,6 +462,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
   [System.Xml.Serialization.XmlRootAttribute(Namespace = "https://adwords.google.com/api/adwords/v13", IsNullable = false)]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class clientCustomerId : System.Web.Services.Protocols.SoapHeader {
     private string[] valueField;
 
@@ -468,6 +482,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AccountInfo {
     private Address billingAddressField;
 
@@ -636,6 +651,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Address {
     private string addressLine1Field;
 
@@ -768,6 +784,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MccAlert {
     private string clientCompanyNameField;
 
@@ -850,6 +867,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum MccAlertPriority {
     Low,
     High
@@ -858,6 +876,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum MccAlertType {
     AccountOnTarget,
     DeclinedPayment,
@@ -877,6 +896,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ClientAccountInfo {
     private string emailAddressField;
 
@@ -906,6 +926,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class EmailPromotionsPreferences {
     private bool accountPerformanceEnabledField;
 
@@ -966,6 +987,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum NetworkType {
     GoogleSearch,
     SearchNetwork,
@@ -976,6 +998,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ReportServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ReportService : LegacyAdWordsSoapClient {
     private useragent useragentValueField;
 
@@ -1231,6 +1254,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class ReportJob {
     private string[] clientEmailsField;
 
@@ -1358,6 +1382,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ReportJobStatus {
     Pending,
     InProgress,
@@ -1370,6 +1395,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class DefinedReportJob : ReportJob {
     private AdGroupStatus[] adGroupStatusesField;
 
@@ -1557,6 +1583,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdGroupStatus {
     Enabled,
     Paused,
@@ -1566,6 +1593,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdWordsType {
     SearchOnly,
     ContentOnly
@@ -1574,6 +1602,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CampaignStatus {
     Active,
     Pending,
@@ -1586,6 +1615,7 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum KeywordStatus {
     Disapproved,
     Deleted,
@@ -1597,957 +1627,12 @@ namespace Google.Api.Ads.AdWords.v13 {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum KeywordType {
     Broad,
     Phrase,
     Exact
   }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Web.Services.WebServiceBindingAttribute(Name = "TrafficEstimatorServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class TrafficEstimatorService : LegacyAdWordsSoapClient {
-    private useragent useragentValueField;
-
-    private password passwordValueField;
-
-    private email emailValueField;
-
-    private clientEmail clientEmailValueField;
-
-    private clientCustomerId clientCustomerIdValueField;
-
-    private developerToken developerTokenValueField;
-
-    private applicationToken applicationTokenValueField;
-
-    private responseTime responseTimeValueField;
-
-    private operations operationsValueField;
-
-    private units unitsValueField;
-
-    private requestId requestIdValueField;
-
-    public TrafficEstimatorService() {
-      this.Url = "https://adwords.google.com/api/adwords/v13/TrafficEstimatorService";
-    }
-
-    public useragent useragentValue {
-      get {
-        return this.useragentValueField;
-      }
-      set {
-        this.useragentValueField = value;
-      }
-    }
-
-    public password passwordValue {
-      get {
-        return this.passwordValueField;
-      }
-      set {
-        this.passwordValueField = value;
-      }
-    }
-
-    public email emailValue {
-      get {
-        return this.emailValueField;
-      }
-      set {
-        this.emailValueField = value;
-      }
-    }
-
-    public clientEmail clientEmailValue {
-      get {
-        return this.clientEmailValueField;
-      }
-      set {
-        this.clientEmailValueField = value;
-      }
-    }
-
-    public clientCustomerId clientCustomerIdValue {
-      get {
-        return this.clientCustomerIdValueField;
-      }
-      set {
-        this.clientCustomerIdValueField = value;
-      }
-    }
-
-    public developerToken developerTokenValue {
-      get {
-        return this.developerTokenValueField;
-      }
-      set {
-        this.developerTokenValueField = value;
-      }
-    }
-
-    public applicationToken applicationTokenValue {
-      get {
-        return this.applicationTokenValueField;
-      }
-      set {
-        this.applicationTokenValueField = value;
-      }
-    }
-
-    public responseTime responseTimeValue {
-      get {
-        return this.responseTimeValueField;
-      }
-      set {
-        this.responseTimeValueField = value;
-      }
-    }
-
-    public operations operationsValue {
-      get {
-        return this.operationsValueField;
-      }
-      set {
-        this.operationsValueField = value;
-      }
-    }
-
-    public units unitsValue {
-      get {
-        return this.unitsValueField;
-      }
-      set {
-        this.unitsValueField = value;
-      }
-    }
-
-    public requestId requestIdValue {
-      get {
-        return this.requestIdValueField;
-      }
-      set {
-        this.requestIdValueField = value;
-      }
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("clientEmailValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("passwordValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("responseTimeValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("emailValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("requestIdValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("unitsValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("developerTokenValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("applicationTokenValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("operationsValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("useragentValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("clientCustomerIdValue")]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/v13", ResponseNamespace = "https://adwords.google.com/api/adwords/v13", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("checkKeywordTrafficReturn")]
-    public KeywordTraffic[] checkKeywordTraffic([System.Xml.Serialization.XmlElementAttribute("requests")]
-KeywordTrafficRequest[] requests) {
-      object[] results = this.Invoke("checkKeywordTraffic", new object[] {requests});
-      return ((KeywordTraffic[]) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("clientEmailValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("passwordValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("responseTimeValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("emailValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("requestIdValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("unitsValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("developerTokenValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("applicationTokenValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("operationsValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("useragentValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("clientCustomerIdValue")]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/v13", ResponseNamespace = "https://adwords.google.com/api/adwords/v13", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("estimateAdGroupListReturn")]
-    public AdGroupEstimate[] estimateAdGroupList([System.Xml.Serialization.XmlElementAttribute("adGroupRequests")]
-AdGroupRequest[] adGroupRequests) {
-      object[] results = this.Invoke("estimateAdGroupList", new object[] {adGroupRequests});
-      return ((AdGroupEstimate[]) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("clientEmailValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("passwordValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("responseTimeValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("emailValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("requestIdValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("unitsValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("developerTokenValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("applicationTokenValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("operationsValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("useragentValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("clientCustomerIdValue")]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/v13", ResponseNamespace = "https://adwords.google.com/api/adwords/v13", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("estimateCampaignListReturn")]
-    public CampaignEstimate[] estimateCampaignList([System.Xml.Serialization.XmlElementAttribute("campaignRequests")]
-CampaignRequest[] campaignRequests) {
-      object[] results = this.Invoke("estimateCampaignList", new object[] {campaignRequests});
-      return ((CampaignEstimate[]) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("clientEmailValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("passwordValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("responseTimeValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("emailValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("requestIdValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("unitsValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("developerTokenValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("applicationTokenValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("operationsValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("useragentValue")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("clientCustomerIdValue")]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/v13", ResponseNamespace = "https://adwords.google.com/api/adwords/v13", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("estimateKeywordListReturn")]
-    public KeywordEstimate[] estimateKeywordList([System.Xml.Serialization.XmlElementAttribute("keywordRequests")]
-KeywordRequest[] keywordRequests) {
-      object[] results = this.Invoke("estimateKeywordList", new object[] {keywordRequests});
-      return ((KeywordEstimate[]) (results[0]));
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class KeywordTrafficRequest {
-    private string keywordTextField;
-
-    private KeywordType keywordTypeField;
-
-    private string languageField;
-
-    public string keywordText {
-      get {
-        return this.keywordTextField;
-      }
-      set {
-        this.keywordTextField = value;
-      }
-    }
-
-    public KeywordType keywordType {
-      get {
-        return this.keywordTypeField;
-      }
-      set {
-        this.keywordTypeField = value;
-      }
-    }
-
-    public string language {
-      get {
-        return this.languageField;
-      }
-      set {
-        this.languageField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class CampaignEstimate {
-    private AdGroupEstimate[] adGroupEstimatesField;
-
-    private int idField;
-
-    private bool idFieldSpecified;
-
-    [System.Xml.Serialization.XmlElementAttribute("adGroupEstimates")]
-    public AdGroupEstimate[] adGroupEstimates {
-      get {
-        return this.adGroupEstimatesField;
-      }
-      set {
-        this.adGroupEstimatesField = value;
-      }
-    }
-
-    public int id {
-      get {
-        return this.idField;
-      }
-      set {
-        this.idField = value;
-        this.idSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class AdGroupEstimate {
-    private int idField;
-
-    private bool idFieldSpecified;
-
-    private KeywordEstimate[] keywordEstimatesField;
-
-    public int id {
-      get {
-        return this.idField;
-      }
-      set {
-        this.idField = value;
-        this.idSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("keywordEstimates")]
-    public KeywordEstimate[] keywordEstimates {
-      get {
-        return this.keywordEstimatesField;
-      }
-      set {
-        this.keywordEstimatesField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class KeywordEstimate {
-    private long idField;
-
-    private bool idFieldSpecified;
-
-    private float lowerAvgPositionField;
-
-    private float lowerClicksPerDayField;
-
-    private long lowerCpcField;
-
-    private float upperAvgPositionField;
-
-    private float upperClicksPerDayField;
-
-    private long upperCpcField;
-
-    public long id {
-      get {
-        return this.idField;
-      }
-      set {
-        this.idField = value;
-        this.idSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
-    }
-
-    public float lowerAvgPosition {
-      get {
-        return this.lowerAvgPositionField;
-      }
-      set {
-        this.lowerAvgPositionField = value;
-      }
-    }
-
-    public float lowerClicksPerDay {
-      get {
-        return this.lowerClicksPerDayField;
-      }
-      set {
-        this.lowerClicksPerDayField = value;
-      }
-    }
-
-    public long lowerCpc {
-      get {
-        return this.lowerCpcField;
-      }
-      set {
-        this.lowerCpcField = value;
-      }
-    }
-
-    public float upperAvgPosition {
-      get {
-        return this.upperAvgPositionField;
-      }
-      set {
-        this.upperAvgPositionField = value;
-      }
-    }
-
-    public float upperClicksPerDay {
-      get {
-        return this.upperClicksPerDayField;
-      }
-      set {
-        this.upperClicksPerDayField = value;
-      }
-    }
-
-    public long upperCpc {
-      get {
-        return this.upperCpcField;
-      }
-      set {
-        this.upperCpcField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class RegionTargets {
-    private string[] excludedRegionsField;
-
-    private string[] regionsField;
-
-    [System.Xml.Serialization.XmlElementAttribute("excludedRegions")]
-    public string[] excludedRegions {
-      get {
-        return this.excludedRegionsField;
-      }
-      set {
-        this.excludedRegionsField = value;
-      }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("regions")]
-    public string[] regions {
-      get {
-        return this.regionsField;
-      }
-      set {
-        this.regionsField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class Circle {
-    private int latitudeMicroDegreesField;
-
-    private int longitudeMicroDegreesField;
-
-    private int radiusMetersField;
-
-    public int latitudeMicroDegrees {
-      get {
-        return this.latitudeMicroDegreesField;
-      }
-      set {
-        this.latitudeMicroDegreesField = value;
-      }
-    }
-
-    public int longitudeMicroDegrees {
-      get {
-        return this.longitudeMicroDegreesField;
-      }
-      set {
-        this.longitudeMicroDegreesField = value;
-      }
-    }
-
-    public int radiusMeters {
-      get {
-        return this.radiusMetersField;
-      }
-      set {
-        this.radiusMetersField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class MetroTargets {
-    private string[] excludedMetrosField;
-
-    private string[] metrosField;
-
-    [System.Xml.Serialization.XmlElementAttribute("excludedMetros")]
-    public string[] excludedMetros {
-      get {
-        return this.excludedMetrosField;
-      }
-      set {
-        this.excludedMetrosField = value;
-      }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("metros")]
-    public string[] metros {
-      get {
-        return this.metrosField;
-      }
-      set {
-        this.metrosField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class CountryTargets {
-    private string[] countriesField;
-
-    private string[] excludedCountriesField;
-
-    [System.Xml.Serialization.XmlElementAttribute("countries")]
-    public string[] countries {
-      get {
-        return this.countriesField;
-      }
-      set {
-        this.countriesField = value;
-      }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("excludedCountries")]
-    public string[] excludedCountries {
-      get {
-        return this.excludedCountriesField;
-      }
-      set {
-        this.excludedCountriesField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class CityTargets {
-    private string[] citiesField;
-
-    private string[] excludedCitiesField;
-
-    [System.Xml.Serialization.XmlElementAttribute("cities")]
-    public string[] cities {
-      get {
-        return this.citiesField;
-      }
-      set {
-        this.citiesField = value;
-      }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("excludedCities")]
-    public string[] excludedCities {
-      get {
-        return this.excludedCitiesField;
-      }
-      set {
-        this.excludedCitiesField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class GeoTarget {
-    private CityTargets cityTargetsField;
-
-    private CountryTargets countryTargetsField;
-
-    private MetroTargets metroTargetsField;
-
-    private Circle[] proximityTargetsField;
-
-    private RegionTargets regionTargetsField;
-
-    private bool targetAllField;
-
-    public CityTargets cityTargets {
-      get {
-        return this.cityTargetsField;
-      }
-      set {
-        this.cityTargetsField = value;
-      }
-    }
-
-    public CountryTargets countryTargets {
-      get {
-        return this.countryTargetsField;
-      }
-      set {
-        this.countryTargetsField = value;
-      }
-    }
-
-    public MetroTargets metroTargets {
-      get {
-        return this.metroTargetsField;
-      }
-      set {
-        this.metroTargetsField = value;
-      }
-    }
-
-    [System.Xml.Serialization.XmlArrayItemAttribute("circles", IsNullable = false)]
-    public Circle[] proximityTargets {
-      get {
-        return this.proximityTargetsField;
-      }
-      set {
-        this.proximityTargetsField = value;
-      }
-    }
-
-    public RegionTargets regionTargets {
-      get {
-        return this.regionTargetsField;
-      }
-      set {
-        this.regionTargetsField = value;
-      }
-    }
-
-    public bool targetAll {
-      get {
-        return this.targetAllField;
-      }
-      set {
-        this.targetAllField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class CampaignRequest {
-    private AdGroupRequest[] adGroupRequestsField;
-
-    private GeoTarget geoTargetingField;
-
-    private int idField;
-
-    private bool idFieldSpecified;
-
-    private string[] languageTargetingField;
-
-    private NetworkType[] networkTargetingField;
-
-    [System.Xml.Serialization.XmlElementAttribute("adGroupRequests")]
-    public AdGroupRequest[] adGroupRequests {
-      get {
-        return this.adGroupRequestsField;
-      }
-      set {
-        this.adGroupRequestsField = value;
-      }
-    }
-
-    public GeoTarget geoTargeting {
-      get {
-        return this.geoTargetingField;
-      }
-      set {
-        this.geoTargetingField = value;
-      }
-    }
-
-    public int id {
-      get {
-        return this.idField;
-      }
-      set {
-        this.idField = value;
-        this.idSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
-    }
-
-    [System.Xml.Serialization.XmlArrayAttribute(IsNullable = true)]
-    [System.Xml.Serialization.XmlArrayItemAttribute("languages")]
-    public string[] languageTargeting {
-      get {
-        return this.languageTargetingField;
-      }
-      set {
-        this.languageTargetingField = value;
-      }
-    }
-
-    [System.Xml.Serialization.XmlArrayItemAttribute("networkTypes", IsNullable = false)]
-    public NetworkType[] networkTargeting {
-      get {
-        return this.networkTargetingField;
-      }
-      set {
-        this.networkTargetingField = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class AdGroupRequest {
-    private long? idField;
-
-    private bool idFieldSpecified;
-
-    private KeywordRequest[] keywordRequestsField;
-
-    private long maxCpcField;
-
-    private bool maxCpcFieldSpecified;
-
-    [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
-    public long? id {
-      get {
-        return this.idField;
-      }
-      set {
-        this.idField = value;
-        this.idSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("keywordRequests")]
-    public KeywordRequest[] keywordRequests {
-      get {
-        return this.keywordRequestsField;
-      }
-      set {
-        this.keywordRequestsField = value;
-      }
-    }
-
-    public long maxCpc {
-      get {
-        return this.maxCpcField;
-      }
-      set {
-        this.maxCpcField = value;
-        this.maxCpcSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool maxCpcSpecified {
-      get {
-        return this.maxCpcFieldSpecified;
-      }
-      set {
-        this.maxCpcFieldSpecified = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public partial class KeywordRequest {
-    private long idField;
-
-    private bool idFieldSpecified;
-
-    private long maxCpcField;
-
-    private bool maxCpcFieldSpecified;
-
-    private bool negativeField;
-
-    private bool negativeFieldSpecified;
-
-    private string textField;
-
-    private KeywordType typeField;
-
-    private bool typeFieldSpecified;
-
-    public long id {
-      get {
-        return this.idField;
-      }
-      set {
-        this.idField = value;
-        this.idSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool idSpecified {
-      get {
-        return this.idFieldSpecified;
-      }
-      set {
-        this.idFieldSpecified = value;
-      }
-    }
-
-    public long maxCpc {
-      get {
-        return this.maxCpcField;
-      }
-      set {
-        this.maxCpcField = value;
-        this.maxCpcSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool maxCpcSpecified {
-      get {
-        return this.maxCpcFieldSpecified;
-      }
-      set {
-        this.maxCpcFieldSpecified = value;
-      }
-    }
-
-    public bool negative {
-      get {
-        return this.negativeField;
-      }
-      set {
-        this.negativeField = value;
-        this.negativeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool negativeSpecified {
-      get {
-        return this.negativeFieldSpecified;
-      }
-      set {
-        this.negativeFieldSpecified = value;
-      }
-    }
-
-    public string text {
-      get {
-        return this.textField;
-      }
-      set {
-        this.textField = value;
-      }
-    }
-
-    public KeywordType type {
-      get {
-        return this.typeField;
-      }
-      set {
-        this.typeField = value;
-        this.typeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool typeSpecified {
-      get {
-        return this.typeFieldSpecified;
-      }
-      set {
-        this.typeFieldSpecified = value;
-      }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/v13")]
-  public enum KeywordTraffic {
-    HasTraffic,
-    VeryLowTraffic,
-    Unknown
-  }
 }
+
+#pragma warning restore 1591

@@ -58,6 +58,12 @@ namespace Google.Api.Ads.AdWords.Lib {
       return new AdWordsService().GetServiceTypes();
     }
 
+    /// <summary>
+    /// Gets the list of default SOAP listeners.
+    /// </summary>
+    /// <returns>
+    /// A list of default SOAP listeners.
+    /// </returns>
     public override SoapListener[] GetDefaultListeners() {
       return new SoapListener[] {AdWordsTraceListener.Instance, AdWordsUnitsListener.Instance};
     }
@@ -85,6 +91,10 @@ namespace Google.Api.Ads.AdWords.Lib {
       return totalUnits;
     }
 
+    /// <summary>
+    /// Gets the units consumed by the last operation.
+    /// </summary>
+    /// <returns></returns>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public int GetUnitsForLastOperation() {
       if (units.Count == 0) {

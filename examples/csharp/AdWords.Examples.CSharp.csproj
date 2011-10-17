@@ -22,6 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <NoWarn>0618</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -55,15 +56,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Both\UsingTrafficEstimatorDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="v13\AccountServiceDemo.cs" />
     <Compile Include="v13\AccountServiceNoConfigDemo.cs" />
-    <Compile Include="v13\CheckKeywordTrafficDemo.cs" />
     <Compile Include="v13\DownloadReportAsCsvDemo.cs" />
     <Compile Include="v13\DownloadReportAsXmlDemo.cs" />
-    <Compile Include="v13\KeywordEstimateDemo.cs" />
     <Compile Include="v13\ReportServiceKeywordDemo.cs" />
     <Compile Include="v13\ReportServiceStructureDemo.cs" />
     <Compile Include="v200909\AddAdExtensionOverride.cs" />
@@ -262,7 +260,6 @@
     <Compile Include="v201101\DeleteExperiment.cs" />
     <Compile Include="v201101\DeleteSitelinks.cs" />
     <Compile Include="v201101\DeleteUserList.cs" />
-    <Compile Include="v201101\DownloadCrossClientReport.cs" />
     <Compile Include="v201101\DownloadReport.cs" />
     <Compile Include="v201101\GetAccountHierarchy.cs" />
     <Compile Include="v201101\GetAdGroupBidLandscape.cs" />
@@ -315,6 +312,83 @@
     <Compile Include="v201101\UpdateConversionTracker.cs" />
     <Compile Include="v201101\UpdateUserList.cs" />
     <Compile Include="v201101\UploadImage.cs" />
+    <Compile Include="v201109\AddAdExtensionOverride.cs" />
+    <Compile Include="v201109\AddAdGroup.cs" />
+    <Compile Include="v201109\AddAdGroupCriteria.cs" />
+    <Compile Include="v201109\AddAds.cs" />
+    <Compile Include="v201109\AddCampaign.cs" />
+    <Compile Include="v201109\AddCampaignAdExtension.cs" />
+    <Compile Include="v201109\AddConversionTracker.cs" />
+    <Compile Include="v201109\AddExperiment.cs" />
+    <Compile Include="v201109\AddLogicalUserList.cs" />
+    <Compile Include="v201109\AddMobileImageAd.cs" />
+    <Compile Include="v201109\AddNegativeCampaignCriterion.cs" />
+    <Compile Include="v201109\AddSiteLinks.cs" />
+    <Compile Include="v201109\AddUserList.cs" />
+    <Compile Include="v201109\BackupSandboxDemo.cs" />
+    <Compile Include="v201109\CheckCampaigns.cs" />
+    <Compile Include="v201109\ClientApiUnitsUsageDemo.cs" />
+    <Compile Include="v201109\DeleteAd.cs" />
+    <Compile Include="v201109\DeleteAdGroup.cs" />
+    <Compile Include="v201109\DeleteAdGroupCriterion.cs" />
+    <Compile Include="v201109\DeleteBulkMutateJob.cs" />
+    <Compile Include="v201109\DeleteCampaign.cs" />
+    <Compile Include="v201109\DeleteExperiment.cs" />
+    <Compile Include="v201109\DeleteSitelinks.cs" />
+    <Compile Include="v201109\DeleteUserList.cs" />
+    <Compile Include="v201109\DownloadAdhocReport.cs" />
+    <Compile Include="v201109\GetAccountHierarchy.cs" />
+    <Compile Include="v201109\GetAdGroupBidLandscape.cs" />
+    <Compile Include="v201109\GetAllAccountChanges.cs" />
+    <Compile Include="v201109\GetAllActiveAdGroupCriteria.cs" />
+    <Compile Include="v201109\GetAllAdExtensionOverrides.cs" />
+    <Compile Include="v201109\GetAllAdGroupCriteria.cs" />
+    <Compile Include="v201109\GetAllAdGroups.cs" />
+    <Compile Include="v201109\GetAllAdParams.cs" />
+    <Compile Include="v201109\GetAllAds.cs" />
+    <Compile Include="v201109\GetAllCampaignAdExtensions.cs" />
+    <Compile Include="v201109\GetAllCampaigns.cs" />
+    <Compile Include="v201109\GetAllCampaignTargets.cs" />
+    <Compile Include="v201109\GetAllConversionTrackers.cs" />
+    <Compile Include="v201109\GetAllDisapprovedAds.cs" />
+    <Compile Include="v201109\GetAllExperiments.cs" />
+    <Compile Include="v201109\GetAllImages.cs" />
+    <Compile Include="v201109\GetAllNegativeCampaignCriteria.cs" />
+    <Compile Include="v201109\GetAllPausedCampaigns.cs" />
+    <Compile Include="v201109\GetAllReportDefinitions.cs" />
+    <Compile Include="v201109\GetAllUserLists.cs" />
+    <Compile Include="v201109\GetAllVideos.cs" />
+    <Compile Include="v201109\GetBulkMutateJob.cs" />
+    <Compile Include="v201109\GetCampaign.cs" />
+    <Compile Include="v201109\GetCampaignAlerts.cs" />
+    <Compile Include="v201109\GetConversionOptimizerEligibility.cs" />
+    <Compile Include="v201109\GetCriterionBidLandscape.cs" />
+    <Compile Include="v201109\GetGeoLocationInfo.cs" />
+    <Compile Include="v201109\GetKeywordOpportunities.cs" />
+    <Compile Include="v201109\GetMethodCost.cs" />
+    <Compile Include="v201109\GetOperationCount.cs" />
+    <Compile Include="v201109\GetRelatedKeywords.cs" />
+    <Compile Include="v201109\GetRelatedPlacements.cs" />
+    <Compile Include="v201109\GetReportFields.cs" />
+    <Compile Include="v201109\GetTotalUsageUnitsPerMonth.cs" />
+    <Compile Include="v201109\GetTrafficEstimates.cs" />
+    <Compile Include="v201109\GetUnitCount.cs" />
+    <Compile Include="v201109\HandlePartialFailures.cs" />
+    <Compile Include="v201109\HandlePolicyViolationError.cs" />
+    <Compile Include="v201109\HandleTwoFactorAuthorizationError.cs" />
+    <Compile Include="v201109\MethodApiUnitsUsageDemo.cs" />
+    <Compile Include="v201109\PerformMutateJob.cs" />
+    <Compile Include="v201109\PromoteExperiment.cs" />
+    <Compile Include="v201109\RestoreSandboxDemo.cs" />
+    <Compile Include="v201109\SetAdParams.cs" />
+    <Compile Include="v201109\SetCampaignTargets.cs" />
+    <Compile Include="v201109\UpdateAd.cs" />
+    <Compile Include="v201109\UpdateAdGroup.cs" />
+    <Compile Include="v201109\UpdateAdGroupCriterion.cs" />
+    <Compile Include="v201109\UpdateCampaign.cs" />
+    <Compile Include="v201109\UpdateConversionTracker.cs" />
+    <Compile Include="v201109\UpdateUserList.cs" />
+    <Compile Include="v201109\UploadImage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="SampleBase.cs" />
   </ItemGroup>

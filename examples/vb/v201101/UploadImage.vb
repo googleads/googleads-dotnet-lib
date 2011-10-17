@@ -59,8 +59,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
 
       ' Create image.
       Dim image As New Image
-      image.data = MediaUtilities.GetAssetDataFromUrl( _
-          "https://sandbox.google.com/sandboximages/image.jpg")
+      image.data = MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L")
       image.type = MediaMediaType.IMAGE
 
       Try

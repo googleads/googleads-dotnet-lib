@@ -42,12 +42,6 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature ReportService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/developer/TrafficEstimatorService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature TrafficEstimatorService;
-
-      /// <summary>
       /// Factory type for v13 services.
       /// </summary>
       public static readonly Type factoryType = typeof(LegacyAdWordsServiceFactory);
@@ -58,8 +52,6 @@ namespace Google.Api.Ads.AdWords.Lib {
       static v13() {
         AccountService = AdWordsService.MakeLegacyServiceSignature("v13", "AccountService");
         ReportService = AdWordsService.MakeLegacyServiceSignature("v13", "ReportService");
-        TrafficEstimatorService =
-            AdWordsService.MakeLegacyServiceSignature("v13", "TrafficEstimatorService");
       }
     }
   }

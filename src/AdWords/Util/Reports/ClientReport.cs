@@ -16,12 +16,55 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Google.Api.Ads.AdWords.Util.Reports {
   /// <summary>
-  /// Represents a client report downloaded from the server.
+  /// Represents a report downloaded from the server.
   /// </summary>
-  public class ClientReport : Report {
+  public class ClientReport {
+    /// <summary>
+    /// The path to which the report was downloaded.
+    /// </summary>
+    string path;
+
+    /// <summary>
+    /// The report contents in memory.
+    /// </summary>
+    byte[] contents;
+
+    /// <summary>
+    /// Gets or sets the path.
+    /// </summary>
+    public string Path {
+      get {
+        return path;
+      }
+      internal set {
+        path = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets the report contents.
+    /// </summary>
+    public byte[] Contents {
+      get {
+        return contents;
+      }
+      internal set {
+        contents = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets the report contents.
+    /// </summary>
+    public string Text {
+      get {
+        return Encoding.UTF8.GetString(contents);
+      }
+    }
   }
 }

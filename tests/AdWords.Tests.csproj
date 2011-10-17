@@ -21,6 +21,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <NoWarn>0618</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -58,7 +59,6 @@
     <Compile Include="AdWords\v13\AccountServiceTests.cs" />
     <Compile Include="AdWords\v13\ReportServiceTests.cs" />
     <Compile Include="AdWords\v13\ServiceTests.cs" />
-    <Compile Include="AdWords\v13\TrafficEstimatorServiceTests.cs" />
     <Compile Include="AdWords\v200909\AdExtensionOverrideServiceTests.cs" />
     <Compile Include="AdWords\v200909\AdGroupAdServiceTests.cs" />
     <Compile Include="AdWords\v200909\AdGroupCriterionServiceTests.cs" />
@@ -124,6 +124,23 @@
     <Compile Include="AdWords\v201101\ReportDefinitionServiceTests.cs" />
     <Compile Include="AdWords\v201101\TargetingIdeaServiceTests.cs" />
     <Compile Include="AdWords\v201101\TestUtils.cs" />
+    <Compile Include="AdWords\v201109\AdExtensionOverrideServiceTests.cs" />
+    <Compile Include="AdWords\v201109\AdGroupAdServiceTests.cs" />
+    <Compile Include="AdWords\v201109\AdGroupCriterionServiceTests.cs" />
+    <Compile Include="AdWords\v201109\AdGroupServiceTests.cs" />
+    <Compile Include="AdWords\v201109\AdParamServiceTests.cs" />
+    <Compile Include="AdWords\v201109\BulkMutateJobServiceTests.cs" />
+    <Compile Include="AdWords\v201109\CampaignAdExtensionServiceTests.cs" />
+    <Compile Include="AdWords\v201109\CampaignCriterionServiceTests.cs" />
+    <Compile Include="AdWords\v201109\CampaignServiceTests.cs" />
+    <Compile Include="AdWords\v201109\CampaignTargetServiceTests.cs" />
+    <Compile Include="AdWords\v201109\DataServiceTests.cs" />
+    <Compile Include="AdWords\v201109\GeoLocationServiceTests.cs" />
+    <Compile Include="AdWords\v201109\InfoServiceTests.cs" />
+    <Compile Include="AdWords\v201109\MediaServiceTests.cs" />
+    <Compile Include="AdWords\v201109\ReportDefinitionServiceTests.cs" />
+    <Compile Include="AdWords\v201109\TargetingIdeaServiceTests.cs" />
+    <Compile Include="AdWords\v201109\TestUtils.cs" />
     <Compile Include="AdWords\BaseTests.cs" />
     <Compile Include="Common\Util\CsvFileTests.cs" />
   </ItemGroup>

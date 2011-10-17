@@ -16,6 +16,7 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201101;
+using Google.Api.Ads.Common.Util;
 
 using System;
 using System.IO;
@@ -88,25 +89,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201101 {
       imageAd.displayUrl = "www.example.com";
       imageAd.url = "http://www.example.com";
 
-      // Load your image into data field.
-      string imageUrl = "https://sandbox.google.com/sandboximages/image.jpg";
-
-      WebRequest request = HttpWebRequest.Create(imageUrl);
-      WebResponse response = request.GetResponse();
-
-      MemoryStream memStream = new MemoryStream();
-      using (Stream responseStream = response.GetResponseStream()) {
-        byte[] strmBuffer = new byte[4096];
-
-        int bytesRead = responseStream.Read(strmBuffer, 0, 4096);
-        while (bytesRead != 0) {
-          memStream.Write(strmBuffer, 0, bytesRead);
-          bytesRead = responseStream.Read(strmBuffer, 0, 4096);
-        }
-      }
-
       imageAd.image = new Image();
-      imageAd.image.data = memStream.ToArray();
+      imageAd.image.data = MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L");
 
       // Set the AdGroup Id.
       AdGroupAd imageAdGroupAd = new AdGroupAd();
@@ -135,7 +119,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201101 {
 
       image.type = MediaMediaType.IMAGE;
       image.name = "Starting Image";
-      image.data = memStream.ToArray();
+      image.data = MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L");
       imageField.fieldMedia = image;
 
       // Create the template field "displayUrlColor".
