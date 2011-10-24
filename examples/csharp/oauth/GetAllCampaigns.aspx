@@ -32,10 +32,12 @@
   </p>
   <asp:Button ID="btnAuthorize" runat="server" Text="Authorize User"
      onclick="OnAuthorizeButtonClick" />
+  <asp:Button ID="btnLogout" runat="server" Text="Logout"
+     onclick="OnLogoutButtonClick" /><br /><br />
+  <asp:Label ID="Label1" runat="server" Text="Enter Customer ID:" Height="18px"></asp:Label>
+  <asp:TextBox ID="txtCustomerId" runat="server" Width="232px"></asp:TextBox>
   <asp:Button ID="btnGetCampaigns" runat="server" Text="Get campaigns"
      onclick="OnGetCampaignsButtonClick" />
-  <asp:Button ID="btnLogout" runat="server" Text="Logout"
-     onclick="OnLogoutButtonClick" />
   <br />
   <br />
   <asp:GridView ID="CampaignGrid" runat="server"

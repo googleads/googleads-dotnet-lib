@@ -130,15 +130,24 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       if (job.status == BasicJobStatus.COMPLETED) {
         BulkMutateJobSelector selector = new BulkMutateJobSelector();
         selector.jobIds = new long[] {job.id};
-        SimpleMutateResult results = (SimpleMutateResult) mutateJobService.getResult(selector).Item;
-        for (int i = 0; i < results.results.Length; i++) {
-          Operand operand = results.results[i];
-          Console.WriteLine("Operation {0} - {1}", i, (operand.Item is PlaceHolder)?
-              "FAILED": "SUCCEEDED");
-        }
-        foreach (ApiError error in results.errors) {
-          Console.WriteLine("Operation error, reason: '{0}', trigger: '{1}', field path: '{2}'",
-              error.errorString, error.trigger, error.fieldPath);
+        JobResult jobResult = mutateJobService.getResult(selector);
+        if (jobResult != null) {
+          SimpleMutateResult results = (SimpleMutateResult) jobResult.Item;
+          if (results != null) {
+            if (results.results != null) {
+              for (int i = 0; i < results.results.Length; i++) {
+                Operand operand = results.results[i];
+                Console.WriteLine("Operation {0} - {1}", i, (operand.Item is PlaceHolder) ?
+                    "FAILED" : "SUCCEEDED");
+              }
+            }
+            if (results.errors != null) {
+              foreach (ApiError error in results.errors) {
+                Console.WriteLine("Operation error, reason: '{0}', trigger: '{1}', " +
+                    "field path: '{2}'", error.errorString, error.trigger, error.fieldPath);
+              }
+            }
+          }
         }
         Console.WriteLine("Job completed successfully!");
       } else {

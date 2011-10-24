@@ -28,7 +28,14 @@ namespace Google.Api.Ads.Common.Lib {
     /// The various protocols supported by the library.
     /// </summary>
     public enum SupportedProtocols {
+      /// <summary>
+      /// SOAP
+      /// </summary>
       SOAP,
+
+      /// <summary>
+      /// WSE
+      /// </summary>
       WSE
     }
 

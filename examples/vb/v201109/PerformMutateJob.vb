@@ -128,22 +128,31 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       If (job.status = BasicJobStatus.COMPLETED) Then
         selector = New BulkMutateJobSelector
         selector.jobIds = New Long() {job.id}
-        Dim results As SimpleMutateResult = mutateJobService.getResult(selector).Item
+        Dim jobResult As JobResult = mutateJobService.getResult(selector)
+        If Not jobResult Is Nothing Then
+          Dim results As SimpleMutateResult = jobResult.Item
+          If Not results Is Nothing Then
+            If Not results.results Is Nothing Then
+              For i = 0 To results.results.Length - 1
+                Dim operand As Operand = results.results(i)
+                Dim status As String
+                If TypeOf operand.Item Is PlaceHolder Then
+                  status = "FAILED"
+                Else
+                  status = "SUCCEEDED"
+                End If
+                Console.WriteLine("Operation {0} - {1}", i, status)
+              Next i
+            End If
 
-        For i = 0 To results.results.Length - 1
-          Dim operand As Operand = results.results(i)
-          Dim status As String
-          If TypeOf operand.Item Is PlaceHolder Then
-            status = "FAILED"
-          Else
-            status = "SUCCEEDED"
+            If Not results.errors Is Nothing Then
+              For Each apiError As ApiError In results.errors
+                Console.WriteLine("Operation error, reason: '{0}', trigger: '{1}', field path: " & _
+                    "'{2}'", apiError.errorString, apiError.trigger, apiError.fieldPath)
+              Next
+            End If
           End If
-          Console.WriteLine("Operation {0} - {1}", i, status)
-        Next i
-        For Each apiError As ApiError In results.errors
-          Console.WriteLine("Operation error, reason: '{0}', trigger: '{1}', field path: '{2}'", _
-            apiError.errorString, apiError.trigger, apiError.fieldPath)
-        Next
+        End If
         Console.WriteLine("Job completed successfully!")
       Else
         Console.WriteLine("Job could not be completed.")

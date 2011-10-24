@@ -75,6 +75,7 @@
   </ProjectExtensions>
   <ItemGroup>
     <Content Include="css\main.css" />
+    <Content Include="DownloadReport.aspx" />
     <Content Include="GetAllCampaigns.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -82,6 +83,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
+    <Compile Include="DownloadReport.aspx.cs" />
+    <Compile Include="DownloadReport.aspx.designer.cs" />
     <Compile Include="GetAllCampaigns.aspx.cs" />
     <Compile Include="GetAllCampaigns.aspx.designer.cs" />
     <Compile Include="Global.asax.cs" />

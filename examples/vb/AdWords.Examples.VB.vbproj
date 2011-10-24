@@ -296,7 +296,7 @@
     <Compile Include="v201109\PromoteExperiment.vb" />
     <Compile Include="v201109\RestoreSandboxDemo.vb" />
     <Compile Include="v201109\SetAdParams.vb" />
-    <Compile Include="v201109\SetCampaignTargets.vb" />
+    <Compile Include="v201109\SetCampaignCriteria.vb" />
     <Compile Include="v201109\UpdateAd.vb" />
     <Compile Include="v201109\UpdateAdGroup.vb" />
     <Compile Include="v201109\UpdateAdGroupCriterion.vb" />

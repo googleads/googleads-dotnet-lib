@@ -84,18 +84,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       ClientReport retval = new ClientReport();
       AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
 
-      if (string.IsNullOrEmpty(config.AuthToken)) {
-        config.AuthToken = new AuthToken(config, "adwords", config.Email, config.Password).
-            GetToken();
-      }
-
       string postBody = null;
       string downloadUrl;
       if (typeof(T) == typeof(long)) {
         downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer,
             reportDefinitionOrId);
       } else {
-        downloadUrl = ADHOC_REPORT_URL_FORMAT;
+        downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer);
         postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(reportDefinitionOrId));
       }
 
@@ -138,8 +133,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer,
             reportDefinitionOrId);
       } else {
-        downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer,
-            reportDefinitionOrId);
+        downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer);
         postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(reportDefinitionOrId));
       }
 
@@ -211,7 +205,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
 
       if (!string.IsNullOrEmpty(config.ClientEmail)) {
         request.Headers.Add("clientEmail: " + config.ClientEmail);
-      } else {
+      } else if (!string.IsNullOrEmpty(config.ClientCustomerId)) {
         request.Headers.Add("clientCustomerId: " + config.ClientCustomerId);
       }
       request.ContentType = "application/x-www-form-urlencoded";

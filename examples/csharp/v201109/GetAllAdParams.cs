@@ -63,7 +63,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
 
       // Create a selector.
       Selector selector = new Selector();
-      selector.fields = new string[] {"AdGroupId", "CriterionId", "InsertionText", "ParamIndex"};
+      selector.fields = new string[] {"CriterionId", "InsertionText", "ParamIndex"};
 
       // Set a filter condition.
       Predicate predicate = new Predicate();
@@ -78,8 +78,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         if (page != null && page.entries != null) {
           foreach (AdParam adParam in page.entries) {
             Console.WriteLine("Ad param with text '{0}' was found for criterion with id '{1}' " +
-                "and ad group id '{2}'.", adParam.insertionText, adParam.criterionId,
-                adParam.adGroupId);
+                "and ad group id '{2}'.", adParam.insertionText, adParam.criterionId, adGroupId);
           }
         } else {
           Console.WriteLine("No ad parameters found for adgroup #{0}.", adGroupId);

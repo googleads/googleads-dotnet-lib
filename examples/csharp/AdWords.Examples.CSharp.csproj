@@ -381,7 +381,7 @@
     <Compile Include="v201109\PromoteExperiment.cs" />
     <Compile Include="v201109\RestoreSandboxDemo.cs" />
     <Compile Include="v201109\SetAdParams.cs" />
-    <Compile Include="v201109\SetCampaignTargets.cs" />
+    <Compile Include="v201109\SetCampaignCriteria.cs" />
     <Compile Include="v201109\UpdateAd.cs" />
     <Compile Include="v201109\UpdateAdGroup.cs" />
     <Compile Include="v201109\UpdateAdGroupCriterion.cs" />

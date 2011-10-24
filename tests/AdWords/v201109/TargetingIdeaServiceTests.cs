@@ -312,39 +312,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     }
 
     /// <summary>
-    /// Test whether we can request keyword category id search parameter.
-    /// </summary>
-    [Test]
-    public void TestGetKeywordCategoryIdSearchParameter() {
-      TargetingIdeaSelector selector = new TargetingIdeaSelector();
-
-      KeywordCategoryIdSearchParameter kwdCategoryIdSearchParameter =
-          new KeywordCategoryIdSearchParameter();
-      kwdCategoryIdSearchParameter.categoryId = 5;
-
-      RelatedToKeywordSearchParameter relatedToKeywordSearchParam =
-          new RelatedToKeywordSearchParameter();
-
-      Keyword keyword = new Keyword();
-      keyword.text = "rent video";
-      keyword.matchType = KeywordMatchType.EXACT;
-
-      relatedToKeywordSearchParam.keywords = new Keyword[] {keyword};
-
-      selector.searchParameters =
-          new SearchParameter[] {kwdCategoryIdSearchParameter, relatedToKeywordSearchParam};
-
-      selector.ideaType = IdeaType.KEYWORD;
-      selector.requestType = RequestType.IDEAS;
-
-      selector.paging = new Paging();
-      selector.paging.startIndex = 0;
-      selector.paging.numberResults = 1;
-
-      Assert.That(targetingIdeaService.get(selector) is TargetingIdeaPage);
-    }
-
-    /// <summary>
     /// Test whether we can request keyword match type search parameter.
     /// </summary>
     [Test]
