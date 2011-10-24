@@ -34,8 +34,15 @@ namespace Google.Api.Ads.AdWords.Lib {
   /// Base class for AdWords API services.
   /// </summary>
   public class AdWordsSoapClient : AdsSoapClient {
+    /// <summary>
+    /// The error thrown when an auth token expires.
+    /// </summary>
     private const string COOKIE_INVALID_ERROR = "AuthenticationError.GOOGLE_ACCOUNT_COOKIE_INVALID";
-    private const string SERVICE_NAME = "adwords";
+
+    /// <summary>
+    /// Service name to be used when getting auth token for AdWords.
+    /// </summary>
+    public const string SERVICE_NAME = "adwords";
 
     /// <summary>
     /// This method makes the actual SOAP API call. It is a thin wrapper
@@ -51,6 +58,14 @@ namespace Google.Api.Ads.AdWords.Lib {
     protected override object[] MakeApiCall(string methodName, object[] parameters) {
       AdWordsAppConfig config = this.User.Config as AdWordsAppConfig;
       string oAuthHeader = null;
+      RequestHeader header = (RequestHeader) this.GetType().GetProperty("RequestHeader").
+          GetValue(this, null);
+
+      if (string.Compare(header.Version, "v201109") >= 0 && !string.IsNullOrEmpty(
+          header.clientEmail)) {
+        throw new SoapHeaderException("ClientEmail header is not supported in " + header.Version +
+            ".", XmlQualifiedName.Empty);
+      }
 
       if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth) {
         if (this.User.OAuthProvider != null) {
@@ -61,8 +76,6 @@ namespace Google.Api.Ads.AdWords.Lib {
           throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
         }
       } else if (config.AuthorizationMethod == AdWordsAuthorizationMethod.ClientLogin) {
-        RequestHeader header = (RequestHeader) this.GetType().GetProperty("RequestHeader").
-            GetValue(this, null);
         if (header != null) {
           header.authToken = (!string.IsNullOrEmpty(config.AuthToken)) ? config.AuthToken :
               new AuthToken(config, SERVICE_NAME, config.Email, config.Password).GetToken();

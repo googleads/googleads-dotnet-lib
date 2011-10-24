@@ -398,8 +398,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201003 {
     /// </summary>
     /// <returns>The image data, as an array of bytes.</returns>
     public byte[] GetSandboxImage() {
-      return MediaUtilities.GetAssetDataFromUrl(
-          "https://sandbox.google.com/sandboximages/image.jpg");
+      return MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L");
     }
 
     /// <summary>

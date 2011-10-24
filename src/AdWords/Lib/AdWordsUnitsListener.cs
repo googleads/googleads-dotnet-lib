@@ -68,7 +68,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// The derived classes should override this method to analyze
     /// the message and return the API units.
     /// </summary>
-    /// <param name="message">The SOAP message.</param>
+    /// <param name="soapMessage">The SOAP message.</param>
     /// <returns>The API units for call.</returns>
     protected static int GetApiUnitsForCall(XmlDocument soapMessage) {
       XmlNamespaceManager xmlns = new XmlNamespaceManager(soapMessage.NameTable);

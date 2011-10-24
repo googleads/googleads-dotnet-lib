@@ -31,25 +31,9 @@ namespace Google.Api.Ads.AdWords.Util {
   [Serializable]
   public class ReportsException : AdWordsException {
     /// <summary>
-    /// The report status if this exception corresponds to asynchronous report.
-    /// </summary>
-    MccReportStatus reportStatus;
-
-    /// <summary>
-    /// Gets the report status if this exception corresponds to asynchronous
-    /// report.
-    /// </summary>
-    public MccReportStatus ReportStatus {
-      get {
-        return reportStatus;
-      }
-    }
-
-    /// <summary>
     /// Public constructor.
     /// </summary>
     public ReportsException() : base() {
-      reportStatus = null;
     }
 
     /// <summary>
@@ -57,7 +41,6 @@ namespace Google.Api.Ads.AdWords.Util {
     /// </summary>
     /// <param name="message">Error message for this API exception.</param>
     public ReportsException(string message) : base(message) {
-      reportStatus = null;
     }
 
     /// <summary>
@@ -67,19 +50,6 @@ namespace Google.Api.Ads.AdWords.Util {
     /// <param name="innerException">Inner exception, if any.</param>
     public ReportsException(string message, Exception innerException)
         : base(message, innerException) {
-      reportStatus = null;
-    }
-
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="message">Error message for this API exception.</param>
-    /// <param name="innerException">Inner exception, if any.</param>
-    /// <param name="reportStatus">The report status if this exception
-    /// corresponds to asynchronous report.</param>
-    public ReportsException(string message, Exception innerException, MccReportStatus reportStatus)
-        : base(message, innerException) {
-      reportStatus = reportStatus;
     }
 
     /// <summary>
@@ -91,9 +61,6 @@ namespace Google.Api.Ads.AdWords.Util {
     /// serialization stream.</param>
     protected ReportsException(SerializationInfo info, StreamingContext context)
         : base(info, context) {
-      reportStatus = (MccReportStatus) SerializationUtilities.DeserializeFromXmlText(
-          GetValue<string>(info, "reportStatus"),
-          GetValue<Type>(info, "reportStatusType"));
     }
 
     /// <summary>
@@ -109,10 +76,6 @@ namespace Google.Api.Ads.AdWords.Util {
         throw new ArgumentNullException("info");
       }
       base.GetObjectData(info, context);
-      if (reportStatus != null) {
-        info.AddValue("reportStatus", SerializationUtilities.SerializeAsXmlText(reportStatus));
-        info.AddValue("reportStatusType", reportStatus.GetType());
-      }
     }
   }
 }

@@ -56,7 +56,6 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// before giving up. Defaults to maximum number of attempts that can be
     /// made in 30 minutes.
     /// </summary>
-    /// <value>
     public int MaxPollingAttempts {
       get {
         return maxPollingAttempts;

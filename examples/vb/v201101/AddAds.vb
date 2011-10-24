@@ -91,8 +91,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
 
       ' Load your image into data field.
       imageAd.image = New Image
-      imageAd.image.data = MediaUtilities.GetAssetDataFromUrl( _
-          "https://sandbox.google.com/sandboximages/image.jpg")
+      imageAd.image.data = MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L")
 
       ' Set the AdGroup Id.
       Dim imageAdGroupAd As New AdGroupAd
@@ -123,8 +122,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201101
       image.name = "Starting Image"
 
       ' Load your image into data field.
-      image.data = MediaUtilities.GetAssetDataFromUrl( _
-          "https://sandbox.google.com/sandboximages/image.jpg")
+      image.data = MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L")
 
       imageField.fieldMedia = image
 

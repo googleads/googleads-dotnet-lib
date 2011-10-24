@@ -26,6 +26,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Web;
 using System.Xml;
 
 namespace Google.Api.Ads.AdWords.Util.Reports {
@@ -50,23 +51,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     private const string REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload?__rd={1}";
 
     /// <summary>
-    /// Downloads an MCC report.
+    /// The report download url format for ad-hoc reports.
     /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
-    /// <param name="returnMoneyInMicros">True, if the report values should be
-    /// downloaded in micros.</param>
-    /// <returns>An Mcc report object.</returns>
-    private delegate MccReport GetMccReportFunction(long reportDefinitionId,
-        bool returnMoneyInMicros);
-
-    /// <summary>
-    /// Downloads an MCC report and saves it to disk.
-    /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
-    /// <returns>An Mcc report object.</returns>
-    private delegate MccReport DownloadMccReportFunction(long reportDefinitionId,
-        bool returnMoneyInMicros, string path);
-
+    private const string ADHOC_REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/v201109";
     /// <summary>
     /// Initializes a new instance of the <see cref="ReportUtilities"/> class.
     /// </summary>
@@ -78,38 +65,41 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Downloads a client report.
     /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
+    /// <param name="reportDefinitionOrId">The report definition or id.</param>
+    /// <typeparam name="T">The type of ReportDefinition object.</typeparam>
     /// <returns>A client report object.</returns>
-    public ClientReport GetClientReport(long reportDefinitionId) {
-      return GetClientReport(reportDefinitionId, true);
+    public ClientReport GetClientReport<T>(T reportDefinitionOrId) {
+      return GetClientReport(reportDefinitionOrId, true);
     }
 
     /// <summary>
     /// Downloads a client report.
     /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
     /// <param name="returnMoneyInMicros">True, if the report values should be
     /// downloaded in micros.</param>
+    /// <param name="reportDefinitionOrId">The report definition or id.</param>
+    /// <typeparam name="T">The type of ReportDefinition object.</typeparam>
     /// <returns>A client report object.</returns>
-    public ClientReport GetClientReport(long reportDefinitionId, bool returnMoneyInMicros) {
+    public ClientReport GetClientReport<T>(T reportDefinitionOrId, bool returnMoneyInMicros) {
       ClientReport retval = new ClientReport();
       AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
-      if (string.IsNullOrEmpty(config.AuthToken)) {
-        config.AuthToken = new AuthToken(config, "adwords", config.Email, config.Password).
-            GetToken();
-      }
-      string clientId = !string.IsNullOrEmpty(config.ClientEmail) ? config.ClientEmail :
-          config.ClientCustomerId;
 
-      string downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer,
-          reportDefinitionId);
+      string postBody = null;
+      string downloadUrl;
+      if (typeof(T) == typeof(long)) {
+        downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer,
+            reportDefinitionOrId);
+      } else {
+        downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer);
+        postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(reportDefinitionOrId));
+      }
 
       MemoryStream memStream = new MemoryStream();
-      byte[] preview = DownloadReportToStream(downloadUrl, config.Proxy, clientId, config.AuthToken,
-          returnMoneyInMicros, memStream);
+      byte[] preview = DownloadReportToStream(downloadUrl, config, returnMoneyInMicros, memStream,
+          postBody);
       if (!IsValidReport(preview)) {
         throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid + " - " +
-            ConvertPreviewBytesToString(preview), null, null);
+            ConvertPreviewBytesToString(preview), null);
       }
       retval.Contents = memStream.ToArray();
       return retval;
@@ -118,313 +108,77 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Downloads a client report and saves it to disk.
     /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
+    /// <param name="reportDefinitionOrId">The report definition or id.</param>
+    /// <typeparam name="T">The type of ReportDefinition object.</typeparam>
     /// <param name="path">The path to which the report should be saved.</param>
-    public void DownloadClientReport(long reportDefinitionId, string path) {
-      DownloadClientReport(reportDefinitionId, true, path);
+    public void DownloadClientReport<T>(T reportDefinitionOrId, string path) {
+      DownloadClientReport(reportDefinitionOrId, true, path);
     }
 
     /// <summary>
     /// Downloads a client report and saves it to disk.
     /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
+    /// <param name="reportDefinitionOrId">The report definition or id.</param>
     /// <param name="returnMoneyInMicros">True, if the report values should be
     /// downloaded in micros.</param>
     /// <param name="path">The path to which the report should be saved.</param>
-    public void DownloadClientReport(long reportDefinitionId, bool returnMoneyInMicros,
+    /// <typeparam name="T">The type of ReportDefinition object.</typeparam>
+    public void DownloadClientReport<T>(T reportDefinitionOrId, bool returnMoneyInMicros,
         string path) {
       AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
-      if (string.IsNullOrEmpty(config.AuthToken)) {
-        config.AuthToken = new AuthToken(config, "adwords", config.Email, config.Password).
-            GetToken();
+
+      string postBody = null;
+      string downloadUrl;
+      if (typeof(T) == typeof(long)) {
+        downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer,
+            reportDefinitionOrId);
+      } else {
+        downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer);
+        postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(reportDefinitionOrId));
       }
-      string clientId = !string.IsNullOrEmpty(config.ClientEmail) ? config.ClientEmail :
-          config.ClientCustomerId;
 
-      string downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer,
-          reportDefinitionId);
-
-      byte[] preview = DownloadReportToDisk(downloadUrl, config.Proxy, clientId, config.AuthToken,
-          returnMoneyInMicros, path);
+      byte[] preview = DownloadReportToDisk(downloadUrl, config, returnMoneyInMicros, path,
+          postBody);
       if (!IsValidReport(preview)) {
         throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid + " - " +
-            ConvertPreviewBytesToString(preview), null, null);
+            ConvertPreviewBytesToString(preview), null);
       }
     }
 
     /// <summary>
-    /// Downloads an MCC report.
+    /// Converts the report definition to XML format.
     /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
-    /// <returns>An Mcc report object.</returns>
-    public MccReport GetMccReport(long reportDefinitionId) {
-      return GetMccReport(reportDefinitionId, true);
-    }
-
-    /// <summary>
-    /// Downloads an MCC report.
-    /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
-    /// <param name="returnMoneyInMicros">True, if the report values should be
-    /// downloaded in micros.</param>
-    /// <returns>An Mcc report object.</returns>
-    public MccReport GetMccReport(long reportDefinitionId, bool returnMoneyInMicros) {
-      return DownloadMccReport(reportDefinitionId, returnMoneyInMicros,
-          null);
-    }
-
-    /// <summary>
-    /// Downloads an MCC report and saves it to disk.
-    /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
-    /// <param name="path">The path to which the report should be saved.</param>
-    /// <returns>An Mcc report object.</returns>
-    public MccReport DownloadMccReport(long reportDefinitionId, string path) {
-      return DownloadMccReport(reportDefinitionId, true, path);
-    }
-
-    /// <summary>
-    /// Downloads an MCC report and saves it to disk.
-    /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
-    /// <param name="returnMoneyInMicros">True, if the report values should be
-    /// downloaded in micros.</param>
-    /// <param name="path">The path to which the report should be saved.</param>
-    /// <returns>An Mcc report object.</returns>
-    public MccReport DownloadMccReport(long reportDefinitionId, bool returnMoneyInMicros,
-        string path) {
-      throw new NotSupportedException("This functionality is currently not supported by the " +
-          "client library, since cross-client reports were unlaunched. See " +
-          "http://adwordsapi.blogspot.com/2011/03/update-to-reporting-service-in-adwords.html" +
-          " for details.");
-      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
-      MccReport retval = new MccReport();
-
-      if (string.IsNullOrEmpty(config.AuthToken)) {
-        config.AuthToken = new AuthToken(config, "adwords", config.Email, config.Password).
-            GetToken();
+    /// <typeparam name="T">The type of ReportDefinition.</typeparam>
+    /// <param name="definition">The report definition.</param>
+    /// <returns>The report definition serialized as an xml.</returns>
+    private string ConvertDefinitionToXml<T>(T definition) {
+      string xml = SerializationUtilities.SerializeAsXmlText(definition).Replace(
+          "ReportDefinition", "reportDefinition");
+      XmlDocument doc = new XmlDocument();
+      doc.LoadXml(xml);
+      XmlNodeList xmlNodes = doc.SelectNodes("descendant::*");
+      foreach (XmlElement node in xmlNodes) {
+        node.RemoveAllAttributes();
       }
-      string clientId = !string.IsNullOrEmpty(config.ClientEmail) ? config.ClientEmail :
-          config.ClientCustomerId;
-
-      string queryToken = "new";
-
-      int pollingCount = 0;
-
-      while (pollingCount < MaxPollingAttempts) {
-        string downloadUrl = string.Format(REPORT_URL_FORMAT + "&qt={2}", config.AdWordsApiServer,
-            reportDefinitionId, queryToken);
-        MccReportResponse reportResponse = GetMccReportResponse(downloadUrl, clientId,
-            config.AuthToken, returnMoneyInMicros, config.Proxy);
-
-        switch (reportResponse.StatusCode) {
-          case HttpStatusCode.InternalServerError:
-            throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid, null,
-                reportResponse.ReportStatus);
-
-          case HttpStatusCode.OK:
-            queryToken = reportResponse.QueryToken;
-            Thread.Sleep(WAIT_TIME);
-            pollingCount++;
-            break;
-
-          case HttpStatusCode.Moved:
-            byte[] preview = null;
-            if (string.IsNullOrEmpty(path)) {
-              MemoryStream memStream = new MemoryStream();
-              DownloadReportToStream(reportResponse.FollowupUrl, config.Proxy, clientId,
-                  config.AuthToken, returnMoneyInMicros, memStream);
-              retval.Contents = memStream.ToArray();
-            } else {
-              DownloadReportToDisk(reportResponse.FollowupUrl, config.Proxy, clientId,
-                  config.AuthToken, returnMoneyInMicros, path);
-              retval.Path = path;
-            }
-
-            if (!IsValidReport(preview)) {
-              throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid + " - " +
-                  ConvertPreviewBytesToString(preview), null, reportResponse.ReportStatus);
-            }
-
-            retval.ReportStatus = reportResponse.ReportStatus;
-            return retval;
-
-          default:
-            // There are situations under which the server can return other
-            // codes. 503 RATE_EXCEEDED is a good example.
-            throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid);
-        }
-      }
-      throw new ReportsException(AdWordsErrorMessages.ReportNumPollsExceeded);
-    }
-
-    /// <summary>
-    /// Begins downloading an MCC report asynchronously.
-    /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
-    /// <param name="returnMoneyInMicros">True, if the report values should be
-    /// downloaded in micros.</param>
-    /// <param name="callback">The callback to be called once the report
-    /// is saved.</param>
-    /// <returns>The IAsyncResult object associated with this asynchronous
-    /// call.</returns>
-    public IAsyncResult BeginGetMccReport(long reportDefinitionId, bool returnMoneyInMicros,
-        AsyncCallback callback) {
-      GetMccReportFunction getMccReport = GetMccReport;
-      return getMccReport.BeginInvoke(reportDefinitionId, returnMoneyInMicros, callback,
-          getMccReport);
-    }
-
-    /// <summary>
-    /// Ends downloading an MCC report asynchronously.
-    /// </summary>
-    /// <returns>The IAsyncResult object returned from
-    /// <see cref="BeginGetMccReport"/></returns>
-    /// <returns>An Mcc report object.</returns>
-    public MccReport EndGetMccReport(IAsyncResult result) {
-      return (result.AsyncState as GetMccReportFunction).EndInvoke(result);
-    }
-
-    /// <summary>
-    /// Begins downloading an MCC report to disk asynchronously.
-    /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
-    /// <param name="returnMoneyInMicros">True, if the report values should be
-    /// downloaded in micros.</param>
-    /// <param name="path">The path to which the report should be saved.</param>
-    /// <param name="callback">The callback to be called once the report
-    /// is saved.</param>
-    /// <returns>The IAsyncResult object associated with this asynchronous
-    /// call.</returns>
-    public IAsyncResult BeginDownloadMccReport(long reportDefinitionId, bool returnMoneyInMicros,
-        string path, AsyncCallback callback) {
-      DownloadMccReportFunction downloadMccReport = DownloadMccReport;
-      return downloadMccReport.BeginInvoke(reportDefinitionId, returnMoneyInMicros, path,
-          callback, downloadMccReport);
-    }
-
-    /// <summary>
-    /// Ends downloading an MCC report to disk asynchronously.
-    /// </summary>
-    /// <returns>The IAsyncResult object returned from
-    /// <see cref="BeginGetMccReport"/></returns>
-    /// <returns>An Mcc report object.</returns>
-    public MccReport EndDownloadMccReport(IAsyncResult result) {
-      return (result.AsyncState as DownloadMccReportFunction).EndInvoke(result);
-    }
-
-    /// <summary>
-    /// Gets the MCC report response.
-    /// </summary>
-    /// <param name="downloadUrl">The download URL.</param>
-    /// <param name="clientId">The client id.</param>
-    /// <param name="authToken">The auth token.</param>
-    /// <param name="returnMoneyInMicros">True, if the report values should be
-    /// downloaded in micros.</param>
-    /// <param name="proxy">The proxy server to be used for connecting to the
-    /// server.</param>
-    /// <returns>The response from the server.</returns>
-    private MccReportResponse GetMccReportResponse(string downloadUrl, string clientId,
-        string authToken, bool returnMoneyInMicros, WebProxy proxy) {
-      MccReportResponse retval = new MccReportResponse();
-
-      WebRequest request = HttpWebRequest.Create(downloadUrl);
-      request.Proxy = proxy;
-      (request as HttpWebRequest).AllowAutoRedirect = false;
-      request.Headers.Add("clientEmail: " + clientId);
-      request.Headers.Add("Authorization: GoogleLogin auth=" + authToken);
-      request.Headers.Add("returnMoneyInMicros: " + returnMoneyInMicros.ToString().ToLower());
-
-      WebResponse response = null;
-      try {
-        response = request.GetResponse();
-      } catch (WebException ex) {
-        response = ex.Response;
-      }
-
-      retval.StatusCode = (response as HttpWebResponse).StatusCode;
-      if (retval.StatusCode == HttpStatusCode.MovedPermanently) {
-        retval.FollowupUrl = response.Headers["Location"];
-      }
-      MemoryStream memStream = new MemoryStream();
-      MediaUtilities.CopyStream(response.GetResponseStream(), memStream);
-      retval.ReportStatus = ParseReportResponse(Encoding.UTF8.GetString(memStream.ToArray()));
-      return retval;
-    }
-
-    /// <summary>
-    /// Parses the report response.
-    /// </summary>
-    /// <param name="contents">The report response xml.</param>
-    /// <returns>The parsed report response.</returns>
-    private MccReportStatus ParseReportResponse(string contents) {
-      MccReportStatus reportResponse = new MccReportStatus();
-      XmlDocument xDoc = SerializationUtilities.LoadXml(contents);
-
-      XmlNode node = null;
-
-      node = xDoc.SelectSingleNode("/reportResponse/queryToken/text()");
-      if (node != null) {
-        reportResponse.queryToken = node.Value;
-      }
-
-      node = xDoc.SelectSingleNode("/reportResponse/state/text()");
-      if (node != null) {
-        reportResponse.state = (MccReportStatus.State) Enum.Parse(typeof(MccReportStatus.State),
-            node.Value);
-      }
-
-      node = xDoc.SelectSingleNode("/reportResponse/total/text()");
-      if (node != null) {
-        reportResponse.total = int.Parse(node.Value);
-      }
-
-      node = xDoc.SelectSingleNode("/reportResponse/success/text()");
-      if (node != null) {
-        reportResponse.success = int.Parse(node.Value);
-      }
-
-      node = xDoc.SelectSingleNode("/reportResponse/fail/text()");
-      if (node != null) {
-        reportResponse.fail = int.Parse(node.Value);
-      }
-
-      node = xDoc.SelectSingleNode("/reportResponse/failureReason/text()");
-      if (node != null) {
-        reportResponse.failureReason = node.Value;
-      }
-
-      XmlNodeList accountNodes = xDoc.SelectNodes("/reportResponse/failures/*");
-
-      foreach (XmlNode accountNode in accountNodes) {
-        MccReportStatus.Account account = new MccReportStatus.Account();
-        XmlNode accountIdNode = accountNode.SelectSingleNode("id");
-        if (accountNode != null) {
-          account.id = accountIdNode.InnerText;
-        }
-        reportResponse.failures.Add(account);
-      }
-
-      return reportResponse;
+      return doc.OuterXml;
     }
 
     /// <summary>
     /// Downloads the report to disk.
     /// </summary>
     /// <param name="downloadUrl">The report download URL.</param>
-    /// <param name="proxy">The web proxy to be used for HTTP requests.</param>
-    /// <param name="clientId">The client id who owns this report.</param>
-    /// <param name="authToken">The auth token for authorizing report download.
-    /// </param>
+    /// <param name="config">The configuration settings to be used when
+    /// downloading the report.</param>
     /// <param name="returnMoneyInMicros">True, if the report values should be
     /// downloaded in micros.</param>
     /// <param name="path">The path to which the report is downloaded.</param>
-    /// <returns>A preview of <see cref="MAX_ERROR_LENGTH" bytes./></returns>
-    private byte[] DownloadReportToDisk(string downloadUrl, WebProxy proxy, string clientId,
-        string authToken, bool returnMoneyInMicros, string path) {
+    /// <param name="postBody">The additional contents to be added to request
+    /// POST body.</param>
+    /// <returns>A preview of <see cref="MAX_ERROR_LENGTH"/> bytes.</returns>
+    private byte[] DownloadReportToDisk(string downloadUrl, AdWordsAppConfig config,
+        bool returnMoneyInMicros, string path, string postBody) {
       using (FileStream fs = File.OpenWrite(path)) {
-        return DownloadReportToStream(downloadUrl, proxy, clientId, authToken,
-            returnMoneyInMicros, fs);
+        return DownloadReportToStream(downloadUrl, config, returnMoneyInMicros, fs, postBody);
       }
     }
 
@@ -432,31 +186,51 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// Downloads the report to disk.
     /// </summary>
     /// <param name="downloadUrl">The report download URL.</param>
-    /// <param name="proxy">The web proxy to be used for HTTP requests.</param>
-    /// <param name="clientId">The client id who owns this report.</param>
-    /// <param name="authToken">The auth token for authorizing report download.
-    /// </param>
+    /// <param name="config">The configuration settings to be used when
+    /// downloading the report.</param>
     /// <param name="returnMoneyInMicros">True, if the report values should be
     /// downloaded in micros.</param>
     /// <param name="outputStream">The output stream to which the downloaded
     /// report should be saved.</param>
-    /// <returns>A preview of <see cref="MAX_ERROR_LENGTH" bytes./></returns>
-    private byte[] DownloadReportToStream(string downloadUrl, WebProxy proxy, string clientId,
-        string authToken, bool returnMoneyInMicros, Stream outputStream) {
+    /// <param name="postBody">The additional contents to be added to request
+    /// POST body.</param>
+    /// <returns>A preview of <see cref="MAX_ERROR_LENGTH" /> bytes.</returns>
+    private byte[] DownloadReportToStream(string downloadUrl, AdWordsAppConfig config,
+        bool returnMoneyInMicros, Stream outputStream, string postBody) {
       WebRequest request = HttpWebRequest.Create(downloadUrl);
-      request.Proxy = proxy;
-
-      if (!clientId.Contains("@")) {
-        request.Headers.Add("clientCustomerId: " + clientId);
-      } else {
-        request.Headers.Add("clientEmail: " + clientId);
+      if (!string.IsNullOrEmpty(postBody)) {
+        request.Method = "POST";
       }
+      request.Proxy = config.Proxy;
 
-      if (!string.IsNullOrEmpty(authToken)) {
-        request.Headers.Add("Authorization: GoogleLogin auth=" + authToken);
+      if (!string.IsNullOrEmpty(config.ClientEmail)) {
+        request.Headers.Add("clientEmail: " + config.ClientEmail);
+      } else if (!string.IsNullOrEmpty(config.ClientCustomerId)) {
+        request.Headers.Add("clientCustomerId: " + config.ClientCustomerId);
+      }
+      request.ContentType = "application/x-www-form-urlencoded";
+      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth) {
+        if (this.User.OAuthProvider != null) {
+          AdsOAuthProvider provider = this.User.OAuthProvider;
+          provider.GenerateAccessToken();
+          request.Headers["Authorization"] = provider.GetAuthHeader(downloadUrl);
+        } else {
+          throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
+        }
+      } else if (config.AuthorizationMethod == AdWordsAuthorizationMethod.ClientLogin) {
+        string authToken = (!string.IsNullOrEmpty(config.AuthToken)) ? config.AuthToken :
+            new AuthToken(config, AdWordsSoapClient.SERVICE_NAME, config.Email,
+                config.Password).GetToken();
+        request.Headers["Authorization"] = "GoogleLogin auth=" + authToken;
       }
 
       request.Headers.Add("returnMoneyInMicros: " + returnMoneyInMicros.ToString().ToLower());
+
+      if (!string.IsNullOrEmpty(postBody)) {
+        using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
+          writer.Write(postBody);
+        }
+      }
 
       WebResponse response = request.GetResponse();
       return MediaUtilities.CopyStreamWithPreview(response.GetResponseStream(),

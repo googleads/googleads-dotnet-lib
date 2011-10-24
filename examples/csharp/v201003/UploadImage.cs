@@ -60,8 +60,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201003 {
 
       // Create image.
       Image image = new Image();
-      image.data = MediaUtilities.GetAssetDataFromUrl(
-          "https://sandbox.google.com/sandboximages/image.jpg");
+      image.data = MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L");
       image.mediaTypeDb = MediaMediaType.IMAGE;
       image.name = "Sample Image";
 

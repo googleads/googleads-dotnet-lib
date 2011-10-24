@@ -78,10 +78,6 @@
     <Compile Include="AdWords\Util\Data\SandboxSerializationException.cs" />
     <Compile Include="AdWords\Util\Reports\ClientReport.cs" />
     <Compile Include="AdWords\Util\Reports\LegacyReportUtilities.cs" />
-    <Compile Include="AdWords\Util\Reports\MccReport.cs" />
-    <Compile Include="AdWords\Util\Reports\MccReportResponse.cs" />
-    <Compile Include="AdWords\Util\Reports\MccReportStatus.cs" />
-    <Compile Include="AdWords\Util\Reports\Report.cs" />
     <Compile Include="AdWords\Util\Reports\ReportsException.cs" />
     <Compile Include="AdWords\Util\Reports\ReportUtilities.cs" />
     <Compile Include="AdWords\Util\Units\AdWordsAccount.cs" />
@@ -113,6 +109,8 @@
     <Compile Include="AdWords\v201008\AdWordsServiceV201008.cs" />
     <Compile Include="AdWords\v201101\AdWordsApi.cs" />
     <Compile Include="AdWords\v201101\AdWordsServiceV201101.cs" />
+    <Compile Include="AdWords\v201109\AdWordsApi.cs" />
+    <Compile Include="AdWords\v201109\AdWordsServiceV201109.cs" />
     <Compile Include="AdWords\AdWordsErrorMessages.Designer.cs" />
     <Compile Include="Common\Lib\AdsClient.cs" />
     <Compile Include="Common\Lib\AdsException.cs" />

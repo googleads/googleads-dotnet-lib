@@ -14,6 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+#pragma warning disable 1591
+
 namespace Google.Api.Ads.AdWords.v201008 {
   using Google.Api.Ads.AdWords.Headers;
   using Google.Api.Ads.AdWords.Lib;
@@ -35,6 +37,7 @@ namespace Google.Api.Ads.AdWords.v201008 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -97,6 +100,7 @@ CampaignOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignAdExtensionReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignCriterionReturnValue))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class ListReturnValue {
     private string listReturnValueTypeField;
 
@@ -116,6 +120,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignReturnValue : ListReturnValue {
     private Campaign[] valueField;
 
@@ -135,6 +140,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Campaign {
     private long idField;
 
@@ -328,6 +334,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CampaignStatus {
     ACTIVE,
     DELETED,
@@ -337,6 +344,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ServingStatus {
     SERVING,
     NONE,
@@ -350,6 +358,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Budget {
     private BudgetBudgetPeriod periodField;
 
@@ -416,6 +425,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Budget.BudgetPeriod", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum BudgetBudgetPeriod {
     DAILY,
     MONTHLY
@@ -426,6 +436,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Money : ComparableValue {
     private long microAmountField;
 
@@ -462,6 +473,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class ComparableValue {
     private string comparableValueTypeField;
 
@@ -483,6 +495,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class NumberValue : ComparableValue {
   }
 
@@ -491,6 +504,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LongValue : NumberValue {
     private long numberField;
 
@@ -523,6 +537,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class DoubleValue : NumberValue {
     private double numberField;
 
@@ -553,6 +568,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Budget.BudgetDeliveryMethod", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum BudgetBudgetDeliveryMethod {
     STANDARD,
     ACCELERATED
@@ -568,6 +584,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class BiddingStrategy {
     private string biddingStrategyTypeField;
 
@@ -587,6 +604,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BudgetOptimizer : BiddingStrategy {
     private bool enhancedCpcEnabledField;
 
@@ -630,6 +648,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PercentCPA : BiddingStrategy {
   }
 
@@ -638,6 +657,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ManualCPM : BiddingStrategy {
   }
 
@@ -646,6 +666,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ManualCPC : BiddingStrategy {
     private bool enhancedCpcEnabledField;
 
@@ -701,6 +722,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum PositionPreference {
     ON,
     OFF
@@ -711,6 +733,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ConversionOptimizer : BiddingStrategy {
     private PricingModel pricingModelField;
 
@@ -791,6 +814,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum PricingModel {
     CLICKS,
     IMPRESSIONS,
@@ -800,6 +824,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ConversionOptimizerBidType {
     TARGET_CPA,
     MAX_CPA
@@ -808,6 +833,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ConversionDeduplicationMode {
     ONE_PER_CLICK,
     MANY_PER_CLICK
@@ -818,6 +844,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ConversionOptimizerEligibility {
     private bool eligibleField;
 
@@ -860,6 +887,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConversionOptimizerEligibility.RejectionReason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ConversionOptimizerEligibilityRejectionReason {
     CAMPAIGN_IS_NOT_ACTIVE,
     NOT_CPC_CAMPAIGN,
@@ -873,6 +901,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignStats : Stats {
   }
 
@@ -885,6 +914,7 @@ CampaignOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdExtensionOverrideStats))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdStats))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignAdExtensionStats))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Stats {
     private string startDateField;
 
@@ -1304,6 +1334,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Stats.Network", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum StatsNetwork {
     SEARCH,
     GOOGLE_SEARCH,
@@ -1318,6 +1349,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdServingOptimizationStatus {
     OPTIMIZE,
     ROTATE,
@@ -1329,6 +1361,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class FrequencyCap {
     private long impressionsField;
 
@@ -1409,6 +1442,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum TimeUnit {
     MINUTE,
     HOUR,
@@ -1421,6 +1455,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum Level {
     CREATIVE,
     ADGROUP,
@@ -1433,6 +1468,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Bid {
     private Money amountField;
 
@@ -1456,6 +1492,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class AdGroupBids {
     private string adGroupBidsTypeField;
 
@@ -1475,6 +1512,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ManualCPMAdGroupBids : AdGroupBids {
     private Bid maxCpmField;
 
@@ -1493,6 +1531,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ManualCPCAdGroupBids : AdGroupBids {
     private Bid keywordMaxCpcField;
 
@@ -1558,6 +1597,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ConversionOptimizerAdGroupBids : AdGroupBids {
     private Bid targetCpaField;
 
@@ -1626,6 +1666,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BudgetOptimizerAdGroupBids : AdGroupBids {
     private Bid proxyKeywordMaxCpcField;
 
@@ -1680,6 +1721,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PercentCPAAdGroupBids : AdGroupBids {
     private int percentCpaField;
 
@@ -1713,6 +1755,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BiddingTransition {
     private BiddingStrategy targetBiddingStrategyField;
 
@@ -1754,6 +1797,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ConversionOptimizerBiddingTransition : BiddingTransition {
     private bool useSavedBidsField;
 
@@ -1799,6 +1843,7 @@ CampaignOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(JobOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignCriterionOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignAdExtensionOperation))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class Operation {
     private Operator operatorField;
 
@@ -1841,6 +1886,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum Operator {
     ADD,
     REMOVE,
@@ -1852,6 +1898,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignOperation : Operation {
     private BiddingTransition biddingTransitionField;
 
@@ -1893,6 +1940,7 @@ CampaignOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignAdExtensionPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignCriterionPage))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class Page {
     private int totalNumEntriesField;
 
@@ -1937,6 +1985,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignPage : Page {
     private Budget totalBudgetField;
 
@@ -1967,6 +2016,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Paging {
     private int startIndexField;
 
@@ -2024,6 +2074,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class DateRange {
     private string minField;
 
@@ -2055,6 +2106,7 @@ CampaignOperation[] operations) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdStatsSelector))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignAdExtensionStatsSelector))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class StatsSelector {
     private DateRange dateRangeField;
 
@@ -2085,6 +2137,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignSelector {
     private long[] idsField;
 
@@ -2207,6 +2260,7 @@ CampaignOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignAdExtensionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BulkMutateJobError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdExtensionError))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class ApiError {
     private string fieldPathField;
 
@@ -2259,6 +2313,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class DatabaseError : ApiError {
     private DatabaseErrorReason reasonField;
 
@@ -2289,6 +2344,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DatabaseError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum DatabaseErrorReason {
     CONCURRENT_MODIFICATION,
     PERMISSION_DENIED,
@@ -2303,6 +2359,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class StringLengthError : ApiError {
     private StringLengthErrorReason reasonField;
 
@@ -2333,6 +2390,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StringLengthError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum StringLengthErrorReason {
     TOO_SHORT,
     TOO_LONG
@@ -2343,6 +2401,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class StatsQueryError : ApiError {
     private StatsQueryErrorReason reasonField;
 
@@ -2373,6 +2432,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StatsQueryError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum StatsQueryErrorReason {
     DATE_NOT_IN_VALID_RANGE
   }
@@ -2382,6 +2442,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class SizeLimitError : ApiError {
     private SizeLimitErrorReason reasonField;
 
@@ -2412,6 +2473,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SizeLimitError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum SizeLimitErrorReason {
     REQUEST_SIZE_LIMIT_EXCEEDED,
     RESPONSE_SIZE_LIMIT_EXCEEDED,
@@ -2423,6 +2485,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class RequiredError : ApiError {
     private RequiredErrorReason reasonField;
 
@@ -2453,6 +2516,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum RequiredErrorReason {
     REQUIRED
   }
@@ -2462,6 +2526,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class RequestError : ApiError {
     private RequestErrorReason reasonField;
 
@@ -2492,6 +2557,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequestError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum RequestErrorReason {
     UNKNOWN,
     INVALID_INPUT
@@ -2502,6 +2568,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class RejectedError : ApiError {
     private RejectedErrorReason reasonField;
 
@@ -2532,6 +2599,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RejectedError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum RejectedErrorReason {
     UNKNOWN_VALUE
   }
@@ -2541,6 +2609,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ReadOnlyError : ApiError {
     private ReadOnlyErrorReason reasonField;
 
@@ -2571,6 +2640,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReadOnlyError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ReadOnlyErrorReason {
     READ_ONLY
   }
@@ -2580,6 +2650,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class RateExceededError : ApiError {
     private RateExceededErrorReason reasonField;
 
@@ -2657,6 +2728,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RateExceededError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum RateExceededErrorReason {
     RATE_EXCEEDED
   }
@@ -2666,6 +2738,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class RangeError : ApiError {
     private RangeErrorReason reasonField;
 
@@ -2696,6 +2769,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RangeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum RangeErrorReason {
     TOO_LOW,
     TOO_HIGH
@@ -2706,6 +2780,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class QuotaError : ApiError {
     private QuotaErrorReason reasonField;
 
@@ -2761,6 +2836,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "QuotaError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum QuotaErrorReason {
     TOO_MANY_ADGROUPS_PER_CAMPAIGN,
     TOO_MANY_CAMPAIGNS_PER_ACCOUNT,
@@ -2777,6 +2853,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class QuotaCheckError : ApiError {
     private QuotaCheckErrorReason reasonField;
 
@@ -2807,6 +2884,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "QuotaCheckError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum QuotaCheckErrorReason {
     INVALID_TOKEN_HEADER,
     ACCOUNT_DELINQUENT,
@@ -2827,6 +2905,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class OperatorError : ApiError {
     private OperatorErrorReason reasonField;
 
@@ -2857,6 +2936,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OperatorError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum OperatorErrorReason {
     OPERATOR_NOT_SUPPORTED
   }
@@ -2866,6 +2946,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class OperationAccessDenied : ApiError {
     private OperationAccessDeniedReason reasonField;
 
@@ -2896,6 +2977,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OperationAccessDenied.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum OperationAccessDeniedReason {
     ACTION_NOT_PERMITTED,
     ADD_OPERATION_NOT_PERMITTED,
@@ -2909,6 +2991,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class NullError : ApiError {
     private NullErrorReason reasonField;
 
@@ -2939,6 +3022,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NullError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum NullErrorReason {
     NULL_CONTENT
   }
@@ -2948,6 +3032,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class NotWhitelistedError : ApiError {
     private NotWhitelistedErrorReason reasonField;
 
@@ -2978,6 +3063,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotWhitelistedError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum NotWhitelistedErrorReason {
     CUSTOMER_NOT_WHITELISTED_FOR_API
   }
@@ -2987,6 +3073,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class NotEmptyError : ApiError {
     private NotEmptyErrorReason reasonField;
 
@@ -3017,6 +3104,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotEmptyError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum NotEmptyErrorReason {
     EMPTY_LIST
   }
@@ -3026,6 +3114,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class NewEntityCreationError : ApiError {
     private NewEntityCreationErrorReason reasonField;
 
@@ -3056,6 +3145,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NewEntityCreationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum NewEntityCreationErrorReason {
     CANNOT_SET_ID_FOR_ADD
   }
@@ -3065,6 +3155,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class InternalApiError : ApiError {
     private InternalApiErrorReason reasonField;
 
@@ -3095,6 +3186,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InternalApiError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum InternalApiErrorReason {
     UNEXPECTED_INTERNAL_API_ERROR,
     UNKNOWN
@@ -3105,6 +3197,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class EntityNotFound : ApiError {
     private EntityNotFoundReason reasonField;
 
@@ -3135,6 +3228,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityNotFound.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum EntityNotFoundReason {
     INVALID_ID
   }
@@ -3144,6 +3238,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class DistinctError : ApiError {
     private DistinctErrorReason reasonField;
 
@@ -3174,6 +3269,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DistinctError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum DistinctErrorReason {
     DUPLICATE_ELEMENT
   }
@@ -3183,6 +3279,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class DateError : ApiError {
     private DateErrorReason reasonField;
 
@@ -3213,6 +3310,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DateError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum DateErrorReason {
     INVALID_FIELD_VALUES_IN_DATE,
     INVALID_STRING_DATE,
@@ -3229,6 +3327,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ClientTermsError : ApiError {
     private ClientTermsErrorReason reasonField;
 
@@ -3259,6 +3358,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ClientTermsError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ClientTermsErrorReason {
     INCOMPLETE_SIGNUP_CURRENT_ADWORDS_TNC_NOT_AGREED
   }
@@ -3268,6 +3368,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignError : ApiError {
     private CampaignErrorReason reasonField;
 
@@ -3298,6 +3399,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CampaignErrorReason {
     AFTER_MAXIMUM_ALLOWABLE_DATE,
     CANNOT_GO_BACK_TO_INCOMPLETE,
@@ -3330,6 +3432,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BudgetError : ApiError {
     private BudgetErrorReason reasonField;
 
@@ -3360,6 +3463,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BudgetError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum BudgetErrorReason {
     BUDGET_ERROR,
     BUDGET_PERIOD_NOT_AVAILABLE,
@@ -3380,6 +3484,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BiddingTransitionError : ApiError {
     private BiddingTransitionErrorReason reasonField;
 
@@ -3410,6 +3515,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BiddingTransitionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum BiddingTransitionErrorReason {
     BID_TO_POSITION_ENABLED,
     BIDDING_STRATEGY_NOT_AVAILABLE_FOR_ACCOUNT_TYPE,
@@ -3446,6 +3552,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BiddingError : ApiError {
     private BiddingErrorReason reasonField;
 
@@ -3476,6 +3583,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BiddingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum BiddingErrorReason {
     BID_AMOUNT_REQUIRED,
     BID_INCOMPATIBLE_WITH_ADGROUP,
@@ -3535,6 +3643,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AuthorizationError : ApiError {
     private AuthorizationErrorReason reasonField;
 
@@ -3565,6 +3674,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AuthorizationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AuthorizationErrorReason {
     UNABLE_TO_AUTHORIZE,
     NO_ADWORDS_ACCOUNT_FOR_CUSTOMER,
@@ -3579,6 +3689,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AuthenticationError : ApiError {
     private AuthenticationErrorReason reasonField;
 
@@ -3609,6 +3720,7 @@ CampaignOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AuthenticationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AuthenticationErrorReason {
     AUTHENTICATION_FAILED,
     CLIENT_CUSTOMER_ID_IS_REQUIRED,
@@ -3639,6 +3751,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ApplicationException {
     private string messageField;
 
@@ -3669,6 +3782,7 @@ CampaignOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ApiException : ApplicationException {
     private ApiError[] errorsField;
 
@@ -3692,6 +3806,7 @@ CampaignOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Target))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignTargetService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -3744,6 +3859,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignTargetReturnValue : ListReturnValue {
     private TargetList[] valueField;
 
@@ -3770,6 +3886,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class TargetList {
     private long campaignIdField;
 
@@ -3814,6 +3931,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PlatformTargetList : TargetList {
     private PlatformTarget[] targetsField;
 
@@ -3833,6 +3951,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PlatformTarget : Target {
     private PlatformType platformTypeField;
 
@@ -3863,6 +3982,7 @@ CampaignTargetOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum PlatformType {
     DESKTOP,
     HIGH_END_MOBILE,
@@ -3891,6 +4011,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class Target {
     private string targetTypeField;
 
@@ -3916,6 +4037,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class GeoTarget : Target {
     private bool excludedField;
 
@@ -3948,6 +4070,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ProximityTarget : GeoTarget {
     private GeoPoint geoPointField;
 
@@ -4052,6 +4175,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class GeoPoint {
     private string latitudeInMicroDegreesField;
 
@@ -4107,6 +4231,7 @@ CampaignTargetOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProximityTarget.DistanceUnits", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ProximityTargetDistanceUnits {
     KILOMETERS,
     MILES
@@ -4117,6 +4242,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Address {
     private string streetAddressField;
 
@@ -4201,6 +4327,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ProvinceTarget : GeoTarget {
     private string provinceCodeField;
 
@@ -4219,6 +4346,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PolygonTarget : GeoTarget {
     private GeoPoint[] verticesField;
 
@@ -4238,6 +4366,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MetroTarget : GeoTarget {
     private string metroCodeField;
 
@@ -4256,6 +4385,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CountryTarget : GeoTarget {
     private string countryCodeField;
 
@@ -4274,6 +4404,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CityTarget : GeoTarget {
     private string cityNameField;
 
@@ -4316,6 +4447,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class DemographicTarget : Target {
     private int bidModifierField;
 
@@ -4348,6 +4480,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class GenderTarget : DemographicTarget {
     private GenderTargetGender genderField;
 
@@ -4378,6 +4511,7 @@ CampaignTargetOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "GenderTarget.Gender", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum GenderTargetGender {
     MALE,
     FEMALE
@@ -4388,6 +4522,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AgeTarget : DemographicTarget {
     private AgeTargetAge ageField;
 
@@ -4418,6 +4553,7 @@ CampaignTargetOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AgeTarget.Age", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AgeTargetAge {
     AGE_0_17,
     AGE_18_24,
@@ -4433,6 +4569,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class NetworkTarget : Target {
     private NetworkCoverageType networkCoverageTypeField;
 
@@ -4463,6 +4600,7 @@ CampaignTargetOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum NetworkCoverageType {
     GOOGLE_SEARCH,
     SEARCH_NETWORK,
@@ -4479,6 +4617,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class MobileTarget : Target {
   }
 
@@ -4487,6 +4626,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MobilePlatformTarget : MobileTarget {
     private string platformNameField;
 
@@ -4505,6 +4645,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MobileCarrierTarget : MobileTarget {
     private string carrierNameField;
 
@@ -4534,6 +4675,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LanguageTarget : Target {
     private string languageCodeField;
 
@@ -4552,6 +4694,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdScheduleTarget : Target {
     private DayOfWeek dayOfWeekField;
 
@@ -4707,6 +4850,7 @@ CampaignTargetOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum DayOfWeek {
     MONDAY,
     TUESDAY,
@@ -4720,6 +4864,7 @@ CampaignTargetOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum MinuteOfHour {
     ZERO,
     FIFTEEN,
@@ -4732,6 +4877,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class NetworkTargetList : TargetList {
     private NetworkTarget[] targetsField;
 
@@ -4751,6 +4897,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MobileTargetList : TargetList {
     private MobileTarget[] targetsField;
 
@@ -4770,6 +4917,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LanguageTargetList : TargetList {
     private LanguageTarget[] targetsField;
 
@@ -4789,6 +4937,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class GeoTargetList : TargetList {
     private GeoTarget[] targetsField;
 
@@ -4808,6 +4957,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class DemographicTargetList : TargetList {
     private DemographicTarget[] targetsField;
 
@@ -4827,6 +4977,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdScheduleTargetList : TargetList {
     private AdScheduleTarget[] targetsField;
 
@@ -4846,6 +4997,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignTargetOperation : Operation {
     private TargetList operandField;
 
@@ -4864,6 +5016,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignTargetPage : Page {
     private TargetList[] entriesField;
 
@@ -4883,6 +5036,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignTargetSelector {
     private long[] campaignIdsField;
 
@@ -4913,6 +5067,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TargetError : ApiError {
     private TargetErrorReason reasonField;
 
@@ -4943,6 +5098,7 @@ CampaignTargetOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TargetError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum TargetErrorReason {
     AD_SCHEDULE_ADVANCED_INCOMPATIBLE_WITH_CONVERSION_OPTIMIZER,
     AD_SCHEDULE_BID_MULTIPLIER_MALFORMED,
@@ -5023,6 +5179,7 @@ CampaignTargetOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class RegionCodeError : ApiError {
     private RegionCodeErrorReason reasonField;
 
@@ -5053,6 +5210,7 @@ CampaignTargetOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RegionCodeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum RegionCodeErrorReason {
     INVALID_REGION_CODE
   }
@@ -5065,6 +5223,7 @@ CampaignTargetOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ExperimentService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -5117,6 +5276,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ExperimentReturnValue : ListReturnValue {
     private Experiment[] valueField;
 
@@ -5136,6 +5296,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Experiment {
     private long idField;
 
@@ -5346,6 +5507,7 @@ ExperimentOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ExperimentStatus {
     ACTIVE,
     DELETED,
@@ -5355,6 +5517,7 @@ ExperimentOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ExperimentServingStatus {
     RUNNING,
     PENDING,
@@ -5368,6 +5531,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ExperimentSummaryStats {
     private int adGroupsCountField;
 
@@ -5425,6 +5589,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ExperimentOperation : Operation {
     private Experiment operandField;
 
@@ -5443,6 +5608,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ExperimentPage : Page {
     private Experiment[] entriesField;
 
@@ -5462,6 +5628,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ExperimentSelector {
     private long[] experimentIdsField;
 
@@ -5518,6 +5685,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ExperimentServiceError : ApiError {
     private ExperimentServiceErrorReason reasonField;
 
@@ -5548,6 +5716,7 @@ ExperimentOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ExperimentServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ExperimentServiceErrorReason {
     AFTER_MAXIMUM_ALLOWABLE_DATE,
     AOL_PARTNER_CAMPAIGNS_CANT_RUN_EXPERIMENTS,
@@ -5572,6 +5741,7 @@ ExperimentOperation[] operations) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "GeoLocationServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class GeoLocationService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -5615,6 +5785,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class GeoLocation {
     private GeoPoint geoPointField;
 
@@ -5668,6 +5839,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class InvalidGeoLocation : GeoLocation {
   }
 
@@ -5676,6 +5848,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class GeoLocationSelector {
     private Address[] addressesField;
 
@@ -5706,6 +5879,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class GeoLocationError : ApiError {
     private GeoLocationErrorReason reasonField;
 
@@ -5736,6 +5910,7 @@ ExperimentOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "GeoLocationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum GeoLocationErrorReason {
     UNKNOWN
   }
@@ -5745,6 +5920,7 @@ ExperimentOperation[] operations) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "InfoServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/info/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class InfoService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -5787,6 +5963,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/info/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ApiUsageRecord {
     private string clientEmailField;
 
@@ -5830,6 +6007,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/info/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ApiUsageInfo {
     private ApiUsageRecord[] apiUsageRecordsField;
 
@@ -5874,6 +6052,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/info/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class InfoSelector {
     private string serviceNameField;
 
@@ -5974,6 +6153,7 @@ ExperimentOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/info/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ApiUsageType {
     FREE_USAGE_API_UNITS_PER_MONTH,
     TOTAL_USAGE_API_UNITS_PER_MONTH,
@@ -5988,6 +6168,7 @@ ExperimentOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/info/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ApiUsageError : ApiError {
     private ApiUsageErrorReason reasonField;
 
@@ -6018,6 +6199,7 @@ ExperimentOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ApiUsageError.Reason", Namespace = "https://adwords.google.com/api/adwords/info/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ApiUsageErrorReason {
     INVALID_DATE_RANGE,
     SERVICE_NAME_NOT_SPECIFIED,
@@ -6032,6 +6214,7 @@ ExperimentOperation[] operations) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "MediaServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MediaService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -6084,6 +6267,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Media_Size_StringMapEntry {
     private MediaSize keyField;
 
@@ -6125,6 +6309,7 @@ Media[] media) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Media.Size", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum MediaSize {
     FULL,
     SHRUNKEN,
@@ -6137,6 +6322,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Media_Size_DimensionsMapEntry {
     private MediaSize keyField;
 
@@ -6180,6 +6366,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Dimensions {
     private int widthField;
 
@@ -6240,6 +6427,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Media {
     private long mediaIdField;
 
@@ -6439,6 +6627,7 @@ Media[] media) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Media.MediaType", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum MediaMediaType {
     AUDIO,
     DYNAMIC_IMAGE,
@@ -6451,6 +6640,7 @@ Media[] media) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Media.MimeType", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum MediaMimeType {
     IMAGE_JPEG,
     IMAGE_GIF,
@@ -6470,6 +6660,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Video : Media {
     private long durationMillisField;
 
@@ -6571,6 +6762,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Image : Media {
     private byte[] dataField;
 
@@ -6590,6 +6782,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Audio : Media {
     private long durationMillisField;
 
@@ -6658,6 +6851,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MediaPage {
     private Media[] entriesField;
 
@@ -6702,6 +6896,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MediaSelector {
     private MediaMediaType mediaTypeField;
 
@@ -6804,6 +6999,7 @@ Media[] media) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Media.MediaExtendedCapabilityState", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum MediaMediaExtendedCapabilityState {
     UNKNOWN,
     SUPPORTED,
@@ -6818,6 +7014,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class VideoError : ApiError {
     private VideoErrorReason reasonField;
 
@@ -6848,6 +7045,7 @@ Media[] media) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum VideoErrorReason {
     INVALID_VIDEO,
     STORAGE_ERROR,
@@ -6868,6 +7066,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MediaError : ApiError {
     private MediaErrorReason reasonField;
 
@@ -6898,6 +7097,7 @@ Media[] media) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MediaError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum MediaErrorReason {
     CANNOT_ADD_STANDARD_ICON,
     DUPLICATE_MEDIA,
@@ -6925,6 +7125,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ImageError : ApiError {
     private ImageErrorReason reasonField;
 
@@ -6955,6 +7156,7 @@ Media[] media) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ImageError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ImageErrorReason {
     INVALID_IMAGE,
     STORAGE_ERROR,
@@ -6992,6 +7194,7 @@ Media[] media) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AudioError : ApiError {
     private AudioErrorReason reasonField;
 
@@ -7022,6 +7225,7 @@ Media[] media) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudioError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AudioErrorReason {
     INVALID_AUDIO,
     PROBLEM_READING_AUDIO_FILE,
@@ -7037,6 +7241,7 @@ Media[] media) {
   [System.Web.Services.WebServiceBindingAttribute(Name = "ReportDefinitionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ReportDefinitionService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -7098,6 +7303,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ReportDefinitionOperation : Operation {
     private ReportDefinition operandField;
 
@@ -7116,6 +7322,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ReportDefinition {
     private long idField;
 
@@ -7281,6 +7488,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Selector {
     private string[] fieldsField;
 
@@ -7323,6 +7531,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Predicate {
     private string fieldField;
 
@@ -7376,6 +7585,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Predicate.Operator", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum PredicateOperator {
     EQUALS,
     NOT_EQUALS,
@@ -7397,6 +7607,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportDefinition.ReportType", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ReportDefinitionReportType {
     KEYWORDS_PERFORMANCE_REPORT,
     AD_PERFORMANCE_REPORT,
@@ -7414,6 +7625,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportDefinition.DateRangeType", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ReportDefinitionDateRangeType {
     TODAY,
     YESTERDAY,
@@ -7431,6 +7643,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum DownloadFormat {
     CSVFOREXCEL,
     CSV,
@@ -7445,6 +7658,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ReportDefinitionField {
     private string fieldNameField;
 
@@ -7558,6 +7772,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ReportDefinitionPage {
     private ReportDefinition[] entriesField;
 
@@ -7602,6 +7817,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ReportDefinitionSelector {
     private Paging pagingField;
 
@@ -7620,6 +7836,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ReportDefinitionError : ApiError {
     private ReportDefinitionErrorReason reasonField;
 
@@ -7650,6 +7867,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportDefinitionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ReportDefinitionErrorReason {
     INVALID_FIELD_NAME_FOR_REPORT,
     UNABLE_TO_FIND_MAPPING_FOR_THIS_REPORT,
@@ -7665,6 +7883,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CollectionSizeError : ApiError {
     private CollectionSizeErrorReason reasonField;
 
@@ -7695,6 +7914,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CollectionSizeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CollectionSizeErrorReason {
     TOO_FEW,
     TOO_MANY
@@ -7707,6 +7927,7 @@ ReportDefinitionOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Criterion))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Target))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TargetingIdeaService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -7758,6 +7979,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Range {
     private ComparableValue minField;
 
@@ -7787,6 +8009,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class WebpageDescriptor {
     private string urlField;
 
@@ -7816,6 +8039,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MonthlySearchVolume {
     private int yearField;
 
@@ -7898,6 +8122,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class InStreamAdInfo {
     private int maxAdDurationField;
 
@@ -8055,6 +8280,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdFormatSpec {
     private SiteConstantsAdFormat formatField;
 
@@ -8085,6 +8311,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SiteConstants.AdFormat", Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum SiteConstantsAdFormat {
     UNKNOWN,
     TEXT,
@@ -8115,6 +8342,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class Attribute {
     private string attributeTypeField;
 
@@ -8134,6 +8362,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PlacementAttribute : Attribute {
     private Placement valueField;
 
@@ -8152,6 +8381,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Placement : Criterion {
     private string urlField;
 
@@ -8177,6 +8407,7 @@ ReportDefinitionOperation[] operations) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentLabel))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Criterion {
     private long idField;
 
@@ -8221,6 +8452,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Product : Criterion {
     private ProductCondition[] conditionsField;
 
@@ -8251,6 +8483,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ProductCondition {
     private string argumentField;
 
@@ -8280,6 +8513,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ProductConditionOperand {
     private string operandField;
 
@@ -8298,6 +8532,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Vertical : Criterion {
     private string[] pathField;
 
@@ -8317,6 +8552,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CriterionUserList : Criterion {
     private long userListIdField;
 
@@ -8408,6 +8644,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CriterionUserList.MembershipStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CriterionUserListMembershipStatus {
     OPEN,
     CLOSED
@@ -8418,6 +8655,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CriterionUserInterest : Criterion {
     private long userInterestIdField;
 
@@ -8461,6 +8699,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Keyword : Criterion {
     private string textField;
 
@@ -8502,6 +8741,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum KeywordMatchType {
     EXACT,
     PHRASE,
@@ -8513,6 +8753,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class KeywordAttribute : Attribute {
     private Keyword valueField;
 
@@ -8531,6 +8772,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LongRangeAttribute : Attribute {
     private Range valueField;
 
@@ -8549,6 +8791,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MoneyAttribute : Attribute {
     private Money valueField;
 
@@ -8567,6 +8810,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class WebpageDescriptorAttribute : Attribute {
     private WebpageDescriptor valueField;
 
@@ -8585,6 +8829,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class StringAttribute : Attribute {
     private string valueField;
 
@@ -8603,6 +8848,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PlacementTypeAttribute : Attribute {
     private SiteConstantsPlacementType valueField;
 
@@ -8633,6 +8879,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SiteConstants.PlacementType", Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum SiteConstantsPlacementType {
     UNKNOWN,
     SITE,
@@ -8648,6 +8895,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MonthlySearchVolumeAttribute : Attribute {
     private MonthlySearchVolume[] valueField;
 
@@ -8667,6 +8915,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LongAttribute : Attribute {
     private long valueField;
 
@@ -8699,6 +8948,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class IntegerSetAttribute : Attribute {
     private int[] valueField;
 
@@ -8718,6 +8968,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class IntegerAttribute : Attribute {
     private int valueField;
 
@@ -8750,6 +9001,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class InStreamAdInfoAttribute : Attribute {
     private InStreamAdInfo valueField;
 
@@ -8768,6 +9020,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class IdeaTypeAttribute : Attribute {
     private IdeaType valueField;
 
@@ -8798,6 +9051,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum IdeaType {
     KEYWORD,
     PLACEMENT
@@ -8808,6 +9062,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class DoubleAttribute : Attribute {
     private double valueField;
 
@@ -8840,6 +9095,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BooleanAttribute : Attribute {
     private bool valueField;
 
@@ -8872,6 +9128,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdFormatSpecListAttribute : Attribute {
     private AdFormatSpec[] valueField;
 
@@ -8891,6 +9148,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Type_AttributeMapEntry {
     private AttributeType keyField;
 
@@ -8932,6 +9190,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AttributeType {
     UNKNOWN,
     AD_SHARE,
@@ -8960,6 +9219,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TargetingIdea {
     private Type_AttributeMapEntry[] dataField;
 
@@ -8990,6 +9250,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TargetingIdeaPage {
     private int totalNumEntriesField;
 
@@ -9034,6 +9295,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LongComparisonOperation {
     private long minimumField;
 
@@ -9091,6 +9353,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class DoubleComparisonOperation {
     private double minimumField;
 
@@ -9166,6 +9429,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class SearchParameter {
     private string searchParameterTypeField;
 
@@ -9185,6 +9449,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class RelatedToKeywordSearchParameter : SearchParameter {
     private Keyword[] keywordsField;
 
@@ -9204,6 +9469,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ExcludedKeywordSearchParameter : SearchParameter {
     private Keyword[] keywordsField;
 
@@ -9223,6 +9489,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LanguageTargetSearchParameter : SearchParameter {
     private LanguageTarget[] languageTargetsField;
 
@@ -9242,6 +9509,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CountryTargetSearchParameter : SearchParameter {
     private CountryTarget[] countryTargetsField;
 
@@ -9261,6 +9529,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class GlobalMonthlySearchesSearchParameter : SearchParameter {
     private LongComparisonOperation operationField;
 
@@ -9279,6 +9548,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AverageTargetedMonthlySearchesSearchParameter : SearchParameter {
     private LongComparisonOperation operationField;
 
@@ -9297,6 +9567,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdShareSearchParameter : SearchParameter {
     private DoubleComparisonOperation operationField;
 
@@ -9315,6 +9586,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class SeedAdGroupIdSearchParameter : SearchParameter {
     private long adGroupIdField;
 
@@ -9347,6 +9619,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class SearchShareSearchParameter : SearchParameter {
     private DoubleComparisonOperation operationField;
 
@@ -9365,6 +9638,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class RelatedToUrlSearchParameter : SearchParameter {
     private string[] urlsField;
 
@@ -9409,6 +9683,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PlacementTypeSearchParameter : SearchParameter {
     private SiteConstantsPlacementType[] placementTypesField;
 
@@ -9428,6 +9703,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MobileSearchParameter : SearchParameter {
   }
 
@@ -9436,6 +9712,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class KeywordMatchTypeSearchParameter : SearchParameter {
     private KeywordMatchType[] keywordMatchTypesField;
 
@@ -9455,6 +9732,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class KeywordCategoryIdSearchParameter : SearchParameter {
     private int categoryIdField;
 
@@ -9487,6 +9765,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class IncludeAdultContentSearchParameter : SearchParameter {
   }
 
@@ -9495,6 +9774,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class IdeaTextMatchesSearchParameter : SearchParameter {
     private string[] includedField;
 
@@ -9549,6 +9829,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum MatchAction {
     INCLUDE,
     EXCLUDE
@@ -9559,6 +9840,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CompetitionSearchParameter : SearchParameter {
     private CompetitionSearchParameterLevel[] levelsField;
 
@@ -9576,6 +9858,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CompetitionSearchParameter.Level", Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CompetitionSearchParameterLevel {
     LOW,
     MEDIUM,
@@ -9587,6 +9870,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdTypeSearchParameter : SearchParameter {
     private SiteConstantsAdType[] adTypesField;
 
@@ -9604,6 +9888,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SiteConstants.AdType", Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum SiteConstantsAdType {
     UNKNOWN,
     TEXT,
@@ -9617,6 +9902,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TargetingIdeaSelector {
     private SearchParameter[] searchParametersField;
 
@@ -9729,6 +10015,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum RequestType {
     IDEAS,
     STATS
@@ -9739,6 +10026,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PolicyViolationError.Part", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PolicyViolationErrorPart {
     private int indexField;
 
@@ -9796,6 +10084,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PolicyViolationKey {
     private string policyNameField;
 
@@ -9827,6 +10116,7 @@ ReportDefinitionOperation[] operations) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdParamPolicyError))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PolicyViolationError : ApiError {
     private PolicyViolationKey keyField;
 
@@ -9915,6 +10205,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CriterionPolicyError : PolicyViolationError {
   }
 
@@ -9926,6 +10217,7 @@ ReportDefinitionOperation[] operations) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdCountLimitExceeded))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignCriterionLimitExceeded))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class EntityCountLimitExceeded : ApiError {
     private EntityCountLimitExceededReason reasonField;
 
@@ -9992,6 +10284,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityCountLimitExceeded.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum EntityCountLimitExceededReason {
     ACCOUNT_LIMIT,
     CAMPAIGN_LIMIT,
@@ -10006,6 +10299,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupCriterionLimitExceeded : EntityCountLimitExceeded {
     private AdGroupCriterionLimitExceededCriteriaLimitType limitTypeField;
 
@@ -10036,6 +10330,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupCriterionLimitExceeded.CriteriaLimitType", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdGroupCriterionLimitExceededCriteriaLimitType {
     ADGROUP_KEYWORD,
     ADGROUP_WEBSITE
@@ -10046,6 +10341,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupCriterionError : ApiError {
     private AdGroupCriterionErrorReason reasonField;
 
@@ -10076,6 +10372,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupCriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdGroupCriterionErrorReason {
     INVALID_ID_FILTER_TYPE,
     ID_FILTERS_HAVE_DIFF_FIELDS_SET,
@@ -10109,6 +10406,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TargetingIdeaError : ApiError {
     private TargetingIdeaErrorReason reasonField;
 
@@ -10139,6 +10437,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TargetingIdeaError.Reason", Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum TargetingIdeaErrorReason {
     DUPLICATE_SEARCH_FILTER_TYPES_PRESENT,
     INSUFFICIENT_SEARCH_PARAMETERS,
@@ -10156,6 +10455,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MatchesRegexError : ApiError {
     private MatchesRegexErrorReason reasonField;
 
@@ -10186,6 +10486,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MatchesRegexError.Reason", Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum MatchesRegexErrorReason {
     UNKNOWN,
     DOES_NOT_MATCH
@@ -10200,6 +10501,7 @@ ReportDefinitionOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Criterion))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(EstimateRequest))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TrafficEstimatorService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -10242,6 +10544,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class StatsEstimate {
     private Money averageCpcField;
 
@@ -10324,6 +10627,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Estimate {
     private string estimateTypeField;
 
@@ -10343,6 +10647,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignEstimate : Estimate {
     private long campaignIdField;
 
@@ -10387,6 +10692,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupEstimate : Estimate {
     private long adGroupIdField;
 
@@ -10431,6 +10737,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class KeywordEstimate : Estimate {
     private long criterionIdField;
 
@@ -10485,6 +10792,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TrafficEstimatorResult {
     private CampaignEstimate[] campaignEstimatesField;
 
@@ -10518,6 +10826,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class EstimateRequest {
     private string estimateRequestTypeField;
 
@@ -10537,6 +10846,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignEstimateRequest : EstimateRequest {
     private long campaignIdField;
 
@@ -10593,6 +10903,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupEstimateRequest : EstimateRequest {
     private long adGroupIdField;
 
@@ -10648,6 +10959,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class KeywordEstimateRequest : EstimateRequest {
     private Keyword keywordField;
 
@@ -10677,6 +10989,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TrafficEstimatorSelector {
     private CampaignEstimateRequest[] campaignEstimateRequestsField;
 
@@ -10707,6 +11020,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class IdError : ApiError {
     private IdErrorReason reasonField;
 
@@ -10737,6 +11051,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "IdError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum IdErrorReason {
     NOT_FOUND
   }
@@ -10746,6 +11061,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class EntityAccessDenied : ApiError {
     private EntityAccessDeniedReason reasonField;
 
@@ -10776,6 +11092,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityAccessDenied.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum EntityAccessDeniedReason {
     READ_ACCESS_DENIED,
     WRITE_ACCESS_DENIED
@@ -10786,6 +11103,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TrafficEstimatorError : ApiError {
     private TrafficEstimatorErrorReason reasonField;
 
@@ -10816,6 +11134,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TrafficEstimatorError.Reason", Namespace = "https://adwords.google.com/api/adwords/o/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum TrafficEstimatorErrorReason {
     NO_CAMPAIGN_FOR_AD_GROUP_ESTIMATE_REQUEST,
     NO_AD_GROUP_FOR_KEYWORD_ESTIMATE_REQUEST,
@@ -10831,6 +11150,7 @@ ReportDefinitionOperation[] operations) {
   [System.Web.Services.WebServiceBindingAttribute(Name = "AlertServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AlertService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -10873,6 +11193,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Detail {
     private string triggerTimeField;
 
@@ -10891,6 +11212,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Alert {
     private AlertSeverity alertSeverityField;
 
@@ -10983,6 +11305,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AlertSeverity {
     GREEN,
     YELLOW,
@@ -10993,6 +11316,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AlertType {
     ACCOUNT_ON_TARGET,
     DECLINED_PAYMENT,
@@ -11020,6 +11344,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class NoStatsPage : Page {
   }
 
@@ -11028,6 +11353,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AlertPage : NoStatsPage {
     private Alert[] entriesField;
 
@@ -11047,6 +11373,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AlertQuery {
     private ClientSpec clientSpecField;
 
@@ -11163,6 +11490,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ClientSpec {
     ALL,
     DIRECT,
@@ -11173,6 +11501,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum FilterSpec {
     ALL,
     ONLY_SUBMANAGERS,
@@ -11183,6 +11512,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum TriggerTimeSpec {
     ALL_TIME,
     LAST_24_HOURS,
@@ -11194,6 +11524,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AlertSelector {
     private AlertQuery queryField;
 
@@ -11223,6 +11554,7 @@ ReportDefinitionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AlertError : ApiError {
     private AlertErrorReason reasonField;
 
@@ -11253,6 +11585,7 @@ ReportDefinitionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AlertError.Reason", Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AlertErrorReason {
     NO_CLIENT_IDS_SELECTED,
     INVALID_CLIENT_ID_SELECTED,
@@ -11271,6 +11604,7 @@ ReportDefinitionOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Stats))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdExtensionOverrideService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -11323,6 +11657,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdExtensionOverrideReturnValue : ListReturnValue {
     private AdExtensionOverride[] valueField;
 
@@ -11342,6 +11677,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdExtensionOverride {
     private long adIdField;
 
@@ -11462,6 +11798,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdExtension {
     private long idField;
 
@@ -11506,6 +11843,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LocationSyncExtension : AdExtension {
     private string emailField;
 
@@ -11585,6 +11923,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ProductExtension : AdExtension {
     private int googleBaseCustomerIdField;
 
@@ -11640,6 +11979,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ProductConditionAndGroup {
     private ProductCondition[] conditionsField;
 
@@ -11670,6 +12010,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class SitelinksExtension : AdExtension {
     private Sitelink[] sitelinksField;
 
@@ -11689,6 +12030,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Sitelink {
     private string displayTextField;
 
@@ -11718,6 +12060,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MobileExtension : AdExtension {
     private string phoneNumberField;
 
@@ -11747,6 +12090,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LocationExtension : AdExtension {
     private Address addressField;
 
@@ -11883,6 +12227,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LocationExtension.Source", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum LocationExtensionSource {
     ADWORDS_FRONTEND,
     LBC_SYNC
@@ -11893,6 +12238,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class OverrideInfo {
     private LocationOverrideInfo itemField;
 
@@ -11912,6 +12258,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LocationOverrideInfo {
     private int radiusField;
 
@@ -11967,6 +12314,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LocationOverrideInfo.RadiusUnits", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum LocationOverrideInfoRadiusUnits {
     KILOMETERS,
     MILES
@@ -11975,6 +12323,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdExtensionOverride.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdExtensionOverrideStatus {
     ACTIVE,
     DELETED
@@ -11983,6 +12332,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdExtensionOverride.ApprovalStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdExtensionOverrideApprovalStatus {
     APPROVED,
     UNCHECKED,
@@ -11994,6 +12344,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdExtensionOverrideStats : Stats {
   }
 
@@ -12002,6 +12353,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdExtensionOverrideOperation : Operation {
     private AdExtensionOverride operandField;
 
@@ -12020,6 +12372,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdExtensionOverridePage : Page {
     private AdExtensionOverride[] entriesField;
 
@@ -12039,6 +12392,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdExtensionOverrideSelector {
     private long[] campaignIdsField;
 
@@ -12105,6 +12459,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdExtensionOverrideError : ApiError {
     private AdExtensionOverrideErrorReason reasonField;
 
@@ -12135,6 +12490,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdExtensionOverrideError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdExtensionOverrideErrorReason {
     AD_ALREADY_HAS_ADEXTENSION_OVERRIDE,
     ADEXTENSION_ID_MUST_BE_SPECIFIED,
@@ -12157,6 +12513,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ServicedAccountServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ServicedAccountService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -12199,6 +12556,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CustomerId {
     private long idField;
 
@@ -12231,6 +12589,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Link {
     private CustomerId managerIdField;
 
@@ -12331,6 +12690,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ServiceType {
     UI_AND_API,
     API_ONLY,
@@ -12340,6 +12700,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum LinkType {
     ESTABLISHED,
     INVITATION,
@@ -12351,6 +12712,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Account {
     private long customerIdField;
 
@@ -12430,6 +12792,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ServicedAccountGraph {
     private Account[] accountsField;
 
@@ -12461,6 +12824,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ServicedAccountSelector {
     private long[] customerIdsField;
 
@@ -12542,6 +12906,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ServicedAccountError : ApiError {
     private ServicedAccountErrorReason reasonField;
 
@@ -12572,6 +12937,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ServicedAccountError.Reason", Namespace = "https://adwords.google.com/api/adwords/mcm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ServicedAccountErrorReason {
     BAD_IDS,
     NOT_AUTHORIZED,
@@ -12583,6 +12949,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CustomerSyncServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CustomerSyncService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -12625,6 +12992,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupChangeData {
     private long adGroupIdField;
 
@@ -12716,6 +13084,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ChangeStatus {
     FIELDS_UNCHANGED,
     FIELDS_CHANGED,
@@ -12727,6 +13096,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignChangeData {
     private long campaignIdField;
 
@@ -12869,6 +13239,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CustomerChangeData {
     private CampaignChangeData[] changedCampaignsField;
 
@@ -12899,6 +13270,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class DateTimeRange {
     private string minField;
 
@@ -12928,6 +13300,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CustomerSyncSelector {
     private DateTimeRange dateTimeRangeField;
 
@@ -12958,6 +13331,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CustomerSyncError : ApiError {
     private CustomerSyncErrorReason reasonField;
 
@@ -13013,6 +13387,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomerSyncError.Reason", Namespace = "https://adwords.google.com/api/adwords/ch/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CustomerSyncErrorReason {
     INVALID_CAMPAIGN_ID,
     INVALID_DATE_RANGE,
@@ -13027,6 +13402,7 @@ AdExtensionOverrideOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class UserListService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -13079,6 +13455,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class UserListReturnValue : ListReturnValue {
     private UserList[] valueField;
 
@@ -13101,6 +13478,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class UserList {
     private long idField;
 
@@ -13315,6 +13693,7 @@ UserListOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum UserListMembershipStatus {
     OPEN,
     CLOSED
@@ -13323,6 +13702,7 @@ UserListOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum SizeRange {
     LESS_THAN_FIVE_HUNDRED,
     LESS_THAN_ONE_THOUSAND,
@@ -13345,6 +13725,7 @@ UserListOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserList.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum UserListType {
     EXTERNAL_REMARKETING,
     LOGICAL,
@@ -13357,6 +13738,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class RemarketingUserList : UserList {
     private UserListConversionType[] conversionTypesField;
 
@@ -13376,6 +13758,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class UserListConversionType {
     private long idField;
 
@@ -13442,6 +13825,7 @@ UserListOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListConversionType.Category", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum UserListConversionTypeCategory {
     BOOMERANG_EVENT,
     OTHER
@@ -13452,6 +13836,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LogicalUserList : UserList {
     private UserListLogicalRule[] rulesField;
 
@@ -13471,6 +13856,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class UserListLogicalRule {
     private UserListLogicalRuleOperator operatorField;
 
@@ -13513,6 +13899,7 @@ UserListOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListLogicalRule.Operator", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum UserListLogicalRuleOperator {
     ALL,
     ANY,
@@ -13525,6 +13912,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LogicalUserListOperand {
     private object itemField;
 
@@ -13545,6 +13933,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class UserInterest {
     private long idField;
 
@@ -13613,6 +14002,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ExternalRemarketingUserList : UserList {
   }
 
@@ -13621,6 +14011,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class UserListOperation : Operation {
     private UserList operandField;
 
@@ -13639,6 +14030,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class UserListPage : Page {
     private UserList[] entriesField;
 
@@ -13658,6 +14050,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class UserListSelector {
     private long[] userListIdsField;
 
@@ -13737,6 +14130,7 @@ UserListOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class UserListError : ApiError {
     private UserListErrorReason reasonField;
 
@@ -13767,6 +14161,7 @@ UserListOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum UserListErrorReason {
     EXTERNAL_REMARKETING_USER_LIST_MUTATE_NOT_SUPPORTED,
     CONCRETE_TYPE_REQUIRED,
@@ -13797,6 +14192,7 @@ UserListOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(StatsSelector))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupAdService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -13849,6 +14245,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupAdReturnValue : ListReturnValue {
     private AdGroupAd[] valueField;
 
@@ -13868,6 +14265,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupAd {
     private long adGroupIdField;
 
@@ -13957,6 +14355,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Ad {
     private long idField;
 
@@ -14083,6 +14482,7 @@ AdGroupAdOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Ad.ApprovalStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdApprovalStatus {
     APPROVED,
     FAMILY_SAFE,
@@ -14097,6 +14497,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TemplateAd : Ad {
     private long templateIdField;
 
@@ -14200,6 +14601,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdUnionId {
     private long idField;
 
@@ -14244,6 +14646,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TempAdUnionId : AdUnionId {
   }
 
@@ -14252,6 +14655,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TemplateElement {
     private string uniqueNameField;
 
@@ -14282,6 +14686,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TemplateElementField {
     private string nameField;
 
@@ -14345,6 +14750,7 @@ AdGroupAdOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TemplateElementField.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum TemplateElementFieldType {
     ADDRESS,
     AUDIO,
@@ -14361,6 +14767,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LocalBusinessAd : Ad {
     private string fullBusinessNameField;
 
@@ -14522,6 +14929,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ImageAd : Ad {
     private Image imageField;
 
@@ -14577,6 +14985,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class RichMediaAd : Ad {
     private string nameField;
 
@@ -14653,6 +15062,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ThirdPartyRedirectAd : RichMediaAd {
     private bool isCookieTargetedField;
 
@@ -14745,6 +15155,7 @@ AdGroupAdOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum VideoType {
     ADOBE,
     REALPLAYER,
@@ -14757,6 +15168,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MobileImageAd : Ad {
     private MarkupLanguageType[] markupLanguagesField;
 
@@ -14797,6 +15209,7 @@ AdGroupAdOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum MarkupLanguageType {
     HTML,
     CHTML,
@@ -14809,6 +15222,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class TextAd : Ad {
     private string headlineField;
 
@@ -14849,6 +15263,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ProductAd : Ad {
     private string promotionLineField;
 
@@ -14867,6 +15282,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class MobileAd : Ad {
     private string headlineField;
 
@@ -14953,6 +15369,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class DeprecatedAd : Ad {
     private string nameField;
 
@@ -14994,6 +15411,7 @@ AdGroupAdOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DeprecatedAd.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum DeprecatedAdType {
     VIDEO,
     CLICK_TO_CALL,
@@ -15011,6 +15429,7 @@ AdGroupAdOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupAd.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdGroupAdStatus {
     ENABLED,
     PAUSED,
@@ -15022,6 +15441,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdStats : Stats {
     private double percentServedField;
 
@@ -15054,6 +15474,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ExemptionRequest {
     private PolicyViolationKey keyField;
 
@@ -15072,6 +15493,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupAdOperation : Operation {
     private AdGroupAd operandField;
 
@@ -15102,6 +15524,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupAdPage : Page {
     private AdGroupAd[] entriesField;
 
@@ -15121,6 +15544,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdStatsSelector : StatsSelector {
   }
 
@@ -15129,6 +15553,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupAdSelector {
     private long[] campaignIdsField;
 
@@ -15206,6 +15631,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PagingError : ApiError {
     private PagingErrorReason reasonField;
 
@@ -15236,6 +15662,7 @@ AdGroupAdOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PagingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum PagingErrorReason {
     START_INDEX_CANNOT_BE_NEGATIVE,
     NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE,
@@ -15247,6 +15674,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupAdCountLimitExceeded : EntityCountLimitExceeded {
   }
 
@@ -15255,6 +15683,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupAdError : ApiError {
     private AdGroupAdErrorReason reasonField;
 
@@ -15285,6 +15714,7 @@ AdGroupAdOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupAdError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdGroupAdErrorReason {
     AD_NOT_UNDER_ADGROUP,
     CANNOT_OPERATE_ON_DELETED_ADGROUPAD,
@@ -15299,6 +15729,7 @@ AdGroupAdOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdError : ApiError {
     private AdErrorReason reasonField;
 
@@ -15329,6 +15760,7 @@ AdGroupAdOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdErrorReason {
     APPROXIMATELY_TOO_LONG,
     APPROXIMATELY_TOO_SHORT,
@@ -15424,6 +15856,7 @@ AdGroupAdOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupCriterionService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -15476,6 +15909,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupCriterionReturnValue : ListReturnValue {
     private AdGroupCriterion[] valueField;
 
@@ -15509,6 +15943,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupCriterion {
     private long adGroupIdField;
 
@@ -15564,6 +15999,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BiddableAdGroupCriterion : AdGroupCriterion {
     private UserStatus userStatusField;
 
@@ -15710,6 +16146,7 @@ AdGroupCriterionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum UserStatus {
     ACTIVE,
     DELETED,
@@ -15719,6 +16156,7 @@ AdGroupCriterionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum SystemServingStatus {
     ELIGIBLE,
     RARELY_SERVED
@@ -15727,6 +16165,7 @@ AdGroupCriterionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ApprovalStatus {
     APPROVED,
     PENDING_REVIEW,
@@ -15744,6 +16183,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class AdGroupCriterionBids {
     private string adGroupCriterionBidsTypeField;
 
@@ -15763,6 +16203,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ManualCPCAdGroupCriterionBids : AdGroupCriterionBids {
     private Bid maxCpcField;
 
@@ -15840,6 +16281,7 @@ AdGroupCriterionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum BidSource {
     ADGROUP,
     CRITERION
@@ -15850,6 +16292,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PositionPreferenceAdGroupCriterionBids {
     private Bid proxyMaxCpcField;
 
@@ -15918,6 +16361,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ManualCPMAdGroupCriterionBids : AdGroupCriterionBids {
     private Bid maxCpmField;
 
@@ -15961,6 +16405,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BudgetOptimizerAdGroupCriterionBids : AdGroupCriterionBids {
     private Bid proxyBidField;
 
@@ -16004,6 +16449,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class PercentCPAAdGroupCriterionBids : AdGroupCriterionBids {
     private int percentCpaField;
 
@@ -16061,6 +16507,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ConversionOptimizerAdGroupCriterionBids : AdGroupCriterionBids {
   }
 
@@ -16069,6 +16516,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BiddableAdGroupCriterionExperimentData {
     private long experimentIdField;
 
@@ -16160,6 +16608,7 @@ AdGroupCriterionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ExperimentDeltaStatus {
     EXPERIMENT_ONLY,
     MODIFIED,
@@ -16170,6 +16619,7 @@ AdGroupCriterionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ExperimentDataStatus {
     ACTIVE,
     DELETED,
@@ -16182,6 +16632,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class AdGroupCriterionExperimentBidMultiplier {
     private string adGroupCriterionExperimentBidMultiplierTypeField;
 
@@ -16201,6 +16652,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ManualCPCAdGroupCriterionExperimentBidMultiplier : AdGroupCriterionExperimentBidMultiplier {
     private BidMultiplier maxCpcMultiplierField;
 
@@ -16244,6 +16696,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BidMultiplier {
     private double multiplierField;
 
@@ -16285,6 +16738,7 @@ AdGroupCriterionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum MultiplierSource {
     ADGROUP,
     CRITERION,
@@ -16296,6 +16750,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class QualityInfo {
     private bool isKeywordAdRelevanceAcceptableField;
 
@@ -16403,6 +16858,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class NegativeAdGroupCriterion : AdGroupCriterion {
   }
 
@@ -16411,6 +16867,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupCriterionOperation : Operation {
     private AdGroupCriterion operandField;
 
@@ -16441,6 +16898,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupCriterionPage : Page {
     private AdGroupCriterion[] entriesField;
 
@@ -16460,6 +16918,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupCriterionIdFilter {
     private long campaignIdField;
 
@@ -16542,6 +17001,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupCriterionSelector {
     private AdGroupCriterionIdFilter[] idFiltersField;
 
@@ -16643,6 +17103,7 @@ AdGroupCriterionOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CriterionUse {
     BIDDABLE,
     NEGATIVE
@@ -16657,6 +17118,7 @@ AdGroupCriterionOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -16709,6 +17171,7 @@ AdGroupOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupReturnValue : ListReturnValue {
     private AdGroup[] valueField;
 
@@ -16728,6 +17191,7 @@ AdGroupOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroup {
     private long idField;
 
@@ -16863,6 +17327,7 @@ AdGroupOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroup.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdGroupStatus {
     ENABLED,
     PAUSED,
@@ -16874,6 +17339,7 @@ AdGroupOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupExperimentData {
     private long experimentIdField;
 
@@ -16969,6 +17435,7 @@ AdGroupOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class AdGroupExperimentBidMultipliers {
     private string adGroupExperimentBidMultipliersTypeField;
 
@@ -16988,6 +17455,7 @@ AdGroupOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ManualCPMAdGroupExperimentBidMultipliers : AdGroupExperimentBidMultipliers {
     private BidMultiplier maxCpmMultiplierField;
 
@@ -17006,6 +17474,7 @@ AdGroupOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ManualCPCAdGroupExperimentBidMultipliers : AdGroupExperimentBidMultipliers {
     private BidMultiplier maxCpcMultiplierField;
 
@@ -17035,6 +17504,7 @@ AdGroupOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupOperation : Operation {
     private AdGroup operandField;
 
@@ -17053,6 +17523,7 @@ AdGroupOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupPage : Page {
     private AdGroup[] entriesField;
 
@@ -17072,6 +17543,7 @@ AdGroupOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupSelector {
     private long[] campaignIdsField;
 
@@ -17162,6 +17634,7 @@ AdGroupOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupServiceError : ApiError {
     private AdGroupServiceErrorReason reasonField;
 
@@ -17217,6 +17690,7 @@ AdGroupOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdGroupServiceErrorReason {
     ADGROUP_CAMPAIGN_MISMATCH,
     DUPLICATE_ADGROUP_NAME,
@@ -17259,6 +17733,7 @@ AdGroupOperation[] operations) {
   [System.Web.Services.WebServiceBindingAttribute(Name = "AdParamServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdParamService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -17311,6 +17786,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdParamOperation : Operation {
     private AdParam operandField;
 
@@ -17329,6 +17805,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdParam {
     private long adGroupIdField;
 
@@ -17422,6 +17899,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdParamPage {
     private AdParam[] entriesField;
 
@@ -17466,6 +17944,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdParamSelector {
     private long[] adGroupIdsField;
 
@@ -17508,6 +17987,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdParamPolicyError : PolicyViolationError {
   }
 
@@ -17516,6 +17996,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdParamError : ApiError {
     private AdParamErrorReason reasonField;
 
@@ -17546,6 +18027,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdParamError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdParamErrorReason {
     AD_PARAM_CANNOT_BE_SPECIFIED_MULTIPLE_TIMES,
     AD_PARAM_DOES_NOT_EXIST,
@@ -17562,6 +18044,7 @@ AdParamOperation[] operations) {
   [System.Web.Services.WebServiceBindingAttribute(Name = "BidLandscapeServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BidLandscapeService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -17604,6 +18087,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BidLandscape.LandscapePoint", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BidLandscapeLandscapePoint {
     private Money bidField;
 
@@ -17696,6 +18180,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class BidLandscape {
     private long campaignIdField;
 
@@ -17799,6 +18284,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CriterionBidLandscape : BidLandscape {
     private long criterionIdField;
 
@@ -17831,6 +18317,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupBidLandscape : BidLandscape {
     private AdGroupBidLandscapeType typeField;
 
@@ -17886,6 +18373,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupBidLandscape.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdGroupBidLandscapeType {
     UNIFORM,
     DEFAULT,
@@ -17897,6 +18385,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BidLandscapeIdFilter {
     private long campaignIdField;
 
@@ -17981,6 +18470,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class BidLandscapeSelector {
     private BidLandscapeIdFilter[] idFiltersField;
 
@@ -18012,6 +18502,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CriterionBidLandscapeSelector : BidLandscapeSelector {
   }
 
@@ -18020,6 +18511,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdGroupBidLandscapeSelector : BidLandscapeSelector {
   }
 
@@ -18028,6 +18520,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BidLandscapeServiceError : ApiError {
     private BidLandscapeServiceErrorReason reasonField;
 
@@ -18058,6 +18551,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BidLandscapeServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum BidLandscapeServiceErrorReason {
     ID_FILTERS_HAVE_DIFF_FIELDS_SET,
     INVALID_ID_FILTER_TYPE,
@@ -18072,6 +18566,7 @@ AdParamOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(JobSelector))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BulkMutateJobService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -18123,6 +18618,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class Operand {
     private object itemField;
 
@@ -18153,6 +18649,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignAdExtensionStats : Stats {
   }
 
@@ -18161,6 +18658,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ContentLabel : Criterion {
     private ContentLabelType contentLabelTypeField;
 
@@ -18191,6 +18689,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum ContentLabelType {
     ADULTISH,
     AFE,
@@ -18215,6 +18714,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignAdExtension {
     private long campaignIdField;
 
@@ -18317,6 +18817,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignAdExtension.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CampaignAdExtensionStatus {
     ACTIVE,
     DELETED
@@ -18325,6 +18826,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignAdExtension.ApprovalStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CampaignAdExtensionApprovalStatus {
     APPROVED,
     UNCHECKED,
@@ -18337,6 +18839,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignCriterion {
     private long campaignIdField;
 
@@ -18392,6 +18895,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class NegativeCampaignCriterion : CampaignCriterion {
   }
 
@@ -18401,6 +18905,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class Job {
     private string customerJobKeyField;
 
@@ -18475,6 +18980,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class JobContext {
     private string authenticatedUserEmailField;
 
@@ -18518,6 +19024,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ApiErrorReason {
     private object itemField;
 
@@ -18583,6 +19090,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdExtensionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum AdExtensionErrorReason {
     ACCOUNT_DELETED,
     AD_EXTENSION_NO_LONGER_ACTIVE,
@@ -18632,6 +19140,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BulkMutateJobError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum BulkMutateJobErrorReason {
     CAN_RETURN_RESULT_FOR_ONLY_COMPLETED_JOBS,
     CAN_RETURN_RESULT_FOR_ONLY_ONE_JOB,
@@ -18653,6 +19162,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignAdExtensionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CampaignAdExtensionErrorReason {
     ADEXTENSION_NOT_UNDER_CAMPAIGN,
     CANNOT_ADD_DELETED_CAMPAIGN_ADEXTENSION,
@@ -18667,6 +19177,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignCriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CampaignCriterionErrorReason {
     CRITERIA_QUOTA_EXCEEDED,
     CONCRETE_TYPE_REQUIRED,
@@ -18683,6 +19194,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "JobError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum JobErrorReason {
     DUPLICATE_JOB_KEY_FOR_CUSTOMER,
     JOB_TYPE_NOT_SUPPORTED,
@@ -18699,6 +19211,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PolicyViolationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum PolicyViolationErrorReason {
     POLICY_ERROR
   }
@@ -18706,6 +19219,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "QuotaExceededError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum QuotaExceededErrorReason {
     QUOTA_EXCEEDED
   }
@@ -18716,6 +19230,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class JobStats {
     private int progressPercentField;
 
@@ -18810,6 +19325,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BulkMutateJobStats : JobStats {
     private int numOperationsField;
 
@@ -18892,6 +19408,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BillingSummary {
     private int numOperationsField;
 
@@ -18949,6 +19466,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BulkMutateJob : Job {
     private long idField;
 
@@ -19101,6 +19619,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BulkMutateJobPolicy {
     private long[] prerequisiteJobIdsField;
 
@@ -19131,6 +19650,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BulkMutateRequest {
     private int partIndexField;
 
@@ -19175,6 +19695,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class OperationStream {
     private EntityId scopingEntityIdField;
 
@@ -19205,6 +19726,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class EntityId {
     private EntityIdType typeField;
 
@@ -19260,6 +19782,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityId.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum EntityIdType {
     ADGROUP_ID,
     AD_ID,
@@ -19272,6 +19795,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class JobOperation : Operation {
     private Job operandField;
 
@@ -19290,6 +19814,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignCriterionOperation : Operation {
     private CampaignCriterion operandField;
 
@@ -19308,6 +19833,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignAdExtensionOperation : Operation {
     private CampaignAdExtension operandField;
 
@@ -19324,6 +19850,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum BasicJobStatus {
     COMPLETED,
     PROCESSING,
@@ -19336,6 +19863,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BulkMutateJobEvent : JobEvent {
     private BasicJobStatus statusField;
 
@@ -19369,6 +19897,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class JobEvent {
     private string dateTimeField;
 
@@ -19399,6 +19928,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BulkMutateResult {
     private int partIndexField;
 
@@ -19443,6 +19973,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class OperationStreamResult {
     private OperationResult[] operationResultsField;
 
@@ -19478,6 +20009,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class OperationResult {
     private string operationResultTypeField;
 
@@ -19497,6 +20029,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class UnprocessedResult : OperationResult {
   }
 
@@ -19505,6 +20038,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class ReturnValueResult : OperationResult {
     private Operand returnValueField;
 
@@ -19523,6 +20057,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class LostResult : OperationResult {
   }
 
@@ -19531,6 +20066,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class FailureResult : OperationResult {
     private ApiException causeField;
 
@@ -19549,6 +20085,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class JobError : ApiError {
     private JobErrorReason reasonField;
 
@@ -19581,6 +20118,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignCriterionLimitExceeded : EntityCountLimitExceeded {
     private CampaignCriterionLimitExceededCriteriaLimitType limitTypeField;
 
@@ -19611,6 +20149,7 @@ AdParamOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignCriterionLimitExceeded.CriteriaLimitType", Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public enum CampaignCriterionLimitExceededCriteriaLimitType {
     CAMPAIGN_NEGATIVE_KEYWORD,
     CAMPAIGN_NEGATIVE_WEBSITE
@@ -19621,6 +20160,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignCriterionError : ApiError {
     private CampaignCriterionErrorReason reasonField;
 
@@ -19653,6 +20193,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignAdExtensionError : ApiError {
     private CampaignAdExtensionErrorReason reasonField;
 
@@ -19685,6 +20226,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BulkMutateJobError : ApiError {
     private BulkMutateJobErrorReason reasonField;
 
@@ -19717,6 +20259,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class AdExtensionError : ApiError {
     private AdExtensionErrorReason reasonField;
 
@@ -19749,6 +20292,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BatchFailureResult : OperationResult {
     private int operationIndexInBatchField;
 
@@ -19782,6 +20326,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public abstract partial class JobSelector {
     private string[] customerJobKeysField;
 
@@ -19888,6 +20433,7 @@ AdParamOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class BulkMutateJobSelector : JobSelector {
     private long[] jobIdsField;
 
@@ -19950,6 +20496,7 @@ AdParamOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(StatsSelector))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignAdExtensionService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -20002,6 +20549,7 @@ CampaignAdExtensionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignAdExtensionReturnValue : ListReturnValue {
     private CampaignAdExtension[] valueField;
 
@@ -20021,6 +20569,7 @@ CampaignAdExtensionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignAdExtensionPage : Page {
     private CampaignAdExtension[] entriesField;
 
@@ -20040,6 +20589,7 @@ CampaignAdExtensionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignAdExtensionStatsSelector : StatsSelector {
   }
 
@@ -20048,6 +20598,7 @@ CampaignAdExtensionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignAdExtensionSelector {
     private CampaignAdExtensionStatsSelector statsSelectorField;
 
@@ -20116,6 +20667,7 @@ CampaignAdExtensionOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignCriterionService : AdWordsSoapClient {
     private RequestHeader requestHeaderField;
 
@@ -20168,6 +20720,7 @@ CampaignCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignCriterionReturnValue : ListReturnValue {
     private CampaignCriterion[] valueField;
 
@@ -20187,6 +20740,7 @@ CampaignCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignCriterionPage : Page {
     private CampaignCriterion[] entriesField;
 
@@ -20206,6 +20760,7 @@ CampaignCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignCriterionIdFilter {
     private long campaignIdField;
 
@@ -20263,6 +20818,7 @@ CampaignCriterionOperation[] operations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201008")]
+  [Obsolete("This API version is deprecated; use v201109 version of API instead.")]
   public partial class CampaignCriterionSelector {
     private CampaignCriterionIdFilter[] idFiltersField;
     private Paging pagingField;
@@ -20285,3 +20841,5 @@ CampaignCriterionOperation[] operations) {
     }
   }
 }
+
+#pragma warning restore 1591

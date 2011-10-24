@@ -90,8 +90,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v200909 {
       imageAd.url = "http://www.example.com";
 
       imageAd.image = new Image();
-      imageAd.image.data = MediaUtilities.GetAssetDataFromUrl(
-          "https://sandbox.google.com/sandboximages/image.jpg");
+      imageAd.image.data = MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L");
 
       // Set the AdGroup Id.
       AdGroupAd imageAdGroupAd = new AdGroupAd();
@@ -120,8 +119,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v200909 {
 
       image.mediaTypeDb = MediaMediaType.IMAGE;
       image.name = "Starting Image";
-      image.data = MediaUtilities.GetAssetDataFromUrl(
-          "https://sandbox.google.com/sandboximages/image.jpg");
+      image.data = MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L");
       imageField.fieldMedia = image;
 
       // Create the template field "displayUrlColor".

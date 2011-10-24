@@ -15,7 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201101;
+using Google.Api.Ads.AdWords.v201109;
 using Google.Api.Ads.Common.OAuth.Lib;
 
 using System;
@@ -63,7 +63,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     /// the event data.</param>
     protected void OnGetCampaignsButtonClick(object sender, EventArgs e) {
       CampaignService service =
-          (CampaignService) user.GetService(AdWordsService.v201101.CampaignService);
+          (CampaignService) user.GetService(AdWordsService.v201109.CampaignService);
 
       // Create a selector.
       Selector selector = new Selector();
@@ -74,28 +74,36 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
       orderByName.sortOrder = SortOrder.ASCENDING;
 
       selector.ordering = new OrderBy[] {orderByName};
-      CampaignPage page = service.get(selector);
+      (user.Config as AdWordsAppConfig).ClientCustomerId = txtCustomerId.Text;
 
-      // Display campaigns.
-      if (page != null && page.entries != null && page.entries.Length > 0) {
-        DataTable dataTable = new DataTable();
-        dataTable.Columns.AddRange(new DataColumn[] {
-            new DataColumn("Serial No.", typeof(int)),
-            new DataColumn("Campaign Id", typeof(long)),
-            new DataColumn("Campaign Name", typeof(string)),
-            new DataColumn("Status", typeof(string))
-        });
-        for (int i = 0; i < page.entries.Length; i++) {
-          Campaign campaign = page.entries[i];
-          DataRow dataRow = dataTable.NewRow();
-          dataRow.ItemArray = new object[] {i + 1, campaign.id, campaign.name,
-              campaign.status.ToString()};
-          dataTable.Rows.Add(dataRow);
+      try {
+        CampaignPage page = service.get(selector);
+
+        // Display campaigns.
+        if (page != null && page.entries != null && page.entries.Length > 0) {
+          DataTable dataTable = new DataTable();
+          dataTable.Columns.AddRange(new DataColumn[] {
+              new DataColumn("Serial No.", typeof(int)),
+              new DataColumn("Campaign Id", typeof(long)),
+              new DataColumn("Campaign Name", typeof(string)),
+              new DataColumn("Status", typeof(string))
+          });
+          for (int i = 0; i < page.entries.Length; i++) {
+            Campaign campaign = page.entries[i];
+            DataRow dataRow = dataTable.NewRow();
+            dataRow.ItemArray = new object[] {i + 1, campaign.id, campaign.name,
+                campaign.status.ToString()
+            };
+            dataTable.Rows.Add(dataRow);
+          }
+          CampaignGrid.DataSource = dataTable;
+          CampaignGrid.DataBind();
+        } else {
+          Response.Write("No campaigns were found.");
         }
-        CampaignGrid.DataSource = dataTable;
-        CampaignGrid.DataBind();
-      } else {
-        Response.Write("No campaigns were found.");
+      } catch (Exception ex) {
+        Response.Write(string.Format("Failed to get campaigns. Exception says \"{0}\"",
+            ex.Message));
       }
     }
 
