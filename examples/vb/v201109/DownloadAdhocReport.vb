@@ -57,7 +57,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
 
       Dim definition As New ReportDefinition
 
-      definition.reportName = "Custom ADGROUP_PERFORMANCE_REPORT"
+      definition.reportName = "Last 7 days ADGROUP_PERFORMANCE_REPORT"
       definition.reportType = ReportDefinitionReportType.ADGROUP_PERFORMANCE_REPORT
       definition.downloadFormat = DownloadFormat.CSV
       definition.dateRangeType = ReportDefinitionDateRangeType.LAST_7_DAYS

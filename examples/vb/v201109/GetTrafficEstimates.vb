@@ -80,6 +80,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         keywordEstimateRequests.Add(keywordEstimateRequest)
       Next
 
+      ' Create negative keywords.
+      Dim negativeKeyword1 As New Keyword
+      negativeKeyword1.text = "moon walk"
+      negativeKeyword1.matchType = KeywordMatchType.BROAD
+
+      Dim negativeKeywordEstimateRequest As New KeywordEstimateRequest
+      negativeKeywordEstimateRequest.keyword = negativeKeyword1
+      negativeKeywordEstimateRequest.isNegative = True
+      keywordEstimateRequests.Add(negativeKeywordEstimateRequest)
+
       ' Create ad group estimate requests.
       Dim adGroupEstimateRequest As New AdGroupEstimateRequest
       adGroupEstimateRequest.keywordEstimateRequests = keywordEstimateRequests.ToArray
@@ -123,6 +133,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
               For i As Integer = 0 To adGroupEstimate.keywordEstimates.Length - 1
                 Dim keyword As Keyword = keywordEstimateRequests.Item(i).keyword
                 Dim keywordEstimate As KeywordEstimate = adGroupEstimate.keywordEstimates(i)
+
+                If keywordEstimateRequests.Item(i).isNegative Then
+                  Continue For
+                End If
 
                 ' Find the mean of the min and max values.
                 Dim meanAverageCpc As Long = ((keywordEstimate.min.averageCpc.microAmount + _

@@ -81,6 +81,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         keywordEstimateRequests.Add(keywordEstimateRequest);
       }
 
+      // Create negative keywords.
+      Keyword negativeKeyword1 = new Keyword();
+      negativeKeyword1.text = "moon walk";
+      negativeKeyword1.matchType = KeywordMatchType.BROAD;
+
+      KeywordEstimateRequest negativeKeywordEstimateRequest = new KeywordEstimateRequest();
+      negativeKeywordEstimateRequest.keyword = negativeKeyword1;
+      negativeKeywordEstimateRequest.isNegative = true;
+      keywordEstimateRequests.Add(negativeKeywordEstimateRequest);
+
+
       // Create ad group estimate requests.
       AdGroupEstimateRequest adGroupEstimateRequest = new AdGroupEstimateRequest();
       adGroupEstimateRequest.keywordEstimateRequests = keywordEstimateRequests.ToArray();
@@ -123,6 +134,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
               for (int i = 0; i < adGroupEstimate.keywordEstimates.Length; i++) {
                 Keyword keyword = keywordEstimateRequests[i].keyword;
                 KeywordEstimate keywordEstimate = adGroupEstimate.keywordEstimates[i];
+                if (keywordEstimateRequests[i].isNegative) {
+                  continue;
+                }
 
                 // Find the mean of the min and max values.
                 long meanAverageCpc = (keywordEstimate.min.averageCpc.microAmount

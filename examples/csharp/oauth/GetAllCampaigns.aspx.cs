@@ -83,16 +83,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
         if (page != null && page.entries != null && page.entries.Length > 0) {
           DataTable dataTable = new DataTable();
           dataTable.Columns.AddRange(new DataColumn[] {
-            new DataColumn("Serial No.", typeof(int)),
-            new DataColumn("Campaign Id", typeof(long)),
-            new DataColumn("Campaign Name", typeof(string)),
-            new DataColumn("Status", typeof(string))
-        });
+              new DataColumn("Serial No.", typeof(int)),
+              new DataColumn("Campaign Id", typeof(long)),
+              new DataColumn("Campaign Name", typeof(string)),
+              new DataColumn("Status", typeof(string))
+          });
           for (int i = 0; i < page.entries.Length; i++) {
             Campaign campaign = page.entries[i];
             DataRow dataRow = dataTable.NewRow();
             dataRow.ItemArray = new object[] {i + 1, campaign.id, campaign.name,
-              campaign.status.ToString()};
+                campaign.status.ToString()
+            };
             dataTable.Rows.Add(dataRow);
           }
           CampaignGrid.DataSource = dataTable;

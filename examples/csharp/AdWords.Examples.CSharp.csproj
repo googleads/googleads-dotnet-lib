@@ -318,6 +318,7 @@
     <Compile Include="v201109\AddAds.cs" />
     <Compile Include="v201109\AddCampaign.cs" />
     <Compile Include="v201109\AddCampaignAdExtension.cs" />
+    <Compile Include="v201109\AddCampaignTargetingCriteria.cs" />
     <Compile Include="v201109\AddConversionTracker.cs" />
     <Compile Include="v201109\AddExperiment.cs" />
     <Compile Include="v201109\AddLogicalUserList.cs" />
@@ -349,10 +350,12 @@
     <Compile Include="v201109\GetAllCampaignAdExtensions.cs" />
     <Compile Include="v201109\GetAllCampaigns.cs" />
     <Compile Include="v201109\GetAllCampaignTargets.cs" />
+    <Compile Include="v201109\GetAllCarriers.cs" />
     <Compile Include="v201109\GetAllConversionTrackers.cs" />
     <Compile Include="v201109\GetAllDisapprovedAds.cs" />
     <Compile Include="v201109\GetAllExperiments.cs" />
     <Compile Include="v201109\GetAllImages.cs" />
+    <Compile Include="v201109\GetAllLanguages.cs" />
     <Compile Include="v201109\GetAllNegativeCampaignCriteria.cs" />
     <Compile Include="v201109\GetAllPausedCampaigns.cs" />
     <Compile Include="v201109\GetAllReportDefinitions.cs" />
@@ -365,6 +368,7 @@
     <Compile Include="v201109\GetCriterionBidLandscape.cs" />
     <Compile Include="v201109\GetGeoLocationInfo.cs" />
     <Compile Include="v201109\GetKeywordOpportunities.cs" />
+    <Compile Include="v201109\GetLocationCriteria.cs" />
     <Compile Include="v201109\GetMethodCost.cs" />
     <Compile Include="v201109\GetOperationCount.cs" />
     <Compile Include="v201109\GetRelatedKeywords.cs" />
@@ -381,7 +385,6 @@
     <Compile Include="v201109\PromoteExperiment.cs" />
     <Compile Include="v201109\RestoreSandboxDemo.cs" />
     <Compile Include="v201109\SetAdParams.cs" />
-    <Compile Include="v201109\SetCampaignCriteria.cs" />
     <Compile Include="v201109\UpdateAd.cs" />
     <Compile Include="v201109\UpdateAdGroup.cs" />
     <Compile Include="v201109\UpdateAdGroupCriterion.cs" />

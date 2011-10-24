@@ -34,7 +34,7 @@
      onclick="OnAuthorizeButtonClick" />
   <asp:Button ID="btnLogout" runat="server" Text="Logout"
      onclick="OnLogoutButtonClick" /><br /><br />
-  <asp:Label ID="Label1" runat="server" Text="Enter Customer ID:" Height="18px"></asp:Label>
+  <asp:Label ID="lblCustomerId" runat="server" Text="Enter Customer ID:" Height="18px"></asp:Label>
   <asp:TextBox ID="txtCustomerId" runat="server" Width="232px"></asp:TextBox>
   <asp:Button ID="btnDownloadReport" runat="server" Text="Download Report"
      onclick="OnDownloadReportButtonClick" />

@@ -19,6 +19,7 @@ Imports Google.Api.Ads.AdWords.v201109
 
 Imports System
 Imports System.Collections.Generic
+Imports System.Text.RegularExpressions
 Imports System.Threading
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
@@ -58,6 +59,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       Dim mutateJobService As MutateJobService = user.GetService( _
           AdWordsService.v201109.MutateJobService)
 
+      Const RETRY_INTERVAL As Integer = 30
+      Const RETRIES_COUNT As Integer = 30
+      Const KEYWORD_NUMBER As Integer = 100
+      Const INDEX_REGEX As String = "operations\[(\d+)\].operand"
+
       Dim adGroupId As Long = Long.Parse(_T("INSERT_ADGROUP_ID_HERE"))
 
       Dim operations As New List(Of Operation)
@@ -81,7 +87,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
 
       Dim i As Integer
 
-      For i = 0 To 100
+      For i = 0 To KEYWORD_NUMBER
         Dim keyword As New Keyword
         keyword.text = String.Format("mars cruise {0}", i)
         keyword.matchType = KeywordMatchType.BROAD
@@ -104,9 +110,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       Dim job As SimpleMutateJob = mutateJobService.mutate(operations.ToArray, policy)
 
       Dim completed As Boolean = False
+      Dim retryCount As Integer = 0
+      Console.WriteLine("Retrieving job status...")
+
       Dim selector As BulkMutateJobSelector
       Do While Not completed
-        Thread.Sleep(2000)
         selector = New BulkMutateJobSelector
         selector.jobIds = New Long() {job.id}
         Try
@@ -117,6 +125,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
                 (job.status = BasicJobStatus.FAILED)) Then
               completed = True
               Exit Do
+            Else
+              Console.WriteLine("{0}: Current status is {1}, waiting {2} seconds to retry...", _
+                  retryCount, job.status, RETRY_INTERVAL)
+              Thread.Sleep(RETRY_INTERVAL * 1000)
+              retryCount = retryCount + 1
             End If
           End If
         Catch ex As Exception
@@ -147,15 +160,24 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
 
             If Not results.errors Is Nothing Then
               For Each apiError As ApiError In results.errors
-                Console.WriteLine("Operation error, reason: '{0}', trigger: '{1}', field path: " & _
-                    "'{2}'", apiError.errorString, apiError.trigger, apiError.fieldPath)
+                Dim match As Match = Regex.Match(apiError.fieldPath, INDEX_REGEX, _
+                    RegexOptions.IgnoreCase)
+                Dim index As String = "???"
+                If (match.Success) Then
+                  index = match.Groups(1).Value
+                End If
+                Console.WriteLine("Operation index {0} failed due to reason: '{1}', " & _
+                    "trigger: '{2}'", index, apiError.errorString, apiError.trigger)
               Next
             End If
           End If
         End If
         Console.WriteLine("Job completed successfully!")
-      Else
-        Console.WriteLine("Job could not be completed.")
+      ElseIf (job.status = BasicJobStatus.FAILED) Then
+        Console.WriteLine("Job failed with reason: " & job.failureReason.ToString())
+      ElseIf (job.status = BasicJobStatus.PROCESSING OrElse job.status = BasicJobStatus.PENDING) _
+          Then
+        Console.WriteLine("Job did not complete in {0} secconds.", RETRY_INTERVAL * RETRIES_COUNT)
       End If
 
     End Sub

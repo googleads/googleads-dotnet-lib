@@ -60,7 +60,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
 
       ReportDefinition definition = new ReportDefinition();
 
-      definition.reportName = "Custom ADGROUP_PERFORMANCE_REPORT";
+      definition.reportName = "Last 7 days ADGROUP_PERFORMANCE_REPORT";
       definition.reportType = ReportDefinitionReportType.ADGROUP_PERFORMANCE_REPORT;
       definition.downloadFormat = DownloadFormat.CSV;
       definition.dateRangeType = ReportDefinitionDateRangeType.LAST_7_DAYS;

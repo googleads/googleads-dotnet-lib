@@ -19,14 +19,16 @@ using Google.Api.Ads.AdWords.v201109;
 
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   /// <summary>
-  /// This code example shows how to add ads and keywords using the
+  /// This code example shows how to perform asynchronous requests using the
   /// MutateJobService.
   ///
-  /// Tags: MutateJobService.mutate
+  /// Tags: MutateJobService.mutate, MutateJobService.get
+  /// Tags: MutateJobService.getResult
   /// </summary>
   class PerformMutateJob : SampleBase {
     /// <summary>
@@ -34,7 +36,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example shows how to add ads and keywords using the" +
+        return "This code example shows how to perform asynchronous requests using the" +
             " MutateJobService.";
       }
     }
@@ -59,9 +61,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       MutateJobService mutateJobService = (MutateJobService) user.GetService(
           AdWordsService.v201109.MutateJobService);
 
+      const int RETRY_INTERVAL = 30;
+      const int RETRIES_COUNT = 30;
+      const int KEYWORD_NUMBER = 100;
+      const string INDEX_REGEX = "operations\\[(\\d+)\\].operand";
+
       long adGroupId = long.Parse(_T("INSERT_ADGROUP_ID_HERE"));
 
       List<Operation> operations = new List<Operation>();
+
       // Create an AdGroupAdOperation to add a text ad.
       AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
       adGroupAdOperation.@operator = Operator.ADD;
@@ -81,7 +89,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
 
       operations.Add(adGroupAdOperation);
 
-      for (int i = 0; i < 100; i++) {
+      // Create AdGroupCriterionOperation to add keywords.
+      for (int i = 0; i < KEYWORD_NUMBER; i++) {
         Keyword keyword = new Keyword();
         keyword.text = string.Format("mars cruise {0}", i);
         keyword.matchType = KeywordMatchType.BROAD;
@@ -104,10 +113,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
 
       // Wait for the job to complete.
       bool completed = false;
-
-      while (completed == false) {
-        Thread.Sleep(2000);
-
+      int retryCount = 0;
+      Console.WriteLine("Retrieving job status...");
+      while (completed == false && retryCount < RETRIES_COUNT) {
         BulkMutateJobSelector selector = new BulkMutateJobSelector();
         selector.jobIds = new long[] {job.id};
 
@@ -118,6 +126,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
             if (job.status == BasicJobStatus.COMPLETED || job.status == BasicJobStatus.FAILED) {
               completed = true;
               break;
+            } else {
+              Console.WriteLine("{0}: Current status is {1}, waiting {2} seconds to retry...",
+                  retryCount, job.status, RETRY_INTERVAL);
+              Thread.Sleep(RETRY_INTERVAL * 1000);
+              retryCount++;
             }
           }
         } catch (Exception ex) {
@@ -143,15 +156,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
             }
             if (results.errors != null) {
               foreach (ApiError error in results.errors) {
-                Console.WriteLine("Operation error, reason: '{0}', trigger: '{1}', " +
-                    "field path: '{2}'", error.errorString, error.trigger, error.fieldPath);
+                Match match = Regex.Match(error.fieldPath, INDEX_REGEX, RegexOptions.IgnoreCase);
+                string index = (match.Success)? match.Groups[1].Value : "???";
+                Console.WriteLine("Operation index {0} failed due to reason: '{1}', " +
+                    "trigger: '{2}'", index, error.errorString, error.trigger);
               }
             }
           }
         }
         Console.WriteLine("Job completed successfully!");
-      } else {
-        Console.WriteLine("Job could not be completed.");
+      } else if (job.status == BasicJobStatus.FAILED) {
+        Console.WriteLine("Job failed with reason: " + job.failureReason);
+      } else if (job.status == BasicJobStatus.PROCESSING || job.status == BasicJobStatus.PENDING) {
+        Console.WriteLine("Job did not complete in {0} secconds.",
+            RETRY_INTERVAL * RETRIES_COUNT);
       }
     }
   }
