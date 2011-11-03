@@ -158,7 +158,6 @@
     <Compile Include="v201101\AddCampaign.vb" />
     <Compile Include="v201101\AddCampaignAdExtension.vb" />
     <Compile Include="v201101\AddConversionTracker.vb" />
-    <Compile Include="v201101\AddCrossClientReportDefinition.vb" />
     <Compile Include="v201101\AddExperiment.vb" />
     <Compile Include="v201101\AddKeywordsPerformanceReportDefinition.vb" />
     <Compile Include="v201101\AddLogicalUserList.vb" />

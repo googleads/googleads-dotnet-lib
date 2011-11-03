@@ -241,7 +241,6 @@
     <Compile Include="v201101\AddCampaign.cs" />
     <Compile Include="v201101\AddCampaignAdExtension.cs" />
     <Compile Include="v201101\AddConversionTracker.cs" />
-    <Compile Include="v201101\AddCrossClientReportDefinition.cs" />
     <Compile Include="v201101\AddExperiment.cs" />
     <Compile Include="v201101\AddKeywordsPerformanceReportDefinition.cs" />
     <Compile Include="v201101\AddLogicalUserList.cs" />
@@ -349,7 +348,6 @@
     <Compile Include="v201109\GetAllAds.cs" />
     <Compile Include="v201109\GetAllCampaignAdExtensions.cs" />
     <Compile Include="v201109\GetAllCampaigns.cs" />
-    <Compile Include="v201109\GetAllCampaignTargets.cs" />
     <Compile Include="v201109\GetAllCarriers.cs" />
     <Compile Include="v201109\GetAllConversionTrackers.cs" />
     <Compile Include="v201109\GetAllDisapprovedAds.cs" />

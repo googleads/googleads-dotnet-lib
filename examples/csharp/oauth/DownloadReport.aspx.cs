@@ -14,6 +14,8 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using OAuth.Net.Consumer;
+
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201109;
 using Google.Api.Ads.Common.OAuth.Lib;
@@ -42,8 +44,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     void Page_Load(object sender, EventArgs e) {
       user = new AdWordsUser();
       string url = Request.Url.GetLeftPart(UriPartial.Path);
-      user.OAuthProvider = new AdsOAuthNetProvider(AdWordsService.GetOAuthScope(
-          user.Config as AdWordsAppConfig), url);
+      AdWordsAppConfig config = user.Config as AdWordsAppConfig;
+      user.OAuthProvider = new AdsOAuthNetProvider(config.OAuthConsumerKey,
+          config.OAuthConsumerSecret, AdWordsService.GetOAuthScope(user.Config as AdWordsAppConfig),
+          url);
     }
 
     /// <summary>

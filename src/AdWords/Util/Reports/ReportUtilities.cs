@@ -225,6 +225,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       }
 
       request.Headers.Add("returnMoneyInMicros: " + returnMoneyInMicros.ToString().ToLower());
+      request.Headers.Add("developerToken: " + config.DeveloperToken);
 
       if (!string.IsNullOrEmpty(postBody)) {
         using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
@@ -232,7 +233,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         }
       }
 
-      WebResponse response = request.GetResponse();
+      // AdWords API now returns a 400 for an API error.
+      WebResponse response = null;
+      try {
+        response = request.GetResponse();
+      } catch (WebException ex) {
+        response = ex.Response;
+      }
       return MediaUtilities.CopyStreamWithPreview(response.GetResponseStream(),
           outputStream, MAX_ERROR_LENGTH);
     }
