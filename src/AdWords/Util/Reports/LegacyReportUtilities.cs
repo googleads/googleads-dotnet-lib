@@ -49,7 +49,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// Maximum number of times to poll the report server before giving up.
     /// Defaults to maximum number of attempts that can be made in 30 minutes.
     /// </summary>
-    private int maxPollingAttempts = 30 * 60 * 1000 / WAIT_TIME;
+    protected int maxPollingAttempts = 30 * 60 * 1000 / WAIT_TIME;
 
     /// <summary>
     /// Gets or sets the maximum number of times to poll the report server

@@ -1,3 +1,8 @@
+13.1.0
+- Added developerToken headers for report download.
+- Support for handling report errors using HTTP code 400.
+- Fixed broken csproj files.
+
 13.0.0
 - Added support for v201109, deprecated other versions.
 - Added support for OAuth in report download.
