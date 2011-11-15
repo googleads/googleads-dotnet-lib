@@ -16,17 +16,19 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Xml;
-using System.Globalization;
 
 namespace Google.Api.Ads.Common.Lib {
   /// <summary>
   /// This class reads the configuration keys from App.config.
   /// </summary>
-  public abstract class AppConfigBase {
+  public abstract class AppConfigBase : INotifyPropertyChanged {
     /// <summary>
     /// Key name for logPath.
     /// </summary>
@@ -137,7 +139,7 @@ namespace Google.Api.Ads.Common.Lib {
         return retryCount;
       }
       set {
-        retryCount = value;
+        SetPropertyField("RetryCount", ref retryCount, value);
       }
     }
 
@@ -215,7 +217,7 @@ namespace Google.Api.Ads.Common.Lib {
         return timeout;
       }
       set {
-        timeout = value;
+        SetPropertyField("Timeout", ref timeout, value);
       }
     }
 
@@ -315,5 +317,36 @@ namespace Google.Api.Ads.Common.Lib {
         return settings.ContainsKey(key) ? (string) settings[key] : defaultValue;
       }
     }
+
+    /// <summary>
+    /// Raises the <see cref="E:PropertyChanged"/> event.
+    /// </summary>
+    /// <param name="e">The <see cref="System.ComponentModel.PropertyChangedEventArgs"/> instance
+    /// containing the event data.</param>
+    protected void OnPropertyChanged(PropertyChangedEventArgs e) {
+      PropertyChangedEventHandler handler = PropertyChanged;
+      if (handler != null) {
+        handler(this, e);
+      }
+    }
+
+    /// <summary>
+    /// Sets the specified property field.
+    /// </summary>
+    /// <typeparam name="T">Type of the property field to be set.</typeparam>
+    /// <param name="propertyName">Name of the property.</param>
+    /// <param name="field">The property field to be set.</param>
+    /// <param name="newValue">The new value to be set to the propery.</param>
+    protected void SetPropertyField<T>(string propertyName, ref T field, T newValue) {
+      if (!EqualityComparer<T>.Default.Equals(field, newValue)) {
+        field = newValue;
+        OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+      }
+    }
+
+    /// <summary>
+    /// Occurs when a property value changes.
+    /// </summary>
+    public event PropertyChangedEventHandler PropertyChanged;
   }
 }

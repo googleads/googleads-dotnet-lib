@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace Google.Api.Ads.Common.Lib {
@@ -39,6 +40,9 @@ namespace Google.Api.Ads.Common.Lib {
       }
       set {
         config = value;
+        config.PropertyChanged += delegate(object sender, PropertyChangedEventArgs e) {
+          ReadHeadersFromConfig(config);
+        };
         ReadHeadersFromConfig(config);
       }
     }

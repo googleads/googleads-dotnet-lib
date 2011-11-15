@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -78,7 +78,6 @@
     <Compile Include="Common\Util\CsvFile.cs" />
     <Compile Include="Common\Util\MediaUtilities.cs" />
     <Compile Include="Common\Util\SerializationUtilities.cs" />
-    <Compile Include="Common\CommonErrorMessages.Designer.cs" />
     <Compile Include="Dfa\Lib\DfaApiException.cs" />
     <Compile Include="Dfa\Lib\DfaAppConfig.cs" />
     <Compile Include="Dfa\Lib\DfaException.cs" />
@@ -92,7 +91,6 @@
     <Compile Include="Dfa\Lib\ResponseHeader.cs" />
     <Compile Include="Dfa\Lib\SoapHeaderListener.cs" />
     <Compile Include="Dfa\Lib\UserToken.cs" />
-    <Compile Include="Dfa\Util\ApiCodes\CodeCsvs.Designer.cs" />
     <Compile Include="Dfa\Util\ApiCodes\ErrorCode.cs" />
     <Compile Include="Dfa\v1_13\DfaApi.cs" />
     <Compile Include="Dfa\v1_13\DfaServiceV1_13.cs" />
@@ -100,7 +98,6 @@
     <Compile Include="Dfa\v1_14\DfaServiceV1_14.cs" />
     <Compile Include="Dfa\v1_15\DfaApi.cs" />
     <Compile Include="Dfa\v1_15\DfaServiceV1_15.cs" />
-    <Compile Include="Dfa\DfaErrorMessages.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Common\CommonErrorMessages.Designer.cs">
