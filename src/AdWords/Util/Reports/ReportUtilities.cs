@@ -60,6 +60,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="user">AdWords user to be used along with this
     /// utilities object.</param>
     public ReportUtilities(AdWordsUser user) : base(user) {
+      // Default the max number of polling attempts to 3. The user may modify
+      // this using MaxPollingAttempts property after creating the class.
+      this.maxPollingAttempts = 3;
     }
 
     /// <summary>
@@ -94,15 +97,35 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(reportDefinitionOrId));
       }
 
-      MemoryStream memStream = new MemoryStream();
-      byte[] preview = DownloadReportToStream(downloadUrl, config, returnMoneyInMicros, memStream,
-          postBody);
-      if (!IsValidReport(preview)) {
-        throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid + " - " +
-            ConvertPreviewBytesToString(preview), null);
+      string previewString = "";
+      for (int i = 0; i < maxPollingAttempts; i++) {
+        MemoryStream memStream = new MemoryStream();
+        byte[] preview = DownloadReportToStream(downloadUrl, config, returnMoneyInMicros, memStream,
+            postBody);
+        previewString = ConvertPreviewBytesToString(preview);
+        if (!IsValidReport(previewString)) {
+          if (!IsTransientError(previewString)) {
+            throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid + " - " +
+                ConvertPreviewBytesToString(preview), null);
+          } else {
+            Thread.Sleep(WAIT_TIME);
+          }
+        } else {
+          retval.Contents = memStream.ToArray();
+          return retval;
+        }
       }
-      retval.Contents = memStream.ToArray();
-      return retval;
+      throw new ReportsException(previewString);
+    }
+
+    /// <summary>
+    /// Determines whether the report download error is transient or not.
+    /// </summary>
+    /// <param name="preview">The report preview.</param>
+    /// <returns>True, if the error is transient, false otherwise.
+    /// </returns>
+    protected bool IsTransientError(string previewString) {
+      return previewString.Contains("RateExceededError") || previewString.Contains("InternalError");
     }
 
     /// <summary>
@@ -137,12 +160,25 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(reportDefinitionOrId));
       }
 
-      byte[] preview = DownloadReportToDisk(downloadUrl, config, returnMoneyInMicros, path,
-          postBody);
-      if (!IsValidReport(preview)) {
-        throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid + " - " +
-            ConvertPreviewBytesToString(preview), null);
+      string previewString = "";
+
+      for (int i = 0; i < maxPollingAttempts; i++) {
+        MemoryStream memStream = new MemoryStream();
+        byte[] preview = DownloadReportToDisk(downloadUrl, config, returnMoneyInMicros, path,
+            postBody);
+        previewString = ConvertPreviewBytesToString(preview);
+        if (!IsValidReport(previewString)) {
+          if (!IsTransientError(previewString)) {
+            throw new ReportsException(AdWordsErrorMessages.ReportIsInvalid + " - " +
+                ConvertPreviewBytesToString(preview), null);
+          } else {
+            Thread.Sleep(WAIT_TIME);
+          }
+        } else {
+          return;
+        }
       }
+      throw new ReportsException(previewString);
     }
 
     /// <summary>
@@ -225,6 +261,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       }
 
       request.Headers.Add("returnMoneyInMicros: " + returnMoneyInMicros.ToString().ToLower());
+      request.Headers.Add("developerToken: " + config.DeveloperToken);
 
       if (!string.IsNullOrEmpty(postBody)) {
         using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
@@ -232,7 +269,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         }
       }
 
-      WebResponse response = request.GetResponse();
+      // AdWords API now returns a 400 for an API error.
+      WebResponse response = null;
+      try {
+        response = request.GetResponse();
+      } catch (WebException ex) {
+        response = ex.Response;
+      }
       return MediaUtilities.CopyStreamWithPreview(response.GetResponseStream(),
           outputStream, MAX_ERROR_LENGTH);
     }
@@ -268,8 +311,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// for report validity.
     /// </param>
     /// <returns>True if the report is valid, false otherwise.</returns>
-    private bool IsValidReport(byte[] previewBytes) {
-      string previewString = ConvertPreviewBytesToString(previewBytes);
+    private bool IsValidReport(string previewString) {
       if (!string.IsNullOrEmpty(previewString)) {
         if (Regex.IsMatch(previewString, REPORT_ERROR_REGEX)) {
           return false;
