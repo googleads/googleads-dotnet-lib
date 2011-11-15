@@ -1,3 +1,6 @@
+2.4.0
+- Fixed broken csproj files.
+
 2.3.0
 - Fixed issues 2, 3, 4, 5
 - Added support for v1.15.

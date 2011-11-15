@@ -103,7 +103,7 @@ namespace Google.Api.Ads.Dfa.Lib {
         return authToken;
       }
       set {
-        authToken = value;
+        SetPropertyField("AuthToken", ref authToken, value);
       }
     }
 
@@ -115,7 +115,7 @@ namespace Google.Api.Ads.Dfa.Lib {
         return userName;
       }
       set {
-        userName = value;
+        SetPropertyField("UserName", ref userName, value);
       }
     }
 
@@ -127,7 +127,7 @@ namespace Google.Api.Ads.Dfa.Lib {
         return password;
       }
       set {
-        password = value;
+        SetPropertyField("Password", ref password, value);
       }
     }
 
@@ -139,7 +139,7 @@ namespace Google.Api.Ads.Dfa.Lib {
         return applicationName;
       }
       set {
-        applicationName = value;
+        SetPropertyField("ApplicationName", ref applicationName, value);
       }
     }
 
@@ -151,7 +151,7 @@ namespace Google.Api.Ads.Dfa.Lib {
         return dfaApiServer;
       }
       set {
-        dfaApiServer = value;
+        SetPropertyField("DfaApiServer", ref dfaApiServer, value);
       }
     }
 
@@ -164,7 +164,7 @@ namespace Google.Api.Ads.Dfa.Lib {
         return enableGzipCompression;
       }
       set {
-        enableGzipCompression = value;
+        SetPropertyField("EnableGzipCompression", ref enableGzipCompression, value);
       }
     }
 
