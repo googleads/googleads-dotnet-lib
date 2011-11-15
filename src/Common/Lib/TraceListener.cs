@@ -186,7 +186,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Writes a log string into a specified stream.
     /// </summary>
-    /// <param name="fileName">The text writer to which the log text should
+    /// <param name="writer">The text writer to which the log text should
     /// be written.</param>
     /// <param name="logText">The log text to be written to the stream.</param>
     private void WriteToStream(TextWriter writer, string logText) {

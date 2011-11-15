@@ -155,8 +155,7 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
         }
         return;
       } catch (OAuthRequestException ex) {
-        throw new AdsOAuthException("Failed to generate access token. The user may have " +
-            "denied access to your request token.");
+        throw new AdsOAuthException("OAuth server threw an exception." + ex.Problem);
       }
     }
   }

@@ -63,9 +63,6 @@ namespace Google.Api.Ads.Common.Lib {
       get {
         return config;
       }
-      set {
-        config = value;
-      }
     }
 
     /// <summary>
@@ -115,7 +112,7 @@ namespace Google.Api.Ads.Common.Lib {
         foreach (string key in headers.Keys) {
           PropertyInfo propInfo = configType.GetProperty(key, BindingFlags.IgnoreCase |
               BindingFlags.Public | BindingFlags.Instance);
-          if (propInfo != null) {
+          if (propInfo != null && propInfo.PropertyType == typeof(string)) {
             propInfo.SetValue(config, headers[key], null);
           }
         }
