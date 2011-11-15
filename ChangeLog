@@ -1,3 +1,7 @@
+3.4.0
+- Fixed issues 4, 5, 6
+- Fixed broken csproj files.
+
 3.3.0
 - Added support for v201108.
 

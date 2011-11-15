@@ -149,7 +149,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         return authToken;
       }
       set {
-        authToken = value;
+        SetPropertyField("AuthToken", ref authToken, value);
       }
     }
 
@@ -161,7 +161,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         return email;
       }
       set {
-        email = value;
+        SetPropertyField("Email", ref email, value);
       }
     }
 
@@ -173,7 +173,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         return password;
       }
       set {
-        password = value;
+        SetPropertyField("Password", ref password, value);
       }
     }
 
@@ -185,7 +185,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         return networkCode;
       }
       set {
-        networkCode = value;
+        SetPropertyField("NetworkCode", ref networkCode, value);
       }
     }
 
@@ -197,7 +197,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         return applicationName;
       }
       set {
-        applicationName = value;
+        SetPropertyField("ApplicationName", ref applicationName, value);
       }
     }
 
@@ -209,7 +209,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         return dfpApiServer;
       }
       set {
-        dfpApiServer = value;
+        SetPropertyField("DfpApiServer", ref dfpApiServer, value);
       }
     }
 
@@ -222,7 +222,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         return enableGzipCompression;
       }
       set {
-        enableGzipCompression = value;
+        SetPropertyField("EnableGzipCompression", ref enableGzipCompression, value);
       }
     }
 
@@ -234,7 +234,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         return authorizationMethod;
       }
       set {
-        authorizationMethod = value;
+        SetPropertyField("AuthorizationMethod", ref authorizationMethod, value);
       }
     }
 
@@ -246,7 +246,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         return oAuthConsumerKey;
       }
       set {
-        oAuthConsumerKey = value;
+        SetPropertyField("OAuthConsumerKey", ref oAuthConsumerKey, value);
       }
     }
 
@@ -258,7 +258,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         return oAuthConsumerSecret;
       }
       set {
-        oAuthConsumerSecret = value;
+        SetPropertyField("OAuthConsumerSecret", ref oAuthConsumerSecret, value);
       }
     }
 

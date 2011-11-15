@@ -39,19 +39,16 @@ namespace Google.Api.Ads.Dfp.Lib {
     private RequestHeader requestHeader;
 
     /// <summary>
-    /// Gets an application name that can be used with the library.
-    /// </summary>
-    protected string ApplicationName {
-      get {
-        DfpAppConfig dfpConfig = (DfpAppConfig) AppConfig;
-        return String.Join("", new string[] {dfpConfig.Signature, "|", dfpConfig.ApplicationName});
-      }
-    }
-
-    /// <summary>
     /// Default public constructor.
     /// </summary>
     public DfpServiceFactory() {
+    }
+
+    /// <summary>
+    /// Gets an application name that can be used with the library.
+    /// </summary>
+    protected string GetApplicationName(DfpAppConfig dfpConfig) {
+      return String.Join("", new string[] {dfpConfig.Signature, "|", dfpConfig.ApplicationName});
     }
 
     /// <summary>
@@ -113,7 +110,7 @@ namespace Google.Api.Ads.Dfp.Lib {
 
       this.requestHeader = new RequestHeader();
       this.requestHeader.networkCode = dfpConfig.NetworkCode;
-      this.requestHeader.applicationName = dfpConfig.ApplicationName;
+      this.requestHeader.applicationName = GetApplicationName(dfpConfig);
     }
   }
 }
