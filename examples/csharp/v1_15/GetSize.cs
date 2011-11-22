@@ -61,13 +61,21 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_15 {
       int width = int.Parse(_T("INSERT_WIDTH_HERE"));
       int height = int.Parse(_T("INSERT_HEIGHT_HERE"));
 
+      SizeSearchCriteria criteria = new SizeSearchCriteria();
+      criteria.width = width;
+      criteria.height = height;
+
       try {
         // Get size.
-        Size size = service.getSize(width, height);
+        SizeRecordSet sizeRecords = service.getSizes(criteria);
 
-        // Display size id.
-        Console.WriteLine("Size id for \"{0}\" width and \"{1}\" height is \"{2}\".", size.width,
-            size.height, size.id);
+        if (sizeRecords.records != null) {
+          foreach (Size size in sizeRecords.records) {
+            // Display size id.
+            Console.WriteLine("Size id for \"{0}\" width and \"{1}\" height is \"{2}\".",
+                size.width, size.height, size.id);
+          }
+        }
       } catch (Exception ex) {
         Console.WriteLine("Failed to retrieve size. Exception says \"{0}\"", ex.Message);
       }

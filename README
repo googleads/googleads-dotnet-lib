@@ -64,14 +64,18 @@ the library and not in its internals, you should download this distribution.
 
 The contents of this distribution are as follows:
 
-  \
-    \docs
+  /
+    /docs
       - Documentation xmls for Google.DFA.dll and DFA.Examples.exe.
       - Prebuilt help files for the client library in chm format.
-    \lib
+    /lib
       - Precompiled library, Google.DFA.dll.
-    \examples
-      - Client library examples, provided as a Visual Studio project.
+    /examples
+      /csharp
+        - Client library examples, provided as a Visual Studio project.
+      /wcf
+        - Shows how to setup a WCF service that uses DFA API + a consumer
+	  for this service.
     README
     ChangeLog
     COPYING
@@ -80,19 +84,19 @@ The examples folder contains code examples for all the major functionality
 supported by the library for all the supported versions of the API. To run
 the examples,
 
-- Open examples\Dfa.Examples.csproj in Visual Studio 2005/2008.
+- Open examples\csharp\Dfa.Examples.CSharp.csproj in Visual Studio 2005/2008.
 - Open App.config and edit the following keys:
   - UserName: ENTER_YOUR_USERNAME_HERE.
   - Password: ENTER_YOUR_PASSWORD_HERE.
 
 - Save and close App.config.
-- Open the Properties dialog for the Dfa.Examples project (Right click
-  the Dfa.Examples project in the Solution Explorer and select the
+- Open the Properties dialog for the Dfa.Examples.CSharp project (Right click
+  the Dfa.Examples.CSharp project in the Solution Explorer and select the
   Properties option from the context menu.).
 - Navigate to the Debug Tab and enter the command line options. The command line
   options are of the form version.examplename. For instance,
-  v111.GetAdTypes is the command line option to run v1.11\GetAdTypes.cs.
-- Compile and run the Dfa.Examples project.
+  v1_15.GetAdTypes is the command line option to run v1_15\GetAdTypes.cs.
+- Compile and run the Dfa.Examples.CSharp project.
 
 Alternatively, each code example has a main() method, so you can set the
 appropriate code example as the Startup object (Select the Application tab on
@@ -117,11 +121,11 @@ You can use the library in a new project as follows:
 
   DfaUser user = new DfaUser();
   AdvertiserRemoteService service = (AdvertiserRemoteService) user.GetService(
-      DfaService.v111.AdvertiserRemoteService);
+      DfaService.v1_15.AdvertiserRemoteService);
   // make more calls to service class.
 
 All the supported services in the client library are available as
-DfaService.vxxx.ServiceName, where vxxx is the API version (v111) and
+DfaService.vx_xx.ServiceName, where vx_xx is the API version (v1_15) and
 ServiceName is the name of the service you want to create.
 
 Finally, if you wish to use this assembly in another .NET compatible language
@@ -146,7 +150,11 @@ The contents of this distribution are as follows:
       - Prebuilt help files for the client library in .CHM format.
       - A .sbproj (Sandcastle project) for building the documentation.
     /examples
-      - Client library examples, provided as a Visual Studio project.
+      /csharp
+        - Client library examples, provided as a Visual Studio project.
+      /wcf
+        - Shows how to setup a WCF service that uses DFA API + a consumer
+	  for this service.
     /lib
       - External client libraries referenced by various projects in the source
         distribution.
@@ -164,14 +172,14 @@ To compile and run the project:
 
 - Open Dfa.2005.sln or Dfa.2008.sln depending on the version of
   Visual Studio you are using.
-- Open App.config under the Dfa.Examples project and edit the following
+- Open App.config under the csharp\Dfa.Examples.CSharp project and edit the following
   keys:
   - UserName: ENTER_YOUR_USERNAME_HERE.
   - Password: ENTER_YOUR_PASSWORD_HERE.
 
 - Save and close App.config.
-- Open the Properties dialog for the Dfa.Examples project (Right click
-  the Dfa.Examples project in the Solution Explorer and select the
+- Open the Properties dialog for the Dfa.Examples.CSharp project (Right click
+  the Dfa.Examples.CSharp project in the Solution Explorer and select the
   Properties option from the context menu.).
 - Navigate to the Debug tab and enter the command line options. The command line
   options are of the form version.examplename. For instance,
@@ -181,7 +189,7 @@ To compile and run the project:
 
 Alternatively, each code example has a main() method, so you can set the
 appropriate code example as the Startup object (Select the Application tab on
-the Dfa.Examples Properties dialog and pick the desired class from the
+the Dfa.Examples.CSharp Properties dialog and pick the desired class from the
 "Startup object" dropdown.).
 
 To run the test cases, you need to download and install the latest version of
