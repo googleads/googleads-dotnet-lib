@@ -152,7 +152,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Default value for timeout for Ads services.
     /// </summary>
-    private const int DEFAULT_TIMEOUT = 100000;
+    private const int DEFAULT_TIMEOUT = -1;
 
     /// <summary>
     /// Gets the path to which the SOAP logs are to be saved.

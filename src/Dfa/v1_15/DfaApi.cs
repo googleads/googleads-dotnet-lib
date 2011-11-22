@@ -370,6 +370,18 @@ namespace Google.Api.Ads.Dfa.v1_15 {
       object[] results = this.Invoke("uploadNetworkWidgetImage", new object[] {request});
       return ((WidgetImageUploadResponse) (results[0]));
     }
+
+    [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.15", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+    [return: System.Xml.Serialization.SoapElementAttribute("AgreementRecordSet")]
+    public AgreementRecordSet getAgreements(AgreementSearchCriteria criteria) {
+      object[] results = this.Invoke("getAgreements", new object[] {criteria});
+      return ((AgreementRecordSet) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.15", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+    public void executeAgreement(long agreementId) {
+      this.Invoke("executeAgreement", new object[] {agreementId});
+    }
   }
 
 
@@ -424,28 +436,13 @@ namespace Google.Api.Ads.Dfa.v1_15 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class WidgetImageUploadResponse {
-    private double imageSizeField;
-
-    private string relativeImageUrlField;
-
-    private string staticDataUrlField;
-
-    public double imageSize {
-      get { return this.imageSizeField; }
-      set { this.imageSizeField = value; }
-    }
+  public partial class AgreementRecordSet {
+    private Agreement[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string relativeImageUrl {
-      get { return this.relativeImageUrlField; }
-      set { this.relativeImageUrlField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string staticDataUrl {
-      get { return this.staticDataUrlField; }
-      set { this.staticDataUrlField = value; }
+    public Agreement[] records {
+      get { return this.recordsField; }
+      set { this.recordsField = value; }
     }
   }
 
@@ -455,409 +452,36 @@ namespace Google.Api.Ads.Dfa.v1_15 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class WidgetImageUploadRequest {
-    private long campaignField;
+  public partial class Agreement : Base {
+    private string descriptionField;
 
-    private byte[] filedataField;
+    private string emailAddressField;
 
-    private string filenameField;
+    private bool executedField;
 
-    private long networkField;
+    private System.DateTime? executionDateField;
 
-    private bool networkWidgetImageUploadField;
-
-    private string profileField;
-
-    public long campaign {
-      get { return this.campaignField; }
-      set { this.campaignField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(DataType = "base64Binary", IsNullable = true)]
-    public byte[] filedata {
-      get { return this.filedataField; }
-      set { this.filedataField = value; }
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string description {
+      get { return this.descriptionField; }
+      set { this.descriptionField = value; }
     }
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string filename {
-      get { return this.filenameField; }
-      set { this.filenameField = value; }
+    public string emailAddress {
+      get { return this.emailAddressField; }
+      set { this.emailAddressField = value; }
     }
 
-    public long network {
-      get { return this.networkField; }
-      set { this.networkField = value; }
-    }
-
-    public bool networkWidgetImageUpload {
-      get { return this.networkWidgetImageUploadField; }
-      set { this.networkWidgetImageUploadField = value; }
+    public bool executed {
+      get { return this.executedField; }
+      set { this.executedField = value; }
     }
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string profile {
-      get { return this.profileField; }
-      set { this.profileField = value; }
-    }
-  }
-
-
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(NetworkSaveResult))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public abstract partial class SaveResult {
-    private long idField;
-
-    public long id {
-      get { return this.idField; }
-      set { this.idField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class NetworkSaveResult : SaveResult {
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class WidgetNetworkConfig {
-    private bool activeField;
-
-    private double imageSizeField;
-
-    private string imageUrlField;
-
-    private string staticDataURLField;
-
-    public bool active {
-      get { return this.activeField; }
-      set { this.activeField = value; }
-    }
-
-    public double imageSize {
-      get { return this.imageSizeField; }
-      set { this.imageSizeField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string imageUrl {
-      get { return this.imageUrlField; }
-      set { this.imageUrlField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string staticDataURL {
-      get { return this.staticDataURLField; }
-      set { this.staticDataURLField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class BillingCustomer {
-    private string accessCodeTypeField;
-
-    private bool activeField;
-
-    private string billingCodeField;
-
-    private System.DateTime? expirationDateField;
-
-    private bool publisherField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string accessCodeType {
-      get { return this.accessCodeTypeField; }
-      set { this.accessCodeTypeField = value; }
-    }
-
-    public bool active {
-      get { return this.activeField; }
-      set { this.activeField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string billingCode {
-      get { return this.billingCodeField; }
-      set { this.billingCodeField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public System.DateTime? expirationDate {
-      get { return this.expirationDateField; }
-      set { this.expirationDateField = value; }
-    }
-
-    public bool publisher {
-      get { return this.publisherField; }
-      set { this.publisherField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class RichMediaNetworkConfiguration {
-    private BillingCustomer billingCustomerField;
-
-    private long changeUserIdField;
-
-    private long customerIdField;
-
-    private System.DateTime? dateAssignedField;
-
-    private long networkField;
-
-    private long teaserSizeLimitField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public BillingCustomer billingCustomer {
-      get { return this.billingCustomerField; }
-      set { this.billingCustomerField = value; }
-    }
-
-    public long changeUserId {
-      get { return this.changeUserIdField; }
-      set { this.changeUserIdField = value; }
-    }
-
-    public long customerId {
-      get { return this.customerIdField; }
-      set { this.customerIdField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public System.DateTime? dateAssigned {
-      get { return this.dateAssignedField; }
-      set { this.dateAssignedField = value; }
-    }
-
-    public long network {
-      get { return this.networkField; }
-      set { this.networkField = value; }
-    }
-
-    public long teaserSizeLimit {
-      get { return this.teaserSizeLimitField; }
-      set { this.teaserSizeLimitField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class ReachReportConfiguration {
-    private bool adTypeFrequencyAndReachField;
-
-    private bool pageLevelFrequencyField;
-
-    private bool placementFrequencyField;
-
-    private bool siteLevelFrequencyField;
-
-    public bool adTypeFrequencyAndReach {
-      get { return this.adTypeFrequencyAndReachField; }
-      set { this.adTypeFrequencyAndReachField = value; }
-    }
-
-    public bool pageLevelFrequency {
-      get { return this.pageLevelFrequencyField; }
-      set { this.pageLevelFrequencyField = value; }
-    }
-
-    public bool placementFrequency {
-      get { return this.placementFrequencyField; }
-      set { this.placementFrequencyField = value; }
-    }
-
-    public bool siteLevelFrequency {
-      get { return this.siteLevelFrequencyField; }
-      set { this.siteLevelFrequencyField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class LookbackConfiguration {
-    private int clickDurationField;
-
-    private int postImpressionActivitiesDurationField;
-
-    private int reportsDaysField;
-
-    private int richMediaEventsDaysField;
-
-    public int clickDuration {
-      get { return this.clickDurationField; }
-      set { this.clickDurationField = value; }
-    }
-
-    public int postImpressionActivitiesDuration {
-      get { return this.postImpressionActivitiesDurationField; }
-      set { this.postImpressionActivitiesDurationField = value; }
-    }
-
-    public int reportsDays {
-      get { return this.reportsDaysField; }
-      set { this.reportsDaysField = value; }
-    }
-
-    public int richMediaEventsDays {
-      get { return this.richMediaEventsDaysField; }
-      set { this.richMediaEventsDaysField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class ExposureToConversionConfiguration {
-    private int activitiesToTrackField;
-
-    private bool exposureToConversionEnabledField;
-
-    private int exposuresToTrackField;
-
-    public int activitiesToTrack {
-      get { return this.activitiesToTrackField; }
-      set { this.activitiesToTrackField = value; }
-    }
-
-    public bool exposureToConversionEnabled {
-      get { return this.exposureToConversionEnabledField; }
-      set { this.exposureToConversionEnabledField = value; }
-    }
-
-    public int exposuresToTrack {
-      get { return this.exposuresToTrackField; }
-      set { this.exposuresToTrackField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class AdvancedReportsConfiguration {
-    private int crossSiteDuplicationField;
-
-    private int frequencyToConversionField;
-
-    private int timeLagToConversionField;
-
-    public int crossSiteDuplication {
-      get { return this.crossSiteDuplicationField; }
-      set { this.crossSiteDuplicationField = value; }
-    }
-
-    public int frequencyToConversion {
-      get { return this.frequencyToConversionField; }
-      set { this.frequencyToConversionField = value; }
-    }
-
-    public int timeLagToConversion {
-      get { return this.timeLagToConversionField; }
-      set { this.timeLagToConversionField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class ReportsConfiguration {
-    private AdvancedReportsConfiguration advancedReportsConfigurationField;
-
-    private ExposureToConversionConfiguration exposureToConversionConfigurationField;
-
-    private LookbackConfiguration lookbackConfigurationField;
-
-    private int minimumClickRateField;
-
-    private int minimumClicksField;
-
-    private int minimumDaysField;
-
-    private int minimumImpressionsField;
-
-    private ReachReportConfiguration reachReportConfigurationField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public AdvancedReportsConfiguration advancedReportsConfiguration {
-      get { return this.advancedReportsConfigurationField; }
-      set { this.advancedReportsConfigurationField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public ExposureToConversionConfiguration exposureToConversionConfiguration {
-      get { return this.exposureToConversionConfigurationField; }
-      set { this.exposureToConversionConfigurationField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public LookbackConfiguration lookbackConfiguration {
-      get { return this.lookbackConfigurationField; }
-      set { this.lookbackConfigurationField = value; }
-    }
-
-    public int minimumClickRate {
-      get { return this.minimumClickRateField; }
-      set { this.minimumClickRateField = value; }
-    }
-
-    public int minimumClicks {
-      get { return this.minimumClicksField; }
-      set { this.minimumClicksField = value; }
-    }
-
-    public int minimumDays {
-      get { return this.minimumDaysField; }
-      set { this.minimumDaysField = value; }
-    }
-
-    public int minimumImpressions {
-      get { return this.minimumImpressionsField; }
-      set { this.minimumImpressionsField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public ReachReportConfiguration reachReportConfiguration {
-      get { return this.reachReportConfigurationField; }
-      set { this.reachReportConfigurationField = value; }
+    public System.DateTime? executionDate {
+      get { return this.executionDateField; }
+      set { this.executionDateField = value; }
     }
   }
 
@@ -1253,6 +877,449 @@ namespace Google.Api.Ads.Dfa.v1_15 {
   }
 
 
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class ReportsConfiguration {
+    private AdvancedReportsConfiguration advancedReportsConfigurationField;
+
+    private ExposureToConversionConfiguration exposureToConversionConfigurationField;
+
+    private LookbackConfiguration lookbackConfigurationField;
+
+    private int minimumClickRateField;
+
+    private int minimumClicksField;
+
+    private int minimumDaysField;
+
+    private int minimumImpressionsField;
+
+    private ReachReportConfiguration reachReportConfigurationField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public AdvancedReportsConfiguration advancedReportsConfiguration {
+      get { return this.advancedReportsConfigurationField; }
+      set { this.advancedReportsConfigurationField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public ExposureToConversionConfiguration exposureToConversionConfiguration {
+      get { return this.exposureToConversionConfigurationField; }
+      set { this.exposureToConversionConfigurationField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public LookbackConfiguration lookbackConfiguration {
+      get { return this.lookbackConfigurationField; }
+      set { this.lookbackConfigurationField = value; }
+    }
+
+    public int minimumClickRate {
+      get { return this.minimumClickRateField; }
+      set { this.minimumClickRateField = value; }
+    }
+
+    public int minimumClicks {
+      get { return this.minimumClicksField; }
+      set { this.minimumClicksField = value; }
+    }
+
+    public int minimumDays {
+      get { return this.minimumDaysField; }
+      set { this.minimumDaysField = value; }
+    }
+
+    public int minimumImpressions {
+      get { return this.minimumImpressionsField; }
+      set { this.minimumImpressionsField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public ReachReportConfiguration reachReportConfiguration {
+      get { return this.reachReportConfigurationField; }
+      set { this.reachReportConfigurationField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class AdvancedReportsConfiguration {
+    private int crossSiteDuplicationField;
+
+    private int frequencyToConversionField;
+
+    private int timeLagToConversionField;
+
+    public int crossSiteDuplication {
+      get { return this.crossSiteDuplicationField; }
+      set { this.crossSiteDuplicationField = value; }
+    }
+
+    public int frequencyToConversion {
+      get { return this.frequencyToConversionField; }
+      set { this.frequencyToConversionField = value; }
+    }
+
+    public int timeLagToConversion {
+      get { return this.timeLagToConversionField; }
+      set { this.timeLagToConversionField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class ExposureToConversionConfiguration {
+    private int activitiesToTrackField;
+
+    private bool exposureToConversionEnabledField;
+
+    private int exposuresToTrackField;
+
+    public int activitiesToTrack {
+      get { return this.activitiesToTrackField; }
+      set { this.activitiesToTrackField = value; }
+    }
+
+    public bool exposureToConversionEnabled {
+      get { return this.exposureToConversionEnabledField; }
+      set { this.exposureToConversionEnabledField = value; }
+    }
+
+    public int exposuresToTrack {
+      get { return this.exposuresToTrackField; }
+      set { this.exposuresToTrackField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class LookbackConfiguration {
+    private int clickDurationField;
+
+    private int postImpressionActivitiesDurationField;
+
+    private int reportsDaysField;
+
+    private int richMediaEventsDaysField;
+
+    public int clickDuration {
+      get { return this.clickDurationField; }
+      set { this.clickDurationField = value; }
+    }
+
+    public int postImpressionActivitiesDuration {
+      get { return this.postImpressionActivitiesDurationField; }
+      set { this.postImpressionActivitiesDurationField = value; }
+    }
+
+    public int reportsDays {
+      get { return this.reportsDaysField; }
+      set { this.reportsDaysField = value; }
+    }
+
+    public int richMediaEventsDays {
+      get { return this.richMediaEventsDaysField; }
+      set { this.richMediaEventsDaysField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class ReachReportConfiguration {
+    private bool adTypeFrequencyAndReachField;
+
+    private bool pageLevelFrequencyField;
+
+    private bool placementFrequencyField;
+
+    private bool siteLevelFrequencyField;
+
+    public bool adTypeFrequencyAndReach {
+      get { return this.adTypeFrequencyAndReachField; }
+      set { this.adTypeFrequencyAndReachField = value; }
+    }
+
+    public bool pageLevelFrequency {
+      get { return this.pageLevelFrequencyField; }
+      set { this.pageLevelFrequencyField = value; }
+    }
+
+    public bool placementFrequency {
+      get { return this.placementFrequencyField; }
+      set { this.placementFrequencyField = value; }
+    }
+
+    public bool siteLevelFrequency {
+      get { return this.siteLevelFrequencyField; }
+      set { this.siteLevelFrequencyField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class RichMediaNetworkConfiguration {
+    private BillingCustomer billingCustomerField;
+
+    private long changeUserIdField;
+
+    private long customerIdField;
+
+    private System.DateTime? dateAssignedField;
+
+    private long networkField;
+
+    private long teaserSizeLimitField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public BillingCustomer billingCustomer {
+      get { return this.billingCustomerField; }
+      set { this.billingCustomerField = value; }
+    }
+
+    public long changeUserId {
+      get { return this.changeUserIdField; }
+      set { this.changeUserIdField = value; }
+    }
+
+    public long customerId {
+      get { return this.customerIdField; }
+      set { this.customerIdField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public System.DateTime? dateAssigned {
+      get { return this.dateAssignedField; }
+      set { this.dateAssignedField = value; }
+    }
+
+    public long network {
+      get { return this.networkField; }
+      set { this.networkField = value; }
+    }
+
+    public long teaserSizeLimit {
+      get { return this.teaserSizeLimitField; }
+      set { this.teaserSizeLimitField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class BillingCustomer {
+    private string accessCodeTypeField;
+
+    private bool activeField;
+
+    private string billingCodeField;
+
+    private System.DateTime? expirationDateField;
+
+    private bool publisherField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string accessCodeType {
+      get { return this.accessCodeTypeField; }
+      set { this.accessCodeTypeField = value; }
+    }
+
+    public bool active {
+      get { return this.activeField; }
+      set { this.activeField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string billingCode {
+      get { return this.billingCodeField; }
+      set { this.billingCodeField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public System.DateTime? expirationDate {
+      get { return this.expirationDateField; }
+      set { this.expirationDateField = value; }
+    }
+
+    public bool publisher {
+      get { return this.publisherField; }
+      set { this.publisherField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class WidgetNetworkConfig {
+    private bool activeField;
+
+    private double imageSizeField;
+
+    private string imageUrlField;
+
+    private string staticDataURLField;
+
+    public bool active {
+      get { return this.activeField; }
+      set { this.activeField = value; }
+    }
+
+    public double imageSize {
+      get { return this.imageSizeField; }
+      set { this.imageSizeField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string imageUrl {
+      get { return this.imageUrlField; }
+      set { this.imageUrlField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string staticDataURL {
+      get { return this.staticDataURLField; }
+      set { this.staticDataURLField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class WidgetImageUploadResponse {
+    private double imageSizeField;
+
+    private string relativeImageUrlField;
+
+    private string staticDataUrlField;
+
+    public double imageSize {
+      get { return this.imageSizeField; }
+      set { this.imageSizeField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string relativeImageUrl {
+      get { return this.relativeImageUrlField; }
+      set { this.relativeImageUrlField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string staticDataUrl {
+      get { return this.staticDataUrlField; }
+      set { this.staticDataUrlField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class WidgetImageUploadRequest {
+    private long campaignField;
+
+    private byte[] filedataField;
+
+    private string filenameField;
+
+    private long networkField;
+
+    private bool networkWidgetImageUploadField;
+
+    private string profileField;
+
+    public long campaign {
+      get { return this.campaignField; }
+      set { this.campaignField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(DataType = "base64Binary", IsNullable = true)]
+    public byte[] filedata {
+      get { return this.filedataField; }
+      set { this.filedataField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string filename {
+      get { return this.filenameField; }
+      set { this.filenameField = value; }
+    }
+
+    public long network {
+      get { return this.networkField; }
+      set { this.networkField = value; }
+    }
+
+    public bool networkWidgetImageUpload {
+      get { return this.networkWidgetImageUploadField; }
+      set { this.networkWidgetImageUploadField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string profile {
+      get { return this.profileField; }
+      set { this.profileField = value; }
+    }
+  }
+
+
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(NetworkSaveResult))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public abstract partial class SaveResult {
+    private long idField;
+
+    public long id {
+      get { return this.idField; }
+      set { this.idField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class NetworkSaveResult : SaveResult {
+  }
+
+
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(NetworkRecordSet))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
@@ -1322,6 +1389,7 @@ namespace Google.Api.Ads.Dfa.v1_15 {
   }
 
 
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(AgreementSearchCriteria))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PageableSearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(NetworkSearchCriteria))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -1345,6 +1413,15 @@ namespace Google.Api.Ads.Dfa.v1_15 {
       get { return this.searchStringField; }
       set { this.searchStringField = value; }
     }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class AgreementSearchCriteria : SearchCriteriaBase {
   }
 
 
@@ -1529,6 +1606,8 @@ namespace Google.Api.Ads.Dfa.v1_15 {
 
     private LookbackWindow lookbackWindowField;
 
+    private bool paymentAcceptedField;
+
     private long placementGroupIdField;
 
     private long placementStrategyIdField;
@@ -1573,6 +1652,11 @@ namespace Google.Api.Ads.Dfa.v1_15 {
     public LookbackWindow lookbackWindow {
       get { return this.lookbackWindowField; }
       set { this.lookbackWindowField = value; }
+    }
+
+    public bool paymentAccepted {
+      get { return this.paymentAcceptedField; }
+      set { this.paymentAcceptedField = value; }
     }
 
     public long placementGroupId {
@@ -2124,8 +2208,8 @@ namespace Google.Api.Ads.Dfa.v1_15 {
   }
 
 
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(ClickTracker))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(DefaultAd))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(ClickTracker))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(MobileAd))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(TrackingAd))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(TargetableAdBase))]
@@ -2224,82 +2308,6 @@ namespace Google.Api.Ads.Dfa.v1_15 {
     public long placementId {
       get { return this.placementIdField; }
       set { this.placementIdField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class ClickTracker : AdBase {
-    private ClickThroughUrl clickThroughUrlField;
-
-    private CreativeGroupAssignment creativeGroupAssignmentField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public ClickThroughUrl clickThroughUrl {
-      get { return this.clickThroughUrlField; }
-      set { this.clickThroughUrlField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public CreativeGroupAssignment creativeGroupAssignment {
-      get { return this.creativeGroupAssignmentField; }
-      set { this.creativeGroupAssignmentField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class ClickThroughUrl {
-    private string customClickThroughUrlField;
-
-    private bool defaultLandingPageUsedField;
-
-    private long landingPageIdField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string customClickThroughUrl {
-      get { return this.customClickThroughUrlField; }
-      set { this.customClickThroughUrlField = value; }
-    }
-
-    public bool defaultLandingPageUsed {
-      get { return this.defaultLandingPageUsedField; }
-      set { this.defaultLandingPageUsedField = value; }
-    }
-
-    public long landingPageId {
-      get { return this.landingPageIdField; }
-      set { this.landingPageIdField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class CreativeGroupAssignment {
-    private long creativeGroup1IdField;
-
-    private long creativeGroup2IdField;
-
-    public long creativeGroup1Id {
-      get { return this.creativeGroup1IdField; }
-      set { this.creativeGroup1IdField = value; }
-    }
-
-    public long creativeGroup2Id {
-      get { return this.creativeGroup2IdField; }
-      set { this.creativeGroup2IdField = value; }
     }
   }
 
@@ -2409,6 +2417,58 @@ namespace Google.Api.Ads.Dfa.v1_15 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class ClickThroughUrl {
+    private string customClickThroughUrlField;
+
+    private bool defaultLandingPageUsedField;
+
+    private long landingPageIdField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string customClickThroughUrl {
+      get { return this.customClickThroughUrlField; }
+      set { this.customClickThroughUrlField = value; }
+    }
+
+    public bool defaultLandingPageUsed {
+      get { return this.defaultLandingPageUsedField; }
+      set { this.defaultLandingPageUsedField = value; }
+    }
+
+    public long landingPageId {
+      get { return this.landingPageIdField; }
+      set { this.landingPageIdField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class CreativeGroupAssignment {
+    private long creativeGroup1IdField;
+
+    private long creativeGroup2IdField;
+
+    public long creativeGroup1Id {
+      get { return this.creativeGroup1IdField; }
+      set { this.creativeGroup1IdField = value; }
+    }
+
+    public long creativeGroup2Id {
+      get { return this.creativeGroup2IdField; }
+      set { this.creativeGroup2IdField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
   public partial class RichMediaExitOverride {
     private string clickThroughUrlField;
 
@@ -2423,6 +2483,30 @@ namespace Google.Api.Ads.Dfa.v1_15 {
     public long exitId {
       get { return this.exitIdField; }
       set { this.exitIdField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class ClickTracker : AdBase {
+    private ClickThroughUrl clickThroughUrlField;
+
+    private CreativeGroupAssignment creativeGroupAssignmentField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public ClickThroughUrl clickThroughUrl {
+      get { return this.clickThroughUrlField; }
+      set { this.clickThroughUrlField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public CreativeGroupAssignment creativeGroupAssignment {
+      get { return this.creativeGroupAssignmentField; }
+      set { this.creativeGroupAssignmentField = value; }
     }
   }
 
@@ -4641,16 +4725,8 @@ namespace Google.Api.Ads.Dfa.v1_15 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.15", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.15")]
     [return: System.Xml.Serialization.SoapElementAttribute("Size")]
-    public Size getSize(int width, int height) {
-      object[] results = this.Invoke("getSize", new object[] {width, height});
-      return ((Size) (results[0]));
-    }
-
-    [System.Web.Services.WebMethodAttribute(MessageName = "getSize1")]
-    [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.15", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-    [return: System.Xml.Serialization.SoapElementAttribute("Size")]
     public Size getSize(long id) {
-      object[] results = this.Invoke("getSize1", new object[] {id});
+      object[] results = this.Invoke("getSize", new object[] {id});
       return ((Size) (results[0]));
     }
 
@@ -8050,13 +8126,6 @@ byte[] fileData) {
   }
 
 
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(TrackingTextCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(HTMLCreativeBase))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(HTMLInterstitialCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(HTMLCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(FlashInpageCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(MobileDisplayCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(TrackingHTMLCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RedirectCreativeBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(InternalRedirectCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(InterstitialInternalRedirectCreative))]
@@ -8064,17 +8133,24 @@ byte[] fileData) {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(ImageCreativeBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(TrackingImageCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(ImageCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(HTMLCreativeBase))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(HTMLCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(HTMLInterstitialCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(MobileDisplayCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(FlashInpageCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(TrackingHTMLCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(TrackingTextCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaCreativeBase))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaImageWithFloatingCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaInPageWithOverlayCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFlashInFlashCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFloatingWithReminderCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaExpandingCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFloatingCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaInPageWithFloatingCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFlashInFlashCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaImageWithFloatingCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaExpandingCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaOverlayCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFloatingWithReminderCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaInPageWithOverlayCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaImageWithOverlayCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaInPageCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFloatingCreative))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9333,11 +9409,11 @@ byte[] fileData) {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaVideoAsset))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaImageAsset))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFlashAsset))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaReminderAsset))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaExpandingAsset))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaReminderAsset))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFloatingAsset))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaOverlayAsset))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaInPageAsset))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFloatingAsset))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9452,11 +9528,11 @@ byte[] fileData) {
   }
 
 
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaReminderAsset))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaExpandingAsset))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaReminderAsset))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFloatingAsset))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaOverlayAsset))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaInPageAsset))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFloatingAsset))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9491,80 +9567,6 @@ byte[] fileData) {
     public string wmode {
       get { return this.wmodeField; }
       set { this.wmodeField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class RichMediaReminderAsset : RichMediaFlashAsset {
-    private string zIndexField;
-
-    private int durationField;
-
-    private int leftField;
-
-    private bool leftLockPositionField;
-
-    private string leftUnitField;
-
-    private int startTimeField;
-
-    private int topField;
-
-    private bool topLockPositionField;
-
-    private string topUnitField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string ZIndex {
-      get { return this.zIndexField; }
-      set { this.zIndexField = value; }
-    }
-
-    public int duration {
-      get { return this.durationField; }
-      set { this.durationField = value; }
-    }
-
-    public int left {
-      get { return this.leftField; }
-      set { this.leftField = value; }
-    }
-
-    public bool leftLockPosition {
-      get { return this.leftLockPositionField; }
-      set { this.leftLockPositionField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string leftUnit {
-      get { return this.leftUnitField; }
-      set { this.leftUnitField = value; }
-    }
-
-    public int startTime {
-      get { return this.startTimeField; }
-      set { this.startTimeField = value; }
-    }
-
-    public int top {
-      get { return this.topField; }
-      set { this.topField = value; }
-    }
-
-    public bool topLockPosition {
-      get { return this.topLockPositionField; }
-      set { this.topLockPositionField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string topUnit {
-      get { return this.topUnitField; }
-      set { this.topUnitField = value; }
     }
   }
 
@@ -9696,34 +9698,29 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class RichMediaOverlayAsset : RichMediaFlashAsset {
-    private bool addressBarField;
+  public partial class RichMediaReminderAsset : RichMediaFlashAsset {
+    private string zIndexField;
 
     private int durationField;
 
     private int leftField;
 
+    private bool leftLockPositionField;
+
     private string leftUnitField;
-
-    private bool menuBarField;
-
-    private bool overlayField;
 
     private int startTimeField;
 
-    private bool statusBarField;
-
-    private bool toolBarField;
-
     private int topField;
+
+    private bool topLockPositionField;
 
     private string topUnitField;
 
-    private string windowTitleField;
-
-    public bool addressBar {
-      get { return this.addressBarField; }
-      set { this.addressBarField = value; }
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string ZIndex {
+      get { return this.zIndexField; }
+      set { this.zIndexField = value; }
     }
 
     public int duration {
@@ -9736,20 +9733,15 @@ byte[] fileData) {
       set { this.leftField = value; }
     }
 
+    public bool leftLockPosition {
+      get { return this.leftLockPositionField; }
+      set { this.leftLockPositionField = value; }
+    }
+
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
     public string leftUnit {
       get { return this.leftUnitField; }
       set { this.leftUnitField = value; }
-    }
-
-    public bool menuBar {
-      get { return this.menuBarField; }
-      set { this.menuBarField = value; }
-    }
-
-    public bool overlay {
-      get { return this.overlayField; }
-      set { this.overlayField = value; }
     }
 
     public int startTime {
@@ -9757,47 +9749,20 @@ byte[] fileData) {
       set { this.startTimeField = value; }
     }
 
-    public bool statusBar {
-      get { return this.statusBarField; }
-      set { this.statusBarField = value; }
-    }
-
-    public bool toolBar {
-      get { return this.toolBarField; }
-      set { this.toolBarField = value; }
-    }
-
     public int top {
       get { return this.topField; }
       set { this.topField = value; }
+    }
+
+    public bool topLockPosition {
+      get { return this.topLockPositionField; }
+      set { this.topLockPositionField = value; }
     }
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
     public string topUnit {
       get { return this.topUnitField; }
       set { this.topUnitField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string windowTitle {
-      get { return this.windowTitleField; }
-      set { this.windowTitleField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class RichMediaInPageAsset : RichMediaFlashAsset {
-    private RichMediaImageAsset alternateImageAssetField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public RichMediaImageAsset alternateImageAsset {
-      get { return this.alternateImageAssetField; }
-      set { this.alternateImageAssetField = value; }
     }
   }
 
@@ -9916,14 +9881,206 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class TrackingTextCreative : CreativeBase {
+  public partial class RichMediaOverlayAsset : RichMediaFlashAsset {
+    private bool addressBarField;
+
+    private int durationField;
+
+    private int leftField;
+
+    private string leftUnitField;
+
+    private bool menuBarField;
+
+    private bool overlayField;
+
+    private int startTimeField;
+
+    private bool statusBarField;
+
+    private bool toolBarField;
+
+    private int topField;
+
+    private string topUnitField;
+
+    private string windowTitleField;
+
+    public bool addressBar {
+      get { return this.addressBarField; }
+      set { this.addressBarField = value; }
+    }
+
+    public int duration {
+      get { return this.durationField; }
+      set { this.durationField = value; }
+    }
+
+    public int left {
+      get { return this.leftField; }
+      set { this.leftField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string leftUnit {
+      get { return this.leftUnitField; }
+      set { this.leftUnitField = value; }
+    }
+
+    public bool menuBar {
+      get { return this.menuBarField; }
+      set { this.menuBarField = value; }
+    }
+
+    public bool overlay {
+      get { return this.overlayField; }
+      set { this.overlayField = value; }
+    }
+
+    public int startTime {
+      get { return this.startTimeField; }
+      set { this.startTimeField = value; }
+    }
+
+    public bool statusBar {
+      get { return this.statusBarField; }
+      set { this.statusBarField = value; }
+    }
+
+    public bool toolBar {
+      get { return this.toolBarField; }
+      set { this.toolBarField = value; }
+    }
+
+    public int top {
+      get { return this.topField; }
+      set { this.topField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string topUnit {
+      get { return this.topUnitField; }
+      set { this.topUnitField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string windowTitle {
+      get { return this.windowTitleField; }
+      set { this.windowTitleField = value; }
+    }
   }
 
 
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(HTMLInterstitialCreative))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class RichMediaInPageAsset : RichMediaFlashAsset {
+    private RichMediaImageAsset alternateImageAssetField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public RichMediaImageAsset alternateImageAsset {
+      get { return this.alternateImageAssetField; }
+      set { this.alternateImageAssetField = value; }
+    }
+  }
+
+
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(InternalRedirectCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(InterstitialInternalRedirectCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RedirectCreative))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public abstract partial class RedirectCreativeBase : CreativeBase {
+    private string redirectUrlField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string redirectUrl {
+      get { return this.redirectUrlField; }
+      set { this.redirectUrlField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class InternalRedirectCreative : RedirectCreativeBase {
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class InterstitialInternalRedirectCreative : RedirectCreativeBase {
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class RedirectCreative : RedirectCreativeBase {
+  }
+
+
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(TrackingImageCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(ImageCreative))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public abstract partial class ImageCreativeBase : CreativeBase {
+    private string alternateTextField;
+
+    private string assetFilenameField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string alternateText {
+      get { return this.alternateTextField; }
+      set { this.alternateTextField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string assetFilename {
+      get { return this.assetFilenameField; }
+      set { this.assetFilenameField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class TrackingImageCreative : ImageCreativeBase {
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class ImageCreative : ImageCreativeBase {
+  }
+
+
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(HTMLCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(FlashInpageCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(HTMLInterstitialCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(MobileDisplayCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(FlashInpageCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(TrackingHTMLCreative))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
@@ -9954,6 +10111,15 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class HTMLCreative : HTMLCreativeBase {
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
   public partial class HTMLInterstitialCreative : HTMLCreativeBase {
   }
 
@@ -9963,7 +10129,22 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class HTMLCreative : HTMLCreativeBase {
+  public partial class MobileDisplayCreative : HTMLCreativeBase {
+    private string thirdPartyClickTrackingUrlField;
+
+    private string thirdPartyImpressionTrackingUrlField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string thirdPartyClickTrackingUrl {
+      get { return this.thirdPartyClickTrackingUrlField; }
+      set { this.thirdPartyClickTrackingUrlField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string thirdPartyImpressionTrackingUrl {
+      get { return this.thirdPartyImpressionTrackingUrlField; }
+      set { this.thirdPartyImpressionTrackingUrlField = value; }
+    }
   }
 
 
@@ -10090,134 +10271,29 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class MobileDisplayCreative : HTMLCreativeBase {
-    private string thirdPartyClickTrackingUrlField;
-
-    private string thirdPartyImpressionTrackingUrlField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string thirdPartyClickTrackingUrl {
-      get { return this.thirdPartyClickTrackingUrlField; }
-      set { this.thirdPartyClickTrackingUrlField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string thirdPartyImpressionTrackingUrl {
-      get { return this.thirdPartyImpressionTrackingUrlField; }
-      set { this.thirdPartyImpressionTrackingUrlField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
   public partial class TrackingHTMLCreative : HTMLCreativeBase {
   }
 
 
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(InternalRedirectCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(InterstitialInternalRedirectCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RedirectCreative))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public abstract partial class RedirectCreativeBase : CreativeBase {
-    private string redirectUrlField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string redirectUrl {
-      get { return this.redirectUrlField; }
-      set { this.redirectUrlField = value; }
-    }
+  public partial class TrackingTextCreative : CreativeBase {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class InternalRedirectCreative : RedirectCreativeBase {
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class InterstitialInternalRedirectCreative : RedirectCreativeBase {
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class RedirectCreative : RedirectCreativeBase {
-  }
-
-
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(TrackingImageCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(ImageCreative))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public abstract partial class ImageCreativeBase : CreativeBase {
-    private string alternateTextField;
-
-    private string assetFilenameField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string alternateText {
-      get { return this.alternateTextField; }
-      set { this.alternateTextField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string assetFilename {
-      get { return this.assetFilenameField; }
-      set { this.assetFilenameField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class TrackingImageCreative : ImageCreativeBase {
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class ImageCreative : ImageCreativeBase {
-  }
-
-
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaImageWithFloatingCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaInPageWithOverlayCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFlashInFlashCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFloatingWithReminderCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaExpandingCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFloatingCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaInPageWithFloatingCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFlashInFlashCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaImageWithFloatingCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaExpandingCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaOverlayCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFloatingWithReminderCreative))]
+  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaInPageWithOverlayCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaImageWithOverlayCreative))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaInPageCreative))]
-  [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaFloatingCreative))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10425,109 +10501,13 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class RichMediaImageWithFloatingCreative : RichMediaCreativeBase {
+  public partial class RichMediaFloatingCreative : RichMediaCreativeBase {
     private RichMediaFloatingAsset floatingAssetField;
-
-    private RichMediaImageAsset imageAssetField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
     public RichMediaFloatingAsset floatingAsset {
       get { return this.floatingAssetField; }
       set { this.floatingAssetField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public RichMediaImageAsset imageAsset {
-      get { return this.imageAssetField; }
-      set { this.imageAssetField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class RichMediaInPageWithOverlayCreative : RichMediaCreativeBase {
-    private RichMediaInPageAsset inPageAssetField;
-
-    private RichMediaOverlayAsset overlayAssetField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public RichMediaInPageAsset inPageAsset {
-      get { return this.inPageAssetField; }
-      set { this.inPageAssetField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public RichMediaOverlayAsset overlayAsset {
-      get { return this.overlayAssetField; }
-      set { this.overlayAssetField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class RichMediaFlashInFlashCreative : RichMediaCreativeBase {
-    private string assetTypeField;
-
-    private RichMediaFlashAsset flashAssetField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public string assetType {
-      get { return this.assetTypeField; }
-      set { this.assetTypeField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public RichMediaFlashAsset flashAsset {
-      get { return this.flashAssetField; }
-      set { this.flashAssetField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class RichMediaFloatingWithReminderCreative : RichMediaCreativeBase {
-    private RichMediaFloatingAsset floatingAssetField;
-
-    private RichMediaReminderAsset reminderAssetField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public RichMediaFloatingAsset floatingAsset {
-      get { return this.floatingAssetField; }
-      set { this.floatingAssetField = value; }
-    }
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public RichMediaReminderAsset reminderAsset {
-      get { return this.reminderAssetField; }
-      set { this.reminderAssetField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class RichMediaExpandingCreative : RichMediaCreativeBase {
-    private RichMediaExpandingAsset expandingAssetField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public RichMediaExpandingAsset expandingAsset {
-      get { return this.expandingAssetField; }
-      set { this.expandingAssetField = value; }
     }
   }
 
@@ -10561,8 +10541,120 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class RichMediaFlashInFlashCreative : RichMediaCreativeBase {
+    private string assetTypeField;
+
+    private RichMediaFlashAsset flashAssetField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public string assetType {
+      get { return this.assetTypeField; }
+      set { this.assetTypeField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public RichMediaFlashAsset flashAsset {
+      get { return this.flashAssetField; }
+      set { this.flashAssetField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class RichMediaImageWithFloatingCreative : RichMediaCreativeBase {
+    private RichMediaFloatingAsset floatingAssetField;
+
+    private RichMediaImageAsset imageAssetField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public RichMediaFloatingAsset floatingAsset {
+      get { return this.floatingAssetField; }
+      set { this.floatingAssetField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public RichMediaImageAsset imageAsset {
+      get { return this.imageAssetField; }
+      set { this.imageAssetField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class RichMediaExpandingCreative : RichMediaCreativeBase {
+    private RichMediaExpandingAsset expandingAssetField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public RichMediaExpandingAsset expandingAsset {
+      get { return this.expandingAssetField; }
+      set { this.expandingAssetField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
   public partial class RichMediaOverlayCreative : RichMediaCreativeBase {
     private RichMediaOverlayAsset overlayAssetField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public RichMediaOverlayAsset overlayAsset {
+      get { return this.overlayAssetField; }
+      set { this.overlayAssetField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class RichMediaFloatingWithReminderCreative : RichMediaCreativeBase {
+    private RichMediaFloatingAsset floatingAssetField;
+
+    private RichMediaReminderAsset reminderAssetField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public RichMediaFloatingAsset floatingAsset {
+      get { return this.floatingAssetField; }
+      set { this.floatingAssetField = value; }
+    }
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public RichMediaReminderAsset reminderAsset {
+      get { return this.reminderAssetField; }
+      set { this.reminderAssetField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
+  public partial class RichMediaInPageWithOverlayCreative : RichMediaCreativeBase {
+    private RichMediaInPageAsset inPageAssetField;
+
+    private RichMediaOverlayAsset overlayAssetField;
+
+    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
+    public RichMediaInPageAsset inPageAsset {
+      get { return this.inPageAssetField; }
+      set { this.inPageAssetField = value; }
+    }
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
     public RichMediaOverlayAsset overlayAsset {
@@ -10608,22 +10700,6 @@ byte[] fileData) {
     public RichMediaInPageAsset inPageAsset {
       get { return this.inPageAssetField; }
       set { this.inPageAssetField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.15")]
-  public partial class RichMediaFloatingCreative : RichMediaCreativeBase {
-    private RichMediaFloatingAsset floatingAssetField;
-
-    [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
-    public RichMediaFloatingAsset floatingAsset {
-      get { return this.floatingAssetField; }
-      set { this.floatingAssetField = value; }
     }
   }
 

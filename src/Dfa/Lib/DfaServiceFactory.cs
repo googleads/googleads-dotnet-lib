@@ -187,6 +187,8 @@ namespace Google.Api.Ads.Dfa.Lib {
         service.Proxy = config.Proxy;
       }
 
+      service.Timeout = config.Timeout;
+
       service.Url = string.Format("{0}{1}/api/dfa-api/{2}",
           serverUrl, dfaapiSignature.Version, dfaapiSignature.ServiceEndpoint);
 
