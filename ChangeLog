@@ -1,3 +1,7 @@
+3.5.0
+- Exposed Timeout setting in App.config.
+- Default service Timeout is now infinite.
+
 3.4.0
 - Fixed issues 4, 5, 6
 - Fixed broken csproj files.
