@@ -218,7 +218,17 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="serviceFactory">The factory that will create this
     /// service.</param>
     public void RegisterService(string serviceId, ServiceFactory serviceFactory) {
-      serviceFactoryMap.Add(serviceId, serviceFactory);
+      serviceFactoryMap[serviceId] = serviceFactory;
+    }
+
+    /// <summary>
+    /// Gets the service factory for a service.
+    /// </summary>
+    /// <param name="serviceId">The service id.</param>
+    /// <returns>The service factory instance, or null if the service is not
+    /// yet registered.</returns>
+    public ServiceFactory GetServiceFactory(string serviceId) {
+      return (serviceFactoryMap.ContainsKey(serviceId)) ? serviceFactoryMap[serviceId] : null;
     }
 
     /// <summary>
@@ -260,12 +270,14 @@ namespace Google.Api.Ads.Common.Lib {
     public AdsClient GetService(ServiceSignature serviceSignature, Uri serverUrl) {
       if (serviceSignature == null) {
         throw new ArgumentNullException("serviceSignature");
-      } else if (!serviceFactoryMap.ContainsKey(serviceSignature.Id)) {
-        throw new ArgumentException(string.Format(
-            CommonErrorMessages.UnregisteredServiceTypeRequested, serviceSignature.ServiceName));
       } else {
-        return serviceFactoryMap[serviceSignature.Id].CreateService(serviceSignature,
-            this, serverUrl);
+        ServiceFactory factory = GetServiceFactory(serviceSignature.Id);
+        if (factory == null) {
+          throw new ArgumentException(string.Format(
+              CommonErrorMessages.UnregisteredServiceTypeRequested, serviceSignature.ServiceName));
+        } else {
+          return factory.CreateService(serviceSignature, this, serverUrl);
+        }
       }
     }
 
