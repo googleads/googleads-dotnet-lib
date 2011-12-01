@@ -1,3 +1,6 @@
+3.6.0
+- Added support for v201111.
+
 3.5.0
 - Exposed Timeout setting in App.config.
 - Default service Timeout is now infinite.
