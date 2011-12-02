@@ -16,17 +16,21 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v13;
+using Google.Api.Ads.AdWords.v201109;
+
+using NUnit.Framework;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
+
 namespace Google.Api.Ads.AdWords.Tests {
   /// <summary>
   /// Base class for all test suites.
   /// </summary>
-  class BaseTests {
+  public class BaseTests {
     /// <summary>
     /// The AdWords user to be used for tests.
     /// </summary>
@@ -35,19 +39,39 @@ namespace Google.Api.Ads.AdWords.Tests {
     /// <summary>
     /// Default public constructor.
     /// </summary>
-    /// <remarks>The constructor adds a 2000 ms delay between running individual
-    /// tests so that we don't hit the ClientLogin server frequently and cause
-    /// it throw captcha errors. You shouldn't do this in your code, instead
-    /// you should generate an authtoken, set it in your App.config and reuse
-    /// it to avoid performance issues.
-    /// </remarks>
     public BaseTests() {
-      // Make sure we don't hit the authtoken endpoint really bad.
-      Thread.Sleep(2000);
-      AccountService accountService =
-          (AccountService) user.GetService(AdWordsService.v13.AccountService);
-      accountService.clientEmailValue = null;
-      string[] clients = accountService.getClientAccounts();
+      (user.Config as AdWordsAppConfig).ClientCustomerId = null;
+      (user.Config as AdWordsAppConfig).ClientEmail = null;
+      CampaignService campaignService = (CampaignService) user.GetService(
+          AdWordsService.v201109.CampaignService);
+      ServicedAccountService servicedAccountService =
+          (ServicedAccountService) user.GetService(AdWordsService.v201109.
+              ServicedAccountService);
+
+      // Create a selector.
+      Selector selector = new Selector();
+      selector.fields = new string[] {"Id", "Name", "Status"};
+
+      // Initialize the sandbox by making a call to CampaignService.get.
+      CampaignPage page = campaignService.get(selector);
+
+      // Get the client customer ids.
+      ServicedAccountSelector serviceSelector = new ServicedAccountSelector();
+      serviceSelector.enablePaging = false;
+
+      ServicedAccountGraph graph = servicedAccountService.get(serviceSelector);
+
+      if (graph != null && graph.accounts != null) {
+        for (int i = 0; i < graph.accounts.Length; i++) {
+          if (graph.accounts[i].canManageClients == false) {
+            (user.Config as AdWordsAppConfig).ClientCustomerId =
+                graph.accounts[i].customerId.ToString();
+            break;
+          }
+        }
+      }
+      Assert.NotNull((user.Config as AdWordsAppConfig).ClientCustomerId);
+      Assert.Null((user.Config as AdWordsAppConfig).ClientEmail);
     }
   }
 }

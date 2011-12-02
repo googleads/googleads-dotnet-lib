@@ -245,6 +245,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         request.Headers.Add("clientCustomerId: " + config.ClientCustomerId);
       }
       request.ContentType = "application/x-www-form-urlencoded";
+      if (config.EnableGzipCompression) {
+        (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.GZip
+            | DecompressionMethods.Deflate;
+      } else {
+        (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.None;
+      }
       if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth) {
         if (this.User.OAuthProvider != null) {
           AdsOAuthProvider provider = this.User.OAuthProvider;

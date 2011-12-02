@@ -77,16 +77,21 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
 
       Try
         Dim utilities As New ReportUtilities(user)
-        ' If you know that your report is small enough to fit in memory, then
-        ' you can instead use
-        ' ClientReport report = new ReportUtilities().DownloadClientReport(
-        '     new AdWordsAppConfig(), definition);
-        '
-        ' ' Binary report file (e.g. zip format)
-        ' byte[] reportBytes = report.Contents;
-        '
-        ' ' Text report file (e.g. xml format)
-        ' string reportText = report.Text;
+        ' ' If you know that your report is small enough to fit in memory, then
+        ' ' you can instead use
+        ' Dim report As ClientReport = New ReportUtilities(user).GetClientReport(definition)
+
+        ' ' Get the text report directly if you requested a text format
+        ' ' (e.g. xml)
+        ' Dim reportText as string = report.Text;
+
+        ' ' Get the binary report if you requested a binary format
+        ' ' (e.g. gzip)
+        ' Dim reportBytes as byte() = report.Contents;
+
+        ' ' Deflate a zipped binary report for further processing.
+        ' Dim deflatedReportText As String = System.Text.Encoding.UTF8.GetString( _
+        '     MediaUtilities.DeflateGZipData(report.Contents))
         utilities.DownloadClientReport(Of ReportDefinition)(definition, filePath)
         Console.WriteLine("Report was downloaded to '{0}'.", filePath)
       Catch ex As Exception

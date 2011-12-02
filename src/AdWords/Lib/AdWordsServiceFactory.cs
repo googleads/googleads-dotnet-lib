@@ -98,7 +98,7 @@ namespace Google.Api.Ads.AdWords.Lib {
       service.Url = string.Format("{0}api/adwords/{1}/{2}/{3}",
           serverUrl.AbsoluteUri, awapiSignature.GroupName, awapiSignature.Version,
           awapiSignature.ServiceName);
-
+      service.EnableDecompression = awConfig.EnableGzipCompression;
       service.User = user;
       return service;
     }
