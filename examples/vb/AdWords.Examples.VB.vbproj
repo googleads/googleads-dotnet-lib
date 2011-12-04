@@ -244,6 +244,7 @@
     <Compile Include="v201109\BackupSandboxDemo.vb" />
     <Compile Include="v201109\CheckCampaigns.vb" />
     <Compile Include="v201109\ClientApiUnitsUsageDemo.vb" />
+    <Compile Include="v201109\CreateAccount.vb" />
     <Compile Include="v201109\DeleteAd.vb" />
     <Compile Include="v201109\DeleteAdGroup.vb" />
     <Compile Include="v201109\DeleteAdGroupCriterion.vb" />
@@ -279,6 +280,7 @@
     <Compile Include="v201109\GetBulkMutateJob.vb" />
     <Compile Include="v201109\GetCampaign.vb" />
     <Compile Include="v201109\GetCampaignAlerts.vb" />
+    <Compile Include="v201109\GetClientCustomerId.vb" />
     <Compile Include="v201109\GetConversionOptimizerEligibility.vb" />
     <Compile Include="v201109\GetCriterionBidLandscape.vb" />
     <Compile Include="v201109\GetGeoLocationInfo.vb" />

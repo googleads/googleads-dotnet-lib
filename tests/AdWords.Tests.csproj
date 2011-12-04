@@ -138,10 +138,12 @@
     <Compile Include="AdWords\v201109\GeoLocationServiceTests.cs" />
     <Compile Include="AdWords\v201109\InfoServiceTests.cs" />
     <Compile Include="AdWords\v201109\MediaServiceTests.cs" />
+    <Compile Include="AdWords\v201109\MockTests.cs" />
     <Compile Include="AdWords\v201109\ReportDefinitionServiceTests.cs" />
     <Compile Include="AdWords\v201109\TargetingIdeaServiceTests.cs" />
     <Compile Include="AdWords\v201109\TestUtils.cs" />
     <Compile Include="AdWords\BaseTests.cs" />
+    <Compile Include="AdWords\MockUtilities.cs" />
     <Compile Include="Common\Util\CsvFileTests.cs" />
   </ItemGroup>
   <ItemGroup>

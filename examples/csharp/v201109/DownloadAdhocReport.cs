@@ -62,7 +62,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
 
       definition.reportName = "Last 7 days ADGROUP_PERFORMANCE_REPORT";
       definition.reportType = ReportDefinitionReportType.ADGROUP_PERFORMANCE_REPORT;
-      definition.downloadFormat = DownloadFormat.CSV;
+      definition.downloadFormat = DownloadFormat.GZIPPED_CSV;
       definition.dateRangeType = ReportDefinitionDateRangeType.LAST_7_DAYS;
 
       Selector selector = new Selector();
@@ -82,14 +82,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       try {
         // If you know that your report is small enough to fit in memory, then
         // you can instead use
-        // ClientReport report = new ReportUtilities().DownloadClientReport(
-        //     new AdWordsAppConfig(), definition);
+        // ClientReport report = new ReportUtilities(user).GetClientReport(definition);
         //
-        // // Binary report file (e.g. zip format)
+        // // Get the text report directly if you requested a text format
+        // // (e.g. xml)
+        // string reportText = report.Text;
+        //
+        // // Get the binary report if you requested a binary format
+        // // (e.g. gzip)
         // byte[] reportBytes = report.Contents;
         //
-        // // Text report file (e.g. xml format)
-        // string reportText = report.Text;
+        // // Deflate a zipped binary report for further processing.
+        // string deflatedReportText = Encoding.UTF8.GetString(
+        //     MediaUtilities.DeflateGZipData(report.Contents));
         new ReportUtilities(user).DownloadClientReport(definition, path);
         Console.WriteLine("Report was downloaded to '{0}'.", path);
       } catch (Exception ex) {

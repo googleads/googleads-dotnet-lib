@@ -1,3 +1,8 @@
+13.3.0
+- Added support for CreateAccountService.
+- SOAP services can now be mocked for testing purposes.
+- EnableGZipCompression flag now works for report downloads also.
+
 13.2.0
 - Exposed Timeout setting in App.config.
 - Default service Timeout is now infinite.

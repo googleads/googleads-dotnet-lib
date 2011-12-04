@@ -65,14 +65,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201008 {
       try {
         // If you know that your report is small enough to fit in memory, then
         // you can instead use
-        // ClientReport report = new ReportUtilities().GetClientReport(
-        //     new AdWordsAppConfig(), reportDefinitionId);
+        // ClientReport report = new ReportUtilities(user).GetClientReport(reportDefinitionId);
         //
-        // // Binary report file (e.g. zip format)
+        // // Get the text report directly if you requested a text format
+        // // (e.g. xml)
+        // string reportText = report.Text;
+        //
+        // // Get the binary report if you requested a binary format
+        // // (e.g. gzip)
         // byte[] reportBytes = report.Contents;
         //
-        // // Text report file (e.g. xml format)
-        // string reportText = report.Text;
+        // // Deflate a zipped binary report for further processing.
+        // string deflatedReportText = Encoding.UTF8.GetString(
+        //     MediaUtilities.DeflateGZipData(report.Contents));
         new ReportUtilities(user).DownloadClientReport(reportDefinitionId, path);
         Console.WriteLine("Report with definition id '{0}' was downloaded to '{1}'.",
             reportDefinitionId, path);

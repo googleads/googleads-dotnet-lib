@@ -113,6 +113,12 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature ConversionTrackerService;
 
       /// <summary>
+      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201109/CreateAccountService.html">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature CreateAccountService;
+
+      /// <summary>
       /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201109/CustomerSyncService.html">
       /// this page</a> for details.
       /// </summary>
@@ -227,6 +233,8 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201109", "cm", "ConstantDataService");
         ConversionTrackerService =
             AdWordsService.MakeServiceSignature("v201109", "cm", "ConversionTrackerService");
+        CreateAccountService =
+            AdWordsService.MakeServiceSignature("v201109", "mcm", "CreateAccountService");
         CustomerSyncService =
             AdWordsService.MakeServiceSignature("v201109", "ch", "CustomerSyncService");
         DataService =
