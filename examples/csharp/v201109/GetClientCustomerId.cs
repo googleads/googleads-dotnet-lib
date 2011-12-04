@@ -75,7 +75,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       // The date used doesn't matter, so use today.
       DateRange dateRange = new DateRange();
       dateRange.max = DateTime.Now.ToString("yyyyMMdd");
-      dateRange.min = DateTime.Now.AddMonths(-1).ToString("yyyyMMdd");
+      dateRange.min = DateTime.Now.ToString("yyyyMMdd");
       selector.dateRange = dateRange;
 
       try {

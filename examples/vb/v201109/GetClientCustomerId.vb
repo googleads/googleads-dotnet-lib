@@ -73,7 +73,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       ' The date used doesn't matter, so use today.
       Dim dateRange As New DateRange
       dateRange.max = DateTime.Now.ToString("yyyyMMdd")
-      dateRange.min = DateTime.Now.AddMonths(-1).ToString("yyyyMMdd")
+      dateRange.min = DateTime.Now.ToString("yyyyMMdd")
       selector.dateRange = dateRange
       Try
         ' Get the information for the client email address.
