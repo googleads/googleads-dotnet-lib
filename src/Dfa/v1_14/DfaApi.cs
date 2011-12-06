@@ -29,6 +29,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "loginSoapBinding", Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class LoginRemoteService : DfaSoapClient {
     public LoginRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/login";
@@ -68,6 +69,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserProfile : UserBase {
     private System.DateTime? lastAccessTimeField;
 
@@ -203,6 +205,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ApiException {
     private long errorCodeField;
 
@@ -233,6 +236,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ChangePasswordRequest {
     private string confirmPasswordField;
 
@@ -283,6 +287,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class NetworkRemoteService : DfaSoapClient {
     public NetworkRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/network";
@@ -371,6 +376,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class NetworkSearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter activeFilterField;
 
@@ -394,6 +400,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ActiveFilter {
     private bool activeOnlyField;
 
@@ -415,6 +422,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class WidgetImageUploadResponse {
     private double imageSizeField;
 
@@ -445,6 +453,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class WidgetImageUploadRequest {
     private long campaignField;
 
@@ -512,6 +521,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class NetworkSaveResult : SaveResult {
   }
 
@@ -520,6 +530,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class WidgetNetworkConfig {
     private bool activeField;
 
@@ -557,6 +568,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class BillingCustomer {
     private string accessCodeTypeField;
 
@@ -602,6 +614,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaNetworkConfiguration {
     private BillingCustomer billingCustomerField;
 
@@ -653,6 +666,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ReachReportConfiguration {
     private bool adTypeFrequencyAndReachField;
 
@@ -688,6 +702,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class LookbackConfiguration {
     private int clickDurationField;
 
@@ -723,6 +738,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ExposureToConversionConfiguration {
     private int activitiesToTrackField;
 
@@ -751,6 +767,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdvancedReportsConfiguration {
     private int crossSiteDuplicationField;
 
@@ -779,6 +796,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ReportsConfiguration {
     private AdvancedReportsConfiguration advancedReportsConfigurationField;
 
@@ -847,6 +865,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class NetworkPermissionGroupBase : Base {
   }
 
@@ -855,6 +874,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class NetworkPermissionGroup : NetworkPermissionGroupBase {
     private int displayOrderField;
 
@@ -870,6 +890,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class NetworkPermissionBase : Base {
   }
 
@@ -878,6 +899,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class NetworkPermission : NetworkPermissionBase {
     private NetworkPermissionGroup permissionGroupField;
 
@@ -902,6 +924,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PermissionGroupBase : Base {
   }
 
@@ -910,6 +933,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PermissionGroup : PermissionGroupBase {
     private long displayOrderField;
 
@@ -926,6 +950,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PermissionBase : Base {
   }
 
@@ -934,6 +959,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdministratorPermission : PermissionBase {
     private int accessLevelField;
 
@@ -948,6 +974,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Permission : PermissionBase {
     private long displayOrderField;
 
@@ -978,6 +1005,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class TimeZone : Base {
   }
 
@@ -986,6 +1014,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class LanguageEncoding : Base {
   }
 
@@ -994,6 +1023,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Currency : Base {
   }
 
@@ -1003,6 +1033,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class FrequencyCapGroupBase : Base {
   }
 
@@ -1011,6 +1042,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class FrequencyCapGroup : FrequencyCapGroupBase {
     private long? durationField;
 
@@ -1035,6 +1067,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class NetworkBase : Base {
   }
 
@@ -1043,6 +1076,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Network : NetworkBase {
     private string abbreviationField;
 
@@ -1250,6 +1284,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class NetworkRecordSet : PagedRecordSet {
     private Network[] recordsField;
 
@@ -1265,6 +1300,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SortOrder {
     private bool descendingField;
 
@@ -1347,6 +1383,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(TagSettingsBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PricingPeriod))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementRemoteService : DfaSoapClient {
     public PlacementRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/placement";
@@ -1473,6 +1510,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Placement : PlacementBase {
     private bool archivedField;
 
@@ -1575,6 +1613,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class LookbackWindow {
     private int postClickEventLookbackWindowField;
 
@@ -1603,6 +1642,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementUpdateResultSet {
     private bool inErrorField;
 
@@ -1625,6 +1665,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementUpdateResult : SaveResult {
     private string errorMessageField;
 
@@ -1640,6 +1681,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementGroupSaveResult : SaveResult {
   }
 
@@ -1648,6 +1690,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementSaveResult : SaveResult {
   }
 
@@ -1656,6 +1699,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementUpdateRequest {
     private long campaignIdField;
 
@@ -1700,6 +1744,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementGroupRecordSet : PagedRecordSet {
     private PlacementGroup[] recordsField;
 
@@ -1715,6 +1760,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementGroup : PlacementGroupBase {
     private bool archivedField;
 
@@ -1802,6 +1848,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PricingSchedule {
     private int capCostOptionField;
 
@@ -1862,6 +1909,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PricingPeriod {
     private string commentsField;
 
@@ -1908,6 +1956,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementGroupBase : Base {
   }
 
@@ -1916,6 +1965,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementTagOption : Base {
   }
 
@@ -1924,6 +1974,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class State : Base {
     private string abbreviationField;
 
@@ -1946,6 +1997,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class OperatingSystem : Base {
   }
 
@@ -1954,6 +2006,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DomainType : Base {
   }
 
@@ -1962,6 +2015,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DomainNameBase : Base {
   }
 
@@ -1970,6 +2024,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DesignatedMarketArea : Base {
   }
 
@@ -1978,6 +2033,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class City : Base {
     private long countryIdField;
 
@@ -1999,6 +2055,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Browser : Base {
   }
 
@@ -2007,6 +2064,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Bandwidth : Base {
   }
 
@@ -2015,6 +2073,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class OSP : Base {
   }
 
@@ -2023,6 +2082,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ISP : Base {
   }
 
@@ -2031,6 +2091,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class MobilePlatform : Base {
   }
 
@@ -2039,6 +2100,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Country : Base {
     private string countryCodeField;
 
@@ -2142,6 +2204,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementAssignment {
     private bool activeField;
 
@@ -2163,6 +2226,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class TrackingAd : AdBase {
     private CreativeAssignment[] creativeAssignmentsField;
 
@@ -2178,6 +2242,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeAssignment {
     private bool activeField;
 
@@ -2261,6 +2326,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ClickThroughUrl {
     private string customClickThroughUrlField;
 
@@ -2290,6 +2356,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeGroupAssignment {
     private long creativeGroup1IdField;
 
@@ -2311,6 +2378,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaExitOverride {
     private string clickThroughUrlField;
 
@@ -2548,6 +2616,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AreaCode {
     private long areaCodeField;
 
@@ -2569,6 +2638,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class BrowserVersion {
     private Browser browserField;
 
@@ -2599,6 +2669,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CountryTargetingCriteria {
     private Country[] countriesField;
 
@@ -2621,6 +2692,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserListExpression {
     private string idExpressionField;
 
@@ -2644,6 +2716,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeAd : TargetableAdBase {
     private ClickThroughUrl clickThroughUrlField;
 
@@ -2674,6 +2747,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RotationGroup : TargetableAdBase {
     private FrequencyCapGroup[] assignedFrequencyCapGroupsField;
 
@@ -2711,6 +2785,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ClickTracker : AdBase {
     private ClickThroughUrl clickThroughUrlField;
 
@@ -2734,6 +2809,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class MobileAd : AdBase {
     private CountryTargetingCriteria countryTargetingCriteriaField;
 
@@ -2831,6 +2907,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DefaultAd : AdBase {
     private CreativeAssignment creativeAssignmentField;
 
@@ -2846,6 +2923,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AudienceSegment : Base {
     private int percentageAllocationField;
 
@@ -2860,6 +2938,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AudienceSegmentGroup : Base {
     private AudienceSegment[] audienceSegmentsField;
 
@@ -2877,6 +2956,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CampaignBase : Base {
     private long advertiserIdField;
 
@@ -2937,6 +3017,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CampaignSummary : CampaignBase {
   }
 
@@ -2945,6 +3026,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Campaign : CampaignBase {
     private AudienceSegmentGroup[] audienceSegmentGroupsField;
 
@@ -3000,6 +3082,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeOptimizationConfiguration {
     private int minimumCreativeWeightField;
 
@@ -3036,6 +3119,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivityWeight {
     private long activityIdField;
 
@@ -3058,6 +3142,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdvertiserBase : Base {
   }
 
@@ -3066,6 +3151,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Advertiser : AdvertiserBase {
     private long advertiserGroupIdField;
 
@@ -3129,6 +3215,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementType : Base {
   }
 
@@ -3137,6 +3224,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementGroupType : Base {
   }
 
@@ -3145,6 +3233,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PricingType : Base {
   }
 
@@ -3154,6 +3243,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementBase : Base {
   }
 
@@ -3162,6 +3252,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementRecordSet : PagedRecordSet {
     private Placement[] recordsField;
 
@@ -3177,6 +3268,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DateInterval {
     private System.DateTime? endDateField;
 
@@ -3200,6 +3292,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementGroupSearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter archiveFilterField;
 
@@ -3286,6 +3379,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementSearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter archiveFilterField;
 
@@ -3388,6 +3482,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementTagInfo {
     private string clickThroughUrlTagField;
 
@@ -3467,6 +3562,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ClickCommandInfo {
     private AdBase adField;
 
@@ -3498,6 +3594,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementTagData {
     private Advertiser advertiserField;
 
@@ -3537,6 +3634,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementTagCriteria {
     private long idField;
 
@@ -3560,6 +3658,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class TagSettingsBase {
     private string additionalKeyValuesField;
 
@@ -3589,6 +3688,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class TagSettings : TagSettingsBase {
     private int[] tagTypesField;
 
@@ -3604,6 +3704,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "reportSoapBinding", Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ReportRemoteService : DfaSoapClient {
     public ReportRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/report";
@@ -3636,6 +3737,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ReportSearchCriteria {
     private DateInterval intervalField;
 
@@ -3658,6 +3760,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ReportRequest {
     private long queryIdField;
 
@@ -3679,6 +3782,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ReportStatusType : Base {
   }
 
@@ -3687,6 +3791,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ReportInfo {
     private long queryIdField;
 
@@ -3724,6 +3829,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ReportInfoRecordSet {
     private ReportInfo[] recordsField;
 
@@ -3746,6 +3852,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SiteRemoteService : DfaSoapClient {
     public SiteRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/site";
@@ -3825,6 +3932,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SiteSearchCriteria : PageableSearchCriteriaBase {
     private bool activeField;
 
@@ -3839,6 +3947,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SiteDirectoryDfaSiteMappingResult {
     private long dfaSiteIdField;
 
@@ -3868,6 +3977,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SiteDirectoryDfaSiteMappingRequest {
     private long dfaSiteIdField;
 
@@ -3889,6 +3999,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DfaSiteSaveResult : SaveResult {
   }
 
@@ -3897,6 +4008,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SiteSaveResult : SaveResult {
   }
 
@@ -3905,6 +4017,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SiteDirectorySiteImportResult : SaveResult {
     private long dfaSiteIdField;
 
@@ -3934,6 +4047,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SiteDirectorySiteImportRequest {
     private long siteDirectorySiteIdField;
 
@@ -3955,6 +4069,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SiteTagSettings : TagSettingsBase {
     private string keywordReferrerField;
 
@@ -3970,6 +4085,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SiteRichMediaSettings {
     private string alternateTextField;
 
@@ -4025,6 +4141,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DfaSiteContactType : Base {
   }
 
@@ -4034,6 +4151,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ContactBase : Base {
   }
 
@@ -4042,6 +4160,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Contact : ContactBase {
     private bool allowedToEditSiteField;
 
@@ -4129,6 +4248,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DfaSiteContactBase : Base {
   }
 
@@ -4137,6 +4257,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DfaSiteContact : DfaSiteContactBase {
     private long dfaSiteContactTypeIdField;
 
@@ -4175,6 +4296,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DfaSiteBase : Base {
   }
 
@@ -4183,6 +4305,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DfaSite : DfaSiteBase {
     private bool approvedField;
 
@@ -4294,6 +4417,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SiteBase : Base {
   }
 
@@ -4302,6 +4426,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Site : SiteBase {
     private bool acceptingInterstitialPlacementsField;
 
@@ -4361,6 +4486,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ContactRecordSet : PagedRecordSet {
     private Contact[] recordsField;
 
@@ -4376,6 +4502,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DfaSiteRecordSet : PagedRecordSet {
     private DfaSite[] recordsField;
 
@@ -4391,6 +4518,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SiteRecordSet : PagedRecordSet {
     private Site[] recordsField;
 
@@ -4406,6 +4534,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ContactSearchCriteria : PageableSearchCriteriaBase {
     private bool includeParentContactsField;
 
@@ -4436,6 +4565,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DfaSiteSearchCriteria : PageableSearchCriteriaBase {
     private long[] sDSiteIdsField;
 
@@ -4489,6 +4619,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Web.Services.WebServiceBindingAttribute(Name = "sizeSoapBinding", Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SizeRemoteService : DfaSoapClient {
     public SizeRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/size";
@@ -4529,6 +4660,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Size {
     private int heightField;
 
@@ -4557,6 +4689,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SizeRecordSet {
     private Size[] recordsField;
 
@@ -4572,6 +4705,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SizeSearchCriteria : SearchCriteriaBase {
     private int heightField;
 
@@ -4593,6 +4727,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SizeSaveResult : SaveResult {
   }
 
@@ -4604,6 +4739,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightRemoteService : DfaSoapClient {
     public SpotlightRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/spotlight";
@@ -4737,6 +4873,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightConfiguration : SpotlightConfigurationBase {
     private int clickDaysField;
 
@@ -4879,6 +5016,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CustomSpotlightVariableConfiguration : VariableBase {
   }
 
@@ -4902,6 +5040,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivityImageTagsSaveRequest {
     private long[] activityIdsField;
 
@@ -4924,6 +5063,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CountrySearchCriteria {
     private bool secureField;
 
@@ -4938,6 +5078,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivityGroupRecordSet {
     private SpotlightActivityGroup[] recordsField;
 
@@ -4953,6 +5094,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivityGroup : SpotlightActivityGroupBase {
     private int groupTypeField;
 
@@ -4991,6 +5133,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivityRecordSet : PagedRecordSet {
     private SpotlightActivity[] recordsField;
 
@@ -5006,6 +5149,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivity : SpotlightActivityBase {
     private long activityGroupIdField;
 
@@ -5125,6 +5269,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class FloodlightTag : Base {
     private string urlField;
 
@@ -5140,6 +5285,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class FloodlightPublisherTag : FloodlightTag {
     private bool clickThroughField;
 
@@ -5168,6 +5314,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivityTagProperty {
     private int averageNumEventsField;
 
@@ -5205,6 +5352,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivityBase : Base {
   }
 
@@ -5213,6 +5361,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivityGroupSearchCriteria : SearchCriteriaBase {
     private long advertiserIdField;
 
@@ -5234,6 +5383,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivitySearchCriteria : PageableSearchCriteriaBase {
     private int activityTypeField;
 
@@ -5263,6 +5413,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivityImageTagsSaveResult : SaveResult {
     private string errorMessageField;
 
@@ -5278,6 +5429,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivityGroupSaveResult : SaveResult {
   }
 
@@ -5286,6 +5438,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivitySaveResult : SaveResult {
   }
 
@@ -5294,6 +5447,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightConfigurationSaveResult : SaveResult {
   }
 
@@ -5302,6 +5456,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightTagCodeType : Base {
   }
 
@@ -5310,6 +5465,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightTagFormatType : Base {
   }
 
@@ -5318,6 +5474,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightActivityType : Base {
   }
 
@@ -5326,6 +5483,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightTagMethodType : Base {
   }
 
@@ -5334,6 +5492,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CustomSpotlightVariable : Base {
   }
 
@@ -5342,6 +5501,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class StandardVariable : Base {
   }
 
@@ -5351,6 +5511,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SpotlightConfigurationBase : Base {
   }
 
@@ -5362,6 +5523,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementStrategyRemoteService : DfaSoapClient {
     public PlacementStrategyRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/strategy";
@@ -5399,6 +5561,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementStrategy : Base {
   }
 
@@ -5407,6 +5570,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementStrategySaveResult : SaveResult {
   }
 
@@ -5415,6 +5579,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementStrategyRecordSet : PagedRecordSet {
     private PlacementStrategy[] recordsField;
 
@@ -5430,6 +5595,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class PlacementStrategySearchCriteria : PageableSearchCriteriaBase {
     private SortOrder sortOrderField;
 
@@ -5448,6 +5614,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SubnetworkRemoteService : DfaSoapClient {
     public SubnetworkRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/subnetwork";
@@ -5501,6 +5668,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SubnetworkSearchCriteria : PageableSearchCriteriaBase {
     private SortOrder sortOrderField;
 
@@ -5516,6 +5684,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SubnetworkSaveResult : SaveResult {
   }
 
@@ -5534,6 +5703,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SubnetworkSummary : SubnetworkBase {
   }
 
@@ -5542,6 +5712,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Subnetwork : SubnetworkBase {
     private long[] availablePermissionsField;
 
@@ -5564,6 +5735,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SubnetworkSummaryRecordSet : PagedRecordSet {
     private SubnetworkSummary[] recordsField;
 
@@ -5579,6 +5751,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class SubnetworkRecordSet : PagedRecordSet {
     private Subnetwork[] recordsField;
 
@@ -5597,6 +5770,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserRemoteService : DfaSoapClient {
     public UserRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/user";
@@ -5662,6 +5836,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserSearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter activeFilterField;
 
@@ -5699,6 +5874,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserInvitationEmailRequest {
     private string emailMessageField;
 
@@ -5729,6 +5905,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserSaveResult : SaveResult {
     private string tokenField;
 
@@ -5744,6 +5921,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserFilter {
     private ObjectFilter[] objectFiltersField;
 
@@ -5766,6 +5944,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ObjectFilter : Base {
   }
 
@@ -5774,6 +5953,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class TraffickerType : Base {
   }
 
@@ -5782,6 +5962,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserFilterCriteriaType : Base {
   }
 
@@ -5790,6 +5971,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserFilterType : Base {
   }
 
@@ -5798,6 +5980,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class User : UserBase {
     private UserFilter advertiserUserFilterField;
 
@@ -5866,6 +6049,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserRecordSet : PagedRecordSet {
     private User[] recordsField;
 
@@ -5889,6 +6073,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(AreaCode))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PlacementAssignment))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdRemoteService : DfaSoapClient {
     public AdRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/ad";
@@ -6066,6 +6251,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeAdAssociationSaveResultSet {
     private bool inErrorField;
 
@@ -6088,6 +6274,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeAdAssociationSaveResult : SaveResult {
     private string errorMessageField;
 
@@ -6103,6 +6290,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdCopyResult : SaveResult {
     private AdCopyRequest adCopyRequestField;
 
@@ -6134,6 +6322,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdCopyRequest {
     private long adIdField;
 
@@ -6169,6 +6358,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdSaveResult : SaveResult {
   }
 
@@ -6177,6 +6367,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeAdAssociationUpdateRequest {
     private long[] adIdsField;
 
@@ -6238,6 +6429,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CitySearchCriteria {
     private long[] countryIdsField;
 
@@ -6261,6 +6453,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class OverridableAdPropertiesSaveResult {
     private OverridableAdPropertiesKey overridableAdPropertiesKeyField;
 
@@ -6276,6 +6469,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class OverridableAdPropertiesKey {
     private long adIdField;
 
@@ -6448,6 +6642,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserList : Base {
     private string descriptionField;
 
@@ -6478,6 +6673,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserListGroup : Base {
     private string descriptionField;
 
@@ -6493,6 +6689,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Region : Base {
     private long countryIdField;
 
@@ -6507,6 +6704,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdType : Base {
   }
 
@@ -6515,6 +6713,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DomainName : DomainNameBase {
     private string companyNameField;
 
@@ -6530,6 +6729,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class OverridableAdProperties : OverridableAdPropertiesBase {
     private ClickThroughUrl clickThroughUrlField;
 
@@ -6545,6 +6745,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DomainNameRecordSet : PagedRecordSet {
     private DomainName[] recordsField;
 
@@ -6560,6 +6761,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdRecordSet : PagedRecordSet {
     private AdBase[] recordsField;
 
@@ -6575,6 +6777,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserListSearchCriteria : SearchCriteriaBase {
     private long advertiserIdField;
 
@@ -6597,6 +6800,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class DomainNameSearchCriteria : PageableSearchCriteriaBase {
     private string domainField;
 
@@ -6612,6 +6816,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdSearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter activeFilterField;
 
@@ -6653,6 +6858,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserRoleRemoteService : DfaSoapClient {
     public UserRoleRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/userrole";
@@ -6704,6 +6910,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserRole : UserRoleBase {
     private long parentUserRoleIdField;
 
@@ -6733,6 +6940,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserRoleSummaryRecordSet : PagedRecordSet {
     private UserRoleSummary[] recordsField;
 
@@ -6748,6 +6956,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserRoleSummary : UserRoleBase {
   }
 
@@ -6779,6 +6988,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserRoleRecordSet : PagedRecordSet {
     private UserRole[] userRolesField;
 
@@ -6794,6 +7004,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserRoleSearchCriteria : PageableSearchCriteriaBase {
     private bool parentNetworkUserRolesOnlyField;
 
@@ -6823,6 +7034,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class UserRoleSaveResult : SaveResult {
   }
 
@@ -6834,6 +7046,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdvertiserRemoteService : DfaSoapClient {
     public AdvertiserRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/advertiser";
@@ -6864,6 +7077,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdvertiserSearchCriteria : PageableSearchCriteriaBase {
     private long[] advertiserGroupIdsField;
 
@@ -6908,6 +7122,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdvertiserSaveResult : SaveResult {
   }
 
@@ -6916,6 +7131,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdvertiserRecordSet : PagedRecordSet {
     private Advertiser[] recordsField;
 
@@ -6934,6 +7150,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdvertiserGroupRemoteService : DfaSoapClient {
     public AdvertiserGroupRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/advertisergroup";
@@ -6976,6 +7193,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdvertiserGroup : AdvertiserGroupBase {
     private int advertiserCountField;
 
@@ -6991,6 +7209,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdvertiserGroupBase : Base {
   }
 
@@ -6999,6 +7218,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdvertiserGroupSaveResult : SaveResult {
   }
 
@@ -7007,6 +7227,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdvertiserGroupRecordSet : PagedRecordSet {
     private AdvertiserGroup[] recordsField;
 
@@ -7022,6 +7243,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class AdvertiserGroupSearchCriteria : PageableSearchCriteriaBase {
     private SortOrder sortOrderField;
 
@@ -7041,6 +7263,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SpotlightActivityWeight))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CampaignRemoteService : DfaSoapClient {
     public CampaignRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/campaign";
@@ -7113,6 +7336,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CampaignMigrationRequest {
     private long campaignIdField;
 
@@ -7135,6 +7359,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CampaignRecordSet : PagedRecordSet {
     private Campaign[] recordsField;
 
@@ -7150,6 +7375,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CampaignSearchCriteria : PageableSearchCriteriaBase {
     private long[] advertiserIdsField;
 
@@ -7181,6 +7407,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class LandingPageRecordSet {
     private LandingPage[] recordsField;
 
@@ -7196,6 +7423,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class LandingPage : LandingPageBase {
     private string urlField;
 
@@ -7212,6 +7440,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class LandingPageBase : Base {
   }
 
@@ -7220,6 +7449,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CampaignCopyRequest {
     private long campaignIdField;
 
@@ -7234,6 +7464,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CampaignCopyResult : SaveResult {
     private CampaignCopyRequest copyRequestField;
 
@@ -7265,6 +7496,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CampaignMigrationResult : SaveResult {
     private string errorMessageField;
 
@@ -7280,6 +7512,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class LandingPageSaveResult : SaveResult {
   }
 
@@ -7288,6 +7521,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CampaignSaveResult : SaveResult {
   }
 
@@ -7298,6 +7532,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ChangeLogRemoteService : DfaSoapClient {
     public ChangeLogRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/changelog";
@@ -7347,6 +7582,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ChangeLogObjectType : Base {
   }
 
@@ -7355,6 +7591,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ChangeLogRecord {
     private string actionField;
 
@@ -7454,6 +7691,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ChangeLogRecordSet : PagedRecordSet {
     private ChangeLogRecord[] recordsField;
 
@@ -7469,6 +7707,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ChangeLogRecordSearchCriteria : PageableSearchCriteriaBase {
     private long objectIdField;
 
@@ -7501,6 +7740,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ContentCategoryRemoteService : DfaSoapClient {
     public ContentCategoryRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/contentcategory";
@@ -7538,6 +7778,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ContentCategory : ContentCategoryBase {
     private string descriptionField;
 
@@ -7554,6 +7795,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ContentCategoryBase : Base {
   }
 
@@ -7562,6 +7804,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ContentCategoryRecordSet : PagedRecordSet {
     private ContentCategory[] recordsField;
 
@@ -7577,6 +7820,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ContentCategorySearchCriteria : PageableSearchCriteriaBase {
     private SortOrder sortOrderField;
 
@@ -7592,6 +7836,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ContentCategorySaveResult : SaveResult {
   }
 
@@ -7611,6 +7856,7 @@ namespace Google.Api.Ads.Dfa.v1_14 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaAsset))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(CreativeFieldAssignment))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeRemoteService : DfaSoapClient {
     public CreativeRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/creative";
@@ -7863,6 +8109,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeFieldAssignment {
     private long creativeFieldIdField;
 
@@ -7884,6 +8131,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeRenderingResult {
     private long creativeIdField;
 
@@ -7912,6 +8160,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeRenderingRequest {
     private long[] creativeIdsField;
 
@@ -7928,6 +8177,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RawFileSummary {
     private string filenameField;
 
@@ -7951,6 +8201,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RawFile : RawFileSummary {
     private byte[] fileDataField;
 
@@ -7966,6 +8217,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeUploadRequest {
     private CreativeUploadSessionSummary creativeUploadSessionSummaryField;
 
@@ -7990,6 +8242,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeUploadSessionSummary {
     private long advertiserIdField;
 
@@ -8018,6 +8271,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeUploadSession : CreativeUploadSessionSummary {
     private CreativeSaveRequest[] creativeSaveRequestsField;
 
@@ -8056,6 +8310,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeSaveRequest {
     private long creativeIdField;
 
@@ -8094,6 +8349,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class FlashFile : CreativeUploadFileBase {
   }
 
@@ -8113,6 +8369,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeUploadFileSummary : Base {
     private string sourcePathField;
 
@@ -8128,6 +8385,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeUploadFile : CreativeUploadFileSummary {
     private Dimensions dimensionsField;
 
@@ -8173,6 +8431,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class Dimensions {
     private int heightField;
 
@@ -8195,6 +8454,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeGroupBase : Base {
   }
 
@@ -8203,6 +8463,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeGroup : CreativeGroupBase {
     private long advertiserIdField;
 
@@ -8224,6 +8485,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeType : Base {
   }
 
@@ -8235,6 +8497,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaEventBase : Base {
     private string descriptionField;
 
@@ -8265,6 +8528,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaTimerEvent : RichMediaEventBase {
   }
 
@@ -8273,6 +8537,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaExitEvent : RichMediaEventBase {
     private RichMediaExitWindowProperties exitWindowPropertiesField;
 
@@ -8304,6 +8569,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaExitWindowProperties {
     private int heightField;
 
@@ -8381,6 +8647,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaCounterEvent : RichMediaEventBase {
   }
 
@@ -8389,6 +8656,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ImageFile : CreativeUploadFileBase {
   }
 
@@ -8397,6 +8665,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeUploadFileCount {
     private int flashFileCountField;
 
@@ -8425,6 +8694,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeUploadSessionRequest {
     private long advertiserIdField;
 
@@ -8446,6 +8716,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaAssetUploadRequest {
     private string assetFileNameField;
 
@@ -8484,6 +8755,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativePlacementAssignment {
     private string adNameField;
 
@@ -8521,6 +8793,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativePlacementAssignmentResult : CreativePlacementAssignment {
     private long adIdField;
 
@@ -8543,6 +8816,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeGroupRecordSet {
     private CreativeGroup[] recordsField;
 
@@ -8558,6 +8832,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeAssetRecordSet {
     private CreativeAssetBase[] recordsField;
 
@@ -8603,6 +8878,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeAsset : CreativeAssetBase {
     private byte[] contentField;
 
@@ -8618,6 +8894,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeAssetSearchCriteria {
     private long advertiserIdField;
 
@@ -8647,6 +8924,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeAssetSaveResult {
     private FlashClickTag[] clickTagsField;
 
@@ -8701,6 +8979,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class FlashClickTag {
     private string nameField;
 
@@ -8724,6 +9003,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeCopyRequest {
     private long advertiserIdField;
 
@@ -8759,6 +9039,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeCopyResult : SaveResult {
     private CreativeCopyRequest copyRequestField;
 
@@ -8790,6 +9071,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeCampaignAssociationResult : SaveResult {
     private long campaignIdField;
 
@@ -8812,6 +9094,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeSaveResult : SaveResult {
     private long adIdField;
 
@@ -8826,6 +9109,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeRecordSet : PagedRecordSet {
     private CreativeBase[] recordsField;
 
@@ -8841,6 +9125,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeSearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter activeStatusField;
 
@@ -8892,6 +9177,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class TargetWindow {
     private string optionField;
 
@@ -8915,6 +9201,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class FSCommand {
     private int leftField;
 
@@ -8954,6 +9241,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class HTMLCreativeAsset {
     private string assetFilenameField;
 
@@ -8969,6 +9257,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class MobileDisplayCreativeAsset : HTMLCreativeAsset {
     private Dimensions dimesionsField;
 
@@ -8984,6 +9273,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class HTMLCreativeFlashAsset : HTMLCreativeAsset {
     private FlashClickTag[] clickTagsField;
 
@@ -9022,6 +9312,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaAsset {
     private string fileNameField;
 
@@ -9066,6 +9357,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaVideoAsset : RichMediaAsset {
     private string progressiveUrlField;
 
@@ -9089,6 +9381,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaImageAsset : RichMediaAsset {
     private string altTextField;
 
@@ -9138,6 +9431,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaFlashAsset : RichMediaAsset {
     private string creativeFormatField;
 
@@ -9175,6 +9469,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaReminderAsset : RichMediaFlashAsset {
     private string zIndexField;
 
@@ -9248,6 +9543,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaExpandingAsset : RichMediaFlashAsset {
     private string zIndexField;
 
@@ -9369,6 +9665,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaOverlayAsset : RichMediaFlashAsset {
     private bool addressBarField;
 
@@ -9463,6 +9760,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaInPageAsset : RichMediaFlashAsset {
     private RichMediaImageAsset alternateImageAssetField;
 
@@ -9478,6 +9776,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaFloatingAsset : RichMediaFlashAsset {
     private string zIndexField;
 
@@ -9586,6 +9885,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class TrackingTextCreative : CreativeBase {
   }
 
@@ -9622,6 +9922,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class HTMLInterstitialCreative : HTMLCreativeBase {
   }
 
@@ -9630,6 +9931,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class FlashInpageCreative : HTMLCreativeBase {
     private FSCommand fSCommandField;
 
@@ -9747,6 +10049,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class HTMLCreative : HTMLCreativeBase {
   }
 
@@ -9755,6 +10058,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class TrackingHTMLCreative : HTMLCreativeBase {
   }
 
@@ -9763,6 +10067,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class MobileDisplayCreative : HTMLCreativeBase {
     private string thirdPartyClickTrackingUrlField;
 
@@ -9804,6 +10109,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class InternalRedirectCreative : RedirectCreativeBase {
   }
 
@@ -9812,6 +10118,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RedirectCreative : RedirectCreativeBase {
   }
 
@@ -9820,6 +10127,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class InterstitialInternalRedirectCreative : RedirectCreativeBase {
   }
 
@@ -9853,6 +10161,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class ImageCreative : ImageCreativeBase {
   }
 
@@ -9861,6 +10170,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class TrackingImageCreative : ImageCreativeBase {
   }
 
@@ -10080,6 +10390,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaFloatingWithReminderCreative : RichMediaCreativeBase {
     private RichMediaFloatingAsset floatingAssetField;
 
@@ -10103,6 +10414,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaImageWithFloatingCreative : RichMediaCreativeBase {
     private RichMediaFloatingAsset floatingAssetField;
 
@@ -10126,6 +10438,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaInPageCreative : RichMediaCreativeBase {
     private RichMediaInPageAsset inPageAssetField;
 
@@ -10141,6 +10454,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaInPageWithOverlayCreative : RichMediaCreativeBase {
     private RichMediaInPageAsset inPageAssetField;
 
@@ -10164,6 +10478,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaExpandingCreative : RichMediaCreativeBase {
     private RichMediaExpandingAsset expandingAssetField;
 
@@ -10179,6 +10494,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaFloatingCreative : RichMediaCreativeBase {
     private RichMediaFloatingAsset floatingAssetField;
 
@@ -10194,6 +10510,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaOverlayCreative : RichMediaCreativeBase {
     private RichMediaOverlayAsset overlayAssetField;
 
@@ -10209,6 +10526,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaImageWithOverlayCreative : RichMediaCreativeBase {
     private RichMediaImageAsset imageAssetField;
 
@@ -10232,6 +10550,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaInPageWithFloatingCreative : RichMediaCreativeBase {
     private RichMediaFloatingAsset floatingAssetField;
 
@@ -10255,6 +10574,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class RichMediaFlashInFlashCreative : RichMediaCreativeBase {
     private string assetTypeField;
 
@@ -10281,6 +10601,7 @@ byte[] fileData) {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeFieldRemoteService : DfaSoapClient {
     public CreativeFieldRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/creativefield";
@@ -10344,6 +10665,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeField : CreativeFieldBase {
     private long advertiserIdField;
 
@@ -10366,6 +10688,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeFieldBase : Base {
   }
 
@@ -10374,6 +10697,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeFieldValueRecordSet : PagedRecordSet {
     private CreativeFieldValue[] recordsField;
 
@@ -10389,6 +10713,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeFieldValue : CreativeFieldValueBase {
     private long creativeFieldIdField;
 
@@ -10404,6 +10729,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeFieldValueBase : Base {
   }
 
@@ -10412,6 +10738,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeFieldRecordSet : PagedRecordSet {
     private CreativeField[] recordsField;
 
@@ -10427,6 +10754,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeFieldValueSearchCriteria : PageableSearchCriteriaBase {
     private long[] creativeFieldIdsField;
 
@@ -10450,6 +10778,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeFieldSearchCriteria : PageableSearchCriteriaBase {
     private long[] advertiserIdsField;
 
@@ -10473,6 +10802,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeFieldValueSaveResult : SaveResult {
   }
 
@@ -10481,6 +10811,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeFieldSaveResult : SaveResult {
   }
 
@@ -10491,6 +10822,7 @@ byte[] fileData) {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeGroupRemoteService : DfaSoapClient {
     public CreativeGroupRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.14/api/dfa-api/creativegroup";
@@ -10528,6 +10860,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeGroupSearchCriteria : SearchCriteriaBase {
     private long[] advertiserIdsField;
 
@@ -10550,6 +10883,7 @@ byte[] fileData) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.14")]
+  [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
   public partial class CreativeGroupSaveResult : SaveResult {
   }
 }
