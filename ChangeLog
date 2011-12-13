@@ -1,3 +1,8 @@
+2.7.0
+- Added support for v1.16.
+- Removed support for v1.13.
+- v1.14 is now marked as deprecated.
+
 2.6.0
 - Fixed corrupted Google.Dfa.dll in binary distribution of v2.5.0.
 

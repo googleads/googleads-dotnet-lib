@@ -92,12 +92,12 @@
     <Compile Include="Dfa\Lib\SoapHeaderListener.cs" />
     <Compile Include="Dfa\Lib\UserToken.cs" />
     <Compile Include="Dfa\Util\ApiCodes\ErrorCode.cs" />
-    <Compile Include="Dfa\v1_13\DfaApi.cs" />
-    <Compile Include="Dfa\v1_13\DfaServiceV1_13.cs" />
     <Compile Include="Dfa\v1_14\DfaApi.cs" />
     <Compile Include="Dfa\v1_14\DfaServiceV1_14.cs" />
     <Compile Include="Dfa\v1_15\DfaApi.cs" />
     <Compile Include="Dfa\v1_15\DfaServiceV1_15.cs" />
+    <Compile Include="Dfa\v1_16\DfaApi.cs" />
+    <Compile Include="Dfa\v1_16\DfaServiceV1_16.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Common\CommonErrorMessages.Designer.cs">
