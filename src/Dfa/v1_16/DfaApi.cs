@@ -29,43 +29,37 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "loginSoapBinding", Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class LoginRemoteService : DfaSoapClient
-  {
-    public LoginRemoteService()
-    {
+  public partial class LoginRemoteService : DfaSoapClient {
+    public LoginRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/login";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserProfile")]
-    public UserProfile authenticate(string username, string password)
-    {
+    public UserProfile authenticate(string username, string password) {
       object[] results = this.Invoke("authenticate", new object[] {username, password});
-      return ((UserProfile)(results[0]));
+      return ((UserProfile) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserProfile")]
-    public UserProfile impersonateUser(string username, string token, string userToImpersonate)
-    {
+    public UserProfile impersonateUser(string username, string token, string userToImpersonate) {
       object[] results = this.Invoke("impersonateUser", new object[] {username, token, userToImpersonate});
-      return ((UserProfile)(results[0]));
+      return ((UserProfile) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserProfile")]
-    public UserProfile impersonateNetwork(string username, string token, long networkId)
-    {
+    public UserProfile impersonateNetwork(string username, string token, long networkId) {
       object[] results = this.Invoke("impersonateNetwork", new object[] {username, token, networkId});
-      return ((UserProfile)(results[0]));
+      return ((UserProfile) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserProfile")]
-    public UserProfile changePassword(ChangePasswordRequest changePasswordRequest)
-    {
+    public UserProfile changePassword(ChangePasswordRequest changePasswordRequest) {
       object[] results = this.Invoke("changePassword", new object[] {changePasswordRequest});
-      return ((UserProfile)(results[0]));
+      return ((UserProfile) (results[0]));
     }
   }
 
@@ -74,8 +68,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserProfile : UserBase
-  {
+  public partial class UserProfile : UserBase {
     private System.DateTime? lastAccessTimeField;
 
     private string networkNameField;
@@ -107,8 +100,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class UserBase : Base
-  {
+  public abstract partial class UserBase : Base {
     private bool activeField;
 
     private bool apiUserField;
@@ -182,8 +174,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class Base
-  {
+  public abstract partial class Base {
     private long idField;
 
     private string nameField;
@@ -212,8 +203,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ApiException
-  {
+  public partial class ApiException {
     private long errorCodeField;
 
     private string errorMessageField;
@@ -243,8 +233,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ChangePasswordRequest
-  {
+  public partial class ChangePasswordRequest {
     private string confirmPasswordField;
 
     private string newPasswordField;
@@ -294,112 +283,97 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
-  public partial class NetworkRemoteService : DfaSoapClient
-  {
-    public NetworkRemoteService()
-    {
+  public partial class NetworkRemoteService : DfaSoapClient {
+    public NetworkRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/network";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("NetworkRecordSet")]
-    public NetworkRecordSet getNetworks(NetworkSearchCriteria networkSearchCriteria)
-    {
+    public NetworkRecordSet getNetworks(NetworkSearchCriteria networkSearchCriteria) {
       object[] results = this.Invoke("getNetworks", new object[] {networkSearchCriteria});
-      return ((NetworkRecordSet)(results[0]));
+      return ((NetworkRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Network")]
-    public Network getNetwork(long networkId)
-    {
+    public Network getNetwork(long networkId) {
       object[] results = this.Invoke("getNetwork", new object[] {networkId});
-      return ((Network)(results[0]));
+      return ((Network) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("NetworkSaveResult")]
-    public NetworkSaveResult saveNetwork(Network network)
-    {
+    public NetworkSaveResult saveNetwork(Network network) {
       object[] results = this.Invoke("saveNetwork", new object[] {network});
-      return ((NetworkSaveResult)(results[0]));
+      return ((NetworkSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Currencies")]
-    public Currency[] getCurrencies()
-    {
+    public Currency[] getCurrencies() {
       object[] results = this.Invoke("getCurrencies", new object[0]);
-      return ((Currency[])(results[0]));
+      return ((Currency[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("LanguageEncodings")]
-    public LanguageEncoding[] getLanguageEncodingList()
-    {
+    public LanguageEncoding[] getLanguageEncodingList() {
       object[] results = this.Invoke("getLanguageEncodingList", new object[0]);
-      return ((LanguageEncoding[])(results[0]));
+      return ((LanguageEncoding[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("TimeZones")]
-    public TimeZone[] getTimeZoneList()
-    {
+    public TimeZone[] getTimeZoneList() {
       object[] results = this.Invoke("getTimeZoneList", new object[0]);
-      return ((TimeZone[])(results[0]));
+      return ((TimeZone[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Permissions")]
-    public Permission[] getAllPermissions()
-    {
+    public Permission[] getAllPermissions() {
       object[] results = this.Invoke("getAllPermissions", new object[0]);
-      return ((Permission[])(results[0]));
+      return ((Permission[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("NetworkPermissions")]
-    public NetworkPermission[] getAllNetworkPermissions()
-    {
+    public NetworkPermission[] getAllNetworkPermissions() {
       object[] results = this.Invoke("getAllNetworkPermissions", new object[0]);
-      return ((NetworkPermission[])(results[0]));
+      return ((NetworkPermission[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("NetworkPermissions")]
-    public NetworkPermission[] getAssignedNetworkPermissions(long networkId)
-    {
+    public NetworkPermission[] getAssignedNetworkPermissions(long networkId) {
       object[] results = this.Invoke("getAssignedNetworkPermissions", new object[] {networkId});
-      return ((NetworkPermission[])(results[0]));
+      return ((NetworkPermission[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AdministratorPermission")]
-    public AdministratorPermission[] getAdministratorPermissions()
-    {
+    public AdministratorPermission[] getAdministratorPermissions() {
       object[] results = this.Invoke("getAdministratorPermissions", new object[0]);
-      return ((AdministratorPermission[])(results[0]));
+      return ((AdministratorPermission[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("WidgetImageUploadResponse")]
-    public WidgetImageUploadResponse uploadNetworkWidgetImage(WidgetImageUploadRequest request)
-    {
+    public WidgetImageUploadResponse uploadNetworkWidgetImage(WidgetImageUploadRequest request) {
       object[] results = this.Invoke("uploadNetworkWidgetImage", new object[] {request});
-      return ((WidgetImageUploadResponse)(results[0]));
+      return ((WidgetImageUploadResponse) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AgreementRecordSet")]
-    public AgreementRecordSet getAgreements(AgreementSearchCriteria criteria)
-    {
+    public AgreementRecordSet getAgreements(AgreementSearchCriteria criteria) {
       object[] results = this.Invoke("getAgreements", new object[] {criteria});
-      return ((AgreementRecordSet)(results[0]));
+      return ((AgreementRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void executeAgreement(long agreementId)
-    {
+    public void executeAgreement(long agreementId) {
       this.Invoke("executeAgreement", new object[] {agreementId});
     }
   }
@@ -409,8 +383,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class NetworkSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class NetworkSearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter activeFilterField;
 
     private SortOrder sortOrderField;
@@ -433,8 +406,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ActiveFilter
-  {
+  public partial class ActiveFilter {
     private bool activeOnlyField;
 
     private bool inactiveOnlyField;
@@ -455,8 +427,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AgreementRecordSet
-  {
+  public partial class AgreementRecordSet {
     private Agreement[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -471,8 +442,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Agreement : Base
-  {
+  public partial class Agreement : Base {
     private string descriptionField;
 
     private string emailAddressField;
@@ -511,8 +481,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class NetworkPermissionGroupBase : Base
-  {
+  public partial class NetworkPermissionGroupBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -520,8 +489,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class NetworkPermissionGroup : NetworkPermissionGroupBase
-  {
+  public partial class NetworkPermissionGroup : NetworkPermissionGroupBase {
     private int displayOrderField;
 
     public int displayOrder {
@@ -536,8 +504,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class NetworkPermissionBase : Base
-  {
+  public partial class NetworkPermissionBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -545,8 +512,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class NetworkPermission : NetworkPermissionBase
-  {
+  public partial class NetworkPermission : NetworkPermissionBase {
     private NetworkPermissionGroup permissionGroupField;
 
     private string shortNameField;
@@ -570,8 +536,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PermissionGroupBase : Base
-  {
+  public partial class PermissionGroupBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -579,8 +544,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PermissionGroup : PermissionGroupBase
-  {
+  public partial class PermissionGroup : PermissionGroupBase {
     private long displayOrderField;
 
     public long displayOrder {
@@ -596,8 +560,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PermissionBase : Base
-  {
+  public partial class PermissionBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -605,8 +568,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdministratorPermission : PermissionBase
-  {
+  public partial class AdministratorPermission : PermissionBase {
     private int accessLevelField;
 
     public int accessLevel {
@@ -620,8 +582,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Permission : PermissionBase
-  {
+  public partial class Permission : PermissionBase {
     private long displayOrderField;
 
     private PermissionGroup permissionGroupField;
@@ -651,8 +612,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class TimeZone : Base
-  {
+  public partial class TimeZone : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -660,8 +620,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class LanguageEncoding : Base
-  {
+  public partial class LanguageEncoding : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -669,8 +628,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Currency : Base
-  {
+  public partial class Currency : Base {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(FrequencyCapGroup))]
@@ -679,8 +637,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class FrequencyCapGroupBase : Base
-  {
+  public partial class FrequencyCapGroupBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -688,8 +645,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class FrequencyCapGroup : FrequencyCapGroupBase
-  {
+  public partial class FrequencyCapGroup : FrequencyCapGroupBase {
     private long? durationField;
 
     private long? impressionsField;
@@ -713,8 +669,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class NetworkBase : Base
-  {
+  public partial class NetworkBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -722,8 +677,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Network : NetworkBase
-  {
+  public partial class Network : NetworkBase {
     private string abbreviationField;
 
     private bool activeField;
@@ -901,8 +855,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ReportsConfiguration
-  {
+  public partial class ReportsConfiguration {
     private AdvancedReportsConfiguration advancedReportsConfigurationField;
 
     private ExposureToConversionConfiguration exposureToConversionConfigurationField;
@@ -969,8 +922,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdvancedReportsConfiguration
-  {
+  public partial class AdvancedReportsConfiguration {
     private int crossSiteDuplicationField;
 
     private int frequencyToConversionField;
@@ -998,8 +950,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ExposureToConversionConfiguration
-  {
+  public partial class ExposureToConversionConfiguration {
     private int activitiesToTrackField;
 
     private bool exposureToConversionEnabledField;
@@ -1027,8 +978,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class LookbackConfiguration
-  {
+  public partial class LookbackConfiguration {
     private int clickDurationField;
 
     private int postImpressionActivitiesDurationField;
@@ -1063,8 +1013,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ReachReportConfiguration
-  {
+  public partial class ReachReportConfiguration {
     private bool adTypeFrequencyAndReachField;
 
     private bool pageLevelFrequencyField;
@@ -1099,8 +1048,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaNetworkConfiguration
-  {
+  public partial class RichMediaNetworkConfiguration {
     private BillingCustomer billingCustomerField;
 
     private long changeUserIdField;
@@ -1151,8 +1099,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class BillingCustomer
-  {
+  public partial class BillingCustomer {
     private string accessCodeTypeField;
 
     private bool activeField;
@@ -1197,8 +1144,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class WidgetNetworkConfig
-  {
+  public partial class WidgetNetworkConfig {
     private bool activeField;
 
     private double imageSizeField;
@@ -1235,8 +1181,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class WidgetImageUploadResponse
-  {
+  public partial class WidgetImageUploadResponse {
     private double imageSizeField;
 
     private string relativeImageUrlField;
@@ -1266,8 +1211,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class WidgetImageUploadRequest
-  {
+  public partial class WidgetImageUploadRequest {
     private long campaignField;
 
     private byte[] filedataField;
@@ -1320,8 +1264,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class SaveResult
-  {
+  public abstract partial class SaveResult {
     private long idField;
 
     public long id {
@@ -1335,8 +1278,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class NetworkSaveResult : SaveResult
-  {
+  public partial class NetworkSaveResult : SaveResult {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(NetworkRecordSet))]
@@ -1345,8 +1287,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class PagedRecordSet
-  {
+  public abstract partial class PagedRecordSet {
     private int pageNumberField;
 
     private int totalNumberOfPagesField;
@@ -1374,8 +1315,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class NetworkRecordSet : PagedRecordSet
-  {
+  public partial class NetworkRecordSet : PagedRecordSet {
     private Network[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -1390,8 +1330,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SortOrder
-  {
+  public partial class SortOrder {
     private bool descendingField;
 
     private string fieldNameField;
@@ -1416,8 +1355,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class SearchCriteriaBase
-  {
+  public abstract partial class SearchCriteriaBase {
     private long[] idsField;
 
     private string searchStringField;
@@ -1440,8 +1378,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AgreementSearchCriteria : SearchCriteriaBase
-  {
+  public partial class AgreementSearchCriteria : SearchCriteriaBase {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(NetworkSearchCriteria))]
@@ -1450,8 +1387,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class PageableSearchCriteriaBase : SearchCriteriaBase
-  {
+  public abstract partial class PageableSearchCriteriaBase : SearchCriteriaBase {
     private int pageNumberField;
 
     private int pageSizeField;
@@ -1485,143 +1421,124 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(TagSettingsBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PricingPeriod))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class PlacementRemoteService : DfaSoapClient
-  {
-    public PlacementRemoteService()
-    {
+  public partial class PlacementRemoteService : DfaSoapClient {
+    public PlacementRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/placement";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Placement")]
-    public Placement getPlacement(long placementId)
-    {
+    public Placement getPlacement(long placementId) {
       object[] results = this.Invoke("getPlacement", new object[] {placementId});
-      return ((Placement)(results[0]));
+      return ((Placement) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementSaveResult")]
-    public PlacementSaveResult savePlacement(Placement placement)
-    {
+    public PlacementSaveResult savePlacement(Placement placement) {
       object[] results = this.Invoke("savePlacement", new object[] {placement});
-      return ((PlacementSaveResult)(results[0]));
+      return ((PlacementSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deletePlacement(long placementId)
-    {
+    public void deletePlacement(long placementId) {
       this.Invoke("deletePlacement", new object[] {placementId});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementGroup")]
-    public PlacementGroup getPlacementGroup(long placementGroupId)
-    {
+    public PlacementGroup getPlacementGroup(long placementGroupId) {
       object[] results = this.Invoke("getPlacementGroup", new object[] {placementGroupId});
-      return ((PlacementGroup)(results[0]));
+      return ((PlacementGroup) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementGroupSaveResult")]
-    public PlacementGroupSaveResult savePlacementGroup(PlacementGroup placementGroup)
-    {
+    public PlacementGroupSaveResult savePlacementGroup(PlacementGroup placementGroup) {
       object[] results = this.Invoke("savePlacementGroup", new object[] {placementGroup});
-      return ((PlacementGroupSaveResult)(results[0]));
+      return ((PlacementGroupSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deletePlacementGroup(long placementGroupId)
-    {
+    public void deletePlacementGroup(long placementGroupId) {
       this.Invoke("deletePlacementGroup", new object[] {placementGroupId});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PricingType")]
-    public PricingType[] getPricingTypes()
-    {
+    public PricingType[] getPricingTypes() {
       object[] results = this.Invoke("getPricingTypes", new object[0]);
-      return ((PricingType[])(results[0]));
+      return ((PricingType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementGroupType")]
-    public PlacementGroupType[] getPlacementGroupTypes()
-    {
+    public PlacementGroupType[] getPlacementGroupTypes() {
       object[] results = this.Invoke("getPlacementGroupTypes", new object[0]);
-      return ((PlacementGroupType[])(results[0]));
+      return ((PlacementGroupType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementType")]
-    public PlacementType[] getPlacementTypes()
-    {
+    public PlacementType[] getPlacementTypes() {
       object[] results = this.Invoke("getPlacementTypes", new object[0]);
-      return ((PlacementType[])(results[0]));
+      return ((PlacementType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementTagData")]
-    public PlacementTagData getPlacementTagData(long campaignId, PlacementTagCriteria[] placementTagCriterias)
-    {
+    public PlacementTagData getPlacementTagData(long campaignId, PlacementTagCriteria[] placementTagCriterias) {
       object[] results = this.Invoke("getPlacementTagData", new object[] {campaignId, placementTagCriterias});
-      return ((PlacementTagData)(results[0]));
+      return ((PlacementTagData) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementTagOption")]
-    public PlacementTagOption[] getRegularPlacementTagOptions()
-    {
+    public PlacementTagOption[] getRegularPlacementTagOptions() {
       object[] results = this.Invoke("getRegularPlacementTagOptions", new object[0]);
-      return ((PlacementTagOption[])(results[0]));
+      return ((PlacementTagOption[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementTagOption")]
-    public PlacementTagOption[] getInterstitialPlacementTagOptions()
-    {
+    public PlacementTagOption[] getInterstitialPlacementTagOptions() {
       object[] results = this.Invoke("getInterstitialPlacementTagOptions", new object[0]);
-      return ((PlacementTagOption[])(results[0]));
+      return ((PlacementTagOption[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementTagOption")]
-    public PlacementTagOption[] getMobilePlacementTagOptions()
-    {
+    public PlacementTagOption[] getMobilePlacementTagOptions() {
       object[] results = this.Invoke("getMobilePlacementTagOptions", new object[0]);
-      return ((PlacementTagOption[])(results[0]));
+      return ((PlacementTagOption[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementTagOption")]
-    public PlacementTagOption[] getInStreamVideoPlacementTagOptions()
-    {
+    public PlacementTagOption[] getInStreamVideoPlacementTagOptions() {
       object[] results = this.Invoke("getInStreamVideoPlacementTagOptions", new object[0]);
-      return ((PlacementTagOption[])(results[0]));
+      return ((PlacementTagOption[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementRecordSet")]
-    public PlacementRecordSet getPlacementsByCriteria(PlacementSearchCriteria searchCriteria)
-    {
+    public PlacementRecordSet getPlacementsByCriteria(PlacementSearchCriteria searchCriteria) {
       object[] results = this.Invoke("getPlacementsByCriteria", new object[] {searchCriteria});
-      return ((PlacementRecordSet)(results[0]));
+      return ((PlacementRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementGroupRecordSet")]
-    public PlacementGroupRecordSet getPlacementGroupsByCriteria(PlacementGroupSearchCriteria searchCriteria)
-    {
+    public PlacementGroupRecordSet getPlacementGroupsByCriteria(PlacementGroupSearchCriteria searchCriteria) {
       object[] results = this.Invoke("getPlacementGroupsByCriteria", new object[] {searchCriteria});
-      return ((PlacementGroupRecordSet)(results[0]));
+      return ((PlacementGroupRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementUpdateResultSet")]
-    public PlacementUpdateResultSet updatePlacements(PlacementUpdateRequest placementUpdateRequest)
-    {
+    public PlacementUpdateResultSet updatePlacements(PlacementUpdateRequest placementUpdateRequest) {
       object[] results = this.Invoke("updatePlacements", new object[] {placementUpdateRequest});
-      return ((PlacementUpdateResultSet)(results[0]));
+      return ((PlacementUpdateResultSet) (results[0]));
     }
   }
 
@@ -1630,8 +1547,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Placement : PlacementBase
-  {
+  public partial class Placement : PlacementBase {
     private bool archivedField;
 
     private long campaignIdField;
@@ -1740,8 +1656,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class LookbackWindow
-  {
+  public partial class LookbackWindow {
     private int postClickEventLookbackWindowField;
 
     private int postImpressionEventLookbackWindowField;
@@ -1769,8 +1684,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementUpdateResultSet
-  {
+  public partial class PlacementUpdateResultSet {
     private bool inErrorField;
 
     private PlacementUpdateResult[] resultField;
@@ -1792,8 +1706,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementUpdateResult : SaveResult
-  {
+  public partial class PlacementUpdateResult : SaveResult {
     private string errorMessageField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -1808,8 +1721,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementGroupSaveResult : SaveResult
-  {
+  public partial class PlacementGroupSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -1817,8 +1729,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementSaveResult : SaveResult
-  {
+  public partial class PlacementSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -1826,8 +1737,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementUpdateRequest
-  {
+  public partial class PlacementUpdateRequest {
     private long campaignIdField;
 
     private System.DateTime? endDateField;
@@ -1871,8 +1781,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementGroupRecordSet : PagedRecordSet
-  {
+  public partial class PlacementGroupRecordSet : PagedRecordSet {
     private PlacementGroup[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -1887,8 +1796,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementGroup : PlacementGroupBase
-  {
+  public partial class PlacementGroup : PlacementGroupBase {
     private bool archivedField;
 
     private long campaignIdField;
@@ -1975,8 +1883,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PricingSchedule
-  {
+  public partial class PricingSchedule {
     private int capCostOptionField;
 
     private System.DateTime? endDateField;
@@ -2036,8 +1943,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PricingPeriod
-  {
+  public partial class PricingPeriod {
     private string commentsField;
 
     private System.DateTime? endDateField;
@@ -2083,8 +1989,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementGroupBase : Base
-  {
+  public partial class PlacementGroupBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -2092,8 +1997,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementTagOption : Base
-  {
+  public partial class PlacementTagOption : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -2101,8 +2005,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class State : Base
-  {
+  public partial class State : Base {
     private string abbreviationField;
 
     private long countryIdField;
@@ -2124,8 +2027,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class OperatingSystem : Base
-  {
+  public partial class OperatingSystem : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -2133,8 +2035,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DomainType : Base
-  {
+  public partial class DomainType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -2142,8 +2043,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DomainNameBase : Base
-  {
+  public partial class DomainNameBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -2151,8 +2051,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DesignatedMarketArea : Base
-  {
+  public partial class DesignatedMarketArea : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -2160,8 +2059,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class City : Base
-  {
+  public partial class City : Base {
     private long countryIdField;
 
     private long regionIdField;
@@ -2182,8 +2080,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Browser : Base
-  {
+  public partial class Browser : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -2191,8 +2088,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Bandwidth : Base
-  {
+  public partial class Bandwidth : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -2200,8 +2096,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class OSP : Base
-  {
+  public partial class OSP : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -2209,8 +2104,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ISP : Base
-  {
+  public partial class ISP : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -2218,8 +2112,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class MobilePlatform : Base
-  {
+  public partial class MobilePlatform : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -2227,8 +2120,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Country : Base
-  {
+  public partial class Country : Base {
     private string countryCodeField;
 
     private bool secureField;
@@ -2257,8 +2149,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class AdBase : Base
-  {
+  public abstract partial class AdBase : Base {
     private bool activeField;
 
     private bool archivedField;
@@ -2332,8 +2223,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementAssignment
-  {
+  public partial class PlacementAssignment {
     private bool activeField;
 
     private long placementIdField;
@@ -2354,8 +2244,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class TrackingAd : AdBase
-  {
+  public partial class TrackingAd : AdBase {
     private CreativeAssignment[] creativeAssignmentsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -2370,8 +2259,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeAssignment
-  {
+  public partial class CreativeAssignment {
     private bool activeField;
 
     private string alternalteTextField;
@@ -2454,8 +2342,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ClickThroughUrl
-  {
+  public partial class ClickThroughUrl {
     private string customClickThroughUrlField;
 
     private bool defaultLandingPageUsedField;
@@ -2484,8 +2371,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeGroupAssignment
-  {
+  public partial class CreativeGroupAssignment {
     private long creativeGroup1IdField;
 
     private long creativeGroup2IdField;
@@ -2506,8 +2392,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaExitOverride
-  {
+  public partial class RichMediaExitOverride {
     private string clickThroughUrlField;
 
     private long exitIdField;
@@ -2531,8 +2416,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class TargetableAdBase : AdBase
-  {
+  public abstract partial class TargetableAdBase : AdBase {
     private ISP[] iSPsField;
 
     private OSP[] oSPsField;
@@ -2745,8 +2629,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AreaCode
-  {
+  public partial class AreaCode {
     private long areaCodeField;
 
     private long countryIdField;
@@ -2767,8 +2650,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class BrowserVersion
-  {
+  public partial class BrowserVersion {
     private Browser browserField;
 
     private int majorVersionField;
@@ -2798,8 +2680,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CountryTargetingCriteria
-  {
+  public partial class CountryTargetingCriteria {
     private Country[] countriesField;
 
     private bool excludeField;
@@ -2821,8 +2702,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserListExpression
-  {
+  public partial class UserListExpression {
     private string idExpressionField;
 
     private string nameExpressionField;
@@ -2845,8 +2725,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RotationGroup : TargetableAdBase
-  {
+  public partial class RotationGroup : TargetableAdBase {
     private FrequencyCapGroup[] assignedFrequencyCapGroupsField;
 
     private CreativeAssignment[] creativeAssignmentsField;
@@ -2883,8 +2762,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeAd : TargetableAdBase
-  {
+  public partial class CreativeAd : TargetableAdBase {
     private ClickThroughUrl clickThroughUrlField;
 
     private CreativeGroupAssignment creativeGroupAssignmentField;
@@ -2914,8 +2792,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DefaultAd : AdBase
-  {
+  public partial class DefaultAd : AdBase {
     private CreativeAssignment creativeAssignmentField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -2930,8 +2807,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class MobileAd : AdBase
-  {
+  public partial class MobileAd : AdBase {
     private CountryTargetingCriteria countryTargetingCriteriaField;
 
     private CreativeAssignment[] creativeAssignmentsField;
@@ -3028,8 +2904,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ClickTracker : AdBase
-  {
+  public partial class ClickTracker : AdBase {
     private ClickThroughUrl clickThroughUrlField;
 
     private CreativeGroupAssignment creativeGroupAssignmentField;
@@ -3052,8 +2927,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AudienceSegment : Base
-  {
+  public partial class AudienceSegment : Base {
     private int percentageAllocationField;
 
     public int percentageAllocation {
@@ -3067,8 +2941,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AudienceSegmentGroup : Base
-  {
+  public partial class AudienceSegmentGroup : Base {
     private AudienceSegment[] audienceSegmentsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -3085,8 +2958,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CampaignBase : Base
-  {
+  public partial class CampaignBase : Base {
     private long advertiserIdField;
 
     private bool archivedField;
@@ -3146,8 +3018,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CampaignSummary : CampaignBase
-  {
+  public partial class CampaignSummary : CampaignBase {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -3155,8 +3026,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Campaign : CampaignBase
-  {
+  public partial class Campaign : CampaignBase {
     private AudienceSegmentGroup[] audienceSegmentGroupsField;
 
     private long[] creativeGroupIdsField;
@@ -3211,8 +3081,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeOptimizationConfiguration
-  {
+  public partial class CreativeOptimizationConfiguration {
     private int minimumCreativeWeightField;
 
     private int optimizationModelIdField;
@@ -3248,8 +3117,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivityWeight
-  {
+  public partial class SpotlightActivityWeight {
     private long activityIdField;
 
     private int weightField;
@@ -3271,8 +3139,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdvertiserBase : Base
-  {
+  public partial class AdvertiserBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -3280,8 +3147,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Advertiser : AdvertiserBase
-  {
+  public partial class Advertiser : AdvertiserBase {
     private long advertiserGroupIdField;
 
     private bool approvedField;
@@ -3344,8 +3210,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementType : Base
-  {
+  public partial class PlacementType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -3353,8 +3218,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementGroupType : Base
-  {
+  public partial class PlacementGroupType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -3362,8 +3226,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PricingType : Base
-  {
+  public partial class PricingType : Base {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Placement))]
@@ -3372,8 +3235,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementBase : Base
-  {
+  public partial class PlacementBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -3381,8 +3243,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementRecordSet : PagedRecordSet
-  {
+  public partial class PlacementRecordSet : PagedRecordSet {
     private Placement[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -3397,8 +3258,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DateInterval
-  {
+  public partial class DateInterval {
     private System.DateTime? endDateField;
 
     private System.DateTime? startDateField;
@@ -3421,8 +3281,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementGroupSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class PlacementGroupSearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter archiveFilterField;
 
     private long[] campaignIdsField;
@@ -3508,8 +3367,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class PlacementSearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter archiveFilterField;
 
     private long[] campaignIdsField;
@@ -3611,8 +3469,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementTagInfo
-  {
+  public partial class PlacementTagInfo {
     private string clickThroughUrlTagField;
 
     private string iframeJavaScriptTagField;
@@ -3691,8 +3548,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ClickCommandInfo
-  {
+  public partial class ClickCommandInfo {
     private AdBase adField;
 
     private string clickCommandField;
@@ -3723,8 +3579,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementTagData
-  {
+  public partial class PlacementTagData {
     private Advertiser advertiserField;
 
     private CampaignBase campaignField;
@@ -3763,8 +3618,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementTagCriteria
-  {
+  public partial class PlacementTagCriteria {
     private long idField;
 
     private long[] tagOptionIdsField;
@@ -3787,8 +3641,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class TagSettingsBase
-  {
+  public partial class TagSettingsBase {
     private string additionalKeyValuesField;
 
     private bool includeClickTrackingStringInTagsField;
@@ -3817,8 +3670,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class TagSettings : TagSettingsBase
-  {
+  public partial class TagSettings : TagSettingsBase {
     private int[] tagTypesField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -3833,35 +3685,30 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "reportSoapBinding", Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class ReportRemoteService : DfaSoapClient
-  {
-    public ReportRemoteService()
-    {
+  public partial class ReportRemoteService : DfaSoapClient {
+    public ReportRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/report";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("getReportsByCriteriaReturn")]
-    public ReportInfoRecordSet getReportsByCriteria(ReportSearchCriteria ReportSearchCriteria)
-    {
+    public ReportInfoRecordSet getReportsByCriteria(ReportSearchCriteria ReportSearchCriteria) {
       object[] results = this.Invoke("getReportsByCriteria", new object[] {ReportSearchCriteria});
-      return ((ReportInfoRecordSet)(results[0]));
+      return ((ReportInfoRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("getReportReturn")]
-    public ReportInfo getReport(ReportRequest ReportRequest)
-    {
+    public ReportInfo getReport(ReportRequest ReportRequest) {
       object[] results = this.Invoke("getReport", new object[] {ReportRequest});
-      return ((ReportInfo)(results[0]));
+      return ((ReportInfo) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("runDeferredReportReturn")]
-    public ReportInfo runDeferredReport(ReportRequest ReportRequest)
-    {
+    public ReportInfo runDeferredReport(ReportRequest ReportRequest) {
       object[] results = this.Invoke("runDeferredReport", new object[] {ReportRequest});
-      return ((ReportInfo)(results[0]));
+      return ((ReportInfo) (results[0]));
     }
   }
 
@@ -3870,8 +3717,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ReportSearchCriteria
-  {
+  public partial class ReportSearchCriteria {
     private DateInterval intervalField;
 
     private long queryIdField;
@@ -3893,8 +3739,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ReportRequest
-  {
+  public partial class ReportRequest {
     private long queryIdField;
 
     private long reportIdField;
@@ -3915,8 +3760,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ReportStatusType : Base
-  {
+  public partial class ReportStatusType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -3924,8 +3768,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ReportInfo
-  {
+  public partial class ReportInfo {
     private long queryIdField;
 
     private long reportIdField;
@@ -3962,8 +3805,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ReportInfoRecordSet
-  {
+  public partial class ReportInfoRecordSet {
     private ReportInfo[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -3985,89 +3827,77 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
-  public partial class SiteRemoteService : DfaSoapClient
-  {
-    public SiteRemoteService()
-    {
+  public partial class SiteRemoteService : DfaSoapClient {
+    public SiteRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/site";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SiteRecordSet")]
-    public SiteRecordSet getSitesByCriteria(SiteSearchCriteria siteSearchCriteria)
-    {
+    public SiteRecordSet getSitesByCriteria(SiteSearchCriteria siteSearchCriteria) {
       object[] results = this.Invoke("getSitesByCriteria", new object[] {siteSearchCriteria});
-      return ((SiteRecordSet)(results[0]));
+      return ((SiteRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SiteDirectorySiteImportResults")]
-    public SiteDirectorySiteImportResult[] importSiteDirectorySites(SiteDirectorySiteImportRequest[] siteDirectorySiteImportRequests)
-    {
+    public SiteDirectorySiteImportResult[] importSiteDirectorySites(SiteDirectorySiteImportRequest[] siteDirectorySiteImportRequests) {
       object[] results = this.Invoke("importSiteDirectorySites", new object[] {siteDirectorySiteImportRequests});
-      return ((SiteDirectorySiteImportResult[])(results[0]));
+      return ((SiteDirectorySiteImportResult[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SiteSaveResult")]
-    public SiteSaveResult saveSiteDirectorySite(Site site)
-    {
+    public SiteSaveResult saveSiteDirectorySite(Site site) {
       object[] results = this.Invoke("saveSiteDirectorySite", new object[] {site});
-      return ((SiteSaveResult)(results[0]));
+      return ((SiteSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void linkDfaSiteToSiteDirectorySite(long dfaSiteId, long siteDirectorySiteId)
-    {
+    public void linkDfaSiteToSiteDirectorySite(long dfaSiteId, long siteDirectorySiteId) {
       this.Invoke("linkDfaSiteToSiteDirectorySite", new object[] {dfaSiteId, siteDirectorySiteId});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SiteDirectoryDfaSiteMappingResults")]
-    public SiteDirectoryDfaSiteMappingResult[] linkDfaSitesToSiteDirectorySites(SiteDirectoryDfaSiteMappingRequest[] siteDirectoryDfaSiteMappingRequests)
-    {
+    public SiteDirectoryDfaSiteMappingResult[] linkDfaSitesToSiteDirectorySites(SiteDirectoryDfaSiteMappingRequest[] siteDirectoryDfaSiteMappingRequests) {
       object[] results = this.Invoke("linkDfaSitesToSiteDirectorySites", new object[] {siteDirectoryDfaSiteMappingRequests});
-      return ((SiteDirectoryDfaSiteMappingResult[])(results[0]));
+      return ((SiteDirectoryDfaSiteMappingResult[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("DfaSite")]
-    public DfaSite getDfaSite(long dfaSiteId)
-    {
+    public DfaSite getDfaSite(long dfaSiteId) {
       object[] results = this.Invoke("getDfaSite", new object[] {dfaSiteId});
-      return ((DfaSite)(results[0]));
+      return ((DfaSite) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("DfaSiteRecordSet")]
-    public DfaSiteRecordSet getDfaSites(DfaSiteSearchCriteria dfaSiteSearchCriteria)
-    {
+    public DfaSiteRecordSet getDfaSites(DfaSiteSearchCriteria dfaSiteSearchCriteria) {
       object[] results = this.Invoke("getDfaSites", new object[] {dfaSiteSearchCriteria});
-      return ((DfaSiteRecordSet)(results[0]));
+      return ((DfaSiteRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("DfaSiteSaveResult")]
-    public DfaSiteSaveResult saveDfaSite(DfaSite dfaSite)
-    {
+    public DfaSiteSaveResult saveDfaSite(DfaSite dfaSite) {
       object[] results = this.Invoke("saveDfaSite", new object[] {dfaSite});
-      return ((DfaSiteSaveResult)(results[0]));
+      return ((DfaSiteSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("ContactRecordSet")]
-    public ContactRecordSet getContacts(ContactSearchCriteria contactSearchCriteria)
-    {
+    public ContactRecordSet getContacts(ContactSearchCriteria contactSearchCriteria) {
       object[] results = this.Invoke("getContacts", new object[] {contactSearchCriteria});
-      return ((ContactRecordSet)(results[0]));
+      return ((ContactRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("DfaSiteContactType")]
-    public DfaSiteContactType[] getAvailableDfaSiteContactTypes()
-    {
+    public DfaSiteContactType[] getAvailableDfaSiteContactTypes() {
       object[] results = this.Invoke("getAvailableDfaSiteContactTypes", new object[0]);
-      return ((DfaSiteContactType[])(results[0]));
+      return ((DfaSiteContactType[]) (results[0]));
     }
   }
 
@@ -4076,8 +3906,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SiteSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class SiteSearchCriteria : PageableSearchCriteriaBase {
     private bool activeField;
 
     public bool active {
@@ -4091,8 +3920,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SiteDirectoryDfaSiteMappingResult
-  {
+  public partial class SiteDirectoryDfaSiteMappingResult {
     private long dfaSiteIdField;
 
     private string errorMessageField;
@@ -4121,8 +3949,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SiteDirectoryDfaSiteMappingRequest
-  {
+  public partial class SiteDirectoryDfaSiteMappingRequest {
     private long dfaSiteIdField;
 
     private long siteDirectorySiteIdField;
@@ -4143,8 +3970,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DfaSiteSaveResult : SaveResult
-  {
+  public partial class DfaSiteSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -4152,8 +3978,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SiteSaveResult : SaveResult
-  {
+  public partial class SiteSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -4161,8 +3986,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SiteDirectorySiteImportResult : SaveResult
-  {
+  public partial class SiteDirectorySiteImportResult : SaveResult {
     private long dfaSiteIdField;
 
     private string errorMessageField;
@@ -4191,8 +4015,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SiteDirectorySiteImportRequest
-  {
+  public partial class SiteDirectorySiteImportRequest {
     private long siteDirectorySiteIdField;
 
     private long subnetworkIdField;
@@ -4213,8 +4036,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SiteTagSettings : TagSettingsBase
-  {
+  public partial class SiteTagSettings : TagSettingsBase {
     private string keywordReferrerField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -4229,8 +4051,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SiteRichMediaSettings
-  {
+  public partial class SiteRichMediaSettings {
     private string alternateTextField;
 
     private string frameAndLayerFooterField;
@@ -4285,8 +4106,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DfaSiteContactType : Base
-  {
+  public partial class DfaSiteContactType : Base {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Contact))]
@@ -4295,8 +4115,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ContactBase : Base
-  {
+  public partial class ContactBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -4304,8 +4123,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Contact : ContactBase
-  {
+  public partial class Contact : ContactBase {
     private bool allowedToEditSiteField;
 
     private string cityField;
@@ -4392,8 +4210,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DfaSiteContactBase : Base
-  {
+  public partial class DfaSiteContactBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -4401,8 +4218,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DfaSiteContact : DfaSiteContactBase
-  {
+  public partial class DfaSiteContact : DfaSiteContactBase {
     private long dfaSiteContactTypeIdField;
 
     private long dfaSiteIdField;
@@ -4440,8 +4256,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DfaSiteBase : Base
-  {
+  public partial class DfaSiteBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -4449,8 +4264,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DfaSite : DfaSiteBase
-  {
+  public partial class DfaSite : DfaSiteBase {
     private bool approvedField;
 
     private long countryIdField;
@@ -4561,8 +4375,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SiteBase : Base
-  {
+  public partial class SiteBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -4570,8 +4383,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Site : SiteBase
-  {
+  public partial class Site : SiteBase {
     private bool acceptingInterstitialPlacementsField;
 
     private bool acceptingMobilePlacementsField;
@@ -4630,8 +4442,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ContactRecordSet : PagedRecordSet
-  {
+  public partial class ContactRecordSet : PagedRecordSet {
     private Contact[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -4646,8 +4457,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DfaSiteRecordSet : PagedRecordSet
-  {
+  public partial class DfaSiteRecordSet : PagedRecordSet {
     private DfaSite[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -4662,8 +4472,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SiteRecordSet : PagedRecordSet
-  {
+  public partial class SiteRecordSet : PagedRecordSet {
     private Site[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -4678,8 +4487,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ContactSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class ContactSearchCriteria : PageableSearchCriteriaBase {
     private bool includeParentContactsField;
 
     private long[] siteDirectorySiteIdsField;
@@ -4709,8 +4517,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DfaSiteSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class DfaSiteSearchCriteria : PageableSearchCriteriaBase {
     private long[] sDSiteIdsField;
 
     private long[] campaignIdsField;
@@ -4763,35 +4570,30 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Web.Services.WebServiceBindingAttribute(Name = "sizeSoapBinding", Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
-  public partial class SizeRemoteService : DfaSoapClient
-  {
-    public SizeRemoteService()
-    {
+  public partial class SizeRemoteService : DfaSoapClient {
+    public SizeRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/size";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SizeSaveResult")]
-    public SizeSaveResult saveSize(Size size)
-    {
+    public SizeSaveResult saveSize(Size size) {
       object[] results = this.Invoke("saveSize", new object[] {size});
-      return ((SizeSaveResult)(results[0]));
+      return ((SizeSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Size")]
-    public Size getSize(long id)
-    {
+    public Size getSize(long id) {
       object[] results = this.Invoke("getSize", new object[] {id});
-      return ((Size)(results[0]));
+      return ((Size) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SizeRecordSet")]
-    public SizeRecordSet getSizes(SizeSearchCriteria searchCriteria)
-    {
+    public SizeRecordSet getSizes(SizeSearchCriteria searchCriteria) {
       object[] results = this.Invoke("getSizes", new object[] {searchCriteria});
-      return ((SizeRecordSet)(results[0]));
+      return ((SizeRecordSet) (results[0]));
     }
   }
 
@@ -4800,8 +4602,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Size
-  {
+  public partial class Size {
     private int heightField;
 
     private long idField;
@@ -4829,8 +4630,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SizeRecordSet
-  {
+  public partial class SizeRecordSet {
     private Size[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -4845,8 +4645,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SizeSearchCriteria : SearchCriteriaBase
-  {
+  public partial class SizeSearchCriteria : SearchCriteriaBase {
     private int heightField;
 
     private int widthField;
@@ -4867,8 +4666,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SizeSaveResult : SaveResult
-  {
+  public partial class SizeSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -4879,151 +4677,131 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class SpotlightRemoteService : DfaSoapClient
-  {
-    public SpotlightRemoteService()
-    {
+  public partial class SpotlightRemoteService : DfaSoapClient {
+    public SpotlightRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/spotlight";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SpotlightConfiguration")]
-    public SpotlightConfiguration getSpotlightConfiguration(long id)
-    {
+    public SpotlightConfiguration getSpotlightConfiguration(long id) {
       object[] results = this.Invoke("getSpotlightConfiguration", new object[] {id});
-      return ((SpotlightConfiguration)(results[0]));
+      return ((SpotlightConfiguration) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SpotlightConfigurationSaveResult")]
-    public SpotlightConfigurationSaveResult saveSpotlightConfiguration(SpotlightConfiguration spotlightConfiguration)
-    {
+    public SpotlightConfigurationSaveResult saveSpotlightConfiguration(SpotlightConfiguration spotlightConfiguration) {
       object[] results = this.Invoke("saveSpotlightConfiguration", new object[] {spotlightConfiguration});
-      return ((SpotlightConfigurationSaveResult)(results[0]));
+      return ((SpotlightConfigurationSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("StandardVariable")]
-    public StandardVariable[] getAvailableStandardVariables()
-    {
+    public StandardVariable[] getAvailableStandardVariables() {
       object[] results = this.Invoke("getAvailableStandardVariables", new object[0]);
-      return ((StandardVariable[])(results[0]));
+      return ((StandardVariable[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CustomSpotlightVariable")]
-    public CustomSpotlightVariable[] getAvailableCustomSpotlightVariables()
-    {
+    public CustomSpotlightVariable[] getAvailableCustomSpotlightVariables() {
       object[] results = this.Invoke("getAvailableCustomSpotlightVariables", new object[0]);
-      return ((CustomSpotlightVariable[])(results[0]));
+      return ((CustomSpotlightVariable[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SpotlightActivitySaveResult")]
-    public SpotlightActivitySaveResult saveSpotlightActivity(SpotlightActivity spotlightActivity)
-    {
+    public SpotlightActivitySaveResult saveSpotlightActivity(SpotlightActivity spotlightActivity) {
       object[] results = this.Invoke("saveSpotlightActivity", new object[] {spotlightActivity});
-      return ((SpotlightActivitySaveResult)(results[0]));
+      return ((SpotlightActivitySaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SpotlightActivityGroupSaveResult")]
-    public SpotlightActivityGroupSaveResult saveSpotlightActivityGroup(SpotlightActivityGroup spotlightActivityGroup)
-    {
+    public SpotlightActivityGroupSaveResult saveSpotlightActivityGroup(SpotlightActivityGroup spotlightActivityGroup) {
       object[] results = this.Invoke("saveSpotlightActivityGroup", new object[] {spotlightActivityGroup});
-      return ((SpotlightActivityGroupSaveResult)(results[0]));
+      return ((SpotlightActivityGroupSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SpotlightActivityRecordSet")]
-    public SpotlightActivityRecordSet getSpotlightActivities(SpotlightActivitySearchCriteria spotlightActivitySearchCriteria)
-    {
+    public SpotlightActivityRecordSet getSpotlightActivities(SpotlightActivitySearchCriteria spotlightActivitySearchCriteria) {
       object[] results = this.Invoke("getSpotlightActivities", new object[] {spotlightActivitySearchCriteria});
-      return ((SpotlightActivityRecordSet)(results[0]));
+      return ((SpotlightActivityRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SpotlightActivity")]
-    public SpotlightActivity getSpotlightActivity(long spotlightActivityId)
-    {
+    public SpotlightActivity getSpotlightActivity(long spotlightActivityId) {
       object[] results = this.Invoke("getSpotlightActivity", new object[] {spotlightActivityId});
-      return ((SpotlightActivity)(results[0]));
+      return ((SpotlightActivity) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SpotlightActivityGroupRecordSet")]
-    public SpotlightActivityGroupRecordSet getSpotlightActivityGroups(SpotlightActivityGroupSearchCriteria spotlightActivityGroupSearchCriteria)
-    {
+    public SpotlightActivityGroupRecordSet getSpotlightActivityGroups(SpotlightActivityGroupSearchCriteria spotlightActivityGroupSearchCriteria) {
       object[] results = this.Invoke("getSpotlightActivityGroups", new object[] {spotlightActivityGroupSearchCriteria});
-      return ((SpotlightActivityGroupRecordSet)(results[0]));
+      return ((SpotlightActivityGroupRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deleteSpotlightActivity(long spolightActivityId)
-    {
+    public void deleteSpotlightActivity(long spolightActivityId) {
       this.Invoke("deleteSpotlightActivity", new object[] {spolightActivityId});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deleteSpotlightActivityGroup(long spolightActivityGroupId)
-    {
+    public void deleteSpotlightActivityGroup(long spolightActivityGroupId) {
       this.Invoke("deleteSpotlightActivityGroup", new object[] {spolightActivityGroupId});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SpotlightTagMethodType")]
-    public SpotlightTagMethodType[] getSpotlightTagMethodTypes()
-    {
+    public SpotlightTagMethodType[] getSpotlightTagMethodTypes() {
       object[] results = this.Invoke("getSpotlightTagMethodTypes", new object[0]);
-      return ((SpotlightTagMethodType[])(results[0]));
+      return ((SpotlightTagMethodType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SpotlightActivityType")]
-    public SpotlightActivityType[] getSpotlightActivityTypes()
-    {
+    public SpotlightActivityType[] getSpotlightActivityTypes() {
       object[] results = this.Invoke("getSpotlightActivityTypes", new object[0]);
-      return ((SpotlightActivityType[])(results[0]));
+      return ((SpotlightActivityType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SpotlightTagFormatType")]
-    public SpotlightTagFormatType[] getSpotlightTagFormatTypes()
-    {
+    public SpotlightTagFormatType[] getSpotlightTagFormatTypes() {
       object[] results = this.Invoke("getSpotlightTagFormatTypes", new object[0]);
-      return ((SpotlightTagFormatType[])(results[0]));
+      return ((SpotlightTagFormatType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SpotlightTagCodeType")]
-    public SpotlightTagCodeType[] getSpotlightTagCodeTypes()
-    {
+    public SpotlightTagCodeType[] getSpotlightTagCodeTypes() {
       object[] results = this.Invoke("getSpotlightTagCodeTypes", new object[0]);
-      return ((SpotlightTagCodeType[])(results[0]));
+      return ((SpotlightTagCodeType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.w3.org/2001/XMLSchema")]
     [return: System.Xml.Serialization.SoapElementAttribute("string")]
-    public string generateTags(long[] activityIds)
-    {
+    public string generateTags(long[] activityIds) {
       object[] results = this.Invoke("generateTags", new object[] {activityIds});
-      return ((string)(results[0]));
+      return ((string) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Country")]
-    public Country[] getCountriesByCriteria(CountrySearchCriteria countrySearchCriteria)
-    {
+    public Country[] getCountriesByCriteria(CountrySearchCriteria countrySearchCriteria) {
       object[] results = this.Invoke("getCountriesByCriteria", new object[] {countrySearchCriteria});
-      return ((Country[])(results[0]));
+      return ((Country[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SpotlightActivityImageTagsSaveResult")]
-    public SpotlightActivityImageTagsSaveResult[] updateActivityImageTags(SpotlightActivityImageTagsSaveRequest request)
-    {
+    public SpotlightActivityImageTagsSaveResult[] updateActivityImageTags(SpotlightActivityImageTagsSaveRequest request) {
       object[] results = this.Invoke("updateActivityImageTags", new object[] {request});
-      return ((SpotlightActivityImageTagsSaveResult[])(results[0]));
+      return ((SpotlightActivityImageTagsSaveResult[]) (results[0]));
     }
   }
 
@@ -5032,8 +4810,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightConfiguration : SpotlightConfigurationBase
-  {
+  public partial class SpotlightConfiguration : SpotlightConfigurationBase {
     private int clickDaysField;
 
     private bool crossSiteDuplicateReportField;
@@ -5182,8 +4959,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CustomSpotlightVariableConfiguration : VariableBase
-  {
+  public partial class CustomSpotlightVariableConfiguration : VariableBase {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(CustomSpotlightVariableConfiguration))]
@@ -5192,8 +4968,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class VariableBase : Base
-  {
+  public abstract partial class VariableBase : Base {
     private int typeField;
 
     public int type {
@@ -5207,8 +4982,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivityImageTagsSaveRequest
-  {
+  public partial class SpotlightActivityImageTagsSaveRequest {
     private long[] activityIdsField;
 
     private bool statusField;
@@ -5230,8 +5004,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CountrySearchCriteria
-  {
+  public partial class CountrySearchCriteria {
     private bool secureField;
 
     public bool secure {
@@ -5245,8 +5018,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivityGroupRecordSet
-  {
+  public partial class SpotlightActivityGroupRecordSet {
     private SpotlightActivityGroup[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -5261,8 +5033,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivityGroup : SpotlightActivityGroupBase
-  {
+  public partial class SpotlightActivityGroup : SpotlightActivityGroupBase {
     private int groupTypeField;
 
     private long spotlightConfigurationIdField;
@@ -5292,8 +5063,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class SpotlightActivityGroupBase : Base
-  {
+  public abstract partial class SpotlightActivityGroupBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5301,8 +5071,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivityRecordSet : PagedRecordSet
-  {
+  public partial class SpotlightActivityRecordSet : PagedRecordSet {
     private SpotlightActivity[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -5317,8 +5086,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivity : SpotlightActivityBase
-  {
+  public partial class SpotlightActivity : SpotlightActivityBase {
     private long activityGroupIdField;
 
     private long activityTypeIdField;
@@ -5437,8 +5205,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class FloodlightTag : Base
-  {
+  public partial class FloodlightTag : Base {
     private string urlField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -5453,8 +5220,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class FloodlightPublisherTag : FloodlightTag
-  {
+  public partial class FloodlightPublisherTag : FloodlightTag {
     private bool clickThroughField;
 
     private long siteIdField;
@@ -5482,8 +5248,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivityTagProperty
-  {
+  public partial class SpotlightActivityTagProperty {
     private int averageNumEventsField;
 
     private bool errorField;
@@ -5520,8 +5285,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivityBase : Base
-  {
+  public partial class SpotlightActivityBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5529,8 +5293,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivityGroupSearchCriteria : SearchCriteriaBase
-  {
+  public partial class SpotlightActivityGroupSearchCriteria : SearchCriteriaBase {
     private long advertiserIdField;
 
     private int typeField;
@@ -5551,8 +5314,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivitySearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class SpotlightActivitySearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter activeFilterField;
 
     private int activityTypeField;
@@ -5589,8 +5351,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivityImageTagsSaveResult : SaveResult
-  {
+  public partial class SpotlightActivityImageTagsSaveResult : SaveResult {
     private string errorMessageField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -5605,8 +5366,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivityGroupSaveResult : SaveResult
-  {
+  public partial class SpotlightActivityGroupSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5614,8 +5374,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivitySaveResult : SaveResult
-  {
+  public partial class SpotlightActivitySaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5623,8 +5382,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightConfigurationSaveResult : SaveResult
-  {
+  public partial class SpotlightConfigurationSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5632,8 +5390,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightTagCodeType : Base
-  {
+  public partial class SpotlightTagCodeType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5641,8 +5398,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightTagFormatType : Base
-  {
+  public partial class SpotlightTagFormatType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5650,8 +5406,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightActivityType : Base
-  {
+  public partial class SpotlightActivityType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5659,8 +5414,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightTagMethodType : Base
-  {
+  public partial class SpotlightTagMethodType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5668,8 +5422,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CustomSpotlightVariable : Base
-  {
+  public partial class CustomSpotlightVariable : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5677,8 +5430,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class StandardVariable : Base
-  {
+  public partial class StandardVariable : Base {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SpotlightConfiguration))]
@@ -5687,8 +5439,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SpotlightConfigurationBase : Base
-  {
+  public partial class SpotlightConfigurationBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5699,40 +5450,34 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class PlacementStrategyRemoteService : DfaSoapClient
-  {
-    public PlacementStrategyRemoteService()
-    {
+  public partial class PlacementStrategyRemoteService : DfaSoapClient {
+    public PlacementStrategyRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/strategy";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementStrategy")]
-    public PlacementStrategy getPlacementStrategy(long placementStrategyId)
-    {
+    public PlacementStrategy getPlacementStrategy(long placementStrategyId) {
       object[] results = this.Invoke("getPlacementStrategy", new object[] {placementStrategyId});
-      return ((PlacementStrategy)(results[0]));
+      return ((PlacementStrategy) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementStrategyRecordSet")]
-    public PlacementStrategyRecordSet getPlacementStrategiesByCriteria(PlacementStrategySearchCriteria placementStrategySearchCriteria)
-    {
+    public PlacementStrategyRecordSet getPlacementStrategiesByCriteria(PlacementStrategySearchCriteria placementStrategySearchCriteria) {
       object[] results = this.Invoke("getPlacementStrategiesByCriteria", new object[] {placementStrategySearchCriteria});
-      return ((PlacementStrategyRecordSet)(results[0]));
+      return ((PlacementStrategyRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("PlacementStrategySaveResult")]
-    public PlacementStrategySaveResult savePlacementStrategy(PlacementStrategy placementStrategy)
-    {
+    public PlacementStrategySaveResult savePlacementStrategy(PlacementStrategy placementStrategy) {
       object[] results = this.Invoke("savePlacementStrategy", new object[] {placementStrategy});
-      return ((PlacementStrategySaveResult)(results[0]));
+      return ((PlacementStrategySaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deletePlacementStrategy(long placementStrategyId)
-    {
+    public void deletePlacementStrategy(long placementStrategyId) {
       this.Invoke("deletePlacementStrategy", new object[] {placementStrategyId});
     }
   }
@@ -5742,8 +5487,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementStrategy : Base
-  {
+  public partial class PlacementStrategy : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5751,8 +5495,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementStrategySaveResult : SaveResult
-  {
+  public partial class PlacementStrategySaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5760,8 +5503,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementStrategyRecordSet : PagedRecordSet
-  {
+  public partial class PlacementStrategyRecordSet : PagedRecordSet {
     private PlacementStrategy[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -5776,8 +5518,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class PlacementStrategySearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class PlacementStrategySearchCriteria : PageableSearchCriteriaBase {
     private SortOrder sortOrderField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -5795,59 +5536,51 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
-  public partial class SubnetworkRemoteService : DfaSoapClient
-  {
-    public SubnetworkRemoteService()
-    {
+  public partial class SubnetworkRemoteService : DfaSoapClient {
+    public SubnetworkRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/subnetwork";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SubnetworkRecordSet")]
-    public SubnetworkRecordSet getSubnetworks(SubnetworkSearchCriteria subnetworkSearchCriteria)
-    {
+    public SubnetworkRecordSet getSubnetworks(SubnetworkSearchCriteria subnetworkSearchCriteria) {
       object[] results = this.Invoke("getSubnetworks", new object[] {subnetworkSearchCriteria});
-      return ((SubnetworkRecordSet)(results[0]));
+      return ((SubnetworkRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SubnetworkSummaryRecordSet")]
-    public SubnetworkSummaryRecordSet getSubnetworkSummaries(SubnetworkSearchCriteria subnetworkSearchCriteria)
-    {
+    public SubnetworkSummaryRecordSet getSubnetworkSummaries(SubnetworkSearchCriteria subnetworkSearchCriteria) {
       object[] results = this.Invoke("getSubnetworkSummaries", new object[] {subnetworkSearchCriteria});
-      return ((SubnetworkSummaryRecordSet)(results[0]));
+      return ((SubnetworkSummaryRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Subnetwork")]
-    public Subnetwork getSubnetwork(long subnetworkId)
-    {
+    public Subnetwork getSubnetwork(long subnetworkId) {
       object[] results = this.Invoke("getSubnetwork", new object[] {subnetworkId});
-      return ((Subnetwork)(results[0]));
+      return ((Subnetwork) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("SubnetworkSaveResult")]
-    public SubnetworkSaveResult saveSubnetwork(Subnetwork subnetwork)
-    {
+    public SubnetworkSaveResult saveSubnetwork(Subnetwork subnetwork) {
       object[] results = this.Invoke("saveSubnetwork", new object[] {subnetwork});
-      return ((SubnetworkSaveResult)(results[0]));
+      return ((SubnetworkSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Permissions")]
-    public Permission[] getAllAvailablePermissions()
-    {
+    public Permission[] getAllAvailablePermissions() {
       object[] results = this.Invoke("getAllAvailablePermissions", new object[0]);
-      return ((Permission[])(results[0]));
+      return ((Permission[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Permissions")]
-    public Permission[] getDefaultPermissions()
-    {
+    public Permission[] getDefaultPermissions() {
       object[] results = this.Invoke("getDefaultPermissions", new object[0]);
-      return ((Permission[])(results[0]));
+      return ((Permission[]) (results[0]));
     }
   }
 
@@ -5856,8 +5589,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SubnetworkSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class SubnetworkSearchCriteria : PageableSearchCriteriaBase {
     private SortOrder sortOrderField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -5872,8 +5604,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SubnetworkSaveResult : SaveResult
-  {
+  public partial class SubnetworkSaveResult : SaveResult {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SubnetworkSummary))]
@@ -5883,8 +5614,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class SubnetworkBase : Base
-  {
+  public abstract partial class SubnetworkBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5892,8 +5622,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SubnetworkSummary : SubnetworkBase
-  {
+  public partial class SubnetworkSummary : SubnetworkBase {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -5901,8 +5630,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Subnetwork : SubnetworkBase
-  {
+  public partial class Subnetwork : SubnetworkBase {
     private long[] availablePermissionsField;
 
     private long networkIdField;
@@ -5924,8 +5652,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SubnetworkSummaryRecordSet : PagedRecordSet
-  {
+  public partial class SubnetworkSummaryRecordSet : PagedRecordSet {
     private SubnetworkSummary[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -5940,8 +5667,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class SubnetworkRecordSet : PagedRecordSet
-  {
+  public partial class SubnetworkRecordSet : PagedRecordSet {
     private Subnetwork[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -5959,72 +5685,62 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
-  public partial class UserRemoteService : DfaSoapClient
-  {
-    public UserRemoteService()
-    {
+  public partial class UserRemoteService : DfaSoapClient {
+    public UserRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/user";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserRecordSet")]
-    public UserRecordSet getUsersByCriteria(UserSearchCriteria userSearchCriteria)
-    {
+    public UserRecordSet getUsersByCriteria(UserSearchCriteria userSearchCriteria) {
       object[] results = this.Invoke("getUsersByCriteria", new object[] {userSearchCriteria});
-      return ((UserRecordSet)(results[0]));
+      return ((UserRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("User")]
-    public User getUser(long userId)
-    {
+    public User getUser(long userId) {
       object[] results = this.Invoke("getUser", new object[] {userId});
-      return ((User)(results[0]));
+      return ((User) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserSaveResult")]
-    public UserSaveResult saveUser(User user)
-    {
+    public UserSaveResult saveUser(User user) {
       object[] results = this.Invoke("saveUser", new object[] {user});
-      return ((UserSaveResult)(results[0]));
+      return ((UserSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserFilterTypes")]
-    public UserFilterType[] getAvailableUserFilterTypes()
-    {
+    public UserFilterType[] getAvailableUserFilterTypes() {
       object[] results = this.Invoke("getAvailableUserFilterTypes", new object[0]);
-      return ((UserFilterType[])(results[0]));
+      return ((UserFilterType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserFilterCriteriaTypes")]
-    public UserFilterCriteriaType[] getAvailableUserFilterCriteriaTypes()
-    {
+    public UserFilterCriteriaType[] getAvailableUserFilterCriteriaTypes() {
       object[] results = this.Invoke("getAvailableUserFilterCriteriaTypes", new object[0]);
-      return ((UserFilterCriteriaType[])(results[0]));
+      return ((UserFilterCriteriaType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("TraffickerTypes")]
-    public TraffickerType[] getAvailableTraffickerTypes()
-    {
+    public TraffickerType[] getAvailableTraffickerTypes() {
       object[] results = this.Invoke("getAvailableTraffickerTypes", new object[0]);
-      return ((TraffickerType[])(results[0]));
+      return ((TraffickerType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.w3.org/2001/XMLSchema")]
     [return: System.Xml.Serialization.SoapElementAttribute("string")]
-    public string generateUniqueUsername(string username)
-    {
+    public string generateUniqueUsername(string username) {
       object[] results = this.Invoke("generateUniqueUsername", new object[] {username});
-      return ((string)(results[0]));
+      return ((string) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void sendUserInvitationEmail(UserInvitationEmailRequest emailRequest)
-    {
+    public void sendUserInvitationEmail(UserInvitationEmailRequest emailRequest) {
       this.Invoke("sendUserInvitationEmail", new object[] {emailRequest});
     }
   }
@@ -6034,8 +5750,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class UserSearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter activeFilterField;
 
     private SortOrder sortOrderField;
@@ -6072,8 +5787,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserInvitationEmailRequest
-  {
+  public partial class UserInvitationEmailRequest {
     private string emailMessageField;
 
     private string emailSubjectField;
@@ -6103,8 +5817,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserSaveResult : SaveResult
-  {
+  public partial class UserSaveResult : SaveResult {
     private string tokenField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -6119,8 +5832,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserFilter
-  {
+  public partial class UserFilter {
     private ObjectFilter[] objectFiltersField;
 
     private int userFilterCriteriaIdField;
@@ -6142,8 +5854,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ObjectFilter : Base
-  {
+  public partial class ObjectFilter : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -6151,8 +5862,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class TraffickerType : Base
-  {
+  public partial class TraffickerType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -6160,8 +5870,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserFilterCriteriaType : Base
-  {
+  public partial class UserFilterCriteriaType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -6169,8 +5878,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserFilterType : Base
-  {
+  public partial class UserFilterType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -6178,8 +5886,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class User : UserBase
-  {
+  public partial class User : UserBase {
     private UserFilter advertiserUserFilterField;
 
     private UserFilter campaignUserFilterField;
@@ -6247,8 +5954,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserRecordSet : PagedRecordSet
-  {
+  public partial class UserRecordSet : PagedRecordSet {
     private User[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -6271,201 +5977,175 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(AreaCode))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PlacementAssignment))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class AdRemoteService : DfaSoapClient
-  {
-    public AdRemoteService()
-    {
+  public partial class AdRemoteService : DfaSoapClient {
+    public AdRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/ad";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AdBase")]
-    public AdBase getAd(long adId)
-    {
+    public AdBase getAd(long adId) {
       object[] results = this.Invoke("getAd", new object[] {adId});
-      return ((AdBase)(results[0]));
+      return ((AdBase) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AdSaveResult")]
-    public AdSaveResult saveAd(AdBase ad)
-    {
+    public AdSaveResult saveAd(AdBase ad) {
       object[] results = this.Invoke("saveAd", new object[] {ad});
-      return ((AdSaveResult)(results[0]));
+      return ((AdSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deleteAd(long adId)
-    {
+    public void deleteAd(long adId) {
       this.Invoke("deleteAd", new object[] {adId});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AdCopyResults")]
-    public AdCopyResult[] copyAds(AdCopyRequest[] adCopyRequests)
-    {
+    public AdCopyResult[] copyAds(AdCopyRequest[] adCopyRequests) {
       object[] results = this.Invoke("copyAds", new object[] {adCopyRequests});
-      return ((AdCopyResult[])(results[0]));
+      return ((AdCopyResult[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AdRecordSet")]
-    public AdRecordSet getAds(AdSearchCriteria adSearchCriteria)
-    {
+    public AdRecordSet getAds(AdSearchCriteria adSearchCriteria) {
       object[] results = this.Invoke("getAds", new object[] {adSearchCriteria});
-      return ((AdRecordSet)(results[0]));
+      return ((AdRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AdTypes")]
-    public AdType[] getAdTypes()
-    {
+    public AdType[] getAdTypes() {
       object[] results = this.Invoke("getAdTypes", new object[0]);
-      return ((AdType[])(results[0]));
+      return ((AdType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("OverridableAdPropertiesSaveResult")]
-    public OverridableAdPropertiesSaveResult overrideAdProperties(OverridableAdProperties overridableAdProperties)
-    {
+    public OverridableAdPropertiesSaveResult overrideAdProperties(OverridableAdProperties overridableAdProperties) {
       object[] results = this.Invoke("overrideAdProperties", new object[] {overridableAdProperties});
-      return ((OverridableAdPropertiesSaveResult)(results[0]));
+      return ((OverridableAdPropertiesSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("DesignatedMarketAreas")]
-    public DesignatedMarketArea[] getDesignatedMarketAreas()
-    {
+    public DesignatedMarketArea[] getDesignatedMarketAreas() {
       object[] results = this.Invoke("getDesignatedMarketAreas", new object[0]);
-      return ((DesignatedMarketArea[])(results[0]));
+      return ((DesignatedMarketArea[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Countries")]
-    public Country[] getCountries()
-    {
+    public Country[] getCountries() {
       object[] results = this.Invoke("getCountries", new object[0]);
-      return ((Country[])(results[0]));
+      return ((Country[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Regions")]
-    public Region[] getRegions(long[] countryIds)
-    {
+    public Region[] getRegions(long[] countryIds) {
       object[] results = this.Invoke("getRegions", new object[] {countryIds});
-      return ((Region[])(results[0]));
+      return ((Region[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("States")]
-    public State[] getStates(long[] countryIds)
-    {
+    public State[] getStates(long[] countryIds) {
       object[] results = this.Invoke("getStates", new object[] {countryIds});
-      return ((State[])(results[0]));
+      return ((State[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AreaCodes")]
-    public AreaCode[] getAreaCodes(long[] countryIds)
-    {
+    public AreaCode[] getAreaCodes(long[] countryIds) {
       object[] results = this.Invoke("getAreaCodes", new object[] {countryIds});
-      return ((AreaCode[])(results[0]));
+      return ((AreaCode[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Cities")]
-    public City[] getCities(CitySearchCriteria citySearchCriteria)
-    {
+    public City[] getCities(CitySearchCriteria citySearchCriteria) {
       object[] results = this.Invoke("getCities", new object[] {citySearchCriteria});
-      return ((City[])(results[0]));
+      return ((City[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Browsers")]
-    public Browser[] getBrowsers()
-    {
+    public Browser[] getBrowsers() {
       object[] results = this.Invoke("getBrowsers", new object[0]);
-      return ((Browser[])(results[0]));
+      return ((Browser[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Bandwidths")]
-    public Bandwidth[] getBandwidths()
-    {
+    public Bandwidth[] getBandwidths() {
       object[] results = this.Invoke("getBandwidths", new object[0]);
-      return ((Bandwidth[])(results[0]));
+      return ((Bandwidth[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("OperatingSystems")]
-    public OperatingSystem[] getOperatingSystems()
-    {
+    public OperatingSystem[] getOperatingSystems() {
       object[] results = this.Invoke("getOperatingSystems", new object[0]);
-      return ((OperatingSystem[])(results[0]));
+      return ((OperatingSystem[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserListGroups")]
-    public UserListGroup[] getUserListGroupsByCriteria(UserListSearchCriteria searchCriteria)
-    {
+    public UserListGroup[] getUserListGroupsByCriteria(UserListSearchCriteria searchCriteria) {
       object[] results = this.Invoke("getUserListGroupsByCriteria", new object[] {searchCriteria});
-      return ((UserListGroup[])(results[0]));
+      return ((UserListGroup[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserLists")]
-    public UserList[] getUserListsByCriteria(UserListSearchCriteria searchCriteria)
-    {
+    public UserList[] getUserListsByCriteria(UserListSearchCriteria searchCriteria) {
       object[] results = this.Invoke("getUserListsByCriteria", new object[] {searchCriteria});
-      return ((UserList[])(results[0]));
+      return ((UserList[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("DomainTypes")]
-    public DomainType[] getDomainTypes()
-    {
+    public DomainType[] getDomainTypes() {
       object[] results = this.Invoke("getDomainTypes", new object[0]);
-      return ((DomainType[])(results[0]));
+      return ((DomainType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("OSPs")]
-    public OSP[] getOSPs()
-    {
+    public OSP[] getOSPs() {
       object[] results = this.Invoke("getOSPs", new object[0]);
-      return ((OSP[])(results[0]));
+      return ((OSP[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("ISPs")]
-    public ISP[] getISPs()
-    {
+    public ISP[] getISPs() {
       object[] results = this.Invoke("getISPs", new object[0]);
-      return ((ISP[])(results[0]));
+      return ((ISP[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("DomainNameRecordSet")]
-    public DomainNameRecordSet getDomainNamesBySearchCriteria(DomainNameSearchCriteria searchCriteria)
-    {
+    public DomainNameRecordSet getDomainNamesBySearchCriteria(DomainNameSearchCriteria searchCriteria) {
       object[] results = this.Invoke("getDomainNamesBySearchCriteria", new object[] {searchCriteria});
-      return ((DomainNameRecordSet)(results[0]));
+      return ((DomainNameRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("MobilePlatforms")]
-    public MobilePlatform[] getMobilePlatforms()
-    {
+    public MobilePlatform[] getMobilePlatforms() {
       object[] results = this.Invoke("getMobilePlatforms", new object[0]);
-      return ((MobilePlatform[])(results[0]));
+      return ((MobilePlatform[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeAdAssociationSaveResults")]
-    public CreativeAdAssociationSaveResultSet updateCreativeAssignmentProperties(CreativeAdAssociationUpdateRequest associationUpdateRequest)
-    {
+    public CreativeAdAssociationSaveResultSet updateCreativeAssignmentProperties(CreativeAdAssociationUpdateRequest associationUpdateRequest) {
       object[] results = this.Invoke("updateCreativeAssignmentProperties", new object[] {associationUpdateRequest});
-      return ((CreativeAdAssociationSaveResultSet)(results[0]));
+      return ((CreativeAdAssociationSaveResultSet) (results[0]));
     }
   }
 
@@ -6474,8 +6154,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeAdAssociationSaveResultSet
-  {
+  public partial class CreativeAdAssociationSaveResultSet {
     private bool inErrorField;
 
     private CreativeAdAssociationSaveResult[] saveResultsField;
@@ -6497,8 +6176,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeAdAssociationSaveResult : SaveResult
-  {
+  public partial class CreativeAdAssociationSaveResult : SaveResult {
     private string errorMessageField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -6513,8 +6191,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdCopyResult : SaveResult
-  {
+  public partial class AdCopyResult : SaveResult {
     private AdCopyRequest adCopyRequestField;
 
     private string errorMessageField;
@@ -6545,8 +6222,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdCopyRequest
-  {
+  public partial class AdCopyRequest {
     private long adIdField;
 
     private long campaignIdField;
@@ -6581,8 +6257,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdSaveResult : SaveResult
-  {
+  public partial class AdSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -6590,8 +6265,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeAdAssociationUpdateRequest
-  {
+  public partial class CreativeAdAssociationUpdateRequest {
     private long[] adIdsField;
 
     private bool associationStatusField;
@@ -6652,8 +6326,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CitySearchCriteria
-  {
+  public partial class CitySearchCriteria {
     private long[] countryIdsField;
 
     private long[] regionIdsField;
@@ -6676,8 +6349,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class OverridableAdPropertiesSaveResult
-  {
+  public partial class OverridableAdPropertiesSaveResult {
     private OverridableAdPropertiesKey overridableAdPropertiesKeyField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -6692,8 +6364,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class OverridableAdPropertiesKey
-  {
+  public partial class OverridableAdPropertiesKey {
     private long adIdField;
 
     private long placementIdField;
@@ -6715,8 +6386,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class OverridableAdPropertiesBase
-  {
+  public abstract partial class OverridableAdPropertiesBase {
     private AreaCode[] areaCodesField;
 
     private long audienceSegmentIdField;
@@ -6866,8 +6536,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserList : Base
-  {
+  public partial class UserList : Base {
     private string descriptionField;
 
     private int estimatedUserCountField;
@@ -6897,8 +6566,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserListGroup : Base
-  {
+  public partial class UserListGroup : Base {
     private string descriptionField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -6913,8 +6581,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Region : Base
-  {
+  public partial class Region : Base {
     private long countryIdField;
 
     public long countryId {
@@ -6928,8 +6595,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdType : Base
-  {
+  public partial class AdType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -6937,8 +6603,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DomainName : DomainNameBase
-  {
+  public partial class DomainName : DomainNameBase {
     private string companyNameField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -6953,8 +6618,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class OverridableAdProperties : OverridableAdPropertiesBase
-  {
+  public partial class OverridableAdProperties : OverridableAdPropertiesBase {
     private ClickThroughUrl clickThroughUrlField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -6969,8 +6633,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DomainNameRecordSet : PagedRecordSet
-  {
+  public partial class DomainNameRecordSet : PagedRecordSet {
     private DomainName[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -6985,8 +6648,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdRecordSet : PagedRecordSet
-  {
+  public partial class AdRecordSet : PagedRecordSet {
     private AdBase[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -7001,8 +6663,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserListSearchCriteria : SearchCriteriaBase
-  {
+  public partial class UserListSearchCriteria : SearchCriteriaBase {
     private long advertiserIdField;
 
     private long[] userListGroupIdsField;
@@ -7024,8 +6685,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class DomainNameSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class DomainNameSearchCriteria : PageableSearchCriteriaBase {
     private string domainField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -7040,8 +6700,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class AdSearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter activeFilterField;
 
     private long campaignIdField;
@@ -7082,56 +6741,48 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class UserRoleRemoteService : DfaSoapClient
-  {
-    public UserRoleRemoteService()
-    {
+  public partial class UserRoleRemoteService : DfaSoapClient {
+    public UserRoleRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/userrole";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserRoleSaveResult")]
-    public UserRoleSaveResult saveUserRole(UserRole userRole)
-    {
+    public UserRoleSaveResult saveUserRole(UserRole userRole) {
       object[] results = this.Invoke("saveUserRole", new object[] {userRole});
-      return ((UserRoleSaveResult)(results[0]));
+      return ((UserRoleSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserRole")]
-    public UserRole getUserRole(long userRoleId)
-    {
+    public UserRole getUserRole(long userRoleId) {
       object[] results = this.Invoke("getUserRole", new object[] {userRoleId});
-      return ((UserRole)(results[0]));
+      return ((UserRole) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserRoleRecordSet")]
-    public UserRoleRecordSet getUserRoles(UserRoleSearchCriteria userRoleSearchCriteria)
-    {
+    public UserRoleRecordSet getUserRoles(UserRoleSearchCriteria userRoleSearchCriteria) {
       object[] results = this.Invoke("getUserRoles", new object[] {userRoleSearchCriteria});
-      return ((UserRoleRecordSet)(results[0]));
+      return ((UserRoleRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("UserRoleSummaryRecordSet")]
-    public UserRoleSummaryRecordSet getUserRoleSummaries(UserRoleSearchCriteria userRoleSearchCriteria)
-    {
+    public UserRoleSummaryRecordSet getUserRoleSummaries(UserRoleSearchCriteria userRoleSearchCriteria) {
       object[] results = this.Invoke("getUserRoleSummaries", new object[] {userRoleSearchCriteria});
-      return ((UserRoleSummaryRecordSet)(results[0]));
+      return ((UserRoleSummaryRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Permissions")]
-    public Permission[] getAvailablePermissions(long subnetworkId)
-    {
+    public Permission[] getAvailablePermissions(long subnetworkId) {
       object[] results = this.Invoke("getAvailablePermissions", new object[] {subnetworkId});
-      return ((Permission[])(results[0]));
+      return ((Permission[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deleteUserRole(long id)
-    {
+    public void deleteUserRole(long id) {
       this.Invoke("deleteUserRole", new object[] {id});
     }
   }
@@ -7141,8 +6792,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserRole : UserRoleBase
-  {
+  public partial class UserRole : UserRoleBase {
     private long parentUserRoleIdField;
 
     private Permission[] permissionsField;
@@ -7171,8 +6821,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserRoleSummaryRecordSet : PagedRecordSet
-  {
+  public partial class UserRoleSummaryRecordSet : PagedRecordSet {
     private UserRoleSummary[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -7187,8 +6836,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserRoleSummary : UserRoleBase
-  {
+  public partial class UserRoleSummary : UserRoleBase {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(UserRoleSummary))]
@@ -7198,8 +6846,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class UserRoleBase : Base
-  {
+  public abstract partial class UserRoleBase : Base {
     private bool defaultUserRoleField;
 
     private long subnetworkIdField;
@@ -7220,8 +6867,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserRoleRecordSet : PagedRecordSet
-  {
+  public partial class UserRoleRecordSet : PagedRecordSet {
     private UserRole[] userRolesField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -7236,8 +6882,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserRoleSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class UserRoleSearchCriteria : PageableSearchCriteriaBase {
     private bool parentNetworkUserRolesOnlyField;
 
     private SortOrder sortOrderField;
@@ -7266,8 +6911,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class UserRoleSaveResult : SaveResult
-  {
+  public partial class UserRoleSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -7278,32 +6922,27 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
-  public partial class AdvertiserRemoteService : DfaSoapClient
-  {
-    public AdvertiserRemoteService()
-    {
+  public partial class AdvertiserRemoteService : DfaSoapClient {
+    public AdvertiserRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/advertiser";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AdvertiserRecordSet")]
-    public AdvertiserRecordSet getAdvertisers(AdvertiserSearchCriteria advertiserSearchCriteria)
-    {
+    public AdvertiserRecordSet getAdvertisers(AdvertiserSearchCriteria advertiserSearchCriteria) {
       object[] results = this.Invoke("getAdvertisers", new object[] {advertiserSearchCriteria});
-      return ((AdvertiserRecordSet)(results[0]));
+      return ((AdvertiserRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AdvertiserSaveResult")]
-    public AdvertiserSaveResult saveAdvertiser(Advertiser advertiser)
-    {
+    public AdvertiserSaveResult saveAdvertiser(Advertiser advertiser) {
       object[] results = this.Invoke("saveAdvertiser", new object[] {advertiser});
-      return ((AdvertiserSaveResult)(results[0]));
+      return ((AdvertiserSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deleteAdvertiser(long advertiserId)
-    {
+    public void deleteAdvertiser(long advertiserId) {
       this.Invoke("deleteAdvertiser", new object[] {advertiserId});
     }
   }
@@ -7313,8 +6952,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdvertiserSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class AdvertiserSearchCriteria : PageableSearchCriteriaBase {
     private long[] advertiserGroupIdsField;
 
     private bool includeAdvertisersWithOutGroupOnlyField;
@@ -7358,8 +6996,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdvertiserSaveResult : SaveResult
-  {
+  public partial class AdvertiserSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -7367,8 +7004,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdvertiserRecordSet : PagedRecordSet
-  {
+  public partial class AdvertiserRecordSet : PagedRecordSet {
     private Advertiser[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -7386,46 +7022,39 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class AdvertiserGroupRemoteService : DfaSoapClient
-  {
-    public AdvertiserGroupRemoteService()
-    {
+  public partial class AdvertiserGroupRemoteService : DfaSoapClient {
+    public AdvertiserGroupRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/advertisergroup";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AdvertiserGroup")]
-    public AdvertiserGroup getAdvertiserGroup(long advertiserGroupId)
-    {
+    public AdvertiserGroup getAdvertiserGroup(long advertiserGroupId) {
       object[] results = this.Invoke("getAdvertiserGroup", new object[] {advertiserGroupId});
-      return ((AdvertiserGroup)(results[0]));
+      return ((AdvertiserGroup) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AdvertiserGroupRecordSet")]
-    public AdvertiserGroupRecordSet getAdvertiserGroups(AdvertiserGroupSearchCriteria advertiserGroupSearchCriteria)
-    {
+    public AdvertiserGroupRecordSet getAdvertiserGroups(AdvertiserGroupSearchCriteria advertiserGroupSearchCriteria) {
       object[] results = this.Invoke("getAdvertiserGroups", new object[] {advertiserGroupSearchCriteria});
-      return ((AdvertiserGroupRecordSet)(results[0]));
+      return ((AdvertiserGroupRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("AdvertiserGroupSaveResult")]
-    public AdvertiserGroupSaveResult saveAdvertiserGroup(AdvertiserGroup advertiserGroup)
-    {
+    public AdvertiserGroupSaveResult saveAdvertiserGroup(AdvertiserGroup advertiserGroup) {
       object[] results = this.Invoke("saveAdvertiserGroup", new object[] {advertiserGroup});
-      return ((AdvertiserGroupSaveResult)(results[0]));
+      return ((AdvertiserGroupSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deleteAdvertiserGroup(long advertiserGroupId)
-    {
+    public void deleteAdvertiserGroup(long advertiserGroupId) {
       this.Invoke("deleteAdvertiserGroup", new object[] {advertiserGroupId});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void assignAdvertisersToAdvertiserGroup(long advertiserGroupId, long[] advertiserIds)
-    {
+    public void assignAdvertisersToAdvertiserGroup(long advertiserGroupId, long[] advertiserIds) {
       this.Invoke("assignAdvertisersToAdvertiserGroup", new object[] {advertiserGroupId, advertiserIds});
     }
   }
@@ -7435,8 +7064,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdvertiserGroup : AdvertiserGroupBase
-  {
+  public partial class AdvertiserGroup : AdvertiserGroupBase {
     private int advertiserCountField;
 
     public int advertiserCount {
@@ -7451,8 +7079,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdvertiserGroupBase : Base
-  {
+  public partial class AdvertiserGroupBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -7460,8 +7087,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdvertiserGroupSaveResult : SaveResult
-  {
+  public partial class AdvertiserGroupSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -7469,8 +7095,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdvertiserGroupRecordSet : PagedRecordSet
-  {
+  public partial class AdvertiserGroupRecordSet : PagedRecordSet {
     private AdvertiserGroup[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -7485,8 +7110,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class AdvertiserGroupSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class AdvertiserGroupSearchCriteria : PageableSearchCriteriaBase {
     private SortOrder sortOrderField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -7505,81 +7129,70 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SpotlightActivityWeight))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class CampaignRemoteService : DfaSoapClient
-  {
-    public CampaignRemoteService()
-    {
+  public partial class CampaignRemoteService : DfaSoapClient {
+    public CampaignRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/campaign";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("Campaign")]
-    public Campaign getCampaign(long campaignId)
-    {
+    public Campaign getCampaign(long campaignId) {
       object[] results = this.Invoke("getCampaign", new object[] {campaignId});
-      return ((Campaign)(results[0]));
+      return ((Campaign) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CampaignSaveResult")]
-    public CampaignSaveResult saveCampaign(Campaign campaign)
-    {
+    public CampaignSaveResult saveCampaign(Campaign campaign) {
       object[] results = this.Invoke("saveCampaign", new object[] {campaign});
-      return ((CampaignSaveResult)(results[0]));
+      return ((CampaignSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deleteCampaign(long campaignId)
-    {
+    public void deleteCampaign(long campaignId) {
       this.Invoke("deleteCampaign", new object[] {campaignId});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("LandingPageSaveResult")]
-    public LandingPageSaveResult saveLandingPage(LandingPage landingPage)
-    {
+    public LandingPageSaveResult saveLandingPage(LandingPage landingPage) {
       object[] results = this.Invoke("saveLandingPage", new object[] {landingPage});
-      return ((LandingPageSaveResult)(results[0]));
+      return ((LandingPageSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("LandingPageRecordSet")]
-    public LandingPageRecordSet getLandingPagesForCampaign(long campaignId)
-    {
+    public LandingPageRecordSet getLandingPagesForCampaign(long campaignId) {
       object[] results = this.Invoke("getLandingPagesForCampaign", new object[] {campaignId});
-      return ((LandingPageRecordSet)(results[0]));
+      return ((LandingPageRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("addLandingPageToCampaignReturn")]
-    public bool addLandingPageToCampaign(long campaignId, LandingPage[] landingPages)
-    {
+    public bool addLandingPageToCampaign(long campaignId, LandingPage[] landingPages) {
       object[] results = this.Invoke("addLandingPageToCampaign", new object[] {campaignId, landingPages});
-      return ((bool)(results[0]));
+      return ((bool) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CampaignRecordSet")]
-    public CampaignRecordSet getCampaignsByCriteria(CampaignSearchCriteria searchCriteria)
-    {
+    public CampaignRecordSet getCampaignsByCriteria(CampaignSearchCriteria searchCriteria) {
       object[] results = this.Invoke("getCampaignsByCriteria", new object[] {searchCriteria});
-      return ((CampaignRecordSet)(results[0]));
+      return ((CampaignRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CampaignMigrationResult")]
-    public CampaignMigrationResult migrateCampaign(CampaignMigrationRequest campaignMigrationRequest)
-    {
+    public CampaignMigrationResult migrateCampaign(CampaignMigrationRequest campaignMigrationRequest) {
       object[] results = this.Invoke("migrateCampaign", new object[] {campaignMigrationRequest});
-      return ((CampaignMigrationResult)(results[0]));
+      return ((CampaignMigrationResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CampaignCopyResult")]
-    public CampaignCopyResult[] copyCampaigns(CampaignCopyRequest[] campaignCopyRequests)
-    {
+    public CampaignCopyResult[] copyCampaigns(CampaignCopyRequest[] campaignCopyRequests) {
       object[] results = this.Invoke("copyCampaigns", new object[] {campaignCopyRequests});
-      return ((CampaignCopyResult[])(results[0]));
+      return ((CampaignCopyResult[]) (results[0]));
     }
   }
 
@@ -7588,8 +7201,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CampaignMigrationRequest
-  {
+  public partial class CampaignMigrationRequest {
     private long campaignIdField;
 
     private string landingPageUrlField;
@@ -7611,8 +7223,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CampaignRecordSet : PagedRecordSet
-  {
+  public partial class CampaignRecordSet : PagedRecordSet {
     private Campaign[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -7627,8 +7238,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CampaignSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class CampaignSearchCriteria : PageableSearchCriteriaBase {
     private long[] advertiserIdsField;
 
     private ActiveFilter archiveFilterField;
@@ -7659,8 +7269,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class LandingPageRecordSet
-  {
+  public partial class LandingPageRecordSet {
     private LandingPage[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -7675,8 +7284,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class LandingPage : LandingPageBase
-  {
+  public partial class LandingPage : LandingPageBase {
     private string urlField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -7692,8 +7300,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class LandingPageBase : Base
-  {
+  public partial class LandingPageBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -7701,8 +7308,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CampaignCopyRequest
-  {
+  public partial class CampaignCopyRequest {
     private long campaignIdField;
 
     public long campaignId {
@@ -7716,8 +7322,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CampaignCopyResult : SaveResult
-  {
+  public partial class CampaignCopyResult : SaveResult {
     private CampaignCopyRequest copyRequestField;
 
     private string errorMessageField;
@@ -7748,8 +7353,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CampaignMigrationResult : SaveResult
-  {
+  public partial class CampaignMigrationResult : SaveResult {
     private string errorMessageField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -7764,8 +7368,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class LandingPageSaveResult : SaveResult
-  {
+  public partial class LandingPageSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -7773,8 +7376,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CampaignSaveResult : SaveResult
-  {
+  public partial class CampaignSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -7784,54 +7386,46 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(PagedRecordSet))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class ChangeLogRemoteService : DfaSoapClient
-  {
-    public ChangeLogRemoteService()
-    {
+  public partial class ChangeLogRemoteService : DfaSoapClient {
+    public ChangeLogRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/changelog";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("ChangeLogObjectTypes")]
-    public ChangeLogObjectType[] getChangeLogObjectTypes()
-    {
+    public ChangeLogObjectType[] getChangeLogObjectTypes() {
       object[] results = this.Invoke("getChangeLogObjectTypes", new object[0]);
-      return ((ChangeLogObjectType[])(results[0]));
+      return ((ChangeLogObjectType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("ChangeLogRecordSet")]
-    public ChangeLogRecordSet getChangeLogRecords(ChangeLogRecordSearchCriteria changeLogRecordSearchCriteria)
-    {
+    public ChangeLogRecordSet getChangeLogRecords(ChangeLogRecordSearchCriteria changeLogRecordSearchCriteria) {
       object[] results = this.Invoke("getChangeLogRecords", new object[] {changeLogRecordSearchCriteria});
-      return ((ChangeLogRecordSet)(results[0]));
+      return ((ChangeLogRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("ChangeLogRecord")]
-    public ChangeLogRecord getChangeLogRecord(long changeLogRecordId)
-    {
+    public ChangeLogRecord getChangeLogRecord(long changeLogRecordId) {
       object[] results = this.Invoke("getChangeLogRecord", new object[] {changeLogRecordId});
-      return ((ChangeLogRecord)(results[0]));
+      return ((ChangeLogRecord) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("ChangeLogRecord")]
-    public ChangeLogRecord getChangeLogRecordForObjectType(long changeLogRecordId, long objectTypeId)
-    {
+    public ChangeLogRecord getChangeLogRecordForObjectType(long changeLogRecordId, long objectTypeId) {
       object[] results = this.Invoke("getChangeLogRecordForObjectType", new object[] {changeLogRecordId, objectTypeId});
-      return ((ChangeLogRecord)(results[0]));
+      return ((ChangeLogRecord) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void updateChangeLogRecordComments(long changeLogRecordId, string comments)
-    {
+    public void updateChangeLogRecordComments(long changeLogRecordId, string comments) {
       this.Invoke("updateChangeLogRecordComments", new object[] {changeLogRecordId, comments});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void updateChangeLogRecordCommentsForObjectType(long changeLogRecordId, string comments, long objectTypeId)
-    {
+    public void updateChangeLogRecordCommentsForObjectType(long changeLogRecordId, string comments, long objectTypeId) {
       this.Invoke("updateChangeLogRecordCommentsForObjectType", new object[] {changeLogRecordId, comments, objectTypeId});
     }
   }
@@ -7841,8 +7435,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ChangeLogObjectType : Base
-  {
+  public partial class ChangeLogObjectType : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -7850,8 +7443,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ChangeLogRecord
-  {
+  public partial class ChangeLogRecord {
     private string actionField;
 
     private System.DateTime? changeDateField;
@@ -7950,8 +7542,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ChangeLogRecordSet : PagedRecordSet
-  {
+  public partial class ChangeLogRecordSet : PagedRecordSet {
     private ChangeLogRecord[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -7966,8 +7557,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ChangeLogRecordSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class ChangeLogRecordSearchCriteria : PageableSearchCriteriaBase {
     private long objectIdField;
 
     private long objectTypeIdField;
@@ -7999,40 +7589,34 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class ContentCategoryRemoteService : DfaSoapClient
-  {
-    public ContentCategoryRemoteService()
-    {
+  public partial class ContentCategoryRemoteService : DfaSoapClient {
+    public ContentCategoryRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/contentcategory";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("ContentCategorySaveResult")]
-    public ContentCategorySaveResult saveContentCategory(ContentCategory contentCategory)
-    {
+    public ContentCategorySaveResult saveContentCategory(ContentCategory contentCategory) {
       object[] results = this.Invoke("saveContentCategory", new object[] {contentCategory});
-      return ((ContentCategorySaveResult)(results[0]));
+      return ((ContentCategorySaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("ContentCategory")]
-    public ContentCategory getContentCategory(long contentCategoryId)
-    {
+    public ContentCategory getContentCategory(long contentCategoryId) {
       object[] results = this.Invoke("getContentCategory", new object[] {contentCategoryId});
-      return ((ContentCategory)(results[0]));
+      return ((ContentCategory) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("ContentCategoryRecordSet")]
-    public ContentCategoryRecordSet getContentCategories(ContentCategorySearchCriteria searchCriteria)
-    {
+    public ContentCategoryRecordSet getContentCategories(ContentCategorySearchCriteria searchCriteria) {
       object[] results = this.Invoke("getContentCategories", new object[] {searchCriteria});
-      return ((ContentCategoryRecordSet)(results[0]));
+      return ((ContentCategoryRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deleteContentCategory(long contentCategoryId)
-    {
+    public void deleteContentCategory(long contentCategoryId) {
       this.Invoke("deleteContentCategory", new object[] {contentCategoryId});
     }
   }
@@ -8042,8 +7626,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ContentCategory : ContentCategoryBase
-  {
+  public partial class ContentCategory : ContentCategoryBase {
     private string descriptionField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -8059,8 +7642,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ContentCategoryBase : Base
-  {
+  public partial class ContentCategoryBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -8068,8 +7650,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ContentCategoryRecordSet : PagedRecordSet
-  {
+  public partial class ContentCategoryRecordSet : PagedRecordSet {
     private ContentCategory[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -8084,8 +7665,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ContentCategorySearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class ContentCategorySearchCriteria : PageableSearchCriteriaBase {
     private SortOrder sortOrderField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -8100,8 +7680,7 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ContentCategorySaveResult : SaveResult
-  {
+  public partial class ContentCategorySaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -8120,193 +7699,168 @@ namespace Google.Api.Ads.Dfa.v1_16 {
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaAsset))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(CreativeFieldAssignment))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class CreativeRemoteService : DfaSoapClient
-  {
-    public CreativeRemoteService()
-    {
+  public partial class CreativeRemoteService : DfaSoapClient {
+    public CreativeRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/creative";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeBase")]
-    public CreativeBase getCreative(long creativeId)
-    {
+    public CreativeBase getCreative(long creativeId) {
       object[] results = this.Invoke("getCreative", new object[] {creativeId});
-      return ((CreativeBase)(results[0]));
+      return ((CreativeBase) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeRecordSet")]
-    public CreativeRecordSet getCreatives(CreativeSearchCriteria creativeSearchCriteria)
-    {
+    public CreativeRecordSet getCreatives(CreativeSearchCriteria creativeSearchCriteria) {
       object[] results = this.Invoke("getCreatives", new object[] {creativeSearchCriteria});
-      return ((CreativeRecordSet)(results[0]));
+      return ((CreativeRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeSaveResult")]
-    public CreativeSaveResult saveCreative(CreativeBase creative, long campaignId)
-    {
+    public CreativeSaveResult saveCreative(CreativeBase creative, long campaignId) {
       object[] results = this.Invoke("saveCreative", new object[] {creative, campaignId});
-      return ((CreativeSaveResult)(results[0]));
+      return ((CreativeSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deleteCreative(long creativeId)
-    {
+    public void deleteCreative(long creativeId) {
       this.Invoke("deleteCreative", new object[] {creativeId});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeAsset")]
-    public CreativeAssetSaveResult saveCreativeAsset(CreativeAsset creativeAsset)
-    {
+    public CreativeAssetSaveResult saveCreativeAsset(CreativeAsset creativeAsset) {
       object[] results = this.Invoke("saveCreativeAsset", new object[] {creativeAsset});
-      return ((CreativeAssetSaveResult)(results[0]));
+      return ((CreativeAssetSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeAssetRecordSet")]
-    public CreativeAssetRecordSet getCreativeAssets(CreativeAssetSearchCriteria creativeAssetSearchCriteria)
-    {
+    public CreativeAssetRecordSet getCreativeAssets(CreativeAssetSearchCriteria creativeAssetSearchCriteria) {
       object[] results = this.Invoke("getCreativeAssets", new object[] {creativeAssetSearchCriteria});
-      return ((CreativeAssetRecordSet)(results[0]));
+      return ((CreativeAssetRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeType")]
-    public CreativeType[] getCreativeTypes()
-    {
+    public CreativeType[] getCreativeTypes() {
       object[] results = this.Invoke("getCreativeTypes", new object[0]);
-      return ((CreativeType[])(results[0]));
+      return ((CreativeType[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void assignCreativeGroupsToCreative(long campaignId, long creativeId, long[] creativeGroupIds)
-    {
+    public void assignCreativeGroupsToCreative(long campaignId, long creativeId, long[] creativeGroupIds) {
       this.Invoke("assignCreativeGroupsToCreative", new object[] {campaignId, creativeId, creativeGroupIds});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeGroupRecordSet")]
-    public CreativeGroupRecordSet getAssignedCreativeGroupsToCreative(long campaignId, long creativeId)
-    {
+    public CreativeGroupRecordSet getAssignedCreativeGroupsToCreative(long campaignId, long creativeId) {
       object[] results = this.Invoke("getAssignedCreativeGroupsToCreative", new object[] {campaignId, creativeId});
-      return ((CreativeGroupRecordSet)(results[0]));
+      return ((CreativeGroupRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeCampaignAssociationResults")]
-    public CreativeCampaignAssociationResult[] associateCreativesToCampaign(long campaignId, long[] creativeIds)
-    {
+    public CreativeCampaignAssociationResult[] associateCreativesToCampaign(long campaignId, long[] creativeIds) {
       object[] results = this.Invoke("associateCreativesToCampaign", new object[] {campaignId, creativeIds});
-      return ((CreativeCampaignAssociationResult[])(results[0]));
+      return ((CreativeCampaignAssociationResult[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativePlacementAssignmentResults")]
-    public CreativePlacementAssignmentResult[] assignCreativesToPlacements(CreativePlacementAssignment[] creativePlacementAssignments)
-    {
+    public CreativePlacementAssignmentResult[] assignCreativesToPlacements(CreativePlacementAssignment[] creativePlacementAssignments) {
       object[] results = this.Invoke("assignCreativesToPlacements", new object[] {creativePlacementAssignments});
-      return ((CreativePlacementAssignmentResult[])(results[0]));
+      return ((CreativePlacementAssignmentResult[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("RichMediaCreativeBase")]
-    public RichMediaCreativeBase uploadRichMediaAsset(RichMediaAssetUploadRequest uploadRequest)
-    {
+    public RichMediaCreativeBase uploadRichMediaAsset(RichMediaAssetUploadRequest uploadRequest) {
       object[] results = this.Invoke("uploadRichMediaAsset", new object[] {uploadRequest});
-      return ((RichMediaCreativeBase)(results[0]));
+      return ((RichMediaCreativeBase) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("RichMediaCreativeBase")]
-    public RichMediaCreativeBase replaceRichMediaAsset(string oldAssetFileName, RichMediaAssetUploadRequest replaceRequest)
-    {
+    public RichMediaCreativeBase replaceRichMediaAsset(string oldAssetFileName, RichMediaAssetUploadRequest replaceRequest) {
       object[] results = this.Invoke("replaceRichMediaAsset", new object[] {oldAssetFileName, replaceRequest});
-      return ((RichMediaCreativeBase)(results[0]));
+      return ((RichMediaCreativeBase) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("RichMediaCreativeBase")]
-    public RichMediaCreativeBase deleteRichMediaAsset(long creativeId, string assetFileName)
-    {
+    public RichMediaCreativeBase deleteRichMediaAsset(long creativeId, string assetFileName) {
       object[] results = this.Invoke("deleteRichMediaAsset", new object[] {creativeId, assetFileName});
-      return ((RichMediaCreativeBase)(results[0]));
+      return ((RichMediaCreativeBase) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("RichMediaCreativeBase")]
-    public RichMediaCreativeBase uploadRichMediaCreativePackage(long advertiserId,     [System.Xml.Serialization.SoapElementAttribute(DataType = "base64Binary")]
-byte[] fileData, bool uploadAsFlashInFlashCreative)
-    {
+    public RichMediaCreativeBase uploadRichMediaCreativePackage(long advertiserId, [System.Xml.Serialization.SoapElementAttribute(DataType = "base64Binary")]
+byte[] fileData, bool uploadAsFlashInFlashCreative) {
       object[] results = this.Invoke("uploadRichMediaCreativePackage", new object[] {advertiserId, fileData, uploadAsFlashInFlashCreative});
-      return ((RichMediaCreativeBase)(results[0]));
+      return ((RichMediaCreativeBase) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("RichMediaCreativeBase")]
-    public RichMediaCreativeBase replaceRichMediaCreativePackage(long creativeId,     [System.Xml.Serialization.SoapElementAttribute(DataType = "base64Binary")]
-byte[] fileData)
-    {
+    public RichMediaCreativeBase replaceRichMediaCreativePackage(long creativeId, [System.Xml.Serialization.SoapElementAttribute(DataType = "base64Binary")]
+byte[] fileData) {
       object[] results = this.Invoke("replaceRichMediaCreativePackage", new object[] {creativeId, fileData});
-      return ((RichMediaCreativeBase)(results[0]));
+      return ((RichMediaCreativeBase) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.w3.org/2001/XMLSchema")]
     [return: System.Xml.Serialization.SoapElementAttribute("string")]
-    public string getRichMediaPreviewURL(long creativeId)
-    {
+    public string getRichMediaPreviewURL(long creativeId) {
       object[] results = this.Invoke("getRichMediaPreviewURL", new object[] {creativeId});
-      return ((string)(results[0]));
+      return ((string) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeCopyResults")]
-    public CreativeCopyResult[] copyCreative(CreativeCopyRequest[] copyRequests)
-    {
+    public CreativeCopyResult[] copyCreative(CreativeCopyRequest[] copyRequests) {
       object[] results = this.Invoke("copyCreative", new object[] {copyRequests});
-      return ((CreativeCopyResult[])(results[0]));
+      return ((CreativeCopyResult[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeUploadSession")]
-    public CreativeUploadSession createCreativesFromCreativeUploadSession(CreativeUploadSession creativeUploadSession)
-    {
+    public CreativeUploadSession createCreativesFromCreativeUploadSession(CreativeUploadSession creativeUploadSession) {
       object[] results = this.Invoke("createCreativesFromCreativeUploadSession", new object[] {creativeUploadSession});
-      return ((CreativeUploadSession)(results[0]));
+      return ((CreativeUploadSession) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeUploadSession")]
-    public CreativeUploadSession generateCreativeUploadSession(CreativeUploadSessionRequest creativeUploadSessionRequest)
-    {
+    public CreativeUploadSession generateCreativeUploadSession(CreativeUploadSessionRequest creativeUploadSessionRequest) {
       object[] results = this.Invoke("generateCreativeUploadSession", new object[] {creativeUploadSessionRequest});
-      return ((CreativeUploadSession)(results[0]));
+      return ((CreativeUploadSession) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeUploadSession")]
-    public CreativeUploadSession getCompleteCreativeUploadSession(CreativeUploadSessionSummary creativeUploadSessionSummary)
-    {
+    public CreativeUploadSession getCompleteCreativeUploadSession(CreativeUploadSessionSummary creativeUploadSessionSummary) {
       object[] results = this.Invoke("getCompleteCreativeUploadSession", new object[] {creativeUploadSessionSummary});
-      return ((CreativeUploadSession)(results[0]));
+      return ((CreativeUploadSession) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeUploadSession")]
-    public CreativeUploadSession uploadCreativeFiles(CreativeUploadRequest creativeUploadRequest)
-    {
+    public CreativeUploadSession uploadCreativeFiles(CreativeUploadRequest creativeUploadRequest) {
       object[] results = this.Invoke("uploadCreativeFiles", new object[] {creativeUploadRequest});
-      return ((CreativeUploadSession)(results[0]));
+      return ((CreativeUploadSession) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeRenderingResults")]
-    public CreativeRenderingResult[] getCreativeRenderings(CreativeRenderingRequest creativeRenderingRequest)
-    {
+    public CreativeRenderingResult[] getCreativeRenderings(CreativeRenderingRequest creativeRenderingRequest) {
       object[] results = this.Invoke("getCreativeRenderings", new object[] {creativeRenderingRequest});
-      return ((CreativeRenderingResult[])(results[0]));
+      return ((CreativeRenderingResult[]) (results[0]));
     }
   }
 
@@ -8340,8 +7894,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class CreativeBase : Base
-  {
+  public abstract partial class CreativeBase : Base {
     private bool activeField;
 
     private long advertiserIdField;
@@ -8398,8 +7951,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeFieldAssignment
-  {
+  public partial class CreativeFieldAssignment {
     private long creativeFieldIdField;
 
     private long creativeFieldValueIdField;
@@ -8420,8 +7972,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeRenderingResult
-  {
+  public partial class CreativeRenderingResult {
     private long creativeIdField;
 
     private long renderingIdField;
@@ -8449,8 +8000,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeRenderingRequest
-  {
+  public partial class CreativeRenderingRequest {
     private long[] creativeIdsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -8466,8 +8016,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RawFileSummary
-  {
+  public partial class RawFileSummary {
     private string filenameField;
 
     private string mimeTypeField;
@@ -8490,8 +8039,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RawFile : RawFileSummary
-  {
+  public partial class RawFile : RawFileSummary {
     private byte[] fileDataField;
 
     [System.Xml.Serialization.SoapElementAttribute(DataType = "base64Binary", IsNullable = true)]
@@ -8506,8 +8054,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeUploadRequest
-  {
+  public partial class CreativeUploadRequest {
     private CreativeUploadSessionSummary creativeUploadSessionSummaryField;
 
     private RawFile[] rawFilesField;
@@ -8531,8 +8078,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeUploadSessionSummary
-  {
+  public partial class CreativeUploadSessionSummary {
     private long advertiserIdField;
 
     private long campaignIdField;
@@ -8560,8 +8106,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeUploadSession : CreativeUploadSessionSummary
-  {
+  public partial class CreativeUploadSession : CreativeUploadSessionSummary {
     private CreativeSaveRequest[] creativeSaveRequestsField;
 
     private CreativeUploadFileCount fileCountField;
@@ -8599,8 +8144,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeSaveRequest
-  {
+  public partial class CreativeSaveRequest {
     private long creativeIdField;
 
     private string errorMessageField;
@@ -8638,8 +8182,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class FlashFile : CreativeUploadFileBase
-  {
+  public partial class FlashFile : CreativeUploadFileBase {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(ImageFile))]
@@ -8649,8 +8192,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class CreativeUploadFileBase : Base
-  {
+  public abstract partial class CreativeUploadFileBase : Base {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(CreativeUploadFile))]
@@ -8659,8 +8201,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeUploadFileSummary : Base
-  {
+  public partial class CreativeUploadFileSummary : Base {
     private string sourcePathField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -8675,8 +8216,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeUploadFile : CreativeUploadFileSummary
-  {
+  public partial class CreativeUploadFile : CreativeUploadFileSummary {
     private Dimensions dimensionsField;
 
     private string errorMessageField;
@@ -8721,8 +8261,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class Dimensions
-  {
+  public partial class Dimensions {
     private int heightField;
 
     private int widthField;
@@ -8744,8 +8283,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeGroupBase : Base
-  {
+  public partial class CreativeGroupBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -8753,8 +8291,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeGroup : CreativeGroupBase
-  {
+  public partial class CreativeGroup : CreativeGroupBase {
     private long advertiserIdField;
 
     private int groupNumberField;
@@ -8775,8 +8312,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeType : Base
-  {
+  public partial class CreativeType : Base {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaTimerEvent))]
@@ -8787,8 +8323,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaEventBase : Base
-  {
+  public partial class RichMediaEventBase : Base {
     private string descriptionField;
 
     private long parentAssetIdField;
@@ -8818,8 +8353,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaTimerEvent : RichMediaEventBase
-  {
+  public partial class RichMediaTimerEvent : RichMediaEventBase {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -8827,8 +8361,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaExitEvent : RichMediaEventBase
-  {
+  public partial class RichMediaExitEvent : RichMediaEventBase {
     private RichMediaExitWindowProperties exitWindowPropertiesField;
 
     private string targetField;
@@ -8859,8 +8392,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaExitWindowProperties
-  {
+  public partial class RichMediaExitWindowProperties {
     private int heightField;
 
     private int leftField;
@@ -8937,8 +8469,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaCounterEvent : RichMediaEventBase
-  {
+  public partial class RichMediaCounterEvent : RichMediaEventBase {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -8946,8 +8477,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ImageFile : CreativeUploadFileBase
-  {
+  public partial class ImageFile : CreativeUploadFileBase {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -8955,8 +8485,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeUploadFileCount
-  {
+  public partial class CreativeUploadFileCount {
     private int flashFileCountField;
 
     private int imageFileCountField;
@@ -8984,8 +8513,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeUploadSessionRequest
-  {
+  public partial class CreativeUploadSessionRequest {
     private long advertiserIdField;
 
     private long campaignIdField;
@@ -9006,8 +8534,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaAssetUploadRequest
-  {
+  public partial class RichMediaAssetUploadRequest {
     private string assetFileNameField;
 
     private long creativeIdField;
@@ -9045,8 +8572,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativePlacementAssignment
-  {
+  public partial class CreativePlacementAssignment {
     private string adNameField;
 
     private long creativeIdField;
@@ -9083,8 +8609,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativePlacementAssignmentResult : CreativePlacementAssignment
-  {
+  public partial class CreativePlacementAssignmentResult : CreativePlacementAssignment {
     private long adIdField;
 
     private string errorMessageField;
@@ -9106,8 +8631,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeGroupRecordSet
-  {
+  public partial class CreativeGroupRecordSet {
     private CreativeGroup[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -9122,8 +8646,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeAssetRecordSet
-  {
+  public partial class CreativeAssetRecordSet {
     private CreativeAssetBase[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -9139,8 +8662,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class CreativeAssetBase
-  {
+  public abstract partial class CreativeAssetBase {
     private long advertiserIdField;
 
     private bool forHTMLCreativesField;
@@ -9169,8 +8691,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeAsset : CreativeAssetBase
-  {
+  public partial class CreativeAsset : CreativeAssetBase {
     private byte[] contentField;
 
     [System.Xml.Serialization.SoapElementAttribute(DataType = "base64Binary", IsNullable = true)]
@@ -9185,8 +8706,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeAssetSearchCriteria
-  {
+  public partial class CreativeAssetSearchCriteria {
     private long advertiserIdField;
 
     private string assetFilenameField;
@@ -9215,8 +8735,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeAssetSaveResult
-  {
+  public partial class CreativeAssetSaveResult {
     private FlashClickTag[] clickTagsField;
 
     private int flashVersionField;
@@ -9270,8 +8789,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class FlashClickTag
-  {
+  public partial class FlashClickTag {
     private string nameField;
 
     private string valueField;
@@ -9294,8 +8812,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeCopyRequest
-  {
+  public partial class CreativeCopyRequest {
     private long advertiserIdField;
 
     private long campaignIdField;
@@ -9330,8 +8847,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeCopyResult : SaveResult
-  {
+  public partial class CreativeCopyResult : SaveResult {
     private CreativeCopyRequest copyRequestField;
 
     private string errorMessageField;
@@ -9362,8 +8878,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeCampaignAssociationResult : SaveResult
-  {
+  public partial class CreativeCampaignAssociationResult : SaveResult {
     private long campaignIdField;
 
     private string errorMessageField;
@@ -9385,8 +8900,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeSaveResult : SaveResult
-  {
+  public partial class CreativeSaveResult : SaveResult {
     private long adIdField;
 
     public long adId {
@@ -9400,8 +8914,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeRecordSet : PagedRecordSet
-  {
+  public partial class CreativeRecordSet : PagedRecordSet {
     private CreativeBase[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -9416,8 +8929,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class CreativeSearchCriteria : PageableSearchCriteriaBase {
     private ActiveFilter activeStatusField;
 
     private long advertiserIdField;
@@ -9468,8 +8980,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class TargetWindow
-  {
+  public partial class TargetWindow {
     private string optionField;
 
     private string otherValueField;
@@ -9492,8 +9003,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class FSCommand
-  {
+  public partial class FSCommand {
     private int leftField;
 
     private string optionField;
@@ -9532,8 +9042,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class HTMLCreativeAsset
-  {
+  public partial class HTMLCreativeAsset {
     private string assetFilenameField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -9548,8 +9057,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class MobileDisplayCreativeAsset : HTMLCreativeAsset
-  {
+  public partial class MobileDisplayCreativeAsset : HTMLCreativeAsset {
     private Dimensions dimesionsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -9564,8 +9072,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class HTMLCreativeFlashAsset : HTMLCreativeAsset
-  {
+  public partial class HTMLCreativeFlashAsset : HTMLCreativeAsset {
     private FlashClickTag[] clickTagsField;
 
     private int flashVersionField;
@@ -9603,8 +9110,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaAsset
-  {
+  public partial class RichMediaAsset {
     private string fileNameField;
 
     private int fileSizeField;
@@ -9648,8 +9154,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaVideoAsset : RichMediaAsset
-  {
+  public partial class RichMediaVideoAsset : RichMediaAsset {
     private string progressiveUrlField;
 
     private string streamingUrlField;
@@ -9672,8 +9177,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaImageAsset : RichMediaAsset
-  {
+  public partial class RichMediaImageAsset : RichMediaAsset {
     private string altTextField;
 
     private bool backupImageField;
@@ -9722,8 +9226,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaFlashAsset : RichMediaAsset
-  {
+  public partial class RichMediaFlashAsset : RichMediaAsset {
     private string creativeFormatField;
 
     private int heightField;
@@ -9760,8 +9263,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaReminderAsset : RichMediaFlashAsset
-  {
+  public partial class RichMediaReminderAsset : RichMediaFlashAsset {
     private string zIndexField;
 
     private int durationField;
@@ -9834,8 +9336,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaExpandingAsset : RichMediaFlashAsset
-  {
+  public partial class RichMediaExpandingAsset : RichMediaFlashAsset {
     private string zIndexField;
 
     private RichMediaImageAsset alternateImageField;
@@ -9956,8 +9457,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaFloatingAsset : RichMediaFlashAsset
-  {
+  public partial class RichMediaFloatingAsset : RichMediaFlashAsset {
     private string zIndexField;
 
     private int durationField;
@@ -10065,8 +9565,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaInPageAsset : RichMediaFlashAsset
-  {
+  public partial class RichMediaInPageAsset : RichMediaFlashAsset {
     private RichMediaImageAsset alternateImageAssetField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -10081,8 +9580,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaOverlayAsset : RichMediaFlashAsset
-  {
+  public partial class RichMediaOverlayAsset : RichMediaFlashAsset {
     private bool addressBarField;
 
     private int durationField;
@@ -10176,8 +9674,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class TrackingTextCreative : CreativeBase
-  {
+  public partial class TrackingTextCreative : CreativeBase {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(TrackingHTMLCreative))]
@@ -10190,8 +9687,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class HTMLCreativeBase : CreativeBase
-  {
+  public abstract partial class HTMLCreativeBase : CreativeBase {
     private string hTMLCodeField;
 
     private HTMLCreativeAsset[] creativeAssetsField;
@@ -10214,8 +9710,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class TrackingHTMLCreative : HTMLCreativeBase
-  {
+  public partial class TrackingHTMLCreative : HTMLCreativeBase {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -10223,8 +9718,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class FlashInpageCreative : HTMLCreativeBase
-  {
+  public partial class FlashInpageCreative : HTMLCreativeBase {
     private FSCommand fSCommandField;
 
     private HTMLCreativeFlashAsset[] additionalFlashAssetsField;
@@ -10341,8 +9835,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class HTMLInterstitialCreative : HTMLCreativeBase
-  {
+  public partial class HTMLInterstitialCreative : HTMLCreativeBase {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -10350,8 +9843,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class HTMLCreative : HTMLCreativeBase
-  {
+  public partial class HTMLCreative : HTMLCreativeBase {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -10359,8 +9851,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class MobileDisplayCreative : HTMLCreativeBase
-  {
+  public partial class MobileDisplayCreative : HTMLCreativeBase {
     private string thirdPartyClickTrackingUrlField;
 
     private string thirdPartyImpressionTrackingUrlField;
@@ -10386,8 +9877,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class RedirectCreativeBase : CreativeBase
-  {
+  public abstract partial class RedirectCreativeBase : CreativeBase {
     private string redirectUrlField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -10402,8 +9892,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class InternalRedirectCreative : RedirectCreativeBase
-  {
+  public partial class InternalRedirectCreative : RedirectCreativeBase {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -10411,8 +9900,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RedirectCreative : RedirectCreativeBase
-  {
+  public partial class RedirectCreative : RedirectCreativeBase {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -10420,8 +9908,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class InterstitialInternalRedirectCreative : RedirectCreativeBase
-  {
+  public partial class InterstitialInternalRedirectCreative : RedirectCreativeBase {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(TrackingImageCreative))]
@@ -10431,8 +9918,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class ImageCreativeBase : CreativeBase
-  {
+  public abstract partial class ImageCreativeBase : CreativeBase {
     private string alternateTextField;
 
     private string assetFilenameField;
@@ -10455,8 +9941,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class TrackingImageCreative : ImageCreativeBase
-  {
+  public partial class TrackingImageCreative : ImageCreativeBase {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -10464,8 +9949,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class ImageCreative : ImageCreativeBase
-  {
+  public partial class ImageCreative : ImageCreativeBase {
   }
 
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(RichMediaImageWithOverlayCreative))]
@@ -10483,8 +9967,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public abstract partial class RichMediaCreativeBase : CreativeBase
-  {
+  public abstract partial class RichMediaCreativeBase : CreativeBase {
     private string actionScriptVersionField;
 
     private string adRequestKeysField;
@@ -10685,8 +10168,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaImageWithOverlayCreative : RichMediaCreativeBase
-  {
+  public partial class RichMediaImageWithOverlayCreative : RichMediaCreativeBase {
     private RichMediaImageAsset imageAssetField;
 
     private RichMediaOverlayAsset overlayAssetField;
@@ -10709,8 +10191,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaFloatingWithReminderCreative : RichMediaCreativeBase
-  {
+  public partial class RichMediaFloatingWithReminderCreative : RichMediaCreativeBase {
     private RichMediaFloatingAsset floatingAssetField;
 
     private RichMediaReminderAsset reminderAssetField;
@@ -10733,8 +10214,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaInPageWithOverlayCreative : RichMediaCreativeBase
-  {
+  public partial class RichMediaInPageWithOverlayCreative : RichMediaCreativeBase {
     private RichMediaInPageAsset inPageAssetField;
 
     private RichMediaOverlayAsset overlayAssetField;
@@ -10757,8 +10237,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaImageWithFloatingCreative : RichMediaCreativeBase
-  {
+  public partial class RichMediaImageWithFloatingCreative : RichMediaCreativeBase {
     private RichMediaFloatingAsset floatingAssetField;
 
     private RichMediaImageAsset imageAssetField;
@@ -10781,8 +10260,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaFlashInFlashCreative : RichMediaCreativeBase
-  {
+  public partial class RichMediaFlashInFlashCreative : RichMediaCreativeBase {
     private string assetTypeField;
 
     private RichMediaFlashAsset flashAssetField;
@@ -10805,8 +10283,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaFloatingCreative : RichMediaCreativeBase
-  {
+  public partial class RichMediaFloatingCreative : RichMediaCreativeBase {
     private RichMediaFloatingAsset floatingAssetField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -10821,8 +10298,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaExpandingCreative : RichMediaCreativeBase
-  {
+  public partial class RichMediaExpandingCreative : RichMediaCreativeBase {
     private RichMediaExpandingAsset expandingAssetField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -10837,8 +10313,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaInPageWithFloatingCreative : RichMediaCreativeBase
-  {
+  public partial class RichMediaInPageWithFloatingCreative : RichMediaCreativeBase {
     private RichMediaFloatingAsset floatingAssetField;
 
     private RichMediaInPageAsset inPageAssetField;
@@ -10861,8 +10336,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaInPageCreative : RichMediaCreativeBase
-  {
+  public partial class RichMediaInPageCreative : RichMediaCreativeBase {
     private RichMediaInPageAsset inPageAssetField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -10877,8 +10351,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class RichMediaOverlayCreative : RichMediaCreativeBase
-  {
+  public partial class RichMediaOverlayCreative : RichMediaCreativeBase {
     private RichMediaOverlayAsset overlayAssetField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -10896,70 +10369,60 @@ byte[] fileData)
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class CreativeFieldRemoteService : DfaSoapClient
-  {
-    public CreativeFieldRemoteService()
-    {
+  public partial class CreativeFieldRemoteService : DfaSoapClient {
+    public CreativeFieldRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/creativefield";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeFieldSaveResult")]
-    public CreativeFieldSaveResult saveCreativeField(CreativeField creativeField)
-    {
+    public CreativeFieldSaveResult saveCreativeField(CreativeField creativeField) {
       object[] results = this.Invoke("saveCreativeField", new object[] {creativeField});
-      return ((CreativeFieldSaveResult)(results[0]));
+      return ((CreativeFieldSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deleteCreativeField(long creativeFieldId)
-    {
+    public void deleteCreativeField(long creativeFieldId) {
       this.Invoke("deleteCreativeField", new object[] {creativeFieldId});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeFieldRecordSet")]
-    public CreativeFieldRecordSet getCreativeFields(CreativeFieldSearchCriteria creativeFieldSearchCriteria)
-    {
+    public CreativeFieldRecordSet getCreativeFields(CreativeFieldSearchCriteria creativeFieldSearchCriteria) {
       object[] results = this.Invoke("getCreativeFields", new object[] {creativeFieldSearchCriteria});
-      return ((CreativeFieldRecordSet)(results[0]));
+      return ((CreativeFieldRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeFieldValueRecordSet")]
-    public CreativeFieldValueRecordSet getCreativeFieldValues(CreativeFieldValueSearchCriteria creativeFieldValueSearchCriteria)
-    {
+    public CreativeFieldValueRecordSet getCreativeFieldValues(CreativeFieldValueSearchCriteria creativeFieldValueSearchCriteria) {
       object[] results = this.Invoke("getCreativeFieldValues", new object[] {creativeFieldValueSearchCriteria});
-      return ((CreativeFieldValueRecordSet)(results[0]));
+      return ((CreativeFieldValueRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeField")]
-    public CreativeField getCreativeField(long creativeFieldId)
-    {
+    public CreativeField getCreativeField(long creativeFieldId) {
       object[] results = this.Invoke("getCreativeField", new object[] {creativeFieldId});
-      return ((CreativeField)(results[0]));
+      return ((CreativeField) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeFieldValue")]
-    public CreativeFieldValue getCreativeFieldValue(long creativeFieldValueId)
-    {
+    public CreativeFieldValue getCreativeFieldValue(long creativeFieldValueId) {
       object[] results = this.Invoke("getCreativeFieldValue", new object[] {creativeFieldValueId});
-      return ((CreativeFieldValue)(results[0]));
+      return ((CreativeFieldValue) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeFieldValueSaveResult")]
-    public CreativeFieldValueSaveResult saveCreativeFieldValue(CreativeFieldValue creativeFieldValue)
-    {
+    public CreativeFieldValueSaveResult saveCreativeFieldValue(CreativeFieldValue creativeFieldValue) {
       object[] results = this.Invoke("saveCreativeFieldValue", new object[] {creativeFieldValue});
-      return ((CreativeFieldValueSaveResult)(results[0]));
+      return ((CreativeFieldValueSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deleteCreativeFieldValue(long creativeFieldValueId)
-    {
+    public void deleteCreativeFieldValue(long creativeFieldValueId) {
       this.Invoke("deleteCreativeFieldValue", new object[] {creativeFieldValueId});
     }
   }
@@ -10969,8 +10432,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeField : CreativeFieldBase
-  {
+  public partial class CreativeField : CreativeFieldBase {
     private long advertiserIdField;
 
     private long totalNumberOfValuesField;
@@ -10992,8 +10454,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeFieldBase : Base
-  {
+  public partial class CreativeFieldBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -11001,8 +10462,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeFieldValueRecordSet : PagedRecordSet
-  {
+  public partial class CreativeFieldValueRecordSet : PagedRecordSet {
     private CreativeFieldValue[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -11017,8 +10477,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeFieldValue : CreativeFieldValueBase
-  {
+  public partial class CreativeFieldValue : CreativeFieldValueBase {
     private long creativeFieldIdField;
 
     public long creativeFieldId {
@@ -11033,8 +10492,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeFieldValueBase : Base
-  {
+  public partial class CreativeFieldValueBase : Base {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -11042,8 +10500,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeFieldRecordSet : PagedRecordSet
-  {
+  public partial class CreativeFieldRecordSet : PagedRecordSet {
     private CreativeField[] recordsField;
 
     [System.Xml.Serialization.SoapElementAttribute(IsNullable = true)]
@@ -11058,8 +10515,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeFieldValueSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class CreativeFieldValueSearchCriteria : PageableSearchCriteriaBase {
     private long[] creativeFieldIdsField;
 
     private SortOrder sortOrderField;
@@ -11082,8 +10538,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeFieldSearchCriteria : PageableSearchCriteriaBase
-  {
+  public partial class CreativeFieldSearchCriteria : PageableSearchCriteriaBase {
     private long[] advertiserIdsField;
 
     private SortOrder sortOrderField;
@@ -11106,8 +10561,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeFieldValueSaveResult : SaveResult
-  {
+  public partial class CreativeFieldValueSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -11115,8 +10569,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeFieldSaveResult : SaveResult
-  {
+  public partial class CreativeFieldSaveResult : SaveResult {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -11126,41 +10579,35 @@ byte[] fileData)
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SearchCriteriaBase))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(SaveResult))]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
-  public partial class CreativeGroupRemoteService : DfaSoapClient
-  {
-    public CreativeGroupRemoteService()
-    {
+  public partial class CreativeGroupRemoteService : DfaSoapClient {
+    public CreativeGroupRemoteService() {
       this.Url = "http://advertisersapi.doubleclick.net/v1.16/api/dfa-api/creativegroup";
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeGroupSaveResult")]
-    public CreativeGroupSaveResult saveCreativeGroup(CreativeGroup creativeGroup)
-    {
+    public CreativeGroupSaveResult saveCreativeGroup(CreativeGroup creativeGroup) {
       object[] results = this.Invoke("saveCreativeGroup", new object[] {creativeGroup});
-      return ((CreativeGroupSaveResult)(results[0]));
+      return ((CreativeGroupSaveResult) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-    public void deleteCreativeGroup(long creativeGroupId)
-    {
+    public void deleteCreativeGroup(long creativeGroupId) {
       this.Invoke("deleteCreativeGroup", new object[] {creativeGroupId});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeGroupRecordSet")]
-    public CreativeGroupRecordSet getCreativeGroups(CreativeGroupSearchCriteria searchCriteria)
-    {
+    public CreativeGroupRecordSet getCreativeGroups(CreativeGroupSearchCriteria searchCriteria) {
       object[] results = this.Invoke("getCreativeGroups", new object[] {searchCriteria});
-      return ((CreativeGroupRecordSet)(results[0]));
+      return ((CreativeGroupRecordSet) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.16", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.16")]
     [return: System.Xml.Serialization.SoapElementAttribute("CreativeGroup")]
-    public CreativeGroup getCreativeGroup(long id)
-    {
+    public CreativeGroup getCreativeGroup(long id) {
       object[] results = this.Invoke("getCreativeGroup", new object[] {id});
-      return ((CreativeGroup)(results[0]));
+      return ((CreativeGroup) (results[0]));
     }
   }
 
@@ -11169,8 +10616,7 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeGroupSearchCriteria : SearchCriteriaBase
-  {
+  public partial class CreativeGroupSearchCriteria : SearchCriteriaBase {
     private long[] advertiserIdsField;
 
     private int groupNumberField;
@@ -11192,7 +10638,6 @@ byte[] fileData)
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.SoapTypeAttribute(Namespace = "http://www.doubleclick.net/dfa-api/v1.16")]
-  public partial class CreativeGroupSaveResult : SaveResult
-  {
+  public partial class CreativeGroupSaveResult : SaveResult {
   }
 }

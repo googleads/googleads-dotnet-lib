@@ -28,7 +28,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// <summary>
     /// All the services available in v1.14.
     /// </summary>
-    [Obsolete("This API version is deprecated; use v.16 version of API instead.")]
+    [Obsolete("This API version is deprecated; use v1.16 version of API instead.")]
     public class v1_14 {
       /// <summary>
       /// See <a href="http://code.google.com/apis/dfa/docs/reference/v1.14/ad/service.html">
