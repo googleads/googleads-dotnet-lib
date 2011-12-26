@@ -124,6 +124,12 @@ namespace Google.Api.Ads.Dfp.Lib {
       public static readonly ServiceSignature SuggestedAdUnitService;
 
       /// <summary>
+      /// See <a href="http://code.google.com/apis/dfp/docs/reference/v201111/ThirdPartySlotService.html">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature ThirdPartySlotService;
+
+      /// <summary>
       /// See <a href="http://code.google.com/apis/dfp/docs/reference/v201111/UserService.html">
       /// this page</a> for details.
       /// </summary>
@@ -159,6 +165,8 @@ namespace Google.Api.Ads.Dfp.Lib {
         ReportService = DfpService.MakeServiceSignature("v201111", "ReportService");
         SuggestedAdUnitService = DfpService.MakeServiceSignature("v201111",
             "SuggestedAdUnitService");
+        ThirdPartySlotService = DfpService.MakeServiceSignature("v201111",
+            "ThirdPartySlotService");
         UserService = DfpService.MakeServiceSignature("v201111", "UserService");
       }
     }
