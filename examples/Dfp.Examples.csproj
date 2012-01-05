@@ -162,6 +162,11 @@
     <Compile Include="v201111\ReportService\RunDeliveryReport.cs" />
     <Compile Include="v201111\ReportService\RunInventoryReport.cs" />
     <Compile Include="v201111\ReportService\RunSalesReport.cs" />
+    <Compile Include="v201111\ThirdPartySlotService\ArchiveThirdPartySlots.cs" />
+    <Compile Include="v201111\ThirdPartySlotService\CreateThirdPartySlot.cs" />
+    <Compile Include="v201111\ThirdPartySlotService\GetAllThirdPartySlots.cs" />
+    <Compile Include="v201111\ThirdPartySlotService\GetThirdPartySlotsByStatement.cs" />
+    <Compile Include="v201111\ThirdPartySlotService\UpdateThirdPartySlots.cs" />
     <Compile Include="v201111\UserService\CreateUsers.cs" />
     <Compile Include="v201111\UserService\DeactivateUser.cs" />
     <Compile Include="v201111\UserService\GetAllRoles.cs" />

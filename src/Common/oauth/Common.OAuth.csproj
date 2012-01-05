@@ -45,10 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Lib\AdsOAuthException.cs" />
     <Compile Include="Lib\AdsOAuthNetProvider.cs" />
     <Compile Include="Lib\AdsServiceLocator.cs" />
     <Compile Include="Lib\AdsServiceComponent.cs" />
-    <Compile Include="Lib\AdsOAuthException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
