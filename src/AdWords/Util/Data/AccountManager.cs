@@ -16,8 +16,7 @@
 
 using Google.Api.Ads.AdWords;
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v13;
-using Google.Api.Ads.AdWords.v200909;
+using Google.Api.Ads.AdWords.v201109;
 
 using System;
 using System.Collections;
@@ -44,6 +43,11 @@ namespace Google.Api.Ads.AdWords.Util.Data {
     private AdWordsUser user = null;
 
     /// <summary>
+    /// The AdWords API sandbox server url.
+    /// </summary>
+    private const string SANDBOX_SERVER = "https://adwords-sandbox.google.com";
+
+    /// <summary>
     /// Default constructor for AccountManager.
     /// </summary>
     public AccountManager() {
@@ -65,17 +69,25 @@ namespace Google.Api.Ads.AdWords.Util.Data {
     /// returned by getClientAccounts method of AccountService.
     /// </summary>
     /// <returns>An array of ClientAccount objects.</returns>
-    public ClientAccount[] DownloadAllAccounts() {
-      AccountService accountService = (AccountService) user.GetService(
-          AdWordsService.v13.AccountService, "https://sandbox.google.com");
-      accountService.clientEmailValue.Value[0] = "";
+    public LocalClientAccount[] DownloadAllAccounts(string[] campaignFields, string[] adGroupFields,
+        string[] adFields, string[] criterionFields, string[] campaignCriterionFields) {
+      // Get the ServicedAccountService.
+      ServicedAccountService servicedAccountService =
+          (ServicedAccountService) user.GetService(AdWordsService.v201109.
+              ServicedAccountService);
 
-      string[] clients = accountService.getClientAccounts();
-      List<ClientAccount> allClients = new List<ClientAccount>();
+      ServicedAccountSelector selector = new ServicedAccountSelector();
+      selector.enablePaging = false;
 
-      if (clients != null) {
-        foreach (string client in clients)
-          allClients.Add(DownloadAccount(client));
+      ServicedAccountGraph graph = servicedAccountService.get(selector);
+
+      List<LocalClientAccount> allClients = new List<LocalClientAccount>();
+
+      if (graph != null && graph.accounts != null) {
+        for (int i = 0; i < graph.accounts.Length; i++) {
+          allClients.Add(DownloadAccount(graph.accounts[i].customerId, campaignFields,
+              adGroupFields, adFields, criterionFields, campaignCriterionFields));
+        }
       }
       return allClients.ToArray();
     }
@@ -84,19 +96,305 @@ namespace Google.Api.Ads.AdWords.Util.Data {
     /// Downloads a sandbox client account under an mcc. All the campaigns,
     /// adgroups, ads and criteria are downloaded by this function.
     /// </summary>
-    /// <param name="clientEmail">The clientEmail for the account.</param>
-    /// <returns>The ClientAccount object representing this account.</returns>
-    public ClientAccount DownloadAccount(string clientEmail) {
-      AccountService accountService = (AccountService) user.GetService(
-          AdWordsService.v13.AccountService, "https://sandbox.google.com");
-
-      accountService.clientEmailValue.Value[0] = clientEmail;
-
-      ClientAccount account = new ClientAccount();
-      account.Email = clientEmail;
-      account.AccountInfo = accountService.getAccountInfo();
-      account.Campaigns = new List<LocalCampaign>(GetAccountCampaigns(clientEmail));
+    /// <param name="customerId">The customer id for the account</param>
+    /// <param name="campaignFields">The list of names of campaign fields that
+    /// should be saved.</param>
+    /// <param name="adGroupFields">The list of names of ad group fields that
+    /// should be saved.</param>
+    /// <param name="adFields">The list of names of ad fields that should be
+    /// saved.</param>
+    /// <param name="criterionFields">The list of names of criterion fields that
+    /// should be saved.</param>
+    /// <param name="campaignCriterionFields">The list of names of campaign
+    /// criterion fields that should be saved.</param>
+    /// <returns>The LocalClientAccount object representing this account.
+    /// </returns>
+    public LocalClientAccount DownloadAccount(long customerId, string[] campaignFields,
+        string[] adGroupFields, string[] adFields, string[] criterionFields,
+        string[] campaignCriterionFields) {
+      LocalClientAccount account = new LocalClientAccount();
+      account.CustomerId = customerId;
+      account.Campaigns = new List<LocalCampaign>(GetAccountCampaigns(customerId, campaignFields,
+          adGroupFields, adFields, criterionFields, campaignCriterionFields));
       return account;
+    }
+
+    /// <summary>
+    /// Retrieves the list of all campaigns in an account.
+    /// </summary>
+    /// <param name="customerId">The customer id for the account</param>
+    /// <param name="campaignFields">The list of names of campaign fields that
+    /// should be saved.</param>
+    /// <param name="adGroupFields">The list of names of ad group fields that
+    /// should be saved.</param>
+    /// <param name="adFields">The list of names of ad fields that should be
+    /// saved.</param>
+    /// <param name="criterionFields">The list of names of criterion fields that
+    /// should be saved.</param>
+    /// <param name="campaignCriterionFields">The list of names of campaign
+    /// criterion fields that should be saved.</param>
+    /// <returns>List of campaigns in the account.</returns>
+    private LocalCampaign[] GetAccountCampaigns(long customerId, string[] campaignFields,
+        string[] adGroupFields, string[] adFields, string[] criterionFields,
+        string[] campaignCriterionFields) {
+      List<LocalCampaign> retVal = new List<LocalCampaign>();
+
+      CampaignService campaignService = (CampaignService) user.GetService(
+          AdWordsService.v201109.CampaignService, SANDBOX_SERVER);
+      campaignService.RequestHeader.clientCustomerId = customerId.ToString();
+
+      // Create a selector.
+      Selector selector = new Selector();
+      selector.fields = campaignFields;
+
+      selector.paging = new Paging();
+
+      int offset = 0;
+      int pageSize = 500;
+
+      CampaignPage page = new CampaignPage();
+
+      do {
+        selector.paging.startIndex = offset;
+        selector.paging.numberResults = pageSize;
+
+        page = campaignService.get(selector);
+        if (page != null && page.entries != null) {
+          int i = offset;
+          foreach (Campaign campaign in page.entries) {
+            LocalCampaign localCampaign = new LocalCampaign();
+            localCampaign.Campaign = campaign;
+            localCampaign.AdGroups.AddRange(GetAdGroups(campaign.id, customerId, adGroupFields,
+                adFields, criterionFields));
+            localCampaign.CampaignCriteria.AddRange(GetCampaignCriteria(campaign.id, customerId,
+                campaignCriterionFields));
+            retVal.Add(localCampaign);
+          }
+        }
+        offset += pageSize;
+      } while (offset < page.totalNumEntries);
+
+      return retVal.ToArray();
+    }
+
+    /// <summary>
+    /// Retrieves the list of all adgroups in a campaign.
+    /// </summary>
+    /// <param name="campaignId">Campaign Id.</param>
+    /// <param name="customerId">The customer id for the account</param>
+    /// <param name="adGroupFields">The list of names of ad group fields that
+    /// should be saved.</param>
+    /// <param name="adFields">The list of names of ad fields that should be
+    /// saved.</param>
+    /// <param name="criterionFields">The list of names of criterion fields that
+    /// should be saved.</param>
+    /// <returns>List of ad groups in the campaign.</returns>
+    private LocalAdGroup[] GetAdGroups(long campaignId, long customerId, string[] adGroupFields,
+        string[] adFields, string[] criterionFields) {
+      List<LocalAdGroup> retVal = new List<LocalAdGroup>();
+
+      AdGroupService adGroupService = (AdGroupService) user.GetService(
+          AdWordsService.v201109.AdGroupService, SANDBOX_SERVER);
+      adGroupService.RequestHeader.clientCustomerId = customerId.ToString();
+
+      // Create a selector.
+      Selector selector = new Selector();
+      selector.fields = adGroupFields;
+
+      // Set a filter condition.
+      Predicate predicate = new Predicate();
+      predicate.field = "CampaignId";
+      predicate.@operator = PredicateOperator.EQUALS;
+      predicate.values = new string[] {campaignId.ToString()};
+      selector.predicates = new Predicate[] {predicate};
+
+      // Set the selector paging.
+      selector.paging = new Paging();
+
+      int offset = 0;
+      int pageSize = 500;
+
+      AdGroupPage page = new AdGroupPage();
+
+      do {
+        selector.paging.startIndex = offset;
+        selector.paging.numberResults = pageSize;
+
+        page = adGroupService.get(selector);
+        if (page != null && page.entries != null) {
+          int i = offset;
+          foreach (AdGroup adGroup in page.entries) {
+            LocalAdGroup localAdGroup = new LocalAdGroup();
+
+            localAdGroup.AdGroup = adGroup;
+            localAdGroup.Ads.AddRange(GetAllAds(adGroup.id, customerId, adFields));
+            localAdGroup.Criteria.AddRange(GetAdGroupCriteria(adGroup.id, customerId,
+                criterionFields));
+            retVal.Add(localAdGroup);
+          }
+        }
+        offset += pageSize;
+      } while (offset < page.totalNumEntries);
+      return retVal.ToArray();
+    }
+
+    /// <summary>
+    /// Retrieves the list of all ads in an adgroup.
+    /// </summary>
+    /// <param name="adGroupId">The AdGroup Id.</param>
+    /// <param name="customerId">The customer id for the account</param>
+    /// <param name="adFields">The list of names of ad fields that should be
+    /// saved.</param>
+    /// <returns>List of ads in the adgroup.</returns>
+    private AdGroupAd[] GetAllAds(long adGroupId, long customerId, string[] adFields) {
+      AdGroupAdService adService = (AdGroupAdService) user.GetService(
+          AdWordsService.v201109.AdGroupAdService, SANDBOX_SERVER);
+
+      adService.RequestHeader.clientCustomerId = customerId.ToString();
+
+      // Create a selector and set the filters.
+      Selector selector = new Selector();
+
+      // Set the fields to select.
+      selector.fields = adFields;
+
+      // Restrict the fetch to only the selected AdGroupId.
+      Predicate adGroupPredicate = new Predicate();
+      adGroupPredicate.field = "AdGroupId";
+      adGroupPredicate.@operator = PredicateOperator.EQUALS;
+      adGroupPredicate.values = new string[] {adGroupId.ToString()};
+
+      // By default disabled ads aren't returned by the selector. To return
+      // them include the DISABLED status in the statuses field.
+      Predicate statusPredicate = new Predicate();
+      statusPredicate.field = "Status";
+      statusPredicate.@operator = PredicateOperator.IN;
+      statusPredicate.values = new string[] {AdGroupAdStatus.ENABLED.ToString(),
+          AdGroupAdStatus.PAUSED.ToString(), AdGroupAdStatus.DISABLED.ToString()};
+      selector.predicates = new Predicate[] {adGroupPredicate, statusPredicate};
+
+      // Select selector paging.
+      selector.paging = new Paging();
+
+      int offset = 0;
+      int pageSize = 500;
+
+      AdGroupAdPage page = new AdGroupAdPage();
+            List<AdGroupAd> retVal = new List<AdGroupAd>();
+
+      do {
+        selector.paging.startIndex = offset;
+        selector.paging.numberResults = pageSize;
+
+        page = adService.get(selector);
+
+        if (page != null && page.entries != null) {
+          int i = offset;
+
+          foreach (AdGroupAd adGroupAd in page.entries) {
+            retVal.Add(adGroupAd);
+          }
+        }
+        offset += pageSize;
+      } while (offset < page.totalNumEntries);
+
+      return retVal.ToArray();
+    }
+
+    /// <summary>
+    /// Retrieves the list of all criteria in an adgroup.
+    /// </summary>
+    /// <param name="adGroupId">The AdGroup Id.</param>
+    /// <param name="customerId">The customer id for the account</param>
+    /// <param name="criterionFields">The list of names of criterion fields that
+    /// should be saved.</param>
+    /// <returns>List of criteria in the adgroup.</returns>
+    private AdGroupCriterion[] GetAdGroupCriteria(long adGroupId, long customerId,
+        string[] criterionFields) {
+      AdGroupCriterionService criterionService = (AdGroupCriterionService) user.GetService(
+          AdWordsService.v201109.AdGroupCriterionService, "https://adwords-sandbox.google.com");
+
+      criterionService.RequestHeader.clientCustomerId = customerId.ToString();
+
+
+      // Create a selector.
+      Selector selector = new Selector();
+      selector.fields = criterionFields;
+
+      // Restrict the fetch to only the selected AdGroupId.
+      Predicate adGroupPredicate = new Predicate();
+      adGroupPredicate.field = "AdGroupId";
+      adGroupPredicate.@operator = PredicateOperator.EQUALS;
+      adGroupPredicate.values = new string[] {adGroupId.ToString()};
+
+      selector.predicates = new Predicate[] {adGroupPredicate};
+
+      selector.paging = new Paging();
+
+      int offset = 0;
+      int pageSize = 500;
+
+      AdGroupCriterionPage page = new AdGroupCriterionPage();
+      List<AdGroupCriterion> retVal = new List<AdGroupCriterion>();
+
+      do {
+        selector.paging.startIndex = offset;
+        selector.paging.numberResults = pageSize;
+
+        page = criterionService.get(selector);
+
+        if (page != null && page.entries != null) {
+          retVal.AddRange(page.entries);
+        }
+        offset += pageSize;
+      } while (offset < page.totalNumEntries);
+      return retVal.ToArray();
+    }
+
+    /// <summary>
+    /// Retrieves the list of all criteria in a campaign.
+    /// </summary>
+    /// <param name="campaignId">The campaign id.</param>
+    /// <param name="customerId">The customer id for the account</param>
+    /// <param name="campaignCriterionFields">The list of names of campaign
+    /// criterion fields that should be saved.</param>
+    /// <returns>List of criteria in the campaign.</returns>
+    private CampaignCriterion[] GetCampaignCriteria(long campaignId, long customerId,
+        string[] campaignCriterionFields) {
+      CampaignCriterionService criterionService = (CampaignCriterionService) user.GetService(
+          AdWordsService.v201109.CampaignCriterionService, "https://adwords-sandbox.google.com");
+
+      // Create selector.
+      Selector selector = new Selector();
+      selector.fields = campaignCriterionFields;
+
+      Predicate predicate = new Predicate();
+      predicate.field = "CampaignId";
+      predicate.@operator = PredicateOperator.EQUALS;
+      predicate.values = new string[] {campaignId.ToString()};
+
+      selector.predicates = new Predicate[] {predicate};
+
+      selector.paging = new Paging();
+
+      int offset = 0;
+      int pageSize = 500;
+
+      CampaignCriterionPage page = new CampaignCriterionPage();
+      List<CampaignCriterion> retVal = new List<CampaignCriterion>();
+
+      do {
+        selector.paging.startIndex = offset;
+        selector.paging.numberResults = pageSize;
+
+        // Get all campaign targets.
+        page = criterionService.get(selector);
+        if (page != null && page.entries != null) {
+          retVal.AddRange(page.entries);
+        }
+        offset += pageSize;
+      } while (offset < page.totalNumEntries);
+      return retVal.ToArray();
     }
 
     /// <summary>
@@ -106,13 +404,8 @@ namespace Google.Api.Ads.AdWords.Util.Data {
     /// sandbox MCC account.
     /// </summary>
     /// <param name="accounts">The data to be restored to the accounts.</param>
-    internal void UploadAllAccounts(List<ClientAccount> accounts) {
-      AccountService accountService = (AccountService) user.GetService(
-          AdWordsService.v13.AccountService, "https://sandbox.google.com");
-      accountService.clientEmailValue.Value[0] = "";
-      accountService.getClientAccounts();
-
-      foreach (ClientAccount account in accounts) {
+    internal void UploadAllAccounts(List<LocalClientAccount> accounts) {
+      foreach (LocalClientAccount account in accounts) {
         UploadAccount(account);
       }
     }
@@ -121,44 +414,44 @@ namespace Google.Api.Ads.AdWords.Util.Data {
     /// Restores a sandbox client accounts under an mcc.
     /// </summary>
     /// <param name="account">The data to be restored to the accounts.</param>
-    internal void UploadAccount(ClientAccount account) {
-      AccountService accountService = (AccountService) user.GetService(
-          AdWordsService.v13.AccountService, "https://sandbox.google.com");
-      accountService.clientEmailValue.Value[0] = account.Email;
-
-      accountService.updateAccountInfo(account.AccountInfo);
-      SetCampaigns(account.Campaigns, account.Email);
+    internal void UploadAccount(LocalClientAccount account) {
+      SetCampaigns(account.Campaigns, account.CustomerId);
     }
 
     /// <summary>
     /// Restores the campaigns in an account.
     /// </summary>
     /// <param name="campaigns">The campaigns to be restored.</param>
-    /// <param name="clientEmail">client account email.</param>
-    private void SetCampaigns(List<LocalCampaign> campaigns, string clientEmail) {
+    /// <param name="customerId">The customer id for the account</param>
+    private void SetCampaigns(List<LocalCampaign> campaigns, long customerId) {
+      if (campaigns.Count == 0) {
+        return;
+      }
       CampaignService campaignService = (CampaignService) user.GetService(
-          AdWordsService.v200909.CampaignService, "https://adwords-sandbox.google.com");
-      campaignService.RequestHeader.clientEmail = clientEmail;
+          AdWordsService.v201109.CampaignService, "https://adwords-sandbox.google.com");
+      campaignService.RequestHeader.clientCustomerId = customerId.ToString();
 
       foreach (LocalCampaign localCampaign in campaigns) {
         // Clear readonly fields.
         localCampaign.Campaign.idSpecified = false;
-        localCampaign.Campaign.stats = null;
-        localCampaign.Campaign.servingStatusSpecified = false;
 
-        DateTime startDay = DateTime.ParseExact(localCampaign.Campaign.startDate, "yyyyMMdd", null);
-        DateTime endDay = DateTime.ParseExact(localCampaign.Campaign.endDate, "yyyyMMdd", null);
+        if (localCampaign.Campaign.startDate != null) {
+          DateTime startDay = DateTime.ParseExact(localCampaign.Campaign.startDate, "yyyyMMdd",
+              null);
+          if (startDay < DateTime.Today) {
+            localCampaign.Campaign.startDate = DateTime.Today.ToString("yyyyMMdd");
+          }
+        }
 
-        if (startDay < DateTime.Today) {
-          localCampaign.Campaign.startDate = DateTime.Today.ToString("yyyyMMdd");
+        if (localCampaign.Campaign.endDate != null) {
+          DateTime endDay = DateTime.ParseExact(localCampaign.Campaign.endDate, "yyyyMMdd", null);
+          if (endDay > new DateTime(2037, 12, 30)) {
+            localCampaign.Campaign.endDate = null;
+          }
         }
-        if (endDay > new DateTime(2037, 12, 30)) {
-          localCampaign.Campaign.endDate = null;
-        }
-        if (localCampaign.Campaign.status == v200909.CampaignStatus.ACTIVE ||
-            localCampaign.Campaign.status == v200909.CampaignStatus.PAUSED) {
+        if (localCampaign.Campaign.status == CampaignStatus.ACTIVE ||
+            localCampaign.Campaign.status == CampaignStatus.PAUSED) {
           CampaignOperation operation = new CampaignOperation();
-          operation.operatorSpecified = true;
           operation.@operator = Operator.ADD;
           operation.operand = localCampaign.Campaign;
           try {
@@ -167,11 +460,9 @@ namespace Google.Api.Ads.AdWords.Util.Data {
 
             if (retVal != null && retVal.value != null) {
               foreach (Campaign newCampaign in retVal.value) {
-                SetAdGroups(newCampaign.id, localCampaign.AdGroups, clientEmail);
+                SetAdGroups(newCampaign.id, localCampaign.AdGroups, customerId);
                 SetCampaignCriteria(newCampaign.id, localCampaign.CampaignCriteria,
-                    clientEmail);
-                SetCampaignTargets(newCampaign.id, localCampaign.CampaignTargets,
-                    clientEmail);
+                    customerId);
               }
             }
           } catch (Exception ex) {
@@ -183,59 +474,26 @@ namespace Google.Api.Ads.AdWords.Util.Data {
     }
 
     /// <summary>
-    /// Sets the campaign targets for a given campaign.
-    /// </summary>
-    /// <param name="campaignId">The campaign id.</param>
-    /// <param name="targetLists">The list of campaign targets.</param>
-    /// <param name="clientEmail">client account email.</param>
-    private void SetCampaignTargets(long campaignId, List<TargetList> targetLists,
-        string clientEmail) {
-      CampaignTargetService campaignTargetService = (CampaignTargetService) user.GetService(
-          AdWordsService.v200909.CampaignTargetService, "https://adwords-sandbox.google.com");
-      campaignTargetService.RequestHeader.clientEmail = clientEmail;
-
-      List<CampaignTargetOperation> operations = new List<CampaignTargetOperation>();
-
-      foreach (TargetList targetList in targetLists) {
-        targetList.campaignIdSpecified = true;
-        targetList.campaignId = campaignId;
-
-        CampaignTargetOperation targetOperation = new CampaignTargetOperation();
-        targetOperation.operatorSpecified = true;
-        targetOperation.@operator = Operator.SET;
-        targetOperation.operand = targetList;
-        operations.Add(targetOperation);
-      }
-      try {
-        campaignTargetService.mutate(operations.ToArray());
-      } catch (Exception ex) {
-        throw new SandboxSerializationException(
-            AdWordsErrorMessages.FailedToAddCampaignTargetsToSandbox, ex);
-      }
-    }
-
-    /// <summary>
     /// Restores ad groups in a campaign.
     /// </summary>
     /// <param name="campaignId">Campaign id.</param>
     /// <param name="adGroups">The list of adgroups to be added to
     /// this campaign.</param>
-    /// <param name="clientEmail">client account email.</param>
-    private void SetAdGroups(long campaignId, List<LocalAdGroup> adGroups, string clientEmail) {
+    /// <param name="customerId">The customer id for the account</param>
+    private void SetAdGroups(long campaignId, List<LocalAdGroup> adGroups, long customerId) {
+      if (adGroups.Count == 0) {
+        return;
+      }
+
       AdGroupService adGroupService = (AdGroupService) user.GetService(
-          AdWordsService.v200909.AdGroupService, "https://adwords-sandbox.google.com");
-      adGroupService.RequestHeader.clientEmail = clientEmail;
+          AdWordsService.v201109.AdGroupService, "https://adwords-sandbox.google.com");
+      adGroupService.RequestHeader.clientCustomerId = customerId.ToString();
 
       foreach (LocalAdGroup localAdGroup in adGroups) {
         localAdGroup.AdGroup.campaignId = campaignId;
-        localAdGroup.AdGroup.campaignIdSpecified = true;
-
-        // Clear the readonly fields.
-        localAdGroup.AdGroup.campaignName = null;
         localAdGroup.AdGroup.idSpecified = false;
 
         AdGroupOperation operation = new AdGroupOperation();
-        operation.operatorSpecified = true;
         operation.@operator = Operator.ADD;
         operation.operand = localAdGroup.AdGroup;
 
@@ -246,8 +504,8 @@ namespace Google.Api.Ads.AdWords.Util.Data {
 
           if (retVal != null && retVal.value != null) {
             foreach (AdGroup adGroupValue in retVal.value) {
-              SetAds(adGroupValue.id, localAdGroup.Ads, clientEmail);
-              SetCriteria(adGroupValue.id, localAdGroup.Criteria, clientEmail);
+              SetAds(adGroupValue.id, localAdGroup.Ads, customerId);
+              SetCriteria(adGroupValue.id, localAdGroup.Criteria, customerId);
             }
           }
         } catch (Exception ex) {
@@ -262,26 +520,22 @@ namespace Google.Api.Ads.AdWords.Util.Data {
     /// </summary>
     /// <param name="adGroupId">AdGroup Id.</param>
     /// <param name="adGroupAds">AdGroup Ads to be added to the adgroup.</param>
-    /// <param name="clientEmail">client account email.</param>
-    private void SetAds(long adGroupId, List<AdGroupAd> adGroupAds, string clientEmail) {
+    /// <param name="customerId">The customer id for the account</param>
+    private void SetAds(long adGroupId, List<AdGroupAd> adGroupAds, long customerId) {
+      if (adGroupAds.Count == 0) {
+        return;
+      }
       AdGroupAdService adService = (AdGroupAdService) user.GetService(
-          AdWordsService.v200909.AdGroupAdService, "https://adwords-sandbox.google.com");
-      adService.RequestHeader.clientEmail = clientEmail;
+          AdWordsService.v201109.AdGroupAdService, "https://adwords-sandbox.google.com");
+      adService.RequestHeader.clientCustomerId = customerId.ToString();
 
       List<AdGroupAdOperation> operations = new List<AdGroupAdOperation>();
 
       foreach (AdGroupAd adGroupAd in adGroupAds) {
-        // Clear readonly fields.
-        adGroupAd.stats = null;
         adGroupAd.ad.idSpecified = false;
-        adGroupAd.ad.approvalStatusSpecified = false;
-        adGroupAd.ad.disapprovalReasons = null;
-
-        adGroupAd.adGroupIdSpecified = true;
         adGroupAd.adGroupId = adGroupId;
 
         AdGroupAdOperation operation = new AdGroupAdOperation();
-        operation.operatorSpecified = true;
         operation.@operator = Operator.ADD;
         operation.operand = adGroupAd;
         operations.Add(operation);
@@ -300,42 +554,23 @@ namespace Google.Api.Ads.AdWords.Util.Data {
     /// <param name="adGroupId">AdGroup Id.</param>
     /// <param name="adGroupCriteria">The list of criteria to be added to the ad
     /// group.</param>
-    /// <param name="clientEmail">client account email.</param>
+    /// <param name="customerId">The customer id for the account</param>
     private void SetCriteria(long adGroupId, List<AdGroupCriterion> adGroupCriteria,
-        string clientEmail) {
+        long customerId) {
+      if (adGroupCriteria.Count == 0) {
+        return;
+      }
       AdGroupCriterionService criterionService = (AdGroupCriterionService) user.GetService(
-          AdWordsService.v200909.AdGroupCriterionService, "https://adwords-sandbox.google.com");
-      criterionService.RequestHeader.clientEmail = clientEmail;
+          AdWordsService.v201109.AdGroupCriterionService, "https://adwords-sandbox.google.com");
+      criterionService.RequestHeader.clientCustomerId = customerId.ToString();
 
       List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
       foreach (AdGroupCriterion adGroupCriterion in adGroupCriteria) {
-        // Clear the readonly fields.
-        if (adGroupCriterion is BiddableAdGroupCriterion) {
-          BiddableAdGroupCriterion biddableAgc = (BiddableAdGroupCriterion) adGroupCriterion;
-          biddableAgc.approvalStatusSpecified = false;
-          biddableAgc.qualityInfo = null;
-          biddableAgc.systemServingStatusSpecified = false;
-          biddableAgc.firstPageCpc = null;
-          biddableAgc.stats = null;
-          if (biddableAgc.bids is ManualCPCAdGroupCriterionBids) {
-            ManualCPCAdGroupCriterionBids manualCpcAgcBids =
-                (ManualCPCAdGroupCriterionBids) biddableAgc.bids;
-            manualCpcAgcBids.bidSourceSpecified = false;
-          } else if (biddableAgc.bids is ManualCPMAdGroupCriterionBids) {
-            ManualCPMAdGroupCriterionBids manualCpmAgcBids =
-                (ManualCPMAdGroupCriterionBids) biddableAgc.bids;
-            manualCpmAgcBids.bidSourceSpecified = false;
-          }
-        }
-
         adGroupCriterion.criterion.idSpecified = false;
-
-        adGroupCriterion.adGroupIdSpecified = true;
         adGroupCriterion.adGroupId = adGroupId;
 
         AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
         operation.@operator = Operator.ADD;
-        operation.operatorSpecified = true;
         operation.operand = adGroupCriterion;
         operations.Add(operation);
       }
@@ -353,25 +588,26 @@ namespace Google.Api.Ads.AdWords.Util.Data {
     /// <param name="campaignId">The campaign id.</param>
     /// <param name="campaignCriteria">The list of criteria to be added to
     /// the campaign.</param>
-    /// <param name="clientEmail">client account email.</param>
+    /// <param name="customerId">The customer id for the account</param>
     private void SetCampaignCriteria(long campaignId, List<CampaignCriterion> campaignCriteria,
-        string clientEmail) {
+        long customerId) {
+      if (campaignCriteria.Count == 0) {
+        return;
+      }
       CampaignCriterionService criterionService = (CampaignCriterionService) user.GetService(
-          AdWordsService.v200909.CampaignCriterionService, "https://adwords-sandbox.google.com");
-      criterionService.RequestHeader.clientEmail = clientEmail;
+          AdWordsService.v201109.CampaignCriterionService, "https://adwords-sandbox.google.com");
+      criterionService.RequestHeader.clientCustomerId = customerId.ToString();
 
       List<CampaignCriterionOperation> operations = new List<CampaignCriterionOperation>();
 
       foreach (CampaignCriterion campaignCriterion in campaignCriteria) {
         // Clear the readonly fields.
         campaignCriterion.criterion.idSpecified = false;
-
         campaignCriterion.campaignIdSpecified = true;
         campaignCriterion.campaignId = campaignId;
 
         CampaignCriterionOperation operation = new CampaignCriterionOperation();
         operation.@operator = Operator.ADD;
-        operation.operatorSpecified = true;
         operation.operand = campaignCriterion;
         operations.Add(operation);
       }
@@ -381,159 +617,6 @@ namespace Google.Api.Ads.AdWords.Util.Data {
         throw new SandboxSerializationException(
             AdWordsErrorMessages.FailedToAddCampaignCriteriaToSandbox, ex);
       }
-    }
-
-    /// <summary>
-    /// Retrieves the list of all campaigns in an account.
-    /// </summary>
-    /// <param name="clientEmail">client account email.</param>
-    /// <returns>List of campaigns in the account.</returns>
-    private LocalCampaign[] GetAccountCampaigns(string clientEmail) {
-      List<LocalCampaign> retVal = new List<LocalCampaign>();
-
-      CampaignService campaignService = (CampaignService) user.GetService(
-          AdWordsService.v200909.CampaignService, "https://adwords-sandbox.google.com");
-      campaignService.RequestHeader.clientEmail = clientEmail;
-
-      // Get all campaigns.
-      CampaignPage page = campaignService.get(new CampaignSelector());
-
-      if (page != null && page.entries != null) {
-        if (page.entries.Length > 0) {
-          foreach (Campaign campaign in page.entries) {
-            LocalCampaign localCampaign = new LocalCampaign();
-            localCampaign.Campaign = campaign;
-            localCampaign.AdGroups.AddRange(GetAdGroups(campaign.id, clientEmail));
-            localCampaign.CampaignCriteria.AddRange(GetCampaignCriteria(campaign.id, clientEmail));
-            localCampaign.CampaignTargets.AddRange(GetCampaignTargets(campaign.id, clientEmail));
-            retVal.Add(localCampaign);
-          }
-        }
-      }
-      return retVal.ToArray();
-    }
-
-    /// <summary>
-    /// Retrieves the list of all adgroups in a campaign.
-    /// </summary>
-    /// <param name="campaignId">Campaign Id.</param>
-    /// <param name="clientEmail">client account email.</param>
-    /// <returns>List of ad groups in the campaign.</returns>
-    private LocalAdGroup[] GetAdGroups(long campaignId, string clientEmail) {
-      List<LocalAdGroup> retVal = new List<LocalAdGroup>();
-
-      AdGroupService adGroupService = (AdGroupService) user.GetService(
-          AdWordsService.v200909.AdGroupService, "https://adwords-sandbox.google.com");
-      adGroupService.RequestHeader.clientEmail = clientEmail;
-
-      AdGroupSelector adGroupSelector = new AdGroupSelector();
-      adGroupSelector.campaignIdSpecified = true;
-      adGroupSelector.campaignId = campaignId;
-
-      AdGroupPage page = adGroupService.get(adGroupSelector);
-      if (page != null && page.entries != null) {
-        foreach (AdGroup adGroup in page.entries) {
-          LocalAdGroup localAdGroup = new LocalAdGroup();
-
-          localAdGroup.AdGroup = adGroup;
-          localAdGroup.Ads.AddRange(GetAllAds(adGroup.id));
-          localAdGroup.Criteria.AddRange(GetAdGroupCriteria(adGroup.id, clientEmail));
-          retVal.Add(localAdGroup);
-        }
-      }
-      return retVal.ToArray();
-    }
-
-    /// <summary>
-    /// Retrieves the list of all ads in an adgroup.
-    /// </summary>
-    /// <param name="adGroupId">The AdGroup Id.</param>
-    /// <returns>List of ads in the adgroup.</returns>
-    private AdGroupAd[] GetAllAds(long adGroupId) {
-      AdGroupAdService adService = (AdGroupAdService) user.GetService(
-          AdWordsService.v200909.AdGroupAdService, "https://adwords-sandbox.google.com");
-
-      AdGroupAdSelector selector = new AdGroupAdSelector();
-      selector.adGroupIds = new long[] {adGroupId};
-
-      List<AdGroupAd> retVal = new List<AdGroupAd>();
-      AdGroupAdPage page = adService.get(selector);
-
-      if (page != null && page.entries != null) {
-        foreach (AdGroupAd adGroupAd in page.entries) {
-          // TODO(Anash): ImageAd and MobileImageAd gives mediaId, which
-          // cannot be downloaded yet with v200909.
-          if (adGroupAd.ad is TextAd) {
-            retVal.Add(adGroupAd);
-          }
-        }
-      }
-
-      return retVal.ToArray();
-    }
-
-    /// <summary>
-    /// Retrieves the list of all criteria in an adgroup.
-    /// </summary>
-    /// <param name="adGroupId">The AdGroup Id.</param>
-    /// <param name="clientEmail">client account email.</param>
-    /// <returns>List of criteria in the adgroup.</returns>
-    private AdGroupCriterion[] GetAdGroupCriteria(long adGroupId, string clientEmail) {
-      AdGroupCriterionService criterionService = (AdGroupCriterionService) user.GetService(
-          AdWordsService.v200909.AdGroupCriterionService, "https://adwords-sandbox.google.com");
-      AdGroupCriterionSelector selector = new AdGroupCriterionSelector();
-
-      AdGroupCriterionIdFilter filter = new AdGroupCriterionIdFilter();
-      filter.adGroupIdSpecified = true;
-      filter.adGroupId = adGroupId;
-      selector.idFilters = new AdGroupCriterionIdFilter[] {filter};
-
-      criterionService.RequestHeader.clientEmail = clientEmail;
-
-      AdGroupCriterionPage page = criterionService.get(selector);
-      return (page != null && page.entries != null)? page.entries : new AdGroupCriterion[] {};
-    }
-
-    /// <summary>
-    /// Retrieves the list of all criteria in a campaign.
-    /// </summary>
-    /// <param name="campaignId">The campaign id.</param>
-    /// <param name="clientEmail">client account email.</param>
-    /// <returns>List of criteria in the campaign.</returns>
-    private CampaignCriterion[] GetCampaignCriteria(long campaignId, string clientEmail) {
-      CampaignCriterionService criterionService = (CampaignCriterionService) user.GetService(
-          AdWordsService.v200909.CampaignCriterionService, "https://adwords-sandbox.google.com");
-      CampaignCriterionSelector selector = new CampaignCriterionSelector();
-
-      CampaignCriterionIdFilter filter = new CampaignCriterionIdFilter();
-      filter.campaignIdSpecified = true;
-      filter.campaignId = campaignId;
-      selector.idFilters = new CampaignCriterionIdFilter[] {filter};
-
-      criterionService.RequestHeader.clientEmail = clientEmail;
-
-      CampaignCriterionPage page = criterionService.get(selector);
-      List<CampaignCriterion> retVal = new List<CampaignCriterion>();
-      return (page != null && page.entries != null)? page.entries : new CampaignCriterion[] {};
-    }
-
-    /// <summary>
-    /// Retrieves the list of all targets for a campaign.
-    /// </summary>
-    /// <param name="campaignId">Id of the campaign for which targets
-    /// are retrieved.</param>
-    /// <param name="clientEmail">client account email.</param>
-    /// <returns>List of targets for the campaign.</returns>
-    private TargetList[] GetCampaignTargets(long campaignId, string clientEmail) {
-      CampaignTargetService targetService = (CampaignTargetService) user.GetService(
-          AdWordsService.v200909.CampaignTargetService, "https://adwords-sandbox.google.com");
-      CampaignTargetSelector selector = new CampaignTargetSelector();
-      selector.campaignIds = new long[] {campaignId};
-
-      targetService.RequestHeader.clientEmail = clientEmail;
-
-      CampaignTargetPage page = targetService.get(selector);
-      return (page != null && page.entries != null) ? page.entries : new TargetList[] {};
     }
   }
 }

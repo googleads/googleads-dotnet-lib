@@ -1,3 +1,12 @@
+14.0.0
+- Removed support for v13 ReportService, v200909, v201003, v201008, v201101.
+- Refactored all v201109 code examples.
+- Removed all v13 code examples.
+- Split the project into Google.Ads.Common and Google.AdWords. If you are using
+  a binary distribution, you need to add reference to Google.Ads.Common in
+  addition to Google.AdWords. You also need to update your Web.config and
+  App.config to fix the assembly name.
+
 13.3.0
 - Added support for CreateAccountService.
 - SOAP services can now be mocked for testing purposes.

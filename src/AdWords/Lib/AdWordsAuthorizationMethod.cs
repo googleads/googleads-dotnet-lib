@@ -29,5 +29,4 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// </summary>
     OAuth
   }
-
 }

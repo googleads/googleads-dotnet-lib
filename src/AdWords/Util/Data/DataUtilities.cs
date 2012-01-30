@@ -38,13 +38,26 @@ namespace Google.Api.Ads.AdWords.Util.Data {
     /// <param name="user">The AdWordsUser to be used for downloading sandbox contents.</param>
     /// <param name="fileName">The XML file to which the dump is to be
     /// saved.</param>
-    public static void DownloadSandboxContents(AdWordsUser user, string fileName) {
+    /// <param name="campaignFields">The list of names of campaign fields that
+    /// should be saved.</param>
+    /// <param name="adGroupFields">The list of names of ad group fields that
+    /// should be saved.</param>
+    /// <param name="adFields">The list of names of ad fields that should be
+    /// saved.</param>
+    /// <param name="criterionFields">The list of names of criterion fields that
+    /// should be saved.</param>
+    /// <param name="campaignCriterionFields">The list of names of campaign
+    /// criterion fields that should be saved.</param>
+    public static void DownloadSandboxContents(AdWordsUser user, string fileName,
+        string[] campaignFields, string[] adGroupFields, string[] adFields,
+        string[] criterionFields, string[] campaignCriterionFields) {
       AccountManager manager = new AccountManager(user);
-      ClientAccount[] allClients = manager.DownloadAllAccounts();
+      LocalClientAccount[] allClients = manager.DownloadAllAccounts(campaignFields, adGroupFields,
+          adFields, criterionFields, campaignCriterionFields);
 
       XmlDocument xDoc = SerializationUtilities.LoadXml("<Accounts/>");
 
-      foreach (ClientAccount account in allClients) {
+      foreach (LocalClientAccount account in allClients) {
         XmlElement xClient = xDoc.CreateElement("Account");
         SerializeAccount(xClient, account);
         xDoc.DocumentElement.AppendChild(xClient);
@@ -62,7 +75,7 @@ namespace Google.Api.Ads.AdWords.Util.Data {
       XmlDocument xDoc = new XmlDocument();
       xDoc.Load(fileName);
 
-      List<ClientAccount> allClients = new List<ClientAccount>();
+      List<LocalClientAccount> allClients = new List<LocalClientAccount>();
 
       XmlNodeList xClients = xDoc.SelectNodes("Accounts/Account");
 
@@ -79,14 +92,14 @@ namespace Google.Api.Ads.AdWords.Util.Data {
     /// <param name="accountNode">The XML node that contains serialized data.
     /// </param>
     /// <returns>The deserialized ClientAccount object.</returns>
-    private static ClientAccount DeSerializeAccount(XmlElement accountNode) {
+    private static LocalClientAccount DeSerializeAccount(XmlElement accountNode) {
       XmlNode clientAccountNode = accountNode.SelectSingleNode("ClientAccount");
       XmlDocument xmldoc = new XmlDocument();
       xmldoc.AppendChild(xmldoc.ImportNode(clientAccountNode, true));
       MemoryStream memoryStream = new MemoryStream();
       xmldoc.Save(memoryStream);
       memoryStream.Seek(0, SeekOrigin.Begin);
-      return (ClientAccount)new XmlSerializer(typeof(ClientAccount)).Deserialize(memoryStream);
+      return (LocalClientAccount)new XmlSerializer(typeof(LocalClientAccount)).Deserialize(memoryStream);
     }
 
     /// <summary>
@@ -95,9 +108,9 @@ namespace Google.Api.Ads.AdWords.Util.Data {
     /// <param name="accountNode">The XML node to which serialization
     /// happens.</param>
     /// <param name="client">The account details to be serialized.</param>
-    private static void SerializeAccount(XmlElement accountNode, ClientAccount client) {
+    private static void SerializeAccount(XmlElement accountNode, LocalClientAccount client) {
       MemoryStream memoryStream = new MemoryStream();
-      XmlSerializer serializer = new XmlSerializer(typeof(ClientAccount));
+      XmlSerializer serializer = new XmlSerializer(typeof(LocalClientAccount));
       serializer.Serialize(memoryStream, client);
       memoryStream.Seek(0, SeekOrigin.Begin);
       XmlDocument xmldoc = new XmlDocument();
