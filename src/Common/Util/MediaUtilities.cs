@@ -88,8 +88,7 @@ namespace Google.Api.Ads.Common.Util {
     /// <param name="targetStream">Destination stream.</param>
     /// <param name="maxPreviewBytes">The maximum number of preview bytes to
     /// return.</param>
-    /// <returns>An array of bytes, whose max size is
-    /// <see cref="maxPreviewBytes"/>.</returns>
+    /// <returns>An array of bytes, whose max size is maxPreviewBytes.</returns>
     /// <exception cref="ArgumentException">Thrown if source stream is not
     /// readable, or if the target stream is not writable.
     /// </exception>
