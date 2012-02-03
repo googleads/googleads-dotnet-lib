@@ -119,7 +119,7 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
     /// <summary>
     /// Gets a default instance of the specified service type.
     /// </summary>
-    /// <param name="serviceType">The service type.
+    /// <param name="serviceType">The service type.</param>
     /// <returns>An instance of service type.</returns>
     /// <exception cref="ActivationException">Thrown if the object cannot be
     /// created. The inner exception contains more details about why the object

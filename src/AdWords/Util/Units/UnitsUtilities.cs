@@ -18,7 +18,7 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.AdWords.Util.ApiCodes;
 using Google.Api.Ads.AdWords.v13;
-using Google.Api.Ads.AdWords.v200909;
+using Google.Api.Ads.AdWords.v201109;
 
 using System;
 using System.Collections;
@@ -45,7 +45,7 @@ namespace Google.Api.Ads.AdWords.Util.Units {
         DateTime endDate) {
       List<MethodQuotaUsage> methodQuotaUsageList = new List<MethodQuotaUsage>();
       SortedList<string, List<string>> serviceToMethodsMap = GetAllMethods();
-      InfoService service = (InfoService) user.GetService(AdWordsService.v200909.InfoService);
+      InfoService service = (InfoService) user.GetService(AdWordsService.v201109.InfoService);
 
       foreach (string serviceName in serviceToMethodsMap.Keys) {
         List<string> methods = serviceToMethodsMap[serviceName];
@@ -96,7 +96,7 @@ namespace Google.Api.Ads.AdWords.Util.Units {
       Hashtable allUsers = new Hashtable(StringComparer.InvariantCultureIgnoreCase);
       BuildUserGraph(accountService, rootUser, allUsers);
 
-      InfoService infoService = (InfoService) user.GetService(AdWordsService.v200909.InfoService);
+      InfoService infoService = (InfoService) user.GetService(AdWordsService.v201109.InfoService);
       FetchUnitUsages(infoService, rootUser, startDate, endDate);
 
       foreach (string email in allUsers.Keys) {

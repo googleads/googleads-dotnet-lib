@@ -14,8 +14,7 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.AdWords.v13;
-using Google.Api.Ads.AdWords.v200909;
+using Google.Api.Ads.AdWords.v201109;
 
 using System;
 using System.Collections.Generic;

@@ -66,9 +66,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing
     /// the event data.</param>
     protected void OnGetCampaignsButtonClick(object sender, EventArgs e) {
-      CampaignService service =
-          (CampaignService) user.GetService(AdWordsService.v201109.CampaignService);
-
       // Create a selector.
       Selector selector = new Selector();
       selector.fields = new string[] {"Id", "Name", "Status"};
@@ -81,6 +78,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
       (user.Config as AdWordsAppConfig).ClientCustomerId = txtCustomerId.Text;
 
       try {
+        CampaignService service =
+            (CampaignService) user.GetService(AdWordsService.v201109.CampaignService);
+
         CampaignPage page = service.get(selector);
 
         // Display campaigns.

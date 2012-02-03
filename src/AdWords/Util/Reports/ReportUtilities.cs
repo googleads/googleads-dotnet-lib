@@ -33,7 +33,23 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
   /// <summary>
   /// Defines report utility functions for the client library.
   /// </summary>
-  public class ReportUtilities : LegacyReportUtilities {
+  public class ReportUtilities {
+    /// <summary>
+    /// The user associated with this object.
+    /// </summary>
+    private AdWordsUser user;
+
+    /// <summary>
+    /// Wait time in ms for report functions.
+    /// </summary>
+    protected const int WAIT_TIME = 30000;
+
+    /// <summary>
+    /// Maximum number of times to poll the report server before giving up.
+    /// Defaults to maximum number of attempts that can be made in 30 minutes.
+    /// </summary>
+    protected int maxPollingAttempts = 30 * 60 * 1000 / WAIT_TIME;
+
     /// <summary>
     /// Maximum length of report to read to check if it contains errors.
     /// </summary>
@@ -54,12 +70,40 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// The report download url format for ad-hoc reports.
     /// </summary>
     private const string ADHOC_REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/v201109";
+
+    /// <summary>
+    /// Gets or sets the maximum number of times to poll the report server
+    /// before giving up. Defaults to maximum number of attempts that can be
+    /// made in 30 minutes.
+    /// </summary>
+    public int MaxPollingAttempts {
+      get {
+        return maxPollingAttempts;
+      }
+      set {
+        maxPollingAttempts = value;
+      }
+    }
+
+    /// <summary>
+    /// Returns the user associated with this object.
+    /// </summary>
+    public AdWordsUser User {
+      get {
+        return user;
+      }
+      set {
+        user = value;
+      }
+    }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="ReportUtilities"/> class.
     /// </summary>
     /// <param name="user">AdWords user to be used along with this
     /// utilities object.</param>
-    public ReportUtilities(AdWordsUser user) : base(user) {
+    public ReportUtilities(AdWordsUser user) {
+      this.user = user;
       // Default the max number of polling attempts to 3. The user may modify
       // this using MaxPollingAttempts property after creating the class.
       this.maxPollingAttempts = 3;
@@ -121,7 +165,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Determines whether the report download error is transient or not.
     /// </summary>
-    /// <param name="preview">The report preview.</param>
+    /// <param name="previewString">The report preview text.</param>
     /// <returns>True, if the error is transient, false otherwise.
     /// </returns>
     protected bool IsTransientError(string previewString) {
@@ -313,9 +357,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Determines whether the report is valid or not.
     /// </summary>
-    /// <param name="previewBytes">First n bytes of a report to be inspected
-    /// for report validity.
-    /// </param>
+    /// <param name="previewString">The report preview text.</param>
     /// <returns>True if the report is valid, false otherwise.</returns>
     private bool IsValidReport(string previewString) {
       if (!string.IsNullOrEmpty(previewString)) {

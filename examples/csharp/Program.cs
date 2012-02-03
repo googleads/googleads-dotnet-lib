@@ -22,8 +22,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
-using SamplePair = System.Collections.Generic.KeyValuePair<string,
-    Google.Api.Ads.AdWords.Examples.CSharp.SampleBase>;
+using ExamplePair = System.Collections.Generic.KeyValuePair<string,
+    Google.Api.Ads.AdWords.Examples.CSharp.ExampleBase>;
 using System.Threading;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp {
@@ -34,7 +34,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
     /// <summary>
     /// A map to hold the code examples to be executed.
     /// </summary>
-    static List<SamplePair> sampleMap = new List<SamplePair>();
+    static List<ExamplePair> codeExampleMap = new List<ExamplePair>();
 
     /// <summary>
     /// A flag to keep track of whether help message was shown earlier.
@@ -46,8 +46,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
     /// </summary>
     /// <param name="key">The code example name.</param>
     /// <param name="value">The code example instance.</param>
-    static void RegisterSample(string key, SampleBase value) {
-      sampleMap.Add(new SamplePair(key, value));
+    static void RegisterCodeExample(string key, ExampleBase value) {
+      codeExampleMap.Add(new ExamplePair(key, value));
     }
 
     /// <summary>
@@ -57,9 +57,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
       Type[] types = Assembly.GetExecutingAssembly().GetTypes();
 
       foreach (Type type in types) {
-        if (type.BaseType == typeof(SampleBase)) {
-          RegisterSample(type.FullName.Replace(typeof(Program).Namespace + ".", ""),
-              Activator.CreateInstance(type) as SampleBase);
+        if (type.BaseType == typeof(ExampleBase)) {
+          RegisterCodeExample(type.FullName.Replace(typeof(Program).Namespace + ".", ""),
+              Activator.CreateInstance(type) as ExampleBase);
         }
       }
     }
@@ -76,12 +76,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
 
       AdWordsUser user = new AdWordsUser();
       foreach (string cmdArgs in args) {
-        SamplePair matchingPair = sampleMap.Find(delegate(SamplePair pair) {
+        ExamplePair matchingPair = codeExampleMap.Find(delegate(ExamplePair pair) {
           return string.Compare(pair.Key, cmdArgs, true) == 0;
         });
 
         if (matchingPair.Key != null) {
-          RunASample(user, matchingPair.Value);
+          RunACodeExample(user, matchingPair.Value);
         } else {
           ShowUsage();
         }
@@ -89,17 +89,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
     }
 
     /// <summary>
-    /// Runs a code sample.
+    /// Runs a code example.
     /// </summary>
     /// <param name="user">The user whose credentials should be used for
-    /// running the sample.</param>
-    /// <param name="sample">The code sample to run.</param>
-    private static void RunASample(AdWordsUser user, SampleBase sample) {
+    /// running the code example.</param>
+    /// <param name="codeExample">The code example to run.</param>
+    private static void RunACodeExample(AdWordsUser user, ExampleBase codeExample) {
       try {
-        Console.WriteLine(sample.Description);
-        sample.Run(user);
+        Console.WriteLine(codeExample.Description);
+        codeExample.Run(user, codeExample.GetParameters(), Console.Out);
       } catch (Exception ex) {
-        Console.WriteLine("An exception occurred while running this code sample.\n{0} at\n{1}",
+        Console.WriteLine("An exception occurred while running this code example.\n{0} at\n{1}",
             ex.Message, ex.StackTrace);
       } finally {
         Console.WriteLine("Press [Enter] to continue");
@@ -124,7 +124,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
       Console.WriteLine("--all\t\t : Run all code examples.", exeName);
       Console.WriteLine("examplename1 [examplename1 ...] : " +
           "Run specific code examples. Example name can be one of the following:\n", exeName);
-      foreach (SamplePair pair in sampleMap) {
+      foreach (ExamplePair pair in codeExampleMap) {
         Console.WriteLine("{0} : {1}", pair.Key, pair.Value.Description);
       }
       Console.WriteLine("Press [Enter] to continue");

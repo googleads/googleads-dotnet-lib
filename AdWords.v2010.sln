@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWords.Tests", "tests\AdWords.Tests.csproj", "{6D64AF43-1FC4-4128-9496-5ECE53F00B7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWords", "src\AdWords.csproj", "{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWords", "src\AdWords\AdWords.csproj", "{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWords.Examples.CSharp", "examples\csharp\AdWords.Examples.CSharp.csproj", "{5C1DE791-767A-4599-A0B9-51D6D2DFCC81}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AdWords.Examples.VB", "examples\vb\AdWords.Examples.VB.vbproj", "{A4AE3724-C225-4F03-AC77-A71C1330D8DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.OAuth", "src\Common\oauth\Common.OAuth.csproj", "{0A341427-343C-48EB-BF04-699C5D0C2508}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "src\Common\Common.csproj", "{277404DB-A439-4450-B3A5-186294CDF245}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.OAuth", "src\Common\OAuth\Common.OAuth.csproj", "{0A341427-343C-48EB-BF04-699C5D0C2508}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdWords.Examples.CSharp.OAuth", "examples\csharp\oauth\AdWords.Examples.CSharp.OAuth.csproj", "{4641ADD7-0D1F-473D-B713-2830C5029367}"
 EndProject
@@ -45,6 +47,12 @@ Global
 		{A4AE3724-C225-4F03-AC77-A71C1330D8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4AE3724-C225-4F03-AC77-A71C1330D8DD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A4AE3724-C225-4F03-AC77-A71C1330D8DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{277404DB-A439-4450-B3A5-186294CDF245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{277404DB-A439-4450-B3A5-186294CDF245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{277404DB-A439-4450-B3A5-186294CDF245}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{277404DB-A439-4450-B3A5-186294CDF245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{277404DB-A439-4450-B3A5-186294CDF245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{277404DB-A439-4450-B3A5-186294CDF245}.Release|x86.ActiveCfg = Release|Any CPU
 		{0A341427-343C-48EB-BF04-699C5D0C2508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0A341427-343C-48EB-BF04-699C5D0C2508}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A341427-343C-48EB-BF04-699C5D0C2508}.Debug|x86.ActiveCfg = Debug|Any CPU

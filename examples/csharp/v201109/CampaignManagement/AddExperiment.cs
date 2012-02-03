@@ -1,0 +1,214 @@
+// Copyright 2011, Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// Author: api.anash@gmail.com (Anash P. Oommen)
+
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201109;
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
+  /// <summary>
+  /// This code example creates an experiment using a query percentage of 10,
+  /// which defines what fraction of auctions should go to the control split
+  /// (90%) vs. the experiment split (10%), then adds experimental bid changes
+  /// for criteria and ad groups. To get campaigns, run GetCampaigns.cs.
+  /// To get ad groups, run GetAdGroups.cs. To get criteria, run
+  /// GetKeywords.cs.
+  ///
+  /// Tags: ExperimentService.mutate
+  /// </summary>
+  class AddExperiment : ExampleBase {
+    /// <summary>
+    /// Main method, to run this code example as a standalone application.
+    /// </summary>
+    /// <param name="args">The command line arguments.</param>
+    public static void Main(string[] args) {
+      ExampleBase codeExample = new AddExperiment();
+      Console.WriteLine(codeExample.Description);
+      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+    }
+
+    /// <summary>
+    /// Returns a description about the code example.
+    /// </summary>
+    public override string Description {
+      get {
+        return "This code example creates an experiment using a query percentage of 10, which " +
+            "defines what fraction of auctions should go to the control split (90%) vs. the " +
+            "experiment split (10%), then adds experimental bid changes for criteria and ad " +
+            "groups. To get campaigns, run GetCampaigns.cs. To get ad groups, run " +
+            "GetAdGroups.cs. To get criteria, run GetKeywords.cs.";
+      }
+    }
+
+    /// <summary>
+    /// Gets the list of parameter names required to run this code example.
+    /// </summary>
+    /// <returns>
+    /// A list of parameter names for this code example.
+    /// </returns>
+    public override string[] GetParameterNames() {
+      return new string[] {"CAMPAIGN_ID", "ADGROUP_ID", "CRITERION_ID"};
+    }
+
+    /// <summary>
+    /// Runs the code example.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="parameters">The parameters for running the code
+    /// example.</param>
+    /// <param name="writer">The stream writer to which script output should be
+    /// written.</param>
+    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
+        TextWriter writer) {
+      // Get the ExperimentService.
+      ExperimentService experimentService =
+          (ExperimentService) user.GetService(AdWordsService.v201109.ExperimentService);
+
+      // Get the AdGroupService.
+      AdGroupService adGroupService =
+          (AdGroupService) user.GetService(AdWordsService.v201109.AdGroupService);
+
+      // Get the AdGroupCriterionService.
+      AdGroupCriterionService adGroupCriterionService =
+          (AdGroupCriterionService) user.GetService(AdWordsService.v201109.AdGroupCriterionService);
+
+      long campaignId = long.Parse(parameters["CAMPAIGN_ID"]);
+      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
+      long criterionId = long.Parse(parameters["CRITERION_ID"]);
+
+      // Create the experiment.
+      Experiment experiment = new Experiment();
+      experiment.campaignId = campaignId;
+      experiment.name = "Interplanetary Cruise #" + ExampleUtilities.GetTimeStamp();
+      experiment.queryPercentage = 10;
+      experiment.startDateTime = DateTime.Now.ToString("yyyyMMdd HHmmss");
+
+      // Create the operation.
+      ExperimentOperation experimentOperation = new ExperimentOperation();
+      experimentOperation.@operator = Operator.ADD;
+      experimentOperation.operand = experiment;
+
+      try {
+        // Add the experiment.
+        ExperimentReturnValue experimentRetVal = experimentService.mutate(
+            new ExperimentOperation[] {experimentOperation});
+
+        // Display the results.
+        if (experimentRetVal != null && experimentRetVal.value != null && experimentRetVal.value.
+            Length > 0) {
+          long experimentId = 0;
+
+          Experiment newExperiment = experimentRetVal.value[0];
+
+          writer.WriteLine("Experiment with name = \"{0}\" and id = \"{1}\" was added.\n",
+              newExperiment.name, newExperiment.id);
+          experimentId = newExperiment.id;
+
+          // Set ad group for the experiment.
+          AdGroup adGroup = new AdGroup();
+          adGroup.id = adGroupId;
+
+          // Create experiment bid multiplier rule that will modify ad group bid
+          // for the experiment.
+          ManualCPCAdGroupExperimentBidMultipliers adGroupBidMultiplier =
+              new ManualCPCAdGroupExperimentBidMultipliers();
+          adGroupBidMultiplier.maxCpcMultiplier = new BidMultiplier();
+          adGroupBidMultiplier.maxCpcMultiplier.multiplier = 1.5;
+
+          // Set experiment data to the ad group.
+          AdGroupExperimentData adGroupExperimentData = new AdGroupExperimentData();
+          adGroupExperimentData.experimentId = experimentId;
+          adGroupExperimentData.experimentDeltaStatus = ExperimentDeltaStatus.MODIFIED;
+          adGroupExperimentData.experimentBidMultipliers = adGroupBidMultiplier;
+
+          adGroup.experimentData = adGroupExperimentData;
+
+          // Create the operation.
+          AdGroupOperation adGroupOperation = new AdGroupOperation();
+          adGroupOperation.operand = adGroup;
+          adGroupOperation.@operator = Operator.SET;
+
+          // Update the ad group.
+          AdGroupReturnValue adGroupRetVal = adGroupService.mutate(new AdGroupOperation[] {
+              adGroupOperation});
+
+          // Display the results.
+          if (adGroupRetVal != null && adGroupRetVal.value != null &&
+              adGroupRetVal.value.Length > 0) {
+            AdGroup updatedAdGroup = adGroupRetVal.value[0];
+            writer.WriteLine("Ad group with name = \"{0}\", id = \"{1}\" and status = \"{2}\" " +
+                "was updated for the experiment.\n", updatedAdGroup.name, updatedAdGroup.id,
+                updatedAdGroup.status);
+          } else {
+            writer.WriteLine("No ad groups were updated.");
+          }
+
+          // Set ad group criteria for the experiment.
+          Criterion criterion = new Criterion();
+          criterion.id = criterionId;
+
+          BiddableAdGroupCriterion adGroupCriterion = new BiddableAdGroupCriterion();
+          adGroupCriterion.adGroupId = adGroupId;
+          adGroupCriterion.criterion = criterion;
+
+          // Create experiment bid multiplier rule that will modify criterion bid
+          // for the experiment.
+          ManualCPCAdGroupCriterionExperimentBidMultiplier bidMultiplier =
+              new ManualCPCAdGroupCriterionExperimentBidMultiplier();
+          bidMultiplier.maxCpcMultiplier = new BidMultiplier();
+          bidMultiplier.maxCpcMultiplier.multiplier = 1.5;
+
+          // Set experiment data to the criterion.
+          BiddableAdGroupCriterionExperimentData adGroupCriterionExperimentData =
+              new BiddableAdGroupCriterionExperimentData();
+          adGroupCriterionExperimentData.experimentId = experimentId;
+          adGroupCriterionExperimentData.experimentDeltaStatus = ExperimentDeltaStatus.MODIFIED;
+          adGroupCriterionExperimentData.experimentBidMultiplier = bidMultiplier;
+
+          adGroupCriterion.experimentData = adGroupCriterionExperimentData;
+
+          // Create the operation.
+          AdGroupCriterionOperation adGroupCriterionOperation = new AdGroupCriterionOperation();
+          adGroupCriterionOperation.operand = adGroupCriterion;
+          adGroupCriterionOperation.@operator = Operator.SET;
+
+          // Update the ad group criteria.
+          AdGroupCriterionReturnValue adGroupCriterionRetVal = adGroupCriterionService.mutate(
+              new AdGroupCriterionOperation[] {adGroupCriterionOperation});
+
+          // Display the results.
+          if (adGroupCriterionRetVal != null && adGroupCriterionRetVal.value != null &&
+              adGroupCriterionRetVal.value.Length > 0) {
+            AdGroupCriterion updatedAdGroupCriterion = adGroupCriterionRetVal.value[0];
+            writer.WriteLine("Ad group criterion with ad group id = \"{0}\", criterion id = "
+                + "\"{1}\" and type = \"{2}\" was updated for the experiment.\n",
+                updatedAdGroupCriterion.adGroupId, updatedAdGroupCriterion.criterion.id,
+                updatedAdGroupCriterion.criterion.CriterionType);
+          } else {
+            writer.WriteLine("No ad group criteria were updated.");
+          }
+        } else {
+          writer.WriteLine("No experiments were added.");
+        }
+      } catch (Exception ex) {
+        writer.WriteLine("Failed to add experiment(s). Exception says \"{0}\"", ex.Message);
+      }
+    }
+  }
+}

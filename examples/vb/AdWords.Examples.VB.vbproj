@@ -10,7 +10,7 @@
     <StartupObject>Google.Api.Ads.AdWords.Examples.VB.Program</StartupObject>
     <RootNamespace>
     </RootNamespace>
-    <AssemblyName>AdWords.Examples.VB</AssemblyName>
+    <AssemblyName>Google.AdWords.Examples.VB</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -25,9 +25,8 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>AdWords.Examples.VB.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,7 +34,6 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>AdWords.Examples.VB.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
@@ -57,6 +55,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\common\src\Common.csproj">
+      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\src\public\AdWords.csproj">
+      <Project>{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}</Project>
+      <Name>AdWords</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="My Project\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
@@ -68,247 +76,67 @@
   </Target>
   -->
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AdWords.csproj">
-      <Name>AdWords</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.vb" />
-    <Compile Include="v13\AccountServiceDemo.vb" />
-    <Compile Include="v13\AccountServiceNoConfigDemo.vb" />
-    <Compile Include="v13\DownloadReportAsCsvDemo.vb" />
-    <Compile Include="v13\DownloadReportAsXmlDemo.vb" />
-    <Compile Include="v13\ReportServiceKeywordDemo.vb" />
-    <Compile Include="v13\ReportServiceStructureDemo.vb" />
-    <Compile Include="v201008\AddAdExtensionOverride.vb" />
-    <Compile Include="v201008\AddAdGroup.vb" />
-    <Compile Include="v201008\AddAdGroupCriteria.vb" />
-    <Compile Include="v201008\AddAds.vb" />
-    <Compile Include="v201008\AddCampaign.vb" />
-    <Compile Include="v201008\AddCampaignAdExtension.vb" />
-    <Compile Include="v201008\AddExperiment.vb" />
-    <Compile Include="v201008\AddKeywordsPerformanceReportDefinition.vb" />
-    <Compile Include="v201008\AddLogicalUserList.vb" />
-    <Compile Include="v201008\AddMobileImageAd.vb" />
-    <Compile Include="v201008\AddNegativeCampaignCriterion.vb" />
-    <Compile Include="v201008\AddSiteLinks.vb" />
-    <Compile Include="v201008\AddUserList.vb" />
-    <Compile Include="v201008\BackupSandboxDemo.vb" />
-    <Compile Include="v201008\CheckCampaigns.vb" />
-    <Compile Include="v201008\ClientApiUnitsUsageDemo.vb" />
-    <Compile Include="v201008\DeleteAd.vb" />
-    <Compile Include="v201008\DeleteAdGroup.vb" />
-    <Compile Include="v201008\DeleteAdGroupCriterion.vb" />
-    <Compile Include="v201008\DeleteBulkMutateJob.vb" />
-    <Compile Include="v201008\DeleteCampaign.vb" />
-    <Compile Include="v201008\DeleteExperiment.vb" />
-    <Compile Include="v201008\DeleteSitelinks.vb" />
-    <Compile Include="v201008\DeleteUserList.vb" />
-    <Compile Include="v201008\DownloadReport.vb" />
-    <Compile Include="v201008\GetAccountHierarchy.vb" />
-    <Compile Include="v201008\GetAllAccountChanges.vb" />
-    <Compile Include="v201008\GetAllActiveAdGroupCriteria.vb" />
-    <Compile Include="v201008\GetAllAdExtensionOverrides.vb" />
-    <Compile Include="v201008\GetAllAdGroupCriteria.vb" />
-    <Compile Include="v201008\GetAllAdGroups.vb" />
-    <Compile Include="v201008\GetAllAds.vb" />
-    <Compile Include="v201008\GetAllBulkMutateJobs.vb" />
-    <Compile Include="v201008\GetAllCampaignAdExtensions.vb" />
-    <Compile Include="v201008\GetAllCampaigns.vb" />
-    <Compile Include="v201008\GetAllCampaignTargets.vb" />
-    <Compile Include="v201008\GetAllDisapprovedAds.vb" />
-    <Compile Include="v201008\GetAllExperiments.vb" />
-    <Compile Include="v201008\GetAllImages.vb" />
-    <Compile Include="v201008\GetAllNegativeCampaignCriteria.vb" />
-    <Compile Include="v201008\GetAllPausedCampaigns.vb" />
-    <Compile Include="v201008\GetAllReportDefinitions.vb" />
-    <Compile Include="v201008\GetAllUserLists.vb" />
-    <Compile Include="v201008\GetAllVideos.vb" />
-    <Compile Include="v201008\GetCampaign.vb" />
-    <Compile Include="v201008\GetCampaignAlerts.vb" />
-    <Compile Include="v201008\GetConversionOptimizerEligibility.vb" />
-    <Compile Include="v201008\GetCriterionBidLandscape.vb" />
-    <Compile Include="v201008\GetGeoLocationInfo.vb" />
-    <Compile Include="v201008\GetMethodCost.vb" />
-    <Compile Include="v201008\GetOperationCount.vb" />
-    <Compile Include="v201008\GetRelatedKeywords.vb" />
-    <Compile Include="v201008\GetRelatedPlacements.vb" />
-    <Compile Include="v201008\GetReportFields.vb" />
-    <Compile Include="v201008\GetTotalUsageUnitsPerMonth.vb" />
-    <Compile Include="v201008\GetTrafficEstimates.vb" />
-    <Compile Include="v201008\GetUnitCount.vb" />
-    <Compile Include="v201008\HandlePartialFailures.vb" />
-    <Compile Include="v201008\HandlePolicyViolationError.vb" />
-    <Compile Include="v201008\MethodApiUnitsUsageDemo.vb" />
-    <Compile Include="v201008\PerformBulkMutateJob.vb" />
-    <Compile Include="v201008\PromoteExperiment.vb" />
-    <Compile Include="v201008\RestoreSandboxDemo.vb" />
-    <Compile Include="v201008\SetAdParams.vb" />
-    <Compile Include="v201008\SetCampaignTargets.vb" />
-    <Compile Include="v201008\UpdateAd.vb" />
-    <Compile Include="v201008\UpdateAdGroup.vb" />
-    <Compile Include="v201008\UpdateAdGroupCriterion.vb" />
-    <Compile Include="v201008\UpdateCampaign.vb" />
-    <Compile Include="v201008\UpdateUserList.vb" />
-    <Compile Include="v201008\UploadImage.vb" />
-    <Compile Include="v201101\AddAdExtensionOverride.vb" />
-    <Compile Include="v201101\AddAdGroup.vb" />
-    <Compile Include="v201101\AddAdGroupCriteria.vb" />
-    <Compile Include="v201101\AddAds.vb" />
-    <Compile Include="v201101\AddCampaign.vb" />
-    <Compile Include="v201101\AddCampaignAdExtension.vb" />
-    <Compile Include="v201101\AddConversionTracker.vb" />
-    <Compile Include="v201101\AddExperiment.vb" />
-    <Compile Include="v201101\AddKeywordsPerformanceReportDefinition.vb" />
-    <Compile Include="v201101\AddLogicalUserList.vb" />
-    <Compile Include="v201101\AddMobileImageAd.vb" />
-    <Compile Include="v201101\AddNegativeCampaignCriterion.vb" />
-    <Compile Include="v201101\AddSiteLinks.vb" />
-    <Compile Include="v201101\AddUserList.vb" />
-    <Compile Include="v201101\BackupSandboxDemo.vb" />
-    <Compile Include="v201101\CheckCampaigns.vb" />
-    <Compile Include="v201101\ClientApiUnitsUsageDemo.vb" />
-    <Compile Include="v201101\DeleteAd.vb" />
-    <Compile Include="v201101\DeleteAdGroup.vb" />
-    <Compile Include="v201101\DeleteAdGroupCriterion.vb" />
-    <Compile Include="v201101\DeleteBulkMutateJob.vb" />
-    <Compile Include="v201101\DeleteCampaign.vb" />
-    <Compile Include="v201101\DeleteExperiment.vb" />
-    <Compile Include="v201101\DeleteSitelinks.vb" />
-    <Compile Include="v201101\DeleteUserList.vb" />
-    <Compile Include="v201101\DownloadReport.vb" />
-    <Compile Include="v201101\GetAccountHierarchy.vb" />
-    <Compile Include="v201101\GetAdGroupBidLandscape.vb" />
-    <Compile Include="v201101\GetAllAccountChanges.vb" />
-    <Compile Include="v201101\GetAllActiveAdGroupCriteria.vb" />
-    <Compile Include="v201101\GetAllAdExtensionOverrides.vb" />
-    <Compile Include="v201101\GetAllAdGroupCriteria.vb" />
-    <Compile Include="v201101\GetAllAdGroups.vb" />
-    <Compile Include="v201101\GetAllAds.vb" />
-    <Compile Include="v201101\GetAllCampaignAdExtensions.vb" />
-    <Compile Include="v201101\GetAllCampaigns.vb" />
-    <Compile Include="v201101\GetAllCampaignTargets.vb" />
-    <Compile Include="v201101\GetAllConversionTrackers.vb" />
-    <Compile Include="v201101\GetAllDisapprovedAds.vb" />
-    <Compile Include="v201101\GetAllExperiments.vb" />
-    <Compile Include="v201101\GetAllImages.vb" />
-    <Compile Include="v201101\GetAllNegativeCampaignCriteria.vb" />
-    <Compile Include="v201101\GetAllPausedCampaigns.vb" />
-    <Compile Include="v201101\GetAllReportDefinitions.vb" />
-    <Compile Include="v201101\GetAllUserLists.vb" />
-    <Compile Include="v201101\GetAllVideos.vb" />
-    <Compile Include="v201101\GetBulkMutateJob.vb" />
-    <Compile Include="v201101\GetCampaign.vb" />
-    <Compile Include="v201101\GetCampaignAlerts.vb" />
-    <Compile Include="v201101\GetConversionOptimizerEligibility.vb" />
-    <Compile Include="v201101\GetCriterionBidLandscape.vb" />
-    <Compile Include="v201101\GetGeoLocationInfo.vb" />
-    <Compile Include="v201101\GetKeywordOpportunities.vb" />
-    <Compile Include="v201101\GetMethodCost.vb" />
-    <Compile Include="v201101\GetOperationCount.vb" />
-    <Compile Include="v201101\GetRelatedKeywords.vb" />
-    <Compile Include="v201101\GetRelatedPlacements.vb" />
-    <Compile Include="v201101\GetReportFields.vb" />
-    <Compile Include="v201101\GetTotalUsageUnitsPerMonth.vb" />
-    <Compile Include="v201101\GetTrafficEstimates.vb" />
-    <Compile Include="v201101\GetUnitCount.vb" />
-    <Compile Include="v201101\HandlePartialFailures.vb" />
-    <Compile Include="v201101\HandlePolicyViolationError.vb" />
-    <Compile Include="v201101\MethodApiUnitsUsageDemo.vb" />
-    <Compile Include="v201101\PerformBulkMutateJob.vb" />
-    <Compile Include="v201101\PromoteExperiment.vb" />
-    <Compile Include="v201101\RestoreSandboxDemo.vb" />
-    <Compile Include="v201101\SetAdParams.vb" />
-    <Compile Include="v201101\SetCampaignTargets.vb" />
-    <Compile Include="v201101\UpdateAd.vb" />
-    <Compile Include="v201101\UpdateAdGroup.vb" />
-    <Compile Include="v201101\UpdateAdGroupCriterion.vb" />
-    <Compile Include="v201101\UpdateCampaign.vb" />
-    <Compile Include="v201101\UpdateConversionTracker.vb" />
-    <Compile Include="v201101\UpdateUserList.vb" />
-    <Compile Include="v201101\UploadImage.vb" />
-    <Compile Include="v201109\AddAdExtensionOverride.vb" />
-    <Compile Include="v201109\AddAdGroup.vb" />
-    <Compile Include="v201109\AddAdGroupCriteria.vb" />
-    <Compile Include="v201109\AddAds.vb" />
-    <Compile Include="v201109\AddCampaign.vb" />
-    <Compile Include="v201109\AddCampaignAdExtension.vb" />
-    <Compile Include="v201109\AddCampaignTargetingCriteria.vb" />
-    <Compile Include="v201109\AddConversionTracker.vb" />
-    <Compile Include="v201109\AddExperiment.vb" />
-    <Compile Include="v201109\AddLogicalUserList.vb" />
-    <Compile Include="v201109\AddMobileImageAd.vb" />
-    <Compile Include="v201109\AddNegativeCampaignCriterion.vb" />
-    <Compile Include="v201109\AddSiteLinks.vb" />
-    <Compile Include="v201109\AddUserList.vb" />
-    <Compile Include="v201109\BackupSandboxDemo.vb" />
-    <Compile Include="v201109\CheckCampaigns.vb" />
-    <Compile Include="v201109\ClientApiUnitsUsageDemo.vb" />
-    <Compile Include="v201109\CreateAccount.vb" />
-    <Compile Include="v201109\DeleteAd.vb" />
-    <Compile Include="v201109\DeleteAdGroup.vb" />
-    <Compile Include="v201109\DeleteAdGroupCriterion.vb" />
-    <Compile Include="v201109\DeleteBulkMutateJob.vb" />
-    <Compile Include="v201109\DeleteCampaign.vb" />
-    <Compile Include="v201109\DeleteExperiment.vb" />
-    <Compile Include="v201109\DeleteSitelinks.vb" />
-    <Compile Include="v201109\DeleteUserList.vb" />
-    <Compile Include="v201109\DownloadAdhocReport.vb" />
-    <Compile Include="v201109\GetAccountHierarchy.vb" />
-    <Compile Include="v201109\GetAdGroupBidLandscape.vb" />
-    <Compile Include="v201109\GetAllAccountChanges.vb" />
-    <Compile Include="v201109\GetAllActiveAdGroupCriteria.vb" />
-    <Compile Include="v201109\GetAllAdExtensionOverrides.vb" />
-    <Compile Include="v201109\GetAllAdGroupCriteria.vb" />
-    <Compile Include="v201109\GetAllAdGroups.vb" />
-    <Compile Include="v201109\GetAllAdParams.vb" />
-    <Compile Include="v201109\GetAllAds.vb" />
-    <Compile Include="v201109\GetAllCampaignAdExtensions.vb" />
-    <Compile Include="v201109\GetAllCampaigns.vb" />
-    <Compile Include="v201109\GetAllCampaignTargets.vb" />
-    <Compile Include="v201109\GetAllCarriers.vb" />
-    <Compile Include="v201109\GetAllConversionTrackers.vb" />
-    <Compile Include="v201109\GetAllDisapprovedAds.vb" />
-    <Compile Include="v201109\GetAllExperiments.vb" />
-    <Compile Include="v201109\GetAllImages.vb" />
-    <Compile Include="v201109\GetAllLanguages.vb" />
-    <Compile Include="v201109\GetAllNegativeCampaignCriteria.vb" />
-    <Compile Include="v201109\GetAllPausedCampaigns.vb" />
-    <Compile Include="v201109\GetAllReportDefinitions.vb" />
-    <Compile Include="v201109\GetAllUserLists.vb" />
-    <Compile Include="v201109\GetAllVideos.vb" />
-    <Compile Include="v201109\GetBulkMutateJob.vb" />
-    <Compile Include="v201109\GetCampaign.vb" />
-    <Compile Include="v201109\GetCampaignAlerts.vb" />
-    <Compile Include="v201109\GetClientCustomerId.vb" />
-    <Compile Include="v201109\GetConversionOptimizerEligibility.vb" />
-    <Compile Include="v201109\GetCriterionBidLandscape.vb" />
-    <Compile Include="v201109\GetGeoLocationInfo.vb" />
-    <Compile Include="v201109\GetKeywordOpportunities.vb" />
-    <Compile Include="v201109\GetLocationCriteria.vb" />
-    <Compile Include="v201109\GetMethodCost.vb" />
-    <Compile Include="v201109\GetOperationCount.vb" />
-    <Compile Include="v201109\GetRelatedKeywords.vb" />
-    <Compile Include="v201109\GetRelatedPlacements.vb" />
-    <Compile Include="v201109\GetReportFields.vb" />
-    <Compile Include="v201109\GetTotalUsageUnitsPerMonth.vb" />
-    <Compile Include="v201109\GetTrafficEstimates.vb" />
-    <Compile Include="v201109\GetUnitCount.vb" />
-    <Compile Include="v201109\HandlePartialFailures.vb" />
-    <Compile Include="v201109\HandlePolicyViolationError.vb" />
-    <Compile Include="v201109\MethodApiUnitsUsageDemo.vb" />
-    <Compile Include="v201109\PerformMutateJob.vb" />
-    <Compile Include="v201109\PromoteExperiment.vb" />
-    <Compile Include="v201109\RestoreSandboxDemo.vb" />
-    <Compile Include="v201109\SetAdParams.vb" />
-    <Compile Include="v201109\UpdateAd.vb" />
-    <Compile Include="v201109\UpdateAdGroup.vb" />
-    <Compile Include="v201109\UpdateAdGroupCriterion.vb" />
-    <Compile Include="v201109\UpdateCampaign.vb" />
-    <Compile Include="v201109\UpdateConversionTracker.vb" />
-    <Compile Include="v201109\UpdateUserList.vb" />
-    <Compile Include="v201109\UploadImage.vb" />
+    <Compile Include="v201109\AccountManagement\CreateAccount.vb" />
+    <Compile Include="v201109\AccountManagement\GetAccountAlerts.vb" />
+    <Compile Include="v201109\AccountManagement\GetAccountChanges.vb" />
+    <Compile Include="v201109\AccountManagement\GetAccountHierarchy.vb" />
+    <Compile Include="v201109\AccountManagement\GetClientCustomerId.vb" />
+    <Compile Include="v201109\AccountManagement\GetClientUnitUsage.vb" />
+    <Compile Include="v201109\AudienceAndConversionManagement\AddAudience.vb" />
+    <Compile Include="v201109\AudienceAndConversionManagement\AddConversionTracker.vb" />
+    <Compile Include="v201109\BasicOperations\AddAdGroup.vb" />
+    <Compile Include="v201109\BasicOperations\AddCampaign.vb" />
+    <Compile Include="v201109\BasicOperations\AddKeywords.vb" />
+    <Compile Include="v201109\BasicOperations\AddTextAds.vb" />
+    <Compile Include="v201109\BasicOperations\DeleteAd.vb" />
+    <Compile Include="v201109\BasicOperations\DeleteAdGroup.vb" />
+    <Compile Include="v201109\BasicOperations\DeleteCampaign.vb" />
+    <Compile Include="v201109\BasicOperations\DeleteKeyword.vb" />
+    <Compile Include="v201109\BasicOperations\GetAdGroups.vb" />
+    <Compile Include="v201109\BasicOperations\GetCampaigns.vb" />
+    <Compile Include="v201109\BasicOperations\GetKeywords.vb" />
+    <Compile Include="v201109\BasicOperations\GetTextAds.vb" />
+    <Compile Include="v201109\BasicOperations\PauseAd.vb" />
+    <Compile Include="v201109\BasicOperations\UpdateAdGroup.vb" />
+    <Compile Include="v201109\BasicOperations\UpdateCampaign.vb" />
+    <Compile Include="v201109\BasicOperations\UpdateKeyword.vb" />
+    <Compile Include="v201109\CampaignManagement\AddExperiment.vb" />
+    <Compile Include="v201109\CampaignManagement\AddKeywordsInBulk.vb" />
+    <Compile Include="v201109\CampaignManagement\AddLocationExtension.vb" />
+    <Compile Include="v201109\CampaignManagement\AddLocationExtensionOverride.vb" />
+    <Compile Include="v201109\CampaignManagement\AddSiteLinks.vb" />
+    <Compile Include="v201109\CampaignManagement\DeleteSitelinks.vb" />
+    <Compile Include="v201109\CampaignManagement\GetAllDisapprovedAds.vb" />
+    <Compile Include="v201109\CampaignManagement\PromoteExperiment.vb" />
+    <Compile Include="v201109\CampaignManagement\SetAdParameters.vb" />
+    <Compile Include="v201109\CampaignManagement\ValidateTextAd.vb" />
+    <Compile Include="v201109\ErrorHandling\HandlePartialFailures.vb" />
+    <Compile Include="v201109\ErrorHandling\HandlePolicyViolationError.vb" />
+    <Compile Include="v201109\ErrorHandling\HandleRateExceededError.vb" />
+    <Compile Include="v201109\ErrorHandling\HandleTwoFactorAuthorizationError.vb" />
+    <Compile Include="v201109\Miscellaneous\GetAllVideosAndImages.vb" />
+    <Compile Include="v201109\Miscellaneous\UploadImage.vb" />
+    <Compile Include="v201109\Optimization\EstimateKeywordTraffic.vb" />
+    <Compile Include="v201109\Optimization\GetAdGroupBidSimulations.vb" />
+    <Compile Include="v201109\Optimization\GetKeywordBidSimulations.vb" />
+    <Compile Include="v201109\Optimization\GetKeywordIdeas.vb" />
+    <Compile Include="v201109\Optimization\GetKeywordOpportunities.vb" />
+    <Compile Include="v201109\Optimization\GetPlacementIdeas.vb" />
+    <Compile Include="v201109\Reporting\DownloadCriteriaReport.vb" />
+    <Compile Include="v201109\Reporting\DownloadDefinedReport.vb" />
+    <Compile Include="v201109\Reporting\GetDefinedReports.vb" />
+    <Compile Include="v201109\Reporting\GetReportFields.vb" />
+    <Compile Include="v201109\Targeting\AddCampaignTargetingCriteria.vb" />
+    <Compile Include="v201109\Targeting\GetCampaignTargetingCriteria.vb" />
+    <Compile Include="v201109\Targeting\GetTargetableLanguagesAndCarriers.vb" />
+    <Compile Include="v201109\Targeting\LookupLocation.vb" />
+    <Compile Include="v201109\Utilities\BackupSandboxDemo.vb" />
+    <Compile Include="v201109\Utilities\ClientApiUnitsUsageDemo.vb" />
+    <Compile Include="v201109\Utilities\MethodApiUnitsUsageDemo.vb" />
+    <Compile Include="v201109\Utilities\RestoreSandboxDemo.vb" />
+    <Compile Include="ExampleBase.vb" />
+    <Compile Include="ExampleUtilities.vb" />
     <Compile Include="Program.vb" />
-    <Compile Include="SampleBase.vb" />
   </ItemGroup>
 </Project>
