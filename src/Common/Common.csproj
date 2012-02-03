@@ -1,0 +1,96 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{277404DB-A439-4450-B3A5-186294CDF245}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Google.Api.Ads.Common</RootNamespace>
+    <AssemblyName>Google.Ads.Common</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>AdsApi.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonErrorMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonErrorMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\AdsClient.cs" />
+    <Compile Include="Lib\AdsException.cs" />
+    <Compile Include="Lib\AdsOAuthException.cs" />
+    <Compile Include="Lib\AdsOAuthProvider.cs" />
+    <Compile Include="Lib\AdsService.cs" />
+    <Compile Include="Lib\AdsUser.cs" />
+    <Compile Include="Lib\AppConfigBase.cs" />
+    <Compile Include="Lib\AuthToken.cs" />
+    <Compile Include="Lib\AuthTokenCache.cs" />
+    <Compile Include="Lib\AuthTokenErrorCode.cs" />
+    <Compile Include="Lib\AuthTokenException.cs" />
+    <Compile Include="Lib\ContextStore.cs" />
+    <Compile Include="Lib\DefaultAuthTokenCache.cs" />
+    <Compile Include="Lib\SoapListener.cs">
+    </Compile>
+    <Compile Include="Lib\ServiceFactory.cs" />
+    <Compile Include="Lib\ServiceSignature.cs" />
+    <Compile Include="Lib\AdsSoapClient.cs" />
+    <Compile Include="Lib\SoapHeaderBase.cs" />
+    <Compile Include="Lib\SoapListenerExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lib\SoapListenerExtensionAttribute.cs" />
+    <Compile Include="Lib\TraceListener.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\CsvException.cs" />
+    <Compile Include="Util\CsvFile.cs" />
+    <Compile Include="Util\MediaUtilities.cs" />
+    <Compile Include="Util\SerializationUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CommonErrorMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonErrorMessages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AdsApi.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

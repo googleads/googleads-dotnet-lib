@@ -1,0 +1,114 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE15CE8A-532B-49DA-8CF7-2BFCDEE845DB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Google.Api.Ads.Dfp</RootNamespace>
+    <AssemblyName>Dfp</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\common\src\Common.csproj">
+      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="Headers\Authentication.cs" />
+    <Compile Include="Headers\ClientLogin.cs" />
+    <Compile Include="Headers\DfpSoapHeader.cs" />
+    <Compile Include="Headers\OAuth.cs" />
+    <Compile Include="Headers\RequestHeader.cs" />
+    <Compile Include="Headers\RequestHeaderStub.cs" />
+    <Compile Include="Headers\ResponseHeader.cs" />
+    <Compile Include="Headers\ResponseHeaderStub.cs" />
+    <Compile Include="Lib\DfpApiException.cs" />
+    <Compile Include="Lib\DfpAppConfig.cs" />
+    <Compile Include="Lib\DfpAuthorizationMethod.cs" />
+    <Compile Include="Lib\DfpException.cs" />
+    <Compile Include="Lib\DfpService.cs" />
+    <Compile Include="Lib\DfpServiceFactory.cs" />
+    <Compile Include="Lib\DfpServiceSignature.cs" />
+    <Compile Include="Lib\DfpSoapClient.cs" />
+    <Compile Include="Lib\DfpTraceListener.cs" />
+    <Compile Include="Lib\DfpUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Properties.cs" />
+    <Compile Include="Util\v201103\DateTimeUtilities.cs" />
+    <Compile Include="Util\v201103\PqlUtilities.cs" />
+    <Compile Include="Util\v201103\StatementBuilder.cs" />
+    <Compile Include="Util\v201104\DateTimeUtilities.cs" />
+    <Compile Include="Util\v201104\PqlUtilities.cs" />
+    <Compile Include="Util\v201104\StatementBuilder.cs" />
+    <Compile Include="Util\v201107\DateTimeUtilities.cs" />
+    <Compile Include="Util\v201107\PqlUtilities.cs" />
+    <Compile Include="Util\v201107\StatementBuilder.cs" />
+    <Compile Include="Util\v201108\DateTimeUtilities.cs" />
+    <Compile Include="Util\v201108\PqlUtilities.cs" />
+    <Compile Include="Util\v201108\StatementBuilder.cs" />
+    <Compile Include="Util\v201111\DateTimeUtilities.cs" />
+    <Compile Include="Util\v201111\PqlUtilities.cs" />
+    <Compile Include="Util\v201111\StatementBuilder.cs" />
+    <Compile Include="v201103\DfpApi.cs" />
+    <Compile Include="v201103\DfpServiceV201103.cs" />
+    <Compile Include="v201104\DfpApi.cs" />
+    <Compile Include="v201104\DfpServiceV201104.cs" />
+    <Compile Include="v201107\DfpApi.cs" />
+    <Compile Include="v201107\DfpServiceV201107.cs" />
+    <Compile Include="v201108\DfpApi.cs" />
+    <Compile Include="v201108\DfpServiceV201108.cs" />
+    <Compile Include="v201111\DfpApi.cs" />
+    <Compile Include="v201111\DfpServiceV201111.cs" />
+          <Compile Include="DfpErrorMessages.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>DfpErrorMessages.resx</DependentUpon>
+            <CustomToolNamespace></CustomToolNamespace>
+          </Compile></ItemGroup>
+  <ItemGroup>
+          <EmbeddedResource Include="DfpErrorMessages.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>DfpErrorMessages.Designer.cs</LastGenOutput>
+            <SubType>Designer</SubType>
+          </EmbeddedResource></ItemGroup>
+</Project>
