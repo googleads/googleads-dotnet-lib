@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,11 +33,11 @@
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\common\lib\OAuth.Net\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <HintPath>..\..\lib\OAuth.Net.Combined\bin\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="OAuth.Net.Combined, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\common\lib\OAuth.Net\OAuth.Net.Combined.dll</HintPath>
+      <HintPath>..\..\lib\OAuth.Net.Combined\bin\OAuth.Net.Combined.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -77,10 +77,15 @@
     </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>
-    <Content Include="css\main.css" />
-    <Content Include="GetAllUsers.aspx" />
-    <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <ProjectReference Include="..\..\src\Dfp\Dfp.csproj">
+      <Name>Dfp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Common\Common.csproj">
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Common\OAuth\Common.OAuth.csproj">
+      <Name>Common.OAuth</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,18 +95,8 @@
     <Compile Include="Global.asax.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Dfp.csproj">
-      <Name>Dfp</Name>
-    </ProjectReference>
-    <Reference Include="Microsoft.Practices.ServiceLocation">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\OAuth.Net.Combined\bin\Microsoft.Practices.ServiceLocation.dll</HintPath>
-    </Reference>
-    <Reference Include="OAuth.Net.Combined">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\OAuth.Net.Combined\bin\OAuth.Net.Combined.dll</HintPath>
-    </Reference>
-          <ProjectReference Include="..\..\src\Common\oauth\Common.OAuth.csproj">
-            <Name>Common.OAuth</Name>
-          </ProjectReference></ItemGroup>
+    <Content Include="GetAllUsers.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
 </Project>

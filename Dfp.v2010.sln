@@ -1,13 +1,15 @@
 
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dfp", "src\Dfp.csproj", "{CE15CE8A-532B-49DA-8CF7-2BFCDEE845DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dfp", "src\Dfp\Dfp.csproj", "{CE15CE8A-532B-49DA-8CF7-2BFCDEE845DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dfp.Examples", "examples\Dfp.Examples.csproj", "{65E3CAA4-8EE5-414A-AC88-02E4F33EC954}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "src\Common\Common.csproj", "{277404DB-A439-4450-B3A5-186294CDF245}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dfp.Tests", "tests\Dfp.Tests.csproj", "{FB12F1ED-8B46-4F49-8B0C-0F948DF7BB51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.OAuth", "src\Common\oauth\Common.OAuth.csproj", "{0A341427-343C-48EB-BF04-699C5D0C2508}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.OAuth", "src\Common\OAuth\Common.OAuth.csproj", "{0A341427-343C-48EB-BF04-699C5D0C2508}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dfp.Examples.OAuth", "examples\oauth\Dfp.Examples.OAuth.csproj", "{4641ADD7-0D1F-473D-B713-2830C5029367}"
 EndProject
@@ -25,6 +27,10 @@ Global
 		{65E3CAA4-8EE5-414A-AC88-02E4F33EC954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65E3CAA4-8EE5-414A-AC88-02E4F33EC954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65E3CAA4-8EE5-414A-AC88-02E4F33EC954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{277404DB-A439-4450-B3A5-186294CDF245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{277404DB-A439-4450-B3A5-186294CDF245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{277404DB-A439-4450-B3A5-186294CDF245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{277404DB-A439-4450-B3A5-186294CDF245}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FB12F1ED-8B46-4F49-8B0C-0F948DF7BB51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FB12F1ED-8B46-4F49-8B0C-0F948DF7BB51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB12F1ED-8B46-4F49-8B0C-0F948DF7BB51}.Release|Any CPU.ActiveCfg = Release|Any CPU

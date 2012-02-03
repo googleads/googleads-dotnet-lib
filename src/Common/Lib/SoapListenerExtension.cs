@@ -45,7 +45,11 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     private MemoryStream newStream;
 
-    public SoapListenerExtension() { }
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SoapListenerExtension"/>
+    /// class.
+    /// </summary>
+    public SoapListenerExtension() {}
 
     /// <summary>
     /// Save the Stream representing the SOAP request or SOAP response into
