@@ -39,48 +39,60 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdWordsErrorMessages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AdWordsErrorMessages.resx</DependentUpon>
-    </Compile>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\common\src\Common.csproj">
+      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
     <Compile Include="Headers\AdWordsSoapHeader.cs" />
+    <Compile Include="Headers\RequestHeader.cs" />
     <Compile Include="Headers\RequestHeaderStub.cs" />
+    <Compile Include="Headers\ResponseHeader.cs" />
     <Compile Include="Headers\ResponseHeaderStub.cs" />
+    <Compile Include="Lib\AdWordsApiException.cs" />
+    <Compile Include="Lib\AdWordsAppConfig.cs" />
     <Compile Include="Lib\AdWordsAuthorizationMethod.cs" />
     <Compile Include="Lib\AdWordsException.cs" />
+    <Compile Include="Lib\AdWordsService.cs" />
+    <Compile Include="Lib\AdWordsServiceFactory.cs" />
+    <Compile Include="Lib\AdWordsServiceSignature.cs" />
+    <Compile Include="Lib\AdWordsSoapClient.cs" />
     <Compile Include="Lib\AdWordsTraceListener.cs" />
     <Compile Include="Lib\AdWordsUnitsListener.cs" />
-    <Compile Include="Util\Data\SandboxSerializationException.cs" />
-    <Compile Include="Util\ErrorUtilities.cs" />
-    <Compile Include="Util\Reports\ClientReport.cs" />
-    <Compile Include="Util\Reports\ReportsException.cs" />
-    <Compile Include="Lib\LegacyAdwordsServiceSignature.cs" />
-    <Compile Include="Headers\ResponseHeader.cs" />
-    <Compile Include="Headers\RequestHeader.cs" />
-    <Compile Include="Lib\ApiUnitsEntry.cs" />
-    <Compile Include="Lib\AdWordsServiceSignature.cs" />
-    <Compile Include="Util\Data\AccountManager.cs" />
-    <Compile Include="Util\ApiCodes\ApiMethod.cs" />
-    <Compile Include="Util\ApiCodes\CodeUtilities.cs" />
-    <Compile Include="Lib\AdWordsApiException.cs" />
-    <Compile Include="Lib\AdWordsSoapClient.cs" />
-    <Compile Include="Lib\AdWordsServiceFactory.cs" />
-    <Compile Include="Lib\AdWordsAppConfig.cs" />
-    <Compile Include="Lib\AdWordsService.cs" />
     <Compile Include="Lib\AdWordsUser.cs" />
+    <Compile Include="Lib\ApiUnitsEntry.cs" />
     <Compile Include="Lib\LegacyAdWordsServiceFactory.cs" />
+    <Compile Include="Lib\LegacyAdwordsServiceSignature.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
-    <Compile Include="Util\Data\LocalClientAccount.cs" />
+    <Compile Include="Util\ApiCodes\ApiMethod.cs" />
+    <Compile Include="Util\ApiCodes\CodeUtilities.cs" />
+    <Compile Include="Util\Data\AccountManager.cs" />
+    <Compile Include="Util\Data\DataUtilities.cs" />
     <Compile Include="Util\Data\LocalAdGroup.cs" />
     <Compile Include="Util\Data\LocalCampaign.cs" />
+    <Compile Include="Util\Data\LocalClientAccount.cs" />
+    <Compile Include="Util\Data\SandboxSerializationException.cs" />
+    <Compile Include="Util\Reports\ClientReport.cs" />
+    <Compile Include="Util\Reports\ReportsException.cs" />
+    <Compile Include="Util\Reports\ReportUtilities.cs" />
     <Compile Include="Util\Units\AdWordsAccount.cs" />
     <Compile Include="Util\Units\ClientQuotaUsage.cs" />
     <Compile Include="Util\Units\MethodQuotaUsage.cs" />
-    <Compile Include="Util\Data\DataUtilities.cs" />
-    <Compile Include="Util\Reports\ReportUtilities.cs" />
     <Compile Include="Util\Units\UnitsUtilities.cs" />
+    <Compile Include="Util\ErrorUtilities.cs" />
     <Compile Include="v13\AccountException.cs" />
     <Compile Include="v13\AdWordsApi.cs" />
     <Compile Include="v13\AdWordsServiceV13.cs" />
@@ -99,29 +111,16 @@
     <Compile Include="v13\WebPageException.cs" />
     <Compile Include="v201109\AdWordsApi.cs" />
     <Compile Include="v201109\AdWordsServiceV201109.cs" />
-  </ItemGroup>
+          <Compile Include="AdWordsErrorMessages.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>AdWordsErrorMessages.resx</DependentUpon>
+            <CustomToolNamespace></CustomToolNamespace>
+          </Compile></ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="AdWordsErrorMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AdWordsErrorMessages.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\common\src\Common.csproj">
-      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+          <EmbeddedResource Include="AdWordsErrorMessages.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>AdWordsErrorMessages.Designer.cs</LastGenOutput>
+            <SubType>Designer</SubType>
+          </EmbeddedResource></ItemGroup>
 </Project>
