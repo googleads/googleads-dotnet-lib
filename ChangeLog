@@ -1,3 +1,7 @@
+3.1.0
+- Added support for v1.17.
+- Removed support for v1.14.
+
 3.0.0
 - Split the project into Google.Ads.Common and Google.Dfa. If you are using
   a binary distribution, you need to add reference to Google.Ads.Common.dll in
