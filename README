@@ -8,20 +8,22 @@ their large or complex AdWords accounts and campaigns.
 
 Google's DoubleClick Ad Exchange Buyer API service lets developers design
 computer programs that interact directly with the DoubleClick Ad Exchange Buyer
-platform. With these applications, advertisers and third-parties can more
-efficiently - and creatively - manage their large or complex DoubleClick Ad
+platform. With these applications, advertisers and third-parties for buyers can
+more efficiently - and creatively - manage their large or complex DoubleClick Ad
 Exchange Buyer accounts and campaigns.
 
 The AdWords and DoubleClick Ad Exchange Buyer API DotNet Client Library makes
 it easier to write .NET clients to programmatically access AdWords or Ad
-Exchange Buyer API DotNet accounts. All client library classes and utilities
+Exchange Buyer accounts. All client library classes and utilities
 are in the "Google.Api.Ads.AdWords" namespace or sub-namespaces. The library is
 compatible with .NET SDK 2.0 and above. When using the library, you needn't
 worry about downloading WSDLs and such, since the library contains stub
 classes for all the supported services and takes care of details like SOAP
 marshalling and unmarshalling, SOAP logging, etc. The complete documentation
 for the AdWords API is available from
-http://www.google.com/apis/adwords/developer/index.html.
+http://www.google.com/apis/adwords/developer/index.html. The DoubleClick Ad
+Exchange Buyer API docs are available from
+https://developers.google.com/ad-exchange/buyer-soap/
 
 
 What's in the client library?
@@ -35,13 +37,13 @@ and DoubleClick Ad Exchange Buyer API web services plus more. It includes:
     data. These classes are generated automatically from WSDLs using wsdl.exe
     and post-processed to provide features like
     - Not having to specify xxxSpecified = true for each nullable property.
-    - Being able to treat SOAP faults as AdWords exceptions rather than as
+    - Being able to treat SOAP faults as API exceptions rather than as
       generic SoapExceptions.
     - Reusing types across multiple services.
 
   - AdWordsUser class: The AdWordsUser class provides methods for setting
-    credentials for accessing AdWords accounts as well as for creating instances
-    of the AdWords Service classes.
+    credentials for accessing accounts as well as for creating instances
+    of the service classes.
 
   - Helpful utilities: The utilities located under
     Google.Api.Ads.AdWords.Utils help you download reports, retrieve detailed
@@ -65,13 +67,13 @@ downloaded from the site.
 Binary distribution
 -------------------
 
-The binary distribution of AdWords API DotNet client library consists of a
-precompiled version of the library as a .NET assembly, code examples for using
-the library, and library documentation. If you are interested in just using
-the library and not in its internals, you should download this distribution.
-There are separate downloads for AdWords and DoubleClick Ad Exchange Buyer
-versions, and each downloadable archive consists only files specific to the
-API it is associated with.
+The binary distribution of AdWords and DoubleClick Ad Exchange Buyer API DotNet
+Client Library consists of a precompiled version of the library as a .NET
+assembly, code examples for using the library, and library documentation.
+If you are interested in just using the library and not in its internals, you
+should download this distribution. There are separate downloads for AdWords and
+DoubleClick Ad Exchange Buyer versions, and each downloadable archive consists
+only files specific to the API it is associated with.
 
 The contents of this distribution are as follows:
 
@@ -96,7 +98,8 @@ supported by the library for all the supported versions of the API. Code
 examples are provided in both C# and VB.NET programming languages. To run
 the examples,
 
-- Open AdWords.sln in Visual Studio. There are different .sln files available
+- Open AdWords.sln (for AdWords API) or AdxBuyer.sln (for DoubleClick Ad
+  Exchange Buyer API) in Visual Studio. There are different .sln files available
   for versions 2005, 2008 and 2010.
 - Open App.config for the examples project of your choice and edit the following
   keys:
@@ -155,13 +158,14 @@ collision with Enum.Equals).
 Source distribution
 -------------------
 
-The source distribution of the AdWords API DotNet client library consists of
-individual Visual Studio projects for the client library, code examples and
-test cases, documentation for using the library, and support libraries and tools
-for compiling and running the library. If you are interested in the library
-internals you should download this distribution. There are separate downloads
-for AdWords and DoubleClick Ad Exchange Buyer versions, and each downloadable
-archive consists only files specific to the API it is associated with.
+The source distribution of the AdWords and DoubleClick Ad Exchange Buyer API
+DotNet Client Library consists of individual Visual Studio projects for the
+client library, code examples and test cases, documentation for using the
+library, and support libraries and tools for compiling and running the library.
+If you are interested in the library internals you should download this
+distribution. There are separate downloads for AdWords and DoubleClick Ad
+Exchange Buyer versions, and each downloadable archive consists only files
+specific to the API it is associated with.
 
 
 The contents of this distribution are as follows:
@@ -188,7 +192,8 @@ The contents of this distribution are as follows:
 
 To compile and run the project:
 
-- Open AdWords.sln in Visual Studio. There are different .sln files available
+- Open AdWords.sln (for AdWords API) or AdxBuyer.sln (for DoubleClick Ad
+  Exchange Buyer API) in Visual Studio. There are different .sln files available
   for versions 2005, 2008 and 2010.
 - Open App.config under the Examples project you are interested in and edit the
   following keys:
