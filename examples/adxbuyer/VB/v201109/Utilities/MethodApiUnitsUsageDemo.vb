@@ -28,7 +28,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   ''' provided by the AdWords API. Note that this data is not in real time and
   ''' is refreshed every few hours.
   ''' </summary>
-  Class MethodApiUnitsUsageDemo
+  Public Class MethodApiUnitsUsageDemo
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -37,7 +37,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New MethodApiUnitsUsageDemo
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>

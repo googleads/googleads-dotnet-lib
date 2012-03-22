@@ -29,7 +29,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   ''' Tags: ConstantDataService.getCarrierCriterion
   ''' Tags: ConstantDataService.getLanguageCriterion
   ''' </summary>
-  Class GetTargetableLanguagesAndCarriers
+  Public Class GetTargetableLanguagesAndCarriers
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -38,7 +38,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New GetTargetableLanguagesAndCarriers
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -102,8 +107,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No languages were found.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to get targetable carriers and languages. Exception " & _
-            "says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to get targetable carriers and languages.", _
+            ex)
       End Try
     End Sub
   End Class

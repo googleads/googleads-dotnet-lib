@@ -42,7 +42,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
+    <ProjectReference Include="..\..\..\common\src\Common.csproj">
       <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
       <Name>Common</Name>
     </ProjectReference>
@@ -111,19 +111,16 @@
     <Compile Include="v13\WebPageException.cs" />
     <Compile Include="v201109\AdWordsApi.cs" />
     <Compile Include="v201109\AdWordsServiceV201109.cs" />
-    <Compile Include="AdWordsErrorMessages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AdWordsErrorMessages.resx</DependentUpon>
-      <CustomToolNamespace>
-      </CustomToolNamespace>
-    </Compile>
-  </ItemGroup>
+          <Compile Include="AdWordsErrorMessages.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>AdWordsErrorMessages.resx</DependentUpon>
+            <CustomToolNamespace></CustomToolNamespace>
+          </Compile></ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AdWordsErrorMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AdWordsErrorMessages.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
+          <EmbeddedResource Include="AdWordsErrorMessages.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>AdWordsErrorMessages.Designer.cs</LastGenOutput>
+            <SubType>Designer</SubType>
+          </EmbeddedResource></ItemGroup>
 </Project>

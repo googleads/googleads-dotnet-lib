@@ -64,7 +64,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// The report download url format.
     /// </summary>
-    private const string REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload?__rd={1}";
+    private const string REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/v201109?__rd={1}";
 
     /// <summary>
     /// The report download url format for ad-hoc reports.
@@ -258,6 +258,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     private byte[] DownloadReportToDisk(string downloadUrl, AdWordsAppConfig config,
         bool returnMoneyInMicros, string path, string postBody) {
       using (FileStream fs = File.OpenWrite(path)) {
+        fs.SetLength(0);
         return DownloadReportToStream(downloadUrl, config, returnMoneyInMicros, fs, postBody);
       }
     }
@@ -282,6 +283,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         request.Method = "POST";
       }
       request.Proxy = config.Proxy;
+      request.Timeout = config.Timeout;
 
       if (!string.IsNullOrEmpty(config.ClientEmail)) {
         request.Headers.Add("clientEmail: " + config.ClientEmail);

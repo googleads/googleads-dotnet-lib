@@ -27,7 +27,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: AdGroupAdService.get
   /// </summary>
-  class GetAllDisapprovedAds : ExampleBase {
+  public class GetAllDisapprovedAds : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -35,7 +35,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new GetAllDisapprovedAds();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -78,12 +83,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       selector.fields = new string[] {"Id", "CreativeApprovalStatus", "DisapprovalReasons"};
 
       // Create the filter.
-      Predicate predicate = new Predicate();
-      predicate.@operator = PredicateOperator.EQUALS;
-      predicate.field = "CampaignId";
-      predicate.values = new string[] {campaignId.ToString()};
+      Predicate campaignPredicate = new Predicate();
+      campaignPredicate.@operator = PredicateOperator.EQUALS;
+      campaignPredicate.field = "CampaignId";
+      campaignPredicate.values = new string[] {campaignId.ToString()};
 
-      selector.predicates = new Predicate[] {predicate};
+      Predicate approvalPredicate = new Predicate();
+      approvalPredicate.@operator = PredicateOperator.EQUALS;
+      approvalPredicate.field = "CreativeApprovalStatus";
+      approvalPredicate.values = new string[] {AdApprovalStatus.DISAPPROVED.ToString()};
+
+      selector.predicates = new Predicate[] {campaignPredicate, approvalPredicate};
 
       // Set the selector paging.
       selector.paging = new Paging();
@@ -105,21 +115,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           if (page != null && page.entries != null) {
             int i = offset;
             foreach (AdGroupAd adGroupAd in page.entries) {
-              if (adGroupAd.ad.approvalStatus == AdApprovalStatus.DISAPPROVED) {
-                writer.WriteLine("{0}) Ad id {1} has been disapproved for the following " +
-                    "reason(s):", i, adGroupAd.ad.id);
-                foreach (string reason in adGroupAd.ad.disapprovalReasons) {
-                  writer.WriteLine("    {0}", reason);
-                }
-                i++;
+              writer.WriteLine("{0}) Ad id {1} has been disapproved for the following " +
+                  "reason(s):", i, adGroupAd.ad.id);
+              foreach (string reason in adGroupAd.ad.disapprovalReasons) {
+                writer.WriteLine("    {0}", reason);
               }
+              i++;
             }
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
         writer.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
-        writer.WriteLine("Failed to get disapproved ads. Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to get disapproved ads.", ex);
       }
     }
   }

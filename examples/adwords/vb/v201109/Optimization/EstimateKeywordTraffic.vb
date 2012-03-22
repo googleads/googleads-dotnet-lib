@@ -27,7 +27,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: TrafficEstimatorService.get
   ''' </summary>
-  Class EstimateKeywordTraffic
+  Public Class EstimateKeywordTraffic
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -36,7 +36,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New EstimateKeywordTraffic
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -177,8 +182,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No traffic estimates were returned.\n")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to retrieve traffic estimates. Exception says ""{0}""", _
-            ex.Message)
+        Throw New System.ApplicationException("Failed to retrieve traffic estimates.", ex)
       End Try
     End Sub
   End Class

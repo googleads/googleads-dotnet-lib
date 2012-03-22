@@ -28,7 +28,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: AdGroupCriterionService.mutate
   ''' </summary>
-  Class AddKeywords
+  Public Class AddKeywords
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -37,7 +37,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New AddKeywords
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -82,17 +87,23 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       keyword1.matchType = KeywordMatchType.BROAD
 
       ' Create the biddable ad group criterion.
-      Dim keywordCriterion1 As AdGroupCriterion = New BiddableAdGroupCriterion
+      Dim keywordCriterion1 As New BiddableAdGroupCriterion
       keywordCriterion1.adGroupId = adGroupId
       keywordCriterion1.criterion = keyword1
 
+      ' Optional: Set the user status.
+      keywordCriterion1.userStatus = UserStatus.PAUSED
+
+      ' Optional: Set the keyword destination url.
+      keywordCriterion1.destinationUrl = "http://example.com/mars/cruise"
+
       ' Create the keyword.
       Dim keyword2 As New Keyword
-      keyword2.text = "mars hotels"
+      keyword2.text = "mars chocolate"
       keyword2.matchType = KeywordMatchType.EXACT
 
       ' Create the biddable ad group criterion.
-      Dim keywordCriterion2 As AdGroupCriterion = New BiddableAdGroupCriterion
+      Dim keywordCriterion2 As New NegativeAdGroupCriterion
       keywordCriterion2.adGroupId = adGroupId
       keywordCriterion2.criterion = keyword2
 
@@ -128,7 +139,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No keywords were added.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to create keywords. Exception says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to create keywords.", ex)
       End Try
     End Sub
   End Class

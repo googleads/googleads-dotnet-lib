@@ -27,7 +27,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: ConversionTrackerService.mutate
   /// </summary>
-  class AddConversionTracker : ExampleBase {
+  public class AddConversionTracker : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -35,7 +35,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new AddConversionTracker();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -81,6 +86,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       conversionTracker.httpProtocol = AdWordsConversionTrackerHttpProtocol.HTTP;
       conversionTracker.textFormat = AdWordsConversionTrackerTextFormat.HIDDEN;
 
+      // Set optional fields.
+      conversionTracker.status = ConversionTrackerStatus.ENABLED;
+      conversionTracker.viewthroughLookbackWindow = 15;
+      conversionTracker.viewthroughConversionDeDupSearch = true;
+      conversionTracker.isProductAdsChargeable = true;
+      conversionTracker.productAdsChargeableConversionWindow = 15;
+      conversionTracker.conversionPageLanguage = "en";
+      conversionTracker.backgroundColor = "#0000FF";
+      conversionTracker.userRevenueValue = "someJavascriptVariable";
+
       // Create the operation.
       ConversionTrackerOperation operation = new ConversionTrackerOperation();
       operation.@operator = Operator.ADD;
@@ -101,7 +116,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           writer.WriteLine("No conversion trackers were added.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to add conversion tracker. Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to add conversion tracker.", ex);
       }
     }
   }

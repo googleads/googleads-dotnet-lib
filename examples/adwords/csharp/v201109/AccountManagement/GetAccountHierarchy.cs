@@ -28,7 +28,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: ServicedAccountService.get
   /// </summary>
-  class GetAccountHierarchy : ExampleBase {
+  public class GetAccountHierarchy : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -36,7 +36,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new GetAccountHierarchy();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -104,7 +109,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           writer.WriteLine("No accounts were retrieved.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to retrieve accounts. Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to retrieve accounts.", ex);
       }
     }
   }

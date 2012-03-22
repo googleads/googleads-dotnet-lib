@@ -28,7 +28,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: CampaignService.get
   /// </summary>
-  class HandleTwoFactorAuthorizationError : ExampleBase {
+  public class HandleTwoFactorAuthorizationError : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -36,7 +36,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new HandleTwoFactorAuthorizationError();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -93,7 +98,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
             writer.WriteLine("Invalid credentials.");
           }
         } else {
-          writer.WriteLine("The server raised an {0} error.", ex.ErrorCode);
+          throw new System.ApplicationException(String.Format("The server raised an {0} error.",
+              ex.ErrorCode));
         }
       }
     }

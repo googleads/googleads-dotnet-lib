@@ -99,8 +99,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
         Console.WriteLine(codeExample.Description);
         codeExample.Run(user, codeExample.GetParameters(), Console.Out);
       } catch (Exception ex) {
-        Console.WriteLine("An exception occurred while running this code example.\n{0} at\n{1}",
-            ex.Message, ex.StackTrace);
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
       } finally {
         Console.WriteLine("Press [Enter] to continue");
         Console.ReadLine();

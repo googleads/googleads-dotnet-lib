@@ -28,14 +28,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: CampaignAdExtensionService.mutate
   /// </summary>
-  class AddSiteLinks : ExampleBase {
+  public class AddSiteLinks : ExampleBase {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
       ExampleBase codeExample = new AddSiteLinks();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -120,7 +125,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           writer.WriteLine("No sitelinks were created.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to add site links. Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to add site links.", ex);
       }
     }
   }

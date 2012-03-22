@@ -31,7 +31,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   /// Tags: MutateJobService.mutate, MutateJobService.get
   /// Tags: MutateJobService.getResult
   /// </summary>
-  class AddPlacementsInBulk : ExampleBase {
+  public class AddPlacementsInBulk : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>

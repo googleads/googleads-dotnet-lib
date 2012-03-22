@@ -27,7 +27,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: TrafficEstimatorService.get
   /// </summary>
-  class EstimateKeywordTraffic : ExampleBase {
+  public class EstimateKeywordTraffic : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -35,7 +35,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new EstimateKeywordTraffic();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -176,8 +181,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           writer.WriteLine("No traffic estimates were returned.\n");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to retrieve traffic estimates. Exception says \"{0}\"",
-            ex.Message);
+        throw new System.ApplicationException("Failed to retrieve traffic estimates.", ex);
       }
     }
   }

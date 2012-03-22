@@ -28,7 +28,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: AdGroupCriterionService.get
   /// </summary>
-  class GetPlacements : ExampleBase {
+  public class GetPlacements : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>

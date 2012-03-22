@@ -31,7 +31,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   /// Tags: MutateJobService.mutate, MutateJobService.get
   /// Tags: MutateJobService.getResult
   /// </summary>
-  class AddKeywordsInBulk : ExampleBase {
+  public class AddKeywordsInBulk : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -39,7 +39,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new AddKeywordsInBulk();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -132,9 +137,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
             }
           }
         } catch (Exception ex) {
-          writer.WriteLine("Failed to fetch simple mutate job with id = {0}. Exception says " +
-              "\"{1}\"", job.id, ex.Message);
-          return;
+          throw new System.ApplicationException("Failed to fetch simple mutate job with " +
+              "id = {0}.", ex);
         }
       }
 

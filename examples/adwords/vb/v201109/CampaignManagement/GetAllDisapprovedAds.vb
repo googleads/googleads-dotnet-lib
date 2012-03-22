@@ -27,7 +27,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: AdGroupAdService.get
   ''' </summary>
-  Class GetAllDisapprovedAds
+  Public Class GetAllDisapprovedAds
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -36,7 +36,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New GetAllDisapprovedAds
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -78,12 +83,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       selector.fields = New String() {"Id", "CreativeApprovalStatus", "DisapprovalReasons"}
 
       ' Set the filters.
-      Dim predicate As New Predicate
-      predicate.operator = PredicateOperator.EQUALS
-      predicate.field = "CampaignId"
-      predicate.values = New String() {campaignId.ToString}
+      Dim campaignPredicate As New Predicate
+      campaignPredicate.operator = PredicateOperator.EQUALS
+      campaignPredicate.field = "CampaignId"
+      campaignPredicate.values = New String() {campaignId.ToString}
 
-      selector.predicates = New Predicate() {predicate}
+      Dim approvalPredicate As New Predicate
+      approvalPredicate.operator = PredicateOperator.EQUALS
+      approvalPredicate.field = "CreativeApprovalStatus"
+      approvalPredicate.values = New String() {AdApprovalStatus.DISAPPROVED.ToString()}
+
+      selector.predicates = New Predicate() {campaignPredicate, approvalPredicate}
 
       ' Set the selector paging.
       selector.paging = New Paging
@@ -105,21 +115,19 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
             Dim i As Integer = offset
             For Each adGroupAd As AdGroupAd In page.entries
-              If (adGroupAd.ad.approvalStatus = AdApprovalStatus.DISAPPROVED) Then
-                writer.WriteLine("{0}) Ad id {1} has been disapproved for the following " & _
+              writer.WriteLine("{0}) Ad id {1} has been disapproved for the following " & _
                     "reason(s):", i, adGroupAd.ad.id)
-                For Each reason As String In adGroupAd.ad.disapprovalReasons
-                  writer.WriteLine("    {0}", reason)
-                Next
-                i += 1
-              End If
+              For Each reason As String In adGroupAd.ad.disapprovalReasons
+                writer.WriteLine("    {0}", reason)
+              Next
+              i += 1
             Next
           End If
           offset = offset + pageSize
         Loop While (offset < page.totalNumEntries)
         writer.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries)
       Catch ex As Exception
-        writer.WriteLine("Failed to get disapproved ads. Exception says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to get disapproved ads.", ex)
       End Try
     End Sub
   End Class

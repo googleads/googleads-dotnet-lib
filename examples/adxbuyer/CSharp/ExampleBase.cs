@@ -24,7 +24,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
   /// <summary>
   /// This abstract class represents a code example.
   /// </summary>
-  abstract class ExampleBase {
+  public abstract class ExampleBase {
     /// <summary>
     /// Delegate for accepting user inputs for this code example.
     /// </summary>

@@ -28,7 +28,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: AdGroupCriterionService.mutate
   ''' </summary>
-  Class HandlePartialFailures
+  Public Class HandlePartialFailures
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -37,7 +37,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New HandlePartialFailures
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -137,9 +142,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
             End If
           Next
         End If
-      Catch e As Exception
-        writer.WriteLine("Failed to add keyword(s) in partial failure mode. Exception " & _
-            "says '{0}'", e.Message)
+      Catch ex As Exception
+        Throw New System.ApplicationException("Failed to add keyword(s) in partial failure mode.", _
+            ex)
       End Try
     End Sub
   End Class

@@ -29,7 +29,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: AdGroupAdService.get
   ''' </summary>
-  Class GetThirdPartyRedirectAds
+  Public Class GetThirdPartyRedirectAds
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.

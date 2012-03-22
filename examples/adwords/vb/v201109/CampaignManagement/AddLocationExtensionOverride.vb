@@ -29,7 +29,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: GeoLocationService.get, AdExtensionOverrideService.mutate
   ''' </summary>
-  Class AddLocationExtensionOverride
+  Public Class AddLocationExtensionOverride
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -38,7 +38,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New AddLocationExtensionOverride
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -104,11 +109,27 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       extension.geoPoint = location.geoPoint
       extension.encodedLocation = location.encodedLocation
       extension.source = LocationExtensionSource.ADWORDS_FRONTEND
-      extension.phoneNumber = "1-800-555-5556"
+
+      ' Optional: Set the company name.
+      extension.companyName = "ACME Inc."
+
+      ' Optional: Set the phone number.
+      extension.phoneNumber = "(650) 253-0000"
+
+      ' Optional: Set image and icon media id.
+      ' extension.imageMediaId = ...;
+      ' extension.iconMediaId = ...;
 
       Dim locationExtensionOverride As New AdExtensionOverride
       locationExtensionOverride.adExtension = extension
       locationExtensionOverride.adId = adId
+
+      ' Optional: Set the override info.
+      Dim overrideInfo As New OverrideInfo
+      overrideInfo.Item = New LocationOverrideInfo
+      overrideInfo.Item.radius = 5
+      overrideInfo.Item.radiusUnits = LocationOverrideInfoRadiusUnits.MILES
+      locationExtensionOverride.overrideInfo = overrideInfo
 
       ' Create the operation.
       Dim operation As New AdExtensionOverrideOperation
@@ -130,8 +151,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No location extensions were overridden.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to override location extension. Exception says ""{0}""", _
-            ex.Message)
+        Throw New System.ApplicationException("Failed to override location extension.", ex)
       End Try
     End Sub
   End Class

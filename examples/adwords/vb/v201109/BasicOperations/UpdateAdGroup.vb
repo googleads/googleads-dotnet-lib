@@ -28,7 +28,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: AdGroupService.mutate
   ''' </summary>
-  Class UpdateAdGroup
+  Public Class UpdateAdGroup
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -37,7 +37,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New UpdateAdGroup
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -99,7 +104,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No ad groups were updated.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to update ad groups. Exception says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to update ad groups.", ex)
       End Try
     End Sub
   End Class

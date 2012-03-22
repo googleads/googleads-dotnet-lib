@@ -28,7 +28,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: GeoLocationService.get, CampaignAdExtensionService.mutate
   ''' </summary>
-  Class AddLocationExtension
+  Public Class AddLocationExtension
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -37,7 +37,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New AddLocationExtension
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -113,6 +118,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         locationExtension.encodedLocation = location.encodedLocation
         locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND
 
+        ' Optional: Set the company name.
+        locationExtension.companyName = "ACME Inc."
+
+        ' Optional: Set the phone number.
+        locationExtension.phoneNumber = "(650) 253-0000"
+
         Dim extension As New CampaignAdExtension
         extension.campaignId = campaignId
         extension.status = CampaignAdExtensionStatus.ACTIVE
@@ -141,8 +152,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No location extensions were created.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to add location extensions. Exception says ""{0}""", _
-            ex.Message)
+        Throw New System.ApplicationException("Failed to add location extensions.", ex)
       End Try
     End Sub
   End Class

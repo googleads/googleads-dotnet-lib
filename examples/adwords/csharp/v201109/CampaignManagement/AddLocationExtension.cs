@@ -28,7 +28,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: GeoLocationService.get, CampaignAdExtensionService.mutate
   /// </summary>
-  class AddLocationExtension : ExampleBase {
+  public class AddLocationExtension : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -36,7 +36,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new AddLocationExtension();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -113,6 +118,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         locationExtension.encodedLocation = location.encodedLocation;
         locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND;
 
+        // Optional: Set the company name.
+        locationExtension.companyName = "ACME Inc.";
+
+        // Optional: Set the phone number.
+        locationExtension.phoneNumber = "(650) 253-0000";
+
         CampaignAdExtension extension = new CampaignAdExtension();
         extension.campaignId = campaignId;
         extension.status = CampaignAdExtensionStatus.ACTIVE;
@@ -139,7 +150,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           writer.WriteLine("No location extensions were created.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to add location extensions. Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to add location extension.", ex);
       }
     }
   }

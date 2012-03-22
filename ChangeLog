@@ -1,3 +1,8 @@
+14.2.0
+- Did some additional cleanup of code examples.
+- Fixed issues 70, 71, 72, 75.
+- Added support for OAuth 1.0a in non-ASP.NET environments.
+
 14.1.0
 - Updated README and folder structure to include AdxBuyer API.
 

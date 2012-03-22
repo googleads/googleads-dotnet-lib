@@ -27,7 +27,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: LocationCriterionService.get
   /// </summary>
-  class LookupLocation : ExampleBase {
+  public class LookupLocation : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -35,7 +35,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new LookupLocation();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -114,7 +119,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
               parentLocations, locationCriterion.reach);
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to get location criteria. Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to get location criteria.", ex);
       }
     }
 

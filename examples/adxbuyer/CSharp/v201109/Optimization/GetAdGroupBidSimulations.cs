@@ -28,7 +28,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: DataService.getAdGroupBidLandscape
   /// </summary>
-  class GetAdGroupBidSimulations : ExampleBase {
+  public class GetAdGroupBidSimulations : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -36,7 +36,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new GetAdGroupBidSimulations();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -105,8 +110,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           writer.WriteLine("No ad group bid landscapes were found.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to get ad group bid landscapes. Exception says \"{0}\"",
-            ex.Message);
+        throw new System.ApplicationException("Failed to get ad group bid landscapes.", ex);
       }
     }
   }

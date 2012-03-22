@@ -25,11 +25,12 @@ using System.IO;
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   /// <summary>
   /// This code example adds text ads to a given ad group. To list ad groups,
-  /// run GetAdGroups.cs.
+  /// run GetAdGroups.cs. To learn how to handle policy violations and add
+  /// exemption requests, see HandlePolicyViolationError.cs.
   ///
   /// Tags: AdGroupAdService.mutate
   /// </summary>
-  class AddTextAds : ExampleBase {
+  public class AddTextAds : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -37,7 +38,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new AddTextAds();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -46,7 +52,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public override string Description {
       get {
         return "This code example adds text ads to a given ad group. To list ad groups, run " +
-            "GetAdGroups.cs.";
+            "GetAdGroups.cs. To learn how to handle policy violations and add exemption " +
+            "requests, see HandlePolicyViolationError.cs.";
       }
     }
 
@@ -84,9 +91,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       textAd1.displayUrl = "www.example.com";
       textAd1.url = "http://www.example.com";
 
-      AdGroupAd textadGroupAd1 = new AdGroupAd();
-      textadGroupAd1.adGroupId = adGroupId;
-      textadGroupAd1.ad = textAd1;
+      AdGroupAd textAdGroupAd1 = new AdGroupAd();
+      textAdGroupAd1.adGroupId = adGroupId;
+      textAdGroupAd1.ad = textAd1;
+
+      // Optional: Set the status.
+      textAdGroupAd1.status = AdGroupAdStatus.PAUSED;
 
       // Create the text ad.
       TextAd textAd2 = new TextAd();
@@ -96,18 +106,21 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       textAd2.displayUrl = "www.example.com";
       textAd2.url = "http://www.example.com";
 
-      AdGroupAd textadGroupAd2 = new AdGroupAd();
-      textadGroupAd2.adGroupId = adGroupId;
-      textadGroupAd2.ad = textAd2;
+      AdGroupAd textAdGroupAd2 = new AdGroupAd();
+      textAdGroupAd2.adGroupId = adGroupId;
+      textAdGroupAd2.ad = textAd2;
+
+      // Optional: Set the status.
+      textAdGroupAd2.status = AdGroupAdStatus.PAUSED;
 
       // Create the operations.
       AdGroupAdOperation textAdOperation1 = new AdGroupAdOperation();
       textAdOperation1.@operator = Operator.ADD;
-      textAdOperation1.operand = textadGroupAd1;
+      textAdOperation1.operand = textAdGroupAd1;
 
       AdGroupAdOperation textAdOperation2 = new AdGroupAdOperation();
       textAdOperation2.@operator = Operator.ADD;
-      textAdOperation2.operand = textadGroupAd2;
+      textAdOperation2.operand = textAdGroupAd2;
 
       AdGroupAdReturnValue retVal = null;
 
@@ -131,7 +144,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           writer.WriteLine("No text ads were created.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to create text ad(s). Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to create text ad.", ex);
       }
     }
   }
