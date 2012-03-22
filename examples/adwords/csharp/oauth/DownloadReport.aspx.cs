@@ -47,7 +47,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
       AdWordsAppConfig config = user.Config as AdWordsAppConfig;
       user.OAuthProvider = new AdsOAuthNetProvider(config.OAuthConsumerKey,
           config.OAuthConsumerSecret, AdWordsService.GetOAuthScope(user.Config as AdWordsAppConfig),
-          url);
+          url, Session.SessionID);
     }
 
     /// <summary>

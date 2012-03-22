@@ -27,16 +27,21 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: AdGroupAdService.mutate
   ''' </summary>
-  Class UpdateAd
+  Public Class PauseAd
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New UpdateAd
+      Dim codeExample As ExampleBase = New PauseAd
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -102,7 +107,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No ads were paused.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to pause ad. Exception says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to pause ad.", ex)
       End Try
     End Sub
   End Class

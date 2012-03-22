@@ -55,5 +55,20 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
       Return parameters
     End Function
 
+    ''' <summary>
+    ''' Formats the exception as a printable message.
+    ''' </summary>
+    ''' <param name="ex">The exception.</param>
+    ''' <returns>The formatted exception string.</returns>
+    Public Shared Function FormatException(ByVal ex As Exception) As String
+      Dim messages As New List(Of String)
+      Dim rootEx As Exception = ex
+      Do While (Not rootEx Is Nothing)
+        messages.Add(String.Format("{0} ({1})\n\n{2}\n", rootEx.GetType.ToString, _
+            rootEx.Message, rootEx.StackTrace))
+        rootEx = rootEx.InnerException
+      Loop
+      Return String.Join("\nCaused by\n\n", messages.ToArray)
+    End Function
   End Class
 End Namespace

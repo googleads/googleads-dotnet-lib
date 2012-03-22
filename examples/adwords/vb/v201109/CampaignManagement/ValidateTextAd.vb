@@ -29,7 +29,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: AdGroupAdService.mutate
   ''' </summary>
-  Class ValidateTextAd
+  Public Class ValidateTextAd
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -38,7 +38,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New ValidateTextAd
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters, Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -109,7 +114,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           Next
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to validate text ad. Exception says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to validate text ad.", ex)
       End Try
     End Sub
   End Class

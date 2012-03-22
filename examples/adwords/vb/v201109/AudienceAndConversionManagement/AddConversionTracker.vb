@@ -27,7 +27,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: ConversionTrackerService.mutate
   ''' </summary>
-  Friend Class AddConversionTracker
+  Public Class AddConversionTracker
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -36,7 +36,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New AddConversionTracker
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -82,6 +87,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       conversionTracker.httpProtocol = AdWordsConversionTrackerHttpProtocol.HTTP
       conversionTracker.textFormat = AdWordsConversionTrackerTextFormat.HIDDEN
 
+      ' Set optional fields.
+      conversionTracker.status = ConversionTrackerStatus.ENABLED
+      conversionTracker.viewthroughLookbackWindow = 15
+      conversionTracker.viewthroughConversionDeDupSearch = True
+      conversionTracker.isProductAdsChargeable = True
+      conversionTracker.productAdsChargeableConversionWindow = 15
+      conversionTracker.conversionPageLanguage = "en"
+      conversionTracker.backgroundColor = "#0000FF"
+      conversionTracker.userRevenueValue = "someJavascriptVariable"
+
       ' Create the operation.
       Dim operation As New ConversionTrackerOperation
       operation.operator = [Operator].ADD
@@ -103,7 +118,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No conversion trackers were added.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to add conversion tracker. Exception says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to add conversion tracker.", ex)
       End Try
     End Sub
   End Class

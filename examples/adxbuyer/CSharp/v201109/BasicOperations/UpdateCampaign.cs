@@ -28,7 +28,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: CampaignService.mutate
   /// </summary>
-  class UpdateCampaign : ExampleBase {
+  public class UpdateCampaign : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -36,7 +36,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new UpdateCampaign();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -74,15 +79,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
 
       long campaignId = long.Parse(parameters["CAMPAIGN_ID"]);
 
-      // Create campaign with updated budget.
+      // Create the campaign.
       Campaign campaign = new Campaign();
       campaign.id = campaignId;
 
+      // Set the updated budget.
       Budget budget = new Budget();
       budget.deliveryMethod = BudgetBudgetDeliveryMethod.ACCELERATED;
       campaign.budget = budget;
 
-      // Create the operations.
+      // Create the operation.
       CampaignOperation operation = new CampaignOperation();
       operation.@operator = Operator.SET;
       operation.operand = campaign;
@@ -100,7 +106,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           writer.WriteLine("No campaigns were updated.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to update campaign(s). Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to update campaign.", ex);
       }
     }
   }

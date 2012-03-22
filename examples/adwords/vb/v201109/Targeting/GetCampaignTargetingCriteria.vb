@@ -29,7 +29,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: CampaignCriterionService.get
   ''' </summary>
-  Class GetCampaignTargetingCriteria
+  Public Class GetCampaignTargetingCriteria
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -38,7 +38,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New GetCampaignTargetingCriteria
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -124,8 +129,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         Loop While (offset < page.totalNumEntries)
         writer.WriteLine("Number of campaign targeting criteria found: {0}", page.totalNumEntries)
       Catch ex As Exception
-        writer.WriteLine("Failed to get campaign targeting criteria. Exception says ""{0}""", _
-            ex.Message)
+        Throw New System.ApplicationException("Failed to get campaign targeting criteria.", ex)
       End Try
     End Sub
   End Class

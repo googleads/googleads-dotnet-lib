@@ -28,7 +28,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: AdGroupCriterionService.mutate
   /// </summary>
-  class UpdatePlacement : ExampleBase {
+  public class UpdatePlacement : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>

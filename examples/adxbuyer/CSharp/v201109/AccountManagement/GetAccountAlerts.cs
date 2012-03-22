@@ -29,7 +29,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: AlertService.get
   /// </summary>
-  class GetAccountAlerts : ExampleBase {
+  public class GetAccountAlerts : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -37,7 +37,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new GetAccountAlerts();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -126,7 +131,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         } while (offset < page.totalNumEntries);
         writer.WriteLine("Number of alerts found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
-        writer.WriteLine("Failed to retrieve alerts. Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to retrieve alerts.", ex);
       }
     }
   }

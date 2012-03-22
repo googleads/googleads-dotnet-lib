@@ -32,7 +32,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: ExperimentService.mutate
   ''' </summary>
-  Class AddExperiment
+  Public Class AddExperiment
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -41,7 +41,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New AddExperiment
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -98,6 +103,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       experiment.name = ("Interplanetary Cruise #" & ExampleUtilities.GetTimeStamp)
       experiment.queryPercentage = 10
       experiment.startDateTime = DateTime.Now.ToString("yyyyMMdd HHmmss")
+
+      ' Optional: Set the end date.
+      experiment.endDateTime = DateTime.Now.AddDays(30).ToString("yyyyMMdd HHmmss")
+
+      ' Optional: Set the status.
+      experiment.status = ExperimentStatus.ACTIVE
 
       ' Create the operation.
       Dim experimentOperation As New ExperimentOperation
@@ -206,7 +217,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No experiments were added.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to add experiment(s). Exception says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to add experiment(s).", ex)
       End Try
     End Sub
   End Class

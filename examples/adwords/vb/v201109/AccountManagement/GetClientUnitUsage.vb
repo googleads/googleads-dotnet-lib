@@ -28,7 +28,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: InfoService.get
   ''' </summary>
-  Class GetClientUnitUsage
+  Public Class GetClientUnitUsage
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -37,7 +37,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New GetClientUnitUsage
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -85,7 +90,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       ' Create date range for retrieving unit usage.
       Dim dateRange As New DateRange
       dateRange.min = New DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).ToString("yyyyMMdd")
-      dateRange.max = DateTime.Now.ToString("yyyyMMdd")
+      dateRange.max = DateTime.Now.AddDays(-1).ToString("yyyyMMdd")
       selector.dateRange = dateRange
 
       Try
@@ -102,7 +107,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No API usage records were found for client.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to get unit usage for client. Exception says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to get unit usage for client.", ex)
       End Try
     End Sub
 

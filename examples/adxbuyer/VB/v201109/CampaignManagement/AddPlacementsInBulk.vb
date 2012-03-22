@@ -31,7 +31,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   ''' Tags: MutateJobService.mutate, MutateJobService.get
   ''' Tags: MutateJobService.getResult
   ''' </summary>
-  Class AddPlacementsInBulk
+  Public Class AddPlacementsInBulk
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.

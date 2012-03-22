@@ -27,7 +27,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: UserListService.mutate
   /// </summary>
-  class AddAudience : ExampleBase {
+  public class AddAudience : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -35,7 +35,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new AddAudience();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -85,6 +90,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       UserListConversionType conversionType = new UserListConversionType();
       conversionType.name = userList.name;
       userList.conversionTypes = new UserListConversionType[] {conversionType};
+
+      // Optional: Set the user list status.
+      userList.status = UserListMembershipStatus.OPEN;
 
       // Create the operation.
       UserListOperation operation = new UserListOperation();
@@ -140,10 +148,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
             // Display user list associated conversion code snippets.
             if (newUserList.conversionTypes != null) {
               foreach (UserListConversionType userListConversionType in userList.conversionTypes) {
-                AdWordsConversionTracker conversionTracker =
-                    (AdWordsConversionTracker) conversionsMap[userListConversionType.id];
-                writer.WriteLine("Conversion type code snippet associated to the list:\n{0}\n",
-                    conversionTracker.snippet);
+                if (conversionsMap.ContainsKey(userListConversionType.id)) {
+                  AdWordsConversionTracker conversionTracker =
+                      (AdWordsConversionTracker) conversionsMap[userListConversionType.id];
+                  writer.WriteLine("Conversion type code snippet associated to the list:\n{0}\n",
+                      conversionTracker.snippet);
+                } else {
+                  throw new Exception("Failed to associate conversion type code snippet.");
+                }
               }
             }
           }
@@ -151,8 +163,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           writer.WriteLine("No user lists (a.k.a. audiences) were added.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to add user lists (a.k.a. audiences). Exception says \"{0}\"",
-            ex.Message);
+        throw new System.ApplicationException("Failed to add user lists (a.k.a. audiences).", ex);
       }
     }
   }

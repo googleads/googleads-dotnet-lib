@@ -28,7 +28,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: AdGroupCriterionService.mutate
   ''' </summary>
-  Class HandlePartialFailures
+  Public Class HandlePartialFailures
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.

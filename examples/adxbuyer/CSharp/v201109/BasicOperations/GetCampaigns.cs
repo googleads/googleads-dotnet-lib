@@ -28,7 +28,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: CampaignService.get
   /// </summary>
-  class GetCampaigns : ExampleBase {
+  public class GetCampaigns : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -36,7 +36,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new GetCampaigns();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -97,7 +102,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
             int i = offset;
             foreach (Campaign campaign in page.entries) {
               writer.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = '{3}'" +
-                " was found.", i, campaign.id, campaign.name, campaign.status);
+                " was found.", i + 1, campaign.id, campaign.name, campaign.status);
               i++;
             }
           }
@@ -105,7 +110,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         } while (offset < page.totalNumEntries);
         writer.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
-        writer.WriteLine("Failed to retrieve campaign(s). Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to retrieve campaigns", ex);
       }
     }
   }

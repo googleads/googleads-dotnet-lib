@@ -28,7 +28,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: AdGroupService.get
   /// </summary>
-  class GetAdGroups : ExampleBase {
+  public class GetAdGroups : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -36,7 +36,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new GetAdGroups();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -106,7 +111,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           if (page != null && page.entries != null) {
             int i = offset;
             foreach (AdGroup adGroup in page.entries) {
-              writer.WriteLine("{0}) Ad group name is '{1} and id is {2}.", i, adGroup.name,
+              writer.WriteLine("{0}) Ad group name is '{1}' and id is {2}.", i + 1, adGroup.name,
                   adGroup.id);
               i++;
             }
@@ -115,7 +120,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         } while (offset < page.totalNumEntries);
         writer.WriteLine("Number of ad groups found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
-        writer.WriteLine("Failed to retrieve ad group(s). Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to retrieve ad groups.", ex);
       }
     }
   }

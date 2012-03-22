@@ -29,7 +29,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: MediaService.get
   ''' </summary>
-  Class GetAllVideosAndImages
+  Public Class GetAllVideosAndImages
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -38,7 +38,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New GetAllVideosAndImages
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -81,7 +86,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
 
       ' Set the filter.
       Dim predicate As New Predicate
-      predicate.operator = PredicateOperator.EQUALS
+      predicate.operator = PredicateOperator.IN
       predicate.field = "Type"
       predicate.values = New String() {MediaMediaType.VIDEO.ToString(), _
           MediaMediaType.IMAGE.ToString()}
@@ -126,7 +131,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         Loop While (offset < page.totalNumEntries)
         writer.WriteLine("Number of images and videos found: {0}", page.totalNumEntries)
       Catch ex As Exception
-        writer.WriteLine("Failed to get images and videos. Exception says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to get images and videos.", ex)
       End Try
     End Sub
 

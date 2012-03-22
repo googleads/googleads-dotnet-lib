@@ -29,7 +29,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: AdGroupAdService.mutate, AdParamService.mutate
   ''' </summary>
-  Class SetAdParameters
+  Public Class SetAdParameters
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -38,7 +38,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New SetAdParameters
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -115,7 +120,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           Return
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to create text ads. Exception says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to create text ads.", ex)
         Return
       End Try
 
@@ -154,8 +159,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No ad parameters were set.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to set ad parameter(s). Exception says ""{0}""", _
-            ex.Message)
+        Throw New System.ApplicationException("Failed to set ad parameter(s).", ex)
       End Try
     End Sub
   End Class

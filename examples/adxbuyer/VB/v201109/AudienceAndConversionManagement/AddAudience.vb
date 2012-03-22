@@ -27,7 +27,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   '''
   ''' Tags: UserListService.mutate
   ''' </summary>
-  Class AddAudience
+  Public Class AddAudience
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -36,7 +36,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New AddAudience
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -85,6 +90,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       Dim conversionType As New UserListConversionType
       conversionType.name = userList.name
       userList.conversionTypes = New UserListConversionType() {conversionType}
+
+      ' Optional: Set the user list status.
+      userList.status = UserListMembershipStatus.OPEN
 
       ' Create the operation.
       Dim operation As New UserListOperation
@@ -153,8 +161,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No user lists (a.k.a. audiences) were added.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to add user lists (a.k.a. audiences). Exception says ""{0}""", _
-            ex.Message)
+        Throw New System.ApplicationException("Failed to add user lists (a.k.a. audiences).", ex)
       End Try
     End Sub
   End Class

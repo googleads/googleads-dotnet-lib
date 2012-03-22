@@ -104,6 +104,9 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
       get {
         return isDefault;
       }
+      set {
+        isDefault = value;
+      }
     }
   }
 }

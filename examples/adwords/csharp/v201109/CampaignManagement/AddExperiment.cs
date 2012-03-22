@@ -32,7 +32,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: ExperimentService.mutate
   /// </summary>
-  class AddExperiment : ExampleBase {
+  public class AddExperiment : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -40,7 +40,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new AddExperiment();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -98,6 +103,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       experiment.name = "Interplanetary Cruise #" + ExampleUtilities.GetTimeStamp();
       experiment.queryPercentage = 10;
       experiment.startDateTime = DateTime.Now.ToString("yyyyMMdd HHmmss");
+
+      // Optional: Set the end date.
+      experiment.endDateTime = DateTime.Now.AddDays(30).ToString("yyyyMMdd HHmmss");
+
+      // Optional: Set the status.
+      experiment.status = ExperimentStatus.ACTIVE;
 
       // Create the operation.
       ExperimentOperation experimentOperation = new ExperimentOperation();
@@ -207,7 +218,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           writer.WriteLine("No experiments were added.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to add experiment(s). Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to add experiment.", ex);
       }
     }
   }

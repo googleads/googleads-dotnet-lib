@@ -29,7 +29,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   /// Tags: ConstantDataService.getCarrierCriterion
   /// Tags: ConstantDataService.getLanguageCriterion
   /// </summary>
-  class GetTargetableLanguagesAndCarriers : ExampleBase {
+  public class GetTargetableLanguagesAndCarriers : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -37,7 +37,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new GetTargetableLanguagesAndCarriers();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -101,8 +106,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           writer.WriteLine("No languages were found.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to get targetable carriers and languages. Exception says \"{0}\"",
-            ex.Message);
+        throw new System.ApplicationException("Failed to get targetable carriers and languages.",
+            ex);
       }
     }
   }

@@ -24,6 +24,7 @@ using OAuth.Net.Consumer;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Web;
 
 namespace Google.Api.Ads.Common.OAuth.Lib {
   /// <summary>
@@ -44,10 +45,39 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
         new Dictionary<Type, Dictionary<string, AdsServiceComponent>>();
 
     /// <summary>
+    /// Choose whether to use an in-memory store or session store for storing
+    /// OAuth state.
+    /// </summary>
+    Boolean useMemoryStore;
+
+    /// <summary>
+    /// Gets or sets whether to use an in-memory store or session store for
+    /// storing OAuth state.
+    /// </summary>
+    public Boolean UseMemoryStore {
+      get {
+        return useMemoryStore;
+      }
+      set {
+        useMemoryStore = value;
+        Dictionary<string, AdsServiceComponent> serviceMap =
+            serviceLookup[typeof(IRequestStateStore)];
+        if (value) {
+          serviceMap["state-store-inmemory"].IsDefault = true;
+          serviceMap["state-store-session"].IsDefault = false;
+        } else {
+          serviceMap["state-store-inmemory"].IsDefault = false;
+          serviceMap["state-store-session"].IsDefault = true;
+        }
+      }
+    }
+
+    /// <summary>
     /// Default public constructor.
     /// </summary>
     public AdsServiceLocator() {
       RegisterDefaultServices();
+      this.UseMemoryStore = false;
     }
 
     /// <summary>
@@ -57,8 +87,12 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
     private void RegisterDefaultServices() {
       RegisterService(new AdsServiceComponent("signing.provider:HMAC-SHA1",
           typeof(ISigningProvider), typeof(HmacSha1SigningProvider)));
-      RegisterService(new AdsServiceComponent("state-store", typeof(IRequestStateStore),
-          typeof(SessionRequestStateStore)));
+
+      RegisterService(new AdsServiceComponent("state-store-session", typeof(IRequestStateStore),
+        typeof(SessionRequestStateStore)));
+      RegisterService(new AdsServiceComponent("state-store-inmemory", typeof(IRequestStateStore),
+        typeof(InMemoryRequestStateStore)));
+
       RegisterService(new AdsServiceComponent("nonce.provider", typeof(INonceProvider),
           typeof(GuidNonceProvider)));
     }

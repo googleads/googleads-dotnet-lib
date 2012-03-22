@@ -31,7 +31,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   ''' Tags: MutateJobService.mutate, MutateJobService.get
   ''' Tags: MutateJobService.getResult
   ''' </summary>
-  Class AddKeywordsInBulk
+  Public Class AddKeywordsInBulk
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -40,7 +40,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New AddKeywordsInBulk
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -134,8 +139,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
             End If
           End If
         Catch ex As Exception
-          writer.WriteLine("Failed to fetch simple mutate job with id = {0}. Exception " & _
-              "says ""{1}"".", job.id, ex.Message)
+          Throw New System.ApplicationException(String.Format("Failed to fetch simple mutate " & _
+                "job with id = {0}.", job.id), ex)
           Return
         End Try
       End While

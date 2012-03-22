@@ -27,7 +27,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   ''' This code example gets and downloads a criteria Ad Hoc report from an XML
   ''' report definition.
   ''' </summary>
-  Class DownloadCriteriaReport
+  Public Class DownloadCriteriaReport
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -36,7 +36,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New DownloadCriteriaReport
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -115,7 +120,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         utilities.DownloadClientReport(Of ReportDefinition)(definition, filePath)
         writer.WriteLine("Report was downloaded to '{0}'.", filePath)
       Catch ex As Exception
-        writer.WriteLine("Failed to download report. Exception says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to download report.", ex)
       End Try
 
     End Sub

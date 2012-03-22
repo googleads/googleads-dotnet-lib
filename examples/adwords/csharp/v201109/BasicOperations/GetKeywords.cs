@@ -28,7 +28,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: AdGroupCriterionService.get
   /// </summary>
-  class GetKeywords : ExampleBase {
+  public class GetKeywords : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -36,7 +36,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new GetKeywords();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -116,12 +121,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
               Keyword keyword = (Keyword) adGroupCriterion.criterion;
               if (isNegative) {
                 writer.WriteLine("{0}) Negative keyword with ad group ID = '{1}', keyword ID " +
-                    "= '{2}', and text = '{3}' was found.", i, adGroupCriterion.adGroupId,
+                    "= '{2}', and text = '{3}' was found.", i + 1, adGroupCriterion.adGroupId,
                     keyword.id, keyword.text);
               } else {
                 writer.WriteLine("{0}) Keyword with ad group ID = '{1}', keyword ID = '{2}', " +
-                    "text = '{3}' and matchType = '{4} was found.", i, adGroupCriterion.adGroupId,
-                    keyword.id, keyword.text, keyword.matchType);
+                    "text = '{3}' and matchType = '{4} was found.", i + 1,
+                    adGroupCriterion.adGroupId, keyword.id, keyword.text, keyword.matchType);
               }
               i++;
             }
@@ -130,7 +135,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         } while (offset < page.totalNumEntries);
         writer.WriteLine("Number of keywords found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
-        writer.WriteLine("Failed to retrieve keywords. Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to retrieve keywords.", ex);
       }
     }
   }

@@ -29,7 +29,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: InfoService.get
   /// </summary>
-  class GetClientCustomerId : ExampleBase {
+  public class GetClientCustomerId : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -37,7 +37,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new GetClientCustomerId();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -86,10 +91,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       selector.includeSubAccounts = true;
       selector.apiUsageType = ApiUsageType.UNIT_COUNT_FOR_CLIENTS;
 
-      // The date used doesn't matter, so use today.
+      // The date used doesn't matter, so use yesterday.
       DateRange dateRange = new DateRange();
-      dateRange.max = DateTime.Now.ToString("yyyyMMdd");
-      dateRange.min = DateTime.Now.ToString("yyyyMMdd");
+      dateRange.max = DateTime.Now.AddDays(-1).ToString("yyyyMMdd");
+      dateRange.min = DateTime.Now.AddDays(-1).ToString("yyyyMMdd");
       selector.dateRange = dateRange;
 
       try {
@@ -105,7 +110,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           writer.WriteLine("No client customer ids were found.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to get client customer id. Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to get client customer id.", ex);
       }
     }
   }

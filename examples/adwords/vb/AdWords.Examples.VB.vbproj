@@ -55,16 +55,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Common\Common.csproj">
-      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\src\AdWords\AdWords.csproj">
-      <Project>{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}</Project>
-      <Name>AdWords</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="My Project\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
@@ -85,8 +75,8 @@
     <Compile Include="v201109\AccountManagement\GetClientUnitUsage.vb" />
     <Compile Include="v201109\AudienceAndConversionManagement\AddAudience.vb" />
     <Compile Include="v201109\AudienceAndConversionManagement\AddConversionTracker.vb" />
-    <Compile Include="v201109\BasicOperations\AddAdGroup.vb" />
-    <Compile Include="v201109\BasicOperations\AddCampaign.vb" />
+    <Compile Include="v201109\BasicOperations\AddAdGroups.vb" />
+    <Compile Include="v201109\BasicOperations\AddCampaigns.vb" />
     <Compile Include="v201109\BasicOperations\AddKeywords.vb" />
     <Compile Include="v201109\BasicOperations\AddTextAds.vb" />
     <Compile Include="v201109\BasicOperations\DeleteAd.vb" />
@@ -121,10 +111,10 @@
     <Compile Include="v201109\Optimization\GetAdGroupBidSimulations.vb" />
     <Compile Include="v201109\Optimization\GetKeywordBidSimulations.vb" />
     <Compile Include="v201109\Optimization\GetKeywordIdeas.vb" />
-    <Compile Include="v201109\Optimization\GetKeywordOpportunities.vb" />
     <Compile Include="v201109\Optimization\GetPlacementIdeas.vb" />
     <Compile Include="v201109\Reporting\DownloadCriteriaReport.vb" />
     <Compile Include="v201109\Reporting\DownloadDefinedReport.vb" />
+    <Compile Include="v201109\Reporting\GetCampaignStats.vb" />
     <Compile Include="v201109\Reporting\GetDefinedReports.vb" />
     <Compile Include="v201109\Reporting\GetReportFields.vb" />
     <Compile Include="v201109\Targeting\AddCampaignTargetingCriteria.vb" />
@@ -139,4 +129,11 @@
     <Compile Include="ExampleUtilities.vb" />
     <Compile Include="Program.vb" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\AdWords\AdWords.csproj">
+      <Name>AdWords</Name>
+    </ProjectReference>
+          <ProjectReference Include="..\..\..\src\Common\Common.csproj">
+            <Name>Common</Name>
+          </ProjectReference></ItemGroup>
 </Project>

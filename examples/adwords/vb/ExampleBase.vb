@@ -24,7 +24,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
   ''' <summary>
   ''' This abstract class represents a code example.
   ''' </summary>
-  MustInherit Class ExampleBase
+  Public MustInherit Class ExampleBase
     ''' <summary>
     ''' Delegate for accepting user inputs for this code example.
     ''' </summary>

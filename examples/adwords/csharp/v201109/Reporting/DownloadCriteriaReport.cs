@@ -27,7 +27,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   /// This code example gets and downloads a criteria Ad Hoc report from an XML
   /// report definition.
   /// </summary>
-  class DownloadCriteriaReport : ExampleBase {
+  public class DownloadCriteriaReport : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -35,7 +35,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new DownloadCriteriaReport();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -112,7 +117,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         new ReportUtilities(user).DownloadClientReport(definition, filePath);
         writer.WriteLine("Report was downloaded to '{0}'.", filePath);
       } catch (Exception ex) {
-        writer.WriteLine("Failed to download report. Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to download report.", ex);
       }
     }
   }

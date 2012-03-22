@@ -28,7 +28,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   ///
   /// Tags: AdGroupCriterionService.mutate
   /// </summary>
-  class HandlePartialFailures : ExampleBase {
+  public class HandlePartialFailures : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -36,7 +36,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public static void Main(string[] args) {
       ExampleBase codeExample = new HandlePartialFailures();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -135,9 +140,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
             }
           }
         }
-      } catch (Exception e) {
-        writer.WriteLine("Failed to add keyword(s) in partial failure mode. Exception says " +
-            "\"{0}\"", e.Message);
+      } catch (Exception ex) {
+        throw new System.ApplicationException("Failed to add keywords in partial failure mode.",
+            ex);
       }
     }
   }

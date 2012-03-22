@@ -25,11 +25,12 @@ Imports System.IO
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   ''' <summary>
   ''' This code example adds text ads to a given ad group. To list ad groups,
-  ''' run GetAdGroups.vb.
+  ''' run GetAdGroups.vb. To learn how to handle policy violations and add
+  ''' exemption requests, see HandlePolicyViolationError.vb.
   '''
   ''' Tags: AdGroupAdService.mutate
   ''' </summary>
-  Class AddTextAds
+  Public Class AddTextAds
     Inherits ExampleBase
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -38,7 +39,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Shared Sub Main(ByVal args As String())
       Dim codeExample As ExampleBase = New AddTextAds
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -47,7 +53,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Overrides ReadOnly Property Description() As String
       Get
         Return "This code example adds text ads to a given ad group. To list ad groups, run " & _
-            "GetAdGroups.vb."
+            "GetAdGroups.vb. To learn how to handle policy violations and add exemption " & _
+            "requests, see HandlePolicyViolationError.cs."
       End Get
     End Property
 
@@ -89,6 +96,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       textAdGroupAd1.adGroupId = adGroupId
       textAdGroupAd1.ad = textAd1
 
+      ' Optional: Set the status.
+      textAdGroupAd1.status = AdGroupAdStatus.PAUSED
+
       ' Create the text ad.
       Dim textAd2 As New TextAd
       textAd2.headline = "Luxury Hotels in Mars"
@@ -100,6 +110,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       Dim textAdGroupAd2 As New AdGroupAd
       textAdGroupAd2.adGroupId = adGroupId
       textAdGroupAd2.ad = textAd2
+
+      ' Optional: Set the status.
+      textAdGroupAd2.status = AdGroupAdStatus.PAUSED
 
       ' Create the operations.
       Dim textAdOperation1 As New AdGroupAdOperation
@@ -132,7 +145,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           writer.WriteLine("No text ads were created.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to create text ads. Exception says ""{0}""", ex.Message)
+        Throw New System.ApplicationException("Failed to create text ads.", ex)
       End Try
     End Sub
   End Class
