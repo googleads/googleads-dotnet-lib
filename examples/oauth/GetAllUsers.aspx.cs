@@ -42,7 +42,7 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
       user = new DfpUser();
       string url = Request.Url.GetLeftPart(UriPartial.Path);
       user.OAuthProvider = new AdsOAuthNetProvider(DfpService.GetOAuthScope(
-          user.Config as DfpAppConfig), url);
+          user.Config as DfpAppConfig), url, Session.SessionID);
     }
 
     /// <summary>

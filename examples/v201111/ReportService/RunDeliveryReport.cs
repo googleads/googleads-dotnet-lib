@@ -75,7 +75,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201111 {
         // Wait for report to complete.
         while (reportJob.reportJobStatus == ReportJobStatus.IN_PROGRESS) {
           Console.WriteLine("Report job with id = '{0}' is still running.", reportJob.id);
-          Thread.Sleep(3000);
+          Thread.Sleep(30000);
+          // Get report job.
+          reportJob = reportService.getReportJob(reportJob.id);
         }
 
         if (reportJob.reportJobStatus == ReportJobStatus.COMPLETED) {
