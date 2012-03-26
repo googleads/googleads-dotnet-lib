@@ -71,8 +71,11 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
     /// </summary>
     /// <param name="scope">The OAuth scope.</param>
     /// <param name="callbackUrl">The OAuth callback URL.</param>
-    public AdsOAuthNetProvider(string scope, string callbackUrl)
-      : this(DefaultOAuthConsumerKey, DefaultOAuthConsumerSecret, scope, callbackUrl) {
+    /// <param name="userId">A unique string to identify a user session. If
+    /// this is a web application, this value could be
+    /// <code>HttpContext.Current.Session.SessionID</code>.</param>
+    public AdsOAuthNetProvider(string scope, string callbackUrl, string userId)
+      : this(DefaultOAuthConsumerKey, DefaultOAuthConsumerSecret, scope, callbackUrl, userId) {
     }
 
     /// <summary>
@@ -83,11 +86,14 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
     /// <param name="consumerSecret">The OAuth consumer secret.</param>
     /// <param name="scope">The OAuth scope.</param>
     /// <param name="callbackUrl">The callback URL.</param>
+    /// <param name="userId">A unique string to identify a user session. If
+    /// this is a web application, this value could be
+    /// <code>HttpContext.Current.Session.SessionID</code>.</param>
     public AdsOAuthNetProvider(string consumerKey, string consumerSecret, string scope,
-        string callbackUrl) : this(OAuthService.Create(new EndPoint(
+        string callbackUrl, string userId) : this(OAuthService.Create(new EndPoint(
             RequestTokenUrl + "?scope=" + scope, "POST"), new Uri(AuthorizationUrl),
             new EndPoint(AccessTokenUrl, "POST"), true, "", SignatureMethod, OAuthVersion,
-            new OAuthConsumer(consumerKey, consumerSecret)), callbackUrl) {
+            new OAuthConsumer(consumerKey, consumerSecret)), callbackUrl, userId) {
     }
 
     /// <summary>
@@ -96,11 +102,14 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
     /// </summary>
     /// <param name="service">The OAuth service settings.</param>
     /// <param name="callbackUrl">The callback URL.</param>
-    protected AdsOAuthNetProvider(OAuthService service, string callbackUrl)
+    /// <param name="userId">A unique string to identify a user session. If
+    /// this is a web application, this value could be
+    /// <code>HttpContext.Current.Session.SessionID</code>.</param>
+    protected AdsOAuthNetProvider(OAuthService service, string callbackUrl, string userId)
       : base(new EndPoint("http://localhost", "POST"), service, null,
           service.ComponentLocator.GetInstance<IRequestStateStore>(),
-          new RequestStateKey(service, HttpContext.Current.Session.SessionID)) {
-      this.CallbackUrl = new Uri(callbackUrl);
+          new RequestStateKey(service, userId)) {
+      this.CallbackUrl = (callbackUrl == null)? null : new Uri(callbackUrl);
       this.AuthorizationHandler = AspNetOAuthRequest.HandleAuthorization;
       this.VerificationHandler = AspNetOAuthRequest.HandleVerification;
     }
