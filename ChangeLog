@@ -1,3 +1,7 @@
+4.3.0
+- Added support for v201203.
+- Removed support for v201103, v201104, v201107.
+
 4.2.0
 - Fixed issues 8, 9
 - Added support for OAuth 1.0a in non ASP.NET environments.
