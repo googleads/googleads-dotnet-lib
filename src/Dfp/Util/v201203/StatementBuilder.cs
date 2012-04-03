@@ -1,4 +1,4 @@
-// Copyright 2011, Google Inc. All Rights Reserved.
+// Copyright 2012, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,13 +14,15 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.Dfp.v201103;
+using Google.Api.Ads.Dfp.v201203;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Google.Api.Ads.Dfp.Util.v201103 {
+using DateTime = Google.Api.Ads.Dfp.v201203.DateTime;
+
+namespace Google.Api.Ads.Dfp.Util.v201203 {
   /// <summary>
   /// A utility class that allows you to build a DFP Statement from query
   /// and parameters.
@@ -90,6 +92,18 @@ namespace Google.Api.Ads.Dfp.Util.v201103 {
     public StatementBuilder AddValue(string key, decimal value) {
       NumberValue queryValue = new NumberValue();
       queryValue.value = value.ToString();
+      return AddValue(key, queryValue);
+    }
+
+    /// <summary>
+    /// Adds a new DateTime value to the list of query parameters.
+    /// </summary>
+    /// <param name="key">The parameter name.</param>
+    /// <param name="value">The parameter value.</param>
+    /// <returns>The statement builder, for chaining method calls.</returns>
+    public StatementBuilder AddValue(string key, DateTime value) {
+      DateTimeValue queryValue = new DateTimeValue();
+      queryValue.value = value;
       return AddValue(key, queryValue);
     }
 

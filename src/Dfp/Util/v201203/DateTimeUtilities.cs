@@ -1,4 +1,4 @@
-// Copyright 2011, Google Inc. All Rights Reserved.
+// Copyright 2012, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,15 +14,15 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.Dfp.v201104;
+using Google.Api.Ads.Dfp.v201203;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-using DfpDateTime = Google.Api.Ads.Dfp.v201104.DateTime;
+using DfpDateTime = Google.Api.Ads.Dfp.v201203.DateTime;
 
-namespace Google.Api.Ads.Dfp.Util.v201104 {
+namespace Google.Api.Ads.Dfp.Util.v201203 {
   /// <summary>
   /// A utility class that allows you to build Datetime objects from strings.
   /// </summary>
