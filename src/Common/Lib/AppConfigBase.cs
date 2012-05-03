@@ -224,7 +224,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets the short name for this library.
     /// </summary>
-    public string ShortName {
+    private string ShortName {
       get {
         return shortNameField;
       }
@@ -243,7 +243,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets a version string for this assembly.
     /// </summary>
     /// <returns>The version string in format Major.Minor.Revision.</returns>
-    public string Version {
+    private string Version {
       get {
         Version version = Assembly.GetExecutingAssembly().GetName().Version;
         return string.Format(CultureInfo.InvariantCulture, "{0}.{1}.{2}", version.Major,

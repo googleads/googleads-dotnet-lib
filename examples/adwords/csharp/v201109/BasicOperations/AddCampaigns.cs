@@ -167,7 +167,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       try {
         // Add the campaign.
         CampaignReturnValue retVal = campaignService.mutate(
-            (new CampaignOperation[] {operation1, operation1}));
+            (new CampaignOperation[] {operation1, operation2}));
 
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {

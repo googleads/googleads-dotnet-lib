@@ -107,8 +107,6 @@
     <Compile Include="v201109\Targeting\GetTargetableLanguagesAndCarriers.vb" />
     <Compile Include="v201109\Targeting\LookupLocation.vb" />
     <Compile Include="v201109\Utilities\BackupSandboxDemo.vb" />
-    <Compile Include="v201109\Utilities\ClientApiUnitsUsageDemo.vb" />
-    <Compile Include="v201109\Utilities\MethodApiUnitsUsageDemo.vb" />
     <Compile Include="v201109\Utilities\RestoreSandboxDemo.vb" />
     <Compile Include="ExampleBase.vb" />
     <Compile Include="ExampleUtilities.vb" />
