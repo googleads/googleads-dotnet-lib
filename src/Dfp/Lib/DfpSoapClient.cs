@@ -83,6 +83,17 @@ namespace Google.Api.Ads.Dfp.Lib {
       if (header == null) {
         throw new DfpApiException(null, DfpErrorMessages.FailedToSetAuthorizationHeader);
       }
+
+      if (!(this.GetType().Name == "NetworkService" && (methodName == "getAllNetworks"
+          || methodName == "makeTestNetwork"))) {
+        if (string.Compare(header.Version, "v201203") >= 0 && string.IsNullOrEmpty(
+            header.networkCode)) {
+          throw new SoapHeaderException("networkCode header is required in all API versions >= " +
+              "v201203. The only exceptions are NetworkService.getAllNetworks and " +
+              "NetworkService.makeTestNetwork.", XmlQualifiedName.Empty);
+        }
+      }
+
       if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth) {
         if (this.User.OAuthProvider != null) {
           AdsOAuthProvider provider = this.User.OAuthProvider;
