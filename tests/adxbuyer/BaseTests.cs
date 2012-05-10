@@ -15,7 +15,6 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v13;
 using Google.Api.Ads.AdWords.v201109;
 
 using NUnit.Framework;

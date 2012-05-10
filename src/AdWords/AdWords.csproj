@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -91,24 +91,7 @@
     <Compile Include="Util\Units\AdWordsAccount.cs" />
     <Compile Include="Util\Units\ClientQuotaUsage.cs" />
     <Compile Include="Util\Units\MethodQuotaUsage.cs" />
-    <Compile Include="Util\Units\UnitsUtilities.cs" />
     <Compile Include="Util\ErrorUtilities.cs" />
-    <Compile Include="v13\AccountException.cs" />
-    <Compile Include="v13\AdWordsApi.cs" />
-    <Compile Include="v13\AdWordsServiceV13.cs" />
-    <Compile Include="v13\BillingException.cs" />
-    <Compile Include="v13\ConcurrencyException.cs" />
-    <Compile Include="v13\ExceededLimitsException.cs" />
-    <Compile Include="v13\GoogleInternalException.cs" />
-    <Compile Include="v13\InvalidOperationException.cs" />
-    <Compile Include="v13\InvalidParameterException.cs" />
-    <Compile Include="v13\InvalidRequestException.cs" />
-    <Compile Include="v13\LegacyAdWordsApiException.cs" />
-    <Compile Include="v13\LegacyAdWordsSoapClient.cs" />
-    <Compile Include="v13\PermissionException.cs" />
-    <Compile Include="v13\PolicyViolationException.cs" />
-    <Compile Include="v13\SandboxException.cs" />
-    <Compile Include="v13\WebPageException.cs" />
     <Compile Include="v201109\AdWordsApi.cs" />
     <Compile Include="v201109\AdWordsServiceV201109.cs" />
           <Compile Include="AdWordsErrorMessages.Designer.cs">

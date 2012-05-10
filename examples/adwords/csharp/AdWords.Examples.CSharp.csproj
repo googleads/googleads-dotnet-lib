@@ -108,8 +108,6 @@
     <Compile Include="v201109\Targeting\GetTargetableLanguagesAndCarriers.cs" />
     <Compile Include="v201109\Targeting\LookupLocation.cs" />
     <Compile Include="v201109\Utilities\BackupSandboxDemo.cs" />
-    <Compile Include="v201109\Utilities\ClientApiUnitsUsageDemo.cs" />
-    <Compile Include="v201109\Utilities\MethodApiUnitsUsageDemo.cs" />
     <Compile Include="v201109\Utilities\RestoreSandboxDemo.cs" />
     <Compile Include="ExampleBase.cs" />
     <Compile Include="ExampleUtilities.cs" />

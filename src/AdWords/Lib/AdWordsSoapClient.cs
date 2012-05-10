@@ -136,7 +136,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         if (faultNode != null) {
           try {
             AdWordsApiException awapiException = new AdWordsApiException(
-                SerializationUtilities.DeserializeFromXmlText(
+                SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
                     faultNode.OuterXml, Assembly.GetExecutingAssembly().GetType(
                     this.GetType().Namespace + ".ApiException"), defaultNs, "ApiExceptionFault"),
                     AdWordsErrorMessages.AnApiExceptionOccurred, ex);

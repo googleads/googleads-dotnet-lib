@@ -40,6 +40,16 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     private AdWordsUser user;
 
     /// <summary>
+    /// Default report version.
+    /// </summary>
+    private const string DEFAULT_REPORT_VERSION = "v201109";
+
+    /// <summary>
+    /// Sets the reporting API version to use.
+    /// </summary>
+    private string reportVersion = DEFAULT_REPORT_VERSION;
+
+    /// <summary>
     /// Wait time in ms for report functions.
     /// </summary>
     protected const int WAIT_TIME = 30000;
@@ -64,12 +74,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// The report download url format.
     /// </summary>
-    private const string REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/v201109?__rd={1}";
+    private const string REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/{1}?__rd={2}";
 
     /// <summary>
     /// The report download url format for ad-hoc reports.
     /// </summary>
-    private const string ADHOC_REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/v201109";
+    private const string ADHOC_REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/{1}";
 
     /// <summary>
     /// Gets or sets the maximum number of times to poll the report server
@@ -82,6 +92,18 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       }
       set {
         maxPollingAttempts = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the reporting API version to use.
+    /// </summary>
+    public string ReportVersion {
+      get {
+        return reportVersion;
+      }
+      set {
+        reportVersion = value;
       }
     }
 
@@ -134,10 +156,11 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       string postBody = null;
       string downloadUrl;
       if (typeof(T) == typeof(long)) {
-        downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer,
+        downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer, reportVersion,
             reportDefinitionOrId);
       } else {
-        downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer);
+        downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer,
+            reportVersion);
         postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(reportDefinitionOrId));
       }
 
@@ -197,10 +220,11 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       string postBody = null;
       string downloadUrl;
       if (typeof(T) == typeof(long)) {
-        downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer,
+        downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer, reportVersion,
             reportDefinitionOrId);
       } else {
-        downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer);
+        downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer,
+            reportVersion);
         postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(reportDefinitionOrId));
       }
 

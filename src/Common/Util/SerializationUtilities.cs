@@ -17,6 +17,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Xml.Serialization;
 using System.Text;
 using System.Xml;
@@ -27,6 +28,21 @@ namespace Google.Api.Ads.Common.Util {
   /// object as xml.
   /// </summary>
   public class SerializationUtilities {
+    /// <summary>
+    /// A map to store custom xml serializers.
+    /// </summary>
+    /// <remarks> For background, see
+    /// http://support.microsoft.com/kb/886385/en-us. The summary of the issue
+    /// is that .NET runtime will leak XmlSerializer objects if the non-custom
+    /// constructor (custom rootNode, namespace, etc.) is requested, and hence
+    /// the serializers need to be cached locally. To replicate memory leaks,
+    /// write AdWords API code that will throw a lot of SOAPExceptions. The
+    /// XmlSerializers obtained for deserializing the SOAP exceptions will be
+    /// leaked by the runtime.
+    /// </remarks>
+    private static Dictionary<string, XmlSerializer> customSerializerMaps =
+        new Dictionary<string, XmlSerializer>();
+
     /// <summary>
     /// A mono-friendly version of XmlDocument::LoadXml.
     /// </summary>
@@ -46,7 +62,7 @@ namespace Google.Api.Ads.Common.Util {
     }
 
     /// <summary>
-    /// Deserialize an object from xml.
+    /// Deserialize an object from xml for a custom root node and xml namespace.
     /// </summary>
     /// <param name="contents">The serialized xml.</param>
     /// <param name="contentType">The type of deserialized object.</param>
@@ -54,19 +70,44 @@ namespace Google.Api.Ads.Common.Util {
     /// </param>
     /// <param name="rootNode">The root node name for the object in serialized
     /// xml.</param>
-    /// <returns>The deserialized object or null if deserialization fails.</returns>
+    /// <returns>The deserialized object or null if deserialization fails.
+    /// </returns>
     /// <remarks><paramref name="contentType"/> must be XmlSerializable.
     /// </remarks>
-    public static object DeserializeFromXmlText(string contents, Type contentType, string ns,
-        string rootNode) {
+    public static object DeserializeFromXmlTextCustomRootNs(string contents, Type contentType,
+        string ns, string rootNode) {
       if (string.IsNullOrEmpty(contents) || contentType == null || string.IsNullOrEmpty(ns) ||
           string.IsNullOrEmpty(rootNode)) {
         return null;
       }
+      XmlSerializer serializer = GetCustomXmlSerializer(contentType, ns, rootNode);
+      return DeserializeFromXmlText(serializer, contents);
+    }
+
+    /// <summary>
+    /// Gets a custom serializer for a type from a cache.
+    /// </summary>
+    /// <param name="contentType">The type of deserialized object.</param>
+    /// <param name="ns">The xml namespace of the object in serialized xml.
+    /// </param>
+    /// <param name="rootNode">The root node name for the object in serialized
+    /// xml.</param>
+    /// <returns>The xml serializer.</returns>
+    /// <remarks>See http://support.microsoft.com/kb/886385/en-us and
+    /// http://code.google.com/p/google-api-adwords-dotnet/issues/detail?id=78
+    /// for more details.</remarks>
+    [MethodImpl(MethodImplOptions.Synchronized)]
+    private static XmlSerializer GetCustomXmlSerializer(Type contentType, string ns,
+        string rootNode) {
+      string key = string.Format("{0}_{1}_{2}", contentType.AssemblyQualifiedName, ns, rootNode);
+      if (customSerializerMaps.ContainsKey(key)) {
+        return customSerializerMaps[key];
+      }
 
       XmlSerializer serializer = new XmlSerializer(contentType, new XmlAttributeOverrides(),
           new Type[] {}, new XmlRootAttribute(rootNode), ns);
-      return DeserializeFromXmlText(serializer, contents);
+      customSerializerMaps.Add(key, serializer);
+      return serializer;
     }
 
     /// <summary>
@@ -95,11 +136,15 @@ namespace Google.Api.Ads.Common.Util {
     /// <remarks><paramref name="contentType"/> must be XmlSerializable.
     /// </remarks>
     private static object DeserializeFromXmlText(XmlSerializer serializer, string contents) {
-      MemoryStream memStream = new MemoryStream();
-      byte[] bytes = Encoding.UTF8.GetBytes(contents);
-      memStream.Write(bytes, 0, bytes.Length);
-      memStream.Seek(0, SeekOrigin.Begin);
-      return serializer.Deserialize(memStream);
+      object retval = null;
+
+      using (MemoryStream memStream = new MemoryStream()) {
+        byte[] bytes = Encoding.UTF8.GetBytes(contents);
+        memStream.Write(bytes, 0, bytes.Length);
+        memStream.Seek(0, SeekOrigin.Begin);
+        retval = serializer.Deserialize(memStream);
+      }
+      return retval;
     }
 
     /// <summary>
@@ -110,9 +155,13 @@ namespace Google.Api.Ads.Common.Util {
     /// <remarks><paramref name="objToSerialize"/> must me XmlSerializable.
     /// </remarks>
     public static string SerializeAsXmlText(object objToSerialize) {
-      MemoryStream memStream = new MemoryStream();
-      new XmlSerializer(objToSerialize.GetType()).Serialize(memStream, objToSerialize);
-      return Encoding.UTF8.GetString(memStream.ToArray());
+      string retval = "";
+
+      using (MemoryStream memStream = new MemoryStream()) {
+        new XmlSerializer(objToSerialize.GetType()).Serialize(memStream, objToSerialize);
+        retval = Encoding.UTF8.GetString(memStream.ToArray());
+      }
+      return retval;
     }
   }
 }

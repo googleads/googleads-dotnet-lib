@@ -66,16 +66,16 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature AlertService;
 
       /// <summary>
+      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201109/BudgetOrderService.html">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature BudgetOrderService;
+
+      /// <summary>
       /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201109/BulkMutateJobService.html">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature BulkMutateJobService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201109/BulkOpportunityService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature BulkOpportunityService;
 
       /// <summary>
       /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201109/CampaignAdExtensionService.html">
@@ -217,10 +217,10 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201109", "cm", "AdParamService");
         AlertService =
             AdWordsService.MakeServiceSignature("v201109", "mcm", "AlertService");
+        BudgetOrderService =
+            AdWordsService.MakeServiceSignature("v201109", "billing", "BudgetOrderService");
         BulkMutateJobService =
             AdWordsService.MakeServiceSignature("v201109", "job", "BulkMutateJobService");
-        BulkOpportunityService =
-            AdWordsService.MakeServiceSignature("v201109", "o", "BulkOpportunityService");
         CampaignAdExtensionService =
             AdWordsService.MakeServiceSignature("v201109", "cm", "CampaignAdExtensionService");
         CampaignCriterionService =
