@@ -1,3 +1,7 @@
+4.4.0
+- Added support for v201204.
+- Fixed issue 10.
+
 4.3.0
 - Added support for v201203.
 - Removed support for v201103, v201104, v201107.

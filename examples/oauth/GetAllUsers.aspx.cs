@@ -16,7 +16,7 @@
 
 using Google.Api.Ads.Common.OAuth.Lib;
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.v201203;
+using Google.Api.Ads.Dfp.v201204;
 
 using System;
 using System.Data;
@@ -63,7 +63,7 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
     /// the event data.</param>
     protected void OnGetUsersButtonClick(object sender, EventArgs e) {
       // Get the UserService.
-      UserService userService = (UserService) user.GetService(DfpService.v201203.UserService);
+      UserService userService = (UserService) user.GetService(DfpService.v201204.UserService);
 
       // Sets defaults for page and Statement.
       UserPage page = new UserPage();

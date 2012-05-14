@@ -52,7 +52,7 @@ namespace Google.Api.Ads.Dfp.Lib {
 
         if (faultNode != null) {
           try {
-            return new DfpApiException(SerializationUtilities.DeserializeFromXmlText(
+            return new DfpApiException(SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
                 faultNode.OuterXml, Assembly.GetExecutingAssembly().GetType(
                     this.GetType().Namespace + ".ApiException"), defaultNs, "ApiExceptionFault"),
                 ex.Message, ex);

@@ -66,6 +66,23 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
     const string OAuthVersion = "1.0";
 
     /// <summary>
+    /// The configuration class for getting application settings.
+    /// </summary>
+    private AppConfigBase config;
+
+    /// <summary>
+    /// Gets or sets the configuration class for getting application settings.
+    /// </summary>
+    public AppConfigBase Config {
+      get {
+        return config;
+      }
+      set {
+        config = value;
+      }
+    }
+
+    /// <summary>
     /// Initializes a new instance of the <see cref="AdsOAuthNetProvider"/>
     /// class.
     /// </summary>
@@ -112,6 +129,22 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
       this.CallbackUrl = (callbackUrl == null)? null : new Uri(callbackUrl);
       this.AuthorizationHandler = AspNetOAuthRequest.HandleAuthorization;
       this.VerificationHandler = AspNetOAuthRequest.HandleVerification;
+    }
+
+    /// <summary>
+    /// Configures the HTTP connection.
+    /// </summary>
+    /// <param name="request">The web request object.</param>
+    /// <returns>
+    /// The configured web request object.
+    /// </returns>
+    protected override System.Net.HttpWebRequest ConfigureConnection(
+        System.Net.HttpWebRequest request) {
+      if (config != null) {
+        request.Proxy = config.Proxy;
+        request.Timeout = config.Timeout;
+      }
+      return request;
     }
 
     /// <summary>

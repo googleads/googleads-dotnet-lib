@@ -35,24 +35,9 @@ namespace Google.Api.Ads.Common.Lib {
   /// </summary>
   public abstract class TraceListener : SoapListener {
     /// <summary>
-    /// The filename to which we log the SOAP messages.
+    /// Should we log the SOAP messages?
     /// </summary>
-    protected string soapFileName;
-
-    /// <summary>
-    /// The filename to which we log the request info.
-    /// </summary>
-    protected string requestInfoFileName;
-
-    /// <summary>
-    /// Should we log the SOAP messages to file?
-    /// </summary>
-    private bool logToFile;
-
-    /// <summary>
-    /// Should we log the SOAP messages to console?
-    /// </summary>
-    private bool logToConsole;
+    private bool writeToLog;
 
     /// <summary>
     /// Should we only log SOAP messages corresponding to an error?
@@ -60,31 +45,32 @@ namespace Google.Api.Ads.Common.Lib {
     private bool logErrorsOnly;
 
     /// <summary>
-    /// Maximum number of attempts to write to log file if it is locked.
+    /// The writer for writing trace logs.
     /// </summary>
-    private const int MAX_ATTEMPTS = 3;
+    private TraceWriter writer;
+
+    /// <summary>
+    /// Gets or sets the writer for writing trace logs.
+    /// </summary>
+    public TraceWriter Writer {
+      get {
+        return writer;
+      }
+      set {
+        writer = value;
+      }
+    }
 
     /// <summary>
     /// Protected constructor.
     /// </summary>
     /// <param name="config">The config class.</param>
     protected TraceListener(AppConfigBase config) : base(config) {
-      string logPath = "";
-      if (config.LogToFile) {
-        logToFile = config.LogToFile;
-        logPath = config.LogPath.TrimEnd('\\', '/') + Path.DirectorySeparatorChar;
-        if (!Directory.Exists(logPath)) {
-          Directory.CreateDirectory(logPath);
-        }
-        soapFileName = logPath + "soap_xml.log";
-        requestInfoFileName = logPath + "request_info.log";
-      } else {
-        logPath = "";  // default location for SOAP logs
-      }
-
-      // should we log to console as well?
-      logToConsole = config.LogToConsole;
+      writeToLog = config.LogToFile;
       logErrorsOnly = config.LogErrorsOnly;
+      if (writeToLog) {
+        this.writer = new DefaultTraceWriter(config);
+      }
     }
 
     /// <summary>
@@ -147,13 +133,8 @@ namespace Google.Api.Ads.Common.Lib {
               HttpStatusCode.InternalServerError;
 
       if (!logErrorsOnly || logErrorsOnly && isError) {
-        if (logToFile) {
-          WriteToFile(soapFileName, soapLog);
-          WriteToFile(requestInfoFileName, requestLog);
-        }
-        if (logToConsole) {
-          WriteToStream(Console.Out, soapLog);
-          WriteToStream(Console.Out, requestLog);
+        if (writeToLog && this.writer != null) {
+          writer.Write(soapLog, requestLog);
         }
       }
     }
@@ -163,42 +144,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     /// <returns>The list of fields to be masked.</returns>
     protected abstract string[] GetFieldsToMask();
-
-    /// <summary>
-    /// Writes a log string into a specified log file.
-    /// </summary>
-    /// <param name="fileName">The file to which the log text should be written.
-    /// </param>
-    /// <param name="logText">The log text to be written to the file.</param>
-    private static void WriteToFile(string fileName, string logText) {
-      for (int i = 0; i < MAX_ATTEMPTS; i++) {
-        try {
-          StreamWriter writer = new StreamWriter(fileName, true);
-          writer.WriteLine(logText);
-          writer.Close();
-          break;
-        } catch (Exception) {
-          Thread.Sleep(100 + new Random().Next(1000));
-        }
-      }
-    }
-
-    /// <summary>
-    /// Writes a log string into a specified stream.
-    /// </summary>
-    /// <param name="writer">The text writer to which the log text should
-    /// be written.</param>
-    /// <param name="logText">The log text to be written to the stream.</param>
-    private void WriteToStream(TextWriter writer, string logText) {
-      for (int i = 0; i < MAX_ATTEMPTS; i++) {
-        try {
-          writer.WriteLine(logText);
-          break;
-        } catch (Exception) {
-          Thread.Sleep(100 + new Random().Next(1000));
-        }
-      }
-    }
 
     /// <summary>
     /// Creates a formatted http request text, to be written into HTTP logs.
@@ -237,7 +182,7 @@ namespace Google.Api.Ads.Common.Lib {
       foreach (string key in webRequest.Headers) {
         headerBuilder.AppendFormat("{0}: {1}\r\n", key, webRequest.Headers[key]);
       }
-      headerBuilder.AppendFormat("TimeStamp: {0}\r\n", DateTime.Now.ToString("R"));
+      headerBuilder.AppendFormat("TimeStamp: {0}\r\n", this.GetTimeStamp());
       builder.AppendFormat("\r\n{0}\r\n", AppendHeadersToSoapXml(soapRequest,
           headerBuilder.ToString()));
       return builder.ToString();
@@ -258,12 +203,20 @@ namespace Google.Api.Ads.Common.Lib {
       foreach (string key in webResponse.Headers) {
         headerBuilder.AppendFormat("{0}: {1}\r\n", key, webResponse.Headers[key]);
       }
-      headerBuilder.AppendFormat("TimeStamp: {0}\r\n", DateTime.Now.ToString("R"));
+      headerBuilder.AppendFormat("TimeStamp: {0}\r\n", this.GetTimeStamp());
       builder.AppendFormat("\r\n{0}\r\n", AppendHeadersToSoapXml(soapResponse,
           headerBuilder.ToString()));
 
       builder.AppendFormat("-----------------END API CALL-----------------------\r\n");
       return builder.ToString();
+    }
+
+    /// <summary>
+    /// Gets the current timestamp as a formatted string.
+    /// </summary>
+    /// <returns>The current timestamp.</returns>
+    protected virtual string GetTimeStamp() {
+      return DateTime.Now.ToString("R");
     }
 
     /// <summary>
