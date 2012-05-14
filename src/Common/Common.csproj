@@ -58,6 +58,7 @@
     <Compile Include="Lib\AuthTokenException.cs" />
     <Compile Include="Lib\ContextStore.cs" />
     <Compile Include="Lib\DefaultAuthTokenCache.cs" />
+    <Compile Include="Lib\DefaultTraceWriter.cs" />
     <Compile Include="Lib\SoapListener.cs">
     </Compile>
     <Compile Include="Lib\ServiceFactory.cs" />
@@ -69,6 +70,7 @@
     </Compile>
     <Compile Include="Lib\SoapListenerExtensionAttribute.cs" />
     <Compile Include="Lib\TraceListener.cs" />
+    <Compile Include="Lib\TraceWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\CsvException.cs" />
     <Compile Include="Util\CsvFile.cs" />

@@ -161,6 +161,9 @@ namespace Google.Api.Ads.Common.Lib {
       get {
         return logPath;
       }
+      protected set {
+        logPath = value;
+      }
     }
 
     /// <summary>
@@ -169,6 +172,9 @@ namespace Google.Api.Ads.Common.Lib {
     public bool LogToConsole {
       get {
         return logToConsoleField;
+      }
+      protected set {
+        logToConsoleField = value;
       }
     }
 
@@ -180,6 +186,9 @@ namespace Google.Api.Ads.Common.Lib {
       get {
         return logErrorsOnlyField;
       }
+      protected set {
+        logErrorsOnlyField = value;
+      }
     }
 
     /// <summary>
@@ -188,6 +197,9 @@ namespace Google.Api.Ads.Common.Lib {
     public bool LogToFile {
       get {
         return logToFileField;
+      }
+      protected set {
+        logToFileField = value;
       }
     }
 
@@ -198,6 +210,9 @@ namespace Google.Api.Ads.Common.Lib {
       get {
         return proxyField;
       }
+      protected set {
+        proxyField = value;
+      }
     }
 
     /// <summary>
@@ -206,6 +221,9 @@ namespace Google.Api.Ads.Common.Lib {
     public bool MaskCredentials {
       get {
         return maskCredentials;
+      }
+      protected set {
+        maskCredentials = value;
       }
     }
 
@@ -224,7 +242,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets the short name for this library.
     /// </summary>
-    public string ShortName {
+    private string ShortName {
       get {
         return shortNameField;
       }
@@ -243,7 +261,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets a version string for this assembly.
     /// </summary>
     /// <returns>The version string in format Major.Minor.Revision.</returns>
-    public string Version {
+    private string Version {
       get {
         Version version = Assembly.GetExecutingAssembly().GetName().Version;
         return string.Format(CultureInfo.InvariantCulture, "{0}.{1}.{2}", version.Major,
