@@ -47,22 +47,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     }
 
     /// <summary>
-    /// Tests the GetAdGroupBidSimulations VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestGetAdGroupBidSimulationsVBExample() {
-      RunExample(new VBExamples.GetAdGroupBidSimulations());
-    }
-
-    /// <summary>
-    /// Tests the GetAdGroupBidSimulations C# code example.
-    /// </summary>
-    [Test]
-    public void TestGetAdGroupBidSimulationsCSharpExample() {
-      RunExample(new CSharpExamples.GetAdGroupBidSimulations());
-    }
-
-    /// <summary>
     /// Tests the GetPlacementIdeas VB.NET code example.
     /// </summary>
     [Test]

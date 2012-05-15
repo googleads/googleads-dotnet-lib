@@ -80,22 +80,29 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
 
       long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
 
-      // Create the text ad.
-      TextAd textAd = new TextAd();
-      textAd.headline = "Luxury Cruise to Mars";
-      textAd.description1 = "Visit the Red Planet in style.";
-      textAd.description2 = "Low-gravity fun for everyone!!";
-      textAd.displayUrl = "www.example.com";
-      textAd.url = "http://www.example.com";
+      // Create the third party redirect ad that violates a policy.
+      ThirdPartyRedirectAd redirectAd = new ThirdPartyRedirectAd();
+      redirectAd.name = "Policy violation demo ad " + ExampleUtilities.GetTimeStamp();
+      redirectAd.url = "gopher://gopher.google.com";
+      redirectAd.dimensions = new Dimensions();
+      redirectAd.dimensions.width = 300;
+      redirectAd.dimensions.height = 250;
 
-      AdGroupAd textadGroupAd = new AdGroupAd();
-      textadGroupAd.adGroupId = adGroupId;
-      textadGroupAd.ad = textAd;
+      redirectAd.snippet = "<img src=\"https://sandbox.google.com/sandboximages/image.jpg\"/>";
+      redirectAd.impressionBeaconUrl = "http://www.examples.com/beacon1";
+      redirectAd.certifiedVendorFormatId = 119;
+      redirectAd.isCookieTargeted = false;
+      redirectAd.isUserInterestTargeted = false;
+      redirectAd.isTagged = false;
+
+      AdGroupAd redirectAdGroupAd = new AdGroupAd();
+      redirectAdGroupAd.adGroupId = adGroupId;
+      redirectAdGroupAd.ad = redirectAd;
 
       // Create the operations.
-      AdGroupAdOperation textAdOperation = new AdGroupAdOperation();
-      textAdOperation.@operator = Operator.ADD;
-      textAdOperation.operand = textadGroupAd;
+      AdGroupAdOperation redirectAdOperation = new AdGroupAdOperation();
+      redirectAdOperation.@operator = Operator.ADD;
+      redirectAdOperation.operand = redirectAdGroupAd;
 
       try {
         AdGroupAdReturnValue retVal = null;
@@ -106,7 +113,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         List<AdGroupAdOperation> allOperations = new List<AdGroupAdOperation>();
         List<AdGroupAdOperation> operationsToBeRemoved = new List<AdGroupAdOperation>();
 
-        allOperations.Add(textAdOperation);
+        allOperations.Add(redirectAdOperation);
 
         try {
           // Validate the operations.

@@ -81,22 +81,31 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
 
       Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
 
-      ' Create the text ad.
-      Dim textAd As New TextAd
-      textAd.headline = "Luxury Cruise to Mars"
-      textAd.description1 = "Visit the Red Planet in style."
-      textAd.description2 = "Low-gravity fun for everyone!!"
-      textAd.displayUrl = "www.example.com"
-      textAd.url = "http://www.example.com"
+      ' Create a third party redirect ad that violates a policy.
+      ' Create the third party redirect ad.
+      Dim redirectAd As New ThirdPartyRedirectAd
+      redirectAd.name = String.Format("Policy violation demo ad ", ExampleUtilities.GetTimeStamp)
+      redirectAd.url = "gopher://gopher.google.com"
 
-      Dim textadGroupAd As New AdGroupAd
-      textadGroupAd.adGroupId = adGroupId
-      textadGroupAd.ad = textAd
+      redirectAd.dimensions = New Dimensions
+      redirectAd.dimensions.height = 250
+      redirectAd.dimensions.width = 300
+
+      redirectAd.snippet = "<img src=""https://sandbox.google.com/sandboximages/image.jpg""/>"
+      redirectAd.impressionBeaconUrl = "http://www.examples.com/beacon"
+      redirectAd.certifiedVendorFormatId = 119
+      redirectAd.isCookieTargeted = False
+      redirectAd.isUserInterestTargeted = False
+      redirectAd.isTagged = False
+
+      Dim redirectAdGroupAd As New AdGroupAd
+      redirectAdGroupAd.adGroupId = adGroupId
+      redirectAdGroupAd.ad = redirectAd
 
       ' Create the operations.
-      Dim textAdOperation As New AdGroupAdOperation
-      textAdOperation.operator = [Operator].ADD
-      textAdOperation.operand = textadGroupAd
+      Dim redirectAdOperation As New AdGroupAdOperation
+      redirectAdOperation.operator = [Operator].ADD
+      redirectAdOperation.operand = redirectAdGroupAd
 
       Try
         Dim retVal As AdGroupAdReturnValue = Nothing
@@ -107,7 +116,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         Dim allOperations As New List(Of AdGroupAdOperation)
         Dim operationsToBeRemoved As New List(Of AdGroupAdOperation)
 
-        allOperations.Add(textAdOperation)
+        allOperations.Add(redirectAdOperation)
 
         Try
           ' Validate the operations.

@@ -42,22 +42,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     }
 
     /// <summary>
-    /// Tests the GetAccountAlerts VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestGetAccountAlertsVBExample() {
-      RunExample(new VBExamples.GetAccountAlerts());
-    }
-
-    /// <summary>
-    /// Tests the GetAccountAlerts C# code example.
-    /// </summary>
-    [Test]
-    public void TestGetAccountAlertsCSharpExample() {
-      RunExample(new CSharpExamples.GetAccountAlerts());
-    }
-
-    /// <summary>
     /// Tests the GetAccountChanges VB.NET code example.
     /// </summary>
     [Test]

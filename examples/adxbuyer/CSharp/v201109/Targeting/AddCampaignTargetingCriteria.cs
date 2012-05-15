@@ -120,15 +120,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       platformCriterion1.campaignId = campaignId;
       platformCriterion1.criterion = platform1;
 
-      // Add a negative campaign keyword.
+      // Add a negative campaign placement.
       NegativeCampaignCriterion negativeCriterion = new NegativeCampaignCriterion();
       negativeCriterion.campaignId = campaignId;
 
-      Keyword keyword = new Keyword();
-      keyword.matchType = KeywordMatchType.BROAD;
-      keyword.text = "jupiter cruise";
+      Placement placement = new Placement();
+      placement.url = "http://mars.google.com";
 
-      negativeCriterion.criterion = keyword;
+      negativeCriterion.criterion = placement;
 
       CampaignCriterion[] criteria = new CampaignCriterion[] {languageCriterion1,
           languageCriterion2, locationCriterion1, locationCriterion2, platformCriterion1,

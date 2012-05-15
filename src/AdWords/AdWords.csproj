@@ -94,6 +94,8 @@
     <Compile Include="Util\ErrorUtilities.cs" />
     <Compile Include="v201109\AdWordsApi.cs" />
     <Compile Include="v201109\AdWordsServiceV201109.cs" />
+    <Compile Include="v201109_1\AdWordsApi.cs" />
+    <Compile Include="v201109_1\AdWordsServiceV201109_1.cs" />
           <Compile Include="AdWordsErrorMessages.Designer.cs">
             <AutoGen>True</AutoGen>
             <DesignTime>True</DesignTime>
