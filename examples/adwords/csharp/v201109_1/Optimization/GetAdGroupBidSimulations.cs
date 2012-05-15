@@ -1,4 +1,4 @@
-// Copyright 2011, Google Inc. All Rights Reserved.
+// Copyright 2012, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,13 +15,13 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201109;
+using Google.Api.Ads.AdWords.v201109_1;
 
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
   /// <summary>
   /// This code example gets bid landscapes for an ad group. To get ad groups,
   /// run GetAdGroups.cs.
@@ -73,7 +73,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
         TextWriter writer) {
       // Get the DataService.
-      DataService dataService = (DataService) user.GetService(AdWordsService.v201109.DataService);
+      DataService dataService = (DataService) user.GetService(AdWordsService.v201109_1.DataService);
 
       long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
 

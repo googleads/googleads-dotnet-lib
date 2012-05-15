@@ -1,4 +1,4 @@
-' Copyright 2011, Google Inc. All Rights Reserved.
+' Copyright 2012, Google Inc. All Rights Reserved.
 '
 ' Licensed under the Apache License, Version 2.0 (the "License");
 ' you may not use this file except in compliance with the License.
@@ -15,13 +15,13 @@
 ' Author: api.anash@gmail.com (Anash P. Oommen)
 
 Imports Google.Api.Ads.AdWords.Lib
-Imports Google.Api.Ads.AdWords.v201109
+Imports Google.Api.Ads.AdWords.v201109_1
 
 Imports System
 Imports System.Collections.Generic
 Imports System.IO
 
-Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
+Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
   ''' <summary>
   ''' This code example gets bid landscapes for an ad group. To get ad groups,
   ''' run GetAdGroups.vb.
@@ -76,7 +76,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
         Dictionary(Of String, String), ByVal writer As TextWriter)
       ' Get the DataService.
-      Dim dataService As DataService = user.GetService(AdWordsService.v201109.DataService)
+      Dim dataService As DataService = user.GetService(AdWordsService.v201109_1.DataService)
 
       Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
 

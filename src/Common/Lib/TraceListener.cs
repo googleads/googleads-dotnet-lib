@@ -182,7 +182,7 @@ namespace Google.Api.Ads.Common.Lib {
       foreach (string key in webRequest.Headers) {
         headerBuilder.AppendFormat("{0}: {1}\r\n", key, webRequest.Headers[key]);
       }
-      headerBuilder.AppendFormat("TimeStamp: {0}\r\n", DateTime.Now.ToString("R"));
+      headerBuilder.AppendFormat("TimeStamp: {0}\r\n", this.GetTimeStamp());
       builder.AppendFormat("\r\n{0}\r\n", AppendHeadersToSoapXml(soapRequest,
           headerBuilder.ToString()));
       return builder.ToString();
@@ -203,12 +203,20 @@ namespace Google.Api.Ads.Common.Lib {
       foreach (string key in webResponse.Headers) {
         headerBuilder.AppendFormat("{0}: {1}\r\n", key, webResponse.Headers[key]);
       }
-      headerBuilder.AppendFormat("TimeStamp: {0}\r\n", DateTime.Now.ToString("R"));
+      headerBuilder.AppendFormat("TimeStamp: {0}\r\n", this.GetTimeStamp());
       builder.AppendFormat("\r\n{0}\r\n", AppendHeadersToSoapXml(soapResponse,
           headerBuilder.ToString()));
 
       builder.AppendFormat("-----------------END API CALL-----------------------\r\n");
       return builder.ToString();
+    }
+
+    /// <summary>
+    /// Gets the current timestamp as a formatted string.
+    /// </summary>
+    /// <returns>The current timestamp.</returns>
+    protected virtual string GetTimeStamp() {
+      return DateTime.Now.ToString("R");
     }
 
     /// <summary>

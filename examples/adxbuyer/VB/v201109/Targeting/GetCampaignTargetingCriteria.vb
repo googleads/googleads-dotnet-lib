@@ -84,15 +84,20 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
 
       ' Create the selector.
       Dim selector As New Selector
-      selector.fields = New String() {"Id", "CriteriaType", "CampaignId"}
+      selector.fields = New String() {"Id", "CriteriaType", "PlacementUrl"}
 
       ' Set the filters.
-      Dim predicate As New Predicate
-      predicate.field = "CampaignId"
-      predicate.operator = PredicateOperator.EQUALS
-      predicate.values = New String() {campaignId.ToString}
+      Dim campaignPredicate As New Predicate
+      campaignPredicate.field = "CampaignId"
+      campaignPredicate.operator = PredicateOperator.EQUALS
+      campaignPredicate.values = New String() {campaignId.ToString}
 
-      selector.predicates = New Predicate() {predicate}
+      Dim placementPredicate As New Predicate
+      placementPredicate.field = "CriteriaType"
+      placementPredicate.operator = PredicateOperator.EQUALS
+      placementPredicate.values = New String() {"PLACEMENT"}
+
+      selector.predicates = New Predicate() {campaignPredicate, placementPredicate}
 
       ' Set the selector paging.
       selector.paging = New Paging
@@ -114,22 +119,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
             Dim i As Integer = offset
             For Each campaignCriterion As CampaignCriterion In page.entries
-              Dim negative As String = ""
-              If (TypeOf campaignCriterion Is NegativeCampaignCriterion) Then
-                negative = "Negative "
-              End If
-              writer.WriteLine("{0}) {1}Campaign targeting criterion with id = '{2}' and " & _
-                  "Type = {3} was found for campaign id '{4}'", i, negative, _
-                  campaignCriterion.criterion.id, campaignCriterion.criterion.type, _
-                  campaignCriterion.campaignId)
+              Dim placement As Placement = campaignCriterion.criterion
+              writer.WriteLine("{0}) Placement with ID {1} and url {2} was found.", i, _
+                 placement.id, placement.url)
               i += 1
             Next
           End If
           offset = offset + pageSize
         Loop While (offset < page.totalNumEntries)
-        writer.WriteLine("Number of campaign targeting criteria found: {0}", page.totalNumEntries)
+        writer.WriteLine("Number of placements found: {0}", page.totalNumEntries)
       Catch ex As Exception
-        Throw New System.ApplicationException("Failed to get campaign targeting criteria.", ex)
+        Throw New System.ApplicationException("Failed to get placements.", ex)
       End Try
     End Sub
   End Class

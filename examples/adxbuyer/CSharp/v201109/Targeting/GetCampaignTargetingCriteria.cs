@@ -85,15 +85,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
 
       // Create the selector.
       Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "CriteriaType", "CampaignId"};
+      selector.fields = new string[] {"Id", "CriteriaType", "PlacementUrl"};
 
       // Set the filters.
-      Predicate predicate = new Predicate();
-      predicate.field = "CampaignId";
-      predicate.@operator = PredicateOperator.EQUALS;
-      predicate.values = new string[] {campaignId.ToString()};
+      Predicate campaignPredicate = new Predicate();
+      campaignPredicate.field = "CampaignId";
+      campaignPredicate.@operator = PredicateOperator.EQUALS;
+      campaignPredicate.values = new string[] {campaignId.ToString()};
 
-      selector.predicates = new Predicate[] {predicate};
+      Predicate placementPredicate = new Predicate();
+      placementPredicate.field = "CriteriaType";
+      placementPredicate.@operator = PredicateOperator.EQUALS;
+      placementPredicate.values = new string[] {"PLACEMENT"};
+
+      selector.predicates = new Predicate[] {campaignPredicate, placementPredicate};
 
       // Set the selector paging.
       selector.paging = new Paging();
@@ -115,16 +120,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           if (page != null && page.entries != null) {
             int i = offset;
             foreach (CampaignCriterion campaignCriterion in page.entries) {
-              string negative = (campaignCriterion is NegativeCampaignCriterion) ? "Negative " : "";
-              writer.WriteLine("{0}) {1}Campaign criterion with id = '{2}' and Type = {3} was " +
-                  " found for campaign id '{4}'", i, negative, campaignCriterion.criterion.id,
-                  campaignCriterion.criterion.type, campaignCriterion.campaignId);
+              Placement placement = campaignCriterion.criterion as Placement;
+
+              writer.WriteLine("{0}) Placement with ID {1} and url {2} was found.", i,
+                  placement.id, placement.url);
               i++;
             }
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of campaign targeting criteria found: {0}", page.totalNumEntries);
+        writer.WriteLine("Number of placements found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to get campaign targeting criteria.", ex);
       }

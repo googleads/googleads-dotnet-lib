@@ -120,15 +120,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       platformCriterion1.campaignId = campaignId
       platformCriterion1.criterion = platform1
 
-      ' Add a negative campaign keyword.
+      ' Add a negative campaign placement.
       Dim negativeCriterion As New NegativeCampaignCriterion()
       negativeCriterion.campaignId = campaignId
 
-      Dim keyword As New Keyword()
-      keyword.matchType = KeywordMatchType.BROAD
-      keyword.text = "jupiter cruise"
+      Dim placement As New Placement()
+      placement.url = "http://mars.google.com"
 
-      negativeCriterion.criterion = keyword
+      negativeCriterion.criterion = placement
 
       Dim criteria() As CampaignCriterion = {languageCriterion1, languageCriterion2, _
           locationCriterion1, locationCriterion2, platformCriterion1, negativeCriterion}

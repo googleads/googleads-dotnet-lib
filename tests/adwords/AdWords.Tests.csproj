@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -81,6 +81,17 @@
     <Compile Include="v201109\ReportingTest.cs" />
     <Compile Include="v201109\TargetingTest.cs" />
     <Compile Include="v201109\TestUtils.cs" />
+    <Compile Include="v201109_1\AccountManagementTest.cs" />
+    <Compile Include="v201109_1\AudienceAndConversionManagementTest.cs" />
+    <Compile Include="v201109_1\BasicOperationsTest.cs" />
+    <Compile Include="v201109_1\CampaignManagementTest.cs" />
+    <Compile Include="v201109_1\ErrorHandlingTest.cs" />
+    <Compile Include="v201109_1\ExampleBaseTests.cs" />
+    <Compile Include="v201109_1\MiscellaneousTest.cs" />
+    <Compile Include="v201109_1\OptimizationTest.cs" />
+    <Compile Include="v201109_1\ReportingTest.cs" />
+    <Compile Include="v201109_1\TargetingTest.cs" />
+    <Compile Include="v201109_1\TestUtils.cs" />
     <Compile Include="BaseTests.cs" />
   </ItemGroup>
 </Project>

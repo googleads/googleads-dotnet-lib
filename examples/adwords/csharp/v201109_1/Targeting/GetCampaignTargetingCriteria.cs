@@ -1,4 +1,4 @@
-// Copyright 2011, Google Inc. All Rights Reserved.
+// Copyright 2012, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,27 +15,27 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201109;
+using Google.Api.Ads.AdWords.v201109_1;
 
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
   /// <summary>
-  /// This code example gets all alerts for all clients of an MCC account.
-  /// The effective user (ClientCustomerId or AuthToken) must be an MCC user
-  /// to get results.
+  /// This code example gets all targeting criteria for a campaign. To set
+  /// campaign targeting criteria, run AddCampaignTargetingCriteria.cs. To get
+  /// campaigns, run GetCampaigns.cs.
   ///
-  /// Tags: AlertService.get
+  /// Tags: CampaignCriterionService.get
   /// </summary>
-  public class GetAccountAlerts : ExampleBase {
+  public class GetCampaignTargetingCriteria : ExampleBase {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetAccountAlerts();
+      ExampleBase codeExample = new GetCampaignTargetingCriteria();
       Console.WriteLine(codeExample.Description);
       try {
         codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
@@ -50,8 +50,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all alerts for all clients of an MCC account. The " +
-            "effective user (ClientCustomerId or AuthToken) must be an MCC user to get results.";
+        return "This code example gets all targeting criteria for a campaign. To set campaign " +
+            "targeting criteria, run AddCampaignTargetingCriteria.cs. To get campaigns, run " +
+            "GetCampaigns.cs.";
       }
     }
 
@@ -62,7 +63,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// A list of parameter names for this code example.
     /// </returns>
     public override string[] GetParameterNames() {
-      return new string[] {};
+      return new string[] {"CAMPAIGN_ID"};
     }
 
     /// <summary>
@@ -75,63 +76,57 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// written.</param>
     public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
         TextWriter writer) {
-      // Get the AlertService.
-      AlertService alertService = (AlertService) user.GetService(
-          AdWordsService.v201109.AlertService);
+      // Get the CampaignCriterionService.
+      CampaignCriterionService campaignCriterionService =
+          (CampaignCriterionService) user.GetService(
+              AdWordsService.v201109_1.CampaignCriterionService);
+
+      long campaignId = long.Parse(parameters["CAMPAIGN_ID"]);
 
       // Create the selector.
-      AlertSelector selector = new AlertSelector();
+      Selector selector = new Selector();
+      selector.fields = new string[] {"Id", "CriteriaType", "CampaignId"};
 
-      // Create the alert query.
-      AlertQuery query = new AlertQuery();
-      query.filterSpec = FilterSpec.ALL;
-      query.clientSpec = ClientSpec.ALL;
-      query.triggerTimeSpec = TriggerTimeSpec.ALL_TIME;
-      query.severities = new AlertSeverity[] {AlertSeverity.GREEN, AlertSeverity.YELLOW,
-          AlertSeverity.RED};
+      // Set the filters.
+      Predicate predicate = new Predicate();
+      predicate.field = "CampaignId";
+      predicate.@operator = PredicateOperator.EQUALS;
+      predicate.values = new string[] {campaignId.ToString()};
 
-      // Enter all possible values of AlertType to get all alerts. If you are
-      // interested only in specific alert types, then you may also do it as
-      // follows:
-      // query.types = new AlertType[] {AlertType.CAMPAIGN_ENDING,
-      //     AlertType.CAMPAIGN_ENDED};
-      query.types = (AlertType[]) Enum.GetValues(typeof(AlertType));
-      selector.query = query;
+      selector.predicates = new Predicate[] {predicate};
 
-      // Set paging for selector.
+      // Set the selector paging.
       selector.paging = new Paging();
 
       int offset = 0;
       int pageSize = 500;
 
-      AlertPage page = new AlertPage();
+      CampaignCriterionPage page = new CampaignCriterionPage();
 
       try {
         do {
-          // Get account alerts.
           selector.paging.startIndex = offset;
           selector.paging.numberResults = pageSize;
 
-          page = alertService.get(selector);
+          // Get all campaign targets.
+          page = campaignCriterionService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
             int i = offset;
-            foreach (Alert alert in page.entries) {
-              writer.WriteLine("{0}) Customer Id is {1:###-###-####}, Alert type is '{2}', " +
-                  "Severity is {3}", i + 1, alert.clientCustomerId, alert.alertType,
-                  alert.alertSeverity);
-              for (int j = 0; j < alert.details.Length; j++) {
-                writer.WriteLine("  - Triggered at {0}", alert.details[j].triggerTime);
-              }
+            foreach (CampaignCriterion campaignCriterion in page.entries) {
+              string negative = (campaignCriterion is NegativeCampaignCriterion) ? "Negative " : "";
+              writer.WriteLine("{0}) {1}Campaign criterion with id = '{2}' and Type = {3} was " +
+                  " found for campaign id '{4}'", i, negative, campaignCriterion.criterion.id,
+                  campaignCriterion.criterion.type, campaignCriterion.campaignId);
               i++;
             }
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of alerts found: {0}", page.totalNumEntries);
+        writer.WriteLine("Number of campaign targeting criteria found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to retrieve alerts.", ex);
+        throw new System.ApplicationException("Failed to get campaign targeting criteria.", ex);
       }
     }
   }
