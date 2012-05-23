@@ -17,7 +17,7 @@
 
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfa.Lib;
-using Google.Api.Ads.Dfa.v1_14;
+using Google.Api.Ads.Dfa.v1_17;
 
 using System;
 using System.Collections.Generic;
@@ -47,7 +47,7 @@ namespace Google.Api.Ads.Dfa.Examples.Wcf {
     internal AdType[] GetAdTypes() {
        // Create AdRemoteService instance.
       AdRemoteService service = (AdRemoteService) user.GetService(
-          DfaService.v1_14.AdRemoteService);
+          DfaService.v1_17.AdRemoteService);
 
       // Get ad types.
       return service.getAdTypes();
@@ -64,7 +64,7 @@ namespace Google.Api.Ads.Dfa.Examples.Wcf {
     internal bool GetReport(long queryId, string reportFilePath) {
       // Create ReportRemoteService instance.
       ReportRemoteService service = (ReportRemoteService)user.GetService(
-          DfaService.v1_14.ReportRemoteService);
+          DfaService.v1_17.ReportRemoteService);
       return ScheduleAndDownloadReport(service, queryId, reportFilePath);
     }
 

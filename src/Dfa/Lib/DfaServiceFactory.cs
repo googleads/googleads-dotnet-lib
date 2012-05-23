@@ -98,7 +98,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     private RequestHeader GetRequestHeader() {
       DfaAppConfig config = (DfaAppConfig) base.AppConfig;
       RequestHeader reqHeader = new RequestHeader();
-      reqHeader.ApplicationName = config.Signature + "|" + config.ApplicationName;
+      reqHeader.ApplicationName = config.GetUserAgent();
       return reqHeader;
     }
 
@@ -188,9 +188,9 @@ namespace Google.Api.Ads.Dfa.Lib {
       }
 
       service.Timeout = config.Timeout;
-
       service.Url = string.Format("{0}{1}/api/dfa-api/{2}",
           serverUrl, dfaapiSignature.Version, dfaapiSignature.ServiceEndpoint);
+      service.UserAgent = config.GetUserAgent();
 
       service.User = user;
       return service;
