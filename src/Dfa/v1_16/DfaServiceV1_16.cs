@@ -28,6 +28,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// <summary>
     /// All the services available in v1.16.
     /// </summary>
+    [Obsolete()]
     public class v1_16 {
       /// <summary>
       /// See <a href="http://code.google.com/apis/dfa/docs/reference/v1.16/ad/service.html">

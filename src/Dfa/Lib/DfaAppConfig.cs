@@ -30,6 +30,11 @@ namespace Google.Api.Ads.Dfa.Lib {
   /// </summary>
   public class DfaAppConfig : AppConfigBase {
     /// <summary>
+    /// The short name to identify this assembly.
+    /// </summary>
+    private const string SHORT_NAME = "DfaApi-Dotnet";
+
+    /// <summary>
     /// Key name for enableGzipCompression.
     /// </summary>
     private const string ENABLE_GZIP_COMPRESSION = "EnableGzipCompression";
@@ -169,6 +174,14 @@ namespace Google.Api.Ads.Dfa.Lib {
     }
 
     /// <summary>
+    /// Gets a useragent string that can be used with the library.
+    /// </summary>
+    public string GetUserAgent() {
+      return String.Format("{0} ({1}{2})", this.applicationName, this.Signature,
+          this.EnableGzipCompression ? ", gzip" : "");
+    }
+
+    /// <summary>
     /// Public constructor.
     /// </summary>
     public DfaAppConfig() : base() {
@@ -177,7 +190,6 @@ namespace Google.Api.Ads.Dfa.Lib {
       password = "";
       applicationName = "";
       enableGzipCompression = true;
-      shortNameField = "DfaApi-DotNet";
 
       dfaApiServer = DEFAULT_DFAAPI_SERVER;
 

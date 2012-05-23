@@ -1,3 +1,12 @@
+3.3.0
+- Added support for v1.18.
+- Removed support for v.15.
+- Fixed the way user agents are constructed for SOAP requests.
+- Common library version was bumped to 1.1.0.
+
+3.2.0
+- Fixed issue 11.
+
 3.1.0
 - Added support for v1.17.
 - Removed support for v1.14.

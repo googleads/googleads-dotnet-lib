@@ -41,8 +41,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Protected constructor.
     /// </summary>
-    protected DfaTraceListener()
-      : base(new DfaAppConfig()) {
+    protected DfaTraceListener() : base(new DfaAppConfig()) {
     }
 
     /// <summary>
