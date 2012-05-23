@@ -39,13 +39,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     private RequestHeader requestHeader;
 
     /// <summary>
-    /// Gets a useragent string that can be used with the library.
-    /// </summary>
-    protected string GetUseragent(AdWordsAppConfig awConfig) {
-      return String.Join("", new string[] {awConfig.Signature, "|", awConfig.UserAgent});
-    }
-
-    /// <summary>
     /// Default public constructor.
     /// </summary>
     public AdWordsServiceFactory() {
@@ -117,7 +110,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         requestHeader.clientCustomerId = awConfig.ClientCustomerId;
       }
       requestHeader.developerToken = awConfig.DeveloperToken;
-      requestHeader.userAgent = GetUseragent(awConfig);
+      requestHeader.userAgent = awConfig.GetUserAgent();
     }
 
     /// <summary>

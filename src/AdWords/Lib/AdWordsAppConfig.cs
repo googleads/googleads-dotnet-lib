@@ -30,6 +30,11 @@ namespace Google.Api.Ads.AdWords.Lib {
   /// </summary>
   public class AdWordsAppConfig : AppConfigBase {
     /// <summary>
+    /// The short name to identify this assembly.
+    /// </summary>
+    private const string SHORT_NAME = "AwApi-DotNet";
+
+    /// <summary>
     /// Key name for enableGzipCompression.
     /// </summary>
     private const string ENABLE_GZIP_COMPRESSION = "EnableGzipCompression";
@@ -356,6 +361,14 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
+    /// Gets a useragent string that can be used with the library.
+    /// </summary>
+    public string GetUserAgent() {
+      return String.Format("{0} ({1}{2})", this.UserAgent, this.Signature,
+          this.EnableGzipCompression ? ", gzip" : "");
+    }
+
+    /// <summary>
     /// Public constructor.
     /// </summary>
     public AdWordsAppConfig() : base() {
@@ -368,7 +381,6 @@ namespace Google.Api.Ads.AdWords.Lib {
       applicationToken = "";
       userAgent = "";
       enableGzipCompression = true;
-      shortNameField = "AwApi-DotNet";
       legacyAdWordsApiServer = DEFAULT_LEGACY_ADWORDSAPI_SERVER;
       adWordsApiServer = DEFAULT_ADWORDSAPI_SERVER;
       oAuthConsumerKey = "";

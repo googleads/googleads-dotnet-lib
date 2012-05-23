@@ -302,12 +302,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <returns>A preview of <see cref="MAX_ERROR_LENGTH" /> bytes.</returns>
     private byte[] DownloadReportToStream(string downloadUrl, AdWordsAppConfig config,
         bool returnMoneyInMicros, Stream outputStream, string postBody) {
-      WebRequest request = HttpWebRequest.Create(downloadUrl);
+      HttpWebRequest request = (HttpWebRequest) HttpWebRequest.Create(downloadUrl);
       if (!string.IsNullOrEmpty(postBody)) {
         request.Method = "POST";
       }
       request.Proxy = config.Proxy;
       request.Timeout = config.Timeout;
+      request.UserAgent = config.GetUserAgent();
 
       if (!string.IsNullOrEmpty(config.ClientEmail)) {
         request.Headers.Add("clientEmail: " + config.ClientEmail);

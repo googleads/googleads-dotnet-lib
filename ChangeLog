@@ -1,3 +1,8 @@
+14.5.0
+- Changed the way user agents are constructed for SOAP requests.
+- Common library version was bumped to 1.1.0.
+- Fixed issue 83.
+
 14.4.0
 - Added support for v201109_1.
 - Fixed issues 81.
