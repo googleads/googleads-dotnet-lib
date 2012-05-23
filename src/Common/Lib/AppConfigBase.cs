@@ -30,6 +30,11 @@ namespace Google.Api.Ads.Common.Lib {
   /// </summary>
   public abstract class AppConfigBase : INotifyPropertyChanged {
     /// <summary>
+    /// The short name to identify this assembly.
+    /// </summary>
+    private const string SHORT_NAME = "Common-Dotnet";
+
+    /// <summary>
     /// Key name for logPath.
     /// </summary>
     private const string LOG_PATH = "LogPath";
@@ -114,11 +119,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// True, if the credentials in the log file should be masked.
     /// </summary>
     private bool maskCredentials;
-
-    /// <summary>
-    /// The short name for this library.
-    /// </summary>
-    protected string shortNameField;
 
     /// <summary>
     /// Timeout to be used for Ads services in milliseconds.
@@ -240,12 +240,24 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets the short name for this library.
+    /// Gets the signature for this assembly, given a type derived from
+    /// AppConfigBase.
     /// </summary>
-    private string ShortName {
-      get {
-        return shortNameField;
+    /// <param name="type">Type of the class derived from AppConfigBase.</param>
+    /// <returns>The assembly signature.</returns>
+    /// <exception cref="ArgumentException">Thrown if type is not derived from
+    /// AppConfigBase.</exception>
+    private string GetAssemblySignatureFromAppConfigType(Type type) {
+      Type appConfigBaseType = typeof(AppConfigBase);
+      if (!(type.BaseType == appConfigBaseType || type == appConfigBaseType)) {
+        throw new ArgumentException(string.Format("{0} is not derived from {1}.",
+            type.FullName, appConfigBaseType.FullName));
       }
+      Version version = type.Assembly.GetName().Version;
+      string shortName = (string) type.GetField("SHORT_NAME", BindingFlags.NonPublic |
+          BindingFlags.Static).GetValue(null);
+      return string.Format("{0}-{1}.{2}.{3}", shortName, version.Major, version.Minor,
+          version.Revision);
     }
 
     /// <summary>
@@ -253,19 +265,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     public string Signature {
       get {
-        return string.Format(CultureInfo.InvariantCulture, "{0}-{1}", ShortName, Version);
-      }
-    }
-
-    /// <summary>
-    /// Gets a version string for this assembly.
-    /// </summary>
-    /// <returns>The version string in format Major.Minor.Revision.</returns>
-    private string Version {
-      get {
-        Version version = Assembly.GetExecutingAssembly().GetName().Version;
-        return string.Format(CultureInfo.InvariantCulture, "{0}.{1}.{2}", version.Major,
-            version.Minor, version.Revision);
+        return string.Format("{0}, {1}, MS Web Services Client Protocol {2}",
+            GetAssemblySignatureFromAppConfigType(this.GetType()),
+            GetAssemblySignatureFromAppConfigType(this.GetType().BaseType), Environment.Version);
       }
     }
 

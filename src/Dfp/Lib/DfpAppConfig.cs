@@ -30,6 +30,11 @@ namespace Google.Api.Ads.Dfp.Lib {
   /// </summary>
   public class DfpAppConfig : AppConfigBase {
     /// <summary>
+    /// The short name to identify this assembly.
+    /// </summary>
+    private const string SHORT_NAME = "DfpApi-DotNet";
+
+    /// <summary>
     /// Key name for enableGzipCompression.
     /// </summary>
     private const string ENABLE_GZIP_COMPRESSION = "EnableGzipCompression";
@@ -263,6 +268,14 @@ namespace Google.Api.Ads.Dfp.Lib {
     }
 
     /// <summary>
+    /// Gets a useragent string that can be used with the library.
+    /// </summary>
+    public string GetUserAgent() {
+      return String.Format("{0} ({1}{2})", this.applicationName, this.Signature,
+          this.EnableGzipCompression ? ", gzip" : "");
+    }
+
+    /// <summary>
     /// Public constructor.
     /// </summary>
     public DfpAppConfig() : base() {
@@ -272,7 +285,6 @@ namespace Google.Api.Ads.Dfp.Lib {
       networkCode = "";
       applicationName = "";
       enableGzipCompression = true;
-      shortNameField = "DfpApi-DotNet";
       dfpApiServer = DEFAULT_DFPAPI_SERVER;
       oAuthConsumerKey = "";
       oAuthConsumerSecret = "";
