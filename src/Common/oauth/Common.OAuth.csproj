@@ -45,10 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lib\AdsOAuthException.cs" />
-    <Compile Include="Lib\AdsOAuthNetProvider.cs" />
     <Compile Include="Lib\AdsServiceLocator.cs" />
     <Compile Include="Lib\AdsServiceComponent.cs" />
+    <Compile Include="Lib\OAuth1aProvider.cs" />
+    <Compile Include="Lib\OAuth2Provider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

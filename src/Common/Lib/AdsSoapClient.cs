@@ -173,8 +173,22 @@ namespace Google.Api.Ads.Common.Lib {
         } catch (SoapException ex) {
           Exception customException = GetCustomException(ex);
           if (retryCount > 0 && ShouldRetry(customException)) {
-            retryCount--;
-            continue;
+            try {
+              PrepareForRetry(customException);
+              retryCount--;
+              continue;
+            } catch (Exception e) {
+              // We threw an exception while trying to recover from another
+              // exception. The second exception may contain additional details
+              // (e.g. exact reason why OAuth token refresh failed.), so we
+              // raise an ApplicationException with the message from the second
+              // exception and the first exception as inner exception. Ideally,
+              // we'd like to return both the exception objects, but this is
+              // a reasonable tradeoff.
+              string msg = string.Format("An error occured while retrying a failed API call : " +
+                  "{0}. See inner exception for more details.", e.Message);
+              throw new ApplicationException(msg, customException);
+            }
           } else {
             throw customException;
           }
@@ -218,6 +232,14 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
+    /// Prepares for retrying the API call.
+    /// </summary>
+    /// <param name="ex">The exception thrown from the previous call.</param>
+    protected virtual void PrepareForRetry(Exception ex) {
+      return;
+    }
+
+    /// <summary>
     /// Whether the current API call should be retried or not.
     /// </summary>
     /// <param name="ex">The exception thrown from the previous call.</param>
@@ -233,9 +255,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// <returns>The WebRequest instance.</returns>
     protected override WebRequest GetWebRequest(Uri uri) {
       // Store the base WebRequest in the member variable for future access.
-      lastRequest = base.GetWebRequest(uri);
-      (lastRequest as HttpWebRequest).ServicePoint.Expect100Continue = false;
-      return lastRequest;
+      this.lastRequest = base.GetWebRequest(uri);
+      (this.lastRequest as HttpWebRequest).ServicePoint.Expect100Continue = false;
+      return this.lastRequest;
     }
 
     /// <summary>
@@ -247,8 +269,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <returns>The web response.</returns>
     protected override WebResponse GetWebResponse(WebRequest request) {
       // Store the base WebResponse in the member variable for future access.
-      lastResponse = base.GetWebResponse(request);
-      return lastResponse;
+      this.lastResponse = base.GetWebResponse(request);
+      return this.lastResponse;
     }
 
     /// <summary>

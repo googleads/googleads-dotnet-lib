@@ -27,6 +27,11 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// <summary>
     /// OAuth 1.0a API.
     /// </summary>
-    OAuth
+    OAuth,
+
+    /// <summary>
+    /// OAuth 2.0 draft 10 API.
+    /// </summary>
+    OAuth2
   }
 }

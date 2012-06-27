@@ -40,6 +40,17 @@ namespace Google.Api.Ads.Common.Lib {
     AdsOAuthProvider oAuthProvider = null;
 
     /// <summary>
+    /// The application configuration for this user.
+    /// </summary>
+    private AppConfigBase config;
+
+    /// <summary>
+    /// Stores all the registered services and their factories.
+    /// </summary>
+    private Dictionary<string, ServiceFactory> serviceFactoryMap =
+        new Dictionary<string, ServiceFactory>();
+
+    /// <summary>
     /// Gets or sets the OAuth provider.
     /// </summary>
     public AdsOAuthProvider OAuthProvider {
@@ -50,11 +61,6 @@ namespace Google.Api.Ads.Common.Lib {
         oAuthProvider = value;
       }
     }
-
-    /// <summary>
-    /// The application configuration for this user.
-    /// </summary>
-    private AppConfigBase config;
 
     /// <summary>
     /// Gets or sets the application configuration for this user.
@@ -73,12 +79,6 @@ namespace Google.Api.Ads.Common.Lib {
         return listeners;
       }
     }
-
-    /// <summary>
-    /// Stores all the registered services and their factories.
-    /// </summary>
-    private Dictionary<string, ServiceFactory> serviceFactoryMap =
-        new Dictionary<string, ServiceFactory>();
 
     /// <summary>
     /// Protected constructor. Use this version from a derived class if you want
