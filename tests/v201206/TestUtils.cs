@@ -314,6 +314,22 @@ namespace Google.Api.Ads.Dfp.Tests.v201206 {
       return placementService.createPlacement(placement);
     }
 
+    public ReportJob CreateReport(DfpUser user) {
+      // Get ReportService.
+      ReportService reportService =
+          (ReportService) user.GetService(DfpService.v201206.ReportService);
+
+      ReportJob reportJob = new ReportJob();
+      reportJob.reportQuery = new ReportQuery();
+      reportJob.reportQuery.dimensions = new Dimension[] {Dimension.ORDER};
+      reportJob.reportQuery.columns = new Column[] {Column.AD_SERVER_IMPRESSIONS,
+          Column.AD_SERVER_CLICKS, Column.AD_SERVER_CTR, Column.AD_SERVER_CPM_AND_CPC_REVENUE,
+          Column.AD_SERVER_AVERAGE_ECPM};
+      reportJob.reportQuery.dateRangeType = DateRangeType.LAST_MONTH;
+
+      return reportService.runReportJob(reportJob);
+    }
+
     /// <summary>
     /// Gets the current timestamp as a string.
     /// </summary>

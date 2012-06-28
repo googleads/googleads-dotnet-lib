@@ -28,15 +28,15 @@ namespace Google.Api.Ads.Dfp.v201206 {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Web.Services.WebServiceBindingAttribute(Name = "LabelServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "InventoryServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
-  public partial class LabelService : DfpSoapClient {
+  public partial class InventoryService : DfpSoapClient {
     private RequestHeader requestHeaderField;
 
     private ResponseHeader responseHeaderField;
 
-    public LabelService() {
-      this.Url = "https://www.google.com/apis/ads/publisher/v201206/LabelService";
+    public InventoryService() {
+      this.Url = "https://www.google.com/apis/ads/publisher/v201206/InventoryService";
     }
 
     public RequestHeader RequestHeader {
@@ -53,45 +53,54 @@ namespace Google.Api.Ads.Dfp.v201206 {
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public Label createLabel(Label label) {
-      object[] results = this.Invoke("createLabel", new object[] {label});
-      return ((Label) (results[0]));
+    public AdUnit createAdUnit(AdUnit adUnit) {
+      object[] results = this.Invoke("createAdUnit", new object[] {adUnit});
+      return ((AdUnit) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public Label[] createLabels([System.Xml.Serialization.XmlElementAttribute("labels")]
-Label[] labels) {
-      object[] results = this.Invoke("createLabels", new object[] {labels});
-      return ((Label[]) (results[0]));
+    public AdUnit[] createAdUnits([System.Xml.Serialization.XmlElementAttribute("adUnits")]
+AdUnit[] adUnits) {
+      object[] results = this.Invoke("createAdUnits", new object[] {adUnits});
+      return ((AdUnit[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public Label getLabel(long labelId) {
-      object[] results = this.Invoke("getLabel", new object[] {labelId});
-      return ((Label) (results[0]));
+    public AdUnit getAdUnit(string adUnitId) {
+      object[] results = this.Invoke("getAdUnit", new object[] {adUnitId});
+      return ((AdUnit) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public LabelPage getLabelsByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getLabelsByStatement", new object[] {filterStatement});
-      return ((LabelPage) (results[0]));
+    public AdUnitSize[] getAdUnitSizesByStatement(Statement filterStatement) {
+      object[] results = this.Invoke("getAdUnitSizesByStatement", new object[] {filterStatement});
+      return ((AdUnitSize[]) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public UpdateResult performLabelAction(LabelAction labelAction, Statement filterStatement) {
-      object[] results = this.Invoke("performLabelAction", new object[] {labelAction, filterStatement});
+    public AdUnitPage getAdUnitsByStatement(Statement filterStatement) {
+      object[] results = this.Invoke("getAdUnitsByStatement", new object[] {filterStatement});
+      return ((AdUnitPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public UpdateResult performAdUnitAction(AdUnitAction adUnitAction, Statement filterStatement) {
+      object[] results = this.Invoke("performAdUnitAction", new object[] {adUnitAction, filterStatement});
       return ((UpdateResult) (results[0]));
     }
 
@@ -99,19 +108,19 @@ Label[] labels) {
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public Label updateLabel(Label label) {
-      object[] results = this.Invoke("updateLabel", new object[] {label});
-      return ((Label) (results[0]));
+    public AdUnit updateAdUnit(AdUnit adUnit) {
+      object[] results = this.Invoke("updateAdUnit", new object[] {adUnit});
+      return ((AdUnit) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public Label[] updateLabels([System.Xml.Serialization.XmlElementAttribute("labels")]
-Label[] labels) {
-      object[] results = this.Invoke("updateLabels", new object[] {labels});
-      return ((Label[]) (results[0]));
+    public AdUnit[] updateAdUnits([System.Xml.Serialization.XmlElementAttribute("adUnits")]
+AdUnit[] adUnits) {
+      object[] results = this.Invoke("updateAdUnits", new object[] {adUnits});
+      return ((AdUnit[]) (results[0]));
     }
   }
 
@@ -158,20 +167,22 @@ Label[] labels) {
     }
   }
 
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateLabels))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateLabels))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateAdUnits))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AssignAdUnitsToPlacement))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveAdUnits))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateAdUnits))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public abstract partial class LabelAction {
-    private string labelActionTypeField;
+  public abstract partial class AdUnitAction {
+    private string adUnitActionTypeField;
 
-    [System.Xml.Serialization.XmlElementAttribute("LabelAction.Type")]
-    public string LabelActionType {
-      get { return this.labelActionTypeField; }
-      set { this.labelActionTypeField = value; }
+    [System.Xml.Serialization.XmlElementAttribute("AdUnitAction.Type")]
+    public string AdUnitActionType {
+      get { return this.adUnitActionTypeField; }
+      set { this.adUnitActionTypeField = value; }
     }
   }
 
@@ -180,7 +191,7 @@ Label[] labels) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class DeactivateLabels : LabelAction {
+  public partial class DeactivateAdUnits : AdUnitAction {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -188,7 +199,25 @@ Label[] labels) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class ActivateLabels : LabelAction {
+  public partial class AssignAdUnitsToPlacement : AdUnitAction {
+    private long placementIdField;
+
+    private bool placementIdFieldSpecified;
+
+    public long placementId {
+      get { return this.placementIdField; }
+      set {
+        this.placementIdField = value;
+        this.placementIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool placementIdSpecified {
+      get { return this.placementIdFieldSpecified; }
+      set { this.placementIdFieldSpecified = value; }
+    }
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -196,7 +225,23 @@ Label[] labels) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class LabelPage {
+  public partial class ArchiveAdUnits : AdUnitAction {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class ActivateAdUnits : AdUnitAction {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class AdUnitPage {
     private int totalResultSetSizeField;
 
     private bool totalResultSetSizeFieldSpecified;
@@ -205,7 +250,7 @@ Label[] labels) {
 
     private bool startIndexFieldSpecified;
 
-    private Label[] resultsField;
+    private AdUnit[] resultsField;
 
     public int totalResultSetSize {
       get { return this.totalResultSetSizeField; }
@@ -238,7 +283,7 @@ Label[] labels) {
     }
 
     [System.Xml.Serialization.XmlElementAttribute("results")]
-    public Label[] results {
+    public AdUnit[] results {
       get { return this.resultsField; }
       set { this.resultsField = value; }
     }
@@ -249,34 +294,82 @@ Label[] labels) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class Label {
-    private long idField;
+  public partial class AdUnit {
+    private string idField;
 
-    private bool idFieldSpecified;
+    private string parentIdField;
+
+    private bool hasChildrenField;
+
+    private bool hasChildrenFieldSpecified;
+
+    private AdUnitParent[] parentPathField;
 
     private string nameField;
 
     private string descriptionField;
 
-    private bool isActiveField;
+    private AdUnitTargetWindow targetWindowField;
 
-    private bool isActiveFieldSpecified;
+    private bool targetWindowFieldSpecified;
 
-    private LabelType[] typesField;
+    private InventoryStatus statusField;
 
-    public long id {
+    private bool statusFieldSpecified;
+
+    private string adUnitCodeField;
+
+    private AdUnitSize[] adUnitSizesField;
+
+    private TargetPlatform targetPlatformField;
+
+    private bool targetPlatformFieldSpecified;
+
+    private bool explicitlyTargetedField;
+
+    private bool explicitlyTargetedFieldSpecified;
+
+    private AdSenseSettingsInheritedProperty inheritedAdSenseSettingsField;
+
+    private LabelFrequencyCap[] appliedLabelFrequencyCapsField;
+
+    private LabelFrequencyCap[] effectiveLabelFrequencyCapsField;
+
+    private long[] effectiveTeamIdsField;
+
+    private long[] appliedTeamIdsField;
+
+    private DateTime lastModifiedDateTimeField;
+
+    public string id {
       get { return this.idField; }
+      set { this.idField = value; }
+    }
+
+    public string parentId {
+      get { return this.parentIdField; }
+      set { this.parentIdField = value; }
+    }
+
+    public bool hasChildren {
+      get { return this.hasChildrenField; }
       set {
-        this.idField = value;
-        this.idSpecified = true;
+        this.hasChildrenField = value;
+        this.hasChildrenSpecified = true;
       }
     }
 
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool idSpecified {
-      get { return this.idFieldSpecified; }
-      set { this.idFieldSpecified = value; }
+    public bool hasChildrenSpecified {
+      get { return this.hasChildrenFieldSpecified; }
+      set { this.hasChildrenFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("parentPath")]
+    public AdUnitParent[] parentPath {
+      get { return this.parentPathField; }
+      set { this.parentPathField = value; }
     }
 
     public string name {
@@ -289,35 +382,110 @@ Label[] labels) {
       set { this.descriptionField = value; }
     }
 
-    public bool isActive {
-      get { return this.isActiveField; }
+    public AdUnitTargetWindow targetWindow {
+      get { return this.targetWindowField; }
       set {
-        this.isActiveField = value;
-        this.isActiveSpecified = true;
+        this.targetWindowField = value;
+        this.targetWindowSpecified = true;
       }
     }
 
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool isActiveSpecified {
-      get { return this.isActiveFieldSpecified; }
-      set { this.isActiveFieldSpecified = value; }
+    public bool targetWindowSpecified {
+      get { return this.targetWindowFieldSpecified; }
+      set { this.targetWindowFieldSpecified = value; }
     }
 
-    [System.Xml.Serialization.XmlElementAttribute("types")]
-    public LabelType[] types {
-      get { return this.typesField; }
-      set { this.typesField = value; }
+    public InventoryStatus status {
+      get { return this.statusField; }
+      set {
+        this.statusField = value;
+        this.statusSpecified = true;
+      }
     }
-  }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum LabelType {
-    COMPETITIVE_EXCLUSION,
-    AD_UNIT_FREQUENCY_CAP,
-    AD_EXCLUSION
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool statusSpecified {
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
+    }
+
+    public string adUnitCode {
+      get { return this.adUnitCodeField; }
+      set { this.adUnitCodeField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("adUnitSizes")]
+    public AdUnitSize[] adUnitSizes {
+      get { return this.adUnitSizesField; }
+      set { this.adUnitSizesField = value; }
+    }
+
+    public TargetPlatform targetPlatform {
+      get { return this.targetPlatformField; }
+      set {
+        this.targetPlatformField = value;
+        this.targetPlatformSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool targetPlatformSpecified {
+      get { return this.targetPlatformFieldSpecified; }
+      set { this.targetPlatformFieldSpecified = value; }
+    }
+
+    public bool explicitlyTargeted {
+      get { return this.explicitlyTargetedField; }
+      set {
+        this.explicitlyTargetedField = value;
+        this.explicitlyTargetedSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool explicitlyTargetedSpecified {
+      get { return this.explicitlyTargetedFieldSpecified; }
+      set { this.explicitlyTargetedFieldSpecified = value; }
+    }
+
+    public AdSenseSettingsInheritedProperty inheritedAdSenseSettings {
+      get { return this.inheritedAdSenseSettingsField; }
+      set { this.inheritedAdSenseSettingsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("appliedLabelFrequencyCaps")]
+    public LabelFrequencyCap[] appliedLabelFrequencyCaps {
+      get { return this.appliedLabelFrequencyCapsField; }
+      set { this.appliedLabelFrequencyCapsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("effectiveLabelFrequencyCaps")]
+    public LabelFrequencyCap[] effectiveLabelFrequencyCaps {
+      get { return this.effectiveLabelFrequencyCapsField; }
+      set { this.effectiveLabelFrequencyCapsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("effectiveTeamIds")]
+    public long[] effectiveTeamIds {
+      get { return this.effectiveTeamIdsField; }
+      set { this.effectiveTeamIdsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("appliedTeamIds")]
+    public long[] appliedTeamIds {
+      get { return this.appliedTeamIdsField; }
+      set { this.appliedTeamIdsField = value; }
+    }
+
+    public DateTime lastModifiedDateTime {
+      get { return this.lastModifiedDateTimeField; }
+      set { this.lastModifiedDateTimeField = value; }
+    }
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -325,63 +493,490 @@ Label[] labels) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class Date {
-    private int yearField;
+  public partial class AdUnitParent {
+    private string idField;
 
-    private bool yearFieldSpecified;
+    private string nameField;
 
-    private int monthField;
+    public string id {
+      get { return this.idField; }
+      set { this.idField = value; }
+    }
 
-    private bool monthFieldSpecified;
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+  }
 
-    private int dayField;
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnit.TargetWindow", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum AdUnitTargetWindow {
+    TOP,
+    BLANK
+  }
 
-    private bool dayFieldSpecified;
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum InventoryStatus {
+    ACTIVE,
+    INACTIVE,
+    ARCHIVED
+  }
 
-    public int year {
-      get { return this.yearField; }
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class AdUnitSize {
+    private Size sizeField;
+
+    private EnvironmentType environmentTypeField;
+
+    private bool environmentTypeFieldSpecified;
+
+    private AdUnitSize[] companionsField;
+
+    public Size size {
+      get { return this.sizeField; }
+      set { this.sizeField = value; }
+    }
+
+    public EnvironmentType environmentType {
+      get { return this.environmentTypeField; }
       set {
-        this.yearField = value;
-        this.yearSpecified = true;
+        this.environmentTypeField = value;
+        this.environmentTypeSpecified = true;
       }
     }
 
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool yearSpecified {
-      get { return this.yearFieldSpecified; }
-      set { this.yearFieldSpecified = value; }
+    public bool environmentTypeSpecified {
+      get { return this.environmentTypeFieldSpecified; }
+      set { this.environmentTypeFieldSpecified = value; }
     }
 
-    public int month {
-      get { return this.monthField; }
+    [System.Xml.Serialization.XmlElementAttribute("companions")]
+    public AdUnitSize[] companions {
+      get { return this.companionsField; }
+      set { this.companionsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class Size {
+    private int widthField;
+
+    private bool widthFieldSpecified;
+
+    private int heightField;
+
+    private bool heightFieldSpecified;
+
+    private bool isAspectRatioField;
+
+    private bool isAspectRatioFieldSpecified;
+
+    public int width {
+      get { return this.widthField; }
       set {
-        this.monthField = value;
-        this.monthSpecified = true;
+        this.widthField = value;
+        this.widthSpecified = true;
       }
     }
 
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool monthSpecified {
-      get { return this.monthFieldSpecified; }
-      set { this.monthFieldSpecified = value; }
+    public bool widthSpecified {
+      get { return this.widthFieldSpecified; }
+      set { this.widthFieldSpecified = value; }
     }
 
-    public int day {
-      get { return this.dayField; }
+    public int height {
+      get { return this.heightField; }
       set {
-        this.dayField = value;
-        this.daySpecified = true;
+        this.heightField = value;
+        this.heightSpecified = true;
       }
     }
 
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool daySpecified {
-      get { return this.dayFieldSpecified; }
-      set { this.dayFieldSpecified = value; }
+    public bool heightSpecified {
+      get { return this.heightFieldSpecified; }
+      set { this.heightFieldSpecified = value; }
     }
+
+    public bool isAspectRatio {
+      get { return this.isAspectRatioField; }
+      set {
+        this.isAspectRatioField = value;
+        this.isAspectRatioSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool isAspectRatioSpecified {
+      get { return this.isAspectRatioFieldSpecified; }
+      set { this.isAspectRatioFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum EnvironmentType {
+    BROWSER,
+    VIDEO_PLAYER
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum TargetPlatform {
+    WEB,
+    MOBILE
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class AdSenseSettingsInheritedProperty {
+    private AdSenseSettings valueField;
+
+    public AdSenseSettings value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class AdSenseSettings {
+    private bool adSenseEnabledField;
+
+    private bool adSenseEnabledFieldSpecified;
+
+    private string borderColorField;
+
+    private string titleColorField;
+
+    private string backgroundColorField;
+
+    private string textColorField;
+
+    private string urlColorField;
+
+    private AdSenseSettingsAdType adTypeField;
+
+    private bool adTypeFieldSpecified;
+
+    private AdSenseSettingsBorderStyle borderStyleField;
+
+    private bool borderStyleFieldSpecified;
+
+    private AdSenseSettingsFontFamily fontFamilyField;
+
+    private bool fontFamilyFieldSpecified;
+
+    private AdSenseSettingsFontSize fontSizeField;
+
+    private bool fontSizeFieldSpecified;
+
+    private Size_StringMapEntry[] afcFormatsField;
+
+    public bool adSenseEnabled {
+      get { return this.adSenseEnabledField; }
+      set {
+        this.adSenseEnabledField = value;
+        this.adSenseEnabledSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool adSenseEnabledSpecified {
+      get { return this.adSenseEnabledFieldSpecified; }
+      set { this.adSenseEnabledFieldSpecified = value; }
+    }
+
+    public string borderColor {
+      get { return this.borderColorField; }
+      set { this.borderColorField = value; }
+    }
+
+    public string titleColor {
+      get { return this.titleColorField; }
+      set { this.titleColorField = value; }
+    }
+
+    public string backgroundColor {
+      get { return this.backgroundColorField; }
+      set { this.backgroundColorField = value; }
+    }
+
+    public string textColor {
+      get { return this.textColorField; }
+      set { this.textColorField = value; }
+    }
+
+    public string urlColor {
+      get { return this.urlColorField; }
+      set { this.urlColorField = value; }
+    }
+
+    public AdSenseSettingsAdType adType {
+      get { return this.adTypeField; }
+      set {
+        this.adTypeField = value;
+        this.adTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool adTypeSpecified {
+      get { return this.adTypeFieldSpecified; }
+      set { this.adTypeFieldSpecified = value; }
+    }
+
+    public AdSenseSettingsBorderStyle borderStyle {
+      get { return this.borderStyleField; }
+      set {
+        this.borderStyleField = value;
+        this.borderStyleSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool borderStyleSpecified {
+      get { return this.borderStyleFieldSpecified; }
+      set { this.borderStyleFieldSpecified = value; }
+    }
+
+    public AdSenseSettingsFontFamily fontFamily {
+      get { return this.fontFamilyField; }
+      set {
+        this.fontFamilyField = value;
+        this.fontFamilySpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool fontFamilySpecified {
+      get { return this.fontFamilyFieldSpecified; }
+      set { this.fontFamilyFieldSpecified = value; }
+    }
+
+    public AdSenseSettingsFontSize fontSize {
+      get { return this.fontSizeField; }
+      set {
+        this.fontSizeField = value;
+        this.fontSizeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool fontSizeSpecified {
+      get { return this.fontSizeFieldSpecified; }
+      set { this.fontSizeFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("afcFormats")]
+    public Size_StringMapEntry[] afcFormats {
+      get { return this.afcFormatsField; }
+      set { this.afcFormatsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.AdType", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum AdSenseSettingsAdType {
+    TEXT,
+    IMAGE,
+    TEXT_AND_IMAGE
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.BorderStyle", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum AdSenseSettingsBorderStyle {
+    DEFAULT,
+    NOT_ROUNDED,
+    SLIGHTLY_ROUNDED,
+    VERY_ROUNDED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.FontFamily", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum AdSenseSettingsFontFamily {
+    DEFAULT,
+    ARIAL,
+    TAHOMA,
+    GEORGIA,
+    TIMES,
+    VERDANA
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.FontSize", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum AdSenseSettingsFontSize {
+    DEFAULT,
+    SMALL,
+    MEDIUM,
+    LARGE
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class Size_StringMapEntry {
+    private Size keyField;
+
+    private string valueField;
+
+    public Size key {
+      get { return this.keyField; }
+      set { this.keyField = value; }
+    }
+
+    public string value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class LabelFrequencyCap {
+    private FrequencyCap frequencyCapField;
+
+    private long labelIdField;
+
+    private bool labelIdFieldSpecified;
+
+    public FrequencyCap frequencyCap {
+      get { return this.frequencyCapField; }
+      set { this.frequencyCapField = value; }
+    }
+
+    public long labelId {
+      get { return this.labelIdField; }
+      set {
+        this.labelIdField = value;
+        this.labelIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool labelIdSpecified {
+      get { return this.labelIdFieldSpecified; }
+      set { this.labelIdFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class FrequencyCap {
+    private int maxImpressionsField;
+
+    private bool maxImpressionsFieldSpecified;
+
+    private int numTimeUnitsField;
+
+    private bool numTimeUnitsFieldSpecified;
+
+    private TimeUnit timeUnitField;
+
+    private bool timeUnitFieldSpecified;
+
+    public int maxImpressions {
+      get { return this.maxImpressionsField; }
+      set {
+        this.maxImpressionsField = value;
+        this.maxImpressionsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool maxImpressionsSpecified {
+      get { return this.maxImpressionsFieldSpecified; }
+      set { this.maxImpressionsFieldSpecified = value; }
+    }
+
+    public int numTimeUnits {
+      get { return this.numTimeUnitsField; }
+      set {
+        this.numTimeUnitsField = value;
+        this.numTimeUnitsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool numTimeUnitsSpecified {
+      get { return this.numTimeUnitsFieldSpecified; }
+      set { this.numTimeUnitsFieldSpecified = value; }
+    }
+
+    public TimeUnit timeUnit {
+      get { return this.timeUnitField; }
+      set {
+        this.timeUnitField = value;
+        this.timeUnitSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool timeUnitSpecified {
+      get { return this.timeUnitFieldSpecified; }
+      set { this.timeUnitFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum TimeUnit {
+    MINUTE,
+    HOUR,
+    DAY,
+    WEEK,
+    MONTH,
+    LIFETIME,
+    POD,
+    STREAM
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -459,6 +1054,70 @@ Label[] labels) {
     public string timeZoneID {
       get { return this.timeZoneIDField; }
       set { this.timeZoneIDField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class Date {
+    private int yearField;
+
+    private bool yearFieldSpecified;
+
+    private int monthField;
+
+    private bool monthFieldSpecified;
+
+    private int dayField;
+
+    private bool dayFieldSpecified;
+
+    public int year {
+      get { return this.yearField; }
+      set {
+        this.yearField = value;
+        this.yearSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool yearSpecified {
+      get { return this.yearFieldSpecified; }
+      set { this.yearFieldSpecified = value; }
+    }
+
+    public int month {
+      get { return this.monthField; }
+      set {
+        this.monthField = value;
+        this.monthSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool monthSpecified {
+      get { return this.monthFieldSpecified; }
+      set { this.monthFieldSpecified = value; }
+    }
+
+    public int day {
+      get { return this.dayField; }
+      set {
+        this.dayField = value;
+        this.daySpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool daySpecified {
+      get { return this.dayFieldSpecified; }
+      set { this.dayFieldSpecified = value; }
     }
   }
 
@@ -594,10 +1253,12 @@ Label[] labels) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(UniqueError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TypeError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TeamError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(StringLengthError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(StatementError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ServerError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequiredError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(RegExError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuotaError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PublisherQueryLanguageSyntaxError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PublisherQueryLanguageContextError))]
@@ -605,19 +1266,27 @@ Label[] labels) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ParseError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(NullError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotNullError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(LabelError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitTypeError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventoryUnitSizesError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventoryUnitPartnerAssociationError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventoryUnitError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidColorError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InternalApiError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(FrequencyCapError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CommonError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthenticationError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApiVersionError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitHierarchyError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitCodeError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitAfcSizeError))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(LabelError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserDomainTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TechnologyTargetingError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TeamError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReservationDetailsError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequiredSizeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequiredNumberError))]
@@ -633,7 +1302,6 @@ Label[] labels) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidUrlError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeoTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(GenericTargetingError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(FrequencyCapError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ForecastError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DayPartTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateTimeRangeTargetingError))]
@@ -652,20 +1320,11 @@ Label[] labels) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AssetError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(OrderActionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidEmailError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(RegExError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventoryUnitError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitHierarchyError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitCodeError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitAfcSizeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReportError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentPartnerError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeTemplateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityLimitReachedError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomFieldError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitTypeError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventoryUnitSizesError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventoryUnitPartnerAssociationError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidColorError))]
   public abstract partial class ApiError {
     private string fieldPathField;
 
@@ -711,6 +1370,41 @@ Label[] labels) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public partial class TypeError : ApiError {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class TeamError : ApiError {
+    private TeamErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public TeamErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TeamError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum TeamErrorReason {
+    ENTITY_NOT_ON_USERS_TEAMS,
+    MISSING_USERS_TEAM,
+    ALL_TEAM_ASSOCIATION_NOT_ALLOWED
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -845,6 +1539,40 @@ Label[] labels) {
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum RequiredErrorReason {
     REQUIRED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class RegExError : ApiError {
+    private RegExErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public RegExErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RegExError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum RegExErrorReason {
+    INVALID,
+    NULL
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -1086,12 +1814,12 @@ Label[] labels) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class LabelError : ApiError {
-    private LabelErrorReason reasonField;
+  public partial class AdUnitTypeError : ApiError {
+    private AdUnitTypeErrorReason reasonField;
 
     private bool reasonFieldSpecified;
 
-    public LabelErrorReason reason {
+    public AdUnitTypeErrorReason reason {
       get { return this.reasonField; }
       set {
         this.reasonField = value;
@@ -1109,10 +1837,150 @@ Label[] labels) {
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LabelError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum LabelErrorReason {
-    INVALID_PREFIX,
-    NAME_INVALID_CHARS
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitTypeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum AdUnitTypeErrorReason {
+    MOBILE_APP_PLATFORM_NOT_VALID
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class InventoryUnitSizesError : ApiError {
+    private InventoryUnitSizesErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public InventoryUnitSizesErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitSizesError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum InventoryUnitSizesErrorReason {
+    INVALID_SIZES,
+    INVALID_SIZE_FOR_PLATFORM,
+    INVALID_SIZE_FOR_ENVIRONMENT,
+    INVALID_SIZE_FOR_MASTER,
+    INVALID_SIZE_FOR_COMPANION,
+    DUPLICATE_MASTER_SIZES,
+    ASPECT_RATIO_NOT_SUPPORTED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class InventoryUnitPartnerAssociationError : ApiError {
+    private InventoryUnitPartnerAssociationErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public InventoryUnitPartnerAssociationErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitPartnerAssociationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum InventoryUnitPartnerAssociationErrorReason {
+    ANCESTOR_AD_UNIT_HAS_PARTNER_ASSOCIATION,
+    DESCENDANT_AD_UNIT_HAS_PARTNER_ASSOCIATION,
+    SAME_PARTNER_ASSOCIATION_IN_INVENTORY_HIERARCHY,
+    NO_PARTNER_CATCH_ALL
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class InventoryUnitError : ApiError {
+    private InventoryUnitErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public InventoryUnitErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum InventoryUnitErrorReason {
+    EXPLICIT_TARGETING_NOT_ALLOWED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class InvalidColorError : ApiError {
+    private InvalidColorErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public InvalidColorErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InvalidColorError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum InvalidColorErrorReason {
+    INVALID_FORMAT
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -1147,6 +2015,44 @@ Label[] labels) {
   public enum InternalApiErrorReason {
     UNEXPECTED_INTERNAL_API_ERROR,
     UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class FrequencyCapError : ApiError {
+    private FrequencyCapErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public FrequencyCapErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FrequencyCapError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum FrequencyCapErrorReason {
+    IMPRESSION_LIMIT_EXCEEDED,
+    IMPRESSIONS_TOO_LOW,
+    RANGE_LIMIT_EXCEEDED,
+    RANGE_TOO_LOW,
+    DUPLICATE_TIME_RANGE,
+    TOO_MANY_FREQUENCY_CAPS
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -1264,6 +2170,110 @@ Label[] labels) {
     UPDATE_TO_NEWER_VERSION
   }
 
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class AdUnitHierarchyError : ApiError {
+    private AdUnitHierarchyErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public AdUnitHierarchyErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitHierarchyError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum AdUnitHierarchyErrorReason {
+    INVALID_DEPTH,
+    INVALID_PARENT
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class AdUnitCodeError : ApiError {
+    private AdUnitCodeErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public AdUnitCodeErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitCodeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum AdUnitCodeErrorReason {
+    INVALID_CHARACTERS,
+    INVALID_CHARACTERS_WHEN_UTF_CHARACTERS_ARE_ALLOWED,
+    LEADING_FORWARD_SLASH
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class AdUnitAfcSizeError : ApiError {
+    private AdUnitAfcSizeErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public AdUnitAfcSizeErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitAfcSizeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum AdUnitAfcSizeErrorReason {
+    INVALID,
+    DOESNT_FIT,
+    NOT_APPLICABLE
+  }
+
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApiException))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
@@ -1328,6 +2338,292 @@ Label[] labels) {
       get { return this.tokenField; }
       set { this.tokenField = value; }
     }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "LabelServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class LabelService : DfpSoapClient {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public LabelService() {
+      this.Url = "https://www.google.com/apis/ads/publisher/v201206/LabelService";
+    }
+
+    public RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public Label createLabel(Label label) {
+      object[] results = this.Invoke("createLabel", new object[] {label});
+      return ((Label) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public Label[] createLabels([System.Xml.Serialization.XmlElementAttribute("labels")]
+Label[] labels) {
+      object[] results = this.Invoke("createLabels", new object[] {labels});
+      return ((Label[]) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public Label getLabel(long labelId) {
+      object[] results = this.Invoke("getLabel", new object[] {labelId});
+      return ((Label) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public LabelPage getLabelsByStatement(Statement filterStatement) {
+      object[] results = this.Invoke("getLabelsByStatement", new object[] {filterStatement});
+      return ((LabelPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public UpdateResult performLabelAction(LabelAction labelAction, Statement filterStatement) {
+      object[] results = this.Invoke("performLabelAction", new object[] {labelAction, filterStatement});
+      return ((UpdateResult) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public Label updateLabel(Label label) {
+      object[] results = this.Invoke("updateLabel", new object[] {label});
+      return ((Label) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public Label[] updateLabels([System.Xml.Serialization.XmlElementAttribute("labels")]
+Label[] labels) {
+      object[] results = this.Invoke("updateLabels", new object[] {labels});
+      return ((Label[]) (results[0]));
+    }
+  }
+
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateLabels))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateLabels))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public abstract partial class LabelAction {
+    private string labelActionTypeField;
+
+    [System.Xml.Serialization.XmlElementAttribute("LabelAction.Type")]
+    public string LabelActionType {
+      get { return this.labelActionTypeField; }
+      set { this.labelActionTypeField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class DeactivateLabels : LabelAction {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class ActivateLabels : LabelAction {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class LabelPage {
+    private int totalResultSetSizeField;
+
+    private bool totalResultSetSizeFieldSpecified;
+
+    private int startIndexField;
+
+    private bool startIndexFieldSpecified;
+
+    private Label[] resultsField;
+
+    public int totalResultSetSize {
+      get { return this.totalResultSetSizeField; }
+      set {
+        this.totalResultSetSizeField = value;
+        this.totalResultSetSizeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool totalResultSetSizeSpecified {
+      get { return this.totalResultSetSizeFieldSpecified; }
+      set { this.totalResultSetSizeFieldSpecified = value; }
+    }
+
+    public int startIndex {
+      get { return this.startIndexField; }
+      set {
+        this.startIndexField = value;
+        this.startIndexSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool startIndexSpecified {
+      get { return this.startIndexFieldSpecified; }
+      set { this.startIndexFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("results")]
+    public Label[] results {
+      get { return this.resultsField; }
+      set { this.resultsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class Label {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private string nameField;
+
+    private string descriptionField;
+
+    private bool isActiveField;
+
+    private bool isActiveFieldSpecified;
+
+    private LabelType[] typesField;
+
+    public long id {
+      get { return this.idField; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public string description {
+      get { return this.descriptionField; }
+      set { this.descriptionField = value; }
+    }
+
+    public bool isActive {
+      get { return this.isActiveField; }
+      set {
+        this.isActiveField = value;
+        this.isActiveSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool isActiveSpecified {
+      get { return this.isActiveFieldSpecified; }
+      set { this.isActiveFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("types")]
+    public LabelType[] types {
+      get { return this.typesField; }
+      set { this.typesField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum LabelType {
+    COMPETITIVE_EXCLUSION,
+    AD_UNIT_FREQUENCY_CAP,
+    AD_EXCLUSION
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class LabelError : ApiError {
+    private LabelErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public LabelErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LabelError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum LabelErrorReason {
+    INVALID_PREFIX,
+    NAME_INVALID_CHARS
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -3667,84 +4963,6 @@ LineItem[] lineItems) {
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class FrequencyCap {
-    private int maxImpressionsField;
-
-    private bool maxImpressionsFieldSpecified;
-
-    private int numTimeUnitsField;
-
-    private bool numTimeUnitsFieldSpecified;
-
-    private TimeUnit timeUnitField;
-
-    private bool timeUnitFieldSpecified;
-
-    public int maxImpressions {
-      get { return this.maxImpressionsField; }
-      set {
-        this.maxImpressionsField = value;
-        this.maxImpressionsSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool maxImpressionsSpecified {
-      get { return this.maxImpressionsFieldSpecified; }
-      set { this.maxImpressionsFieldSpecified = value; }
-    }
-
-    public int numTimeUnits {
-      get { return this.numTimeUnitsField; }
-      set {
-        this.numTimeUnitsField = value;
-        this.numTimeUnitsSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool numTimeUnitsSpecified {
-      get { return this.numTimeUnitsFieldSpecified; }
-      set { this.numTimeUnitsFieldSpecified = value; }
-    }
-
-    public TimeUnit timeUnit {
-      get { return this.timeUnitField; }
-      set {
-        this.timeUnitField = value;
-        this.timeUnitSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool timeUnitSpecified {
-      get { return this.timeUnitFieldSpecified; }
-      set { this.timeUnitFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum TimeUnit {
-    MINUTE,
-    HOUR,
-    DAY,
-    WEEK,
-    MONTH,
-    LIFETIME,
-    POD,
-    STREAM
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LineItemType {
     SPONSORSHIP,
@@ -3927,70 +5145,6 @@ LineItem[] lineItems) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class Size {
-    private int widthField;
-
-    private bool widthFieldSpecified;
-
-    private int heightField;
-
-    private bool heightFieldSpecified;
-
-    private bool isAspectRatioField;
-
-    private bool isAspectRatioFieldSpecified;
-
-    public int width {
-      get { return this.widthField; }
-      set {
-        this.widthField = value;
-        this.widthSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool widthSpecified {
-      get { return this.widthFieldSpecified; }
-      set { this.widthFieldSpecified = value; }
-    }
-
-    public int height {
-      get { return this.heightField; }
-      set {
-        this.heightField = value;
-        this.heightSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool heightSpecified {
-      get { return this.heightFieldSpecified; }
-      set { this.heightFieldSpecified = value; }
-    }
-
-    public bool isAspectRatio {
-      get { return this.isAspectRatioField; }
-      set {
-        this.isAspectRatioField = value;
-        this.isAspectRatioSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool isAspectRatioSpecified {
-      get { return this.isAspectRatioFieldSpecified; }
-      set { this.isAspectRatioFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public partial class AppliedLabel {
     private long labelIdField;
 
@@ -4038,22 +5192,6 @@ LineItem[] lineItems) {
     PIXEL,
     ASPECT_RATIO,
     INTERSTITIAL
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum TargetPlatform {
-    WEB,
-    MOBILE
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum EnvironmentType {
-    BROWSER,
-    VIDEO_PLAYER
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -4334,41 +5472,6 @@ LineItem[] lineItems) {
     WEB_LINE_ITEM_CONTAINS_MOBILE_TECH_CRITERIA,
     MOBILE_CARRIER_TARGETING_FEATURE_NOT_ENABLED,
     DEVICE_CAPABILITY_TARGETING_FEATURE_NOT_ENABLED
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class TeamError : ApiError {
-    private TeamErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public TeamErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TeamError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum TeamErrorReason {
-    ENTITY_NOT_ON_USERS_TEAMS,
-    MISSING_USERS_TEAM,
-    ALL_TEAM_ASSOCIATION_NOT_ALLOWED
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -4959,44 +6062,6 @@ LineItem[] lineItems) {
   public enum GenericTargetingErrorReason {
     CONFLICTING_INCLUSION_OR_EXCLUSION_OF_SIBLINGS,
     INCLUDING_DESCENDANTS_OF_EXCLUDED_CRITERIA
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class FrequencyCapError : ApiError {
-    private FrequencyCapErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public FrequencyCapErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FrequencyCapError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum FrequencyCapErrorReason {
-    IMPRESSION_LIMIT_EXCEEDED,
-    IMPRESSIONS_TOO_LOW,
-    RANGE_LIMIT_EXCEEDED,
-    RANGE_TOO_LOW,
-    DUPLICATE_TIME_RANGE,
-    TOO_MANY_FREQUENCY_CAPS
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -7203,15 +8268,6 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum InventoryStatus {
-    ACTIVE,
-    INACTIVE,
-    ARCHIVED
-  }
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Placement))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
@@ -7247,40 +8303,6 @@ Placement[] placements) {
       get { return this.siteTargetingInfoTypeField; }
       set { this.siteTargetingInfoTypeField = value; }
     }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class RegExError : ApiError {
-    private RegExErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public RegExErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RegExError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum RegExErrorReason {
-    INVALID,
-    NULL
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -7374,143 +8396,6 @@ Placement[] placements) {
       get { return this.rowsField; }
       set { this.rowsField = value; }
     }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class InventoryUnitError : ApiError {
-    private InventoryUnitErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public InventoryUnitErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum InventoryUnitErrorReason {
-    EXPLICIT_TARGETING_NOT_ALLOWED
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AdUnitHierarchyError : ApiError {
-    private AdUnitHierarchyErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public AdUnitHierarchyErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitHierarchyError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum AdUnitHierarchyErrorReason {
-    INVALID_DEPTH,
-    INVALID_PARENT
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AdUnitCodeError : ApiError {
-    private AdUnitCodeErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public AdUnitCodeErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitCodeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum AdUnitCodeErrorReason {
-    INVALID_CHARACTERS,
-    INVALID_CHARACTERS_WHEN_UTF_CHARACTERS_ARE_ALLOWED,
-    LEADING_FORWARD_SLASH
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AdUnitAfcSizeError : ApiError {
-    private AdUnitAfcSizeErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public AdUnitAfcSizeErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitAfcSizeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum AdUnitAfcSizeErrorReason {
-    INVALID,
-    DOESNT_FIT,
-    NOT_APPLICABLE
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -8249,11 +9134,37 @@ Placement[] placements) {
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnit.TargetWindow", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum AdUnitTargetWindow {
-    TOP,
-    BLANK
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "AudienceSegmentServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class AudienceSegmentService : DfpSoapClient {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public AudienceSegmentService() {
+      this.Url = "https://www.google.com/apis/ads/publisher/v201206/AudienceSegmentService";
+    }
+
+    public RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public AudienceSegmentPage getAudienceSegmentsByStatement(Statement filterStatement) {
+      object[] results = this.Invoke("getAudienceSegmentsByStatement", new object[] {filterStatement});
+      return ((AudienceSegmentPage) (results[0]));
+    }
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -8261,39 +9172,145 @@ Placement[] placements) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AdUnitSize {
-    private Size sizeField;
+  public partial class AudienceSegment {
+    private long idField;
 
-    private EnvironmentType environmentTypeField;
+    private bool idFieldSpecified;
 
-    private bool environmentTypeFieldSpecified;
+    private string nameField;
 
-    private AdUnitSize[] companionsField;
+    private string descriptionField;
 
-    public Size size {
-      get { return this.sizeField; }
-      set { this.sizeField = value; }
-    }
+    private AudienceSegmentStatus statusField;
 
-    public EnvironmentType environmentType {
-      get { return this.environmentTypeField; }
+    private bool statusFieldSpecified;
+
+    private long sizeField;
+
+    private bool sizeFieldSpecified;
+
+    private string audienceSegmentTypeField;
+
+    public long id {
+      get { return this.idField; }
       set {
-        this.environmentTypeField = value;
-        this.environmentTypeSpecified = true;
+        this.idField = value;
+        this.idSpecified = true;
       }
     }
 
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool environmentTypeSpecified {
-      get { return this.environmentTypeFieldSpecified; }
-      set { this.environmentTypeFieldSpecified = value; }
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
-    [System.Xml.Serialization.XmlElementAttribute("companions")]
-    public AdUnitSize[] companions {
-      get { return this.companionsField; }
-      set { this.companionsField = value; }
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public string description {
+      get { return this.descriptionField; }
+      set { this.descriptionField = value; }
+    }
+
+    public AudienceSegmentStatus status {
+      get { return this.statusField; }
+      set {
+        this.statusField = value;
+        this.statusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool statusSpecified {
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
+    }
+
+    public long size {
+      get { return this.sizeField; }
+      set {
+        this.sizeField = value;
+        this.sizeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool sizeSpecified {
+      get { return this.sizeFieldSpecified; }
+      set { this.sizeFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("AudienceSegment.Type")]
+    public string AudienceSegmentType {
+      get { return this.audienceSegmentTypeField; }
+      set { this.audienceSegmentTypeField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudienceSegment.Status", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum AudienceSegmentStatus {
+    ACTIVE,
+    INACTIVE
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class AudienceSegmentPage {
+    private int totalResultSetSizeField;
+
+    private bool totalResultSetSizeFieldSpecified;
+
+    private int startIndexField;
+
+    private bool startIndexFieldSpecified;
+
+    private AudienceSegment[] resultsField;
+
+    public int totalResultSetSize {
+      get { return this.totalResultSetSizeField; }
+      set {
+        this.totalResultSetSizeField = value;
+        this.totalResultSetSizeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool totalResultSetSizeSpecified {
+      get { return this.totalResultSetSizeFieldSpecified; }
+      set { this.totalResultSetSizeFieldSpecified = value; }
+    }
+
+    public int startIndex {
+      get { return this.startIndexField; }
+      set {
+        this.startIndexField = value;
+        this.startIndexSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool startIndexSpecified {
+      get { return this.startIndexFieldSpecified; }
+      set { this.startIndexFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("results")]
+    public AudienceSegment[] results {
+      get { return this.resultsField; }
+      set { this.resultsField = value; }
     }
   }
 
@@ -8551,187 +9568,6 @@ Team[] teams) {
     NONE,
     READ_ONLY,
     READ_WRITE
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Web.Services.WebServiceBindingAttribute(Name = "AudienceSegmentServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
-  public partial class AudienceSegmentService : DfpSoapClient {
-    private RequestHeader requestHeaderField;
-
-    private ResponseHeader responseHeaderField;
-
-    public AudienceSegmentService() {
-      this.Url = "https://www.google.com/apis/ads/publisher/v201206/AudienceSegmentService";
-    }
-
-    public RequestHeader RequestHeader {
-      get { return this.requestHeaderField; }
-      set { this.requestHeaderField = value; }
-    }
-
-    public ResponseHeader ResponseHeader {
-      get { return this.responseHeaderField; }
-      set { this.responseHeaderField = value; }
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public AudienceSegmentPage getAudienceSegmentsByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getAudienceSegmentsByStatement", new object[] {filterStatement});
-      return ((AudienceSegmentPage) (results[0]));
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AudienceSegment {
-    private long idField;
-
-    private bool idFieldSpecified;
-
-    private string nameField;
-
-    private string descriptionField;
-
-    private AudienceSegmentStatus statusField;
-
-    private bool statusFieldSpecified;
-
-    private long sizeField;
-
-    private bool sizeFieldSpecified;
-
-    private string audienceSegmentTypeField;
-
-    public long id {
-      get { return this.idField; }
-      set {
-        this.idField = value;
-        this.idSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool idSpecified {
-      get { return this.idFieldSpecified; }
-      set { this.idFieldSpecified = value; }
-    }
-
-    public string name {
-      get { return this.nameField; }
-      set { this.nameField = value; }
-    }
-
-    public string description {
-      get { return this.descriptionField; }
-      set { this.descriptionField = value; }
-    }
-
-    public AudienceSegmentStatus status {
-      get { return this.statusField; }
-      set {
-        this.statusField = value;
-        this.statusSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool statusSpecified {
-      get { return this.statusFieldSpecified; }
-      set { this.statusFieldSpecified = value; }
-    }
-
-    public long size {
-      get { return this.sizeField; }
-      set {
-        this.sizeField = value;
-        this.sizeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool sizeSpecified {
-      get { return this.sizeFieldSpecified; }
-      set { this.sizeFieldSpecified = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("AudienceSegment.Type")]
-    public string AudienceSegmentType {
-      get { return this.audienceSegmentTypeField; }
-      set { this.audienceSegmentTypeField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudienceSegment.Status", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum AudienceSegmentStatus {
-    ACTIVE,
-    INACTIVE
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AudienceSegmentPage {
-    private int totalResultSetSizeField;
-
-    private bool totalResultSetSizeFieldSpecified;
-
-    private int startIndexField;
-
-    private bool startIndexFieldSpecified;
-
-    private AudienceSegment[] resultsField;
-
-    public int totalResultSetSize {
-      get { return this.totalResultSetSizeField; }
-      set {
-        this.totalResultSetSizeField = value;
-        this.totalResultSetSizeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool totalResultSetSizeSpecified {
-      get { return this.totalResultSetSizeFieldSpecified; }
-      set { this.totalResultSetSizeFieldSpecified = value; }
-    }
-
-    public int startIndex {
-      get { return this.startIndexField; }
-      set {
-        this.startIndexField = value;
-        this.startIndexSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool startIndexSpecified {
-      get { return this.startIndexFieldSpecified; }
-      set { this.startIndexFieldSpecified = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("results")]
-    public AudienceSegment[] results {
-      get { return this.resultsField; }
-      set { this.resultsField = value; }
-    }
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
@@ -12468,6 +13304,180 @@ Creative[] creatives) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "CreativeSetServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class CreativeSetService : DfpSoapClient {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public CreativeSetService() {
+      this.Url = "https://www.google.com/apis/ads/publisher/v201206/CreativeSetService";
+    }
+
+    public RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public CreativeSet createCreativeSet(CreativeSet creativeSet) {
+      object[] results = this.Invoke("createCreativeSet", new object[] {creativeSet});
+      return ((CreativeSet) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public CreativeSet getCreativeSet(long creativeSetId) {
+      object[] results = this.Invoke("getCreativeSet", new object[] {creativeSetId});
+      return ((CreativeSet) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public CreativeSetPage getCreativeSetsByStatement(Statement statement) {
+      object[] results = this.Invoke("getCreativeSetsByStatement", new object[] {statement});
+      return ((CreativeSetPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public CreativeSet updateCreativeSet(CreativeSet creativeSet) {
+      object[] results = this.Invoke("updateCreativeSet", new object[] {creativeSet});
+      return ((CreativeSet) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class CreativeSetPage {
+    private int totalResultSetSizeField;
+
+    private bool totalResultSetSizeFieldSpecified;
+
+    private int startIndexField;
+
+    private bool startIndexFieldSpecified;
+
+    private CreativeSet[] resultsField;
+
+    public int totalResultSetSize {
+      get { return this.totalResultSetSizeField; }
+      set {
+        this.totalResultSetSizeField = value;
+        this.totalResultSetSizeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool totalResultSetSizeSpecified {
+      get { return this.totalResultSetSizeFieldSpecified; }
+      set { this.totalResultSetSizeFieldSpecified = value; }
+    }
+
+    public int startIndex {
+      get { return this.startIndexField; }
+      set {
+        this.startIndexField = value;
+        this.startIndexSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool startIndexSpecified {
+      get { return this.startIndexFieldSpecified; }
+      set { this.startIndexFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("results")]
+    public CreativeSet[] results {
+      get { return this.resultsField; }
+      set { this.resultsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class CreativeSet {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private string nameField;
+
+    private long masterCreativeIdField;
+
+    private bool masterCreativeIdFieldSpecified;
+
+    private long[] companionCreativeIdsField;
+
+    public long id {
+      get { return this.idField; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public long masterCreativeId {
+      get { return this.masterCreativeIdField; }
+      set {
+        this.masterCreativeIdField = value;
+        this.masterCreativeIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool masterCreativeIdSpecified {
+      get { return this.masterCreativeIdFieldSpecified; }
+      set { this.masterCreativeIdFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("companionCreativeIds")]
+    public long[] companionCreativeIds {
+      get { return this.companionCreativeIdsField; }
+      set { this.companionCreativeIdsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CreativeTemplateServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
   public partial class CreativeTemplateService : DfpSoapClient {
@@ -13867,37 +14877,21 @@ CustomTargetingValue[] values) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public partial class Forecast {
     private long idField;
-
     private bool idFieldSpecified;
-
     private long orderIdField;
-
     private bool orderIdFieldSpecified;
-
     private UnitType unitTypeField;
-
     private bool unitTypeFieldSpecified;
-
     private long availableUnitsField;
-
     private bool availableUnitsFieldSpecified;
-
     private long deliveredUnitsField;
-
     private bool deliveredUnitsFieldSpecified;
-
     private long matchedUnitsField;
-
     private bool matchedUnitsFieldSpecified;
-
     private long possibleUnitsField;
-
     private bool possibleUnitsFieldSpecified;
-
     private long reservedUnitsField;
-
     private bool reservedUnitsFieldSpecified;
-
     public long id {
       get { return this.idField; }
       set {
@@ -13905,14 +14899,12 @@ CustomTargetingValue[] values) {
         this.idSpecified = true;
       }
     }
-
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool idSpecified {
       get { return this.idFieldSpecified; }
       set { this.idFieldSpecified = value; }
     }
-
     public long orderId {
       get { return this.orderIdField; }
       set {
@@ -13920,14 +14912,12 @@ CustomTargetingValue[] values) {
         this.orderIdSpecified = true;
       }
     }
-
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool orderIdSpecified {
       get { return this.orderIdFieldSpecified; }
       set { this.orderIdFieldSpecified = value; }
     }
-
     public UnitType unitType {
       get { return this.unitTypeField; }
       set {
@@ -13935,14 +14925,12 @@ CustomTargetingValue[] values) {
         this.unitTypeSpecified = true;
       }
     }
-
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool unitTypeSpecified {
       get { return this.unitTypeFieldSpecified; }
       set { this.unitTypeFieldSpecified = value; }
     }
-
     public long availableUnits {
       get { return this.availableUnitsField; }
       set {
@@ -13950,14 +14938,12 @@ CustomTargetingValue[] values) {
         this.availableUnitsSpecified = true;
       }
     }
-
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool availableUnitsSpecified {
       get { return this.availableUnitsFieldSpecified; }
       set { this.availableUnitsFieldSpecified = value; }
     }
-
     public long deliveredUnits {
       get { return this.deliveredUnitsField; }
       set {
@@ -13965,14 +14951,12 @@ CustomTargetingValue[] values) {
         this.deliveredUnitsSpecified = true;
       }
     }
-
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool deliveredUnitsSpecified {
       get { return this.deliveredUnitsFieldSpecified; }
       set { this.deliveredUnitsFieldSpecified = value; }
     }
-
     public long matchedUnits {
       get { return this.matchedUnitsField; }
       set {
@@ -13980,14 +14964,12 @@ CustomTargetingValue[] values) {
         this.matchedUnitsSpecified = true;
       }
     }
-
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool matchedUnitsSpecified {
       get { return this.matchedUnitsFieldSpecified; }
       set { this.matchedUnitsFieldSpecified = value; }
     }
-
     public long possibleUnits {
       get { return this.possibleUnitsField; }
       set {
@@ -13995,14 +14977,12 @@ CustomTargetingValue[] values) {
         this.possibleUnitsSpecified = true;
       }
     }
-
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool possibleUnitsSpecified {
       get { return this.possibleUnitsFieldSpecified; }
       set { this.possibleUnitsFieldSpecified = value; }
     }
-
     public long reservedUnits {
       get { return this.reservedUnitsField; }
       set {
@@ -14010,848 +14990,11 @@ CustomTargetingValue[] values) {
         this.reservedUnitsSpecified = true;
       }
     }
-
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool reservedUnitsSpecified {
       get { return this.reservedUnitsFieldSpecified; }
       set { this.reservedUnitsFieldSpecified = value; }
     }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Web.Services.WebServiceBindingAttribute(Name = "InventoryServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
-  public partial class InventoryService : DfpSoapClient {
-    private RequestHeader requestHeaderField;
-
-    private ResponseHeader responseHeaderField;
-
-    public InventoryService() {
-      this.Url = "https://www.google.com/apis/ads/publisher/v201206/InventoryService";
-    }
-
-    public RequestHeader RequestHeader {
-      get { return this.requestHeaderField; }
-      set { this.requestHeaderField = value; }
-    }
-
-    public ResponseHeader ResponseHeader {
-      get { return this.responseHeaderField; }
-      set { this.responseHeaderField = value; }
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public AdUnit createAdUnit(AdUnit adUnit) {
-      object[] results = this.Invoke("createAdUnit", new object[] {adUnit});
-      return ((AdUnit) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public AdUnit[] createAdUnits([System.Xml.Serialization.XmlElementAttribute("adUnits")]
-AdUnit[] adUnits) {
-      object[] results = this.Invoke("createAdUnits", new object[] {adUnits});
-      return ((AdUnit[]) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public AdUnit getAdUnit(string adUnitId) {
-      object[] results = this.Invoke("getAdUnit", new object[] {adUnitId});
-      return ((AdUnit) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public AdUnitSize[] getAdUnitSizesByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getAdUnitSizesByStatement", new object[] {filterStatement});
-      return ((AdUnitSize[]) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public AdUnitPage getAdUnitsByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getAdUnitsByStatement", new object[] {filterStatement});
-      return ((AdUnitPage) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public UpdateResult performAdUnitAction(AdUnitAction adUnitAction, Statement filterStatement) {
-      object[] results = this.Invoke("performAdUnitAction", new object[] {adUnitAction, filterStatement});
-      return ((UpdateResult) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public AdUnit updateAdUnit(AdUnit adUnit) {
-      object[] results = this.Invoke("updateAdUnit", new object[] {adUnit});
-      return ((AdUnit) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public AdUnit[] updateAdUnits([System.Xml.Serialization.XmlElementAttribute("adUnits")]
-AdUnit[] adUnits) {
-      object[] results = this.Invoke("updateAdUnits", new object[] {adUnits});
-      return ((AdUnit[]) (results[0]));
-    }
-  }
-
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateAdUnits))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AssignAdUnitsToPlacement))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveAdUnits))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateAdUnits))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public abstract partial class AdUnitAction {
-    private string adUnitActionTypeField;
-
-    [System.Xml.Serialization.XmlElementAttribute("AdUnitAction.Type")]
-    public string AdUnitActionType {
-      get { return this.adUnitActionTypeField; }
-      set { this.adUnitActionTypeField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class DeactivateAdUnits : AdUnitAction {
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AssignAdUnitsToPlacement : AdUnitAction {
-    private long placementIdField;
-
-    private bool placementIdFieldSpecified;
-
-    public long placementId {
-      get { return this.placementIdField; }
-      set {
-        this.placementIdField = value;
-        this.placementIdSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool placementIdSpecified {
-      get { return this.placementIdFieldSpecified; }
-      set { this.placementIdFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class ArchiveAdUnits : AdUnitAction {
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class ActivateAdUnits : AdUnitAction {
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AdUnitPage {
-    private int totalResultSetSizeField;
-
-    private bool totalResultSetSizeFieldSpecified;
-
-    private int startIndexField;
-
-    private bool startIndexFieldSpecified;
-
-    private AdUnit[] resultsField;
-
-    public int totalResultSetSize {
-      get { return this.totalResultSetSizeField; }
-      set {
-        this.totalResultSetSizeField = value;
-        this.totalResultSetSizeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool totalResultSetSizeSpecified {
-      get { return this.totalResultSetSizeFieldSpecified; }
-      set { this.totalResultSetSizeFieldSpecified = value; }
-    }
-
-    public int startIndex {
-      get { return this.startIndexField; }
-      set {
-        this.startIndexField = value;
-        this.startIndexSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool startIndexSpecified {
-      get { return this.startIndexFieldSpecified; }
-      set { this.startIndexFieldSpecified = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("results")]
-    public AdUnit[] results {
-      get { return this.resultsField; }
-      set { this.resultsField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AdUnit {
-    private string idField;
-
-    private string parentIdField;
-
-    private bool hasChildrenField;
-
-    private bool hasChildrenFieldSpecified;
-
-    private AdUnitParent[] parentPathField;
-
-    private string nameField;
-
-    private string descriptionField;
-
-    private AdUnitTargetWindow targetWindowField;
-
-    private bool targetWindowFieldSpecified;
-
-    private InventoryStatus statusField;
-
-    private bool statusFieldSpecified;
-
-    private string adUnitCodeField;
-
-    private AdUnitSize[] adUnitSizesField;
-
-    private TargetPlatform targetPlatformField;
-
-    private bool targetPlatformFieldSpecified;
-
-    private bool explicitlyTargetedField;
-
-    private bool explicitlyTargetedFieldSpecified;
-
-    private AdSenseSettingsInheritedProperty inheritedAdSenseSettingsField;
-
-    private LabelFrequencyCap[] appliedLabelFrequencyCapsField;
-
-    private LabelFrequencyCap[] effectiveLabelFrequencyCapsField;
-
-    private long[] effectiveTeamIdsField;
-
-    private long[] appliedTeamIdsField;
-
-    private DateTime lastModifiedDateTimeField;
-
-    public string id {
-      get { return this.idField; }
-      set { this.idField = value; }
-    }
-
-    public string parentId {
-      get { return this.parentIdField; }
-      set { this.parentIdField = value; }
-    }
-
-    public bool hasChildren {
-      get { return this.hasChildrenField; }
-      set {
-        this.hasChildrenField = value;
-        this.hasChildrenSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool hasChildrenSpecified {
-      get { return this.hasChildrenFieldSpecified; }
-      set { this.hasChildrenFieldSpecified = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("parentPath")]
-    public AdUnitParent[] parentPath {
-      get { return this.parentPathField; }
-      set { this.parentPathField = value; }
-    }
-
-    public string name {
-      get { return this.nameField; }
-      set { this.nameField = value; }
-    }
-
-    public string description {
-      get { return this.descriptionField; }
-      set { this.descriptionField = value; }
-    }
-
-    public AdUnitTargetWindow targetWindow {
-      get { return this.targetWindowField; }
-      set {
-        this.targetWindowField = value;
-        this.targetWindowSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool targetWindowSpecified {
-      get { return this.targetWindowFieldSpecified; }
-      set { this.targetWindowFieldSpecified = value; }
-    }
-
-    public InventoryStatus status {
-      get { return this.statusField; }
-      set {
-        this.statusField = value;
-        this.statusSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool statusSpecified {
-      get { return this.statusFieldSpecified; }
-      set { this.statusFieldSpecified = value; }
-    }
-
-    public string adUnitCode {
-      get { return this.adUnitCodeField; }
-      set { this.adUnitCodeField = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("adUnitSizes")]
-    public AdUnitSize[] adUnitSizes {
-      get { return this.adUnitSizesField; }
-      set { this.adUnitSizesField = value; }
-    }
-
-    public TargetPlatform targetPlatform {
-      get { return this.targetPlatformField; }
-      set {
-        this.targetPlatformField = value;
-        this.targetPlatformSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool targetPlatformSpecified {
-      get { return this.targetPlatformFieldSpecified; }
-      set { this.targetPlatformFieldSpecified = value; }
-    }
-
-    public bool explicitlyTargeted {
-      get { return this.explicitlyTargetedField; }
-      set {
-        this.explicitlyTargetedField = value;
-        this.explicitlyTargetedSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool explicitlyTargetedSpecified {
-      get { return this.explicitlyTargetedFieldSpecified; }
-      set { this.explicitlyTargetedFieldSpecified = value; }
-    }
-
-    public AdSenseSettingsInheritedProperty inheritedAdSenseSettings {
-      get { return this.inheritedAdSenseSettingsField; }
-      set { this.inheritedAdSenseSettingsField = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("appliedLabelFrequencyCaps")]
-    public LabelFrequencyCap[] appliedLabelFrequencyCaps {
-      get { return this.appliedLabelFrequencyCapsField; }
-      set { this.appliedLabelFrequencyCapsField = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("effectiveLabelFrequencyCaps")]
-    public LabelFrequencyCap[] effectiveLabelFrequencyCaps {
-      get { return this.effectiveLabelFrequencyCapsField; }
-      set { this.effectiveLabelFrequencyCapsField = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("effectiveTeamIds")]
-    public long[] effectiveTeamIds {
-      get { return this.effectiveTeamIdsField; }
-      set { this.effectiveTeamIdsField = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("appliedTeamIds")]
-    public long[] appliedTeamIds {
-      get { return this.appliedTeamIdsField; }
-      set { this.appliedTeamIdsField = value; }
-    }
-
-    public DateTime lastModifiedDateTime {
-      get { return this.lastModifiedDateTimeField; }
-      set { this.lastModifiedDateTimeField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AdUnitParent {
-    private string idField;
-
-    private string nameField;
-
-    public string id {
-      get { return this.idField; }
-      set { this.idField = value; }
-    }
-
-    public string name {
-      get { return this.nameField; }
-      set { this.nameField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AdSenseSettingsInheritedProperty {
-    private AdSenseSettings valueField;
-
-    public AdSenseSettings value {
-      get { return this.valueField; }
-      set { this.valueField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AdSenseSettings {
-    private bool adSenseEnabledField;
-
-    private bool adSenseEnabledFieldSpecified;
-
-    private string borderColorField;
-
-    private string titleColorField;
-
-    private string backgroundColorField;
-
-    private string textColorField;
-
-    private string urlColorField;
-
-    private AdSenseSettingsAdType adTypeField;
-
-    private bool adTypeFieldSpecified;
-
-    private AdSenseSettingsBorderStyle borderStyleField;
-
-    private bool borderStyleFieldSpecified;
-
-    private AdSenseSettingsFontFamily fontFamilyField;
-
-    private bool fontFamilyFieldSpecified;
-
-    private AdSenseSettingsFontSize fontSizeField;
-
-    private bool fontSizeFieldSpecified;
-
-    private Size_StringMapEntry[] afcFormatsField;
-
-    public bool adSenseEnabled {
-      get { return this.adSenseEnabledField; }
-      set {
-        this.adSenseEnabledField = value;
-        this.adSenseEnabledSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool adSenseEnabledSpecified {
-      get { return this.adSenseEnabledFieldSpecified; }
-      set { this.adSenseEnabledFieldSpecified = value; }
-    }
-
-    public string borderColor {
-      get { return this.borderColorField; }
-      set { this.borderColorField = value; }
-    }
-
-    public string titleColor {
-      get { return this.titleColorField; }
-      set { this.titleColorField = value; }
-    }
-
-    public string backgroundColor {
-      get { return this.backgroundColorField; }
-      set { this.backgroundColorField = value; }
-    }
-
-    public string textColor {
-      get { return this.textColorField; }
-      set { this.textColorField = value; }
-    }
-
-    public string urlColor {
-      get { return this.urlColorField; }
-      set { this.urlColorField = value; }
-    }
-
-    public AdSenseSettingsAdType adType {
-      get { return this.adTypeField; }
-      set {
-        this.adTypeField = value;
-        this.adTypeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool adTypeSpecified {
-      get { return this.adTypeFieldSpecified; }
-      set { this.adTypeFieldSpecified = value; }
-    }
-
-    public AdSenseSettingsBorderStyle borderStyle {
-      get { return this.borderStyleField; }
-      set {
-        this.borderStyleField = value;
-        this.borderStyleSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool borderStyleSpecified {
-      get { return this.borderStyleFieldSpecified; }
-      set { this.borderStyleFieldSpecified = value; }
-    }
-
-    public AdSenseSettingsFontFamily fontFamily {
-      get { return this.fontFamilyField; }
-      set {
-        this.fontFamilyField = value;
-        this.fontFamilySpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool fontFamilySpecified {
-      get { return this.fontFamilyFieldSpecified; }
-      set { this.fontFamilyFieldSpecified = value; }
-    }
-
-    public AdSenseSettingsFontSize fontSize {
-      get { return this.fontSizeField; }
-      set {
-        this.fontSizeField = value;
-        this.fontSizeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool fontSizeSpecified {
-      get { return this.fontSizeFieldSpecified; }
-      set { this.fontSizeFieldSpecified = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("afcFormats")]
-    public Size_StringMapEntry[] afcFormats {
-      get { return this.afcFormatsField; }
-      set { this.afcFormatsField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.AdType", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum AdSenseSettingsAdType {
-    TEXT,
-    IMAGE,
-    TEXT_AND_IMAGE
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.BorderStyle", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum AdSenseSettingsBorderStyle {
-    DEFAULT,
-    NOT_ROUNDED,
-    SLIGHTLY_ROUNDED,
-    VERY_ROUNDED
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.FontFamily", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum AdSenseSettingsFontFamily {
-    DEFAULT,
-    ARIAL,
-    TAHOMA,
-    GEORGIA,
-    TIMES,
-    VERDANA
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.FontSize", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum AdSenseSettingsFontSize {
-    DEFAULT,
-    SMALL,
-    MEDIUM,
-    LARGE
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class Size_StringMapEntry {
-    private Size keyField;
-
-    private string valueField;
-
-    public Size key {
-      get { return this.keyField; }
-      set { this.keyField = value; }
-    }
-
-    public string value {
-      get { return this.valueField; }
-      set { this.valueField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class LabelFrequencyCap {
-    private FrequencyCap frequencyCapField;
-
-    private long labelIdField;
-
-    private bool labelIdFieldSpecified;
-
-    public FrequencyCap frequencyCap {
-      get { return this.frequencyCapField; }
-      set { this.frequencyCapField = value; }
-    }
-
-    public long labelId {
-      get { return this.labelIdField; }
-      set {
-        this.labelIdField = value;
-        this.labelIdSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool labelIdSpecified {
-      get { return this.labelIdFieldSpecified; }
-      set { this.labelIdFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class AdUnitTypeError : ApiError {
-    private AdUnitTypeErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public AdUnitTypeErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitTypeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum AdUnitTypeErrorReason {
-    MOBILE_APP_PLATFORM_NOT_VALID
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class InventoryUnitSizesError : ApiError {
-    private InventoryUnitSizesErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public InventoryUnitSizesErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitSizesError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum InventoryUnitSizesErrorReason {
-    INVALID_SIZES,
-    INVALID_SIZE_FOR_PLATFORM,
-    INVALID_SIZE_FOR_ENVIRONMENT,
-    INVALID_SIZE_FOR_MASTER,
-    INVALID_SIZE_FOR_COMPANION,
-    DUPLICATE_MASTER_SIZES,
-    ASPECT_RATIO_NOT_SUPPORTED
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class InventoryUnitPartnerAssociationError : ApiError {
-    private InventoryUnitPartnerAssociationErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public InventoryUnitPartnerAssociationErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitPartnerAssociationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum InventoryUnitPartnerAssociationErrorReason {
-    ANCESTOR_AD_UNIT_HAS_PARTNER_ASSOCIATION,
-    DESCENDANT_AD_UNIT_HAS_PARTNER_ASSOCIATION,
-    SAME_PARTNER_ASSOCIATION_IN_INVENTORY_HIERARCHY,
-    NO_PARTNER_CATCH_ALL
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class InvalidColorError : ApiError {
-    private InvalidColorErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public InvalidColorErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InvalidColorError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum InvalidColorErrorReason {
-    INVALID_FORMAT
   }
 }

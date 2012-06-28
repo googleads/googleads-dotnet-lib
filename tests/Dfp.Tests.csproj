@@ -163,6 +163,7 @@
     <Compile Include="v201206\LineItemServiceTests.cs" />
     <Compile Include="v201206\OrderServiceTests.cs" />
     <Compile Include="v201206\PlacementServiceTests.cs" />
+    <Compile Include="v201206\ReportServiceTests.cs" />
     <Compile Include="v201206\TestUtils.cs" />
     <Compile Include="v201206\UserServiceTests.cs" />
     <Compile Include="BaseTests.cs" />

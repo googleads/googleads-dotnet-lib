@@ -688,6 +688,11 @@
     <Compile Include="v201206\PlacementService\GetPlacementsByStatement.cs" />
     <Compile Include="v201206\PlacementService\UpdatePlacements.cs" />
     <Compile Include="v201206\PublisherQueryLanguageService\GetAllCities.cs" />
+    <Compile Include="v201206\ReportService\DownloadReport.cs" />
+    <Compile Include="v201206\ReportService\RunDeliveryReport.cs" />
+    <Compile Include="v201206\ReportService\RunInventoryReport.cs" />
+    <Compile Include="v201206\ReportService\RunMergedDeliveryReport.cs" />
+    <Compile Include="v201206\ReportService\RunSalesReport.cs" />
     <Compile Include="v201206\SuggestedAdUnitService\ApproveSuggestedAdUnits.cs" />
     <Compile Include="v201206\SuggestedAdUnitService\GetAllSuggestedAdUnits.cs" />
     <Compile Include="v201206\SuggestedAdUnitService\GetSuggestedAdUnit.cs" />

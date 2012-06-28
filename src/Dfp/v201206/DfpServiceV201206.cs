@@ -54,6 +54,12 @@ namespace Google.Api.Ads.Dfp.Lib {
       public static readonly ServiceSignature CreativeService;
 
       /// <summary>
+      /// See <a href="http://code.google.com/apis/dfp/docs/reference/v201206/CreativeSetService.html">
+      /// this page </a> for details.
+      /// </summary>
+      public static readonly ServiceSignature CreativeSetService;
+
+      /// <summary>
       /// See <a href="http://code.google.com/apis/dfp/docs/reference/v201206/CreativeTemplateService.html">
       /// this page </a> for details.
       /// </summary>
@@ -173,6 +179,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         CompanyService = DfpService.MakeServiceSignature("v201206", "CompanyService");
         ContentService = DfpService.MakeServiceSignature("v201206", "ContentService");
         CreativeService = DfpService.MakeServiceSignature("v201206", "CreativeService");
+        CreativeSetService = DfpService.MakeServiceSignature("v201206", "CreativeSetService");
         CreativeTemplateService = DfpService.MakeServiceSignature("v201206",
             "CreativeTemplateService");
         CustomTargetingService = DfpService.MakeServiceSignature("v201206",
