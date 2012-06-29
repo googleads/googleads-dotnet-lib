@@ -1,3 +1,9 @@
+4.5.0
+- Added experimental support for OAuth2 as an authentication mechanism.
+- Added support for v201206.
+- Common library version was bumped to 1.2.0.
+- Changed the way user agents are constructed for SOAP requests.
+
 4.4.0
 - Added support for v201204.
 - Fixed issue 10.

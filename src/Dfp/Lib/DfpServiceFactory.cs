@@ -45,13 +45,6 @@ namespace Google.Api.Ads.Dfp.Lib {
     }
 
     /// <summary>
-    /// Gets an application name that can be used with the library.
-    /// </summary>
-    protected string GetApplicationName(DfpAppConfig dfpConfig) {
-      return String.Join("", new string[] {dfpConfig.Signature, "|", dfpConfig.ApplicationName});
-    }
-
-    /// <summary>
     /// Create a service object.
     /// </summary>
     /// <param name="signature">Signature of the service being created.</param>
@@ -96,6 +89,7 @@ namespace Google.Api.Ads.Dfp.Lib {
       service.Timeout = dfpConfig.Timeout;
       service.Url = string.Format("{0}apis/ads/publisher/{1}/{2}",
           serverUrl, dfpapiSignature.Version, dfpapiSignature.ServiceName);
+      service.UserAgent = dfpConfig.GetUserAgent();
 
       service.User = user;
       return service;
@@ -110,7 +104,7 @@ namespace Google.Api.Ads.Dfp.Lib {
 
       this.requestHeader = new RequestHeader();
       this.requestHeader.networkCode = dfpConfig.NetworkCode;
-      this.requestHeader.applicationName = GetApplicationName(dfpConfig);
+      this.requestHeader.applicationName = dfpConfig.GetUserAgent();
     }
   }
 }

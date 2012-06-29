@@ -14,19 +14,20 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.Common.OAuth.Lib;
-using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.v201204;
-
-using Microsoft.Practices.ServiceLocation;
+using OAuth.Net.Common;
 using OAuth.Net.Consumer;
 
+using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.v201204;
+using Google.Api.Ads.Common.OAuth.Lib;
+
 using System;
+using System.Data;
 
 namespace Google.Api.Ads.Dfp.Examples.OAuth {
   /// <summary>
-  /// This code example shows how to run a DFP API command line application
-  /// using OAuth 1.0a as authentication mechanism. To run this application,
+  /// This code example shows how to run an DFP API command line application
+  /// using OAuth 1.0a/2.0 as authentication mechanism. To run this application,
   ///
   /// 1. You should create a new Console Application project.
   /// 2. Add reference to the following assemblies:
@@ -37,102 +38,137 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
   /// <item>Microsoft.Practices.ServiceLocation.dll</item>
   /// <item>OAuth.Net.Combined.dll</item>
   /// <item>System.Web</item>
-  /// <item>System.Web.Services</item>
   /// <item>System.Configuration</item>
   /// </list>
   /// 3. Replace the Main() method with this class's method.
-  /// 4. Copy App.config from Dfp.Examples project, and configure it as shown in
-  /// this project's Web.config.
+  /// 4. Copy App.config from Dfp.Examples project, and configure
+  /// it as shown in this project's Web.config.
   /// 5. Compile and run this example.
   ///
   /// This code example depends on Console environment only for reading and
   /// writing values, you may use this code example in other environments like
   /// Windows Form applications with minimial modifications.
   /// </summary>
-  class ConsoleExample {
+  public class ConsoleExample {
+    /// <summary>
+    /// The main method.
+    /// </summary>
+    /// <param name="args">Command line arguments.</param>
     static void Main(string[] args) {
-      // Create a service locator, and configure it to use in-memory state
-      // store. The service locator provides a session based store for ASP.NET
-      // applications.
-      AdsServiceLocator injector = new AdsServiceLocator();
-      injector.UseMemoryStore = true;
-      ServiceLocator.SetLocatorProvider(new ServiceLocatorProvider(delegate() {
-        return injector;
-      }));
-
-      // Create a new Dfp user.
       DfpUser user = new DfpUser();
-      DfpAppConfig config = user.Config as DfpAppConfig;
 
-      // Since this is not a web application, leave the callback url as null.
-      string callbackUrl = null;
+      if ((user.Config as DfpAppConfig).AuthorizationMethod ==
+          DfpAuthorizationMethod.OAuth) {
+        DoAuth1Authorization(user);
+      } else if ((user.Config as DfpAppConfig).AuthorizationMethod ==
+          DfpAuthorizationMethod.OAuth2) {
+        DoAuth2Authorization(user);
+      } else {
+        throw new Exception("Authorization mode is not OAuth.");
+      }
 
-      // Provide a unique user id. This is used to distinguish OAuth credentials
-      // of individual users in case your application manages multiple users
-      // concurrently. If it doesn't, you can provide any value for this string.
-      string userId = "user123";
-
-      // Set the OAuth provider.
-      AdsOAuthNetProvider provider = new AdsOAuthNetProvider(config.OAuthConsumerKey,
-          config.OAuthConsumerSecret, DfpService.GetOAuthScope(config),
-          callbackUrl, userId);
-
-      // The library provides an AuthorizationHandler and VerificationHandler
-      // that works fine with an ASP.NET environment. In case you need to
-      // support another environment, or modify the behaviour of the default
-      // handler in an ASP.NET application, you need to override these fields.
-      provider.AuthorizationHandler = delegate(object sender, AuthorizationEventArgs authArgs) {
-        OAuthRequest request = (OAuthRequest) sender;
-        Console.WriteLine("Visit {0} in a new browser window. Once the process is complete, " +
-            "enter the verification code provided by the web page below.",
-            request.Service.BuildAuthorizationUrl(authArgs.RequestToken).AbsoluteUri);
-        authArgs.ContinueOnReturn = true;
-      };
-
-      provider.VerificationHandler =
-          delegate(object sender, AuthorizationVerificationEventArgs authArgs) {
-            Console.Write("Please enter the OAuth verifier: ");
-            authArgs.Verifier = Console.ReadLine();
-            // If the user provided an empty verifier, exit the application,
-            // since the OAuth flow cannot continue any longer.
-            if (string.IsNullOrEmpty(authArgs.Verifier)) {
-              System.Environment.Exit(2);
-            }
-          };
-
-      user.OAuthProvider = provider;
-
-      // Trigger the OAuth signup process.
-      user.OAuthProvider.GenerateAccessToken();
-
-      // Now make your API call.
       // Get the UserService.
-      UserService userService = (UserService) user.GetService(DfpService.v201204.UserService);
+      UserService userService = (UserService)user.GetService(DfpService.v201204.UserService);
 
       // Sets defaults for page and Statement.
       UserPage page = new UserPage();
       Statement statement = new Statement();
       int offset = 0;
 
-      do {
-        // Create a Statement to get all users.
-        statement.query = string.Format("LIMIT 500 OFFSET {0}", offset);
+      try {
+        do {
+          // Create a Statement to get all users.
+          statement.query = string.Format("LIMIT 500 OFFSET {0}", offset);
 
-        // Get users by Statement.
-        page = userService.getUsersByStatement(statement);
+          // Get users by Statement.
+          page = userService.getUsersByStatement(statement);
 
-        if (page.results != null && page.results.Length > 0) {
-          int i = page.startIndex;
-          foreach (User usr in page.results) {
-            Console.WriteLine("{0}) User with ID = '{1}', email = '{2}', and role = '{3}'" +
-                " was found.", i, usr.id, usr.email, usr.roleName);
-            i++;
+          if (page.results != null && page.results.Length > 0) {
+            int i = page.startIndex;
+            foreach (User usr in page.results) {
+              Console.WriteLine("{0}) User with ID = '{1}', email = '{2}', and role = '{3}'" +
+                  " was found.", i, usr.id, usr.email, usr.roleName);
+              i++;
+            }
           }
-        }
-        offset += 500;
-      } while (offset < page.totalResultSetSize);
+          offset += 500;
+        } while (offset < page.totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
+      } catch (Exception ex) {
+        Console.WriteLine("Failed to get all users. Exception says \"{0}\"",
+            ex.Message);
+      }
+    }
+
+    /// <summary>
+    /// Does the OAuth2 authorization.
+    /// </summary>
+    /// <param name="user">The Dfp user.</param>
+    /// <remarks>If you have saved a user's access and refresh tokens from a
+    /// previous session, you can set them directly to the OAuth2 handler
+    /// object. Also, make sure you set the redirect uri and scope correctly
+    /// if you wish to call RefreshAccessToken method.</remarks>
+    private static void DoAuth2Authorization(DfpUser user) {
+      // Set the OAuth2 scope.
+      user.Config.OAuth2Scope = DfpService.GetOAuthScope(user.Config as DfpAppConfig);
+
+      // Since we are using a console application, set the callback url to null.
+      user.Config.OAuth2RedirectUri = null;
+
+      // Create the OAuth2 protocol handler and set it to the current user.
+      OAuth2Provider oAuth2 = new OAuth2Provider(user.Config);
+      user.OAuthProvider = oAuth2;
+
+      // Get the authorization url.
+      string authorizationUrl = oAuth2.GetAuthorizationUrl();
+      Console.WriteLine("Open a fresh web browser and navigate to \n\n{0}\n\n. You will be " +
+          "prompted to login and then authorize this application to make calls to the " +
+          "AdWords API. Once approved, you will be presented with an authorization code.",
+          authorizationUrl);
+
+      // Accept the OAuth2 authorization code from the user.
+      Console.Write("Enter the authorization code :");
+      string authorizationCode = Console.ReadLine();
+
+      // Fetch the access and refresh tokens.
+      oAuth2.FetchAccessAndRefreshTokens(authorizationCode);
+    }
+
+    /// <summary>
+    /// Does the OAuth1 authorization.
+    /// </summary>
+    /// <param name="user">The Dfp user.</param>
+    /// <remarks>If you have saved a user's access tokens from a previous
+    /// session, you can set them directly to the OAuth1a handler object. Since
+    /// Also, make sure you set the redirect uri and scope correctly for signing
+    /// purposes.</remarks>
+    private static void DoAuth1Authorization(DfpUser user) {
+      // Set the OAuth1.0a scope.
+      user.Config.OAuthScope = DfpService.GetOAuthScope(user.Config as DfpAppConfig);
+
+      // Since we are using a console application, set the callback url to null.
+      user.Config.OAuthCallbackUrl = null;
+
+      // Create the OAuth1.oa protocol handler and set it to the current user.
+      OAuth1aProvider oAuth1a = new OAuth1aProvider(user.Config);
+      user.OAuthProvider = oAuth1a;
+
+      // Generate the authorization url and display that to the user. Note that
+      // this will also generate a request token if not done already.
+      string authorizationUrl = oAuth1a.GetAuthorizationUrl();
+      Console.WriteLine("Open a fresh web browser and navigate to \n\n{0}\n\n. You will be " +
+          "prompted to login and then authorize this application to make calls to the " +
+          "AdWords API. Once approved, you will be presented with an authorization code.",
+          authorizationUrl);
+
+      // Accept the authorization code from the user.
+      Console.Write("Enter the authorization code :");
+      string authorizationCode = Console.ReadLine();
+
+      // Fetch the access token.
+      oAuth1a.FetchAccessAndRefreshTokens(authorizationCode);
+      return;
     }
   }
 }
