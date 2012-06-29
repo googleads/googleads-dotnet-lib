@@ -452,6 +452,9 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
       get {
         return oAuthTokensObtained;
       }
+      set {
+        oAuthTokensObtained = value;
+      }
     }
 
     /// <summary>

@@ -124,7 +124,7 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
       string authorizationUrl = oAuth2.GetAuthorizationUrl();
       Console.WriteLine("Open a fresh web browser and navigate to \n\n{0}\n\n. You will be " +
           "prompted to login and then authorize this application to make calls to the " +
-          "AdWords API. Once approved, you will be presented with an authorization code.",
+          "DFP API. Once approved, you will be presented with an authorization code.",
           authorizationUrl);
 
       // Accept the OAuth2 authorization code from the user.
@@ -159,7 +159,7 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
       string authorizationUrl = oAuth1a.GetAuthorizationUrl();
       Console.WriteLine("Open a fresh web browser and navigate to \n\n{0}\n\n. You will be " +
           "prompted to login and then authorize this application to make calls to the " +
-          "AdWords API. Once approved, you will be presented with an authorization code.",
+          "DFP API. Once approved, you will be presented with an authorization code.",
           authorizationUrl);
 
       // Accept the authorization code from the user.
