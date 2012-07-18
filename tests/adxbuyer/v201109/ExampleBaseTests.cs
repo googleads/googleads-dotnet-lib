@@ -35,29 +35,27 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     protected TestUtils utils = new TestUtils();
 
     /// <summary>
-    /// Map of parameters to run the code example.
-    /// </summary>
-    protected Dictionary<String, String> parameters = null;
-
-    /// <summary>
     /// Default public constructor.
     /// </summary>
     public ExampleBaseTests() : base() {
     }
 
     /// <summary>
-    /// Runs the code example.
+    /// Runs a code example.
     /// </summary>
-    /// <param name="codeExample">The code example.</param>
-    /// <param name="parameters">The code example parameters.</param>
-    protected void RunExample(Object codeExample) {
+    /// <param name="exampleDelegate">The delegate that initializes and runs the
+    /// code example.</param>
+    protected void RunExample(TestDelegate exampleDelegate) {
       Thread.Sleep(10000);
       StringWriter writer = new StringWriter();
       Assert.DoesNotThrow(delegate() {
-        codeExample.GetType().GetMethod("Run").Invoke(codeExample,
-            new object[] {user, parameters, writer});
+        TextWriter oldWriter = Console.Out;
+        Console.SetOut(writer);
+        exampleDelegate.Invoke();
+        Console.SetOut(oldWriter);
         Console.WriteLine(writer.ToString());
       });
     }
+
   }
 }

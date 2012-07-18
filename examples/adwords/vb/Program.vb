@@ -87,18 +87,51 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
     End Sub
 
     ''' <summary>
+    ''' Invokes the Run method of code example.
+    ''' </summary>
+    ''' <param name="codeExample">The code example.</param>
+    ''' <param name="user">The user.</param>
+    Private Shared Sub InvokeRun(ByVal codeExample As Object, ByVal user As AdWordsUser)
+      codeExample.GetType.GetMethod("Run").Invoke(codeExample, GetParameters(user, codeExample))
+    End Sub
+
+    ''' <summary>
+    ''' Gets the description of the code example.
+    ''' </summary>
+    ''' <param name="codeExample">The code example.</param>
+    ''' <returns>The description</returns>
+    Private Shared Function GetDescription(ByVal codeExample As Object) As Object
+      Return codeExample.GetType.GetProperty("Description").GetValue(codeExample, Nothing)
+    End Function
+
+    ''' <summary>
+    ''' Gets the parameters for running a code example.
+    ''' </summary>
+    ''' <param name="user">The user.</param>
+    ''' <param name="codeExample">The code example.</param>
+    ''' <returns>The list of parameters.</returns>
+    Private Shared Function GetParameters(ByVal user As AdWordsUser, ByVal codeExample As Object) _
+        As Object()
+      Dim methodInfo As MethodInfo = codeExample.GetType.GetMethod("Run")
+      Dim parameters As New List(Of Object)
+      parameters.Add(user)
+      parameters.AddRange(ExampleUtilities.GetParameters(methodInfo))
+      Return parameters.ToArray
+    End Function
+
+    ''' <summary>
     ''' Runs a code example.
     ''' </summary>
     ''' <param name="user">The user whose credentials should be used for
     ''' running the code example.</param>
     ''' <param name="codeExample">The code example to run.</param>
-    Private Shared Sub RunACodeExample(ByVal user As AdWordsUser, ByVal codeExample As ExampleBase)
+    Private Shared Sub RunACodeExample(ByVal user As AdWordsUser, ByVal codeExample As Object)
       Try
-        Console.WriteLine(codeExample.Description)
-        codeExample.Run(user, codeExample.GetParameters(), Console.Out)
+        Console.WriteLine(GetDescription(codeExample))
+        Program.InvokeRun(codeExample, user)
       Catch ex As Exception
-        Console.WriteLine("An exception occurred while running this code example.\n{0} at\n{1}", _
-            ex.Message, ex.StackTrace)
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
       Finally
         Console.WriteLine("Press [Enter] to continue")
         Console.ReadLine()

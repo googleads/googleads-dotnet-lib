@@ -35,9 +35,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetPlacements
+      Dim codeExample As New GetPlacements
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -51,25 +56,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    Public Sub Run(ByVal user As AdWordsUser)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
           AdWordsService.v201109.AdGroupCriterionService)
@@ -116,11 +106,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
               ' to identify the criterion type.
               Dim placement As Placement = adGroupCriterion.criterion
               If isNegative Then
-                writer.WriteLine("{0}) Negative placement with ad group ID = '{1}', placement " & _
+                Console.WriteLine("{0}) Negative placement with ad group ID = '{1}', placement " & _
                     "ID = '{2}', and url = '{3}' was found.", i, adGroupCriterion.adGroupId, _
                     placement.id, placement.url)
               Else
-                writer.WriteLine("{0}) Placement with ad group ID = '{1}', placement ID = " & _
+                Console.WriteLine("{0}) Placement with ad group ID = '{1}', placement ID = " & _
                     "'{2}' and url = '{3}' was found.", i, adGroupCriterion.adGroupId, _
                     placement.id, placement.url)
               End If
@@ -129,9 +119,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           End If
           offset = offset + pageSize
         Loop While (offset < page.totalNumEntries)
-        writer.WriteLine("Number of placements found: {0}", page.totalNumEntries)
+        Console.WriteLine("Number of placements found: {0}", page.totalNumEntries)
       Catch ex As Exception
-        writer.WriteLine("Failed to retrieve placements. Exception says ""{0}""", ex.Message)
+        Console.WriteLine("Failed to retrieve placements. Exception says ""{0}""", ex.Message)
       End Try
     End Sub
   End Class

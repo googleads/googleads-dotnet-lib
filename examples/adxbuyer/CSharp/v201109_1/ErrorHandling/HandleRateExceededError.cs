@@ -39,10 +39,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new HandleRateExceededError();
+      HandleRateExceededError codeExample = new HandleRateExceededError();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -64,37 +65,22 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group to which keywords are added.
+    /// </param>
+    public void Run(AdWordsUser user, long adGroupId) {
       const int NUM_THREADS = 100;
 
       // Increase the maximum number of parallel HTTP connections that .NET
       // framework allows. By default, this is set to 2 by the .NET framework.
       System.Net.ServicePointManager.DefaultConnectionLimit = NUM_THREADS;
 
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
-
       List<Thread> threads = new List<Thread>();
 
       for (int i = 0; i < NUM_THREADS; i++) {
-        Thread thread = new Thread(new KeywordThread(user, i, adGroupId, writer).Run);
+        Thread thread = new Thread(new KeywordThread(user, i, adGroupId).Run);
         threads.Add(thread);
       }
 
@@ -127,11 +113,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
       AdWordsUser user;
 
       /// <summary>
-      /// The text writer to which all output is written.
-      /// </summary>
-      TextWriter writer;
-
-      /// <summary>
       /// Number of keywords to be validated in each API call.
       /// </summary>
       const int NUM_KEYWORDS = 100;
@@ -142,13 +123,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
       /// <param name="threadIndex">Index of the thread.</param>
       /// <param name="adGroupId">The ad group id.</param>
       /// <param name="user">The AdWords user who owns the ad group.</param>
-      /// <param name="writer">The stream writer to which script output should be
-      /// written.</param>
-      public KeywordThread(AdWordsUser user, int threadIndex, long adGroupId, TextWriter writer) {
+      public KeywordThread(AdWordsUser user, int threadIndex, long adGroupId) {
         this.user = user;
         this.threadIndex = threadIndex;
         this.adGroupId = adGroupId;
-        this.writer = writer;
       }
 
       /// <summary>
@@ -206,7 +184,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
                 }
                 // Handle rate exceeded errors.
                 RateExceededError rateExceededError = (RateExceededError) apiError;
-                writer.WriteLine("Got Rate exceeded error - rate name = '{0}', scope = '{1}', " +
+                Console.WriteLine("Got Rate exceeded error - rate name = '{0}', scope = '{1}', " +
                     "retry After {2} seconds.", rateExceededError.rateScope,
                     rateExceededError.rateName, rateExceededError.retryAfterSeconds);
                 Thread.Sleep(rateExceededError.retryAfterSeconds * 1000);

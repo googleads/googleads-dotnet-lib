@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -165,6 +165,63 @@
     <Compile Include="v201109_1\Targeting\LookupLocation.cs" />
     <Compile Include="v201109_1\Utilities\BackupSandboxDemo.cs" />
     <Compile Include="v201109_1\Utilities\RestoreSandboxDemo.cs" />
+    <Compile Include="v201206\AccountManagement\CreateAccount.cs" />
+    <Compile Include="v201206\AccountManagement\GetAccountAlerts.cs" />
+    <Compile Include="v201206\AccountManagement\GetAccountChanges.cs" />
+    <Compile Include="v201206\AccountManagement\GetAccountHierarchy.cs" />
+    <Compile Include="v201206\AccountManagement\GetClientCustomerId.cs" />
+    <Compile Include="v201206\AccountManagement\GetClientUnitUsage.cs" />
+    <Compile Include="v201206\BasicOperations\AddAdGroups.cs" />
+    <Compile Include="v201206\BasicOperations\AddCampaigns.cs" />
+    <Compile Include="v201206\BasicOperations\AddKeywords.cs" />
+    <Compile Include="v201206\BasicOperations\AddTextAds.cs" />
+    <Compile Include="v201206\BasicOperations\DeleteAd.cs" />
+    <Compile Include="v201206\BasicOperations\DeleteAdGroup.cs" />
+    <Compile Include="v201206\BasicOperations\DeleteCampaign.cs" />
+    <Compile Include="v201206\BasicOperations\DeleteKeyword.cs" />
+    <Compile Include="v201206\BasicOperations\GetAdGroups.cs" />
+    <Compile Include="v201206\BasicOperations\GetCampaigns.cs" />
+    <Compile Include="v201206\BasicOperations\GetCampaignsWithAwql.cs" />
+    <Compile Include="v201206\BasicOperations\GetKeywords.cs" />
+    <Compile Include="v201206\BasicOperations\GetTextAds.cs" />
+    <Compile Include="v201206\BasicOperations\PauseAd.cs" />
+    <Compile Include="v201206\BasicOperations\UpdateAdGroup.cs" />
+    <Compile Include="v201206\BasicOperations\UpdateCampaign.cs" />
+    <Compile Include="v201206\BasicOperations\UpdateKeyword.cs" />
+    <Compile Include="v201206\CampaignManagement\AddExperiment.cs" />
+    <Compile Include="v201206\CampaignManagement\AddKeywordsInBulk.cs" />
+    <Compile Include="v201206\CampaignManagement\AddLocationExtension.cs" />
+    <Compile Include="v201206\CampaignManagement\AddLocationExtensionOverride.cs" />
+    <Compile Include="v201206\CampaignManagement\AddSiteLinks.cs" />
+    <Compile Include="v201206\CampaignManagement\DeleteSitelinks.cs" />
+    <Compile Include="v201206\CampaignManagement\GetAllDisapprovedAds.cs" />
+    <Compile Include="v201206\CampaignManagement\GetAllDisapprovedAdsWihAwql.cs" />
+    <Compile Include="v201206\CampaignManagement\PromoteExperiment.cs" />
+    <Compile Include="v201206\CampaignManagement\SetAdParameters.cs" />
+    <Compile Include="v201206\CampaignManagement\ValidateTextAd.cs" />
+    <Compile Include="v201206\ErrorHandling\HandlePartialFailures.cs" />
+    <Compile Include="v201206\ErrorHandling\HandlePolicyViolationError.cs" />
+    <Compile Include="v201206\ErrorHandling\HandleRateExceededError.cs" />
+    <Compile Include="v201206\ErrorHandling\HandleTwoFactorAuthorizationError.cs" />
+    <Compile Include="v201206\Miscellaneous\GetAllVideosAndImages.cs" />
+    <Compile Include="v201206\Miscellaneous\UploadImage.cs" />
+    <Compile Include="v201206\Optimization\EstimateKeywordTraffic.cs" />
+    <Compile Include="v201206\Optimization\GetAdGroupBidSimulations.cs" />
+    <Compile Include="v201206\Optimization\GetKeywordBidSimulations.cs" />
+    <Compile Include="v201206\Optimization\GetKeywordIdeas.cs" />
+    <Compile Include="v201206\Optimization\GetPlacementIdeas.cs" />
+    <Compile Include="v201206\Remarketing\AddAudience.cs" />
+    <Compile Include="v201206\Remarketing\AddConversionTracker.cs" />
+    <Compile Include="v201206\Reporting\DownloadCriteriaReport.cs" />
+    <Compile Include="v201206\Reporting\DownloadCriteriaReportWithAwql.cs" />
+    <Compile Include="v201206\Reporting\GetCampaignStats.cs" />
+    <Compile Include="v201206\Reporting\GetReportFields.cs" />
+    <Compile Include="v201206\Targeting\AddCampaignTargetingCriteria.cs" />
+    <Compile Include="v201206\Targeting\GetCampaignTargetingCriteria.cs" />
+    <Compile Include="v201206\Targeting\GetTargetableLanguagesAndCarriers.cs" />
+    <Compile Include="v201206\Targeting\LookupLocation.cs" />
+    <Compile Include="v201206\Utilities\BackupSandboxDemo.cs" />
+    <Compile Include="v201206\Utilities\RestoreSandboxDemo.cs" />
     <Compile Include="ExampleBase.cs" />
     <Compile Include="ExampleUtilities.cs" />
     <Compile Include="Program.cs" />

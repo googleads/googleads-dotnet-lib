@@ -33,10 +33,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetReportFields();
+      GetReportFields codeExample = new GetReportFields();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        ReportDefinitionReportType reportType = (ReportDefinitionReportType) Enum.Parse(
+            typeof(ReportDefinitionReportType), "INSERT_REPORT_TYPE_HERE");
+        codeExample.Run(new AdWordsUser(), reportType);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -53,33 +55,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"REPORT_TYPE"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="reportType">The report type to be run.</param>
+    public void Run(AdWordsUser user, ReportDefinitionReportType reportType) {
       // Get the ReportDefinitionService.
       ReportDefinitionService reportDefinitionService = (ReportDefinitionService) user.GetService(
           AdWordsService.v201109.ReportDefinitionService);
-
-      // The type of the report to get fields for.
-      // E.g.: KEYWORDS_PERFORMANCE_REPORT
-      ReportDefinitionReportType reportType = (ReportDefinitionReportType) Enum.Parse(
-          typeof(ReportDefinitionReportType), parameters["REPORT_TYPE"]);
 
       try {
         // Get the report fields.
@@ -87,18 +70,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
             reportType);
         if (reportDefinitionFields != null && reportDefinitionFields.Length > 0) {
           // Display report fields.
-          writer.WriteLine("The report type '{0}' contains the following fields:", reportType);
+          Console.WriteLine("The report type '{0}' contains the following fields:", reportType);
 
           foreach (ReportDefinitionField reportDefinitionField in reportDefinitionFields) {
-            writer.Write("- {0} ({1})", reportDefinitionField.fieldName,
+            Console.Write("- {0} ({1})", reportDefinitionField.fieldName,
                 reportDefinitionField.fieldType);
             if (reportDefinitionField.enumValues != null) {
-              writer.Write(" := [{0}]", String.Join(", ", reportDefinitionField.enumValues));
+              Console.Write(" := [{0}]", String.Join(", ", reportDefinitionField.enumValues));
             }
-            writer.WriteLine();
+            Console.WriteLine();
           }
         } else {
-          writer.WriteLine("This report type has no fields.");
+          Console.WriteLine("This report type has no fields.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to retrieve fields for report type.", ex);

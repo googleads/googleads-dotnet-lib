@@ -39,7 +39,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [SetUp]
     public void Init() {
-      parameters = new Dictionary<string, string>();
     }
 
     /// <summary>
@@ -47,7 +46,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestAddAudienceVBExample() {
-      RunExample(new VBExamples.AddAudience());
+      RunExample(delegate() {
+        new VBExamples.AddAudience().Run(user);
+      });
     }
 
     /// <summary>
@@ -55,7 +56,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestAddAudienceCSharpExample() {
-      RunExample(new CSharpExamples.AddAudience());
+      RunExample(delegate() {
+        new CSharpExamples.AddAudience().Run(user);
+      });
     }
 
     /// <summary>
@@ -63,7 +66,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestAddConversionTrackerVBExample() {
-      RunExample(new VBExamples.AddConversionTracker());
+      RunExample(delegate() {
+        new VBExamples.AddConversionTracker().Run(user);
+      });
     }
 
     /// <summary>
@@ -71,7 +76,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestAddConversionTrackerCSharpExample() {
-      RunExample(new CSharpExamples.AddConversionTracker());
+      RunExample(delegate() {
+        new CSharpExamples.AddConversionTracker().Run(user);
+      });
     }
   }
 }

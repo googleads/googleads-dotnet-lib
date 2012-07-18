@@ -33,16 +33,16 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
   /// Test cases for all the code examples under v201109\ErrorHandling.
   /// </summary>
   class ErrorHandlingTest : ExampleBaseTests {
+    long campaignId;
+    long adGroupId;
+
     /// <summary>
     /// Inits this instance.
     /// </summary>
     [SetUp]
     public void Init() {
-      parameters = new Dictionary<string, string>();
-
-      long campaignId = utils.CreateCampaign(user, new ManualCPC());
-      long adGroupId = utils.CreateAdGroup(user, campaignId);
-      parameters["ADGROUP_ID"] = adGroupId.ToString();
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
+      adGroupId = utils.CreateAdGroup(user, campaignId);
     }
 
     /// <summary>
@@ -50,7 +50,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestHandlePartialFailuresVBExample() {
-      RunExample(new VBExamples.HandlePartialFailures());
+      RunExample(delegate() {
+        new VBExamples.HandlePartialFailures().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -58,7 +60,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestHandlePartialFailuresCSharpExample() {
-      RunExample(new CSharpExamples.HandlePartialFailures());
+      RunExample(delegate() {
+        new CSharpExamples.HandlePartialFailures().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -66,7 +70,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestHandlePolicyViolationErrorVBExample() {
-      RunExample(new VBExamples.HandlePolicyViolationError());
+      RunExample(delegate() {
+        new VBExamples.HandlePolicyViolationError().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -74,7 +80,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestHandlePolicyViolationErrorCSharpExample() {
-      RunExample(new CSharpExamples.HandlePolicyViolationError());
+      RunExample(delegate() {
+        new CSharpExamples.HandlePolicyViolationError().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -82,7 +90,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestHandleTwoFactorAuthorizationErrorVBExample() {
-      RunExample(new VBExamples.HandleTwoFactorAuthorizationError());
+      RunExample(delegate() {
+        new VBExamples.HandleTwoFactorAuthorizationError().Run(user);
+      });
     }
 
     /// <summary>
@@ -90,7 +100,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestHandleTwoFactorAuthorizationErrorCSharpExample() {
-      RunExample(new CSharpExamples.HandleTwoFactorAuthorizationError());
+      RunExample(delegate() {
+        new CSharpExamples.HandleTwoFactorAuthorizationError().Run(user);
+      });
     }
   }
 }

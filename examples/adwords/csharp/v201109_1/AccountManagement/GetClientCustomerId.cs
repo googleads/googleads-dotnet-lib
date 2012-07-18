@@ -35,10 +35,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetClientCustomerId();
+      GetClientCustomerId codeExample = new GetClientCustomerId();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        string clientEmail = "INSERT_CLIENT_EMAIL_HERE";
+        codeExample.Run(new AdWordsUser(), clientEmail);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -57,33 +58,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"CLIENT_EMAIL_ADDRESS"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="clientEmail">The client email for which customer id
+    /// is retrieved.</param>
+    public void Run(AdWordsUser user, string clientEmail) {
       // Get the InfoService.
       InfoService infoService = (InfoService) user.GetService(AdWordsService.v201109_1.InfoService);
 
       // Ensure the clientCustomerId is not set, so that requests are made to
       // the MCC.
       infoService.RequestHeader.clientCustomerId = null;
-
-      string clientEmail = parameters["CLIENT_EMAIL_ADDRESS"];
 
       // Create the selector.
       InfoSelector selector = new InfoSelector();
@@ -103,11 +89,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
 
         if (info != null && info.apiUsageRecords != null) {
           foreach (ApiUsageRecord record in info.apiUsageRecords) {
-            writer.WriteLine("Found record with client email '{0}' and customer ID " +
+            Console.WriteLine("Found record with client email '{0}' and customer ID " +
                 "'{1:###-###-####}'.", record.clientEmail, record.clientCustomerId);
           }
         } else {
-          writer.WriteLine("No client customer ids were found.");
+          Console.WriteLine("No client customer ids were found.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to get client customer id.", ex);

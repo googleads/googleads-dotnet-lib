@@ -35,10 +35,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New CreateAccount
+      Dim codeExample As New CreateAccount
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        codeExample.Run(New AdWordsUser)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -56,25 +56,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    Public Sub Run(ByVal user As AdWordsUser)
       ' Get the CreateAccountService.
       Dim createAccountService As CreateAccountService = user.GetService( _
           AdWordsService.v201109_1.CreateAccountService)
@@ -100,10 +85,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
         ' Display the results.
         If (Not accounts Is Nothing AndAlso accounts.Length > 0) Then
           Dim newAccount As Account = accounts(0)
-          writer.WriteLine("Account with customer ID '{0:###-###-####}' was successfully " & _
+          Console.WriteLine("Account with customer ID '{0:###-###-####}' was successfully " & _
               "created.", newAccount.customerId)
         Else
-          writer.WriteLine("No accounts were created.")
+          Console.WriteLine("No accounts were created.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to create accounts.", ex)

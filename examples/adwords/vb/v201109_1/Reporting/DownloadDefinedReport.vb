@@ -32,10 +32,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New DownloadDefinedReport
+      Dim codeExample As New DownloadDefinedReport
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim reportDefinitionId As Long = Long.Parse("INSERT_REPORT_DEFINITION_ID_HERE")
+        Dim fileName As String = "INSERT_OUTPUT_FILE_NAME"
+        codeExample.Run(New AdWordsUser, reportDefinitionId, fileName)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -52,27 +54,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"REPORT_DEFINITION_ID", "OUTPUT_FILE_NAME"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
-      Dim reportDefinitionId As Long = Long.Parse(parameters("REPORT_DEFINITION_ID"))
-      Dim fileName As String = parameters("OUTPUT_FILE_NAME")
+    ''' <param name="reportDefinitionId">Id of the report to be downloaded.
+    ''' </param>
+    ''' <param name="fileName">File to which report is downloaded.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal reportDefinitionId As Long, _
+        ByVal fileName As String)
       Dim filePath As String = (ExampleUtilities.GetHomeDir() & Path.DirectorySeparatorChar & _
           fileName)
 
@@ -95,7 +84,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
         ' string deflatedReportText = Encoding.UTF8.GetString(
         '     MediaUtilities.DeflateGZipData(report.Contents));
         utilities.DownloadClientReport(Of Long)(reportDefinitionId, filePath)
-        writer.WriteLine("Report with definition id '{0}' was downloaded to '{1}'.", _
+        Console.WriteLine("Report with definition id '{0}' was downloaded to '{1}'.", _
             reportDefinitionId, filePath)
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to download report.", ex)

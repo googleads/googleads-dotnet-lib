@@ -34,10 +34,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetAccountHierarchy();
+      GetAccountHierarchy codeExample = new GetAccountHierarchy();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,25 +55,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the ServicedAccountService.
       ServicedAccountService servicedAccountService =
           (ServicedAccountService) user.GetService(AdWordsService.v201109_1.
@@ -90,11 +75,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
 
         if (graph != null && graph.accounts != null) {
           // Display the accounts.
-          writer.WriteLine("There are {0} customers under this account hierarchy.",
+          Console.WriteLine("There are {0} customers under this account hierarchy.",
               graph.accounts.Length);
 
           for (int i = 0; i < graph.accounts.Length; i++) {
-            writer.WriteLine("{0}) Customer id: {1:###-###-####}\nLogin email: " +
+            Console.WriteLine("{0}) Customer id: {1:###-###-####}\nLogin email: " +
                 "{2}\nCompany name: {3}\nIsMCC: {4}\n", i + 1, graph.accounts[i].customerId,
                 graph.accounts[i].login, graph.accounts[i].companyName,
                 graph.accounts[i].canManageClients);
@@ -102,11 +87,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
 
           // Display the links.
           foreach (Link link in graph.links) {
-            writer.WriteLine("There is a {0} link from {1:###-###-####} to {2:###-###-####}",
+            Console.WriteLine("There is a {0} link from {1:###-###-####} to {2:###-###-####}",
                 link.typeOfLink, link.managerId.id, link.clientId.id);
           }
         } else {
-          writer.WriteLine("No accounts were retrieved.");
+          Console.WriteLine("No accounts were retrieved.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to retrieve accounts.", ex);

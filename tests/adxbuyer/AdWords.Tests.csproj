@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -71,16 +71,38 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="v201109\AccountManagementTest.cs" />
-    <Compile Include="v201109\AudienceAndConversionManagementTest.cs" />
     <Compile Include="v201109\BasicOperationsTest.cs" />
     <Compile Include="v201109\CampaignManagementTest.cs" />
     <Compile Include="v201109\ErrorHandlingTest.cs" />
     <Compile Include="v201109\ExampleBaseTests.cs" />
     <Compile Include="v201109\MiscellaneousTest.cs" />
     <Compile Include="v201109\OptimizationTest.cs" />
+    <Compile Include="v201109\RemarketingTest.cs" />
     <Compile Include="v201109\ReportingTest.cs" />
     <Compile Include="v201109\TargetingTest.cs" />
     <Compile Include="v201109\TestUtils.cs" />
+    <Compile Include="v201109_1\AccountManagementTest.cs" />
+    <Compile Include="v201109_1\BasicOperationsTest.cs" />
+    <Compile Include="v201109_1\CampaignManagementTest.cs" />
+    <Compile Include="v201109_1\ErrorHandlingTest.cs" />
+    <Compile Include="v201109_1\ExampleBaseTests.cs" />
+    <Compile Include="v201109_1\MiscellaneousTest.cs" />
+    <Compile Include="v201109_1\OptimizationTest.cs" />
+    <Compile Include="v201109_1\RemarketingTest.cs" />
+    <Compile Include="v201109_1\ReportingTest.cs" />
+    <Compile Include="v201109_1\TargetingTest.cs" />
+    <Compile Include="v201109_1\TestUtils.cs" />
+    <Compile Include="v201206\AccountManagementTest.cs" />
+    <Compile Include="v201206\BasicOperationsTest.cs" />
+    <Compile Include="v201206\CampaignManagementTest.cs" />
+    <Compile Include="v201206\ErrorHandlingTest.cs" />
+    <Compile Include="v201206\ExampleBaseTests.cs" />
+    <Compile Include="v201206\MiscellaneousTest.cs" />
+    <Compile Include="v201206\OptimizationTest.cs" />
+    <Compile Include="v201206\RemarketingTest.cs" />
+    <Compile Include="v201206\ReportingTest.cs" />
+    <Compile Include="v201206\TargetingTest.cs" />
+    <Compile Include="v201206\TestUtils.cs" />
     <Compile Include="BaseTests.cs" />
   </ItemGroup>
 </Project>

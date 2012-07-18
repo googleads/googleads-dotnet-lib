@@ -34,10 +34,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new UploadImage();
+      UploadImage codeExample = new UploadImage();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -54,25 +54,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the MediaService.
       MediaService mediaService = (MediaService) user.GetService(
           AdWordsService.v201109.MediaService);
@@ -91,11 +76,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           Media newImage = result[0];
           Dictionary<MediaSize, Dimensions> dimensions =
               CreateMediaDimensionMap(newImage.dimensions);
-          writer.WriteLine("Image with id '{0}', dimensions '{1}x{2}', and MIME type '{3}'" +
+          Console.WriteLine("Image with id '{0}', dimensions '{1}x{2}', and MIME type '{3}'" +
               " was uploaded.", newImage.mediaId, dimensions[MediaSize.FULL].width,
               dimensions[MediaSize.FULL].height, newImage.mimeType);
         } else {
-          writer.WriteLine("No images were uploaded.");
+          Console.WriteLine("No images were uploaded.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to upload image.", ex);

@@ -30,14 +30,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   /// </summary>
   public class AddKeywords : ExampleBase {
     /// <summary>
+    /// Number of items being added / updated in this code example.
+    /// </summary>
+    const int NUM_ITEMS = 5;
+
+    /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new AddKeywords();
+      AddKeywords codeExample = new AddKeywords();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,70 +61,46 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group to which keywords are added.
+    /// </param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupCriterionService.
       AdGroupCriterionService adGroupCriterionService =
-          (AdGroupCriterionService) user.GetService(AdWordsService.v201109.AdGroupCriterionService);
+          (AdGroupCriterionService) user.GetService(
+              AdWordsService.v201109.AdGroupCriterionService);
 
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
+      List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
 
-      // Create the keyword.
-      Keyword keyword1 = new Keyword();
-      keyword1.text = "mars cruise";
-      keyword1.matchType = KeywordMatchType.BROAD;
+      for (int i = 0; i < NUM_ITEMS; i++) {
+        // Create the keyword.
+        Keyword keyword = new Keyword();
+        keyword.text = "mars cruise";
+        keyword.matchType = KeywordMatchType.BROAD;
 
-      // Create the biddable ad group criterion.
-      BiddableAdGroupCriterion keywordCriterion1 = new BiddableAdGroupCriterion();
-      keywordCriterion1.adGroupId = adGroupId;
-      keywordCriterion1.criterion = keyword1;
+        // Create the biddable ad group criterion.
+        BiddableAdGroupCriterion keywordCriterion = new BiddableAdGroupCriterion();
+        keywordCriterion.adGroupId = adGroupId;
+        keywordCriterion.criterion = keyword;
 
-      // Optional: Set the user status.
-      keywordCriterion1.userStatus = UserStatus.PAUSED;
+        // Optional: Set the user status.
+        keywordCriterion.userStatus = UserStatus.PAUSED;
 
-      // Optional: Set the keyword destination url.
-      keywordCriterion1.destinationUrl = "http://example.com/mars/cruise";
+        // Optional: Set the keyword destination url.
+        keywordCriterion.destinationUrl = "http://example.com/mars/cruise/" + i;
 
-      // Create the keyword.
-      Keyword keyword2 = new Keyword();
-      keyword2.text = "mars chocolates";
-      keyword2.matchType = KeywordMatchType.EXACT;
+        // Create the operations.
+        AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
+        operation.@operator = Operator.ADD;
+        operation.operand = keywordCriterion;
 
-      // Create the biddable ad group criterion.
-      NegativeAdGroupCriterion keywordCriterion2 = new NegativeAdGroupCriterion();
-      keywordCriterion2.adGroupId = adGroupId;
-      keywordCriterion2.criterion = keyword2;
-
-      // Create the operations.
-      AdGroupCriterionOperation keywordOperation1 = new AdGroupCriterionOperation();
-      keywordOperation1.@operator = Operator.ADD;
-      keywordOperation1.operand = keywordCriterion1;
-
-      AdGroupCriterionOperation keywordOperation2 = new AdGroupCriterionOperation();
-      keywordOperation2.@operator = Operator.ADD;
-      keywordOperation2.operand = keywordCriterion2;
-
+        operations.Add(operation);
+      }
       try {
         // Create the keywords.
-        AdGroupCriterionReturnValue retVal = adGroupCriterionService.mutate(
-            new AdGroupCriterionOperation[] {keywordOperation1, keywordOperation2});
+        AdGroupCriterionReturnValue retVal = adGroupCriterionService.mutate(operations.ToArray());
 
         // Display the results.
         if (retVal != null && retVal.value != null) {
@@ -129,13 +111,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
             // if (adGroupCriterion is Keyword) { ... }
             //
             // to identify the criterion type.
-            writer.WriteLine("Keyword with ad group id = '{0}', keyword id = '{1}', text = " +
+            Console.WriteLine("Keyword with ad group id = '{0}', keyword id = '{1}', text = " +
                 "'{2}' and match type = '{3}' was created.", adGroupCriterion.adGroupId,
                 adGroupCriterion.criterion.id, (adGroupCriterion.criterion as Keyword).text,
                 (adGroupCriterion.criterion as Keyword).matchType);
           }
         } else {
-          writer.WriteLine("No keywords were added.");
+          Console.WriteLine("No keywords were added.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to create keywords.", ex);

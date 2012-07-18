@@ -32,21 +32,20 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
   /// Test cases for all the code examples under v201109_1\BasicOperations.
   /// </summary>
   class BasicOperationsTest : ExampleBaseTests {
+    long campaignId;
+    long adGroupId;
+    long adId;
+    long keywordId;
+
     /// <summary>
     /// Inits this instance.
     /// </summary>
     [SetUp]
     public void Init() {
-      parameters = new Dictionary<string, string>();
-      long campaignId = utils.CreateCampaign(user, new ManualCPC());
-      long adGroupId = utils.CreateAdGroup(user, campaignId);
-      long adId = utils.CreateTextAd(user, adGroupId, false);
-      long keywordId = utils.CreateKeyword(user, adGroupId);
-
-      parameters["CAMPAIGN_ID"] = campaignId.ToString();
-      parameters["ADGROUP_ID"] = adGroupId.ToString();
-      parameters["AD_ID"] = adId.ToString();
-      parameters["KEYWORD_ID"] = keywordId.ToString();
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
+      adGroupId = utils.CreateAdGroup(user, campaignId);
+      adId = utils.CreateTextAd(user, adGroupId, false);
+      keywordId = utils.CreateKeyword(user, adGroupId);
     }
 
     /// <summary>
@@ -54,7 +53,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestAddAdGroupVBExample() {
-      RunExample(new VBExamples.AddAdGroups());
+      RunExample(delegate() {
+        new VBExamples.AddAdGroups().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -62,7 +63,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestAddAdGroupCSharpExample() {
-      RunExample(new CSharpExamples.AddAdGroups());
+      RunExample(delegate() {
+        new CSharpExamples.AddAdGroups().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -70,7 +73,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestAddCampaignVBExample() {
-      RunExample(new VBExamples.AddCampaigns());
+      RunExample(delegate() {
+        new VBExamples.AddCampaigns().Run(user);
+      });
     }
 
     /// <summary>
@@ -78,7 +83,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestAddCampaignCSharpExample() {
-      RunExample(new CSharpExamples.AddCampaigns());
+      RunExample(delegate() {
+        new CSharpExamples.AddCampaigns().Run(user);
+      });
     }
 
     /// <summary>
@@ -86,7 +93,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestAddKeywordsVBExample() {
-      RunExample(new VBExamples.AddKeywords());
+      RunExample(delegate() {
+        new VBExamples.AddKeywords().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -94,7 +103,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestAddKeywordsCSharpExample() {
-      RunExample(new CSharpExamples.AddKeywords());
+      RunExample(delegate() {
+        new CSharpExamples.AddKeywords().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -102,7 +113,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestAddTextAdsVBExample() {
-      RunExample(new VBExamples.AddTextAds());
+      RunExample(delegate() {
+        new VBExamples.AddTextAds().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -110,7 +123,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestAddTextAdsCSharpExample() {
-      RunExample(new CSharpExamples.AddTextAds());
+      RunExample(delegate() {
+        new CSharpExamples.AddTextAds().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -118,7 +133,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestDeleteAdGroupVBExample() {
-      RunExample(new VBExamples.DeleteAdGroup());
+      RunExample(delegate() {
+        new VBExamples.DeleteAdGroup().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -126,7 +143,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestDeleteAdGroupCSharpExample() {
-      RunExample(new CSharpExamples.DeleteAdGroup());
+      RunExample(delegate() {
+        new VBExamples.DeleteAdGroup().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -134,7 +153,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestDeleteAdVBExample() {
-      RunExample(new VBExamples.DeleteAd());
+      RunExample(delegate() {
+        new VBExamples.DeleteAd().Run(user, adGroupId, adId);
+      });
     }
 
     /// <summary>
@@ -142,7 +163,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestDeleteAdCSharpExample() {
-      RunExample(new CSharpExamples.DeleteAd());
+      RunExample(delegate() {
+        new CSharpExamples.DeleteAd().Run(user, adGroupId, adId);
+      });
     }
 
     /// <summary>
@@ -150,7 +173,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestDeleteCampaignVBExample() {
-      RunExample(new VBExamples.DeleteCampaign());
+      RunExample(delegate() {
+        new VBExamples.DeleteCampaign().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -158,7 +183,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestDeleteCampaignCSharpExample() {
-      RunExample(new CSharpExamples.DeleteCampaign());
+      RunExample(delegate() {
+        new CSharpExamples.DeleteCampaign().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -166,7 +193,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestDeleteKeywordVBExample() {
-      RunExample(new VBExamples.DeleteKeyword());
+      RunExample(delegate() {
+        new VBExamples.DeleteKeyword().Run(user, adGroupId, keywordId);
+      });
     }
 
     /// <summary>
@@ -174,7 +203,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestDeleteKeywordCSharpExample() {
-      RunExample(new CSharpExamples.DeleteKeyword());
+      RunExample(delegate() {
+        new CSharpExamples.DeleteKeyword().Run(user, adGroupId, keywordId);
+      });
     }
 
     /// <summary>
@@ -182,7 +213,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetAdGroupsVBExample() {
-      RunExample(new VBExamples.GetAdGroups());
+      RunExample(delegate() {
+        new VBExamples.GetAdGroups().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -190,7 +223,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetAdGroupsCSharpExample() {
-      RunExample(new CSharpExamples.GetAdGroups());
+      RunExample(delegate() {
+        new CSharpExamples.GetAdGroups().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -198,7 +233,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetCampaignsVBExample() {
-      RunExample(new VBExamples.GetCampaigns());
+      RunExample(delegate() {
+        new VBExamples.GetCampaigns().Run(user);
+      });
     }
 
     /// <summary>
@@ -206,7 +243,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetCampaignsCSharpExample() {
-      RunExample(new CSharpExamples.GetCampaigns());
+      RunExample(delegate() {
+        new CSharpExamples.GetCampaigns().Run(user);
+      });
     }
 
     /// <summary>
@@ -214,7 +253,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetKeywordsVBExample() {
-      RunExample(new VBExamples.GetKeywords());
+      RunExample(delegate() {
+        new VBExamples.GetKeywords().Run(user);
+      });
     }
 
     /// <summary>
@@ -222,7 +263,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetKeywordsCSharpExample() {
-      RunExample(new CSharpExamples.GetKeywords());
+      RunExample(delegate() {
+        new CSharpExamples.GetKeywords().Run(user);
+      });
     }
 
     /// <summary>
@@ -230,7 +273,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetTextAdsVBExample() {
-      RunExample(new VBExamples.GetTextAds());
+      RunExample(delegate() {
+        new VBExamples.GetTextAds().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -238,7 +283,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetTextAdsCSharpExample() {
-      RunExample(new CSharpExamples.GetTextAds());
+      RunExample(delegate() {
+        new CSharpExamples.GetTextAds().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -246,7 +293,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestPauseAdVBExample() {
-      RunExample(new VBExamples.PauseAd());
+      RunExample(delegate() {
+        new VBExamples.PauseAd().Run(user, adGroupId, adId);
+      });
     }
 
     /// <summary>
@@ -254,7 +303,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestPauseAdCSharpExample() {
-      RunExample(new CSharpExamples.PauseAd());
+      RunExample(delegate() {
+        new CSharpExamples.PauseAd().Run(user, adGroupId, adId);
+      });
     }
 
     /// <summary>
@@ -262,7 +313,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestUpdateAdGroupVBExample() {
-      RunExample(new VBExamples.UpdateAdGroup());
+      RunExample(delegate() {
+        new VBExamples.UpdateAdGroup().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -270,7 +323,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestUpdateAdGroupCSharpExample() {
-      RunExample(new CSharpExamples.UpdateAdGroup());
+      RunExample(delegate() {
+        new CSharpExamples.UpdateAdGroup().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -278,7 +333,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestUpdateCampaignVBExample() {
-      RunExample(new VBExamples.UpdateCampaign());
+      RunExample(delegate() {
+        new VBExamples.UpdateCampaign().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -286,7 +343,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestUpdateCampaignCSharpExample() {
-      RunExample(new CSharpExamples.UpdateCampaign());
+      RunExample(delegate() {
+        new CSharpExamples.UpdateCampaign().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -294,7 +353,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestUpdateKeywordVBExample() {
-      RunExample(new VBExamples.UpdateKeyword());
+      RunExample(delegate() {
+        new VBExamples.UpdateKeyword().Run(user, adGroupId, keywordId);
+      });
     }
 
     /// <summary>
@@ -302,7 +363,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestUpdateKeywordCSharpExample() {
-      RunExample(new CSharpExamples.UpdateKeyword());
+      RunExample(delegate() {
+        new CSharpExamples.UpdateKeyword().Run(user, adGroupId, keywordId);
+      });
     }
   }
 }

@@ -33,20 +33,16 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
   /// Test cases for all the code examples under v201109\CampaignManagement.
   /// </summary>
   class CampaignManagementTest : ExampleBaseTests {
+    long campaignId;
+    long adGroupId;
+
     /// <summary>
     /// Inits this instance.
     /// </summary>
     [SetUp]
     public void Init() {
-      parameters = new Dictionary<string, string>();
-
-      long campaignId = utils.CreateCampaign(user, new ManualCPM());
-      long adGroupId = utils.CreateAdGroup(user, campaignId, true);
-      long adId = utils.CreateTextAd(user, adGroupId, false);
-
-      parameters["CAMPAIGN_ID"] = campaignId.ToString();
-      parameters["ADGROUP_ID"] = adGroupId.ToString();
-      parameters["AD_ID"] = adId.ToString();
+      campaignId = utils.CreateCampaign(user, new ManualCPM());
+      adGroupId = utils.CreateAdGroup(user, campaignId, true);
     }
 
     /// <summary>
@@ -54,7 +50,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestAddPlacementsInBulkVBExample() {
-      RunExample(new VBExamples.AddPlacementsInBulk());
+      RunExample(delegate() {
+        new VBExamples.AddPlacementsInBulk().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -62,7 +60,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestAddPlacementsInBulkCSharpExample() {
-      RunExample(new CSharpExamples.AddPlacementsInBulk());
+      RunExample(delegate() {
+        new CSharpExamples.AddPlacementsInBulk().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -70,7 +70,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAllDisapprovedAdsVBExample() {
-      RunExample(new VBExamples.GetAllDisapprovedAds());
+      RunExample(delegate() {
+        new VBExamples.GetAllDisapprovedAds().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -78,7 +80,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAllDisapprovedAdsCSharpExample() {
-      RunExample(new CSharpExamples.GetAllDisapprovedAds());
+      RunExample(delegate() {
+        new CSharpExamples.GetAllDisapprovedAds().Run(user, campaignId);
+      });
     }
   }
 }

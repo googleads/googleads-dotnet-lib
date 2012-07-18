@@ -35,10 +35,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetAccountChanges();
+      GetAccountChanges codeExample = new GetAccountChanges();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,25 +55,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the CustomerSyncService.
       CustomerSyncService customerSyncService =
           (CustomerSyncService) user.GetService(AdWordsService.v201109.
@@ -100,44 +85,44 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
 
         // Display the changes.
         if (accountChanges != null && accountChanges.changedCampaigns != null) {
-          writer.WriteLine("Displaying changes up to: {0}", accountChanges.lastChangeTimestamp);
+          Console.WriteLine("Displaying changes up to: {0}", accountChanges.lastChangeTimestamp);
           foreach (CampaignChangeData campaignChanges in accountChanges.changedCampaigns) {
-            writer.WriteLine("Campaign with id \"{0}\" was changed:", campaignChanges.campaignId);
-            writer.WriteLine("  Campaign changed status: {0}",
+            Console.WriteLine("Campaign with id \"{0}\" was changed:", campaignChanges.campaignId);
+            Console.WriteLine("  Campaign changed status: {0}",
                 campaignChanges.campaignChangeStatus);
             if (campaignChanges.campaignChangeStatus != ChangeStatus.NEW) {
-              writer.WriteLine("  Added ad extensions: {0}", GetFormattedList(
+              Console.WriteLine("  Added ad extensions: {0}", GetFormattedList(
                   campaignChanges.addedAdExtensions));
-              writer.WriteLine("  Added campaign criteria: {0}",
+              Console.WriteLine("  Added campaign criteria: {0}",
                   GetFormattedList(campaignChanges.addedCampaignCriteria));
-              writer.WriteLine("  Added campaign targeting: {0}",
+              Console.WriteLine("  Added campaign targeting: {0}",
                   campaignChanges.campaignTargetingChanged? "yes" : "no");
-              writer.WriteLine("  Deleted ad extensions: {0}",
+              Console.WriteLine("  Deleted ad extensions: {0}",
                   GetFormattedList(campaignChanges.deletedAdExtensions));
-              writer.WriteLine("  Deleted campaign criteria: {0}",
+              Console.WriteLine("  Deleted campaign criteria: {0}",
                   GetFormattedList(campaignChanges.deletedCampaignCriteria));
 
               if (campaignChanges.changedAdGroups != null) {
                 foreach (AdGroupChangeData adGroupChanges in campaignChanges.changedAdGroups) {
-                  writer.WriteLine("  Ad group with id \"{0}\" was changed:",
+                  Console.WriteLine("  Ad group with id \"{0}\" was changed:",
                       adGroupChanges.adGroupId);
-                  writer.WriteLine("    Ad group changed status: {0}",
+                  Console.WriteLine("    Ad group changed status: {0}",
                       adGroupChanges.adGroupChangeStatus);
                   if (adGroupChanges.adGroupChangeStatus != ChangeStatus.NEW) {
-                    writer.WriteLine("    Ads changed: {0}",
+                    Console.WriteLine("    Ads changed: {0}",
                         GetFormattedList(adGroupChanges.changedAds));
-                    writer.WriteLine("    Criteria changed: {0}",
+                    Console.WriteLine("    Criteria changed: {0}",
                         GetFormattedList(adGroupChanges.changedCriteria));
-                    writer.WriteLine("    Criteria deleted: {0}",
+                    Console.WriteLine("    Criteria deleted: {0}",
                         GetFormattedList(adGroupChanges.deletedCriteria));
                   }
                 }
               }
             }
-            writer.WriteLine();
+            Console.WriteLine();
           }
         } else {
-          writer.WriteLine("No account changes were found.");;
+          Console.WriteLine("No account changes were found.");;
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to get account changes.", ex);

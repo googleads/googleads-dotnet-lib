@@ -34,9 +34,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new AddPlacements();
+      AddPlacements codeExample = new AddPlacements();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -50,30 +56,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group to which placements are added.
+    /// </param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupCriterionService.
       AdGroupCriterionService adGroupCriterionService =
           (AdGroupCriterionService) user.GetService(AdWordsService.v201109_1.AdGroupCriterionService);
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
 
       // Create the placement.
       Placement placement1 = new Placement();
@@ -116,15 +107,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
             // if (adGroupCriterion is Placement) { ... }
             //
             // to identify the criterion type.
-            writer.WriteLine("Placement with ad group id = '{0}, placement id = '{1}, url = " +
+            Console.WriteLine("Placement with ad group id = '{0}, placement id = '{1}, url = " +
                 "'{2}' was created.", adGroupCriterion.adGroupId,
                 adGroupCriterion.criterion.id, (adGroupCriterion.criterion as Placement).url);
           }
         } else {
-          writer.WriteLine("No placements were added.");
+          Console.WriteLine("No placements were added.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to create placements. Exception says \"{0}\"", ex.Message);
+        Console.WriteLine("Failed to create placements.", ex);
       }
     }
   }

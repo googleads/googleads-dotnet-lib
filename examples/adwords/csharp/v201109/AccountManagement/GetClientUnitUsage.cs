@@ -34,10 +34,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetClientUnitUsage();
+      GetClientUnitUsage codeExample = new GetClientUnitUsage();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -54,25 +54,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the InfoService.
       InfoService infoService = (InfoService) user.GetService(AdWordsService.v201109.InfoService);
 
@@ -99,11 +84,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         // Display the results.
         if (info != null && info.apiUsageRecords != null) {
           foreach (ApiUsageRecord record in info.apiUsageRecords) {
-            writer.WriteLine("API Usage for customer ID '{0:###-###-####}' is {1} units.",
+            Console.WriteLine("API Usage for customer ID '{0:###-###-####}' is {1} units.",
                 record.clientCustomerId, record.cost);
           }
         } else {
-          writer.WriteLine("No API usage records were found for client.");
+          Console.WriteLine("No API usage records were found for client.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to get unit usage for client.", ex);

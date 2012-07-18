@@ -33,17 +33,16 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
   /// Test cases for all the code examples under v201109\Optimization.
   /// </summary>
   class OptimizationTest : ExampleBaseTests {
+    long campaignId;
+    long adGroupId;
+
     /// <summary>
     /// Inits this instance.
     /// </summary>
     [SetUp]
     public void Init() {
-      parameters = new Dictionary<string, string>();
-
-      long campaignId = utils.CreateCampaign(user, new ManualCPM());
-      long adGroupId = utils.CreateAdGroup(user, campaignId, true);
-      parameters["CAMPAIGN_ID"] = campaignId.ToString();
-      parameters["ADGROUP_ID"] = adGroupId.ToString();
+      campaignId = utils.CreateCampaign(user, new ManualCPM());
+      adGroupId = utils.CreateAdGroup(user, campaignId, true);
     }
 
     /// <summary>
@@ -51,7 +50,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetPlacementIdeasVBExample() {
-      RunExample(new VBExamples.GetPlacementIdeas());
+      RunExample(delegate() {
+        new VBExamples.GetPlacementIdeas().Run(user);
+      });
     }
 
     /// <summary>
@@ -59,7 +60,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetPlacementIdeasCSharpExample() {
-      RunExample(new CSharpExamples.GetPlacementIdeas());
+      RunExample(delegate() {
+        new CSharpExamples.GetPlacementIdeas().Run(user);
+      });
     }
   }
 }

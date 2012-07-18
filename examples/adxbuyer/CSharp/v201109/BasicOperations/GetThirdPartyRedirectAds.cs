@@ -35,9 +35,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetThirdPartyRedirectAds();
+      GetThirdPartyRedirectAds codeExample = new GetThirdPartyRedirectAds();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -52,30 +58,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group from which third party
+    /// redirect ads are retrieved.</param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupAdService.
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(AdWordsService.v201109.AdGroupAdService);
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
 
       // Create a selector.
       Selector selector = new Selector();
@@ -132,9 +123,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
 
             foreach (AdGroupAd adGroupAd in page.entries) {
               ThirdPartyRedirectAd thirdPartyRedirectAd = (ThirdPartyRedirectAd) adGroupAd.ad;
-              writer.WriteLine("{0}) Ad id is {1} and status is {2}", i, thirdPartyRedirectAd.id,
+              Console.WriteLine("{0}) Ad id is {1} and status is {2}", i, thirdPartyRedirectAd.id,
                   adGroupAd.status);
-              writer.WriteLine("  Url: {0}\n  Display Url: {1}\n  Snippet:{2}",
+              Console.WriteLine("  Url: {0}\n  Display Url: {1}\n  Snippet:{2}",
                   thirdPartyRedirectAd.url, thirdPartyRedirectAd.displayUrl,
                   thirdPartyRedirectAd.snippet);
               i++;
@@ -142,10 +133,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of third party redirect ads found: {0}", page.totalNumEntries);
+        Console.WriteLine("Number of third party redirect ads found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
-        writer.WriteLine("Failed to get third party redirect ad(s). Exception says \"{0}\"",
-            ex.Message);
+        throw new System.ApplicationException("Failed to get third party redirect ad(s).", ex);
       }
     }
   }

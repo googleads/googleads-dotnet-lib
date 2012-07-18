@@ -35,10 +35,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetCampaignTargetingCriteria();
+      GetCampaignTargetingCriteria codeExample = new GetCampaignTargetingCriteria();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+        codeExample.Run(new AdWordsUser(), campaignId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -57,31 +58,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"CAMPAIGN_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="campaignId">Id of the campaign from which targeting
+    /// criteria are retrieved.</param>
+    public void Run(AdWordsUser user, long campaignId) {
       // Get the CampaignCriterionService.
       CampaignCriterionService campaignCriterionService =
           (CampaignCriterionService) user.GetService(
               AdWordsService.v201109_1.CampaignCriterionService);
-
-      long campaignId = long.Parse(parameters["CAMPAIGN_ID"]);
 
       // Create the selector.
       Selector selector = new Selector();
@@ -122,14 +108,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
             foreach (CampaignCriterion campaignCriterion in page.entries) {
               Placement placement = campaignCriterion.criterion as Placement;
 
-              writer.WriteLine("{0}) Placement with ID {1} and url {2} was found.", i,
+              Console.WriteLine("{0}) Placement with ID {1} and url {2} was found.", i,
                   placement.id, placement.url);
               i++;
             }
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of placements found: {0}", page.totalNumEntries);
+        Console.WriteLine("Number of placements found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to get campaign targeting criteria.", ex);
       }

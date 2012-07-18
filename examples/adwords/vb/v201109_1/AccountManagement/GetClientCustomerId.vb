@@ -36,10 +36,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetClientCustomerId
+      Dim codeExample As New GetClientCustomerId
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim clientEmail As String = Long.Parse("INSERT_CLIENT_EMAIL_HERE")
+        codeExample.Run(New AdWordsUser, clientEmail)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -58,33 +59,18 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"CLIENT_EMAIL_ADDRESS"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="clientEmail">The client email for which customer id
+    ''' is retrieved.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal clientEmail As String)
       ' Get the InfoService.
       Dim infoService As InfoService = user.GetService(AdWordsService.v201109_1.InfoService)
 
       ' Ensure the clientCustomerId is not set, so that requests are made to
       ' the MCC.
       infoService.RequestHeader.clientCustomerId = Nothing
-
-      Dim clientEmail As String = parameters("CLIENT_EMAIL_ADDRESS")
 
       ' Create the selector.
       Dim selector As New InfoSelector
@@ -104,11 +90,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
 
         If ((Not info Is Nothing) AndAlso (Not info.apiUsageRecords Is Nothing)) Then
           For Each record As ApiUsageRecord In info.apiUsageRecords
-            writer.WriteLine("Found record with client email '{0}' and customer ID " & _
+            Console.WriteLine("Found record with client email '{0}' and customer ID " & _
                 "'{1:###-###-####}'.", record.clientEmail, record.clientCustomerId)
           Next
         Else
-          writer.WriteLine("No client customer ids were found.")
+          Console.WriteLine("No client customer ids were found.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to get client customer id.", ex)

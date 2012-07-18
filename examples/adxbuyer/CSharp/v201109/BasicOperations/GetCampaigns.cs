@@ -34,10 +34,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetCampaigns();
+      GetCampaigns codeExample = new GetCampaigns();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -54,25 +54,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the CampaignService.
       CampaignService campaignService =
           (CampaignService) user.GetService(AdWordsService.v201109.CampaignService);
@@ -101,14 +86,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           if (page != null && page.entries != null) {
             int i = offset;
             foreach (Campaign campaign in page.entries) {
-              writer.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = '{3}'" +
+              Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = '{3}'" +
                 " was found.", i + 1, campaign.id, campaign.name, campaign.status);
               i++;
             }
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
+        Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to retrieve campaigns", ex);
       }

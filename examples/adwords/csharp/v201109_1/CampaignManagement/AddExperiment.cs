@@ -38,10 +38,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new AddExperiment();
+      AddExperiment codeExample = new AddExperiment();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        long criterionId = long.Parse("INSERT_CRITERION_ID_HERE");
+        codeExample.Run(new AdWordsUser(), campaignId, adGroupId, criterionId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -62,25 +65,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"CAMPAIGN_ID", "ADGROUP_ID", "CRITERION_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="campaignId">Id of the campaign to which experiments are
+    /// added.</param>
+    /// <param name="adGroupId">Id of the ad group to which experiments are
+    /// added.</param>
+    /// <param name="criterionId">Id of the criterion for which experiments
+    /// are added.</param>
+    public void Run(AdWordsUser user, long campaignId, long adGroupId, long criterionId) {
       // Get the ExperimentService.
       ExperimentService experimentService =
           (ExperimentService) user.GetService(AdWordsService.v201109_1.ExperimentService);
@@ -93,14 +87,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
       AdGroupCriterionService adGroupCriterionService =
           (AdGroupCriterionService) user.GetService(AdWordsService.v201109_1.AdGroupCriterionService);
 
-      long campaignId = long.Parse(parameters["CAMPAIGN_ID"]);
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
-      long criterionId = long.Parse(parameters["CRITERION_ID"]);
-
       // Create the experiment.
       Experiment experiment = new Experiment();
       experiment.campaignId = campaignId;
-      experiment.name = "Interplanetary Cruise #" + ExampleUtilities.GetTimeStamp();
+      experiment.name = "Interplanetary Cruise #" + ExampleUtilities.GetRandomString();
       experiment.queryPercentage = 10;
       experiment.startDateTime = DateTime.Now.ToString("yyyyMMdd HHmmss");
 
@@ -127,7 +117,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
 
           Experiment newExperiment = experimentRetVal.value[0];
 
-          writer.WriteLine("Experiment with name = \"{0}\" and id = \"{1}\" was added.\n",
+          Console.WriteLine("Experiment with name = \"{0}\" and id = \"{1}\" was added.\n",
               newExperiment.name, newExperiment.id);
           experimentId = newExperiment.id;
 
@@ -163,11 +153,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
           if (adGroupRetVal != null && adGroupRetVal.value != null &&
               adGroupRetVal.value.Length > 0) {
             AdGroup updatedAdGroup = adGroupRetVal.value[0];
-            writer.WriteLine("Ad group with name = \"{0}\", id = \"{1}\" and status = \"{2}\" " +
+            Console.WriteLine("Ad group with name = \"{0}\", id = \"{1}\" and status = \"{2}\" " +
                 "was updated for the experiment.\n", updatedAdGroup.name, updatedAdGroup.id,
                 updatedAdGroup.status);
           } else {
-            writer.WriteLine("No ad groups were updated.");
+            Console.WriteLine("No ad groups were updated.");
           }
 
           // Set ad group criteria for the experiment.
@@ -207,15 +197,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
           if (adGroupCriterionRetVal != null && adGroupCriterionRetVal.value != null &&
               adGroupCriterionRetVal.value.Length > 0) {
             AdGroupCriterion updatedAdGroupCriterion = adGroupCriterionRetVal.value[0];
-            writer.WriteLine("Ad group criterion with ad group id = \"{0}\", criterion id = "
+            Console.WriteLine("Ad group criterion with ad group id = \"{0}\", criterion id = "
                 + "\"{1}\" and type = \"{2}\" was updated for the experiment.\n",
                 updatedAdGroupCriterion.adGroupId, updatedAdGroupCriterion.criterion.id,
                 updatedAdGroupCriterion.criterion.CriterionType);
           } else {
-            writer.WriteLine("No ad group criteria were updated.");
+            Console.WriteLine("No ad group criteria were updated.");
           }
         } else {
-          writer.WriteLine("No experiments were added.");
+          Console.WriteLine("No experiments were added.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to add experiment.", ex);

@@ -38,9 +38,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New AddPlacementsInBulk
+      Dim codeExample As New AddPlacementsInBulk
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -53,25 +59,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad groups to which placements are
+    ''' added.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the MutateJobService.
       Dim mutateJobService As MutateJobService = user.GetService( _
           AdWordsService.v201109.MutateJobService)
@@ -80,8 +73,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       Const RETRIES_COUNT As Integer = 30
       Const PLACEMENT_NUMBER As Integer = 100
       Const INDEX_REGEX As String = "operations\[(\d+)\].operand"
-
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
 
       Dim operations As New List(Of Operation)
 
@@ -111,7 +102,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       ' Wait for the job to complete.
       Dim completed As Boolean = False
       Dim retryCount As Integer = 0
-      writer.WriteLine("Retrieving job status...")
+      Console.WriteLine("Retrieving job status...")
 
       While (completed = False AndAlso retryCount < RETRIES_COUNT)
         Dim selector As New BulkMutateJobSelector
@@ -126,14 +117,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
               completed = True
               Exit While
             Else
-              writer.WriteLine("{0}: Current status is {1}, waiting {2} seconds to retry...", _
+              Console.WriteLine("{0}: Current status is {1}, waiting {2} seconds to retry...", _
                   retryCount, job.status, RETRY_INTERVAL)
               Thread.Sleep(RETRY_INTERVAL * 1000)
               retryCount = retryCount + 1
             End If
           End If
         Catch ex As Exception
-          writer.WriteLine("Failed to fetch simple mutate job with id = {0}. Exception " & _
+          Console.WriteLine("Failed to fetch simple mutate job with id = {0}. Exception " & _
               "says ""{1}"".", job.id, ex.Message)
           Return
         End Try
@@ -161,7 +152,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
                 Else
                   status = "SUCCEEDED"
                 End If
-                writer.WriteLine("Operation {0} - {1}", i, status)
+                Console.WriteLine("Operation {0} - {1}", i, status)
               Next i
             End If
 
@@ -174,20 +165,20 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
                 If (match.Success) Then
                   index = match.Groups(1).Value
                 End If
-                writer.WriteLine("Operation index {0} failed due to reason: '{1}', " & _
+                Console.WriteLine("Operation index {0} failed due to reason: '{1}', " & _
                     "trigger: '{2}'", index, apiError.errorString, apiError.trigger)
               Next
             End If
           End If
         End If
-        writer.WriteLine("Job completed successfully!")
+        Console.WriteLine("Job completed successfully!")
       ElseIf (job.status = BasicJobStatus.FAILED) Then
         ' Handle the cases where job failed.
-        writer.WriteLine("Job failed with reason: " & job.failureReason.ToString())
+        Console.WriteLine("Job failed with reason: " & job.failureReason.ToString())
       ElseIf (job.status = BasicJobStatus.PROCESSING OrElse job.status = BasicJobStatus.PENDING) _
           Then
         ' Handle the cases where job didn't complete after wait period.
-        writer.WriteLine("Job did not complete in {0} secconds.", RETRY_INTERVAL * RETRIES_COUNT)
+        Console.WriteLine("Job did not complete in {0} secconds.", RETRY_INTERVAL * RETRIES_COUNT)
       End If
     End Sub
   End Class

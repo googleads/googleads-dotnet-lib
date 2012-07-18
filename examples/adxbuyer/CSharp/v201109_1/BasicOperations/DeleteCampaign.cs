@@ -34,10 +34,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new DeleteCampaign();
+      DeleteCampaign codeExample = new DeleteCampaign();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+        codeExample.Run(new AdWordsUser(), campaignId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,30 +56,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"CAMPAIGN_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="campaignId">Id of the campaign to be deleted.</param>
+    public void Run(AdWordsUser user, long campaignId) {
       // Get the CampaignService.
       CampaignService campaignService = (CampaignService) user.GetService(
           AdWordsService.v201109_1.CampaignService);
-
-      long campaignId = long.Parse(parameters["CAMPAIGN_ID"]);
 
       // Create campaign with DELETED status.
       Campaign campaign = new Campaign();
@@ -86,7 +71,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
 
       // When deleting a campaign, rename it to avoid name collisions with new
       // campaigns.
-      campaign.name = "Deleted Campaign - " + ExampleUtilities.GetTimeStamp();
+      campaign.name = "Deleted Campaign - " + ExampleUtilities.GetRandomString();
       campaign.status = CampaignStatus.DELETED;
 
       // Create the operation.
@@ -101,10 +86,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           Campaign deletedCampaign = retVal.value[0];
-          writer.WriteLine("Campaign with id = \"{0}\" was renamed to \"{1}\" and deleted.",
+          Console.WriteLine("Campaign with id = \"{0}\" was renamed to \"{1}\" and deleted.",
               deletedCampaign.id, deletedCampaign.name);
         } else {
-          writer.WriteLine("No campaigns were deleted.");
+          Console.WriteLine("No campaigns were deleted.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to delete campaign.", ex);

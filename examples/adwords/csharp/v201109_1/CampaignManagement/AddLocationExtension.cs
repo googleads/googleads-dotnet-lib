@@ -34,10 +34,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new AddLocationExtension();
+      AddLocationExtension codeExample = new AddLocationExtension();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+        codeExample.Run(new AdWordsUser(), campaignId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,31 +56,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"CAMPAIGN_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="campaignId">Id of the campaign to which location
+    /// extensions are added.</param>
+    public void Run(AdWordsUser user, long campaignId) {
       // Get the CampaignAdExtensionService.
       CampaignAdExtensionService campaignExtensionService =
           (CampaignAdExtensionService) user.GetService(AdWordsService.v201109_1.
           CampaignAdExtensionService);
-
-      long campaignId = long.Parse(parameters["CAMPAIGN_ID"]);
 
       // Add location 1: 1600 Amphitheatre Pkwy, Mountain View, US.
       Address address1 = new Address();
@@ -143,11 +129,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           foreach (CampaignAdExtension campaignExtension in retVal.value) {
-            writer.WriteLine("Created a location extension with id = \"{0}\" and " +
+            Console.WriteLine("Created a location extension with id = \"{0}\" and " +
                 "status = \"{1}\"", campaignExtension.adExtension.id, campaignExtension.status);
           }
         } else {
-          writer.WriteLine("No location extensions were created.");
+          Console.WriteLine("No location extensions were created.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to add location extension.", ex);

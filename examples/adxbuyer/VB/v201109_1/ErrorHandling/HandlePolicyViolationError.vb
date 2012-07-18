@@ -1,4 +1,4 @@
-' Copyright 2012, Google Inc. All Rights Reserved.
+' Copyright 2011, Google Inc. All Rights Reserved.
 '
 ' Licensed under the Apache License, Version 2.0 (the "License");
 ' you may not use this file except in compliance with the License.
@@ -36,10 +36,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New HandlePolicyViolationError
+      Dim codeExample As New HandlePolicyViolationError
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -56,35 +57,20 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group to which ads are added.
+    ''' </param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupAdService.
       Dim service As AdGroupAdService = user.GetService( _
           AdWordsService.v201109_1.AdGroupAdService)
 
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
-
       ' Create a third party redirect ad that violates a policy.
       ' Create the third party redirect ad.
       Dim redirectAd As New ThirdPartyRedirectAd
-      redirectAd.name = String.Format("Policy violation demo ad ", ExampleUtilities.GetTimeStamp)
+      redirectAd.name = String.Format("Policy violation demo ad ", ExampleUtilities.GetRandomString)
       redirectAd.url = "gopher://gopher.google.com"
 
       redirectAd.dimensions = New Dimensions
@@ -181,14 +167,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
           If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) _
               AndAlso (retVal.value.Length > 0)) Then
             For Each newAdGroupAd As AdGroupAd In retVal.value
-              writer.WriteLine("New ad with id = ""{0}"" and displayUrl = ""{1}"" was created.", _
+              Console.WriteLine("New ad with id = ""{0}"" and displayUrl = ""{1}"" was created.", _
                   newAdGroupAd.ad.id, newAdGroupAd.ad.displayUrl)
             Next
           Else
-            writer.WriteLine("No ads were created.")
+            Console.WriteLine("No ads were created.")
           End If
         Else
-          writer.WriteLine("There are no ads to create after policy violation checks.")
+          Console.WriteLine("There are no ads to create after policy violation checks.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to create Ad(s).", ex)

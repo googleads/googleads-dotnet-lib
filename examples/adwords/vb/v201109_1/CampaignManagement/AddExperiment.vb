@@ -39,10 +39,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New AddExperiment
+      Dim codeExample As New AddExperiment
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        Dim criterionId As Long = Long.Parse("INSERT_CRITERION_ID_HERE")
+
+        codeExample.Run(New AdWordsUser, campaignId, adGroupId, criterionId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -63,25 +67,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"CAMPAIGN_ID", "ADGROUP_ID", "CRITERION_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="campaignId">Id of the campaign to which experiments are
+    ''' added.</param>
+    ''' <param name="adGroupId">Id of the ad group to which experiments are
+    ''' added.</param>
+    ''' <param name="criterionId">Id of the criterion for which experiments
+    ''' are added.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long, ByVal adGroupId As Long, _
+        ByVal criterionId As Long)
       ' Get the ExperimentService.
       Dim experimentService As ExperimentService = user.GetService( _
           AdWordsService.v201109_1.ExperimentService)
@@ -93,14 +89,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
       Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
           AdWordsService.v201109_1.AdGroupCriterionService)
 
-      Dim campaignId As Long = Long.Parse(parameters("CAMPAIGN_ID"))
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
-      Dim criterionId As Long = Long.Parse(parameters("CRITERION_ID"))
-
       ' Create the experiment.
       Dim experiment As New Experiment
       experiment.campaignId = campaignId
-      experiment.name = ("Interplanetary Cruise #" & ExampleUtilities.GetTimeStamp)
+      experiment.name = ("Interplanetary Cruise #" & ExampleUtilities.GetRandomString)
       experiment.queryPercentage = 10
       experiment.startDateTime = DateTime.Now.ToString("yyyyMMdd HHmmss")
 
@@ -127,7 +119,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
 
           Dim newExperiment As Experiment = experimentRetVal.value(0)
 
-          writer.WriteLine("Experiment with name = ""{0}"" and id = ""{1}"" was added.", _
+          Console.WriteLine("Experiment with name = ""{0}"" and id = ""{1}"" was added.", _
               newExperiment.name, newExperiment.id)
           experimentId = newExperiment.id
 
@@ -162,11 +154,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
           If ((Not adGroupRetVal Is Nothing) AndAlso (Not adGroupRetVal.value Is Nothing) _
               AndAlso (adGroupRetVal.value.Length > 0)) Then
             Dim updatedAdGroup As AdGroup = adGroupRetVal.value(0)
-            writer.WriteLine("Ad group with name = ""{0}"", id = ""{1}"" and status = " & _
+            Console.WriteLine("Ad group with name = ""{0}"", id = ""{1}"" and status = " & _
                   """{2}"" was updated for the experiment.", updatedAdGroup.name, _
                   updatedAdGroup.id, updatedAdGroup.status)
           Else
-            writer.WriteLine("No ad groups were updated.")
+            Console.WriteLine("No ad groups were updated.")
           End If
 
           ' Set ad group criteria for the experiment.
@@ -206,15 +198,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
               (Not adGroupCriterionRetVal.value Is Nothing) AndAlso _
               (adGroupCriterionRetVal.value.Length > 0)) Then
             Dim updatedAdGroupCriterion As AdGroupCriterion = adGroupCriterionRetVal.value(0)
-            writer.WriteLine("Ad group criterion with ad group id = ""{0}"", criterion id =" & _
+            Console.WriteLine("Ad group criterion with ad group id = ""{0}"", criterion id =" & _
                   " ""{1}"" and type = ""{2}"" was updated for the experiment.", _
                   updatedAdGroupCriterion.adGroupId, updatedAdGroupCriterion.criterion.id, _
                   updatedAdGroupCriterion.criterion.CriterionType)
           Else
-            writer.WriteLine("No ad group criteria were updated.")
+            Console.WriteLine("No ad group criteria were updated.")
           End If
         Else
-          writer.WriteLine("No experiments were added.")
+          Console.WriteLine("No experiments were added.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to add experiment(s).", ex)

@@ -37,10 +37,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new AddKeywordsInBulk();
+      AddKeywordsInBulk codeExample = new AddKeywordsInBulk();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -57,25 +58,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad groups to which keywords are
+    /// added.</param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the MutateJobService.
       MutateJobService mutateJobService = (MutateJobService) user.GetService(
           AdWordsService.v201109_1.MutateJobService);
@@ -84,8 +72,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
       const int RETRIES_COUNT = 30;
       const int KEYWORD_NUMBER = 100;
       const string INDEX_REGEX = "operations\\[(\\d+)\\].operand";
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
 
       List<Operation> operations = new List<Operation>();
 
@@ -116,7 +102,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
       // Wait for the job to complete.
       bool completed = false;
       int retryCount = 0;
-      writer.WriteLine("Retrieving job status...");
+      Console.WriteLine("Retrieving job status...");
 
       while (completed == false && retryCount < RETRIES_COUNT) {
         BulkMutateJobSelector selector = new BulkMutateJobSelector();
@@ -130,7 +116,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
               completed = true;
               break;
             } else {
-              writer.WriteLine("{0}: Current status is {1}, waiting {2} seconds to retry...",
+              Console.WriteLine("{0}: Current status is {1}, waiting {2} seconds to retry...",
                   retryCount, job.status, RETRY_INTERVAL);
               Thread.Sleep(RETRY_INTERVAL * 1000);
               retryCount++;
@@ -158,7 +144,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
             if (results.results != null) {
               for (int i = 0; i < results.results.Length; i++) {
                 Operand operand = results.results[i];
-                writer.WriteLine("Operation {0} - {1}", i, (operand.Item is PlaceHolder) ?
+                Console.WriteLine("Operation {0} - {1}", i, (operand.Item is PlaceHolder) ?
                     "FAILED" : "SUCCEEDED");
               }
             }
@@ -168,19 +154,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
               foreach (ApiError apiError in results.errors) {
                 Match match = Regex.Match(apiError.fieldPath, INDEX_REGEX, RegexOptions.IgnoreCase);
                 string index = (match.Success)? match.Groups[1].Value : "???";
-                writer.WriteLine("Operation index {0} failed due to reason: '{1}', " +
+                Console.WriteLine("Operation index {0} failed due to reason: '{1}', " +
                     "trigger: '{2}'", index, apiError.errorString, apiError.trigger);
               }
             }
           }
         }
-        writer.WriteLine("Job completed successfully!");
+        Console.WriteLine("Job completed successfully!");
       } else if (job.status == BasicJobStatus.FAILED) {
         // Handle the cases where job failed.
-        writer.WriteLine("Job failed with reason: " + job.failureReason);
+        Console.WriteLine("Job failed with reason: " + job.failureReason);
       } else if (job.status == BasicJobStatus.PROCESSING || job.status == BasicJobStatus.PENDING) {
         // Handle the cases where job didn't complete after wait period.
-        writer.WriteLine("Job did not complete in {0} secconds.", RETRY_INTERVAL * RETRIES_COUNT);
+        Console.WriteLine("Job did not complete in {0} secconds.", RETRY_INTERVAL * RETRIES_COUNT);
       }
     }
   }

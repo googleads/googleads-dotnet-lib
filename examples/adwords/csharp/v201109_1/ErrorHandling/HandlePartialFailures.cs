@@ -34,10 +34,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new HandlePartialFailures();
+      HandlePartialFailures codeExample = new HandlePartialFailures();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -54,33 +55,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group to which keywords are added.
+    /// </param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupCriterionService.
       AdGroupCriterionService adGroupCriterionService =
           (AdGroupCriterionService) user.GetService(AdWordsService.v201109_1.AdGroupCriterionService);
 
       // Set partial failure mode for the service.
       adGroupCriterionService.RequestHeader.partialFailure = true;
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
 
       List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
 
@@ -114,14 +100,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
         if (result != null && result.value != null) {
           foreach (AdGroupCriterion adGroupCriterionResult in result.value) {
             if (adGroupCriterionResult.criterion != null) {
-              writer.WriteLine("Keyword with ad group id '{0}', criterion id '{1}', and " +
+              Console.WriteLine("Keyword with ad group id '{0}', criterion id '{1}', and " +
                   "text '{2}' was added.\n", adGroupCriterionResult.adGroupId,
                   adGroupCriterionResult.criterion.id,
                   ((Keyword) adGroupCriterionResult.criterion).text);
             }
           }
         } else {
-          writer.WriteLine("No keywords were added.");
+          Console.WriteLine("No keywords were added.");
         }
 
         // Display the partial failure errors.
@@ -130,12 +116,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
             int operationIndex = ErrorUtilities.GetOperationIndex(apiError.fieldPath);
             if (operationIndex != -1) {
               AdGroupCriterion adGroupCriterion = operations[operationIndex].operand;
-              writer.WriteLine("Keyword with ad group id '{0}' and text '{1}' "
+              Console.WriteLine("Keyword with ad group id '{0}' and text '{1}' "
                   + "triggered a failure for the following reason: '{2}'.\n",
                   adGroupCriterion.adGroupId, ((Keyword) adGroupCriterion.criterion).text,
                   apiError.errorString);
             } else {
-              writer.WriteLine("A failure for the following reason: '{0}' has occurred.\n",
+              Console.WriteLine("A failure for the following reason: '{0}' has occurred.\n",
                   apiError.errorString);
             }
           }

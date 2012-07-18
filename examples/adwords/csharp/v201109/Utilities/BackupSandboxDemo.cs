@@ -31,10 +31,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new BackupSandboxDemo();
+      BackupSandboxDemo codeExample = new BackupSandboxDemo();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        string fileName = "INSERT_FILE_NAME_HERE";
+        codeExample.Run(new AdWordsUser(), fileName);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -51,29 +52,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"OUTPUT_FILENAME"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="fileName">The file to which sandbox contents are backed
+    /// up.</param>
+    public void Run(AdWordsUser user, string fileName) {
       // The following set of fields are not exhaustive, they are only for
       // illustration. If you need to backup more object fields, you need to
       // lookup the corresponding selector names and add them below.
-      DataUtilities.DownloadSandboxContents(user, parameters["OUTPUT_FILENAME"],
+      DataUtilities.DownloadSandboxContents(user, fileName,
           new string[] {"Id", "Name", "Status"},
           new string[] {"Id", "Name", "Status"},
           new string[] {"Id", "Status", "Headline", "Description1", "Description2", "DisplayUrl"},

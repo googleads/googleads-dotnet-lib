@@ -34,10 +34,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new CreateAccount();
+      CreateAccount codeExample = new CreateAccount();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,25 +55,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the CreateAccountService.
       CreateAccountService createAccountService =
           (CreateAccountService) user.GetService(AdWordsService.v201109.CreateAccountService);
@@ -99,10 +84,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         // Display the results.
         if (accounts != null && accounts.Length > 0) {
           Account newAccount = accounts[0];
-          writer.WriteLine("Account with customer ID '{0:###-###-####}' was successfully created.",
+          Console.WriteLine("Account with customer ID '{0:###-###-####}' was successfully created.",
               newAccount.customerId);
         } else {
-          writer.WriteLine("No accounts were created.");
+          Console.WriteLine("No accounts were created.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to create accounts.", ex);

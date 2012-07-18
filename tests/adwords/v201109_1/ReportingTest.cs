@@ -32,15 +32,16 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
   /// Test cases for all the code examples under v201109_1\Reporting.
   /// </summary>
   class ReportingTest : ExampleBaseTests {
+    string outputFileName;
+    ReportDefinitionReportType reportType;
+
     /// <summary>
     /// Inits this instance.
     /// </summary>
     [SetUp]
     public void Init() {
-      parameters = new Dictionary<string, string>();
-
-      parameters["OUTPUT_FILE_NAME"] = Path.GetTempFileName();
-      parameters["REPORT_TYPE"] = ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT.ToString();
+      outputFileName = Path.GetTempFileName();
+      reportType = ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT;
     }
 
     /// <summary>
@@ -48,7 +49,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestDownloadCriteriaReportVBExample() {
-      RunExample(new VBExamples.DownloadCriteriaReport());
+      RunExample(delegate() {
+        new VBExamples.DownloadCriteriaReport().Run(user, outputFileName);
+      });
     }
 
     /// <summary>
@@ -56,7 +59,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestDownloadCriteriaReportCSharpExample() {
-      RunExample(new CSharpExamples.DownloadCriteriaReport());
+      RunExample(delegate() {
+        new CSharpExamples.DownloadCriteriaReport().Run(user, outputFileName);
+      });
     }
 
     /// <summary>
@@ -64,7 +69,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetDefinedReportsVBExample() {
-      RunExample(new VBExamples.GetDefinedReports());
+      RunExample(delegate() {
+        new VBExamples.GetDefinedReports().Run(user);
+      });
     }
 
     /// <summary>
@@ -72,7 +79,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetDefinedReportsCSharpExample() {
-      RunExample(new CSharpExamples.GetDefinedReports());
+      RunExample(delegate() {
+        new CSharpExamples.GetDefinedReports().Run(user);
+      });
     }
 
     /// <summary>
@@ -80,7 +89,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetReportFieldsVBExample() {
-      RunExample(new VBExamples.GetReportFields());
+      RunExample(delegate() {
+        new VBExamples.GetReportFields().Run(user, reportType);
+      });
     }
 
     /// <summary>
@@ -88,7 +99,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetReportFieldsCSharpExample() {
-      RunExample(new CSharpExamples.GetReportFields());
+      RunExample(delegate() {
+        new CSharpExamples.GetReportFields().Run(user, reportType);
+      });
     }
 
     /// <summary>
@@ -96,7 +109,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetCampaignStatsVBExample() {
-      RunExample(new VBExamples.GetCampaignStats());
+      RunExample(delegate() {
+        new VBExamples.GetCampaignStats().Run(user);
+      });
     }
 
     /// <summary>
@@ -104,7 +119,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetCampaignStatsCSharpExample() {
-      RunExample(new CSharpExamples.GetCampaignStats());
+      RunExample(delegate() {
+        new CSharpExamples.GetCampaignStats().Run(user);
+      });
     }
   }
 }

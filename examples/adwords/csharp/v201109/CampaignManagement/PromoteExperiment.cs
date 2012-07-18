@@ -35,10 +35,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new PromoteExperiment();
+      PromoteExperiment codeExample = new PromoteExperiment();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long experimentId = long.Parse("INSERT_EXPERIMENT_ID_HERE");
+        codeExample.Run(new AdWordsUser(), experimentId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -57,30 +58,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"EXPERIMENT_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="experimentId">Id of the experiment to be promoted.</param>
+    public void Run(AdWordsUser user, long experimentId) {
       // Get the ExperimentService.
       ExperimentService experimentService =
           (ExperimentService) user.GetService(AdWordsService.v201109.ExperimentService);
-
-      long experimentId = long.Parse(parameters["EXPERIMENT_ID"]);
 
       // Set experiment's status to PROMOTED.
       Experiment experiment = new Experiment();
@@ -100,10 +85,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           Experiment promotedExperiment = retVal.value[0];
-          writer.WriteLine("Experiment with name = \"{0}\" and id = \"{1}\" was promoted.\n",
+          Console.WriteLine("Experiment with name = \"{0}\" and id = \"{1}\" was promoted.\n",
               promotedExperiment.name, promotedExperiment.id);
         } else {
-          writer.WriteLine("No experiments were promoted.");
+          Console.WriteLine("No experiments were promoted.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to promote experiment.", ex);

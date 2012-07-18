@@ -34,10 +34,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New AddAudience
+      Dim codeExample As New AddAudience
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        codeExample.Run(New AdWordsUser)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -54,25 +54,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    Public Sub Run(ByVal user As AdWordsUser)
       ' Get the UserListService.
       Dim userListService As UserListService = user.GetService( _
           AdWordsService.v201109_1.UserListService)
@@ -82,7 +67,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
           AdWordsService.v201109_1.ConversionTrackerService)
 
       Dim userList As New RemarketingUserList
-      userList.name = ("Mars cruise customers #" & ExampleUtilities.GetTimeStamp)
+      userList.name = ("Mars cruise customers #" & ExampleUtilities.GetRandomString)
       userList.description = "A list of mars cruise customers in the last year."
       userList.status = UserListMembershipStatus.OPEN
       userList.membershipLifeSpan = 365
@@ -143,7 +128,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
 
           ' Display the results.
           For Each newUserList As RemarketingUserList In userLists
-            writer.WriteLine("User list with name '{0}' and id '{1}' was added.", _
+            Console.WriteLine("User list with name '{0}' and id '{1}' was added.", _
                 newUserList.name, newUserList.id)
 
             ' Display user list associated conversion code snippets.
@@ -152,13 +137,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
                 Dim conversionTracker As AdWordsConversionTracker = _
                     DirectCast(conversionsMap.Item(newConversionType.id),  _
                         AdWordsConversionTracker)
-                writer.WriteLine("Conversion type code snippet associated to the list:\n{0}", _
+                Console.WriteLine("Conversion type code snippet associated to the list:\n{0}", _
                     conversionTracker.snippet)
               Next
             End If
           Next
         Else
-          writer.WriteLine("No user lists (a.k.a. audiences) were added.")
+          Console.WriteLine("No user lists (a.k.a. audiences) were added.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to add user lists (a.k.a. audiences).", ex)

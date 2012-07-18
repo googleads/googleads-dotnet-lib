@@ -35,10 +35,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new ValidateTextAd();
+      ValidateTextAd codeExample = new ValidateTextAd();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -56,33 +57,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group to which text ads are
+    /// added.</param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupAdService.
       AdGroupAdService adGroupAdService =
           (AdGroupAdService) user.GetService(AdWordsService.v201109_1.AdGroupAdService);
 
       // Set the validateOnly headers.
       adGroupAdService.RequestHeader.validateOnly = true;
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
 
       // Create your text ad.
       TextAd textAd = new TextAd();
@@ -104,14 +90,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
         AdGroupAdReturnValue retVal = adGroupAdService.mutate(
             (new AdGroupAdOperation[] {textAdOperation}));
         // Since validation is ON, result will be null.
-        writer.WriteLine("text ad validated successfully.");
+        Console.WriteLine("text ad validated successfully.");
       } catch (AdWordsApiException ex) {
         // This block will be hit if there is a validation error from the server.
-        writer.WriteLine("There were validation error(s) while adding text ad.");
+        Console.WriteLine("There were validation error(s) while adding text ad.");
 
         if (ex.ApiException != null) {
           foreach (ApiError error in ((ApiException) ex.ApiException).errors) {
-            writer.WriteLine("  Error type is '{0}' and fieldPath is '{1}'.",
+            Console.WriteLine("  Error type is '{0}' and fieldPath is '{1}'.",
                 error.ApiErrorType, error.fieldPath);
           }
         }

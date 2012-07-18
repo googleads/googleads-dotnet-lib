@@ -1,4 +1,4 @@
-' Copyright 2012, Google Inc. All Rights Reserved.
+' Copyright 2011, Google Inc. All Rights Reserved.
 '
 ' Licensed under the Apache License, Version 2.0 (the "License");
 ' you may not use this file except in compliance with the License.
@@ -31,13 +31,24 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
   Public Class AddPlacements
     Inherits ExampleBase
     ''' <summary>
+    ''' Number of items being added / updated in this code example.
+    ''' </summary>
+    Const NUM_ITEMS As Integer = 5
+
+    ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New AddPlacements
+      Dim codeExample As New AddPlacements
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -51,62 +62,40 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group to which keywords are added.
+    ''' </param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
           AdWordsService.v201109_1.AdGroupCriterionService)
 
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
+      Dim operations As New List(Of AdGroupCriterionOperation)
 
-      ' Create the placement.
-      Dim placement1 As New Placement
-      placement1.url = "http://mars.google.com"
+      For i As Integer = 1 To NUM_ITEMS
 
-      ' Create the biddable ad group criterion.
-      Dim placementCriterion1 As AdGroupCriterion = New BiddableAdGroupCriterion
-      placementCriterion1.adGroupId = adGroupId
-      placementCriterion1.criterion = placement1
+        ' Create the placement.
+        Dim placement As New Placement
+        placement.url = "http://mars.google.com/" + i.ToString()
 
-      ' Create the placement.
-      Dim placement2 As New Placement
-      placement2.url = "http://venus.google.com"
+        ' Create the biddable ad group criterion.
+        Dim placementCriterion As AdGroupCriterion = New BiddableAdGroupCriterion
+        placementCriterion.adGroupId = adGroupId
+        placementCriterion.criterion = placement
 
-      ' Create the biddable ad group criterion.
-      Dim placementCriterion2 As AdGroupCriterion = New BiddableAdGroupCriterion
-      placementCriterion2.adGroupId = adGroupId
-      placementCriterion2.criterion = placement2
+        ' Create the operations.
+        Dim operation As New AdGroupCriterionOperation
+        operation.operator = [Operator].ADD
+        operation.operand = placementCriterion
 
-      ' Create the operations.
-      Dim placementOperation1 As New AdGroupCriterionOperation
-      placementOperation1.operator = [Operator].ADD
-      placementOperation1.operand = placementCriterion1
-
-      Dim placementOperation2 As New AdGroupCriterionOperation
-      placementOperation2.operator = [Operator].ADD
-      placementOperation2.operand = placementCriterion2
-
+        operations.Add(operation)
+      Next
       Try
         ' Create the placements.
         Dim retVal As AdGroupCriterionReturnValue = adGroupCriterionService.mutate( _
-            New AdGroupCriterionOperation() {placementOperation1, placementOperation2})
+            operations.ToArray)
 
         ' Display the results.
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing)) Then
@@ -117,15 +106,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
             ' if (adGroupCriterion is Placement) { ... }
             '
             ' to identify the criterion type.
-            writer.WriteLine("Placement with ad group id = '{0}, placement id = '{1} and url = " & _
+            Console.WriteLine("Placement with ad group id = '{0}, placement id = '{1} and url = " & _
                 "'{2}' was created.", adGroupCriterion.adGroupId, _
                 adGroupCriterion.criterion.id, TryCast(adGroupCriterion.criterion, Placement).url)
           Next
         Else
-          writer.WriteLine("No placements were added.")
+          Console.WriteLine("No placements were added.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to create placements. Exception says ""{0}""", ex.Message)
+        Console.WriteLine("Failed to create placements. Exception says ""{0}""", ex.Message)
       End Try
     End Sub
   End Class

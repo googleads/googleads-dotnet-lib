@@ -36,10 +36,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetKeywordBidSimulations
+      Dim codeExample As New GetKeywordBidSimulations
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        Dim keywordId As Long = Long.Parse("INSERT_KEYWORD_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId, keywordId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -57,30 +59,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID", "KEYWORD_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group for which keyword bid
+    ''' simulations are retrieved.</param>
+    ''' <param name="keywordId">Id of the keyword for which bid simulations are
+    ''' retrieved.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal keywordId As Long)
       ' Get the DataService.
       Dim dataService As DataService = user.GetService(AdWordsService.v201109.DataService)
-
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
-      Dim keywordId As Long = Long.Parse(parameters("KEYWORD_ID"))
 
       ' Create the selector.
       Dim selector As New Selector
@@ -121,13 +109,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
             Dim i As Integer = offset
 
             For Each bidLandscape As CriterionBidLandscape In page.entries
-              writer.WriteLine("{0}) Found keyword bid landscape with ad group id ""{1}"", " & _
+              Console.WriteLine("{0}) Found keyword bid landscape with ad group id ""{1}"", " & _
                     "keyword id ""{2}"", start date ""{3}"", end date ""{4}"", and " & _
                     "landscape points:", i, bidLandscape.adGroupId, bidLandscape.criterionId, _
                     bidLandscape.startDate, bidLandscape.endDate)
               For Each bidLandscapePoint As BidLandscapeLandscapePoint _
                   In bidLandscape.landscapePoints
-                writer.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, marginalCpc: {3}, " & _
+                Console.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, marginalCpc: {3}, " & _
                     "impressions: {4}", bidLandscapePoint.bid.microAmount, _
                     bidLandscapePoint.clicks, bidLandscapePoint.cost.microAmount, _
                     bidLandscapePoint.marginalCpc.microAmount, bidLandscapePoint.impressions)
@@ -137,7 +125,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           End If
           offset = offset + pageSize
         Loop While (offset < page.totalNumEntries)
-        writer.WriteLine("Number of keyword bid landscapes found: {0}", page.totalNumEntries)
+        Console.WriteLine("Number of keyword bid landscapes found: {0}", page.totalNumEntries)
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to retrieve keyword bid landscapes.", ex)
       End Try

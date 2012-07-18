@@ -35,10 +35,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new SetAdParameters();
+      SetAdParameters codeExample = new SetAdParameters();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        long criterionId = long.Parse("INSERT_CRITERION_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId, criterionId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -56,25 +58,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID", "CRITERION_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group that contains the criterion.
+    /// </param>
+    /// <param name="criterionId">Id of the keyword for which the ad
+    /// parameters are set.</param>
+    public void Run(AdWordsUser user, long adGroupId, long criterionId) {
       // Get the AdGroupAdService.
       AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
           AdWordsService.v201109_1.AdGroupAdService);
@@ -82,9 +73,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
       // Get the AdParamService.
       AdParamService adParamService = (AdParamService) user.GetService(
           AdWordsService.v201109_1.AdParamService);
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
-      long criterionId = long.Parse(parameters["CRITERION_ID"]);
 
       // Create the text ad.
       TextAd textAd = new TextAd();
@@ -111,14 +99,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
 
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-          writer.WriteLine("Text ad with id ='{0}' was successfully added.",
+          Console.WriteLine("Text ad with id ='{0}' was successfully added.",
               retVal.value[0].ad.id);
         } else {
-          writer.WriteLine("No text ads were created.");
+          Console.WriteLine("No text ads were created.");
           return;
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to create text ads. Exception says \"{0}\"", ex.Message);
+        Console.WriteLine("Failed to create text ads. Exception says \"{0}\"", ex.Message);
         return;
       }
 
@@ -152,9 +140,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
 
         // Display the results.
         if (newAdParams != null) {
-          writer.WriteLine("Ad parameters were successfully updated.");
+          Console.WriteLine("Ad parameters were successfully updated.");
         } else {
-          writer.WriteLine("No ad parameters were set.");
+          Console.WriteLine("No ad parameters were set.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to set ad parameters.", ex);

@@ -33,19 +33,18 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
   /// Test cases for all the code examples under v201109_1\Optimization.
   /// </summary>
   class OptimizationTest : ExampleBaseTests {
+    long campaignId;
+    long adGroupId;
+    long keywordId;
+
     /// <summary>
     /// Inits this instance.
     /// </summary>
     [SetUp]
     public void Init() {
-      parameters = new Dictionary<string, string>();
-
-      long campaignId = utils.CreateCampaign(user, new ManualCPC());
-      long adGroupId = utils.CreateAdGroup(user, campaignId);
-      long keywordId = utils.CreateKeyword(user, adGroupId);
-      parameters["CAMPAIGN_ID"] = campaignId.ToString();
-      parameters["ADGROUP_ID"] = adGroupId.ToString();
-      parameters["KEYWORD_ID"] = keywordId.ToString();
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
+      adGroupId = utils.CreateAdGroup(user, campaignId);
+      keywordId = utils.CreateKeyword(user, adGroupId);
     }
 
     /// <summary>
@@ -53,7 +52,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestEstimateKeywordTrafficVBExample() {
-      RunExample(new VBExamples.EstimateKeywordTraffic());
+      RunExample(delegate() {
+        new VBExamples.EstimateKeywordTraffic().Run(user);
+      });
     }
 
     /// <summary>
@@ -61,7 +62,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestEstimateKeywordTrafficCSharpExample() {
-      RunExample(new CSharpExamples.EstimateKeywordTraffic());
+      RunExample(delegate() {
+        new CSharpExamples.EstimateKeywordTraffic().Run(user);
+      });
     }
 
     /// <summary>
@@ -69,7 +72,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetAdGroupBidSimulationsVBExample() {
-      RunExample(new VBExamples.GetAdGroupBidSimulations());
+      RunExample(delegate() {
+        new VBExamples.GetAdGroupBidSimulations().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -77,7 +82,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetAdGroupBidSimulationsCSharpExample() {
-      RunExample(new CSharpExamples.GetAdGroupBidSimulations());
+      RunExample(delegate() {
+        new CSharpExamples.GetAdGroupBidSimulations().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -85,7 +92,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetKeywordBidSimulationsVBExample() {
-      RunExample(new VBExamples.GetKeywordBidSimulations());
+      RunExample(delegate() {
+        new VBExamples.GetKeywordBidSimulations().Run(user, adGroupId, keywordId);
+      });
     }
 
     /// <summary>
@@ -93,7 +102,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetKeywordBidSimulationsCSharpExample() {
-      RunExample(new CSharpExamples.GetKeywordBidSimulations());
+      RunExample(delegate() {
+        new CSharpExamples.GetKeywordBidSimulations().Run(user, adGroupId, keywordId);
+      });
     }
 
     /// <summary>
@@ -101,7 +112,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetKeywordIdeasVBExample() {
-      RunExample(new VBExamples.GetKeywordIdeas());
+      RunExample(delegate() {
+        new VBExamples.GetKeywordIdeas().Run(user);
+      });
     }
 
     /// <summary>
@@ -109,7 +122,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetKeywordIdeasCSharpExample() {
-      RunExample(new CSharpExamples.GetKeywordIdeas());
+      RunExample(delegate() {
+        new CSharpExamples.GetKeywordIdeas().Run(user);
+      });
     }
 
     /// <summary>
@@ -117,7 +132,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetPlacementIdeasVBExample() {
-      RunExample(new VBExamples.GetPlacementIdeas());
+      RunExample(delegate() {
+        new VBExamples.GetPlacementIdeas().Run(user);
+      });
     }
 
     /// <summary>
@@ -125,7 +142,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109_1 {
     /// </summary>
     [Test]
     public void TestGetPlacementIdeasCSharpExample() {
-      RunExample(new CSharpExamples.GetPlacementIdeas());
+      RunExample(delegate() {
+        new CSharpExamples.GetPlacementIdeas().Run(user);
+      });
     }
   }
 }

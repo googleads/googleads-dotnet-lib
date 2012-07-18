@@ -35,10 +35,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetKeywordBidSimulations();
+      GetKeywordBidSimulations codeExample = new GetKeywordBidSimulations();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        long keywordId = long.Parse("INSERT_KEYWORD_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId, keywordId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -56,30 +58,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID", "KEYWORD_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group for which keyword bid
+    /// simulations are retrieved.</param>
+    /// <param name="keywordId">Id of the keyword for which bid simulations are
+    /// retrieved.</param>
+    public void Run(AdWordsUser user, long adGroupId, long keywordId) {
       // Get the DataService.
       DataService dataService = (DataService) user.GetService(AdWordsService.v201109.DataService);
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
-      long keywordId = long.Parse(parameters["KEYWORD_ID"]);
 
       // Create the selector.
       Selector selector = new Selector();
@@ -120,13 +108,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
             int i = offset;
 
             foreach (CriterionBidLandscape bidLandscape in page.entries) {
-              writer.WriteLine("{0}) Found criterion bid landscape with ad group id '{1}', " +
+              Console.WriteLine("{0}) Found criterion bid landscape with ad group id '{1}', " +
                   "keyword id '{2}', start date '{3}', end date '{4}', and landscape points:",
                   i, bidLandscape.adGroupId, bidLandscape.criterionId, bidLandscape.startDate,
                   bidLandscape.endDate);
               foreach (BidLandscapeLandscapePoint bidLandscapePoint in
                   bidLandscape.landscapePoints) {
-                writer.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, marginalCpc: {3}, " +
+                Console.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, marginalCpc: {3}, " +
                     "impressions: {4}\n", bidLandscapePoint.bid.microAmount,
                     bidLandscapePoint.clicks, bidLandscapePoint.cost.microAmount,
                     bidLandscapePoint.marginalCpc.microAmount, bidLandscapePoint.impressions);
@@ -136,7 +124,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of keyword bid landscapes found: {0}", page.totalNumEntries);
+        Console.WriteLine("Number of keyword bid landscapes found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to retrieve keyword bid landscapes.", ex);
       }

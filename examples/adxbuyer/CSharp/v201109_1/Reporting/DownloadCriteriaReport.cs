@@ -33,10 +33,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new DownloadCriteriaReport();
+      DownloadCriteriaReport codeExample = new DownloadCriteriaReport();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        string fileName = "INSERT_FILE_NAME_HERE";
+        codeExample.Run(new AdWordsUser(), fileName);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -54,27 +55,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"OUTPUT_FILE_NAME"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
-      string fileName = parameters["OUTPUT_FILE_NAME"];
-
+    /// <param name="fileName">The file to which the report is downloaded.
+    /// </param>
+    public void Run(AdWordsUser user, string fileName) {
       ReportDefinition definition = new ReportDefinition();
 
       definition.reportName = "Last 7 days CRITERIA_PERFORMANCE_REPORT";
@@ -119,7 +105,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
         ReportUtilities utilities = new ReportUtilities(user);
         utilities.ReportVersion = "v201109_1";
         utilities.DownloadClientReport(definition, filePath);
-        writer.WriteLine("Report was downloaded to '{0}'.", filePath);
+        Console.WriteLine("Report was downloaded to '{0}'.", filePath);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to download report.", ex);
       }

@@ -35,10 +35,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetTextAds
+      Dim codeExample As New GetTextAds
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -56,29 +57,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group from which text ads are
+    ''' retrieved.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupAdService.
       Dim service As AdGroupAdService = user.GetService(AdWordsService.v201109_1.AdGroupAdService)
-
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
 
       ' Create a selector.
       Dim selector As New Selector
@@ -136,16 +122,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
 
             For Each adGroupAd As AdGroupAd In page.entries
               Dim textAd As TextAd = adGroupAd.ad
-              writer.WriteLine("{0}) Ad id is {1} and status is {2}", i, textAd.id, _
+              Console.WriteLine("{0}) Ad id is {1} and status is {2}", i, textAd.id, _
                   adGroupAd.status)
-              writer.WriteLine("  {0}\n  {1}\n  {2}\n  {3}", textAd.headline, _
+              Console.WriteLine("  {0}\n  {1}\n  {2}\n  {3}", textAd.headline, _
                   textAd.description1, textAd.description2, textAd.displayUrl)
             Next
             i += 1
           End If
           offset = offset + pageSize
         Loop While (offset < page.totalNumEntries)
-        writer.WriteLine("Number of text ads found: {0}", page.totalNumEntries)
+        Console.WriteLine("Number of text ads found: {0}", page.totalNumEntries)
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to get text ads.", ex)
       End Try

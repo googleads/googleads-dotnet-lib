@@ -36,10 +36,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetAllVideosAndImages
+      Dim codeExample As New GetAllVideosAndImages
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        codeExample.Run(New AdWordsUser)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -58,25 +58,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    Public Sub Run(ByVal user As AdWordsUser)
       ' Get the MediaService.
       Dim mediaService As MediaService = user.GetService(AdWordsService.v201109_1.MediaService)
 
@@ -114,13 +99,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
             For Each media As Media In page.entries
               If TypeOf media Is Video Then
                 Dim video As Video = media
-                writer.WriteLine("{0}) Video with id '{1}' and name '{2}' was found.", _
+                Console.WriteLine("{0}) Video with id '{1}' and name '{2}' was found.", _
                     i, video.mediaId, video.name)
               ElseIf TypeOf media Is Image Then
                 Dim image As Image = media
                 Dim dimensions As Dictionary(Of MediaSize, Dimensions) = _
                     CreateMediaDimensionMap(image.dimensions)
-                writer.WriteLine("{0}) Image with id '{1}', dimensions '{2}x{3}', and MIME " & _
+                Console.WriteLine("{0}) Image with id '{1}', dimensions '{2}x{3}', and MIME " & _
                     "type '{4}' was found.", i, image.mediaId, dimensions(MediaSize.FULL).width, _
                     dimensions(MediaSize.FULL).height, image.mimeType)
               End If
@@ -129,7 +114,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
           End If
           offset = offset + pageSize
         Loop While (offset < page.totalNumEntries)
-        writer.WriteLine("Number of images and videos found: {0}", page.totalNumEntries)
+        Console.WriteLine("Number of images and videos found: {0}", page.totalNumEntries)
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to get images and videos.", ex)
       End Try

@@ -33,14 +33,20 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   Public Class AddTextAds
     Inherits ExampleBase
     ''' <summary>
+    ''' Number of items being added / updated in this code example.
+    ''' </summary>
+    Const NUM_ITEMS As Integer = 5
+
+    ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New AddTextAds
+      Dim codeExample As New AddTextAds
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -59,75 +65,47 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group to which ads are added.
+    ''' </param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupAdService.
       Dim service As AdGroupAdService = user.GetService( _
           AdWordsService.v201109.AdGroupAdService)
 
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
+      Dim operations As New List(Of AdGroupAdOperation)
 
-      ' Create the text ad.
-      Dim textAd1 As New TextAd
-      textAd1.headline = "Luxury Cruise to Mars"
-      textAd1.description1 = "Visit the Red Planet in style."
-      textAd1.description2 = "Low-gravity fun for everyone!"
-      textAd1.displayUrl = "www.example.com"
-      textAd1.url = "http://www.example.com"
+      For i As Integer = 1 To NUM_ITEMS
+        ' Create the text ad.
+        Dim textAd As New TextAd
+        textAd.headline = "Luxury Cruise to Mars"
+        textAd.description1 = "Visit the Red Planet in style."
+        textAd.description2 = "Low-gravity fun for everyone!"
+        textAd.displayUrl = "www.example.com"
+        textAd.url = "http://www.example.com/" + i
 
-      Dim textAdGroupAd1 As New AdGroupAd
-      textAdGroupAd1.adGroupId = adGroupId
-      textAdGroupAd1.ad = textAd1
+        Dim textAdGroupAd As New AdGroupAd
+        textAdGroupAd.adGroupId = adGroupId
+        textAdGroupAd.ad = textAd
 
-      ' Optional: Set the status.
-      textAdGroupAd1.status = AdGroupAdStatus.PAUSED
+        ' Optional: Set the status.
+        textAdGroupAd.status = AdGroupAdStatus.PAUSED
 
-      ' Create the text ad.
-      Dim textAd2 As New TextAd
-      textAd2.headline = "Luxury Hotels in Mars"
-      textAd2.description1 = "Enjoy your stay at Red Planet."
-      textAd2.description2 = "Low-gravity fun for everyone!"
-      textAd2.displayUrl = "www.example.com"
-      textAd2.url = "http://www.example.com"
+        ' Create the operations.
+        Dim operation As New AdGroupAdOperation
+        operation.operator = [Operator].ADD
+        operation.operand = textAdGroupAd
 
-      Dim textAdGroupAd2 As New AdGroupAd
-      textAdGroupAd2.adGroupId = adGroupId
-      textAdGroupAd2.ad = textAd2
-
-      ' Optional: Set the status.
-      textAdGroupAd2.status = AdGroupAdStatus.PAUSED
-
-      ' Create the operations.
-      Dim textAdOperation1 As New AdGroupAdOperation
-      textAdOperation1.operator = [Operator].ADD
-      textAdOperation1.operand = textAdGroupAd1
-
-      Dim textAdOperation2 As New AdGroupAdOperation
-      textAdOperation2.operator = [Operator].ADD
-      textAdOperation2.operand = textAdGroupAd2
+        operations.Add(operation)
+      Next
 
       Dim retVal As AdGroupAdReturnValue = Nothing
 
       Try
         ' Create the ads.
-        retVal = service.mutate(New AdGroupAdOperation() {textAdOperation1, textAdOperation2})
+        retVal = service.mutate(operations.ToArray())
 
         ' Display the results.
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing)) Then
@@ -138,11 +116,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           '
           ' to identify the ad type.
           For Each adGroupAd As AdGroupAd In retVal.value
-            writer.WriteLine("New text ad with id = ""{0}"" and displayUrl = ""{1}"" was " & _
+            Console.WriteLine("New text ad with id = ""{0}"" and displayUrl = ""{1}"" was " & _
                 "created.", adGroupAd.ad.id, adGroupAd.ad.displayUrl)
           Next
         Else
-          writer.WriteLine("No text ads were created.")
+          Console.WriteLine("No text ads were created.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to create text ads.", ex)

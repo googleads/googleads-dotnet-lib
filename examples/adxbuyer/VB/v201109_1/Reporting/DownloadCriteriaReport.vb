@@ -34,10 +34,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New DownloadCriteriaReport
+      Dim codeExample As New DownloadCriteriaReport
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim fileName As String = "INSERT_OUTPUT_FILE_NAME"
+        codeExample.Run(New AdWordsUser, fileName)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -55,27 +56,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"OUTPUT_FILE_NAME"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
-      Dim fileName As String = parameters("OUTPUT_FILE_NAME")
-
+    ''' <param name="fileName">The file to which the report is downloaded.
+    ''' </param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal fileName As String)
       Dim definition As New ReportDefinition
 
       definition.reportName = "Last 7 days CRITERIA_PERFORMANCE_REPORT"
@@ -122,7 +108,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
         Dim utilities As New ReportUtilities(user)
         utilities.ReportVersion = "v201109_1"
         utilities.DownloadClientReport(Of ReportDefinition)(definition, filePath)
-        writer.WriteLine("Report was downloaded to '{0}'.", filePath)
+        Console.WriteLine("Report was downloaded to '{0}'.", filePath)
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to download report.", ex)
       End Try

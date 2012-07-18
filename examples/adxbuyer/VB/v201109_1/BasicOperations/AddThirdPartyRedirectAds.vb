@@ -32,13 +32,24 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
   Public Class AddThirdPartyRedirectAds
     Inherits ExampleBase
     ''' <summary>
+    ''' Number of items being added / updated in this code example.
+    ''' </summary>
+    Const NUM_ITEMS As Integer = 5
+
+    ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New AddThirdPartyRedirectAds
+      Dim codeExample As New AddThirdPartyRedirectAds
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -52,93 +63,53 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group to which ads are added.
+    ''' </param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupAdService.
       Dim service As AdGroupAdService = user.GetService( _
           AdWordsService.v201109_1.AdGroupAdService)
 
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
+      Dim operations As New List(Of AdGroupAdOperation)
 
-      ' Create the third party redirect ad.
-      Dim redirectAd1 As New ThirdPartyRedirectAd
-      redirectAd1.name = String.Format("Example third party ad #{0}", ExampleUtilities.GetTimeStamp)
-      redirectAd1.url = "http://www.example.com"
+      For i As Integer = 1 To NUM_ITEMS
+        ' Create the third party redirect ad.
+        Dim redirectAd As New ThirdPartyRedirectAd
+        redirectAd.name = String.Format("Example third party ad #{0}", ExampleUtilities.GetRandomString)
+        redirectAd.url = "http://www.example.com"
 
-      redirectAd1.dimensions = New Dimensions
-      redirectAd1.dimensions.height = 250
-      redirectAd1.dimensions.width = 300
+        redirectAd.dimensions = New Dimensions
+        redirectAd.dimensions.height = 250
+        redirectAd.dimensions.width = 300
 
-      redirectAd1.snippet = "<img src=""https://sandbox.google.com/sandboximages/image.jpg""/>"
-      redirectAd1.impressionBeaconUrl = "http://www.examples.com/beacon"
-      redirectAd1.certifiedVendorFormatId = 119
-      redirectAd1.isCookieTargeted = False
-      redirectAd1.isUserInterestTargeted = False
-      redirectAd1.isTagged = False
+        redirectAd.snippet = "<img src=""https://sandbox.google.com/sandboximages/image.jpg""/>"
+        redirectAd.impressionBeaconUrl = "http://www.examples.com/beacon"
+        redirectAd.certifiedVendorFormatId = 119
+        redirectAd.isCookieTargeted = False
+        redirectAd.isUserInterestTargeted = False
+        redirectAd.isTagged = False
 
-      Dim thirdPartyRedirectAdGroupAd1 As New AdGroupAd
-      thirdPartyRedirectAdGroupAd1.adGroupId = adGroupId
-      thirdPartyRedirectAdGroupAd1.ad = redirectAd1
+        Dim thirdPartyRedirectAdGroupAd As New AdGroupAd
+        thirdPartyRedirectAdGroupAd.adGroupId = adGroupId
+        thirdPartyRedirectAdGroupAd.ad = redirectAd
 
-      ' Optional: Set the status.
-      thirdPartyRedirectAdGroupAd1.status = AdGroupAdStatus.PAUSED
+        ' Optional: Set the status.
+        thirdPartyRedirectAdGroupAd.status = AdGroupAdStatus.PAUSED
 
-      ' Create the operations.
-      Dim thirdPartyRedirectAdOperation1 As New AdGroupAdOperation
-      thirdPartyRedirectAdOperation1.operator = [Operator].ADD
-      thirdPartyRedirectAdOperation1.operand = thirdPartyRedirectAdGroupAd1
+        ' Create the operations.
+        Dim operation As New AdGroupAdOperation
+        operation.operator = [Operator].ADD
+        operation.operand = thirdPartyRedirectAdGroupAd
 
-      ' Create the third party redirect ad.
-      Dim redirectAd2 As New ThirdPartyRedirectAd
-      redirectAd2.name = String.Format("Example third party ad #{0}", ExampleUtilities.GetTimeStamp)
-      redirectAd2.url = "http://www.example.com"
-
-      redirectAd2.dimensions = New Dimensions
-      redirectAd2.dimensions.height = 250
-      redirectAd2.dimensions.width = 300
-
-      redirectAd2.snippet = "<img src=""https://sandbox.google.com/sandboximages/image.jpg""/>"
-      redirectAd2.impressionBeaconUrl = "http://www.examples.com/beacon"
-      redirectAd2.certifiedVendorFormatId = 119
-      redirectAd2.isCookieTargeted = False
-      redirectAd2.isUserInterestTargeted = False
-      redirectAd2.isTagged = False
-
-      Dim thirdPartyRedirectAdGroupAd2 As New AdGroupAd
-      thirdPartyRedirectAdGroupAd2.adGroupId = adGroupId
-      thirdPartyRedirectAdGroupAd2.ad = redirectAd2
-
-      ' Optional: Set the status.
-      thirdPartyRedirectAdGroupAd2.status = AdGroupAdStatus.PAUSED
-
-      ' Create the operations.
-      Dim thirdPartyRedirectAdOperation2 As New AdGroupAdOperation
-      thirdPartyRedirectAdOperation2.operator = [Operator].ADD
-      thirdPartyRedirectAdOperation2.operand = thirdPartyRedirectAdGroupAd2
-
-      Dim retVal As AdGroupAdReturnValue = Nothing
+        operations.Add(operation)
+      Next
 
       Try
         ' Create the ads.
-        retVal = service.mutate(New AdGroupAdOperation() {thirdPartyRedirectAdOperation1, _
-                                                          thirdPartyRedirectAdOperation2})
+        Dim retVal As AdGroupAdReturnValue = service.mutate(operations.ToArray())
 
         ' Display the results.
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing)) Then
@@ -149,14 +120,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
           '
           ' to identify the ad type.
           For Each adGroupAd As AdGroupAd In retVal.value
-            writer.WriteLine("New third party redirect ad with id = ""{0}"" and url = ""{1}"" " & _
+            Console.WriteLine("New third party redirect ad with id = ""{0}"" and url = ""{1}"" " & _
                 "was created.", adGroupAd.ad.id, DirectCast(adGroupAd.ad, ThirdPartyRedirectAd).url)
           Next
         Else
-          writer.WriteLine("No third party redirect ads were created.")
+          Console.WriteLine("No third party redirect ads were created.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to create third party redirect ad. Exception says ""{0}""", _
+        Console.WriteLine("Failed to create third party redirect ad. Exception says ""{0}""", _
             ex.Message)
       End Try
     End Sub

@@ -1,4 +1,4 @@
-' Copyright 2012, Google Inc. All Rights Reserved.
+' Copyright 2011, Google Inc. All Rights Reserved.
 '
 ' Licensed under the Apache License, Version 2.0 (the "License");
 ' you may not use this file except in compliance with the License.
@@ -35,9 +35,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New DeletePlacement
+      Dim codeExample As New DeletePlacement
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        Dim placementId As Long = Long.Parse("INSERT_PLACEMENT_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId, placementId)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -51,31 +58,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID", "PLACEMENT_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group that contains the keyword.
+    ''' </param>
+    ''' <param name="placementId">Id of the placement to be deleted.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal placementId As Long)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
           AdWordsService.v201109_1.AdGroupCriterionService)
-
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
-      Dim placementId As Long = Long.Parse(parameters("PLACEMENT_ID"))
 
       ' Create base class criterion to avoid setting placement-specific
       ' fields.
@@ -101,13 +93,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
           Dim deletedPlacement As AdGroupCriterion = retVal.value(0)
-          writer.WriteLine("Placement with ad group id = ""{0}"" and id = ""{1}"" was " & _
+          Console.WriteLine("Placement with ad group id = ""{0}"" and id = ""{1}"" was " & _
                 "deleted.", deletedPlacement.adGroupId, deletedPlacement.criterion.id)
         Else
-          writer.WriteLine("No placement was deleted.")
+          Console.WriteLine("No placement was deleted.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to delete placement. Exception says ""{0}""", ex.Message)
+        Console.WriteLine("Failed to delete placement. Exception says ""{0}""", ex.Message)
       End Try
     End Sub
   End Class

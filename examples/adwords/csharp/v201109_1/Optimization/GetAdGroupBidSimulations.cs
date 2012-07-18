@@ -34,10 +34,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetAdGroupBidSimulations();
+      GetAdGroupBidSimulations codeExample = new GetAdGroupBidSimulations();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,27 +56,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the specified user.
     /// </summary>
     /// <param name="user">The user.</param>
-    /// <param name="parameters">The parameters.</param>
-    /// <param name="writer">The writer.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group for which bid simulations are
+    /// retrieved.</param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the DataService.
       DataService dataService = (DataService) user.GetService(AdWordsService.v201109_1.DataService);
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
 
       // Create the selector.
       Selector selector = new Selector();
@@ -95,19 +83,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
         AdGroupBidLandscapePage page = dataService.getAdGroupBidLandscape(selector);
         if (page != null && page.entries != null && page.entries.Length > 0) {
           foreach (AdGroupBidLandscape bidLandscape in page.entries) {
-            writer.WriteLine("Found ad group bid landscape with ad group id '{0}', type '{1}', " +
+            Console.WriteLine("Found ad group bid landscape with ad group id '{0}', type '{1}', " +
                 "current: '{2}', start date '{3}', end date '{4}', and landscape points",
                 bidLandscape.adGroupId, bidLandscape.type, bidLandscape.landscapeCurrent,
                 bidLandscape.startDate, bidLandscape.endDate);
             foreach (BidLandscapeLandscapePoint point in bidLandscape.landscapePoints) {
-              writer.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, marginalCpc: {3}, " +
+              Console.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, marginalCpc: {3}, " +
                   "impressions: {4}", point.bid.microAmount, point.bid.microAmount,
                   point.clicks, point.cost.microAmount, point.marginalCpc.microAmount,
                   point.impressions);
             }
           }
         } else {
-          writer.WriteLine("No ad group bid landscapes were found.");
+          Console.WriteLine("No ad group bid landscapes were found.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to get ad group bid landscapes.", ex);

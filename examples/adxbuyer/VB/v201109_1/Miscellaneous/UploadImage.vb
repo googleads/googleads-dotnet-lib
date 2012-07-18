@@ -35,10 +35,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New UploadImage
+      Dim codeExample As New UploadImage
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        codeExample.Run(New AdWordsUser)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -55,25 +55,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    Public Sub Run(ByVal user As AdWordsUser)
       ' Get the MediaService.
       Dim mediaService As MediaService = user.GetService( _
           AdWordsService.v201109_1.MediaService)
@@ -92,11 +77,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
           Dim newImage As Media = result(0)
           Dim dimensions As Dictionary(Of MediaSize, Dimensions) = _
                 CreateMediaDimensionMap(newImage.dimensions)
-          writer.WriteLine("Image with id '{0}', dimensions '{1}x{2}', and MIME type '{3}'" & _
+          Console.WriteLine("Image with id '{0}', dimensions '{1}x{2}', and MIME type '{3}'" & _
               " was uploaded.", newImage.mediaId, dimensions.Item(MediaSize.FULL).width, _
               dimensions.Item(MediaSize.FULL).height, newImage.mimeType)
         Else
-          writer.WriteLine("No images were uploaded.")
+          Console.WriteLine("No images were uploaded.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to upload images.", ex)

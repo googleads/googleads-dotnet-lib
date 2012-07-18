@@ -33,10 +33,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetDefinedReports();
+      GetDefinedReports codeExample = new GetDefinedReports();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -53,25 +53,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the ReportDefinitionService.
       ReportDefinitionService reportDefinitionService = (ReportDefinitionService) user.GetService(
           AdWordsService.v201109_1.ReportDefinitionService);
@@ -86,11 +71,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
         // Display report definitions.
         if (page != null && page.entries != null && page.entries.Length > 0) {
           foreach (ReportDefinition reportDefinition in page.entries) {
-            writer.WriteLine("ReportDefinition with name \"{0}\" and id \"{1}\" was found.",
+            Console.WriteLine("ReportDefinition with name \"{0}\" and id \"{1}\" was found.",
                 reportDefinition.reportName, reportDefinition.id);
           }
         } else {
-          writer.WriteLine("No report definitions were found.");
+          Console.WriteLine("No report definitions were found.");
         }
 
       } catch (Exception ex) {

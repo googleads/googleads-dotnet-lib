@@ -30,13 +30,24 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
   /// </summary>
   public class AddThirdPartyRedirectAds : ExampleBase {
     /// <summary>
+    /// Number of items being added / updated in this code example.
+    /// </summary>
+    const int NUM_ITEMS = 5;
+
+    /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new AddThirdPartyRedirectAds();
+      AddThirdPartyRedirectAds codeExample = new AddThirdPartyRedirectAds();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -50,103 +61,73 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group to which ads are added.
+    /// </param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupAdService.
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(AdWordsService.v201109.AdGroupAdService);
 
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
+      List<AdGroupAdOperation> operations = new List<AdGroupAdOperation>();
 
-      // Create the third party redirect ad.
-      ThirdPartyRedirectAd redirectAd1 = new ThirdPartyRedirectAd();
-      redirectAd1.name = string.Format("Example third party ad #{0}",
-          ExampleUtilities.GetTimeStamp());
-      redirectAd1.url = "http://www.example.com";
+      for (int i = 0; i < NUM_ITEMS; i++) {
+        // Create the text ad.
+        // Create the third party redirect ad.
+        ThirdPartyRedirectAd redirectAd = new ThirdPartyRedirectAd();
+        redirectAd.name = string.Format("Example third party ad #{0}",
+            ExampleUtilities.GetRandomString());
+        redirectAd.url = "http://www.example.com";
 
-      redirectAd1.dimensions = new Dimensions();
-      redirectAd1.dimensions.height = 250;
-      redirectAd1.dimensions.width = 300;
+        redirectAd.dimensions = new Dimensions();
+        redirectAd.dimensions.height = 250;
+        redirectAd.dimensions.width = 300;
 
-      // This field normally contains the javascript ad tag.
-      redirectAd1.snippet = "<img src=\"https://sandbox.google.com/sandboximages/image.jpg\"/>";
-      redirectAd1.impressionBeaconUrl = "http://www.examples.com/beacon1";
-      redirectAd1.certifiedVendorFormatId = 119;
-      redirectAd1.isCookieTargeted = false;
-      redirectAd1.isUserInterestTargeted = false;
-      redirectAd1.isTagged = false;
+        // This field normally contains the javascript ad tag.
+        redirectAd.snippet = "<img src=\"https://sandbox.google.com/sandboximages/image.jpg\"/>";
+        redirectAd.impressionBeaconUrl = "http://www.examples.com/beacon1";
+        redirectAd.certifiedVendorFormatId = 119;
+        redirectAd.isCookieTargeted = false;
+        redirectAd.isUserInterestTargeted = false;
+        redirectAd.isTagged = false;
 
-      // Set the ad group id.
-      AdGroupAd adGroupAd1 = new AdGroupAd();
-      adGroupAd1.adGroupId = adGroupId;
-      adGroupAd1.ad = redirectAd1;
+        // Set the ad group id.
+        AdGroupAd adGroupAd = new AdGroupAd();
+        adGroupAd.adGroupId = adGroupId;
+        adGroupAd.ad = redirectAd;
 
-      // Create the operation.
-      AdGroupAdOperation adGroupAdOperation1 = new AdGroupAdOperation();
-      adGroupAdOperation1.@operator = Operator.ADD;
-      adGroupAdOperation1.operand = adGroupAd1;
+        // Create the operation.
+        AdGroupAdOperation operation = new AdGroupAdOperation();
+        operation.@operator = Operator.ADD;
+        operation.operand = adGroupAd;
 
-      // Create the third party redirect ad.
-      ThirdPartyRedirectAd redirectAd2 = new ThirdPartyRedirectAd();
-      redirectAd2.name = string.Format("Example third party ad #{0}",
-          ExampleUtilities.GetTimeStamp());
-      redirectAd2.url = "http://www.example.com";
+        operations.Add(operation);
+      }
 
-      redirectAd2.dimensions = new Dimensions();
-      redirectAd2.dimensions.height = 250;
-      redirectAd2.dimensions.width = 300;
-
-      // This field normally contains the javascript ad tag.
-      redirectAd2.snippet = "<img src=\"https://sandbox.google.com/sandboximages/image.jpg\"/>";
-      redirectAd2.impressionBeaconUrl = "http://www.examples.com/beacon2";
-      redirectAd2.certifiedVendorFormatId = 119;
-      redirectAd2.isCookieTargeted = false;
-      redirectAd2.isUserInterestTargeted = false;
-      redirectAd2.isTagged = false;
-
-      // Set the ad group id.
-      AdGroupAd adGroupAd2 = new AdGroupAd();
-      adGroupAd2.adGroupId = adGroupId;
-      adGroupAd2.ad = redirectAd2;
-
-      // Create the operation.
-      AdGroupAdOperation adGroupAdOperation2 = new AdGroupAdOperation();
-      adGroupAdOperation2.@operator = Operator.ADD;
-      adGroupAdOperation2.operand = adGroupAd2;
+      AdGroupAdReturnValue retVal = null;
 
       try {
         // Create the ads
-        AdGroupAdReturnValue result =
-            service.mutate(new AdGroupAdOperation[] {adGroupAdOperation1, adGroupAdOperation2});
-        if (result != null && result.value != null && result.value.Length > 0) {
-          foreach (AdGroupAd newAdGroupAd in result.value) {
-            writer.WriteLine("New third party redirect ad with url = \"{0}\" and id = {1}" +
+        retVal = service.mutate(operations.ToArray());
+        if (retVal != null && retVal.value != null) {
+          // If you are adding multiple type of Ads, then you may need to check
+          // for
+          //
+          // if (adGroupAd.ad is ThirdPartyRedirectAd) { ... }
+          //
+          // to identify the ad type.
+          foreach (AdGroupAd newAdGroupAd in retVal.value) {
+            Console.WriteLine("New third party redirect ad with url = \"{0}\" and id = {1}" +
                 " was created.", ((ThirdPartyRedirectAd) newAdGroupAd.ad).url,
                 newAdGroupAd.ad.id);
           }
         } else {
-          writer.WriteLine("No third party redirect ads were created.");
+          Console.WriteLine("No third party redirect ads were created.");
         }
       } catch (Exception ex) {
-        writer.WriteLine("Failed to create third party redirect ads. Exception says \"{0}\"",
-            ex.Message);
+        throw new System.ApplicationException("Failed to create third party redirect ads.", ex);
       }
     }
   }

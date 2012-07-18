@@ -34,10 +34,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new UpdateAdGroup();
+      UpdateAdGroup codeExample = new UpdateAdGroup();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,30 +56,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group to be updated.</param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupService.
       AdGroupService adGroupService =
           (AdGroupService) user.GetService(AdWordsService.v201109_1.AdGroupService);
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
 
       // Create the ad group.
       AdGroup adGroup = new AdGroup();
@@ -97,10 +82,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           AdGroup pausedAdGroup = retVal.value[0];
-          writer.WriteLine("Ad group with id = '{0}' was successfully updated.",
+          Console.WriteLine("Ad group with id = '{0}' was successfully updated.",
               pausedAdGroup.id);
         } else {
-          writer.WriteLine("No ad groups were updated.");
+          Console.WriteLine("No ad groups were updated.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to update ad group.", ex);

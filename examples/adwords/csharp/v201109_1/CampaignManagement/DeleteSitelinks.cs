@@ -35,10 +35,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new DeleteSitelinks();
+      DeleteSitelinks codeExample = new DeleteSitelinks();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+        codeExample.Run(new AdWordsUser(), campaignId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -57,31 +58,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"CAMPAIGN_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="campaignId">Id of the campaign from which sitelinks are
+    /// deleted.</param>
+    public void Run(AdWordsUser user, long campaignId) {
       // Get the CampaignAdExtensionService.
       CampaignAdExtensionService campaignExtensionService =
           (CampaignAdExtensionService)user.GetService(AdWordsService.v201109_1.
           CampaignAdExtensionService);
 
-      long campaignId = long.Parse(parameters["CAMPAIGN_ID"]);
       long siteLinkExtensionId = -1;
 
       // Create the selector.
@@ -133,15 +120,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
             campaignExtensionService.mutate(new CampaignAdExtensionOperation[] {operation});
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           CampaignAdExtension campaignExtension = retVal.value[0];
-          writer.WriteLine("Deleted a campaign ad extension with id = \"{0}\" and " +
+          Console.WriteLine("Deleted a campaign ad extension with id = \"{0}\" and " +
               "status = \"{1}\"", campaignExtension.adExtension.id, campaignExtension.status);
           foreach (Sitelink siteLink in
               (campaignExtension.adExtension as SitelinksExtension).sitelinks) {
-            writer.WriteLine("-- Site link text is \"{0}\" and destination url is {1}",
+            Console.WriteLine("-- Site link text is \"{0}\" and destination url is {1}",
                 siteLink.displayText, siteLink.destinationUrl);
           }
         } else {
-          writer.WriteLine("No site links were deleted.");
+          Console.WriteLine("No site links were deleted.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to delete site links.", ex);

@@ -35,10 +35,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New AddCampaignTargetingCriteria
+      Dim codeExample As New AddCampaignTargetingCriteria
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
+        codeExample.Run(New AdWordsUser, campaignId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -56,30 +57,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"CAMPAIGN_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="campaignId">Id of the campaign to which targeting criteria
+    ''' are added.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the CampaignCriterionService.
       Dim campaignCriterionService As CampaignCriterionService = user.GetService( _
           AdWordsService.v201109_1.CampaignCriterionService)
-
-      Dim campaignId As Long = Long.Parse(parameters("CAMPAIGN_ID"))
 
       ' Create language criteria.
       ' See http://code.google.com/apis/adwords/docs/appendix/languagecodes.html
@@ -150,7 +136,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
         ' Display the results.
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing)) Then
           For Each criterion As CampaignCriterion In retVal.value
-            writer.WriteLine("Campaign criterion of type '{0}' was set to campaign with id " & _
+            Console.WriteLine("Campaign criterion of type '{0}' was set to campaign with id " & _
                 "= '{1}'.", criterion.criterion.CriterionType, criterion.campaignId)
           Next
         End If

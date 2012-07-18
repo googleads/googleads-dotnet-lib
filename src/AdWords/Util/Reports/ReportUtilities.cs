@@ -79,6 +79,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// The report download url format for ad-hoc reports.
     /// </summary>
+    private const string QUERY_REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/{1}?" +
+        "__fmt={2}";
+
+    /// <summary>
+    /// The report download url format for ad-hoc reports.
+    /// </summary>
     private const string ADHOC_REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/{1}";
 
     /// <summary>
@@ -132,37 +138,188 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     }
 
     /// <summary>
-    /// Downloads a client report.
+    /// Downloads a report into memory.
     /// </summary>
-    /// <param name="reportDefinitionOrId">The report definition or id.</param>
-    /// <typeparam name="T">The type of ReportDefinition object.</typeparam>
-    /// <returns>A client report object.</returns>
-    public ClientReport GetClientReport<T>(T reportDefinitionOrId) {
-      return GetClientReport(reportDefinitionOrId, true);
+    /// <param name="query">The AWQL query for report definition. See
+    /// https://developers.google.com/adwords/api/docs/guides/awql for AWQL
+    /// documentation.</param>
+    /// <param name="format">The report format.</param>
+    /// <returns>The client report.</returns>
+    public ClientReport GetClientReport(string query, string format) {
+      return GetClientReport(query, format, true);
     }
 
     /// <summary>
-    /// Downloads a client report.
+    ///  Downloads a report into memory.
     /// </summary>
-    /// <param name="returnMoneyInMicros">True, if the report values should be
-    /// downloaded in micros.</param>
-    /// <param name="reportDefinitionOrId">The report definition or id.</param>
-    /// <typeparam name="T">The type of ReportDefinition object.</typeparam>
-    /// <returns>A client report object.</returns>
-    public ClientReport GetClientReport<T>(T reportDefinitionOrId, bool returnMoneyInMicros) {
-      ClientReport retval = new ClientReport();
+    /// <param name="query">The AWQL query for report definition. See
+    /// https://developers.google.com/adwords/api/docs/guides/awql for AWQL
+    /// documentation.</param>
+    /// <param name="format">The report format.</param>
+    /// <param name="returnMoneyInMicros">True, if the money values in the
+    /// report should be returned as micros, False otherwise.</param>
+    /// <returns>The client report.</returns>
+    public ClientReport GetClientReport(string query, string format, bool returnMoneyInMicros) {
+      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
+      string downloadUrl = string.Format(QUERY_REPORT_URL_FORMAT, config.AdWordsApiServer,
+            reportVersion, format);
+      string postData = string.Format("__rdquery={0}", HttpUtility.UrlEncode(query));
+      return GetClientReportInternal(downloadUrl, postData, returnMoneyInMicros);
+    }
+
+    /// <summary>
+    ///  Downloads a report into memory.
+    /// </summary>
+    /// <param name="reportDefinitionId">The report definition id.</param>
+    /// <returns>The client report.</returns>
+    public ClientReport GetClientReport(long reportDefinitionId) {
+      return GetClientReport(reportDefinitionId, true);
+    }
+
+    /// <summary>
+    ///  Downloads a report into memory.
+    /// </summary>
+    /// <param name="reportDefinitionId">The report definition id.</param>
+    /// <param name="returnMoneyInMicros">True, if the money values in the
+    /// report should be returned as micros, False otherwise.</param>
+    /// <returns>The client report.</returns>
+    public ClientReport GetClientReport(long reportDefinitionId, bool returnMoneyInMicros) {
+      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
+      string downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer, reportVersion,
+            reportDefinitionId);
+      return GetClientReportInternal(downloadUrl, null, returnMoneyInMicros);
+    }
+
+    /// <summary>
+    ///  Downloads a report into memory.
+    /// </summary>
+    /// <param name="reportDefinition">The report definition.</param>
+    /// <returns>The client report.</returns>
+    public ClientReport GetClientReport<T>(T reportDefinition) {
+      return GetClientReport(reportDefinition, true);
+    }
+
+    /// <summary>
+    ///  Downloads a report into memory.
+    /// </summary>
+    /// <param name="reportDefinition">The report definition.</param>
+    /// <param name="returnMoneyInMicros">True, if the money values in the
+    /// report should be returned as micros, False otherwise.</param>
+    /// <returns>The client report.</returns>
+    public ClientReport GetClientReport<T>(T reportDefinition, bool returnMoneyInMicros) {
       AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
 
-      string postBody = null;
-      string downloadUrl;
-      if (typeof(T) == typeof(long)) {
-        downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer, reportVersion,
-            reportDefinitionOrId);
-      } else {
-        downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer,
+      string postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(
+          reportDefinition));
+      string downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer,
             reportVersion);
-        postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(reportDefinitionOrId));
-      }
+      return GetClientReportInternal(downloadUrl, postBody, returnMoneyInMicros);
+    }
+
+    /// <summary>
+    /// Downloads a report to disk.
+    /// </summary>
+    /// <param name="query">The AWQL query for report definition.</param>
+    /// <param name="format">The report format.</param>
+    /// <param name="path">The path to which report should be downloaded.
+    /// </param>
+    /// <returns>The client report.</returns>
+    public ClientReport DownloadClientReport(string query, string format, string path) {
+      return DownloadClientReport(query, format, true, path);
+    }
+
+    /// <summary>
+    /// Downloads a report to disk.
+    /// </summary>
+    /// <param name="query">The AWQL query for report definition.</param>
+    /// <param name="format">The report format.</param>
+    /// <param name="path">The path to which report should be downloaded.
+    /// </param>
+    /// <param name="returnMoneyInMicros">True, if the money values in the
+    /// report should be returned as micros, False otherwise.</param>
+    /// <returns>The client report.</returns>
+    public ClientReport DownloadClientReport(string query, string format, bool returnMoneyInMicros,
+        string path) {
+      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
+      string downloadUrl = string.Format(QUERY_REPORT_URL_FORMAT, config.AdWordsApiServer,
+            reportVersion, format);
+      string postData = string.Format("__rdquery={0}", HttpUtility.UrlEncode(query));
+      return DownloadClientReportInternal(downloadUrl, postData, returnMoneyInMicros, path);
+    }
+
+    /// <summary>
+    /// Downloads a report to disk.
+    /// </summary>
+    /// <param name="reportDefinitionId">The report definition id.</param>
+    /// <param name="path">The path to which report should be downloaded.
+    /// </param>
+    /// <returns>The client report.</returns>
+    public ClientReport DownloadClientReport(long reportDefinitionId, string path) {
+      return DownloadClientReport(reportDefinitionId, true, path);
+    }
+
+    /// <summary>
+    /// Downloads a report to disk.
+    /// </summary>
+    /// <param name="reportDefinitionId">The report definition id.</param>
+    /// <param name="returnMoneyInMicros">True, if the money values in the
+    /// report should be returned as micros, False otherwise.</param>
+    /// <param name="path">The path to which report should be downloaded.
+    /// </param>
+    /// <returns>The client report.</returns>
+    public ClientReport DownloadClientReport(long reportDefinitionId, bool returnMoneyInMicros,
+        string path) {
+      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
+      string downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer, reportVersion,
+            reportDefinitionId);
+      return DownloadClientReportInternal(downloadUrl, null, returnMoneyInMicros, path);
+    }
+
+    /// <summary>
+    /// Downloads a report to disk.
+    /// </summary>
+    /// <param name="reportDefinition">The report definition.</param>
+    /// <param name="path">The path to which report should be downloaded.
+    /// </param>
+    /// <returns>The client report.</returns>
+    public ClientReport DownloadClientReport<T>(T reportDefinition, string path) {
+      return DownloadClientReport(reportDefinition, true, path);
+    }
+
+    /// <summary>
+    /// Downloads a report to disk.
+    /// </summary>
+    /// <param name="reportDefinition">The report definition.</param>
+    /// <param name="returnMoneyInMicros">True, if the money values in the
+    /// report should be returned as micros, False otherwise.</param>
+    /// <param name="path">The path to which report should be downloaded.
+    /// </param>
+    /// <returns>The client report.</returns>
+    public ClientReport DownloadClientReport<T>(T reportDefinition, bool returnMoneyInMicros,
+        string path) {
+      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
+
+      string postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(
+          reportDefinition));
+      string downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer,
+            reportVersion);
+      return DownloadClientReportInternal(downloadUrl, postBody, returnMoneyInMicros, path);
+    }
+
+    /// <summary>
+    /// Downloads the client report.
+    /// </summary>
+    /// <param name="downloadUrl">The download URL.</param>
+    /// <param name="postBody">The HTTP POST request body.</param>
+    /// <param name="returnMoneyInMicros">True, if the money values in the
+    /// report should be returned as micros, False otherwise.</param>
+    /// <param name="path">The path to which report should be downloaded.
+    /// </param>
+    /// <returns>The client report.</returns>
+    private ClientReport GetClientReportInternal(string downloadUrl, string postBody,
+        bool returnMoneyInMicros) {
+      ClientReport retval = new ClientReport();
+      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
 
       string previewString = "";
       for (int i = 0; i < maxPollingAttempts; i++) {
@@ -186,52 +343,23 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     }
 
     /// <summary>
-    /// Determines whether the report download error is transient or not.
+    /// Downloads the client report.
     /// </summary>
-    /// <param name="previewString">The report preview text.</param>
-    /// <returns>True, if the error is transient, false otherwise.
-    /// </returns>
-    protected bool IsTransientError(string previewString) {
-      return previewString.Contains("RateExceededError") || previewString.Contains("InternalError");
-    }
-
-    /// <summary>
-    /// Downloads a client report and saves it to disk.
-    /// </summary>
-    /// <param name="reportDefinitionOrId">The report definition or id.</param>
-    /// <typeparam name="T">The type of ReportDefinition object.</typeparam>
-    /// <param name="path">The path to which the report should be saved.</param>
-    public void DownloadClientReport<T>(T reportDefinitionOrId, string path) {
-      DownloadClientReport(reportDefinitionOrId, true, path);
-    }
-
-    /// <summary>
-    /// Downloads a client report and saves it to disk.
-    /// </summary>
-    /// <param name="reportDefinitionOrId">The report definition or id.</param>
-    /// <param name="returnMoneyInMicros">True, if the report values should be
-    /// downloaded in micros.</param>
-    /// <param name="path">The path to which the report should be saved.</param>
-    /// <typeparam name="T">The type of ReportDefinition object.</typeparam>
-    public void DownloadClientReport<T>(T reportDefinitionOrId, bool returnMoneyInMicros,
-        string path) {
+    /// <param name="downloadUrl">The download URL.</param>
+    /// <param name="postBody">The HTTP POST request body.</param>
+    /// <param name="returnMoneyInMicros">True, if the money values in the
+    /// report should be returned as micros, False otherwise.</param>
+    /// <param name="path">The path to which report should be downloaded.
+    /// </param>
+    /// <returns>The client report.</returns>
+    private ClientReport DownloadClientReportInternal(string downloadUrl, string postBody,
+        bool returnMoneyInMicros, string path) {
+      ClientReport retval = new ClientReport();
       AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
-
-      string postBody = null;
-      string downloadUrl;
-      if (typeof(T) == typeof(long)) {
-        downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer, reportVersion,
-            reportDefinitionOrId);
-      } else {
-        downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer,
-            reportVersion);
-        postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(reportDefinitionOrId));
-      }
 
       string previewString = "";
 
       for (int i = 0; i < maxPollingAttempts; i++) {
-        MemoryStream memStream = new MemoryStream();
         byte[] preview = DownloadReportToDisk(downloadUrl, config, returnMoneyInMicros, path,
             postBody);
         previewString = ConvertPreviewBytesToString(preview);
@@ -243,10 +371,21 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
             Thread.Sleep(WAIT_TIME);
           }
         } else {
-          return;
+          retval.Path = path;
+          return retval;
         }
       }
       throw new ReportsException(previewString);
+    }
+
+    /// <summary>
+    /// Determines whether the report download error is transient or not.
+    /// </summary>
+    /// <param name="previewString">The report preview text.</param>
+    /// <returns>True, if the error is transient, false otherwise.
+    /// </returns>
+    protected bool IsTransientError(string previewString) {
+      return previewString.Contains("RateExceededError") || previewString.Contains("InternalError");
     }
 
     /// <summary>
@@ -322,11 +461,10 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       } else {
         (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.None;
       }
-      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth) {
+      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth ||
+          config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
         if (this.User.OAuthProvider != null) {
-          AdsOAuthProvider provider = this.User.OAuthProvider;
-          provider.GenerateAccessToken();
-          request.Headers["Authorization"] = provider.GetAuthHeader(downloadUrl);
+          request.Headers["Authorization"] = this.User.OAuthProvider.GetAuthHeader(downloadUrl);
         } else {
           throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
         }
