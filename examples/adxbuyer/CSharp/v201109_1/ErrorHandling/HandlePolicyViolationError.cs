@@ -35,10 +35,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new HandlePolicyViolationError();
+      HandlePolicyViolationError codeExample = new HandlePolicyViolationError();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,34 +56,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group to which ads are added.
+    /// </param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupAdService.
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(AdWordsService.v201109_1.AdGroupAdService);
 
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
-
       // Create the third party redirect ad that violates a policy.
       ThirdPartyRedirectAd redirectAd = new ThirdPartyRedirectAd();
-      redirectAd.name = "Policy violation demo ad " + ExampleUtilities.GetTimeStamp();
+      redirectAd.name = "Policy violation demo ad " + ExampleUtilities.GetRandomString();
       redirectAd.url = "gopher://gopher.google.com";
       redirectAd.dimensions = new Dimensions();
       redirectAd.dimensions.width = 300;
@@ -177,14 +163,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
           // Display the results.
           if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
             foreach (AdGroupAd newAdGroupAd in retVal.value) {
-              writer.WriteLine("New ad with id = \"{0}\" and displayUrl = \"{1}\" was created.",
+              Console.WriteLine("New ad with id = \"{0}\" and displayUrl = \"{1}\" was created.",
                   newAdGroupAd.ad.id, newAdGroupAd.ad.displayUrl);
             }
           } else {
-            writer.WriteLine("No ads were created.");
+            Console.WriteLine("No ads were created.");
           }
         } else {
-          writer.WriteLine("There are no ads to create after policy violation checks.");
+          Console.WriteLine("There are no ads to create after policy violation checks.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to create ads.", ex);

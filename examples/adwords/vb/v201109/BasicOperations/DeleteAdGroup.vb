@@ -35,10 +35,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New DeleteAdGroup
+      Dim codeExample As New DeleteAdGroup
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -56,29 +57,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group to be deleted.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupService.
       Dim adGroupService As AdGroupService = user.GetService(AdWordsService.v201109.AdGroupService)
-
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
 
       ' Create ad group with DELETED status.
       Dim adGroup As New AdGroup
@@ -86,7 +71,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
 
       ' When deleting an ad group, rename it to avoid name collisions with new
       ' ad groups.
-      adGroup.name = "Deleted AdGroup - " + ExampleUtilities.GetTimeStamp
+      adGroup.name = "Deleted AdGroup - " + ExampleUtilities.GetRandomString
       adGroup.status = AdGroupStatus.DELETED
 
       ' Create the operation.
@@ -103,10 +88,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
           Dim deletedAdGroup As AdGroup = retVal.value(0)
-          writer.WriteLine("Ad group with id = ""{0}"" was renamed to ""{1}"" and deleted.", _
+          Console.WriteLine("Ad group with id = ""{0}"" was renamed to ""{1}"" and deleted.", _
               deletedAdGroup.id, deletedAdGroup.name)
         Else
-          writer.WriteLine("No ad groups were deleted.")
+          Console.WriteLine("No ad groups were deleted.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to delete ad groups.", ex)

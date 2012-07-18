@@ -1,4 +1,4 @@
-' Copyright 2012, Google Inc. All Rights Reserved.
+' Copyright 2011, Google Inc. All Rights Reserved.
 '
 ' Licensed under the Apache License, Version 2.0 (the "License");
 ' you may not use this file except in compliance with the License.
@@ -35,9 +35,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New HandlePartialFailures
+      Dim codeExample As New HandlePartialFailures
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -49,34 +55,20 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
       End Get
     End Property
 
-    ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID"}
-    End Function
 
     ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group to which placements are
+    ''' added.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
           AdWordsService.v201109_1.AdGroupCriterionService)
 
       ' Set partial failure mode for the service.
       adGroupCriterionService.RequestHeader.partialFailure = True
-
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
 
       Dim operations As New List(Of AdGroupCriterionOperation)
 
@@ -108,14 +100,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
         If ((Not result Is Nothing) AndAlso (Not result.value Is Nothing)) Then
           For Each adGroupCriterionResult As AdGroupCriterion In result.value
             If (Not adGroupCriterionResult.criterion Is Nothing) Then
-              writer.WriteLine("Placement with ad group id '{0}', criterion id " & _
+              Console.WriteLine("Placement with ad group id '{0}', criterion id " & _
                   "'{1}', and url '{2}' was added.\n", adGroupCriterionResult.adGroupId, _
                   adGroupCriterionResult.criterion.id, _
                   DirectCast(adGroupCriterionResult.criterion, Placement).url)
             End If
           Next
         Else
-          writer.WriteLine("No placements were added.")
+          Console.WriteLine("No placements were added.")
         End If
 
         ' Display the partial failure errors.
@@ -124,19 +116,19 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
             Dim operationIndex As Integer = ErrorUtilities.GetOperationIndex(apiError.fieldPath)
             If (operationIndex <> -1) Then
               Dim adGroupCriterion As AdGroupCriterion = operations(operationIndex).operand
-              writer.WriteLine("Placement with ad group id '{0}' and url '{1}' " & _
+              Console.WriteLine("Placement with ad group id '{0}' and url '{1}' " & _
                   "triggered a failure for the following reason: '{2}'.\n", _
                   adGroupCriterion.adGroupId, _
                   DirectCast(adGroupCriterion.criterion, Placement).url, _
                   apiError.errorString)
             Else
-              writer.WriteLine("A failure for the following reason: '{0}' has occurred.\n", _
+              Console.WriteLine("A failure for the following reason: '{0}' has occurred.\n", _
                   apiError.errorString)
             End If
           Next
         End If
       Catch e As Exception
-        writer.WriteLine("Failed to add placement(s) in partial failure mode. Exception " & _
+        Console.WriteLine("Failed to add placement(s) in partial failure mode. Exception " & _
             "says '{0}'", e.Message)
       End Try
     End Sub

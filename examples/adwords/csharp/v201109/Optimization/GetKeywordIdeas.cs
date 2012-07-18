@@ -33,10 +33,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetKeywordIdeas();
+      GetKeywordIdeas codeExample = new GetKeywordIdeas();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -53,25 +53,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the TargetingIdeaService.
       TargetingIdeaService targetingIdeaService =
           (TargetingIdeaService) user.GetService(AdWordsService.v201109.TargetingIdeaService);
@@ -128,7 +113,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
                 if (entry.key == AttributeType.CRITERION) {
                   CriterionAttribute kwdAttribute = entry.value as CriterionAttribute;
                   Keyword relatedKeyword = (Keyword) kwdAttribute.value;
-                  writer.WriteLine("{0}) Related keyword with text = '{0}' and match type = " +
+                  Console.WriteLine("{0}) Related keyword with text = '{0}' and match type = " +
                       "'{1}' was found.", relatedKeyword.text, relatedKeyword.matchType);
                 }
               }
@@ -137,7 +122,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of related keywords found: {0}", page.totalNumEntries);
+        Console.WriteLine("Number of related keywords found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to retrieve related keywords.", ex);
       }

@@ -33,10 +33,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new AddAudience();
+      AddAudience codeExample = new AddAudience();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -53,25 +53,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the UserListService.
       UserListService userListService =
           (UserListService) user.GetService(AdWordsService.v201109.UserListService);
@@ -82,7 +67,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
               ConversionTrackerService);
 
       RemarketingUserList userList = new RemarketingUserList();
-      userList.name = "Mars cruise customers #" + ExampleUtilities.GetTimeStamp();
+      userList.name = "Mars cruise customers #" + ExampleUtilities.GetRandomString();
       userList.description = "A list of mars cruise customers in the last year.";
       userList.status = UserListMembershipStatus.OPEN;
       userList.membershipLifeSpan = 365;
@@ -142,7 +127,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
 
           // Display the results.
           foreach (RemarketingUserList newUserList in userLists) {
-            writer.WriteLine("User list with name '{0}' and id '{1}' was added.",
+            Console.WriteLine("User list with name '{0}' and id '{1}' was added.",
                 newUserList.name, newUserList.id);
 
             // Display user list associated conversion code snippets.
@@ -151,7 +136,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
                 if (conversionsMap.ContainsKey(userListConversionType.id)) {
                   AdWordsConversionTracker conversionTracker =
                       (AdWordsConversionTracker) conversionsMap[userListConversionType.id];
-                  writer.WriteLine("Conversion type code snippet associated to the list:\n{0}\n",
+                  Console.WriteLine("Conversion type code snippet associated to the list:\n{0}\n",
                       conversionTracker.snippet);
                 } else {
                   throw new Exception("Failed to associate conversion type code snippet.");
@@ -160,7 +145,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
             }
           }
         } else {
-          writer.WriteLine("No user lists (a.k.a. audiences) were added.");
+          Console.WriteLine("No user lists (a.k.a. audiences) were added.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to add user lists (a.k.a. audiences).", ex);

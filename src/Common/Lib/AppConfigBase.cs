@@ -90,6 +90,56 @@ namespace Google.Api.Ads.Common.Lib {
     private const string RETRYCOUNT = "RetryCount";
 
     /// <summary>
+    /// Key name for OAuth2 client id.
+    /// </summary>
+    private const string OAUTH2_CLIENTID = "OAuth2ClientId";
+
+    /// <summary>
+    /// Key name for OAuth2 client secret.
+    /// </summary>
+    private const string OAUTH2_CLIENTSECRET = "OAuth2ClientSecret";
+
+    /// <summary>
+    /// Key name for OAuth2 access token.
+    /// </summary>
+    private const string OAUTH2_ACCESSTOKEN = "OAuth2AccessToken";
+
+    /// <summary>
+    /// Key name for OAuth2 refresh token.
+    /// </summary>
+    private const string OAUTH2_REFRESHTOKEN = "OAuth2RefreshToken";
+
+    /// <summary>
+    /// Key name for OAuth2 scope.
+    /// </summary>
+    private const string OAUTH2_SCOPE = "OAuth2Scope";
+
+    /// <summary>
+    /// Key name for redirect uri.
+    /// </summary>
+    private const string OAUTH2_REDIRECTURI = "OAuth2RedirectUri";
+
+    /// <summary>
+    /// Key name for oAuthConsumerKey.
+    /// </summary>
+    private const string OAUTH_CONSUMER_KEY = "OAuthConsumerKey";
+
+    /// <summary>
+    /// Key name for oAuthConsumerKey.
+    /// </summary>
+    private const string OAUTH_CONSUMER_SECRET = "OAuthConsumerSecret";
+
+    /// <summary>
+    /// Key name for oAuthScope.
+    /// </summary>
+    private const string OAUTH_SCOPE = "OAuthScope";
+
+    /// <summary>
+    /// Key name for oAuthCallbackUrl.
+    /// </summary>
+    private const string OAUTH_CALLBACK_URL = "OAuthCallbackUrl";
+
+    /// <summary>
     /// Path to which the SOAP logs are to be saved.
     /// </summary>
     private string logPath;
@@ -131,17 +181,54 @@ namespace Google.Api.Ads.Common.Lib {
     private int retryCount;
 
     /// <summary>
-    /// Gets or sets the number of times to retry a call if an API call fails
-    /// and can be retried.
+    /// OAuth2 client id.
     /// </summary>
-    public int RetryCount {
-      get {
-        return retryCount;
-      }
-      set {
-        SetPropertyField("RetryCount", ref retryCount, value);
-      }
-    }
+    private string oAuth2ClientId;
+
+    /// <summary>
+    /// OAuth2 client secret.
+    /// </summary>
+    private string oAuth2ClientSecret;
+
+    /// <summary>
+    /// OAuth2 access token.
+    /// </summary>
+    private string oAuth2AccessToken;
+
+    /// <summary>
+    /// OAuth2 refresh token.
+    /// </summary>
+    private string oAuth2RefreshToken;
+
+    /// <summary>
+    /// OAuth2 scope.
+    /// </summary>
+    private string oAuth2Scope;
+
+    /// <summary>
+    /// Redirect uri.
+    /// </summary>
+    private string oAuth2RedirectUri;
+
+    /// <summary>
+    /// OAuth consumer key.
+    /// </summary>
+    private string oAuthConsumerKey;
+
+    /// <summary>
+    /// OAuth consumer value.
+    /// </summary>
+    private string oAuthConsumerSecret;
+
+    /// <summary>
+    /// OAuth scope.
+    /// </summary>
+    private string oAuthScope;
+
+    /// <summary>
+    /// OAuth callback url.
+    /// </summary>
+    private string oAuthCallbackUrl;
 
     /// <summary>
     /// Default value for number of times to retry a call if an API call fails
@@ -240,6 +327,142 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
+    /// Gets or sets the number of times to retry a call if an API call fails
+    /// and can be retried.
+    /// </summary>
+    public int RetryCount {
+      get {
+        return retryCount;
+      }
+      set {
+        SetPropertyField("RetryCount", ref retryCount, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 client id.
+    /// </summary>
+    public string OAuth2ClientId {
+      get {
+        return oAuth2ClientId;
+      }
+      set {
+        SetPropertyField("OAuth2ClientId", ref oAuth2ClientId, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 client secret.
+    /// </summary>
+    public string OAuth2ClientSecret {
+      get {
+        return oAuth2ClientSecret;
+      }
+      set {
+        SetPropertyField("OAuth2ClientSecret", ref oAuth2ClientSecret, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 access token.
+    /// </summary>
+    public string OAuth2AccessToken {
+      get {
+        return oAuth2AccessToken;
+      }
+      set {
+        SetPropertyField("OAuth2AccessToken", ref oAuth2AccessToken, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 refresh token.
+    /// </summary>
+    public string OAuth2RefreshToken {
+      get {
+        return oAuth2RefreshToken;
+      }
+      set {
+        SetPropertyField("OAuth2RefreshToken", ref oAuth2RefreshToken, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 scope.
+    /// </summary>
+    public string OAuth2Scope {
+      get {
+        return oAuth2Scope;
+      }
+      set {
+        SetPropertyField("OAuth2Scope", ref oAuth2Scope, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 redirect URI.
+    /// </summary>
+    /// <value>
+    /// The O auth2 redirect URI.
+    /// </value>
+    public string OAuth2RedirectUri {
+      get {
+        return oAuth2RedirectUri;
+      }
+      set {
+        SetPropertyField("OAuth2RedirectUri", ref oAuth2RedirectUri, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth consumer key.
+    /// </summary>
+    public string OAuthConsumerKey {
+      get {
+        return oAuthConsumerKey;
+      }
+      set {
+        SetPropertyField("OAuthConsumerKey", ref oAuthConsumerKey, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth consumer secret.
+    /// </summary>
+    public string OAuthConsumerSecret {
+      get {
+        return oAuthConsumerSecret;
+      }
+      set {
+        SetPropertyField("OAuthConsumerSecret", ref oAuthConsumerSecret, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth consumer secret.
+    /// </summary>
+    public string OAuthScope {
+      get {
+        return oAuthScope;
+      }
+      set {
+        SetPropertyField("OAuthScope", ref oAuthScope, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth consumer secret.
+    /// </summary>
+    public string OAuthCallbackUrl {
+      get {
+        return oAuthCallbackUrl;
+      }
+      set {
+        SetPropertyField("OAuthCallbackUrl", ref oAuthCallbackUrl, value);
+      }
+    }
+
+    /// <summary>
     /// Gets the signature for this assembly, given a type derived from
     /// AppConfigBase.
     /// </summary>
@@ -256,7 +479,7 @@ namespace Google.Api.Ads.Common.Lib {
       Version version = type.Assembly.GetName().Version;
       string shortName = (string) type.GetField("SHORT_NAME", BindingFlags.NonPublic |
           BindingFlags.Static).GetValue(null);
-      return string.Format("{0}-{1}.{2}.{3}", shortName, version.Major, version.Minor,
+      return string.Format("{0}/{1}.{2}.{3}", shortName, version.Major, version.Minor,
           version.Revision);
     }
 
@@ -265,7 +488,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     public string Signature {
       get {
-        return string.Format("{0}, {1}, MS Web Services Client Protocol {2}",
+        return string.Format("{0}, {1}, .NET CLR/{2}",
             GetAssemblySignatureFromAppConfigType(this.GetType()),
             GetAssemblySignatureFromAppConfigType(this.GetType().BaseType), Environment.Version);
       }
@@ -282,6 +505,16 @@ namespace Google.Api.Ads.Common.Lib {
       proxyField = null;
       maskCredentials = true;
       timeout = DEFAULT_TIMEOUT;
+      oAuth2ClientId = "";
+      oAuth2ClientSecret = "";
+      oAuth2AccessToken = "";
+      oAuth2RefreshToken = "";
+      oAuth2Scope = "";
+      oAuth2RedirectUri = null;
+      oAuthConsumerKey = "";
+      oAuthConsumerSecret = "";
+      oAuthCallbackUrl = null;
+      oAuthScope = "";
     }
 
     /// <summary>
@@ -315,6 +548,18 @@ namespace Google.Api.Ads.Common.Lib {
       }
       maskCredentials = bool.Parse(ReadSetting(settings, MASK_CREDENTIALS,
           maskCredentials.ToString()));
+
+      oAuth2ClientId = ReadSetting(settings, OAUTH2_CLIENTID, oAuth2ClientId);
+      oAuth2ClientSecret = ReadSetting(settings, OAUTH2_CLIENTSECRET, oAuth2ClientSecret);
+      oAuth2AccessToken = ReadSetting(settings, OAUTH2_ACCESSTOKEN, oAuth2AccessToken);
+      oAuth2RefreshToken = ReadSetting(settings, OAUTH2_REFRESHTOKEN, oAuth2RefreshToken);
+      oAuth2Scope = ReadSetting(settings, OAUTH2_SCOPE, oAuth2Scope);
+      oAuth2RedirectUri = ReadSetting(settings, OAUTH2_REDIRECTURI, oAuth2RedirectUri);
+
+      oAuthConsumerKey = ReadSetting(settings, OAUTH_CONSUMER_KEY, oAuthConsumerKey);
+      oAuthConsumerSecret = ReadSetting(settings, OAUTH_CONSUMER_SECRET, oAuthConsumerSecret);
+      oAuthCallbackUrl = ReadSetting(settings, OAUTH_CALLBACK_URL, oAuthCallbackUrl);
+      oAuthScope = ReadSetting(settings, OAUTH_SCOPE, oAuthScope);
 
       int.TryParse(ReadSetting(settings, TIMEOUT, timeout.ToString()), out timeout);
       int.TryParse(ReadSetting(settings, RETRYCOUNT, retryCount.ToString()), out retryCount);

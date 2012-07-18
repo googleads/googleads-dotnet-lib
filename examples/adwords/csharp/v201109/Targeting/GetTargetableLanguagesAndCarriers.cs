@@ -35,10 +35,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetTargetableLanguagesAndCarriers();
+      GetTargetableLanguagesAndCarriers codeExample = new GetTargetableLanguagesAndCarriers();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -56,25 +56,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the ConstantDataService.
       ConstantDataService constantDataService = (ConstantDataService) user.GetService(
           AdWordsService.v201109.ConstantDataService);
@@ -86,11 +71,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         // Display the results.
         if (carriers != null) {
           foreach (Carrier carrier in carriers) {
-            writer.WriteLine("Carrier name is '{0}', ID is {1} and country code is '{2}'.",
+            Console.WriteLine("Carrier name is '{0}', ID is {1} and country code is '{2}'.",
                 carrier.name, carrier.id, carrier.countryCode);
           }
         } else {
-          writer.WriteLine("No carriers were retrieved.");
+          Console.WriteLine("No carriers were retrieved.");
         }
 
         // Get all languages.
@@ -99,11 +84,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         // Display the results.
         if (languages != null) {
           foreach (Language language in languages) {
-            writer.WriteLine("Language name is '{0}', ID is {1} and code is '{2}'.",
+            Console.WriteLine("Language name is '{0}', ID is {1} and code is '{2}'.",
                 language.name, language.id, language.code);
           }
         } else {
-          writer.WriteLine("No languages were found.");
+          Console.WriteLine("No languages were found.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to get targetable carriers and languages.",

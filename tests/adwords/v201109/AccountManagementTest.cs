@@ -33,21 +33,24 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
   /// Test cases for all the code examples under v201109\AccountManagement.
   /// </summary>
   class AccountManagementTest : ExampleBaseTests {
+    string clientEmailAddress;
+
     /// <summary>
     /// Inits this instance.
     /// </summary>
     [SetUp]
     public void Init() {
-      parameters = new Dictionary<string, string>();
-
-      parameters["CLIENT_EMAIL_ADDRESS"] = "client_1+" + (user.Config as AdWordsAppConfig).Email;
+      clientEmailAddress = "client_1+" + (user.Config as AdWordsAppConfig).Email;
     }
+
     /// <summary>
     /// Tests the CreateAccount VB.NET code example.
     /// </summary>
     [Test]
     public void TestCreateAccountVBExample() {
-      RunExample(new VBExamples.CreateAccount());
+      RunExample(delegate() {
+        new VBExamples.CreateAccount().Run(user);
+      });
     }
 
     /// <summary>
@@ -55,7 +58,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestCreateAccountCSharpExample() {
-      RunExample(new CSharpExamples.CreateAccount());
+      RunExample(delegate() {
+        new CSharpExamples.CreateAccount().Run(user);
+      });
     }
 
     /// <summary>
@@ -63,7 +68,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAccountAlertsVBExample() {
-      RunExample(new VBExamples.GetAccountAlerts());
+      RunExample(delegate() {
+        new VBExamples.GetAccountAlerts().Run(user);
+      });
     }
 
     /// <summary>
@@ -71,7 +78,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAccountAlertsCSharpExample() {
-      RunExample(new CSharpExamples.GetAccountAlerts());
+      RunExample(delegate() {
+        new CSharpExamples.GetAccountAlerts().Run(user);
+      });
     }
 
     /// <summary>
@@ -79,7 +88,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAccountChangesVBExample() {
-      RunExample(new VBExamples.GetAccountChanges());
+      RunExample(delegate() {
+        new VBExamples.GetAccountChanges().Run(user);
+      });
     }
 
     /// <summary>
@@ -87,7 +98,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAccountChangesCSharpExample() {
-      RunExample(new CSharpExamples.GetAccountChanges());
+      RunExample(delegate() {
+        new CSharpExamples.GetAccountChanges().Run(user);
+      });
     }
 
     /// <summary>
@@ -95,7 +108,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAccountHierarchyVBExample() {
-      RunExample(new VBExamples.GetAccountHierarchy());
+      RunExample(delegate() {
+        new VBExamples.GetAccountHierarchy().Run(user);
+      });
     }
 
     /// <summary>
@@ -103,7 +118,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAccountHierarchyCSharpExample() {
-      RunExample(new CSharpExamples.GetAccountHierarchy());
+      RunExample(delegate() {
+        new CSharpExamples.GetAccountHierarchy().Run(user);
+      });
     }
 
     /// <summary>
@@ -111,7 +128,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetClientCustomerIdVBExample() {
-      RunExample(new VBExamples.GetClientCustomerId());
+      RunExample(delegate() {
+        new VBExamples.GetClientCustomerId().Run(user, clientEmailAddress);
+      });
     }
 
     /// <summary>
@@ -119,7 +138,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetClientCustomerIdCSharpExample() {
-      RunExample(new CSharpExamples.GetClientCustomerId());
+      RunExample(delegate() {
+        new CSharpExamples.GetClientCustomerId().Run(user, clientEmailAddress);
+      });
     }
 
     /// <summary>
@@ -127,7 +148,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetClientUnitUsageVBExample() {
-      RunExample(new VBExamples.GetClientUnitUsage());
+      RunExample(delegate() {
+        new VBExamples.GetClientUnitUsage().Run(user);
+      });
     }
 
     /// <summary>
@@ -135,7 +158,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetClientUnitUsageCSharpExample() {
-      RunExample(new CSharpExamples.GetClientUnitUsage());
+      RunExample(delegate() {
+        new CSharpExamples.GetClientUnitUsage().Run(user);
+      });
     }
   }
 }

@@ -32,14 +32,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
   /// </summary>
   public class AddTextAds : ExampleBase {
     /// <summary>
+    /// Number of items being added / updated in this code example.
+    /// </summary>
+    const int NUM_ITEMS = 5;
+
+    /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new AddTextAds();
+      AddTextAds codeExample = new AddTextAds();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -58,75 +64,47 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group to which ads are added.
+    /// </param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupAdService.
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(AdWordsService.v201109_1.AdGroupAdService);
 
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
+      List<AdGroupAdOperation> operations = new List<AdGroupAdOperation>();
 
-      // Create the text ad.
-      TextAd textAd1 = new TextAd();
-      textAd1.headline = "Luxury Cruise to Mars";
-      textAd1.description1 = "Visit the Red Planet in style.";
-      textAd1.description2 = "Low-gravity fun for everyone!";
-      textAd1.displayUrl = "www.example.com";
-      textAd1.url = "http://www.example.com";
+      for (int i = 0; i < NUM_ITEMS; i++) {
+        // Create the text ad.
+        TextAd textAd = new TextAd();
+        textAd.headline = "Luxury Cruise to Mars";
+        textAd.description1 = "Visit the Red Planet in style.";
+        textAd.description2 = "Low-gravity fun for everyone!";
+        textAd.displayUrl = "www.example.com";
+        textAd.url = "http://www.example.com/" + i;
 
-      AdGroupAd textAdGroupAd1 = new AdGroupAd();
-      textAdGroupAd1.adGroupId = adGroupId;
-      textAdGroupAd1.ad = textAd1;
+        AdGroupAd textAdGroupAd = new AdGroupAd();
+        textAdGroupAd.adGroupId = adGroupId;
+        textAdGroupAd.ad = textAd;
 
-      // Optional: Set the status.
-      textAdGroupAd1.status = AdGroupAdStatus.PAUSED;
+        // Optional: Set the status.
+        textAdGroupAd.status = AdGroupAdStatus.PAUSED;
 
-      // Create the text ad.
-      TextAd textAd2 = new TextAd();
-      textAd2.headline = "Luxury Hotels in Mars";
-      textAd2.description1 = "Enjoy your stay at Red Planet.";
-      textAd2.description2 = "Low-gravity fun for everyone!";
-      textAd2.displayUrl = "www.example.com";
-      textAd2.url = "http://www.example.com";
+        // Create the operation.
+        AdGroupAdOperation operation = new AdGroupAdOperation();
+        operation.@operator = Operator.ADD;
+        operation.operand = textAdGroupAd;
 
-      AdGroupAd textAdGroupAd2 = new AdGroupAd();
-      textAdGroupAd2.adGroupId = adGroupId;
-      textAdGroupAd2.ad = textAd2;
-
-      // Optional: Set the status.
-      textAdGroupAd2.status = AdGroupAdStatus.PAUSED;
-
-      // Create the operations.
-      AdGroupAdOperation textAdOperation1 = new AdGroupAdOperation();
-      textAdOperation1.@operator = Operator.ADD;
-      textAdOperation1.operand = textAdGroupAd1;
-
-      AdGroupAdOperation textAdOperation2 = new AdGroupAdOperation();
-      textAdOperation2.@operator = Operator.ADD;
-      textAdOperation2.operand = textAdGroupAd2;
+        operations.Add(operation);
+      }
 
       AdGroupAdReturnValue retVal = null;
 
       try {
         // Create the ads.
-        retVal = service.mutate(new AdGroupAdOperation[] {textAdOperation1, textAdOperation2});
+        retVal = service.mutate(operations.ToArray());
 
         // Display the results.
         if (retVal != null && retVal.value != null) {
@@ -137,11 +115,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
           //
           // to identify the ad type.
           foreach (AdGroupAd adGroupAd in retVal.value) {
-            writer.WriteLine("New text ad with id = \"{0}\" and displayUrl = \"{1}\" was created.",
+            Console.WriteLine("New text ad with id = \"{0}\" and displayUrl = \"{1}\" was created.",
                 adGroupAd.ad.id, adGroupAd.ad.displayUrl);
           }
         } else {
-          writer.WriteLine("No text ads were created.");
+          Console.WriteLine("No text ads were created.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to create text ad.", ex);

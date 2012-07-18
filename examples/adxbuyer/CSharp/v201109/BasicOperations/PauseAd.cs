@@ -33,10 +33,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new PauseAd();
+      PauseAd codeExample = new PauseAd();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        long adId = long.Parse("INSERT_AD_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId, adId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -53,31 +55,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID", "AD_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group that contains the ad.
+    /// </param>
+    /// <param name="adId">Id of the ad to be paused.</param>
+    public void Run(AdWordsUser user, long adGroupId, long adId) {
       // Get the AdGroupAdService.
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(AdWordsService.v201109.AdGroupAdService);
 
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
-      long adId = long.Parse(parameters["AD_ID"]);
       AdGroupAdStatus status = AdGroupAdStatus.PAUSED;
 
       // Create the ad group ad.
@@ -100,10 +88,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           AdGroupAd pausedAdGroupAd = retVal.value[0];
-          writer.WriteLine("Ad with id \"{0}\" and ad group id \"{1}\"was paused.",
+          Console.WriteLine("Ad with id \"{0}\" and ad group id \"{1}\"was paused.",
               pausedAdGroupAd.ad.id, pausedAdGroupAd.adGroupId);
         } else {
-          writer.WriteLine("No ads were paused.");
+          Console.WriteLine("No ads were paused.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to pause ad.", ex);

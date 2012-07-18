@@ -36,10 +36,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetCampaignStats
+      Dim codeExample As New GetCampaignStats
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        codeExample.Run(New AdWordsUser)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -58,25 +58,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    Public Sub Run(ByVal user As AdWordsUser)
       ' Get the CampaignService.
       Dim campaignService As CampaignService = user.GetService( _
           AdWordsService.v201109.CampaignService)
@@ -118,9 +103,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
             Dim i As Integer = offset
             For Each campaign As Campaign In page.entries
-              writer.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' had the following " & _
+              Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' had the following " & _
                   "stats last week", i + 1, campaign.id, campaign.name)
-              writer.WriteLine("  Clicks: {0}, Impressions: {1}, Cost: {2} micros. Ctr: {3}", _
+              Console.WriteLine("  Clicks: {0}, Impressions: {1}, Cost: {2} micros. Ctr: {3}", _
                   campaign.campaignStats.clicks, campaign.campaignStats.impressions, _
                   campaign.campaignStats.cost, campaign.campaignStats.ctr)
               i += 1
@@ -128,7 +113,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           End If
           offset = offset + pageSize
         Loop While (offset < page.totalNumEntries)
-        writer.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
+        Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to retrieve campaign(s).", ex)
       End Try

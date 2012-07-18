@@ -36,10 +36,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetCampaignTargetingCriteria
+      Dim codeExample As New GetCampaignTargetingCriteria
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
+        codeExample.Run(New AdWordsUser, campaignId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -58,29 +59,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"CAMPAIGN_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="campaignId">Id of the campaign from which targeting
+    ''' criteria are retrieved.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the CampaignCriterionService.
       Dim campaignCriterionService As CampaignCriterionService = user.GetService( _
           AdWordsService.v201109.CampaignCriterionService)
-      Dim campaignId As Long = Long.Parse(parameters("CAMPAIGN_ID"))
 
       ' Create the selector.
       Dim selector As New Selector
@@ -120,14 +107,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
             Dim i As Integer = offset
             For Each campaignCriterion As CampaignCriterion In page.entries
               Dim placement As Placement = campaignCriterion.criterion
-              writer.WriteLine("{0}) Placement with ID {1} and url {2} was found.", i, _
+              Console.WriteLine("{0}) Placement with ID {1} and url {2} was found.", i, _
                  placement.id, placement.url)
               i += 1
             Next
           End If
           offset = offset + pageSize
         Loop While (offset < page.totalNumEntries)
-        writer.WriteLine("Number of placements found: {0}", page.totalNumEntries)
+        Console.WriteLine("Number of placements found: {0}", page.totalNumEntries)
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to get placements.", ex)
       End Try

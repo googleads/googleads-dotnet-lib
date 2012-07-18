@@ -34,10 +34,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new DeleteAd();
+      DeleteAd codeExample = new DeleteAd();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        long adId = long.Parse("INSERT_AD_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId, adId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,31 +57,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID", "AD_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group that contains the ad.</param>
+    /// <param name="adId">Id of the ad being deleted.</param>
+    public void Run(AdWordsUser user, long adGroupId, long adId) {
       // Get the AdGroupAdService.
       AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
           AdWordsService.v201109_1.AdGroupAdService);
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
-      long adId = long.Parse(parameters["AD_ID"]);
 
       // Since we do not need to update any ad-specific fields, it is enough to
       // create the base type.
@@ -104,10 +90,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
 
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           AdGroupAd deletedAdGroupAd = retVal.value[0];
-          writer.WriteLine("Ad with id = \"{0}\" and type = \"{1}\" was deleted.",
+          Console.WriteLine("Ad with id = \"{0}\" and type = \"{1}\" was deleted.",
               deletedAdGroupAd.ad.id, deletedAdGroupAd.ad.AdType);
         } else {
-          writer.WriteLine("No ads were deleted.");
+          Console.WriteLine("No ads were deleted.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to delete ad.", ex);

@@ -34,10 +34,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetKeywords();
+      GetKeywords codeExample = new GetKeywords();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,25 +55,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the AdGroupCriterionService.
       AdGroupCriterionService adGroupCriterionService =
           (AdGroupCriterionService) user.GetService(AdWordsService.v201109_1.AdGroupCriterionService);
@@ -120,11 +105,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
               // to identify the criterion type.
               Keyword keyword = (Keyword) adGroupCriterion.criterion;
               if (isNegative) {
-                writer.WriteLine("{0}) Negative keyword with ad group ID = '{1}', keyword ID " +
+                Console.WriteLine("{0}) Negative keyword with ad group ID = '{1}', keyword ID " +
                     "= '{2}', and text = '{3}' was found.", i + 1, adGroupCriterion.adGroupId,
                     keyword.id, keyword.text);
               } else {
-                writer.WriteLine("{0}) Keyword with ad group ID = '{1}', keyword ID = '{2}', " +
+                Console.WriteLine("{0}) Keyword with ad group ID = '{1}', keyword ID = '{2}', " +
                     "text = '{3}' and matchType = '{4} was found.", i + 1,
                     adGroupCriterion.adGroupId, keyword.id, keyword.text, keyword.matchType);
               }
@@ -133,7 +118,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of keywords found: {0}", page.totalNumEntries);
+        Console.WriteLine("Number of keywords found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to retrieve keywords.", ex);
       }

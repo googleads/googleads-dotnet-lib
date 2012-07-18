@@ -27,16 +27,26 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
   '''
   ''' Tags: CampaignService.mutate
   ''' </summary>
-  Public Class AddCampaign
+  Public Class AddCampaigns
     Inherits ExampleBase
+    ''' <summary>
+    ''' Number of items being added / updated in this code example.
+    ''' </summary>
+    Const NUM_ITEMS As Integer = 5
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New AddCampaign
+      Dim codeExample As New AddCampaigns
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        codeExample.Run(New AdWordsUser)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -49,139 +59,84 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    Public Sub Run(ByVal user As AdWordsUser)
       ' Get the CampaignService.
       Dim campaignService As CampaignService = user.GetService( _
           AdWordsService.v201109_1.CampaignService)
 
-      ' Create the campaign.
-      Dim campaign1 As New Campaign
-      campaign1.name = "Interplanetary Cruise #" & ExampleUtilities.GetTimeStamp
-      campaign1.status = CampaignStatus.PAUSED
-      campaign1.biddingStrategy = New ManualCPM
+      Dim operations As New List(Of CampaignOperation)
 
-      ' Set the campaign budget.
-      Dim budget1 As New Budget
-      budget1.period = BudgetBudgetPeriod.DAILY
-      budget1.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
-      budget1.amount = New Money
-      budget1.amount.microAmount = 50000000
+      For i As Integer = 1 To NUM_ITEMS
+        ' Create the campaign.
+        Dim campaign As New Campaign
+        campaign.name = "Interplanetary Cruise #" & ExampleUtilities.GetRandomString
 
-      campaign1.budget = budget1
+        campaign.status = CampaignStatus.PAUSED
+        campaign.biddingStrategy = New ManualCPM
 
-      ' Set targetContentNetwork true. Other network targeting is not available
-      ' for Ad Exchange Buyers.
-      campaign1.networkSetting = New NetworkSetting
-      campaign1.networkSetting.targetGoogleSearch = False
-      campaign1.networkSetting.targetSearchNetwork = False
-      campaign1.networkSetting.targetContentContextual = False
-      campaign1.networkSetting.targetContentNetwork = True
-      campaign1.networkSetting.targetPartnerSearchNetwork = False
+        ' Set the campaign budget.
+        Dim budget As New Budget
+        budget.period = BudgetBudgetPeriod.DAILY
+        budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
+        budget.amount = New Money
+        budget.amount.microAmount = 50000000
 
-      ' Set real time bidding settings.
-      Dim rtbSetting1 As New RealTimeBiddingSetting
-      rtbSetting1.optIn = True
-      campaign1.settings = New Setting() {rtbSetting1}
+        campaign.budget = budget
 
-      ' Optional: Set the start date.
-      campaign1.startDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd")
+        ' Set targetContentNetwork true. Other network targeting is not available
+        ' for Ad Exchange Buyers.
+        campaign.networkSetting = New NetworkSetting
+        campaign.networkSetting.targetGoogleSearch = False
+        campaign.networkSetting.targetSearchNetwork = False
+        campaign.networkSetting.targetContentContextual = False
+        campaign.networkSetting.targetContentNetwork = True
+        campaign.networkSetting.targetPartnerSearchNetwork = False
 
-      ' Optional: Set the end date.
-      campaign1.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd")
+        ' Set real time bidding settings.
+        Dim rtbSetting As New RealTimeBiddingSetting
+        rtbSetting.optIn = True
+        campaign.settings = New Setting() {rtbSetting}
 
-      ' Optional: Set the frequency cap.
-      Dim frequencyCap1 As New FrequencyCap
-      frequencyCap1.impressions = 5
-      frequencyCap1.level = Level.ADGROUP
-      frequencyCap1.timeUnit = TimeUnit.DAY
-      campaign1.frequencyCap = frequencyCap1
+        ' Optional: Set the start date.
+        campaign.startDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd")
 
-      ' Create the operation.
-      Dim operation1 As New CampaignOperation
-      operation1.operator = [Operator].ADD
-      operation1.operand = campaign1
+        ' Optional: Set the end date.
+        campaign.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd")
 
-      ' Create the campaign.
-      Dim campaign2 As New Campaign
-      campaign2.name = "Interplanetary Cruise Banner#" & ExampleUtilities.GetTimeStamp
-      campaign2.status = CampaignStatus.PAUSED
-      campaign2.biddingStrategy = New ManualCPM
+        ' Optional: Set the frequency cap.
+        Dim frequencyCap As New FrequencyCap
+        frequencyCap.impressions = 5
+        frequencyCap.level = Level.ADGROUP
+        frequencyCap.timeUnit = TimeUnit.DAY
+        campaign.frequencyCap = frequencyCap
 
-      ' Set the campaign budget.
-      Dim budget2 As New Budget
-      budget2.period = BudgetBudgetPeriod.DAILY
-      budget2.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
-      budget2.amount = New Money
-      budget2.amount.microAmount = 30000000
+        ' Create the operation.
+        Dim operation As New CampaignOperation
+        operation.operator = [Operator].ADD
+        operation.operand = campaign
 
-      campaign2.budget = budget2
+        operations.Add(operation)
+      Next
 
-      ' Set targetContentNetwork true. Other network targeting is not available
-      ' for Ad Exchange Buyers.
-      campaign2.networkSetting = New NetworkSetting
-      campaign2.networkSetting.targetGoogleSearch = False
-      campaign2.networkSetting.targetSearchNetwork = False
-      campaign2.networkSetting.targetContentContextual = False
-      campaign2.networkSetting.targetContentNetwork = True
-      campaign2.networkSetting.targetPartnerSearchNetwork = False
-
-      ' Set real time bidding settings.
-      Dim rtbSetting2 As New RealTimeBiddingSetting
-      rtbSetting2.optIn = True
-      campaign2.settings = New Setting() {rtbSetting2}
-
-      ' Optional: Set the start date.
-      campaign2.startDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd")
-
-      ' Optional: Set the end date.
-      campaign2.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd")
-
-      ' Optional: Set the frequency cap.
-      Dim frequencyCap2 As New FrequencyCap
-      frequencyCap2.impressions = 5
-      frequencyCap2.level = Level.ADGROUP
-      frequencyCap2.timeUnit = TimeUnit.DAY
-      campaign2.frequencyCap = frequencyCap2
-
-      ' Create the operation.
-      Dim operation2 As New CampaignOperation
-      operation2.operator = [Operator].ADD
-      operation2.operand = campaign2
       Try
         ' Add the campaign.
-        Dim retVal As CampaignReturnValue = campaignService.mutate( _
-            New CampaignOperation() {operation1, operation2})
+        Dim retVal As CampaignReturnValue = campaignService.mutate(operations.ToArray())
 
         ' Display the results.
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
           For Each newCampaign As Campaign In retVal.value
-            writer.WriteLine("Campaign with name = '{0}' and id = '{1}' was added.", _
+            Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was added.", _
                   newCampaign.name, newCampaign.id)
           Next
         Else
-          writer.WriteLine("No campaigns were added.")
+          Console.WriteLine("No campaigns were added.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to add campaigns. Exception says ""{0}""", ex.Message)
+        Console.WriteLine("Failed to add campaigns. Exception says ""{0}""", ex.Message)
       End Try
     End Sub
   End Class

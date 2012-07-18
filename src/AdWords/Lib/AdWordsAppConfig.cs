@@ -95,16 +95,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     private const string AUTHORIZATION_METHOD = "AuthorizationMethod";
 
     /// <summary>
-    /// Key name for oAuthConsumerKey.
-    /// </summary>
-    private const string OAUTH_CONSUMER_KEY = "OAuthConsumerKey";
-
-    /// <summary>
-    /// Key name for oAuthConsumerKey.
-    /// </summary>
-    private const string OAUTH_CONSUMER_SECRET = "OAuthConsumerSecret";
-
-    /// <summary>
     /// Default value for Legacy AdWords API URL.
     /// </summary>
     private const string DEFAULT_LEGACY_ADWORDSAPI_SERVER = "https://adwords.google.com";
@@ -180,16 +170,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Authorization method to be used when making API calls.
     /// </summary>
     private AdWordsAuthorizationMethod authorizationMethod;
-
-    /// <summary>
-    /// OAuth consumer key.
-    /// </summary>
-    private string oAuthConsumerKey;
-
-    /// <summary>
-    /// OAuth consumer value.
-    /// </summary>
-    private string oAuthConsumerSecret;
 
     /// <summary>
     /// Gets or sets the auth token to be used in SOAP headers.
@@ -337,30 +317,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
-    /// Gets or sets the OAuth consumer key.
-    /// </summary>
-    public string OAuthConsumerKey {
-      get {
-        return oAuthConsumerKey;
-      }
-      set {
-        SetPropertyField("OAuthConsumerKey", ref oAuthConsumerKey, value);
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the OAuth consumer secret.
-    /// </summary>
-    public string OAuthConsumerSecret {
-      get {
-        return oAuthConsumerSecret;
-      }
-      set {
-        SetPropertyField("OAuthConsumerSecret", ref oAuthConsumerSecret, value);
-      }
-    }
-
-    /// <summary>
     /// Gets a useragent string that can be used with the library.
     /// </summary>
     public string GetUserAgent() {
@@ -383,8 +339,6 @@ namespace Google.Api.Ads.AdWords.Lib {
       enableGzipCompression = true;
       legacyAdWordsApiServer = DEFAULT_LEGACY_ADWORDSAPI_SERVER;
       adWordsApiServer = DEFAULT_ADWORDSAPI_SERVER;
-      oAuthConsumerKey = "";
-      oAuthConsumerSecret = "";
       authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
 
       ReadSettings((Hashtable) ConfigurationManager.GetSection("AdWordsApi"));
@@ -410,8 +364,6 @@ namespace Google.Api.Ads.AdWords.Lib {
       legacyAdWordsApiServer = ReadSetting(settings, LEGACY_ADWORDSAPI_SERVER,
           legacyAdWordsApiServer);
       adWordsApiServer = ReadSetting(settings, ADWORDSAPI_SERVER, adWordsApiServer);
-      oAuthConsumerKey = ReadSetting(settings, OAUTH_CONSUMER_KEY, oAuthConsumerKey);
-      oAuthConsumerSecret = ReadSetting(settings, OAUTH_CONSUMER_SECRET, oAuthConsumerSecret);
       try {
         authorizationMethod = (AdWordsAuthorizationMethod) Enum.Parse(
             typeof(AdWordsAuthorizationMethod),

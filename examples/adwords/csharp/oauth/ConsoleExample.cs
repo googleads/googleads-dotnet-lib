@@ -14,18 +14,20 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using OAuth.Net.Common;
+using OAuth.Net.Consumer;
+
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201109;
 using Google.Api.Ads.Common.OAuth.Lib;
 
-using Microsoft.Practices.ServiceLocation;
-using OAuth.Net.Consumer;
 using System;
+using System.Data;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
   /// <summary>
   /// This code example shows how to run an AdWords API command line application
-  /// using OAuth 1.0a as authentication mechanism. To run this application,
+  /// using OAuth 1.0a/2.0 as authentication mechanism. To run this application,
   ///
   /// 1. You should create a new Console Application project.
   /// 2. Add reference to the following assemblies:
@@ -53,88 +55,131 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     /// </summary>
     /// <param name="args">Command line arguments.</param>
     static void Main(string[] args) {
-      // Create a service locator, and configure it to use in-memory state
-      // store. The service locator provides a session based store for ASP.NET
-      // applications.
-      AdsServiceLocator injector = new AdsServiceLocator();
-      injector.UseMemoryStore = true;
-      ServiceLocator.SetLocatorProvider(new ServiceLocatorProvider(delegate() {
-        return injector;
-      }));
-
-      // Create a new AdWords user.
       AdWordsUser user = new AdWordsUser();
-      AdWordsAppConfig config = user.Config as AdWordsAppConfig;
 
-      // Since this is not a web application, leave the callback url as null.
-      string callbackUrl = null;
+      if ((user.Config as AdWordsAppConfig).AuthorizationMethod ==
+          AdWordsAuthorizationMethod.OAuth) {
+        DoAuth1Authorization(user);
+      } else if ((user.Config as AdWordsAppConfig).AuthorizationMethod ==
+          AdWordsAuthorizationMethod.OAuth2) {
+        DoAuth2Authorization(user);
+      } else {
+        throw new Exception("Authorization mode is not OAuth.");
+      }
 
-      // Provide a unique user id. This is used to distinguish OAuth credentials
-      // of individual users in case your application manages multiple users
-      // concurrently. If it doesn't, you can provide any value for this string.
-      string userId = "user123";
+      Console.Write("Enter the customer id: ");
+      string customerId = Console.ReadLine();
+      (user.Config as AdWordsAppConfig).ClientCustomerId = customerId;
 
-      // Set the OAuth provider.
-      AdsOAuthNetProvider provider = new AdsOAuthNetProvider(config.OAuthConsumerKey,
-          config.OAuthConsumerSecret, AdWordsService.GetOAuthScope(user.Config as AdWordsAppConfig),
-          callbackUrl, "user123");
-
-      // The library provides an AuthorizationHandler and VerificationHandler
-      // that works fine with an ASP.NET environment. In case you need to
-      // support another environment, or modify the behaviour of the default
-      // handler in an ASP.NET application, you need to override these fields.
-      provider.AuthorizationHandler = delegate(object sender, AuthorizationEventArgs authArgs) {
-        OAuthRequest request = (OAuthRequest) sender;
-        Console.WriteLine("Visit {0} in a new browser window. Once the process is complete, " +
-            "enter the verification code provided by the web page below.",
-            request.Service.BuildAuthorizationUrl(authArgs.RequestToken).AbsoluteUri);
-        authArgs.ContinueOnReturn = true;
-      };
-
-      provider.VerificationHandler =
-          delegate(object sender, AuthorizationVerificationEventArgs authArgs) {
-            Console.Write("Please enter the OAuth verifier: ");
-            authArgs.Verifier = Console.ReadLine();
-            // If the user provided an empty verifier, exit the application,
-            // since the OAuth flow cannot continue any longer.
-            if (string.IsNullOrEmpty(authArgs.Verifier)) {
-              System.Environment.Exit(2);
-            }
-          };
-
-      user.OAuthProvider = provider;
-
-      // Trigger the OAuth signup process.
-      user.OAuthProvider.GenerateAccessToken();
-
-      // Now make your API call.
-      // Create a CampaignService instance.
-      CampaignService service = (CampaignService) user.GetService(
-          AdWordsService.v201109.CampaignService);
-
-      // If you used OAuth to authenticate against an AdWords user, then you
-      // needn't provide the clientCustomerId. If you authenticated against an
-      // MCC account, you need to provide the clientCustomerId for which you
-      // wish to make the API call. If you are downloading a report, then
-      // you should provide a customerId even if you used OAuth to authenticate
-      // against an AdWords account. If you don't provide a customer id in your
-      // code, then the library will read it from App.config.
-      //
-      //service.RequestHeader.clientCustomerId = "XXX-XXX-XXXX";
+      // Get the CampaignService.
+      CampaignService campaignService =
+          (CampaignService) user.GetService(AdWordsService.v201109.CampaignService);
 
       // Create the selector.
       Selector selector = new Selector();
       selector.fields = new string[] {"Id", "Name", "Status"};
 
-      CampaignPage page = service.get(selector);
+      // Set the selector paging.
+      selector.paging = new Paging();
 
-      int i = 0;
-      // Display the results.
-      foreach (Campaign campaign in page.entries) {
-        Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = '{3}'" +
-          " was found.", i + 1, campaign.id, campaign.name, campaign.status);
-        i++;
+      int offset = 0;
+      int pageSize = 500;
+
+      CampaignPage page = new CampaignPage();
+
+      try {
+        do {
+          selector.paging.startIndex = offset;
+          selector.paging.numberResults = pageSize;
+
+          // Get the campaigns.
+          page = campaignService.get(selector);
+
+          // Display the results.
+          if (page != null && page.entries != null) {
+            int i = offset;
+            foreach (Campaign campaign in page.entries) {
+              Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = '{3}'" +
+                " was found.", i + 1, campaign.id, campaign.name, campaign.status);
+              i++;
+            }
+          }
+          offset += pageSize;
+        } while (offset < page.totalNumEntries);
+        Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
+      } catch (Exception ex) {
+        throw new System.ApplicationException("Failed to retrieve campaigns", ex);
       }
+    }
+
+    /// <summary>
+    /// Does the OAuth2 authorization.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <remarks>If you have saved a user's access and refresh tokens from a
+    /// previous session, you can set them directly to the OAuth2 handler
+    /// object. Also, make sure you set the redirect uri and scope correctly
+    /// if you wish to call RefreshAccessToken method.</remarks>
+    private static void DoAuth2Authorization(AdWordsUser user) {
+      // Set the OAuth2 scope.
+      user.Config.OAuth2Scope = AdWordsService.GetOAuthScope(user.Config as AdWordsAppConfig);
+
+      // Since we are using a console application, set the callback url to null.
+      user.Config.OAuth2RedirectUri = null;
+
+      // Create the OAuth2 protocol handler and set it to the current user.
+      OAuth2Provider oAuth2 = new OAuth2Provider(user.Config);
+      user.OAuthProvider = oAuth2;
+
+      // Get the authorization url.
+      string authorizationUrl = oAuth2.GetAuthorizationUrl();
+      Console.WriteLine("Open a fresh web browser and navigate to \n\n{0}\n\n. You will be " +
+          "prompted to login and then authorize this application to make calls to the " +
+          "AdWords API. Once approved, you will be presented with an authorization code.",
+          authorizationUrl);
+
+      // Accept the OAuth2 authorization code from the user.
+      Console.Write("Enter the authorization code :");
+      string authorizationCode = Console.ReadLine();
+
+      // Fetch the access and refresh tokens.
+      oAuth2.FetchAccessAndRefreshTokens(authorizationCode);
+    }
+
+    /// <summary>
+    /// Does the OAuth1 authorization.
+    /// </summary>
+    /// <param name="user">The user.</param>
+    /// <remarks>If you have saved a user's access tokens from a previous
+    /// session, you can set them directly to the OAuth1a handler object. Since
+    /// Also, make sure you set the redirect uri and scope correctly for signing
+    /// purposes.</remarks>
+    private static void DoAuth1Authorization(AdWordsUser user) {
+      // Set the OAuth1.0a scope.
+      user.Config.OAuthScope = AdWordsService.GetOAuthScope(user.Config as AdWordsAppConfig);
+
+      // Since we are using a console application, set the callback url to null.
+      user.Config.OAuthCallbackUrl = null;
+
+      // Create the OAuth1.oa protocol handler and set it to the current user.
+      OAuth1aProvider oAuth1a = new OAuth1aProvider(user.Config);
+      user.OAuthProvider = oAuth1a;
+
+      // Generate the authorization url and display that to the user. Note that
+      // this will also generate a request token if not done already.
+      string authorizationUrl = oAuth1a.GetAuthorizationUrl();
+      Console.WriteLine("Open a fresh web browser and navigate to \n\n{0}\n\n. You will be " +
+          "prompted to login and then authorize this application to make calls to the " +
+          "AdWords API. Once approved, you will be presented with an authorization code.",
+          authorizationUrl);
+
+      // Accept the authorization code from the user.
+      Console.Write("Enter the authorization code :");
+      string authorizationCode = Console.ReadLine();
+
+      // Fetch the access token.
+      oAuth1a.FetchAccessAndRefreshTokens(authorizationCode);
+      return;
     }
   }
 }

@@ -1,3 +1,9 @@
+14.6.0
+- Added support for OAuth2. OAuth1.0a flow was changed.
+- Added support for v201206.
+- Common library version was bumped to 1.2.0.
+- Fixed issue 82, 85, 86.
+
 14.5.0
 - Changed the way user agents are constructed for SOAP requests.
 - Common library version was bumped to 1.1.0.

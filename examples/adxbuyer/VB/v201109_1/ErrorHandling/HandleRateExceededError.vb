@@ -41,10 +41,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New HandleRateExceededError
+      Dim codeExample As New HandleRateExceededError
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -66,37 +67,22 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group to which keywords are added.
+    ''' </param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       Const NUM_THREADS As Integer = 100
 
       ' Increase the maximum number of parallel HTTP connections that .NET
       ' framework allows. By default, this is set to 2 by the .NET framework.
       ServicePointManager.DefaultConnectionLimit = NUM_THREADS
 
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
-
       Dim threads As New List(Of Thread)
 
       For i As Integer = 0 To NUM_THREADS
-        Dim thread As New Thread(AddressOf New KeywordThread(user, i, adGroupId, writer).Run)
+        Dim thread As New Thread(AddressOf New KeywordThread(user, i, adGroupId).Run)
         threads.Add(thread)
       Next i
 
@@ -129,11 +115,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
       Dim user As AdWordsUser
 
       ''' <summary>
-      ''' The text writer to which all output is written.
-      ''' </summary>
-      Dim writer As TextWriter
-
-      ''' <summary>
       ''' Number of keywords to be validated in each API call.
       ''' </summary>
       Const NUM_KEYWORDS As Integer = 100
@@ -145,11 +126,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
       ''' <param name="adGroupId">The ad group id.</param>
       ''' <param name="user">The AdWords user who owns the ad group.</param>
       Public Sub New(ByVal user As AdWordsUser, ByVal threadIndex As Integer, _
-          ByVal adGroupId As Long, ByVal writer As TextWriter)
+          ByVal adGroupId As Long)
         Me.user = user
         Me.threadIndex = threadIndex
         Me.adGroupId = adGroupId
-        Me.writer = writer
       End Sub
 
       ''' <summary>
@@ -206,7 +186,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
                 End If
                 ' Handle rate exceeded errors.
                 Dim rateExceededError As RateExceededError = DirectCast(apiError, RateExceededError)
-                writer.WriteLine("Got Rate exceeded error - rate name = '{0}', scope = '{1}', " & _
+                Console.WriteLine("Got Rate exceeded error - rate name = '{0}', scope = '{1}', " & _
                     "retry After {2} seconds.", rateExceededError.rateScope, _
                     rateExceededError.rateName, rateExceededError.retryAfterSeconds)
                 Thread.Sleep(rateExceededError.retryAfterSeconds)

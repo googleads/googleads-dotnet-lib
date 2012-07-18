@@ -35,10 +35,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New DeleteKeyword
+      Dim codeExample As New DeleteKeyword
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        Dim keywordId As Long = Long.Parse("INSERT_KEYWORD_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId, keywordId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -56,31 +58,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID", "KEYWORD_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group that contains the keyword.
+    ''' </param>
+    ''' <param name="keywordId">Id of the keyword to be deleted.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal keywordId As Long)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
           AdWordsService.v201109_1.AdGroupCriterionService)
-
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
-      Dim keywordId As Long = Long.Parse(parameters("KEYWORD_ID"))
 
       ' Create base class criterion to avoid setting keyword-specific
       ' fields.
@@ -106,10 +93,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
           Dim deletedKeyword As AdGroupCriterion = retVal.value(0)
-          writer.WriteLine("Keyword with ad group id = ""{0}"" and id = ""{1}"" was " & _
+          Console.WriteLine("Keyword with ad group id = ""{0}"" and id = ""{1}"" was " & _
                 "deleted.", deletedKeyword.adGroupId, deletedKeyword.criterion.id)
         Else
-          writer.WriteLine("No keywords were deleted.")
+          Console.WriteLine("No keywords were deleted.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to delete keywords.", ex)

@@ -34,10 +34,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new DeleteAdGroup();
+      DeleteAdGroup codeExample = new DeleteAdGroup();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,30 +56,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group to be deleted.</param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupService.
       AdGroupService adGroupService = (AdGroupService) user.GetService(
           AdWordsService.v201109_1.AdGroupService);
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
 
       // Create ad group with DELETED status.
       AdGroup adGroup = new AdGroup();
@@ -86,7 +71,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
 
       // When deleting an ad group, rename it to avoid name collisions with new
       // adgroups.
-      adGroup.name = "Deleted AdGroup - " + ExampleUtilities.GetTimeStamp();
+      adGroup.name = "Deleted AdGroup - " + ExampleUtilities.GetRandomString();
       adGroup.status = AdGroupStatus.DELETED;
 
       // Create the operation.
@@ -101,10 +86,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           AdGroup deletedAdGroup = retVal.value[0];
-          writer.WriteLine("Ad group with id = \"{0}\" was renamed to \"{1}\" and deleted.",
+          Console.WriteLine("Ad group with id = \"{0}\" was renamed to \"{1}\" and deleted.",
               deletedAdGroup.id, deletedAdGroup.name);
         } else {
-          writer.WriteLine("No ad groups were deleted.");
+          Console.WriteLine("No ad groups were deleted.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to delete ad group.", ex);

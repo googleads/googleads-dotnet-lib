@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp {
   /// <summary>
@@ -23,11 +24,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
   /// </summary>
   public class ExampleUtilities {
     /// <summary>
-    /// Gets the current timestamp as a string.
+    /// Gets a random string. Useful for generating unique names for campaigns,
+    /// ad groups, etc.
     /// </summary>
     /// <returns>The current timestamp as a string.</returns>
-    public static string GetTimeStamp() {
-      return DateTime.Now.ToString("yyyy-M-d H-m-s.ffffff");
+    public static string GetRandomString() {
+      return string.Format("{0} - {1}", Guid.NewGuid(),
+          DateTime.Now.ToString("yyyy-M-d H-m-s.ffffff"));
     }
 
     /// <summary>
@@ -55,19 +58,30 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
     }
 
     /// <summary>
-    /// Gets the user inputs for running a code example in command line mode.
+    /// Gets the parameters for running the code example.
     /// </summary>
-    /// <param name="paramNames">The parameter names.</param>
-    /// <returns>A dictionary, with key as parameter name and value as
-    /// parameter value.</returns>
-    public static Dictionary<string, string> GetUserInputs(string[] paramNames) {
-      Dictionary<string, string> parameters = new Dictionary<string, string>();
-      foreach (string paramName in paramNames) {
-        Console.Write("Enter {0}: ", paramName);
-        parameters[paramName] = Console.ReadLine();
+    /// <param name="methodInfo">The method info for Run method in code
+    /// example.</param>
+    /// <returns>An array of parameters for running the code example.</returns>
+    public static List<object> GetParameters(MethodInfo methodInfo) {
+      List<object> retval = new List<object>();
+      ParameterInfo[] paramInfos = methodInfo.GetParameters();
+      for (int i = 1; i < paramInfos.Length; i++) {
+        ParameterInfo paramInfo = paramInfos[i];
+        Console.Write("Enter {0}: ", paramInfo.Name);
+        string value = Console.ReadLine();
+        object objValue = null;
+        if (paramInfo.ParameterType == typeof(long)) {
+          objValue = long.Parse(value);
+        } else if (paramInfo.ParameterType == typeof(string)) {
+          objValue = value;
+        } else {
+          throw new ApplicationException("Unknown parameter type : " +
+              paramInfo.ParameterType.FullName);
+        }
+        retval.Add(objValue);
       }
-      return parameters;
+      return retval;
     }
-
   }
 }

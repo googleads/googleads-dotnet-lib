@@ -34,9 +34,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new HandlePartialFailures();
+      HandlePartialFailures codeExample = new HandlePartialFailures();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -49,33 +55,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group to which keywords are added.
+    /// </param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupCriterionService.
       AdGroupCriterionService adGroupCriterionService =
           (AdGroupCriterionService) user.GetService(AdWordsService.v201109.AdGroupCriterionService);
 
       // Set partial failure mode for the service.
       adGroupCriterionService.RequestHeader.partialFailure = true;
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
 
       List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
 
@@ -108,14 +99,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         if (result != null && result.value != null) {
           foreach (AdGroupCriterion adGroupCriterionResult in result.value) {
             if (adGroupCriterionResult.criterion != null) {
-              writer.WriteLine("Placement with ad group id '{0}', and criterion " +
+              Console.WriteLine("Placement with ad group id '{0}', and criterion " +
                   "id '{1}', and url '{2}' was added.\n", adGroupCriterionResult.adGroupId,
                   adGroupCriterionResult.criterion.id,
                   ((Placement) adGroupCriterionResult.criterion).url);
             }
           }
         } else {
-          writer.WriteLine("No placements were added.");
+          Console.WriteLine("No placements were added.");
         }
 
         // Display the partial failure errors.
@@ -124,19 +115,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
             int operationIndex = ErrorUtilities.GetOperationIndex(apiError.fieldPath);
             if (operationIndex != -1) {
               AdGroupCriterion adGroupCriterion = operations[operationIndex].operand;
-              writer.WriteLine("Placement with ad group id '{0}' and url '{1}' "
+              Console.WriteLine("Placement with ad group id '{0}' and url '{1}' "
                   + "triggered a failure for the following reason: '{2}'.\n",
                   adGroupCriterion.adGroupId, ((Placement) adGroupCriterion.criterion).url,
                   apiError.errorString);
             } else {
-              writer.WriteLine("A failure for the following reason: '{0}' has occurred.\n",
+              Console.WriteLine("A failure for the following reason: '{0}' has occurred.\n",
                   apiError.errorString);
             }
           }
         }
       } catch (Exception e) {
-        writer.WriteLine("Failed to add placement(s) in partial failure mode. Exception says " +
-            "\"{0}\"", e.Message);
+        throw new System.ApplicationException("Failed to add placements in partial failure mode.",
+            e);
       }
     }
   }

@@ -35,10 +35,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetKeywordIdeas
+      Dim codeExample As New GetKeywordIdeas
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        codeExample.Run(New AdWordsUser)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -55,25 +55,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    Public Sub Run(ByVal user As AdWordsUser)
       ' Get the TargetingIdeaService.
       Dim targetingIdeaService As TargetingIdeaService = user.GetService( _
           AdWordsService.v201109_1.TargetingIdeaService)
@@ -125,11 +110,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
             Dim i As Integer = offset
             For Each idea As TargetingIdea In page.entries
               For Each entry As Type_AttributeMapEntry In idea.data
-                If entry.key = AttributeType.CRITERION Then
+                If (entry.key = AttributeType.CRITERION) Then
                   Dim kwdAttribute As CriterionAttribute = entry.value
                   Dim relatedKeyword As Keyword = kwdAttribute.value
-                  writer.Write("{0}) Related keyword with text = '{1}' and match type = " & _
-                      "'{2}' was found", i + 1, relatedKeyword.text, relatedKeyword.matchType)
+                  Console.Write("{0}) Related keyword with text = '{1}' and match type = " & _
+                      "'{2}' was found.", i, relatedKeyword.text, relatedKeyword.matchType)
                 End If
                 If entry.key = AttributeType.CATEGORY_PRODUCTS_AND_SERVICES Then
                   Dim intSetAttribute As IntegerSetAttribute = entry.value
@@ -137,17 +122,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
                   For Each value As Integer In intSetAttribute.value
                     builder.AppendFormat("{0}, ", value)
                   Next
-                  writer.Write(" with Product and Services categories ({0})", _
+                  Console.Write(" with Product and Services categories ({0})", _
                       builder.ToString().Trim(New Char() {",", " "}))
                 End If
               Next
-              writer.WriteLine(".")
+              Console.WriteLine(".")
               i = i + 1
             Next
           End If
           offset = offset + pageSize
         Loop While (offset < page.totalNumEntries)
-        writer.WriteLine("Number of related keywords found: {0}", page.totalNumEntries)
+        Console.WriteLine("Number of related keywords found: {0}", page.totalNumEntries)
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to retrieve related keywords.", ex)
       End Try

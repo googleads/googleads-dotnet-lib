@@ -35,10 +35,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetAccountAlerts();
+      GetAccountAlerts codeExample = new GetAccountAlerts();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -56,25 +56,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the AlertService.
       AlertService alertService = (AlertService) user.GetService(
           AdWordsService.v201109.AlertService);
@@ -118,18 +103,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
           if (page != null && page.entries != null) {
             int i = offset;
             foreach (Alert alert in page.entries) {
-              writer.WriteLine("{0}) Customer Id is {1:###-###-####}, Alert type is '{2}', " +
+              Console.WriteLine("{0}) Customer Id is {1:###-###-####}, Alert type is '{2}', " +
                   "Severity is {3}", i + 1, alert.clientCustomerId, alert.alertType,
                   alert.alertSeverity);
               for (int j = 0; j < alert.details.Length; j++) {
-                writer.WriteLine("  - Triggered at {0}", alert.details[j].triggerTime);
+                Console.WriteLine("  - Triggered at {0}", alert.details[j].triggerTime);
               }
               i++;
             }
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of alerts found: {0}", page.totalNumEntries);
+        Console.WriteLine("Number of alerts found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to retrieve alerts.", ex);
       }

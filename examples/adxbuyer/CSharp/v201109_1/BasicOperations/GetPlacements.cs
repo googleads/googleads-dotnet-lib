@@ -34,9 +34,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetPlacements();
+      GetPlacements codeExample = new GetPlacements();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+      try {
+        codeExample.Run(new AdWordsUser());
+      } catch (Exception ex) {
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(ex));
+      }
     }
 
     /// <summary>
@@ -50,28 +55,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the AdGroupCriterionService.
       AdGroupCriterionService adGroupCriterionService =
-          (AdGroupCriterionService) user.GetService(AdWordsService.v201109_1.AdGroupCriterionService);
+          (AdGroupCriterionService) user.GetService(
+              AdWordsService.v201109_1.AdGroupCriterionService);
 
       // Create a selector.
       Selector selector = new Selector();
@@ -115,11 +106,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
               // to identify the criterion type.
               Placement placement = (Placement) adGroupCriterion.criterion;
               if (isNegative) {
-                writer.WriteLine("{0}) Negative placement with ad group ID = '{1}', placement ID " +
-                    "= '{2}', and url = '{3}' was found.", i, adGroupCriterion.adGroupId,
+                Console.WriteLine("{0}) Negative placement with ad group ID = '{1}', placement " +
+                    "ID = '{2}', and url = '{3}' was found.", i, adGroupCriterion.adGroupId,
                     placement.id, placement.url);
               } else {
-                writer.WriteLine("{0}) Placement with ad group ID = '{1}', placement ID = '{2}' " +
+                Console.WriteLine("{0}) Placement with ad group ID = '{1}', placement ID = '{2}' " +
                     "and url = '{3}' was found.", i, adGroupCriterion.adGroupId,
                     placement.id, placement.url);
               }
@@ -128,9 +119,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of placements found: {0}", page.totalNumEntries);
+        Console.WriteLine("Number of placements found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
-        writer.WriteLine("Failed to retrieve placements. Exception says \"{0}\"", ex.Message);
+        throw new System.ApplicationException("Failed to retrieve placements.");
       }
     }
   }

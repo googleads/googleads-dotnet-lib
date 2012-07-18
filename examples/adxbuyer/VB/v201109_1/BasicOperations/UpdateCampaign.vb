@@ -35,10 +35,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New UpdateCampaign
+      Dim codeExample As New UpdateCampaign
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
+        codeExample.Run(New AdWordsUser, campaignId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -55,30 +56,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"CAMPAIGN_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="campaignId">Id of the campaign to be updated.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the CampaignService.
       Dim campaignService As CampaignService = user.GetService( _
           AdWordsService.v201109_1.CampaignService)
-
-      Dim campaignId As Long = Long.Parse(parameters("CAMPAIGN_ID"))
 
       ' Create campaign with updated budget.
       Dim campaign As New Campaign
@@ -102,10 +87,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
           Dim updatedCampaign As Campaign = retVal.value(0)
-          writer.WriteLine("Campaign with name = '{0}' and id = '{1}' was updated.", _
+          Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was updated.", _
               updatedCampaign.name, updatedCampaign.id)
         Else
-          writer.WriteLine("No campaigns were updated.")
+          Console.WriteLine("No campaigns were updated.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to update campaigns.", ex)

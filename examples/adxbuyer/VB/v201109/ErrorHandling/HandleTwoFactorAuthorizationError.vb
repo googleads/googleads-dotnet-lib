@@ -34,10 +34,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New HandleTwoFactorAuthorizationError
+      Dim codeExample As New HandleTwoFactorAuthorizationError
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        codeExample.Run(New AdWordsUser)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -55,25 +55,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    Public Sub Run(ByVal user As AdWordsUser)
       ' Use a test account for which 2 factor authentication has been enabled.
       Dim loginEmail As String = "2steptester@gmail.com"
       Dim password As String = "testaccount"
@@ -84,19 +69,19 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       Try
         ' Try to obtain an authToken.
         Dim token As String = authToken.GetToken
-        writer.WriteLine("Retrieved an authToken = {0} for user {1}.", token, loginEmail)
+        Console.WriteLine("Retrieved an authToken = {0} for user {1}.", token, loginEmail)
       Catch ex As AuthTokenException
         ' Since the test account has 2 factor authentication enabled, this block
         ' of code will be executed.
         If (ex.ErrorCode = AuthTokenErrorCode.BadAuthentication) Then
           If (ex.Info = "InvalidSecondFactor") Then
-            writer.WriteLine("The user has enabled two factor authentication in this " & _
+            Console.WriteLine("The user has enabled two factor authentication in this " & _
                 "account. Have the user generate an application-specific password to make " & _
                 "calls against the AdWords API. See " & _
                 "http://adwordsapi.blogspot.com/2011/02/authentication-changes-with-2-step.html" & _
                 "for more details.")
           Else
-            writer.WriteLine("Invalid credentials.")
+            Console.WriteLine("Invalid credentials.")
           End If
         Else
           Throw New System.ApplicationException(String.Format("The server raised an {0} error.", _

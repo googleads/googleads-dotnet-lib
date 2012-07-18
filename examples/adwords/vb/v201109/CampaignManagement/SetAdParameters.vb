@@ -36,10 +36,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New SetAdParameters
+      Dim codeExample As New SetAdParameters
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        Dim criterionId As Long = Long.Parse("INSERT_CRITERION_ID_HERE")
+
+        codeExample.Run(New AdWordsUser, adGroupId, criterionId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -57,25 +60,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID", "CRITERION_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group that contains the criterion.
+    ''' </param>
+    ''' <param name="criterionId">Id of the keyword for which the ad
+    ''' parameters are set.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal criterionId As Long)
       ' Get the AdGroupAdService.
       Dim adGroupAdService As AdGroupAdService = user.GetService( _
           AdWordsService.v201109.AdGroupAdService)
@@ -83,9 +75,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
       ' Get the AdParamService.
       Dim adParamService As AdParamService = user.GetService( _
           AdWordsService.v201109.AdParamService)
-
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
-      Dim criterionId As Long = Long.Parse(parameters("CRITERION_ID"))
 
       ' Create the text ad.
       Dim textAd As New TextAd
@@ -113,10 +102,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         ' Display the results.
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) _
             AndAlso (retVal.value.Length > 0)) Then
-          writer.WriteLine("Text ad with id = ""{0}"" was successfully added.", _
+          Console.WriteLine("Text ad with id = ""{0}"" was successfully added.", _
               retVal.value(0).ad.id)
         Else
-          writer.WriteLine("No text ads were created.")
+          Console.WriteLine("No text ads were created.")
           Return
         End If
       Catch ex As Exception
@@ -154,9 +143,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
 
         'Display the results.
         If (Not newAdParams Is Nothing) Then
-          writer.WriteLine("Ad parameters were successfully updated.")
+          Console.WriteLine("Ad parameters were successfully updated.")
         Else
-          writer.WriteLine("No ad parameters were set.")
+          Console.WriteLine("No ad parameters were set.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to set ad parameter(s).", ex)

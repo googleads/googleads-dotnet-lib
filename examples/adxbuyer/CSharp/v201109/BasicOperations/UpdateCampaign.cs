@@ -34,10 +34,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new UpdateCampaign();
+      UpdateCampaign codeExample = new UpdateCampaign();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+        codeExample.Run(new AdWordsUser(), campaignId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -54,30 +55,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"CAMPAIGN_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="campaignId">Id of the campaign to be updated.</param>
+    public void Run(AdWordsUser user, long campaignId) {
       // Get the CampaignService.
       CampaignService campaignService =
           (CampaignService)user.GetService(AdWordsService.v201109.CampaignService);
-
-      long campaignId = long.Parse(parameters["CAMPAIGN_ID"]);
 
       // Create the campaign.
       Campaign campaign = new Campaign();
@@ -100,10 +85,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           Campaign updatedCampaign = retVal.value[0];
-          writer.WriteLine("Campaign with name = '{0}' and id = '{1}' was updated.",
+          Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was updated.",
               updatedCampaign.name, updatedCampaign.id);
         } else {
-          writer.WriteLine("No campaigns were updated.");
+          Console.WriteLine("No campaigns were updated.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to update campaign.", ex);

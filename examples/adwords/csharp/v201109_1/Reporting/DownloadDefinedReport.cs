@@ -31,10 +31,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new DownloadDefinedReport();
+      DownloadDefinedReport codeExample = new DownloadDefinedReport();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long reportDefinitionId = long.Parse("INSERT_REPORT_DEFINITION_ID_HERE");
+        string fileName = "INSERT_FILE_NAME_HERE";
+        codeExample.Run(new AdWordsUser(), reportDefinitionId, fileName);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -51,27 +53,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"REPORT_DEFINITION_ID", "OUTPUT_FILE_NAME"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
-      long reportDefinitionId = long.Parse(parameters["REPORT_DEFINITION_ID"]);
-      string fileName = parameters["OUTPUT_FILE_NAME"];
+    /// <param name="reportDefinitionId">Id of the report to be downloaded.
+    /// </param>
+    /// <param name="fileName">File to which report is downloaded.</param>
+    public void Run(AdWordsUser user, long reportDefinitionId, string fileName) {
       string filePath = ExampleUtilities.GetHomeDir() + Path.DirectorySeparatorChar + fileName;
 
       try {
@@ -91,7 +79,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
         // string deflatedReportText = Encoding.UTF8.GetString(
         //     MediaUtilities.DeflateGZipData(report.Contents));
         new ReportUtilities(user).DownloadClientReport(reportDefinitionId, filePath);
-        writer.WriteLine("Report with definition id '{0}' was downloaded to '{1}'.",
+        Console.WriteLine("Report with definition id '{0}' was downloaded to '{1}'.",
             reportDefinitionId, filePath);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to download report.", ex);

@@ -33,10 +33,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new EstimateKeywordTraffic();
+      EstimateKeywordTraffic codeExample = new EstimateKeywordTraffic();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -53,25 +53,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the TrafficEstimatorService.
       TrafficEstimatorService trafficEstimatorService = (TrafficEstimatorService) user.GetService(
           AdWordsService.v201109.TrafficEstimatorService);
@@ -168,17 +153,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
                 long meanTotalCost = (keywordEstimate.min.totalCost.microAmount
                    + keywordEstimate.max.totalCost.microAmount) / 2;
 
-               writer.WriteLine("Results for the keyword with text = '{0}' and match type = " +
+               Console.WriteLine("Results for the keyword with text = '{0}' and match type = " +
                     "'{1}':", keyword.text, keyword.matchType);
-               writer.WriteLine("  Estimated average CPC: {0}", meanAverageCpc);
-               writer.WriteLine("  Estimated ad position: {0:0.00}", meanAveragePosition);
-               writer.WriteLine("  Estimated daily clicks: {0}", meanClicks);
-               writer.WriteLine("  Estimated daily cost: {0}", meanTotalCost);
+               Console.WriteLine("  Estimated average CPC: {0}", meanAverageCpc);
+               Console.WriteLine("  Estimated ad position: {0:0.00}", meanAveragePosition);
+               Console.WriteLine("  Estimated daily clicks: {0}", meanClicks);
+               Console.WriteLine("  Estimated daily cost: {0}", meanTotalCost);
               }
             }
           }
         } else {
-          writer.WriteLine("No traffic estimates were returned.\n");
+          Console.WriteLine("No traffic estimates were returned.\n");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to retrieve traffic estimates.", ex);

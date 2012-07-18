@@ -34,10 +34,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetTextAds();
+      GetTextAds codeExample = new GetTextAds();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,30 +56,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group from which text ads are
+    /// retrieved.</param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupAdService.
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(AdWordsService.v201109_1.AdGroupAdService);
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
 
       // Create a selector.
       Selector selector = new Selector();
@@ -136,16 +122,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
 
             foreach (AdGroupAd adGroupAd in page.entries) {
               TextAd textAd = (TextAd) adGroupAd.ad;
-              writer.WriteLine("{0}) Ad id is {1} and status is {2}", i + 1, textAd.id,
+              Console.WriteLine("{0}) Ad id is {1} and status is {2}", i + 1, textAd.id,
                   adGroupAd.status);
-              writer.WriteLine("  {0}\n  {1}\n  {2}\n  {3}", textAd.headline,
+              Console.WriteLine("  {0}\n  {1}\n  {2}\n  {3}", textAd.headline,
                   textAd.description1, textAd.description2, textAd.displayUrl);
               i++;
             }
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of text ads found: {0}", page.totalNumEntries);
+        Console.WriteLine("Number of text ads found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to get text ads", ex);
       }

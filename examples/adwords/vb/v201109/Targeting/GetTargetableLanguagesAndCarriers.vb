@@ -36,10 +36,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetTargetableLanguagesAndCarriers
+      Dim codeExample As New GetTargetableLanguagesAndCarriers
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        codeExample.Run(New AdWordsUser)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -57,25 +57,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    Public Sub Run(ByVal user As AdWordsUser)
       ' Get the ConstantDataService.
       Dim constantDataService As ConstantDataService = user.GetService( _
           AdWordsService.v201109.ConstantDataService)
@@ -87,11 +72,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         ' Display the results.
         If (Not carriers Is Nothing) Then
           For Each carrier As Carrier In carriers
-            writer.WriteLine("Carrier name is '{0}', ID is {1} and country code is '{2}'.", _
+            Console.WriteLine("Carrier name is '{0}', ID is {1} and country code is '{2}'.", _
                 carrier.name, carrier.id, carrier.countryCode)
           Next
         Else
-          writer.WriteLine("No carriers were retrieved.")
+          Console.WriteLine("No carriers were retrieved.")
         End If
 
         ' Get all languages.
@@ -100,11 +85,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         ' Display the results.
         If (Not languages Is Nothing) Then
           For Each language As Language In languages
-            writer.WriteLine("Language name is '{0}', ID is {1} and code is '{2}'.", _
+            Console.WriteLine("Language name is '{0}', ID is {1} and code is '{2}'.", _
                 language.name, language.id, language.code)
           Next
         Else
-          writer.WriteLine("No languages were found.")
+          Console.WriteLine("No languages were found.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to get targetable carriers and languages.", _

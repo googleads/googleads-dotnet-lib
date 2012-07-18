@@ -33,10 +33,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new AddConversionTracker();
+      AddConversionTracker codeExample = new AddConversionTracker();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -53,25 +53,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the ConversionTrackerService.
       ConversionTrackerService conversionTrackerService =
           (ConversionTrackerService)user.GetService(AdWordsService.v201109.
@@ -80,7 +65,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
       // Create Adwords conversion tracker.
       AdWordsConversionTracker conversionTracker = new AdWordsConversionTracker();
       conversionTracker.name = "Earth to Mars Cruises Conversion #" +
-          ExampleUtilities.GetTimeStamp();
+          ExampleUtilities.GetRandomString();
       conversionTracker.category = ConversionTrackerCategory.DEFAULT;
       conversionTracker.markupLanguage = AdWordsConversionTrackerMarkupLanguage.HTML;
       conversionTracker.httpProtocol = AdWordsConversionTrackerHttpProtocol.HTTP;
@@ -109,11 +94,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         // Display the results.
         if (retval != null && retval.value != null && retval.value.Length > 0) {
           ConversionTracker newConversionTracker = retval.value[0];
-          writer.WriteLine("Conversion tracker with id '{0}', name '{1}', status '{2}', " +
+          Console.WriteLine("Conversion tracker with id '{0}', name '{1}', status '{2}', " +
               "category '{3}' was added.", newConversionTracker.id, newConversionTracker.name,
               newConversionTracker.status, newConversionTracker.category);
         } else {
-          writer.WriteLine("No conversion trackers were added.");
+          Console.WriteLine("No conversion trackers were added.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to add conversion tracker.", ex);

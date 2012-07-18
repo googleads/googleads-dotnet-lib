@@ -36,10 +36,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetAccountChanges
+      Dim codeExample As New GetAccountChanges
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        codeExample.Run(New AdWordsUser)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -56,25 +56,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    Public Sub Run(ByVal user As AdWordsUser)
       ' Get the CustomerSyncService.
       Dim customerSyncService As CustomerSyncService = user.GetService( _
           AdWordsService.v201109_1.CustomerSyncService)
@@ -102,49 +87,49 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
         ' Display the changes.
         If ((Not accountChanges Is Nothing) AndAlso _
             (Not accountChanges.changedCampaigns Is Nothing)) Then
-          writer.WriteLine("Displaying changes up to: {0}", accountChanges.lastChangeTimestamp)
+          Console.WriteLine("Displaying changes up to: {0}", accountChanges.lastChangeTimestamp)
 
           For Each campaignChanges As CampaignChangeData In accountChanges.changedCampaigns
-            writer.WriteLine("Campaign with id ""{0}"" was changed:", campaignChanges.campaignId)
-            writer.WriteLine("  Campaign changed status: {0}", _
+            Console.WriteLine("Campaign with id ""{0}"" was changed:", campaignChanges.campaignId)
+            Console.WriteLine("  Campaign changed status: {0}", _
                 campaignChanges.campaignChangeStatus)
             If (campaignChanges.campaignChangeStatus <> ChangeStatus.NEW) Then
-              writer.WriteLine("  Added ad extensions: {0}", _
+              Console.WriteLine("  Added ad extensions: {0}", _
                   GetFormattedList(campaignChanges.addedAdExtensions))
-              writer.WriteLine("  Added campaign criteria: {0}", _
+              Console.WriteLine("  Added campaign criteria: {0}", _
                   GetFormattedList(campaignChanges.addedCampaignCriteria))
               If (campaignChanges.campaignTargetingChanged) Then
-                writer.WriteLine("  Added campaign targeting: yes")
+                Console.WriteLine("  Added campaign targeting: yes")
               Else
-                writer.WriteLine("  Added campaign targeting: no")
+                Console.WriteLine("  Added campaign targeting: no")
               End If
 
-              writer.WriteLine("  Deleted ad extensions: {0}", _
+              Console.WriteLine("  Deleted ad extensions: {0}", _
                   GetFormattedList(campaignChanges.deletedAdExtensions))
-              writer.WriteLine("  Deleted campaign criteria: {0}", _
+              Console.WriteLine("  Deleted campaign criteria: {0}", _
                   GetFormattedList(campaignChanges.deletedCampaignCriteria))
 
               If (Not campaignChanges.changedAdGroups Is Nothing) Then
                 For Each adGroupChanges As AdGroupChangeData In campaignChanges.changedAdGroups
-                  writer.WriteLine("  Ad group with id ""{0}"" was changed:", _
+                  Console.WriteLine("  Ad group with id ""{0}"" was changed:", _
                       adGroupChanges.adGroupId)
-                  writer.WriteLine("    Ad group changed status: {0}", _
+                  Console.WriteLine("    Ad group changed status: {0}", _
                       adGroupChanges.adGroupChangeStatus)
                   If (adGroupChanges.adGroupChangeStatus <> ChangeStatus.NEW) Then
-                    writer.WriteLine("    Ads changed: {0}", _
+                    Console.WriteLine("    Ads changed: {0}", _
                         GetFormattedList(adGroupChanges.changedAds))
-                    writer.WriteLine("    Criteria changed: {0}", _
+                    Console.WriteLine("    Criteria changed: {0}", _
                         GetFormattedList(adGroupChanges.changedCriteria))
-                    writer.WriteLine("    Criteria deleted: {0}", _
+                    Console.WriteLine("    Criteria deleted: {0}", _
                         GetFormattedList(adGroupChanges.deletedCriteria))
                   End If
                 Next
               End If
             End If
-            writer.WriteLine()
+            Console.WriteLine()
           Next
         Else
-          writer.WriteLine("No account changes were found.")
+          Console.WriteLine("No account changes were found.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to get account changes.", ex)

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -96,6 +96,9 @@
     <Compile Include="v201109\AdWordsServiceV201109.cs" />
     <Compile Include="v201109_1\AdWordsApi.cs" />
     <Compile Include="v201109_1\AdWordsServiceV201109_1.cs" />
+    <Compile Include="v201206\AdWordsApi.cs" />
+    <Compile Include="v201206\AdWordsServiceV201206.cs" />
+    <Compile Include="v201206\ReportDefinition.cs" />
           <Compile Include="AdWordsErrorMessages.Designer.cs">
             <AutoGen>True</AutoGen>
             <DesignTime>True</DesignTime>

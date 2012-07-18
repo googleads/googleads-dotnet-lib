@@ -35,9 +35,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New UpdatePlacement
+      Dim codeExample As New UpdatePlacement
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        Dim placementId As Long = Long.Parse("INSERT_PLACEMENT_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId, placementId)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -51,31 +58,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID", "PLACEMENT_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group that contains the keyword.
+    ''' </param>
+    ''' <param name="placementId">Id of the placement to be updated.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal placementId As Long)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
           AdWordsService.v201109.AdGroupCriterionService)
-
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
-      Dim placementId As Long = Long.Parse(parameters("PLACEMENT_ID"))
 
       ' Since we are not updating any placement-specific fields, it is enough to
       ' create a criterion object.
@@ -114,14 +106,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
             bidAmount = TryCast(TryCast(adGroupCriterion, BiddableAdGroupCriterion).bids,  _
                 ManualCPCAdGroupCriterionBids).maxCpc.amount.microAmount
           End If
-          writer.WriteLine("Placement with ad group id = '{0}', id = '{1}' was updated with " & _
+          Console.WriteLine("Placement with ad group id = '{0}', id = '{1}' was updated with " & _
               "bid amount = '{2}' micros.", adGroupCriterion.adGroupId, _
               adGroupCriterion.criterion.id, bidAmount)
         Else
-          writer.WriteLine("No placements were updated.")
+          Console.WriteLine("No placements were updated.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to update placement. Exception says ""{0}""", ex.Message)
+        Console.WriteLine("Failed to update placement. Exception says ""{0}""", ex.Message)
       End Try
     End Sub
   End Class

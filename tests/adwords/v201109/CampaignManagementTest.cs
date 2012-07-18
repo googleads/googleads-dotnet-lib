@@ -33,24 +33,22 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
   /// Test cases for all the code examples under v201109\CampaignManagement.
   /// </summary>
   class CampaignManagementTest : ExampleBaseTests {
+    long campaignId;
+    long adGroupId;
+    long criterionId;
+    long adId;
+    long locationExtensionId;
+
     /// <summary>
     /// Inits this instance.
     /// </summary>
     [SetUp]
     public void Init() {
-      parameters = new Dictionary<string, string>();
-
-      long campaignId = utils.CreateCampaign(user, new ManualCPC());
-      long adGroupId = utils.CreateAdGroup(user, campaignId);
-      long criterionId = utils.CreateKeyword(user, adGroupId);
-      long adId = utils.CreateTextAd(user, adGroupId, false);
-      long locationExtensionId = utils.CreateLocationExtension(user, campaignId);
-
-      parameters["CAMPAIGN_ID"] = campaignId.ToString();
-      parameters["ADGROUP_ID"] = adGroupId.ToString();
-      parameters["CRITERION_ID"] = criterionId.ToString();
-      parameters["AD_ID"] = adId.ToString();
-      parameters["LOCATION_EXTENSION_ID"] = locationExtensionId.ToString();
+      campaignId = utils.CreateCampaign(user, new ManualCPC());
+      adGroupId = utils.CreateAdGroup(user, campaignId);
+      criterionId = utils.CreateKeyword(user, adGroupId);
+      adId = utils.CreateTextAd(user, adGroupId, false);
+      locationExtensionId = utils.CreateLocationExtension(user, campaignId);
     }
 
     /// <summary>
@@ -58,7 +56,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestAddExperimentVBExample() {
-      RunExample(new VBExamples.AddExperiment());
+      RunExample(delegate() {
+        new VBExamples.AddExperiment().Run(user, campaignId, adGroupId, criterionId);
+      });
     }
 
     /// <summary>
@@ -66,7 +66,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestAddExperimentCSharpExample() {
-      RunExample(new CSharpExamples.AddExperiment());
+      RunExample(delegate() {
+        new CSharpExamples.AddExperiment().Run(user, campaignId, adGroupId, criterionId);
+      });
     }
 
     /// <summary>
@@ -74,7 +76,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestAddKeywordsInBulkVBExample() {
-      RunExample(new VBExamples.AddKeywordsInBulk());
+      RunExample(delegate() {
+        new VBExamples.AddKeywordsInBulk().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -82,7 +86,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestAddKeywordsInBulkCSharpExample() {
-      RunExample(new CSharpExamples.AddKeywordsInBulk());
+      RunExample(delegate() {
+        new CSharpExamples.AddKeywordsInBulk().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -90,7 +96,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestAddLocationExtensionVBExample() {
-      RunExample(new VBExamples.AddLocationExtension());
+      RunExample(delegate() {
+        new VBExamples.AddLocationExtension().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -98,7 +106,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestAddLocationExtensionCSharpExample() {
-      RunExample(new CSharpExamples.AddLocationExtension());
+      RunExample(delegate() {
+        new CSharpExamples.AddLocationExtension().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -106,7 +116,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestAddLocationExtensionOverrideVBExample() {
-      RunExample(new VBExamples.AddLocationExtensionOverride());
+      RunExample(delegate() {
+        new VBExamples.AddLocationExtensionOverride().Run(user, adId, locationExtensionId);
+      });
     }
 
     /// <summary>
@@ -114,7 +126,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestAddLocationExtensionOverrideCSharpExample() {
-      RunExample(new CSharpExamples.AddLocationExtensionOverride());
+      RunExample(delegate() {
+        new CSharpExamples.AddLocationExtensionOverride().Run(user, adId, locationExtensionId);
+      });
     }
 
     /// <summary>
@@ -122,7 +136,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestAddSiteLinksVBExample() {
-      RunExample(new VBExamples.AddSiteLinks());
+      RunExample(delegate() {
+        new VBExamples.AddSiteLinks().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -130,7 +146,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestAddSiteLinksCSharpExample() {
-      RunExample(new CSharpExamples.AddSiteLinks());
+      RunExample(delegate() {
+        new CSharpExamples.AddSiteLinks().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -138,7 +156,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestDeleteSitelinksVBExample() {
-      RunExample(new VBExamples.DeleteSitelinks());
+      RunExample(delegate() {
+        new VBExamples.DeleteSitelinks().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -146,7 +166,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestDeleteSitelinksCSharpExample() {
-      RunExample(new CSharpExamples.DeleteSitelinks());
+      RunExample(delegate() {
+        new CSharpExamples.DeleteSitelinks().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -154,7 +176,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAllDisapprovedAdsVBExample() {
-      RunExample(new VBExamples.GetAllDisapprovedAds());
+      RunExample(delegate() {
+        new VBExamples.GetAllDisapprovedAds().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -162,21 +186,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAllDisapprovedAdsCSharpExample() {
-      RunExample(new CSharpExamples.GetAllDisapprovedAds());
-    }
-
-    /// <summary>
-    /// Create an experiment for promotion.
-    /// </summary>
-    /// <remarks> This code cannot be added in Init(), since there can be only
-    /// one experiment per campaign, and if we add this to Init(), then
-    /// AddExperiment tests will fail.</remarks>
-    private void CreateExperimentForPromotion() {
-      long campaignId = long.Parse(parameters["CAMPAIGN_ID"]);
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
-      long criterionId = long.Parse(parameters["CRITERION_ID"]);
-      parameters["EXPERIMENT_ID"] = utils.AddExperiment(user, campaignId, adGroupId,
-          criterionId).ToString();
+      RunExample(delegate() {
+        new CSharpExamples.GetAllDisapprovedAds().Run(user, campaignId);
+      });
     }
 
     /// <summary>
@@ -184,8 +196,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestPromoteExperimentVBExample() {
-      CreateExperimentForPromotion();
-      RunExample(new VBExamples.PromoteExperiment());
+      long experimentId = CreateExperimentForPromotion();
+      RunExample(delegate() {
+        new VBExamples.PromoteExperiment().Run(user, experimentId);
+      });
     }
 
     /// <summary>
@@ -193,8 +207,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestPromoteExperimentCSharpExample() {
-      CreateExperimentForPromotion();
-      RunExample(new CSharpExamples.PromoteExperiment());
+      long experimentId = CreateExperimentForPromotion();
+      RunExample(delegate() {
+        new CSharpExamples.PromoteExperiment().Run(user, experimentId);
+      });
     }
 
     /// <summary>
@@ -202,7 +218,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestSetAdParametersVBExample() {
-      RunExample(new VBExamples.SetAdParameters());
+      RunExample(delegate() {
+        new VBExamples.SetAdParameters().Run(user, adGroupId, criterionId);
+      });
     }
 
     /// <summary>
@@ -210,7 +228,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestSetAdParametersCSharpExample() {
-      RunExample(new CSharpExamples.SetAdParameters());
+      RunExample(delegate() {
+        new CSharpExamples.SetAdParameters().Run(user, adGroupId, criterionId);
+      });
     }
 
     /// <summary>
@@ -218,7 +238,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestValidateTextAdVBExample() {
-      RunExample(new VBExamples.ValidateTextAd());
+      RunExample(delegate() {
+        new VBExamples.ValidateTextAd().Run(user, adGroupId);
+      });
     }
 
     /// <summary>
@@ -226,7 +248,20 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestValidateTextAdCSharpExample() {
-      RunExample(new CSharpExamples.ValidateTextAd());
+      RunExample(delegate() {
+        new CSharpExamples.ValidateTextAd().Run(user, adGroupId);
+      });
+    }
+
+    /// <summary>
+    /// Create an experiment for promotion.
+    /// </summary>
+    /// <returns>Experiment id for promotion.</returns>
+    /// <remarks> This code cannot be added in Init(), since there can be only
+    /// one experiment per campaign, and if we add this to Init(), then
+    /// AddExperiment tests will fail.</remarks>
+    private long CreateExperimentForPromotion() {
+      return utils.AddExperiment(user, campaignId, adGroupId, criterionId);
     }
   }
 }

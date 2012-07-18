@@ -30,14 +30,19 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
   Public Class AddCampaigns
     Inherits ExampleBase
     ''' <summary>
+    ''' Number of items being added / updated in this code example.
+    ''' </summary>
+    Const NUM_ITEMS As Integer = 5
+
+    ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New AddCampaigns
+      Dim codeExample As New AddCampaigns
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        codeExample.Run(New AdWordsUser)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -54,153 +59,85 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    Public Sub Run(ByVal user As AdWordsUser)
       ' Get the CampaignService.
       Dim campaignService As CampaignService = user.GetService( _
           AdWordsService.v201109_1.CampaignService)
 
-      ' Create the campaign.
-      Dim campaign1 As New Campaign
-      campaign1.name = "Interplanetary Cruise #" & ExampleUtilities.GetTimeStamp
-      campaign1.status = CampaignStatus.PAUSED
-      campaign1.biddingStrategy = New ManualCPC
+      Dim operations As New List(Of CampaignOperation)
 
-      ' Set the campaign budget.
-      Dim budget1 As New Budget
-      budget1.period = BudgetBudgetPeriod.DAILY
-      budget1.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
-      budget1.amount = New Money
-      budget1.amount.microAmount = 50000000
+      For i As Integer = 1 To NUM_ITEMS
+        ' Create the campaign.
+        Dim campaign As New Campaign
+        campaign.name = "Interplanetary Cruise #" & ExampleUtilities.GetRandomString
+        campaign.status = CampaignStatus.PAUSED
+        campaign.biddingStrategy = New ManualCPC
 
-      campaign1.budget = budget1
+        ' Set the campaign budget.
+        Dim budget As New Budget
+        budget.period = BudgetBudgetPeriod.DAILY
+        budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
+        budget.amount = New Money
+        budget.amount.microAmount = 50000000
 
-      ' Set the campaign network options.
-      campaign1.networkSetting = New NetworkSetting
-      campaign1.networkSetting.targetGoogleSearch = True
-      campaign1.networkSetting.targetSearchNetwork = True
-      campaign1.networkSetting.targetContentContextual = False
-      campaign1.networkSetting.targetContentNetwork = False
-      campaign1.networkSetting.targetPartnerSearchNetwork = False
+        campaign.budget = budget
 
-      ' Set the campaign settings for Advanced location options.
-      Dim geoSetting1 As New GeoTargetTypeSetting()
-      geoSetting1.positiveGeoTargetType = GeoTargetTypeSettingPositiveGeoTargetType.DONT_CARE
-      geoSetting1.negativeGeoTargetType = GeoTargetTypeSettingNegativeGeoTargetType.DONT_CARE
+        ' Set the campaign network options.
+        campaign.networkSetting = New NetworkSetting
+        campaign.networkSetting.targetGoogleSearch = True
+        campaign.networkSetting.targetSearchNetwork = True
+        campaign.networkSetting.targetContentContextual = False
+        campaign.networkSetting.targetContentNetwork = False
+        campaign.networkSetting.targetPartnerSearchNetwork = False
 
-      ' Set the campaign settings for near-exact and near-phrase matches.
-      Dim keywordSetting1 As New KeywordMatchSetting()
-      keywordSetting1.optIn = False
+        ' Set the campaign geo target and keyword match settings.
+        Dim geoSetting As New GeoTargetTypeSetting
+        geoSetting.positiveGeoTargetType = GeoTargetTypeSettingPositiveGeoTargetType.DONT_CARE
+        geoSetting.negativeGeoTargetType = GeoTargetTypeSettingNegativeGeoTargetType.DONT_CARE
 
-      campaign1.settings = New Setting() {geoSetting1, keywordSetting1}
+        Dim keywordSetting As New KeywordMatchSetting
+        keywordSetting.optIn = False
 
-      ' Optional: Set the start date.
-      campaign1.startDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd")
+        campaign.settings = New Setting() {geoSetting, keywordSetting}
 
-      ' Optional: Set the end date.
-      campaign1.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd")
+        ' Optional: Set the start date.
+        campaign.startDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd")
 
-      ' Optional: Set the campaign ad serving optimization status.
-      campaign1.adServingOptimizationStatus = AdServingOptimizationStatus.ROTATE
+        ' Optional: Set the end date.
+        campaign.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd")
 
-      ' Optional: Set the frequency cap.
-      Dim frequencyCap1 As New FrequencyCap
-      frequencyCap1.impressions = 5
-      frequencyCap1.level = Level.ADGROUP
-      frequencyCap1.timeUnit = TimeUnit.DAY
-      campaign1.frequencyCap = frequencyCap1
+        ' Optional: Set the campaign ad serving optimization status.
+        campaign.adServingOptimizationStatus = AdServingOptimizationStatus.ROTATE
 
-      ' Create the operation.
-      Dim operation1 As New CampaignOperation
-      operation1.operator = [Operator].ADD
-      operation1.operand = campaign1
+        ' Optional: Set the frequency cap.
+        Dim frequencyCap As New FrequencyCap
+        frequencyCap.impressions = 5
+        frequencyCap.level = Level.ADGROUP
+        frequencyCap.timeUnit = TimeUnit.DAY
+        campaign.frequencyCap = frequencyCap
 
-      ' Create the campaign.
-      Dim campaign2 As New Campaign
-      campaign2.name = "Interplanetary Cruise #" & ExampleUtilities.GetTimeStamp
-      campaign2.status = CampaignStatus.PAUSED
-      campaign2.biddingStrategy = New ManualCPC
-
-      ' Set the campaign budget.
-      Dim budget2 As New Budget
-      budget2.period = BudgetBudgetPeriod.DAILY
-      budget2.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
-      budget2.amount = New Money
-      budget2.amount.microAmount = 30000000
-
-      campaign2.budget = budget2
-
-      ' Set the campaign network options.
-      campaign2.networkSetting = New NetworkSetting
-      campaign2.networkSetting.targetGoogleSearch = True
-      campaign2.networkSetting.targetSearchNetwork = True
-      campaign2.networkSetting.targetContentContextual = False
-      campaign2.networkSetting.targetContentNetwork = False
-      campaign2.networkSetting.targetPartnerSearchNetwork = False
-
-      ' Set the campaign settings for Advanced location options.
-      Dim geoSetting2 As New GeoTargetTypeSetting()
-      geoSetting2.positiveGeoTargetType = GeoTargetTypeSettingPositiveGeoTargetType.DONT_CARE
-      geoSetting2.negativeGeoTargetType = GeoTargetTypeSettingNegativeGeoTargetType.DONT_CARE
-
-      ' Set the campaign settings for near-exact and near-phrase matches.
-      Dim keywordSetting2 As New KeywordMatchSetting()
-      keywordSetting2.optIn = False
-
-      campaign2.settings = New Setting() {geoSetting2, keywordSetting2}
-
-      ' Optional: Set the start date.
-      campaign2.startDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd")
-
-      ' Optional: Set the end date.
-      campaign2.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd")
-
-      ' Optional: Set the campaign ad serving optimization status.
-      campaign2.adServingOptimizationStatus = AdServingOptimizationStatus.ROTATE
-
-      ' Optional: Set the frequency cap.
-      Dim frequencyCap2 As New FrequencyCap
-      frequencyCap2.impressions = 5
-      frequencyCap2.level = Level.ADGROUP
-      frequencyCap2.timeUnit = TimeUnit.DAY
-      campaign2.frequencyCap = frequencyCap2
-
-      ' Create the operation.
-      Dim operation2 As New CampaignOperation
-      operation2.operator = [Operator].ADD
-      operation2.operand = campaign2
+        ' Create the operation.
+        Dim operation As New CampaignOperation
+        operation.operator = [Operator].ADD
+        operation.operand = campaign
+      Next
 
       Try
         ' Add the campaign.
-        Dim retVal As CampaignReturnValue = campaignService.mutate( _
-            New CampaignOperation() {operation1, operation2})
+        Dim retVal As CampaignReturnValue = campaignService.mutate(operations.ToArray())
 
         ' Display the results.
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
           For Each newCampaign As Campaign In retVal.value
-            writer.WriteLine("Campaign with name = '{0}' and id = '{1}' was added.", _
+            Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was added.", _
                   newCampaign.name, newCampaign.id)
           Next
         Else
-          writer.WriteLine("No campaigns were added.")
+          Console.WriteLine("No campaigns were added.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to add campaigns.", ex)

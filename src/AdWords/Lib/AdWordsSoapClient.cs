@@ -40,6 +40,11 @@ namespace Google.Api.Ads.AdWords.Lib {
     private const string COOKIE_INVALID_ERROR = "AuthenticationError.GOOGLE_ACCOUNT_COOKIE_INVALID";
 
     /// <summary>
+    /// The error thrown when an oauth token expires.
+    /// </summary>
+    private const string OAUTH_TOKEN_EXPIRED_ERROR = "AuthenticationError.OAUTH_TOKEN_INVALID";
+
+    /// <summary>
     /// Service name to be used when getting auth token for AdWords.
     /// </summary>
     public const string SERVICE_NAME = "adwords";
@@ -67,11 +72,10 @@ namespace Google.Api.Ads.AdWords.Lib {
             ".", XmlQualifiedName.Empty);
       }
 
-      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth) {
+      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth ||
+          config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
         if (this.User.OAuthProvider != null) {
-          AdsOAuthProvider provider = this.User.OAuthProvider;
-          provider.GenerateAccessToken();
-          oAuthHeader = provider.GetAuthHeader(this.Url);
+          oAuthHeader = this.User.OAuthProvider.GetAuthHeader(this.Url);
         } else {
           throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
         }
@@ -116,7 +120,21 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// True, if the current API call should be retried.
     /// </returns>
     protected override bool ShouldRetry(Exception ex) {
-      return (ex is AdWordsApiException && IsCookieInvalidError(ex as AdWordsApiException));
+      AdWordsApiException awapiException = ex as AdWordsApiException;
+      return awapiException != null && (IsCookieInvalidError(awapiException) ||
+          IsOAuthTokenExpiredError(awapiException));
+    }
+
+    /// <summary>
+    /// Prepares for retrying the API call.
+    /// </summary>
+    /// <param name="ex">The exception thrown from the previous call.</param>
+    protected override void PrepareForRetry(Exception ex) {
+      AdWordsApiException awapiException = ex as AdWordsApiException;
+      if (awapiException != null) {
+        InvalidateAuthTokenCacheIfNecessary(awapiException);
+        RefreshOAuthTokenIfNecessary(awapiException);
+      }
     }
 
     /// <summary>
@@ -141,7 +159,6 @@ namespace Google.Api.Ads.AdWords.Lib {
                     this.GetType().Namespace + ".ApiException"), defaultNs, "ApiExceptionFault"),
                     AdWordsErrorMessages.AnApiExceptionOccurred, ex);
 
-            InvalidateAuthTokenCacheIfNecessary(awapiException);
             return awapiException;
           } catch (Exception) {
             // deserialization failed, but we can safely ignore it.
@@ -159,18 +176,53 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <returns>True, if the server exception is a AuthToken invalid error,
     /// false otherwise.</returns>
     private bool IsCookieInvalidError(AdWordsApiException awapiException) {
+      return MatchesError(awapiException, COOKIE_INVALID_ERROR);
+    }
+
+    /// <summary>
+    /// Determines whether the exception thrown by the server is an OAuth token
+    /// expired error.
+    /// </summary>
+    /// <param name="awapiException">The awapi exception.</param>
+    /// <returns>True, if the server exception is a OAuth token expired error,
+    /// false otherwise.</returns>
+    private bool IsOAuthTokenExpiredError(AdWordsApiException awapiException) {
+      return MatchesError(awapiException, OAUTH_TOKEN_EXPIRED_ERROR);
+    }
+
+    /// <summary>
+    /// Determines whether the exception thrown by the server matches a known
+    /// error.
+    /// </summary>
+    /// <param name="awapiException">The awapi exception.</param>
+    /// <param name="errorMessage">The known error message.</param>
+    /// <returns>True, if the server exception matches the known error, false
+    /// otherwise.</returns>
+    private bool MatchesError(AdWordsApiException awapiException, string errorMessage) {
       object[] errors = (object[]) awapiException.ApiException.GetType().
           GetProperty("errors").GetValue(awapiException.ApiException, null);
       if (errors != null) {
         for (int i = 0; i < errors.Length; i++) {
           string errorString = (string) errors[i].GetType().GetProperty("errorString").
               GetValue(errors[i], null);
-          if (errorString == COOKIE_INVALID_ERROR) {
+          if (errorString == errorMessage) {
             return true;
           }
         }
       }
       return false;
+    }
+
+    /// <summary>
+    /// Refreshes the OAuth access token if necessary.
+    /// </summary>
+    /// <param name="awapiException">The awapi exception.</param>
+    private void RefreshOAuthTokenIfNecessary(AdWordsApiException awapiException) {
+      AdWordsAppConfig config = this.User.Config as AdWordsAppConfig;
+      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2 &&
+          IsOAuthTokenExpiredError(awapiException)) {
+        (this.User.OAuthProvider as OAuth2).RefreshAccessToken();
+      }
     }
 
     /// <summary>

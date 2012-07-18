@@ -34,10 +34,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new AddCampaignTargetingCriteria();
+      AddCampaignTargetingCriteria codeExample = new AddCampaignTargetingCriteria();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+        codeExample.Run(new AdWordsUser(), campaignId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,31 +56,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"CAMPAIGN_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="campaignId">Id of the campaign to which targeting criteria
+    /// are added.</param>
+    public void Run(AdWordsUser user, long campaignId) {
       // Get the CampaignCriterionService.
       CampaignCriterionService campaignCriterionService =
           (CampaignCriterionService) user.GetService(
               AdWordsService.v201109.CampaignCriterionService);
-
-      long campaignId = long.Parse(parameters["CAMPAIGN_ID"]);
 
       // Create language criteria.
       // See http://code.google.com/apis/adwords/docs/appendix/languagecodes.html
@@ -150,7 +136,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         if (retVal != null && retVal.value != null) {
           // Display campaign targets.
           foreach (CampaignCriterion criterion in retVal.value) {
-            writer.WriteLine("Campaign criteria of type '{0}' was set to campaign with" +
+            Console.WriteLine("Campaign criteria of type '{0}' was set to campaign with" +
                 " id = '{1}'.", criterion.criterion.CriterionType, criterion.campaignId);
           }
         }

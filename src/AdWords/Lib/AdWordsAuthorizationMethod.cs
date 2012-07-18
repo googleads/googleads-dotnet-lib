@@ -25,8 +25,13 @@ namespace Google.Api.Ads.AdWords.Lib {
     ClientLogin,
 
     /// <summary>
-    /// OAuth 1.0 API.
+    /// OAuth 1.0a API.
     /// </summary>
-    OAuth
+    OAuth,
+
+    /// <summary>
+    /// OAuth 2.0 API.
+    /// </summary>
+    OAuth2
   }
 }

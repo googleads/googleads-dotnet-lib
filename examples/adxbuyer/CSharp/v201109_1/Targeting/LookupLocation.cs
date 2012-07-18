@@ -33,10 +33,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new LookupLocation();
+      LookupLocation codeExample = new LookupLocation();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -53,25 +53,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the LocationCriterionService.
       LocationCriterionService locationCriterionService =
           (LocationCriterionService) user.GetService(AdWordsService.v201109_1.
@@ -113,7 +98,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
           } else {
             parentLocations = "N/A";
           }
-          writer.WriteLine("The search term '{0}' returned the location '{1}' of type '{2}' " +
+          Console.WriteLine("The search term '{0}' returned the location '{1}' of type '{2}' " +
               "with parent locations '{3}' and reach '{4}'.", locationCriterion.searchTerm,
               locationCriterion.location.locationName, locationCriterion.location.displayType,
               parentLocations, locationCriterion.reach);

@@ -35,10 +35,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New UpdateKeyword
+      Dim codeExample As New UpdateKeyword
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        Dim keywordId As Long = Long.Parse("INSERT_KEYWORD_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId, keywordId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -55,31 +57,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID", "KEYWORD_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group that contains the keyword.
+    ''' </param>
+    ''' <param name="keywordId">Id of the keyword to be updated.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal keywordId As Long)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
           AdWordsService.v201109.AdGroupCriterionService)
-
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
-      Dim keywordId As Long = Long.Parse(parameters("KEYWORD_ID"))
 
       ' Since we are not updating any keyword-specific fields, it is enough to
       ' create a criterion object.
@@ -118,11 +105,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
             bidAmount = TryCast(TryCast(adGroupCriterion, BiddableAdGroupCriterion).bids,  _
                 ManualCPCAdGroupCriterionBids).maxCpc.amount.microAmount
           End If
-          writer.WriteLine("Keyword with ad group id = '{0}', id = '{1}' was updated with " & _
+          Console.WriteLine("Keyword with ad group id = '{0}', id = '{1}' was updated with " & _
               "bid amount = '{2}' micros.", adGroupCriterion.adGroupId, _
               adGroupCriterion.criterion.id, bidAmount)
         Else
-          writer.WriteLine("No keyword was updated.")
+          Console.WriteLine("No keyword was updated.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to update keyword.", ex)

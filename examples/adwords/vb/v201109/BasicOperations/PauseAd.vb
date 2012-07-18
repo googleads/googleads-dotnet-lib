@@ -34,10 +34,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New PauseAd
+      Dim codeExample As New PauseAd
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        Dim adId As Long = Long.Parse("INSERT_AD_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId, adId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -54,30 +56,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID", "AD_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group that contains the ad.
+    ''' </param>
+    ''' <param name="adId">Id of the ad to be paused.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal adId As Long)
       ' Get the AdGroupAdService.
       Dim service As AdGroupAdService = user.GetService(AdWordsService.v201109.AdGroupAdService)
 
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
-      Dim adId As Long = Long.Parse(parameters("AD_ID"))
       Dim status As AdGroupAdStatus = AdGroupAdStatus.PAUSED
 
       ' Create the ad group ad.
@@ -102,9 +90,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
           Dim pausedAdGroupAd As AdGroupAd = retVal.value(0)
-          writer.WriteLine("Ad with id ""{0}"" was paused.", pausedAdGroupAd.ad.id)
+          Console.WriteLine("Ad with id ""{0}"" was paused.", pausedAdGroupAd.ad.id)
         Else
-          writer.WriteLine("No ads were paused.")
+          Console.WriteLine("No ads were paused.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to pause ad.", ex)

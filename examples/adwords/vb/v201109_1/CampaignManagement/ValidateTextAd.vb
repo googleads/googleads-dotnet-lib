@@ -36,10 +36,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New ValidateTextAd
+      Dim codeExample As New ValidateTextAd
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -58,30 +59,18 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary><returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the specified user.
     ''' </summary>
-    ''' <param name="user">The user.</param>
-    ''' <param name="parameters">The parameters.</param>
-    ''' <param name="writer">The writer.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="user">The AdWords user.</param>
+    ''' <param name="adGroupId">Id of the ad group to which text ads are
+    ''' added.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupAdService.
       Dim adGroupAdService As AdGroupAdService = user.GetService( _
           AdWordsService.v201109_1.AdGroupAdService)
 
       ' Set the validateOnly headers.
       adGroupAdService.RequestHeader.validateOnly = True
-
-      Dim adGroupId As Long = Long.Parse(parameters.Item("ADGROUP_ID"))
 
       ' Create your text ad.
       Dim textAd As New TextAd
@@ -102,14 +91,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
         Dim retVal As AdGroupAdReturnValue = adGroupAdService.mutate( _
             New AdGroupAdOperation() {textAdOperation})
         ' Since validation is ON, result will be null.
-        writer.WriteLine("text ad validated successfully.")
+        Console.WriteLine("text ad validated successfully.")
       Catch ex As AdWordsApiException
         ' This block will be hit if there is a validation error from the server.
-        writer.WriteLine("There were validation error(s) while adding text ad.")
+        Console.WriteLine("There were validation error(s) while adding text ad.")
 
         If (Not ex.ApiException Is Nothing) Then
           For Each apiError As ApiError In DirectCast(ex.ApiException, ApiException).errors
-            writer.WriteLine("  Error type is '{0}' and fieldPath is '{1}'.", _
+            Console.WriteLine("  Error type is '{0}' and fieldPath is '{1}'.", _
                 apiError.ApiErrorType, apiError.fieldPath)
           Next
         End If

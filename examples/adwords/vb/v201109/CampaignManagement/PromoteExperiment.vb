@@ -36,10 +36,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New PromoteExperiment
+      Dim codeExample As New PromoteExperiment
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim experimentId As Long = Long.Parse("INSERT_EXPERIMENT_ID_HERE")
+        codeExample.Run(New AdWordsUser, experimentId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -58,30 +59,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"EXPERIMENT_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="experimentId">Id of the experiment to be promoted.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal experimentId As Long)
       ' Get the ExperimentService.
       Dim experimentService As ExperimentService = user.GetService( _
           AdWordsService.v201109.ExperimentService)
-
-      Dim experimentId As Long = Long.Parse(parameters("EXPERIMENT_ID"))
 
       ' Set experiment's status to PROMOTED.
       Dim experiment As New Experiment
@@ -102,10 +87,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
           Dim promotedExperiment As Experiment = retVal.value(0)
-          writer.WriteLine("Experiment with name = ""{0}"" and id = ""{1}"" was promoted.", _
+          Console.WriteLine("Experiment with name = ""{0}"" and id = ""{1}"" was promoted.", _
                 promotedExperiment.name, promotedExperiment.id)
         Else
-          writer.WriteLine("No experiments were promoted.")
+          Console.WriteLine("No experiments were promoted.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to promote experiment(s).", ex)

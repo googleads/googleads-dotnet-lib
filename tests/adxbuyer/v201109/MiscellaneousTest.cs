@@ -38,7 +38,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [SetUp]
     public void Init() {
-      parameters = new Dictionary<string, string>();
     }
 
     /// <summary>
@@ -46,7 +45,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAllVideosAndImagesVBExample() {
-      RunExample(new VBExamples.GetAllVideosAndImages());
+      RunExample(delegate() {
+        new VBExamples.GetAllVideosAndImages().Run(user);
+      });
     }
 
     /// <summary>
@@ -54,7 +55,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAllVideosAndImagesCSharpExample() {
-      RunExample(new CSharpExamples.GetAllVideosAndImages());
+      RunExample(delegate() {
+        new CSharpExamples.GetAllVideosAndImages().Run(user);
+      });
     }
 
     /// <summary>
@@ -62,7 +65,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestUploadImageVBExample() {
-      RunExample(new VBExamples.UploadImage());
+      RunExample(delegate() {
+        new VBExamples.UploadImage().Run(user);
+      });
     }
 
     /// <summary>
@@ -70,7 +75,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestUploadImageCSharpExample() {
-      RunExample(new CSharpExamples.UploadImage());
+      RunExample(delegate() {
+        new CSharpExamples.UploadImage().Run(user);
+      });
     }
   }
 }

@@ -34,10 +34,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new DeleteKeyword();
+      DeleteKeyword codeExample = new DeleteKeyword();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        long keywordId = long.Parse("INSERT_KEYWORD_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId, keywordId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -55,31 +57,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"ADGROUP_ID", "KEYWORD_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adGroupId">Id of the ad group that contains the keyword.
+    /// </param>
+    /// <param name="keywordId">Id of the keyword to be deleted.</param>
+    public void Run(AdWordsUser user, long adGroupId, long keywordId) {
       // Get the AdGroupCriterionService.
       AdGroupCriterionService adGroupCriterionService = (AdGroupCriterionService)user.GetService(
           AdWordsService.v201109.AdGroupCriterionService);
-
-      long adGroupId = long.Parse(parameters["ADGROUP_ID"]);
-      long keywordId = long.Parse(parameters["KEYWORD_ID"]);
 
       // Create base class criterion to avoid setting keyword-specific fields.
       Criterion criterion = new Criterion();
@@ -103,10 +90,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           AdGroupCriterion deletedKeyword = retVal.value[0];
-          writer.WriteLine("Keyword with ad group id = \"{0}\" and id = \"{1}\" was deleted.",
+          Console.WriteLine("Keyword with ad group id = \"{0}\" and id = \"{1}\" was deleted.",
               deletedKeyword.adGroupId, deletedKeyword.criterion.id);
         } else {
-          writer.WriteLine("No keywords were deleted.");
+          Console.WriteLine("No keywords were deleted.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to delete keyword.", ex);

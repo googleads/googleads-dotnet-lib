@@ -31,13 +31,24 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
   Public Class AddAdGroups
     Inherits ExampleBase
     ''' <summary>
+    ''' Number of items being added / updated in this code example.
+    ''' </summary>
+    Const NUM_ITEMS As Integer = 5
+
+    ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New AddAdGroups
+      Dim codeExample As New AddAdGroups
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
+        codeExample.Run(New AdWordsUser, campaignId)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -51,90 +62,59 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"CAMPAIGN_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="campaignId">Id of the campaign to which ad groups are
+    ''' added.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the AdGroupService.
       Dim adGroupService As AdGroupService = user.GetService( _
           AdWordsService.v201109.AdGroupService)
 
-      Dim campaignId As Long = Long.Parse(parameters("CAMPAIGN_ID"))
+      Dim operations As New List(Of AdGroupOperation)
 
-      ' Create the ad group.
-      Dim adGroup1 As New AdGroup
-      adGroup1.name = String.Format("Earth to Mars Cruises #{0}", ExampleUtilities.GetTimeStamp)
-      adGroup1.status = AdGroupStatus.ENABLED
-      adGroup1.campaignId = campaignId
+      For i As Integer = 1 To NUM_ITEMS
+        ' Create the ad group.
+        Dim adGroup1 As New AdGroup
+        adGroup1.name = String.Format("Earth to Mars Cruises #{0}", ExampleUtilities.GetRandomString)
+        adGroup1.status = AdGroupStatus.ENABLED
+        adGroup1.campaignId = campaignId
 
-      ' Set the ad group bids.
-      Dim bid1 As New ManualCPMAdGroupBids()
+        ' Set the ad group bids.
+        Dim bid1 As New ManualCPMAdGroupBids()
 
-      Dim maxCpm1 As New Bid()
-      maxCpm1.amount = New Money()
-      maxCpm1.amount.microAmount = 10000000
-      bid1.maxCpm = maxCpm1
+        Dim maxCpm1 As New Bid()
+        maxCpm1.amount = New Money()
+        maxCpm1.amount.microAmount = 10000000
+        bid1.maxCpm = maxCpm1
 
-      adGroup1.bids = bid1
+        adGroup1.bids = bid1
 
-      ' Create the operation.
-      Dim operation1 As New AdGroupOperation
-      operation1.operator = [Operator].ADD
-      operation1.operand = adGroup1
+        ' Create the operation.
+        Dim operation1 As New AdGroupOperation
+        operation1.operator = [Operator].ADD
+        operation1.operand = adGroup1
 
-      ' Create the ad group.
-      Dim adGroup2 As New AdGroup
-      adGroup2.name = String.Format("Earth to Venus Cruises #{0}", ExampleUtilities.GetTimeStamp)
-      adGroup2.status = AdGroupStatus.ENABLED
-      adGroup2.campaignId = campaignId
-
-      ' Set the ad group bids.
-      Dim bid2 As New ManualCPMAdGroupBids()
-
-      Dim maxCpm2 As New Bid()
-      maxCpm2.amount = New Money()
-      maxCpm2.amount.microAmount = 20000000
-      bid2.maxCpm = maxCpm2
-
-      adGroup2.bids = bid2
-
-      ' Create the operation.
-      Dim operation2 As New AdGroupOperation
-      operation2.operator = [Operator].ADD
-      operation2.operand = adGroup2
+        operations.Add(operation1)
+      Next
 
       Try
         ' Create the ad group.
-        Dim retVal As AdGroupReturnValue = adGroupService.mutate( _
-            New AdGroupOperation() {operation1})
+        Dim retVal As AdGroupReturnValue = adGroupService.mutate(operations.ToArray)
 
         ' Display the results.
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
           For Each newAdGroup As AdGroup In retVal.value
-            writer.WriteLine("Ad group with id = '{0}' and name = '{1}' was created.", _
+            Console.WriteLine("Ad group with id = '{0}' and name = '{1}' was created.", _
                 newAdGroup.id, newAdGroup.name)
           Next
         Else
-          writer.WriteLine("No ad groups were created.")
+          Console.WriteLine("No ad groups were created.")
         End If
       Catch ex As Exception
-        writer.WriteLine("Failed to create ad groups. Exception says ""{0}""", ex.Message)
+        Console.WriteLine("Failed to create ad groups. Exception says ""{0}""", ex.Message)
       End Try
     End Sub
   End Class

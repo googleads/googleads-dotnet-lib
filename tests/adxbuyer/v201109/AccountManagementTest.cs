@@ -38,7 +38,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [SetUp]
     public void Init() {
-      parameters = new Dictionary<string, string>();
     }
 
     /// <summary>
@@ -46,7 +45,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAccountChangesVBExample() {
-      RunExample(new VBExamples.GetAccountChanges());
+      RunExample(delegate() {
+        new VBExamples.GetAccountChanges().Run(user);
+      });
     }
 
     /// <summary>
@@ -54,7 +55,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201109 {
     /// </summary>
     [Test]
     public void TestGetAccountChangesCSharpExample() {
-      RunExample(new CSharpExamples.GetAccountChanges());
+      RunExample(delegate() {
+        new CSharpExamples.GetAccountChanges().Run(user);
+      });
     }
   }
 }

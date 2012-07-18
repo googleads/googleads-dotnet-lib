@@ -35,10 +35,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetAdGroupBidSimulations
+      Dim codeExample As New GetAdGroupBidSimulations
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -56,29 +57,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group for which bid simulations are
+    ''' retrieved.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the DataService.
       Dim dataService As DataService = user.GetService(AdWordsService.v201109.DataService)
-
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
 
       ' Create the selector.
       Dim selector As New Selector
@@ -100,20 +86,20 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         If (((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) AndAlso _
             (page.entries.Length > 0)) Then
           For Each bidLandscape As AdGroupBidLandscape In page.entries
-            writer.WriteLine("Found ad group bid landscape with ad group id '{0}', " & _
+            Console.WriteLine("Found ad group bid landscape with ad group id '{0}', " & _
                 "type '{1}', current: '{2}', start date '{3}', end date '{4}', and " & _
                 "landscape points", bidLandscape.adGroupId, bidLandscape.type, _
                 bidLandscape.landscapeCurrent, bidLandscape.startDate, bidLandscape.endDate)
             Dim point As BidLandscapeLandscapePoint
             For Each point In bidLandscape.landscapePoints
-              writer.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, marginalCpc: {3}, " & _
+              Console.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, marginalCpc: {3}, " & _
                   "impressions: {4}", point.bid.microAmount, point.bid.microAmount, _
                   point.clicks, point.cost.microAmount, point.marginalCpc.microAmount, _
                   point.impressions)
             Next
           Next
         Else
-          writer.WriteLine("No ad group bid landscapes were found.\n")
+          Console.WriteLine("No ad group bid landscapes were found.\n")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to get ad group bid landscapes.", ex)

@@ -36,9 +36,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetThirdPartyRedirectAds
+      Dim codeExample As New GetThirdPartyRedirectAds
       Console.WriteLine(codeExample.Description)
-      codeExample.Run(New AdWordsUser(), codeExample.GetParameters(), Console.Out)
+      Try
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
+      Catch ex As Exception
+        Console.WriteLine("An exception occurred while running this code example. {0}", _
+            ExampleUtilities.FormatException(ex))
+      End Try
     End Sub
 
     ''' <summary>
@@ -53,29 +59,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"ADGROUP_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adGroupId">Id of the ad group from which text ads are
+    ''' retrieved.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupAdService.
       Dim service As AdGroupAdService = user.GetService(AdWordsService.v201109.AdGroupAdService)
-
-      Dim adGroupId As Long = Long.Parse(parameters("ADGROUP_ID"))
 
       ' Create a selector.
       Dim selector As New Selector
@@ -132,9 +123,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
 
             For Each adGroupAd As AdGroupAd In page.entries
               Dim thirdPartyRedirectAd As ThirdPartyRedirectAd = adGroupAd.ad
-              writer.WriteLine("{0}) Ad id is {1} and status is {2}", i, thirdPartyRedirectAd.id, _
+              Console.WriteLine("{0}) Ad id is {1} and status is {2}", i, thirdPartyRedirectAd.id, _
                   adGroupAd.status)
-              writer.WriteLine("  Url: {0}\n  Display Url: {1}\n  Snippet:{2}", _
+              Console.WriteLine("  Url: {0}\n  Display Url: {1}\n  Snippet:{2}", _
                   thirdPartyRedirectAd.url, thirdPartyRedirectAd.displayUrl, _
                   thirdPartyRedirectAd.snippet)
             Next
@@ -142,9 +133,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
           End If
           offset = offset + pageSize
         Loop While (offset < page.totalNumEntries)
-        writer.WriteLine("Number of third party redirect ads found: {0}", page.totalNumEntries)
+        Console.WriteLine("Number of third party redirect ads found: {0}", page.totalNumEntries)
       Catch ex As Exception
-        writer.WriteLine("Failed to get third party redirect ads. Exception says ""{0}""", _
+        Console.WriteLine("Failed to get third party redirect ads. Exception says ""{0}""", _
             ex.Message)
       End Try
     End Sub

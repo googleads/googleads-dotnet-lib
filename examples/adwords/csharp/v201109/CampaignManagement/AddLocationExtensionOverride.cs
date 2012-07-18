@@ -35,10 +35,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new AddLocationExtensionOverride();
+      AddLocationExtensionOverride codeExample = new AddLocationExtensionOverride();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long adId = long.Parse("INSERT_AD_ID_HERE");
+        long locationExtensionId = long.Parse("INSERT_LOCATION_EXTENSION_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adId, locationExtensionId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -57,32 +59,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"AD_ID", "LOCATION_EXTENSION_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="adId">Id of the ad for which the location extension is
+    /// overridden.</param>
+    /// <param name="locationExtensionId">Id of the location extension to be
+    /// overridden.</param>
+    public void Run(AdWordsUser user, long adId, long locationExtensionId) {
       // Get the AdExtensionOverrideService.
       AdExtensionOverrideService adExtensionOverrideService =
           (AdExtensionOverrideService) user.GetService(AdWordsService.v201109.
               AdExtensionOverrideService);
-
-      long adId = long.Parse(parameters["AD_ID"]);
-      long locationExtensionId = long.Parse(parameters["LOCATION_EXTENSION_ID"]);
 
       // Create the address.
       Address address = new Address();
@@ -144,10 +132,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109 {
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           AdExtensionOverride adExtensionOverride = retVal.value[0];
-          writer.WriteLine("Overrode location extension with id = \"{0}\" in Ad id = \"{1}\"",
+          Console.WriteLine("Overrode location extension with id = \"{0}\" in Ad id = \"{1}\"",
               adExtensionOverride.adExtension.id, adExtensionOverride.adId);
         } else {
-          writer.WriteLine("No location extensions were overridden.");
+          Console.WriteLine("No location extensions were overridden.");
         }
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to override location extension.", ex);

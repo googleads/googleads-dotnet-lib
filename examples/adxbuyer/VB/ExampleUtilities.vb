@@ -16,6 +16,7 @@
 
 Imports System
 Imports System.Collections.Generic
+Imports System.Reflection
 
 Namespace Google.Api.Ads.AdWords.Examples.VB
   ''' <summary>
@@ -31,11 +32,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
     End Function
 
     ''' <summary>
-    ''' Gets the current timestamp as a string.
+    ''' Gets a random string. Used for generating unique strings for use with
+    ''' AdGroups, Campaigns, etc.
     ''' </summary>
-    ''' <returns>The current timestamp as a string.</returns>
-    Public Shared Function GetTimeStamp() As String
-      Return DateTime.Now.ToString("yyyy-M-d H-m-s.ffffff")
+    ''' <returns>The random string.</returns>
+    Public Shared Function GetRandomString() As String
+      Return String.Format("{0} - {1}", Guid.NewGuid, _
+                           DateTime.Now.ToString("yyyy-M-d H-m-s.ffffff"))
     End Function
 
     ''' <summary>
@@ -69,6 +72,34 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
         rootEx = rootEx.InnerException
       Loop
       Return String.Join("\nCaused by\n\n", messages.ToArray)
+    End Function
+
+    ''' <summary>
+    ''' Gets the parameters required to run the code example.
+    ''' </summary>
+    ''' <param name="methodInfo">The method info for the code example's Run
+    ''' method.</param>
+    ''' <returns>The list of parameters.</returns>
+    Public Shared Function GetParameters(ByVal methodInfo As MethodInfo) As List(Of Object)
+      Dim retval As New List(Of Object)
+      Dim paramInfos As ParameterInfo() = methodInfo.GetParameters
+      Dim i As Integer
+      For i = 1 To paramInfos.Length - 1
+        Dim paramInfo As ParameterInfo = paramInfos(i)
+        Console.Write("Enter {0}: ", paramInfo.Name)
+        Dim value As String = Console.ReadLine
+        Dim objValue As Object = Nothing
+        If (paramInfo.ParameterType Is GetType(Long)) Then
+          objValue = Long.Parse(value)
+        Else
+          If (Not paramInfo.ParameterType Is GetType(String)) Then
+            Throw New ApplicationException(("Unknown parameter type : " & paramInfo.ParameterType.FullName))
+          End If
+          objValue = value
+        End If
+        retval.Add(objValue)
+      Next i
+      Return retval
     End Function
   End Class
 End Namespace

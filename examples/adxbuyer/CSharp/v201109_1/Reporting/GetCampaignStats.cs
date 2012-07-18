@@ -35,10 +35,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetCampaignStats();
+      GetCampaignStats codeExample = new GetCampaignStats();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        codeExample.Run(new AdWordsUser());
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -56,25 +56,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    public void Run(AdWordsUser user) {
       // Get the CampaignService.
       CampaignService campaignService =
           (CampaignService) user.GetService(AdWordsService.v201109_1.CampaignService);
@@ -116,9 +101,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
           if (page != null && page.entries != null) {
             int i = offset;
             foreach (Campaign campaign in page.entries) {
-              writer.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' had the following " +
+              Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' had the following " +
                   "stats last week", i + 1, campaign.id, campaign.name);
-              writer.WriteLine("  Clicks: {0}, Impressions: {1}, Cost: {2} micros. Ctr: {3}",
+              Console.WriteLine("  Clicks: {0}, Impressions: {1}, Cost: {2} micros. Ctr: {3}",
                   campaign.campaignStats.clicks, campaign.campaignStats.impressions,
                   campaign.campaignStats.cost,campaign.campaignStats.ctr);
               i++;
@@ -126,7 +111,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of matching campaigns found: {0}", page.totalNumEntries);
+        Console.WriteLine("Number of matching campaigns found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to retrieve matching campaigns", ex);
       }

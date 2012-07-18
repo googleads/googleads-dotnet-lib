@@ -34,10 +34,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New GetReportFields
+      Dim codeExample As New GetReportFields
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim reportType As ReportDefinitionReportType = [Enum].Parse( _
+            GetType(ReportDefinitionReportType), "INSERT_REPORT_TYPE_HERE")
+        codeExample.Run(New AdWordsUser, reportType)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -54,33 +56,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"REPORT_TYPE"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="reportType">The report type to be run.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal reportType As ReportDefinitionReportType)
       ' Get the ReportDefinitionService.
       Dim reportDefinitionService As ReportDefinitionService = user.GetService( _
           AdWordsService.v201109.ReportDefinitionService)
 
       ' The type of the report to get fields for.
       ' E.g.: KEYWORDS_PERFORMANCE_REPORT
-      Dim reportType As ReportDefinitionReportType = [Enum].Parse( _
-          GetType(ReportDefinitionReportType), parameters("REPORT_TYPE"))
 
       Try
         ' Get the report fields.
@@ -90,18 +76,18 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         If ((Not reportDefinitionFields Is Nothing) AndAlso _
             (reportDefinitionFields.Length > 0)) Then
           ' Display report fields.
-          writer.WriteLine("The report type '{0}' contains the following fields:", reportType)
+          Console.WriteLine("The report type '{0}' contains the following fields:", reportType)
 
           For Each reportDefinitionField As ReportDefinitionField In reportDefinitionFields
-            writer.Write("- {0} ({1})", reportDefinitionField.fieldName, _
+            Console.Write("- {0} ({1})", reportDefinitionField.fieldName, _
                 reportDefinitionField.fieldType)
             If (Not reportDefinitionField.enumValues Is Nothing) Then
-              writer.Write(" := [{0}]", String.Join(", ", reportDefinitionField.enumValues))
+              Console.Write(" := [{0}]", String.Join(", ", reportDefinitionField.enumValues))
             End If
-            writer.WriteLine()
+            Console.WriteLine()
           Next
         Else
-          writer.WriteLine("This report type has no fields.")
+          Console.WriteLine("This report type has no fields.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to retrieve fields for report type.", ex)

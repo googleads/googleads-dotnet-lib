@@ -33,10 +33,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      ExampleBase codeExample = new GetAllDisapprovedAds();
+      GetAllDisapprovedAds codeExample = new GetAllDisapprovedAds();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), codeExample.GetParameters(), Console.Out);
+        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+        codeExample.Run(new AdWordsUser(), campaignId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -53,30 +54,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
     }
 
     /// <summary>
-    /// Gets the list of parameter names required to run this code example.
-    /// </summary>
-    /// <returns>
-    /// A list of parameter names for this code example.
-    /// </returns>
-    public override string[] GetParameterNames() {
-      return new string[] {"CAMPAIGN_ID"};
-    }
-
-    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="parameters">The parameters for running the code
-    /// example.</param>
-    /// <param name="writer">The stream writer to which script output should be
-    /// written.</param>
-    public override void Run(AdWordsUser user, Dictionary<string, string> parameters,
-        TextWriter writer) {
+    /// <param name="campaignId">Id of the campaign for which disapproved ads
+    /// are retrieved.</param>
+    public void Run(AdWordsUser user, long campaignId) {
       // Get the AdGroupAdService.
       AdGroupAdService service =
           (AdGroupAdService) user.GetService(AdWordsService.v201109_1.AdGroupAdService);
-
-      long campaignId = long.Parse(parameters["CAMPAIGN_ID"]);
 
       // Create the selector.
       Selector selector = new Selector();
@@ -115,17 +101,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201109_1 {
           if (page != null && page.entries != null) {
             int i = offset;
             foreach (AdGroupAd adGroupAd in page.entries) {
-              writer.WriteLine("{0}) Ad id {1} has been disapproved for the following " +
+              Console.WriteLine("{0}) Ad id {1} has been disapproved for the following " +
                   "reason(s):", i, adGroupAd.ad.id);
               foreach (string reason in adGroupAd.ad.disapprovalReasons) {
-                writer.WriteLine("    {0}", reason);
+                Console.WriteLine("    {0}", reason);
               }
               i++;
             }
           }
           offset += pageSize;
         } while (offset < page.totalNumEntries);
-        writer.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries);
+        Console.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to get disapproved ads.", ex);
       }

@@ -22,8 +22,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
-using ExamplePair = System.Collections.Generic.KeyValuePair<string,
-    Google.Api.Ads.AdWords.Examples.CSharp.ExampleBase>;
+using ExamplePair = System.Collections.Generic.KeyValuePair<string, object>;
 using System.Threading;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp {
@@ -46,7 +45,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
     /// </summary>
     /// <param name="key">The code example name.</param>
     /// <param name="value">The code example instance.</param>
-    static void RegisterCodeExample(string key, ExampleBase value) {
+    static void RegisterCodeExample(string key, object value) {
       codeExampleMap.Add(new ExamplePair(key, value));
     }
 
@@ -57,9 +56,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
       Type[] types = Assembly.GetExecutingAssembly().GetTypes();
 
       foreach (Type type in types) {
-        if (type.BaseType == typeof(ExampleBase)) {
+        if (type.IsSubclassOf(typeof(ExampleBase))) {
           RegisterCodeExample(type.FullName.Replace(typeof(Program).Namespace + ".", ""),
-              Activator.CreateInstance(type) as ExampleBase);
+              Activator.CreateInstance(type));
         }
       }
     }
@@ -94,10 +93,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
     /// <param name="user">The user whose credentials should be used for
     /// running the code example.</param>
     /// <param name="codeExample">The code example to run.</param>
-    private static void RunACodeExample(AdWordsUser user, ExampleBase codeExample) {
+    private static void RunACodeExample(AdWordsUser user, object codeExample) {
       try {
-        Console.WriteLine(codeExample.Description);
-        codeExample.Run(user, codeExample.GetParameters(), Console.Out);
+        Console.WriteLine(GetDescription(codeExample));
+        InvokeRun(codeExample, user);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -105,6 +104,40 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
         Console.WriteLine("Press [Enter] to continue");
         Console.ReadLine();
       }
+    }
+
+    /// <summary>
+    /// Gets the description for the code example.
+    /// </summary>
+    /// <param name="codeExample">The code example.</param>
+    /// <returns>The description.</returns>
+    private static object GetDescription(object codeExample) {
+      Type exampleType = codeExample.GetType();
+      return exampleType.GetProperty("Description").GetValue(codeExample, null);
+    }
+
+    /// <summary>
+    /// Gets the parameters for running a code example.
+    /// </summary>
+    /// <param name="user">The user.</param>
+    /// <param name="codeExample">The code example.</param>
+    /// <returns>The list of parameters.</returns>
+    private static object[] GetParameters(AdWordsUser user, object codeExample) {
+      MethodInfo methodInfo = codeExample.GetType().GetMethod("Run");
+      List<object> parameters = new List<object>();
+      parameters.Add(user);
+      parameters.AddRange(ExampleUtilities.GetParameters(methodInfo));
+      return parameters.ToArray();
+    }
+
+    /// <summary>
+    /// Invokes the run method.
+    /// </summary>
+    /// <param name="codeExample">The code example.</param>
+    /// <param name="user">The user.</param>
+    private static void InvokeRun(object codeExample, AdWordsUser user) {
+      MethodInfo methodInfo = codeExample.GetType().GetMethod("Run");
+      methodInfo.Invoke(codeExample, GetParameters(user, codeExample));
     }
 
     /// <summary>
@@ -125,7 +158,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
       Console.WriteLine("examplename1 [examplename1 ...] : " +
           "Run specific code examples. Example name can be one of the following:\n", exeName);
       foreach (ExamplePair pair in codeExampleMap) {
-        Console.WriteLine("{0} : {1}", pair.Key, pair.Value.Description);
+        Console.WriteLine("{0} : {1}", pair.Key, GetDescription(pair.Value));
       }
       Console.WriteLine("Press [Enter] to continue");
       Console.ReadLine();

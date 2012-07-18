@@ -36,10 +36,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As ExampleBase = New AddLocationExtensionOverride
+      Dim codeExample As New AddLocationExtensionOverride
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, codeExample.GetParameters, Console.Out)
+        Dim adId As Long = Long.Parse("INSERT_AD_ID_HERE")
+        Dim locationExtensionId As Long = Long.Parse("INSERT_LOCATION_EXTENSION_ID_HERE")
+        codeExample.Run(New AdWordsUser, adId, locationExtensionId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -58,31 +60,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
     End Property
 
     ''' <summary>
-    ''' Gets the list of parameter names required to run this code example.
-    ''' </summary>
-    ''' <returns>
-    ''' A list of parameter names for this code example.
-    ''' </returns>
-    Public Overrides Function GetParameterNames() As String()
-      Return New String() {"AD_ID", "LOCATION_EXTENSION_ID"}
-    End Function
-
-    ''' <summary>
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="parameters">The parameters for running the code
-    ''' example.</param>
-    ''' <param name="writer">The stream writer to which script output should be
-    ''' written.</param>
-    Public Overrides Sub Run(ByVal user As AdWordsUser, ByVal parameters As  _
-        Dictionary(Of String, String), ByVal writer As TextWriter)
+    ''' <param name="adId">Id of the ad for which the location extension is
+    ''' overridden.</param>
+    ''' <param name="locationExtensionId">Id of the location extension to be
+    ''' overridden.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adId As Long, ByVal locationExtensionId As Long)
       ' Get the AdExtensionOverrideService.
       Dim adExtensionOverrideService As AdExtensionOverrideService = user.GetService( _
           AdWordsService.v201109.AdExtensionOverrideService)
-
-      Dim adId As Long = Long.Parse(parameters("AD_ID"))
-      Dim locationExtensionId As Long = Long.Parse(parameters("LOCATION_EXTENSION_ID"))
 
       ' Create the address.
       Dim address As New Address
@@ -145,10 +133,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
           Dim adExtensionOverride As AdExtensionOverride = retVal.value(0)
-          writer.WriteLine("Overrode location extension with id = ""{0}"" in ad id = ""{1}""", _
+          Console.WriteLine("Overrode location extension with id = ""{0}"" in ad id = ""{1}""", _
               adExtensionOverride.adExtension.id, adExtensionOverride.adId)
         Else
-          writer.WriteLine("No location extensions were overridden.")
+          Console.WriteLine("No location extensions were overridden.")
         End If
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to override location extension.", ex)
