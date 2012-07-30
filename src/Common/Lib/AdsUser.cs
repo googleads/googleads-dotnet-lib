@@ -288,7 +288,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="service">The service for which call is being made.</param>
     /// <param name="direction">The direction of SOAP message.</param>
     internal void CallListeners(XmlDocument document, AdsClient service,
-        SoapListener.Direction direction) {
+        SoapMessageDirection direction) {
       foreach (SoapListener listener in listeners) {
         listener.HandleMessage(document, service, direction);
       }

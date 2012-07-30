@@ -43,7 +43,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     /// <param name="config">The application configuration class for configuring
     /// this instance.</param>
-    public DefaultTraceWriter(AppConfigBase config) {
+    public DefaultTraceWriter(AppConfig config) {
       string logPath = "";
       if (config.LogToFile) {
         logPath = config.LogPath.TrimEnd('\\', '/') + Path.DirectorySeparatorChar;

@@ -27,6 +27,23 @@ namespace Google.Api.Ads.AdWords.Lib {
   /// </summary>
   public class AdWordsUnitsListener : SoapListener {
     /// <summary>
+    /// The config class to be used with this class.
+    /// </summary>
+    private AppConfig config;
+
+    /// <summary>
+    /// Gets or sets the config class to be used with this class.
+    /// </summary>
+    public AppConfig Config {
+      get {
+        return config;
+      }
+      set {
+        config = value;
+      }
+    }
+
+    /// <summary>
     /// The singleton instance.
     /// </summary>
     protected static AdWordsUnitsListener instance = new AdWordsUnitsListener();
@@ -34,7 +51,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <summary>
     /// Protected constructor.
     /// </summary>
-    protected AdWordsUnitsListener() : base(new AdWordsAppConfig()) {
+    protected AdWordsUnitsListener() {
     }
 
     /// <summary>
@@ -89,11 +106,23 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <param name="soapMessage">The SOAP message.</param>
     /// <param name="service">The SOAP service.</param>
     /// <param name="direction">The direction of message.</param>
-    public override void HandleMessage(XmlDocument soapMessage, AdsClient service,
-        SoapListener.Direction direction) {
-      if (direction == Direction.IN) {
+    public void HandleMessage(XmlDocument soapMessage, AdsClient service,
+        SoapMessageDirection direction) {
+      if (direction == SoapMessageDirection.IN) {
         RecordApiUnitCost(GetApiUnitsForCall(soapMessage), service);
       }
+    }
+
+    /// <summary>
+    /// Cleanups the after call.
+    /// </summary>
+    public void CleanupAfterCall() {
+    }
+
+    /// <summary>
+    /// Inits for call.
+    /// </summary>
+    public void InitForCall() {
     }
   }
 }

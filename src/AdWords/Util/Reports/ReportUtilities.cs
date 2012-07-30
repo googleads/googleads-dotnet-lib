@@ -491,8 +491,10 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       } catch (WebException ex) {
         response = ex.Response;
       }
-      return MediaUtilities.CopyStreamWithPreview(response.GetResponseStream(),
+      byte[] preview = MediaUtilities.CopyStreamWithPreview(response.GetResponseStream(),
           outputStream, MAX_ERROR_LENGTH);
+      response.Close();
+      return preview;
     }
 
     /// <summary>
