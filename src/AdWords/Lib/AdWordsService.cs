@@ -47,18 +47,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
-    /// Creates a service creation parameter for defining a v13 service.
-    /// </summary>
-    /// <param name="version">Service version, for instance, v13.</param>
-    /// <param name="serviceName">Service name, for instance, CampaignService.
-    /// </param>
-    /// <returns>A service creation parameter defining this service.</returns>
-    protected static ServiceSignature MakeLegacyServiceSignature(string version,
-        string serviceName) {
-      return new LegacyAdwordsServiceSignature(version, serviceName);
-    }
-
-    /// <summary>
     /// Gets all service types defined in this service.
     /// </summary>
     /// <returns>The nested types that define service versions under this

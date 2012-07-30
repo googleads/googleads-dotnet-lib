@@ -52,6 +52,7 @@
     <Compile Include="Lib\AdsOAuthProvider.cs" />
     <Compile Include="Lib\AdsService.cs" />
     <Compile Include="Lib\AdsUser.cs" />
+    <Compile Include="Lib\AppConfig.cs" />
     <Compile Include="Lib\AppConfigBase.cs" />
     <Compile Include="Lib\AuthToken.cs" />
     <Compile Include="Lib\AuthTokenCache.cs" />
@@ -72,6 +73,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Lib\SoapListenerExtensionAttribute.cs" />
+    <Compile Include="Lib\SoapMessageDirection.cs" />
     <Compile Include="Lib\TraceListener.cs" />
     <Compile Include="Lib\TraceWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

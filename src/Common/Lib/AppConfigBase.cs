@@ -28,7 +28,7 @@ namespace Google.Api.Ads.Common.Lib {
   /// <summary>
   /// This class reads the configuration keys from App.config.
   /// </summary>
-  public abstract class AppConfigBase : INotifyPropertyChanged {
+  public abstract class AppConfigBase : INotifyPropertyChanged, AppConfig {
     /// <summary>
     /// The short name to identify this assembly.
     /// </summary>
@@ -402,9 +402,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the OAuth2 redirect URI.
     /// </summary>
-    /// <value>
-    /// The O auth2 redirect URI.
-    /// </value>
     public string OAuth2RedirectUri {
       get {
         return oAuth2RedirectUri;
@@ -451,7 +448,7 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets or sets the OAuth consumer secret.
+    /// Gets or sets the OAuth callback url.
     /// </summary>
     public string OAuthCallbackUrl {
       get {

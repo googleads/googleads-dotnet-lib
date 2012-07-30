@@ -73,12 +73,8 @@
     <Compile Include="Lib\AdWordsUnitsListener.cs" />
     <Compile Include="Lib\AdWordsUser.cs" />
     <Compile Include="Lib\ApiUnitsEntry.cs" />
-    <Compile Include="Lib\LegacyAdWordsServiceFactory.cs" />
-    <Compile Include="Lib\LegacyAdwordsServiceSignature.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
-    <Compile Include="Util\ApiCodes\ApiMethod.cs" />
-    <Compile Include="Util\ApiCodes\CodeUtilities.cs" />
     <Compile Include="Util\Data\AccountManager.cs" />
     <Compile Include="Util\Data\DataUtilities.cs" />
     <Compile Include="Util\Data\LocalAdGroup.cs" />
