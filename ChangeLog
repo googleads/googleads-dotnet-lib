@@ -1,3 +1,6 @@
+4.6.0
+- Fixed issues 13, 14.
+
 4.5.0
 - Added experimental support for OAuth2 as an authentication mechanism.
 - Added support for v201206.

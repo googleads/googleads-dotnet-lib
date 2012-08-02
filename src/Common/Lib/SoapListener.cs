@@ -1,4 +1,4 @@
-// Copyright 2011, Google Inc. All Rights Reserved.
+// Copyright 2012, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,53 +15,22 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using System;
-using System.IO;
-using System.Net;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Web;
-using System.Web.Services;
-using System.Web.Services.Protocols;
 using System.Xml;
-using System.Xml.Serialization;
 
 namespace Google.Api.Ads.Common.Lib {
   /// <summary>
   /// Listens to SOAP messages sent and received by this library.
   /// </summary>
-  public abstract class SoapListener {
+  public interface SoapListener {
     /// <summary>
-    /// The config class to be used with this class.
+    /// Gets the config class to be used with this class.
     /// </summary>
-    protected AppConfigBase config;
+    AppConfig Config { get; }
 
     /// <summary>
-    /// Direction of SOAP message.
+    /// Initializes the listener for handling an API call.
     /// </summary>
-    public enum Direction {
-      /// <summary>
-      /// Response from the server.
-      /// </summary>
-      IN,
-      /// <summary>
-      /// Request to the server.
-      /// </summary>
-      OUT
-    }
-
-    /// <summary>
-    /// Protected constructor.
-    /// </summary>
-    /// <param name="config">The config class to be used with this class.
-    /// </param>
-    protected SoapListener(AppConfigBase config) {
-      this.config = config;
-    }
-
-    /// <summary>
-    /// Initializes the class for an API call.
-    /// </summary>
-    public virtual void InitForCall() { }
+    void InitForCall();
 
     /// <summary>
     /// Handles the SOAP message.
@@ -69,12 +38,11 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="soapMessage">The SOAP message.</param>
     /// <param name="service">The SOAP service.</param>
     /// <param name="direction">The direction of message.</param>
-    public abstract void HandleMessage(XmlDocument soapMessage, AdsClient service,
-        Direction direction);
+    void HandleMessage(XmlDocument soapMessage, AdsClient service, SoapMessageDirection direction);
 
     /// <summary>
     /// Cleans up any resources after an API call.
     /// </summary>
-    public virtual void CleanupAfterCall() { }
+    void CleanupAfterCall();
   }
 }
