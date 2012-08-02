@@ -98,7 +98,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// </summary>
     /// <returns>The list of fields to be masked.</returns>
     protected override string[] GetFieldsToMask() {
-      return new string[] {"authToken"};
+      return new string[] {"authToken", "token"};
     }
   }
 }

@@ -29,12 +29,12 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// An App.config reader suitable for this factory.
     /// </summary>
-    private AppConfigBase config;
+    private AppConfig config;
 
     /// <summary>
     /// Gets an App.config reader suitable for this factory.
     /// </summary>
-    public AppConfigBase AppConfig {
+    public AppConfig AppConfig {
       get {
         return config;
       }
@@ -63,6 +63,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// Reads the headers from App.config.
     /// </summary>
     /// <param name="config">The configuration class.</param>
-    protected abstract void ReadHeadersFromConfig(AppConfigBase config);
+    protected abstract void ReadHeadersFromConfig(AppConfig config);
   }
 }

@@ -19,6 +19,7 @@ using Google.Api.Ads.Dfp.Headers;
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
 using System.Text;
@@ -99,7 +100,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// Reads the headers from App.config.
     /// </summary>
     /// <param name="config">The configuration class.</param>
-    protected override void ReadHeadersFromConfig(AppConfigBase config) {
+    protected override void ReadHeadersFromConfig(AppConfig config) {
       DfpAppConfig dfpConfig = (DfpAppConfig) config;
 
       this.requestHeader = new RequestHeader();

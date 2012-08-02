@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.v201206 {
   using System.Web.Services.Protocols;
   using System.Xml.Serialization;
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "InventoryServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -49,8 +49,8 @@ namespace Google.Api.Ads.Dfp.v201206 {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnit createAdUnit(AdUnit adUnit) {
@@ -58,8 +58,8 @@ namespace Google.Api.Ads.Dfp.v201206 {
       return ((AdUnit) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnit[] createAdUnits([System.Xml.Serialization.XmlElementAttribute("adUnits")]
@@ -68,8 +68,8 @@ AdUnit[] adUnits) {
       return ((AdUnit[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnit getAdUnit(string adUnitId) {
@@ -77,8 +77,8 @@ AdUnit[] adUnits) {
       return ((AdUnit) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnitSize[] getAdUnitSizesByStatement(Statement filterStatement) {
@@ -86,8 +86,8 @@ AdUnit[] adUnits) {
       return ((AdUnitSize[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnitPage getAdUnitsByStatement(Statement filterStatement) {
@@ -95,8 +95,8 @@ AdUnit[] adUnits) {
       return ((AdUnitPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performAdUnitAction(AdUnitAction adUnitAction, Statement filterStatement) {
@@ -104,8 +104,8 @@ AdUnit[] adUnits) {
       return ((UpdateResult) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnit updateAdUnit(AdUnit adUnit) {
@@ -113,8 +113,8 @@ AdUnit[] adUnits) {
       return ((AdUnit) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AdUnit[] updateAdUnits([System.Xml.Serialization.XmlElementAttribute("adUnits")]
@@ -124,24 +124,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(OAuth))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClientLogin))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public abstract partial class Authentication {
-    private string authenticationTypeField;
-
-    [System.Xml.Serialization.XmlElementAttribute("Authentication.Type")]
-    public string AuthenticationType {
-      get { return this.authenticationTypeField; }
-      set { this.authenticationTypeField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -171,7 +154,7 @@ AdUnit[] adUnits) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AssignAdUnitsToPlacement))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveAdUnits))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateAdUnits))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -186,7 +169,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -194,7 +177,7 @@ AdUnit[] adUnits) {
   public partial class DeactivateAdUnits : AdUnitAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -220,7 +203,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -228,7 +211,7 @@ AdUnit[] adUnits) {
   public partial class ArchiveAdUnits : AdUnitAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -236,7 +219,7 @@ AdUnit[] adUnits) {
   public partial class ActivateAdUnits : AdUnitAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -289,7 +272,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -488,7 +471,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -509,7 +492,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnit.TargetWindow", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AdUnitTargetWindow {
@@ -517,7 +500,7 @@ AdUnit[] adUnits) {
     BLANK
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum InventoryStatus {
@@ -526,7 +509,7 @@ AdUnit[] adUnits) {
     ARCHIVED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -567,7 +550,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -631,7 +614,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum EnvironmentType {
@@ -639,7 +622,7 @@ AdUnit[] adUnits) {
     VIDEO_PLAYER
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum TargetPlatform {
@@ -647,7 +630,7 @@ AdUnit[] adUnits) {
     MOBILE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -661,7 +644,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -806,7 +789,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.AdType", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AdSenseSettingsAdType {
@@ -815,7 +798,7 @@ AdUnit[] adUnits) {
     TEXT_AND_IMAGE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.BorderStyle", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AdSenseSettingsBorderStyle {
@@ -825,7 +808,7 @@ AdUnit[] adUnits) {
     VERY_ROUNDED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.FontFamily", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AdSenseSettingsFontFamily {
@@ -837,7 +820,7 @@ AdUnit[] adUnits) {
     VERDANA
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.FontSize", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AdSenseSettingsFontSize {
@@ -847,7 +830,7 @@ AdUnit[] adUnits) {
     LARGE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -868,7 +851,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -901,7 +884,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -965,7 +948,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum TimeUnit {
@@ -979,7 +962,7 @@ AdUnit[] adUnits) {
     STREAM
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1057,7 +1040,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1125,7 +1108,7 @@ AdUnit[] adUnits) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumberValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateTimeValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BooleanValue))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1140,7 +1123,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1154,7 +1137,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1168,7 +1151,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1182,7 +1165,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1208,7 +1191,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1229,7 +1212,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1279,7 +1262,7 @@ AdUnit[] adUnits) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitHierarchyError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitCodeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitAfcSizeError))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1356,7 +1339,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1364,7 +1347,7 @@ AdUnit[] adUnits) {
   public partial class UniqueError : ApiError {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1372,7 +1355,7 @@ AdUnit[] adUnits) {
   public partial class TypeError : ApiError {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1398,7 +1381,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TeamError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum TeamErrorReason {
@@ -1407,7 +1390,7 @@ AdUnit[] adUnits) {
     ALL_TEAM_ASSOCIATION_NOT_ALLOWED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1433,7 +1416,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StringLengthError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum StringLengthErrorReason {
@@ -1441,7 +1424,7 @@ AdUnit[] adUnits) {
     TOO_SHORT
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1467,14 +1450,14 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StatementError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum StatementErrorReason {
     VARIABLE_NOT_BOUND_TO_VALUE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1500,7 +1483,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ServerError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ServerErrorReason {
@@ -1508,7 +1491,7 @@ AdUnit[] adUnits) {
     SERVER_BUSY
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1534,14 +1517,14 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum RequiredErrorReason {
     REQUIRED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1567,7 +1550,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RegExError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum RegExErrorReason {
@@ -1575,7 +1558,7 @@ AdUnit[] adUnits) {
     NULL
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1601,14 +1584,14 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "QuotaError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum QuotaErrorReason {
     EXCEEDED_QUOTA
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1634,14 +1617,14 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PublisherQueryLanguageSyntaxError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum PublisherQueryLanguageSyntaxErrorReason {
     UNPARSABLE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1667,14 +1650,14 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PublisherQueryLanguageContextError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum PublisherQueryLanguageContextErrorReason {
     UNEXECUTABLE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1700,14 +1683,14 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PermissionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum PermissionErrorReason {
     PERMISSION_DENIED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1733,14 +1716,14 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ParseError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ParseErrorReason {
     UNPARSABLE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1766,14 +1749,14 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NullError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum NullErrorReason {
     NULL_CONTENT
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1799,7 +1782,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotNullError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum NotNullErrorReason {
@@ -1809,7 +1792,7 @@ AdUnit[] adUnits) {
     NULL
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1835,14 +1818,14 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitTypeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AdUnitTypeErrorReason {
     MOBILE_APP_PLATFORM_NOT_VALID
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1868,7 +1851,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitSizesError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum InventoryUnitSizesErrorReason {
@@ -1881,7 +1864,7 @@ AdUnit[] adUnits) {
     ASPECT_RATIO_NOT_SUPPORTED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1907,7 +1890,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitPartnerAssociationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum InventoryUnitPartnerAssociationErrorReason {
@@ -1917,7 +1900,7 @@ AdUnit[] adUnits) {
     NO_PARTNER_CATCH_ALL
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1943,14 +1926,14 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum InventoryUnitErrorReason {
     EXPLICIT_TARGETING_NOT_ALLOWED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1976,14 +1959,14 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InvalidColorError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum InvalidColorErrorReason {
     INVALID_FORMAT
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2009,7 +1992,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InternalApiError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum InternalApiErrorReason {
@@ -2017,7 +2000,7 @@ AdUnit[] adUnits) {
     UNKNOWN
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2043,7 +2026,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FrequencyCapError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum FrequencyCapErrorReason {
@@ -2055,7 +2038,7 @@ AdUnit[] adUnits) {
     TOO_MANY_FREQUENCY_CAPS
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2081,7 +2064,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CommonError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CommonErrorReason {
@@ -2091,7 +2074,7 @@ AdUnit[] adUnits) {
     CANNOT_UPDATE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2117,7 +2100,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AuthenticationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AuthenticationErrorReason {
@@ -2137,7 +2120,7 @@ AdUnit[] adUnits) {
     GOOGLE_ACCOUNT_ALREADY_ASSOCIATED_WITH_NETWORK
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2163,14 +2146,14 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ApiVersionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ApiVersionErrorReason {
     UPDATE_TO_NEWER_VERSION
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2196,7 +2179,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitHierarchyError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AdUnitHierarchyErrorReason {
@@ -2204,7 +2187,7 @@ AdUnit[] adUnits) {
     INVALID_PARENT
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2230,7 +2213,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitCodeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AdUnitCodeErrorReason {
@@ -2239,7 +2222,7 @@ AdUnit[] adUnits) {
     LEADING_FORWARD_SLASH
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2265,7 +2248,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitAfcSizeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AdUnitAfcSizeErrorReason {
@@ -2275,7 +2258,7 @@ AdUnit[] adUnits) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApiException))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2297,7 +2280,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2312,7 +2295,24 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(OAuth))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClientLogin))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public abstract partial class Authentication {
+    private string authenticationTypeField;
+
+    [System.Xml.Serialization.XmlElementAttribute("Authentication.Type")]
+    public string AuthenticationType {
+      get { return this.authenticationTypeField; }
+      set { this.authenticationTypeField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2326,7 +2326,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2340,7 +2340,7 @@ AdUnit[] adUnits) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "LabelServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -2364,8 +2364,8 @@ AdUnit[] adUnits) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Label createLabel(Label label) {
@@ -2373,8 +2373,8 @@ AdUnit[] adUnits) {
       return ((Label) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Label[] createLabels([System.Xml.Serialization.XmlElementAttribute("labels")]
@@ -2383,8 +2383,8 @@ Label[] labels) {
       return ((Label[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Label getLabel(long labelId) {
@@ -2392,8 +2392,8 @@ Label[] labels) {
       return ((Label) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LabelPage getLabelsByStatement(Statement filterStatement) {
@@ -2401,8 +2401,8 @@ Label[] labels) {
       return ((LabelPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performLabelAction(LabelAction labelAction, Statement filterStatement) {
@@ -2410,8 +2410,8 @@ Label[] labels) {
       return ((UpdateResult) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Label updateLabel(Label label) {
@@ -2419,8 +2419,8 @@ Label[] labels) {
       return ((Label) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Label[] updateLabels([System.Xml.Serialization.XmlElementAttribute("labels")]
@@ -2432,7 +2432,7 @@ Label[] labels) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateLabels))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateLabels))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2447,7 +2447,7 @@ Label[] labels) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2455,7 +2455,7 @@ Label[] labels) {
   public partial class DeactivateLabels : LabelAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2463,7 +2463,7 @@ Label[] labels) {
   public partial class ActivateLabels : LabelAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2516,7 +2516,7 @@ Label[] labels) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2583,7 +2583,7 @@ Label[] labels) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LabelType {
@@ -2592,7 +2592,7 @@ Label[] labels) {
     AD_EXCLUSION
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2618,7 +2618,7 @@ Label[] labels) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LabelError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LabelErrorReason {
@@ -2626,7 +2626,7 @@ Label[] labels) {
     NAME_INVALID_CHARS
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "LineItemServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -2651,8 +2651,8 @@ Label[] labels) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItem createLineItem(LineItem lineItem) {
@@ -2660,8 +2660,8 @@ Label[] labels) {
       return ((LineItem) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItem[] createLineItems([System.Xml.Serialization.XmlElementAttribute("lineItems")]
@@ -2670,8 +2670,8 @@ LineItem[] lineItems) {
       return ((LineItem[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItem getLineItem(long lineItemId) {
@@ -2679,8 +2679,8 @@ LineItem[] lineItems) {
       return ((LineItem) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemPage getLineItemsByStatement(Statement filterStatement) {
@@ -2688,8 +2688,8 @@ LineItem[] lineItems) {
       return ((LineItemPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performLineItemAction(LineItemAction lineItemAction, Statement filterStatement) {
@@ -2697,8 +2697,8 @@ LineItem[] lineItems) {
       return ((UpdateResult) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItem updateLineItem(LineItem lineItem) {
@@ -2706,8 +2706,8 @@ LineItem[] lineItems) {
       return ((LineItem) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItem[] updateLineItems([System.Xml.Serialization.XmlElementAttribute("lineItems")]
@@ -2727,7 +2727,7 @@ LineItem[] lineItems) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteLineItems))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveLineItems))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateLineItems))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2742,7 +2742,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2751,7 +2751,7 @@ LineItem[] lineItems) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ResumeAndOverbookLineItems))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2759,7 +2759,7 @@ LineItem[] lineItems) {
   public partial class ResumeLineItems : LineItemAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2768,7 +2768,7 @@ LineItem[] lineItems) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReserveAndOverbookLineItems))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2776,7 +2776,7 @@ LineItem[] lineItems) {
   public partial class ReserveLineItems : LineItemAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2784,7 +2784,7 @@ LineItem[] lineItems) {
   public partial class ReserveAndOverbookLineItems : ReserveLineItems {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2792,7 +2792,7 @@ LineItem[] lineItems) {
   public partial class ReleaseLineItems : LineItemAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2800,7 +2800,7 @@ LineItem[] lineItems) {
   public partial class PauseLineItems : LineItemAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2808,7 +2808,7 @@ LineItem[] lineItems) {
   public partial class DeleteLineItems : LineItemAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2816,7 +2816,7 @@ LineItem[] lineItems) {
   public partial class ArchiveLineItems : LineItemAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2824,7 +2824,7 @@ LineItem[] lineItems) {
   public partial class ActivateLineItems : LineItemAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2877,7 +2877,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2891,7 +2891,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2954,7 +2954,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2982,7 +2982,7 @@ LineItem[] lineItems) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(MetroLocation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CountryLocation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CityLocation))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3016,7 +3016,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3030,7 +3030,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3051,7 +3051,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3072,7 +3072,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3086,7 +3086,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3114,7 +3114,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3145,7 +3145,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3178,7 +3178,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3212,7 +3212,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3252,7 +3252,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum DayOfWeek {
@@ -3265,7 +3265,7 @@ LineItem[] lineItems) {
     SUNDAY
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3310,7 +3310,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum MinuteOfHour {
@@ -3320,7 +3320,7 @@ LineItem[] lineItems) {
     FORTY_FIVE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum DeliveryTimeZone {
@@ -3328,7 +3328,7 @@ LineItem[] lineItems) {
     BROWSER
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3405,7 +3405,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3449,7 +3449,7 @@ LineItem[] lineItems) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BrowserLanguage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Browser))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BandwidthGroup))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3490,7 +3490,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3554,7 +3554,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3562,7 +3562,7 @@ LineItem[] lineItems) {
   public partial class OperatingSystem : Technology {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3607,7 +3607,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3633,7 +3633,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3641,7 +3641,7 @@ LineItem[] lineItems) {
   public partial class MobileCarrier : Technology {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3649,7 +3649,7 @@ LineItem[] lineItems) {
   public partial class DeviceManufacturer : Technology {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3657,7 +3657,7 @@ LineItem[] lineItems) {
   public partial class DeviceCapability : Technology {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3665,7 +3665,7 @@ LineItem[] lineItems) {
   public partial class BrowserLanguage : Technology {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3686,7 +3686,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3694,7 +3694,7 @@ LineItem[] lineItems) {
   public partial class BandwidthGroup : Technology {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3728,7 +3728,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3762,7 +3762,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3785,7 +3785,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3819,7 +3819,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3853,7 +3853,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3876,7 +3876,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3899,7 +3899,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3933,7 +3933,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3956,7 +3956,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3990,7 +3990,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomCriteriaSet.LogicalOperator", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CustomCriteriaSetLogicalOperator {
@@ -4002,7 +4002,7 @@ LineItem[] lineItems) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceSegmentCriteria))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomCriteria))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomCriteriaSet))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4019,7 +4019,7 @@ LineItem[] lineItems) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceSegmentCriteria))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomCriteria))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4027,7 +4027,7 @@ LineItem[] lineItems) {
   public abstract partial class CustomCriteriaLeaf : CustomCriteriaNode {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4061,7 +4061,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudienceSegmentCriteria.ComparisonOperator", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AudienceSegmentCriteriaComparisonOperator {
@@ -4069,7 +4069,7 @@ LineItem[] lineItems) {
     IS_NOT
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4122,7 +4122,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomCriteria.ComparisonOperator", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CustomCriteriaComparisonOperator {
@@ -4130,7 +4130,7 @@ LineItem[] lineItems) {
     IS_NOT
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4164,7 +4164,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4210,7 +4210,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4232,7 +4232,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum VideoPositionTargetingType {
@@ -4248,7 +4248,7 @@ LineItem[] lineItems) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LineItem))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4922,7 +4922,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum StartDateTimeType {
@@ -4931,7 +4931,7 @@ LineItem[] lineItems) {
     ONE_HOUR_FROM_NOW
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CreativeRotationType {
@@ -4941,7 +4941,7 @@ LineItem[] lineItems) {
     SEQUENTIAL
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum DeliveryRateType {
@@ -4950,7 +4950,7 @@ LineItem[] lineItems) {
     AS_FAST_AS_POSSIBLE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum RoadblockingType {
@@ -4961,7 +4961,7 @@ LineItem[] lineItems) {
     CREATIVE_SET
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LineItemType {
@@ -4978,7 +4978,7 @@ LineItem[] lineItems) {
     BUMPER
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum UnitType {
@@ -4986,7 +4986,7 @@ LineItem[] lineItems) {
     CLICKS
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemSummary.Duration", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LineItemSummaryDuration {
@@ -4995,7 +4995,7 @@ LineItem[] lineItems) {
     DAILY
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5028,7 +5028,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CostType {
@@ -5037,7 +5037,7 @@ LineItem[] lineItems) {
     CPM
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LineItemDiscountType {
@@ -5045,7 +5045,7 @@ LineItem[] lineItems) {
     PERCENTAGE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5140,7 +5140,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5185,7 +5185,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CreativeSizeType {
@@ -5194,7 +5194,7 @@ LineItem[] lineItems) {
     INTERSTITIAL
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CompanionDeliveryOption {
@@ -5204,7 +5204,7 @@ LineItem[] lineItems) {
     UNKNOWN
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CreativePersistenceType {
@@ -5215,7 +5215,7 @@ LineItem[] lineItems) {
     PERSISTENT_AND_EXCLUDE_ALL
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5260,7 +5260,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5305,7 +5305,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ComputedStatus {
@@ -5321,7 +5321,7 @@ LineItem[] lineItems) {
     CANCELED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemSummary.ReservationStatus", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LineItemSummaryReservationStatus {
@@ -5331,7 +5331,7 @@ LineItem[] lineItems) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DropDownCustomFieldValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomFieldValue))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5365,7 +5365,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5391,7 +5391,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5405,7 +5405,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5431,14 +5431,14 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserDomainTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum UserDomainTargetingErrorReason {
     INVALID_DOMAIN_NAMES
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5464,17 +5464,18 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TechnologyTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum TechnologyTargetingErrorReason {
     MOBILE_LINE_ITEM_CONTAINS_WEB_TECH_CRITERIA,
     WEB_LINE_ITEM_CONTAINS_MOBILE_TECH_CRITERIA,
     MOBILE_CARRIER_TARGETING_FEATURE_NOT_ENABLED,
-    DEVICE_CAPABILITY_TARGETING_FEATURE_NOT_ENABLED
+    DEVICE_CAPABILITY_TARGETING_FEATURE_NOT_ENABLED,
+    DEVICE_CATEGORY_TARGETING_FEATURE_NOT_ENABLED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5500,7 +5501,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReservationDetailsError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ReservationDetailsErrorReason {
@@ -5516,7 +5517,7 @@ LineItem[] lineItems) {
     BACKFILL_WEBPROPERTY_CODE_NOT_ALLOWED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5542,7 +5543,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredSizeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum RequiredSizeErrorReason {
@@ -5550,7 +5551,7 @@ LineItem[] lineItems) {
     NOT_ALLOWED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5576,7 +5577,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredNumberError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum RequiredNumberErrorReason {
@@ -5587,7 +5588,7 @@ LineItem[] lineItems) {
     TOO_SMALL_WITH_DETAILS
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5613,7 +5614,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredCollectionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum RequiredCollectionErrorReason {
@@ -5622,7 +5623,7 @@ LineItem[] lineItems) {
     TOO_SMALL
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5648,7 +5649,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RangeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum RangeErrorReason {
@@ -5656,7 +5657,7 @@ LineItem[] lineItems) {
     TOO_LOW
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5682,7 +5683,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OrderError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum OrderErrorReason {
@@ -5694,7 +5695,7 @@ LineItem[] lineItems) {
     PRIMARY_USER_CANNOT_BE_SECONDARY
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5720,7 +5721,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemOperationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LineItemOperationErrorReason {
@@ -5733,7 +5734,7 @@ LineItem[] lineItems) {
     CANNOT_RESERVE_COMPANY_CREDIT_STATUS_NOT_ACTIVE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5759,7 +5760,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemFlightDateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LineItemFlightDateErrorReason {
@@ -5769,7 +5770,7 @@ LineItem[] lineItems) {
     END_DATE_TIME_TOO_LATE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5795,7 +5796,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LineItemErrorReason {
@@ -5838,7 +5839,7 @@ LineItem[] lineItems) {
     INVALID_SIZE_FOR_ENVIRONMENT
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5864,7 +5865,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemCreativeAssociationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LineItemCreativeAssociationErrorReason {
@@ -5879,7 +5880,7 @@ LineItem[] lineItems) {
     CANNOT_COPY_WITHIN_SAME_LINE_ITEM
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5905,7 +5906,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LabelEntityAssociationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LabelEntityAssociationErrorReason {
@@ -5915,7 +5916,7 @@ LineItem[] lineItems) {
     DUPLICATE_ASSOCIATION_WITH_NEGATION
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5941,7 +5942,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum InventoryTargetingErrorReason {
@@ -5958,7 +5959,7 @@ LineItem[] lineItems) {
     SELF_ONLY_INVENTORY_UNIT_WITHOUT_DESCENDANTS
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5984,7 +5985,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InvalidUrlError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum InvalidUrlErrorReason {
@@ -5994,7 +5995,7 @@ LineItem[] lineItems) {
     NO_SCHEME
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6020,7 +6021,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "GeoTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum GeoTargetingErrorReason {
@@ -6030,7 +6031,7 @@ LineItem[] lineItems) {
     UNTARGETABLE_LOCATION
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6056,7 +6057,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "GenericTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum GenericTargetingErrorReason {
@@ -6064,7 +6065,7 @@ LineItem[] lineItems) {
     INCLUDING_DESCENDANTS_OF_EXCLUDED_CRITERIA
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6090,7 +6091,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ForecastError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ForecastErrorReason {
@@ -6103,7 +6104,7 @@ LineItem[] lineItems) {
     EXCEEDED_QUOTA
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6129,7 +6130,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DayPartTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum DayPartTargetingErrorReason {
@@ -6139,7 +6140,7 @@ LineItem[] lineItems) {
     TIME_PERIODS_OVERLAP
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6165,7 +6166,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DateTimeRangeTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum DateTimeRangeTargetingErrorReason {
@@ -6182,7 +6183,7 @@ LineItem[] lineItems) {
     LIMITED_RANGES_IN_UNLIMITED_LINEITEM
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6208,7 +6209,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CustomTargetingErrorReason {
@@ -6242,7 +6243,7 @@ LineItem[] lineItems) {
     ONLY_APPROVED_AUDIENCE_SEGMENTS_CAN_BE_TARGETED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6268,7 +6269,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomFieldValueError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CustomFieldValueErrorReason {
@@ -6277,7 +6278,7 @@ LineItem[] lineItems) {
     CUSTOM_FIELD_OPTION_NOT_FOUND
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6303,7 +6304,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CompanyCreditStatusError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CompanyCreditStatusErrorReason {
@@ -6314,7 +6315,7 @@ LineItem[] lineItems) {
     UNACCEPTABLE_COMPANY_CREDIT_STATUS_FOR_LINE_ITEM
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6340,7 +6341,7 @@ LineItem[] lineItems) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ClickTrackingLineItemError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ClickTrackingLineItemErrorReason {
@@ -6352,7 +6353,7 @@ LineItem[] lineItems) {
     UNSUPPORTED_FIELD
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "LineItemCreativeAssociationServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -6376,8 +6377,8 @@ LineItem[] lineItems) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemCreativeAssociation createLineItemCreativeAssociation(LineItemCreativeAssociation lineItemCreativeAssociation) {
@@ -6385,8 +6386,8 @@ LineItem[] lineItems) {
       return ((LineItemCreativeAssociation) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemCreativeAssociation[] createLineItemCreativeAssociations([System.Xml.Serialization.XmlElementAttribute("lineItemCreativeAssociations")]
@@ -6395,8 +6396,8 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
       return ((LineItemCreativeAssociation[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemCreativeAssociation getLineItemCreativeAssociation(long lineItemId, long creativeId) {
@@ -6404,8 +6405,8 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
       return ((LineItemCreativeAssociation) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemCreativeAssociationPage getLineItemCreativeAssociationsByStatement(Statement filterStatement) {
@@ -6413,8 +6414,8 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
       return ((LineItemCreativeAssociationPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public string getPreviewUrl(long lineItemId, long creativeId, string siteUrl) {
@@ -6422,8 +6423,8 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
       return ((string) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performLineItemCreativeAssociationAction(LineItemCreativeAssociationAction lineItemCreativeAssociationAction, Statement filterStatement) {
@@ -6431,8 +6432,8 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
       return ((UpdateResult) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemCreativeAssociation updateLineItemCreativeAssociation(LineItemCreativeAssociation lineItemCreativeAssociation) {
@@ -6440,8 +6441,8 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
       return ((LineItemCreativeAssociation) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public LineItemCreativeAssociation[] updateLineItemCreativeAssociations([System.Xml.Serialization.XmlElementAttribute("lineItemCreativeAssociations")]
@@ -6453,7 +6454,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateLineItemCreativeAssociations))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateLineItemCreativeAssociations))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6468,7 +6469,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6476,7 +6477,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
   public partial class DeactivateLineItemCreativeAssociations : LineItemCreativeAssociationAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6484,7 +6485,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
   public partial class ActivateLineItemCreativeAssociations : LineItemCreativeAssociationAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6537,7 +6538,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6682,7 +6683,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemCreativeAssociation.Status", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LineItemCreativeAssociationStatus {
@@ -6692,7 +6693,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     DELETED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6713,7 +6714,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6739,7 +6740,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TemplateInstantiatedCreativeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum TemplateInstantiatedCreativeErrorReason {
@@ -6747,7 +6748,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     FILE_TYPE_NOT_ALLOWED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6773,7 +6774,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemCreativeAssociationOperationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum LineItemCreativeAssociationOperationErrorReason {
@@ -6782,7 +6783,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     CANNOT_ACTIVATE_INVALID_CREATIVE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6808,7 +6809,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ImageError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ImageErrorReason {
@@ -6835,7 +6836,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     SYSTEM_ERROR
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6861,7 +6862,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FileError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum FileErrorReason {
@@ -6869,7 +6870,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     SIZE_TOO_LARGE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6895,7 +6896,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomCreativeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CustomCreativeErrorReason {
@@ -6907,7 +6908,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     DUPLICATE_ASSET_IN_MACROS
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6933,7 +6934,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeSetError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CreativeSetErrorReason {
@@ -6947,7 +6948,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     MASTER_CREATIVE_DOES_NOT_BELONG_TO_CREATIVE_SET
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6973,7 +6974,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CreativeErrorReason {
@@ -6984,7 +6985,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     INVALID_COMPANY_TYPE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7010,14 +7011,14 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeAssetMacroError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CreativeAssetMacroErrorReason {
     INVALID_MACRO_NAME
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7043,7 +7044,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AssetError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AssetErrorReason {
@@ -7053,7 +7054,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     INVALID_ASSET_ID
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "NetworkServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -7077,8 +7078,8 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Network[] getAllNetworks() {
@@ -7086,8 +7087,8 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
       return ((Network[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Network getCurrentNetwork() {
@@ -7095,8 +7096,8 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
       return ((Network) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Network makeTestNetwork() {
@@ -7104,8 +7105,8 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
       return ((Network) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Network updateNetwork(Network network) {
@@ -7114,7 +7115,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7220,7 +7221,7 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "OrderServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -7244,8 +7245,8 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Order createOrder(Order order) {
@@ -7253,8 +7254,8 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
       return ((Order) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Order[] createOrders([System.Xml.Serialization.XmlElementAttribute("orders")]
@@ -7263,8 +7264,8 @@ Order[] orders) {
       return ((Order[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Order getOrder(long orderId) {
@@ -7272,8 +7273,8 @@ Order[] orders) {
       return ((Order) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public OrderPage getOrdersByStatement(Statement filterStatement) {
@@ -7281,8 +7282,8 @@ Order[] orders) {
       return ((OrderPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performOrderAction(OrderAction orderAction, Statement filterStatement) {
@@ -7290,8 +7291,8 @@ Order[] orders) {
       return ((UpdateResult) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Order updateOrder(Order order) {
@@ -7299,8 +7300,8 @@ Order[] orders) {
       return ((Order) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Order[] updateOrders([System.Xml.Serialization.XmlElementAttribute("orders")]
@@ -7326,7 +7327,7 @@ Order[] orders) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveOrdersWithoutReservationChanges))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveOrders))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveAndOverbookOrders))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7341,7 +7342,7 @@ Order[] orders) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7349,7 +7350,7 @@ Order[] orders) {
   public partial class UnarchiveOrders : OrderAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7358,7 +7359,7 @@ Order[] orders) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SubmitOrdersForApprovalAndOverbook))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7366,7 +7367,7 @@ Order[] orders) {
   public partial class SubmitOrdersForApproval : OrderAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7374,7 +7375,7 @@ Order[] orders) {
   public partial class SubmitOrdersForApprovalAndOverbook : SubmitOrdersForApproval {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7382,7 +7383,7 @@ Order[] orders) {
   public partial class RetractOrdersWithoutReservationChanges : OrderAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7391,7 +7392,7 @@ Order[] orders) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ResumeAndOverbookOrders))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7399,7 +7400,7 @@ Order[] orders) {
   public partial class ResumeOrders : OrderAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7407,7 +7408,7 @@ Order[] orders) {
   public partial class ResumeAndOverbookOrders : ResumeOrders {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7415,7 +7416,7 @@ Order[] orders) {
   public partial class PauseOrders : OrderAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7423,7 +7424,7 @@ Order[] orders) {
   public partial class DisapproveOrdersWithoutReservationChanges : OrderAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7431,7 +7432,7 @@ Order[] orders) {
   public partial class DisapproveOrders : OrderAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7439,7 +7440,7 @@ Order[] orders) {
   public partial class DeleteOrders : OrderAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7447,7 +7448,7 @@ Order[] orders) {
   public partial class ArchiveOrders : OrderAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7456,7 +7457,7 @@ Order[] orders) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveAndOverbookOrders))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7464,7 +7465,7 @@ Order[] orders) {
   public partial class ApproveOrders : OrderAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7472,7 +7473,7 @@ Order[] orders) {
   public partial class ApproveAndOverbookOrders : ApproveOrders {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7525,7 +7526,7 @@ Order[] orders) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7871,7 +7872,7 @@ Order[] orders) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum OrderStatus {
@@ -7884,7 +7885,7 @@ Order[] orders) {
     DELETED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7910,7 +7911,7 @@ Order[] orders) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OrderActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum OrderActionErrorReason {
@@ -7923,7 +7924,7 @@ Order[] orders) {
     CANNOT_APPROVE_COMPANY_CREDIT_STATUS_NOT_ACTIVE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7949,14 +7950,14 @@ Order[] orders) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InvalidEmailError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum InvalidEmailErrorReason {
     INVALID_FORMAT
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "PlacementServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -7981,8 +7982,8 @@ Order[] orders) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Placement createPlacement(Placement placement) {
@@ -7990,8 +7991,8 @@ Order[] orders) {
       return ((Placement) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Placement[] createPlacements([System.Xml.Serialization.XmlElementAttribute("placements")]
@@ -8000,8 +8001,8 @@ Placement[] placements) {
       return ((Placement[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Placement getPlacement(long placementId) {
@@ -8009,8 +8010,8 @@ Placement[] placements) {
       return ((Placement) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public PlacementPage getPlacementsByStatement(Statement filterStatement) {
@@ -8018,8 +8019,8 @@ Placement[] placements) {
       return ((PlacementPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performPlacementAction(PlacementAction placementAction, Statement filterStatement) {
@@ -8027,8 +8028,8 @@ Placement[] placements) {
       return ((UpdateResult) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Placement updatePlacement(Placement placement) {
@@ -8036,8 +8037,8 @@ Placement[] placements) {
       return ((Placement) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Placement[] updatePlacements([System.Xml.Serialization.XmlElementAttribute("placements")]
@@ -8050,7 +8051,7 @@ Placement[] placements) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivatePlacements))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchivePlacements))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivatePlacements))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8065,7 +8066,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8073,7 +8074,7 @@ Placement[] placements) {
   public partial class DeactivatePlacements : PlacementAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8081,7 +8082,7 @@ Placement[] placements) {
   public partial class ArchivePlacements : PlacementAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8089,7 +8090,7 @@ Placement[] placements) {
   public partial class ActivatePlacements : PlacementAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8142,7 +8143,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8269,7 +8270,7 @@ Placement[] placements) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Placement))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8305,7 +8306,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "PublisherQueryLanguageServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -8329,8 +8330,8 @@ Placement[] placements) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public ResultSet select(Statement selectStatement) {
@@ -8339,7 +8340,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8361,7 +8362,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8375,7 +8376,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8398,7 +8399,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ReportServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -8422,8 +8423,8 @@ Placement[] placements) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public string getReportDownloadURL(long reportJobId, ExportFormat exportFormat) {
@@ -8431,8 +8432,8 @@ Placement[] placements) {
       return ((string) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public ReportJob getReportJob(long reportJobId) {
@@ -8440,8 +8441,8 @@ Placement[] placements) {
       return ((ReportJob) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public ReportJob runReportJob(ReportJob reportJob) {
@@ -8450,7 +8451,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8548,7 +8549,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum Dimension {
@@ -8603,7 +8604,7 @@ Placement[] placements) {
     MASTER_COMPANION_CREATIVE_NAME
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportQuery.AdUnitView", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ReportQueryAdUnitView {
@@ -8612,7 +8613,7 @@ Placement[] placements) {
     HIERARCHICAL
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum Column {
@@ -8689,7 +8690,7 @@ Placement[] placements) {
     TOTAL_CONVERSION_REVENUE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum DimensionAttribute {
@@ -8725,7 +8726,7 @@ Placement[] placements) {
     CREATIVE_CLICK_THROUGH_URL
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum DateRangeType {
@@ -8736,7 +8737,7 @@ Placement[] placements) {
     CUSTOM_DATE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum DimensionFilter {
@@ -8758,7 +8759,7 @@ Placement[] placements) {
     OPTIMIZABLE_ORDERS
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8810,7 +8811,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ReportJobStatus {
@@ -8819,7 +8820,7 @@ Placement[] placements) {
     FAILED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8845,7 +8846,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ReportErrorReason {
@@ -8871,7 +8872,7 @@ Placement[] placements) {
     SR_CANNOT_RUN_REPORT_IN_ANOTHER_NETWORK
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ExportFormat {
@@ -8883,7 +8884,7 @@ Placement[] placements) {
     XLSX
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "SuggestedAdUnitServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -8907,8 +8908,8 @@ Placement[] placements) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public SuggestedAdUnit getSuggestedAdUnit(string suggestedAdUnitId) {
@@ -8916,8 +8917,8 @@ Placement[] placements) {
       return ((SuggestedAdUnit) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public SuggestedAdUnitPage getSuggestedAdUnitsByStatement(Statement filterStatement) {
@@ -8925,8 +8926,8 @@ Placement[] placements) {
       return ((SuggestedAdUnitPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public SuggestedAdUnitUpdateResult performSuggestedAdUnitAction(SuggestedAdUnitAction suggestedAdUnitAction, Statement filterStatement) {
@@ -8935,7 +8936,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8970,7 +8971,7 @@ Placement[] placements) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveSuggestedAdUnit))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8985,7 +8986,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8993,7 +8994,7 @@ Placement[] placements) {
   public partial class ApproveSuggestedAdUnit : SuggestedAdUnitAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9046,7 +9047,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9133,7 +9134,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AudienceSegmentServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -9157,8 +9158,8 @@ Placement[] placements) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public AudienceSegmentPage getAudienceSegmentsByStatement(Statement filterStatement) {
@@ -9167,7 +9168,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9253,7 +9254,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudienceSegment.Status", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AudienceSegmentStatus {
@@ -9261,7 +9262,7 @@ Placement[] placements) {
     INACTIVE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9314,7 +9315,7 @@ Placement[] placements) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "TeamServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -9338,8 +9339,8 @@ Placement[] placements) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Team createTeam(Team team) {
@@ -9347,8 +9348,8 @@ Placement[] placements) {
       return ((Team) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Team[] createTeams([System.Xml.Serialization.XmlElementAttribute("teams")]
@@ -9357,8 +9358,8 @@ Team[] teams) {
       return ((Team[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Team getTeam(long teamId) {
@@ -9366,8 +9367,8 @@ Team[] teams) {
       return ((Team) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public TeamPage getTeamsByStatement(Statement filterStatement) {
@@ -9375,8 +9376,8 @@ Team[] teams) {
       return ((TeamPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Team updateTeam(Team team) {
@@ -9384,8 +9385,8 @@ Team[] teams) {
       return ((Team) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Team[] updateTeams([System.Xml.Serialization.XmlElementAttribute("teams")]
@@ -9395,7 +9396,7 @@ Team[] teams) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9448,7 +9449,7 @@ Team[] teams) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9561,7 +9562,7 @@ Team[] teams) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum TeamAccessType {
@@ -9570,7 +9571,7 @@ Team[] teams) {
     READ_WRITE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ThirdPartySlotServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -9594,8 +9595,8 @@ Team[] teams) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public ThirdPartySlot createThirdPartySlot(ThirdPartySlot thirdPartySlot) {
@@ -9603,8 +9604,8 @@ Team[] teams) {
       return ((ThirdPartySlot) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public ThirdPartySlotPage getThirdPartySlotsByStatement(Statement filterStatement) {
@@ -9612,8 +9613,8 @@ Team[] teams) {
       return ((ThirdPartySlotPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performThirdPartySlotAction(ThirdPartySlotAction thirdPartySlotAction, Statement filterStatement) {
@@ -9621,8 +9622,8 @@ Team[] teams) {
       return ((UpdateResult) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public ThirdPartySlot updateThirdPartySlot(ThirdPartySlot thirdPartySlot) {
@@ -9633,7 +9634,7 @@ Team[] teams) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveThirdPartySlots))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateThirdPartySlots))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9648,7 +9649,7 @@ Team[] teams) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9656,7 +9657,7 @@ Team[] teams) {
   public partial class ArchiveThirdPartySlots : ThirdPartySlotAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9664,7 +9665,7 @@ Team[] teams) {
   public partial class ActivateThirdPartySlots : ThirdPartySlotAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9717,7 +9718,7 @@ Team[] teams) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9810,7 +9811,7 @@ Team[] teams) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ThirdPartySlot.Status", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ThirdPartySlotStatus {
@@ -9818,7 +9819,7 @@ Team[] teams) {
     ARCHIVED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "UserServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -9843,8 +9844,8 @@ Team[] teams) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public User createUser(User user) {
@@ -9852,8 +9853,8 @@ Team[] teams) {
       return ((User) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public User[] createUsers([System.Xml.Serialization.XmlElementAttribute("users")]
@@ -9862,8 +9863,8 @@ User[] users) {
       return ((User[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Role[] getAllRoles() {
@@ -9871,8 +9872,8 @@ User[] users) {
       return ((Role[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public User getCurrentUser() {
@@ -9880,8 +9881,8 @@ User[] users) {
       return ((User) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public User getUser(long userId) {
@@ -9889,8 +9890,8 @@ User[] users) {
       return ((User) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UserPage getUsersByStatement(Statement filterStatement) {
@@ -9898,8 +9899,8 @@ User[] users) {
       return ((UserPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performUserAction(UserAction userAction, Statement filterStatement) {
@@ -9907,8 +9908,8 @@ User[] users) {
       return ((UpdateResult) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public User updateUser(User user) {
@@ -9916,8 +9917,8 @@ User[] users) {
       return ((User) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public User[] updateUsers([System.Xml.Serialization.XmlElementAttribute("users")]
@@ -9929,7 +9930,7 @@ User[] users) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateUsers))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateUsers))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9944,7 +9945,7 @@ User[] users) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9952,7 +9953,7 @@ User[] users) {
   public partial class DeactivateUsers : UserAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9960,7 +9961,7 @@ User[] users) {
   public partial class ActivateUsers : UserAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10013,7 +10014,7 @@ User[] users) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10059,7 +10060,7 @@ User[] users) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(User))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10140,7 +10141,7 @@ User[] users) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10180,13 +10181,13 @@ User[] users) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "UserTeamAssociationServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserRecordTeamAssociation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
-  public partial class UserTeamAssociationService : System.Web.Services.Protocols.SoapHttpClientProtocol {
+  public partial class UserTeamAssociationService : DfpSoapClient {
     private RequestHeader requestHeaderField;
 
     private ResponseHeader responseHeaderField;
@@ -10205,8 +10206,8 @@ User[] users) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UserTeamAssociation createUserTeamAssociation(UserTeamAssociation userTeamAssociation) {
@@ -10214,8 +10215,8 @@ User[] users) {
       return ((UserTeamAssociation) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UserTeamAssociation[] createUserTeamAssociations([System.Xml.Serialization.XmlElementAttribute("userTeamAssociations")]
@@ -10224,8 +10225,8 @@ UserTeamAssociation[] userTeamAssociations) {
       return ((UserTeamAssociation[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UserTeamAssociation getUserTeamAssociation(long teamId, long userId) {
@@ -10233,8 +10234,8 @@ UserTeamAssociation[] userTeamAssociations) {
       return ((UserTeamAssociation) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UserTeamAssociationPage getUserTeamAssociationsByStatement(Statement filterStatement) {
@@ -10242,8 +10243,8 @@ UserTeamAssociation[] userTeamAssociations) {
       return ((UserTeamAssociationPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performUserTeamAssociationAction(UserTeamAssociationAction userTeamAssociationAction, Statement statement) {
@@ -10251,8 +10252,8 @@ UserTeamAssociation[] userTeamAssociations) {
       return ((UpdateResult) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UserTeamAssociation updateUserTeamAssociation(UserTeamAssociation userTeamAssociation) {
@@ -10260,8 +10261,8 @@ UserTeamAssociation[] userTeamAssociations) {
       return ((UserTeamAssociation) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UserTeamAssociation[] updateUserTeamAssociations([System.Xml.Serialization.XmlElementAttribute("userTeamAssociations")]
@@ -10272,7 +10273,7 @@ UserTeamAssociation[] userTeamAssociations) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteUserTeamAssociations))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10287,7 +10288,7 @@ UserTeamAssociation[] userTeamAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10295,7 +10296,7 @@ UserTeamAssociation[] userTeamAssociations) {
   public partial class DeleteUserTeamAssociations : UserTeamAssociationAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10348,7 +10349,7 @@ UserTeamAssociation[] userTeamAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10375,7 +10376,7 @@ UserTeamAssociation[] userTeamAssociations) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserTeamAssociation))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10447,7 +10448,7 @@ UserTeamAssociation[] userTeamAssociations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CompanyServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -10471,8 +10472,8 @@ UserTeamAssociation[] userTeamAssociations) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Company[] createCompanies([System.Xml.Serialization.XmlElementAttribute("companies")]
@@ -10481,8 +10482,8 @@ Company[] companies) {
       return ((Company[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Company createCompany(Company company) {
@@ -10490,8 +10491,8 @@ Company[] companies) {
       return ((Company) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CompanyPage getCompaniesByStatement(Statement filterStatement) {
@@ -10499,8 +10500,8 @@ Company[] companies) {
       return ((CompanyPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Company getCompany(long companyId) {
@@ -10508,8 +10509,8 @@ Company[] companies) {
       return ((Company) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Company[] updateCompanies([System.Xml.Serialization.XmlElementAttribute("companies")]
@@ -10518,8 +10519,8 @@ Company[] companies) {
       return ((Company[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Company updateCompany(Company company) {
@@ -10528,7 +10529,7 @@ Company[] companies) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10581,7 +10582,7 @@ Company[] companies) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10755,7 +10756,7 @@ Company[] companies) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Company.Type", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CompanyType {
@@ -10766,7 +10767,7 @@ Company[] companies) {
     AD_NETWORK
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Company.CreditStatus", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CompanyCreditStatus {
@@ -10777,7 +10778,7 @@ Company[] companies) {
     BLOCKED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ContentServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -10801,8 +10802,8 @@ Company[] companies) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public ContentPage getContentByStatement(Statement statement) {
@@ -10810,8 +10811,8 @@ Company[] companies) {
       return ((ContentPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public ContentPage getContentByStatementAndCustomTargetingValue(Statement filterStatement, long customTargetingValueId) {
@@ -10819,8 +10820,8 @@ Company[] companies) {
       return ((ContentPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public ContentPage getUncategorizedContentByStatement(Statement filterStatement) {
@@ -10829,7 +10830,7 @@ Company[] companies) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10881,7 +10882,7 @@ Company[] companies) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ContentStatus {
@@ -10889,7 +10890,7 @@ Company[] companies) {
     INACTIVE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10942,7 +10943,7 @@ Company[] companies) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10968,7 +10969,7 @@ Company[] companies) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ContentPartnerError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ContentPartnerErrorReason {
@@ -10977,7 +10978,7 @@ Company[] companies) {
     NO_PARTNER_CATCH_ALL
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CreativeServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -11002,8 +11003,8 @@ Company[] companies) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Creative createCreative(Creative creative) {
@@ -11011,8 +11012,8 @@ Company[] companies) {
       return ((Creative) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Creative[] createCreatives([System.Xml.Serialization.XmlElementAttribute("creatives")]
@@ -11021,8 +11022,8 @@ Creative[] creatives) {
       return ((Creative[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Creative getCreative(long creativeId) {
@@ -11030,8 +11031,8 @@ Creative[] creatives) {
       return ((Creative) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CreativePage getCreativesByStatement(Statement filterStatement) {
@@ -11039,8 +11040,8 @@ Creative[] creatives) {
       return ((CreativePage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Creative updateCreative(Creative creative) {
@@ -11048,8 +11049,8 @@ Creative[] creatives) {
       return ((Creative) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Creative[] updateCreatives([System.Xml.Serialization.XmlElementAttribute("creatives")]
@@ -11059,7 +11060,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11140,7 +11141,7 @@ Creative[] creatives) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashOverlayCreative))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashCreative))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClickTrackingCreative))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11237,7 +11238,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11286,7 +11287,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum VastRedirectType {
@@ -11295,7 +11296,7 @@ Creative[] creatives) {
     LINEAR_AND_NON_LINEAR
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11329,7 +11330,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ConversionEvent {
@@ -11357,7 +11358,7 @@ Creative[] creatives) {
     CUSTOM_CLICK
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11378,7 +11379,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11435,7 +11436,7 @@ Creative[] creatives) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(StringCreativeTemplateVariableValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LongCreativeTemplateVariableValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AssetCreativeTemplateVariableValue))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11457,7 +11458,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11471,7 +11472,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11485,7 +11486,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11511,7 +11512,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11552,7 +11553,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11626,7 +11627,7 @@ Creative[] creatives) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseFlashCreative))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashOverlayCreative))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashCreative))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11640,7 +11641,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11703,7 +11704,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11793,7 +11794,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11854,7 +11855,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum TargetWindow {
@@ -11862,7 +11863,7 @@ Creative[] creatives) {
     TOP
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12034,7 +12035,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12271,7 +12272,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12546,7 +12547,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FlashExpandableCreative.ExpandDirection", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum FlashExpandableCreativeExpandDirection {
@@ -12556,7 +12557,7 @@ Creative[] creatives) {
     DOWN
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12597,7 +12598,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12666,7 +12667,7 @@ Creative[] creatives) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoRedirectCreative))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCreative))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12734,7 +12735,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12749,7 +12750,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12758,7 +12759,7 @@ Creative[] creatives) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoRedirectAsset))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12774,7 +12775,7 @@ Creative[] creatives) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RedirectAsset))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoRedirectAsset))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12789,7 +12790,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12799,7 +12800,7 @@ Creative[] creatives) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageRedirectOverlayCreative))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageRedirectCreative))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12813,7 +12814,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12869,7 +12870,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12879,7 +12880,7 @@ Creative[] creatives) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageOverlayCreative))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageCreative))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12934,7 +12935,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12983,7 +12984,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12993,7 +12994,7 @@ Creative[] creatives) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashRedirectOverlayCreative))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashRedirectCreative))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13021,7 +13022,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13096,7 +13097,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ApiFramework {
@@ -13105,7 +13106,7 @@ Creative[] creatives) {
     VPAID
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13115,7 +13116,7 @@ Creative[] creatives) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashOverlayCreative))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashCreative))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13211,7 +13212,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13279,7 +13280,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13287,7 +13288,7 @@ Creative[] creatives) {
   public partial class FlashCreative : BaseFlashCreative {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13301,7 +13302,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CreativeSetServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -13325,8 +13326,8 @@ Creative[] creatives) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CreativeSet createCreativeSet(CreativeSet creativeSet) {
@@ -13334,8 +13335,8 @@ Creative[] creatives) {
       return ((CreativeSet) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CreativeSet getCreativeSet(long creativeSetId) {
@@ -13343,8 +13344,8 @@ Creative[] creatives) {
       return ((CreativeSet) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CreativeSetPage getCreativeSetsByStatement(Statement statement) {
@@ -13352,8 +13353,8 @@ Creative[] creatives) {
       return ((CreativeSetPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CreativeSet updateCreativeSet(CreativeSet creativeSet) {
@@ -13362,7 +13363,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13415,7 +13416,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13475,7 +13476,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CreativeTemplateServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -13499,8 +13500,8 @@ Creative[] creatives) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CreativeTemplate getCreativeTemplate(long creativeTemplateId) {
@@ -13508,8 +13509,8 @@ Creative[] creatives) {
       return ((CreativeTemplate) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CreativeTemplatePage getCreativeTemplatesByStatement(Statement filterStatement) {
@@ -13518,7 +13519,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13571,7 +13572,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13681,7 +13682,7 @@ Creative[] creatives) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListStringCreativeTemplateVariable))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LongCreativeTemplateVariable))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AssetCreativeTemplateVariable))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13736,7 +13737,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13751,7 +13752,7 @@ Creative[] creatives) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListStringCreativeTemplateVariable))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13765,7 +13766,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13799,7 +13800,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13820,7 +13821,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13846,7 +13847,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13861,7 +13862,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AssetCreativeTemplateVariable.MimeType", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum AssetCreativeTemplateVariableMimeType {
@@ -13871,7 +13872,7 @@ Creative[] creatives) {
     SWF
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CreativeTemplateStatus {
@@ -13880,7 +13881,7 @@ Creative[] creatives) {
     DELETED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CreativeTemplateType {
@@ -13888,7 +13889,7 @@ Creative[] creatives) {
     USER_DEFINED
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13914,7 +13915,7 @@ Creative[] creatives) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeTemplateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CreativeTemplateErrorReason {
@@ -13931,12 +13932,422 @@ Creative[] creatives) {
     MISSING_INTERSTITIAL_MACRO
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "CustomTargetingServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class CustomTargetingService : DfpSoapClient {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public CustomTargetingService() {
+      this.Url = "https://www.google.com/apis/ads/publisher/v201206/CustomTargetingService";
+    }
+
+    public RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public CustomTargetingKey[] createCustomTargetingKeys([System.Xml.Serialization.XmlElementAttribute("keys")]
+CustomTargetingKey[] keys) {
+      object[] results = this.Invoke("createCustomTargetingKeys", new object[] {keys});
+      return ((CustomTargetingKey[]) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public CustomTargetingValue[] createCustomTargetingValues([System.Xml.Serialization.XmlElementAttribute("values")]
+CustomTargetingValue[] values) {
+      object[] results = this.Invoke("createCustomTargetingValues", new object[] {values});
+      return ((CustomTargetingValue[]) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public CustomTargetingKeyPage getCustomTargetingKeysByStatement(Statement filterStatement) {
+      object[] results = this.Invoke("getCustomTargetingKeysByStatement", new object[] {filterStatement});
+      return ((CustomTargetingKeyPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public CustomTargetingValuePage getCustomTargetingValuesByStatement(Statement filterStatement) {
+      object[] results = this.Invoke("getCustomTargetingValuesByStatement", new object[] {filterStatement});
+      return ((CustomTargetingValuePage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public UpdateResult performCustomTargetingKeyAction(CustomTargetingKeyAction customTargetingKeyAction, Statement filterStatement) {
+      object[] results = this.Invoke("performCustomTargetingKeyAction", new object[] {customTargetingKeyAction, filterStatement});
+      return ((UpdateResult) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public UpdateResult performCustomTargetingValueAction(CustomTargetingValueAction customTargetingValueAction, Statement filterStatement) {
+      object[] results = this.Invoke("performCustomTargetingValueAction", new object[] {customTargetingValueAction, filterStatement});
+      return ((UpdateResult) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public CustomTargetingKey[] updateCustomTargetingKeys([System.Xml.Serialization.XmlElementAttribute("keys")]
+CustomTargetingKey[] keys) {
+      object[] results = this.Invoke("updateCustomTargetingKeys", new object[] {keys});
+      return ((CustomTargetingKey[]) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public CustomTargetingValue[] updateCustomTargetingValues([System.Xml.Serialization.XmlElementAttribute("values")]
+CustomTargetingValue[] values) {
+      object[] results = this.Invoke("updateCustomTargetingValues", new object[] {values});
+      return ((CustomTargetingValue[]) (results[0]));
+    }
+  }
+
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteCustomTargetingValues))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public abstract partial class CustomTargetingValueAction {
+    private string customTargetingValueActionTypeField;
+
+    [System.Xml.Serialization.XmlElementAttribute("CustomTargetingValueAction.Type")]
+    public string CustomTargetingValueActionType {
+      get { return this.customTargetingValueActionTypeField; }
+      set { this.customTargetingValueActionTypeField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class DeleteCustomTargetingValues : CustomTargetingValueAction {
+  }
+
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteCustomTargetingKeys))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public abstract partial class CustomTargetingKeyAction {
+    private string customTargetingKeyActionTypeField;
+
+    [System.Xml.Serialization.XmlElementAttribute("CustomTargetingKeyAction.Type")]
+    public string CustomTargetingKeyActionType {
+      get { return this.customTargetingKeyActionTypeField; }
+      set { this.customTargetingKeyActionTypeField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class DeleteCustomTargetingKeys : CustomTargetingKeyAction {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class CustomTargetingValuePage {
+    private int totalResultSetSizeField;
+
+    private bool totalResultSetSizeFieldSpecified;
+
+    private int startIndexField;
+
+    private bool startIndexFieldSpecified;
+
+    private CustomTargetingValue[] resultsField;
+
+    public int totalResultSetSize {
+      get { return this.totalResultSetSizeField; }
+      set {
+        this.totalResultSetSizeField = value;
+        this.totalResultSetSizeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool totalResultSetSizeSpecified {
+      get { return this.totalResultSetSizeFieldSpecified; }
+      set { this.totalResultSetSizeFieldSpecified = value; }
+    }
+
+    public int startIndex {
+      get { return this.startIndexField; }
+      set {
+        this.startIndexField = value;
+        this.startIndexSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool startIndexSpecified {
+      get { return this.startIndexFieldSpecified; }
+      set { this.startIndexFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("results")]
+    public CustomTargetingValue[] results {
+      get { return this.resultsField; }
+      set { this.resultsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class CustomTargetingValue {
+    private long customTargetingKeyIdField;
+
+    private bool customTargetingKeyIdFieldSpecified;
+
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private string nameField;
+
+    private string displayNameField;
+
+    private CustomTargetingValueMatchType matchTypeField;
+
+    private bool matchTypeFieldSpecified;
+
+    public long customTargetingKeyId {
+      get { return this.customTargetingKeyIdField; }
+      set {
+        this.customTargetingKeyIdField = value;
+        this.customTargetingKeyIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool customTargetingKeyIdSpecified {
+      get { return this.customTargetingKeyIdFieldSpecified; }
+      set { this.customTargetingKeyIdFieldSpecified = value; }
+    }
+
+    public long id {
+      get { return this.idField; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public string displayName {
+      get { return this.displayNameField; }
+      set { this.displayNameField = value; }
+    }
+
+    public CustomTargetingValueMatchType matchType {
+      get { return this.matchTypeField; }
+      set {
+        this.matchTypeField = value;
+        this.matchTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool matchTypeSpecified {
+      get { return this.matchTypeFieldSpecified; }
+      set { this.matchTypeFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomTargetingValue.MatchType", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum CustomTargetingValueMatchType {
+    EXACT,
+    BROAD,
+    PREFIX,
+    BROAD_PREFIX
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class CustomTargetingKeyPage {
+    private int totalResultSetSizeField;
+
+    private bool totalResultSetSizeFieldSpecified;
+
+    private int startIndexField;
+
+    private bool startIndexFieldSpecified;
+
+    private CustomTargetingKey[] resultsField;
+
+    public int totalResultSetSize {
+      get { return this.totalResultSetSizeField; }
+      set {
+        this.totalResultSetSizeField = value;
+        this.totalResultSetSizeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool totalResultSetSizeSpecified {
+      get { return this.totalResultSetSizeFieldSpecified; }
+      set { this.totalResultSetSizeFieldSpecified = value; }
+    }
+
+    public int startIndex {
+      get { return this.startIndexField; }
+      set {
+        this.startIndexField = value;
+        this.startIndexSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool startIndexSpecified {
+      get { return this.startIndexFieldSpecified; }
+      set { this.startIndexFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("results")]
+    public CustomTargetingKey[] results {
+      get { return this.resultsField; }
+      set { this.resultsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public partial class CustomTargetingKey {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private string nameField;
+
+    private string displayNameField;
+
+    private CustomTargetingKeyType typeField;
+
+    private bool typeFieldSpecified;
+
+    public long id {
+      get { return this.idField; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public string displayName {
+      get { return this.displayNameField; }
+      set { this.displayNameField = value; }
+    }
+
+    public CustomTargetingKeyType type {
+      get { return this.typeField; }
+      set {
+        this.typeField = value;
+        this.typeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool typeSpecified {
+      get { return this.typeFieldSpecified; }
+      set { this.typeFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomTargetingKey.Type", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
+  public enum CustomTargetingKeyType {
+    PREDEFINED,
+    FREEFORM
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CustomFieldServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
-  public partial class CustomFieldService : System.Web.Services.Protocols.SoapHttpClientProtocol {
+  public partial class CustomFieldService : DfpSoapClient {
     private RequestHeader requestHeaderField;
 
     private ResponseHeader responseHeaderField;
@@ -13955,8 +14366,8 @@ Creative[] creatives) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomField createCustomField(CustomField customField) {
@@ -13964,8 +14375,8 @@ Creative[] creatives) {
       return ((CustomField) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomFieldOption createCustomFieldOption(CustomFieldOption customFieldOption) {
@@ -13973,8 +14384,8 @@ Creative[] creatives) {
       return ((CustomFieldOption) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomFieldOption[] createCustomFieldOptions([System.Xml.Serialization.XmlElementAttribute("customFieldOptions")]
@@ -13983,8 +14394,8 @@ CustomFieldOption[] customFieldOptions) {
       return ((CustomFieldOption[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomField[] createCustomFields([System.Xml.Serialization.XmlElementAttribute("customFields")]
@@ -13993,8 +14404,8 @@ CustomField[] customFields) {
       return ((CustomField[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomField getCustomField(long customFieldId) {
@@ -14002,8 +14413,8 @@ CustomField[] customFields) {
       return ((CustomField) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomFieldOption getCustomFieldOption(long customFieldOptionId, [System.Xml.Serialization.XmlIgnoreAttribute()]
@@ -14012,8 +14423,8 @@ bool customFieldOptionIdSpecified) {
       return ((CustomFieldOption) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomFieldPage getCustomFieldsByStatement(Statement filterStatement) {
@@ -14021,8 +14432,8 @@ bool customFieldOptionIdSpecified) {
       return ((CustomFieldPage) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public UpdateResult performCustomFieldAction(CustomFieldAction customFieldAction, Statement filterStatement) {
@@ -14030,8 +14441,8 @@ bool customFieldOptionIdSpecified) {
       return ((UpdateResult) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomField updateCustomField(CustomField customField) {
@@ -14039,8 +14450,8 @@ bool customFieldOptionIdSpecified) {
       return ((CustomField) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomFieldOption updateCustomFieldOption(CustomFieldOption customFieldOption) {
@@ -14048,8 +14459,8 @@ bool customFieldOptionIdSpecified) {
       return ((CustomFieldOption) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomFieldOption[] updateCustomFieldOptions([System.Xml.Serialization.XmlElementAttribute("customFieldOptions")]
@@ -14058,8 +14469,8 @@ CustomFieldOption[] customFieldOptions) {
       return ((CustomFieldOption[]) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public CustomField[] updateCustomFields([System.Xml.Serialization.XmlElementAttribute("customFields")]
@@ -14071,7 +14482,7 @@ CustomField[] customFields) {
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateCustomFields))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateCustomFields))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14086,7 +14497,7 @@ CustomField[] customFields) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14094,7 +14505,7 @@ CustomField[] customFields) {
   public partial class DeactivateCustomFields : CustomFieldAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14102,7 +14513,7 @@ CustomField[] customFields) {
   public partial class ActivateCustomFields : CustomFieldAction {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14156,7 +14567,7 @@ CustomField[] customFields) {
   }
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DropDownCustomField))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14280,7 +14691,7 @@ CustomField[] customFields) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CustomFieldEntityType {
@@ -14289,7 +14700,7 @@ CustomField[] customFields) {
     CREATIVE
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CustomFieldDataType {
@@ -14299,7 +14710,7 @@ CustomField[] customFields) {
     DROP_DOWN
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CustomFieldVisibility {
@@ -14308,7 +14719,7 @@ CustomField[] customFields) {
     FULL
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14323,7 +14734,7 @@ CustomField[] customFields) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14375,7 +14786,7 @@ CustomField[] customFields) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14383,7 +14794,7 @@ CustomField[] customFields) {
   public partial class EntityLimitReachedError : ApiError {
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14409,424 +14820,14 @@ CustomField[] customFields) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomFieldError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum CustomFieldErrorReason {
     INVALID_CUSTOM_FIELD_FOR_OPTION
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Web.Services.WebServiceBindingAttribute(Name = "CustomTargetingServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
-  public partial class CustomTargetingService : DfpSoapClient {
-    private RequestHeader requestHeaderField;
-
-    private ResponseHeader responseHeaderField;
-
-    public CustomTargetingService() {
-      this.Url = "https://www.google.com/apis/ads/publisher/v201206/CustomTargetingService";
-    }
-
-    public RequestHeader RequestHeader {
-      get { return this.requestHeaderField; }
-      set { this.requestHeaderField = value; }
-    }
-
-    public ResponseHeader ResponseHeader {
-      get { return this.responseHeaderField; }
-      set { this.responseHeaderField = value; }
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public CustomTargetingKey[] createCustomTargetingKeys([System.Xml.Serialization.XmlElementAttribute("keys")]
-CustomTargetingKey[] keys) {
-      object[] results = this.Invoke("createCustomTargetingKeys", new object[] {keys});
-      return ((CustomTargetingKey[]) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public CustomTargetingValue[] createCustomTargetingValues([System.Xml.Serialization.XmlElementAttribute("values")]
-CustomTargetingValue[] values) {
-      object[] results = this.Invoke("createCustomTargetingValues", new object[] {values});
-      return ((CustomTargetingValue[]) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public CustomTargetingKeyPage getCustomTargetingKeysByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getCustomTargetingKeysByStatement", new object[] {filterStatement});
-      return ((CustomTargetingKeyPage) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public CustomTargetingValuePage getCustomTargetingValuesByStatement(Statement filterStatement) {
-      object[] results = this.Invoke("getCustomTargetingValuesByStatement", new object[] {filterStatement});
-      return ((CustomTargetingValuePage) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public UpdateResult performCustomTargetingKeyAction(CustomTargetingKeyAction customTargetingKeyAction, Statement filterStatement) {
-      object[] results = this.Invoke("performCustomTargetingKeyAction", new object[] {customTargetingKeyAction, filterStatement});
-      return ((UpdateResult) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public UpdateResult performCustomTargetingValueAction(CustomTargetingValueAction customTargetingValueAction, Statement filterStatement) {
-      object[] results = this.Invoke("performCustomTargetingValueAction", new object[] {customTargetingValueAction, filterStatement});
-      return ((UpdateResult) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public CustomTargetingKey[] updateCustomTargetingKeys([System.Xml.Serialization.XmlElementAttribute("keys")]
-CustomTargetingKey[] keys) {
-      object[] results = this.Invoke("updateCustomTargetingKeys", new object[] {keys});
-      return ((CustomTargetingKey[]) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public CustomTargetingValue[] updateCustomTargetingValues([System.Xml.Serialization.XmlElementAttribute("values")]
-CustomTargetingValue[] values) {
-      object[] results = this.Invoke("updateCustomTargetingValues", new object[] {values});
-      return ((CustomTargetingValue[]) (results[0]));
-    }
-  }
-
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteCustomTargetingValues))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public abstract partial class CustomTargetingValueAction {
-    private string customTargetingValueActionTypeField;
-
-    [System.Xml.Serialization.XmlElementAttribute("CustomTargetingValueAction.Type")]
-    public string CustomTargetingValueActionType {
-      get { return this.customTargetingValueActionTypeField; }
-      set { this.customTargetingValueActionTypeField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class DeleteCustomTargetingValues : CustomTargetingValueAction {
-  }
-
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteCustomTargetingKeys))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public abstract partial class CustomTargetingKeyAction {
-    private string customTargetingKeyActionTypeField;
-
-    [System.Xml.Serialization.XmlElementAttribute("CustomTargetingKeyAction.Type")]
-    public string CustomTargetingKeyActionType {
-      get { return this.customTargetingKeyActionTypeField; }
-      set { this.customTargetingKeyActionTypeField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class DeleteCustomTargetingKeys : CustomTargetingKeyAction {
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class CustomTargetingValuePage {
-    private int totalResultSetSizeField;
-
-    private bool totalResultSetSizeFieldSpecified;
-
-    private int startIndexField;
-
-    private bool startIndexFieldSpecified;
-
-    private CustomTargetingValue[] resultsField;
-
-    public int totalResultSetSize {
-      get { return this.totalResultSetSizeField; }
-      set {
-        this.totalResultSetSizeField = value;
-        this.totalResultSetSizeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool totalResultSetSizeSpecified {
-      get { return this.totalResultSetSizeFieldSpecified; }
-      set { this.totalResultSetSizeFieldSpecified = value; }
-    }
-
-    public int startIndex {
-      get { return this.startIndexField; }
-      set {
-        this.startIndexField = value;
-        this.startIndexSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool startIndexSpecified {
-      get { return this.startIndexFieldSpecified; }
-      set { this.startIndexFieldSpecified = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("results")]
-    public CustomTargetingValue[] results {
-      get { return this.resultsField; }
-      set { this.resultsField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class CustomTargetingValue {
-    private long customTargetingKeyIdField;
-
-    private bool customTargetingKeyIdFieldSpecified;
-
-    private long idField;
-
-    private bool idFieldSpecified;
-
-    private string nameField;
-
-    private string displayNameField;
-
-    private CustomTargetingValueMatchType matchTypeField;
-
-    private bool matchTypeFieldSpecified;
-
-    public long customTargetingKeyId {
-      get { return this.customTargetingKeyIdField; }
-      set {
-        this.customTargetingKeyIdField = value;
-        this.customTargetingKeyIdSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool customTargetingKeyIdSpecified {
-      get { return this.customTargetingKeyIdFieldSpecified; }
-      set { this.customTargetingKeyIdFieldSpecified = value; }
-    }
-
-    public long id {
-      get { return this.idField; }
-      set {
-        this.idField = value;
-        this.idSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool idSpecified {
-      get { return this.idFieldSpecified; }
-      set { this.idFieldSpecified = value; }
-    }
-
-    public string name {
-      get { return this.nameField; }
-      set { this.nameField = value; }
-    }
-
-    public string displayName {
-      get { return this.displayNameField; }
-      set { this.displayNameField = value; }
-    }
-
-    public CustomTargetingValueMatchType matchType {
-      get { return this.matchTypeField; }
-      set {
-        this.matchTypeField = value;
-        this.matchTypeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool matchTypeSpecified {
-      get { return this.matchTypeFieldSpecified; }
-      set { this.matchTypeFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomTargetingValue.MatchType", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum CustomTargetingValueMatchType {
-    EXACT,
-    BROAD,
-    PREFIX,
-    BROAD_PREFIX
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class CustomTargetingKeyPage {
-    private int totalResultSetSizeField;
-
-    private bool totalResultSetSizeFieldSpecified;
-
-    private int startIndexField;
-
-    private bool startIndexFieldSpecified;
-
-    private CustomTargetingKey[] resultsField;
-
-    public int totalResultSetSize {
-      get { return this.totalResultSetSizeField; }
-      set {
-        this.totalResultSetSizeField = value;
-        this.totalResultSetSizeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool totalResultSetSizeSpecified {
-      get { return this.totalResultSetSizeFieldSpecified; }
-      set { this.totalResultSetSizeFieldSpecified = value; }
-    }
-
-    public int startIndex {
-      get { return this.startIndexField; }
-      set {
-        this.startIndexField = value;
-        this.startIndexSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool startIndexSpecified {
-      get { return this.startIndexFieldSpecified; }
-      set { this.startIndexFieldSpecified = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("results")]
-    public CustomTargetingKey[] results {
-      get { return this.resultsField; }
-      set { this.resultsField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public partial class CustomTargetingKey {
-    private long idField;
-
-    private bool idFieldSpecified;
-
-    private string nameField;
-
-    private string displayNameField;
-
-    private CustomTargetingKeyType typeField;
-
-    private bool typeFieldSpecified;
-
-    public long id {
-      get { return this.idField; }
-      set {
-        this.idField = value;
-        this.idSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool idSpecified {
-      get { return this.idFieldSpecified; }
-      set { this.idFieldSpecified = value; }
-    }
-
-    public string name {
-      get { return this.nameField; }
-      set { this.nameField = value; }
-    }
-
-    public string displayName {
-      get { return this.displayNameField; }
-      set { this.displayNameField = value; }
-    }
-
-    public CustomTargetingKeyType type {
-      get { return this.typeField; }
-      set {
-        this.typeField = value;
-        this.typeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool typeSpecified {
-      get { return this.typeFieldSpecified; }
-      set { this.typeFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomTargetingKey.Type", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
-  public enum CustomTargetingKeyType {
-    PREDEFINED,
-    FREEFORM
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ForecastServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
@@ -14851,8 +14852,8 @@ CustomTargetingValue[] values) {
       set { this.responseHeaderField = value; }
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Forecast getForecast(LineItem lineItem) {
@@ -14860,8 +14861,8 @@ CustomTargetingValue[] values) {
       return ((Forecast) (results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201206", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201206", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public Forecast getForecastById(long lineItemId) {
@@ -14870,7 +14871,7 @@ CustomTargetingValue[] values) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
