@@ -1,4 +1,5 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -51,6 +52,7 @@
     <Compile Include="Lib\AdsOAuthProvider.cs" />
     <Compile Include="Lib\AdsService.cs" />
     <Compile Include="Lib\AdsUser.cs" />
+    <Compile Include="Lib\AppConfig.cs" />
     <Compile Include="Lib\AppConfigBase.cs" />
     <Compile Include="Lib\AuthToken.cs" />
     <Compile Include="Lib\AuthTokenCache.cs" />
@@ -59,6 +61,8 @@
     <Compile Include="Lib\ContextStore.cs" />
     <Compile Include="Lib\DefaultAuthTokenCache.cs" />
     <Compile Include="Lib\DefaultTraceWriter.cs" />
+    <Compile Include="Lib\OAuth1a.cs" />
+    <Compile Include="Lib\OAuth2.cs" />
     <Compile Include="Lib\SoapListener.cs">
     </Compile>
     <Compile Include="Lib\ServiceFactory.cs" />
@@ -69,6 +73,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Lib\SoapListenerExtensionAttribute.cs" />
+    <Compile Include="Lib\SoapMessageDirection.cs" />
     <Compile Include="Lib\TraceListener.cs" />
     <Compile Include="Lib\TraceWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
