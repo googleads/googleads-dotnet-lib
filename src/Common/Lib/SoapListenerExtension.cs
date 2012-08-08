@@ -108,12 +108,12 @@ namespace Google.Api.Ads.Common.Lib {
         case SoapMessageStage.BeforeSerialize:
           break;
         case SoapMessageStage.AfterSerialize:
-          CallListeners(SoapListener.Direction.OUT);
+          CallListeners(SoapMessageDirection.OUT);
           CopyContentsToOldStream();
           break;
         case SoapMessageStage.BeforeDeserialize:
           CopyContentsFromOldStream();
-          CallListeners(SoapListener.Direction.IN);
+          CallListeners(SoapMessageDirection.IN);
           break;
         case SoapMessageStage.AfterDeserialize:
           break;
@@ -126,7 +126,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Calls the listeners.
     /// </summary>
     /// <param name="direction">The direction of SOAP message.</param>
-    private void CallListeners(SoapListener.Direction direction) {
+    private void CallListeners(SoapMessageDirection direction) {
       XmlDocument document = SerializationUtilities.LoadXml(Encoding.UTF8.GetString(
           newStream.ToArray()));
 

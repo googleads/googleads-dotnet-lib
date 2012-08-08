@@ -35,19 +35,23 @@ namespace Google.Api.Ads.Common.Lib {
   /// </summary>
   public abstract class TraceListener : SoapListener {
     /// <summary>
-    /// Should we log the SOAP messages?
+    /// The config class to be used with this class.
     /// </summary>
-    private bool writeToLog;
-
-    /// <summary>
-    /// Should we only log SOAP messages corresponding to an error?
-    /// </summary>
-    private bool logErrorsOnly;
+    private AppConfig config;
 
     /// <summary>
     /// The writer for writing trace logs.
     /// </summary>
     private TraceWriter writer;
+
+    /// <summary>
+    /// Gets the config class to be used with this class.
+    /// </summary>
+    public AppConfig Config {
+      get {
+        return config;
+      }
+    }
 
     /// <summary>
     /// Gets or sets the writer for writing trace logs.
@@ -65,12 +69,17 @@ namespace Google.Api.Ads.Common.Lib {
     /// Protected constructor.
     /// </summary>
     /// <param name="config">The config class.</param>
-    protected TraceListener(AppConfigBase config) : base(config) {
-      writeToLog = config.LogToFile;
-      logErrorsOnly = config.LogErrorsOnly;
-      if (writeToLog) {
+    protected TraceListener(AppConfig config) {
+      this.config = config;
+      if (this.config.LogToFile) {
         this.writer = new DefaultTraceWriter(config);
       }
+    }
+
+    /// <summary>
+    /// Initializes the listener for handling an API call.
+    /// </summary>
+    public void InitForCall() {
     }
 
     /// <summary>
@@ -79,14 +88,14 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="soapMessage">The SOAP message.</param>
     /// <param name="service">The SOAP service.</param>
     /// <param name="direction">The direction of message.</param>
-    public override void HandleMessage(XmlDocument soapMessage, AdsClient service,
-        Direction direction) {
-      if (direction == Direction.OUT) {
+    public void HandleMessage(XmlDocument soapMessage, AdsClient service,
+        SoapMessageDirection direction) {
+      if (direction == SoapMessageDirection.OUT) {
         ContextStore.AddKey("SoapRequest", soapMessage.OuterXml);
       } else {
         ContextStore.AddKey("SoapResponse", soapMessage.OuterXml);
       }
-      if (direction == Direction.IN) {
+      if (direction == SoapMessageDirection.IN) {
         PerformLogging(service, (string) ContextStore.GetValue("SoapRequest"),
             (string) ContextStore.GetValue("SoapResponse"));
       }
@@ -95,8 +104,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Cleans up any resources after an API call.
     /// </summary>
-    public override void CleanupAfterCall() {
-      base.CleanupAfterCall();
+    public void CleanupAfterCall() {
       ContextStore.RemoveKey("SoapRequest");
       ContextStore.RemoveKey("SoapResponse");
     }
@@ -132,8 +140,8 @@ namespace Google.Api.Ads.Common.Lib {
           (service.LastResponse as HttpWebResponse).StatusCode ==
               HttpStatusCode.InternalServerError;
 
-      if (!logErrorsOnly || logErrorsOnly && isError) {
-        if (writeToLog && this.writer != null) {
+      if (!config.LogErrorsOnly || config.LogErrorsOnly && isError) {
+        if (config.LogToFile && this.writer != null) {
           writer.Write(soapLog, requestLog);
         }
       }

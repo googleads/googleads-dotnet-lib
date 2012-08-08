@@ -20,21 +20,45 @@ using System.Text;
 
 namespace Google.Api.Ads.Common.Lib {
   /// <summary>
+  /// Called when an AdsOAuthProvider obtained a new access token and optionally
+  /// a new refresh token from the OAuth server.
+  /// </summary>
+  /// <param name="provider">The provider.</param>
+  public delegate void OAuthTokensObtainedCallback(AdsOAuthProvider provider);
+
+  /// <summary>
   /// Provides OAuth authorization mechanism for Ads services.
   /// </summary>
   public interface AdsOAuthProvider {
     /// <summary>
-    /// Generates the OAuth access token.
+    /// Gets the authorization URL.
     /// </summary>
-    void GenerateAccessToken();
+    /// <returns>The authorization url.</returns>
+    string GetAuthorizationUrl();
 
     /// <summary>
-    /// Gets the AuthorizationHeader value to be set on outgoing HTTP calls.
+    /// Fetches the access and optionally the refresh token if applicable.
     /// </summary>
-    /// <param name="apiCallUrl">The url to which API call is being made.
-    /// </param>
-    /// <returns>Gets the AuthorizationHeader value to be set on outgoing HTTP
-    /// calls.</returns>
-    string GetAuthHeader(string apiCallUrl);
+    /// <param name="authorizationCode">The authorization code returned by
+    /// OAuth server.</param>
+    /// <returns>True if the tokens were fetched successfully, false otherwise.
+    /// </returns>
+    bool FetchAccessAndRefreshTokens(string authorizationCode);
+
+    /// <summary>
+    /// Gets the OAuth authorization header to be used with HTTP requests.
+    /// </summary>
+    /// <param name="protectedUrl">The protected url for which OAuth headers
+    /// are to be generated.</param>
+    /// <returns>The authorization header.</returns>
+    string GetAuthHeader(string protectedUrl);
+
+    /// <summary>
+    /// Callback triggered when this provider obtains a new access token or
+    /// refresh token from the OAuth server.
+    /// </summary>
+    OAuthTokensObtainedCallback OnOAuthTokensObtained {
+      get;
+    }
   }
 }

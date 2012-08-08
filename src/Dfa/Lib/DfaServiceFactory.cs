@@ -200,7 +200,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// Reads the headers from App.config.
     /// </summary>
     /// <param name="config">The configuration class.</param>
-    protected override void ReadHeadersFromConfig(AppConfigBase config) {
+    protected override void ReadHeadersFromConfig(AppConfig config) {
       // nothing to do here.
     }
   }

@@ -29,6 +29,19 @@ namespace Google.Api.Ads.Dfa.Lib {
   /// </summary>
   public class SoapHeaderListener : SoapListener {
     /// <summary>
+    /// The config class to be used with this class.
+    /// </summary>
+    private AppConfig config;
+
+    /// <summary>
+    /// Gets the config class to be used with this class.
+    /// </summary>
+    public AppConfig Config {
+      get {
+        return config;
+      }
+    }
+    /// <summary>
     /// The singleton instance.
     /// </summary>
     protected static SoapHeaderListener instance = new SoapHeaderListener();
@@ -57,7 +70,8 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// <summary>
     /// Protected constructor.
     /// </summary>
-    protected SoapHeaderListener() : base(new DfaAppConfig()) {
+    protected SoapHeaderListener() {
+      this.config = new DfaAppConfig();
     }
 
     /// <summary>
@@ -166,16 +180,22 @@ namespace Google.Api.Ads.Dfa.Lib {
     }
 
     /// <summary>
+    /// Initializes the listener for handling an API call.
+    /// </summary>
+    public void InitForCall() {
+    }
+
+    /// <summary>
     /// Handles the message.
     /// </summary>
     /// <param name="soapMessage">The SOAP message.</param>
     /// <param name="service">The service.</param>
     /// <param name="direction">The direction.</param>
-    public override void HandleMessage(XmlDocument soapMessage, AdsClient service,
-        SoapListener.Direction direction) {
+    public void HandleMessage(XmlDocument soapMessage, AdsClient service,
+        SoapMessageDirection direction) {
       XmlNamespaceManager xmlnt = new XmlNamespaceManager(soapMessage.NameTable);
       xmlnt.AddNamespace(SOAP_PREFIX, SOAP_NAMESPACE);
-      if (direction == Direction.OUT) {
+      if (direction == SoapMessageDirection.OUT) {
         UserToken token = (UserToken) ContextStore.GetValue("Token");
         RequestHeader requestHeader = (RequestHeader) ContextStore.GetValue("RequestHeader");
 
@@ -192,6 +212,12 @@ namespace Google.Api.Ads.Dfa.Lib {
       } else {
         ContextStore.AddKey("ResponseHeader", ParseResponseHeader(soapMessage, xmlnt));
       }
+    }
+
+    /// <summary>
+    /// Cleans up any resources after an API call.
+    /// </summary>
+    public void CleanupAfterCall() {
     }
   }
 }

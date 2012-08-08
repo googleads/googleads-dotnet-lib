@@ -1,3 +1,9 @@
+3.5.0
+- Minor bug fixes to Common library.
+
+3.4.0
+- Common library version was bumped to 1.2.0.
+
 3.3.0
 - Added support for v1.18.
 - Removed support for v.15.

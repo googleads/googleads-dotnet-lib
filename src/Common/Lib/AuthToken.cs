@@ -47,11 +47,6 @@ namespace Google.Api.Ads.Common.Lib {
     private const string ACCOUNT_TYPE = "GOOGLE";
 
     /// <summary>
-    /// The source identifier string to be used with ClientLogin API.
-    /// </summary>
-    private readonly string SOURCE;
-
-    /// <summary>
     /// Email to be used for authentication.
     /// </summary>
     private string email;
@@ -67,19 +62,77 @@ namespace Google.Api.Ads.Common.Lib {
     private string service;
 
     /// <summary>
-    /// The HTTP web proxy to be used when making HTTP requests.
+    /// The configuration class to configure this instance.
     /// </summary>
-    private WebProxy proxy;
-
-    /// <summary>
-    /// Timeout in milliseconds for the HTTP web connection.
-    /// </summary>
-    private int timeout;
+    private AppConfig config;
 
     /// <summary>
     /// The cache for storing authtokens.
     /// </summary>
     private static AuthTokenCache cache = new DefaultAuthTokenCache();
+
+    /// <summary>
+    /// Gets the SOURCE parameter for calling ClientLogin API.
+    /// </summary>
+    private string SOURCE {
+      get {
+        return string.Format(CultureInfo.InvariantCulture, "Google-{0}", config.Signature);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the email to be used for authentication..
+    /// </summary>
+    public string Email {
+      get {
+        return email;
+      }
+      set {
+        email = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the password to be used for authentication.
+    /// </summary>
+    public string Password {
+      get {
+        return password;
+      }
+      set {
+        password = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the service type to be used with ClientLogin API..
+    /// </summary>
+    /// <value>
+    /// The service.
+    /// </value>
+    public string Service {
+      get {
+        return service;
+      }
+      set {
+        service = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the configuration class to configure this instance.
+    /// </summary>
+    /// <value>
+    /// The config.
+    /// </value>
+    public AppConfig Config {
+      get {
+        return config;
+      }
+      set {
+        config = value;
+      }
+    }
 
     /// <summary>
     /// Gets or sets the cache for storing authtokens..
@@ -94,16 +147,9 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Public constructor.
+    /// Initializes a new instance of the <see cref="AuthToken"/> class.
     /// </summary>
-    /// <param name="email">Email to be used for authentication.</param>
-    /// <param name="password">Password to be used for authentication</param>
-    /// <param name="config">The configuration object for use with this object.
-    /// </param>
-    /// <param name="service">The gaia service name for which tokens are being
-    /// generated.</param>
-    public AuthToken(AppConfigBase config, string service, string email, string password)
-        : this(config, service, email, password, config.Proxy, config.Timeout) {
+    public AuthToken() : this(null, null, null, null) {
     }
 
     /// <summary>
@@ -115,34 +161,11 @@ namespace Google.Api.Ads.Common.Lib {
     /// </param>
     /// <param name="service">The gaia service name for which tokens are being
     /// generated.</param>
-    /// <param name="proxy">The HTTP web proxy for making HTTP calls.</param>
-    public AuthToken(AppConfigBase config, string service, string email, string password,
-        WebProxy proxy) : this(config, service, email, password, proxy, config.Timeout) {
-    }
-
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="email">Email to be used for authentication.</param>
-    /// <param name="password">Password to be used for authentication</param>
-    /// <param name="config">The configuration object for use with this object.
-    /// </param>
-    /// <param name="service">The gaia service name for which tokens are being
-    /// generated.</param>
-    /// <param name="proxy">The HTTP web proxy for making HTTP calls.</param>
-    /// <param name="timeout">Timeout in milliseconds for the web connection.
-    /// </param>
-    public AuthToken(AppConfigBase config, string service, string email, string password,
-        WebProxy proxy, int timeout) {
-      if (config == null) {
-        throw new ArgumentNullException("config");
-      }
+    public AuthToken(AppConfig config, string service, string email, string password) {
+      this.config = config;
       this.email = email;
       this.password = password;
       this.service = service;
-      this.SOURCE = string.Format(CultureInfo.InvariantCulture, "Google-{0}", config.Signature);
-      this.proxy = proxy;
-      this.timeout = timeout;
     }
 
     /// <summary>
@@ -176,10 +199,8 @@ namespace Google.Api.Ads.Common.Lib {
       webRequest.Method = "POST";
       webRequest.ContentType = "application/x-www-form-urlencoded";
 
-      if (this.proxy != null) {
-        webRequest.Proxy = proxy;
-      }
-      webRequest.Timeout = timeout;
+      webRequest.Proxy = config.Proxy;
+      webRequest.Timeout = config.Timeout;
 
       string postParams =
           "accountType=" + HttpUtility.UrlEncode(ACCOUNT_TYPE) +
@@ -206,6 +227,7 @@ namespace Google.Api.Ads.Common.Lib {
       }
 
       tblResponse = ParseResponse(response);
+      response.Close();
 
       if (tblResponse.ContainsKey("Auth")) {
         return (string) tblResponse["Auth"];
