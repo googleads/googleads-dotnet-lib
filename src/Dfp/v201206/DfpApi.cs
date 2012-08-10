@@ -5309,6 +5309,7 @@ LineItem[] lineItems) {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201206")]
   public enum ComputedStatus {
+    DELIVERY_EXTENDED,
     DELIVERING,
     READY,
     PAUSED,
@@ -6364,7 +6365,7 @@ LineItem[] lineItems) {
     private ResponseHeader responseHeaderField;
 
     public LineItemCreativeAssociationService() {
-      this.Url = "https://www.google.com/apis/ads/publisher/v201206/LineItemCreativeAssociationServ" + "ice";
+      this.Url = "https://www.google.com/apis/ads/publisher/v201206/LineItemCreativeAssociationService";
     }
 
     public RequestHeader RequestHeader {
