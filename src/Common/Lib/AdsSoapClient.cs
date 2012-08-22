@@ -38,6 +38,11 @@ namespace Google.Api.Ads.Common.Lib {
     private AdsUser user;
 
     /// <summary>
+    /// The signature for this service.
+    /// </summary>
+    private ServiceSignature signature;
+
+    /// <summary>
     /// The WebRequest that was used by the last API call from this service.
     /// </summary>
     private WebRequest lastRequest;
@@ -69,6 +74,18 @@ namespace Google.Api.Ads.Common.Lib {
       }
     }
 
+    /// <summary>
+    /// Gets or sets the signature for this service.
+    /// </summary>
+    public ServiceSignature Signature {
+      get {
+        return signature;
+      }
+      set {
+        signature = value;
+      }
+    }
+	
     /// <summary>
     /// Gets or sets the web request associated with this service's
     /// last API call.

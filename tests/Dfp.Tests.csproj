@@ -166,6 +166,17 @@
     <Compile Include="v201206\ReportServiceTests.cs" />
     <Compile Include="v201206\TestUtils.cs" />
     <Compile Include="v201206\UserServiceTests.cs" />
+    <Compile Include="v201208\CompanyServiceTests.cs" />
+    <Compile Include="v201208\CreativeServiceTests.cs" />
+    <Compile Include="v201208\ForecastServiceTests.cs" />
+    <Compile Include="v201208\InventoryServiceTests.cs" />
+    <Compile Include="v201208\LineItemCreativeAssociationServiceTests.cs" />
+    <Compile Include="v201208\LineItemServiceTests.cs" />
+    <Compile Include="v201208\OrderServiceTests.cs" />
+    <Compile Include="v201208\PlacementServiceTests.cs" />
+    <Compile Include="v201208\ReportServiceTests.cs" />
+    <Compile Include="v201208\TestUtils.cs" />
+    <Compile Include="v201208\UserServiceTests.cs" />
     <Compile Include="BaseTests.cs" />
   </ItemGroup>
 </Project>

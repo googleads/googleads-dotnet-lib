@@ -91,6 +91,7 @@ namespace Google.Api.Ads.Dfp.Lib {
           serverUrl, dfpapiSignature.Version, dfpapiSignature.ServiceName);
       service.UserAgent = dfpConfig.GetUserAgent();
 
+      service.Signature = signature;
       service.User = user;
       return service;
     }

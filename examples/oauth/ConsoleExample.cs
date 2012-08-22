@@ -18,7 +18,7 @@ using OAuth.Net.Common;
 using OAuth.Net.Consumer;
 
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.v201204;
+using Google.Api.Ads.Dfp.v201208;
 using Google.Api.Ads.Common.OAuth.Lib;
 
 using System;
@@ -68,7 +68,7 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
       }
 
       // Get the UserService.
-      UserService userService = (UserService)user.GetService(DfpService.v201204.UserService);
+      UserService userService = (UserService)user.GetService(DfpService.v201208.UserService);
 
       // Sets defaults for page and Statement.
       UserPage page = new UserPage();
