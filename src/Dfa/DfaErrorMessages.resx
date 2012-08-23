@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="OAuthProviderCannotBeNull" xml:space="preserve">
+    <value>OAuth provider cannot be null when selecting Authorization method as "OAuth2".</value>
+    <comment>Used by DfaSoapClient.MakeApiCall when setting authorization headers.</comment>
+  </data>
   <data name="SignatureIsOfWrongType" xml:space="preserve">
     <value>Signature should be a {0} instance.</value>
     <comment>Used for ArgumentException by DfaServiceFactory.CreateService if the signature is not of desired type.</comment>

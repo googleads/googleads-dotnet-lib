@@ -61,6 +61,15 @@ namespace Google.Api.Ads.Dfa {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OAuth provider cannot be null when selecting Authorization method as &quot;OAuth2&quot;..
+        /// </summary>
+        internal static string OAuthProviderCannotBeNull {
+            get {
+                return ResourceManager.GetString("OAuthProviderCannotBeNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Signature should be a {0} instance..
         /// </summary>
         internal static string SignatureIsOfWrongType {
