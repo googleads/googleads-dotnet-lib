@@ -20,6 +20,7 @@ using Google.Api.Ads.Dfa.Util;
 
 using System;
 using System.IO;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Web.Services;
@@ -94,16 +95,54 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// The results from calling the SOAP API method.
     /// </returns>
     protected override object[] MakeApiCall(string methodName, object[] parameters) {
+      DfaAppConfig config = this.User.Config as DfaAppConfig;
+      string oAuthHeader = null;
+
+      if (this.GetType().Name == "LoginRemoteService") {
+        // The choice of OAuth comes only when calling LoginRemoteService.
+        // All other services will still use the login token.
+        if (config.AuthorizationMethod == DfaAuthorizationMethod.OAuth2) {
+          if (this.User.OAuthProvider != null) {
+            oAuthHeader = this.User.OAuthProvider.GetAuthHeader(this.Url);
+          } else {
+            throw new DfaApiException(null, DfaErrorMessages.OAuthProviderCannotBeNull);
+          }
+        }
+      } else {
+        if (this.Token == null) {
+          this.Token = LoginUtil.GetAuthenticationToken(config, this.Signature, this.User,
+              new Uri(this.Url));
+        }
+      }
+
       try {
+        ContextStore.AddKey("OAuthHeader", oAuthHeader);
         ContextStore.AddKey("RequestHeader", requestHeader);
-        ContextStore.AddKey("Token", token);
+        ContextStore.AddKey("Token", Token);
         return base.MakeApiCall(methodName, parameters);
       } finally {
         this.ResponseHeader = (ResponseHeader) ContextStore.GetValue("ResponseHeader");
+        ContextStore.RemoveKey("OAuthHeader");
         ContextStore.RemoveKey("RequestHeader");
         ContextStore.RemoveKey("ResponseHeader");
         ContextStore.RemoveKey("Token");
       }
+    }
+
+    /// <summary>
+    /// Creates a WebRequest instance for the specified url.
+    /// </summary>
+    /// <param name="uri">The Uri to use when creating the WebRequest.</param>
+    /// <returns>
+    /// The WebRequest instance.
+    /// </returns>
+    protected override WebRequest GetWebRequest(Uri uri) {
+      WebRequest request = base.GetWebRequest(uri);
+      string oAuthHeader = (string) ContextStore.GetValue("OAuthHeader");
+      if (!string.IsNullOrEmpty(oAuthHeader)) {
+        request.Headers["Authorization"] = oAuthHeader;
+      }
+      return request;
     }
 
     /// <summary>

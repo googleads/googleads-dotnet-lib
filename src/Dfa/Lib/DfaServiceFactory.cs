@@ -73,19 +73,26 @@ namespace Google.Api.Ads.Dfa.Lib {
             DfaErrorMessages.SignatureIsOfWrongType, typeof(DfaServiceSignature)));
       }
 
-      AdsClient service = CreateServiceWithoutAuthHeaders(signature, user, serverUrl);
+      DfaServiceSignature dfaapiSignature = signature as DfaServiceSignature;
 
-      if (signature.ServiceName != "LoginRemoteService") {
-        if (authToken == null) {
-          authToken = GetAuthenticationToken(signature, user, serverUrl);
-        }
+      AdsClient service = (AdsClient) Activator.CreateInstance(dfaapiSignature.ServiceType);
 
-        service.GetType().GetProperty("Token").SetValue(service, authToken, null);
-        if (Convert.ToDecimal(signature.Version.Substring(1)) > 1.11M) {
-          service.GetType().GetProperty("RequestHeader").SetValue(service,
-              GetRequestHeader(), null);
-          SetRequestHeaderNameSpace(signature as DfaServiceSignature, service);
-        }
+      if (config.Proxy != null) {
+        service.Proxy = config.Proxy;
+      }
+
+      service.Timeout = config.Timeout;
+      service.Url = string.Format("{0}{1}/api/dfa-api/{2}",
+          serverUrl, dfaapiSignature.Version, dfaapiSignature.ServiceEndpoint);
+      service.UserAgent = config.GetUserAgent();
+
+      service.User = user;
+      service.Signature = signature;
+
+      if (Convert.ToDecimal(signature.Version.Substring(1)) > 1.11M) {
+        service.GetType().GetProperty("RequestHeader").SetValue(service,
+            GetRequestHeader(), null);
+        SetRequestHeaderNameSpace(signature as DfaServiceSignature, service);
       }
 
       return service;
@@ -100,38 +107,6 @@ namespace Google.Api.Ads.Dfa.Lib {
       RequestHeader reqHeader = new RequestHeader();
       reqHeader.ApplicationName = config.GetUserAgent();
       return reqHeader;
-    }
-
-    /// <summary>
-    /// Generates an auth token using login service.
-    /// </summary>
-    /// <param name="signature">Signature of the service being created.</param>
-    /// <param name="user">The user for which the service is being created.
-    /// <param name="serverUrl">The server to which the API calls should be
-    /// made.</param>
-    /// </param>
-    /// <returns>A token which may be used for future API calls.</returns>
-    private UserToken GetAuthenticationToken(ServiceSignature signature, AdsUser user,
-        Uri serverUrl) {
-      DfaAppConfig config = (DfaAppConfig) base.AppConfig;
-
-      if (!String.IsNullOrEmpty(config.AuthToken)) {
-        return new UserToken(config.UserName, config.AuthToken);
-      }
-      try {
-        DfaServiceSignature loginServiceSignature = new DfaServiceSignature(signature.Version,
-              "LoginRemoteService");
-        AdsClient loginService = CreateServiceWithoutAuthHeaders(loginServiceSignature, user,
-            serverUrl);
-
-        object userProfile = loginService.GetType().GetMethod("authenticate").Invoke(
-            loginService, new object[] {config.UserName, config.Password});
-        return new UserToken(
-            userProfile.GetType().GetProperty("name").GetValue(userProfile, null).ToString(),
-            userProfile.GetType().GetProperty("token").GetValue(userProfile, null).ToString());
-      } catch (Exception ex) {
-        throw new DfaException("Failed to authenticate user. See inner exception for details.", ex);
-      }
     }
 
     /// <summary>
@@ -165,35 +140,6 @@ namespace Google.Api.Ads.Dfa.Lib {
           }
         }
       }
-    }
-
-    /// <summary>
-    /// Creates a service object without setting auth headers.
-    /// </summary>
-    /// <param name="signature">Signature of the service being created.</param>
-    /// <param name="user">The user for which the service is being created.
-    /// <param name="serverUrl">The server to which the API calls should be
-    /// made.</param>
-    /// </param>
-    /// <returns>An object of the desired service type.</returns>
-    private AdsClient CreateServiceWithoutAuthHeaders(ServiceSignature signature, AdsUser user,
-        Uri serverUrl) {
-      DfaAppConfig config = (DfaAppConfig) base.AppConfig;
-      DfaServiceSignature dfaapiSignature = signature as DfaServiceSignature;
-
-      AdsClient service = (AdsClient) Activator.CreateInstance(dfaapiSignature.ServiceType);
-
-      if (config.Proxy != null) {
-        service.Proxy = config.Proxy;
-      }
-
-      service.Timeout = config.Timeout;
-      service.Url = string.Format("{0}{1}/api/dfa-api/{2}",
-          serverUrl, dfaapiSignature.Version, dfaapiSignature.ServiceEndpoint);
-      service.UserAgent = config.GetUserAgent();
-
-      service.User = user;
-      return service;
     }
 
     /// <summary>

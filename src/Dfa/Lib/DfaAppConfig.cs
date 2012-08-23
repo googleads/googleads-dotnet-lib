@@ -70,6 +70,17 @@ namespace Google.Api.Ads.Dfa.Lib {
     private const string DEFAULT_DFAAPI_SERVER = "https://advertisersapi.doubleclick.net";
 
     /// <summary>
+    /// Key name for authorizationMethod.
+    /// </summary>
+    private const string AUTHORIZATION_METHOD = "AuthorizationMethod";
+
+    /// <summary>
+    /// Default value for authorizationMethod.
+    /// </summary>
+    private const DfaAuthorizationMethod DEFAULT_AUTHORIZATION_METHOD =
+        DfaAuthorizationMethod.LoginService;
+
+    /// <summary>
     /// Authtoken to be used in making API calls.
     /// </summary>
     private string authToken;
@@ -99,6 +110,11 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// responses.
     /// </summary>
     private bool enableGzipCompression;
+
+    /// <summary>
+    /// Authorization method to be used when making API calls.
+    /// </summary>
+    private DfaAuthorizationMethod authorizationMethod;
 
     /// <summary>
     /// Gets or sets the auth token to be used in SOAP headers.
@@ -174,6 +190,18 @@ namespace Google.Api.Ads.Dfa.Lib {
     }
 
     /// <summary>
+    /// Gets or sets the authorization method to be used when making API calls.
+    /// </summary>
+    public DfaAuthorizationMethod AuthorizationMethod {
+      get {
+        return authorizationMethod;
+      }
+      set {
+        SetPropertyField("AuthorizationMethod", ref authorizationMethod, value);
+      }
+    }
+
+    /// <summary>
     /// Gets a useragent string that can be used with the library.
     /// </summary>
     public string GetUserAgent() {
@@ -185,9 +213,10 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// Public constructor.
     /// </summary>
     public DfaAppConfig() : base() {
+      authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
       authToken = "";
-      userName = "";
-      password = "";
+      userName = null;
+      password = null;
       applicationName = "";
       enableGzipCompression = true;
 
@@ -203,6 +232,13 @@ namespace Google.Api.Ads.Dfa.Lib {
     protected override void ReadSettings(Hashtable settings) {
       base.ReadSettings(settings);
 
+      try {
+        authorizationMethod = (DfaAuthorizationMethod) Enum.Parse(
+            typeof(DfaAuthorizationMethod),
+            ReadSetting(settings, AUTHORIZATION_METHOD, authorizationMethod.ToString()));
+      } catch {
+        authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
+      }
       authToken = ReadSetting(settings, AUTHTOKEN, authToken);
       userName = ReadSetting(settings, USERNAME, userName);
       password = ReadSetting(settings, PASSWORD, password);
