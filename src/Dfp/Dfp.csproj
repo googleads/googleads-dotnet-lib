@@ -40,13 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\common\src\Common.csproj">
-      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -118,6 +114,11 @@
             <DependentUpon>DfpErrorMessages.resx</DependentUpon>
             <CustomToolNamespace></CustomToolNamespace>
           </Compile></ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
           <EmbeddedResource Include="DfpErrorMessages.resx">
             <Generator>ResXFileCodeGenerator</Generator>
