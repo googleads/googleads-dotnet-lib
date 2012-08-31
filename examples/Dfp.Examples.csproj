@@ -57,19 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\common\src\Common.csproj">
-      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\src\Dfp.csproj">
-      <Project>{CE15CE8A-532B-49DA-8CF7-2BFCDEE845DB}</Project>
-      <Name>Dfp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
       <Visible>False</Visible>
       <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
@@ -85,6 +72,8 @@
       <ProductName>.NET Framework 3.5</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -840,5 +829,16 @@
     <Compile Include="v201208\UserTeamAssociationService\UpdateUserTeamAssociations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="SampleBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\Dfp\Dfp.csproj">
+      <Name>Dfp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\Common\Common.csproj">
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config" />
   </ItemGroup>
 </Project>

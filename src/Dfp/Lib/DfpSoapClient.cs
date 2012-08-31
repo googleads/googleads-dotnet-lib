@@ -41,7 +41,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// The error thrown when an oauth token expires.
     /// </summary>
     private const string OAUTH_TOKEN_EXPIRED_ERROR = "AuthenticationError.AUTHENTICATION_FAILED";
-    
+
     /// <summary>
     /// The service name for use with ClientLogin server.
     /// </summary>
@@ -75,17 +75,11 @@ namespace Google.Api.Ads.Dfp.Lib {
     }
 
     /// <summary>
-    /// This method makes the actual SOAP API call. It is a thin wrapper
-    /// over SOAPHttpClientProtocol:Invoke, and provide things like
-    /// protection from race condition.
+    /// Initializes the service before MakeApiCall.
     /// </summary>
-    /// <param name="methodName">The name of the SOAP API method.</param>
-    /// <param name="parameters">The list of parameters for the SOAP API
-    /// method.</param>
-    /// <returns>
-    /// The results from calling the SOAP API method.
-    /// </returns>
-    protected override object[] MakeApiCall(string methodName, object[] parameters) {
+    /// <param name="methodName">Name of the method.</param>
+    /// <param name="parameters">The method parameters.</param>
+    protected override void InitForCall(string methodName, object[] parameters) {
       DfpAppConfig config = this.User.Config as DfpAppConfig;
       RequestHeader header = (RequestHeader) this.GetType().GetProperty("RequestHeader").
           GetValue(this, null);
@@ -125,7 +119,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         }
       }
 
-      return base.MakeApiCall(methodName, parameters);
+      base.InitForCall(methodName, parameters);
     }
 
     /// <summary>

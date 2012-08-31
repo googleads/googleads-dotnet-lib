@@ -1,4 +1,9 @@
-4.80
+4.9.0
+- Common library version was bumped to 1.4.0.
+- Fixed the retry mechanism for recovering from OAuth2 and ClientLogin errors.
+- RetryCount configuration key is now available through App.config.
+
+4.8.0
 - Added support for v201208.
 - Common library version was bumped to 1.3.
 
