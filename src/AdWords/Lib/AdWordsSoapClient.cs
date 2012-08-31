@@ -50,17 +50,11 @@ namespace Google.Api.Ads.AdWords.Lib {
     public const string SERVICE_NAME = "adwords";
 
     /// <summary>
-    /// This method makes the actual SOAP API call. It is a thin wrapper
-    /// over SOAPHttpClientProtocol:Invoke, and provide things like
-    /// protection from race condition.
+    /// Initializes the service before MakeApiCall.
     /// </summary>
-    /// <param name="methodName">The name of the SOAP API method.</param>
-    /// <param name="parameters">The list of parameters for the SOAP API
-    /// method.</param>
-    /// <returns>
-    /// The results from calling the SOAP API method.
-    /// </returns>
-    protected override object[] MakeApiCall(string methodName, object[] parameters) {
+    /// <param name="methodName">Name of the method.</param>
+    /// <param name="parameters">The method parameters.</param>
+    protected override void InitForCall(string methodName, object[] parameters) {
       AdWordsAppConfig config = this.User.Config as AdWordsAppConfig;
       string oAuthHeader = null;
       RequestHeader header = (RequestHeader) this.GetType().GetProperty("RequestHeader").
@@ -87,13 +81,18 @@ namespace Google.Api.Ads.AdWords.Lib {
           throw new AdWordsApiException(null, AdWordsErrorMessages.FailedToSetAuthorizationHeader);
         }
       }
+      ContextStore.AddKey("OAuthHeader", oAuthHeader);
+      base.InitForCall(methodName, parameters);
+    }
 
-      try {
-        ContextStore.AddKey("OAuthHeader", oAuthHeader);
-        return base.MakeApiCall(methodName, parameters);
-      } finally {
-        ContextStore.RemoveKey("OAuthHeader");
-      }
+    /// <summary>
+    /// Cleans up the service after MakeApiCall.
+    /// </summary>
+    /// <param name="methodName">Name of the method.</param>
+    /// <param name="parameters">The method parameters.</param>
+    protected override void CleanupAfterCall(string methodName, object[] parameters) {
+      ContextStore.RemoveKey("OAuthHeader");
+      base.CleanupAfterCall(methodName, parameters);
     }
 
     /// <summary>

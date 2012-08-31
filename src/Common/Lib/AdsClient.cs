@@ -154,6 +154,14 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
+    /// Gets or sets the signature for this service.
+    /// </summary>
+    ServiceSignature Signature {
+      get;
+      set;
+    }
+
+    /// <summary>
     /// Gets or sets the web request associated with this service's
     /// last API call.
     /// </summary>
