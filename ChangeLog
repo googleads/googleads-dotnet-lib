@@ -1,3 +1,8 @@
+14.8.0
+- Common library version was bumped to 1.4.0.
+- Fixed the retry mechanism for recovering from OAuth2 and ClientLogin errors.
+- RetryCount configuration key is now available through App.config.
+
 14.7.0
 - Fixed issue 87.
 

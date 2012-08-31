@@ -38,6 +38,11 @@ namespace Google.Api.Ads.Common.Lib {
     private AdsUser user;
 
     /// <summary>
+    /// The signature for this service.
+    /// </summary>
+    private ServiceSignature signature;
+
+    /// <summary>
     /// The WebRequest that was used by the last API call from this service.
     /// </summary>
     private WebRequest lastRequest;
@@ -66,6 +71,18 @@ namespace Google.Api.Ads.Common.Lib {
       }
       set {
         user = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the signature for this service.
+    /// </summary>
+    public ServiceSignature Signature {
+      get {
+        return signature;
+      }
+      set {
+        signature = value;
       }
     }
 
@@ -151,6 +168,33 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
+    /// Initializes the service before MakeApiCall.
+    /// </summary>
+    /// <param name="methodName">Name of the method.</param>
+    /// <param name="parameters">The method parameters.</param>
+    protected virtual void InitForCall(string methodName, object[] parameters) {
+      if (!IsSoapListenerLoaded()) {
+        throw new ApplicationException(CommonErrorMessages.SoapListenerExtensionNotLoaded);
+      }
+      ContextStore.AddKey("SoapService", this);
+      ContextStore.AddKey("SoapMethod", methodName);
+      this.user.InitListeners();
+    }
+
+    /// <summary>
+    /// Cleans up the service after MakeApiCall.
+    /// </summary>
+    /// <param name="methodName">Name of the method.</param>
+    /// <param name="parameters">The method parameters.</param>
+    protected virtual void CleanupAfterCall(string methodName, object[] parameters) {
+      this.user.CleanupListeners();
+      ContextStore.RemoveKey("SoapService");
+      ContextStore.RemoveKey("SoapMethod");
+      this.lastRequest = null;
+      this.lastResponse = null;
+    }
+
+    /// <summary>
     /// This method makes the actual SOAP API call. It is a thin wrapper
     /// over SOAPHttpClientProtocol:Invoke, and provide things like
     /// protection from race condition.
@@ -163,12 +207,7 @@ namespace Google.Api.Ads.Common.Lib {
       int retryCount = this.user.Config.RetryCount;
       while (retryCount >= 0) {
         try {
-          if (!IsSoapListenerLoaded()) {
-            throw new ApplicationException(CommonErrorMessages.SoapListenerExtensionNotLoaded);
-          }
-          ContextStore.AddKey("SoapService", this);
-          ContextStore.AddKey("SoapMethod", methodName);
-          this.user.InitListeners();
+          InitForCall(methodName, parameters);
           return base.Invoke(methodName, parameters);
         } catch (SoapException ex) {
           Exception customException = GetCustomException(ex);
@@ -193,11 +232,7 @@ namespace Google.Api.Ads.Common.Lib {
             throw customException;
           }
         } finally {
-          this.user.CleanupListeners();
-          ContextStore.RemoveKey("SoapService");
-          ContextStore.RemoveKey("SoapMethod");
-          this.lastRequest = null;
-          this.lastResponse = null;
+          CleanupAfterCall(methodName, parameters);
         }
       }
       throw new ArgumentOutOfRangeException("Retry count cannot be negative.");
