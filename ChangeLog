@@ -1,3 +1,8 @@
+15.0.0
+- Add support for v201209.
+- ReportUtils now use apiMode=true, ReportException has more details for
+  troubleshooting in case of a failure.
+
 14.8.0
 - Common library version was bumped to 1.4.0.
 - Fixed the retry mechanism for recovering from OAuth2 and ClientLogin errors.
