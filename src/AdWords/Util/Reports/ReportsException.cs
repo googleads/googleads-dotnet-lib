@@ -24,12 +24,23 @@ using System.Security.Permissions;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Google.Api.Ads.AdWords.Util {
+namespace Google.Api.Ads.AdWords.Util.Reports {
   /// <summary>
   /// Custom exception class for handling reporting errors.
   /// </summary>
   [Serializable]
   public class ReportsException : AdWordsException {
+    ReportDownloadError[] errors;
+
+    public ReportDownloadError[] Errors {
+      get {
+        return errors;
+      }
+      set {
+        errors = value;
+      }
+    }
+
     /// <summary>
     /// Public constructor.
     /// </summary>
@@ -61,6 +72,9 @@ namespace Google.Api.Ads.AdWords.Util {
     /// serialization stream.</param>
     protected ReportsException(SerializationInfo info, StreamingContext context)
         : base(info, context) {
+          if (info != null) {
+            errors = (ReportDownloadError[]) info.GetValue("errors", typeof(ReportDownloadError[]));
+          }
     }
 
     /// <summary>
@@ -76,6 +90,9 @@ namespace Google.Api.Ads.AdWords.Util {
         throw new ArgumentNullException("info");
       }
       base.GetObjectData(info, context);
+      if (info != null) {
+        info.AddValue("errors", errors);
+      }
     }
   }
 }

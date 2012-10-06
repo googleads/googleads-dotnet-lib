@@ -89,7 +89,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201206 {
         campaign.networkSetting = new NetworkSetting();
         campaign.networkSetting.targetGoogleSearch = false;
         campaign.networkSetting.targetSearchNetwork = false;
-        campaign.networkSetting.targetContentContextual = false;
         campaign.networkSetting.targetContentNetwork = true;
         campaign.networkSetting.targetPartnerSearchNetwork = false;
 

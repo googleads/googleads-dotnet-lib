@@ -181,9 +181,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201206 {
       /// representation.</param>
       /// <returns>The tree string representation.</returns>
       public StringBuilder ToTreeString(int depth, StringBuilder sb) {
-        for (int i = 0; i < depth * 2; i++) {
-          sb.Append('-');
-        }
+        sb.Append(new String('-', depth * 2));
         sb.Append(this);
         sb.Append("\n");
         foreach (ManagedCustomerTreeNode childAccount in childAccounts) {

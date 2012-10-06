@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -169,6 +170,46 @@
     <Compile Include="v201206\Targeting\LookupLocation.cs" />
     <Compile Include="v201206\Utilities\BackupSandboxDemo.cs" />
     <Compile Include="v201206\Utilities\RestoreSandboxDemo.cs" />
+    <Compile Include="v201209\AccountManagement\GetAccountChanges.cs" />
+    <Compile Include="v201209\BasicOperations\AddAdGroupDemographicCriteria.cs" />
+    <Compile Include="v201209\BasicOperations\AddAdGroups.cs" />
+    <Compile Include="v201209\BasicOperations\AddCampaigns.cs" />
+    <Compile Include="v201209\BasicOperations\AddPlacements.cs" />
+    <Compile Include="v201209\BasicOperations\AddThirdPartyRedirectAds.cs" />
+    <Compile Include="v201209\BasicOperations\DeleteAd.cs" />
+    <Compile Include="v201209\BasicOperations\DeleteAdGroup.cs" />
+    <Compile Include="v201209\BasicOperations\DeleteCampaign.cs" />
+    <Compile Include="v201209\BasicOperations\DeletePlacement.cs" />
+    <Compile Include="v201209\BasicOperations\GetAdGroups.cs" />
+    <Compile Include="v201209\BasicOperations\GetCampaigns.cs" />
+    <Compile Include="v201209\BasicOperations\GetPlacements.cs" />
+    <Compile Include="v201209\BasicOperations\GetThirdPartyRedirectAds.cs" />
+    <Compile Include="v201209\BasicOperations\PauseAd.cs" />
+    <Compile Include="v201209\BasicOperations\UpdateAdGroup.cs" />
+    <Compile Include="v201209\BasicOperations\UpdateCampaign.cs" />
+    <Compile Include="v201209\BasicOperations\UpdatePlacement.cs" />
+    <Compile Include="v201209\CampaignManagement\AddPlacementsInBulk.cs" />
+    <Compile Include="v201209\CampaignManagement\GetAllDisapprovedAds.cs" />
+    <Compile Include="v201209\CampaignManagement\GetAllDisapprovedAdsWihAwql.cs" />
+    <Compile Include="v201209\ErrorHandling\HandlePartialFailures.cs" />
+    <Compile Include="v201209\ErrorHandling\HandlePolicyViolationError.cs" />
+    <Compile Include="v201209\ErrorHandling\HandleRateExceededError.cs" />
+    <Compile Include="v201209\ErrorHandling\HandleTwoFactorAuthorizationError.cs" />
+    <Compile Include="v201209\Miscellaneous\GetAllVideosAndImages.cs" />
+    <Compile Include="v201209\Miscellaneous\UploadImage.cs" />
+    <Compile Include="v201209\Optimization\GetPlacementIdeas.cs" />
+    <Compile Include="v201209\Remarketing\AddAudience.cs" />
+    <Compile Include="v201209\Remarketing\AddConversionTracker.cs" />
+    <Compile Include="v201209\Reporting\DownloadCriteriaReport.cs" />
+    <Compile Include="v201209\Reporting\DownloadCriteriaReportWithAwql.cs" />
+    <Compile Include="v201209\Reporting\GetCampaignStats.cs" />
+    <Compile Include="v201209\Reporting\GetReportFields.cs" />
+    <Compile Include="v201209\Targeting\AddCampaignTargetingCriteria.cs" />
+    <Compile Include="v201209\Targeting\GetCampaignTargetingCriteria.cs" />
+    <Compile Include="v201209\Targeting\GetTargetableLanguagesAndCarriers.cs" />
+    <Compile Include="v201209\Targeting\LookupLocation.cs" />
+    <Compile Include="v201209\Utilities\BackupSandboxDemo.cs" />
+    <Compile Include="v201209\Utilities\RestoreSandboxDemo.cs" />
     <Compile Include="ExampleBase.cs" />
     <Compile Include="ExampleUtilities.cs" />
     <Compile Include="Program.cs" />

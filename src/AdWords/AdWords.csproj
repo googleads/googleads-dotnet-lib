@@ -76,6 +76,7 @@
     <Compile Include="Util\Data\LocalClientAccount.cs" />
     <Compile Include="Util\Data\SandboxSerializationException.cs" />
     <Compile Include="Util\Reports\ClientReport.cs" />
+    <Compile Include="Util\Reports\ReportDownloadError.cs" />
     <Compile Include="Util\Reports\ReportsException.cs" />
     <Compile Include="Util\Reports\ReportUtilities.cs" />
     <Compile Include="Util\Units\AdWordsAccount.cs" />
@@ -89,6 +90,9 @@
     <Compile Include="v201206\AdWordsApi.cs" />
     <Compile Include="v201206\AdWordsServiceV201206.cs" />
     <Compile Include="v201206\ReportDefinition.cs" />
+    <Compile Include="v201209\AdWordsApi.cs" />
+    <Compile Include="v201209\AdWordsServiceV201209.cs" />
+    <Compile Include="v201209\ReportDefinition.cs" />
           <Compile Include="AdWordsErrorMessages.Designer.cs">
             <AutoGen>True</AutoGen>
             <DesignTime>True</DesignTime>
