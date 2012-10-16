@@ -123,6 +123,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201109_1
         Dim operation As New CampaignOperation
         operation.operator = [Operator].ADD
         operation.operand = campaign
+        operations.Add(operation)
       Next
 
       Try
