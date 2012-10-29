@@ -69,7 +69,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201206 {
     public void Run(AdWordsUser user, long campaignId) {
       // Get the AdGroupService.
       AdGroupService adGroupService =
-          (AdGroupService) user.GetService(AdWordsService.v201109.AdGroupService);
+          (AdGroupService) user.GetService(AdWordsService.v201206.AdGroupService);
 
       List<AdGroupOperation> operations = new List<AdGroupOperation>();
 

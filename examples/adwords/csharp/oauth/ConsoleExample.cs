@@ -18,7 +18,7 @@ using OAuth.Net.Common;
 using OAuth.Net.Consumer;
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201109;
+using Google.Api.Ads.AdWords.v201209;
 using Google.Api.Ads.Common.OAuth.Lib;
 
 using System;
@@ -73,7 +73,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
 
       // Get the CampaignService.
       CampaignService campaignService =
-          (CampaignService) user.GetService(AdWordsService.v201109.CampaignService);
+          (CampaignService) user.GetService(AdWordsService.v201209.CampaignService);
 
       // Create the selector.
       Selector selector = new Selector();
