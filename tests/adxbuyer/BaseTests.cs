@@ -15,7 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201109;
+using Google.Api.Ads.AdWords.v201209;
 
 using NUnit.Framework;
 
@@ -34,43 +34,5 @@ namespace Google.Api.Ads.AdWords.Tests {
     /// The AdWords user to be used for tests.
     /// </summary>
     protected AdWordsUser user = new AdWordsUser();
-
-    /// <summary>
-    /// Default public constructor.
-    /// </summary>
-    public BaseTests() {
-      (user.Config as AdWordsAppConfig).ClientCustomerId = null;
-      (user.Config as AdWordsAppConfig).ClientEmail = null;
-      CampaignService campaignService = (CampaignService) user.GetService(
-          AdWordsService.v201109.CampaignService);
-      ServicedAccountService servicedAccountService =
-          (ServicedAccountService) user.GetService(AdWordsService.v201109.
-              ServicedAccountService);
-
-      // Create a selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "Name", "Status"};
-
-      // Initialize the sandbox by making a call to CampaignService.get.
-      CampaignPage page = campaignService.get(selector);
-
-      // Get the client customer ids.
-      ServicedAccountSelector serviceSelector = new ServicedAccountSelector();
-      serviceSelector.enablePaging = false;
-
-      ServicedAccountGraph graph = servicedAccountService.get(serviceSelector);
-
-      if (graph != null && graph.accounts != null) {
-        for (int i = 0; i < graph.accounts.Length; i++) {
-          if (graph.accounts[i].canManageClients == false) {
-            (user.Config as AdWordsAppConfig).ClientCustomerId =
-                graph.accounts[i].customerId.ToString();
-            break;
-          }
-        }
-      }
-      Assert.NotNull((user.Config as AdWordsAppConfig).ClientCustomerId);
-      Assert.Null((user.Config as AdWordsAppConfig).ClientEmail);
-    }
   }
 }

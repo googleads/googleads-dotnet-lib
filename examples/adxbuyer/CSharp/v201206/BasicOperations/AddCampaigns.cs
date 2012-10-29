@@ -64,7 +64,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201206 {
     public void Run(AdWordsUser user) {
       // Get the CampaignService.
       CampaignService campaignService =
-          (CampaignService) user.GetService(AdWordsService.v201109.CampaignService);
+          (CampaignService) user.GetService(AdWordsService.v201206.CampaignService);
 
       List<CampaignOperation> operations = new List<CampaignOperation>();
 
