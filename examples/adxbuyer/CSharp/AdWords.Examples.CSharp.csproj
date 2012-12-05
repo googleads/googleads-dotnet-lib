@@ -102,6 +102,7 @@
     <Compile Include="v201209\BasicOperations\DeletePlacement.cs" />
     <Compile Include="v201209\BasicOperations\GetAdGroups.cs" />
     <Compile Include="v201209\BasicOperations\GetCampaigns.cs" />
+    <Compile Include="v201209\BasicOperations\GetCampaignsWithAwql.cs" />
     <Compile Include="v201209\BasicOperations\GetPlacements.cs" />
     <Compile Include="v201209\BasicOperations\GetThirdPartyRedirectAds.cs" />
     <Compile Include="v201209\BasicOperations\PauseAd.cs" />

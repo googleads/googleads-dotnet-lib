@@ -53,7 +53,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201206 {
       campaignOperation.operand.budget.amount = new Money();
       campaignOperation.operand.budget.amount.microAmount = 100000000;
       campaignOperation.operand.budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
-
+      KeywordMatchSetting matchSetting = new KeywordMatchSetting();
+      matchSetting.optIn = true;
+      campaignOperation.operand.settings = new Setting[] {matchSetting};
       CampaignReturnValue retVal =
           campaignService.mutate(new CampaignOperation[] {campaignOperation});
       return retVal.value[0].id;
@@ -167,7 +169,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201206 {
       redirectAd.dimensions.width = 300;
 
       // This field normally contains the javascript ad tag.
-      redirectAd.snippet = "<img src=\"https://sandbox.google.com/sandboximages/image.jpg\"/>";
+      redirectAd.snippet =
+          "<img src=\"http://www.google.com/intl/en/adwords/select/images/samples/inline.jpg\"/>";
       redirectAd.impressionBeaconUrl = "http://www.examples.com/beacon";
       redirectAd.certifiedVendorFormatId = 119;
       redirectAd.isCookieTargeted = false;
@@ -476,7 +479,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201206 {
     /// Returns an image which can be used for creating image ads.
     /// </summary>
     /// <returns>The image data, as an array of bytes.</returns>
-    public byte[] GetSandboxImage() {
+    public byte[] GetTestImage() {
       return MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L");
     }
 

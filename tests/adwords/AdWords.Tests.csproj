@@ -44,6 +44,15 @@
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SoapMessages.v201209.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SoapMessages.v201209.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GetAccountAlerts.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -58,6 +67,12 @@
     </ProjectReference>
     <ProjectReference Include="..\..\src\Common\Common.csproj">
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.Tests.csproj">
+      <Name>Common.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\OAuth\Common.OAuth.Tests.csproj">
+      <Name>Common.OAuth.Tests</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\examples\AdWords\CSharp\AdWords.Examples.CSharp.csproj">
       <Name>AdWords.Examples.CSharp</Name>
@@ -74,22 +89,27 @@
     <Compile Include="v201206\BasicOperationsTest.cs" />
     <Compile Include="v201206\CampaignManagementTest.cs" />
     <Compile Include="v201206\ErrorHandlingTest.cs" />
-    <Compile Include="v201206\ExampleBaseTests.cs" />
     <Compile Include="v201206\MiscellaneousTest.cs" />
     <Compile Include="v201206\OptimizationTest.cs" />
     <Compile Include="v201206\ReportingTest.cs" />
     <Compile Include="v201206\TargetingTest.cs" />
     <Compile Include="v201206\TestUtils.cs" />
+    <Compile Include="v201206\VersionedExampleTestsBase.cs" />
     <Compile Include="v201209\AccountManagementTest.cs" />
     <Compile Include="v201209\AudienceAndConversionManagementTest.cs" />
     <Compile Include="v201209\BasicOperationsTest.cs" />
     <Compile Include="v201209\CampaignManagementTest.cs" />
     <Compile Include="v201209\ErrorHandlingTest.cs" />
-    <Compile Include="v201209\ExampleBaseTests.cs" />
     <Compile Include="v201209\MiscellaneousTest.cs" />
+    <Compile Include="v201209\OptimizationTest.cs" />
     <Compile Include="v201209\ReportingTest.cs" />
+    <Compile Include="v201209\TargetingTest.cs" />
     <Compile Include="v201209\TestUtils.cs" />
-    <Compile Include="BaseTests.cs" />
+    <Compile Include="v201209\VersionedExampleTestsBase.cs" />
+    <Compile Include="AdWordsRequestInterceptor.cs" />
+    <Compile Include="ExamplesMockData.cs" />
+    <Compile Include="ExampleTestsBase.cs" />
+    <Compile Include="SoapMessages.v201209.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

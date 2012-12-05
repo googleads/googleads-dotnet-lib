@@ -31,7 +31,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201209 {
   /// <summary>
   /// Test cases for all the code examples under v201209\Reporting.
   /// </summary>
-  class ReportingTest : ExampleBaseTests {
+  class ReportingTest : VersionedExampleTestsBase {
     string outputFileName;
     ReportDefinitionReportType reportType;
 

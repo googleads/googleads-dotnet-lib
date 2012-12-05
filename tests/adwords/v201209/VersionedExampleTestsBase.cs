@@ -1,4 +1,4 @@
-// Copyright 2011, Google Inc. All Rights Reserved.
+﻿// Copyright 2012, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,25 +14,22 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201209;
-
-using NUnit.Framework;
-
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
 
-
-namespace Google.Api.Ads.AdWords.Tests {
+namespace Google.Api.Ads.AdWords.Tests.v201209 {
   /// <summary>
-  /// Base class for all test suites.
+  /// Base class for code examples that adds version-specific features.
   /// </summary>
-  public class BaseTests {
+  class VersionedExampleTestsBase : ExampleTestsBase {
     /// <summary>
-    /// The AdWords user to be used for tests.
+    /// Test utilities instance for support functionality when running tests.
     /// </summary>
-    protected AdWordsUser user = new AdWordsUser();
+    protected TestUtils utils = new TestUtils();
+
+    /// <summary>
+    /// Default public constructor.
+    /// </summary>
+    public VersionedExampleTestsBase() : base() {
+    }
   }
 }

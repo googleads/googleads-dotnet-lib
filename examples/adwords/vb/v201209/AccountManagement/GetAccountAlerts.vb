@@ -25,7 +25,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201209
   ''' <summary>
   ''' This code example gets all alerts for all clients of an MCC account.
   ''' The effective user (ClientCustomerId or AuthToken) must be an MCC user
-  ''' to get results.
+  ''' to get results. This code example won't work with Test Accounts. See
+  ''' https://developers.google.com/adwords/api/docs/test-accounts.
   '''
   ''' Tags: AlertService.get
   ''' </summary>
@@ -52,7 +53,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201209
     Public Overrides ReadOnly Property Description() As String
       Get
         Return "This code example gets all alerts for all clients of an MCC account. The " & _
-            "effective user (ClientCustomerId or AuthToken) must be an MCC user to get results."
+            "effective user (ClientCustomerId or AuthToken) must be an MCC user to get " & _
+            "results. This code example won't work with Test Accounts. See " & _
+            "https://developers.google.com/adwords/api/docs/test-accounts"
       End Get
     End Property
 

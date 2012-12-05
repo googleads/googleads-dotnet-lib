@@ -75,6 +75,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
           objValue = long.Parse(value);
         } else if (paramInfo.ParameterType == typeof(string)) {
           objValue = value;
+        } else if (paramInfo.ParameterType.IsEnum) {
+          objValue = Enum.Parse(paramInfo.ParameterType, value);
         } else {
           throw new ApplicationException("Unknown parameter type : " +
               paramInfo.ParameterType.FullName);

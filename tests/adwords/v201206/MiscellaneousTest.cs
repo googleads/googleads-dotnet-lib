@@ -32,7 +32,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201206 {
   /// <summary>
   /// Test cases for all the code examples under v201206\Miscellaneous.
   /// </summary>
-  class MiscellaneousTest : ExampleBaseTests {
+  class MiscellaneousTest : VersionedExampleTestsBase {
     /// <summary>
     /// Inits this instance.
     /// </summary>

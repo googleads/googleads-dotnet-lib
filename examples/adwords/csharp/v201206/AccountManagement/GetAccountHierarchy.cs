@@ -25,7 +25,8 @@ using System.Text;
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201206 {
   /// <summary>
   /// This code example illustrates how to retrieve the account hierarchy under
-  /// an account.
+  /// an account. This code example won't work with Test Accounts. See
+  /// https://developers.google.com/adwords/api/docs/test-accounts
   ///
   /// Tags: ManagedCustomerService.get
   /// </summary>
@@ -51,7 +52,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201206 {
     public override string Description {
       get {
         return "This code example illustrates how to retrieve the account hierarchy under" +
-            " an account.";
+            " an account. This code example won't work with Test Accounts. See " +
+            "https://developers.google.com/adwords/api/docs/test-accounts";
       }
     }
 

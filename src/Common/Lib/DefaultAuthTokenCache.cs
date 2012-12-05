@@ -62,8 +62,10 @@ namespace Google.Api.Ads.Common.Lib {
     /// </returns>
     public string GetToken(string service, string email, string password) {
       ValidateParams(service, email, password);
-      string key = GetKey(service, email, password);
-      return tokenMap.ContainsKey(key)? tokenMap[key] : null;
+      lock (tokenMap) {
+        string key = GetKey(service, email, password);
+        return tokenMap.ContainsKey(key) ? tokenMap[key] : null;
+      }
     }
 
     /// <summary>
@@ -72,8 +74,11 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="token">The auth token.</param>
     public void InvalidateToken(string token) {
       lock (tokenMap) {
-        if (tokenMap.ContainsValue(token)) {
-          tokenMap.Remove(token);
+        foreach (string key in tokenMap.Keys) {
+          if (tokenMap[key] == token) {
+            tokenMap.Remove(key);
+            break;
+          }
         }
       }
     }

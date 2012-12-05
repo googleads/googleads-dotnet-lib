@@ -25,7 +25,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201206 {
   /// <summary>
   /// This code example gets all alerts for all clients of an MCC account.
   /// The effective user (ClientCustomerId or AuthToken) must be an MCC user
-  /// to get results.
+  /// to get results. This code example won't work with Test Accounts. See
+  /// https://developers.google.com/adwords/api/docs/test-accounts
   ///
   /// Tags: AlertService.get
   /// </summary>
@@ -51,7 +52,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201206 {
     public override string Description {
       get {
         return "This code example gets all alerts for all clients of an MCC account. The " +
-            "effective user (ClientCustomerId or AuthToken) must be an MCC user to get results.";
+            "effective user (ClientCustomerId or AuthToken) must be an MCC user to get results. " +
+            "This code example won't work with Test Accounts. See " +
+            "https://developers.google.com/adwords/api/docs/test-accounts";
       }
     }
 
