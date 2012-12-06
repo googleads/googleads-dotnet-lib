@@ -84,17 +84,11 @@ namespace Google.Api.Ads.Dfa.Lib {
     }
 
     /// <summary>
-    /// This method makes the actual SOAP API call. It is a thin wrapper
-    /// over SOAPHttpClientProtocol:Invoke, and provide things like
-    /// protection from race condition.
+    /// Initializes the service before MakeApiCall.
     /// </summary>
-    /// <param name="methodName">The name of the SOAP API method.</param>
-    /// <param name="parameters">The list of parameters for the SOAP API
-    /// method.</param>
-    /// <returns>
-    /// The results from calling the SOAP API method.
-    /// </returns>
-    protected override object[] MakeApiCall(string methodName, object[] parameters) {
+    /// <param name="methodName">Name of the method.</param>
+    /// <param name="parameters">The method parameters.</param>
+    protected override void InitForCall(string methodName, object[] parameters) {
       DfaAppConfig config = this.User.Config as DfaAppConfig;
       string oAuthHeader = null;
 
@@ -115,18 +109,26 @@ namespace Google.Api.Ads.Dfa.Lib {
         }
       }
 
-      try {
-        ContextStore.AddKey("OAuthHeader", oAuthHeader);
-        ContextStore.AddKey("RequestHeader", requestHeader);
-        ContextStore.AddKey("Token", Token);
-        return base.MakeApiCall(methodName, parameters);
-      } finally {
-        this.ResponseHeader = (ResponseHeader) ContextStore.GetValue("ResponseHeader");
-        ContextStore.RemoveKey("OAuthHeader");
-        ContextStore.RemoveKey("RequestHeader");
-        ContextStore.RemoveKey("ResponseHeader");
-        ContextStore.RemoveKey("Token");
-      }
+      ContextStore.AddKey("OAuthHeader", oAuthHeader);
+      ContextStore.AddKey("RequestHeader", requestHeader);
+      ContextStore.AddKey("Token", Token);
+
+      base.InitForCall(methodName, parameters);
+    }
+
+    /// <summary>
+    /// Cleans up the service after MakeApiCall.
+    /// </summary>
+    /// <param name="methodName">Name of the method.</param>
+    /// <param name="parameters">The method parameters.</param>
+    protected override void CleanupAfterCall(string methodName, object[] parameters) {
+      this.ResponseHeader = (ResponseHeader) ContextStore.GetValue("ResponseHeader");
+      ContextStore.RemoveKey("OAuthHeader");
+      ContextStore.RemoveKey("RequestHeader");
+      ContextStore.RemoveKey("ResponseHeader");
+      ContextStore.RemoveKey("Token");
+
+      base.CleanupAfterCall(methodName, parameters);
     }
 
     /// <summary>

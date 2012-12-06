@@ -39,17 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\common\src\Common.csproj">
-      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Dfa.csproj">
-      <Project>{CE15CE8A-532B-49DA-8CF7-2BFCDEE845DB}</Project>
-      <Name>Dfa</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
@@ -241,4 +230,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="SampleBase.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Dfa\Dfa.csproj">
+      <Name>Dfa</Name>
+    </ProjectReference>
+          <ProjectReference Include="..\..\src\Common\Common.csproj">
+            <Name>Common</Name>
+          </ProjectReference></ItemGroup>
 </Project>

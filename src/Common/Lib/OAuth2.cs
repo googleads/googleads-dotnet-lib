@@ -35,6 +35,11 @@ namespace Google.Api.Ads.Common.Lib {
     void RefreshAccessToken();
 
     /// <summary>
+    /// Generates the access token for service account.
+    /// </summary>
+    void GenerateAccessTokenForServiceAccount();
+
+    /// <summary>
     /// Revokes the refresh token if offline mode is used.
     /// </summary>
     void RevokeRefreshToken();
