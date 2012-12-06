@@ -25,7 +25,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201209
   ''' <summary>
   ''' This code example illustrates how to find a client customer ID for a
   ''' client email. We recommend to use this script as a one off to convert your
-  ''' identifiers to IDs and store them for future use.
+  ''' identifiers to IDs and store them for future use. This code example won't
+  ''' work with Test Accounts. See
+  ''' https://developers.google.com/adwords/api/docs/test-accounts
   '''
   ''' Tags: InfoService.get
   ''' </summary>
@@ -54,7 +56,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201209
       Get
         Return "This code example illustrates how to find a client customer ID for a client " & _
             "email. We recommend to use this script as a one off to convert your identifiers " & _
-            "to IDs and store them for future use."
+            "to IDs and store them for future use. This code example won't work with test " & _
+            "accounts. See https://developers.google.com/adwords/api/docs/test-accounts"
       End Get
     End Property
 

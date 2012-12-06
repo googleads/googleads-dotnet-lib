@@ -233,12 +233,12 @@ compile and run the test cases as follows:
   - UserAgent: ENTER_YOUR_COMPANY_OR_APPLICATION_NAME_HERE.
   - Email: ENTER_YOUR_EMAIL_HERE.
   - Password: ENTER_YOUR_PASSWORD_HERE.
-  - AdWordsApi.Server: https://adwords-sandbox.google.com
   - DeveloperToken: ENTER_YOUR_DEVELOPER_TOKEN_HERE.
+  - ClientCustomerId: ENTER_YOUR_CLIENT_CUSTOMERID_HERE.
 
-- It is recommended that you run the test cases against a sandbox account. See
-  http://code.google.com/apis/adwords/docs/developer/adwords_api_sandbox.html
-  for details on using the AdWords API Sandbox.
+- It is recommended that you run the test cases against a test account. See
+  https://developers.google.com/adwords/api/docs/test-accounts for details
+  on obtaining and using AdWords API Test Accounts.
 - Set AdWords.Tests project as the startup project and run the project.
 
 If you wish to add the AdWords client library as part of your workspace, then

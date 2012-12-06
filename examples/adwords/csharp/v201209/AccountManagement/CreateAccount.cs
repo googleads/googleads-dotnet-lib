@@ -24,7 +24,9 @@ using System.IO;
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201209 {
   /// <summary>
   /// This code example illustrates how to create an account. Note by default,
-  /// this account will only be accessible via parent MCC.
+  /// this account will only be accessible via parent MCC. This code example
+  /// won't work with Test Accounts. See
+  /// https://developers.google.com/adwords/api/docs/test-accounts
   ///
   /// Tags: ManagedCustomerService.mutate
   /// </summary>
@@ -50,7 +52,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201209 {
     public override string Description {
       get {
         return "This code example illustrates how to create an account. Note by default " +
-            "this account will only be accessible via parent MCC.";
+            "this account will only be accessible via parent MCC. This code example won't work " +
+            "with Test Accounts. See https://developers.google.com/adwords/api/docs/test-accounts";
       }
     }
 

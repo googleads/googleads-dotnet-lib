@@ -14,21 +14,13 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201206;
-
-using NUnit.Framework;
-
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading;
 
 namespace Google.Api.Ads.AdWords.Tests.v201206 {
   /// <summary>
-  /// UnitTests for mocking a SOAP service.
+  /// Base class for code examples that adds version-specific features.
   /// </summary>
-  class ExampleBaseTests : BaseTests {
+  class VersionedExampleTestsBase : ExampleTestsBase {
     /// <summary>
     /// Test utilities instance for support functionality when running tests.
     /// </summary>
@@ -37,25 +29,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201206 {
     /// <summary>
     /// Default public constructor.
     /// </summary>
-    public ExampleBaseTests() : base() {
+    public VersionedExampleTestsBase() : base() {
     }
-
-    /// <summary>
-    /// Runs a code example.
-    /// </summary>
-    /// <param name="exampleDelegate">The delegate that initializes and runs the
-    /// code example.</param>
-    protected void RunExample(TestDelegate exampleDelegate) {
-      Thread.Sleep(10000);
-      StringWriter writer = new StringWriter();
-      Assert.DoesNotThrow(delegate() {
-        TextWriter oldWriter = Console.Out;
-        Console.SetOut(writer);
-        exampleDelegate.Invoke();
-        Console.SetOut(oldWriter);
-        Console.WriteLine(writer.ToString());
-      });
-    }
-
   }
 }

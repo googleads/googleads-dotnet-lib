@@ -117,30 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FailedToAddAdGroupsToSandbox" xml:space="preserve">
-    <value>Could not add adgroups to sandbox account.</value>
-    <comment>Used for SandboxSerializationException by AccountManager.SetAdGroups when an adgroup cannot be created in sandbox.</comment>
-  </data>
-  <data name="FailedToAddAdsToSandbox" xml:space="preserve">
-    <value>Could not add ads to sandbox account.</value>
-    <comment>Used for SandboxSerializationException by AccountManager.SetAds when an ad cannot be created in sandbox.</comment>
-  </data>
-  <data name="FailedToAddCampaignCriteriaToSandbox" xml:space="preserve">
-    <value>Could not add campaign criteria to sandbox account.</value>
-    <comment>Used for SandboxSerializationException by AccountManager.SetCampaignCriteria when a campaign criterion cannot be created in sandbox.</comment>
-  </data>
-  <data name="FailedToAddCampaignsToSandbox" xml:space="preserve">
-    <value>Could not add campaigns to sandbox account.</value>
-    <comment>Used for SandboxSerializationException by AccountManager.SetCampaigns when a campaign cannot be created in sandbox.</comment>
-  </data>
-  <data name="FailedToAddCampaignTargetsToSandbox" xml:space="preserve">
-    <value>Could not add campaign targets to sandbox account.</value>
-    <comment>Used for SandboxSerializationException by AccountManager.SetCampaignTargets when a campaign target cannot be created in sandbox.</comment>
-  </data>
-  <data name="FailedToAddCriteriaToSandbox" xml:space="preserve">
-    <value>Could not add criteria to sandbox account.</value>
-    <comment>Used for SandboxSerializationException by AccountManager.SetCriteria when a criterion cannot be created in sandbox.</comment>
-  </data>
   <data name="InvalidStageForSoapMessage" xml:space="preserve">
     <value>Invalid stage for Soap message.</value>
     <comment>Used for ArgumentException by TraceExtension.ProcessMessage if message parameter has an invalid value for Stage field.</comment>

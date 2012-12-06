@@ -32,7 +32,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201206 {
   /// <summary>
   /// Test cases for all the code examples under v201206\Optimization.
   /// </summary>
-  class OptimizationTest : ExampleBaseTests {
+  class OptimizationTest : VersionedExampleTestsBase {
     long campaignId;
     long adGroupId;
 

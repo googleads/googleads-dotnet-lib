@@ -220,7 +220,11 @@ namespace Google.Api.Ads.AdWords.Lib {
       AdWordsAppConfig config = this.User.Config as AdWordsAppConfig;
       if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2 &&
           IsOAuthTokenExpiredError(awapiException)) {
-        (this.User.OAuthProvider as OAuth2).RefreshAccessToken();
+        if (!string.IsNullOrEmpty(config.OAuth2ServiceAccountEmail)) {
+          (this.User.OAuthProvider as OAuth2).GenerateAccessTokenForServiceAccount();
+        } else {
+          (this.User.OAuthProvider as OAuth2).RefreshAccessToken();
+        }
       }
     }
 

@@ -33,7 +33,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201206 {
   /// Test cases for all the code examples under
   /// v201206\AudienceAndConversionManagement.
   /// </summary>
-  class AudienceAndConversionManagementTest : ExampleBaseTests {
+  class AudienceAndConversionManagementTest : VersionedExampleTestsBase {
     /// <summary>
     /// Inits this instance.
     /// </summary>

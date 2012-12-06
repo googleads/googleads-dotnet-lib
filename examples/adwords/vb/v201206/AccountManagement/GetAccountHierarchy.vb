@@ -25,7 +25,8 @@ Imports System.Text
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201206
   ''' <summary>
   ''' This code example illustrates how to retrieve the account hierarchy under
-  ''' an account.
+  ''' an account. This code example won't work with Test Accounts. See
+  ''' https://developers.google.com/adwords/api/docs/test-accounts
   '''
   ''' Tags: ServicedAccountService.get
   ''' </summary>
@@ -52,7 +53,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201206
     Public Overrides ReadOnly Property Description() As String
       Get
         Return "This code example illustrates how to retrieve the account hierarchy under " & _
-            "an account."
+            "an account. This code example won't work with Test Accounts. See " & _
+            "https://developers.google.com/adwords/api/docs/test-accounts"
       End Get
     End Property
 
@@ -62,7 +64,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201206
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the ManagedCustomerService.
-      Dim mcService As ManagedCustomerService = user.GetService(AdWordsService.v201206.ManagedCustomerService)
+      Dim mcService As ManagedCustomerService = user.GetService( _
+          AdWordsService.v201206.ManagedCustomerService)
       mcService.RequestHeader.clientCustomerId = Nothing
 
       ' Create selector.

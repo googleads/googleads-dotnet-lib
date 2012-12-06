@@ -1,7 +1,15 @@
+15.2.0
+- Common library version was bumped to 1.5.0.
+- Added support for OAuth2 service accounts.
+- Removed support for AdWords API sandbox. Developers should use test accounts
+  instead. See https://developers.google.com/adwords/api/docs/test-accounts for
+  details.
+
 15.1.0
 - Removed support for v201109, v201109_1.
 - Fixed AddCampaign.vb in all versions for missing operation.
-- Removed a few util classes that are either redundant or handled better by existing services.
+- Removed a few util classes that are either redundant or handled better by
+  existing services.
 
 15.0.0
 - Add support for v201209.

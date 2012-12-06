@@ -31,7 +31,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201206 {
   /// <summary>
   /// Test cases for all the code examples under v201206\BasicOperations.
   /// </summary>
-  class BasicOperationsTest : ExampleBaseTests {
+  class BasicOperationsTest : VersionedExampleTestsBase {
     long campaignId;
     long adGroupId;
     long adId;

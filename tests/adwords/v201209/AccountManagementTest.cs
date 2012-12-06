@@ -16,14 +16,18 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201209;
+using Google.Api.Ads.Common.Tests;
+using Google.Api.Ads.Common.Util;
 
 using NUnit.Framework;
 
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Text;
 using System.Threading;
+using System.Xml;
 
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201209;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201209;
@@ -32,9 +36,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201209 {
   /// <summary>
   /// Test cases for all the code examples under v201209\AccountManagement.
   /// </summary>
-  class AccountManagementTest : ExampleBaseTests {
+  class AccountManagementTest : VersionedExampleTestsBase {
     string clientEmailAddress;
-
     /// <summary>
     /// Inits this instance.
     /// </summary>
@@ -48,9 +51,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201209 {
     /// </summary>
     [Test]
     public void TestGetAccountAlertsVBExample() {
-      RunExample(delegate() {
+      ExamplesMockData mockData = LoadMockData(SoapMessages_v201209.GetAccountAlerts);
+      RunMockedExample(mockData, delegate() {
         new VBExamples.GetAccountAlerts().Run(user);
-      });
+      }, new WebRequestInterceptor.OnBeforeSendResponse(VerifyGetAccountAlertsRequest));
     }
 
     /// <summary>
@@ -58,9 +62,41 @@ namespace Google.Api.Ads.AdWords.Tests.v201209 {
     /// </summary>
     [Test]
     public void TestGetAccountAlertsCSharpExample() {
-      RunExample(delegate() {
+      ExamplesMockData mockData = LoadMockData(SoapMessages_v201209.GetAccountAlerts);
+      RunMockedExample(mockData, delegate() {
         new CSharpExamples.GetAccountAlerts().Run(user);
-      });
+      }, new WebRequestInterceptor.OnBeforeSendResponse(VerifyGetAccountAlertsRequest));
+    }
+
+    /// <summary>
+    /// Verifies whether GetAccountAlerts is serializing the request correctly.
+    /// </summary>
+    /// <param name="requestUri">The request URI.</param>
+    /// <param name="headers">The headers.</param>
+    /// <param name="body">The body.</param>
+    private void VerifyGetAccountAlertsRequest(Uri requestUri, WebHeaderCollection headers,
+        string body) {
+      XmlDocument doc = new XmlDocument();
+      doc.LoadXml(body);
+      XmlElement node = (XmlElement) doc.GetElementsByTagName("selector")[0];
+      AlertSelector selector =
+          (AlertSelector) SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
+              node.OuterXml, typeof(AlertSelector),
+              "https://adwords.google.com/api/adwords/mcm/v201209", "selector");
+
+      Assert.AreEqual(selector.query.filterSpec, FilterSpec.ALL);
+      Assert.AreEqual(selector.query.clientSpec, ClientSpec.ALL);
+      Assert.AreEqual(selector.query.triggerTimeSpec, TriggerTimeSpec.ALL_TIME);
+      Assert.Contains(AlertSeverity.GREEN, selector.query.severities);
+      Assert.Contains(AlertSeverity.YELLOW, selector.query.severities);
+      Assert.Contains(AlertSeverity.RED, selector.query.severities);
+
+      foreach (AlertType alertType in Enum.GetValues(typeof(AlertType))) {
+        Assert.Contains(alertType, selector.query.types);
+      }
+
+      Assert.AreEqual(selector.paging.startIndex, 0);
+      Assert.AreEqual(selector.paging.numberResults, 500);
     }
 
     /// <summary>

@@ -28,8 +28,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201209 {
   /// application. To trigger the rate exceeded error, this code example runs
   /// 100 threads in parallel, each thread attempting to validate 100 keywords
   /// in a single request. Note that spawning 100 parallel threads is for
-  /// illustrative purposes only, you shouldn't do this in your application
-  /// either against the sandbox or production environment.
+  /// illustrative purposes only, you shouldn't do this in your application.
   ///
   /// Tags: AdGroupAdService.mutate
   /// </summary>
@@ -59,8 +58,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201209 {
             "To trigger the rate exceeded error, this code example runs 100 threads in " +
             "parallel, each thread attempting to validate 100 keywords in a single request. " +
             "Note that spawning 100 parallel threads is for illustrative purposes only, you " +
-            "shouldn't do this in your application either against the sandbox or production " +
-            "environment.";
+            "shouldn't do this in your application.";
       }
     }
 

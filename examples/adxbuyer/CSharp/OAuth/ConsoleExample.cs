@@ -56,20 +56,22 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     /// <param name="args">Command line arguments.</param>
     static void Main(string[] args) {
       AdWordsUser user = new AdWordsUser();
-
-      if ((user.Config as AdWordsAppConfig).AuthorizationMethod ==
-          AdWordsAuthorizationMethod.OAuth) {
+      AdWordsAppConfig config = (user.Config as AdWordsAppConfig);
+      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth) {
         DoAuth1Authorization(user);
-      } else if ((user.Config as AdWordsAppConfig).AuthorizationMethod ==
-          AdWordsAuthorizationMethod.OAuth2) {
-        DoAuth2Authorization(user);
+      } else if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
+        if (!string.IsNullOrEmpty(config.OAuth2ServiceAccountEmail)) {
+          DoAuth2AuthorizationForServiceAccounts(user);
+        } else {
+          DoAuth2Authorization(user);
+        }
       } else {
         throw new Exception("Authorization mode is not OAuth.");
       }
 
       Console.Write("Enter the customer id: ");
       string customerId = Console.ReadLine();
-      (user.Config as AdWordsAppConfig).ClientCustomerId = customerId;
+      config.ClientCustomerId = customerId;
 
       // Get the CampaignService.
       CampaignService campaignService =
@@ -110,6 +112,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to retrieve campaigns", ex);
       }
+    }
+
+    /// <summary>
+    /// Does the OAuth2 authorization for service accounts.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    private static void DoAuth2AuthorizationForServiceAccounts(AdWordsUser user) {
+      user.Config.OAuth2Scope = AdWordsService.GetOAuthScope(user.Config as AdWordsAppConfig);
+
+      OAuth2Provider oAuth2 = new OAuth2Provider(user.Config);
+      user.OAuthProvider = oAuth2;
+      oAuth2.GenerateAccessTokenForServiceAccount();
     }
 
     /// <summary>

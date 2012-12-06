@@ -32,7 +32,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201209 {
   /// <summary>
   /// Test cases for all the code examples under v201209\ErrorHandling.
   /// </summary>
-  class ErrorHandlingTest : ExampleBaseTests {
+  class ErrorHandlingTest : VersionedExampleTestsBase {
     long campaignId;
     long adGroupId;
 
