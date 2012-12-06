@@ -34,7 +34,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Url endpoint for ClientLogin API.
     /// </summary>
-    private readonly Uri URL = new Uri("https://www.google.com/accounts/ClientLogin");
+    private static readonly Uri url = new Uri("https://www.google.com/accounts/ClientLogin");
 
     /// <summary>
     /// The prefix to be appended for captcha urls.
@@ -70,6 +70,15 @@ namespace Google.Api.Ads.Common.Lib {
     /// The cache for storing authtokens.
     /// </summary>
     private static AuthTokenCache cache = new DefaultAuthTokenCache();
+
+    /// <summary>
+    /// Gets the URL.
+    /// </summary>
+    public static Uri Url {
+      get {
+        return url;
+      }
+    }
 
     /// <summary>
     /// Gets the SOURCE parameter for calling ClientLogin API.
@@ -195,7 +204,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// then an AuthTokenException is thrown with appropriate error code.
     /// </exception>
     private string GenerateToken() {
-      WebRequest webRequest = HttpWebRequest.Create(URL);
+      WebRequest webRequest = HttpWebRequest.Create(url);
       webRequest.Method = "POST";
       webRequest.ContentType = "application/x-www-form-urlencoded";
 

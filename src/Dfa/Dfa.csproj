@@ -41,12 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\common\src\Common.csproj">
-      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="AdsApi.snk" />
     <None Include="App.config">
       <SubType>Designer</SubType>
@@ -99,6 +93,11 @@
             <DependentUpon>DfaErrorMessages.resx</DependentUpon>
             <CustomToolNamespace></CustomToolNamespace>
           </Compile></ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Util\ApiCodes\CodeCsvs.resx">
       <Generator>ResXFileCodeGenerator</Generator>

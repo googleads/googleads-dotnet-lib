@@ -106,7 +106,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets the web proxy to be used with the services.
     /// </summary>
-    WebProxy Proxy { get; }
+    IWebProxy Proxy { get; }
 
     /// <summary>
     /// Gets or sets the number of times to retry a call if an API call fails
@@ -123,5 +123,10 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets or sets the timeout for Ads services in milliseconds.
     /// </summary>
     int Timeout { get; set; }
+
+    /// <summary>
+    /// Gets the number of seconds after Jan 1, 1970, 00:00:00
+    /// </summary>
+    long UnixTimestamp { get; }
   }
 }

@@ -15,13 +15,16 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Common.Lib;
-
-using System.Collections.Generic;
-using System.Net;
-using System.Web;
-using System.IO;
 using Google.Api.Ads.Common.Util;
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Web;
 
 namespace Google.Api.Ads.Common.OAuth.Lib {
   /// <summary>
@@ -58,6 +61,37 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
     /// code.
     /// </summary>
     private const string RESPONSE_TYPE = "code";
+
+    /// <summary>
+    /// Audience for generating JWT string.
+    /// </summary>
+    private const string JWT_AUDIENCE = "https://accounts.google.com/o/oauth2/token";
+
+    /// <summary>
+    /// Grant type for generating JWT string.
+    /// </summary>
+    private const string JWT_GRANT_TYPE = "urn:ietf:params:oauth:grant-type:jwt-bearer";
+
+    /// <summary>
+    /// Header for generating JWT string.
+    /// </summary>
+    private const string JWT_HEADER = "{\"alg\":\"RS256\",\"typ\":\"JWT\"}";
+
+    /// <summary>
+    /// Claimset template for generating JWT string.
+    /// </summary>
+    private const string JWT_CLAIMSET_TEMPLATE = "{{\"iss\":\"{0}\", \"scope\":\"{1}\", " +
+        "\"aud\":\"{2}\", \"exp\":{3}, \"iat\":{4}, \"prn\":\"{5}\"}}";
+
+    /// <summary>
+    /// The service account email for which access token should be retrieved.
+    /// </summary>
+    private string serviceAccountEmail;
+
+    /// <summary>
+    /// The email of the account for which the call is being made.
+    /// </summary>
+    private string prnEmail;
 
     /// <summary>
     /// Indicates the client that is making the request. This value is obtained
@@ -121,9 +155,69 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
     string refreshToken = "";
 
     /// <summary>
+    /// jwt certificate path.
+    /// </summary>
+    private string jwtCertificatePath;
+
+    /// <summary>
+    /// jwt certificate password.
+    /// </summary>
+    private string jwtCertificatePassword;
+
+    /// <summary>
     /// The configuration object to be used with this client.
     /// </summary>
     AppConfigBase config = null;
+
+    /// <summary>
+    /// Gets or sets the service account email for which access token should be
+    /// retrieved..
+    /// </summary>
+    public string ServiceAccountEmail {
+      get {
+        return serviceAccountEmail;
+      }
+      set {
+        serviceAccountEmail = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the email of the account for which the call is being made.
+    /// </summary>
+    public string PrnEmail {
+      get {
+        return prnEmail;
+      }
+      set {
+        prnEmail = value;
+      }
+    }
+
+
+    /// <summary>
+    /// Gets or sets the JWT certificate path.
+    /// </summary>
+    public string JwtCertificatePath {
+      get {
+        return jwtCertificatePath;
+      }
+      set {
+        jwtCertificatePath = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the JWT certificate password.
+    /// </summary>
+    public string JwtCertificatePassword {
+      get {
+        return jwtCertificatePassword;
+      }
+      set {
+        jwtCertificatePassword = value;
+      }
+    }
 
     /// <summary>
     /// Gets or sets the client that is making the request. This value is
@@ -263,6 +357,10 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
       this.refreshToken = config.OAuth2RefreshToken;
       this.scope = config.OAuth2Scope;
       this.redirectUri = config.OAuth2RedirectUri;
+      this.serviceAccountEmail = config.OAuth2ServiceAccountEmail;
+      this.prnEmail = config.OAuth2PrnEmail;
+      this.jwtCertificatePath = config.OAuth2CertificatePath;
+      this.jwtCertificatePassword = config.OAuth2CertificatePassword;
     }
 
     #region OAuth2 methods
@@ -289,50 +387,26 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
     /// <param name="authorizationCode">The authorization code obtained from the
     /// Authorization url after the user authorizes the application to make API
     /// calls.</param>
-    /// <remarks>Refresh tokens are obtained only if access mode was set to
-    /// offline.</remarks>
+    /// <returns>
+    /// True if the tokens were fetched successfully, false otherwise.
+    /// </returns>
+    /// <remarks>
+    /// Refresh tokens are obtained only if access mode was set to
+    /// offline.
+    /// </remarks>
     public bool FetchAccessAndRefreshTokens(string authorizationCode) {
       string redirectUrl = (string.IsNullOrEmpty(redirectUri)) ? OFFLINE_REDIRECT_URL : redirectUri;
-
-      WebRequest request = HttpWebRequest.Create(TOKEN_ENDPOINT);
-      request.Method = "POST";
-      request.ContentType = "application/x-www-form-urlencoded";
-
-      using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
-        writer.Write(string.Format("code={0}&client_id={1}&client_secret={2}&redirect_uri={3}" +
-            "&grant_type={4}", HttpUtility.UrlEncode(authorizationCode),
-            HttpUtility.UrlEncode(clientId), HttpUtility.UrlEncode(clientSecret),
-            HttpUtility.UrlEncode(redirectUrl), HttpUtility.UrlEncode("authorization_code")));
-      }
+      string body = string.Format("code={0}&client_id={1}&client_secret={2}&redirect_uri={3}" +
+          "&grant_type={4}", HttpUtility.UrlEncode(authorizationCode),
+          HttpUtility.UrlEncode(clientId), HttpUtility.UrlEncode(clientSecret),
+          HttpUtility.UrlEncode(redirectUrl), HttpUtility.UrlEncode("authorization_code"));
 
       try {
-        WebResponse response = request.GetResponse();
-        MemoryStream memStream = new MemoryStream();
-        MediaUtilities.CopyStream(response.GetResponseStream(), memStream);
-        string contents = Encoding.UTF8.GetString(memStream.ToArray());
-        Dictionary<string, string> values = ParseJsonObjectResponse(contents);
-        if (values.ContainsKey("access_token")) {
-          this.accessToken = values["access_token"];
-        }
-        if (values.ContainsKey("refresh_token")) {
-          this.refreshToken = values["refresh_token"];
-        }
-        if (values.ContainsKey("token_type")) {
-          this.tokenType = values["token_type"];
-        }
-        if (values.ContainsKey("expires_in")) {
-          this.expiresIn = int.Parse(values["expires_in"]);
-        }
-
-        if (this.OnOAuthTokensObtained != null) {
-          this.OnOAuthTokensObtained(this);
-        }
-
-        return true;
-      } catch (WebException ex) {
-        throw new AdsOAuthException("Failed to get access token.\n" +
-            GetResponseText(ex.Response));
+        CallTokenEndpoint(body);
+      } catch (ApplicationException e) {
+        throw new AdsOAuthException("Failed to get access token." + "\n" + e.Message);
       }
+      return true;
     }
 
     /// <summary>
@@ -341,39 +415,45 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
     /// <remarks>This method should be used only when access mode is set to
     /// offline.</remarks>
     public void RefreshAccessToken() {
-      WebRequest request = HttpWebRequest.Create(TOKEN_ENDPOINT);
-      request.Method = "POST";
-      request.ContentType = "application/x-www-form-urlencoded";
-
-      using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
-        writer.Write(string.Format("client_id={0}&client_secret={1}&refresh_token={2}" +
-            "&grant_type={3}", HttpUtility.UrlEncode(clientId), HttpUtility.UrlEncode(clientSecret),
-            HttpUtility.UrlEncode(refreshToken), HttpUtility.UrlEncode("refresh_token")));
-      }
+      string body = string.Format("client_id={0}&client_secret={1}&refresh_token={2}" +
+          "&grant_type={3}", HttpUtility.UrlEncode(clientId), HttpUtility.UrlEncode(clientSecret),
+          HttpUtility.UrlEncode(refreshToken), HttpUtility.UrlEncode("refresh_token"));
 
       try {
-        WebResponse response = request.GetResponse();
-        string contents = GetResponseText(response);
-        Dictionary<string, string> values = ParseJsonObjectResponse(contents);
-        if (values.ContainsKey("access_token")) {
-          this.accessToken = values["access_token"];
-        }
-        if (values.ContainsKey("refresh_token")) {
-          this.refreshToken = values["refresh_token"];
-        }
-        if (values.ContainsKey("token_type")) {
-          this.tokenType = values["token_type"];
-        }
-        if (values.ContainsKey("expires_in")) {
-          this.expiresIn = int.Parse(values["expires_in"]);
-        }
+        CallTokenEndpoint(body);
+      } catch (ApplicationException e) {
+        throw new AdsOAuthException("Failed to refresh access token." + "\n" + e.Message);
+      }
+    }
 
-        if (this.OnOAuthTokensObtained != null) {
-          this.OnOAuthTokensObtained(this);
-        }
-      } catch (WebException ex) {
-        throw new AdsOAuthException("Failed to refresh access token.\n" +
-            GetResponseText(ex.Response));
+    /// <summary>
+    /// Gets the access token for service account.
+    /// </summary>
+    public void GenerateAccessTokenForServiceAccount() {
+      long timestamp = config.UnixTimestamp;
+      long expiry = timestamp + 3600;
+      string jwtClaimset = string.Format(JWT_CLAIMSET_TEMPLATE, serviceAccountEmail, scope,
+          JWT_AUDIENCE, expiry, timestamp, prnEmail);
+
+      string encodedHeader = Base64UrlEncode(Encoding.UTF8.GetBytes(JWT_HEADER));
+      string encodedClaimset = Base64UrlEncode(Encoding.UTF8.GetBytes(jwtClaimset));
+      string inputForSignature = encodedHeader + "." + encodedClaimset;
+
+      X509Certificate2 jwtCertificate = new X509Certificate2(jwtCertificatePath,
+          jwtCertificatePassword);
+
+      string signature = Base64UrlEncode(GetRsaSha256Signature(jwtCertificate,
+          Encoding.UTF8.GetBytes(inputForSignature)));
+      string jwt = inputForSignature + "." + signature;
+
+      string body = "grant_type=" + HttpUtility.UrlEncode(JWT_GRANT_TYPE) + "&assertion=" +
+          HttpUtility.UrlEncode(jwt);
+
+      try {
+        CallTokenEndpoint(body);
+      } catch (ApplicationException e) {
+        throw new AdsOAuthException("Failed to get access token for service account." + "\n" +
+            e.Message);
       }
     }
 
@@ -383,6 +463,7 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
     public void RevokeRefreshToken() {
       string url = string.Format("{0}?token={1}", REVOKE_ENDPOINT, refreshToken);
       WebRequest request = HttpWebRequest.Create(url);
+      request.Proxy = config.Proxy;
       try {
         WebResponse response = request.GetResponse();
       } catch (WebException ex) {
@@ -401,7 +482,77 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
       return "Bearer " + this.AccessToken;
     }
 
+    /// <summary>
+    /// Calls the token endpoint to obtain an access token.
+    /// </summary>
+    /// <param name="body">The request body.</param>
+    /// <param name="errorMessage">The error message.</param>
+    private void CallTokenEndpoint(string body) {
+      WebRequest request = HttpWebRequest.Create(TOKEN_ENDPOINT);
+      request.Proxy = config.Proxy;
+
+      request.Method = "POST";
+      request.ContentType = "application/x-www-form-urlencoded";
+
+      using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
+        writer.Write(body);
+      }
+
+      try {
+        string contents = GetResponseText(request.GetResponse());
+        Dictionary<string, string> values = ParseJsonObjectResponse(contents);
+        if (values.ContainsKey("access_token")) {
+          this.accessToken = values["access_token"];
+        }
+        if (values.ContainsKey("refresh_token")) {
+          this.refreshToken = values["refresh_token"];
+        }
+        if (values.ContainsKey("token_type")) {
+          this.tokenType = values["token_type"];
+        }
+        if (values.ContainsKey("expires_in")) {
+          this.expiresIn = int.Parse(values["expires_in"]);
+        }
+
+        if (this.OnOAuthTokensObtained != null) {
+          this.OnOAuthTokensObtained(this);
+        }
+      } catch (WebException ex) {
+        throw new ApplicationException(GetResponseText(ex.Response));
+      }
+    }
+
     #endregion
+
+    /// <summary>
+    /// Gets the RSA sha256 signature for data.
+    /// </summary>
+    /// <param name="certificate">The certificate.</param>
+    /// <param name="data">The data for which signature should be calculated.
+    /// </param>
+    /// <returns>The signature.</returns>
+    private static byte[] GetRsaSha256Signature(X509Certificate2 certificate, byte[] data) {
+      RSACryptoServiceProvider rsacsp = (RSACryptoServiceProvider) certificate.PrivateKey;
+      CspParameters cspParam = new CspParameters();
+      cspParam.KeyContainerName = rsacsp.CspKeyContainerInfo.KeyContainerName;
+      cspParam.KeyNumber = rsacsp.CspKeyContainerInfo.KeyNumber == KeyNumber.Exchange ? 1 : 2;
+      using (RSACryptoServiceProvider aescsp = new RSACryptoServiceProvider(cspParam)) {
+        aescsp.PersistKeyInCsp = false;
+        byte[] signature = aescsp.SignData(data, "SHA256");
+        bool results = aescsp.VerifyData(data, "SHA256", signature);
+        return signature;
+      }
+    }
+
+    /// <summary>
+    /// Generates a url-safe base64 encoded string.
+    /// </summary>
+    /// <param name="data">The data to be base64-encoded.</param>
+    /// <returns>The base64 encoded string.</returns>
+    private static string Base64UrlEncode(byte[] data) {
+      return Convert.ToBase64String(data).Replace("=", String.Empty).Replace('+', '-').
+          Replace('/', '_');
+    }
 
     /// <summary>
     /// Gets the response text from a web response.
@@ -426,7 +577,7 @@ namespace Google.Api.Ads.Common.OAuth.Lib {
       Dictionary<string, string> retval = new Dictionary<string, string>();
       string[] splits = contents.Trim(new char[] {' ', '{', '}'}).Split(',');
       foreach (string split in splits) {
-        string[] subSplits = split.Trim(new char[] {' ', '\n'}).Split(':');
+        string[] subSplits = split.Trim(new char[] {' ', '\r', '\n'}).Split(':');
         if (subSplits.Length == 2) {
           retval.Add(subSplits[0].Trim(new char[] {'"', ' '}),
               subSplits[1].Trim(new char[] {'"', ' '}));
