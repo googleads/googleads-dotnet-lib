@@ -22,6 +22,7 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Xml;
 
 namespace Google.Api.Ads.Common.Lib {
@@ -120,6 +121,26 @@ namespace Google.Api.Ads.Common.Lib {
     private const string OAUTH2_REDIRECTURI = "OAuth2RedirectUri";
 
     /// <summary>
+    /// Key name for service account email.
+    /// </summary>
+    private const string OAUTH2_SERVICEACCOUNT_EMAIL = "OAuth2ServiceAccountEmail";
+
+    /// <summary>
+    /// Key name for prn account email.
+    /// </summary>
+    private const string OAUTH2_PRN_EMAIL = "OAuth2PrnEmail";
+
+    /// <summary>
+    /// Key name for jwt certificate path.
+    /// </summary>
+    private const string OAUTH2_JWT_CERTIFICATE_PATH = "OAuth2JwtCertificatePath";
+
+    /// <summary>
+    /// Key name for jwt certificate password.
+    /// </summary>
+    private const string OAUTH2_JWT_CERTIFICATE_PASSWORD = "OAuth2JwtCertificatePassword";
+
+    /// <summary>
     /// Key name for oAuthConsumerKey.
     /// </summary>
     private const string OAUTH_CONSUMER_KEY = "OAuthConsumerKey";
@@ -163,7 +184,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Web proxy to be used with the services.
     /// </summary>
-    private WebProxy proxyField;
+    private IWebProxy proxyField;
 
     /// <summary>
     /// True, if the credentials in the log file should be masked.
@@ -199,6 +220,26 @@ namespace Google.Api.Ads.Common.Lib {
     /// OAuth2 refresh token.
     /// </summary>
     private string oAuth2RefreshToken;
+
+    /// <summary>
+    /// OAuth2 service account email.
+    /// </summary>
+    private string oAuth2ServiceAccountEmail;
+
+    /// <summary>
+    /// OAuth2 prn email.
+    /// </summary>
+    private string oAuth2PrnEmail;
+
+    /// <summary>
+    /// OAuth2 certificate path.
+    /// </summary>
+    private string oAuth2CertificatePath;
+
+    /// <summary>
+    /// OAuth2 certificate password.
+    /// </summary>
+    private string oAuth2CertificatePassword;
 
     /// <summary>
     /// OAuth2 scope.
@@ -293,7 +334,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets the web proxy to be used with the services.
     /// </summary>
-    public WebProxy Proxy {
+    public IWebProxy Proxy {
       get {
         return proxyField;
       }
@@ -412,6 +453,54 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
+    /// Gets or sets the OAuth2 service account email.
+    /// </summary>
+    public string OAuth2ServiceAccountEmail {
+      get {
+        return oAuth2ServiceAccountEmail;
+      }
+      set {
+        SetPropertyField("OAuth2ServiceAccountEmail", ref oAuth2ServiceAccountEmail, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 prn email.
+    /// </summary>
+    public string OAuth2PrnEmail {
+      get {
+        return oAuth2PrnEmail;
+      }
+      set {
+        SetPropertyField("OAuth2PrnEmail", ref oAuth2PrnEmail, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 certificate path.
+    /// </summary>
+    public string OAuth2CertificatePath {
+      get {
+        return oAuth2CertificatePath;
+      }
+      set {
+        SetPropertyField("OAuth2CertificatePath", ref oAuth2CertificatePath, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 certificate password.
+    /// </summary>
+    public string OAuth2CertificatePassword {
+      get {
+        return oAuth2CertificatePassword;
+      }
+      set {
+        SetPropertyField("OAuth2CertificatePassword", ref oAuth2CertificatePassword, value);
+      }
+    }
+
+    /// <summary>
     /// Gets or sets the OAuth consumer key.
     /// </summary>
     public string OAuthConsumerKey {
@@ -492,6 +581,16 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
+    /// Gets the number of seconds after Jan 1, 1970, 00:00:00
+    /// </summary>
+    public virtual long UnixTimestamp {
+      get {
+        TimeSpan unixTime = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0));
+        return (long) unixTime.TotalSeconds;
+      }
+    }
+
+    /// <summary>
     /// Default constructor for the object.
     /// </summary>
     protected AppConfigBase() {
@@ -508,6 +607,8 @@ namespace Google.Api.Ads.Common.Lib {
       oAuth2RefreshToken = "";
       oAuth2Scope = "";
       oAuth2RedirectUri = null;
+      oAuth2PrnEmail = "";
+      oAuth2ServiceAccountEmail = "";
       oAuthConsumerKey = "";
       oAuthConsumerSecret = "";
       oAuthCallbackUrl = null;
@@ -542,6 +643,8 @@ namespace Google.Api.Ads.Common.Lib {
               proxyPassword, proxyDomain);
         }
         this.proxyField = proxy;
+      } else {
+        this.proxyField = WebRequest.GetSystemWebProxy();
       }
       maskCredentials = bool.Parse(ReadSetting(settings, MASK_CREDENTIALS,
           maskCredentials.ToString()));
@@ -552,6 +655,14 @@ namespace Google.Api.Ads.Common.Lib {
       oAuth2RefreshToken = ReadSetting(settings, OAUTH2_REFRESHTOKEN, oAuth2RefreshToken);
       oAuth2Scope = ReadSetting(settings, OAUTH2_SCOPE, oAuth2Scope);
       oAuth2RedirectUri = ReadSetting(settings, OAUTH2_REDIRECTURI, oAuth2RedirectUri);
+      oAuth2ServiceAccountEmail = ReadSetting(settings, OAUTH2_SERVICEACCOUNT_EMAIL,
+          oAuth2ServiceAccountEmail);
+      oAuth2PrnEmail = ReadSetting(settings, OAUTH2_PRN_EMAIL, oAuth2PrnEmail);
+
+      oAuth2CertificatePath = ReadSetting(settings, OAUTH2_JWT_CERTIFICATE_PATH,
+          oAuth2CertificatePath);
+      oAuth2CertificatePassword = ReadSetting(settings, OAUTH2_JWT_CERTIFICATE_PASSWORD,
+          oAuth2CertificatePassword);
 
       oAuthConsumerKey = ReadSetting(settings, OAUTH_CONSUMER_KEY, oAuthConsumerKey);
       oAuthConsumerSecret = ReadSetting(settings, OAUTH_CONSUMER_SECRET, oAuthConsumerSecret);
@@ -583,8 +694,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Raises the <see cref="E:PropertyChanged"/> event.
     /// </summary>
-    /// <param name="e">The <see cref="System.ComponentModel.PropertyChangedEventArgs"/> instance
-    /// containing the event data.</param>
+    /// <param name="e">The <see cref="System.ComponentModel.PropertyChangedEventArgs"/>
+    /// instance containing the event data.</param>
     protected void OnPropertyChanged(PropertyChangedEventArgs e) {
       PropertyChangedEventHandler handler = PropertyChanged;
       if (handler != null) {

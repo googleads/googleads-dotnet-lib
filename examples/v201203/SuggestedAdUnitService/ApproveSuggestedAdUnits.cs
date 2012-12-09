@@ -84,7 +84,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201203 {
           ApproveSuggestedAdUnit action = new ApproveSuggestedAdUnit();
 
           // Perform action.
-          UpdateResult result = suggestedAdUnitService.performSuggestedAdUnitAction(
+          SuggestedAdUnitUpdateResult result = suggestedAdUnitService.performSuggestedAdUnitAction(
               action, filterStatement);
 
           // Display results.
