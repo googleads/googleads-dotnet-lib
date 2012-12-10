@@ -68,7 +68,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201204 {
         if (label != null) {
           StringBuilder builder = new StringBuilder();
           foreach (LabelType labelType in label.types) {
-            builder.AppendFormat("%s | ", labelType);
+            builder.AppendFormat("{0} | ", labelType);
           }
           Console.WriteLine("Label with ID '{0}, name '{1}' and type '{2}' was found.",
               label.id, label.name, builder.ToString().TrimEnd(' ', '|'));

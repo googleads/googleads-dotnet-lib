@@ -76,7 +76,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201208 {
           foreach (Label label in labels) {
             StringBuilder builder = new StringBuilder();
             foreach (LabelType labelType in label.types) {
-              builder.AppendFormat("%s | ", labelType);
+              builder.AppendFormat("{0} | ", labelType);
             }
 
             Console.WriteLine("A label with ID '{0}', name '{1}', and type '{2}' was created.",

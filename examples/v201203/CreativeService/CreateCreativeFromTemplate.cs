@@ -90,7 +90,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201203 {
       assetVariableValue.uniqueName = "Imagefile";
       assetVariableValue.assetByteArray = MediaUtilities.GetAssetDataFromUrl(
           "http://www.google.com/intl/en/adwords/select/images/samples/inline.jpg");
-      assetVariableValue.fileName = String.Format("image%s.jpg", this.GetTimeStamp());
+      assetVariableValue.fileName = String.Format("image{0}.jpg", this.GetTimeStamp());
 
       // Create the image width variable value.
       LongCreativeTemplateVariableValue imageWidthVariableValue =

@@ -291,7 +291,9 @@ namespace Google.Api.Ads.Common.Lib {
     protected override WebRequest GetWebRequest(Uri uri) {
       // Store the base WebRequest in the member variable for future access.
       this.lastRequest = base.GetWebRequest(uri);
-      (this.lastRequest as HttpWebRequest).ServicePoint.Expect100Continue = false;
+      if (this.lastRequest is HttpWebRequest) {
+        (this.lastRequest as HttpWebRequest).ServicePoint.Expect100Continue = false;
+      }
       return this.lastRequest;
     }
 
