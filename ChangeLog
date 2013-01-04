@@ -1,7 +1,10 @@
+15.3.0
+- Fixed issue 101.
+
 15.2.0
 - Common library version was bumped to 1.5.0.
 - Added support for OAuth2 service accounts.
-- Removed support for AdWords API sandbox. Developers should use test accounts
+- Removed support for AdWords API Sandbox. Developers should use Test Accounts
   instead. See https://developers.google.com/adwords/api/docs/test-accounts for
   details.
 

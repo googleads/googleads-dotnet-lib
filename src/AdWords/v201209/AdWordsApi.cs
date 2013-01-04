@@ -85,26 +85,6 @@ string query1) {
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -119,7 +99,6 @@ string query1) {
       set { this.errorsField = value; }
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(StringLengthError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SizeLimitError))]
@@ -236,7 +215,6 @@ string query1) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignCriterionReturnValue))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -264,7 +242,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -287,7 +264,6 @@ string query1) {
       set { this.partialFailureErrorsField = value; }
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(NegativeCampaignCriterion))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -377,7 +353,6 @@ string query1) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Webpage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Vertical))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionUserList))]
@@ -452,7 +427,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Criterion.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -480,7 +454,6 @@ string query1) {
     AD_SCHEDULE,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -523,7 +496,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -545,7 +517,6 @@ string query1) {
       set { this.conditionsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -580,7 +551,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -591,7 +561,6 @@ string query1) {
     PAGE_CONTENT,
     UNKNOWN
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(WebpageParameter))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -608,7 +577,6 @@ string query1) {
       set { this.criterionParameterTypeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -663,7 +631,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -716,7 +683,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CriterionUserList.MembershipStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -724,7 +690,6 @@ string query1) {
     OPEN,
     CLOSED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -758,7 +723,6 @@ string query1) {
       set { this.userInterestNameField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -819,7 +783,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -865,7 +828,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Proximity.DistanceUnits", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -873,7 +835,6 @@ string query1) {
     KILOMETERS,
     MILES
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -931,7 +892,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -954,7 +914,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -976,7 +935,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -990,7 +948,6 @@ string query1) {
       set { this.operandField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1007,7 +964,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1022,7 +978,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1036,7 +991,6 @@ string query1) {
       set { this.urlField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1109,7 +1063,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OperatingSystemVersion.OperatorType", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -1118,7 +1071,6 @@ string query1) {
     EQUAL_TO,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1167,7 +1119,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MobileDevice.DeviceType", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -1175,7 +1126,6 @@ string query1) {
     DEVICE_TYPE_MOBILE,
     DEVICE_TYPE_TABLET
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1197,7 +1147,6 @@ string query1) {
       set { this.displayNameField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1231,7 +1180,6 @@ string query1) {
       set { this.displayNameField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1281,7 +1229,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -1290,7 +1237,6 @@ string query1) {
     OBSOLETE,
     PHASING_OUT
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1312,7 +1258,6 @@ string query1) {
       set { this.nameField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1347,7 +1292,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -1356,7 +1300,6 @@ string query1) {
     PHRASE,
     BROAD
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1384,7 +1327,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Gender.GenderType", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -1393,7 +1335,6 @@ string query1) {
     GENDER_FEMALE,
     GENDER_UNDETERMINED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1421,7 +1362,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -1444,7 +1384,6 @@ string query1) {
     VIDEO
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1465,7 +1404,6 @@ string query1) {
       set { this.countryCodeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1493,7 +1431,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AgeRange.AgeRangeType", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -1507,7 +1444,6 @@ string query1) {
     AGE_RANGE_UNDETERMINED,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1611,7 +1547,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -1625,7 +1560,6 @@ string query1) {
     SUNDAY
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -1635,7 +1569,6 @@ string query1) {
     THIRTY,
     FORTY_FIVE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1658,7 +1591,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1666,7 +1598,6 @@ string query1) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class NegativeCampaignCriterion : CampaignCriterion {
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignCriterionOperation))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -1717,7 +1648,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -1726,7 +1656,6 @@ string query1) {
     REMOVE,
     SET
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1741,7 +1670,6 @@ string query1) {
       set { this.operandField = value; }
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignCriterionPage))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -1794,7 +1722,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1809,7 +1736,6 @@ string query1) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1856,7 +1782,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1890,7 +1815,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -1898,7 +1822,6 @@ string query1) {
     ASCENDING,
     DESCENDING
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1920,7 +1843,6 @@ string query1) {
       set { this.maxField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -1963,7 +1885,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Predicate.Operator", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -1984,7 +1905,6 @@ string query1) {
     DOES_NOT_CONTAIN_IGNORE_CASE,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2031,7 +1951,6 @@ string query1) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApiException))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2054,7 +1973,6 @@ string query1) {
       set { this.applicationExceptionTypeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2082,7 +2000,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StringLengthError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2090,7 +2007,6 @@ string query1) {
     TOO_SHORT,
     TOO_LONG
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2118,7 +2034,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SizeLimitError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2127,7 +2042,6 @@ string query1) {
     RESPONSE_SIZE_LIMIT_EXCEEDED,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2155,7 +2069,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SelectorError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2177,7 +2090,6 @@ string query1) {
     START_INDEX_IS_TOO_HIGH,
     UNKNOWN_ERROR
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2205,14 +2117,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum RequiredErrorReason {
     REQUIRED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2240,7 +2150,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequestError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2248,7 +2157,6 @@ string query1) {
     UNKNOWN,
     INVALID_INPUT
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2276,14 +2184,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RegionCodeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum RegionCodeErrorReason {
     INVALID_REGION_CODE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2311,14 +2217,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReadOnlyError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum ReadOnlyErrorReason {
     READ_ONLY
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2379,14 +2283,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RateExceededError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum RateExceededErrorReason {
     RATE_EXCEEDED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2414,7 +2316,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RangeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2422,7 +2323,6 @@ string query1) {
     TOO_LOW,
     TOO_HIGH
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2450,7 +2350,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "QuotaCheckError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2468,7 +2367,6 @@ string query1) {
     MONTHLY_BUDGET_REACHED,
     QUOTA_EXCEEDED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2503,7 +2401,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "QueryError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2525,7 +2422,6 @@ string query1) {
     MAX_LESS_THAN_MIN_IN_DURING_CLAUSE,
     VALIDATION_FAILED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2553,7 +2449,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PagingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2562,7 +2457,6 @@ string query1) {
     NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2590,14 +2484,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OperatorError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum OperatorErrorReason {
     OPERATOR_NOT_SUPPORTED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2625,7 +2517,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OperationAccessDenied.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2637,7 +2528,6 @@ string query1) {
     MUTATE_ACTION_NOT_PERMITTED_FOR_CLIENT,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2665,14 +2555,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NullError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum NullErrorReason {
     NULL_CONTENT
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2700,14 +2588,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotWhitelistedError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum NotWhitelistedErrorReason {
     CUSTOMER_NOT_WHITELISTED_FOR_API
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2735,14 +2621,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotEmptyError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum NotEmptyErrorReason {
     EMPTY_LIST
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2770,14 +2654,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NewEntityCreationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum NewEntityCreationErrorReason {
     CANNOT_SET_ID_FOR_ADD
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2805,7 +2687,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InternalApiError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2814,7 +2695,6 @@ string query1) {
     UNKNOWN,
     DOWNTIME
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2842,14 +2722,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityNotFound.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum EntityNotFoundReason {
     INVALID_ID
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignCriterionLimitExceeded))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -2906,7 +2784,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityCountLimitExceeded.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2918,7 +2795,6 @@ string query1) {
     ADGROUP_DISPLAY_AD_LIMIT,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2946,7 +2822,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignCriterionLimitExceeded.CriteriaLimitType", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2957,7 +2832,6 @@ string query1) {
     CAMPAIGN_LOCATION_CRITERIA,
     CAMPAIGN_PROXIMITY_CRITERIA
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -2985,7 +2859,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DistinctError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -2993,7 +2866,6 @@ string query1) {
     DUPLICATE_ELEMENT,
     DUPLICATE_TYPE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3021,7 +2893,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DatabaseError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -3033,7 +2904,6 @@ string query1) {
     DATABASE_ERROR,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3060,7 +2930,6 @@ string query1) {
       set { this.reasonFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3114,7 +2983,6 @@ string query1) {
     UNKNOWN
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3141,14 +3009,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ClientTermsError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum ClientTermsErrorReason {
     INCOMPLETE_SIGNUP_CURRENT_ADWORDS_TNC_NOT_AGREED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3176,7 +3042,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignCriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -3197,7 +3062,6 @@ string query1) {
     OPERATOR_NOT_SUPPORTED_FOR_CRITERION_TYPE,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3225,14 +3089,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BetaError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum BetaErrorReason {
     BETA_FEATURE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3260,7 +3122,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AuthorizationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -3273,7 +3134,6 @@ string query1) {
     NO_CUSTOMER_FOUND,
     SERVICE_ACCESS_DENIED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3300,7 +3160,6 @@ string query1) {
       set { this.reasonFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3329,7 +3188,6 @@ string query1) {
     USER_ID_INVALID
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3356,33 +3214,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdxError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum AdxErrorReason {
     UNSUPPORTED_FEATURE
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3443,7 +3280,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3466,7 +3302,6 @@ string query1) {
       set { this.partialFailureErrorsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3630,7 +3465,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -3639,7 +3473,6 @@ string query1) {
     DELETED,
     PAUSED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3651,7 +3484,6 @@ string query1) {
     PENDING,
     SUSPENDED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3769,14 +3601,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Budget.BudgetPeriod", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum BudgetBudgetPeriod {
     DAILY
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3804,7 +3634,6 @@ string query1) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumberValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LongValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DoubleValue))]
@@ -3824,7 +3653,6 @@ string query1) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LongValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DoubleValue))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -3834,7 +3662,6 @@ string query1) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public abstract partial class NumberValue : ComparableValue {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3862,7 +3689,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3889,7 +3715,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Budget.BudgetDeliveryMethod", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -3897,7 +3722,6 @@ string query1) {
     STANDARD,
     ACCELERATED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3907,7 +3731,6 @@ string query1) {
     DELETED,
     UNKNOWN
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BudgetOptimizer))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnknownBiddingStrategy))]
@@ -3929,7 +3752,6 @@ string query1) {
       set { this.biddingStrategyTypeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -3964,7 +3786,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3980,7 +3801,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3989,7 +3809,6 @@ string query1) {
   public partial class PercentCPA : BiddingStrategy {
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3997,7 +3816,6 @@ string query1) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class ManualCPM : BiddingStrategy {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4024,7 +3842,6 @@ string query1) {
       set { this.enhancedCpcEnabledFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4071,7 +3888,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -4081,7 +3897,6 @@ string query1) {
     CONVERSIONS
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -4089,7 +3904,6 @@ string query1) {
     TARGET_CPA,
     MAX_CPA
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4125,7 +3939,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConversionOptimizerEligibility.RejectionReason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -4137,7 +3950,6 @@ string query1) {
     UNKNOWN
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4145,7 +3957,6 @@ string query1) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class CampaignStats : Stats {
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignStats))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -4334,7 +4145,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Stats.Network", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -4349,7 +4159,6 @@ string query1) {
     UNKNOWN
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -4360,7 +4169,6 @@ string query1) {
     ROTATE_INDEFINITELY,
     UNAVAILABLE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4426,7 +4234,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -4439,7 +4246,6 @@ string query1) {
     LIFETIME
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -4449,7 +4255,6 @@ string query1) {
     CAMPAIGN,
     UNKNOWN
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrackingSetting))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetRestrictSetting))]
@@ -4472,7 +4277,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4486,7 +4290,6 @@ string query1) {
       set { this.trackingUrlField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4514,7 +4317,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4541,7 +4343,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4567,7 +4368,6 @@ string query1) {
       set { this.optInFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4614,7 +4414,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "GeoTargetTypeSetting.PositiveGeoTargetType", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -4624,7 +4423,6 @@ string query1) {
     LOCATION_OF_PRESENCE
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "GeoTargetTypeSetting.NegativeGeoTargetType", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -4632,7 +4430,6 @@ string query1) {
     DONT_CARE,
     LOCATION_OF_PRESENCE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4717,7 +4514,6 @@ string query1) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConversionOptimizerBiddingTransition))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4740,7 +4536,6 @@ string query1) {
       set { this.biddingTransitionTypeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4768,7 +4563,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4789,7 +4583,6 @@ string query1) {
       set { this.operandField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4812,7 +4605,6 @@ string query1) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4839,7 +4631,6 @@ string query1) {
       set { this.reasonFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4918,7 +4709,6 @@ string query1) {
     TARGET_ERROR
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4945,14 +4735,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StatsQueryError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum StatsQueryErrorReason {
     DATE_NOT_IN_VALID_RANGE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -4980,7 +4768,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SettingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -4993,7 +4780,6 @@ string query1) {
     TARGETING_SETTING_CONTAINS_INVALID_CRITERION_TYPE_GROUP,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5021,14 +4807,12 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RejectedError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum RejectedErrorReason {
     UNKNOWN_VALUE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5075,7 +4859,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "QuotaError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -5091,7 +4874,6 @@ string query1) {
     TOO_MANY_CRITERIA_PER_ACCOUNT,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5119,7 +4901,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DateError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -5133,7 +4914,6 @@ string query1) {
     DATE_RANGE_MINIMUM_DATE_LATER_THAN_MAXIMUM_DATE,
     DATE_RANGE_MINIMUM_AND_MAXIMUM_DATES_BOTH_NULL
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5160,7 +4940,6 @@ string query1) {
       set { this.reasonFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5192,7 +4971,6 @@ string query1) {
     UNKNOWN
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5219,7 +4997,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BudgetError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -5233,7 +5010,6 @@ string query1) {
     NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT,
     INVALID_BUDGET_SCHEDULE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5260,7 +5036,6 @@ string query1) {
       set { this.reasonFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5297,7 +5072,6 @@ string query1) {
     INCOMPATIBLE_WITH_CAMPAIGN_SETTING
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5324,7 +5098,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BiddingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -5348,7 +5121,6 @@ string query1) {
     CANNOT_SET_SITE_MAX_CPC,
     BID_ERROR
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5449,7 +5221,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5498,7 +5269,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5513,7 +5283,6 @@ ConversionTrackerOperation[] operations) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdWordsConversionTracker))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -5678,7 +5447,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConversionTracker.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -5687,7 +5455,6 @@ ConversionTrackerOperation[] operations) {
     DISABLED,
     HIDDEN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5700,7 +5467,6 @@ ConversionTrackerOperation[] operations) {
     LEAD,
     REMARKETING
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5760,7 +5526,6 @@ ConversionTrackerOperation[] operations) {
       set { this.numConvertedClicksFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5873,7 +5638,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdWordsConversionTracker.MarkupLanguage", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -5884,7 +5648,6 @@ ConversionTrackerOperation[] operations) {
     WML
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdWordsConversionTracker.HttpProtocol", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -5892,7 +5655,6 @@ ConversionTrackerOperation[] operations) {
     HTTP,
     HTTPS
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5903,7 +5665,6 @@ ConversionTrackerOperation[] operations) {
     HIDDEN
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdWordsConversionTracker.TrackingCodeType", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -5913,7 +5674,6 @@ ConversionTrackerOperation[] operations) {
     ANDROID_REMARKETING,
     APPLE_IOS_REMARKETING
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5929,7 +5689,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConversionTrackerPage))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5941,7 +5700,6 @@ ConversionTrackerOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertPage))]
   public abstract partial class NoStatsPage : Page {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5957,7 +5715,6 @@ ConversionTrackerOperation[] operations) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -5984,7 +5741,6 @@ ConversionTrackerOperation[] operations) {
       set { this.reasonFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -6016,7 +5772,6 @@ ConversionTrackerOperation[] operations) {
     TOO_MANY_WEBPAGES,
     UNKNOWN_SORTING_TYPE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6051,7 +5806,6 @@ ConversionTrackerOperation[] operations) {
       return ((Customer) (results[0]));
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -6119,7 +5873,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6153,7 +5906,6 @@ ConversionTrackerOperation[] operations) {
       return ((CustomerChangeData) (results[0]));
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -6224,7 +5976,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201209")]
@@ -6233,7 +5984,6 @@ ConversionTrackerOperation[] operations) {
     FIELDS_CHANGED,
     NEW
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -6339,7 +6089,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6362,7 +6111,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6383,7 +6131,6 @@ ConversionTrackerOperation[] operations) {
       set { this.maxField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -6406,7 +6153,6 @@ ConversionTrackerOperation[] operations) {
       set { this.campaignIdsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -6453,7 +6199,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomerSyncError.Reason", Namespace = "https://adwords.google.com/api/adwords/ch/v201209")]
@@ -6462,7 +6207,6 @@ ConversionTrackerOperation[] operations) {
     INVALID_DATE_RANGE,
     TOO_MANY_CHANGES
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6509,7 +6253,6 @@ ConversionTrackerOperation[] operations) {
       return ((CriterionBidLandscapePage) (results[0]));
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -6596,7 +6339,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BidLandscape))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionBidLandscape))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupBidLandscape))]
@@ -6614,7 +6356,6 @@ ConversionTrackerOperation[] operations) {
       set { this.dataEntryTypeField = value; }
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionBidLandscape))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupBidLandscape))]
@@ -6685,7 +6426,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6711,7 +6451,6 @@ ConversionTrackerOperation[] operations) {
       set { this.criterionIdFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -6758,7 +6497,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupBidLandscape.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -6767,7 +6505,6 @@ ConversionTrackerOperation[] operations) {
     DEFAULT,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -6784,7 +6521,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6799,7 +6535,6 @@ ConversionTrackerOperation[] operations) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -6827,7 +6562,6 @@ ConversionTrackerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DataError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -6836,7 +6570,6 @@ ConversionTrackerOperation[] operations) {
     NO_TABLE_ENTRY_CLASS_FOR_VIEW_TYPE,
     TABLE_SERVICE_ERROR
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6885,7 +6618,6 @@ ExperimentOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6900,7 +6632,6 @@ ExperimentOperation[] operations) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7058,7 +6789,6 @@ ExperimentOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -7067,7 +6797,6 @@ ExperimentOperation[] operations) {
     DELETED,
     PROMOTED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7079,7 +6808,6 @@ ExperimentOperation[] operations) {
     DELETED,
     PROMOTED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7145,7 +6873,6 @@ ExperimentOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7159,7 +6886,6 @@ ExperimentOperation[] operations) {
       set { this.operandField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7175,7 +6901,6 @@ ExperimentOperation[] operations) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7203,7 +6928,6 @@ ExperimentOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ExperimentServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -7227,7 +6951,6 @@ ExperimentOperation[] operations) {
     EXPERIMENT_NOT_ACTIVE,
     EXPERIMENT_SERVICE_ERROR
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7262,7 +6985,6 @@ ExperimentOperation[] operations) {
       return ((GeoLocation[]) (results[0]));
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidGeoLocation))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -7302,7 +7024,6 @@ ExperimentOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7310,7 +7031,6 @@ ExperimentOperation[] operations) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class InvalidGeoLocation : GeoLocation {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7333,7 +7053,6 @@ ExperimentOperation[] operations) {
       set { this.dummyField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7361,14 +7080,12 @@ ExperimentOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "GeoLocationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum GeoLocationErrorReason {
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7403,7 +7120,6 @@ ExperimentOperation[] operations) {
       return ((ApiUsageInfo) (results[0]));
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7457,7 +7173,6 @@ ExperimentOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7491,7 +7206,6 @@ ExperimentOperation[] operations) {
       set { this.costFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7594,7 +7308,6 @@ ExperimentOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/info/v201209")]
@@ -7606,7 +7319,6 @@ ExperimentOperation[] operations) {
     UNIT_COUNT_FOR_CLIENTS,
     METHOD_COST
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7634,7 +7346,6 @@ ExperimentOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ApiUsageError.Reason", Namespace = "https://adwords.google.com/api/adwords/info/v201209")]
@@ -7648,7 +7359,6 @@ ExperimentOperation[] operations) {
     INVALID_CLIENT_CUSTOMER_ID,
     INVALID_TOKEN_HEADER
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7699,7 +7409,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7722,7 +7431,6 @@ AdExtensionOverrideOperation[] operations) {
       set { this.partialFailureErrorsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7809,7 +7517,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationSyncExtension))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductExtension))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationExtension))]
@@ -7850,7 +7557,6 @@ AdExtensionOverrideOperation[] operations) {
       set { this.adExtensionTypeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7918,7 +7624,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7946,7 +7651,6 @@ AdExtensionOverrideOperation[] operations) {
       set { this.httpAuthorizationHeaderField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -7989,7 +7693,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8011,7 +7714,6 @@ AdExtensionOverrideOperation[] operations) {
       set { this.dummyField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8113,7 +7815,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LocationExtension.Source", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -8121,7 +7822,6 @@ AdExtensionOverrideOperation[] operations) {
     ADWORDS_FRONTEND,
     LBC_SYNC
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8137,7 +7837,6 @@ AdExtensionOverrideOperation[] operations) {
       set { this.sitelinksField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8159,7 +7858,6 @@ AdExtensionOverrideOperation[] operations) {
       set { this.destinationUrlField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8220,7 +7918,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8268,7 +7965,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InAppLinkExtension.AppStore", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -8276,7 +7972,6 @@ AdExtensionOverrideOperation[] operations) {
     GOOGLE_PLAY,
     ITUNES
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8299,7 +7994,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8314,7 +8008,6 @@ AdExtensionOverrideOperation[] operations) {
       set { this.itemField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8361,7 +8054,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LocationOverrideInfo.RadiusUnits", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -8370,7 +8062,6 @@ AdExtensionOverrideOperation[] operations) {
     MILES
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdExtensionOverride.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -8378,7 +8069,6 @@ AdExtensionOverrideOperation[] operations) {
     ACTIVE,
     DELETED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8389,7 +8079,6 @@ AdExtensionOverrideOperation[] operations) {
     DISAPPROVED
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8397,7 +8086,6 @@ AdExtensionOverrideOperation[] operations) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class AdExtensionOverrideStats : Stats {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8413,7 +8101,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8428,7 +8115,6 @@ AdExtensionOverrideOperation[] operations) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8476,7 +8162,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8503,7 +8188,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdExtensionOverrideError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -8523,7 +8207,6 @@ AdExtensionOverrideOperation[] operations) {
     RADIUS_TOO_SMALL,
     UNKNOWN_ADEXTENSION_OVERRIDE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8560,7 +8243,6 @@ AdExtensionOverrideOperation[] operations) {
       return ((LocationCriterion[]) (results[0]));
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8622,7 +8304,6 @@ AdExtensionOverrideOperation[] operations) {
       set { this.countryCodeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8688,7 +8369,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8715,7 +8395,6 @@ AdExtensionOverrideOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LocationCriterionServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -8725,7 +8404,6 @@ AdExtensionOverrideOperation[] operations) {
     INVALID_COUNTRY_CODE,
     LOCATION_CRITERION_SERVICE_ERROR
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8773,7 +8451,6 @@ ManagedCustomerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8795,7 +8472,6 @@ ManagedCustomerOperation[] operations) {
       set { this.dummyField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8877,7 +8553,6 @@ ManagedCustomerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8891,7 +8566,6 @@ ManagedCustomerOperation[] operations) {
       set { this.operandField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8938,7 +8612,6 @@ ManagedCustomerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8961,7 +8634,6 @@ ManagedCustomerOperation[] operations) {
       set { this.linksField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -8997,7 +8669,6 @@ ManagedCustomerOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ManagedCustomerServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/mcm/v201209")]
@@ -9008,7 +8679,6 @@ ManagedCustomerOperation[] operations) {
     INVALID_CURRENCY,
     INVALID_DESCRIPTIVE_NAME
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9054,7 +8724,6 @@ Media[] media) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9088,7 +8757,6 @@ Media[] media) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Media.Size", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -9098,7 +8766,6 @@ Media[] media) {
     PREVIEW,
     VIDEO_THUMBNAIL
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -9145,7 +8812,6 @@ Media[] media) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9178,7 +8844,6 @@ Media[] media) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Video))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Image))]
@@ -9330,7 +8995,6 @@ Media[] media) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Media.MediaType", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -9342,7 +9006,6 @@ Media[] media) {
     STANDARD_ICON,
     VIDEO
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -9360,7 +9023,6 @@ Media[] media) {
     AUDIO_WAV,
     AUDIO_MP3
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -9435,7 +9097,6 @@ Media[] media) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9450,7 +9111,6 @@ Media[] media) {
       set { this.dataField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -9504,7 +9164,6 @@ Media[] media) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9539,7 +9198,6 @@ Media[] media) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9566,7 +9224,6 @@ Media[] media) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -9584,7 +9241,6 @@ Media[] media) {
     INVALID_ISCI,
     INVALID_AD_ID
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -9611,7 +9267,6 @@ Media[] media) {
       set { this.reasonFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -9641,7 +9296,6 @@ Media[] media) {
     UNSUPPORTED_TYPE
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9667,7 +9321,6 @@ Media[] media) {
       set { this.reasonFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -9710,7 +9363,6 @@ Media[] media) {
     PROBLEM_READING_FILE
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9737,7 +9389,6 @@ Media[] media) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudioError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -9749,7 +9400,6 @@ Media[] media) {
     UNSUPPORTED_AUDIO,
     ERROR_GENERATING_STREAMING_URL
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9806,7 +9456,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9829,7 +9478,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.errorsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -9858,7 +9506,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.itemField = value; }
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DynamicSearchAd))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TextAd))]
@@ -9926,7 +9573,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9947,7 +9593,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.description2Field = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -9976,7 +9621,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.description2Field = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10052,7 +9696,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TempAdUnionId))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10088,7 +9731,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10096,7 +9738,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class TempAdUnionId : AdUnionId {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10119,7 +9760,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.fieldsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10168,7 +9808,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TemplateElementField.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -10185,7 +9824,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     VISIBLE_URL,
     UNKNOWN
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ThirdPartyRedirectAd))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -10287,7 +9925,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RichMediaAd.RichMediaAdType", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -10295,7 +9932,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     STANDARD,
     IN_STREAM_VIDEO
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10377,7 +10013,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -10387,7 +10022,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     QUICKTIME,
     WINDOWSMEDIA
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10404,7 +10038,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     EXPANDING_DOWNRIGHT
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10418,7 +10051,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.promotionLineField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10450,7 +10082,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -10460,7 +10091,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     XHTML,
     WML
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10520,7 +10150,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10561,7 +10190,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10595,7 +10223,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DeprecatedAd.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -10616,7 +10243,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     UNKNOWN
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10624,7 +10250,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class CampaignAdExtensionStats : Stats {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10651,7 +10276,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.percentServedFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10768,7 +10392,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroup.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -10777,7 +10400,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     PAUSED,
     DELETED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10793,7 +10415,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.detailsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10840,7 +10461,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -10852,7 +10472,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     PLACEMENT,
     UNKNOWN
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PercentCPAAdGroupBids))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManualCPMAdGroupBids))]
@@ -10881,7 +10500,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.adGroupBidsTypeField = value; }
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhoneInteractionBid))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -10932,7 +10550,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10947,7 +10564,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InteractionBid.BidStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -10956,7 +10572,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     BID
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10964,7 +10579,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class PhoneInteractionBid : InteractionBid {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -10992,7 +10606,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11006,7 +10619,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.maxCpmField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -11048,7 +10660,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11082,7 +10693,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11115,7 +10725,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.enhancedCpcEnabledFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -11188,7 +10797,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -11199,7 +10807,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     UNKNOWN
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -11208,7 +10815,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     DELETED,
     UNKNOWN
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManualCPMAdGroupExperimentBidMultipliers))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManualCPCAdGroupExperimentBidMultipliers))]
@@ -11227,7 +10833,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11241,7 +10846,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.maxCpmMultiplierField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -11276,7 +10880,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11297,7 +10900,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.maxContentCpcMultiplierField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -11411,7 +11013,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11476,7 +11077,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupAd.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -11485,7 +11085,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     PAUSED,
     DISABLED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -11499,7 +11098,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     UNCHECKED,
     UNKNOWN
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(NegativeAdGroupCriterion))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BiddableAdGroupCriterion))]
@@ -11571,7 +11169,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -11580,7 +11177,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     NEGATIVE
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11588,7 +11184,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class NegativeAdGroupCriterion : AdGroupCriterion {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -11711,7 +11306,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -11721,7 +11315,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     PAUSED
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -11729,7 +11322,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     ELIGIBLE,
     RARELY_SERVED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -11740,7 +11332,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     UNDER_REVIEW,
     DISAPPROVED
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PercentCPAAdGroupCriterionBids))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManualCPMAdGroupCriterionBids))]
@@ -11761,7 +11352,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.adGroupCriterionBidsTypeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -11808,7 +11398,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -11816,7 +11405,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     ADGROUP,
     CRITERION
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -11850,7 +11438,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.bidSourceFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -11904,7 +11491,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11912,7 +11498,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class ConversionOptimizerAdGroupCriterionBids : AdGroupCriterionBids {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -11946,7 +11531,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.enhancedCpcEnabledFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -12019,7 +11603,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManualCPCAdGroupCriterionExperimentBidMultiplier))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -12035,7 +11618,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.adGroupCriterionExperimentBidMultiplierTypeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -12070,7 +11652,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -12079,7 +11660,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     CRITERION,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -12164,7 +11744,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -12243,7 +11822,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignAdExtension.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -12251,7 +11829,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     ACTIVE,
     DELETED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -12261,7 +11838,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     UNCHECKED,
     DISAPPROVED
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SimpleMutateJob))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BulkMutateJob))]
@@ -12300,7 +11876,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.jobTypeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -12369,7 +11944,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.itemField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -12467,7 +12041,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     INVALID_YOUTUBE_DISPLAY_URL
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdExtensionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -12519,7 +12092,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     USER_NOT_PERMITTED_TO_CREATE_LBC_SYNC_LOCATION_EXTENSION
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupAdError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -12531,7 +12103,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     ENTITY_REFERENCED_IN_MULTIPLE_OPS,
     UNSUPPORTED_OPERATION
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -12565,7 +12136,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     UNKNOWN
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -12581,7 +12151,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     INVALID_BID,
     MISSING_ADGROUP_NAME
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -12607,7 +12176,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     SERVICE_PROVIDED_NO_RESULT
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignAdExtensionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -12622,7 +12190,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     UNKNOWN_ERROR
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityAccessDenied.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -12631,14 +12198,12 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     WRITE_ACCESS_DENIED
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "IdError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum IdErrorReason {
     NOT_FOUND
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -12656,14 +12221,12 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     UNKNOWN
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PolicyViolationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public enum PolicyViolationErrorReason {
     POLICY_ERROR
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BulkMutateJobStats))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -12738,7 +12301,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -12803,7 +12365,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -12848,7 +12409,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.numUnitsFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -12903,7 +12463,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -12913,7 +12472,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     FAILED,
     PENDING
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BulkMutateJobEvent))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -12937,7 +12495,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.jobEventTypeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -12964,7 +12521,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.statusFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13078,7 +12634,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13100,7 +12655,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.dummyField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13136,7 +12690,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13158,7 +12711,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.operationsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13205,7 +12757,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityId.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -13215,7 +12766,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     CAMPAIGN_ID,
     CUSTOMER_ID
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13230,7 +12780,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.operandField = value; }
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdScheduleTargetList))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -13267,7 +12816,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13282,7 +12830,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.targetsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13405,7 +12952,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdScheduleTarget))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13422,7 +12968,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13437,7 +12982,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13451,7 +12995,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.operandField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13475,7 +13018,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13489,7 +13031,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.keyField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13512,7 +13053,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13534,7 +13074,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.exemptionRequestsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13570,7 +13109,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13593,7 +13131,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnprocessedResult))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReturnValueResult))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LostResult))]
@@ -13614,7 +13151,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13622,7 +13158,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class UnprocessedResult : OperationResult {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13638,7 +13173,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13646,7 +13180,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class LostResult : OperationResult {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13661,7 +13194,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.causeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13689,7 +13221,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13697,7 +13228,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class PlaceHolder {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13714,7 +13244,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.itemField = value; }
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BulkMutateJobSelector))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -13770,7 +13299,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13804,7 +13332,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.resultPartIndexFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13850,7 +13377,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.lengthFieldSpecified = value; }
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionPolicyError))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -13916,7 +13442,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13924,7 +13449,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class CriterionPolicyError : PolicyViolationError {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -13952,7 +13476,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13978,7 +13501,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.reasonFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -14006,7 +13528,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupCriterionLimitExceeded.CriteriaLimitType", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -14015,7 +13536,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     ADGROUP_WEBSITE
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14023,7 +13543,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class AdGroupAdCountLimitExceeded : EntityCountLimitExceeded {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -14051,7 +13570,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14078,7 +13596,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14104,7 +13621,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.reasonFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -14151,7 +13667,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14177,7 +13692,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.reasonFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -14205,7 +13719,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14232,7 +13745,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14258,7 +13770,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.reasonFieldSpecified = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14294,7 +13805,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14315,7 +13825,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.enumDisplayValueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -14444,7 +13953,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14471,7 +13979,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportDefinitionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -14491,7 +13998,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     CLIENT_SELECTOR_INVALID_CUSTOMER_ID,
     REPORT_DEFINITION_ERROR
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -14519,7 +14025,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CollectionSizeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -14527,7 +14032,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     TOO_FEW,
     TOO_MANY
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -14557,7 +14061,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     DISPLAY_KEYWORD_PERFORMANCE_REPORT,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14604,7 +14107,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14625,7 +14127,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.titleField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -14691,7 +14192,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14712,7 +14212,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.maxField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -14835,7 +14334,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14862,7 +14360,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SiteConstants.AdFormat", Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -14873,7 +14370,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     VIDEO,
     INSTREAM
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(WebpageDescriptorAttribute))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(StringAttribute))]
@@ -14910,7 +14406,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14925,7 +14420,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14939,7 +14433,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -14967,7 +14460,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SiteConstants.PlacementType", Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -14979,7 +14471,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     GAME,
     MOBILE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -14994,7 +14485,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15022,7 +14512,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -15031,7 +14520,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     BID,
     BUDGET
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15048,7 +14536,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15063,7 +14550,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15077,7 +14563,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15105,7 +14590,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15119,7 +14603,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15135,7 +14618,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15163,7 +14645,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15177,7 +14658,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15205,7 +14685,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -15213,7 +14692,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     KEYWORD,
     PLACEMENT
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15241,7 +14719,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15255,7 +14732,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15283,7 +14759,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15297,7 +14772,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15313,7 +14787,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15331,7 +14804,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.itemField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15364,7 +14836,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15382,7 +14853,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15390,7 +14860,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
   public partial class FlashDisplayType {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15418,7 +14887,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "HtmlDisplayType.HtmlOption", Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -15426,7 +14894,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     UNKNOWN,
     THIRD_PARTY_SERVING
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15436,7 +14903,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   public partial class ImageDisplayType {
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DisplayAdSpec.ActivationOption", Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -15445,7 +14911,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     NONE,
     STANDARD_EXPANDABLE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15500,7 +14965,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15524,7 +14988,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InStreamAdSpec.InStreamType", Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -15535,7 +14998,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     IN_SLATE
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15543,7 +15005,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
   public partial class TextAdSpec {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15559,7 +15020,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15594,7 +15054,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -15618,7 +15077,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     TARGETED_MONTHLY_SEARCHES
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15640,7 +15098,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.dummyField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15675,7 +15132,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15722,7 +15178,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15768,7 +15223,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SeedAdGroupIdSearchParameter))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SearchVolumeSearchParameter))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SearchShareSearchParameter))]
@@ -15800,7 +15254,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15827,7 +15280,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15842,7 +15294,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15856,7 +15307,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.operationField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15892,7 +15342,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15907,7 +15356,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.queriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15924,7 +15372,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15939,7 +15386,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.locationsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15956,7 +15402,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15964,7 +15409,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
   public partial class IncludeAdultContentSearchParameter : SearchParameter {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15989,7 +15433,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16004,7 +15447,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.keywordsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16032,7 +15474,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -16041,7 +15482,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     MOBILE_WITH_FULL_BROWSER,
     DESKTOPS_AND_LAPTOPS
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16058,7 +15498,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CompetitionSearchParameter.Level", Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -16067,7 +15506,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     MEDIUM,
     HIGH
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16095,7 +15533,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16111,7 +15548,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16125,7 +15561,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.operationField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16209,7 +15644,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -16217,7 +15651,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     IDEAS,
     STATS
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16245,7 +15678,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TrafficEstimatorError.Reason", Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -16262,7 +15694,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     INVALID_INPUT,
     SERVICE_UNAVAILABLE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16290,7 +15721,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TargetingIdeaError.Reason", Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -16306,7 +15736,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     NO_PAGING_IN_SELECTOR,
     INVALID_INCLUDED_EXCLUDED_KEYWORDS
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16334,7 +15763,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MatchesRegexError.Reason", Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
@@ -16342,7 +15770,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     UNKNOWN,
     DOES_NOT_MATCH
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16370,14 +15797,12 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CurrencyCodeError.Reason", Namespace = "https://adwords.google.com/api/adwords/o/v201209")]
   public enum CurrencyCodeErrorReason {
     UNSUPPORTED_CURRENCY_CODE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16416,7 +15841,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       return ((TrafficEstimatorResult) (results[0]));
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16477,7 +15901,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignEstimate))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(KeywordEstimate))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupEstimate))]
@@ -16495,7 +15918,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.estimateTypeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16531,7 +15953,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16565,7 +15986,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.keywordEstimatesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16607,7 +16027,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16630,7 +16049,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignEstimateRequest))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(KeywordEstimateRequest))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupEstimateRequest))]
@@ -16648,7 +16066,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.estimateRequestTypeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16706,7 +16123,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16748,7 +16164,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16789,7 +16204,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16811,7 +16225,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
       set { this.dummyField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16860,7 +16273,6 @@ UserListOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16875,7 +16287,6 @@ UserListOperation[] operations) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RemarketingUserList))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LogicalUserList))]
@@ -17080,7 +16491,6 @@ UserListOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -17088,7 +16498,6 @@ UserListOperation[] operations) {
     OPEN,
     CLOSED
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -17100,7 +16509,6 @@ UserListOperation[] operations) {
     SUBSCRIBED
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -17108,7 +16516,6 @@ UserListOperation[] operations) {
     ACTIVE,
     INACTIVE
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -17132,7 +16539,6 @@ UserListOperation[] operations) {
     OVER_FIFTY_MILLION
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserList.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -17142,7 +16548,6 @@ UserListOperation[] operations) {
     REMARKETING,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -17158,7 +16563,6 @@ UserListOperation[] operations) {
       set { this.conversionTypesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -17212,7 +16616,6 @@ UserListOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListConversionType.Category", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -17220,7 +16623,6 @@ UserListOperation[] operations) {
     BOOMERANG_EVENT,
     OTHER
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -17236,7 +16638,6 @@ UserListOperation[] operations) {
       set { this.rulesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -17272,7 +16673,6 @@ UserListOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListLogicalRule.Operator", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -17282,7 +16682,6 @@ UserListOperation[] operations) {
     NONE,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -17299,7 +16698,6 @@ UserListOperation[] operations) {
       set { this.itemField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -17353,7 +16751,6 @@ UserListOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17361,7 +16758,6 @@ UserListOperation[] operations) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class ExternalRemarketingUserList : UserList {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -17377,7 +16773,6 @@ UserListOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17392,7 +16787,6 @@ UserListOperation[] operations) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -17420,7 +16814,6 @@ UserListOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -17442,7 +16835,6 @@ UserListOperation[] operations) {
     USER_LIST_MUTATE_NOT_SUPPORTED,
     USER_LIST_SERVICE_ERROR
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17503,7 +16895,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17527,7 +16918,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17542,7 +16932,6 @@ string query1) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17603,7 +16992,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17627,7 +17015,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17642,7 +17029,6 @@ string query1) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17702,7 +17088,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17726,7 +17111,6 @@ string query1) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17741,7 +17125,6 @@ string query1) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17788,7 +17171,6 @@ AdParamOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17802,7 +17184,6 @@ AdParamOperation[] operations) {
       set { this.operandField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -17875,7 +17256,6 @@ AdParamOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17910,7 +17290,6 @@ AdParamOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17918,7 +17297,6 @@ AdParamOperation[] operations) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
   public partial class AdParamPolicyError : PolicyViolationError {
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -17946,7 +17324,6 @@ AdParamOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdParamError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201209")]
@@ -17959,7 +17336,6 @@ AdParamOperation[] operations) {
     MUST_SPECIFY_ADGROUP_ID,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17996,7 +17372,6 @@ AdParamOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18010,7 +17385,6 @@ AdParamOperation[] operations) {
       set { this.triggerTimeField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -18084,7 +17458,6 @@ AdParamOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201209")]
@@ -18094,7 +17467,6 @@ AdParamOperation[] operations) {
     RED,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -18119,7 +17491,6 @@ AdParamOperation[] operations) {
     UNKNOWN
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18134,7 +17505,6 @@ AdParamOperation[] operations) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -18231,7 +17601,6 @@ AdParamOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201209")]
@@ -18241,7 +17610,6 @@ AdParamOperation[] operations) {
     ID_LIST,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -18253,7 +17621,6 @@ AdParamOperation[] operations) {
     UNKNOWN
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201209")]
@@ -18263,7 +17630,6 @@ AdParamOperation[] operations) {
     LAST_24_HOURS,
     LAST_7_DAYS
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -18285,7 +17651,6 @@ AdParamOperation[] operations) {
       set { this.pagingField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -18313,7 +17678,6 @@ AdParamOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AlertError.Reason", Namespace = "https://adwords.google.com/api/adwords/mcm/v201209")]
@@ -18324,7 +17688,6 @@ AdParamOperation[] operations) {
     UNAVAILABLE,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18383,7 +17746,6 @@ BudgetOrderOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18398,7 +17760,6 @@ BudgetOrderOperation[] operations) {
       set { this.valueField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -18496,7 +17857,6 @@ BudgetOrderOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18572,7 +17932,6 @@ BudgetOrderOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BudgetOrderRequest.Status", Namespace = "https://adwords.google.com/api/adwords/billing/v201209")]
@@ -18580,9 +17939,9 @@ BudgetOrderOperation[] operations) {
     UNDER_REVIEW,
     APPROVED,
     REJECTED,
+    CANCELLED,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -18597,7 +17956,6 @@ BudgetOrderOperation[] operations) {
       set { this.operandField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -18627,7 +17985,6 @@ BudgetOrderOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18642,7 +17999,6 @@ BudgetOrderOperation[] operations) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -18670,11 +18026,12 @@ BudgetOrderOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BudgetOrderError.Reason", Namespace = "https://adwords.google.com/api/adwords/billing/v201209")]
   public enum BudgetOrderErrorReason {
+    CUSTOMER_NOT_WHITELISTED_FOR_NEW_BILLING,
+    BUDGET_APPROVAL_IN_PROGRESS,
     SERVICE_UNAVAILABLE,
     INVALID_BILLING_ACCOUNT,
     GENERIC_BILLING_ERROR,
@@ -18692,7 +18049,6 @@ BudgetOrderOperation[] operations) {
     MORE_THAN_ONE_OPERATIONS,
     UNKNOWN
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18742,7 +18098,6 @@ BudgetOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18758,7 +18113,6 @@ BudgetOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18772,7 +18126,6 @@ BudgetOperation[] operations) {
       set { this.operandField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -18788,7 +18141,6 @@ BudgetOperation[] operations) {
       set { this.entriesField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18839,7 +18191,6 @@ CampaignAdExtensionOperation[] operations) {
     }
   }
 
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18862,7 +18213,6 @@ CampaignAdExtensionOperation[] operations) {
       set { this.partialFailureErrorsField = value; }
     }
   }
-
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]

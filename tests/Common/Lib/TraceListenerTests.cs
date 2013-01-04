@@ -122,8 +122,10 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       xIncoming.LoadXml(Resources.XmlResponse);
       listener.HandleMessage(xIncoming, adsClient, SoapMessageDirection.IN);
       Assert.AreEqual(xIncoming.OuterXml, ContextStore.GetValue("SoapResponse"));
-      Assert.AreEqual(Resources.SoapLog, writer.SoapLog);
-      Assert.AreEqual(Resources.ResponseLog, writer.RequestLog);
+      Assert.AreEqual(Resources.SoapLog.Replace("\r\n", "\n"),
+          writer.SoapLog.Replace("\r\n", "\n"));
+      Assert.AreEqual(Resources.ResponseLog.Replace("\r\n", "\n"),
+          writer.RequestLog.Replace("\r\n", "\n"));
     }
 
     /// <summary>
