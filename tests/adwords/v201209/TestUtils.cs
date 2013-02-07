@@ -15,8 +15,9 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.Common.Util;
+using Google.Api.Ads.AdWords.Util.v201209;
 using Google.Api.Ads.AdWords.v201209;
+using Google.Api.Ads.Common.Util;
 
 using NUnit.Framework;
 
@@ -60,6 +61,32 @@ namespace Google.Api.Ads.AdWords.Tests.v201209 {
       CampaignReturnValue retVal =
           campaignService.mutate(new CampaignOperation[] {campaignOperation});
       return retVal.value[0].id;
+    }
+
+    /// <summary>
+    /// Converts a campaign into enhanced campaign using forward compatibility
+    /// map.
+    /// </summary>
+    /// <param name="user">The user.</param>
+    /// <param name="campaignId">The campaign id.</param>
+    public void EnhanceCampaign(AdWordsUser user, long campaignId) {
+      CampaignService campaignService = (CampaignService) user.GetService(
+          AdWordsService.v201209.CampaignService);
+
+      // Campaign to be updated with the enhanced value.
+      // Note: After setting the enhanced value to true, setting it back to false
+      // will generate an ApiError.
+      Campaign campaign = new Campaign();
+      campaign.id = campaignId;
+      campaign.forwardCompatibilityMap = new MapUtilities().Add("Campaign.enhanced", "true").AsArray();
+
+      // Create operation.
+      CampaignOperation operation = new CampaignOperation();
+      operation.@operator = Operator.SET;
+      operation.operand = campaign;
+
+      campaignService.mutate(new CampaignOperation[] {operation});
+      return;
     }
 
     /// <summary>

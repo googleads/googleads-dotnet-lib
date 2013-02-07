@@ -91,11 +91,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
         Dim objValue As Object = Nothing
         If (paramInfo.ParameterType Is GetType(Long)) Then
           objValue = Long.Parse(value)
-        Else
-          If (Not paramInfo.ParameterType Is GetType(String)) Then
-            Throw New ApplicationException(("Unknown parameter type : " & paramInfo.ParameterType.FullName))
-          End If
+        ElseIf (paramInfo.ParameterType Is GetType(Double)) Then
+          objValue = Double.Parse(value)
+        ElseIf (paramInfo.ParameterType Is GetType(String)) Then
           objValue = value
+        ElseIf (paramInfo.ParameterType.IsEnum) Then
+          objValue = [Enum].Parse(paramInfo.ParameterType, value)
+        Else
+          Throw New ApplicationException(("Unknown parameter type : " & _
+                                          paramInfo.ParameterType.FullName))
         End If
         retval.Add(objValue)
       Next i

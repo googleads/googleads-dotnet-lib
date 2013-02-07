@@ -38,6 +38,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201209 {
     long criterionId;
     long adId;
     long locationExtensionId;
+    long enhancedCampaignId;
+
+    const Double BID_MODIFIER = 1.5;
 
     /// <summary>
     /// Inits this instance.
@@ -49,6 +52,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201209 {
       criterionId = utils.CreateKeyword(user, adGroupId);
       adId = utils.CreateTextAd(user, adGroupId, false);
       locationExtensionId = utils.CreateLocationExtension(user, campaignId);
+
+      enhancedCampaignId = utils.CreateCampaign(user, new ManualCPC());
+      utils.EnhanceCampaign(user, enhancedCampaignId);
     }
 
     /// <summary>
@@ -250,6 +256,48 @@ namespace Google.Api.Ads.AdWords.Tests.v201209 {
     public void TestValidateTextAdCSharpExample() {
       RunExample(delegate() {
         new CSharpExamples.ValidateTextAd().Run(user, adGroupId);
+      });
+    }
+
+
+    /// <summary>
+    /// Tests the SetCampaignsEnhanced C# code example.
+    /// </summary>
+    [Test]
+    public void TestSetCampaignsEnhancedCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.SetCampaignEnhanced().Run(user, campaignId);
+      });
+    }
+
+
+    /// <summary>
+    /// Tests the SetCampaignsEnhanced VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestSetCampaignsEnhancedVBExample() {
+      RunExample(delegate() {
+        new VBExamples.SetCampaignEnhanced().Run(user, campaignId);
+      });
+    }
+
+    /// <summary>
+    /// Tests the SetBidModifier C# code example.
+    /// </summary>
+    [Test]
+    public void TestSetBidModifierCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.SetBidModifier().Run(user, enhancedCampaignId, BID_MODIFIER);
+      });
+    }
+
+    /// <summary>
+    /// Tests the SetBidModifier VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestSetBidModifierVBExample() {
+      RunExample(delegate() {
+        new VBExamples.SetBidModifier().Run(user, enhancedCampaignId, BID_MODIFIER);
       });
     }
 

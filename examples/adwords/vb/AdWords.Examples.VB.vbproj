@@ -155,6 +155,8 @@
     <Compile Include="v201209\CampaignManagement\GetAllDisapprovedAdsWithAwql.vb" />
     <Compile Include="v201209\CampaignManagement\PromoteExperiment.vb" />
     <Compile Include="v201209\CampaignManagement\SetAdParameters.vb" />
+    <Compile Include="v201209\CampaignManagement\SetBidModifier.vb" />
+    <Compile Include="v201209\CampaignManagement\SetCampaignEnhanced.vb" />
     <Compile Include="v201209\CampaignManagement\ValidateTextAd.vb" />
     <Compile Include="v201209\ErrorHandling\HandlePartialFailures.vb" />
     <Compile Include="v201209\ErrorHandling\HandlePolicyViolationError.vb" />

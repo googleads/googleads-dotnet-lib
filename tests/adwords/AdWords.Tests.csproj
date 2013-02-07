@@ -84,6 +84,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
+    <Compile Include="Util\v201209\MapUtilitiesTest.cs" />
     <Compile Include="v201206\AccountManagementTest.cs" />
     <Compile Include="v201206\AudienceAndConversionManagementTest.cs" />
     <Compile Include="v201206\BasicOperationsTest.cs" />

@@ -73,6 +73,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
         object objValue = null;
         if (paramInfo.ParameterType == typeof(long)) {
           objValue = long.Parse(value);
+        } else if (paramInfo.ParameterType == typeof(double)) {
+          objValue = double.Parse(value);
         } else if (paramInfo.ParameterType == typeof(string)) {
           objValue = value;
         } else if (paramInfo.ParameterType.IsEnum) {
