@@ -141,6 +141,8 @@
     <Compile Include="v201209\CampaignManagement\GetAllDisapprovedAdsWihAwql.cs" />
     <Compile Include="v201209\CampaignManagement\PromoteExperiment.cs" />
     <Compile Include="v201209\CampaignManagement\SetAdParameters.cs" />
+    <Compile Include="v201209\CampaignManagement\SetBidModifier.cs" />
+    <Compile Include="v201209\CampaignManagement\SetCampaignEnhanced.cs" />
     <Compile Include="v201209\CampaignManagement\ValidateTextAd.cs" />
     <Compile Include="v201209\ErrorHandling\HandlePartialFailures.cs" />
     <Compile Include="v201209\ErrorHandling\HandlePolicyViolationError.cs" />

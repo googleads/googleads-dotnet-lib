@@ -73,6 +73,7 @@
     <Compile Include="Util\Reports\ReportDownloadError.cs" />
     <Compile Include="Util\Reports\ReportsException.cs" />
     <Compile Include="Util\Reports\ReportUtilities.cs" />
+    <Compile Include="Util\v201209\MapUtilities.cs" />
     <Compile Include="Util\ErrorUtilities.cs" />
     <Compile Include="v201206\AdWordsApi.cs" />
     <Compile Include="v201206\AdWordsServiceV201206.cs" />
