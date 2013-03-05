@@ -95,6 +95,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201206
 
       Dim operations As New List(Of CampaignAdExtensionOperation)
 
+      ' Phone numbers for US and FR offices.
+      Dim phoneNumbers As String() = New String() {"(650) 253-0000", "(0)1 42 68 53 00"}
+      Dim index As Integer = 0
+
       ' Create a location extension for each geo location returned by the
       ' server.
       For Each location As GeoLocation In locations
@@ -108,7 +112,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201206
         locationExtension.companyName = "ACME Inc."
 
         ' Optional: Set the phone number.
-        locationExtension.phoneNumber = "(650) 253-0000"
+        locationExtension.phoneNumber = phoneNumbers(index)
+        index = index + 1
 
         Dim extension As New CampaignAdExtension
         extension.campaignId = campaignId

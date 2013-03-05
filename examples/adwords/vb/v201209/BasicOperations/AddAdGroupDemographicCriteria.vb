@@ -35,7 +35,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201209
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New AddAdGroups
+      Dim codeExample As New AddAdGroupDemographicCriteria
       Console.WriteLine(codeExample.Description)
       Try
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")

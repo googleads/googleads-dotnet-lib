@@ -23,8 +23,11 @@ Imports System.IO
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201206
   ''' <summary>
-  ''' This code example retrieves the unit usage for a client account for this
-  ''' month.
+  ''' This code example retrieves the unit usage for a client account for Jan
+  ''' 2013. This code example will not work for date ranges greater than Mar 1
+  ''' 2013 due to recent billing changes. See 
+  ''' http://googleadsdeveloper.blogspot.in/2013/01/new-simplified-adwords-api-pricing.html
+  ''' for details.
   '''
   ''' Tags: InfoService.get
   ''' </summary>
@@ -50,7 +53,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201206
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example retrieves the unit usage for a client account for this month."
+        Return "This code example retrieves the unit usage for a client account for Jan 2013. " & _
+            "This code example will not work for date ranges greater than Mar 1 2013 due to " & _
+            "recent billing changes. See " & _
+            "http://googleadsdeveloper.blogspot.in/2013/01/new-simplified-adwords-api-pricing.html " & _
+            "for details."
       End Get
     End Property
 
@@ -72,10 +79,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201206
       selector.includeSubAccounts = True
       selector.apiUsageType = ApiUsageType.UNIT_COUNT_FOR_CLIENTS
 
-      ' Create date range for retrieving unit usage.
-      Dim dateRange As New DateRange
-      dateRange.min = New DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).ToString("yyyyMMdd")
-      dateRange.max = DateTime.Now.AddDays(-1).ToString("yyyyMMdd")
+      ' Create date range for retrieving unit usage. We will use a fixed date
+      ' range in the past, since InfoService is going away due to billing
+      ' changes.
+      Dim dateRange As New DateRange()
+      dateRange.min = "20120101"
+      dateRange.max = "20120131"
       selector.dateRange = dateRange
 
       Try

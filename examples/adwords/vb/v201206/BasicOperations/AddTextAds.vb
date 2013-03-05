@@ -84,7 +84,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201206
         textAd.description1 = "Visit the Red Planet in style."
         textAd.description2 = "Low-gravity fun for everyone!"
         textAd.displayUrl = "www.example.com"
-        textAd.url = "http://www.example.com/" + i
+        textAd.url = "http://www.example.com/" & i
 
         Dim textAdGroupAd As New AdGroupAd
         textAdGroupAd.adGroupId = adGroupId

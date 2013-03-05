@@ -89,7 +89,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201209
         keywordCriterion.userStatus = UserStatus.PAUSED
 
         ' Optional: Set the keyword destination url.
-        keywordCriterion.destinationUrl = "http://example.com/mars/cruise/" + i
+        keywordCriterion.destinationUrl = "http://example.com/mars/cruise/" & i
 
         ' Create the operations.
         Dim operation As New AdGroupCriterionOperation

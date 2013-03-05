@@ -94,7 +94,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201209
       experiment.campaignId = campaignId
       experiment.name = ("Interplanetary Cruise #" & ExampleUtilities.GetRandomString)
       experiment.queryPercentage = 10
-      experiment.startDateTime = DateTime.Now.ToString("yyyyMMdd HHmmss")
+      experiment.startDateTime = DateTime.Now.AddDays(1).ToString("yyyyMMdd HHmmss")
 
       ' Optional: Set the end date.
       experiment.endDateTime = DateTime.Now.AddDays(30).ToString("yyyyMMdd HHmmss")
