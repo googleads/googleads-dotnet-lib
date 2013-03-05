@@ -14,9 +14,6 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using OAuth.Net.Common;
-using OAuth.Net.Consumer;
-
 using Google.Api.Ads.Common.OAuth.Lib;
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;

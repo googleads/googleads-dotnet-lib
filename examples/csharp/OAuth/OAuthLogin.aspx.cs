@@ -17,8 +17,6 @@
 using Google.Api.Ads.Common.OAuth.Lib;
 using Google.Api.Ads.Dfa.Lib;
 
-using OAuth.Net.Common;
-
 using System;
 using System.Collections;
 using System.Configuration;
