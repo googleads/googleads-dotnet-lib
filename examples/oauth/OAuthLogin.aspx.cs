@@ -17,8 +17,6 @@
 using Google.Api.Ads.Common.OAuth.Lib;
 using Google.Api.Ads.Dfp.Lib;
 
-using OAuth.Net.Common;
-
 using System;
 using System.Collections;
 using System.Configuration;
@@ -32,7 +30,7 @@ using System.Web.UI.WebControls.WebParts;
 
 namespace Google.Api.Ads.Dfp.Examples.OAuth {
   /// <summary>
-  /// Login and callback page for handling OAuth1.0a authentication.
+  /// Login and callback page for handling OAuth2 authentication.
   /// </summary>
   public partial class OAuthLogin : Page {
     /// <summary>
@@ -45,59 +43,9 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
       // Create an DfpAppConfig object with the default settings in
       // App.config.
       DfpAppConfig config = new DfpAppConfig();
-      if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth) {
-        DoOAuth1Authorization(config);
-      } else if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
+      if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
         DoAuth2Configuration(config);
       } else {
-      }
-    }
-
-    /// <summary>
-    /// Does the OAuth1 authorization.
-    /// </summary>
-    /// <param name="config">The config class used for configuring the OAuth
-    /// instance.</param>
-    private void DoOAuth1Authorization(DfpAppConfig config) {
-      // You could specify scope in your App.config, but if you care only about
-      // AdWords, the following is a simpler way of setting the scope.
-      config.OAuthScope = DfpService.GetOAuthScope(config);
-
-      // Since we use this page for OAuth callback also, we set the callback
-      // url as the current page. For a non-web application, this will be null.
-      config.OAuthCallbackUrl = Request.Url.GetLeftPart(UriPartial.Path);
-
-      // Create an OAuth1a object for handling OAuth1 flow.
-      OAuth1aProvider oAuth = new OAuth1aProvider(config);
-
-      if (Session["RequestToken"] == null) {
-        // This is the first time this page is being loaded.
-        // Create the authorization url and redirect the user to that page.
-        // Note that this will also fetch a requestToken if not done already.
-        String authorizationUrl = oAuth.GetAuthorizationUrl();
-        // Save the request token for future use.
-        Session["RequestToken"] = oAuth.RequestToken;
-        Response.Redirect(authorizationUrl);
-      } else if (Request["oauth_verifier"] != null) {
-        // This page was loaded because OAuth server did a callback.
-        // Set the request token we saved earlier. This is required for the
-        // OAuth1 provider to continue with the authorization process it left
-        // off earlier.
-        oAuth.RequestToken = Session["RequestToken"] as IToken;
-
-        // Extract the verifier code from the url parameters.
-        string verifier = Request["oauth_verifier"];
-
-        // Fetch the access token.
-        oAuth.FetchAccessAndRefreshTokens(verifier);
-
-        // Save the access token for future use.
-        Session["AccessToken"] = oAuth.AccessToken;
-
-        // Redirect the user to the main page.
-        Response.Redirect("Default.aspx");
-      } else {
-        throw new Exception("Unknown state for OAuth callback.");
       }
     }
 

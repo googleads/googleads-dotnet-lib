@@ -61,7 +61,6 @@
     <Compile Include="Lib\ContextStore.cs" />
     <Compile Include="Lib\DefaultAuthTokenCache.cs" />
     <Compile Include="Lib\DefaultTraceWriter.cs" />
-    <Compile Include="Lib\OAuth1a.cs" />
     <Compile Include="Lib\OAuth2.cs" />
     <Compile Include="Lib\SoapListener.cs">
     </Compile>

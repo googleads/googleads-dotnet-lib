@@ -14,9 +14,6 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using OAuth.Net.Common;
-using OAuth.Net.Consumer;
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201208;
 using Google.Api.Ads.Common.OAuth.Lib;
@@ -57,14 +54,6 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
       // access token or refresh token with you. If you have one, you needn't
       // redirect the user through the login page; instead you can initialize
       // the user directly as follows:
-      //
-      // OAuth 1.0a
-      // ==========
-      //
-      // OAuth1aProvider oAuth1a = new OAuth1aProvider(user.Config);
-      // oAuth1a.AccessToken = myAccessToken;
-      // user.OAuthProvider = oAuth1a;
-      //
       // OAuth 2
       // ==========
       //
@@ -72,8 +61,7 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
       // oAuth2.AccessToken = myAccessToken;
       // oAuth2.RefreshToken = myRefreshToken;
       DfpAppConfig config = user.Config as DfpAppConfig;
-      if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth ||
-          config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
+      if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
         Response.Redirect("OAuthLogin.aspx");
       } else {
         throw new Exception("Authorization mode is not OAuth.");
@@ -139,18 +127,7 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
     /// Prepares the user for OAuth.
     /// </summary>
     private void PrepareUserForOAuth() {
-      if ((user.Config as DfpAppConfig).AuthorizationMethod ==
-          DfpAuthorizationMethod.OAuth) {
-        // Create an OAuth1 handler.
-        OAuth1aProvider oAuth1a = new OAuth1aProvider(user.Config);
-
-        // In this code example, we use Session to store the OAuth tokens. In
-        // practice, these values will be stored in a local database instead.
-        oAuth1a.AccessToken = Session["AccessToken"] as IToken;
-
-        // Set the OAuth1 handler for the current user.
-        user.OAuthProvider = oAuth1a;
-      } else if ((user.Config as DfpAppConfig).AuthorizationMethod ==
+     if ((user.Config as DfpAppConfig).AuthorizationMethod ==
           DfpAuthorizationMethod.OAuth2) {
         // Create an OAuth2 handler.
         OAuth2Provider oAuth2 = new OAuth2Provider(user.Config);

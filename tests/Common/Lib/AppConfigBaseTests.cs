@@ -91,9 +91,6 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       Assert.AreEqual(int.Parse(tblSettings["Timeout"].ToString()), config.Timeout);
       Assert.AreEqual(int.Parse(tblSettings["RetryCount"].ToString()), config.RetryCount);
 
-      Assert.AreEqual(tblSettings["OAuthConsumerKey"].ToString(), config.OAuthConsumerKey);
-      Assert.AreEqual(tblSettings["OAuthConsumerSecret"].ToString(), config.OAuthConsumerSecret);
-      Assert.AreEqual(tblSettings["OAuthScope"].ToString(), config.OAuthScope);
       Assert.AreEqual(tblSettings["OAuth2ClientId"].ToString(), config.OAuth2ClientId);
       Assert.AreEqual(tblSettings["OAuth2ClientSecret"].ToString(), config.OAuth2ClientSecret);
       Assert.AreEqual(tblSettings["OAuth2ServiceAccountEmail"].ToString(), config.OAuth2ServiceAccountEmail);
