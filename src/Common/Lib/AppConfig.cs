@@ -79,26 +79,6 @@ namespace Google.Api.Ads.Common.Lib {
     string OAuth2Scope { get; set; }
 
     /// <summary>
-    /// Gets or sets the OAuth callback url.
-    /// </summary>
-    string OAuthCallbackUrl { get; set; }
-
-    /// <summary>
-    /// Gets or sets the OAuth consumer key.
-    /// </summary>
-    string OAuthConsumerKey { get; set; }
-
-    /// <summary>
-    /// Gets or sets the OAuth consumer secret.
-    /// </summary>
-    string OAuthConsumerSecret { get; set; }
-
-    /// <summary>
-    /// Gets or sets the OAuth consumer secret.
-    /// </summary>
-    string OAuthScope { get; set; }
-
-    /// <summary>
     /// Occurs when a property is changed.
     /// </summary>
     event PropertyChangedEventHandler PropertyChanged;

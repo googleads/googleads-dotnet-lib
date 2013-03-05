@@ -43,6 +43,12 @@ namespace Google.Api.Ads.Common.Tests {
         "Error=BadAuthentication\r\nUrl=http://localhost";
 
     /// <summary>
+    /// Singleton instance.
+    /// </summary>
+    private static WebRequestInterceptor instance;
+
+
+    /// <summary>
     /// Content type for ClientLogin API calls.
     /// </summary>
     private const string CLIENTLOGIN_RESPONSE_TYPE = "text/plain";

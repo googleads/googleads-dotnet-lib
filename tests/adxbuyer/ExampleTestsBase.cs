@@ -1,4 +1,4 @@
-﻿// Copyright 2012, Google Inc. All Rights Reserved.
+// Copyright 2012, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ using System.IO;
 using System.Net;
 using System.Threading;
 using System.Xml;
+using Google.Api.Ads.Common.Lib;
 
 namespace Google.Api.Ads.AdWords.Tests {
   /// <summary>
@@ -77,6 +78,7 @@ namespace Google.Api.Ads.AdWords.Tests {
         clientLoginInterceptor.Intercept = true;
         clientLoginInterceptor.RaiseException = false;
         awapiInterceptor.Intercept = true;
+        AuthToken.Cache.Clear();
         awapiInterceptor.LoadMessages(mockData.MockMessages,
              delegate(Uri requestUri, WebHeaderCollection headers, String body) {
                VerifySoapHeaders(requestUri, body);
@@ -101,11 +103,12 @@ namespace Google.Api.Ads.AdWords.Tests {
     /// <param name="exampleDelegate">The delegate that initializes and runs the
     /// code example.</param>
     protected void RunExample(TestDelegate exampleDelegate) {
-      Thread.Sleep(10000);
+      Thread.Sleep(3000);
       StringWriter writer = new StringWriter();
       Assert.DoesNotThrow(delegate() {
         TextWriter oldWriter = Console.Out;
         Console.SetOut(writer);
+        AuthToken.Cache.Clear();
         exampleDelegate.Invoke();
         Console.SetOut(oldWriter);
         Console.WriteLine(writer.ToString());

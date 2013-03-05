@@ -41,7 +41,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201209 {
     /// </summary>
     [SetUp]
     public void Init() {
-      campaignId = utils.CreateCampaign(user, new ManualCPC());
+      campaignId = utils.CreateCampaign(user, new ManualCPM());
       adGroupId = utils.CreateAdGroup(user, campaignId);
     }
 

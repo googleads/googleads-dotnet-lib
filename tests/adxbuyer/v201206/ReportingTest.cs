@@ -40,7 +40,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201206 {
     /// </summary>
     [SetUp]
     public void Init() {
-      outputFileName = Path.GetTempFileName();
+      outputFileName = Path.GetFileName(Path.GetTempFileName());
       reportType = ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT;
     }
 

@@ -1,3 +1,7 @@
+15.5.0
+- Added support for v201302.
+- Removed support for OAuth1.0.
+
 15.4.0
 - Added examples for supporting enhanced campaigns through forward compatibility
   maps.

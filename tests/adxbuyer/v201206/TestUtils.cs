@@ -425,7 +425,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201206 {
       experiment.campaignId = campaignId;
       experiment.name = "Interplanetary Cruise #" + GetTimeStamp();
       experiment.queryPercentage = 10;
-      experiment.startDateTime = DateTime.Now.ToString("yyyyMMdd HHmmss");
+      experiment.startDateTime = DateTime.Now.AddDays(1).ToString("yyyyMMdd HHmmss");
 
       // Create the operation.
       ExperimentOperation experimentOperation = new ExperimentOperation();

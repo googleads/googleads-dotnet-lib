@@ -42,6 +42,12 @@ namespace Google.Api.Ads.AdWords.Tests {
     public const string SOAP_RESPONSE_TYPE = "text/xml; charset=UTF-8";
 
     /// <summary>
+    /// Singleton instance.
+    /// </summary>
+    private static WebRequestInterceptor instance;
+
+
+    /// <summary>
     /// Gets the only instance.
     /// </summary>
     public static WebRequestInterceptor Instance {

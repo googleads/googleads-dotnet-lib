@@ -93,6 +93,7 @@ namespace Google.Api.Ads.AdWords.Lib {
           awapiSignature.ServiceName);
       service.EnableDecompression = awConfig.EnableGzipCompression;
       service.User = user;
+      service.Signature = awapiSignature;
       return service;
     }
 
