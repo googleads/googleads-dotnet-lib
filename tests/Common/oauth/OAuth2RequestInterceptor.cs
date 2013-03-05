@@ -96,6 +96,12 @@ namespace Google.Api.Ads.Common.OAuth.Tests {
     private const string OAUTH2_RESPONSE_TYPE = "application/json";
 
     /// <summary>
+    /// Singleton instance.
+    /// </summary>
+    private static WebRequestInterceptor instance;
+
+
+    /// <summary>
     /// Gets the only instance.
     /// </summary>
     public static WebRequestInterceptor Instance {

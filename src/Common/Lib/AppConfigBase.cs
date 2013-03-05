@@ -141,26 +141,6 @@ namespace Google.Api.Ads.Common.Lib {
     private const string OAUTH2_JWT_CERTIFICATE_PASSWORD = "OAuth2JwtCertificatePassword";
 
     /// <summary>
-    /// Key name for oAuthConsumerKey.
-    /// </summary>
-    private const string OAUTH_CONSUMER_KEY = "OAuthConsumerKey";
-
-    /// <summary>
-    /// Key name for oAuthConsumerKey.
-    /// </summary>
-    private const string OAUTH_CONSUMER_SECRET = "OAuthConsumerSecret";
-
-    /// <summary>
-    /// Key name for oAuthScope.
-    /// </summary>
-    private const string OAUTH_SCOPE = "OAuthScope";
-
-    /// <summary>
-    /// Key name for oAuthCallbackUrl.
-    /// </summary>
-    private const string OAUTH_CALLBACK_URL = "OAuthCallbackUrl";
-
-    /// <summary>
     /// Path to which the SOAP logs are to be saved.
     /// </summary>
     private string logPath;
@@ -250,26 +230,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// Redirect uri.
     /// </summary>
     private string oAuth2RedirectUri;
-
-    /// <summary>
-    /// OAuth consumer key.
-    /// </summary>
-    private string oAuthConsumerKey;
-
-    /// <summary>
-    /// OAuth consumer value.
-    /// </summary>
-    private string oAuthConsumerSecret;
-
-    /// <summary>
-    /// OAuth scope.
-    /// </summary>
-    private string oAuthScope;
-
-    /// <summary>
-    /// OAuth callback url.
-    /// </summary>
-    private string oAuthCallbackUrl;
 
     /// <summary>
     /// Default value for number of times to retry a call if an API call fails
@@ -501,54 +461,6 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets or sets the OAuth consumer key.
-    /// </summary>
-    public string OAuthConsumerKey {
-      get {
-        return oAuthConsumerKey;
-      }
-      set {
-        SetPropertyField("OAuthConsumerKey", ref oAuthConsumerKey, value);
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the OAuth consumer secret.
-    /// </summary>
-    public string OAuthConsumerSecret {
-      get {
-        return oAuthConsumerSecret;
-      }
-      set {
-        SetPropertyField("OAuthConsumerSecret", ref oAuthConsumerSecret, value);
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the OAuth consumer secret.
-    /// </summary>
-    public string OAuthScope {
-      get {
-        return oAuthScope;
-      }
-      set {
-        SetPropertyField("OAuthScope", ref oAuthScope, value);
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the OAuth callback url.
-    /// </summary>
-    public string OAuthCallbackUrl {
-      get {
-        return oAuthCallbackUrl;
-      }
-      set {
-        SetPropertyField("OAuthCallbackUrl", ref oAuthCallbackUrl, value);
-      }
-    }
-
-    /// <summary>
     /// Gets the signature for this assembly, given a type derived from
     /// AppConfigBase.
     /// </summary>
@@ -609,10 +521,6 @@ namespace Google.Api.Ads.Common.Lib {
       oAuth2RedirectUri = null;
       oAuth2PrnEmail = "";
       oAuth2ServiceAccountEmail = "";
-      oAuthConsumerKey = "";
-      oAuthConsumerSecret = "";
-      oAuthCallbackUrl = null;
-      oAuthScope = "";
     }
 
     /// <summary>
@@ -663,11 +571,6 @@ namespace Google.Api.Ads.Common.Lib {
           oAuth2CertificatePath);
       oAuth2CertificatePassword = ReadSetting(settings, OAUTH2_JWT_CERTIFICATE_PASSWORD,
           oAuth2CertificatePassword);
-
-      oAuthConsumerKey = ReadSetting(settings, OAUTH_CONSUMER_KEY, oAuthConsumerKey);
-      oAuthConsumerSecret = ReadSetting(settings, OAUTH_CONSUMER_SECRET, oAuthConsumerSecret);
-      oAuthCallbackUrl = ReadSetting(settings, OAUTH_CALLBACK_URL, oAuthCallbackUrl);
-      oAuthScope = ReadSetting(settings, OAUTH_SCOPE, oAuthScope);
 
       int.TryParse(ReadSetting(settings, TIMEOUT, timeout.ToString()), out timeout);
       int.TryParse(ReadSetting(settings, RETRYCOUNT, retryCount.ToString()), out retryCount);

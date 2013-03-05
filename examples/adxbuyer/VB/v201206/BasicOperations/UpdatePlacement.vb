@@ -104,7 +104,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201206
           Dim bidAmount As Long = 0
           If TypeOf adGroupCriterion Is BiddableAdGroupCriterion Then
             bidAmount = TryCast(TryCast(adGroupCriterion, BiddableAdGroupCriterion).bids,  _
-                ManualCPCAdGroupCriterionBids).maxCpc.amount.microAmount
+                ManualCPMAdGroupCriterionBids).maxCpm.amount.microAmount
           End If
           Console.WriteLine("Placement with ad group id = '{0}', id = '{1}' was updated with " & _
               "bid amount = '{2}' micros.", adGroupCriterion.adGroupId, _

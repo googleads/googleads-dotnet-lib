@@ -494,8 +494,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       } else {
         (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.None;
       }
-      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth ||
-          config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
+      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
         if (this.User.OAuthProvider != null) {
           request.Headers["Authorization"] = this.User.OAuthProvider.GetAuthHeader(downloadUrl);
         } else {

@@ -66,8 +66,7 @@ namespace Google.Api.Ads.AdWords.Lib {
             ".", XmlQualifiedName.Empty);
       }
 
-      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth ||
-          config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
+      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
         if (this.User.OAuthProvider != null) {
           oAuthHeader = this.User.OAuthProvider.GetAuthHeader(this.Url);
         } else {

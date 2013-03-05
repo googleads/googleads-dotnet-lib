@@ -103,7 +103,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201209 {
           long bidAmount = 0;
           if (adGroupCriterion is BiddableAdGroupCriterion) {
             bidAmount = ((adGroupCriterion as BiddableAdGroupCriterion).bids as
-                ManualCPCAdGroupCriterionBids).maxCpc.amount.microAmount;
+                ManualCPMAdGroupCriterionBids).maxCpm.amount.microAmount;
           }
           Console.WriteLine("Placement with ad group id = '{0}', id = '{1}' was updated with " +
               "bid amount = '{2}' micros.", adGroupCriterion.adGroupId,
