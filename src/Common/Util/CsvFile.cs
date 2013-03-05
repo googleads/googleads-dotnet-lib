@@ -92,7 +92,7 @@ namespace Google.Api.Ads.Common.Util {
       StreamWriter writer = null;
       try {
         writer = new StreamWriter(fileName);
-        if (Headers != null) {
+        if (Headers.Count != 0) {
           StringBuilder builder = ConvertRowToCsvString(Headers.ToArray());
           writer.WriteLine(builder.ToString().TrimEnd(','));
         }
