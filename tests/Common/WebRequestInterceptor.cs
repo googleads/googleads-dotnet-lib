@@ -35,11 +35,6 @@ namespace Google.Api.Ads.Common.Tests {
     public delegate void OnBeforeSendResponse(Uri uri, WebHeaderCollection headers, String body);
 
     /// <summary>
-    /// Singleton instance.
-    /// </summary>
-    protected static WebRequestInterceptor instance;
-
-    /// <summary>
     /// Callback for listening to outgoing request.
     /// </summary>
     private OnBeforeSendResponse beforeSendResponse = OnBeforeSendResponseCallback;

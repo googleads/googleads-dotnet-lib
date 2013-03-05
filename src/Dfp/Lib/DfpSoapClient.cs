@@ -98,8 +98,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         }
       }
 
-      if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth ||
-          config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
+      if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
         if (this.User.OAuthProvider != null) {
           OAuth oAuth = (header.authentication as OAuth) ?? new OAuth();
           oAuth.parameters = this.User.OAuthProvider.GetAuthHeader(this.Url);

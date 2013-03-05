@@ -14,9 +14,6 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using OAuth.Net.Common;
-using OAuth.Net.Consumer;
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201208;
 using Google.Api.Ads.Common.OAuth.Lib;
@@ -27,7 +24,7 @@ using System.Data;
 namespace Google.Api.Ads.Dfp.Examples.OAuth {
   /// <summary>
   /// This code example shows how to run an DFP API command line application
-  /// using OAuth 1.0a/2.0 as authentication mechanism. To run this application,
+  /// using OAuth 2.0 as authentication mechanism. To run this application,
   ///
   /// 1. You should create a new Console Application project.
   /// 2. Add reference to the following assemblies:
@@ -35,8 +32,6 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
   /// <item>Google.Ads.Common.dll</item>
   /// <item>Google.Ads.OAuth.dll</item>
   /// <item>Google.Dfp.dll</item>
-  /// <item>Microsoft.Practices.ServiceLocation.dll</item>
-  /// <item>OAuth.Net.Combined.dll</item>
   /// <item>System.Web</item>
   /// <item>System.Configuration</item>
   /// </list>
@@ -57,11 +52,7 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
     static void Main(string[] args) {
       DfpUser user = new DfpUser();
 
-      if ((user.Config as DfpAppConfig).AuthorizationMethod ==
-          DfpAuthorizationMethod.OAuth) {
-        DoAuth1Authorization(user);
-      } else if ((user.Config as DfpAppConfig).AuthorizationMethod ==
-          DfpAuthorizationMethod.OAuth2) {
+      if ((user.Config as DfpAppConfig).AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
         DoAuth2Authorization(user);
       } else {
         throw new Exception("Authorization mode is not OAuth.");
@@ -133,42 +124,6 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
 
       // Fetch the access and refresh tokens.
       oAuth2.FetchAccessAndRefreshTokens(authorizationCode);
-    }
-
-    /// <summary>
-    /// Does the OAuth1 authorization.
-    /// </summary>
-    /// <param name="user">The Dfp user.</param>
-    /// <remarks>If you have saved a user's access tokens from a previous
-    /// session, you can set them directly to the OAuth1a handler object. Since
-    /// Also, make sure you set the redirect uri and scope correctly for signing
-    /// purposes.</remarks>
-    private static void DoAuth1Authorization(DfpUser user) {
-      // Set the OAuth1.0a scope.
-      user.Config.OAuthScope = DfpService.GetOAuthScope(user.Config as DfpAppConfig);
-
-      // Since we are using a console application, set the callback url to null.
-      user.Config.OAuthCallbackUrl = null;
-
-      // Create the OAuth1.oa protocol handler and set it to the current user.
-      OAuth1aProvider oAuth1a = new OAuth1aProvider(user.Config);
-      user.OAuthProvider = oAuth1a;
-
-      // Generate the authorization url and display that to the user. Note that
-      // this will also generate a request token if not done already.
-      string authorizationUrl = oAuth1a.GetAuthorizationUrl();
-      Console.WriteLine("Open a fresh web browser and navigate to \n\n{0}\n\n. You will be " +
-          "prompted to login and then authorize this application to make calls to the " +
-          "DFP API. Once approved, you will be presented with an authorization code.",
-          authorizationUrl);
-
-      // Accept the authorization code from the user.
-      Console.Write("Enter the authorization code :");
-      string authorizationCode = Console.ReadLine();
-
-      // Fetch the access token.
-      oAuth1a.FetchAccessAndRefreshTokens(authorizationCode);
-      return;
     }
   }
 }
