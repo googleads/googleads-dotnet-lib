@@ -19,6 +19,7 @@ using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201203;
 
 using System;
+using System.IO;
 using System.Text;
 
 namespace Google.Api.Ads.Dfp.Examples.v201203 {
@@ -59,14 +60,21 @@ namespace Google.Api.Ads.Dfp.Examples.v201203 {
 
       // Set the id of the completed report.
       long reportJobId = long.Parse(_T("INSERT_REPORT_JOB_ID_HERE"));
+      String fileName = _T("INSERT_FILE_PATH_HERE");
 
       try {
         // Download report data.
         string url = reportService.getReportDownloadURL(reportJobId, ExportFormat.CSV);
         byte[] gzipReport = MediaUtilities.GetAssetDataFromUrl(url);
         string reportContents = Encoding.UTF8.GetString(MediaUtilities.DeflateGZipData(gzipReport));
+
+        using (StreamWriter writer = new StreamWriter(fileName)) {
+          writer.Write(reportContents);
+        }
+
         // Display results.
-        Console.WriteLine("Data for report job with id '{0}\':\n{1}", reportJobId, reportContents);
+        Console.WriteLine("Report job with id '{0}' was downloaded to '{1}'.", reportJobId,
+            fileName);
       } catch (Exception ex) {
         Console.WriteLine("Failed to download report. Exception says \"{0}\"", ex.Message);
       }
