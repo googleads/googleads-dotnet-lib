@@ -160,6 +160,17 @@
     <Compile Include="v201211\ReportServiceTests.cs" />
     <Compile Include="v201211\TestUtils.cs" />
     <Compile Include="v201211\UserServiceTests.cs" />
+    <Compile Include="v201302\CompanyServiceTests.cs" />
+    <Compile Include="v201302\CreativeServiceTests.cs" />
+    <Compile Include="v201302\ForecastServiceTests.cs" />
+    <Compile Include="v201302\InventoryServiceTests.cs" />
+    <Compile Include="v201302\LineItemCreativeAssociationServiceTests.cs" />
+    <Compile Include="v201302\LineItemServiceTests.cs" />
+    <Compile Include="v201302\OrderServiceTests.cs" />
+    <Compile Include="v201302\PlacementServiceTests.cs" />
+    <Compile Include="v201302\ReportServiceTests.cs" />
+    <Compile Include="v201302\TestUtils.cs" />
+    <Compile Include="v201302\UserServiceTests.cs" />
     <Compile Include="BaseTests.cs" />
   </ItemGroup>
   <ItemGroup>
