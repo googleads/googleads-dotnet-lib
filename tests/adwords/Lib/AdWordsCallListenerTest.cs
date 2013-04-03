@@ -18,6 +18,7 @@ using Google.Api.Ads.AdWords.Examples.CSharp.v201302;
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Tests.v201302;
 using Google.Api.Ads.AdWords.v201302;
+using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests;
 using Google.Api.Ads.Common.Util;
 
@@ -43,6 +44,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     /// </summary>
     [SetUp]
     public void Init() {
+      user.ResetCallHistory();
     }
 
     /// <summary>
@@ -67,6 +69,35 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
       }));
     }
 
+    /// <summary>
+    /// Tests if SOAP messages are handled correctly.
+    /// </summary>
+    [Test]
+    [Category("Small")]
+    public void TestHandleMessage() {
+      try {
+        ContextStore.AddKey("SoapMethod", "get");
 
+        XmlDocument xDoc = new XmlDocument();
+        xDoc.LoadXml(SoapMessages_v201302.GetAccountAlerts);
+        XmlElement xRequest = (XmlElement) xDoc.SelectSingleNode("/Example/SOAP/Response");
+        xDoc.LoadXml(xRequest.InnerText);
+        AlertService service = (AlertService) user.GetService(AdWordsService.v201302.AlertService);
+
+        AdWordsCallListener.Instance.HandleMessage(xDoc, service, SoapMessageDirection.IN);
+
+        Assert.AreEqual(user.GetTotalOperationCount(), 2);
+        Assert.AreEqual(user.GetOperationCountForLastCall(), 2);
+        ApiCallEntry[] callEntries = user.GetCallDetails();
+        Assert.AreEqual(callEntries.Length, 1);
+        ApiCallEntry callEntry = user.GetCallDetails()[0];
+
+        Assert.AreEqual(callEntry.OperationCount, 2);
+        Assert.AreEqual(callEntry.Method, "get");
+        Assert.AreEqual(callEntry.Service.Signature.ServiceName, "AlertService");
+      } finally {
+        ContextStore.RemoveKey("SoapMethod");
+      }
+    }
   }
 }
