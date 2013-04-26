@@ -53,6 +53,8 @@
     <Compile Include="Lib\TraceListenerTests.cs" />
     <Compile Include="Lib\ServiceFactoryTests.cs" />
     <Compile Include="Lib\ServiceSignatureTests.cs" />
+    <Compile Include="Util\MediaUtilitiesTests.cs" />
+    <Compile Include="Util\CsvFileTests.cs" />
     <Compile Include="WebRequestInterceptor.cs" />
     <Compile Include="Mocks\MockAuthTokenCache.cs" />
     <Compile Include="Mocks\MockAdsClient.cs" />

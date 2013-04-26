@@ -80,6 +80,8 @@
     <Compile Include="v1_18\DfaServiceV1_18.cs" />
     <Compile Include="v1_19\DfaApi.cs" />
     <Compile Include="v1_19\DfaServiceV1_19.cs" />
+    <Compile Include="v1_20\DfaApi.cs" />
+    <Compile Include="v1_20\DfaServiceV1_20.cs" />
     <Compile Include="Util\ApiCodes\CodeCsvs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
