@@ -59,6 +59,7 @@
     <Compile Include="Lib\AdWordsAppConfig.cs" />
     <Compile Include="Lib\AdWordsAuthorizationMethod.cs" />
     <Compile Include="Lib\AdWordsCallListener.cs" />
+    <Compile Include="Lib\AdWordsErrorHandler.cs" />
     <Compile Include="Lib\AdWordsException.cs" />
     <Compile Include="Lib\AdWordsService.cs" />
     <Compile Include="Lib\AdWordsServiceFactory.cs" />
