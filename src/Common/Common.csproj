@@ -58,6 +58,8 @@
     <Compile Include="Lib\AuthTokenCache.cs" />
     <Compile Include="Lib\AuthTokenErrorCode.cs" />
     <Compile Include="Lib\AuthTokenException.cs" />
+    <Compile Include="Lib\CredentialsExpiredException.cs" />
+    <Compile Include="Lib\ErrorHandler.cs" />
     <Compile Include="Lib\ContextStore.cs" />
     <Compile Include="Lib\DefaultAuthTokenCache.cs" />
     <Compile Include="Lib\DefaultTraceWriter.cs" />

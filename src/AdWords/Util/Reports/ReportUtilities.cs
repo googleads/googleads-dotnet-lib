@@ -43,39 +43,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Default report version.
     /// </summary>
-    private const string DEFAULT_REPORT_VERSION = "v201109";
+    private const string DEFAULT_REPORT_VERSION = "v201302";
 
     /// <summary>
     /// Sets the reporting API version to use.
     /// </summary>
     private string reportVersion = DEFAULT_REPORT_VERSION;
-
-    /// <summary>
-    /// Wait time in ms for report functions.
-    /// </summary>
-    protected const int WAIT_TIME = 30000;
-
-    /// <summary>
-    /// Maximum number of times to poll the report server before giving up.
-    /// Defaults to maximum number of attempts that can be made in 30 minutes.
-    /// </summary>
-    protected int maxPollingAttempts = 30 * 60 * 1000 / WAIT_TIME;
-
-    /// <summary>
-    /// Maximum length of report to read to check if it contains errors.
-    /// </summary>
-    private const int MAX_ERROR_LENGTH = 4096;
-
-    /// <summary>
-    /// The regex to check if a report download is valid or if it contains
-    /// errors.
-    /// </summary>
-    private const string REPORT_ERROR_REGEX = "\\!\\!\\!([^\\|]*)\\|\\|\\|(.*)";
-
-    /// <summary>
-    /// The report download url format.
-    /// </summary>
-    private const string REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/{1}?__rd={2}";
 
     /// <summary>
     /// The report download url format for ad-hoc reports.
@@ -89,18 +62,10 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     private const string ADHOC_REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/{1}";
 
     /// <summary>
-    /// Gets or sets the maximum number of times to poll the report server
-    /// before giving up. Defaults to maximum number of attempts that can be
-    /// made in 30 minutes.
+    /// The Authorization header prefix to be used when Authorization method is
+    /// ClientLogin.
     /// </summary>
-    public int MaxPollingAttempts {
-      get {
-        return maxPollingAttempts;
-      }
-      set {
-        maxPollingAttempts = value;
-      }
-    }
+    private const string CLIENT_LOGIN_PREFIX = "GoogleLogin auth=";
 
     /// <summary>
     /// Gets or sets the reporting API version to use.
@@ -121,9 +86,6 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       get {
         return user;
       }
-      set {
-        user = value;
-      }
     }
 
     /// <summary>
@@ -133,9 +95,6 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// utilities object.</param>
     public ReportUtilities(AdWordsUser user) {
       this.user = user;
-      // Default the max number of polling attempts to 3. The user may modify
-      // this using MaxPollingAttempts property after creating the class.
-      this.maxPollingAttempts = 3;
     }
 
     /// <summary>
@@ -166,29 +125,6 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
             reportVersion, format);
       string postData = string.Format("__rdquery={0}", HttpUtility.UrlEncode(query));
       return GetClientReportInternal(downloadUrl, postData, returnMoneyInMicros);
-    }
-
-    /// <summary>
-    ///  Downloads a report into memory.
-    /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
-    /// <returns>The client report.</returns>
-    public ClientReport GetClientReport(long reportDefinitionId) {
-      return GetClientReport(reportDefinitionId, true);
-    }
-
-    /// <summary>
-    ///  Downloads a report into memory.
-    /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
-    /// <param name="returnMoneyInMicros">True, if the money values in the
-    /// report should be returned as micros, False otherwise.</param>
-    /// <returns>The client report.</returns>
-    public ClientReport GetClientReport(long reportDefinitionId, bool returnMoneyInMicros) {
-      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
-      string downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer, reportVersion,
-            reportDefinitionId);
-      return GetClientReportInternal(downloadUrl, null, returnMoneyInMicros);
     }
 
     /// <summary>
@@ -251,34 +187,6 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Downloads a report to disk.
     /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
-    /// <param name="path">The path to which report should be downloaded.
-    /// </param>
-    /// <returns>The client report.</returns>
-    public ClientReport DownloadClientReport(long reportDefinitionId, string path) {
-      return DownloadClientReport(reportDefinitionId, true, path);
-    }
-
-    /// <summary>
-    /// Downloads a report to disk.
-    /// </summary>
-    /// <param name="reportDefinitionId">The report definition id.</param>
-    /// <param name="returnMoneyInMicros">True, if the money values in the
-    /// report should be returned as micros, False otherwise.</param>
-    /// <param name="path">The path to which report should be downloaded.
-    /// </param>
-    /// <returns>The client report.</returns>
-    public ClientReport DownloadClientReport(long reportDefinitionId, bool returnMoneyInMicros,
-        string path) {
-      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
-      string downloadUrl = string.Format(REPORT_URL_FORMAT, config.AdWordsApiServer, reportVersion,
-            reportDefinitionId);
-      return DownloadClientReportInternal(downloadUrl, null, returnMoneyInMicros, path);
-    }
-
-    /// <summary>
-    /// Downloads a report to disk.
-    /// </summary>
     /// <param name="reportDefinition">The report definition.</param>
     /// <param name="path">The path to which report should be downloaded.
     /// </param>
@@ -319,29 +227,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <returns>The client report.</returns>
     private ClientReport GetClientReportInternal(string downloadUrl, string postBody,
         bool returnMoneyInMicros) {
+      MemoryStream memStream = new MemoryStream();
+      DownloadReportToStream(downloadUrl, returnMoneyInMicros, postBody, memStream);
+
       ClientReport retval = new ClientReport();
-      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
-
-      ReportsException ex = null;
-      for (int i = 0; i < maxPollingAttempts; i++) {
-        MemoryStream memStream = new MemoryStream();
-        bool isSuccess = DownloadReportToStream(downloadUrl, config, returnMoneyInMicros, memStream,
-            postBody);
-        if (!isSuccess) {
-          string error = Encoding.UTF8.GetString(memStream.ToArray());
-          ex = ParseException(error);
-
-          if (!IsTransientError(ex)) {
-            throw ex;
-          } else {
-            Thread.Sleep(WAIT_TIME);
-          }
-        } else {
-          retval.Contents = memStream.ToArray();
-          return retval;
-        }
-      }
-      throw ex;
+      retval.Contents = memStream.ToArray();
+      return retval;
     }
 
     /// <summary>
@@ -357,27 +248,112 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     private ClientReport DownloadClientReportInternal(string downloadUrl, string postBody,
         bool returnMoneyInMicros, string path) {
       ClientReport retval = new ClientReport();
-      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
-
-      ReportsException ex = null;
-
-      for (int i = 0; i < maxPollingAttempts; i++) {
-        bool isSuccess = DownloadReportToDisk(downloadUrl, config, returnMoneyInMicros, path,
-            postBody);
-        if (!isSuccess) {
-          string errors = File.ReadAllText(path);
-          ex = ParseException(errors);
-          if (!IsTransientError(ex)) {
-            throw ex;
-          } else {
-            Thread.Sleep(WAIT_TIME);
-          }
-        } else {
-          retval.Path = path;
-          return retval;
+      FileStream fileStream = null;
+      try {
+        fileStream = File.OpenWrite(path);
+        fileStream.SetLength(0);
+        DownloadReportToStream(downloadUrl, returnMoneyInMicros, postBody, fileStream);
+        retval.Path = path;
+        return retval;
+      } finally {
+        if (fileStream != null) {
+          fileStream.Close();
         }
       }
-      throw ex;
+    }
+
+    /// <summary>
+    /// Downloads a report to stream.
+    /// </summary>
+    /// <param name="downloadUrl">The download url.</param>
+    /// <param name="returnMoneyInMicros">True if money values are returned
+    /// in micros.</param>
+    /// <param name="postBody">The POST body.</param>
+    /// <param name="outputStream">The stream to which report is downloaded.
+    /// </param>
+    private void DownloadReportToStream(string downloadUrl, bool returnMoneyInMicros,
+        string postBody, Stream outputStream) {
+      AdWordsErrorHandler errorHandler = new AdWordsErrorHandler(user);
+      while (true) {
+        WebResponse response = null;
+        HttpWebRequest request = BuildRequest(downloadUrl, returnMoneyInMicros, postBody);
+        try {
+          response = request.GetResponse();
+          MediaUtilities.CopyStream(response.GetResponseStream(), outputStream);
+          return;
+        } catch (WebException ex) {
+          response = ex.Response;
+          MemoryStream memStream = new MemoryStream();
+          MediaUtilities.CopyStream(response.GetResponseStream(), memStream);
+          String exceptionBody = Encoding.UTF8.GetString(memStream.ToArray());
+          Exception reportsException = ParseException(exceptionBody);
+
+          if (AdWordsErrorHandler.IsCookieInvalidError(reportsException)) {
+            reportsException = new CredentialsExpiredException(
+                request.Headers["Authorization"].Replace(CLIENT_LOGIN_PREFIX, ""));
+          } else if (AdWordsErrorHandler.IsOAuthTokenExpiredError(reportsException)) {
+            reportsException = new CredentialsExpiredException(request.Headers["Authorization"]);
+          }
+
+          if (errorHandler.ShouldRetry(reportsException)) {
+            errorHandler.PrepareForRetry(reportsException);
+          } else {
+            throw reportsException;
+          }
+        } finally {
+          response.Close();
+        }
+      }
+    }
+
+    /// <summary>
+    /// Builds an HTTP request for downloading reports.
+    /// </summary>
+    /// <param name="downloadUrl">The download url.</param>
+    /// <param name="returnMoneyInMicros">True if money values are returned
+    /// in micros.</param>
+    /// <param name="postBody">The POST body.</param>
+    /// <returns>A webrequest to download reports.</returns>
+    private HttpWebRequest BuildRequest(string downloadUrl, bool returnMoneyInMicros,
+        string postBody) {
+      AdWordsAppConfig config = user.Config as AdWordsAppConfig;
+
+      HttpWebRequest request = (HttpWebRequest) HttpWebRequest.Create(downloadUrl);
+      request.Method = "POST";
+      request.Proxy = config.Proxy;
+      request.Timeout = config.Timeout;
+      request.UserAgent = config.GetUserAgent();
+
+      request.Headers.Add("clientCustomerId: " + config.ClientCustomerId);
+      request.ContentType = "application/x-www-form-urlencoded";
+      if (config.EnableGzipCompression) {
+        (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.GZip
+            | DecompressionMethods.Deflate;
+      } else {
+        (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.None;
+      }
+      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
+        if (this.User.OAuthProvider != null) {
+          request.Headers["Authorization"] = this.User.OAuthProvider.GetAuthHeader(downloadUrl);
+        } else {
+          throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
+        }
+      } else if (config.AuthorizationMethod == AdWordsAuthorizationMethod.ClientLogin) {
+        string authToken = (!string.IsNullOrEmpty(config.AuthToken)) ? config.AuthToken :
+            new AuthToken(config, AdWordsSoapClient.SERVICE_NAME, config.Email,
+                config.Password).GetToken();
+        request.Headers["Authorization"] = CLIENT_LOGIN_PREFIX + authToken;
+      }
+
+      request.Headers.Add("returnMoneyInMicros: " + returnMoneyInMicros.ToString().ToLower());
+      request.Headers.Add("developerToken: " + config.DeveloperToken);
+      // The client library will use only apiMode = true.
+      request.Headers.Add("apiMode", "true");
+
+      using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
+        writer.Write(postBody);
+      }
+      return request;
     }
 
     /// <summary>
@@ -405,22 +381,6 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     }
 
     /// <summary>
-    /// Determines whether the report download error is transient or not.
-    /// </summary>
-    /// <param name="ex">The report exception.</param>
-    /// <returns>True, if the error is transient, false otherwise.
-    /// </returns>
-    protected bool IsTransientError(ReportsException ex) {
-      foreach (ReportDownloadError error in ex.Errors) {
-        if (error.ErrorType.Contains("RateExceededError") ||
-            error.ErrorType.Contains("InternalError")) {
-              return true;
-        }
-      }
-      return false;
-    }
-
-    /// <summary>
     /// Converts the report definition to XML format.
     /// </summary>
     /// <typeparam name="T">The type of ReportDefinition.</typeparam>
@@ -436,140 +396,6 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         node.RemoveAllAttributes();
       }
       return doc.OuterXml;
-    }
-
-    /// <summary>
-    /// Downloads the report to disk.
-    /// </summary>
-    /// <param name="downloadUrl">The report download URL.</param>
-    /// <param name="config">The configuration settings to be used when
-    /// downloading the report.</param>
-    /// <param name="returnMoneyInMicros">True, if the report values should be
-    /// downloaded in micros.</param>
-    /// <param name="path">The path to which the report is downloaded.</param>
-    /// <param name="postBody">The additional contents to be added to request
-    /// POST body.</param>
-    /// <returns>True, if the download was successful, false otherwise.</returns>
-    private bool DownloadReportToDisk(string downloadUrl, AdWordsAppConfig config,
-        bool returnMoneyInMicros, string path, string postBody) {
-      using (FileStream fs = File.OpenWrite(path)) {
-        fs.SetLength(0);
-        return DownloadReportToStream(downloadUrl, config, returnMoneyInMicros, fs, postBody);
-      }
-    }
-
-    /// <summary>
-    /// Downloads the report to disk.
-    /// </summary>
-    /// <param name="downloadUrl">The report download URL.</param>
-    /// <param name="config">The configuration settings to be used when
-    /// downloading the report.</param>
-    /// <param name="returnMoneyInMicros">True, if the report values should be
-    /// downloaded in micros.</param>
-    /// <param name="outputStream">The output stream to which the downloaded
-    /// report should be saved.</param>
-    /// <param name="postBody">The additional contents to be added to request
-    /// POST body.</param>
-    /// <return>True, if there was an error downloading the
-    /// report, false otherwise.</return>
-    private bool DownloadReportToStream(string downloadUrl, AdWordsAppConfig config,
-        bool returnMoneyInMicros, Stream outputStream, string postBody) {
-      HttpWebRequest request = (HttpWebRequest) HttpWebRequest.Create(downloadUrl);
-      if (!string.IsNullOrEmpty(postBody)) {
-        request.Method = "POST";
-      }
-      request.Proxy = config.Proxy;
-      request.Timeout = config.Timeout;
-      request.UserAgent = config.GetUserAgent();
-
-      if (!string.IsNullOrEmpty(config.ClientEmail)) {
-        request.Headers.Add("clientEmail: " + config.ClientEmail);
-      } else if (!string.IsNullOrEmpty(config.ClientCustomerId)) {
-        request.Headers.Add("clientCustomerId: " + config.ClientCustomerId);
-      }
-      request.ContentType = "application/x-www-form-urlencoded";
-      if (config.EnableGzipCompression) {
-        (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.GZip
-            | DecompressionMethods.Deflate;
-      } else {
-        (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.None;
-      }
-      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
-        if (this.User.OAuthProvider != null) {
-          request.Headers["Authorization"] = this.User.OAuthProvider.GetAuthHeader(downloadUrl);
-        } else {
-          throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
-        }
-      } else if (config.AuthorizationMethod == AdWordsAuthorizationMethod.ClientLogin) {
-        string authToken = (!string.IsNullOrEmpty(config.AuthToken)) ? config.AuthToken :
-            new AuthToken(config, AdWordsSoapClient.SERVICE_NAME, config.Email,
-                config.Password).GetToken();
-        request.Headers["Authorization"] = "GoogleLogin auth=" + authToken;
-      }
-
-      request.Headers.Add("returnMoneyInMicros: " + returnMoneyInMicros.ToString().ToLower());
-      request.Headers.Add("developerToken: " + config.DeveloperToken);
-      // The client library will use only apiMode = true.
-      request.Headers.Add("apiMode", "true");
-
-      if (!string.IsNullOrEmpty(postBody)) {
-        using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
-          writer.Write(postBody);
-        }
-      }
-
-      // AdWords API now returns a 400 for an API error.
-      bool retval = false;
-      WebResponse response = null;
-      try {
-        response = request.GetResponse();
-        retval = true;
-      } catch (WebException ex) {
-        response = ex.Response;
-        retval = false;
-      }
-      MediaUtilities.CopyStream(response.GetResponseStream(), outputStream);
-      response.Close();
-      return retval;
-    }
-
-    /// <summary>
-    /// Converts the preview bytes to string.
-    /// </summary>
-    /// <param name="previewBytes">The preview bytes.</param>
-    /// <returns>The preview bytes as a text.</returns>
-    private string ConvertPreviewBytesToString(byte[] previewBytes) {
-      if (previewBytes == null) {
-        return "";
-      }
-
-      // It is possible that our byte array doesn't end at a valid utf-8 string
-      // boundary, so we use a progressive decoder to decode bytes as far as
-      // possible.
-      Decoder decoder = Encoding.UTF8.GetDecoder();
-      char[] charArray = new char[previewBytes.Length];
-      int bytesUsed;
-      int charsUsed;
-      bool completed;
-
-      decoder.Convert(previewBytes, 0, previewBytes.Length, charArray, 0, charArray.Length, true,
-          out bytesUsed, out charsUsed, out completed);
-      return new string(charArray, 0, charsUsed);
-    }
-
-    /// <summary>
-    /// Determines whether the report is valid or not.
-    /// </summary>
-    /// <param name="previewString">The report preview text.</param>
-    /// <returns>True if the report is valid, false otherwise.</returns>
-    private bool IsValidReport(string previewString) {
-      try {
-        XmlDocument errorXml = new XmlDocument();
-        errorXml.LoadXml(previewString);
-        return errorXml.DocumentElement.Name == "error";
-      } catch (Exception) {
-        return false;
-      }
     }
   }
 }
