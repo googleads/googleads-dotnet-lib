@@ -1,5 +1,7 @@
 3.9.0
 - Added support for v1.20
+- Removed support for v1.17, v1,18.
+- Common library version was bumped to 1.7.0.
 
 3.8.0
 - Removed support for OAuth 1.0a.
