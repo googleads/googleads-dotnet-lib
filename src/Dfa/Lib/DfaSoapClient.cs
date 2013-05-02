@@ -148,6 +148,16 @@ namespace Google.Api.Ads.Dfa.Lib {
     }
 
     /// <summary>
+    /// Creates the error handler.
+    /// </summary>
+    /// <returns>
+    /// The error handler instance.
+    /// </returns>
+    protected override ErrorHandler CreateErrorHandler() {
+      return new DfaErrorHandler(this.User);
+    }
+
+    /// <summary>
     /// Gets a custom exception that wraps the SOAP exception thrown
     /// by the server.
     /// </summary>

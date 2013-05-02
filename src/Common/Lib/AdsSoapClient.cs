@@ -204,30 +204,16 @@ namespace Google.Api.Ads.Common.Lib {
     /// method.</param>
     /// <returns>The results from calling the SOAP API method.</returns>
     protected virtual object[] MakeApiCall(string methodName, object[] parameters) {
-      int retryCount = this.user.Config.RetryCount;
-      while (retryCount >= 0) {
+      ErrorHandler errorHandler = CreateErrorHandler();
+
+      while (true) {
         try {
           InitForCall(methodName, parameters);
           return base.Invoke(methodName, parameters);
         } catch (SoapException ex) {
           Exception customException = GetCustomException(ex);
-          if (retryCount > 0 && ShouldRetry(customException)) {
-            try {
-              PrepareForRetry(customException);
-              retryCount--;
-              continue;
-            } catch (Exception e) {
-              // We threw an exception while trying to recover from another
-              // exception. The second exception may contain additional details
-              // (e.g. exact reason why OAuth token refresh failed.), so we
-              // raise an ApplicationException with the message from the second
-              // exception and the first exception as inner exception. Ideally,
-              // we'd like to return both the exception objects, but this is
-              // a reasonable tradeoff.
-              string msg = string.Format("An error occured while retrying a failed API call : " +
-                  "{0}. See inner exception for more details.", e.Message);
-              throw new ApplicationException(msg, customException);
-            }
+          if (errorHandler.ShouldRetry(ex)) {
+            errorHandler.PrepareForRetry(ex);
           } else {
             throw customException;
           }
@@ -236,6 +222,14 @@ namespace Google.Api.Ads.Common.Lib {
         }
       }
       throw new ArgumentOutOfRangeException("Retry count cannot be negative.");
+    }
+
+    /// <summary>
+    /// Creates the error handler.
+    /// </summary>
+    /// <returns>The error handler instance.</returns>
+    protected virtual ErrorHandler CreateErrorHandler() {
+      return new ErrorHandler(this.User);
     }
 
     /// <summary>
@@ -264,23 +258,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// should override this method.</remarks>
     protected virtual Exception GetCustomException(SoapException ex) {
       return ex;
-    }
-
-    /// <summary>
-    /// Prepares for retrying the API call.
-    /// </summary>
-    /// <param name="ex">The exception thrown from the previous call.</param>
-    protected virtual void PrepareForRetry(Exception ex) {
-      return;
-    }
-
-    /// <summary>
-    /// Whether the current API call should be retried or not.
-    /// </summary>
-    /// <param name="ex">The exception thrown from the previous call.</param>
-    /// <returns>True, if the current API call should be retried.</returns>
-    protected virtual bool ShouldRetry(Exception ex) {
-      return false;
     }
 
     /// <summary>
