@@ -67,6 +67,51 @@ namespace Google.Api.Ads.AdWords.Tests.v201302 {
     }
 
     /// <summary>
+    /// Creates the legacy sitelinks.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="campaignId">The campaign id.</param>
+    /// <returns>The list of legacy sitelinks.</returns>
+    public Sitelink[] CreateLegacySitelinks(AdWordsUser user, long campaignId) {
+      // Get the CampaignAdExtensionService.
+      CampaignAdExtensionService campaignExtensionService =
+          (CampaignAdExtensionService) user.GetService(AdWordsService.v201302.
+          CampaignAdExtensionService);
+
+      // Create the sitelinks.
+      SitelinksExtension siteLinkExtension = new SitelinksExtension();
+
+      Sitelink siteLink1 = new Sitelink();
+      siteLink1.displayText = "Music";
+      siteLink1.destinationUrl = "http://www.example.com/music";
+
+      Sitelink siteLink2 = new Sitelink();
+      siteLink2.displayText = "DVDs";
+      siteLink2.destinationUrl = "http://www.example.com/dvds";
+
+      Sitelink siteLink3 = new Sitelink();
+      siteLink3.displayText = "New albums";
+      siteLink3.destinationUrl = "http://www.example.com/albums/new";
+
+      siteLinkExtension.sitelinks = new Sitelink[] {siteLink1, siteLink2, siteLink3};
+
+      CampaignAdExtension campaignAdExtension = new CampaignAdExtension();
+      campaignAdExtension.adExtension = siteLinkExtension;
+      campaignAdExtension.campaignId = campaignId;
+
+      // Create the operation.
+      CampaignAdExtensionOperation operation = new CampaignAdExtensionOperation();
+      operation.@operator = Operator.ADD;
+      operation.operand = campaignAdExtension;
+
+      // Create the sitelinks.
+      CampaignAdExtensionReturnValue retVal =
+          campaignExtensionService.mutate(new CampaignAdExtensionOperation[] {operation});
+
+      return (retVal.value[0].adExtension as SitelinksExtension).sitelinks;
+    }
+
+    /// <summary>
     /// Converts a campaign into enhanced campaign using forward compatibility
     /// map.
     /// </summary>

@@ -36,6 +36,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201302 {
     long adGroupId;
     long adId;
     long keywordId;
+    const double BID_MODIFIER = 0.2;
 
     /// <summary>
     /// Inits this instance.
@@ -83,6 +84,46 @@ namespace Google.Api.Ads.AdWords.Tests.v201302 {
     public void TestAddSiteLinksCSharpExample() {
       RunExample(delegate() {
         new CSharpExamples.AddSiteLinks().Run(user, campaignId);
+      });
+    }
+
+    /// <summary>
+    /// Tests the AddAdGroupBidModifier C# code example.
+    /// </summary>
+    [Test]
+    public void TestAddAdGroupBidModifierCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.AddAdGroupBidModifier().Run(user, adGroupId, BID_MODIFIER);
+      });
+    }
+
+    /// <summary>
+    /// Tests the AddAdGroupBidModifier VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestAddAdGroupBidModifierVBExample() {
+      RunExample(delegate() {
+        new VBExamples.AddAdGroupBidModifier().Run(user, adGroupId, BID_MODIFIER);
+      });
+    }
+
+    /// <summary>
+    /// Tests the GetAdGroupBidModifiers C# code example.
+    /// </summary>
+    [Test]
+    public void TestGetAdGroupBidModifiersCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.GetAdGroupBidModifiers().Run(user, campaignId);
+      });
+    }
+
+    /// <summary>
+    /// Tests the GetAdGroupBidModifiers VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestGetAdGroupBidModifiersVBExample() {
+      RunExample(delegate() {
+        new VBExamples.GetAdGroupBidModifiers().Run(user, campaignId);
       });
     }
   }
