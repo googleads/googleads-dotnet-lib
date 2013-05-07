@@ -114,8 +114,10 @@
     <Compile Include="v201302\AccountManagement\GetAccountAlerts.cs" />
     <Compile Include="v201302\AccountManagement\GetAccountChanges.cs" />
     <Compile Include="v201302\AccountManagement\GetAccountHierarchy.cs" />
+    <Compile Include="v201302\AdvancedOperations\AddAdGroupBidModifier.cs" />
     <Compile Include="v201302\AdvancedOperations\AddClickToDownloadAd.cs" />
     <Compile Include="v201302\AdvancedOperations\AddSiteLinks.cs" />
+    <Compile Include="v201302\AdvancedOperations\GetAdGroupBidModifiers.cs" />
     <Compile Include="v201302\BasicOperations\AddAdGroupDemographicCriteria.cs" />
     <Compile Include="v201302\BasicOperations\AddAdGroups.cs" />
     <Compile Include="v201302\BasicOperations\AddCampaigns.cs" />
@@ -145,12 +147,13 @@
     <Compile Include="v201302\CampaignManagement\PromoteExperiment.cs" />
     <Compile Include="v201302\CampaignManagement\SetAdParameters.cs" />
     <Compile Include="v201302\CampaignManagement\SetBidModifier.cs" />
-    <Compile Include="v201302\CampaignManagement\SetCampaignEnhanced.cs" />
     <Compile Include="v201302\CampaignManagement\ValidateTextAd.cs" />
     <Compile Include="v201302\ErrorHandling\HandlePartialFailures.cs" />
     <Compile Include="v201302\ErrorHandling\HandlePolicyViolationError.cs" />
     <Compile Include="v201302\ErrorHandling\HandleRateExceededError.cs" />
     <Compile Include="v201302\ErrorHandling\HandleTwoFactorAuthorizationError.cs" />
+    <Compile Include="v201302\Migration\SetCampaignEnhanced.cs" />
+    <Compile Include="v201302\Migration\UpgradeLegacySitelinks.cs" />
     <Compile Include="v201302\Miscellaneous\GetAllVideosAndImages.cs" />
     <Compile Include="v201302\Miscellaneous\UploadImage.cs" />
     <Compile Include="v201302\Optimization\EstimateKeywordTraffic.cs" />

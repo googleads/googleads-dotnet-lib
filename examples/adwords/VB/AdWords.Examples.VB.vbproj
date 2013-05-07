@@ -128,8 +128,10 @@
     <Compile Include="v201302\AccountManagement\GetAccountAlerts.vb" />
     <Compile Include="v201302\AccountManagement\GetAccountChanges.vb" />
     <Compile Include="v201302\AccountManagement\GetAccountHierarchy.vb" />
+    <Compile Include="v201302\AdvancedOperations\AddAdGroupBidModifier.vb" />
     <Compile Include="v201302\AdvancedOperations\AddClickToDownloadAd.vb" />
     <Compile Include="v201302\AdvancedOperations\AddSiteLinks.vb" />
+    <Compile Include="v201302\AdvancedOperations\GetAdGroupBidModifiers.vb" />
     <Compile Include="v201302\BasicOperations\AddAdGroupDemographicCriteria.vb" />
     <Compile Include="v201302\BasicOperations\AddAdGroups.vb" />
     <Compile Include="v201302\BasicOperations\AddCampaigns.vb" />
@@ -159,12 +161,13 @@
     <Compile Include="v201302\CampaignManagement\PromoteExperiment.vb" />
     <Compile Include="v201302\CampaignManagement\SetAdParameters.vb" />
     <Compile Include="v201302\CampaignManagement\SetBidModifier.vb" />
-    <Compile Include="v201302\CampaignManagement\SetCampaignEnhanced.vb" />
     <Compile Include="v201302\CampaignManagement\ValidateTextAd.vb" />
     <Compile Include="v201302\ErrorHandling\HandlePartialFailures.vb" />
     <Compile Include="v201302\ErrorHandling\HandlePolicyViolationError.vb" />
     <Compile Include="v201302\ErrorHandling\HandleRateExceededError.vb" />
     <Compile Include="v201302\ErrorHandling\HandleTwoFactorAuthorizationError.vb" />
+    <Compile Include="v201302\Migration\SetCampaignEnhanced.vb" />
+    <Compile Include="v201302\Migration\UpgradeLegacySitelinks.vb" />
     <Compile Include="v201302\Miscellaneous\GetAllVideosAndImages.vb" />
     <Compile Include="v201302\Miscellaneous\UploadImage.vb" />
     <Compile Include="v201302\Optimization\EstimateKeywordTraffic.vb" />

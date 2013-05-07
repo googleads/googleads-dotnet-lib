@@ -34,13 +34,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201302 {
   /// </summary>
   class AccountManagementTest : VersionedExampleTestsBase {
     /// <summary>
-    /// Inits this instance.
-    /// </summary>
-    [SetUp]
-    public void Init() {
-    }
-
-    /// <summary>
     /// Tests the GetAccountChanges VB.NET code example.
     /// </summary>
     [Test]

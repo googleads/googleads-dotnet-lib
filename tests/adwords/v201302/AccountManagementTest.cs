@@ -37,15 +37,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201302 {
   /// Test cases for all the code examples under v201302\AccountManagement.
   /// </summary>
   class AccountManagementTest : VersionedExampleTestsBase {
-    string clientEmailAddress;
-    /// <summary>
-    /// Inits this instance.
-    /// </summary>
-    [SetUp]
-    public void Init() {
-      clientEmailAddress = "client_1+" + (user.Config as AdWordsAppConfig).Email;
-    }
-
     /// <summary>
     /// Tests the GetAccountAlerts VB.NET code example.
     /// </summary>

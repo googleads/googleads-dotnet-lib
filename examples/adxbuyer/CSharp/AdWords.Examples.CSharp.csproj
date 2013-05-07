@@ -92,6 +92,8 @@
     <Compile Include="v201209\Targeting\GetTargetableLanguagesAndCarriers.cs" />
     <Compile Include="v201209\Targeting\LookupLocation.cs" />
     <Compile Include="v201302\AccountManagement\GetAccountChanges.cs" />
+    <Compile Include="v201302\AdvancedOperations\AddAdGroupBidModifier.cs" />
+    <Compile Include="v201302\AdvancedOperations\GetAdGroupBidModifiers.cs" />
     <Compile Include="v201302\BasicOperations\AddAdGroupDemographicCriteria.cs" />
     <Compile Include="v201302\BasicOperations\AddAdGroups.cs" />
     <Compile Include="v201302\BasicOperations\AddCampaigns.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="v201302\ErrorHandling\HandlePolicyViolationError.cs" />
     <Compile Include="v201302\ErrorHandling\HandleRateExceededError.cs" />
     <Compile Include="v201302\ErrorHandling\HandleTwoFactorAuthorizationError.cs" />
+    <Compile Include="v201302\Migration\SetCampaignEnhanced.cs" />
     <Compile Include="v201302\Miscellaneous\GetAllVideosAndImages.cs" />
     <Compile Include="v201302\Miscellaneous\UploadImage.cs" />
     <Compile Include="v201302\Optimization\GetPlacementIdeas.cs" />

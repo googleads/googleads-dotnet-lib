@@ -110,6 +110,7 @@
     <Compile Include="v201302\BasicOperationsTest.cs" />
     <Compile Include="v201302\CampaignManagementTest.cs" />
     <Compile Include="v201302\ErrorHandlingTest.cs" />
+    <Compile Include="v201302\MigrationTest.cs" />
     <Compile Include="v201302\MiscellaneousTest.cs" />
     <Compile Include="v201302\OptimizationTest.cs" />
     <Compile Include="v201302\RemarketingTest.cs" />

@@ -60,6 +60,12 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature AdGroupService;
 
       /// <summary>
+      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201302/AdGroupBidModifierService.html">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature AdGroupBidModifierService;
+
+      /// <summary>
       /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201302/AdParamService.html">
       /// this page</a> for details.
       /// </summary>
@@ -250,6 +256,8 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201302", "cm", "AdGroupCriterionService");
         AdGroupService =
             AdWordsService.MakeServiceSignature("v201302", "cm", "AdGroupService");
+        AdGroupBidModifierService =
+            AdWordsService.MakeServiceSignature("v201302", "cm", "AdGroupBidModifierService");
         AdGroupFeedService =
             AdWordsService.MakeServiceSignature("v201302", "cm", "AdGroupFeedService");
         AdParamService =

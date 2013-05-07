@@ -87,6 +87,7 @@
     <Compile Include="v201209\TestUtils.cs" />
     <Compile Include="v201209\VersionedExampleTestsBase.cs" />
     <Compile Include="v201302\AccountManagementTest.cs" />
+    <Compile Include="v201302\AdvancedOperationsTest.cs" />
     <Compile Include="v201302\BasicOperationsTest.cs" />
     <Compile Include="v201302\CampaignManagementTest.cs" />
     <Compile Include="v201302\ErrorHandlingTest.cs" />
