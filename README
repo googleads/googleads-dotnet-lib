@@ -1,4 +1,4 @@
-Google's DoubleClick for Publishers API DotNet Client Library
+Google's DoubleClick for Publishers API DotNet Client Library s
 =============================================================
 
 Google's DoubleClick for Publishers (DFP) API service lets developers design
@@ -13,7 +13,7 @@ The library is compatible with .NET SDK 2.0 and above. When using the library,
 you needn't worry about downloading WSDLs and such, since the library contains
 stub classes for all the supported services and takes care of details like SOAP
 marshalling and unmarshalling, SOAP logging, etc. The complete documentation for
-the DFP API is available from http://code.google.com/apis/dfp/docs/start.html.
+the DFP API is available from http://code.google.com/apis/dfp/docs/start.html
 
 
 What's in the client library?

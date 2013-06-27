@@ -62,10 +62,14 @@ namespace Google.Api.Ads.Dfp.Lib {
 
         if (faultNode != null) {
           try {
-            return new DfpApiException(SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
-                faultNode.OuterXml, Assembly.GetExecutingAssembly().GetType(
-                    this.GetType().Namespace + ".ApiException"), defaultNs, "ApiExceptionFault"),
+            DfpApiException dfpException = new DfpApiException(
+                SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
+                    faultNode.OuterXml,
+                    Assembly.GetExecutingAssembly().GetType(
+                        this.GetType().Namespace + ".ApiException"), defaultNs,
+                        "ApiExceptionFault"),
                 ex.Message, ex);
+            return dfpException;
           } catch (Exception) {
             // deserialization failed, but we can safely ignore it.
           }
@@ -81,8 +85,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// <param name="parameters">The method parameters.</param>
     protected override void InitForCall(string methodName, object[] parameters) {
       DfpAppConfig config = this.User.Config as DfpAppConfig;
-      RequestHeader header = (RequestHeader) this.GetType().GetProperty("RequestHeader").
-          GetValue(this, null);
+      RequestHeader header = GetRequestHeader();
 
       if (header == null) {
         throw new DfpApiException(null, DfpErrorMessages.FailedToSetAuthorizationHeader);
@@ -122,97 +125,11 @@ namespace Google.Api.Ads.Dfp.Lib {
     }
 
     /// <summary>
-    /// Whether the current API call should be retried or not.
+    /// Gets the request header.
     /// </summary>
-    /// <param name="ex">The exception thrown from the previous call.</param>
-    /// <returns>
-    /// True, if the current API call should be retried.
-    /// </returns>
-    protected override bool ShouldRetry(Exception ex) {
-      DfpApiException dfpApiException = ex as DfpApiException;
-      return dfpApiException != null && (IsCookieInvalidError(dfpApiException) ||
-          IsOAuthTokenExpiredError(dfpApiException));
-    }
-
-    /// <summary>
-    /// Prepares for retrying the API call.
-    /// </summary>
-    /// <param name="ex">The exception thrown from the previous call.</param>
-    protected override void PrepareForRetry(Exception ex) {
-      DfpApiException dfpApiException = ex as DfpApiException;
-      if (dfpApiException != null) {
-        InvalidateAuthTokenCacheIfNecessary(dfpApiException);
-        RefreshOAuthTokenIfNecessary(dfpApiException);
-      }
-    }
-
-    /// <summary>
-    /// Determines whether the exception thrown by the server is an AuthToken
-    /// Invalid Error.
-    /// </summary>
-    /// <param name="dfpApiException">The DFP Api exception.</param>
-    /// <returns>True, if the server exception is a AuthToken invalid error,
-    /// false otherwise.</returns>
-    private bool IsCookieInvalidError(DfpApiException dfpApiException) {
-      return MatchesError(dfpApiException, COOKIE_INVALID_ERROR);
-    }
-
-    /// <summary>
-    /// Determines whether the exception thrown by the server is an OAuth token
-    /// expired error.
-    /// </summary>
-    /// <param name="dfpApiException">The DFP Api exception.</param>
-    /// <returns>True, if the server exception is a OAuth token expired error,
-    /// false otherwise.</returns>
-    private bool IsOAuthTokenExpiredError(DfpApiException dfpApiException) {
-      return MatchesError(dfpApiException, OAUTH_TOKEN_EXPIRED_ERROR);
-    }
-
-    /// <summary>
-    /// Determines whether the exception thrown by the server matches a known
-    /// error.
-    /// </summary>
-    /// <param name="dfpApiException">The DFP Api exception.</param>
-    /// <param name="errorMessage">The known error message.</param>
-    /// <returns>True, if the server exception matches the known error, false
-    /// otherwise.</returns>
-    private bool MatchesError(DfpApiException dfpApiException, string errorMessage) {
-      object[] errors = (object[])dfpApiException.ApiException.GetType().
-          GetProperty("errors").GetValue(dfpApiException.ApiException, null);
-      if (errors != null) {
-        for (int i = 0; i < errors.Length; i++) {
-          string errorString = (string)errors[i].GetType().GetProperty("errorString").
-              GetValue(errors[i], null);
-          if (errorString == errorMessage) {
-            return true;
-          }
-        }
-      }
-      return false;
-    }
-
-    /// <summary>
-    /// Refreshes the OAuth access token if necessary.
-    /// </summary>
-    /// <param name="dfpApiException">The DFP Api exception.</param>
-    private void RefreshOAuthTokenIfNecessary(DfpApiException dfpApiException) {
-      DfpAppConfig config = this.User.Config as DfpAppConfig;
-      if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2 &&
-          IsOAuthTokenExpiredError(dfpApiException)) {
-        (this.User.OAuthProvider as OAuth2).RefreshAccessToken();
-      }
-    }
-
-    /// <summary>
-    /// Invalidates the auth token cache if necessary.
-    /// </summary>
-    /// <param name="dfpApiException">The DFP Api exception.</param>
-    private void InvalidateAuthTokenCacheIfNecessary(DfpApiException dfpApiException) {
-      RequestHeader header = (RequestHeader)this.GetType().GetProperty("RequestHeader").
-          GetValue(this, null);
-      if (IsCookieInvalidError(dfpApiException)) {
-        AuthToken.Cache.InvalidateToken(header.authToken);
-      }
+    /// <returns>The request header.</returns>
+    private RequestHeader GetRequestHeader() {
+      return (RequestHeader) this.GetType().GetProperty("RequestHeader").GetValue(this, null);
     }
   }
 }
