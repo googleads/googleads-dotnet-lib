@@ -29,6 +29,10 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     /// </summary>
     private const string SHORT_NAME = "Mock-DotNet";
 
+    private const long TEST_TIMESTAMP = 1353924951;
+
+    private const string TEST_OAUTH2_SCOPE = "TEST_OAUTH2_SCOPE";
+
     /// <summary>
     /// Default constuctor.
     /// </summary>
@@ -40,8 +44,16 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     /// </summary>
     public override long UnixTimestamp {
       get {
-        return 1353924951;
+        return TEST_TIMESTAMP;
       }
+    }
+
+    /// <summary>
+    /// Gets the default OAuth2 scope.
+    /// </summary>
+    /// <returns></returns>
+    public override string GetDefaultOAuth2Scope() {
+      return TEST_OAUTH2_SCOPE;
     }
 
     /// <summary>
@@ -56,7 +68,6 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     public void MockReadSettings(Hashtable tblSettings) {
       base.ReadSettings(tblSettings);
     }
-
 
     /// <summary>
     /// Sets the property field for tests.

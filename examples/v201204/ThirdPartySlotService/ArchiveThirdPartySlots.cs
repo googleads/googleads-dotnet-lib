@@ -70,7 +70,6 @@ namespace Google.Api.Ads.Dfp.Examples.v201204 {
       // Set defaults for page and offset.
       ThirdPartySlotPage page = new ThirdPartySlotPage();
       int offset = 0;
-      int i = 0;
       List<string> thirdPartySlotIds = new List<string>();
 
       try {

@@ -26,7 +26,7 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     /// Initializes a new instance of the <see cref="MockTraceListener"/> class.
     /// </summary>
     /// <param name="config">The config class.</param>
-    public MockTraceListener(AppConfigBase config) : base(config) {
+    public MockTraceListener(AppConfig config) : base(config) {
     }
 
     /// <summary>

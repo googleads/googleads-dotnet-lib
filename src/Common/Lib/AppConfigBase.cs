@@ -41,11 +41,6 @@ namespace Google.Api.Ads.Common.Lib {
     private const string LOG_PATH = "LogPath";
 
     /// <summary>
-    /// Key name for logToConsole.
-    /// </summary>
-    private const string LOG_TO_CONSOLE = "LogToConsole";
-
-    /// <summary>
     /// Key name for logToFile.
     /// </summary>
     private const string LOG_TO_FILE = "LogToFile";
@@ -89,6 +84,16 @@ namespace Google.Api.Ads.Common.Lib {
     /// Key name for retryCount.
     /// </summary>
     private const string RETRYCOUNT = "RetryCount";
+
+    /// <summary>
+    /// Key name for enableGzipCompression.
+    /// </summary>
+    private const string ENABLE_GZIP_COMPRESSION = "EnableGzipCompression";
+
+    /// <summary>
+    /// Key name for OAuth2 mode.
+    /// </summary>
+    private const string OAUTH2_MODE = "OAuth2Mode";
 
     /// <summary>
     /// Key name for OAuth2 client id.
@@ -141,30 +146,40 @@ namespace Google.Api.Ads.Common.Lib {
     private const string OAUTH2_JWT_CERTIFICATE_PASSWORD = "OAuth2JwtCertificatePassword";
 
     /// <summary>
+    /// Key name for authToken.
+    /// </summary>
+    private const string AUTHTOKEN = "AuthToken";
+
+    /// <summary>
+    /// Key name for email.
+    /// </summary>
+    private const string EMAIL = "Email";
+
+    /// <summary>
+    /// Key name for password.
+    /// </summary>
+    private const string PASSWORD = "Password";
+
+    /// <summary>
     /// Path to which the SOAP logs are to be saved.
     /// </summary>
     private string logPath;
 
     /// <summary>
-    /// True, if the SOAP logs should be written to console.
-    /// </summary>
-    private bool logToConsoleField;
-
-    /// <summary>
     /// True, if the SOAP logs should be written to file.
     /// </summary>
-    private bool logToFileField;
+    private bool logToFile;
 
     /// <summary>
     /// True, if only the SOAP logs that correspond to an error
     /// should be logged.
     /// </summary>
-    private bool logErrorsOnlyField;
+    private bool logErrorsOnly;
 
     /// <summary>
     /// Web proxy to be used with the services.
     /// </summary>
-    private IWebProxy proxyField;
+    private IWebProxy proxy;
 
     /// <summary>
     /// True, if the credentials in the log file should be masked.
@@ -180,6 +195,12 @@ namespace Google.Api.Ads.Common.Lib {
     /// Number of times to retry a call if an API call fails and can be retried.
     /// </summary>
     private int retryCount;
+
+    /// <summary>
+    /// True, if gzip compression should be turned on for SOAP requests and
+    /// responses.
+    /// </summary>
+    private bool enableGzipCompression;
 
     /// <summary>
     /// OAuth2 client id.
@@ -232,6 +253,26 @@ namespace Google.Api.Ads.Common.Lib {
     private string oAuth2RedirectUri;
 
     /// <summary>
+    /// OAuth2 mode.
+    /// </summary>
+    private OAuth2Flow oAuth2Mode;
+
+    /// <summary>
+    /// Authtoken to be used in making API calls.
+    /// </summary>
+    private string authToken;
+
+    /// <summary>
+    /// Email to be used in getting AuthToken.
+    /// </summary>
+    private string email;
+
+    /// <summary>
+    /// Password to be used in getting AuthToken.
+    /// </summary>
+    private string password;
+
+    /// <summary>
     /// Default value for number of times to retry a call if an API call fails
     /// and can be retried.
     /// </summary>
@@ -255,27 +296,15 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets whether the SOAP logs should be written to console.
-    /// </summary>
-    public bool LogToConsole {
-      get {
-        return logToConsoleField;
-      }
-      protected set {
-        logToConsoleField = value;
-      }
-    }
-
-    /// <summary>
     /// Gets whether the SOAP logs that correspond to an error
     /// should be logged.
     /// </summary>
     public bool LogErrorsOnly {
       get {
-        return logErrorsOnlyField;
+        return logErrorsOnly;
       }
       protected set {
-        logErrorsOnlyField = value;
+        logErrorsOnly = value;
       }
     }
 
@@ -284,22 +313,10 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     public bool LogToFile {
       get {
-        return logToFileField;
+        return logToFile;
       }
       protected set {
-        logToFileField = value;
-      }
-    }
-
-    /// <summary>
-    /// Gets the web proxy to be used with the services.
-    /// </summary>
-    public IWebProxy Proxy {
-      get {
-        return proxyField;
-      }
-      protected set {
-        proxyField = value;
+        logToFile = value;
       }
     }
 
@@ -312,6 +329,18 @@ namespace Google.Api.Ads.Common.Lib {
       }
       protected set {
         maskCredentials = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets the web proxy to be used with the services.
+    /// </summary>
+    public IWebProxy Proxy {
+      get {
+        return proxy;
+      }
+      set {
+        SetPropertyField("Proxy", ref proxy, value);
       }
     }
 
@@ -337,6 +366,19 @@ namespace Google.Api.Ads.Common.Lib {
       }
       set {
         SetPropertyField("RetryCount", ref retryCount, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets whether gzip compression should be turned on for SOAP
+    /// requests and responses.
+    /// </summary>
+    public bool EnableGzipCompression {
+      get {
+        return enableGzipCompression;
+      }
+      set {
+        SetPropertyField("EnableGzipCompression", ref enableGzipCompression, value);
       }
     }
 
@@ -379,6 +421,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the OAuth2 refresh token.
     /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 web / application
+    /// flow in offline mode.</remarks>
     public string OAuth2RefreshToken {
       get {
         return oAuth2RefreshToken;
@@ -403,6 +447,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the OAuth2 redirect URI.
     /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 web flow.
+    /// </remarks>
     public string OAuth2RedirectUri {
       get {
         return oAuth2RedirectUri;
@@ -413,8 +459,22 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
+    /// Gets or sets the OAuth2 mode.
+    /// </summary>
+    public OAuth2Flow OAuth2Mode {
+      get {
+        return oAuth2Mode;
+      }
+      set {
+        SetPropertyField("OAuth2Mode", ref oAuth2Mode, value);
+      }
+    }
+
+    /// <summary>
     /// Gets or sets the OAuth2 service account email.
     /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// </remarks>
     public string OAuth2ServiceAccountEmail {
       get {
         return oAuth2ServiceAccountEmail;
@@ -427,6 +487,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the OAuth2 prn email.
     /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// </remarks>
     public string OAuth2PrnEmail {
       get {
         return oAuth2PrnEmail;
@@ -439,6 +501,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the OAuth2 certificate path.
     /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// </remarks>
     public string OAuth2CertificatePath {
       get {
         return oAuth2CertificatePath;
@@ -451,6 +515,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the OAuth2 certificate password.
     /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// </remarks>
     public string OAuth2CertificatePassword {
       get {
         return oAuth2CertificatePassword;
@@ -458,6 +524,49 @@ namespace Google.Api.Ads.Common.Lib {
       set {
         SetPropertyField("OAuth2CertificatePassword", ref oAuth2CertificatePassword, value);
       }
+    }
+
+    /// <summary>
+    /// Gets or sets the email to be used in getting AuthToken.
+    /// </summary>
+    public string Email {
+      get {
+        return email;
+      }
+      set {
+        SetPropertyField("Email", ref email, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the password to be used in getting AuthToken.
+    /// </summary>
+    public string Password {
+      get {
+        return password;
+      }
+      set {
+        SetPropertyField("Password", ref password, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the auth token to be used in SOAP headers.
+    /// </summary>
+    public string AuthToken {
+      get {
+        return authToken;
+      }
+      set {
+        SetPropertyField("AuthToken", ref authToken, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets the default OAuth2 scope.
+    /// </summary>
+    public virtual string GetDefaultOAuth2Scope() {
+      return "";
     }
 
     /// <summary>
@@ -507,12 +616,13 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     protected AppConfigBase() {
       logPath = "C:\\";
-      logToConsoleField = false;
-      logToFileField = false;
-      logErrorsOnlyField = false;
-      proxyField = null;
+      logToFile = false;
+      logErrorsOnly = false;
+      proxy = null;
       maskCredentials = true;
       timeout = DEFAULT_TIMEOUT;
+      enableGzipCompression = true;
+      oAuth2Mode = OAuth2Flow.APPLICATION;
       oAuth2ClientId = "";
       oAuth2ClientSecret = "";
       oAuth2AccessToken = "";
@@ -521,6 +631,9 @@ namespace Google.Api.Ads.Common.Lib {
       oAuth2RedirectUri = null;
       oAuth2PrnEmail = "";
       oAuth2ServiceAccountEmail = "";
+      authToken = "";
+      email = "";
+      password = "";
     }
 
     /// <summary>
@@ -530,11 +643,9 @@ namespace Google.Api.Ads.Common.Lib {
     protected virtual void ReadSettings(Hashtable settings) {
       // Common keys.
       logPath = ReadSetting(settings, LOG_PATH, logPath);
-      logToConsoleField = bool.Parse(ReadSetting(settings, LOG_TO_CONSOLE,
-          logToConsoleField.ToString()));
-      logToFileField = bool.Parse(ReadSetting(settings, LOG_TO_FILE, logToFileField.ToString()));
-      logErrorsOnlyField = bool.Parse(ReadSetting(settings, LOG_ERRORS_ONLY,
-          logErrorsOnlyField.ToString()));
+      logToFile = bool.Parse(ReadSetting(settings, LOG_TO_FILE, logToFile.ToString()));
+      logErrorsOnly = bool.Parse(ReadSetting(settings, LOG_ERRORS_ONLY,
+          logErrorsOnly.ToString()));
 
       string proxyUrl = ReadSetting(settings, PROXY_SERVER, "");
 
@@ -550,12 +661,19 @@ namespace Google.Api.Ads.Common.Lib {
           proxy.Credentials = new NetworkCredential(proxyUser,
               proxyPassword, proxyDomain);
         }
-        this.proxyField = proxy;
+        this.proxy = proxy;
       } else {
-        this.proxyField = WebRequest.GetSystemWebProxy();
+        this.proxy = WebRequest.GetSystemWebProxy();
       }
       maskCredentials = bool.Parse(ReadSetting(settings, MASK_CREDENTIALS,
           maskCredentials.ToString()));
+
+      try {
+        oAuth2Mode = (OAuth2Flow) Enum.Parse(typeof(OAuth2Flow), ReadSetting(settings, OAUTH2_MODE,
+            oAuth2Mode.ToString()));
+      } catch (Exception e) {
+        // No action.
+      }
 
       oAuth2ClientId = ReadSetting(settings, OAUTH2_CLIENTID, oAuth2ClientId);
       oAuth2ClientSecret = ReadSetting(settings, OAUTH2_CLIENTSECRET, oAuth2ClientSecret);
@@ -572,8 +690,14 @@ namespace Google.Api.Ads.Common.Lib {
       oAuth2CertificatePassword = ReadSetting(settings, OAUTH2_JWT_CERTIFICATE_PASSWORD,
           oAuth2CertificatePassword);
 
+      email = ReadSetting(settings, EMAIL, email);
+      password = ReadSetting(settings, PASSWORD, password);
+      authToken = ReadSetting(settings, AUTHTOKEN, authToken);
+
       int.TryParse(ReadSetting(settings, TIMEOUT, timeout.ToString()), out timeout);
       int.TryParse(ReadSetting(settings, RETRYCOUNT, retryCount.ToString()), out retryCount);
+      bool.TryParse(ReadSetting(settings, ENABLE_GZIP_COMPRESSION,
+          enableGzipCompression.ToString()), out enableGzipCompression);
     }
 
     /// <summary>

@@ -35,26 +35,6 @@ namespace Google.Api.Ads.Dfp.Lib {
     private const string SHORT_NAME = "DfpApi-DotNet";
 
     /// <summary>
-    /// Key name for enableGzipCompression.
-    /// </summary>
-    private const string ENABLE_GZIP_COMPRESSION = "EnableGzipCompression";
-
-    /// <summary>
-    /// Key name for authToken.
-    /// </summary>
-    private const string AUTHTOKEN = "AuthToken";
-
-    /// <summary>
-    /// Key name for email.
-    /// </summary>
-    private const string EMAIL = "Email";
-
-    /// <summary>
-    /// Key name for password.
-    /// </summary>
-    private const string PASSWORD = "Password";
-
-    /// <summary>
     /// Key name for networkCode.
     /// </summary>
     private const string NETWORK_CODE = "NetworkCode";
@@ -80,25 +60,15 @@ namespace Google.Api.Ads.Dfp.Lib {
     private const string DEFAULT_DFPAPI_SERVER = "https://www.google.com";
 
     /// <summary>
+    /// The OAuth2 scope for DFP API.
+    /// </summary>
+    private const string DFP_OAUTH2_SCOPE = "https://www.google.com/apis/ads/publisher/";
+
+    /// <summary>
     /// Default value for authorizationMethod.
     /// </summary>
     private const DfpAuthorizationMethod DEFAULT_AUTHORIZATION_METHOD =
         DfpAuthorizationMethod.ClientLogin;
-
-    /// <summary>
-    /// Authtoken to be used in making API calls.
-    /// </summary>
-    private string authToken;
-
-    /// <summary>
-    /// Email to be used in getting AuthToken.
-    /// </summary>
-    private string email;
-
-    /// <summary>
-    /// Password to be used in getting AuthToken.
-    /// </summary>
-    private string password;
 
     /// <summary>
     /// NetworkCode to be used in SOAP headers.
@@ -116,51 +86,9 @@ namespace Google.Api.Ads.Dfp.Lib {
     private string dfpApiServer;
 
     /// <summary>
-    /// True, if gzip compression should be turned on for SOAP requests and
-    /// responses.
-    /// </summary>
-    private bool enableGzipCompression;
-
-    /// <summary>
     /// Authorization method to be used when making API calls.
     /// </summary>
     private DfpAuthorizationMethod authorizationMethod;
-
-    /// <summary>
-    /// Gets or sets the auth token to be used in SOAP headers.
-    /// </summary>
-    public string AuthToken {
-      get {
-        return authToken;
-      }
-      set {
-        SetPropertyField("AuthToken", ref authToken, value);
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the email to be used in getting AuthToken.
-    /// </summary>
-    public string Email {
-      get {
-        return email;
-      }
-      set {
-        SetPropertyField("Email", ref email, value);
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the password to be used in getting AuthToken.
-    /// </summary>
-    public string Password {
-      get {
-        return password;
-      }
-      set {
-        SetPropertyField("Password", ref password, value);
-      }
-    }
 
     /// <summary>
     /// Gets or sets networkCode to be used in SOAP headers.
@@ -199,19 +127,6 @@ namespace Google.Api.Ads.Dfp.Lib {
     }
 
     /// <summary>
-    /// Gets or sets whether gzip compression should be turned on for SOAP
-    /// requests and responses.
-    /// </summary>
-    public bool EnableGzipCompression {
-      get {
-        return enableGzipCompression;
-      }
-      set {
-        SetPropertyField("EnableGzipCompression", ref enableGzipCompression, value);
-      }
-    }
-
-    /// <summary>
     /// Gets or sets the authorization method to be used when making API calls.
     /// </summary>
     public DfpAuthorizationMethod AuthorizationMethod {
@@ -235,12 +150,8 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// Public constructor.
     /// </summary>
     public DfpAppConfig() : base() {
-      authToken = "";
-      email = "";
-      password = "";
       networkCode = "";
       applicationName = "";
-      enableGzipCompression = true;
       dfpApiServer = DEFAULT_DFPAPI_SERVER;
       authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
 
@@ -254,13 +165,8 @@ namespace Google.Api.Ads.Dfp.Lib {
     protected override void ReadSettings(Hashtable settings) {
       base.ReadSettings(settings);
 
-      authToken = ReadSetting(settings, AUTHTOKEN, authToken);
-      email = ReadSetting(settings, EMAIL, email);
-      password = ReadSetting(settings, PASSWORD, password);
       networkCode = ReadSetting(settings, NETWORK_CODE, networkCode);
       applicationName = ReadSetting(settings, APPLICATION_NAME, applicationName);
-      enableGzipCompression = bool.Parse(ReadSetting(settings, ENABLE_GZIP_COMPRESSION,
-          enableGzipCompression.ToString()));
       dfpApiServer = ReadSetting(settings, DFPAPI_SERVER, dfpApiServer);
 
       try {
@@ -270,6 +176,20 @@ namespace Google.Api.Ads.Dfp.Lib {
       } catch {
         authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
       }
+
+      // If there is an OAuth2 scope mentioned in App.config, this will be
+      // loaded by the above call. If there isn't one, we will initialize it
+      // with a library-specific default value.
+      if (string.IsNullOrEmpty(this.OAuth2Scope)) {
+        this.OAuth2Scope = GetDefaultOAuth2Scope();
+      }
+    }
+
+    /// <summary>
+    /// Gets the default OAuth2 scope.
+    /// </summary>
+    public override string GetDefaultOAuth2Scope() {
+      return DFP_OAUTH2_SCOPE;
     }
   }
 }

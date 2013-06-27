@@ -14,7 +14,7 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.Common.OAuth.Lib;
+using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Dfp.Lib;
 
 using System;
@@ -44,22 +44,20 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
       // App.config.
       DfpAppConfig config = new DfpAppConfig();
       if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
-        DoAuth2Configuration(config);
-      } else {
+        if (config.OAuth2Mode == OAuth2Flow.APPLICATION &&
+            string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
+          DoAuth2Configuration(config);
+        }
       }
     }
 
     private void DoAuth2Configuration(DfpAppConfig config) {
-      // You could specify scope in your App.config, but if you care only about
-      // AdWords, the following is a simpler way of setting the scope.
-      config.OAuth2Scope = DfpService.GetOAuthScope(config);
-
       // Since we use this page for OAuth callback also, we set the callback
       // url as the current page. For a non-web application, this will be null.
       config.OAuth2RedirectUri = Request.Url.GetLeftPart(UriPartial.Path);
 
       // Create an OAuth2 object for handling OAuth2 flow.
-      OAuth2Provider oAuth = new OAuth2Provider(config);
+      OAuth2ProviderForApplications oAuth = new OAuth2ProviderForApplications(config);
 
       if (Request.Params["state"] == null) {
         // This is the first time this page is being loaded.
@@ -76,10 +74,33 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
         // your mode is offline.
         oAuth.FetchAccessAndRefreshTokens(Request.Params["code"]);
 
-        // Save the access and refresh tokens for future use.
-        Session["AccessToken"] = oAuth.AccessToken;
-        Session["RefreshToken"] = oAuth.RefreshToken;
-
+        // Save the OAuth2 provider for future use. If you wish to save only
+        // the values and restore the object later, then save
+        // oAuth.RefreshToken, oAuth.AccessToken, oAuth.UpdatedOn and
+        // oAuth.ExpiresIn.
+        //
+        // You can later restore the values as
+        // DfpUser user = new DfpUser();
+        // user.Config.OAuth2Mode = OAuth2Flow.APPLICATION;
+        // OAuth2ProviderForApplications oAuth =
+        //     (user.OAuthProvider as OAuth2ProviderForApplications);
+        // oAuth.RefreshToken = xxx;
+        // oAuth.AccessToken = xxx;
+        // oAuth.UpdatedOn = xxx;
+        // oAuth.ExpiresIn = xxx;
+        //
+        // Note that only oAuth.RefreshToken is mandatory. If you leave
+        // oAuth.AccessToken as empty, or if oAuth.UpdatedOn + oAuth.ExpiresIn
+        // is in the past, the access token will be refreshed by the library.
+        // You can listen to this event as
+        //
+        // oAuth.OnOAuthTokensObtained += delegate(AdsOAuthProvider provider) {
+        //    OAuth2ProviderForApplications oAuth =
+        //        (provider as OAuth2ProviderForApplications);
+        //    // Save oAuth.RefreshToken, oAuth.AccessToken, oAuth.UpdatedOn and
+        //    // oAuth.ExpiresIn.
+        //};
+        Session["OAuthProvider"] = oAuth;
         // Redirect the user to the main page.
         Response.Redirect("Default.aspx");
       } else {

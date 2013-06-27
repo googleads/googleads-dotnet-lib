@@ -55,7 +55,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// <returns>An object of the desired service type.</returns>
     public override AdsClient CreateService(ServiceSignature signature, AdsUser user,
         Uri serverUrl) {
-      DfpAppConfig dfpConfig = (DfpAppConfig) AppConfig;
+      DfpAppConfig dfpConfig = (DfpAppConfig) Config;
       if (serverUrl == null) {
         serverUrl = new Uri(dfpConfig.DfpApiServer);
       }

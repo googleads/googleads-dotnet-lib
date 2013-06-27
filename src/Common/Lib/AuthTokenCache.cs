@@ -22,6 +22,11 @@ namespace Google.Api.Ads.Common.Lib {
   /// <summary>
   /// Defines a cache for storing auth tokens.
   /// </summary>
+  [Obsolete("ClientLogin API is deprecated, see " +
+      "https://developers.google.com/accounts/docs/AuthForInstalledApps for details. OAuth2 is " +
+      "the recommended authentication mechanism. You can refer to the code examples for details " +
+      " on how to use OAUth2 in your application. You can use Util\\OAuth2TokenGenerator.cs for " +
+      "generating OAuth2 refresh tokens for offline access to various Ads* APIs.")]
   public interface AuthTokenCache {
     /// <summary>
     /// Adds an auth token to cache.

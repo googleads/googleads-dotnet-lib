@@ -26,14 +26,6 @@ namespace Google.Api.Ads.Dfp.Lib {
   /// </summary>
   public partial class DfpService : AdsService {
     /// <summary>
-    /// Gets the OAuth scope parameter for getting request token.
-    /// </summary>
-    /// <returns>The OAuth scope parameter for AdWords API.</returns>
-    public static string GetOAuthScope(DfpAppConfig config) {
-      return string.Format("{0}/apis/ads/publisher/", config.DfpApiServer);
-    }
-
-    /// <summary>
     /// Creates a service creation parameter for defining a DFP service.
     /// </summary>
     /// <param name="version">Service version.</param>

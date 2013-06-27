@@ -69,9 +69,6 @@
     <ProjectReference Include="..\..\src\Common\Common.csproj">
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Common\OAuth\Common.OAuth.csproj">
-      <Name>Common.OAuth</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

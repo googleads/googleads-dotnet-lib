@@ -19,6 +19,9 @@ using Google.Api.Ads.Common.Tests.Mocks;
 
 using NUnit.Framework;
 
+// Disable deprecation warnings for AuthToken class.
+#pragma warning disable 612, 618
+
 namespace Google.Api.Ads.Common.Tests.Lib {
   /// <summary>
   /// Tests for AuthToken class.
@@ -64,6 +67,8 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     /// </summary>
     [SetUp]
     public void Init() {
+      config.Email = EMAIL;
+      config.Password = PASSWORD;
       oldCache = AuthToken.Cache;
       AuthToken.Cache = cache;
       clientLoginInterceptor.Intercept = true;
@@ -86,8 +91,6 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     public void TestDefaultConstructor() {
       AuthToken authToken = new AuthToken();
       Assert.Null(authToken.Config);
-      Assert.Null(authToken.Email);
-      Assert.Null(authToken.Password);
       Assert.Null(authToken.Service);
     }
 
@@ -97,10 +100,8 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     [Category("Small")]
     public void TestOverloadedConstructor() {
-      AuthToken authToken = new AuthToken(config, SERVICE, EMAIL, PASSWORD);
+      AuthToken authToken = new AuthToken(config, SERVICE);
       Assert.AreEqual(authToken.Config, config);
-      Assert.AreEqual(authToken.Email, EMAIL);
-      Assert.AreEqual(authToken.Password, PASSWORD);
       Assert.AreEqual(authToken.Service, SERVICE);
     }
 
@@ -116,9 +117,6 @@ namespace Google.Api.Ads.Common.Tests.Lib {
 
       authToken.Password = PASSWORD;
       Assert.AreEqual(authToken.Password, PASSWORD);
-
-      authToken.Config = config;
-      Assert.AreEqual(authToken.Config, config);
 
       authToken.Service = SERVICE;
       Assert.AreEqual(authToken.Service, SERVICE);
@@ -141,7 +139,12 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     [Category("Small")]
     public void TestGetToken() {
-      AuthToken authToken = new AuthToken(config, SERVICE, EMAIL, PASSWORD);
+      AuthToken authToken = new AuthToken(config, SERVICE);
+      TestUtils.ValidateRequiredParameters(authToken, new string[] {"Email", "Password"},
+          delegate() {
+            authToken.GetToken();
+          }
+      );
       string token = authToken.GetToken();
       Assert.AreEqual(token, ClientLoginRequestInterceptor.AUTH_TOKEN);
     }
@@ -156,7 +159,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       try {
         clientLoginInterceptor.RaiseException = true;
         try {
-          AuthToken authToken = new AuthToken(config, SERVICE, EMAIL, PASSWORD);
+          AuthToken authToken = new AuthToken(config, SERVICE);
           string token = authToken.GetToken();
           Assert.Fail();
         } catch (AuthTokenException ex) {
@@ -168,3 +171,5 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     }
   }
 }
+
+#pragma warning restore 612, 618

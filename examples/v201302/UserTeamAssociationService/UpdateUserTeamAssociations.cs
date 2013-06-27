@@ -66,7 +66,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201302 {
 
       // Create filter text to select user team associations by the user ID.
       String statementText = "WHERE userId = :userId LIMIT 500";
-      Statement filterStatement = new StatementBuilder("").AddValue("userId", userId).ToStatement();
+      Statement filterStatement = new StatementBuilder(statementText).
+          AddValue("userId", userId).ToStatement();
 
       try {
         // Get user team associations by statement.

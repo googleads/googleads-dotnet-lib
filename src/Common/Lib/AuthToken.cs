@@ -1,4 +1,4 @@
-// Copyright 2011, Google Inc. All Rights Reserved.
+﻿// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,6 +13,8 @@
 // limitations under the License.
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
+
+using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Collections;
@@ -30,7 +32,12 @@ namespace Google.Api.Ads.Common.Lib {
   /// http://code.google.com/apis/accounts/docs/AuthForInstalledApps.html
   /// for details.
   /// </summary>
-  public class AuthToken {
+  [Obsolete("ClientLogin API is deprecated, see " +
+      "https://developers.google.com/accounts/docs/AuthForInstalledApps for details. OAuth2 is " +
+      "the recommended authentication mechanism. You can refer to the code examples for details " +
+      " on how to use OAUth2 in your application. You can use Util\\OAuth2TokenGenerator.cs for " +
+      "generating OAuth2 refresh tokens for offline access to various Ads* APIs.")]
+  public class AuthToken : Configurable {
     /// <summary>
     /// Url endpoint for ClientLogin API.
     /// </summary>
@@ -45,16 +52,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// Account type to be used with ClientLogin API.
     /// </summary>
     private const string ACCOUNT_TYPE = "GOOGLE";
-
-    /// <summary>
-    /// Email to be used for authentication.
-    /// </summary>
-    private string email;
-
-    /// <summary>
-    /// Password to be used for authentication.
-    /// </summary>
-    private string password;
 
     /// <summary>
     /// Service type to be used with ClientLogin API.
@@ -94,10 +91,10 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     public string Email {
       get {
-        return email;
+        return config.Email;
       }
       set {
-        email = value;
+        config.Email = value;
       }
     }
 
@@ -106,10 +103,10 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     public string Password {
       get {
-        return password;
+        return config.Password;
       }
       set {
-        password = value;
+        config.Password = value;
       }
     }
 
@@ -137,8 +134,7 @@ namespace Google.Api.Ads.Common.Lib {
     public AppConfig Config {
       get {
         return config;
-      }
-      set {
+      } set {
         config = value;
       }
     }
@@ -158,7 +154,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Initializes a new instance of the <see cref="AuthToken"/> class.
     /// </summary>
-    public AuthToken() : this(null, null, null, null) {
+    public AuthToken() : this(null, null) {
     }
 
     /// <summary>
@@ -170,10 +166,23 @@ namespace Google.Api.Ads.Common.Lib {
     /// </param>
     /// <param name="service">The gaia service name for which tokens are being
     /// generated.</param>
+    [Obsolete("Use AuthToken(AppConfig config, string service) constructor instead.")]
     public AuthToken(AppConfig config, string service, string email, string password) {
       this.config = config;
-      this.email = email;
-      this.password = password;
+      this.Email = email;
+      this.Password = password;
+      this.service = service;
+    }
+
+    /// <summary>
+    /// Public constructor.
+    /// </summary>
+    /// <param name="config">The configuration object for use with this object.
+    /// </param>
+    /// <param name="service">The gaia service name for which tokens are being
+    /// generated.</param>
+    public AuthToken(AppConfig config, string service) {
+      this.config = config;
       this.service = service;
     }
 
@@ -185,12 +194,22 @@ namespace Google.Api.Ads.Common.Lib {
     /// then an AuthTokenException is thrown with appropriate error code.
     /// </exception>
     public string GetToken() {
-      string cachedToken = cache.GetToken(this.service, this.email, this.password);
+      DeprecationUtilities.ShowDeprecationMessage(this.GetType());
+
+      if (string.IsNullOrEmpty(Email)) {
+        throw new ArgumentNullException(CommonErrorMessages.EmailCannotBeNull);
+      }
+
+      if (string.IsNullOrEmpty(Password)) {
+        throw new ArgumentNullException(CommonErrorMessages.PasswordCannotBeNull);
+      }
+
+      string cachedToken = cache.GetToken(this.service, Email, Password);
       if (cachedToken == null) {
         lock (this.GetType()) {
-          cachedToken = cache.GetToken(this.service, this.email, this.password);
-          return (cachedToken != null) ? cachedToken : cache.AddToken(this.service, this.email,
-              this.password, GenerateToken());
+          cachedToken = cache.GetToken(this.service, Email, Password);
+          return (cachedToken != null) ? cachedToken : cache.AddToken(this.service, Email,
+              Password, GenerateToken());
         }
       }
       return cachedToken;
@@ -213,8 +232,8 @@ namespace Google.Api.Ads.Common.Lib {
 
       string postParams =
           "accountType=" + HttpUtility.UrlEncode(ACCOUNT_TYPE) +
-          "&Email=" + HttpUtility.UrlEncode(email) +
-          "&Passwd=" + HttpUtility.UrlEncode(password) +
+          "&Email=" + HttpUtility.UrlEncode(Email) +
+          "&Passwd=" + HttpUtility.UrlEncode(Password) +
           "&service=" + HttpUtility.UrlEncode(service) +
           "&source=" + HttpUtility.UrlEncode(SOURCE);
 

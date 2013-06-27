@@ -104,21 +104,17 @@ namespace Google.Api.Ads.Dfp.Lib {
       if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
         if (this.User.OAuthProvider != null) {
           OAuth oAuth = (header.authentication as OAuth) ?? new OAuth();
-          oAuth.parameters = this.User.OAuthProvider.GetAuthHeader(this.Url);
+          oAuth.parameters = this.User.OAuthProvider.GetAuthHeader();
           header.authentication = oAuth;
         } else {
           throw new DfpApiException(null, DfpErrorMessages.OAuthProviderCannotBeNull);
         }
       } else if (config.AuthorizationMethod == DfpAuthorizationMethod.ClientLogin) {
         string authToken = (!string.IsNullOrEmpty(config.AuthToken)) ? config.AuthToken :
-            new AuthToken(config, SERVICE_NAME, config.Email, config.Password).GetToken();
-        if (string.Compare(header.Version, "v201103") < 0) {
-          header.authToken = authToken;
-        } else {
-          ClientLogin clientLogin = (header.authentication as ClientLogin) ?? new ClientLogin();
-          clientLogin.token = authToken;
-          header.authentication = clientLogin;
-        }
+            new AuthToken(config, SERVICE_NAME).GetToken();
+        ClientLogin clientLogin = (header.authentication as ClientLogin) ?? new ClientLogin();
+        clientLogin.token = authToken;
+        header.authentication = clientLogin;
       }
 
       base.InitForCall(methodName, parameters);

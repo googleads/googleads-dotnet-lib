@@ -16,7 +16,7 @@
 
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201208;
-using Google.Api.Ads.Common.OAuth.Lib;
+using Google.Api.Ads.Common.Lib;
 
 using System;
 using System.Data;
@@ -24,7 +24,18 @@ using System.Data;
 namespace Google.Api.Ads.Dfp.Examples.OAuth {
   /// <summary>
   /// This code example shows how to run an DFP API command line application
-  /// using OAuth 2.0 as authentication mechanism. To run this application,
+  /// while incorporating the OAuth2 installed application flow into your
+  /// application. If your application uses a single Google login to make calls
+  /// to all your accounts, you shouldn't use this code example. Instead, you
+  /// should run Common\Util\OAuth2TokenGenerator.cs to generate a refresh token
+  /// and set that in user.Config.OAuth2RefreshToken field, or set
+  /// OAuth2RefreshToken key in your App.config / Web.config.
+  ///
+  /// This code example depends on Console environment only for reading and
+  /// writing values, you may use this code example in other environments like
+  /// Windows Form applications with minimial modifications.
+  ///
+  /// To run this application,
   ///
   /// 1. You should create a new Console Application project.
   /// 2. Add reference to the following assemblies:
@@ -39,10 +50,6 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
   /// 4. Copy App.config from Dfp.Examples project, and configure
   /// it as shown in this project's Web.config.
   /// 5. Compile and run this example.
-  ///
-  /// This code example depends on Console environment only for reading and
-  /// writing values, you may use this code example in other environments like
-  /// Windows Form applications with minimial modifications.
   /// </summary>
   public class ConsoleExample {
     /// <summary>
@@ -51,9 +58,12 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
     /// <param name="args">Command line arguments.</param>
     static void Main(string[] args) {
       DfpUser user = new DfpUser();
-
-      if ((user.Config as DfpAppConfig).AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
-        DoAuth2Authorization(user);
+      DfpAppConfig config = (user.Config as DfpAppConfig);
+      if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
+        if (config.OAuth2Mode == OAuth2Flow.APPLICATION &&
+            string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
+          DoAuth2Authorization(user);
+        }
       } else {
         throw new Exception("Authorization mode is not OAuth.");
       }
@@ -93,26 +103,16 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
     }
 
     /// <summary>
-    /// Does the OAuth2 authorization.
+    /// Does the OAuth2 authorization for installed applications.
     /// </summary>
-    /// <param name="user">The Dfp user.</param>
-    /// <remarks>If you have saved a user's access and refresh tokens from a
-    /// previous session, you can set them directly to the OAuth2 handler
-    /// object. Also, make sure you set the redirect uri and scope correctly
-    /// if you wish to call RefreshAccessToken method.</remarks>
+    /// <param name="user">The DFP user.</param>
     private static void DoAuth2Authorization(DfpUser user) {
-      // Set the OAuth2 scope.
-      user.Config.OAuth2Scope = DfpService.GetOAuthScope(user.Config as DfpAppConfig);
-
       // Since we are using a console application, set the callback url to null.
       user.Config.OAuth2RedirectUri = null;
-
-      // Create the OAuth2 protocol handler and set it to the current user.
-      OAuth2Provider oAuth2 = new OAuth2Provider(user.Config);
-      user.OAuthProvider = oAuth2;
-
+      AdsOAuthProviderForApplications oAuth2Provider =
+          (user.OAuthProvider as AdsOAuthProviderForApplications);
       // Get the authorization url.
-      string authorizationUrl = oAuth2.GetAuthorizationUrl();
+      string authorizationUrl = oAuth2Provider.GetAuthorizationUrl();
       Console.WriteLine("Open a fresh web browser and navigate to \n\n{0}\n\n. You will be " +
           "prompted to login and then authorize this application to make calls to the " +
           "DFP API. Once approved, you will be presented with an authorization code.",
@@ -123,7 +123,7 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
       string authorizationCode = Console.ReadLine();
 
       // Fetch the access and refresh tokens.
-      oAuth2.FetchAccessAndRefreshTokens(authorizationCode);
+      oAuth2Provider.FetchAccessAndRefreshTokens(authorizationCode);
     }
   }
 }

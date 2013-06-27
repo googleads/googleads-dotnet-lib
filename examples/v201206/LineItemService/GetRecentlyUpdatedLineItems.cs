@@ -66,7 +66,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201206 {
         // have been modified in the last 3 days.
         DateTime threeDaysAgo = DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(-3));
         Statement filterStatement = new StatementBuilder(
-            "lastModifiedDateTime >= :lastModifiedDateTime AND orderId =: orderId LIMIT 500").
+            "WHERE lastModifiedDateTime >= :lastModifiedDateTime AND orderId = :orderId LIMIT 500").
             AddValue("lastModifiedDateTime", threeDaysAgo).
             AddValue("orderId", orderId).ToStatement();
 

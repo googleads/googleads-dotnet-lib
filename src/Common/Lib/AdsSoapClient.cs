@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Common.Lib {
     private WebRequest lastRequest;
 
     /// <summary>
-    /// The WebRessponse for the last API call from this service.
+    /// The WebResponse for the last API call from this service.
     /// </summary>
     private WebResponse lastResponse;
 

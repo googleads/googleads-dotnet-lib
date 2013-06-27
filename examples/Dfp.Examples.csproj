@@ -796,18 +796,148 @@
     <Compile Include="v201302\UserTeamAssociationService\GetUserTeamAssociation.cs" />
     <Compile Include="v201302\UserTeamAssociationService\GetUserTeamAssociationsByStatement.cs" />
     <Compile Include="v201302\UserTeamAssociationService\UpdateUserTeamAssociations.cs" />
+    <Compile Include="v201306\ActivityGroupService\CreateActivityGroups.cs" />
+    <Compile Include="v201306\ActivityGroupService\GetActiveActivityGroups.cs" />
+    <Compile Include="v201306\ActivityGroupService\GetAllActivityGroups.cs" />
+    <Compile Include="v201306\ActivityGroupService\UpdateActivityGroups.cs" />
+    <Compile Include="v201306\ActivityService\CreateActivities.cs" />
+    <Compile Include="v201306\ActivityService\GetActiveActivities.cs" />
+    <Compile Include="v201306\ActivityService\GetAllActivities.cs" />
+    <Compile Include="v201306\ActivityService\UpdateActivities.cs" />
+    <Compile Include="v201306\AudienceSegmentService\GetAllAudienceSegments.cs" />
+    <Compile Include="v201306\CompanyService\CreateCompanies.cs" />
+    <Compile Include="v201306\CompanyService\GetAllCompanies.cs" />
+    <Compile Include="v201306\CompanyService\GetCompaniesByStatement.cs" />
+    <Compile Include="v201306\CompanyService\GetCompany.cs" />
+    <Compile Include="v201306\CompanyService\UpdateCompanies.cs" />
+    <Compile Include="v201306\ContactService\CreateContacts.cs" />
+    <Compile Include="v201306\ContactService\GetAllContacts.cs" />
+    <Compile Include="v201306\ContactService\GetUninvitedContacts.cs" />
+    <Compile Include="v201306\ContactService\UpdateContacts.cs" />
+    <Compile Include="v201306\ContentService\GetAllContent.cs" />
+    <Compile Include="v201306\ContentService\GetContentByCategory.cs" />
+    <Compile Include="v201306\CreativeService\CopyImageCreatives.cs" />
+    <Compile Include="v201306\CreativeService\CreateCreativeFromTemplate.cs" />
+    <Compile Include="v201306\CreativeService\CreateCreatives.cs" />
+    <Compile Include="v201306\CreativeService\CreateCustomCreative.cs" />
+    <Compile Include="v201306\CreativeService\GetAllCreatives.cs" />
+    <Compile Include="v201306\CreativeService\GetCreative.cs" />
+    <Compile Include="v201306\CreativeService\GetCreativesByStatement.cs" />
+    <Compile Include="v201306\CreativeService\UpdateCreatives.cs" />
+    <Compile Include="v201306\CreativeTemplateService\GetAllCreativeTemplates.cs" />
+    <Compile Include="v201306\CreativeTemplateService\GetCreativeTemplate.cs" />
+    <Compile Include="v201306\CreativeTemplateService\GetCreativeTemplatesByStatement.cs" />
+    <Compile Include="v201306\CreativeWrapperService\CreateCreativeWrappers.cs" />
+    <Compile Include="v201306\CreativeWrapperService\DeactivateCreativeWrappers.cs" />
+    <Compile Include="v201306\CreativeWrapperService\GetActiveCreativeWrappers.cs" />
+    <Compile Include="v201306\CreativeWrapperService\GetAllCreativeWrappers.cs" />
+    <Compile Include="v201306\CreativeWrapperService\UpdateCreativeWrappers.cs" />
+    <Compile Include="v201306\CustomFieldService\CreateCustomFieldOptions.cs" />
+    <Compile Include="v201306\CustomFieldService\CreateCustomFields.cs" />
+    <Compile Include="v201306\CustomFieldService\DeactivateAllLineItemCustomFields.cs" />
+    <Compile Include="v201306\CustomFieldService\GetAllCustomFields.cs" />
+    <Compile Include="v201306\CustomFieldService\GetAllLineItemCustomFields.cs" />
+    <Compile Include="v201306\CustomFieldService\SetLineItemCustomFieldValue.cs" />
+    <Compile Include="v201306\CustomFieldService\UpdateCustomFields.cs" />
+    <Compile Include="v201306\CustomTargetingService\CreateCustomTargetingKeysAndValues.cs" />
+    <Compile Include="v201306\CustomTargetingService\GetAllCustomTargetingKeysAndValues.cs" />
+    <Compile Include="v201306\CustomTargetingService\GetCustomTargetingKeysByStatement.cs" />
+    <Compile Include="v201306\CustomTargetingService\GetCustomTargetingValuesByStatement.cs" />
+    <Compile Include="v201306\CustomTargetingService\UpdateCustomTargetingKeys.cs" />
+    <Compile Include="v201306\CustomTargetingService\UpdateCustomTargetingValues.cs" />
+    <Compile Include="v201306\ForecastService\GetForecast.cs" />
+    <Compile Include="v201306\ForecastService\GetForecastById.cs" />
+    <Compile Include="v201306\InventoryService\CreateAdUnits.cs" />
+    <Compile Include="v201306\InventoryService\CreateMobileAdUnit.cs" />
+    <Compile Include="v201306\InventoryService\CreateVideoAdUnit.cs" />
+    <Compile Include="v201306\InventoryService\DeActivateAdUnits.cs" />
+    <Compile Include="v201306\InventoryService\GetAdUnit.cs" />
+    <Compile Include="v201306\InventoryService\GetAdUnitsByStatement.cs" />
+    <Compile Include="v201306\InventoryService\GetAdUnitSizes.cs" />
+    <Compile Include="v201306\InventoryService\GetAllAdUnits.cs" />
+    <Compile Include="v201306\InventoryService\GetInventoryTree.cs" />
+    <Compile Include="v201306\InventoryService\UpdateAdUnits.cs" />
+    <Compile Include="v201306\LabelService\CreateLabels.cs" />
+    <Compile Include="v201306\LabelService\DeactivateActiveLabels.cs" />
+    <Compile Include="v201306\LabelService\GetAllLabels.cs" />
+    <Compile Include="v201306\LabelService\GetLabel.cs" />
+    <Compile Include="v201306\LabelService\GetLabelsByStatement.cs" />
+    <Compile Include="v201306\LabelService\UpdateLabels.cs" />
+    <Compile Include="v201306\LineItemCreativeAssociationService\ActivateLicas.cs" />
+    <Compile Include="v201306\LineItemCreativeAssociationService\CreateLicas.cs" />
+    <Compile Include="v201306\LineItemCreativeAssociationService\DeactivateLicas.cs" />
+    <Compile Include="v201306\LineItemCreativeAssociationService\GetAllLicas.cs" />
+    <Compile Include="v201306\LineItemCreativeAssociationService\GetLica.cs" />
+    <Compile Include="v201306\LineItemCreativeAssociationService\GetLicasByStatement.cs" />
+    <Compile Include="v201306\LineItemCreativeAssociationService\UpdateLicas.cs" />
+    <Compile Include="v201306\LineItemService\ActivateLineItem.cs" />
+    <Compile Include="v201306\LineItemService\CreateLineItems.cs" />
+    <Compile Include="v201306\LineItemService\CreateMobileLineItem.cs" />
+    <Compile Include="v201306\LineItemService\CreateVideoLineItem.cs" />
+    <Compile Include="v201306\LineItemService\GetAllLineItems.cs" />
+    <Compile Include="v201306\LineItemService\GetLineItem.cs" />
+    <Compile Include="v201306\LineItemService\GetLineItemsByStatement.cs" />
+    <Compile Include="v201306\LineItemService\GetRecentlyUpdatedLineItems.cs" />
+    <Compile Include="v201306\LineItemService\TargetCustomCriteria.cs" />
+    <Compile Include="v201306\LineItemService\UpdateLineItems.cs" />
+    <Compile Include="v201306\NetworkService\GetAllNetworks.cs" />
+    <Compile Include="v201306\NetworkService\GetCurrentNetwork.cs" />
+    <Compile Include="v201306\NetworkService\MakeTestNetwork.cs" />
+    <Compile Include="v201306\OrderService\ApproveOrder.cs" />
+    <Compile Include="v201306\OrderService\CreateOrders.cs" />
+    <Compile Include="v201306\OrderService\GetAllOrders.cs" />
+    <Compile Include="v201306\OrderService\GetOrder.cs" />
+    <Compile Include="v201306\OrderService\GetOrdersByStatement.cs" />
+    <Compile Include="v201306\OrderService\UpdateOrders.cs" />
+    <Compile Include="v201306\PlacementService\CreatePlacements.cs" />
+    <Compile Include="v201306\PlacementService\DeactivatePlacement.cs" />
+    <Compile Include="v201306\PlacementService\GetAllPlacements.cs" />
+    <Compile Include="v201306\PlacementService\GetPlacement.cs" />
+    <Compile Include="v201306\PlacementService\GetPlacementsByStatement.cs" />
+    <Compile Include="v201306\PlacementService\UpdatePlacements.cs" />
+    <Compile Include="v201306\PublisherQueryLanguageService\GetAllCities.cs" />
+    <Compile Include="v201306\ReportService\DisplayReport.cs" />
+    <Compile Include="v201306\ReportService\DownloadReport.cs" />
+    <Compile Include="v201306\ReportService\RunDeliveryReport.cs" />
+    <Compile Include="v201306\ReportService\RunInventoryReport.cs" />
+    <Compile Include="v201306\ReportService\RunMergedDeliveryReport.cs" />
+    <Compile Include="v201306\ReportService\RunReachReport.cs" />
+    <Compile Include="v201306\ReportService\RunReportWithCustomFields.cs" />
+    <Compile Include="v201306\ReportService\RunSalesReport.cs" />
+    <Compile Include="v201306\SuggestedAdUnitService\ApproveSuggestedAdUnits.cs" />
+    <Compile Include="v201306\SuggestedAdUnitService\GetAllSuggestedAdUnits.cs" />
+    <Compile Include="v201306\SuggestedAdUnitService\GetSuggestedAdUnit.cs" />
+    <Compile Include="v201306\SuggestedAdUnitService\GetSuggestedUnitByStatement.cs" />
+    <Compile Include="v201306\TeamService\CreateTeams.cs" />
+    <Compile Include="v201306\TeamService\GetAllTeams.cs" />
+    <Compile Include="v201306\TeamService\GetTeam.cs" />
+    <Compile Include="v201306\TeamService\GetTeamsByStatement.cs" />
+    <Compile Include="v201306\TeamService\UpdateTeams.cs" />
+    <Compile Include="v201306\UserService\CreateUsers.cs" />
+    <Compile Include="v201306\UserService\DeactivateUser.cs" />
+    <Compile Include="v201306\UserService\GetAllRoles.cs" />
+    <Compile Include="v201306\UserService\GetAllUsers.cs" />
+    <Compile Include="v201306\UserService\GetCurrentUser.cs" />
+    <Compile Include="v201306\UserService\GetUser.cs" />
+    <Compile Include="v201306\UserService\GetUsersByStatement.cs" />
+    <Compile Include="v201306\UserService\UpdateUsers.cs" />
+    <Compile Include="v201306\UserTeamAssociationService\CreateUserTeamAssociations.cs" />
+    <Compile Include="v201306\UserTeamAssociationService\DeleteUserTeamAssociations.cs" />
+    <Compile Include="v201306\UserTeamAssociationService\GetAllUserTeamAssociations.cs" />
+    <Compile Include="v201306\UserTeamAssociationService\GetUserTeamAssociation.cs" />
+    <Compile Include="v201306\UserTeamAssociationService\GetUserTeamAssociationsByStatement.cs" />
+    <Compile Include="v201306\UserTeamAssociationService\UpdateUserTeamAssociations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="SampleBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\Dfp\Dfp.csproj">
       <Name>Dfp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\src\Common\Common.csproj">
-      <Name>Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App.config" />
-  </ItemGroup>
+          <ProjectReference Include="..\src\Common\Common.csproj">
+            <Name>Common</Name>
+          </ProjectReference></ItemGroup>
 </Project>
