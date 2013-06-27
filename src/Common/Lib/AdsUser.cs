@@ -17,6 +17,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Net;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -28,7 +29,7 @@ namespace Google.Api.Ads.Common.Lib {
   /// <summary>
   /// Represents an Ads API user.
   /// </summary>
-  public abstract class AdsUser {
+  public abstract class AdsUser : Configurable {
     /// <summary>
     /// The list of SOAP listeners.
     /// </summary>
@@ -42,7 +43,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// The application configuration for this user.
     /// </summary>
-    private AppConfigBase config;
+    private AppConfig config;
 
     /// <summary>
     /// Stores all the registered services and their factories.
@@ -65,7 +66,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the application configuration for this user.
     /// </summary>
-    public AppConfigBase Config {
+    public AppConfig Config {
       get {
         return config;
       }
@@ -99,6 +100,24 @@ namespace Google.Api.Ads.Common.Lib {
       RegisterServices(GetServiceTypes());
       listeners.AddRange(GetDefaultListeners());
       SetHeadersFromConfig();
+      config.PropertyChanged += delegate(object sender, PropertyChangedEventArgs e) {
+        if (e.PropertyName == "OAuth2Mode") {
+          SetOAuthProvider(config);
+        }
+      };
+      SetOAuthProvider(config);
+    }
+
+    /// <summary>
+    /// Sets the OAuth provider.
+    /// </summary>
+    /// <param name="config">The config.</param>
+    private void SetOAuthProvider(AppConfigBase config) {
+      if (config.OAuth2Mode == OAuth2Flow.APPLICATION) {
+        this.OAuthProvider = new OAuth2ProviderForApplications(config);
+      } else {
+        this.OAuthProvider = new OAuth2ProviderForServiceAccounts(config);
+      }
     }
 
     /// <summary>
@@ -192,7 +211,7 @@ namespace Google.Api.Ads.Common.Lib {
     protected void SetHeadersFromConfig() {
       List<ServiceFactory> uniqueFactories = GetUniqueFactories();
       foreach (ServiceFactory uniqueFactory in uniqueFactories) {
-        uniqueFactory.AppConfig = config;
+        uniqueFactory.Config = config;
       }
     }
 

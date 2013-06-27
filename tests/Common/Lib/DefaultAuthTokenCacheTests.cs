@@ -20,6 +20,9 @@ using NUnit.Framework;
 
 using System;
 
+// Disable deprecation warnings for DefaultAuthTokenCache class.
+#pragma warning disable 612, 618
+
 namespace Google.Api.Ads.Common.Tests.Lib {
   /// <summary>
   /// Tests for DefaultAuthTokenCache class.
@@ -117,3 +120,5 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     }
   }
 }
+
+#pragma warning restore 612, 618

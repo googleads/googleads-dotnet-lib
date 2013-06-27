@@ -121,8 +121,16 @@
     <value>OAuth provider cannot be null when selecting Authorization method as "OAuth2".</value>
     <comment>Used by DfaSoapClient.MakeApiCall when setting authorization headers.</comment>
   </data>
+  <data name="PasswordCannotBeEmpty" xml:space="preserve">
+    <value>Password cannot be empty.</value>
+    <comment>Used for validating DfaPassword key.</comment>
+  </data>
   <data name="SignatureIsOfWrongType" xml:space="preserve">
     <value>Signature should be a {0} instance.</value>
     <comment>Used for ArgumentException by DfaServiceFactory.CreateService if the signature is not of desired type.</comment>
+  </data>
+  <data name="UserNameCannotBeEmpty" xml:space="preserve">
+    <value>Username cannot be empty.</value>
+    <comment>Used for validating DfaUserName key.</comment>
   </data>
 </root>

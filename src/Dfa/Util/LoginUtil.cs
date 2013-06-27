@@ -35,15 +35,22 @@ namespace Google.Api.Ads.Dfa.Util {
     /// <returns>A token which may be used for future API calls.</returns>
     public static UserToken GetAuthenticationToken(DfaAppConfig config, ServiceSignature signature,
         AdsUser user, Uri serverUrl) {
-      if (!String.IsNullOrEmpty(config.AuthToken)) {
-        return new UserToken(config.UserName, config.AuthToken);
+      if (!String.IsNullOrEmpty(config.DfaAuthToken)) {
+        return new UserToken(config.DfaUserName, config.DfaAuthToken);
       }
+      if (string.IsNullOrEmpty(config.DfaUserName)) {
+        throw new ArgumentNullException(DfaErrorMessages.UserNameCannotBeEmpty);
+      }
+      if (string.IsNullOrEmpty(config.DfaPassword)) {
+        throw new ArgumentNullException(DfaErrorMessages.PasswordCannotBeEmpty);
+      }
+
       try {
         DfaServiceSignature loginServiceSignature = new DfaServiceSignature(signature.Version,
               "LoginRemoteService");
         AdsClient loginService = user.GetService(loginServiceSignature, config.DfaApiServer);
         object userProfile = loginService.GetType().GetMethod("authenticate").Invoke(
-            loginService, new object[] {config.UserName, config.Password});
+            loginService, new object[] {config.DfaUserName, config.DfaPassword});
         return new UserToken(
             userProfile.GetType().GetProperty("name").GetValue(userProfile, null).ToString(),
             userProfile.GetType().GetProperty("token").GetValue(userProfile, null).ToString());

@@ -61,9 +61,6 @@
     <ProjectReference Include="..\Common\Common.Tests.csproj">
       <Name>Common.Tests</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Common\OAuth\Common.OAuth.Tests.csproj">
-      <Name>Common.OAuth.Tests</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

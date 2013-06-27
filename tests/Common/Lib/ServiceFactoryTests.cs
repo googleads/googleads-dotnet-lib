@@ -38,8 +38,8 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Category("Small")]
     public void TestProperties() {
       ServiceFactory serviceFactory = new MockServiceFactory();
-      serviceFactory.AppConfig = config;
-      Assert.AreEqual(config, serviceFactory.AppConfig);
+      serviceFactory.Config = config;
+      Assert.AreEqual(config, serviceFactory.Config);
     }
   }
 }

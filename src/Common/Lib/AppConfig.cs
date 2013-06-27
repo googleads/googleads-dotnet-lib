@@ -34,11 +34,6 @@ namespace Google.Api.Ads.Common.Lib {
     string LogPath { get; }
 
     /// <summary>
-    /// Gets whether the SOAP logs should be written to console.
-    /// </summary>
-    bool LogToConsole { get; }
-
-    /// <summary>
     /// Gets whether the SOAP logs should be written to file.
     /// </summary>
     bool LogToFile { get; }
@@ -47,6 +42,11 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets whether the credentials in the log file should be masked.
     /// </summary>
     bool MaskCredentials { get; }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 mode.
+    /// </summary>
+    OAuth2Flow OAuth2Mode { get; set; }
 
     /// <summary>
     /// Gets or sets the OAuth2 access token.
@@ -66,17 +66,64 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the OAuth2 redirect URI.
     /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 web flow.
+    /// </remarks>
     string OAuth2RedirectUri { get; set; }
 
     /// <summary>
     /// OAuth2 refresh token.
     /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 web / application
+    /// flow in offline mode.</remarks>
     string OAuth2RefreshToken { get; set; }
 
     /// <summary>
     /// Gets or sets the OAuth2 scope.
     /// </summary>
     string OAuth2Scope { get; set; }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 service account email.
+    /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// </remarks>
+    string OAuth2ServiceAccountEmail { get; set; }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 prn email.
+    /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// </remarks>
+    string OAuth2PrnEmail { get; set; }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 certificate path.
+    /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// </remarks>
+    string OAuth2CertificatePath { get; set; }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 certificate password.
+    /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// </remarks>
+    string OAuth2CertificatePassword { get; set; }
+
+    /// <summary>
+    /// Gets or sets the email to be used in getting AuthToken.
+    /// </summary>
+    string Email { get; set; }
+
+    /// <summary>
+    /// Gets or sets the password to be used in getting AuthToken.
+    /// </summary>
+    string Password { get; set; }
+
+    /// <summary>
+    /// Gets or sets the auth token to be used in SOAP headers.
+    /// </summary>
+    string AuthToken { get; set; }
 
     /// <summary>
     /// Occurs when a property is changed.
@@ -105,8 +152,19 @@ namespace Google.Api.Ads.Common.Lib {
     int Timeout { get; set; }
 
     /// <summary>
+    /// Gets or sets whether gzip compression should be turned on for SOAP
+    /// requests and responses.
+    /// </summary>
+    bool EnableGzipCompression { get; set; }
+
+    /// <summary>
     /// Gets the number of seconds after Jan 1, 1970, 00:00:00
     /// </summary>
     long UnixTimestamp { get; }
+
+    /// <summary>
+    /// Gets the default OAuth2 scope.
+    /// </summary>
+    string GetDefaultOAuth2Scope();
   }
 }

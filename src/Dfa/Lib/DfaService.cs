@@ -43,13 +43,5 @@ namespace Google.Api.Ads.Dfa.Lib {
     public override Type[] GetServiceTypes() {
       return MethodInfo.GetCurrentMethod().DeclaringType.GetNestedTypes();
     }
-
-    /// <summary>
-    /// Gets the OAuth scope parameter for getting request token.
-    /// </summary>
-    /// <returns>The OAuth scope parameter for AdWords API.</returns>
-    public static string GetOAuthScope(DfaAppConfig config) {
-      return "https://www.googleapis.com/auth/dfatrafficking";
-    }
   }
 }

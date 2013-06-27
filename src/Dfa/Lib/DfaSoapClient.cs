@@ -97,7 +97,7 @@ namespace Google.Api.Ads.Dfa.Lib {
         // All other services will still use the login token.
         if (config.AuthorizationMethod == DfaAuthorizationMethod.OAuth2) {
           if (this.User.OAuthProvider != null) {
-            oAuthHeader = this.User.OAuthProvider.GetAuthHeader(this.Url);
+            oAuthHeader = this.User.OAuthProvider.GetAuthHeader();
           } else {
             throw new DfaApiException(null, DfaErrorMessages.OAuthProviderCannotBeNull);
           }

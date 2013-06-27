@@ -35,24 +35,19 @@ namespace Google.Api.Ads.Dfa.Lib {
     private const string SHORT_NAME = "DfaApi-Dotnet";
 
     /// <summary>
-    /// Key name for enableGzipCompression.
+    /// Key name for dfaAuthToken.
     /// </summary>
-    private const string ENABLE_GZIP_COMPRESSION = "EnableGzipCompression";
+    private const string DFA_AUTHTOKEN = "DfaAuthToken";
 
     /// <summary>
-    /// Key name for authToken.
+    /// Key name for dfaUserName.
     /// </summary>
-    private const string AUTHTOKEN = "AuthToken";
+    private const string DFA_USERNAME = "DfaUserName";
 
     /// <summary>
-    /// Key name for userName.
+    /// Key name for dfaPassword.
     /// </summary>
-    private const string USERNAME = "UserName";
-
-    /// <summary>
-    /// Key name for password.
-    /// </summary>
-    private const string PASSWORD = "Password";
+    private const string DFA_PASSWORD = "DfaPassword";
 
     /// <summary>
     /// Key name for applicationName.
@@ -70,6 +65,11 @@ namespace Google.Api.Ads.Dfa.Lib {
     private const string DEFAULT_DFAAPI_SERVER = "https://advertisersapi.doubleclick.net";
 
     /// <summary>
+    /// OAUth2 scope for DFA API.
+    /// </summary>
+    private const string DFA_OAUTH2_SCOPE = "https://www.googleapis.com/auth/dfatrafficking";
+
+    /// <summary>
     /// Key name for authorizationMethod.
     /// </summary>
     private const string AUTHORIZATION_METHOD = "AuthorizationMethod";
@@ -81,19 +81,19 @@ namespace Google.Api.Ads.Dfa.Lib {
         DfaAuthorizationMethod.LoginService;
 
     /// <summary>
-    /// Authtoken to be used in making API calls.
+    /// Login authentication token to be used in making API calls.
     /// </summary>
-    private string authToken;
+    private string dfaAuthToken;
 
     /// <summary>
-    /// Email to be used in getting authToken.
+    /// Email to be used in getting login token.
     /// </summary>
-    private string userName;
+    private string dfaUserName;
 
     /// <summary>
-    /// Password to be used in getting authToken.
+    /// Password to be used in getting login tokens.
     /// </summary>
-    private string password;
+    private string dfaPassword;
 
     /// <summary>
     /// Application name.
@@ -106,12 +106,6 @@ namespace Google.Api.Ads.Dfa.Lib {
     private string dfaApiServer;
 
     /// <summary>
-    /// True, if gzip compression should be turned on for SOAP requests and
-    /// responses.
-    /// </summary>
-    private bool enableGzipCompression;
-
-    /// <summary>
     /// Authorization method to be used when making API calls.
     /// </summary>
     private DfaAuthorizationMethod authorizationMethod;
@@ -119,36 +113,36 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// <summary>
     /// Gets or sets the auth token to be used in SOAP headers.
     /// </summary>
-    public string AuthToken {
+    public string DfaAuthToken {
       get {
-        return authToken;
+        return dfaAuthToken;
       }
       set {
-        SetPropertyField("AuthToken", ref authToken, value);
+        SetPropertyField("DfaAuthToken", ref dfaAuthToken, value);
       }
     }
 
     /// <summary>
     /// Gets or sets the username to be used in getting AuthToken.
     /// </summary>
-    public string UserName {
+    public string DfaUserName {
       get {
-        return userName;
+        return dfaUserName;
       }
       set {
-        SetPropertyField("UserName", ref userName, value);
+        SetPropertyField("DfaUserName", ref dfaUserName, value);
       }
     }
 
     /// <summary>
     /// Gets or sets the password to be used in getting AuthToken.
     /// </summary>
-    public string Password {
+    public string DfaPassword {
       get {
-        return password;
+        return dfaPassword;
       }
       set {
-        SetPropertyField("Password", ref password, value);
+        SetPropertyField("DfaPassword", ref dfaPassword, value);
       }
     }
 
@@ -177,19 +171,6 @@ namespace Google.Api.Ads.Dfa.Lib {
     }
 
     /// <summary>
-    /// Gets or sets whether gzip compression should be turned on for SOAP
-    /// requests and responses.
-    /// </summary>
-    public bool EnableGzipCompression {
-      get {
-        return enableGzipCompression;
-      }
-      set {
-        SetPropertyField("EnableGzipCompression", ref enableGzipCompression, value);
-      }
-    }
-
-    /// <summary>
     /// Gets or sets the authorization method to be used when making API calls.
     /// </summary>
     public DfaAuthorizationMethod AuthorizationMethod {
@@ -214,12 +195,10 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// </summary>
     public DfaAppConfig() : base() {
       authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
-      authToken = "";
-      userName = null;
-      password = null;
+      dfaAuthToken = "";
+      dfaUserName = null;
+      dfaPassword = null;
       applicationName = "";
-      enableGzipCompression = true;
-
       dfaApiServer = DEFAULT_DFAAPI_SERVER;
 
       ReadSettings((Hashtable) ConfigurationManager.GetSection("DfaApi"));
@@ -239,14 +218,26 @@ namespace Google.Api.Ads.Dfa.Lib {
       } catch {
         authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
       }
-      authToken = ReadSetting(settings, AUTHTOKEN, authToken);
-      userName = ReadSetting(settings, USERNAME, userName);
-      password = ReadSetting(settings, PASSWORD, password);
+      dfaAuthToken = ReadSetting(settings, DFA_AUTHTOKEN, dfaAuthToken);
+      dfaUserName = ReadSetting(settings, DFA_USERNAME, dfaUserName);
+      dfaPassword = ReadSetting(settings, DFA_PASSWORD, dfaPassword);
       applicationName = ReadSetting(settings, APPLICATION_NAME, applicationName);
-      enableGzipCompression = bool.Parse(ReadSetting(settings, ENABLE_GZIP_COMPRESSION,
-          enableGzipCompression.ToString()));
 
       dfaApiServer = ReadSetting(settings, DFAAPI_SERVER, dfaApiServer);
+
+      // If there is an OAuth2 scope mentioned in App.config, this will be
+      // loaded by the above call. If there isn't one, we will initialize it
+      // with a library-specific default value.
+      if (string.IsNullOrEmpty(this.OAuth2Scope)) {
+        this.OAuth2Scope = GetDefaultOAuth2Scope();
+      }
+    }
+
+    /// <summary>
+    /// Gets the default OAuth2 scope.
+    /// </summary>
+    public override string GetDefaultOAuth2Scope() {
+      return DFA_OAUTH2_SCOPE;
     }
   }
 }

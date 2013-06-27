@@ -133,6 +133,18 @@
     <value>Could not locate factoryType field in Type {0}</value>
     <comment>Used for ArgumentException when AdsUser.RegisterServices cannot locate factoryType in a registered Service.</comment>
   </data>
+  <data name="OAuth2AuthorizationCodeIsEmpty" xml:space="preserve">
+    <value>OAuth2 authorizationCode cannot be empty when fetching access token.</value>
+    <comment>Used to validate authorizationCode in OAuth2 flow.</comment>
+  </data>
+  <data name="OAuth2IsNotInOfflineMode" xml:space="preserve">
+    <value>OAuth2 Offline mode should be true to refresh access token.</value>
+    <comment>Used to check if OAuth2 offline mode is enabled when refreshing access tokens.</comment>
+  </data>
+  <data name="OAuth2ParameterErrorMessage" xml:space="preserve">
+    <value>Looks like your application is not configured to use OAuth2 properly. Required OAuth2 parameter {0} is missing. You may run Common\\Utils\\OAuth2TokenGenerator.cs to generate a default OAuth2 configuration.</value>
+    <comment>Thrown when a required OAuth2 parameter is missing.</comment>
+  </data>
   <data name="OAuthExtensionNotLoaded" xml:space="preserve">
     <value>Could not load an oauth extension class.</value>
   </data>

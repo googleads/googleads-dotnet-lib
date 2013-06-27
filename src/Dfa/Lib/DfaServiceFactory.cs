@@ -33,11 +33,6 @@ namespace Google.Api.Ads.Dfa.Lib {
   /// </summary>
   public class DfaServiceFactory : ServiceFactory {
     /// <summary>
-    /// The user token to be sent as part of Soap Headers.
-    /// </summary>
-    private UserToken authToken = null;
-
-    /// <summary>
     /// Default public constructor.
     /// </summary>
     public DfaServiceFactory() {
@@ -54,7 +49,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// <returns>An object of the desired service type.</returns>
     public override AdsClient CreateService(ServiceSignature signature, AdsUser user,
         Uri serverUrl) {
-      DfaAppConfig config = (DfaAppConfig) base.AppConfig;
+      DfaAppConfig config = (DfaAppConfig) base.Config;
 
       if (serverUrl == null) {
         serverUrl = new Uri(config.DfaApiServer);
@@ -103,7 +98,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// </summary>
     /// <returns>The request header.</returns>
     private RequestHeader GetRequestHeader() {
-      DfaAppConfig config = (DfaAppConfig) base.AppConfig;
+      DfaAppConfig config = (DfaAppConfig) base.Config;
       RequestHeader reqHeader = new RequestHeader();
       reqHeader.ApplicationName = config.GetUserAgent();
       return reqHeader;
