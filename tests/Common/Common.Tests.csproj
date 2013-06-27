@@ -53,6 +53,11 @@
     <Compile Include="Lib\TraceListenerTests.cs" />
     <Compile Include="Lib\ServiceFactoryTests.cs" />
     <Compile Include="Lib\ServiceSignatureTests.cs" />
+    <Compile Include="Lib\OAuth2ProviderForApplicationsTests.cs" />
+    <Compile Include="Lib\OAuth2ProviderForServiceAccountsTests.cs" />
+    <Compile Include="OAuth2RequestInterceptor.cs" />
+    <Compile Include="TestUtils.cs" />
+    <Compile Include="Util\DeprecationUtilitiesTest.cs" />
     <Compile Include="Util\MediaUtilitiesTests.cs" />
     <Compile Include="Util\CsvFileTests.cs" />
     <Compile Include="WebRequestInterceptor.cs" />
@@ -86,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\certificate.p12" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

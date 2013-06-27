@@ -70,6 +70,24 @@ namespace Google.Api.Ads.AdWords {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AdWords API can find out effective user from the authorization headers, but setting a client customer ID explicitly is recommended. If the credentials in your configuration corresponds to an MCC account, you may not see any data..
+        /// </summary>
+        internal static string ClientCustomerIdIsEmpty {
+            get {
+                return ResourceManager.GetString("ClientCustomerIdIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AdWords API requires a developer token. If you don&apos;t have one, you can refer to the instructions at https://developers.google.com/adwords/api/docs/signingup to get one..
+        /// </summary>
+        internal static string DeveloperTokenCannotBeEmpty {
+            get {
+                return ResourceManager.GetString("DeveloperTokenCannotBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not set AuthToken for outgoing API call. Please check if service.RequestHeader is not null..
         /// </summary>
         internal static string FailedToSetAuthorizationHeader {

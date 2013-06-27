@@ -124,7 +124,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201209
                 End If
               Next
               Console.WriteLine("Keyword with text '{0}', and average monthly search volume " & _
-                  "'{1}' was found with categories: {2}", keywordText, averageMonthlySearches, _
+                  "'{1}' was found with categories: {2}", keyword, averageMonthlySearches, _
                   categories)
               i = i + 1
             Next

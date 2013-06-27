@@ -83,6 +83,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201302
       Dim cpcBid As New CpcBid()
       cpcBid.bid = New Money()
       cpcBid.bid.microAmount = 1000000
+      biddingConfig.bids = New Bids() {cpcBid}
 
       biddableAdGroupCriterion.biddingStrategyConfiguration = biddingConfig
 

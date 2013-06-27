@@ -21,12 +21,7 @@ namespace Google.Api.Ads.Common.Lib {
   /// <summary>
   /// Listens to SOAP messages sent and received by this library.
   /// </summary>
-  public interface SoapListener {
-    /// <summary>
-    /// Gets the config class to be used with this class.
-    /// </summary>
-    AppConfig Config { get; }
-
+  public interface SoapListener : Configurable {
     /// <summary>
     /// Initializes the listener for handling an API call.
     /// </summary>

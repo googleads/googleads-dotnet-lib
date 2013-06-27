@@ -153,4 +153,12 @@
     <value>OAuth provider cannot be null when selecting Authorization method as "OAuth".</value>
     <comment>Used by AdWordsSoapClient.MakeApiCall when setting authorization headers.</comment>
   </data>
+  <data name="DeveloperTokenCannotBeEmpty" xml:space="preserve">
+    <value>AdWords API requires a developer token. If you don't have one, you can refer to the instructions at https://developers.google.com/adwords/api/docs/signingup to get one.</value>
+    <comment>Error message thrown when developer token is not set by user.</comment>
+  </data>
+  <data name="ClientCustomerIdIsEmpty" xml:space="preserve">
+    <value>AdWords API can find out effective user from the authorization headers, but setting a client customer ID explicitly is recommended. If the credentials in your configuration corresponds to an MCC account, you may not see any data.</value>
+    <comment>Warning message printed when clientCustomerID header is empty.</comment>
+  </data>
 </root>

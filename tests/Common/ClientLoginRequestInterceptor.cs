@@ -21,6 +21,9 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 
+// Disable deprecation warnings for AuthToken class.
+#pragma warning disable 612, 618
+
 namespace Google.Api.Ads.Common.Tests {
   /// <summary>
   /// Intercepts calls to ClientLogin API for testing purposes.
@@ -85,3 +88,5 @@ namespace Google.Api.Ads.Common.Tests {
     }
   }
 }
+
+#pragma warning restore 612, 618

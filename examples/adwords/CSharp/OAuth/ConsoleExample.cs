@@ -16,7 +16,7 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201209;
-using Google.Api.Ads.Common.OAuth.Lib;
+using Google.Api.Ads.Common.Lib;
 
 using System;
 using System.Data;
@@ -24,7 +24,18 @@ using System.Data;
 namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
   /// <summary>
   /// This code example shows how to run an AdWords API command line application
-  /// using OAuth 2.0 as authentication mechanism. To run this application,
+  /// while incorporating the OAuth2 installed application flow into your
+  /// application. If your application uses a single MCC login to make calls to
+  /// all your accounts, you shouldn't use this code example. Instead, you
+  /// should run Common\Util\OAuth2TokenGenerator.cs to generate a refresh token
+  /// and set that in user.Config.OAuth2RefreshToken field, or set
+  /// OAuth2RefreshToken key in your App.config / Web.config.
+  ///
+  /// This code example depends on Console environment only for reading and
+  /// writing values, you may use this code example in other environments like
+  /// Windows Form applications with minimial modifications.
+  ///
+  /// To run this application,
   ///
   /// 1. You should create a new Console Application project.
   /// 2. Add reference to the following assemblies:
@@ -32,8 +43,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
   /// <item>Google.Ads.Common.dll</item>
   /// <item>Google.Ads.OAuth.dll</item>
   /// <item>Google.AdWords.dll</item>
-  /// <item>Microsoft.Practices.ServiceLocation.dll</item>
-  /// <item>OAuth.Net.Combined.dll</item>
   /// <item>System.Web</item>
   /// <item>System.Configuration</item>
   /// </list>
@@ -41,10 +50,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
   /// 4. Copy App.config from AdWords.Examples.CSharp project, and configure
   /// it as shown in ths project's Web.config.
   /// 5. Compile and run this example.
-  ///
-  /// This code example depends on Console environment only for reading and
-  /// writing values, you may use this code example in other environments like
-  /// Windows Form applications with minimial modifications.
   /// </summary>
   public class ConsoleExample {
     /// <summary>
@@ -55,9 +60,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
       AdWordsUser user = new AdWordsUser();
       AdWordsAppConfig config = (user.Config as AdWordsAppConfig);
       if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
-        if (!string.IsNullOrEmpty(config.OAuth2ServiceAccountEmail)) {
-          DoAuth2AuthorizationForServiceAccounts(user);
-        } else {
+        if (config.OAuth2Mode == OAuth2Flow.APPLICATION &&
+            string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
           DoAuth2Authorization(user);
         }
       } else {
@@ -110,38 +114,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     }
 
     /// <summary>
-    /// Does the OAuth2 authorization for service accounts.
+    /// Does the OAuth2 authorization for installed applications.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    private static void DoAuth2AuthorizationForServiceAccounts(AdWordsUser user) {
-      user.Config.OAuth2Scope = AdWordsService.GetOAuthScope(user.Config as AdWordsAppConfig);
-
-      OAuth2Provider oAuth2 = new OAuth2Provider(user.Config);
-      user.OAuthProvider = oAuth2;
-      oAuth2.GenerateAccessTokenForServiceAccount();
-    }
-
-    /// <summary>
-    /// Does the OAuth2 authorization.
-    /// </summary>
-    /// <param name="user">The AdWords user.</param>
-    /// <remarks>If you have saved a user's access and refresh tokens from a
-    /// previous session, you can set them directly to the OAuth2 handler
-    /// object. Also, make sure you set the redirect uri and scope correctly
-    /// if you wish to call RefreshAccessToken method.</remarks>
     private static void DoAuth2Authorization(AdWordsUser user) {
-      // Set the OAuth2 scope.
-      user.Config.OAuth2Scope = AdWordsService.GetOAuthScope(user.Config as AdWordsAppConfig);
-
       // Since we are using a console application, set the callback url to null.
       user.Config.OAuth2RedirectUri = null;
-
-      // Create the OAuth2 protocol handler and set it to the current user.
-      OAuth2Provider oAuth2 = new OAuth2Provider(user.Config);
-      user.OAuthProvider = oAuth2;
-
+      AdsOAuthProviderForApplications oAuth2Provider =
+          (user.OAuthProvider as AdsOAuthProviderForApplications);
       // Get the authorization url.
-      string authorizationUrl = oAuth2.GetAuthorizationUrl();
+      string authorizationUrl = oAuth2Provider.GetAuthorizationUrl();
       Console.WriteLine("Open a fresh web browser and navigate to \n\n{0}\n\n. You will be " +
           "prompted to login and then authorize this application to make calls to the " +
           "AdWords API. Once approved, you will be presented with an authorization code.",
@@ -152,7 +134,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
       string authorizationCode = Console.ReadLine();
 
       // Fetch the access and refresh tokens.
-      oAuth2.FetchAccessAndRefreshTokens(authorizationCode);
+      oAuth2Provider.FetchAccessAndRefreshTokens(authorizationCode);
     }
   }
 }

@@ -64,7 +64,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201209
       Dim password As String = "testaccount"
 
       Dim config As New AdWordsAppConfig
-      Dim authToken As New AuthToken(config, "adwords", loginEmail, password)
+      config.Email = loginEmail
+      config.Password = password
+      Dim authToken As New AuthToken(config, "adwords")
 
       Try
         ' Try to obtain an authToken.

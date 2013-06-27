@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Common.Lib {
   /// For every new service supported, you need an implementation of this
   /// interface.
   /// </summary>
-  public abstract class ServiceFactory {
+  public abstract class ServiceFactory : Configurable {
     /// <summary>
     /// An App.config reader suitable for this factory.
     /// </summary>
@@ -34,7 +34,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets an App.config reader suitable for this factory.
     /// </summary>
-    public AppConfig AppConfig {
+    public AppConfig Config {
       get {
         return config;
       }

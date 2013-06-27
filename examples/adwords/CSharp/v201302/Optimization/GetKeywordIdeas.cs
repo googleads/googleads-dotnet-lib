@@ -134,7 +134,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201302 {
                 }
               }
               Console.WriteLine("Keyword with text '{0}', and average monthly search volume " +
-                  "'{1}' was found with categories: {2}", keywordText, averageMonthlySearches,
+                  "'{1}' was found with categories: {2}", keyword, averageMonthlySearches,
                   categories);
               i++;
             }

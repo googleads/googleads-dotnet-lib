@@ -235,7 +235,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201302
       Dim RequestContextOperand As New RequestContextOperand
       RequestContextOperand.contextType = RequestContextOperandContextType.FEED_ITEM_ID
 
-      Dim functionVariable As New Google.Api.Ads.AdWords.v201302.Function
+      Dim functionVariable As New [Function]
       functionVariable.lhsOperand = New FunctionArgumentOperand() {RequestContextOperand}
       functionVariable.operator = FunctionOperator.IN
 

@@ -111,11 +111,7 @@ namespace Google.Api.Ads.AdWords.Lib {
             AuthToken.Cache.InvalidateToken(e.ExpiredCredential);
             Config.AuthToken = null;
           } else if (this.Config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
-            if (!string.IsNullOrEmpty(this.Config.OAuth2ServiceAccountEmail)) {
-              (this.User.OAuthProvider as OAuth2).GenerateAccessTokenForServiceAccount();
-            } else {
-              (this.User.OAuthProvider as OAuth2).RefreshAccessToken();
-            }
+            this.User.OAuthProvider.RefreshAccessToken();
           }
         } else if (IsTransientError(ex)) {
           Thread.Sleep(WAIT_TIME * (int) Math.Pow(2, this.numRetries));

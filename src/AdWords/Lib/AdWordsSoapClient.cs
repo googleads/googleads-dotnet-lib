@@ -49,22 +49,24 @@ namespace Google.Api.Ads.AdWords.Lib {
       string oAuthHeader = null;
       RequestHeader header = GetRequestHeader();
 
-      if (string.Compare(header.Version, "v201109") >= 0 && !string.IsNullOrEmpty(
-          header.clientEmail)) {
-        throw new SoapHeaderException("ClientEmail header is not supported in " + header.Version +
-            ".", XmlQualifiedName.Empty);
+      if (string.IsNullOrEmpty(header.developerToken)) {
+        throw new ArgumentNullException(AdWordsErrorMessages.DeveloperTokenCannotBeEmpty);
+      }
+
+      if (string.IsNullOrEmpty(header.clientCustomerId)) {
+        TraceUtilities.WriteGeneralWarnings(AdWordsErrorMessages.ClientCustomerIdIsEmpty);
       }
 
       if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
         if (this.User.OAuthProvider != null) {
-          oAuthHeader = this.User.OAuthProvider.GetAuthHeader(this.Url);
+          oAuthHeader = this.User.OAuthProvider.GetAuthHeader();
         } else {
           throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
         }
       } else if (config.AuthorizationMethod == AdWordsAuthorizationMethod.ClientLogin) {
         if (header != null) {
           header.authToken = (!string.IsNullOrEmpty(config.AuthToken)) ? config.AuthToken :
-              new AuthToken(config, SERVICE_NAME, config.Email, config.Password).GetToken();
+              new AuthToken(config, SERVICE_NAME).GetToken();
         } else {
           throw new AdWordsApiException(null, AdWordsErrorMessages.FailedToSetAuthorizationHeader);
         }

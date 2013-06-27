@@ -83,6 +83,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201302 {
       CpcBid cpcBid = new CpcBid();
       cpcBid.bid = new Money();
       cpcBid.bid.microAmount = 1000000;
+      biddingConfig.bids = new Bids[] {cpcBid};
 
       biddableAdGroupCriterion.biddingStrategyConfiguration = biddingConfig;
 

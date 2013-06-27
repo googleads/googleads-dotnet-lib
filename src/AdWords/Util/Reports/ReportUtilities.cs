@@ -334,14 +334,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       }
       if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
         if (this.User.OAuthProvider != null) {
-          request.Headers["Authorization"] = this.User.OAuthProvider.GetAuthHeader(downloadUrl);
+          request.Headers["Authorization"] = this.User.OAuthProvider.GetAuthHeader();
         } else {
           throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
         }
       } else if (config.AuthorizationMethod == AdWordsAuthorizationMethod.ClientLogin) {
         string authToken = (!string.IsNullOrEmpty(config.AuthToken)) ? config.AuthToken :
-            new AuthToken(config, AdWordsSoapClient.SERVICE_NAME, config.Email,
-                config.Password).GetToken();
+            new AuthToken(config, AdWordsSoapClient.SERVICE_NAME).GetToken();
         request.Headers["Authorization"] = CLIENT_LOGIN_PREFIX + authToken;
       }
 

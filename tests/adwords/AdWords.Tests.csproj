@@ -61,7 +61,7 @@
     <Content Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
@@ -77,9 +77,6 @@
     </ProjectReference>
     <ProjectReference Include="..\Common\Common.Tests.csproj">
       <Name>Common.Tests</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Common\OAuth\Common.OAuth.Tests.csproj">
-      <Name>Common.OAuth.Tests</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\examples\AdWords\CSharp\AdWords.Examples.CSharp.csproj">
       <Name>AdWords.Examples.CSharp</Name>

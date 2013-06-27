@@ -116,7 +116,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201209 {
                     foreach (int value in categorySet.value) {
                       builder.AppendFormat("{0}, ", value);
                     }
-                    categories = builder.ToString().Trim(new char[] { ',', ' ' });
+                    categories = builder.ToString().Trim(new char[] {',', ' '});
                   }
                 }
                 if (entry.key == AttributeType.SEARCH_VOLUME) {
@@ -124,7 +124,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201209 {
                 }
               }
               Console.WriteLine("Keyword with text '{0}', and average monthly search volume " +
-                  "'{1}' was found with categories: {2}", keywordText, averageMonthlySearches,
+                  "'{1}' was found with categories: {2}", keyword, averageMonthlySearches,
                   categories);
               i++;
             }

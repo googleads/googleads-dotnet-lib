@@ -35,11 +35,6 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     AdsUser user;
 
     /// <summary>
-    /// The signature for this service.
-    /// </summary>
-    ServiceSignature signature;
-
-    /// <summary>
     /// The webrequest used for making the last API call.
     /// </summary>
     WebRequest lastRequest;

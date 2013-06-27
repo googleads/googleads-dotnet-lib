@@ -55,7 +55,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <returns>An object of the desired service type.</returns>
     public override AdsClient CreateService(ServiceSignature signature, AdsUser user,
         Uri serverUrl) {
-      AdWordsAppConfig awConfig = (AdWordsAppConfig) AppConfig;
+      AdWordsAppConfig awConfig = (AdWordsAppConfig) Config;
       if (serverUrl == null) {
         serverUrl = new Uri(awConfig.AdWordsApiServer);
       }
@@ -105,9 +105,7 @@ namespace Google.Api.Ads.AdWords.Lib {
       AdWordsAppConfig awConfig = (AdWordsAppConfig) config;
       this.requestHeader = new RequestHeader();
 
-      if (!string.IsNullOrEmpty(awConfig.ClientEmail)) {
-        this.requestHeader.clientEmail = awConfig.ClientEmail;
-      } else if (!string.IsNullOrEmpty(awConfig.ClientCustomerId)) {
+      if (!string.IsNullOrEmpty(awConfig.ClientCustomerId)) {
         requestHeader.clientCustomerId = awConfig.ClientCustomerId;
       }
       requestHeader.developerToken = awConfig.DeveloperToken;

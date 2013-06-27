@@ -63,7 +63,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201302 {
       string password = "testaccount";
 
       AdWordsAppConfig config = new AdWordsAppConfig();
-      AuthToken authToken = new AuthToken(config, "adwords", loginEmail, password);
+      config.Email = loginEmail;
+      config.Password = password;
+      AuthToken authToken = new AuthToken(config, "adwords");
 
       try {
         // Try to obtain an authToken.

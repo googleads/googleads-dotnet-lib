@@ -27,14 +27,6 @@ namespace Google.Api.Ads.AdWords.Lib {
   /// </summary>
   public partial class AdWordsService : AdsService {
     /// <summary>
-    /// Gets the OAuth scope parameter for getting request token.
-    /// </summary>
-    /// <returns>The OAuth scope parameter for AdWords API.</returns>
-    public static string GetOAuthScope(AdWordsAppConfig config) {
-      return string.Format("{0}/api/adwords/", config.AdWordsApiServer);
-    }
-
-    /// <summary>
     /// Creates a service creation parameter for defining an AdWords service.
     /// </summary>
     /// <param name="version">Service version.</param>

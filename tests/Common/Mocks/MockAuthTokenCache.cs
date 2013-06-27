@@ -20,6 +20,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+// Disable deprecation warnings for AuthTokenCache class.
+#pragma warning disable 612, 618
+
 namespace Google.Api.Ads.Common.Tests.Mocks {
   /// <summary>
   /// Mock class for AuthTokenCache.
@@ -68,3 +71,5 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     }
   }
 }
+
+#pragma warning restore 612, 618

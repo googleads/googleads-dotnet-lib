@@ -43,7 +43,6 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     public void Init() {
       tblSettings = new Hashtable();
       tblSettings.Add("LogPath", "Test LogPath");
-      tblSettings.Add("LogToConsole", "false");
       tblSettings.Add("LogToFile", "false");
       tblSettings.Add("LogErrorsOnly", "false");
       tblSettings.Add("ProxyServer", "http://localhost/");
@@ -54,9 +53,6 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       tblSettings.Add("Timeout", "20");
       tblSettings.Add("RetryCount", "5");
 
-      tblSettings.Add("OAuthConsumerKey", "OAuthConsumerKey");
-      tblSettings.Add("OAuthConsumerSecret", "OAuthConsumerSecret");
-      tblSettings.Add("OAuthScope", "OAuthScope");
       tblSettings.Add("OAuth2ClientId", "OAuth2ClientId");
       tblSettings.Add("OAuth2ClientSecret", "OAuth2ClientSecret");
       tblSettings.Add("OAuth2ServiceAccountEmail", "OAuth2ServiceAccountEmail");
@@ -67,6 +63,12 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       tblSettings.Add("OAuth2RefreshToken", "OAuth2RefreshToken");
       tblSettings.Add("OAuth2Scope", "OAuth2Scope");
       tblSettings.Add("OAuth2RedirectUri", "OAuth2RedirectUri");
+      tblSettings.Add("OAuth2Mode", "SERVICE_ACCOUNT");
+
+      tblSettings.Add("Email", "Email");
+      tblSettings.Add("Password", "Password");
+      tblSettings.Add("AuthToken", "AuthToken");
+      tblSettings.Add("EnableGzipCompression", "false");
     }
 
     /// <summary>
@@ -78,9 +80,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       MockAppConfig config = new MockAppConfig();
       config.MockReadSettings(tblSettings);
       Assert.AreEqual(tblSettings["LogPath"], config.LogPath);
-      Assert.AreEqual(bool.Parse(tblSettings["LogToConsole"].ToString()), config.LogToConsole);
       Assert.AreEqual(bool.Parse(tblSettings["LogToFile"].ToString()), config.LogToFile);
-      Assert.AreEqual(bool.Parse(tblSettings["LogErrorsOnly"].ToString()), config.LogErrorsOnly);
       Assert.AreEqual(bool.Parse(tblSettings["LogErrorsOnly"].ToString()), config.LogErrorsOnly);
       NetworkCredential credential = (NetworkCredential) config.Proxy.Credentials;
       Assert.AreEqual(tblSettings["ProxyUser"].ToString(), credential.UserName);
@@ -93,14 +93,24 @@ namespace Google.Api.Ads.Common.Tests.Lib {
 
       Assert.AreEqual(tblSettings["OAuth2ClientId"].ToString(), config.OAuth2ClientId);
       Assert.AreEqual(tblSettings["OAuth2ClientSecret"].ToString(), config.OAuth2ClientSecret);
-      Assert.AreEqual(tblSettings["OAuth2ServiceAccountEmail"].ToString(), config.OAuth2ServiceAccountEmail);
+      Assert.AreEqual(tblSettings["OAuth2ServiceAccountEmail"].ToString(),
+          config.OAuth2ServiceAccountEmail);
       Assert.AreEqual(tblSettings["OAuth2PrnEmail"].ToString(), config.OAuth2PrnEmail);
       Assert.AreEqual(tblSettings["OAuth2AccessToken"].ToString(), config.OAuth2AccessToken);
       Assert.AreEqual(tblSettings["OAuth2RefreshToken"].ToString(), config.OAuth2RefreshToken);
       Assert.AreEqual(tblSettings["OAuth2Scope"].ToString(), config.OAuth2Scope);
       Assert.AreEqual(tblSettings["OAuth2RedirectUri"].ToString(), config.OAuth2RedirectUri);
-      Assert.AreEqual(tblSettings["OAuth2JwtCertificatePath"].ToString(), config.OAuth2CertificatePath);
-      Assert.AreEqual(tblSettings["OAuth2JwtCertificatePassword"].ToString(), config.OAuth2CertificatePassword);
+      Assert.AreEqual(tblSettings["OAuth2JwtCertificatePath"].ToString(),
+          config.OAuth2CertificatePath);
+      Assert.AreEqual(tblSettings["OAuth2JwtCertificatePassword"].ToString(),
+          config.OAuth2CertificatePassword);
+      Assert.AreEqual(tblSettings["OAuth2Mode"].ToString(), config.OAuth2Mode.ToString());
+
+      Assert.AreEqual(tblSettings["Email"].ToString(), config.Email);
+      Assert.AreEqual(tblSettings["Password"].ToString(), config.Password);
+      Assert.AreEqual(tblSettings["AuthToken"].ToString(), config.AuthToken);
+      Assert.AreEqual(bool.Parse(tblSettings["EnableGzipCompression"].ToString()),
+          config.EnableGzipCompression);
     }
 
     /// <summary>

@@ -80,18 +80,6 @@ namespace Google.Api.Ads.AdWords.Headers {
     }
 
     /// <summary>
-    /// Gets or sets the client email.
-    /// </summary>
-    public string clientEmail {
-      get {
-        return stub.clientEmail;
-      }
-      set {
-        stub.clientEmail = value;
-      }
-    }
-
-    /// <summary>
     /// Gets or sets the developer token.
     /// </summary>
     public string developerToken {

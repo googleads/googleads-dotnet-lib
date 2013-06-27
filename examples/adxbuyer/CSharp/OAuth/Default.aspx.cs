@@ -17,7 +17,7 @@
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.Reports;
 using Google.Api.Ads.AdWords.v201302;
-using Google.Api.Ads.Common.OAuth.Lib;
+using Google.Api.Ads.Common.Lib;
 
 using System;
 using System.Data;
@@ -51,20 +51,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing
     /// the event data.</param>
     protected void OnAuthorizeButtonClick(object sender, EventArgs e) {
-      // This code example assumes that you don't have a previously authorized
-      // access token or refresh token with you. If you have one, you needn't
-      // redirect the user through the login page; instead you can initialize
-      // the user directly as follows:
-      //
-      // OAuth 2
-      // ==========
-      //
-      // OAuth2Provider oAuth2 = new OAuth2Provider(user.Config);
-      // oAuth2.AccessToken = myAccessToken;
-      // oAuth2.RefreshToken = myRefreshToken;
+      // This code example shows how to run an AdWords API web application
+      // while incorporating the OAuth2 web application flow into your
+      // application. If your application uses a single MCC login to make calls
+      // to all your accounts, you shouldn't use this code example. Instead, you
+      // should run Common\Util\OAuth2TokenGenerator.cs to generate a refresh
+      // token and set that in user.Config.OAuth2RefreshToken field, or set
+      // OAuth2RefreshToken key in your App.config / Web.config.
       AdWordsAppConfig config = user.Config as AdWordsAppConfig;
       if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
-        Response.Redirect("OAuthLogin.aspx");
+        if (user.Config.OAuth2Mode == OAuth2Flow.APPLICATION &&
+              string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
+          Response.Redirect("OAuthLogin.aspx");
+        }
       } else {
         throw new Exception("Authorization mode is not OAuth.");
       }
@@ -192,18 +191,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     /// Configures the AdWords user for OAuth.
     /// </summary>
     private void ConfigureUserForOAuth() {
-      if ((user.Config as AdWordsAppConfig).AuthorizationMethod ==
-            AdWordsAuthorizationMethod.OAuth2) {
-        // Create an OAuth2 handler.
-        OAuth2Provider oAuth2 = new OAuth2Provider(user.Config);
-
-        // We saved these values to our session in OAuth2Login.aspx, but you could
-        // load these values from your local database instead.
-        oAuth2.AccessToken = Session["AccessToken"] as string;
-        oAuth2.RefreshToken = Session["RefreshToken"] as string;
-
-        // Set the OAuth2 handler for the current user.
-        user.OAuthProvider = oAuth2;
+      AdWordsAppConfig config = (user.Config as AdWordsAppConfig);
+      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
+        user.OAuthProvider = (OAuth2ProviderForApplications) Session["OAuthProvider"];
+        if (config.OAuth2Mode == OAuth2Flow.APPLICATION &&
+              string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
+          user.OAuthProvider = (OAuth2ProviderForApplications) Session["OAuthProvider"];
+        }
       } else {
         throw new Exception("Authorization mode is not OAuth.");
       }

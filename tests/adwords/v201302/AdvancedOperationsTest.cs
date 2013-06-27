@@ -34,8 +34,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201302 {
   class AdvancedOperationsTest : VersionedExampleTestsBase {
     long campaignId;
     long adGroupId;
-    long adId;
-    long keywordId;
     const double BID_MODIFIER = 0.2;
 
     /// <summary>
