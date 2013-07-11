@@ -258,7 +258,7 @@ namespace Google.Api.Ads.Common.Lib {
 
       foreach (XmlElement node in nodes) {
         if (Array.Exists<string>(fieldNames, delegate(string match) {
-          return string.Compare(match, node.Name, true) == 0;
+          return string.Compare(match, node.LocalName, true) == 0;
         })) {
           node.InnerText = "******";
         }

@@ -1,36 +1,27 @@
+16.1.0
+- Added support for v201306 of AdWords API.
+
 16.0.0
 - Support for ClientLogin API has been deprecated. OAuth2 is now the default
   authentication mechanism.
-
 - Compile-time deprecation warnings have been added to AuthToken,
   AuthTokenException, AuthTokenCache, and DefaultAuthTokenCache.
-
 - The libary will now generate Trace warnings if you use a deprecated class.
-
 - Added a new utility class in Common\Utils\OAuth2TokenGenerator.cs, that
   generates the config keys needed for using the library with OAuth2.
-
 - Google.Ads.Common.OAuth assembly has been deprecated. Its functionality
   has been moved to Google.Ads.Common assembly instead.
-
 - Several unsupported configuration keys were removed from AdwordsAppConfig
   class.
-
 - Configuration keys for ClientLogin support were moved to AppConfig interface.
-
 - OAuth2 class was refactored to split its functionality into two classes.
   Web / Installed application flow will use OAuth2ProviderForApplications.cs,
   and serviced account flow will use OAuth2ProviderForServiceAccounts.cs.
-
 - AdWords services has now support for proactively refreshing OAuth2 tokens.
-
 - All classes which expose an AppConfig property now implement Configurable
   interface instead.
-
 - All configuration parameters are now validated properly at runtime.
-
 - We have improved the documentation of App.config and Web.config.
-
 - Common library version was bumped to 1.8.0
 
 15.8.0

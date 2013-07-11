@@ -76,6 +76,7 @@
     <Compile Include="Util\Reports\ReportUtilities.cs" />
     <Compile Include="Util\v201209\MapUtilities.cs" />
     <Compile Include="Util\v201302\MapUtilities.cs" />
+    <Compile Include="Util\v201306\MapUtilities.cs" />
     <Compile Include="Util\ErrorUtilities.cs" />
     <Compile Include="v201209\AdWordsApi.cs" />
     <Compile Include="v201209\AdWordsServiceV201209.cs" />
@@ -83,6 +84,9 @@
     <Compile Include="v201302\AdWordsApi.cs" />
     <Compile Include="v201302\AdWordsServiceV201302.cs" />
     <Compile Include="v201302\ReportDefinition.cs" />
+    <Compile Include="v201306\AdWordsApi.cs" />
+    <Compile Include="v201306\AdWordsServiceV201306.cs" />
+    <Compile Include="v201306\ReportDefinition.cs" />
           <Compile Include="AdWordsErrorMessages.Designer.cs">
             <AutoGen>True</AutoGen>
             <DesignTime>True</DesignTime>

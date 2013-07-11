@@ -43,7 +43,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Default report version.
     /// </summary>
-    private const string DEFAULT_REPORT_VERSION = "v201302";
+    private const string DEFAULT_REPORT_VERSION = "v201306";
 
     /// <summary>
     /// Sets the reporting API version to use.

@@ -73,10 +73,20 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201302
         AttributeType.KEYWORD_TEXT, AttributeType.SEARCH_VOLUME, _
         AttributeType.CATEGORY_PRODUCTS_AND_SERVICES}
 
+      ' Language setting (optional).
+      ' The ID can be found in the documentation:
+      '   https://developers.google.com/adwords/api/docs/appendix/languagecodes
+      ' Note: As of v201302, only a single language parameter is allowed.
+      Dim languageParameter As New LanguageSearchParameter()
+      Dim english As New Language()
+      english.id = 1000
+      languageParameter.languages = New Language() {english}
+
       ' Create related to query search parameter.
       Dim relatedToQuerySearchParameter As New RelatedToQuerySearchParameter()
       relatedToQuerySearchParameter.queries = New String() {keywordText}
-      selector.searchParameters = New SearchParameter() {relatedToQuerySearchParameter}
+      selector.searchParameters = New SearchParameter() {relatedToQuerySearchParameter, _
+                                                         languageParameter}
 
       ' Set selector paging (required for targeting idea service).
       Dim paging As New Paging()

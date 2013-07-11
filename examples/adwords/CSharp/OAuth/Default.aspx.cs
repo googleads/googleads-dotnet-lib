@@ -16,7 +16,7 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.Reports;
-using Google.Api.Ads.AdWords.v201302;
+using Google.Api.Ads.AdWords.v201306;
 using Google.Api.Ads.Common.Lib;
 
 using System;
@@ -104,7 +104,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
         // If you know that your report is small enough to fit in memory, then
         // you can instead use
         // ReportUtilities utilities = new ReportUtilities(user);
-        // utilities.ReportVersion = "v201302";
+        // utilities.ReportVersion = "v201306";
         // ClientReport report = utilities.GetClientReport(definition);
         //
         // // Get the text report directly if you requested a text format
@@ -122,7 +122,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
         // Set the customer id.
         (user.Config as AdWordsAppConfig).ClientCustomerId = txtCustomerId.Text;
         ReportUtilities utilities = new ReportUtilities(user);
-        utilities.ReportVersion = "v201302";
+        utilities.ReportVersion = "v201306";
         utilities.DownloadClientReport(definition, filePath);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to download report.", ex);
@@ -155,7 +155,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
 
       try {
         CampaignService service =
-            (CampaignService) user.GetService(AdWordsService.v201302.CampaignService);
+            (CampaignService) user.GetService(AdWordsService.v201306.CampaignService);
 
         CampaignPage page = service.get(selector);
 

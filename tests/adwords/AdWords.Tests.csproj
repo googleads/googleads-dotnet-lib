@@ -45,6 +45,10 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SoapMessages.v201306.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SoapMessages.v201306.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SoapMessages.v201302.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SoapMessages.v201302.Designer.cs</LastGenOutput>
@@ -56,6 +60,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\GetAccountAlerts.v201306.txt" />
     <Content Include="Resources\GetAccountAlerts.v201209.txt" />
     <Content Include="Resources\GetAccountAlerts.v201302.txt" />
     <Content Include="App.config" />
@@ -91,6 +96,7 @@
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Util\v201209\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201302\MapUtilitiesTest.cs" />
+    <Compile Include="Util\v201306\MapUtilitiesTest.cs" />
     <Compile Include="v201209\AccountManagementTest.cs" />
     <Compile Include="v201209\BasicOperationsTest.cs" />
     <Compile Include="v201209\CampaignManagementTest.cs" />
@@ -115,10 +121,24 @@
     <Compile Include="v201302\TargetingTest.cs" />
     <Compile Include="v201302\TestUtils.cs" />
     <Compile Include="v201302\VersionedExampleTestsBase.cs" />
+    <Compile Include="v201306\AccountManagementTest.cs" />
+    <Compile Include="v201306\AdvancedOperationsTest.cs" />
+    <Compile Include="v201306\BasicOperationsTest.cs" />
+    <Compile Include="v201306\CampaignManagementTest.cs" />
+    <Compile Include="v201306\ErrorHandlingTest.cs" />
+    <Compile Include="v201306\MigrationTest.cs" />
+    <Compile Include="v201306\MiscellaneousTest.cs" />
+    <Compile Include="v201306\OptimizationTest.cs" />
+    <Compile Include="v201306\RemarketingTest.cs" />
+    <Compile Include="v201306\ReportingTest.cs" />
+    <Compile Include="v201306\TargetingTest.cs" />
+    <Compile Include="v201306\TestUtils.cs" />
+    <Compile Include="v201306\VersionedExampleTestsBase.cs" />
     <Compile Include="AdWordsRequestInterceptor.cs" />
     <Compile Include="ExamplesMockData.cs" />
     <Compile Include="ExampleTestsBase.cs" />
     <Compile Include="SoapMessages.v201209.Designer.cs" />
     <Compile Include="SoapMessages.v201302.Designer.cs" />
+    <Compile Include="SoapMessages.v201306.Designer.cs" />
   </ItemGroup>
 </Project>
