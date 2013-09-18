@@ -60,7 +60,13 @@ namespace Google.Api.Ads.Dfa.Lib {
       get {
         // The generated classes have their name as XyzRemoteService, and their
         // endpoints are /xyz (i.e. lower case, and without RemoteService).
-        return ServiceName.ToLower().Replace("remoteservice", "");
+        string endpoint = ServiceName.ToLower().Replace("remoteservice", "");
+
+        if (endpoint.CompareTo("placementstrategy") == 0) {
+          return "strategy";
+        } else {
+          return endpoint;
+        }
       }
     }
 

@@ -104,8 +104,7 @@ namespace Google.Api.Ads.Dfa.Lib {
         }
       } else {
         if (this.Token == null) {
-          this.Token = LoginUtil.GetAuthenticationToken(config, this.Signature, this.User,
-              new Uri(this.Url));
+          this.Token = LoginUtil.GetAuthenticationToken(this.User, this.Signature.Version);
         }
       }
 
@@ -154,7 +153,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// The error handler instance.
     /// </returns>
     protected override ErrorHandler CreateErrorHandler() {
-      return new DfaErrorHandler(this.User);
+      return new DfaErrorHandler(this);
     }
 
     /// <summary>
@@ -167,10 +166,9 @@ namespace Google.Api.Ads.Dfa.Lib {
     protected override Exception GetCustomException(SoapException ex) {
       string defaultNs = GetDefaultNamespace();
 
-      string nodeName = "com.doubleclick.dart.appserver.dfa.dto.api.ApiException";
       object apiException = Activator.CreateInstance(Type.GetType(
           this.GetType().Namespace + ".ApiException"));
-      XmlNode faultNode = ex.Detail.SelectSingleNode(nodeName);
+      XmlNode faultNode = GetDetailsNode(ex);
       ErrorCode errorCode = null;
 
       if (faultNode != null) {
@@ -187,7 +185,32 @@ namespace Google.Api.Ads.Dfa.Lib {
           }
         }
       }
-      return new DfaApiException(errorCode, ex.Message, ex);
+      DfaApiException dfaApiException = new DfaApiException(errorCode, ex.Message, ex);
+      if (DfaErrorHandler.IsTokenExpiredError(dfaApiException)) {
+        return new DfaCredentialsExpiredException(this.Token);
+      } else {
+        return dfaApiException;
+      }
+    }
+
+    /// <summary>
+    /// Gets the details node for the SOAP exception.
+    /// </summary>
+    /// <param name="ex">The SOAP exception.</param>
+    /// <returns>The details node.</returns>
+    private static XmlNode GetDetailsNode(SoapException ex) {
+      String[] possibleNodeNames = {
+          "com.doubleclick.dart.appserver.dfa.dto.api.ApiException",
+          "com.google.ads.xfa.soapapi.entity.common.ApiException"
+      };
+
+      foreach (String nodeName in possibleNodeNames) {
+        XmlNode faultNode = ex.Detail.SelectSingleNode(nodeName);
+        if (faultNode != null) {
+          return faultNode;
+        }
+      }
+      return null;
     }
   }
 }

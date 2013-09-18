@@ -56,9 +56,11 @@
   </Target>
   -->
   <ItemGroup>
+    <Compile Include="Lib\DefaultLoginTokenCache.cs" />
     <Compile Include="Lib\DfaApiException.cs" />
     <Compile Include="Lib\DfaAppConfig.cs" />
     <Compile Include="Lib\DfaAuthorizationMethod.cs" />
+    <Compile Include="Lib\DfaCredentialsExpiredException.cs" />
     <Compile Include="Lib\DfaErrorHandler.cs" />
     <Compile Include="Lib\DfaException.cs" />
     <Compile Include="Lib\DfaService.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Lib\DfaSoapClient.cs" />
     <Compile Include="Lib\DfaTraceListener.cs" />
     <Compile Include="Lib\DfaUser.cs" />
+    <Compile Include="Lib\LoginTokenCache.cs" />
     <Compile Include="Lib\RequestHeader.cs" />
     <Compile Include="Lib\ResponseHeader.cs" />
     <Compile Include="Lib\SoapHeaderListener.cs" />

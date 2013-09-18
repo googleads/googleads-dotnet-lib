@@ -25,28 +25,70 @@ namespace Google.Api.Ads.Dfa.Util {
   /// </summary>
   public class LoginUtil {
     /// <summary>
-    /// Generates an auth token using login service.
+    /// The login token cache.
     /// </summary>
-    /// <param name="signature">Signature of the service being created.</param>
-    /// <param name="user">The user for which the service is being created.
-    /// <param name="serverUrl">The server to which the API calls should be
-    /// made.</param>
-    /// </param>
-    /// <returns>A token which may be used for future API calls.</returns>
-    public static UserToken GetAuthenticationToken(DfaAppConfig config, ServiceSignature signature,
-        AdsUser user, Uri serverUrl) {
-      if (!String.IsNullOrEmpty(config.DfaAuthToken)) {
-        return new UserToken(config.DfaUserName, config.DfaAuthToken);
+    private static LoginTokenCache tokenCache = new DefaultLoginTokenCache();
+
+    /// <summary>
+    /// Gets or sets the cache.
+    /// </summary>
+    public static LoginTokenCache Cache {
+      get {
+        return LoginUtil.tokenCache;
       }
+      set {
+        LoginUtil.tokenCache = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets a login token for authenticating DFA API calls.
+    /// </summary>
+    /// <param name="user">The user for which token is generated.</param>
+    /// <param name="serviceVersion">The service version.</param>
+    /// <returns>A token which may be used for future API calls.</returns>
+    public static UserToken GetAuthenticationToken(AdsUser user, string serviceVersion) {
+      DfaAppConfig config = (DfaAppConfig) user.Config;
+
       if (string.IsNullOrEmpty(config.DfaUserName)) {
         throw new ArgumentNullException(DfaErrorMessages.UserNameCannotBeEmpty);
       }
-      if (string.IsNullOrEmpty(config.DfaPassword)) {
-        throw new ArgumentNullException(DfaErrorMessages.PasswordCannotBeEmpty);
-      }
 
+      UserToken userToken = tokenCache.GetToken(config.DfaUserName);
+
+      if (userToken == null) {
+        lock (typeof(LoginUtil)) {
+          userToken = tokenCache.GetToken(config.DfaUserName);
+          if (userToken == null) {
+            userToken = GenerateAuthenticationToken(user, serviceVersion);
+            tokenCache.AddToken(config.DfaUserName, userToken);
+          }
+        }
+      }
+      return userToken;
+    }
+
+    /// <summary>
+    /// Generates a login token for authenticating DFA API calls.
+    /// </summary>
+    /// <param name="user">The user for which token is generated.</param>
+    /// <param name="serviceVersion">The service version.</param>
+    /// <returns>A token which may be used for future API calls.</returns>
+    private static UserToken GenerateAuthenticationToken(AdsUser user, string serviceVersion) {
+      DfaAppConfig config = (DfaAppConfig) user.Config;
+      if (!String.IsNullOrEmpty(config.DfaAuthToken)) {
+        return new UserToken(config.DfaUserName, config.DfaAuthToken);
+      }
+      if (config.AuthorizationMethod == DfaAuthorizationMethod.LoginService) {
+        if (string.IsNullOrEmpty(config.DfaUserName)) {
+          throw new ArgumentNullException(DfaErrorMessages.UserNameCannotBeEmpty);
+        }
+        if (string.IsNullOrEmpty(config.DfaPassword)) {
+          throw new ArgumentNullException(DfaErrorMessages.PasswordCannotBeEmpty);
+        }
+      }
       try {
-        DfaServiceSignature loginServiceSignature = new DfaServiceSignature(signature.Version,
+        DfaServiceSignature loginServiceSignature = new DfaServiceSignature(serviceVersion,
               "LoginRemoteService");
         AdsClient loginService = user.GetService(loginServiceSignature, config.DfaApiServer);
         object userProfile = loginService.GetType().GetMethod("authenticate").Invoke(

@@ -212,8 +212,8 @@ namespace Google.Api.Ads.Common.Lib {
           return base.Invoke(methodName, parameters);
         } catch (SoapException ex) {
           Exception customException = GetCustomException(ex);
-          if (errorHandler.ShouldRetry(ex)) {
-            errorHandler.PrepareForRetry(ex);
+          if (errorHandler.ShouldRetry(customException)) {
+            errorHandler.PrepareForRetry(customException);
           } else {
             throw customException;
           }

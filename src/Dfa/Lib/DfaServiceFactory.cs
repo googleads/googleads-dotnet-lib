@@ -84,11 +84,9 @@ namespace Google.Api.Ads.Dfa.Lib {
       service.User = user;
       service.Signature = signature;
 
-      if (Convert.ToDecimal(signature.Version.Substring(1)) > 1.11M) {
-        service.GetType().GetProperty("RequestHeader").SetValue(service,
-            GetRequestHeader(), null);
-        SetRequestHeaderNameSpace(signature as DfaServiceSignature, service);
-      }
+      service.GetType().GetProperty("RequestHeader").SetValue(service,
+          GetRequestHeader(), null);
+      SetRequestHeaderNameSpace(signature as DfaServiceSignature, service);
 
       return service;
     }

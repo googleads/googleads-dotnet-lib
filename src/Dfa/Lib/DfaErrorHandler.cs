@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Dfa.Util;
 
 using System;
 using System.Collections.Generic;
@@ -26,12 +27,45 @@ namespace Google.Api.Ads.Dfa.Lib {
   /// Handles DFA API Errors.
   /// </summary>
   public class DfaErrorHandler : ErrorHandler {
+    private static readonly ErrorCode TOKEN_EXPIRED_CODE = ErrorCode.FromCode(4);
+    private const string TOKEN_EXPIRED_MESSAGE = "Authentication token has expired.";
+
+    /// <summary>
+    /// The service associated with this error handler.
+    /// </summary>
+    private DfaSoapClient service = null;
+
+    /// <summary>
+    /// Number of times to retry.
+    /// </summary>
+    private int numRetries = 0;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="DfaErrorHandler"/> class.
     /// </summary>
-    /// <param name="user">The user.</param>
-    public DfaErrorHandler(AdsUser user)
-      : base(user) {
+    /// <param name="service">The service associated with this error handler.
+    /// </param>
+    public DfaErrorHandler(DfaSoapClient service)
+      : base(service.User) {
+        this.service = service;
+    }
+
+    /// <summary>
+    /// Gets the user.
+    /// </summary>
+    private DfaUser User {
+      get {
+        return this.user as DfaUser;
+      }
+    }
+
+    /// <summary>
+    /// Gets the config.
+    /// </summary>
+    private DfaAppConfig Config {
+      get {
+        return this.User.Config as DfaAppConfig;
+      }
     }
 
     /// <summary>
@@ -42,7 +76,11 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// True, if the call should be retried, false otherwise.
     /// </returns>
     public override bool ShouldRetry(Exception ex) {
-      return false;
+      if (numRetries < this.Config.RetryCount) {
+        return IsExpiredCredentialsError(ex);
+      } else {
+        return false;
+      }
     }
 
     /// <summary>
@@ -50,6 +88,40 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// </summary>
     /// <param name="ex">The exception.</param>
     public override void PrepareForRetry(Exception ex) {
+      DfaCredentialsExpiredException e = (DfaCredentialsExpiredException) ex;
+      LoginUtil.Cache.InvalidateToken(e.ExpiredCredential);
+      this.Config.DfaAuthToken = null;
+      this.service.Token = null;
+      this.numRetries++;
+    }
+
+    /// <summary>
+    /// Determines whether an exception corrsponds to an expired credential.
+    /// </summary>
+    /// <param name="ex">The exception.</param>
+    /// <returns>True if the exception corresponds to an expired credential,
+    /// false otherwise.</returns>
+    public static bool IsExpiredCredentialsError(Exception ex) {
+      return ex is DfaCredentialsExpiredException;
+    }
+
+    /// <summary>
+    /// Determines whether the exception thrown by the server is due to a login
+    /// token expiration.
+    /// </summary>
+    /// <param name="ex">The exception.</param>
+    /// <returns>True, if the server exception is a AuthToken invalid error,
+    /// false otherwise.</returns>
+    public static bool IsTokenExpiredError(Exception ex) {
+      if (ex is DfaApiException) {
+        DfaApiException dfaEx = (DfaApiException) ex;
+        return true;
+        if (dfaEx.ErrorCode == TOKEN_EXPIRED_CODE && dfaEx.Message.CompareTo(
+            TOKEN_EXPIRED_MESSAGE) == 0) {
+          return true;
+        }
+      }
+      return false;
     }
   }
 }

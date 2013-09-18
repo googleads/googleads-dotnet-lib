@@ -47,7 +47,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     /// <param name="ex">The exception.</param>
     public virtual void PrepareForRetry(Exception ex) {
-      return;
     }
   }
 }

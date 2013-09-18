@@ -37,6 +37,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="password">The login password.</param>
     /// <param name="token">The auth token.</param>
     /// <returns>The auth token.</returns>
+    [Obsolete("Use AddToken(string service, string email, string token) instead.")]
     string AddToken(string service, string email, string password, string token);
 
     /// <summary>
@@ -48,7 +49,28 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="password">The login password.</param>
     /// <returns>The auth token, or null if the cache doesn't have a token.
     /// </returns>
+    [Obsolete("Use string GetToken(string service, string email) instead.")]
     string GetToken(string service, string email, string password);
+
+    /// <summary>
+    /// Adds an auth token to cache.
+    /// </summary>
+    /// <param name="service">The ClientLogin service for which this auth token
+    /// is generated.</param>
+    /// <param name="email">The login email.</param>
+    /// <param name="token">The auth token.</param>
+    /// <returns>The auth token.</returns>
+    string AddToken(string service, string email, string token);
+
+    /// <summary>
+    /// Gets an auth token from cache.
+    /// </summary>
+    /// <param name="service">The ClientLogin service for which this auth token
+    /// is generated.</param>
+    /// <param name="email">The login email.</param>
+    /// <returns>The auth token, or null if the cache doesn't have a token.
+    /// </returns>
+    string GetToken(string service, string email);
 
     /// <summary>
     /// Invalidates an auth token.
