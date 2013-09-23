@@ -23,13 +23,13 @@ namespace Google.Api.Ads.Common.Lib {
   /// <summary>
   /// Exception thrown when credentials are expired.
   /// </summary>
-  public class CredentialsExpiredException : AdsException {
-    string expiredCredential;
+  public class CredentialsExpiredException<T> : AdsException {
+    T expiredCredential;
 
     /// <summary>
     /// Gets the expired credential.
     /// </summary>
-    public string ExpiredCredential {
+    public T ExpiredCredential {
       get {
         return expiredCredential;
       }
@@ -39,7 +39,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Public constructor.
     /// </summary>
     /// <param name="expiredCredential">The expired credential.</param>
-    public CredentialsExpiredException(string expiredCredential) : base() {
+    public CredentialsExpiredException(T expiredCredential) : base() {
       this.expiredCredential = expiredCredential;
     }
 
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     /// <param name="message">Error message for this API exception.</param>
     /// <param name="expiredCredential">The expired credential.</param>
-    public CredentialsExpiredException(string expiredCredential, string message)
+    public CredentialsExpiredException(T expiredCredential, string message)
         : base(message) {
       this.expiredCredential = expiredCredential;
     }
@@ -59,7 +59,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="expiredCredential">The expired credential.</param>
     /// <param name="message">Error message for this API exception.</param>
     /// <param name="innerException">Inner exception, if any.</param>
-    public CredentialsExpiredException(string expiredCredential, string message,
+    public CredentialsExpiredException(T expiredCredential, string message,
         Exception innerException) : base(message, innerException) {
       this.expiredCredential = expiredCredential;
     }
@@ -73,7 +73,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// serialization stream.</param>
     protected CredentialsExpiredException(SerializationInfo info, StreamingContext context)
         : base(info, context) {
-      this.expiredCredential = (string) info.GetValue("ExpiredCredential", typeof(String));
+      this.expiredCredential = (T) info.GetValue("ExpiredCredential", typeof(T));
     }
 
     /// <summary>

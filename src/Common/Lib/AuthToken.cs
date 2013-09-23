@@ -204,12 +204,12 @@ namespace Google.Api.Ads.Common.Lib {
         throw new ArgumentNullException(CommonErrorMessages.PasswordCannotBeNull);
       }
 
-      string cachedToken = cache.GetToken(this.service, Email, Password);
+      string cachedToken = cache.GetToken(this.service, Email);
       if (cachedToken == null) {
         lock (this.GetType()) {
-          cachedToken = cache.GetToken(this.service, Email, Password);
+          cachedToken = cache.GetToken(this.service, Email);
           return (cachedToken != null) ? cachedToken : cache.AddToken(this.service, Email,
-              Password, GenerateToken());
+              GenerateToken());
         }
       }
       return cachedToken;

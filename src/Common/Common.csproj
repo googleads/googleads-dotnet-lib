@@ -59,6 +59,7 @@
     <Compile Include="Lib\AuthTokenErrorCode.cs" />
     <Compile Include="Lib\AuthTokenException.cs" />
     <Compile Include="Lib\Configurable.cs" />
+    <Compile Include="Lib\InMemoryTokenCache.cs" />
     <Compile Include="Lib\CredentialsExpiredException.cs" />
     <Compile Include="Lib\ErrorHandler.cs" />
     <Compile Include="Lib\ContextStore.cs" />

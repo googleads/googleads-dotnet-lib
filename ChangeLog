@@ -1,3 +1,9 @@
+6.1.0
+- Added support for v201308.
+- Removed support for deprecated versions.
+- PqlUtilities.ResultSetToStringArrayList will format DateValue in yyyy-mm-dd
+  format. DateTimeValue is formatted in yyyy-mm-dd HH:mm:ss Z format
+
 6.0.0
 - Support for ClientLogin has been deprecated. OAuth2 is now the default
   authentication mechanism.
