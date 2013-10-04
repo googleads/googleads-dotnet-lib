@@ -39,7 +39,9 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -59,6 +61,7 @@
     <Compile Include="Lib\AdWordsAppConfig.cs" />
     <Compile Include="Lib\AdWordsAuthorizationMethod.cs" />
     <Compile Include="Lib\AdWordsCallListener.cs" />
+    <Compile Include="Lib\AdWordsCredentialsExpiredException.cs" />
     <Compile Include="Lib\AdWordsErrorHandler.cs" />
     <Compile Include="Lib\AdWordsException.cs" />
     <Compile Include="Lib\AdWordsService.cs" />
@@ -74,19 +77,19 @@
     <Compile Include="Util\Reports\ReportDownloadError.cs" />
     <Compile Include="Util\Reports\ReportsException.cs" />
     <Compile Include="Util\Reports\ReportUtilities.cs" />
-    <Compile Include="Util\v201209\MapUtilities.cs" />
     <Compile Include="Util\v201302\MapUtilities.cs" />
     <Compile Include="Util\v201306\MapUtilities.cs" />
+    <Compile Include="Util\v201309\MapUtilities.cs" />
     <Compile Include="Util\ErrorUtilities.cs" />
-    <Compile Include="v201209\AdWordsApi.cs" />
-    <Compile Include="v201209\AdWordsServiceV201209.cs" />
-    <Compile Include="v201209\ReportDefinition.cs" />
     <Compile Include="v201302\AdWordsApi.cs" />
     <Compile Include="v201302\AdWordsServiceV201302.cs" />
     <Compile Include="v201302\ReportDefinition.cs" />
     <Compile Include="v201306\AdWordsApi.cs" />
     <Compile Include="v201306\AdWordsServiceV201306.cs" />
     <Compile Include="v201306\ReportDefinition.cs" />
+    <Compile Include="v201309\AdWordsApi.cs" />
+    <Compile Include="v201309\AdWordsServiceV201309.cs" />
+    <Compile Include="v201309\ReportDefinition.cs" />
           <Compile Include="AdWordsErrorMessages.Designer.cs">
             <AutoGen>True</AutoGen>
             <DesignTime>True</DesignTime>

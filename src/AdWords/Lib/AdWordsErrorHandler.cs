@@ -105,8 +105,8 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <param name="ex">The exception.</param>
     public override void PrepareForRetry(Exception ex) {
       try {
-        if (ex is CredentialsExpiredException) {
-          CredentialsExpiredException e = (CredentialsExpiredException) ex;
+        if (ex is AdWordsCredentialsExpiredException) {
+          AdWordsCredentialsExpiredException e = (AdWordsCredentialsExpiredException) ex;
           if (this.Config.AuthorizationMethod == AdWordsAuthorizationMethod.ClientLogin) {
             AuthToken.Cache.InvalidateToken(e.ExpiredCredential);
             Config.AuthToken = null;
@@ -138,7 +138,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <returns>True if the exception corresponds to an expired credential,
     /// false otherwise.</returns>
     public static bool IsExpiredCredentialsError(Exception ex) {
-      return ex is CredentialsExpiredException;
+      return ex is AdWordsCredentialsExpiredException;
     }
 
     /// <summary>

@@ -289,10 +289,11 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
           Exception reportsException = ParseException(exceptionBody);
 
           if (AdWordsErrorHandler.IsCookieInvalidError(reportsException)) {
-            reportsException = new CredentialsExpiredException(
+            reportsException = new AdWordsCredentialsExpiredException(
                 request.Headers["Authorization"].Replace(CLIENT_LOGIN_PREFIX, ""));
           } else if (AdWordsErrorHandler.IsOAuthTokenExpiredError(reportsException)) {
-            reportsException = new CredentialsExpiredException(request.Headers["Authorization"]);
+            reportsException = new AdWordsCredentialsExpiredException(
+                request.Headers["Authorization"]);
           }
 
           if (errorHandler.ShouldRetry(reportsException)) {

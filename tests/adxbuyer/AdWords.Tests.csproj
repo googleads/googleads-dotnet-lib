@@ -72,17 +72,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
-    <Compile Include="v201209\AccountManagementTest.cs" />
-    <Compile Include="v201209\BasicOperationsTest.cs" />
-    <Compile Include="v201209\CampaignManagementTest.cs" />
-    <Compile Include="v201209\ErrorHandlingTest.cs" />
-    <Compile Include="v201209\MiscellaneousTest.cs" />
-    <Compile Include="v201209\OptimizationTest.cs" />
-    <Compile Include="v201209\RemarketingTest.cs" />
-    <Compile Include="v201209\ReportingTest.cs" />
-    <Compile Include="v201209\TargetingTest.cs" />
-    <Compile Include="v201209\TestUtils.cs" />
-    <Compile Include="v201209\VersionedExampleTestsBase.cs" />
     <Compile Include="v201302\AccountManagementTest.cs" />
     <Compile Include="v201302\AdvancedOperationsTest.cs" />
     <Compile Include="v201302\BasicOperationsTest.cs" />
@@ -108,7 +97,6 @@
     <Compile Include="v201306\TestUtils.cs" />
     <Compile Include="v201306\VersionedExampleTestsBase.cs" />
     <Compile Include="AdWordsRequestInterceptor.cs" />
-    <Compile Include="BaseTests.cs" />
     <Compile Include="ExamplesMockData.cs" />
     <Compile Include="ExampleTestsBase.cs" />
   </ItemGroup>

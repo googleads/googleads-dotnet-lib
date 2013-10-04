@@ -141,9 +141,10 @@ namespace Google.Api.Ads.AdWords.Lib {
                     this.GetType().Namespace + ".ApiException"), defaultNs, "ApiExceptionFault"),
                     AdWordsErrorMessages.AnApiExceptionOccurred, ex);
             if (AdWordsErrorHandler.IsCookieInvalidError(awapiException)) {
-              return new CredentialsExpiredException(this.GetRequestHeader().authToken);
+              return new AdWordsCredentialsExpiredException(this.GetRequestHeader().authToken);
             } else if (AdWordsErrorHandler.IsOAuthTokenExpiredError(awapiException)) {
-              return new CredentialsExpiredException((string) ContextStore.GetValue("OAuthHeader"));
+              return new AdWordsCredentialsExpiredException(
+                  (string) ContextStore.GetValue("OAuthHeader"));
             } else {
               return awapiException;
             }

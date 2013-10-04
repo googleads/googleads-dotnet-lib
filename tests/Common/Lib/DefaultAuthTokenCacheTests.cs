@@ -39,11 +39,6 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     private const string EMAIL = "testemail";
 
     /// <summary>
-    /// Login password.
-    /// </summary>
-    private const string PASSWORD = "testpassword";
-
-    /// <summary>
     /// AuthToken for test purposes.
     /// </summary>
     private const string AUTHTOKEN = "AUTHTOKEN";
@@ -67,7 +62,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     [Category("Small")]
     public void TestAddToken() {
-      string token = cache.AddToken(SERVICE, EMAIL, PASSWORD, AUTHTOKEN);
+      string token = cache.AddToken(SERVICE, EMAIL, AUTHTOKEN);
       Assert.AreEqual(AUTHTOKEN, token);
     }
 
@@ -78,13 +73,10 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Category("Small")]
     public void TestAddTokenValidatesParams() {
       Assert.Throws(typeof(ArgumentException), delegate() {
-        cache.AddToken(null, EMAIL, PASSWORD, AUTHTOKEN);
+        cache.AddToken(null, EMAIL, AUTHTOKEN);
       });
       Assert.Throws(typeof(ArgumentException), delegate() {
-        cache.AddToken(SERVICE, null, PASSWORD, AUTHTOKEN);
-      });
-      Assert.Throws(typeof(ArgumentException), delegate() {
-        cache.AddToken(SERVICE, EMAIL, null, AUTHTOKEN);
+        cache.AddToken(SERVICE, null, AUTHTOKEN);
       });
     }
 
@@ -94,8 +86,8 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     [Category("Small")]
     public void TestGetToken() {
-      cache.AddToken(SERVICE, EMAIL, PASSWORD, AUTHTOKEN);
-      Assert.AreEqual(AUTHTOKEN, cache.GetToken(SERVICE, EMAIL, PASSWORD));
+      cache.AddToken(SERVICE, EMAIL, AUTHTOKEN);
+      Assert.AreEqual(AUTHTOKEN, cache.GetToken(SERVICE, EMAIL));
     }
 
     /// <summary>
@@ -104,7 +96,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     [Category("Small")]
     public void TestClear() {
-      Assert.Null(cache.GetToken(SERVICE, EMAIL, PASSWORD));
+      Assert.Null(cache.GetToken(SERVICE, EMAIL));
     }
 
     /// <summary>
@@ -113,10 +105,10 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     [Category("Small")]
     public void TestInvalidateToken() {
-      cache.AddToken(SERVICE, EMAIL, PASSWORD, AUTHTOKEN);
-      Assert.AreEqual(AUTHTOKEN, cache.GetToken(SERVICE, EMAIL, PASSWORD));
+      cache.AddToken(SERVICE, EMAIL, AUTHTOKEN);
+      Assert.AreEqual(AUTHTOKEN, cache.GetToken(SERVICE, EMAIL));
       cache.InvalidateToken(AUTHTOKEN);
-      Assert.Null(cache.GetToken(SERVICE, EMAIL, PASSWORD));
+      Assert.Null(cache.GetToken(SERVICE, EMAIL));
     }
   }
 }

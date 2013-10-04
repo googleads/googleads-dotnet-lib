@@ -160,6 +160,10 @@
     <value>Service cannot be null</value>
     <comment>Used by AuthTokenCache when an empty service is passed to it.</comment>
   </data>
+  <data name="SignatureCannotBeNull" xml:space="preserve">
+    <value>Cache signature cannot be null.</value>
+    <comment>Used for ArgumentException by InMemoryTokenCache class.</comment>
+  </data>
   <data name="SoapListenerExtensionNotLoaded" xml:space="preserve">
     <value>The SoapListenerExtension class is not loaded. The most possible cause for this error is that you haven't registered Google.Api.Ads.Common.Lib.SoapListenerExtension as a soap extension under configuration/system.web/webServices/soapExtensionTypes in your your App.config or Web.config. See the sample App.config for details on how to register soap extensions.</value>
     <comment>Thrown when SoapListenerExtension was not loaded as a soap extension from App.config.</comment>

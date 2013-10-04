@@ -40,7 +40,7 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     /// The auth token.
     /// </returns>
     public string AddToken(string service, string email, string password, string token) {
-      return token;
+      return AddToken(service, email, token);
     }
 
     /// <summary>
@@ -54,6 +54,33 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     /// The auth token, or null if the cache doesn't have a token.
     /// </returns>
     public string GetToken(string service, string email, string password) {
+      return GetToken(service, email);
+    }
+
+    /// <summary>
+    /// Adds an auth token to cache.
+    /// </summary>
+    /// <param name="service">The ClientLogin service for which this auth token
+    /// is generated.</param>
+    /// <param name="email">The login email.</param>
+    /// <param name="token">The auth token.</param>
+    /// <returns>
+    /// The auth token.
+    /// </returns>
+    public string AddToken(string service, string email, string token) {
+      return token;
+    }
+
+    /// <summary>
+    /// Gets an auth token from cache.
+    /// </summary>
+    /// <param name="service">The ClientLogin service for which this auth token
+    /// is generated.</param>
+    /// <param name="email">The login email.</param>
+    /// <returns>
+    /// The auth token, or null if the cache doesn't have a token.
+    /// </returns>
+    public string GetToken(string service, string email) {
       return null;
     }
 
