@@ -1,3 +1,7 @@
+4.2.0
+- Fixed issue 18.
+- Fixed an issue with detecting expired LoginToken.
+
 4.1.0
 - Fixed issue 16.
 - Added support for automatic detection and refreshing of expired LoginToken.

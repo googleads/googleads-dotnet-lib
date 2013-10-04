@@ -88,11 +88,15 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// </summary>
     /// <param name="ex">The exception.</param>
     public override void PrepareForRetry(Exception ex) {
-      DfaCredentialsExpiredException e = (DfaCredentialsExpiredException) ex;
-      LoginUtil.Cache.InvalidateToken(e.ExpiredCredential);
-      this.Config.DfaAuthToken = null;
-      this.service.Token = null;
-      this.numRetries++;
+      if (IsExpiredCredentialsError(ex)) {
+        DfaCredentialsExpiredException e = (DfaCredentialsExpiredException) ex;
+        LoginUtil.Cache.InvalidateToken(e.ExpiredCredential);
+        this.Config.DfaAuthToken = null;
+        this.service.Token = null;
+        this.numRetries++;
+      } else {
+        throw ex;
+      }
     }
 
     /// <summary>
@@ -115,7 +119,6 @@ namespace Google.Api.Ads.Dfa.Lib {
     public static bool IsTokenExpiredError(Exception ex) {
       if (ex is DfaApiException) {
         DfaApiException dfaEx = (DfaApiException) ex;
-        return true;
         if (dfaEx.ErrorCode == TOKEN_EXPIRED_CODE && dfaEx.Message.CompareTo(
             TOKEN_EXPIRED_MESSAGE) == 0) {
           return true;
