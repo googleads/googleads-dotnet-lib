@@ -77,13 +77,9 @@
     <Compile Include="Util\Reports\ReportDownloadError.cs" />
     <Compile Include="Util\Reports\ReportsException.cs" />
     <Compile Include="Util\Reports\ReportUtilities.cs" />
-    <Compile Include="Util\v201302\MapUtilities.cs" />
     <Compile Include="Util\v201306\MapUtilities.cs" />
     <Compile Include="Util\v201309\MapUtilities.cs" />
     <Compile Include="Util\ErrorUtilities.cs" />
-    <Compile Include="v201302\AdWordsApi.cs" />
-    <Compile Include="v201302\AdWordsServiceV201302.cs" />
-    <Compile Include="v201302\ReportDefinition.cs" />
     <Compile Include="v201306\AdWordsApi.cs" />
     <Compile Include="v201306\AdWordsServiceV201306.cs" />
     <Compile Include="v201306\ReportDefinition.cs" />

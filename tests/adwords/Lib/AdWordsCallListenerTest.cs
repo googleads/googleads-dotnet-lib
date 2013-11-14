@@ -14,10 +14,10 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.AdWords.Examples.CSharp.v201302;
+using Google.Api.Ads.AdWords.Examples.CSharp.v201309;
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.Tests.v201302;
-using Google.Api.Ads.AdWords.v201302;
+using Google.Api.Ads.AdWords.Tests.v201309;
+using Google.Api.Ads.AdWords.v201309;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests;
 using Google.Api.Ads.Common.Util;
@@ -53,7 +53,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     [Test]
     [Category("Integration")]
     public void TestGetAccountAlertsCSharpExample() {
-      ExamplesMockData mockData = LoadMockData(SoapMessages_v201302.GetAccountAlerts);
+      ExamplesMockData mockData = LoadMockData(SoapMessages_v201309.GetAccountAlerts);
       RunMockedExample(mockData, delegate() {
         new GetAccountAlerts().Run(user);
         Assert.AreEqual(user.GetTotalOperationCount(), 2);
@@ -79,10 +79,10 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
         ContextStore.AddKey("SoapMethod", "get");
 
         XmlDocument xDoc = new XmlDocument();
-        xDoc.LoadXml(SoapMessages_v201302.GetAccountAlerts);
+        xDoc.LoadXml(SoapMessages_v201309.GetAccountAlerts);
         XmlElement xRequest = (XmlElement) xDoc.SelectSingleNode("/Example/SOAP/Response");
         xDoc.LoadXml(xRequest.InnerText);
-        AlertService service = (AlertService) user.GetService(AdWordsService.v201302.AlertService);
+        AlertService service = (AlertService) user.GetService(AdWordsService.v201309.AlertService);
 
         AdWordsCallListener.Instance.HandleMessage(xDoc, service, SoapMessageDirection.IN);
 

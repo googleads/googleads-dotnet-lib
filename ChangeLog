@@ -1,3 +1,7 @@
+16.3.0
+- Fixed issue 119.
+- Removed support for v201302 of AdWords API.
+
 16.2.0
 - Removed support for v201209 of AdWords API.
 - Added support for v201309 of AdWords API.
