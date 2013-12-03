@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dfa.Examples.CSharp.OAuth",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Tests", "tests\Common\Common.Tests.csproj", "{7AA5533E-FED0-4E0C-919C-19E7D7EE2FF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthTokenGenerator", "utilities\OAuthTokenGenerator\OAuthTokenGenerator.csproj", "{44B870E6-C579-40F5-A4BA-370C58708E36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +112,16 @@ Global
 		{7AA5533E-FED0-4E0C-919C-19E7D7EE2FF6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{7AA5533E-FED0-4E0C-919C-19E7D7EE2FF6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{7AA5533E-FED0-4E0C-919C-19E7D7EE2FF6}.Release|x86.ActiveCfg = Release|Any CPU
+		{44B870E6-C579-40F5-A4BA-370C58708E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B870E6-C579-40F5-A4BA-370C58708E36}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{44B870E6-C579-40F5-A4BA-370C58708E36}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{44B870E6-C579-40F5-A4BA-370C58708E36}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{44B870E6-C579-40F5-A4BA-370C58708E36}.Debug|x86.Build.0 = Debug|Any CPU
+		{44B870E6-C579-40F5-A4BA-370C58708E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B870E6-C579-40F5-A4BA-370C58708E36}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{44B870E6-C579-40F5-A4BA-370C58708E36}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{44B870E6-C579-40F5-A4BA-370C58708E36}.Release|x86.ActiveCfg = Release|Any CPU
+		{44B870E6-C579-40F5-A4BA-370C58708E36}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

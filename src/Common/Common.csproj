@@ -83,12 +83,12 @@
     <Compile Include="Lib\SoapMessageDirection.cs" />
     <Compile Include="Lib\TraceListener.cs" />
     <Compile Include="Lib\TraceWriter.cs" />
+    <Compile Include="Properties\Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\CsvException.cs" />
     <Compile Include="Util\CsvFile.cs" />
     <Compile Include="Util\DeprecationUtilities.cs" />
     <Compile Include="Util\MediaUtilities.cs" />
-    <Compile Include="Util\OAuth2TokenGenerator.cs" />
     <Compile Include="Util\SerializationUtilities.cs" />
     <Compile Include="Util\TraceUtilities.cs" />
   </ItemGroup>
