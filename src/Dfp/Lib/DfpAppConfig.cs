@@ -71,6 +71,11 @@ namespace Google.Api.Ads.Dfp.Lib {
         DfpAuthorizationMethod.ClientLogin;
 
     /// <summary>
+    /// The default value for application name.
+    /// </summary>
+    public const string DEFAULT_APPLICATION_NAME = "INSERT_YOUR_APPLICATION_NAME_HERE";
+
+    /// <summary>
     /// NetworkCode to be used in SOAP headers.
     /// </summary>
     private string networkCode;
@@ -151,7 +156,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// </summary>
     public DfpAppConfig() : base() {
       networkCode = "";
-      applicationName = "";
+      applicationName = DEFAULT_APPLICATION_NAME;
       dfpApiServer = DEFAULT_DFPAPI_SERVER;
       authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
 

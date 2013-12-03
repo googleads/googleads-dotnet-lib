@@ -93,12 +93,16 @@ namespace Google.Api.Ads.Dfp.Lib {
 
       if (!(this.GetType().Name == "NetworkService" && (methodName == "getAllNetworks"
           || methodName == "makeTestNetwork"))) {
-        if (string.Compare(header.Version, "v201203") >= 0 && string.IsNullOrEmpty(
-            header.networkCode)) {
+        if (string.IsNullOrEmpty(header.networkCode)) {
           throw new SoapHeaderException("networkCode header is required in all API versions >= " +
               "v201203. The only exceptions are NetworkService.getAllNetworks and " +
               "NetworkService.makeTestNetwork.", XmlQualifiedName.Empty);
         }
+      }
+
+      if (string.IsNullOrEmpty(header.applicationName) || header.applicationName.Contains(
+          DfpAppConfig.DEFAULT_APPLICATION_NAME)) {
+        throw new ApplicationException(DfpErrorMessages.RequireValidApplicationName);
       }
 
       if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {

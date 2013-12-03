@@ -33,7 +33,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="value">The value being stored.</param>
     public static void AddKey(string key, object value) {
       if (HttpContext.Current != null) {
-        HttpContext.Current.Items.Add(key, value);
+        HttpContext.Current.Items[key] = value;
       } else {
         CallContext.SetData(key, value);
       }
@@ -57,8 +57,15 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="key">The key for which value should be retrieved.</param>
     /// <returns>The object's value, or null if the key is missing.</returns>
     public static object GetValue(string key) {
-      return (HttpContext.Current != null) ? HttpContext.Current.Items[key] :
-          CallContext.GetData(key);
+      if (HttpContext.Current != null) {
+        if (HttpContext.Current.Items.Contains(key)) {
+          return HttpContext.Current.Items[key];
+        } else {
+          return null;
+        }
+      } else {
+        return CallContext.GetData(key);
+      }
     }
   }
 }

@@ -125,6 +125,10 @@
     <value>OAuth provider cannot be null when selecting Authorization method as "OAuth".</value>
     <comment>Used by DfpSoapClient.MakeApiCall when setting authorization headers.</comment>
   </data>
+  <data name="RequireValidApplicationName" xml:space="preserve">
+    <value>A valid application name was not found in the request header. Please provide a valid application name by modifying the ApplicationName setting in your application's App.config / Web.config or DfpAppConfig instance.</value>
+    <comment>Used to validate whether the user is providing a valid key for ApplicationName field. It cannot be empty, or the default value (INSERT_YOUR_APPLICATION_NAME_HERE) </comment>
+  </data>
   <data name="SignatureIsOfWrongType" xml:space="preserve">
     <value>Signature should be a {0} instance.</value>
     <comment>Used for ArgumentException by DfpServiceFactory.CreateService if the signature is not of desired type.</comment>

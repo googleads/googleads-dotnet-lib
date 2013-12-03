@@ -1,3 +1,12 @@
+6.2.0
+- Added support for v201311.
+- OAuthTokenGenerator is now a Windows Form application. The source is included
+  as a .csproj in the source distribution as well as in the
+  utilities\OAuthTokenGenerator folder of the repository. Compiled binary is
+  available in the lib\ folder of the binary distribution.
+- Updated README to add a section on announcements.
+- Common library version was bumped to 2.0.0.
+
 6.1.0
 - Added support for v201308.
 - Removed support for deprecated versions.

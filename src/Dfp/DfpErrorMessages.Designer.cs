@@ -79,6 +79,15 @@ namespace Google.Api.Ads.Dfp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A valid application name was not found in the request header. Please provide a valid application name by modifying the ApplicationName setting in your application&apos;s App.config / Web.config or DfpAppConfig instance..
+        /// </summary>
+        internal static string RequireValidApplicationName {
+            get {
+                return ResourceManager.GetString("RequireValidApplicationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Signature should be a {0} instance..
         /// </summary>
         internal static string SignatureIsOfWrongType {

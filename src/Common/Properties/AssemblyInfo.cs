@@ -25,9 +25,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription(
     "This library provides you with common functionality to access Ads API.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Google")]
-[assembly: AssemblyProduct("Ads API Dotnet Common Library")]
-[assembly: AssemblyCopyright("Copyright 2012, Google Inc. All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -38,13 +35,3 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("664c76a0-82f8-489b-a74f-8595f289713b")]
-
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version
-//      Build Number
-//      Revision
-//
-[assembly: AssemblyVersion("1.9.0.0")]
-[assembly: AssemblyFileVersion("1.9.0.0")]

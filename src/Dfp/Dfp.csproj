@@ -88,6 +88,9 @@
     <Compile Include="Util\v201308\DateTimeUtilities.cs" />
     <Compile Include="Util\v201308\PqlUtilities.cs" />
     <Compile Include="Util\v201308\StatementBuilder.cs" />
+    <Compile Include="Util\v201311\DateTimeUtilities.cs" />
+    <Compile Include="Util\v201311\PqlUtilities.cs" />
+    <Compile Include="Util\v201311\StatementBuilder.cs" />
     <Compile Include="v201208\DfpApi.cs" />
     <Compile Include="v201208\DfpServiceV201208.cs" />
     <Compile Include="v201211\DfpApi.cs" />
@@ -98,6 +101,8 @@
     <Compile Include="v201306\DfpServiceV201306.cs" />
     <Compile Include="v201308\DfpApi.cs" />
     <Compile Include="v201308\DfpServiceV201308.cs" />
+    <Compile Include="v201311\DfpApi.cs" />
+    <Compile Include="v201311\DfpServiceV201311.cs" />
           <Compile Include="DfpErrorMessages.Designer.cs">
             <AutoGen>True</AutoGen>
             <DesignTime>True</DesignTime>
