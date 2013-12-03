@@ -1,3 +1,13 @@
+16.4.0
+- Fixed issue 124.
+- Upgraded OAuth2 code examples to v201309 of AdWords API.
+- OAuthTokenGenerator is now a Windows Form application. The source is included
+  as a .csproj in the source distribution as well as in the
+  utilities\OAuthTokenGenerator folder of the repository. Compiled binary is
+  available in the lib\ folder of the binary distribution.
+- Updated README to add a section on announcements.
+- Common library version was bumped to 2.0.0.
+
 16.3.0
 - Fixed issue 119.
 - Removed support for v201302 of AdWords API.
