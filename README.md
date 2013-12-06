@@ -1,7 +1,5 @@
 #DFA API DotNet Client Library
 
-test again again again
-
 ##Introduction
 DoubleClick for Advertisers (DFA) API lets developers to build applications that interact directly with the DFA platform and perform a variety of trafficking and administrative tasks. It is particularly useful for automating recurring processes and for integrating DoubleClick for Advertisers with third-party systems.
 
