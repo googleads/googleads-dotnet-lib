@@ -35,7 +35,9 @@ You can download precompiled binary and source distributions [here](../../releas
 
 If you want to download the contents of the repository, you can do it using the command
 
+```
 git clone https://github.com/googleads/google-api-adwords-dotnet
+```
 
 ##How do I use the library?
 
