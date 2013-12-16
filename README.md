@@ -15,6 +15,10 @@ The AdWords and DoubleClick Ad Exchange Buyer API DotNet Client Library makes it
 - Tracking of all API usage.
 - Report downloading in XML or CSV formats.
 
+##Announcements and updates
+
+For API and client library updates and news, please follow our Google+ Ads Developers page: https://plus.google.com/+GoogleAdsDevelopers/posts and our Google Ads Developers blog: http://googleadsdeveloper.blogspot.com/.
+
 ##Downloading the client library
 
 ###Nuget
