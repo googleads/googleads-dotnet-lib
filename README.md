@@ -5,15 +5,15 @@ Google's AdWords API service lets developers design computer programs that inter
 
 Google's DoubleClick Ad Exchange Buyer API service lets developers design computer programs that interact directly with the DoubleClick Ad Exchange Buyer platform. With these applications, advertisers and third-parties for buyers can more efficiently - and creatively - manage their large or complex DoubleClick Ad Exchange Buyer accounts and campaigns.
 
-The AdWords and DoubleClick Ad Exchange Buyer API DotNet Client Library makes it easier to write .NET clients to programmatically access AdWords or Ad Exchange Buyer accounts. The complete documentation for the AdWords API is available from  https://developers.google.com/adwords/api/docs/. The DoubleClick Ad Exchange Buyer API docs are available from https://developers.google.com/ad-exchange/buyer-soap/
+The AdWords and DoubleClick Ad Exchange Buyer API DotNet Client Library makes it easier to write .NET clients to programmatically access AdWords or Ad Exchange Buyer accounts. The complete documentation for the AdWords API is available from  https://developers.google.com/adwords/api/docs/. The DoubleClick Ad Exchange Buyer API docs are available from https://developers.google.com/ad-exchange/buyer-soap/.
 
 ##Features
 
-- Support for .NET SDK 2.0 and above
-- Outgoing and incoming SOAP messages are monitored and logged
-- Support for API calls to production system or sandbox
-- Tracking of all API usage
-- Report downloading in XML or CSV formats
+- Support for .NET SDK 2.0 and above.
+- Outgoing and incoming SOAP messages are monitored and logged.
+- Support for API calls to production system or sandbox.
+- Tracking of all API usage.
+- Report downloading in XML or CSV formats.
 
 ##Downloading the client library
 
@@ -21,11 +21,11 @@ The AdWords and DoubleClick Ad Exchange Buyer API DotNet Client Library makes it
 
 The AdWords and DoubleClick Ad Exchange Buyer API DotNet Client Library are hosted on nuget.org as Nuget packages. The package details are given below:
 
-- [Google.AdWords](https://www.nuget.org/packages/Google.AdWords/): The AdWords and DoubleClick Ad Exchange Buyer API DotNet Client Library
-- [Google.AdWords.Examples.CSharp](https://www.nuget.org/packages/Google.AdWords.Examples.CSharp/): AdWords API Dotnet Client Library C# Code Examples
-- [Google.AdWords.Examples.VB](https://www.nuget.org/packages/Google.AdWords.Examples.VB/): AdWords API Dotnet Client Library VB.NET Code Examples
-- [Google.AdXBuyer.Examples.CSharp](https://www.nuget.org/packages/Google.AdXBuyer.Examples.CSharp/): DoubleClick Ad Exchange Buyer SOAP API Dotnet Client Library C# Code Examples
-- [Google.AdXBuyer.Examples.VB](https://www.nuget.org/packages/Google.AdXBuyer.Examples.VB/): DoubleClick Ad Exchange Buyer SOAP API Dotnet Client Library VB.NET Code Examples
+- [`Google.AdWords`](https://www.nuget.org/packages/Google.AdWords/): The AdWords and DoubleClick Ad Exchange Buyer API DotNet Client Library
+- [`Google.AdWords.Examples.CSharp`](https://www.nuget.org/packages/Google.AdWords.Examples.CSharp/): AdWords API Dotnet Client Library C# Code Examples
+- [`Google.AdWords.Examples.VB`](https://www.nuget.org/packages/Google.AdWords.Examples.VB/): AdWords API Dotnet Client Library VB.NET Code Examples
+- [`Google.AdXBuyer.Examples.CSharp`](https://www.nuget.org/packages/Google.AdXBuyer.Examples.CSharp/): DoubleClick Ad Exchange Buyer SOAP API Dotnet Client Library C# Code Examples
+- [`Google.AdXBuyer.Examples.VB`](https://www.nuget.org/packages/Google.AdXBuyer.Examples.VB/): DoubleClick Ad Exchange Buyer SOAP API Dotnet Client Library VB.NET Code Examples
 
 ###Precompiled binary and source distributions.
 
