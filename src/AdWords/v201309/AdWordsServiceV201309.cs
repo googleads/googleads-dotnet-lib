@@ -17,238 +17,275 @@
 using Google.Api.Ads.Common.Lib;
 
 using System;
-using System.Collections.Generic;
-using System.Reflection;
 
 namespace Google.Api.Ads.AdWords.Lib {
+
   /// <summary>
   /// Lists all the services available through this library.
   /// </summary>
   public partial class AdWordsService : AdsService {
+
     /// <summary>
     /// All the services available in v201309.
     /// </summary>
     public class v201309 {
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/OfflineConversionFeedService.html">
-      /// this page </a> for details.
-      /// </summary>
-      public static readonly ServiceSignature OfflineConversionFeedService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/AdGroupAdService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/AdGroupAdService">
       /// this page </a> for details.
       /// </summary>
       public static readonly ServiceSignature AdGroupAdService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/AdGroupCriterionService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature AdGroupCriterionService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/AdGroupFeedService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature AdGroupFeedService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/AdGroupService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature AdGroupService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/AdGroupBidModifierService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/AdGroupBidModifierService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature AdGroupBidModifierService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/AdParamService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/AdGroupCriterionService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature AdGroupCriterionService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/AdGroupFeedService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature AdGroupFeedService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/AdGroupService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature AdGroupService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/AdParamService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature AdParamService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/AdwordsUserListService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/AdwordsUserListService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature AdwordsUserListService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/AlertService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/AlertService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature AlertService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/BiddingStrategyService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/BiddingStrategyService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature BiddingStrategyService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/BudgetService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature BudgetService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/BudgetOrderService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/BudgetOrderService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature BudgetOrderService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/CampaignAdExtensionService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/BudgetService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature BudgetService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/CampaignAdExtensionService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature CampaignAdExtensionService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/CampaignCriterionService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/CampaignCriterionService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature CampaignCriterionService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/CampaignFeedService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/CampaignFeedService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature CampaignFeedService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/CampaignService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/CampaignService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature CampaignService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/CampaignSharedSetService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/CampaignSharedSetService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature CampaignSharedSetService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/ConstantDataService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/ConstantDataService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature ConstantDataService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/ConversionTrackerService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/ConversionTrackerService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature ConversionTrackerService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/CustomerService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/CustomerService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature CustomerService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/CustomerSyncService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/CustomerSyncService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature CustomerSyncService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/DataService.html">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/DataService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature DataService;
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/ExperimentService.html">
-      /// this page</a> for details.
-      /// </summary>
 
       public static readonly ServiceSignature ExperimentService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/FeedService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature FeedService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/FeedItemService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature FeedItemService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/FeedMappingService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature FeedMappingService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/GeoLocationService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature GeoLocationService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/LocationCriterionService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature LocationCriterionService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/ManagedCustomerService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature ManagedCustomerService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/MediaService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature MediaService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/MutateJobService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature MutateJobService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/ReportDefinitionService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature ReportDefinitionService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/SharedCriterionService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature SharedCriterionService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/SharedSetService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature SharedSetService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/TargetingIdeaService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature TargetingIdeaService;
-
-      /// <summary>
-      /// See <a href="http://code.google.com/apis/adwords/docs/reference/v201309/TrafficEstimatorService.html">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature TrafficEstimatorService;
 
       /// <summary>
       /// Factory type for v201309 services.
       /// </summary>
       public static readonly Type factoryType = typeof(AdWordsServiceFactory);
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/FeedItemService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature FeedItemService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/FeedMappingService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature FeedMappingService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/ExperimentService">
+      /// this page</a> for details.
+      /// </summary>
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/FeedService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature FeedService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/GeoLocationService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature GeoLocationService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/LocationCriterionService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature LocationCriterionService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/ManagedCustomerService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature ManagedCustomerService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/MediaService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature MediaService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/MutateJobService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature MutateJobService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/OfflineConversionFeedService">
+      /// this page </a> for details.
+      /// </summary>
+      public static readonly ServiceSignature OfflineConversionFeedService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/ReportDefinitionService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature ReportDefinitionService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/SharedCriterionService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature SharedCriterionService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/SharedSetService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature SharedSetService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/TargetingIdeaService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature TargetingIdeaService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201309/TrafficEstimatorService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature TrafficEstimatorService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/video/v201309/VideoAdService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature VideoAdService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/video/v201309/VideoCampaignCriterionService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature VideoCampaignCriterionService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/video/v201309/VideoCampaignService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature VideoCampaignService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/video/v201309/VideoService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature VideoService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/video/v201309/VideoTargetingGroupCriterionService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature VideoTargetingGroupCriterionService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/video/v201309/VideoTargetingGroupService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature VideoTargetingGroupService;
 
       /// <summary>
       /// Static constructor to initialize the service constants.
@@ -297,7 +334,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         CustomerSyncService =
             AdWordsService.MakeServiceSignature("v201309", "ch", "CustomerSyncService");
         DataService =
-            AdWordsService.MakeServiceSignature( "v201309", "cm", "DataService");
+            AdWordsService.MakeServiceSignature("v201309", "cm", "DataService");
         ExperimentService =
             AdWordsService.MakeServiceSignature("v201309", "cm", "ExperimentService");
         FeedService =
@@ -326,6 +363,21 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201309", "o", "TargetingIdeaService");
         TrafficEstimatorService =
             AdWordsService.MakeServiceSignature("v201309", "o", "TrafficEstimatorService");
+
+        VideoAdService =
+            AdWordsService.MakeServiceSignature("v201309", "video", "VideoAdService");
+        VideoCampaignCriterionService =
+            AdWordsService.MakeServiceSignature("v201309", "video",
+                "VideoCampaignCriterionService");
+        VideoCampaignService =
+            AdWordsService.MakeServiceSignature("v201309", "video", "VideoCampaignService");
+        VideoService =
+            AdWordsService.MakeServiceSignature("v201309", "video", "VideoService");
+        VideoTargetingGroupCriterionService =
+            AdWordsService.MakeServiceSignature("v201309", "video",
+                "VideoTargetingGroupCriterionService");
+        VideoTargetingGroupService =
+          AdWordsService.MakeServiceSignature("v201309", "video", "VideoTargetingGroupService");
       }
     }
   }

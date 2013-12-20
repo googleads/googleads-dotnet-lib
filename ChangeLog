@@ -1,3 +1,7 @@
+16.5.0
+- Added support for AdWords For Video (v201309). This is a beta
+  feature.
+
 16.4.0
 - Fixed issue 124.
 - Upgraded OAuth2 code examples to v201309 of AdWords API.
