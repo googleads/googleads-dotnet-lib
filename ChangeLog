@@ -1,3 +1,7 @@
+6.2.1
+- Fixed incorrect stub generated for ContentMetadataKeyHierarchyTargeting
+  class.
+
 6.2.0
 - Added support for v201311.
 - OAuthTokenGenerator is now a Windows Form application. The source is included

@@ -169,6 +169,7 @@
     <Compile Include="v201311\TestUtils.cs" />
     <Compile Include="v201311\UserServiceTests.cs" />
     <Compile Include="BaseTests.cs" />
+    <Compile Include="ServiceCreationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
