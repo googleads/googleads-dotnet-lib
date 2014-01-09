@@ -663,7 +663,8 @@ namespace Google.Api.Ads.Common.Lib {
         }
         this.proxy = proxy;
       } else {
-        this.proxy = WebRequest.GetSystemWebProxy();
+          // System.Net.WebRequest will find a proxy if needed
+          this.proxy = null;
       }
       maskCredentials = bool.Parse(ReadSetting(settings, MASK_CREDENTIALS,
           maskCredentials.ToString()));
