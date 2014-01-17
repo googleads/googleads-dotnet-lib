@@ -79,6 +79,15 @@ namespace Google.Api.Ads.Common {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to parse response from server. See inner exception for more details..
+        /// </summary>
+        internal static string FailedToParseAuthTokenException {
+            get {
+                return ResourceManager.GetString("FailedToParseAuthTokenException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid stage for Soap message..
         /// </summary>
         internal static string InvalidStageForSoapMessage {

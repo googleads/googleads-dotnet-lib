@@ -125,6 +125,10 @@
     <value>Email cannot be null</value>
     <comment>Used by AuthTokenCache when an empty email is passed to it.</comment>
   </data>
+  <data name="FailedToParseAuthTokenException" xml:space="preserve">
+    <value>Failed to parse response from server. See inner exception for more details.</value>
+    <comment>Used as default error message when auth token error parsing fails.</comment>
+  </data>
   <data name="InvalidStageForSoapMessage" xml:space="preserve">
     <value>Invalid stage for Soap message.</value>
     <comment>Used for ArgumentException by TraceExtension.ProcessMessage if message parameter has an invalid value for Stage field.</comment>
