@@ -273,32 +273,45 @@ namespace Google.Api.Ads.Common.Lib {
     /// to ClientLogin endpoint.</param>
     /// <returns></returns>
     private AuthTokenException ExtractException(WebException ex) {
-      Dictionary<string, string> tblResponse = null;
-
-      using (WebResponse response = ex.Response) {
-        tblResponse = ParseResponse(response);
-      }
-
-      Uri url = tblResponse.ContainsKey("Url")? new Uri(tblResponse["Url"]) : null;
-      string error = tblResponse.ContainsKey("Error") ? tblResponse["Error"] : String.Empty;
-      string captchaToken = tblResponse.ContainsKey("CaptchaToken") ?
-          tblResponse["CaptchaToken"] : String.Empty;
-      Uri captchaUrl = tblResponse.ContainsKey("CaptchaUrl") ?
-          new Uri(CaptchaUrlPrefix + tblResponse["CaptchaUrl"]) : null;
-
+      Uri url = null;
+      string error = String.Empty;
+      string captchaToken = String.Empty;
+      Uri captchaUrl = null;
+      string info = String.Empty;
+      string errorMessage = CommonErrorMessages.AuthTokenLoginFailed;
       AuthTokenErrorCode errCode = AuthTokenErrorCode.Unknown;
 
       try {
-        errCode = (AuthTokenErrorCode) Enum.Parse(typeof(AuthTokenErrorCode),
-            error, true);
-      } catch (ArgumentException) {
-        // Enum does not have a tryParse.
+        Dictionary<string, string> tblResponse = ParseResponse(ex.Response);
+
+        if (tblResponse.ContainsKey("Url")) {
+          url = new Uri(tblResponse["Url"]);
+        }
+        if (tblResponse.ContainsKey("Error")) {
+          error = tblResponse["Error"];
+        }
+        if (tblResponse.ContainsKey("CaptchaToken")) { 
+          captchaToken = tblResponse["CaptchaToken"];
+        }
+        if (tblResponse.ContainsKey("CaptchaUrl")) {
+          captchaUrl = new Uri(CaptchaUrlPrefix + tblResponse["CaptchaUrl"]);
+        }
+
+        try {
+          errCode = (AuthTokenErrorCode) Enum.Parse(typeof(AuthTokenErrorCode),
+              error, true);
+        } catch (ArgumentException) {
+          // Enum does not have a tryParse.
+        }
+
+        if (tblResponse.ContainsKey("Info")) { 
+          info = tblResponse["Info"];
+        }
+      } catch (Exception) {
+        errorMessage = CommonErrorMessages.FailedToParseAuthTokenException;
       }
-
-      string info = tblResponse.ContainsKey("Info") ? tblResponse["Info"] : String.Empty;
-
       return new AuthTokenException(errCode, url, captchaToken, captchaUrl, info,
-          CommonErrorMessages.AuthTokenLoginFailed, ex);
+          errorMessage, ex);
     }
 
     /// <summary>

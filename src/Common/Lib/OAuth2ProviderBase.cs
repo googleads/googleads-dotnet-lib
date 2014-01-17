@@ -346,6 +346,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="response">The web response.</param>
     /// <returns>The web response contents.</returns>
     protected static string GetResponseText(WebResponse response) {
+      if (response == null) {
+        return String.Empty;
+      }
       MemoryStream memStream = new MemoryStream();
       MediaUtilities.CopyStream(response.GetResponseStream(), memStream);
       return Encoding.UTF8.GetString(memStream.ToArray());

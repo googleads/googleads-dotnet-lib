@@ -1,3 +1,6 @@
+4.4.0
+- Common library version was bumped to 2.1.0.
+
 4.3.0
 - OAuthTokenGenerator is now a Windows Form application. The source is included
   as a .csproj in the source distribution as well as in the
