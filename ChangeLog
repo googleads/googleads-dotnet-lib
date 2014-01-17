@@ -1,3 +1,10 @@
+16.6.0
+- Added support for AdWords Express (v201309). This is a invite-only
+  feature.
+- Fixed issue 2 (https://github.com/googleads/googleads-adwords-dotnet-lib/issues/2)
+  on GitHub. Fix was contributed by Akil Burgess (akil.burgess@viagogo.com).
+- Common library version was bumped to 2.1.0.
+
 16.5.0
 - Added support for AdWords For Video (v201309). This is a beta
   feature.
@@ -14,7 +21,7 @@
 
 16.3.0
 - Fixed issue 119.
-- Removed support for v201302 of AdWords API.
+- Removed support for v201309 of AdWords API.
 
 16.2.0
 - Removed support for v201209 of AdWords API.

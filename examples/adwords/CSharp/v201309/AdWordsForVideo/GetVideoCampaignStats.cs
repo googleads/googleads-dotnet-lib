@@ -138,15 +138,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201309 {
     }
 
     /// <summary>
-    /// Formats a double value for display purposes.
-    /// </summary>
-    /// <param name="n">The double value.</param>
-    /// <returns>The formatted double value as text.</returns>
-    private static String Dashify(double n) {
-      return n == null ? "--" : n.ToString();
-    }
-
-    /// <summary>
     /// Formats the stats for display.
     /// </summary>
     /// <param name="stats">The stats.</param>
@@ -154,15 +145,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201309 {
     private static String FormatStats(VideoEntityStats stats) {
       return string.Format("Views: {0}, Cost: {1}, Avg. CPC: {2}, Avg. CPV: {3}, "
           + "Avg. CPM: {4}, 25%: {5}, 50%: {6}, 75%: {7}, 100%: {8}",
-          Dashify(stats.views),
+          stats.viewsSpecified? stats.views.ToString() : "--",
           Dashify(stats.cost),
           Dashify(stats.averageCpc),
           Dashify(stats.averageCpv),
           Dashify(stats.averageCpm),
-          Dashify(stats.quartile25Percents),
-          Dashify(stats.quartile50Percents),
-          Dashify(stats.quartile75Percents),
-          Dashify(stats.quartile100Percents));
+          stats.quartile25PercentsSpecified? stats.quartile25Percents.ToString() : "--",
+          stats.quartile50PercentsSpecified? stats.quartile50Percents.ToString() : "--",
+          stats.quartile75PercentsSpecified? stats.quartile75Percents.ToString() : "--",
+          stats.quartile100PercentsSpecified? stats.quartile100Percents.ToString() : "--"
+      );
     }
   }
 }

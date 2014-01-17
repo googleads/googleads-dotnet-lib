@@ -123,6 +123,7 @@
     <Compile Include="AdWordsRequestInterceptor.cs" />
     <Compile Include="ExamplesMockData.cs" />
     <Compile Include="ExampleTestsBase.cs" />
+    <Compile Include="ServiceCreationTests.cs" />
     <Compile Include="SoapMessages.v201302.Designer.cs" />
     <Compile Include="SoapMessages.v201306.Designer.cs" />
     <Compile Include="SoapMessages.v201309.Designer.cs" />

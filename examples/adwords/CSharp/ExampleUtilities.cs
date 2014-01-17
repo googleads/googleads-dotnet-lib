@@ -34,6 +34,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
     }
 
     /// <summary>
+    /// Gets a random string. Useful for generating unique names for campaigns,
+    /// ad groups, etc.
+    /// </summary>
+    /// <returns>The current timestamp as a string.</returns>
+    public static string GetShortRandomString() {
+      return Guid.NewGuid().ToString().Substring(0, 8);
+    }
+
+    /// <summary>
     /// Formats the exception as a printable message.
     /// </summary>
     /// <param name="ex">The exception.</param>

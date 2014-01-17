@@ -165,6 +165,12 @@
     <Compile Include="v201309\ErrorHandling\HandlePolicyViolationError.cs" />
     <Compile Include="v201309\ErrorHandling\HandleRateExceededError.cs" />
     <Compile Include="v201309\ErrorHandling\HandleTwoFactorAuthorizationError.cs" />
+    <Compile Include="v201309\Express\AddExpressBusinesses.cs" />
+    <Compile Include="v201309\Express\AddPromotion.cs" />
+    <Compile Include="v201309\Express\GetExpressBusinesses.cs" />
+    <Compile Include="v201309\Express\GetPromotions.cs" />
+    <Compile Include="v201309\Express\UpdateExpressBusiness.cs" />
+    <Compile Include="v201309\Express\UpdatePromotion.cs" />
     <Compile Include="v201309\Miscellaneous\GetAllVideosAndImages.cs" />
     <Compile Include="v201309\Miscellaneous\UploadImage.cs" />
     <Compile Include="v201309\Optimization\EstimateKeywordTraffic.cs" />

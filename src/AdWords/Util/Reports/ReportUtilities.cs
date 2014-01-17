@@ -282,27 +282,37 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
           MediaUtilities.CopyStream(response.GetResponseStream(), outputStream);
           return;
         } catch (WebException ex) {
-          response = ex.Response;
-          MemoryStream memStream = new MemoryStream();
-          MediaUtilities.CopyStream(response.GetResponseStream(), memStream);
-          String exceptionBody = Encoding.UTF8.GetString(memStream.ToArray());
-          Exception reportsException = ParseException(exceptionBody);
+          Exception reportsException = null;
 
-          if (AdWordsErrorHandler.IsCookieInvalidError(reportsException)) {
-            reportsException = new AdWordsCredentialsExpiredException(
-                request.Headers["Authorization"].Replace(CLIENT_LOGIN_PREFIX, ""));
-          } else if (AdWordsErrorHandler.IsOAuthTokenExpiredError(reportsException)) {
-            reportsException = new AdWordsCredentialsExpiredException(
-                request.Headers["Authorization"]);
+          try {
+            response = ex.Response;
+
+            if (response != null) {
+              MemoryStream memStream = new MemoryStream();
+              MediaUtilities.CopyStream(response.GetResponseStream(), memStream);
+              String exceptionBody = Encoding.UTF8.GetString(memStream.ToArray());
+              reportsException = ParseException(exceptionBody);
+            }
+
+            if (AdWordsErrorHandler.IsCookieInvalidError(reportsException)) {
+              reportsException = new AdWordsCredentialsExpiredException(
+                  request.Headers["Authorization"].Replace(CLIENT_LOGIN_PREFIX, ""));
+            } else if (AdWordsErrorHandler.IsOAuthTokenExpiredError(reportsException)) {
+              reportsException = new AdWordsCredentialsExpiredException(
+                  request.Headers["Authorization"]);
+            }
+          } catch (Exception) {
+            reportsException = ex;
           }
-
           if (errorHandler.ShouldRetry(reportsException)) {
             errorHandler.PrepareForRetry(reportsException);
           } else {
             throw reportsException;
           }
         } finally {
-          response.Close();
+          if (response != null) {
+            response.Close();
+          }
         }
       }
     }

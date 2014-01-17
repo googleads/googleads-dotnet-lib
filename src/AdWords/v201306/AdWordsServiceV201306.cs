@@ -269,7 +269,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         AdParamService =
             AdWordsService.MakeServiceSignature("v201306", "cm", "AdParamService");
         AdwordsUserListService =
-            AdWordsService.MakeServiceSignature("v201306", "rm", "AdWordsUserListService");
+            AdWordsService.MakeServiceSignature("v201306", "rm", "AdwordsUserListService");
         AlertService =
             AdWordsService.MakeServiceSignature("v201306", "mcm", "AlertService");
         BiddingStrategyService =

@@ -514,6 +514,8 @@ BudgetOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoBiddingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoServiceError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressBusinessError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(PromotionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdParamPolicyError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdParamError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertError))]
@@ -1632,6 +1634,8 @@ BudgetOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCallToActionOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupCriterionOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressBusinessOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(PromotionOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdParamOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BiddingStrategyOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BudgetOrderOperation))]
@@ -1723,8 +1727,12 @@ BudgetOperation[] operations) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupReportPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupCriterionPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressNoStatsPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressBusinessPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(PromotionPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupBidModifierPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(McmNoStatsPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BiddingStrategyPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BudgetOrderPage))]
@@ -3204,6 +3212,10 @@ string query1) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201309")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(NegativeKeyword))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductService))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(NegativeCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(KeywordSet))]
   public partial class Criterion {
     private long idField;
 
@@ -3972,6 +3984,7 @@ string query1) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201309")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(NegativeKeyword))]
   public partial class Keyword : Criterion {
     private string textField;
 
@@ -7774,7 +7787,6 @@ ConversionTrackerOperation[] operations) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201309")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionBidLandscapePage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupBidLandscapePage))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertPage))]
   public abstract partial class NoStatsPage : Page {
   }
 
@@ -27236,6 +27248,926 @@ TargetingGroupOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "ExpressBusinessServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class ExpressBusinessService : AdWordsSoapClient, IExpressBusinessService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public ExpressBusinessService() {
+      this.Url = "https://adwords.google.com/api/adwords/express/v201309/ExpressBusinessService";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/express/v201309", ResponseNamespace = "https://adwords.google.com/api/adwords/express/v201309", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual ExpressBusinessPage get(Selector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((ExpressBusinessPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/express/v201309", ResponseNamespace = "https://adwords.google.com/api/adwords/express/v201309", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual ExpressBusiness[] mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
+ExpressBusinessOperation[] operations) {
+      object[] results = this.Invoke("mutate", new object[] { operations });
+      return ((ExpressBusiness[]) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class ExpressBusinessOperation : Operation {
+    private ExpressBusiness operandField;
+
+    public ExpressBusiness operand {
+      get { return this.operandField; }
+      set { this.operandField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class ExpressBusiness {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private string nameField;
+
+    private ExpressBusinessStatus statusField;
+
+    private bool statusFieldSpecified;
+
+    private Address addressField;
+
+    private GeoPoint geoPointField;
+
+    private PhoneNumber phoneNumberField;
+
+    private string websiteField;
+
+    public long id {
+      get { return this.idField; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public ExpressBusinessStatus status {
+      get { return this.statusField; }
+      set {
+        this.statusField = value;
+        this.statusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool statusSpecified {
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
+    }
+
+    public Address address {
+      get { return this.addressField; }
+      set { this.addressField = value; }
+    }
+
+    public GeoPoint geoPoint {
+      get { return this.geoPointField; }
+      set { this.geoPointField = value; }
+    }
+
+    public PhoneNumber phoneNumber {
+      get { return this.phoneNumberField; }
+      set { this.phoneNumberField = value; }
+    }
+
+    public string website {
+      get { return this.websiteField; }
+      set { this.websiteField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ExpressBusiness.Status", Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public enum ExpressBusinessStatus {
+    ACTIVE,
+    DELETED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class PhoneNumber {
+    private ExpressRegionCode regionCodeField;
+
+    private bool regionCodeFieldSpecified;
+
+    private string numberField;
+
+    public ExpressRegionCode regionCode {
+      get { return this.regionCodeField; }
+      set {
+        this.regionCodeField = value;
+        this.regionCodeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool regionCodeSpecified {
+      get { return this.regionCodeFieldSpecified; }
+      set { this.regionCodeFieldSpecified = value; }
+    }
+
+    public string number {
+      get { return this.numberField; }
+      set { this.numberField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public enum ExpressRegionCode {
+    AC,
+    AD,
+    AE,
+    AF,
+    AG,
+    AI,
+    AL,
+    AM,
+    AN,
+    AO,
+    AQ,
+    AR,
+    AS,
+    AT,
+    AU,
+    AW,
+    AX,
+    AZ,
+    BA,
+    BB,
+    BD,
+    BE,
+    BF,
+    BG,
+    BH,
+    BI,
+    BJ,
+    BL,
+    BM,
+    BN,
+    BO,
+    BQ,
+    BR,
+    BS,
+    BT,
+    BU,
+    BV,
+    BW,
+    BY,
+    BZ,
+    CA,
+    CC,
+    CD,
+    CF,
+    CG,
+    CH,
+    CI,
+    CK,
+    CL,
+    CM,
+    CN,
+    CO,
+    CP,
+    CR,
+    CS,
+    CU,
+    CV,
+    CW,
+    CX,
+    CY,
+    CZ,
+    DD,
+    DE,
+    DG,
+    DJ,
+    DK,
+    DM,
+    DO,
+    DZ,
+    EA,
+    EC,
+    EE,
+    EG,
+    EH,
+    ER,
+    ES,
+    ET,
+    EU,
+    FI,
+    FJ,
+    FK,
+    FM,
+    FO,
+    FR,
+    FX,
+    GA,
+    GB,
+    GD,
+    GE,
+    GF,
+    GG,
+    GH,
+    GI,
+    GL,
+    GM,
+    GN,
+    GP,
+    GQ,
+    GR,
+    GS,
+    GT,
+    GU,
+    GW,
+    GY,
+    HK,
+    HM,
+    HN,
+    HR,
+    HT,
+    HU,
+    IC,
+    ID,
+    IE,
+    IL,
+    IM,
+    IN,
+    IO,
+    IQ,
+    IR,
+    IS,
+    IT,
+    JE,
+    JM,
+    JO,
+    JP,
+    KE,
+    KG,
+    KH,
+    KI,
+    KM,
+    KN,
+    KP,
+    KR,
+    KW,
+    KY,
+    KZ,
+    LA,
+    LB,
+    LC,
+    LI,
+    LK,
+    LR,
+    LS,
+    LT,
+    LU,
+    LV,
+    LY,
+    MA,
+    MC,
+    MD,
+    ME,
+    MF,
+    MG,
+    MH,
+    MK,
+    ML,
+    MM,
+    MN,
+    MO,
+    MP,
+    MQ,
+    MR,
+    MS,
+    MT,
+    MU,
+    MV,
+    MW,
+    MX,
+    MY,
+    MZ,
+    NA,
+    NC,
+    NE,
+    NF,
+    NG,
+    NI,
+    NL,
+    NO,
+    NP,
+    NR,
+    NT,
+    NU,
+    NZ,
+    OM,
+    PA,
+    PE,
+    PF,
+    PG,
+    PH,
+    PK,
+    PL,
+    PM,
+    PN,
+    PR,
+    PS,
+    PT,
+    PW,
+    PY,
+    QA,
+    QO,
+    QU,
+    RE,
+    RO,
+    RS,
+    RU,
+    RW,
+    SA,
+    SB,
+    SC,
+    SD,
+    SE,
+    SG,
+    SH,
+    SI,
+    SJ,
+    SK,
+    SL,
+    SM,
+    SN,
+    SO,
+    SR,
+    SS,
+    ST,
+    SU,
+    SV,
+    SX,
+    SY,
+    SZ,
+    TA,
+    TC,
+    TD,
+    TF,
+    TG,
+    TH,
+    TJ,
+    TK,
+    TL,
+    TM,
+    TN,
+    TO,
+    TP,
+    TR,
+    TT,
+    TV,
+    TW,
+    TZ,
+    UA,
+    UG,
+    UM,
+    US,
+    UY,
+    UZ,
+    VA,
+    VC,
+    VE,
+    VG,
+    VI,
+    VN,
+    VU,
+    WF,
+    WS,
+    XA,
+    XB,
+    XC,
+    XK,
+    YD,
+    YE,
+    YT,
+    YU,
+    ZA,
+    ZM,
+    ZR,
+    ZW,
+    ZZ,
+    UN001,
+    UN002,
+    UN003,
+    UN005,
+    UN009,
+    UN011,
+    UN013,
+    UN014,
+    UN015,
+    UN017,
+    UN018,
+    UN019,
+    UN021,
+    UN029,
+    UN030,
+    UN034,
+    UN035,
+    UN039,
+    UN053,
+    UN054,
+    UN057,
+    UN061,
+    UN142,
+    UN143,
+    UN145,
+    UN150,
+    UN151,
+    UN154,
+    UN155,
+    UN419
+  }
+
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressBusinessPage))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(PromotionPage))]
+  public abstract partial class ExpressNoStatsPage : Page {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class ExpressBusinessPage : ExpressNoStatsPage {
+    private ExpressBusiness[] entriesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public ExpressBusiness[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class ExpressBusinessError : ApiError {
+    private ExpressBusinessErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public ExpressBusinessErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ExpressBusinessError.Reason", Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public enum ExpressBusinessErrorReason {
+    INVALID_WEBSITE,
+    INVALID_ADDRESS,
+    INVALID_PHONE_NUMBER,
+    PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "PromotionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionParameter))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SoapHeader))]
+  public partial class PromotionService : AdWordsSoapClient, IPromotionService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public PromotionService() {
+      this.Url = "https://adwords.google.com/api/adwords/express/v201309/PromotionService";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/express/v201309", ResponseNamespace = "https://adwords.google.com/api/adwords/express/v201309", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual PromotionPage get(Selector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((PromotionPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/express/v201309", ResponseNamespace = "https://adwords.google.com/api/adwords/express/v201309", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual Promotion[] mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
+PromotionOperation[] operations) {
+      object[] results = this.Invoke("mutate", new object[] { operations });
+      return ((Promotion[]) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class PromotionOperation : Operation {
+    private Promotion operandField;
+
+    public Promotion operand {
+      get { return this.operandField; }
+      set { this.operandField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class Promotion {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private string nameField;
+
+    private PromotionStatus statusField;
+
+    private bool statusFieldSpecified;
+
+    private Creative[] creativesField;
+
+    private string destinationUrlField;
+
+    private bool streetAddressVisibleField;
+
+    private bool streetAddressVisibleFieldSpecified;
+
+    private bool callTrackingEnabledField;
+
+    private bool callTrackingEnabledFieldSpecified;
+
+    private Money budgetField;
+
+    private Criterion[] criteriaField;
+
+    private long[] campaignIdsField;
+
+    private Money remainingBudgetField;
+
+    public long id {
+      get { return this.idField; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public PromotionStatus status {
+      get { return this.statusField; }
+      set {
+        this.statusField = value;
+        this.statusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool statusSpecified {
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("creatives")]
+    public Creative[] creatives {
+      get { return this.creativesField; }
+      set { this.creativesField = value; }
+    }
+
+    public string destinationUrl {
+      get { return this.destinationUrlField; }
+      set { this.destinationUrlField = value; }
+    }
+
+    public bool streetAddressVisible {
+      get { return this.streetAddressVisibleField; }
+      set {
+        this.streetAddressVisibleField = value;
+        this.streetAddressVisibleSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool streetAddressVisibleSpecified {
+      get { return this.streetAddressVisibleFieldSpecified; }
+      set { this.streetAddressVisibleFieldSpecified = value; }
+    }
+
+    public bool callTrackingEnabled {
+      get { return this.callTrackingEnabledField; }
+      set {
+        this.callTrackingEnabledField = value;
+        this.callTrackingEnabledSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool callTrackingEnabledSpecified {
+      get { return this.callTrackingEnabledFieldSpecified; }
+      set { this.callTrackingEnabledFieldSpecified = value; }
+    }
+
+    public Money budget {
+      get { return this.budgetField; }
+      set { this.budgetField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("criteria")]
+    public Criterion[] criteria {
+      get { return this.criteriaField; }
+      set { this.criteriaField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignIds")]
+    public long[] campaignIds {
+      get { return this.campaignIdsField; }
+      set { this.campaignIdsField = value; }
+    }
+
+    public Money remainingBudget {
+      get { return this.remainingBudgetField; }
+      set { this.remainingBudgetField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Promotion.Status", Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public enum PromotionStatus {
+    DRAFT,
+    ACTIVE,
+    PAUSED,
+    DELETED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class Creative {
+    private string headlineField;
+
+    private string line1Field;
+
+    private string line2Field;
+
+    public string headline {
+      get { return this.headlineField; }
+      set { this.headlineField = value; }
+    }
+
+    public string line1 {
+      get { return this.line1Field; }
+      set { this.line1Field = value; }
+    }
+
+    public string line2 {
+      get { return this.line2Field; }
+      set { this.line2Field = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class NegativeKeyword : Keyword {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class ProductService : Criterion, IProductService {
+    private string textField;
+
+    public virtual string text {
+      get { return this.textField; }
+      set { this.textField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class NegativeCriterion : Criterion {
+    private Criterion criterionField;
+
+    public Criterion criterion {
+      get { return this.criterionField; }
+      set { this.criterionField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class KeywordSet : Criterion {
+    private string keywordSetIdField;
+
+    private string nameField;
+
+    private bool deprecatedField;
+
+    private bool deprecatedFieldSpecified;
+
+    public string keywordSetId {
+      get { return this.keywordSetIdField; }
+      set { this.keywordSetIdField = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public bool deprecated {
+      get { return this.deprecatedField; }
+      set {
+        this.deprecatedField = value;
+        this.deprecatedSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool deprecatedSpecified {
+      get { return this.deprecatedFieldSpecified; }
+      set { this.deprecatedFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class PromotionPage : ExpressNoStatsPage {
+    private Promotion[] entriesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public Promotion[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public partial class PromotionError : ApiError {
+    private PromotionErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public PromotionErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PromotionError.Reason", Namespace = "https://adwords.google.com/api/adwords/express/v201309")]
+  public enum PromotionErrorReason {
+    BUSINESS_DELETED,
+    CURRENCY_NOT_SUPPORTED,
+    GOOGLE_GRANT_ACCOUNT,
+    AOL_ACCOUNT,
+    MCC_ACCOUNT,
+    INVALID_DESTINATION_URL,
+    CALL_TRACKING_NOT_SUPPORTED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AdGroupServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201309")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
@@ -27779,12 +28711,21 @@ AdParamOperation[] operations) {
     UNKNOWN
   }
 
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertPage))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201309")]
-  public partial class AlertPage : NoStatsPage {
+  public abstract partial class McmNoStatsPage : Page {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201309")]
+  public partial class AlertPage : McmNoStatsPage {
     private Alert[] entriesField;
 
     [System.Xml.Serialization.XmlElementAttribute("entries")]
@@ -29064,6 +30005,36 @@ BudgetOrderOperation[] operations) {
     }
     TargetingGroupPage get(TargetingGroupSelector selector);
     TargetingGroupReturnValue mutate(TargetingGroupOperation[] operations);
+  }
+  public interface IExpressBusinessService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    ExpressBusinessPage get(Selector selector);
+    ExpressBusiness[] mutate(ExpressBusinessOperation[] operations);
+  }
+  public interface IPromotionService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    PromotionPage get(Selector selector);
+    Promotion[] mutate(PromotionOperation[] operations);
+  }
+  public interface IProductService {
+    string text {
+      get;
+      set;
+    }
   }
   public interface IAdGroupService {
     RequestHeader RequestHeader {

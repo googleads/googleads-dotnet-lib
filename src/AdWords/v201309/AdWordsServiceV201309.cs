@@ -288,6 +288,18 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature VideoTargetingGroupService;
 
       /// <summary>
+      /// See <a href="https://devsite.googleplex.com/adwords/api/docs/reference/express/v201309/ExpressBusinessService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature ExpressBusinessService;
+
+      /// <summary>
+      /// See <a href="https://devsite.googleplex.com/adwords/api/docs/reference/express/v201309/PromotionService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature PromotionService;
+
+      /// <summary>
       /// Static constructor to initialize the service constants.
       /// </summary>
       static v201309() {
@@ -378,6 +390,12 @@ namespace Google.Api.Ads.AdWords.Lib {
                 "VideoTargetingGroupCriterionService");
         VideoTargetingGroupService =
           AdWordsService.MakeServiceSignature("v201309", "video", "VideoTargetingGroupService");
+
+        ExpressBusinessService =
+            AdWordsService.MakeServiceSignature("v201309", "express",
+                "ExpressBusinessService");
+        PromotionService =
+            AdWordsService.MakeServiceSignature("v201309", "express", "PromotionService");
       }
     }
   }
