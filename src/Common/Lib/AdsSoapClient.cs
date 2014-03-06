@@ -229,7 +229,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     /// <returns>The error handler instance.</returns>
     protected virtual ErrorHandler CreateErrorHandler() {
-      return new ErrorHandler(this.User);
+      return new ErrorHandler(this.User.Config);
     }
 
     /// <summary>

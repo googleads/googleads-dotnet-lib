@@ -30,6 +30,11 @@ namespace Google.Api.Ads.Common.Lib {
     Dictionary<string, T> tokenMap = new Dictionary<string, T>();
 
     /// <summary>
+    /// An internal dictionary for caching token signatures.
+    /// </summary>
+    Dictionary<T, string> signatureMap = new Dictionary<T, string>();
+
+    /// <summary>
     /// Adds a token to cache.
     /// </summary>
     /// <param name="signature">The token signature, used as a key.</param>
@@ -41,6 +46,7 @@ namespace Google.Api.Ads.Common.Lib {
       ValidateParams(signature);
       lock (tokenMap) {
         tokenMap[signature] = token;
+        signatureMap[token] = signature;
         return token;
       }
     }
@@ -65,11 +71,10 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="token">The cached token.</param>
     public void InvalidateToken(T token) {
       lock (tokenMap) {
-        foreach (string key in tokenMap.Keys) {
-          if (tokenMap[key] == token) {
-            tokenMap.Remove(key);
-            break;
-          }
+        if (signatureMap.ContainsKey(token)) {
+          string signature = signatureMap[token];
+          tokenMap.Remove(signature);
+          signatureMap.Remove(token);
         }
       }
     }
@@ -80,6 +85,7 @@ namespace Google.Api.Ads.Common.Lib {
     public void Clear() {
       lock (tokenMap) {
         tokenMap.Clear();
+        signatureMap.Clear();
       }
     }
 

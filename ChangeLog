@@ -1,3 +1,11 @@
+6.4.0
+- Added support for v201403.
+- Added LiveStreamEventService and RateCardCustomizationGroupService.
+- Removed all non-bulk methods.
+- Statement builder can now be used to construct statements in parts.
+- Common library version was bumped to 2.2.0.
+- OAuthTokenGenerator added Google Places for Business as a valid API scope.
+
 6.3.0
 - Common library version was bumped to 2.1.0.
 

@@ -33,6 +33,9 @@ namespace Google.Api.Ads.Dfp.Lib {
   /// The factory class for all DFP API services.
   /// </summary>
   public class DfpServiceFactory : ServiceFactory {
+
+    private const string FINAL_CLIENT_LOGIN_VERSION = "v201311";
+
     /// <summary>
     /// The request header to be used with DFP API services.
     /// </summary>
@@ -64,13 +67,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         throw new ArgumentNullException("user");
       }
 
-      if (signature == null) {
-        throw new ArgumentNullException("signature");
-      }
-      if (!(signature is DfpServiceSignature)) {
-        throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
-            DfpErrorMessages.SignatureIsOfWrongType, typeof(DfpServiceSignature)));
-      }
+      CheckServicePreconditions(signature);
 
       DfpServiceSignature dfpapiSignature = signature as DfpServiceSignature;
 
@@ -106,6 +103,28 @@ namespace Google.Api.Ads.Dfp.Lib {
       this.requestHeader = new RequestHeader();
       this.requestHeader.networkCode = dfpConfig.NetworkCode;
       this.requestHeader.applicationName = dfpConfig.GetUserAgent();
+    }
+
+    /// <summary>
+    /// Checks preconditions of the service signature and throws and exception if the service
+    /// cannot be generated.
+    /// </summary>
+    /// <param name="signature">the service signature for generating the service</param>
+    protected override void CheckServicePreconditions(ServiceSignature signature) {
+      if (signature == null) {
+        throw new ArgumentNullException("signature");
+      }
+      if (!(signature is DfpServiceSignature)) {
+        throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
+            DfpErrorMessages.SignatureIsOfWrongType, typeof(DfpServiceSignature)));
+      }
+      DfpAppConfig dfpConfig = (DfpAppConfig) Config;
+      DfpServiceSignature dfpSignature = signature as DfpServiceSignature;
+      String version = dfpSignature.Version;
+      if (dfpConfig.AuthorizationMethod == DfpAuthorizationMethod.ClientLogin
+          && version.CompareTo(FINAL_CLIENT_LOGIN_VERSION) > 0) {
+        throw new DfpException(string.Format(DfpErrorMessages.ClientLoginNotSupported, version));
+      }
     }
   }
 }

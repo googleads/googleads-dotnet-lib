@@ -105,8 +105,7 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator {
     /// the event data.</param>
     protected override void OnClosed(EventArgs e) {
       base.OnClosed(e);
-      newHttpListener.Close();
-      canExit = true;
+      newHttpListener.Stop();
       serverThread.Join();
     }
 
@@ -122,13 +121,12 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator {
 
       // Start the listener.
       serverThread = new Thread(delegate() {
-        while (!canExit) {
-          IAsyncResult serverWaitHandle = newHttpListener.BeginGetContext(
-              new AsyncCallback(handlePageRequest), newHttpListener);
-
-          bool waitResult = serverWaitHandle.AsyncWaitHandle.WaitOne(1000);
-          if (waitResult) {
-            newHttpListener.EndGetContext(serverWaitHandle);
+        while (true) {
+          try {
+            HttpListenerContext ctx = newHttpListener.GetContext();
+            HandlePageRequest(ctx);
+          } catch (HttpListenerException) {
+            break;
           }
         }
       });
@@ -138,13 +136,8 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator {
     /// <summary>
     /// Handles the page request.
     /// </summary>
-    /// <param name="result">The result.</param>
-    private void handlePageRequest(IAsyncResult result) {
-      HttpListener listener = (HttpListener) result.AsyncState;
-      if (!listener.IsListening) {
-        return;
-      }
-      HttpListenerContext context = listener.EndGetContext(result);
+    /// <param name="context">The listener context.</param>
+    private void HandlePageRequest(HttpListenerContext context) {
       string url = context.Request.Url.OriginalString;
       string authorizationCode = context.Request.QueryString["code"];
       oAuth2.FetchAccessAndRefreshTokens(authorizationCode);

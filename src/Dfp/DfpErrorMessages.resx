@@ -117,13 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ClientLoginNotSupported" xml:space="preserve">
+    <value>ClientLogin is not supported in version {0}. Please upgrade to OAuth2.</value>
+    <comment>Used when attempting to use ClientLogin in an unsupported version</comment>
+  </data>
+  <data name="CompleteQuerySet" xml:space="preserve">
+    <value>The complete query is already set. Partial query building is not allowed.</value>
+    <comment>Used when StatementBuilder has a complete query and a partial construction function is used</comment>
+  </data>
   <data name="FailedToSetAuthorizationHeader" xml:space="preserve">
     <value>Could not set AuthToken or OAuthHeader for outgoing API call. Please check if service.RequestHeader is not null.</value>
     <comment>Used by DfpSoapClient.MakeApiCall when setting authorization headers.</comment>
   </data>
+  <data name="InvalidOffsetAndLimit" xml:space="preserve">
+    <value>OFFSET cannot be set if LIMIT is not set.</value>
+    <comment>Used when validating a Satement query</comment>
+  </data>
   <data name="OAuthProviderCannotBeNull" xml:space="preserve">
     <value>OAuth provider cannot be null when selecting Authorization method as "OAuth".</value>
     <comment>Used by DfpSoapClient.MakeApiCall when setting authorization headers.</comment>
+  </data>
+  <data name="PartialQuerySet" xml:space="preserve">
+    <value>A partial query is already set. Access to the complete query is restricted.</value>
+    <comment>Used when StatementBuilder has a partial query and the full query is set</comment>
   </data>
   <data name="RequireValidApplicationName" xml:space="preserve">
     <value>A valid application name was not found in the request header. Please provide a valid application name by modifying the ApplicationName setting in your application's App.config / Web.config or DfpAppConfig instance.</value>

@@ -139,6 +139,32 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     }
 
     /// <summary>
+    /// Tests the OAuth2 access token expiration logic.
+    /// </summary>
+    [Test]
+    public void TestIsAccessTokenExpiring() {
+      MethodInfo mi = typeof(OAuth2ProviderBase).GetMethod("IsAccessTokenExpiring",
+          BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.FlattenHierarchy);
+
+      provider.OAuth2RefreshCutoffLimit = 60;
+
+      // Test if token is not expired if there's > 60 seconds remaining.
+      provider.UpdatedOn = DateTime.Now.Subtract(new TimeSpan(0, 0, 1800));
+      provider.ExpiresIn = 3600;
+      Assert.False((bool) mi.Invoke(provider, null));
+
+      // Test if token is expired if there's 60 seconds or lesser remaining.
+      provider.UpdatedOn = DateTime.Now.Subtract(new TimeSpan(0, 0, 3600));
+      provider.ExpiresIn = 3600 - provider.OAuth2RefreshCutoffLimit;
+      Assert.True((bool) mi.Invoke(provider, null));
+
+      // Test if token is expired if there's no time left for expiration.
+      provider.UpdatedOn = DateTime.Now.Subtract(new TimeSpan(0, 0, 3700));
+      provider.ExpiresIn = 3600;
+      Assert.True((bool) mi.Invoke(provider, null));
+    }
+
+    /// <summary>
     /// Tests if we can the fetch access and refresh tokens for installed
     /// clients.
     /// </summary>
