@@ -28,6 +28,8 @@ namespace Google.Api.Ads.AdWords.Lib {
   /// Handles AdWords API Errors.
   /// </summary>
   public class AdWordsErrorHandler : ErrorHandler {
+    private readonly AdWordsUser user;
+
     /// <summary>
     /// The error thrown when an auth token expires.
     /// </summary>
@@ -49,30 +51,12 @@ namespace Google.Api.Ads.AdWords.Lib {
     private const string INTERNAL_ERROR = "InternalApiError.UNEXPECTED_INTERNAL_API_ERROR";
 
     /// <summary>
-    /// Wait time in ms to wait before retrying a call. The actual retry time
-    /// will be higher due to exponential backoff.
-    /// </summary>
-    protected const int WAIT_TIME = 30000;
-
-    /// <summary>
-    /// Number of times to retry.
-    /// </summary>
-    private int numRetries = 0;
-
-    /// <summary>
     /// Initializes a new instance of the <see cref="AdWordsErrorHandler"/> class.
     /// </summary>
     /// <param name="user">The user.</param>
-    public AdWordsErrorHandler(AdsUser user) : base(user) {
-    }
-
-    /// <summary>
-    /// Gets the user.
-    /// </summary>
-    private AdWordsUser User {
-      get {
-        return this.user as AdWordsUser;
-      }
+    public AdWordsErrorHandler(AdWordsUser user)
+      : base(user.Config) {
+        this.user = user;
     }
 
     /// <summary>
@@ -80,7 +64,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// </summary>
     private AdWordsAppConfig Config {
       get {
-        return this.User.Config as AdWordsAppConfig;
+        return this.user.Config as AdWordsAppConfig;
       }
     }
 
@@ -92,7 +76,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// True, if the call should be retried, false otherwise.
     /// </returns>
     public override bool ShouldRetry(Exception ex) {
-      if (numRetries < this.Config.RetryCount) {
+      if (HaveMoreRetryAttemptsLeft()) {
         return IsExpiredCredentialsError(ex) || IsTransientError(ex);
       } else {
         return false;
@@ -111,12 +95,12 @@ namespace Google.Api.Ads.AdWords.Lib {
             AuthToken.Cache.InvalidateToken(e.ExpiredCredential);
             Config.AuthToken = null;
           } else if (this.Config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
-            this.User.OAuthProvider.RefreshAccessToken();
+            this.user.OAuthProvider.RefreshAccessToken();
           }
         } else if (IsTransientError(ex)) {
-          Thread.Sleep(WAIT_TIME * (int) Math.Pow(2, this.numRetries));
+          DoExponentialBackoff();
         }
-        this.numRetries++;
+        IncrementRetriedAttempts();
       } catch (Exception e) {
         // We threw an exception while trying to recover from another
         // exception. The second exception may contain additional details
@@ -155,16 +139,6 @@ namespace Google.Api.Ads.AdWords.Lib {
         return MatchesError((ReportsException) ex, new string[] {COOKIE_INVALID_ERROR});
       }
       return false;
-    }
-
-    /// <summary>
-    /// Determines whether the exception thrown by the server is a transient
-    /// error.</summary>
-    /// <param name="ex">The exception.</param>
-    /// <returns>True, if the server exception is a transient error, false
-    /// otherwise.</returns>
-    public static bool IsTransientError(Exception ex) {
-       return false;
     }
 
     /// <summary>

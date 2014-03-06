@@ -15,22 +15,74 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Threading;
 
 namespace Google.Api.Ads.Common.Lib {
+
   /// <summary>
   /// Handles errors for an Ads API.
   /// </summary>
   public class ErrorHandler {
-    protected AdsUser user;
+
+    /// <summary>
+    /// Wait time in ms to wait before retrying a call. The actual retry time
+    /// will be higher due to exponential backoff.
+    /// </summary>
+    protected const int WAIT_TIME = 30000;
+
+    protected readonly AppConfig config;
+
+    /// <summary>
+    /// Number of retry attempts made.
+    /// </summary>
+    private int numRetries = 0;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ErrorHandler"/> class.
     /// </summary>
     /// <param name="user">The user.</param>
-    public ErrorHandler(AdsUser user) {
-      this.user = user;
+    public ErrorHandler(AppConfig config) {
+      this.config = config;
+    }
+
+    /// <summary>
+    /// Does the exponential backoff.
+    /// </summary>
+    public virtual void DoExponentialBackoff() {
+      Thread.Sleep(WAIT_TIME * (int) Math.Pow(2, this.numRetries));
+    }
+
+    /// <summary>
+    /// Checks if there are more retry attempts left.
+    /// </summary>
+    /// <returns>True, if there are more retry attempts left, false otherwise.
+    /// </returns>
+    public virtual bool HaveMoreRetryAttemptsLeft() {
+      return numRetries < config.RetryCount;
+    }
+
+    /// <summary>
+    /// Increment the counter for attempts retried.
+    /// </summary>
+    public virtual void IncrementRetriedAttempts() {
+      this.numRetries++;
+    }
+
+    /// <summary>
+    /// Determines whether the exception thrown by the server is a transient
+    /// error.</summary>
+    /// <param name="ex">The exception.</param>
+    /// <returns>True, if the server exception is a transient error, false
+    /// otherwise.</returns>
+    public virtual bool IsTransientError(Exception ex) {
+      return false;
+    }
+
+    /// <summary>
+    /// Prepares the system for retrying the last failed call.
+    /// </summary>
+    /// <param name="ex">The exception.</param>
+    public virtual void PrepareForRetry(Exception ex) {
     }
 
     /// <summary>
@@ -40,13 +92,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// <returns>True, if the call should be retried, false otherwise.</returns>
     public virtual bool ShouldRetry(Exception ex) {
       return false;
-    }
-
-    /// <summary>
-    /// Prepares the system for retrying the last failed call.
-    /// </summary>
-    /// <param name="ex">The exception.</param>
-    public virtual void PrepareForRetry(Exception ex) {
     }
   }
 }

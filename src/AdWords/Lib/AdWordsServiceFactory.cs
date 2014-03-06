@@ -33,6 +33,9 @@ namespace Google.Api.Ads.AdWords.Lib {
   /// The factory class for all AdWords API services.
   /// </summary>
   public class AdWordsServiceFactory : ServiceFactory {
+
+    private const string FINAL_CLIENT_LOGIN_VERSION = "v201309";
+
     /// <summary>
     /// The request header to be used with AdWords API services.
     /// </summary>
@@ -64,14 +67,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         throw new ArgumentNullException("user");
       }
 
-      if (signature == null) {
-        throw new ArgumentNullException("signature");
-      }
-
-      if (!(signature is AdWordsServiceSignature)) {
-        throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
-            AdWordsErrorMessages.SignatureIsOfWrongType, typeof(AdWordsServiceSignature)));
-      }
+      CheckServicePreconditions(signature);
 
       AdWordsServiceSignature awapiSignature = signature as AdWordsServiceSignature;
 
@@ -151,5 +147,31 @@ namespace Google.Api.Ads.AdWords.Lib {
         }
       }
     }
+
+    /// <summary>
+    /// Checks preconditions of the service signature and throws and exception if the service
+    /// cannot be generated.
+    /// </summary>
+    /// <param name="signature">the service signature for generating the service</param>
+    protected override void CheckServicePreconditions(ServiceSignature signature) {
+      if (signature == null) {
+        throw new ArgumentNullException("signature");
+      }
+
+      if (!(signature is AdWordsServiceSignature)) {
+        throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
+            AdWordsErrorMessages.SignatureIsOfWrongType, typeof(AdWordsServiceSignature)));
+      }
+
+      AdWordsAppConfig adWordsAppConfig = (AdWordsAppConfig) Config;
+      AdWordsServiceSignature adWordsSingature = signature as AdWordsServiceSignature;
+      String version = adWordsSingature.Version;
+      if (adWordsAppConfig.AuthorizationMethod == AdWordsAuthorizationMethod.ClientLogin
+          && version.CompareTo(FINAL_CLIENT_LOGIN_VERSION) > 0) {
+        throw new AdWordsException(string.Format(AdWordsErrorMessages.ClientLoginNotSupported,
+            version));
+      }
+    }
+
   }
 }

@@ -100,7 +100,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// The error handler instance.
     /// </returns>
     protected override ErrorHandler CreateErrorHandler() {
-      return new AdWordsErrorHandler(this.User);
+      return new AdWordsErrorHandler(this.User as AdWordsUser);
     }
 
     /// <summary>

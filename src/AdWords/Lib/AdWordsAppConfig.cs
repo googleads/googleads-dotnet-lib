@@ -40,6 +40,21 @@ namespace Google.Api.Ads.AdWords.Lib {
     private const string CLIENT_CUSTOMER_ID = "ClientCustomerId";
 
     /// <summary>
+    /// Key name for merchantCenterId.
+    /// </summary>
+    private const string MERCHANT_CENTER_ID = "MerchantCenter.AccountId";
+
+    /// <summary>
+    /// Key name for placesLoginEmail.
+    /// </summary>
+    private const string PLACES_LOGIN_EMAIL = "GooglePlaces.LoginEmail";
+
+    /// <summary>
+    /// Key name for placesOAuth2RefreshToken.
+    /// </summary>
+    private const string PLACES_OAUTH2_REFRESH_TOKEN = "GooglePlaces.OAuth2RefreshToken";
+    
+    /// <summary>
     /// Key name for developerToken.
     /// </summary>
     private const string DEVELOPER_TOKEN = "DeveloperToken";
@@ -81,6 +96,21 @@ namespace Google.Api.Ads.AdWords.Lib {
     private string developerToken;
 
     /// <summary>
+    /// Login email to be used with Google Places account.
+    /// </summary>
+    private string placesLoginEmail;
+
+    /// <summary>
+    /// OAuth2 refresh token to be used for Google Places account.
+    /// </summary>
+    private string placesOAuth2RefreshToken;
+
+    /// <summary>
+    /// Merchant Center ID to be used for Shopping campaigns.
+    /// </summary>
+    private long merchantCenterId;
+    
+    /// <summary>
     /// Useragent to be used in the SOAP header.
     /// </summary>
     private string userAgent;
@@ -116,6 +146,42 @@ namespace Google.Api.Ads.AdWords.Lib {
       }
       set {
         SetPropertyField("DeveloperToken", ref developerToken, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the Merchant Center ID to be used with Shopping campaigns.
+    /// </summary>
+    public long MerchantCenterId {
+      get {
+        return merchantCenterId;
+      }
+      set {
+        SetPropertyField("MerchantCenterId", ref merchantCenterId, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the Google Places OAuth2 login email.
+    /// </summary>
+    public string PlacesLoginEmail {
+      get {
+        return placesLoginEmail;
+      }
+      set {
+        SetPropertyField("PlacesLoginEmail", ref placesLoginEmail, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the Google Places OAuth2 refresh token.
+    /// </summary>
+    public string PlacesOAuth2RefreshToken {
+      get {
+        return placesOAuth2RefreshToken;
+      }
+      set {
+        SetPropertyField("PlacesOAuth2RefreshToken", ref placesOAuth2RefreshToken, value);
       }
     }
 
@@ -176,6 +242,9 @@ namespace Google.Api.Ads.AdWords.Lib {
     public AdWordsAppConfig() : base() {
       clientCustomerId = "";
       developerToken = "";
+      merchantCenterId = -1;
+      placesOAuth2RefreshToken = "";
+      placesLoginEmail = "";
       userAgent = "";
       adWordsApiServer = DEFAULT_ADWORDSAPI_SERVER;
       authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
@@ -192,6 +261,15 @@ namespace Google.Api.Ads.AdWords.Lib {
 
       clientCustomerId = ReadSetting(settings, CLIENT_CUSTOMER_ID, clientCustomerId);
       developerToken = ReadSetting(settings, DEVELOPER_TOKEN, developerToken);
+      
+      // Configuration keys where AdWords API integrates with other products
+      // that have their own settings.
+      long.TryParse(ReadSetting(settings, MERCHANT_CENTER_ID, merchantCenterId.ToString()),
+          out merchantCenterId);
+      placesLoginEmail = ReadSetting(settings, PLACES_LOGIN_EMAIL, placesLoginEmail);
+      placesOAuth2RefreshToken = ReadSetting(settings, PLACES_OAUTH2_REFRESH_TOKEN,
+          placesOAuth2RefreshToken);
+
       userAgent = ReadSetting(settings, USER_AGENT, userAgent);
       adWordsApiServer = ReadSetting(settings, ADWORDSAPI_SERVER, adWordsApiServer);
       try {

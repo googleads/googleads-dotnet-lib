@@ -89,9 +89,7 @@ namespace Google.Api.Ads.Common.Util {
     /// <remarks>The file will have headers only if <see cref="Headers"/>
     /// are set for this object.</remarks>
     public void Write(string fileName) {
-      StreamWriter writer = null;
-      try {
-        writer = new StreamWriter(fileName);
+      using (StreamWriter writer = new StreamWriter(fileName)) {
         if (Headers.Count != 0) {
           StringBuilder builder = ConvertRowToCsvString(Headers.ToArray());
           writer.WriteLine(builder.ToString().TrimEnd(','));
@@ -99,10 +97,6 @@ namespace Google.Api.Ads.Common.Util {
         foreach (string[] row in Records) {
           StringBuilder builder = ConvertRowToCsvString(row);
           writer.WriteLine(builder.ToString().TrimEnd(','));
-        }
-      } finally {
-        if (writer != null) {
-          writer.Close();
         }
       }
     }
@@ -135,15 +129,9 @@ namespace Google.Api.Ads.Common.Util {
     /// <param name="hasHeaders">True, if the first line of the csv file
     /// is a header.</param>
     private void Load(string filePath, bool hasHeaders) {
-      StreamReader reader = null;
-      try {
-        reader = new StreamReader(filePath);
+      using (StreamReader reader = new StreamReader(filePath)) {
         string contents = reader.ReadToEnd();
         Parse(contents, hasHeaders);
-      } finally {
-        if (reader != null) {
-          reader.Close();
-        }
       }
     }
 

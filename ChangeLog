@@ -1,3 +1,14 @@
+16.7.0
+- Added support for AdWords API v201402.
+- Common library version was bumped to 2.2.0.
+- Stub code for v201306 and v201309 were regenerated.
+- Fixed issue 12 (https://github.com/googleads/googleads-adwords-dotnet-lib/issues/12)
+- Fixed issue 11 (https://github.com/googleads/googleads-adwords-dotnet-lib/issues/11)
+- Fixed issue 8 (https://github.com/googleads/googleads-adwords-dotnet-lib/issues/8)
+- Fixed issue 7 (https://github.com/googleads/googleads-adwords-dotnet-lib/issues/7)
+- Fixed issue 5 (https://github.com/googleads/googleads-adwords-dotnet-lib/issues/5)
+- OAuthTokenGenerator added Google Places for Business as a valid API scope.
+
 16.6.0
 - Added support for AdWords Express (v201309). This is a invite-only
   feature.

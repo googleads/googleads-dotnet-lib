@@ -64,5 +64,12 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     /// <param name="config">The configuration class.</param>
     protected abstract void ReadHeadersFromConfig(AppConfig config);
+
+    /// <summary>
+    /// Checks preconditions of the service signature and throws and exception if the service
+    /// cannot be generated.
+    /// </summary>
+    /// <param name="signature">the service signature for generating the service</param>
+    protected abstract void CheckServicePreconditions(ServiceSignature signature);
   }
 }

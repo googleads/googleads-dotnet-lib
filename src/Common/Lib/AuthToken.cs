@@ -249,13 +249,15 @@ namespace Google.Api.Ads.Common.Lib {
 
       try {
         response = webRequest.GetResponse();
+        tblResponse = ParseResponse(response);
       } catch (WebException ex) {
         AuthTokenException authException = ExtractException(ex);
         throw authException;
+      } finally {
+        if (response != null) {
+          response.Close();
+        }
       }
-
-      tblResponse = ParseResponse(response);
-      response.Close();
 
       if (tblResponse.ContainsKey("Auth")) {
         return (string) tblResponse["Auth"];

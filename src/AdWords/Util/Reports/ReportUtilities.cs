@@ -43,7 +43,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Default report version.
     /// </summary>
-    private const string DEFAULT_REPORT_VERSION = "v201306";
+    private const string DEFAULT_REPORT_VERSION = "v201402";
 
     /// <summary>
     /// Sets the reporting API version to use.
@@ -248,17 +248,11 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     private ClientReport DownloadClientReportInternal(string downloadUrl, string postBody,
         bool returnMoneyInMicros, string path) {
       ClientReport retval = new ClientReport();
-      FileStream fileStream = null;
-      try {
-        fileStream = File.OpenWrite(path);
+      using (FileStream fileStream = File.OpenWrite(path)) {
         fileStream.SetLength(0);
         DownloadReportToStream(downloadUrl, returnMoneyInMicros, postBody, fileStream);
         retval.Path = path;
         return retval;
-      } finally {
-        if (fileStream != null) {
-          fileStream.Close();
-        }
       }
     }
 

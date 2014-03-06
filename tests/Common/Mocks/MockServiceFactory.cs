@@ -46,5 +46,14 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     protected override void ReadHeadersFromConfig(AppConfig config) {
       return;
     }
+
+    /// <summary>
+    /// Checks preconditions of the service signature and throws and exception if the service
+    /// cannot be generated.
+    /// </summary>
+    /// <param name="signature">the service signature for generating the service</param>
+    protected override void CheckServicePreconditions(ServiceSignature signature) {
+      return;
+    }
   }
 }

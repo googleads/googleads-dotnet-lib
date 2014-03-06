@@ -161,4 +161,8 @@
     <value>AdWords API can find out effective user from the authorization headers, but setting a client customer ID explicitly is recommended. If the credentials in your configuration corresponds to an MCC account, you may not see any data.</value>
     <comment>Warning message printed when clientCustomerID header is empty.</comment>
   </data>
+  <data name="ClientLoginNotSupported" xml:space="preserve">
+    <value>ClientLogin is not supported in version {0}. Please upgrade to OAuth2.</value>
+    <comment>Used when attempting to use ClientLogin in an unsupported version</comment>
+  </data>
 </root>
