@@ -59,14 +59,7 @@ namespace Google.Api.Ads.Dfa.Lib {
         throw new ArgumentNullException("user");
       }
 
-      if (signature == null) {
-        throw new ArgumentNullException("signature");
-      }
-
-      if (!(signature is DfaServiceSignature)) {
-        throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
-            DfaErrorMessages.SignatureIsOfWrongType, typeof(DfaServiceSignature)));
-      }
+      CheckServicePreconditions(signature);
 
       DfaServiceSignature dfaapiSignature = signature as DfaServiceSignature;
 
@@ -141,6 +134,22 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// <param name="config">The configuration class.</param>
     protected override void ReadHeadersFromConfig(AppConfig config) {
       // nothing to do here.
+    }
+
+    /// <summary>
+    /// Checks preconditions of the service signature and throws and exception if the service
+    /// cannot be generated.
+    /// </summary>
+    /// <param name="signature">the service signature for generating the service</param>
+    protected override void CheckServicePreconditions(ServiceSignature signature) {
+      if (signature == null) {
+        throw new ArgumentNullException("signature");
+      }
+
+      if (!(signature is DfaServiceSignature)) {
+        throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
+            DfaErrorMessages.SignatureIsOfWrongType, typeof(DfaServiceSignature)));
+      }
     }
   }
 }

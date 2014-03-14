@@ -143,10 +143,10 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
           }
         }
 
-        FileStream fs = File.OpenWrite(filePath);
-        byte[] bytes = MediaUtilities.GetAssetDataFromUrl(reportInfo.url);
-        fs.Write(bytes, 0, bytes.Length);
-        fs.Close();
+        using (FileStream fs = File.OpenWrite(filePath)) {
+          byte[] bytes = MediaUtilities.GetAssetDataFromUrl(reportInfo.url);
+          fs.Write(bytes, 0, bytes.Length);
+        }
 
         Console.WriteLine("Report successfully downloaded to '{0}'.", filePath);
       } catch (Exception ex) {

@@ -1,3 +1,10 @@
+4.5.0
+- Common library version was bumped to 2.2.0.
+- A few classes were refactored for better syntax. See
+  https://github.com/googleads/googleads-adwords-dotnet-lib/issues/11 for
+  details.
+- OAuthTokenGenerator added Google Places for Business as a valid API scope.
+
 4.4.0
 - Common library version was bumped to 2.1.0.
 

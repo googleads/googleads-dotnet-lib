@@ -36,17 +36,12 @@ namespace Google.Api.Ads.Dfa.Lib {
     private DfaSoapClient service = null;
 
     /// <summary>
-    /// Number of times to retry.
-    /// </summary>
-    private int numRetries = 0;
-
-    /// <summary>
     /// Initializes a new instance of the <see cref="DfaErrorHandler"/> class.
     /// </summary>
     /// <param name="service">The service associated with this error handler.
     /// </param>
     public DfaErrorHandler(DfaSoapClient service)
-      : base(service.User) {
+      : base(service.User.Config) {
         this.service = service;
     }
 
@@ -55,7 +50,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// </summary>
     private DfaUser User {
       get {
-        return this.user as DfaUser;
+        return this.service.User as DfaUser;
       }
     }
 
@@ -76,11 +71,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// True, if the call should be retried, false otherwise.
     /// </returns>
     public override bool ShouldRetry(Exception ex) {
-      if (numRetries < this.Config.RetryCount) {
-        return IsExpiredCredentialsError(ex);
-      } else {
-        return false;
-      }
+      return HaveMoreRetryAttemptsLeft() && IsExpiredCredentialsError(ex);
     }
 
     /// <summary>
@@ -93,7 +84,7 @@ namespace Google.Api.Ads.Dfa.Lib {
         LoginUtil.Cache.InvalidateToken(e.ExpiredCredential);
         this.Config.DfaAuthToken = null;
         this.service.Token = null;
-        this.numRetries++;
+        IncrementRetriedAttempts();
       } else {
         throw ex;
       }

@@ -91,6 +91,7 @@
     <Compile Include="Util\MediaUtilities.cs" />
     <Compile Include="Util\SerializationUtilities.cs" />
     <Compile Include="Util\TraceUtilities.cs" />
+    <Compile Include="Util\PreconditionUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CommonErrorMessages.resx">
