@@ -37,6 +37,16 @@ namespace Google.Api.Ads.Common.Util {
     private const string GENERAL_WARNING_MESSAGES_SOURCE = "AdsClientLibs.GeneralWarningMessages";
 
     /// <summary>
+    /// Trace source for SOAP XML logs.
+    /// </summary>
+    private const string SOAP_XML_LOGS_SOURCE = "AdsClientLibs.SoapXmlLogs";
+
+    /// <summary>
+    /// Trace source for request info logs.
+    /// </summary>
+    private const string REQUEST_INFO_LOGS_SOURCE = "AdsClientLibs.RequestInfoLogs";
+
+    /// <summary>
     /// The Trace message id.
     /// </summary>
     /// <remarks>Trace.Write needs a TRACE id to categorize messages, but since
@@ -72,6 +82,30 @@ namespace Google.Api.Ads.Common.Util {
     /// the level for AdsClientLibs.GeneralWarningMessages trace switch. </remarks>
     public static void WriteGeneralErrors(string message) {
       Write(GENERAL_WARNING_MESSAGES_SOURCE, TraceEventType.Error, message);
+    }
+
+    /// <summary>
+    /// Writes the SOAP XML logs.
+    /// </summary>
+    /// <param name="message">The SOAP XML logs.</param>
+    /// <param name="isError">Indicates whether or not these are error logs.</param>
+    /// <remarks>The trace levels may be controlled from App.config by setting
+    /// the level for AdsClientLibs.SoapXmlLogs trace switch. </remarks>
+    public static void WriteSoapXmlLogs(string message, Boolean isError) {
+      TraceEventType type = isError ? TraceEventType.Error : TraceEventType.Information;
+      Write(SOAP_XML_LOGS_SOURCE, type, message);
+    }
+
+    /// <summary>
+    /// Writes the request info logs.
+    /// </summary>
+    /// <param name="message">The request info logs.</param>
+    /// <param name="isError">Indicates whether or not these are error logs.</param>
+    /// <remarks>The trace levels may be controlled from App.config by setting
+    /// the level for AdsClientLibs.RequestInfoLogs trace switch. </remarks>
+    public static void WriteRequestInfoLogs(string message, Boolean isError) {
+      TraceEventType type = isError ? TraceEventType.Error : TraceEventType.Information;
+      Write(REQUEST_INFO_LOGS_SOURCE, type, message);
     }
 
     /// <summary>

@@ -25,7 +25,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201402 {
   /// <summary>
   /// This code example adds a feed that syncs feed items from a Google
   /// Places account and associates the feed with a customer.
-  /// 
+  ///
   /// Tags: CustomerFeedService.mutate, FeedItemService.mutate
   /// Tags:  FeedMappingService.mutate, FeedService.mutate
   /// </summary>
@@ -44,7 +44,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201402 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example adds a feed that syncs feed items from a Google Places " + 
+        return "This code example adds a feed that syncs feed items from a Google Places " +
             "account and associates the feed with a customer.";
       }
     }
@@ -146,7 +146,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201402 {
         // will retry adding the CustomerFeed up to ten times with an
         // exponential back-off policy.
         CustomerFeed addedCustomerFeed = null;
-        
+
         AdWordsAppConfig config = new AdWordsAppConfig();
         config.RetryCount = 10;
 

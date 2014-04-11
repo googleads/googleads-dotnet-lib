@@ -69,7 +69,6 @@
     <Compile Include="Mocks\MockServiceFactory.cs" />
     <Compile Include="Mocks\MockServiceSignature.cs" />
     <Compile Include="Mocks\MockTraceListener.cs" />
-    <Compile Include="Mocks\MockTraceWriter.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

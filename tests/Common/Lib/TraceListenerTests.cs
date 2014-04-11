@@ -35,11 +35,6 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     MockAppConfig config = new MockAppConfig();
 
     /// <summary>
-    /// The TraceWriter instance for testing this class.
-    /// </summary>
-    MockTraceWriter writer = new MockTraceWriter();
-
-    /// <summary>
     /// The TraceListener instance for testing this class.
     /// </summary>
     MockTraceListener listener;
@@ -72,34 +67,14 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       request.Method = "POST";
       request.Headers["TestRequestKey"] = "TestRequestValue";
       adsClient.LastRequest = request;
-
-      writer.Reset();
     }
 
     /// <summary>
-    /// See if various properties of this class can be set properly.
+    /// Tears down the test case.
     /// </summary>
-    [Test]
-    [Category("Small")]
-    public void TestProperties() {
-      listener = new MockTraceListener(config);
-      listener.Writer = writer;
-      Assert.AreEqual(writer, listener.Writer);
-    }
-
-    /// <summary>
-    /// Test the overloaded constructor for TraceListener.
-    /// </summary>
-    [Test]
-    [Category("Small")]
-    public void TestConstructor() {
-      config.SetPropertyFieldForTests("LogToFile", false);
-      listener = new MockTraceListener(config);
-      Assert.IsNull(listener.Writer);
-
-      config.SetPropertyFieldForTests("LogToFile", true);
-      listener = new MockTraceListener(config);
-      Assert.IsInstanceOf<DefaultTraceWriter>(listener.Writer);
+    [TearDown]
+    public void Dispose() {
+      listener.CleanupAfterCall();
     }
 
     /// <summary>
@@ -108,10 +83,8 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     [Category("Small")]
     public void TestHandleMessage() {
-      config.SetPropertyFieldForTests("LogToFile", true);
       config.SetPropertyFieldForTests("MaskCredentials", true);
       listener = new MockTraceListener(config);
-      listener.Writer = writer;
 
       XmlDocument xOutgoing = new XmlDocument();
       xOutgoing.LoadXml(Resources.XmlRequest);
@@ -123,9 +96,9 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       listener.HandleMessage(xIncoming, adsClient, SoapMessageDirection.IN);
       Assert.AreEqual(xIncoming.OuterXml, ContextStore.GetValue("SoapResponse"));
       Assert.AreEqual(Resources.SoapLog.Replace("\r\n", "\n"),
-          writer.SoapLog.Replace("\r\n", "\n"));
+          ((string) ContextStore.GetValue("FormattedSoapLog")).Replace("\r\n", "\n"));
       Assert.AreEqual(Resources.ResponseLog.Replace("\r\n", "\n"),
-          writer.RequestLog.Replace("\r\n", "\n"));
+          ((string) ContextStore.GetValue("FormattedRequestLog")).Replace("\r\n", "\n"));
     }
 
     /// <summary>
@@ -135,10 +108,8 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     [Category("Small")]
     public void TestHandleMessageNoClient() {
-      config.SetPropertyFieldForTests("LogToFile", true);
       config.SetPropertyFieldForTests("MaskCredentials", true);
       listener = new MockTraceListener(config);
-      listener.Writer = writer;
 
       XmlDocument xOutgoing = new XmlDocument();
       xOutgoing.LoadXml(Resources.XmlRequest);
@@ -149,8 +120,8 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       xIncoming.LoadXml(Resources.XmlResponse);
       listener.HandleMessage(xIncoming, null, SoapMessageDirection.IN);
       Assert.AreEqual(xIncoming.OuterXml, ContextStore.GetValue("SoapResponse"));
-      Assert.IsNull(writer.SoapLog);
-      Assert.IsNull(writer.RequestLog);
+      Assert.IsNull(ContextStore.GetValue("FormattedSoapLog"));
+      Assert.IsNull(ContextStore.GetValue("FormattedRequestLog"));
     }
 
     /// <summary>
@@ -171,13 +142,16 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     [Category("Small")]
     public void TestCleanupAfterCall() {
-      config.SetPropertyFieldForTests("LogToFile", true);
       listener = new MockTraceListener(config);
       ContextStore.AddKey("SoapRequest", "SoapRequest");
       ContextStore.AddKey("SoapResponse", "SoapResponse");
+      ContextStore.AddKey("FormattedSoapLog", "FormattedSoapLog");
+      ContextStore.AddKey("FormattedRequestLog", "FormattedRequestLog");
       listener.CleanupAfterCall();
       Assert.Null(ContextStore.GetValue("SoapRequest"));
       Assert.Null(ContextStore.GetValue("SoapResponse"));
+      Assert.Null(ContextStore.GetValue("FormattedSoapLog"));
+      Assert.Null(ContextStore.GetValue("FormattedRequestLog"));
     }
   }
 }

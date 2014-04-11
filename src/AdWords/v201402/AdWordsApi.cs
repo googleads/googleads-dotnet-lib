@@ -26,7 +26,6 @@ namespace Google.Api.Ads.AdWords.v201402 {
   using System.Diagnostics;
   using System.Web.Services;
   using System.Xml.Serialization;
-
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1755,6 +1754,7 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressNoStatsPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressBusinessPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PromotionPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductServicePage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupBidModifierPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(McmNoStatsPage))]
@@ -7927,6 +7927,7 @@ ConversionTrackerOperation[] operations) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionBidLandscapePage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupBidLandscapePage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductServicePage))]
   public abstract partial class NoStatsPage : Page {
   }
 
@@ -27596,9 +27597,16 @@ PromotionOperation[] operations) {
   public partial class ProductService : Criterion, IProductService {
     private string textField;
 
+    private string localeField;
+
     public virtual string text {
       get { return this.textField; }
       set { this.textField = value; }
+    }
+
+    public virtual string locale {
+      get { return this.localeField; }
+      set { this.localeField = value; }
     }
   }
 
@@ -27709,6 +27717,57 @@ PromotionOperation[] operations) {
     INVALID_DESTINATION_URL,
     CALL_TRACKING_NOT_SUPPORTED,
     UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "ProductServiceServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/express/v201402")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Criterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class ProductServiceService : AdWordsSoapClient, IProductServiceService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public ProductServiceService() {
+      this.Url = "https://adwords.google.com/api/adwords/express/v201402/ProductServiceService";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/express/v201402", ResponseNamespace = "https://adwords.google.com/api/adwords/express/v201402", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual ProductServicePage get(Selector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((ProductServicePage) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201402")]
+  public partial class ProductServicePage : NoStatsPage {
+    private ProductService[] entriesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public ProductService[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -29590,6 +29649,21 @@ BudgetOrderOperation[] operations) {
       get;
       set;
     }
+    string locale {
+      get;
+      set;
+    }
+  }
+  public interface IProductServiceService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    ProductServicePage get(Selector selector);
   }
   public interface IAdGroupService {
     RequestHeader RequestHeader {

@@ -276,16 +276,22 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature VideoTargetingGroupService;
 
       /// <summary>
-      /// See <a href="https://devsite.googleplex.com/adwords/api/docs/reference/express/v201402/ExpressBusinessService">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/express/v201402/ExpressBusinessService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature ExpressBusinessService;
 
       /// <summary>
-      /// See <a href="https://devsite.googleplex.com/adwords/api/docs/reference/express/v201402/PromotionService">
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/express/v201402/PromotionService">
       /// this page</a> for details.
       /// </summary>
       public static readonly ServiceSignature PromotionService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/express/v201402/ProductServiceService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature ProductServiceService;
 
       /// <summary>
       /// Static constructor to initialize the service constants.
@@ -380,6 +386,8 @@ namespace Google.Api.Ads.AdWords.Lib {
                 "ExpressBusinessService");
         PromotionService =
             AdWordsService.MakeServiceSignature("v201402", "express", "PromotionService");
+        ProductServiceService =
+            AdWordsService.MakeServiceSignature("v201402", "express", "ProductServiceService");
       }
     }
   }

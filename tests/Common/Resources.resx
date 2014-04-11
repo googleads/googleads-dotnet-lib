@@ -124,7 +124,8 @@
     <value>host=localhost,url=/,,</value>
   </data>
   <data name="SoapLog" xml:space="preserve">
-    <value>-----------------BEGIN API CALL---------------------
+    <value>
+-----------------BEGIN API CALL---------------------
 
 Request
 -------

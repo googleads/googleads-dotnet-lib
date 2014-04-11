@@ -36,21 +36,6 @@ namespace Google.Api.Ads.Common.Lib {
     private const string SHORT_NAME = "Common-Dotnet";
 
     /// <summary>
-    /// Key name for logPath.
-    /// </summary>
-    private const string LOG_PATH = "LogPath";
-
-    /// <summary>
-    /// Key name for logToFile.
-    /// </summary>
-    private const string LOG_TO_FILE = "LogToFile";
-
-    /// <summary>
-    /// Key name for logErrorsOnly.
-    /// </summary>
-    private const string LOG_ERRORS_ONLY = "LogErrorsOnly";
-
-    /// <summary>
     /// Key name for proxyServer
     /// </summary>
     private const string PROXY_SERVER = "ProxyServer";
@@ -161,22 +146,6 @@ namespace Google.Api.Ads.Common.Lib {
     private const string PASSWORD = "Password";
 
     /// <summary>
-    /// Path to which the SOAP logs are to be saved.
-    /// </summary>
-    private string logPath;
-
-    /// <summary>
-    /// True, if the SOAP logs should be written to file.
-    /// </summary>
-    private bool logToFile;
-
-    /// <summary>
-    /// True, if only the SOAP logs that correspond to an error
-    /// should be logged.
-    /// </summary>
-    private bool logErrorsOnly;
-
-    /// <summary>
     /// Web proxy to be used with the services.
     /// </summary>
     private IWebProxy proxy;
@@ -282,43 +251,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// Default value for timeout for Ads services.
     /// </summary>
     private const int DEFAULT_TIMEOUT = -1;
-
-    /// <summary>
-    /// Gets the path to which the SOAP logs are to be saved.
-    /// </summary>
-    public string LogPath {
-      get {
-        return logPath;
-      }
-      protected set {
-        logPath = value;
-      }
-    }
-
-    /// <summary>
-    /// Gets whether the SOAP logs that correspond to an error
-    /// should be logged.
-    /// </summary>
-    public bool LogErrorsOnly {
-      get {
-        return logErrorsOnly;
-      }
-      protected set {
-        logErrorsOnly = value;
-      }
-    }
-
-    /// <summary>
-    /// Gets whether the SOAP logs should be written to file.
-    /// </summary>
-    public bool LogToFile {
-      get {
-        return logToFile;
-      }
-      protected set {
-        logToFile = value;
-      }
-    }
 
     /// <summary>
     /// Gets whether the credentials in the log file should be masked.
@@ -615,9 +547,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// Default constructor for the object.
     /// </summary>
     protected AppConfigBase() {
-      logPath = "C:\\";
-      logToFile = false;
-      logErrorsOnly = false;
       proxy = null;
       maskCredentials = true;
       timeout = DEFAULT_TIMEOUT;
@@ -642,11 +571,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="settings">The parsed app.config settings.</param>
     protected virtual void ReadSettings(Hashtable settings) {
       // Common keys.
-      logPath = ReadSetting(settings, LOG_PATH, logPath);
-      logToFile = bool.Parse(ReadSetting(settings, LOG_TO_FILE, logToFile.ToString()));
-      logErrorsOnly = bool.Parse(ReadSetting(settings, LOG_ERRORS_ONLY,
-          logErrorsOnly.ToString()));
-
       string proxyUrl = ReadSetting(settings, PROXY_SERVER, "");
 
       if (!string.IsNullOrEmpty(proxyUrl)) {

@@ -281,7 +281,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201402 {
     /// <param name="writer">The stream to write output to.</param>
     private void DisplayTree(ProductPartition node, Dictionary<long,
         List<ProductPartition>> children, int level, StringWriter writer) {
-      // Recursively display a node and each of its children
+      // Recursively display a node and each of its children.
       object value = null;
       string type = "";
 

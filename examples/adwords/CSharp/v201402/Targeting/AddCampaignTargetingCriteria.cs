@@ -90,7 +90,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201402 {
       // For example, TIER_1 is the top 10%, TIER_2 is the 80-90%, etc.
       // Tiers 6 through 10 are grouped into TIER_6_TO_10.
       incomeOperand.tier = IncomeTier.TIER_3;
-      
+
       GeoTargetOperand geoTargetOperand1 = new GeoTargetOperand();
       geoTargetOperand1.locations = new long[] {1015116}; // Miami, FL.
 
@@ -110,7 +110,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201402 {
 
       PlacesOfInterestOperand placesOfInterestOperand = new PlacesOfInterestOperand();
       placesOfInterestOperand.category = PlacesOfInterestOperandCategory.DOWNTOWN;
-      
+
       GeoTargetOperand geoTargetOperand2 = new GeoTargetOperand();
       geoTargetOperand2.locations = new long[] { 1015116 }; // Miami, FL.
 
@@ -151,7 +151,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201402 {
       negativeCriterion.criterion = keyword;
 
       CampaignCriterion[] criteria = new CampaignCriterion[] {languageCriterion1,
-          languageCriterion2, locationCriterion1, locationCriterion2, negativeCriterion, 
+          languageCriterion2, locationCriterion1, locationCriterion2, negativeCriterion,
           locationGroupCriterion1, locationGroupCriterion2};
 
       List<CampaignCriterionOperation> operations = new List<CampaignCriterionOperation>();

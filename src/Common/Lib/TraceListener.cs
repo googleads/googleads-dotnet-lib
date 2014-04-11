@@ -40,11 +40,6 @@ namespace Google.Api.Ads.Common.Lib {
     private AppConfig config;
 
     /// <summary>
-    /// The writer for writing trace logs.
-    /// </summary>
-    private TraceWriter writer;
-
-    /// <summary>
     /// Gets the config class to be used with this class.
     /// </summary>
     public AppConfig Config {
@@ -54,26 +49,11 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets or sets the writer for writing trace logs.
-    /// </summary>
-    public TraceWriter Writer {
-      get {
-        return writer;
-      }
-      set {
-        writer = value;
-      }
-    }
-
-    /// <summary>
     /// Protected constructor.
     /// </summary>
     /// <param name="config">The config class.</param>
     protected TraceListener(AppConfig config) {
       this.config = config;
-      if (this.config.LogToFile) {
-        this.writer = new DefaultTraceWriter(config);
-      }
     }
 
     /// <summary>
@@ -107,6 +87,8 @@ namespace Google.Api.Ads.Common.Lib {
     public void CleanupAfterCall() {
       ContextStore.RemoveKey("SoapRequest");
       ContextStore.RemoveKey("SoapResponse");
+      ContextStore.RemoveKey("FormattedSoapLog");
+      ContextStore.RemoveKey("FormattedRequestLog");
     }
 
     /// <summary>
@@ -136,15 +118,15 @@ namespace Google.Api.Ads.Common.Lib {
           service.LastRequest.RequestUri.Host, service.LastRequest.RequestUri.AbsolutePath,
           formattedHttpRequest, formattedHttpResponse);
 
+      ContextStore.AddKey("FormattedSoapLog", soapLog);
+      ContextStore.AddKey("FormattedRequestLog", requestLog);
+
       bool isError = service.LastResponse != null && service.LastResponse is HttpWebResponse &&
           (service.LastResponse as HttpWebResponse).StatusCode ==
               HttpStatusCode.InternalServerError;
 
-      if (!config.LogErrorsOnly || config.LogErrorsOnly && isError) {
-        if (config.LogToFile && this.writer != null) {
-          writer.Write(soapLog, requestLog);
-        }
-      }
+      TraceUtilities.WriteSoapXmlLogs(soapLog, isError);
+      TraceUtilities.WriteRequestInfoLogs(requestLog, isError);
     }
 
     /// <summary>
@@ -179,7 +161,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <returns>A formatted string that represents the SOAP request.</returns>
     protected virtual string FormatSoapRequest(WebRequest webRequest, string soapRequest) {
       StringBuilder builder = new StringBuilder();
-      builder.AppendFormat("-----------------BEGIN API CALL---------------------\r\n");
+      builder.AppendFormat("\r\n-----------------BEGIN API CALL---------------------\r\n");
       builder.AppendFormat("\r\nRequest\r\n");
       builder.AppendFormat("-------\r\n\r\n");
 
