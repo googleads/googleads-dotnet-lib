@@ -42,9 +42,6 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Category("Small")]
     public void Init() {
       tblSettings = new Hashtable();
-      tblSettings.Add("LogPath", "Test LogPath");
-      tblSettings.Add("LogToFile", "false");
-      tblSettings.Add("LogErrorsOnly", "false");
       tblSettings.Add("ProxyServer", "http://localhost/");
       tblSettings.Add("ProxyUser", "ProxyUser");
       tblSettings.Add("ProxyPassword", "ProxyPassword");
@@ -79,9 +76,6 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     public void TestReadSettings() {
       MockAppConfig config = new MockAppConfig();
       config.MockReadSettings(tblSettings);
-      Assert.AreEqual(tblSettings["LogPath"], config.LogPath);
-      Assert.AreEqual(bool.Parse(tblSettings["LogToFile"].ToString()), config.LogToFile);
-      Assert.AreEqual(bool.Parse(tblSettings["LogErrorsOnly"].ToString()), config.LogErrorsOnly);
       NetworkCredential credential = (NetworkCredential) config.Proxy.Credentials;
       Assert.AreEqual(tblSettings["ProxyUser"].ToString(), credential.UserName);
       Assert.AreEqual(tblSettings["ProxyPassword"].ToString(), credential.Password);

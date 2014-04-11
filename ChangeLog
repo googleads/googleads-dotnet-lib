@@ -1,3 +1,33 @@
+7.0.0
+- The library now uses System.Trace for logging. If you are not familiar with
+  Trace listeners, you can read about them at
+  http://msdn.microsoft.com/en-us/library/4y5y10s7(v=vs.110).aspx.
+
+  The following configuration keys are no longer available:
+  -- LogPath
+  -- LogToFile
+  -- LogErrorsOnly
+
+  Instead, the following trace sources/switches have been added:
+  -- AdsClientLibs.SoapXmlLogs: Trace source / switch for logging SOAP xmls.
+  -- AdsClientLibs.RequestInfoLogs: Trace source / switch for logging request
+     details.
+
+  You may add an appropriate listener type to the trace source to save the logs
+  to a data store of your choice. We have added a TextWriterTraceListener
+  entry in the default App.config; this listener gives you the functionality
+  of the old behaviour where logs were written to a file on disk. The path of
+  the log file can be configured using the initializeData setting of the
+  listener, and is the equivalent of the old LogPath setting.
+
+  To turn logging on / off and to set its level, you can use the trace
+  switches. You can set the trace switches to one of the following values:
+  - Off: This turns off logging, and is the equivalent of LogToFile: false
+  - Info: This turns on logging, and is the equivalent of LogErrorsOnly: false.
+  - Error: This turns on logging, and is the equivalent of LogErrorsOnly: true.
+
+- Common library version was bumped to 2.3.0.
+
 6.4.0
 - Added support for v201403.
 - Added LiveStreamEventService and RateCardCustomizationGroupService.
