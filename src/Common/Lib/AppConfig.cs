@@ -24,21 +24,6 @@ namespace Google.Api.Ads.Common.Lib {
   /// </summary>
   public interface AppConfig {
     /// <summary>
-    /// Gets whether the SOAP logs that correspond to an error should be logged.
-    /// </summary>
-    bool LogErrorsOnly { get; }
-
-    /// <summary>
-    /// Gets the path to which the SOAP logs are to be saved.
-    /// </summary>
-    string LogPath { get; }
-
-    /// <summary>
-    /// Gets whether the SOAP logs should be written to file.
-    /// </summary>
-    bool LogToFile { get; }
-
-    /// <summary>
     /// Gets whether the credentials in the log file should be masked.
     /// </summary>
     bool MaskCredentials { get; }
