@@ -1,3 +1,6 @@
+5.1.0
+- Common library version was bumped to v2.3.0.
+
 5.0.0
 - The library now uses System.Trace for logging. If you are not familiar with
   Trace listeners, you can read about them at
@@ -25,8 +28,6 @@
   - Off: This turns off logging, and is the equivalent of LogToFile: false
   - Info: This turns on logging, and is the equivalent of LogErrorsOnly: false.
   - Error: This turns on logging, and is the equivalent of LogErrorsOnly: true.
-
-- Common library version was bumped to v2.3.0.
 
 4.5.0
 - Common library version was bumped to 2.2.0.
