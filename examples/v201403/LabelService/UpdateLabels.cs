@@ -22,8 +22,7 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example updates the descriptions of all active labels by
-  /// updating its description up to the first 500. To determine which labels
+  /// This code example updates a label's description. To determine which labels
   /// exist, run GetAllLabels.cs. This feature is only available to DFP premium
   /// solution networks.
   ///
@@ -35,9 +34,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example updates the descriptions of all active labels by updating " +
-            "its description up to the first 500. To determine which labels exist, run " +
-            "GetAllLabels.cs. This feature is only available to DFP premium solution networks.";
+        return "This code example updates a label's description. To determine which labels " +
+            "exist, run GetAllLabels.cs. This feature is only available to DFP premium solution " +
+            "networks.";
       }
     }
 
@@ -60,37 +59,33 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       LabelService labelService =
           (LabelService) user.GetService(DfpService.v201403.LabelService);
 
-      // Create a statement to only select labels that are competitive
-      // exclusion.
-      Statement filterStatement = new StatementBuilder("WHERE isActive = :isActive LIMIT 500").
-          AddValue("isActive", true).ToStatement();
+      // Set the ID of the label to deactivate.
+      int labelId = int.Parse(_T("INSERT_LABEL_ID_HERE"));
+
+      // Create a statement to select the label.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :id")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("id", labelId);
 
       try {
         // Get the labels by statement.
-        LabelPage page = labelService.getLabelsByStatement(filterStatement);
+        LabelPage page = labelService.getLabelsByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          Label[] labels = page.results;
+        Label label = page.results[0];
 
-          // Update each local label object by updating its description.
-          foreach (Label label in labels) {
-            label.description = "These labels are still competiting with each other.";
-          }
+        // Update the label description.
+        label.description = "New label description.";
 
-          // Update the labels on the server.
-          labels = labelService.updateLabels(labels);
+        // Update the label on the server.
+        Label[] labels = labelService.updateLabels(new Label[] {label});
 
-          if (labels != null) {
-            foreach (Label label in labels) {
-              Console.WriteLine("A label with ID '{0}' and name '{1}' was updated.",
-                  label.id, label.name);
-            }
-          } else {
-            Console.WriteLine("No labels updated.");
-          }
-        } else {
-          Console.WriteLine("No labels found to update.");
+        foreach (Label updatedLabel in labels) {
+          Console.WriteLine("A label with ID '{0}' and name '{1}' was updated.",
+              updatedLabel.id, updatedLabel.name);
         }
+
       } catch (Exception ex) {
         Console.WriteLine("Failed to update labels. Exception says \"{0}\"", ex.Message);
       }

@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
@@ -56,18 +57,19 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       AudienceSegmentService audienceSegmentService =
           (AudienceSegmentService) user.GetService(DfpService.v201403.AudienceSegmentService);
 
-      // Set defaults for page and Statement.
+      // Create a Statement to get all audience segments.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+      // Set default for page.
       AudienceSegmentPage page = new AudienceSegmentPage();
-      Statement statement = new Statement();
-      int offset = 0;
 
       try {
         do {
-          // Create a Statement to get all audience segments.
-          statement.query = string.Format("LIMIT 500 OFFSET {0}", offset);
-
           // Get audience segment by Statement.
-          page = audienceSegmentService.getAudienceSegmentsByStatement(statement);
+          page = audienceSegmentService.getAudienceSegmentsByStatement(
+              statementBuilder.ToStatement());
 
           // Display results.
           if (page.results != null && page.results.Length > 0) {
@@ -79,8 +81,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get audience segment. Exception says \"{0}\"", ex.Message);

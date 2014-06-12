@@ -53,6 +53,8 @@
   </Target>
   -->
   <ItemGroup>
+    <Compile Include="v201405\DfpApi.cs" />
+    <Compile Include="v201405\DfpServiceV201405.cs" />
     <Compile Include="v201311\DfpServiceV201311.cs" />
     <Compile Include="v201311\DfpApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +89,9 @@
     <Compile Include="Headers\ResponseHeader.cs" />
     <Compile Include="Headers\OAuth.cs" />
     <Compile Include="Headers\ClientLogin.cs" />
+    <Compile Include="Util\v201405\DateTimeUtilities.cs" />
+    <Compile Include="Util\v201405\PqlUtilities.cs" />
+    <Compile Include="Util\v201405\StatementBuilder.cs" />
     <Compile Include="Util\v201311\DateTimeUtilities.cs" />
     <Compile Include="Util\v201311\PqlUtilities.cs" />
     <Compile Include="Util\v201311\StatementBuilder.cs" />

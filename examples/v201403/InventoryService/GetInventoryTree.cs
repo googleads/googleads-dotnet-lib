@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
@@ -86,23 +87,23 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       InventoryService inventoryService =
           (InventoryService) user.GetService(DfpService.v201403.InventoryService);
 
-      // Sets defaults for page and Statement.
+      // Create a Statement to get all ad units.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+      // Set default for page.
       AdUnitPage page = new AdUnitPage();
-      Statement statement = new Statement();
-      int offset = 0;
 
       do {
-        // Create a Statement to get all ad units.
-        statement.query = string.Format("LIMIT 500 OFFSET {0}", offset);
-
         // Get ad units by Statement.
-        page = inventoryService.getAdUnitsByStatement(statement);
+        page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
         if (page.results != null && page.results.Length > 0) {
           adUnits.AddRange(page.results);
         }
-        offset += 500;
-      } while (page.results != null && page.results.Length == 500);
+        statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+      } while (statementBuilder.GetOffset() < page.totalResultSetSize);
       return adUnits.ToArray();
     }
 
@@ -118,11 +119,13 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           (InventoryService) user.GetService(DfpService.v201403.InventoryService);
 
       // Create a Statement to only select the root ad unit.
-      Statement statement = new Statement();
-      statement.query = "WHERE parentId IS NULL LIMIT 500";
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("parentId IS NULL")
+          .OrderBy("id ASC")
+          .Limit(1);
 
       // Get ad units by Statement.
-      AdUnitPage page = inventoryService.getAdUnitsByStatement(statement);
+      AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
       if (page.results != null && page.results.Length > 0) {
         return page.results[0];

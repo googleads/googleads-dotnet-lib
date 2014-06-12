@@ -63,21 +63,20 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       long userId = long.Parse(_T("INSERT_USER_ID_HERE"));
 
       // Create Statement text to select user by id.
-      string statementText = "WHERE id = :userId LIMIT 500";
-      Statement statement = new StatementBuilder("").AddValue("userId", userId).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :userId")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("userId", userId);
 
-      // Sets defaults for page and offset.
+      // Sets default for page.
       UserPage page = new UserPage();
-      int offset = 0;
       List<string> userIds = new List<string>();
 
       try {
         do {
-          // Create a Statement to page through users.
-          statement.query = string.Format("{0} OFFSET {1}", statementText, offset);
-
           // Get users by Statement.
-          page = userService.getUsersByStatement(statement);
+          page = userService.getUsersByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
             int i = page.startIndex;
@@ -90,22 +89,21 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of users to be deactivated: {0}", page.totalResultSetSize);
 
         if (userIds.Count > 0) {
-          // Create action Statement.
-          statement = new StatementBuilder(
-              string.Format("WHERE id IN ({0})", string.Join(",", userIds.ToArray()))).
-              ToStatement();
+          // Modify statement for action.
+          statementBuilder.RemoveLimitAndOffset();
 
           // Create action.
           DeactivateUsers action = new DeactivateUsers();
 
           // Perform action.
-          UpdateResult result = userService.performUserAction(action, statement);
+          UpdateResult result = userService.performUserAction(action,
+              statementBuilder.ToStatement());
 
           // Display results.
           if (result != null && result.numChanges > 0) {

@@ -56,19 +56,18 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       ContactService contactService =
           (ContactService) user.GetService(DfpService.v201403.ContactService);
 
-      Statement filterStatement = new Statement();
+      // Create a statement to get all contacts.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Set defaults for page and filterStatement.
+      // Set default for page.
       ContactPage page = new ContactPage();
-      int offset = 0;
 
       try {
         do {
-          // Create a statement to get all contacts.
-          filterStatement.query = "LIMIT 500 OFFSET " + offset.ToString();
-
           // Get contacts by statement.
-          page = contactService.getContactsByStatement(filterStatement);
+          page = contactService.getContactsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null) {
             int i = page.startIndex;
@@ -78,8 +77,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
               i++;
             }
           }
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {

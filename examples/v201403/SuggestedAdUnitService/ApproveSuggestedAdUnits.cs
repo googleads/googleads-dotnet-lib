@@ -59,40 +59,52 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       SuggestedAdUnitService suggestedAdUnitService = (SuggestedAdUnitService) user.GetService(
           DfpService.v201403.SuggestedAdUnitService);
 
-      // Create statement to select all suggested ad units with 50 or more
-      // requests.
-      string statementText = "WHERE numRequests >= 50";
-      Statement filterStatement = new StatementBuilder(statementText).ToStatement();
+      // Set the number of requests for suggested ad units greater than which to approve.
+      long NUMBER_OF_REQUESTS = 50L;
+
+      // Create statement to select all suggested ad units that are highly requested.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("numRequests > :numRequests")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("numRequests", NUMBER_OF_REQUESTS);
+
+      // Set default for page.
+      SuggestedAdUnitPage page = new SuggestedAdUnitPage();
 
       try {
-        // Get suggested ad units by statement.
-        SuggestedAdUnitPage page =
-            suggestedAdUnitService.getSuggestedAdUnitsByStatement(filterStatement);
+        do {
+          // Get suggested ad units by statement.
+          page = suggestedAdUnitService.getSuggestedAdUnitsByStatement(
+              statementBuilder.ToStatement());
 
-        int i = 0;
-        if (page != null && page.results != null) {
-          foreach (SuggestedAdUnit suggestedAdUnit in page.results) {
-            Console.WriteLine("{0}) Suggested ad unit with ID \"{1}\", and \"{2}\" will be " +
-                "approved.", i, suggestedAdUnit.id, suggestedAdUnit.numRequests);
-            i++;
+          int i = 0;
+          if (page != null && page.results != null) {
+            foreach (SuggestedAdUnit suggestedAdUnit in page.results) {
+              Console.WriteLine("{0}) Suggested ad unit with ID \"{1}\", and \"{2}\" will be " +
+                  "approved.", i, suggestedAdUnit.id, suggestedAdUnit.numRequests);
+              i++;
+            }
           }
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while(statementBuilder.GetOffset() < page.totalResultSetSize);
 
-          Console.WriteLine("Number of suggested ad units to be approved: " +
-              page.totalResultSetSize);
+        Console.WriteLine("Number of suggested ad units to be approved: " +
+            page.totalResultSetSize);
 
-          // Create action.
-          ApproveSuggestedAdUnit action = new ApproveSuggestedAdUnit();
+        // Modify statement for action.
+        statementBuilder.RemoveLimitAndOffset();
 
-          // Perform action.
-          SuggestedAdUnitUpdateResult result = suggestedAdUnitService.performSuggestedAdUnitAction(
-              action, filterStatement);
+        // Create action.
+        ApproveSuggestedAdUnit action = new ApproveSuggestedAdUnit();
 
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of suggested ad units approved: " + result.numChanges);
-          } else {
-            Console.WriteLine("No suggested ad units were approved.");
-          }
+        // Perform action.
+        SuggestedAdUnitUpdateResult result = suggestedAdUnitService.performSuggestedAdUnitAction(
+            action, statementBuilder.ToStatement());
+
+        // Display results.
+        if (result != null && result.numChanges > 0) {
+          Console.WriteLine("Number of suggested ad units approved: " + result.numChanges);
         } else {
           Console.WriteLine("No suggested ad units were approved.");
         }

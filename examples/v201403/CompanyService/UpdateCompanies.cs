@@ -22,9 +22,8 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example updates the names of all companies that are advertisers
-  /// by appending "LLC." up to the first 500. To determine which companies
-  /// exist, run GetAllCompanies.cs.
+  /// This code example updates company comments. To determine which companies exist,
+  /// run GetAllCompanies.cs.
   ///
   /// Tags: CompanyService.getCompaniesByStatement, CompanyService.updateCompanies
   /// </summary>
@@ -34,9 +33,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example updates the names of all companies that are advertisers by " +
-            "appending 'LLC.' up to the first 500. To determine which companies exist, run " +
-            "GetAllCompanies.cs.";
+        return "This code example updates company comments. To detemine which companies exist, " +
+            "run GetAllCompanies.cs.";
       }
     }
 
@@ -59,37 +57,31 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       CompanyService companyService =
           (CompanyService) user.GetService(DfpService.v201403.CompanyService);
 
-      // Create a Statement to only select companies that are advertisers.
-      Statement statement = new StatementBuilder("WHERE type = :advertiser LIMIT 500").AddValue(
-          "advertiser", CompanyType.ADVERTISER.ToString()).ToStatement();
+      // Set the ID of the company to update.
+      int companyId = int.Parse(_T("INSERT_COMPANY_ID_HERE"));
+
+      // Create a Statement to select the company by ID.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :companyId")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("id", companyId);
 
       try {
         // Get the companies by Statement.
-        CompanyPage page = companyService.getCompaniesByStatement(statement);
+        CompanyPage page = companyService.getCompaniesByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null && page.results.Length > 0) {
-          Company[] companies = page.results;
+        Company company = page.results[0];
 
-          // Update each local company object by appending LLC. to its name.
-          foreach (Company company in companies) {
-            company.name = company.name + " LLC.";
-          }
+        // Update the company comment
+        company.comment = company.comment + " Updated.";
 
-          // Update the companies on the server.
-          companies = companyService.updateCompanies(companies);
+        // Update the company on the server.
+        Company[] companies = companyService.updateCompanies(new Company[] {company});
 
-          if (companies != null && companies.Length > 0) {
-            int i = 0;
-            foreach (Company company in companies) {
-              Console.WriteLine("{0}) Company with ID = {1}, name = {2} was updated",
-                  i, company.id, company.name, company.type);
-              i++;
-            }
-          } else {
-            Console.WriteLine("No companies updated.");
-          }
-        } else {
-          Console.WriteLine("No companies found to update.");
+        foreach (Company updatedCompany in companies) {
+          Console.WriteLine("Company with ID = {0}, name = {1}, and comment \"{2}\" was updated",
+              updatedCompany.id, updatedCompany.name, updatedCompany.comment);
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to update companies. Exception says \"{0}\"", ex.Message);

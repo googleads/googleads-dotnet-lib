@@ -20,6 +20,7 @@ using Google.Api.Ads.Dfp.Headers;
 
 using System;
 using System.IO;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Web.Services;
@@ -85,6 +86,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// <param name="parameters">The method parameters.</param>
     protected override void InitForCall(string methodName, object[] parameters) {
       DfpAppConfig config = this.User.Config as DfpAppConfig;
+      string oAuthHeader = null;
       RequestHeader header = GetRequestHeader();
 
       if (header == null) {
@@ -107,9 +109,7 @@ namespace Google.Api.Ads.Dfp.Lib {
 
       if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
         if (this.User.OAuthProvider != null) {
-          OAuth oAuth = (header.authentication as OAuth) ?? new OAuth();
-          oAuth.parameters = this.User.OAuthProvider.GetAuthHeader();
-          header.authentication = oAuth;
+          oAuthHeader = this.User.OAuthProvider.GetAuthHeader();
         } else {
           throw new DfpApiException(null, DfpErrorMessages.OAuthProviderCannotBeNull);
         }
@@ -121,7 +121,24 @@ namespace Google.Api.Ads.Dfp.Lib {
         header.authentication = clientLogin;
       }
 
+      ContextStore.AddKey("OAuthHeader", oAuthHeader);
       base.InitForCall(methodName, parameters);
+    }
+
+    /// <summary>
+    /// Creates a WebRequest instance for the specified url.
+    /// </summary>
+    /// <param name="uri">The Uri to use when creating the WebRequest.</param>
+    /// <returns>
+    /// The WebRequest instance.
+    /// </returns>
+    protected override WebRequest GetWebRequest(Uri uri) {
+      WebRequest request = base.GetWebRequest(uri);
+      string oAuthHeader = (string) ContextStore.GetValue("OAuthHeader");
+      if (!string.IsNullOrEmpty(oAuthHeader)) {
+        request.Headers["Authorization"] = oAuthHeader;
+      }
+      return request;
     }
 
     /// <summary>

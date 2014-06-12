@@ -61,42 +61,44 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           (UserTeamAssociationService) user.GetService(
               DfpService.v201403.UserTeamAssociationService);
 
-      // Set the user to set to read only access within its teams.
+      // Set the user id of the user team association to update.
       long userId = long.Parse(_T("INSERT_USER_ID_HERE"));
 
-      // Create filter text to select user team associations by the user ID.
-      String statementText = "WHERE userId = :userId LIMIT 500";
-      Statement filterStatement = new StatementBuilder(statementText).
-          AddValue("userId", userId).ToStatement();
+      // Set the team id of the user team association to update.
+      long teamId = long.Parse(_T("INSERT_TEAM_ID_HERE"));
+
+      // Create a statement to select the user team association.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("userId = :userId and teamId = :teamId")
+          .OrderBy("userId ASC, teamId ASC")
+          .Limit(1)
+          .AddValue("userId", userId)
+          .AddValue("teamId", teamId);
 
       try {
         // Get user team associations by statement.
         UserTeamAssociationPage page =
-            userTeamAssociationService.getUserTeamAssociationsByStatement(filterStatement);
+            userTeamAssociationService.getUserTeamAssociationsByStatement(
+            statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          UserTeamAssociation[] userTeamAssociations = page.results;
+        UserTeamAssociation userTeamAssociation = page.results[0];
 
-          // Update each local user team association to read only access.
-          foreach (UserTeamAssociation userTeamAssociation in userTeamAssociations) {
-            userTeamAssociation.overriddenTeamAccessType = TeamAccessType.READ_ONLY;
-          }
+        userTeamAssociation.overriddenTeamAccessType = TeamAccessType.READ_ONLY;
 
-          // Update the user team associations on the server.
-          userTeamAssociations =
-              userTeamAssociationService.updateUserTeamAssociations(userTeamAssociations);
+        // Update the user team associations on the server.
+        UserTeamAssociation[] userTeamAssociations =
+            userTeamAssociationService.updateUserTeamAssociations(
+            new UserTeamAssociation[] {userTeamAssociation});
 
-          if (userTeamAssociations != null) {
-            foreach (UserTeamAssociation userTeamAssociation in userTeamAssociations) {
-              Console.WriteLine("User team association between user with ID \"{0}\" and team " +
-                  "with ID \"{1}\" was updated to access type \"{2}\".", userTeamAssociation.userId,
-                  userTeamAssociation.teamId, userTeamAssociation.overriddenTeamAccessType);
-            }
-          } else {
-            Console.WriteLine("No user team associations updated.");
+        if (userTeamAssociations != null) {
+          foreach (UserTeamAssociation updatedUserTeamAssociation in userTeamAssociations) {
+            Console.WriteLine("User team association between user with ID \"{0}\" and team " +
+                "with ID \"{1}\" was updated to access type \"{2}\".",
+                updatedUserTeamAssociation.userId, updatedUserTeamAssociation.teamId,
+                updatedUserTeamAssociation.overriddenTeamAccessType);
           }
         } else {
-          Console.WriteLine("No user team associations found to update.");
+          Console.WriteLine("No user team associations updated.");
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to update user team associations. Exception says \"{0}\"",

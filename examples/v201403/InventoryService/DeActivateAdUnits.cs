@@ -35,8 +35,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example deactivates all active ad units. To determine which ad units " +
-            "exist, run GetAllAdUnits.cs or GetInventoryTree.cs.";
+        return "This code example deactivates an ad unit. To determine which ad units exist, " +
+            "run GetAllAdUnits.cs or GetInventoryTree.cs.";
       }
     }
 
@@ -59,24 +59,24 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       InventoryService inventoryService =
           (InventoryService) user.GetService(DfpService.v201403.InventoryService);
 
-      // Create Statement text to select active ad units.
-      string statementText = "WHERE status = :status LIMIT 500";
+      // Set the ID of the ad unit to deactivate.
+      int adUnitId = int.Parse(_T("INSERT_AD_UNIT_ID_HERE"));
 
-      Statement statement = new StatementBuilder("").AddValue("status",
-          InventoryStatus.ACTIVE.ToString()).ToStatement();
+      // Create a statement to select the ad unit.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :id")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("id", adUnitId);
 
-      // Sets defaults for page and offset.
+      // Set default for page.
       AdUnitPage page = new AdUnitPage();
-      int offset = 0;
       List<string> adUnitIds = new List<string>();
 
       try {
         do {
-          // Create a Statement to page through active ad units.
-          statement.query = string.Format("{0} OFFSET {1}", statementText, offset);
-
           // Get ad units by Statement.
-          page = inventoryService.getAdUnitsByStatement(statement);
+          page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
             int i = page.startIndex;
@@ -88,30 +88,28 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of ad units to be deactivated: {0}", adUnitIds.Count);
 
-        if (adUnitIds.Count > 0) {
-          // Create action Statement.
-          statement = new StatementBuilder(
-              string.Format("WHERE id IN ({0})", string.Join(",", adUnitIds.ToArray()))).
-              ToStatement();
+        // Modify statement for action.
+        statementBuilder.RemoveLimitAndOffset();
 
-          // Create action.
-          DeactivateAdUnits action = new DeactivateAdUnits();
+        // Create action.
+        DeactivateAdUnits action = new DeactivateAdUnits();
 
-          // Perform action.
-          UpdateResult result = inventoryService.performAdUnitAction(action, statement);
+        // Perform action.
+        UpdateResult result = inventoryService.performAdUnitAction(action,
+            statementBuilder.ToStatement());
 
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of ad units deactivated: {0}", result.numChanges);
-          } else {
-            Console.WriteLine("No ad units were deactivated.");
-          }
+        // Display results.
+        if (result != null && result.numChanges > 0) {
+          Console.WriteLine("Number of ad units deactivated: {0}", result.numChanges);
+        } else {
+          Console.WriteLine("No ad units were deactivated.");
         }
+
       } catch (Exception ex) {
         Console.WriteLine("Failed to deactivate ad units. Exception says \"{0}\"", ex.Message);
       }

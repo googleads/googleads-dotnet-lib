@@ -56,22 +56,23 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
     public override void Run(DfpUser user) {
-      // Get the CreativeService.
+      // Get the CustomTargetingService.
       CustomTargetingService customTargetingService =
           (CustomTargetingService) user.GetService(DfpService.v201403.CustomTargetingService);
 
-      // Sets defaults for page and filter.
+      // Create a statement to get all custom targeting keys.
+      StatementBuilder keyStatementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+      // Set default for page.
       CustomTargetingKeyPage keyPage = new CustomTargetingKeyPage();
-      Statement keyFilterStatement = new Statement();
-      int keyOffset = 0;
 
       try {
         do {
-          // Create a statement to get all custom targeting keys.
-          keyFilterStatement.query = "LIMIT 500 OFFSET " + keyOffset;
-
           // Get custom targeting keys by statement.
-          keyPage = customTargetingService.getCustomTargetingKeysByStatement(keyFilterStatement);
+          keyPage = customTargetingService.getCustomTargetingKeysByStatement(
+              keyStatementBuilder.ToStatement());
 
           if (keyPage.results != null) {
             int i = keyPage.startIndex;
@@ -80,21 +81,21 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
                   "display name \"{3}\", and type \"{4}\" was found.", i, key.id, key.name,
                   key.displayName, key.type);
 
+              // Create a statement to get all custom targeting values for a
+              // custom targeting key (required) by its ID.
+              StatementBuilder valueStatementBuilder = new StatementBuilder()
+                  .Where("customTargetingKeyId = :customTargetingKeyId")
+                  .OrderBy("id ASC")
+                  .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+                  .AddValue("customTargetingKeyId", key.id);
 
-              // Sets defaults for page and filter.
+              // Set default for page.
               CustomTargetingValuePage valuePage = new CustomTargetingValuePage();
-              Statement valueFilterStatement = new Statement();
-              int valueOffset = 0;
 
               do {
-                // Create a statement to get all custom targeting values for a
-                // custom targeting key (required) by its ID.
-                valueFilterStatement.query = string.Format("WHERE customTargetingKeyId = {0} " +
-                    "LIMIT 500 OFFSET {1}", key.id, valueOffset);
-
                 // Get custom targeting values by statement.
                 valuePage = customTargetingService.getCustomTargetingValuesByStatement(
-                    valueFilterStatement);
+                    valueStatementBuilder.ToStatement());
 
                 if (valuePage.results != null) {
                   int j = valuePage.startIndex;
@@ -105,13 +106,13 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
                     j++;
                   }
                 }
-                valueOffset += 500;
-              } while (valuePage.results != null && valuePage.results.Length == 500);
+                valueStatementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+              } while (valueStatementBuilder.GetOffset() < valuePage.totalResultSetSize);
               i++;
             }
           }
-          keyOffset += 500;
-        } while (keyPage.results != null && keyPage.results.Length == 500);
+          keyStatementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (keyStatementBuilder.GetOffset() < keyPage.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", keyPage.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get custom targeting keys and the values. Exception " +

@@ -23,11 +23,9 @@ using System.Text;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example gets all labels that are competitively excluded. The
-  /// statement retrieves up to the maximum page size limit of 500. To create
-  /// labels, run CreateLabels.cs. This feature is only available to DFP premium
-  /// solution networks.
-  ///
+  /// This code example gets all labels that are competitively excluded. To create
+  /// labels, run CreateLabels.cs. This feature is only available to DFP premium solution
+  /// networks.
   /// Tags: LabelService.getLabelsByStatement
   /// </summary>
   class GetLabelsByStatement : SampleBase {
@@ -36,9 +34,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all labels that are competitively excluded. The statement " +
-            "retrieves up to the maximum page size limit of 500. To create labels, run " +
-            "CreateLabels.cs. This feature is only available to DFP premium solution networks.";
+        return "This code example gets all labels that are competitively excluded. To create " +
+            "labels, run CreateLabels.cs. This feature is only available to DFP premium solution " +
+            "networks.";
       }
     }
 
@@ -63,26 +61,35 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
 
       // Create a statement to only select labels that are competitive
       // sorted by name.
-      Statement filterStatement = new StatementBuilder("WHERE type = :type ORDER BY name LIMIT 500")
-          .AddValue("type", LabelType.COMPETITIVE_EXCLUSION.ToString()).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where ("type = :type")
+          .OrderBy("name ASC")
+          .Limit (StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("type", LabelType.COMPETITIVE_EXCLUSION.ToString());
+
+      // Set default for page
+      LabelPage page = new LabelPage();
 
       try {
-        // Get labels by statement.
-        LabelPage page = labelService.getLabelsByStatement(filterStatement);
+        do {
+          // Get labels by statement.
+          page = labelService.getLabelsByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          int i = page.startIndex;
-          foreach (Label label in page.results) {
-            StringBuilder builder = new StringBuilder();
-            foreach (LabelType labelType in label.types) {
-              builder.AppendFormat("{0} | ", labelType);
+          if (page.results != null) {
+            int i = page.startIndex;
+            foreach (Label label in page.results) {
+              StringBuilder builder = new StringBuilder();
+              foreach (LabelType labelType in label.types) {
+                builder.AppendFormat("{0} | ", labelType);
+              }
+
+              Console.WriteLine("{0}) Label with ID '{1}', name '{2}'and type '{3}' was found.",
+                  i, label.id, label.name, builder.ToString().TrimEnd(' ', '|'));
+              i++;
             }
-
-            Console.WriteLine("{0}) Label with ID '{1}', name '{2}'and type '{3}' was found.",
-                i, label.id, label.name, builder.ToString().TrimEnd(' ', '|'));
-            i++;
           }
-        }
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while(statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get labels. Exception says \"{0}\"", ex.Message);

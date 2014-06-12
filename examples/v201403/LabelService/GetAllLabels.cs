@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
@@ -57,18 +58,18 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       LabelService labelService =
           (LabelService) user.GetService(DfpService.v201403.LabelService);
 
-      // Set defaults for page and filterStatement.
+      // Create a statement to get all labels.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+      // Set default for page.
       LabelPage page = new LabelPage();
-      Statement filterStatement = new Statement();
-      int offset = 0;
 
       try {
         do {
-          // Create a statement to get all labels.
-          filterStatement.query = "LIMIT 500 OFFSET " + offset.ToString();
-
           // Get labels by statement.
-          page = labelService.getLabelsByStatement(filterStatement);
+          page = labelService.getLabelsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null) {
             int i = page.startIndex;
@@ -83,8 +84,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
               i++;
             }
           }
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get labels. Exception says \"{0}\"", ex.Message);
       }

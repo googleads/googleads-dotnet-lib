@@ -15,14 +15,14 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
-using Google.Api.Ads.Dfp.Util.v201403;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example deactivates a creative wrapper belonging to a label.
+  /// This code example deactivates all creative wrappers belonging to a label.
   ///
   /// Tags: CreativeWrapperService.getCreativeWrapperByStatement
   /// Tags: CreativeWrapperService.performCreativeWrapperAction
@@ -33,7 +33,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example deactivates a creative wrapper belonging to a label.";
+        return "This code example deactivates all creative wrappers belonging to a label.";
       }
     }
 
@@ -61,32 +61,48 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       try {
         // Create a query to select the active creative wrapper for the given
         // label.
-        Statement statement = new StatementBuilder("WHERE status = :status AND labelId = :labelId")
-            .AddValue("labelId", labelId)
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where ("labelId = :labelId AND status = :status")
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
             .AddValue("status", CreativeWrapperStatus.ACTIVE.ToString())
-            .ToStatement();
-        CreativeWrapperPage page = creativeWrapperService.getCreativeWrappersByStatement(statement);
-        CreativeWrapper[] creativeWrappers = page.results;
-        if (creativeWrappers != null) {
-          foreach (CreativeWrapper wrapper in creativeWrappers) {
-            Console.WriteLine("Creative wrapper with ID \'{0}\' applying to label \'{1}\' with " +
-                "status \'{2}\' will be deactivated.", wrapper.id, wrapper.labelId, wrapper.status);
-          }
-          Console.WriteLine("Number of creative wrappers to be deactivated: {0}",
-              creativeWrappers.Length);
+            .AddValue("labelId", labelId);
 
-          // Perform action.
-          CreativeWrapperAction action = new DeactivateCreativeWrappers();
-          UpdateResult result =
-              creativeWrapperService.performCreativeWrapperAction(action, statement);
+        // Set default for page.
+        CreativeWrapperPage page = new CreativeWrapperPage();
 
-          // Display results.
-          if (result.numChanges > 0) {
-            Console.WriteLine("Number of creative wrappers deactivated: {0}", result.numChanges);
-          } else {
-            Console.WriteLine("No creative wrappers were deactivated.");
+        do {
+          page =
+              creativeWrapperService.getCreativeWrappersByStatement(statementBuilder.ToStatement());
+          CreativeWrapper[] creativeWrappers = page.results;
+          if (creativeWrappers != null) {
+            foreach (CreativeWrapper wrapper in creativeWrappers) {
+              Console.WriteLine("Creative wrapper with ID \'{0}\' applying to label \'{1}\' with " +
+                  "status \'{2}\' will be deactivated.", wrapper.id, wrapper.labelId,
+                   wrapper.status);
+            }
           }
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+        Console.WriteLine("Number of creative wrappers to be deactivated: {0}",
+            page.totalResultSetSize);
+
+        // Modify statement for action.
+        statementBuilder.RemoveLimitAndOffset();
+
+        // Perform action.
+        CreativeWrapperAction action = new DeactivateCreativeWrappers();
+        UpdateResult result = creativeWrapperService.performCreativeWrapperAction(action,
+            statementBuilder.ToStatement());
+
+        // Display results.
+        if (result.numChanges > 0) {
+          Console.WriteLine("Number of creative wrappers deactivated: {0}", result.numChanges);
+        } else {
+          Console.WriteLine("No creative wrappers were deactivated.");
         }
+
       } catch (Exception ex) {
         Console.WriteLine("Failed to create creative wrappers. Exception says \"{0}\"", ex.Message);
       }

@@ -56,18 +56,19 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       CreativeTemplateService creativeTemplateService =
           (CreativeTemplateService) user.GetService(DfpService.v201403.CreativeTemplateService);
 
-      // Set defaults for page and filterStatement.
+      // Create a statement to get all creative templates.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+      // Set default for page.
       CreativeTemplatePage page = new CreativeTemplatePage();
-      Statement filterStatement = new Statement();
-      int offset = 0;
 
       try {
         do {
-          // Create a statement to get all creative templates.
-          filterStatement.query = "LIMIT 500 OFFSET " + offset.ToString();
-
           // Get creative templates by statement.
-          page = creativeTemplateService.getCreativeTemplatesByStatement(filterStatement);
+          page = creativeTemplateService.getCreativeTemplatesByStatement(
+              statementBuilder.ToStatement());
 
           if (page.results != null) {
             int i = page.startIndex;
@@ -79,8 +80,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {

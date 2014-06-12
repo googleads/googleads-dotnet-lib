@@ -63,19 +63,19 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           (PublisherQueryLanguageService) user.GetService(
               DfpService.v201403.PublisherQueryLanguageService);
 
-      int pageSize = 500;
       // Create statement to select all line items.
-      String selectStatement = "SELECT Id, Name, Status FROM Line_Item LIMIT " + pageSize;
-      int offset = 0;
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Select("Id, Name, Status")
+          .From("Line_Item")
+          .OrderBy ("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
       int resultSetSize = 0;
       List<Row> allRows = new List<Row>();
       ResultSet resultSet;
 
       try {
         do {
-          StatementBuilder statementBuilder =
-              new StatementBuilder(selectStatement + " OFFSET " + offset);
-
           // Get all line items.
           resultSet = pqlService.select(statementBuilder.ToStatement());
 
@@ -85,9 +85,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           // Display results.
           Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
 
-          offset += pageSize;
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
           resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
-        } while (resultSetSize == pageSize);
+        } while (resultSetSize > 0);
 
         Console.WriteLine("Number of results found: " + allRows.Count);
 

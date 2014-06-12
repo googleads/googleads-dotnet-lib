@@ -58,23 +58,32 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           (PlacementService) user.GetService(DfpService.v201403.PlacementService);
 
       // Create a Statement to only select active placements.
-      Statement statement = new StatementBuilder("WHERE status = :status LIMIT 500").AddValue(
-          "status", InventoryStatus.ACTIVE.ToString()).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("status = :status")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("status", InventoryStatus.ACTIVE.ToString());
+
+      // Set default for page
+      PlacementPage page = new PlacementPage();
 
       try {
-        // Get placements by Statement.
-        PlacementPage page = placementService.getPlacementsByStatement(statement);
+        do {
+          // Get placements by Statement.
+          page = placementService.getPlacementsByStatement(statementBuilder.ToStatement());
 
-        // Display results.
-        if (page.results != null && page.results.Length > 0) {
-          int i = page.startIndex;
-          foreach (Placement placement in page.results) {
-            Console.WriteLine("{0}) Placement with ID = '{1}', name ='{2}', and status = '{3}' " +
-              "was found.", i, placement.id, placement.name, placement.status);
-            i++;
+          // Display results.
+          if (page.results != null && page.results.Length > 0) {
+            int i = page.startIndex;
+            foreach (Placement placement in page.results) {
+              Console.WriteLine("{0}) Placement with ID = '{1}', name ='{2}', and status = '{3}' " +
+                "was found.", i, placement.id, placement.name, placement.status);
+              i++;
+            }
           }
-        }
 
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get placement by Statement. Exception says \"{0}\"",

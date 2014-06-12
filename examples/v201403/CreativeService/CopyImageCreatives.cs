@@ -23,7 +23,7 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example copies a given set of image creatives. This would
+  /// This code example creates a copy of an image creative. This would
   /// typically be done to reuse creatives in a small business network. To
   /// determine which creatives exist, run GetAllCreatives.cs.
   ///
@@ -36,7 +36,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example copies a given set of image creatives. This would typically be" +
+        return "This code example creates a copy of an image creative. This would typically be" +
             " done to reuse creatives in a small business network. To determine which creatives " +
             "exist, run GetAllCreatives.cs.";
       }
@@ -61,60 +61,44 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       CreativeService creativeService =
           (CreativeService) user.GetService(DfpService.v201403.CreativeService);
 
-      long[] creativeIds = new long[] {long.Parse(_T("INSERT_IMAGE_CREATIVE_ID_HERE"))};
+      long creativeId = long.Parse(_T("INSERT_IMAGE_CREATIVE_ID_HERE"));
 
-      // Build a comma separated list of creativeIds. Note that if you are using
-      // .NET 4.0 or above, you could use the newly introduced
-      // String.Join<T>(string separator, IEnumerable<T> values) method to
-      // perform this task.
-      string[] creativeIdTexts = new string[creativeIds.Length];
-      for (int i = 0; i < creativeIdTexts.Length; i++) {
-        creativeIdTexts[i] = creativeIds[i].ToString();
-      }
-
-      string commaSeparatedCreativeIds = string.Join(",", creativeIdTexts);
-
-      // Create the statement to filter image creatives by id.
-      Statement statement = new StatementBuilder(
-          string.Format("WHERE id IN ({0}) and creativeType = :creativeType LIMIT 500",
-              commaSeparatedCreativeIds)).AddValue("creativeType", "ImageCreative").
-              ToStatement();
+      // Create a statement to get the image creative.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :id")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("id", creativeId);
 
       try {
-        // Retrieve all creatives which match.
-        CreativePage page = creativeService.getCreativesByStatement(statement);
+        // Get the creative.
+        CreativePage page = creativeService.getCreativesByStatement(statementBuilder.ToStatement());
 
         if (page.results != null) {
-          Creative[] creatives = page.results;
-          long[] oldIds = new long[creatives.Length];
-          for (int i = 0; i < creatives.Length; i++) {
-            ImageCreative imageCreative = (ImageCreative) creatives[i];
-            oldIds[i] = imageCreative.id;
-            // Since we cannot set id to null, we mark it as not specified.
-            imageCreative.idSpecified = false;
+          ImageCreative imageCreative = (ImageCreative) page.results[0];
+          // Since we cannot set id to null, we mark it as not specified.
+          imageCreative.idSpecified = false;
 
-            imageCreative.advertiserId = imageCreative.advertiserId;
-            imageCreative.name = imageCreative.name + " (Copy #" + GetTimeStamp() + ")";
+          imageCreative.advertiserId = imageCreative.advertiserId;
+          imageCreative.name = imageCreative.name + " (Copy #" + GetTimeStamp() + ")";
 
-            // Create image asset.
-            CreativeAsset creativeAsset = new CreativeAsset();
-            creativeAsset.fileName = "image.jpg";
-            creativeAsset.assetByteArray = MediaUtilities.GetAssetDataFromUrl(
-                imageCreative.primaryImageAsset.assetUrl);
+          // Create image asset.
+          CreativeAsset creativeAsset = new CreativeAsset();
+          creativeAsset.fileName = "image.jpg";
+          creativeAsset.assetByteArray = MediaUtilities.GetAssetDataFromUrl(
+              imageCreative.primaryImageAsset.assetUrl);
 
-            creativeAsset.size = imageCreative.primaryImageAsset.size;
-            imageCreative.primaryImageAsset = creativeAsset;
-
-            creatives[i] = imageCreative;
-          }
+          creativeAsset.size = imageCreative.primaryImageAsset.size;
+          imageCreative.primaryImageAsset = creativeAsset;
 
           // Create the copied creative.
-          creatives = creativeService.createCreatives(creatives);
+          Creative[] creatives = creativeService.createCreatives(new Creative[] {imageCreative});
 
           // Display copied creatives.
-          for (int i = 0; i < creatives.Length; i++) {
-            Console.WriteLine("Image creative with ID \"{0}\" copied to ID \"{1}\".", oldIds[i],
-                creatives[i].id);
+          foreach (Creative copiedCreative in creatives) {
+            Console.WriteLine("Image creative with ID \"{0}\", name \"{1}\", and type \"{2}\" " +
+                "was created and can be previewed at {3}", copiedCreative.id, copiedCreative.name,
+                 copiedCreative.CreativeType, copiedCreative.previewUrl);
           }
         } else {
           Console.WriteLine("No creatives were copied.");

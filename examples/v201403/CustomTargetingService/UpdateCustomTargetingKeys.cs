@@ -36,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example updates the display name of each custom targeting key up " +
-            "to the first 500. To determine which custom targeting keys exist, run " +
+        return "This code example updates the display name of custom targeting keys. To " +
+            "determine which custom targeting keys exist, run " +
             "GetAllCustomTargetingKeysAndValues.cs.";
       }
     }
@@ -57,46 +57,42 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
     public override void Run(DfpUser user) {
-      // Get the CreativeService.
+      // Get the CustomTargetingService.
       CustomTargetingService customTargetingService =
           (CustomTargetingService) user.GetService(DfpService.v201403.CustomTargetingService);
 
-      // Create a statement to get all custom targeting keys.
-      Statement filterStatement = new Statement();
-      filterStatement.query = "LIMIT 500";
+      // Set the ID of the custom targeting key to update.
+      int customTargetingKeyId = int.Parse(_T("INSERT_CUSTOM_TARGETING_KEY_ID_HERE"));
+
+      // Create a statement to get the custom targeting key.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :id")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("id", customTargetingKeyId);
 
       try {
         // Get custom targeting keys by statement.
         CustomTargetingKeyPage page =
-            customTargetingService.getCustomTargetingKeysByStatement(filterStatement);
+            customTargetingService.getCustomTargetingKeysByStatement(
+            statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          CustomTargetingKey[] customTargetingKeys = page.results;
+        CustomTargetingKey customTargetingKey = page.results[0];
 
-          // Update each local custom targeting key object by changing its display
-          // name.
-          foreach (CustomTargetingKey customTargetingKey in customTargetingKeys) {
-            if (customTargetingKey.displayName == null) {
-              customTargetingKey.displayName = customTargetingKey.name;
-            }
-            customTargetingKey.displayName = customTargetingKey.displayName + " (Deprecated)";
-          }
+        // Update each local custom targeting key object by changing its display name.
+        if (customTargetingKey.displayName == null) {
+          customTargetingKey.displayName = customTargetingKey.name;
+        }
+        customTargetingKey.displayName = customTargetingKey.displayName + " (Deprecated)";
 
-          // Update the custom targeting keys on the server.
-          customTargetingKeys =
-              customTargetingService.updateCustomTargetingKeys(customTargetingKeys);
+        // Update the custom targeting keys on the server.
+        CustomTargetingKey[] customTargetingKeys = customTargetingService.updateCustomTargetingKeys(
+            new CustomTargetingKey[] {customTargetingKey});
 
-          if (customTargetingKeys != null) {
-            foreach (CustomTargetingKey customTargetingKey in customTargetingKeys) {
-              Console.WriteLine("Custom targeting key with ID \"{0}\", name \"{1}\", and " +
-                  "display name \"{2}\" was updated.", customTargetingKey.id,
-                  customTargetingKey.name, customTargetingKey.displayName);
-            }
-          } else {
-            Console.WriteLine("No custom targeting keys updated.");
-          }
-        } else {
-          Console.WriteLine("No custom targeting keys found to update.");
+        foreach (CustomTargetingKey updatedCustomTargetingKey in customTargetingKeys) {
+          Console.WriteLine("Custom targeting key with ID \"{0}\", name \"{1}\", and " +
+              "display name \"{2}\" was updated.", updatedCustomTargetingKey.id,
+              updatedCustomTargetingKey.name, updatedCustomTargetingKey.displayName);
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to update display name of custom targeting keys. Exception " +

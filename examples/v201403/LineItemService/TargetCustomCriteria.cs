@@ -63,10 +63,6 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       LineItemService lineItemService = (LineItemService) user.GetService(
           DfpService.v201403.LineItemService);
 
-      // Get the CustomTargetingService.
-      CustomTargetingService customTargetingService = (CustomTargetingService) user.GetService(
-          DfpService.v201403.CustomTargetingService);
-
       long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
       long[] customCriteriaIds1 =
           new long[] {long.Parse(_T("INSERT_CUSTOM_TARGETING_KEY_ID_HERE")),

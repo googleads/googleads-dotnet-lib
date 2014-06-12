@@ -59,7 +59,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
     public override void Run(DfpUser user) {
-      // Get the CreativeService.
+      // Get the CustomTargetingService.
       CustomTargetingService customTargetingService =
           (CustomTargetingService) user.GetService(DfpService.v201403.CustomTargetingService);
 

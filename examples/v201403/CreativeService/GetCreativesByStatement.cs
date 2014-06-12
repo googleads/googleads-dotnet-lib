@@ -22,8 +22,7 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example gets all image creatives. The Statement retrieves up to
-  /// the maximum page size limit of 500. To create an image creative, run
+  /// This code example gets all image creatives. To create an image creative, run
   /// CreateCreatives.cs.
   ///
   /// Tags: CreativeService.getCreativesByStatement
@@ -34,8 +33,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all image creatives. The Statement retrieves up to the " +
-            "maximum page size limit of 500. To create an image creative, run " +
+        return "This code example gets all image creatives. To create an image creative, run " +
             "CreateCreatives.cs.";
       }
     }
@@ -60,21 +58,30 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           (CreativeService) user.GetService(DfpService.v201403.CreativeService);
 
       // Create a Statement to only select image creatives.
-      Statement statement = new StatementBuilder("WHERE creativeType = :creativeType LIMIT 500").
-          AddValue("creativeType", "ImageCreative").ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("creativeType = :creativeType")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("creativeType", "ImageCreative");
+
+      // Set default for page.
+      CreativePage page = new CreativePage();
 
       try {
-        // Get creatives by Statement.
-        CreativePage page = creativeService.getCreativesByStatement(statement);
+        do {
+          // Get creatives by Statement.
+          page = creativeService.getCreativesByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null && page.results.Length > 0) {
-          int i = page.startIndex;
-          foreach (Creative creative in page.results) {
-            Console.WriteLine("{0}) Creative with ID ='{1}', name ='{2}' and type ='{3}' " +
-                "was found.", i, creative.id, creative.name, creative.CreativeType);
-            i++;
+          if (page.results != null && page.results.Length > 0) {
+            int i = page.startIndex;
+            foreach (Creative creative in page.results) {
+              Console.WriteLine("{0}) Creative with ID ='{1}', name ='{2}' and type ='{3}' " +
+                  "was found.", i, creative.id, creative.name, creative.CreativeType);
+              i++;
+            }
           }
-        }
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {

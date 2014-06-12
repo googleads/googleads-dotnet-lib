@@ -67,26 +67,23 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
 
       string geoType = "City";
 
-      int pageSize = 500;
       // Create statement to select all targetable cities.
-      String selectStatement = "SELECT Id, Name, CanonicalParentId, ParentIds, CountryCode from " +
-          "Geo_Target where Type = :type and Targetable = true order by CountryCode ASC, " +
-          "Name ASC limit " + pageSize;
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Select("Id, Name, CanonicalParentId, ParentIds, CountryCode")
+          .From("Geo_Target")
+          .Where("Type = :type and Targetable = true")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("type", geoType);
 
-      Statement statement = new StatementBuilder(selectStatement).AddValue("type", geoType)
-          .ToStatement();
-
-      int offset = 0;
       int resultSetSize = 0;
       List<Row> allRows = new List<Row>();
       ResultSet resultSet;
 
       try {
         do {
-          statement.query = selectStatement + " OFFSET " + offset;
-
           // Get all cities.
-          resultSet = pqlService.select(statement);
+          resultSet = pqlService.select(statementBuilder.ToStatement());
 
           // Collect all cities from each page.
           allRows.AddRange(resultSet.rows);
@@ -94,9 +91,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           // Display results.
           Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
 
-          offset += pageSize;
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
           resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
-        } while (resultSetSize == pageSize);
+        } while (resultSetSize > 0);
 
         Console.WriteLine("Number of results found: " + allRows.Count);
 

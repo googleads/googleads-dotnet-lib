@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example deactivates all active placements. To determine which
+  /// This code example deactivates a placement. To determine which
   /// placements exist, run GetAllPlacements.cs.
   ///
   /// Tags: PlacementService.getPlacementsByStatement
@@ -35,7 +35,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example deactivates all active placements. To determine which " +
+        return "This code example deactivates a placement. To determine which " +
             "placements exist, run GetAllPlacements.cs.";
       }
     }
@@ -59,23 +59,21 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       PlacementService placementService =
           (PlacementService) user.GetService(DfpService.v201403.PlacementService);
 
-      // Create Statement text to select active placements.
-      String statementText = "WHERE status = :status LIMIT 500";
-      Statement statement = new StatementBuilder("").AddValue("status",
-          InventoryStatus.ACTIVE.ToString()).ToStatement();
+      // Create Statement to select active placements.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("status = :status")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("status", InventoryStatus.ACTIVE.ToString());
 
-      // Sets defaults for page and offset.
+      // Sets default for page.
       PlacementPage page = new PlacementPage();
-      int offset = 0;
       List<string> placementIds = new List<string>();
 
       try {
         do {
-          // Create a Statement to page through active placements.
-          statement.query = string.Format("{0} OFFSET {1}", statementText, offset);
-
           // Get placements by Statement.
-          page = placementService.getPlacementsByStatement(statement);
+          page = placementService.getPlacementsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
             int i = page.startIndex;
@@ -87,22 +85,21 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of placements to be deactivated: {0}", placementIds.Count);
 
         if (placementIds.Count > 0) {
-          // Create action Statement.
-          statement = new StatementBuilder(
-              string.Format("WHERE id IN ({0})", string.Join(",", placementIds.ToArray()))).
-              ToStatement();
+          // Modify statement for action.
+          statementBuilder.RemoveLimitAndOffset();
 
           // Create action.
           DeactivatePlacements action = new DeactivatePlacements();
 
           // Perform action.
-          UpdateResult result = placementService.performPlacementAction(action, statement);
+          UpdateResult result = placementService.performPlacementAction(action,
+              statementBuilder.ToStatement());
 
           // Display results.
           if (result != null && result.numChanges > 0) {

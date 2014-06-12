@@ -67,23 +67,31 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
 
       // Create a statement to select the children of the effective root ad
       // unit.
-      Statement statement = new StatementBuilder("WHERE parentId = :id LIMIT 1").AddValue(
-          "id", effectiveRootAdUnitId).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("parentId = :parentId")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("parentId", effectiveRootAdUnitId);
+
+      // Set default for page.
+      AdUnitPage page = new AdUnitPage();
 
       try {
-        // Get ad units by Statement.
-        AdUnitPage page = inventoryService.getAdUnitsByStatement(statement);
+        do {
+          // Get ad units by Statement.
+          page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null && page.results.Length > 0) {
-          int i = page.startIndex;
-          foreach (AdUnit adUnit in page.results) {
-            Console.WriteLine("{0}) Ad unit with ID = '{1}', name = '{2}' and status = '{3}' " +
-                "was found.", i, adUnit.id, adUnit.name, adUnit.status);
-            i++;
+          if (page.results != null && page.results.Length > 0) {
+            int i = page.startIndex;
+            foreach (AdUnit adUnit in page.results) {
+              Console.WriteLine("{0}) Ad unit with ID = '{1}', name = '{2}' and status = '{3}' " +
+                  "was found.", i, adUnit.id, adUnit.name, adUnit.status);
+              i++;
+            }
           }
-        }
 
-        // The number of results should always be 1 for this code example.
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get ad unit. Exception says \"{0}\"", ex.Message);

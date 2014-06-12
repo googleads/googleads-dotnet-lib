@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
@@ -56,17 +57,17 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       LineItemService lineItemService =
           (LineItemService) user.GetService(DfpService.v201403.LineItemService);
 
-      // Sets defaults for page and Statement.
+      // Create a Statement to get all line items.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+      // Sets default for page.
       LineItemPage page = new LineItemPage();
-      Statement statement = new Statement();
-      int offset = 0;
       try {
         do {
-          // Create a Statement to get all line items.
-          statement.query = string.Format("LIMIT 500 OFFSET {0}", offset);
-
           // Get line items by Statement.
-          page = lineItemService.getLineItemsByStatement(statement);
+          page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
             int i = page.startIndex;
@@ -78,8 +79,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {

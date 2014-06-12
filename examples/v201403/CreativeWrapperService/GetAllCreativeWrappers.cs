@@ -15,10 +15,10 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
-using Google.Api.Ads.Dfp.Util.v201403;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>

@@ -1,3 +1,8 @@
+7.1.0
+- Added support for v201405.
+- OAuth authentication moved from SOAP header to HTTP headers.
+- Updated v201403 examples to use the newest StatementBuilder features.
+
 7.0.0
 - The library now uses System.Trace for logging. If you are not familiar with
   Trace listeners, you can read about them at

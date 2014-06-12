@@ -23,7 +23,7 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example gets up to 500 system defined creative templates.
+  /// This code example gets all the system defined creative templates.
   ///
   /// Tags: CreativeTemplateService.getCreativeTemplatesByStatement
   /// </summary>
@@ -33,7 +33,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets up to 500 system defined creative templates.";
+        return "This code example gets all the system defined creative templates.";
       }
     }
 
@@ -57,24 +57,32 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           (CreativeTemplateService) user.GetService(DfpService.v201403.CreativeTemplateService);
 
       // Create a statement to only select system defined creative templates.
-      Statement filterStatement =
-          new StatementBuilder("WHERE type = :creativeTemplateType LIMIT 500").AddValue(
-              "creativeTemplateType", CreativeTemplateType.SYSTEM_DEFINED.ToString()).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("type = :creativeTemplateType")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("creativeTemplateType", CreativeTemplateType.SYSTEM_DEFINED.ToString());
+
+      // Set default for page.
+      CreativeTemplatePage page = new CreativeTemplatePage();
 
       try {
-        // Get creative templates by statement.
-        CreativeTemplatePage page = creativeTemplateService.getCreativeTemplatesByStatement(
-            filterStatement);
+        do {
+          // Get creative templates by statement.
+          page = creativeTemplateService.getCreativeTemplatesByStatement(
+              statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          int i = page.startIndex;
-          foreach (CreativeTemplate creativeTemplate in page.results) {
-            Console.WriteLine("{0}) Creative template with ID \"{1}\", name \"{2}\", and type " +
-                "\"{3}\" was found.", i, creativeTemplate.id, creativeTemplate.name,
-                creativeTemplate.type);
-            i++;
+          if (page.results != null) {
+            int i = page.startIndex;
+            foreach (CreativeTemplate creativeTemplate in page.results) {
+              Console.WriteLine("{0}) Creative template with ID \"{1}\", name \"{2}\", and type " +
+                  "\"{3}\" was found.", i, creativeTemplate.id, creativeTemplate.name,
+                  creativeTemplate.type);
+              i++;
+            }
           }
-        }
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get creative templates. Exception says \"{0}\"",

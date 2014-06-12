@@ -15,15 +15,15 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example updates all users by adding "Sr." to the end of each
-  /// name (after a very large baby boom and lack of creativity). To
-  /// determine which users exist, run GetAllUsers.cs.
+  /// This code example updates a user by adding "Sr." to the end of its
+  /// name. To determine which users exist, run GetAllUsers.cs.
   ///
   /// Tags: UserService.getUsersByStatement, UserService.updateUsers
   /// </summary>
@@ -33,9 +33,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example updates all users by adding 'Sr.' to the end of each " +
-            "name (after a very large baby boom and lack of creativity). To " +
-            "determine which users exist, run GetAllUsers.cs.";
+        return "This code example updates a user by adding 'Sr.' to the end of its " +
+            "name. To determine which users exist, run GetAllUsers.cs.";
       }
     }
 
@@ -57,35 +56,36 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       // Get the UserService.
       UserService userService = (UserService) dfpUser.GetService(DfpService.v201403.UserService);
 
+      // Set the user to update.
+      long userId = long.Parse(_T("INSERT_USER_ID_HERE"));
+
       // Create a Statement to get all users.
-      Statement statement = new Statement();
-      statement.query = "LIMIT 500";
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :userId")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("id", userId);
+
 
       try {
         // Get users by Statement.
-        UserPage page = userService.getUsersByStatement(statement);
+        UserPage page = userService.getUsersByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null && page.results.Length > 0) {
-          User[] users = page.results;
+        User user = page.results[0];
 
-          // Update each local users object by changing its name.
-          foreach (User user in users) {
-            user.name = user.name + " Sr.";
-          }
+        // Update user object by changing its name.
+        user.name = user.name + " Sr.";
 
-          // Update the users on the server.
-          users = userService.updateUsers(users);
+        // Update the users on the server.
+        User[] users = userService.updateUsers(new User[] {user});
 
-          if (users != null) {
-            foreach (User user in users) {
-              Console.WriteLine("A user with ID = '{0}', name ='{1}', and role = '{2}'" +
-                  " was updated.", user.id, user.name, user.roleName);
-            }
-          } else {
-            Console.WriteLine("No users updated.");
+        if (users != null) {
+          foreach (User updatedUser in users) {
+            Console.WriteLine("A user with ID = '{0}', name ='{1}', and role = '{2}'" +
+                " was updated.", updatedUser.id, updatedUser.name, updatedUser.roleName);
           }
         } else {
-          Console.WriteLine("No users found to update.");
+          Console.WriteLine("No users updated.");
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to get user by ID. Exception says \"{0}\"",

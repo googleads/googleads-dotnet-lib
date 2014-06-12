@@ -15,10 +15,10 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
-using Google.Api.Ads.Dfp.Util.v201403;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
@@ -60,21 +60,22 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       AudienceSegmentService audienceSegmentService =
           (AudienceSegmentService) user.GetService(DfpService.v201403.AudienceSegmentService);
 
-      string audienceSegmentId = _T("INSERT_AUDIENCE_SEGMENT_ID_HERE");
+      // Set the ID of the audience segment to update.
+      int audienceSegmentId = int.Parse(_T("INSERT_AUDIENCE_SEGMENT_ID_HERE"));
 
       // Create a statement to only select a specified first party audience
       // segment.
-      string statementText = "where id = :audienceSegmentId order by id ASC " +
-          "LIMIT 1";
-      Statement statement = new StatementBuilder(statementText)
-          .AddValue("audienceSegmentId", audienceSegmentId)
-          .ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :audienceSegmentId")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("audienceSegmentId", audienceSegmentId);
 
       try {
         // Get the audience segment.
         RuleBasedFirstPartyAudienceSegment audienceSegment =
             (RuleBasedFirstPartyAudienceSegment) audienceSegmentService
-                .getAudienceSegmentsByStatement(statement).results[0];
+                .getAudienceSegmentsByStatement(statementBuilder.ToStatement()).results[0];
 
         // Update the member expiration days.
         audienceSegment.membershipExpirationDays = 180;

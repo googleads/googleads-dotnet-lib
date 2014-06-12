@@ -23,8 +23,7 @@ using System;
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
   /// This code example gets all line item creative associations for a given
-  /// line item ID. The Statement retrieves up to the maximum page size limit of
-  /// 500. To create LICAs, run CreateLicas.cs.
+  /// line item ID. To create LICAs, run CreateLicas.cs.
   ///
   /// Tags: LineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement
   /// </summary>
@@ -35,8 +34,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     public override string Description {
       get {
         return "This code example gets all line item creative associations for a given line " +
-            "item ID. The Statement retrieves up to the maximum page size limit of 500. To " +
-            "create LICAs, run CreateLicas.cs.";
+            "item ID. To create LICAs, run CreateLicas.cs.";
       }
     }
 
@@ -63,23 +61,32 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
 
       // Create a Statement to only select LICAs for the given lineItem ID.
-      Statement statement = new StatementBuilder("WHERE lineItemId = :lineItemId LIMIT 500").
-          AddValue("lineItemId", lineItemId).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("lineItemId = :lineItemId")
+          .OrderBy("lineItemId ASC, creativeId ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("lineItemId", lineItemId);
+
+      // Set default for page.
+      LineItemCreativeAssociationPage page = new LineItemCreativeAssociationPage();
 
       try {
-        // Get LICAs by Statement.
-        LineItemCreativeAssociationPage page =
-            licaService.getLineItemCreativeAssociationsByStatement(statement);
+        do {
+          // Get LICAs by Statement.
+          page = licaService.getLineItemCreativeAssociationsByStatement(
+              statementBuilder.ToStatement());
 
-        if (page.results != null && page.results.Length > 0) {
-          int i = page.startIndex;
-          foreach (LineItemCreativeAssociation lica in page.results) {
-            Console.WriteLine("{0}) LICA with line item ID = '{1}', creative ID ='{2}' and " +
-                "status ='{3}' was found.", i, lica.lineItemId, lica.creativeId,
-                lica.status);
-            i++;
+          if (page.results != null && page.results.Length > 0) {
+            int i = page.startIndex;
+            foreach (LineItemCreativeAssociation lica in page.results) {
+              Console.WriteLine("{0}) LICA with line item ID = '{1}', creative ID ='{2}' and " +
+                  "status ='{3}' was found.", i, lica.lineItemId, lica.creativeId,
+                  lica.status);
+              i++;
+            }
           }
-        }
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while(statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get LICAs. Exception says \"{0}\"", ex.Message);

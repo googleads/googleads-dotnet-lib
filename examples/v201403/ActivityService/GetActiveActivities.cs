@@ -58,20 +58,18 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       ActivityService activityService =
           (ActivityService) user.GetService(DfpService.v201403.ActivityService);
 
-      // Statement parts to help build a statement that only selects active
-      // activities.
-      Statement filterStatement = new StatementBuilder("").
-          AddValue("status", ActivityStatus.ACTIVE.ToString()).
-          ToStatement();
+      // Create a statement to select active activities.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("status = :status")
+          .OrderBy("id")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("status", ActivityStatus.ACTIVE.ToString());
 
-      int offset = 0;
-      ActivityPage page;
+      ActivityPage page = new ActivityPage();
 
       try {
         do {
-          filterStatement.query = "WHERE status = :status ORDER BY id LIMIT 500 OFFSET " + offset;
-
-          page = activityService.getActivitiesByStatement(filterStatement);
+          page = activityService.getActivitiesByStatement(statementBuilder.ToStatement());
 
           // Display results.
           if (page.results != null) {
@@ -83,8 +81,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}.", page.totalResultSetSize);
       } catch (Exception ex) {

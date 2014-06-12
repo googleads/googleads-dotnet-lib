@@ -23,8 +23,8 @@ using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example updates the delivery rate of all line items up to the
-  /// first 500. To determine which line items exist, run GetAllLineItems.cs.
+  /// This code example updates the delivery rate of a line items.
+  /// To determine which line items exist, run GetAllLineItems.cs.
   ///
   /// Tags: LineItemService.getLineItemsByStatement
   /// Tags: LineItemService.updateLineItems
@@ -35,8 +35,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example updates the delivery rate of all line items up to the first " +
-            "500. To determine which line items exist, run GetAllLineItems.cs.";
+        return "This code example updates the delivery rate of a line item. To determine which " +
+          "line items exist, run GetAllLineItems.cs.";
       }
     }
 
@@ -59,45 +59,37 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       LineItemService lineItemService =
           (LineItemService) user.GetService(DfpService.v201403.LineItemService);
 
-      // Set the ID of the order to get line items from.
-      long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
+      // Set the ID of the line item.
+      long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
 
-      // Create a Statement to get line items with even delivery rates.
-      Statement statement = new StatementBuilder("WHERE deliveryRateType = :deliveryRateType and " +
-          "orderId = :orderId LIMIT 500").AddValue("deliveryRateType",
-              DeliveryRateType.EVENLY.ToString()).AddValue("orderId", orderId).ToStatement();
+      // Create a Statement to get the line item.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :lineItemid")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("lineItemId", lineItemId);
 
       try {
         // Get line items by Statement.
-        LineItemPage page = lineItemService.getLineItemsByStatement(statement);
+        LineItemPage page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null && page.results.Length > 0) {
-          LineItem[] lineItems = page.results;
-          List<LineItem> lineItemsToUpdate = new List<LineItem>();
+        LineItem lineItem = page.results[0];
 
-          // Update each local line item object by changing its delivery rate.
-          foreach (LineItem lineItem in lineItems) {
-            // Archived line items cannot be updated.
-            if (!lineItem.isArchived) {
-              lineItem.deliveryRateType = DeliveryRateType.AS_FAST_AS_POSSIBLE;
-              lineItemsToUpdate.Add(lineItem);
-            }
-          }
+        // Update line item object by changing its delivery rate.
+       lineItem.deliveryRateType = DeliveryRateType.AS_FAST_AS_POSSIBLE;
 
-          // Update the line items on the server.
-          lineItems = lineItemService.updateLineItems(lineItemsToUpdate.ToArray());
+        // Update the line item on the server.
+        LineItem[] lineItems = lineItemService.updateLineItems(new LineItem[] {lineItem});
 
-          if (lineItems != null) {
-            foreach (LineItem lineItem in lineItems) {
-              Console.WriteLine("A line item with ID = '{0}', belonging to order ID = '{1}', " +
-                  "named '{2}', and having delivery rate = '{3}' was updated.",
-                  lineItem.id, lineItem.orderId, lineItem.name, lineItem.deliveryRateType);
-            }
-          } else {
-            Console.WriteLine("No line items updated.");
+        if (lineItems != null) {
+          foreach (LineItem updatedLineItem in lineItems) {
+            Console.WriteLine("A line item with ID = '{0}', belonging to order ID = '{1}', " +
+                "named '{2}', and having delivery rate = '{3}' was updated.",
+                updatedLineItem.id, updatedLineItem.orderId, updatedLineItem.name,
+                updatedLineItem.deliveryRateType);
           }
         } else {
-          Console.WriteLine("No line items found to update.");
+          Console.WriteLine("No line items updated.");
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to update line items. Exception says \"{0}\"",

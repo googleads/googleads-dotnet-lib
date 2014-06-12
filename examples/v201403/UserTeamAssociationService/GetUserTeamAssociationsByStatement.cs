@@ -22,12 +22,10 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  ///  This code example gets all teams that the current user belongs to. The
-  ///  statement retrieves up to the maximum page size limit of 500. To create
+  ///  This code example gets all teams that the a user belongs to. To create
   ///  teams, run CreateTeams.cs.
   ///
   /// Tags: UserTeamAssociationService.getUserTeamAssociationsByStatement
-  /// Tags: UserService.getCurrentUser
   /// </summary>
   class GetUserTeamAssociationsByStatement : SampleBase {
     /// <summary>
@@ -35,9 +33,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all teams that the current user belongs to. The " +
-            "statement retrieves up to the maximum page size limit of 500. To create teams, " +
-            "run CreateTeams.cs.";
+        return "This code example gets all teams that a user belongs to. To create " +
+            "teams, run CreateTeams.cs.";
       }
     }
 
@@ -61,33 +58,38 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           (UserTeamAssociationService) user.GetService(
               DfpService.v201403.UserTeamAssociationService);
 
-      // Get the UserService.
-      UserService userService = (UserService) user.GetService(DfpService.v201403.UserService);
+      // Set the ID of the user to fetch all user team associations for.
+      long userId = long.Parse(_T("INSERT_USER_ID_HERE"));
+
+      // Create statement to select user team associations by the user ID.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("userId = :userId")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("userId", userId);
+
+      // Set default for page.
+      UserTeamAssociationPage page = new UserTeamAssociationPage();
 
       try {
-        // Get the current user.
-        long currentUserId = userService.getCurrentUser().id;
+        do {
+          // Get user team associations by statement.
+          page = userTeamAssociationService.getUserTeamAssociationsByStatement(
+              statementBuilder.ToStatement());
 
-        // Create filter text to select user team associations by the user ID.
-        String statementText = "WHERE userId = :userId LIMIT 500";
-        Statement filterStatement = new StatementBuilder(statementText).
-            AddValue("userId", currentUserId).ToStatement();
-
-        // Get user team associations by statement.
-        UserTeamAssociationPage page =
-            userTeamAssociationService.getUserTeamAssociationsByStatement(filterStatement);
-
-        // Display results.
-        if (page.results != null) {
-          int i = page.startIndex;
-          foreach (UserTeamAssociation userTeamAssociation in page.results) {
-            Console.WriteLine("{0}) User team association between user with ID \"{1}\" and team " +
-                "with ID \"{2}\" was found.", i, userTeamAssociation.userId,
-                userTeamAssociation.teamId);
-            i++;
+          // Display results.
+          if (page.results != null) {
+            int i = page.startIndex;
+            foreach (UserTeamAssociation userTeamAssociation in page.results) {
+              Console.WriteLine("{0}) User team association between user with ID \"{1}\" and " +
+                  "team with ID \"{2}\" was found.", i, userTeamAssociation.userId,
+                  userTeamAssociation.teamId);
+              i++;
+            }
           }
-        }
 
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while(statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get user team associations. Exception says \"{0}\"",

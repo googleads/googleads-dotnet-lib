@@ -35,8 +35,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets a line item by its ID. To determine which line items " +
-            "exist, run GetAllLineItems.cs";
+        return "This code example shows how to get recently updated line items. To create " +
+            "line items, run CreateLineItems.cs";
       }
     }
 
@@ -61,29 +61,35 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
 
       long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
+      // Create statement to only select line items for the given order that
+      // have been modified in the last 3 days.
+      DateTime threeDaysAgo = DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(-3));
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("lastModifiedDateTime >= :lastModifiedDateTime AND orderId = :orderId")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("lastModifiedDateTime", threeDaysAgo)
+          .AddValue("orderId", orderId);
+
+      // Set default for page.
+      LineItemPage page = new LineItemPage();
+
       try {
-        // Create statement to only select line items for the given order that
-        // have been modified in the last 3 days.
-        DateTime threeDaysAgo = DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(-3));
-        Statement filterStatement = new StatementBuilder(
-            "WHERE lastModifiedDateTime >= :lastModifiedDateTime AND orderId = :orderId LIMIT 500").
-            AddValue("lastModifiedDateTime", threeDaysAgo).
-            AddValue("orderId", orderId).ToStatement();
+        do {
+          // Get line items by statement.
+          page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
-
-        // Get line items by statement.
-        LineItemPage page = lineItemService.getLineItemsByStatement(filterStatement);
-
-        // Display results.
-        if (page != null && page.results != null) {
-          foreach (LineItem lineItem in page.results) {
-            Console.WriteLine("Line item with id \"{0}\", belonging to order id \"{1}\" and " +
-                "named \"{2}\" was found.", lineItem.id, lineItem.orderId, lineItem.name);
+          // Display results.
+          if (page != null && page.results != null) {
+            foreach (LineItem lineItem in page.results) {
+              Console.WriteLine("Line item with id \"{0}\", belonging to order id \"{1}\" and " +
+                  "named \"{2}\" was found.", lineItem.id, lineItem.orderId, lineItem.name);
+            }
           }
-          Console.WriteLine("Number of results found: {1}.", page.totalResultSetSize);
-        } else {
-          Console.WriteLine("No line items were found.");
-        }
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while(statementBuilder.GetOffset() < page.totalResultSetSize);
+
+        Console.WriteLine("Number of results found: {1}.", page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get line items. Exception says \"{0}\"", ex.Message);
       }

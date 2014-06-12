@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
@@ -56,18 +57,18 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       ContentService contentService =
           (ContentService) user.GetService(DfpService.v201403.ContentService);
 
-      // Set defaults for page and filterStatement.
+      // Create a statement to get all content.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+      // Set default for page.
       ContentPage page = new ContentPage();
-      Statement filterStatement = new Statement();
-      int offset = 0;
 
       try {
         do {
-          // Create a statement to get all content.
-          filterStatement.query = "LIMIT 500 OFFSET " + offset.ToString();
-
           // Get content by statement.
-          page = contentService.getContentByStatement(filterStatement);
+          page = contentService.getContentByStatement(statementBuilder.ToStatement());
 
           if (page.results != null) {
             int i = page.startIndex;
@@ -77,8 +78,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
               i++;
             }
           }
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {

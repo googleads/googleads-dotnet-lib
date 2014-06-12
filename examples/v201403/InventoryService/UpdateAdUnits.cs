@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
@@ -33,8 +34,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example updates an ad unit by enabling AdSense to the first 500. To " +
-            "determine which ad units exist, run GetAllAdUnits.cs or GetInventoryTree.cs.";
+        return "This code example updates an ad unit by enabling AdSense. To determine which " +
+            "ad units exist, run GetAllAdUnits.cs or GetInventoryTree.cs.";
       }
     }
 
@@ -57,32 +58,30 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       InventoryService inventoryService =
           (InventoryService) user.GetService(DfpService.v201403.InventoryService);
 
-      // Create a statement to get all ad units.
-      Statement statement = new Statement();
-      statement.query = "LIMIT 500";
+      // Set the ID of the ad unit to update.
+      int adUnitId = int.Parse(_T("INSERT_AD_UNIT_ID_HERE"));
+
+      // Create a statement to get the ad unit.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :id")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("id", adUnitId);
 
       try {
         // Get ad units by statement.
-        AdUnitPage page = inventoryService.getAdUnitsByStatement(statement);
+        AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          // Update each local ad unit object by enabling AdSense.
-          foreach (AdUnit adUnit in page.results) {
-            adUnit.inheritedAdSenseSettings.value.adSenseEnabled = true;
-          }
+        AdUnit adUnit = page.results[0];
+        adUnit.inheritedAdSenseSettings.value.adSenseEnabled = true;
 
-          // Update the ad units on the server.
-          AdUnit[] updatedAdUnits = inventoryService.updateAdUnits(page.results);
+        // Update the ad units on the server.
+        AdUnit[] updatedAdUnits = inventoryService.updateAdUnits(new AdUnit[] { adUnit });
 
-          if (updatedAdUnits != null) {
-            foreach (AdUnit adUnit in updatedAdUnits) {
-              Console.WriteLine("Ad unit with ID \"{0}\", name \"{1}\", and is AdSense enabled " +
-                  "\"{2}\" was updated.", adUnit.id, adUnit.name,
-                  adUnit.inheritedAdSenseSettings.value.adSenseEnabled);
-            }
-          } else {
-            Console.WriteLine("No ad units updated.");
-          }
+        foreach (AdUnit updatedAdUnit in updatedAdUnits) {
+          Console.WriteLine("Ad unit with ID \"{0}\", name \"{1}\", and is AdSense enabled " +
+              "\"{2}\" was updated.", updatedAdUnit.id, updatedAdUnit.name,
+              updatedAdUnit.inheritedAdSenseSettings.value.adSenseEnabled);
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to update ad units. Exception says \"{0}\"", ex.Message);

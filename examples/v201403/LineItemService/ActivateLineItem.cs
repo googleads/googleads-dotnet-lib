@@ -69,26 +69,23 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       // Set the ID of the order to get line items from.
       long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
-      // Create Statement text to select approved line items from a given order.
-      string statementText = "WHERE orderId = :orderId and status = :status LIMIT 500";
-      Statement statement = new StatementBuilder("").AddValue("orderId", orderId).
-          AddValue("status", ComputedStatus.NEEDS_CREATIVES.ToString()).ToStatement();
+      // Create Statement to select approved line items from a given order.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("orderId = :orderId and status = :status")
+          .AddValue("orderId", orderId)
+          .AddValue("status", ComputedStatus.NEEDS_CREATIVES.ToString());
 
-      // Set defaults for page and offset.
+      // Set default for page.
       LineItemPage page = new LineItemPage();
-      int offset = 0;
-      int i = 0;
       List<string> lineItemIds = new List<string>();
 
       try {
         do {
-          // Create a Statement to page through approved line items.
-          statement.query = string.Format("{0} OFFSET {1}", statementText, offset);
-
           // Get line items by Statement.
-          page = lineItemService.getLineItemsByStatement(statement);
+          page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
+            int i = page.startIndex;
             foreach (LineItemSummary lineItem in page.results) {
               // Archived line items cannot be activated.
               if (!lineItem.isArchived) {
@@ -101,22 +98,22 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
 
         Console.WriteLine("Number of line items to be activated: {0}", lineItemIds.Count);
 
         if (lineItemIds.Count > 0) {
-          // Create action Statement.
-          statement = new StatementBuilder(
-              string.Format("WHERE id IN ({0})", string.Join(",", lineItemIds.ToArray()))).
-              ToStatement();
+          // Modify Statement.
+          statementBuilder.RemoveLimitAndOffset();
 
           // Create action.
           ActivateLineItems action = new ActivateLineItems();
 
           // Perform action.
-          UpdateResult result = lineItemService.performLineItemAction(action, statement);
+          UpdateResult result = lineItemService.performLineItemAction(action,
+              statementBuilder.ToStatement());
 
           // Display results.
           if (result != null && result.numChanges > 0) {

@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example activates all deactivated LICAs for the line item. To
+  /// This code example activates all LICAs for a given line item. To
   /// determine which LICAs exist, run GetAllLicas.cs.
   ///
   /// Tags: LineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement
@@ -35,7 +35,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example activates all deactivated LICAs for the line item. To " +
+        return "This code example activates all LICAs for a given line item. To " +
             "determine which LICAs exist, run GetAllLicas.cs.";
       }
     }
@@ -62,22 +62,22 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       // Set the line item to get LICAs by.
       long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
 
-      String statementText = "WHERE lineItemId = :lineItemId and status = :status LIMIT 500";
-      Statement statement = new StatementBuilder("").AddValue("lineItemId", lineItemId).
-          AddValue("status", LineItemCreativeAssociationStatus.INACTIVE.ToString()).ToStatement();
+      // Create a Statement to page through LICAs.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("lineItemId = :lineItemId")
+          .OrderBy("lineItemId ASC, creativeId ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("lineItemId", lineItemId);
 
-      // Sets defaults for page and offset.
+      // Set default for page.
       LineItemCreativeAssociationPage page = new LineItemCreativeAssociationPage();
-      int offset = 0;
       List<string> creativeIds = new List<string>();
 
       try {
         do {
-          // Create a Statement to page through active LICAs.
-          statement.query = string.Format("{0} OFFSET {1}", statementText, offset);
-
           // Get LICAs by Statement.
-          page = licaService.getLineItemCreativeAssociationsByStatement(statement);
+          page = licaService.getLineItemCreativeAssociationsByStatement(
+              statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
             int i = page.startIndex;
@@ -90,25 +90,22 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of LICAs to be activated: {0}", creativeIds.Count);
 
         if (creativeIds.Count > 0) {
-          // Create action Statement.
-          statement = new StatementBuilder(
-              string.Format("WHERE lineItemId = :lineItemId and creativeId IN ({0})",
-                  string.Join(",", creativeIds.ToArray()))).
-              AddValue("lineItemId", lineItemId).ToStatement();
+          // Modify statement for action.
+          statementBuilder.RemoveLimitAndOffset();
 
           // Create action.
           ActivateLineItemCreativeAssociations action =
               new ActivateLineItemCreativeAssociations();
 
           // Perform action.
-          UpdateResult result =
-              licaService.performLineItemCreativeAssociationAction(action, statement);
+          UpdateResult result = licaService.performLineItemCreativeAssociationAction(action,
+              statementBuilder.ToStatement());
 
           // Display results.
           if (result != null && result.numChanges > 0) {

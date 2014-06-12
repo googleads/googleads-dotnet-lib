@@ -22,8 +22,7 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example gets all companies that are advertisers. The Statement
-  /// retrieves up to the maximum page size limit of 500. To create companies,
+  /// This code example gets all companies that are advertisers. To create companies,
   /// run CreateCompanies.cs.
   ///
   /// Tags: CompanyService.getCompaniesByStatement
@@ -34,9 +33,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all companies that are advertisers. The Statement " +
-            "retrieves up to the maximum page size limit of 500. To create companies, run " +
-            "CreateCompanies.cs.";
+        return "This code example gets all companies that are advertisers. To create companies, " +
+            "run CreateCompanies.cs.";
       }
     }
 
@@ -61,21 +59,29 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
 
       // Create a Statement to only select companies that are advertisers sorted
       // by name.
-      Statement statement = new StatementBuilder("WHERE type = :advertiser ORDER BY name " +
-          "LIMIT 500").AddValue("advertiser", CompanyType.ADVERTISER.ToString()).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("type = :advertiser")
+          .OrderBy("name ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("advertiser", CompanyType.ADVERTISER.ToString());
+
+      CompanyPage page = new CompanyPage();
 
       try {
-        // Get companies by Statement.
-        CompanyPage page = companyService.getCompaniesByStatement(statement);
+        do {
+          // Get companies by Statement.
+          page = companyService.getCompaniesByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          int i = page.startIndex;
-          foreach (Company company in page.results) {
-            Console.WriteLine("{0}) Company with ID = {1}, name = {2} and type = {3} was found",
-                i, company.id, company.name, company.type);
-            i++;
+          if (page.results != null && page.results.Length > 0) {
+            int i = page.startIndex;
+            foreach (Company company in page.results) {
+              Console.WriteLine("{0}) Company with ID = {1}, name = {2} and type = {3} was found",
+                  i, company.id, company.name, company.type);
+              i++;
+            }
           }
-        }
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get companies. Exception says \"{0}\"", ex.Message);

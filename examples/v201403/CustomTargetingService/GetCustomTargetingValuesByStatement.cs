@@ -24,8 +24,7 @@ using System;
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
   /// This code example gets custom targeting values for the given predefined
-  /// custom targeting key. The statement retrieves up to the maximum page size
-  /// limit of 500. To create custom targeting values, run
+  /// custom targeting key. To create custom targeting values, run
   /// CreateCustomTargetingKeysAndValues.cs. To determine which custom
   /// targeting keys exist, run GetAllCustomTargetingKeysAndValues.cs.
   ///
@@ -38,10 +37,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     public override string Description {
       get {
         return "This code example gets custom targeting values for the given predefined custom " +
-            "targeting key. The statement retrieves up to the maximum page size limit of 500. " +
-            "To create custom targeting values, run CreateCustomTargetingKeysAndValues.cs. To " +
-            "determine which custom targeting keys exist, run " +
-            "GetAllCustomTargetingKeysAndValues.cs.";
+            "targeting key. To create custom targeting values, run " + 
+            "CreateCustomTargetingKeysAndValues.cs. To determine which custom targeting keys " + 
+            "exist, run GetAllCustomTargetingKeysAndValues.cs.";
       }
     }
 
@@ -60,7 +58,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
     public override void Run(DfpUser user) {
-      // Get the CreativeService.
+      // Get the CustomTargetingService.
       CustomTargetingService customTargetingService =
           (CustomTargetingService) user.GetService(DfpService.v201403.CustomTargetingService);
 
@@ -70,25 +68,33 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
 
       // Create a statement to only select custom targeting values for a given
       // key.
-      Statement filterStatement =
-          new StatementBuilder("WHERE customTargetingKeyId = :customTargetingKeyId LIMIT 500")
-              .AddValue("customTargetingKeyId", customTargetingKeyId).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("customTargetingKeyId = :customTargetingKeyId")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+         .AddValue("customTargetingKeyId", customTargetingKeyId);
+
+      // Set default for page.
+      CustomTargetingValuePage page = new CustomTargetingValuePage();
 
       try {
-        // Get custom targeting values by statement.
-        CustomTargetingValuePage page =
-            customTargetingService.getCustomTargetingValuesByStatement(filterStatement);
+        do {
+          // Get custom targeting values by statement.
+          page = customTargetingService.getCustomTargetingValuesByStatement(
+              statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          int i = page.startIndex;
-          foreach (CustomTargetingValue customTargetingValue in page.results) {
-            Console.WriteLine("{0}) Custom targeting value with ID \"{1}\", name \"{2}\", and " +
-                "display name \"{3}\" was found.", i, customTargetingValue.id,
-                customTargetingValue.name, customTargetingValue.displayName);
-            i++;
+          if (page.results != null) {
+            int i = page.startIndex;
+            foreach (CustomTargetingValue customTargetingValue in page.results) {
+              Console.WriteLine("{0}) Custom targeting value with ID \"{1}\", name \"{2}\", and " +
+                  "display name \"{3}\" was found.", i, customTargetingValue.id,
+                  customTargetingValue.name, customTargetingValue.displayName);
+              i++;
+            }
           }
-        }
 
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get custom targeting values. Exception " +

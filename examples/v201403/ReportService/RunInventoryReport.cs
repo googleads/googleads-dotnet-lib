@@ -66,9 +66,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
 
       // Create statement to filter on an ancestor ad unit with the root ad unit ID to include all
       // ad units in the network.
-      StatementBuilder statementBuilder = new StatementBuilder(
-          "where AD_UNIT_ANCESTOR_AD_UNIT_ID = :ancestorAdUnitId").
-          AddValue("ancestorAdUnitId", long.Parse(rootAdUnitId));
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("AD_UNIT_ANCESTOR_AD_UNIT_ID = :ancestorAdUnitId")
+          .AddValue("ancestorAdUnitId", long.Parse(rootAdUnitId));
 
       // Create report query.
       ReportQuery reportQuery = new ReportQuery();

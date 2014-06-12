@@ -55,12 +55,14 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       InventoryService inventoryService =
           (InventoryService) user.GetService(DfpService.v201403.InventoryService);
 
-      Statement filterStatement = new StatementBuilder("WHERE targetPlatform = :targetPlatform").
-          AddValue("targetPlatform", "WEB").ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("targetPlatform = :targetPlatform")
+          .AddValue("targetPlatform", "WEB");
 
       try {
         // Get all ad unit sizes.
-        AdUnitSize[] adUnitSizes = inventoryService.getAdUnitSizesByStatement(filterStatement);
+        AdUnitSize[] adUnitSizes = inventoryService.getAdUnitSizesByStatement(
+            statementBuilder.ToStatement());
 
         // Display results.
         if (adUnitSizes != null) {

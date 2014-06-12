@@ -15,10 +15,10 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
-using Google.Api.Ads.Dfp.Util.v201403;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
@@ -63,26 +63,26 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
 
       // Create a statement to only select a specified first party audience
       // segment.
-      string statementText = "where id = :audienceSegmentId order by id ASC " +
-          "LIMIT 1";
-      Statement statement = new StatementBuilder(statementText)
-          .AddValue("audienceSegmentId", audienceSegmentId)
-          .ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :audienceSegmentId")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("audienceSegmentId", audienceSegmentId);
 
       try {
         // Get audience segment by Statement.
         AudienceSegment audienceSegment =
-            audienceSegmentService.getAudienceSegmentsByStatement(statement).results[0];
+            audienceSegmentService.getAudienceSegmentsByStatement(statementBuilder.ToStatement())
+            .results[0];
 
         Console.WriteLine("Audience segment with id \"{0}\" and name \"{1}\" " +
                   "will be populated", audienceSegment.id, audienceSegment.name);
         // Create action.
         PopulateAudienceSegments action = new PopulateAudienceSegments();
-        statement.query = statementText;
 
         // Perform action.
         UpdateResult result = audienceSegmentService.performAudienceSegmentAction(
-            action, statement);
+            action, statementBuilder.ToStatement());
 
         if (result != null && result.numChanges > 0) {
           Console.WriteLine("Number of audience segments populated: {0}", result.numChanges);

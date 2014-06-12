@@ -57,20 +57,21 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       CreativeWrapperService creativeWrapperService = (CreativeWrapperService) user.GetService(
           DfpService.v201403.CreativeWrapperService);
 
-      // Set defaults for page and Statement.
+     // Create a Statement to get all active creative wrappers.
+     StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("status = :status")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("status", CreativeWrapperStatus.ACTIVE.ToString());
+
+       // Set default for page.
       CreativeWrapperPage page = new CreativeWrapperPage();
-      Statement statement = new StatementBuilder("")
-          .AddValue("status", CreativeWrapperStatus.ACTIVE.ToString())
-          .ToStatement();
-      int offset = 0;
 
       try {
         do {
-          // Create a Statement to get all active creative wrappers.
-          statement.query = string.Format("WHERE status = :status LIMIT 500 OFFSET {0}", offset);
-
           // Get creative wrappers by Statement.
-          page = creativeWrapperService.getCreativeWrappersByStatement(statement);
+          page = creativeWrapperService.getCreativeWrappersByStatement(
+              statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
             int i = page.startIndex;
@@ -81,8 +82,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {

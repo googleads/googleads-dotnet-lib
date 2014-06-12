@@ -23,8 +23,7 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example gets all predefined custom targeting keys. The statement
-  /// retrieves up to the maximum page size limit of 500. To create custom
+  /// This code example gets all predefined custom targeting keys. To create custom
   /// targeting keys, run CreateCustomTargetingKeysAndValues.cs.
   ///
   /// Tags: CustomTargetingService.getCustomTargetingKeysByStatement
@@ -35,8 +34,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all predefined custom targeting keys. The statement " +
-            "retrieves up to the maximum page size limit of 500. To create custom " +
+        return "This code example gets all predefined custom targeting keys. To create custom " +
             "targeting keys, run CreateCustomTargetingKeysAndValues.cs.";
       }
     }
@@ -56,29 +54,40 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
     public override void Run(DfpUser user) {
-      // Get the CreativeService.
+      // Get the CustomTargetingService.
       CustomTargetingService customTargetingService =
           (CustomTargetingService) user.GetService(DfpService.v201403.CustomTargetingService);
 
+      // Create a statement to only select predefined custom targeting keys.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("type = :type")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("type", CustomTargetingKeyType.PREDEFINED.ToString());
+
+      // Set default for page.
+      CustomTargetingKeyPage page = new CustomTargetingKeyPage();
+
       try {
-        // Create a statement to only select predefined custom targeting keys.
-        Statement filterStatement = new StatementBuilder("WHERE type = :type LIMIT 500").AddValue(
-            "type", CustomTargetingKeyType.PREDEFINED.ToString()).ToStatement();
+        do {
+          // Get custom targeting keys by statement.
+          page = customTargetingService.getCustomTargetingKeysByStatement(
+              statementBuilder.ToStatement());
 
-        // Get custom targeting keys by statement.
-        CustomTargetingKeyPage page =
-            customTargetingService.getCustomTargetingKeysByStatement(filterStatement);
-
-        if (page.results != null) {
-          int i = page.startIndex;
-          foreach (CustomTargetingKey customTargetingKey in page.results) {
-            Console.WriteLine("{0}) Custom targeting key with ID \"{1}\", name \"{2}\", and " +
-                "display name \"{3}\" was found.", i, customTargetingKey.id,
-                customTargetingKey.name, customTargetingKey.displayName);
-            i++;
+          if (page.results != null) {
+            int i = page.startIndex;
+            foreach (CustomTargetingKey customTargetingKey in page.results) {
+              Console.WriteLine("{0}) Custom targeting key with ID \"{1}\", name \"{2}\", and " +
+                  "display name \"{3}\" was found.", i, customTargetingKey.id,
+                  customTargetingKey.name, customTargetingKey.displayName);
+              i++;
+            }
           }
-        }
+
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
+
       } catch (Exception ex) {
         Console.WriteLine("Failed to get predefined custom targeting keys. Exception " +
             "says \"{0}\"", ex.Message);

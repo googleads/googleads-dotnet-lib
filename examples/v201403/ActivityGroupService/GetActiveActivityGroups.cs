@@ -57,22 +57,19 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       ActivityGroupService activityGroupService =
           (ActivityGroupService) user.GetService(DfpService.v201403.ActivityGroupService);
 
-      Statement filterStatement = new StatementBuilder("").AddValue(
-          "status", ActivityGroupStatus.ACTIVE.ToString()).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("status = :status")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("status", ActivityGroupStatus.ACTIVE.ToString());
 
-      // Set defaults for page and filterStatement.
+      // Set default for page.
       ActivityGroupPage page;
-      int offset = 0;
 
       try {
         do {
-          // Create a statement to get all content.
-          filterStatement.query = "WHERE status = :status ORDER BY id LIMIT 500 OFFSET " +
-              offset.ToString();
-
-
           // Get contacts by statement.
-          page = activityGroupService.getActivityGroupsByStatement(filterStatement);
+          page = activityGroupService.getActivityGroupsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null) {
             int i = page.startIndex;
@@ -82,8 +79,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
               i++;
             }
           }
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {

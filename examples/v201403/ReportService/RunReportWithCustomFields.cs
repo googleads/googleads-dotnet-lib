@@ -68,23 +68,21 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
         // Set the ID of the order to get line items from.
         long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
-        // Sets defaults for page and filterStatement.
+        // Sets default for page.
         LineItemPage page = new LineItemPage();
-        int offset = 0;
 
         // Create a statement to only select line items from a given order.
-        String filterText = "WHERE orderId = :orderId LIMIT 500";
-        Statement filterStatement =
-            new StatementBuilder(filterText).AddValue("orderId", orderId).ToStatement();
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("orderId = :orderId")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+            .AddValue("orderId", orderId);
 
 
         // Collect all line item custom field IDs for an order.
         List<long> customFieldIds = new List<long>();
         do {
-          filterStatement.query = filterText + " OFFSET " + offset;
-
           // Get line items by statement.
-          page = lineItemService.getLineItemsByStatement(filterStatement);
+          page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
           // Get custom field IDs from the line items of an order.
           if (page.results != null) {
@@ -99,14 +97,12 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
 
         // Create statement to filter for an order.
-        filterStatement =
-            new StatementBuilder("WHERE ORDER_ID = :orderId").AddValue("orderId", orderId)
-                .ToStatement();
+        statementBuilder.RemoveLimitAndOffset();
 
         // Create report job.
         ReportJob reportJob = new ReportJob();
@@ -115,7 +111,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
         ReportQuery reportQuery = new ReportQuery();
         reportQuery.dateRangeType = DateRangeType.LAST_MONTH;
         reportQuery.dimensions = new Dimension[] {Dimension.LINE_ITEM_ID, Dimension.LINE_ITEM_NAME};
-        reportQuery.statement = filterStatement;
+        reportQuery.statement = statementBuilder.ToStatement();
         reportQuery.customFieldIds = customFieldIds.ToArray();
         reportQuery.columns = new Column[] {Column.AD_SERVER_IMPRESSIONS};
         reportJob.reportQuery = reportQuery;

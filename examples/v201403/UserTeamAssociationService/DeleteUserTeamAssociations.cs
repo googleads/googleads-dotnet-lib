@@ -61,21 +61,20 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       long userId = long.Parse(_T("INSERT_USER_ID_HERE"));
 
       // Create filter text to select user team associations by the user ID.
-      String statementText = "WHERE userId = :userId LIMIT 500";
-      Statement filterStatement = new StatementBuilder("").AddValue("userId", userId).
-          ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("userId = :userId")
+          .OrderBy("userId ASC, teamId ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("userId", userId);
 
-      // Set defaults for page and offset.
+      // Set default for page.
       UserTeamAssociationPage page = new UserTeamAssociationPage();
-      int offset = 0;
 
       try {
         do {
-          // Create a statement to page through user team associations.
-          filterStatement.query = statementText + " OFFSET " + offset;
-
           // Get user team associations by statement.
-          page = userTeamAssociationService.getUserTeamAssociationsByStatement(filterStatement);
+          page = userTeamAssociationService.getUserTeamAssociationsByStatement(
+              statementBuilder.ToStatement());
 
           if (page.results != null) {
             int i = page.startIndex;
@@ -87,22 +86,22 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of teams that the user will be removed from: "
             + page.totalResultSetSize);
 
         if (page.totalResultSetSize > 0) {
           // Modify statement for action.
-          filterStatement.query = "WHERE userId = :userId";
+          statementBuilder.RemoveLimitAndOffset();
 
           // Create action.
           DeleteUserTeamAssociations action = new DeleteUserTeamAssociations();
 
           // Perform action.
-          UpdateResult result =
-              userTeamAssociationService.performUserTeamAssociationAction(action, filterStatement);
+          UpdateResult result = userTeamAssociationService.performUserTeamAssociationAction(action,
+              statementBuilder.ToStatement());
 
           // Display results.
           if (result != null && result.numChanges > 0) {

@@ -59,14 +59,14 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           (ActivityGroupService) user.GetService(DfpService.v201403.ActivityGroupService);
 
       ActivityGroupPage page;
-      Statement filterStatement = new Statement();
-      int offset = 0;
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
       try {
         do {
-          filterStatement.query = "ORDER BY id LIMIT 500 OFFSET " + offset.ToString();
           // Get activity groups by statement.
-          page = activityGroupService.getActivityGroupsByStatement(filterStatement);
+          page = activityGroupService.getActivityGroupsByStatement(statementBuilder.ToStatement());
 
           // Display results.
           if (page.results != null) {
@@ -79,8 +79,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {

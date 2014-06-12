@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
@@ -22,8 +23,8 @@ using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example updates the notes of each order up to the first 500.
-  /// To determine which orders exist, run GetAllOrders.cs.
+  /// This code example updates the note of an order. To determine which orders exist,
+  /// run GetAllOrders.cs.
   ///
   /// Tags: OrderService.getOrdersByStatement, OrderService.updateOrders
   /// </summary>
@@ -33,8 +34,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example updates the notes of each order up to the first 500. " +
-            "To determine which orders exist, run GetAllOrders.cs.";
+        return "This code example updates the note of an order. To determine which orders " +
+            "exist, run GetAllOrders.cs.";
       }
     }
 
@@ -56,40 +57,35 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       // Get the OrderService.
       OrderService orderService = (OrderService) user.GetService(DfpService.v201403.OrderService);
 
-      // Create a Statement to get all orders.
-      Statement statement = new Statement();
-      statement.query = "LIMIT 500";
+      long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
+
+      // Create a Statement to get the order.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :id")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("id", orderId);
 
       try {
         // Get orders by Statement.
-        OrderPage page = orderService.getOrdersByStatement(statement);
+        OrderPage page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null && page.results.Length > 0) {
-          Order[] orders = page.results;
-          List<Order> ordersToUpdate = new List<Order>();
+        Order order = page.results[0];
 
-          // Update each local order object by changing its notes.
-          foreach (Order order in orders) {
-            if (!order.isArchived) {
-              order.notes = "Spoke to advertiser. All is well.";
-              ordersToUpdate.Add(order);
-            }
-          }
+        // Update the order object by changing its note.
+        order.notes = "Spoke to advertiser. All is well.";
 
-          // Update the orders on the server.
-          orders = orderService.updateOrders(ordersToUpdate.ToArray());
+        // Update the orders on the server.
+        Order[] orders = orderService.updateOrders(new Order[] {order});
 
-          if (orders != null) {
-            foreach (Order order in orders) {
-              Console.WriteLine("Order with ID = '{0}', name = '{1}', advertiser ID = '{2}', " +
-                  "and notes = '{3}' was updated.", order.id, order.name, order.advertiserId,
-                  order.notes);
-            }
-          } else {
-            Console.WriteLine("No orders updated.");
+        if (orders != null) {
+          foreach (Order updatedOrder in orders) {
+            Console.WriteLine("Order with ID = '{0}', name = '{1}', advertiser ID = '{2}', " +
+                "and notes = '{3}' was updated.", updatedOrder.id, updatedOrder.name,
+                updatedOrder.advertiserId, updatedOrder.notes);
           }
         } else {
-          Console.WriteLine("No orders found to update.");
+          Console.WriteLine("No orders updated.");
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to update orders. Exception says \"{0}\"",

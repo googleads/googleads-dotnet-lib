@@ -35,7 +35,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example deactivates all active labels. To determine which labels exist," +
+        return "This code example deactivates a label. To determine which labels exist," +
             " run GetAllLabels.cs. This feature is only available to DFP premium solution " +
             "networks.";
       }
@@ -60,53 +60,52 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       LabelService labelService =
           (LabelService) user.GetService(DfpService.v201403.LabelService);
 
-      // Create statement text to select active labels.
-      String statementText = "WHERE isActive = :isActive LIMIT 500";
-      Statement filterStatement = new StatementBuilder("").AddValue("isActive", true).ToStatement();
+      // Set the ID of the label to deactivate.
+      int labelId = int.Parse(_T("INSERT_LABEL_ID_HERE"));
 
-      // Set defaults for page and offset.
+      // Create statement text to select the label.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :id")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("id", labelId);
+
+      // Set default for page.
       LabelPage page = new LabelPage();
-      int offset = 0;
-      List<string> labelIds = new List<string>();
 
       try {
         do {
-          // Create a statement to page through active labels.
-          filterStatement.query = statementText + " OFFSET " + offset;
-
           // Get labels by statement.
-          page = labelService.getLabelsByStatement(filterStatement);
+          page = labelService.getLabelsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null) {
             int i = page.startIndex;
             foreach (Label label in page.results) {
               Console.WriteLine("{0}) Label with ID '{1}', name '{2}' will be deactivated.",
                   i, label.id, label.name);
-              labelIds.Add(label.id.ToString());
               i++;
             }
           }
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
-        Console.WriteLine("Number of labels to be deactivated: " + labelIds.Count);
+        Console.WriteLine("Number of labels to be deactivated: " + page.totalResultSetSize);
 
-        if (labelIds.Count > 0) {
-          // Modify statement for action.
-          filterStatement.query = "WHERE id IN (" + string.Join(", ", labelIds.ToArray()) + ")";
+        // Modify statement for action.
+        statementBuilder.RemoveLimitAndOffset();
 
-          // Create action.
-          DeactivateLabels action = new DeactivateLabels();
+        // Create action.
+        DeactivateLabels action = new DeactivateLabels();
 
-          // Perform action.
-          UpdateResult result = labelService.performLabelAction(action, filterStatement);
+        // Perform action.
+        UpdateResult result = labelService.performLabelAction(action,
+            statementBuilder.ToStatement());
 
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of labels deactivated: " + result.numChanges);
-          } else {
-            Console.WriteLine("No labels were deactivated.");
-          }
+        // Display results.
+        if (result != null && result.numChanges > 0) {
+          Console.WriteLine("Number of labels deactivated: " + result.numChanges);
+        } else {
+          Console.WriteLine("No labels were deactivated.");
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to deactivate labels. Exception says \"{0}\"", ex.Message);

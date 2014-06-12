@@ -23,9 +23,8 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example updates the display name of each custom targeting value
-  /// up to the first 500. To determine which custom targeting keys exist, run
-  /// GetAllCustomTargetingKeysAndValues.cs.
+  /// This code example updates the display name of custom targeting values.  To determine 
+  /// which custom targeting keys exist, run GetAllCustomTargetingKeysAndValues.cs.
   ///
   /// Tags: CustomTargetingService.getCustomTargetingValuesByStatement
   /// Tags: CustomTargetingService.updateCustomTargetingValues
@@ -36,8 +35,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example updates the display name of each custom targeting value up to " +
-            "the first 500. To determine which custom targeting keys exist, run " +
+        return "This code example updates the display name of custom targeting values. To " +
+            "determine which custom targeting keys exist, run " +
             "GetAllCustomTargetingKeysAndValues.cs.";
       }
     }
@@ -61,48 +60,40 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       CustomTargetingService customTargetingService =
           (CustomTargetingService) user.GetService(DfpService.v201403.CustomTargetingService);
 
-      // Set the ID of the predefined custom targeting key to get custom
-      // targeting values for.
-      long customTargetingKeyId = long.Parse(_T("INSERT_CUSTOM_TARGETING_KEY_ID_HERE"));
+      // Set the ID of the predefined custom targeting value to update.
+      long customTargetingValueId = long.Parse(_T("INSERT_CUSTOM_TARGETING_VALUE_ID_HERE"));
 
       // Create a statement to only select predefined custom targeting values
       // for a given key.
-      Statement filterStatement =
-          new StatementBuilder("WHERE customTargetingKeyId = :customTargetingKeyId LIMIT 500")
-              .AddValue("customTargetingKeyId", customTargetingKeyId).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("customTargetingValueId = :customTargetingValueId")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("customTargetingValueId", customTargetingValueId);
 
       try {
         // Get custom targeting values by statement.
         CustomTargetingValuePage page =
-            customTargetingService.getCustomTargetingValuesByStatement(filterStatement);
+            customTargetingService.getCustomTargetingValuesByStatement(
+            statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          CustomTargetingValue[] customTargetingValues = page.results;
+        CustomTargetingValue customTargetingValue = page.results[0];
 
-          // Update each local custom targeting value object by changing its
-          // display name.
-          foreach (CustomTargetingValue customTargetingValue in customTargetingValues) {
-            if (customTargetingValue.displayName == null) {
-              customTargetingValue.displayName = customTargetingValue.displayName;
-            }
-            customTargetingValue.displayName = customTargetingValue.displayName + " (Deprecated)";
-          }
+        // Update the local custom targeting value object by changing its display name.
+        if (customTargetingValue.displayName == null) {
+          customTargetingValue.displayName = customTargetingValue.displayName;
+        }
+        customTargetingValue.displayName = customTargetingValue.displayName + " (Deprecated)";
 
-          // Update the custom targeting values on the server.
-          customTargetingValues =
-              customTargetingService.updateCustomTargetingValues(customTargetingValues);
+        // Update the custom targeting values on the server.
+        CustomTargetingValue[] customTargetingValues =
+            customTargetingService.updateCustomTargetingValues(
+            new CustomTargetingValue[] {customTargetingValue});
 
-          if (customTargetingValues != null) {
-            foreach (CustomTargetingValue customTargetingValue in customTargetingValues) {
-              Console.WriteLine("Custom targeting value with ID \"{0}\", name \"{1}\", and " +
-                  "display name \"{2}\" was updated.", customTargetingValue.id,
-                  customTargetingValue.name, customTargetingValue.displayName);
-            }
-          } else {
-            Console.WriteLine("No custom targeting values updated.");
-          }
-        } else {
-          Console.WriteLine("No custom targeting values found to update.");
+        foreach (CustomTargetingValue updatedCustomTargetingValue in customTargetingValues) {
+          Console.WriteLine("Custom targeting value with ID \"{0}\", name \"{1}\", and " +
+              "display name \"{2}\" was updated.", updatedCustomTargetingValue.id,
+              updatedCustomTargetingValue.name, updatedCustomTargetingValue.displayName);
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to update display names of custom targeting values. Exception " +

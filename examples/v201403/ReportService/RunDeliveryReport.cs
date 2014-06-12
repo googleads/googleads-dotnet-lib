@@ -62,8 +62,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
       // Create statement object to filter for an order.
-      Statement filterStatement = new StatementBuilder("WHERE ORDER_ID = :id").AddValue(
-          "id", orderId).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("ORDER_ID = :id")
+          .AddValue("id", orderId);
 
       // Create report job.
       ReportJob reportJob = new ReportJob();
@@ -76,7 +77,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           Column.AD_SERVER_CLICKS, Column.AD_SERVER_CTR, Column.AD_SERVER_CPM_AND_CPC_REVENUE,
           Column.AD_SERVER_WITHOUT_CPD_AVERAGE_ECPM};
       reportJob.reportQuery.dateRangeType = DateRangeType.LAST_MONTH;
-      reportJob.reportQuery.statement = filterStatement;
+      reportJob.reportQuery.statement = statementBuilder.ToStatement();
 
       try {
         // Run report.

@@ -60,21 +60,20 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           (PublisherQueryLanguageService) user.GetService(
               DfpService.v201403.PublisherQueryLanguageService);
 
-      int pageSize = 500;
+      // Create statement to select all line items named like 'line item%'.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Select("Id, Name, Status")
+          .From("Line_Item")
+          .Where("Name LIKE 'line item%'")
+          .OrderBy("Id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Create statement to select all line items.
-      String selectStatement = "SELECT Id, Name, Status FROM Line_Item where Name LIKE " +
-            "'line item%' order by Id ASC LIMIT " + pageSize;
-      int offset = 0;
-      int resultSetSize = 0;
       List<Row> allRows = new List<Row>();
       ResultSet resultSet;
+      int resultSetSize = 0;
 
       try {
         do {
-          StatementBuilder statementBuilder =
-              new StatementBuilder(selectStatement + " OFFSET " + offset);
-
           // Get line items like 'line item%'.
           resultSet = pqlService.select(statementBuilder.ToStatement());
 
@@ -84,9 +83,9 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           // Display results.
           Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
 
-          offset += pageSize;
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
           resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
-        } while (resultSetSize == pageSize);
+        } while (resultSetSize > 0);
 
         Console.WriteLine("Number of results found: " + allRows.Count);
 

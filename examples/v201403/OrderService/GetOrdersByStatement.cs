@@ -22,8 +22,7 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example gets all orders for a given advertiser. The Statement
-  /// retrieves up to the maximum page size limit of 500. To create orders, run
+  /// This code example gets all orders for a given advertiser. To create orders, run
   /// CreateOrders.cs. To determine which companies are advertisers,
   /// run GetCompaniesByStatement.cs.
   ///
@@ -35,8 +34,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all orders for a given advertiser. The Statement " +
-            "retrieves up to the maximum page size limit of 500. To create orders, run " +
+        return "This code example gets all orders for a given advertiser. To create orders, run " +
             "CreateOrders.cs. To determine which companies are advertisers,run " +
             "GetCompaniesByStatement.cs.";
       }
@@ -64,21 +62,30 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       String advertiserId = _T("INSERT_ADVERTISER_COMPANY_ID_HERE");
 
       // Create a Statement to only select orders for a given advertiser.
-      Statement statement = new StatementBuilder("WHERE advertiserId = :advertiserId LIMIT 500").
-          AddValue("advertiserId", advertiserId).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("advertiserId = :advertiserId")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("advertiserId", advertiserId);
+
+      // Set default for page.
+      OrderPage page = new OrderPage();
 
       try {
-        // Get orders by Statement.
-        OrderPage page = orderService.getOrdersByStatement(statement);
+        do {
+          // Get orders by Statement.
+          page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null && page.results.Length > 0) {
-          int i = page.startIndex;
-          foreach (Order order in page.results) {
-            Console.WriteLine("{0}) Order with ID = '{1}', name = '{2}', and advertiser " +
-                "ID = '{3}' was found.", i, order.id, order.name, order.advertiserId);
-            i++;
+          if (page.results != null && page.results.Length > 0) {
+            int i = page.startIndex;
+            foreach (Order order in page.results) {
+              Console.WriteLine("{0}) Order with ID = '{1}', name = '{2}', and advertiser " +
+                  "ID = '{3}' was found.", i, order.id, order.name, order.advertiserId);
+              i++;
+            }
           }
-        }
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while(statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get orders by Statement. Exception says \"{0}\"",

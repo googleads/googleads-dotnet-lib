@@ -67,10 +67,6 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           (LineItemCreativeAssociationService) user.GetService(
               DfpService.v201403.LineItemCreativeAssociationService);
 
-      // Get the CreativeService.
-      CreativeService creativeService =
-          (CreativeService) user.GetService(DfpService.v201403.CreativeService);
-
       // Set the line item ID and creative IDs to associate.
       long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
       long[] creativeIds = new long[] {long.Parse(_T("INSERT_CREATIVE_ID_HERE"))};

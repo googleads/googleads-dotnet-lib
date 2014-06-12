@@ -16,10 +16,10 @@
 
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
-using Google.Api.Ads.Dfp.Util.v201403;
 using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
@@ -60,18 +60,18 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       CustomFieldService customFieldService = (CustomFieldService) user.GetService(
           DfpService.v201403.CustomFieldService);
 
-      // Sets defaults for page and filter.
+      // Create a statement to get all custom fields.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+      // Sets default for page.
       CustomFieldPage page = new CustomFieldPage();
-      Statement filterStatement = new Statement();
-      int offset = 0;
 
       try {
         do {
-          // Create a statement to get all custom fields.
-          filterStatement.query = "LIMIT 500 OFFSET " + offset;
-
           // Get custom fields by statement.
-          page = customFieldService.getCustomFieldsByStatement(filterStatement);
+          page = customFieldService.getCustomFieldsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null) {
             int i = page.startIndex;
@@ -95,8 +95,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (page.results != null && page.results.Length == 500);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {

@@ -23,8 +23,8 @@ using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example approves and overbooks all eligible draft and pending
-  /// orders. To determine which orders exist, run GetAllOrders.cs.
+  /// This code example approves an order and all line items belonging to that order. To determine
+  /// which orders exist, run GetAllOrders.cs.
   ///
   /// Tags: OrderService.getOrdersByStatement, OrderService.performOrderAction
   /// </summary>
@@ -34,8 +34,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example approves and overbooks all draft orders. To determine which " +
-            "orders exist, run GetAllOrders.cs.";
+        return "This code example approves an order and all line items belonging to that order. " +
+            "To determine which orders exist, run GetAllOrders.cs.";
       }
     }
 
@@ -58,26 +58,25 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       OrderService orderService =
           (OrderService) user.GetService(DfpService.v201403.OrderService);
 
-      // Create Statement text to select all draft orders.
-      string statementText = "WHERE status IN (:status1, :status2) and endDateTime >= :today " +
-          "AND isArchived = FALSE LIMIT 500";
-      Statement statement = new StatementBuilder("").
-          AddValue("status1", OrderStatus.DRAFT.ToString()).
-          AddValue("status2", OrderStatus.PENDING_APPROVAL.ToString()).
-          AddValue("today", System.DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")).ToStatement();
+      // Set the ID of the order.
+      long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
-      // Set defaults for page and offset.
+      // Create Statement to select the order.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :id")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("id", orderId);
+
+      // Set default for page.
       OrderPage page = new OrderPage();
-      int i = 0;
-      int offset = 0;
       List<string> orderIds = new List<string>();
+      int i = 0;
 
       try {
         do {
-          // Create a Statement to page through draft orders.
-          statement.query = string.Format("{0} OFFSET {1}", statementText, offset);
           // Get orders by Statement.
-          page = orderService.getOrdersByStatement(statement);
+          page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
             foreach (Order order in page.results) {
@@ -88,22 +87,21 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of orders to be approved: {0}", orderIds.Count);
 
         if (orderIds.Count > 0) {
-          // Create action Statement.
-          statement = new StatementBuilder(
-              string.Format("WHERE id IN ({0})", string.Join(",", orderIds.ToArray()))).
-              ToStatement();
+          // Modify statement for action.
+          statementBuilder.RemoveLimitAndOffset();
 
           // Create action.
           ApproveAndOverbookOrders action = new ApproveAndOverbookOrders();
 
           // Perform action.
-          UpdateResult result = orderService.performOrderAction(action, statement);
+          UpdateResult result = orderService.performOrderAction(action,
+              statementBuilder.ToStatement());
 
           // Display results.
           if (result != null && result.numChanges > 0) {

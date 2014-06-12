@@ -15,10 +15,10 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
-using Google.Api.Ads.Dfp.Util.v201403;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
@@ -75,11 +75,14 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             networkService.getCurrentNetwork().contentBrowseCustomTargetingKeyId;
 
         // Create a statement to select the categories matching the name comedy.
-        Statement categoryFilterStatement = new StatementBuilder(
-            "WHERE customTargetingKeyId = :contentBrowseCustomTargetingKeyId " +
-            " and name = :category LIMIT 1")
+        Statement categoryFilterStatement = new StatementBuilder()
+            .Where("customTargetingKeyId = :contentBrowseCustomTargetingKeyId " +
+            " and name = :category")
+            .OrderBy("id ASC")
+            .Limit(1)
             .AddValue("contentBrowseCustomTargetingKeyId", contentBrowseCustomTargetingKeyId)
-            .AddValue("category", "comedy").ToStatement();
+            .AddValue("category", "comedy")
+            .ToStatement();
 
         // Get categories matching the filter statement.
         CustomTargetingValuePage customTargetingValuePage =
@@ -89,18 +92,20 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           // Get the custom targeting value ID for the comedy category.
           long categoryCustomTargetingValueId = customTargetingValuePage.results[0].id;
 
+          // Create a statement to get all active content.
+          StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("status = :status")
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+            .AddValue("status", "ACTIVE");
+
           // Set defaults for page and filterStatement.
           ContentPage page = new ContentPage();
-          Statement filterStatement = new Statement();
-          int offset = 0;
 
           do {
-            // Create a statement to get all active content.
-            filterStatement.query = "WHERE status = 'ACTIVE' LIMIT 500 OFFSET " + offset.ToString();
-
             // Get content by statement.
-            page = contentService.getContentByStatementAndCustomTargetingValue(filterStatement,
-                categoryCustomTargetingValueId);
+            page = contentService.getContentByStatementAndCustomTargetingValue(
+                statementBuilder.ToStatement(), categoryCustomTargetingValueId);
 
             if (page.results != null) {
               int i = page.startIndex;
@@ -110,8 +115,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
                 i++;
               }
             }
-            offset += 500;
-          } while (offset < page.totalResultSetSize);
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
           Console.WriteLine("Number of results found: " + page.totalResultSetSize);
         }

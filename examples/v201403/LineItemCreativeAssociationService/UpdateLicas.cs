@@ -15,14 +15,15 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example updates the destination URL of all LICAs up to the first
-  /// 500. To determine which LICAs exist, run GetAllLicas.cs.
+  /// This code example updates the destination URL of a LICA. To determine which LICAs exist,
+  /// run GetAllLicas.cs.
   ///
   /// Tags: LineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement
   /// Tags: LineItemCreativeAssociationService.updateLineItemCreativeAssociations
@@ -33,8 +34,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example updates the destination URL of all LICAs up to the first " +
-            "500. To determine which LICAs exist, run GetAllLicas.cs.";
+        return "This code example updates the destination URL of a LICAs. To determine which " +
+            "LICAs exist, run GetAllLicas.cs.";
       }
     }
 
@@ -57,37 +58,42 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       LineItemCreativeAssociationService licaService = (LineItemCreativeAssociationService)
           user.GetService(DfpService.v201403.LineItemCreativeAssociationService);
 
+      // Set the line item to get LICAs by.
+      long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
+
+      // Set the creative to get LICAs by.
+      long creativeId = long.Parse(_T("INSERT_CREATIVE_ID_HERE"));
+
       // Create a Statement to get all LICAs.
-      Statement statement = new Statement();
-      statement.query = "LIMIT 500";
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("lineItemId = :lineItemId AND creativeId = :creativeId")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("lineItemId", lineItemId)
+          .AddValue("creativeId", creativeId);
 
       try {
         // Get LICAs by Statement.
         LineItemCreativeAssociationPage page =
-            licaService.getLineItemCreativeAssociationsByStatement(statement);
+            licaService.getLineItemCreativeAssociationsByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null && page.results.Length > 0) {
-          LineItemCreativeAssociation[] licas = page.results;
+        LineItemCreativeAssociation lica = page.results[0];
 
-          // Update each local LICA object by changing its destination URL.
-          foreach (LineItemCreativeAssociation lica in licas) {
-            lica.destinationUrl = "http://news.google.com";
-          }
+        // Update the LICA object by changing its destination URL.
+        lica.destinationUrl = "http://news.google.com";
 
-          // Update the LICAs on the server.
-          licas = licaService.updateLineItemCreativeAssociations(licas);
+        // Update the LICA on the server.
+        LineItemCreativeAssociation[] licas = licaService.updateLineItemCreativeAssociations(
+            new LineItemCreativeAssociation[] {lica});
 
-          if (licas != null) {
-            foreach (LineItemCreativeAssociation lica in licas) {
-              Console.WriteLine("LICA with line item ID = '{0}, creative ID ='{1}' and " +
-                  "destination URL '{2}' was updated.", lica.lineItemId, lica.creativeId,
-                  lica.destinationUrl);
-            }
-          } else {
-            Console.WriteLine("No LICAs updated.");
+        if (licas != null) {
+          foreach (LineItemCreativeAssociation updatedLica in licas) {
+            Console.WriteLine("LICA with line item ID = '{0}, creative ID ='{1}' and " +
+                "destination URL '{2}' was updated.", updatedLica.lineItemId,
+                updatedLica.creativeId, updatedLica.destinationUrl);
           }
         } else {
-          Console.WriteLine("No LICAs found to update.");
+          Console.WriteLine("No LICAs updated.");
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to update LICAs. Exception says \"{0}\"", ex.Message);

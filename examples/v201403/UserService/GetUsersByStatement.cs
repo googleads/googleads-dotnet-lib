@@ -15,14 +15,14 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example gets all users sorted by name. The Statement retrieves
-  /// up to the maximum page size limit of 500. To create new users,
+  /// This code example gets all active users sorted by name. To create new users,
   /// run CreateUsers.cs.
   ///
   /// Tags: UserService.getUsersByStatement
@@ -33,8 +33,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return " This code example gets all users sorted by name. The Statement retrieves " +
-            "up to the maximum page size limit of 500. To create new users, " +
+        return " This code example gets all active users sorted by name. To create new users, " +
             "run CreateUsers.cs.";
       }
     }
@@ -57,21 +56,30 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       // Get the UserService.
       UserService userService = (UserService) user.GetService(DfpService.v201403.UserService);
 
-      // Create a Statement to get all users sorted by name.
-      Statement statement = new Statement();
-      statement.query = "ORDER BY name LIMIT 500";
+      // Create a Statement to get all active users sorted by name.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("status = :status")
+          .OrderBy("name ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("status", "ACTIVE");
+
+      // Set default for page.
+      UserPage page = new UserPage();
 
       try {
-        // Get users by Statement.
-        UserPage page = userService.getUsersByStatement(statement);
+        do {
+          // Get users by Statement.
+          page = userService.getUsersByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null && page.results.Length > 0) {
-          int i = page.startIndex;
-          foreach (User usr in page.results) {
-            Console.WriteLine("{0}) User with ID = '{1}', email = '{2}', and role = '{3}'" +
-              " was found.", i, usr.id, usr.email, usr.roleName);
+          if (page.results != null && page.results.Length > 0) {
+            int i = page.startIndex;
+            foreach (User usr in page.results) {
+              Console.WriteLine("{0}) User with ID = '{1}', email = '{2}', and role = '{3}'" +
+                " was found.", i, usr.id, usr.email, usr.roleName);
+            }
           }
-        }
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get user by ID. Exception says \"{0}\"",

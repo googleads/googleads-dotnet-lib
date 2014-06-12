@@ -61,15 +61,15 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       int totalResultsCounter = 0;
 
       try {
-        Statement filterStatement = new StatementBuilder("").ToStatement();
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
         ActivityPage page = new ActivityPage();
-        int offset = 0;
 
         do {
-          filterStatement.query = "ORDER BY id LIMIT 500 OFFSET " + offset;
           // Get activities by statement.
-          page = activityService.getActivitiesByStatement(filterStatement);
+          page = activityService.getActivitiesByStatement(statementBuilder.ToStatement());
 
           // Display results.
           if (page.results != null) {
@@ -80,8 +80,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
               totalResultsCounter++;
             }
           }
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}.", totalResultsCounter);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get contacts. Exception says \"{0}\"", ex.Message);

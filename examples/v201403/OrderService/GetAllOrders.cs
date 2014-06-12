@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
@@ -53,18 +54,18 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       // Get the OrderService.
       OrderService orderService = (OrderService) user.GetService(DfpService.v201403.OrderService);
 
-      // Sets defaults for page and Statement.
+      // Create a Statement to get all orders.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+      // Set default for page.
       OrderPage page = new OrderPage();
-      Statement statement = new Statement();
-      int offset = 0;
 
       try {
         do {
-          // Create a Statement to get all orders.
-          statement.query = string.Format("LIMIT 500 OFFSET {0}", offset);
-
           // Get orders by Statement.
-          page = orderService.getOrdersByStatement(statement);
+          page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
             int i = page.startIndex;
@@ -75,8 +76,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
             }
           }
 
-          offset += 500;
-        } while (page.results != null && page.results.Length == 500);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {

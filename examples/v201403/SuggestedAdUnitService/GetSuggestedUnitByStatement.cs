@@ -65,22 +65,32 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
 
       // Create a statement to only select suggested ad units that have more
       // than 50 requests.
-      Statement filterStatement = new StatementBuilder("WHERE numRequests > :numRequests LIMIT 500")
-          .AddValue("numRequests", NUMBER_OF_REQUESTS).ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("numRequests > :numRequests")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("numRequests", NUMBER_OF_REQUESTS);
+
+      // Set default for page.
+      SuggestedAdUnitPage page = new SuggestedAdUnitPage();
 
       try {
-        // Get suggested ad units by statement.
-        SuggestedAdUnitPage page = suggestedAdUnitService.getSuggestedAdUnitsByStatement(
-            filterStatement);
+        do {
+          // Get suggested ad units by statement.
+          page = suggestedAdUnitService.getSuggestedAdUnitsByStatement(
+              statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          int i = page.startIndex;
-          foreach (SuggestedAdUnit suggestedAdUnit in page.results) {
-            Console.WriteLine("{0}) Suggested ad unit with ID \"{1}\", and number of requests " +
-                "\"{2}\" was found.", i, suggestedAdUnit.id, suggestedAdUnit.numRequests);
-            i++;
+          if (page.results != null) {
+            int i = page.startIndex;
+            foreach (SuggestedAdUnit suggestedAdUnit in page.results) {
+              Console.WriteLine("{0}) Suggested ad unit with ID \"{1}\", and number of requests " +
+                  "\"{2}\" was found.", i, suggestedAdUnit.id, suggestedAdUnit.numRequests);
+              i++;
+            }
           }
-        }
+
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get suggested ad units. Exception says \"{0}\"", ex.Message);

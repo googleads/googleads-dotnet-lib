@@ -16,10 +16,10 @@
 
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201403;
 using Google.Api.Ads.Dfp.v201403;
 
 using System;
-using Google.Api.Ads.Dfp.Util.v201403;
 using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
@@ -60,23 +60,20 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
           DfpService.v201403.CustomFieldService);
 
       // Create statement to select only custom fields that apply to line items.
-      String statementText = "WHERE entityType = :entityType LIMIT 500";
-      Statement filterStatement = new StatementBuilder(statementText)
-          .AddValue("entityType", CustomFieldEntityType.LINE_ITEM.ToString())
-          .ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("entityType = :entityType")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("entityType", CustomFieldEntityType.LINE_ITEM.ToString());
 
-      // Set defaults for page and offset.
+      // Set default for page.
       CustomFieldPage page = new CustomFieldPage();
-      int offset = 0;
       int i = 0;
 
       try {
         do {
-          // Create a statement to page through custom fields.
-          filterStatement.query = statementText + " OFFSET " + offset;
-
           // Get custom fields by statement.
-          page = customFieldService.getCustomFieldsByStatement(filterStatement);
+          page = customFieldService.getCustomFieldsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null) {
             foreach (CustomField customField in page.results) {
@@ -85,8 +82,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
               i++;
             }
           }
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get all line item custom fields. Exception says \"{0}\"",

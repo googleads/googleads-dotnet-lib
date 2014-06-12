@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example updates teams by adding an ad unit to the first 5. To
+  /// This code example updates a team by adding an ad unit to it. To
   /// determine which teams exist, run GetAllTeams.cs. To determine which ad
   /// units exist, run GetAllAdUnits.cs.
   ///
@@ -35,7 +35,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example updates teams by adding an ad unit to the first 5. To " +
+        return "This code example updates a team by adding an ad unit to it. To " +
             "determine which teams exist, run GetAllTeams.cs. To determine which ad units " +
             "exist, run GetAllAdUnits.cs.";
       }
@@ -59,45 +59,45 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       // Get the TeamService.
       TeamService teamService = (TeamService) user.GetService(DfpService.v201403.TeamService);
 
-      // Set the ID of the ad unit to add to the teams.
+      // Set the ID of the team to update.
+      long teamId = long.Parse(_T("INSERT_TEAM_ID_HERE"));
+
+      // Set the ID of the ad unit to add to the team.
       String adUnitId = _T("INSERT_AD_UNIT_ID_HERE");
 
-      // Create a statement to select first 5 teams that aren't built-in.
-      Statement filterStatement = new StatementBuilder("WHERE id > 0 LIMIT 5").ToStatement();
+      // Create a statement to select the team.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :id")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("id", teamId);
 
       try {
         // Get the teams by statement.
-        TeamPage page = teamService.getTeamsByStatement(filterStatement);
+        TeamPage page = teamService.getTeamsByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          Team[] teams = page.results;
+        Team team = page.results[0];
 
-          // Update each local team object by adding the ad unit to it.
-          foreach (Team team in teams) {
-            // Don't add ad unit if the team has all inventory already.
-            if (!team.hasAllInventory) {
-              List<String> adUnitIds = new List<String>();
-              if (team.adUnitIds != null) {
-                adUnitIds.AddRange(team.adUnitIds);
-              }
-              adUnitIds.Add(adUnitId);
-              team.adUnitIds = adUnitIds.ToArray();
-            }
+        // Don't add ad unit if the team has all inventory already.
+        if (!team.hasAllInventory) {
+          List<String> adUnitIds = new List<String>();
+          if (team.adUnitIds != null) {
+            adUnitIds.AddRange(team.adUnitIds);
           }
+          adUnitIds.Add(adUnitId);
+          team.adUnitIds = adUnitIds.ToArray();
+        }
 
-          // Update the teams on the server.
-          teams = teamService.updateTeams(teams);
+        // Update the teams on the server.
+        Team[] teams = teamService.updateTeams(new Team[] {team});
 
-          if (teams != null) {
-            foreach (Team team in teams) {
-              Console.WriteLine("A team with ID \"{0}\" and name \"{1}\" was updated.",
-                  team.id, team.name);
-            }
-          } else {
-            Console.WriteLine("No teams updated.");
+        if (teams != null) {
+          foreach (Team updatedTeam in teams) {
+            Console.WriteLine("A team with ID \"{0}\" and name \"{1}\" was updated.",
+                updatedTeam.id, updatedTeam.name);
           }
         } else {
-          Console.WriteLine("No teams found to update.");
+          Console.WriteLine("No teams updated.");
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to update teams. Exception says \"{0}\"", ex.Message);

@@ -61,13 +61,22 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
               DfpService.v201403.PublisherQueryLanguageService);
 
       try {
-        string selectStatement = "Select Id, Name, Status from Line_Item order by Id ASC";
+        StatementBuilder lineItemStatementBuilder = new StatementBuilder()
+            .Select("Id, Name, Status")
+            .From("Line_Item")
+            .OrderBy("Id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         string lineItemFilePath = "Line-Item-Matchtable.csv";
-        fetchMatchTables(pqlService, selectStatement, lineItemFilePath);
+        fetchMatchTables(pqlService, lineItemStatementBuilder, lineItemFilePath);
 
-        selectStatement = "Select Id, Name from Ad_Unit order by Id ASC";
+        StatementBuilder adUnitStatementBuilder = new StatementBuilder()
+            .Select("Id, Name")
+            .From("Ad_Unit")
+            .OrderBy("Id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         string adUnitFilePath = "Ad-Unit-Matchtable.csv";
-        fetchMatchTables(pqlService, selectStatement, adUnitFilePath);
+        fetchMatchTables(pqlService, adUnitStatementBuilder, adUnitFilePath);
+
         Console.WriteLine("Ad units saved to %s", adUnitFilePath);
         Console.WriteLine("Line items saved to %s\n", lineItemFilePath);
       } catch (Exception ex) {
@@ -82,25 +91,20 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// <param name="selectStatement">The select statement.</param>
     /// <param name="fileName">Name of the file.</param>
     private static void fetchMatchTables(PublisherQueryLanguageService pqlService,
-        string selectStatement, string fileName) {
-      int pageSize = 500;
-      Statement statement = new StatementBuilder(selectStatement).ToStatement();
+        StatementBuilder statementBuilder, string fileName) {
 
-      int offset = 0;
       int resultSetSize = 0;
       List<Row> allRows = new List<Row>();
       ResultSet resultSet;
 
       do {
-        statement.query = selectStatement + " limit " + pageSize + " OFFSET " + offset;
-
-        resultSet = pqlService.select(statement);
+        resultSet = pqlService.select(statementBuilder.ToStatement());
         allRows.AddRange(resultSet.rows);
         Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
 
-        offset += pageSize;
+        statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
-      } while (resultSetSize == pageSize);
+      } while (resultSetSize > 0);
 
       resultSet.rows = allRows.ToArray();
       List<String[]> rows = PqlUtilities.ResultSetToStringArrayList(resultSet);

@@ -58,10 +58,6 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       PlacementService placementService =
           (PlacementService) user.GetService(DfpService.v201403.PlacementService);
 
-      // Get the InventoryService.
-      InventoryService inventoryService =
-          (InventoryService) user.GetService(DfpService.v201403.InventoryService);
-
       // Create a statement to select first 500 placements.
       Statement filterStatement = new Statement();
       filterStatement.query = "LIMIT 500";

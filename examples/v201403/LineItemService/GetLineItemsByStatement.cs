@@ -22,8 +22,7 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example gets all line items for the given order. The Statement
-  /// retrieves up to the maximum page size limit of 500. To create line items,
+  /// This code example gets all line items for the given order. To create line items,
   /// run CreateLineItems.cs.
   ///
   /// Tags: LineItemService.getLineItemsByStatement
@@ -34,8 +33,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all line items for the given order. The Statement " +
-            "retrieves up to the maximum page size limit of 500. To create line items, " +
+        return "This code example gets all line items for the given order. To create line items, " +
             "run CreateLineItems.cs.";
       }
     }
@@ -64,24 +62,31 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
 
       // Create a statement to only select line items that need creatives from a
       // given order.
-      Statement filterStatement =
-          new StatementBuilder("WHERE orderId = :orderId AND status = :status LIMIT 500")
-              .AddValue("orderId", orderId)
-              .AddValue("status", ComputedStatus.NEEDS_CREATIVES.ToString())
-              .ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("orderId = :orderId AND status = :status")
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .AddValue("orderId", orderId)
+          .AddValue("status", ComputedStatus.NEEDS_CREATIVES.ToString());
+
+      // Set default for page.
+      LineItemPage page = new LineItemPage();
 
       try {
-        // Get line items by Statement.
-        LineItemPage page = lineItemService.getLineItemsByStatement(filterStatement);
+        do {
+          // Get line items by Statement.
+          page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null && page.results.Length > 0) {
-          int i = page.startIndex;
-          foreach (LineItem lineItem in page.results) {
-            Console.WriteLine("{0}) Line item with ID ='{1}', belonging to order ID = '{2}' and " +
-                 "named '{3}' was found.", i, lineItem.id, lineItem.orderId, lineItem.name);
-            i++;
+          if (page.results != null && page.results.Length > 0) {
+            int i = page.startIndex;
+            foreach (LineItem lineItem in page.results) {
+              Console.WriteLine("{0}) Line item with ID ='{1}', belonging to order ID = '{2}' " +
+                   "and named '{3}' was found.", i, lineItem.id, lineItem.orderId, lineItem.name);
+              i++;
+            }
           }
-        }
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get line item by Statement. Exception says \"{0}\"",

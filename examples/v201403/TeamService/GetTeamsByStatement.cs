@@ -24,8 +24,7 @@ using System.Text;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example gets all teams ordered by name. The statement retrieves
-  /// up to the maximum page size limit of 500. To create teams,
+  /// This code example gets all teams ordered by name. To create teams,
   /// run CreateTeams.cs.
   ///
   /// Tags: TeamService.getTeamsByStatement
@@ -36,8 +35,8 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all teams ordered by name. The statement retrieves up to " +
-            "the maximum page size limit of 500. To create teams, run CreateTeams.cs.";
+        return "This code example gets all teams ordered by name. To create teams, run " +
+            "CreateTeams.cs.";
       }
     }
 
@@ -60,22 +59,30 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       TeamService teamService = (TeamService) user.GetService(DfpService.v201403.TeamService);
 
       // Create a statement to order teams by name.
-      Statement filterStatement = new StatementBuilder("ORDER BY name LIMIT 500").ToStatement();
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("name ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+      // Set default for page.
+      TeamPage page = new TeamPage();
 
       try {
-      // Get teams by statement.
-      TeamPage page = teamService.getTeamsByStatement(filterStatement);
+        do {
+          // Get teams by statement.
+          page = teamService.getTeamsByStatement(statementBuilder.ToStatement());
 
-      // Display results.
-      if (page.results != null) {
-        int i = page.startIndex;
-        foreach (Team team in page.results) {
-          Console.WriteLine("{0}) Team with ID \"{1}\" and name \"{2}\" was found.",
-              i, team.id, team.name);
-          i++;
-        }
-      }
+          // Display results.
+          if (page.results != null) {
+            int i = page.startIndex;
+            foreach (Team team in page.results) {
+              Console.WriteLine("{0}) Team with ID \"{1}\" and name \"{2}\" was found.",
+                  i, team.id, team.name);
+              i++;
+            }
+          }
 
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while(statementBuilder.GetOffset() < page.totalResultSetSize);
       Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get teams by statement. Exception says \"{0}\"", ex.Message);

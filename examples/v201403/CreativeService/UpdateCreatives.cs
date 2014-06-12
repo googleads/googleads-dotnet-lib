@@ -22,8 +22,7 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.v201403 {
   /// <summary>
-  /// This code example gets all image creatives. The Statement retrieves up to
-  /// the maximum page size limit of 500. To create an image creative, run
+  /// This code example updates image creatives. To create an image creative, run
   /// CreateCreatives.cs.
   ///
   /// Tags: CreativeService.getCreativesByStatement
@@ -35,8 +34,7 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all image creatives. The Statement retrieves up to the " +
-            "maximum page size limit of 500. To create an image creative, run " +
+        return "This code example updates image creatives. To create an image creative, run " +
             "CreateCreatives.cs.";
       }
     }
@@ -60,41 +58,37 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
       CreativeService creativeService =
           (CreativeService) user.GetService(DfpService.v201403.CreativeService);
 
+      // Set the ID of the creative to update.
+      int creativeId = int.Parse(_T("INSERT_CREATIVE_ID_HERE"));
+
       // Create a Statement to get all image creatives.
-      Statement statement = new StatementBuilder("WHERE creativeType = :creativeType LIMIT 500").
-          AddValue("creativeType", "ImageCreative").ToStatement();
+      Statement statement = new StatementBuilder()
+          .Where("id = :id")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("id", creativeId).ToStatement();
 
       try {
         // Get creatives by Statement.
         CreativePage page = creativeService.getCreativesByStatement(statement);
 
-        if (page.results != null && page.results.Length > 0) {
-          Creative[] creatives = page.results;
+        Creative creative = page.results[0];
 
-          // Update each local creative object by changing its destination URL.
-          foreach (Creative creative in creatives) {
-            if (creative is ImageCreative) {
-              ImageCreative imageCreative = (ImageCreative) creative;
-              imageCreative.destinationUrl = "http://news.google.com";
-            }
+        // Update local creative object by changing its destination URL.
+        if (creative is ImageCreative) {
+          ImageCreative imageCreative = (ImageCreative) creative;
+          imageCreative.destinationUrl = "http://news.google.com";
+        }
+
+        // Update the creatives on the server.
+        Creative[] creatives = creativeService.updateCreatives(new Creative[] { creative });
+
+        foreach (Creative updatedCreative in creatives) {
+          if (creative is ImageCreative) {
+            ImageCreative imageCreative = (ImageCreative) updatedCreative;
+            Console.WriteLine("An image creative with ID = '{0}' and destination URL ='{1}' " +
+                "was updated.", imageCreative.id, imageCreative.destinationUrl);
           }
-
-          // Update the creatives on the server.
-          creatives = creativeService.updateCreatives(creatives);
-
-          if (creatives != null) {
-            foreach (Creative creative in creatives) {
-              if (creative is ImageCreative) {
-                ImageCreative imageCreative = (ImageCreative) creative;
-                Console.WriteLine("An image creative with ID = '{0}' and destination URL ='{1}' " +
-                    "was updated.", imageCreative.id, imageCreative.destinationUrl);
-              }
-            }
-          } else {
-            Console.WriteLine("No creatives updated.");
-          }
-        } else {
-          Console.WriteLine("No creatives found to update.");
         }
       } catch (Exception ex) {
         Console.WriteLine("Failed to update creatives. Exception says \"{0}\"", ex.Message);

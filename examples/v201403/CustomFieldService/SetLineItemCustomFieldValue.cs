@@ -71,29 +71,21 @@ namespace Google.Api.Ads.Dfp.Examples.v201403 {
 
       // Set the IDs of the custom fields, custom field option, and line item.
       long customFieldId = long.Parse(_T("INSERT_STRING_CUSTOM_FIELD_ID_HERE"));
-      long dropDownCustomFieldId = long.Parse(_T("INSERT_DROP_DOWN_CUSTOM_FIELD_ID_HERE"));
       long customFieldOptionId = long.Parse(_T("INSERT_CUSTOM_FIELD_OPTION_ID_HERE"));
       long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
 
       try {
+        // Get the drop-down custom field id.
+        long dropDownCustomFieldId =
+            customFieldService.getCustomFieldOption(customFieldOptionId).customFieldId;
+
         StatementBuilder statementBuilder = new StatementBuilder()
             .Where("id = :id")
             .OrderBy("id ASC")
-            .Limit(1);
-
-        // Get the custom field.
-        statementBuilder.AddValue("id", customFieldId);
-        CustomFieldPage page = customFieldService.getCustomFieldsByStatement(
-            statementBuilder.ToStatement());
-        CustomField customField = page.results[0];
-
-        // Get the drop-down custom field.
-        statementBuilder.AddValue("id", dropDownCustomFieldId);
-        page = customFieldService.getCustomFieldsByStatement(statementBuilder.ToStatement());
-        DropDownCustomField dropDownCustomField = (DropDownCustomField) page.results[0];
+            .Limit(1)
+            .AddValue("id", lineItemId);
 
         // Get the line item.
-        statementBuilder.AddValue("id", lineItemId);
         LineItemPage lineItemPage = lineItemService.getLineItemsByStatement(
             statementBuilder.ToStatement());
         LineItem lineItem = lineItemPage.results[0];
