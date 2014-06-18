@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{01EF0848-0412-4AA5-9360-033E2060447F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Google.Api.Ads.AdWords.Examples.CSharp</RootNamespace>
+    <AssemblyName>Google.AdWords.Examples.CSharp</AssemblyName>
+    <StartupObject>Google.Api.Ads.AdWords.Examples.CSharp.Program</StartupObject>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Properties.cs" />
+    <Compile Include="v201309\AccountManagement\GetAccountChanges.cs" />
+    <Compile Include="v201309\AdvancedOperations\AddAdGroupBidModifier.cs" />
+    <Compile Include="v201309\AdvancedOperations\GetAdGroupBidModifiers.cs" />
+    <Compile Include="v201309\AdvancedOperations\UploadOfflineConversions.cs" />
+    <Compile Include="v201309\AdvancedOperations\UseSharedBiddingStrategy.cs" />
+    <Compile Include="v201309\BasicOperations\AddAdGroupDemographicCriteria.cs" />
+    <Compile Include="v201309\BasicOperations\AddAdGroups.cs" />
+    <Compile Include="v201309\BasicOperations\AddCampaigns.cs" />
+    <Compile Include="v201309\BasicOperations\AddPlacements.cs" />
+    <Compile Include="v201309\BasicOperations\AddThirdPartyRedirectAds.cs" />
+    <Compile Include="v201309\BasicOperations\DeleteAd.cs" />
+    <Compile Include="v201309\BasicOperations\DeleteAdGroup.cs" />
+    <Compile Include="v201309\BasicOperations\DeleteCampaign.cs" />
+    <Compile Include="v201309\BasicOperations\DeletePlacement.cs" />
+    <Compile Include="v201309\BasicOperations\GetAdGroups.cs" />
+    <Compile Include="v201309\BasicOperations\GetCampaigns.cs" />
+    <Compile Include="v201309\BasicOperations\GetCampaignsWithAwql.cs" />
+    <Compile Include="v201309\BasicOperations\GetPlacements.cs" />
+    <Compile Include="v201309\BasicOperations\GetThirdPartyRedirectAds.cs" />
+    <Compile Include="v201309\BasicOperations\PauseAd.cs" />
+    <Compile Include="v201309\BasicOperations\UpdateAdGroup.cs" />
+    <Compile Include="v201309\BasicOperations\UpdateCampaign.cs" />
+    <Compile Include="v201309\BasicOperations\UpdatePlacement.cs" />
+    <Compile Include="v201309\CampaignManagement\AddPlacementsInBulk.cs" />
+    <Compile Include="v201309\CampaignManagement\GetAllDisapprovedAds.cs" />
+    <Compile Include="v201309\CampaignManagement\GetAllDisapprovedAdsWihAwql.cs" />
+    <Compile Include="v201309\ErrorHandling\HandlePartialFailures.cs" />
+    <Compile Include="v201309\ErrorHandling\HandlePolicyViolationError.cs" />
+    <Compile Include="v201309\ErrorHandling\HandleRateExceededError.cs" />
+    <Compile Include="v201309\ErrorHandling\HandleTwoFactorAuthorizationError.cs" />
+    <Compile Include="v201309\Miscellaneous\GetAllVideosAndImages.cs" />
+    <Compile Include="v201309\Miscellaneous\UploadImage.cs" />
+    <Compile Include="v201309\Optimization\GetPlacementIdeas.cs" />
+    <Compile Include="v201309\Remarketing\AddAudience.cs" />
+    <Compile Include="v201309\Remarketing\AddConversionTracker.cs" />
+    <Compile Include="v201309\Reporting\DownloadCriteriaReport.cs" />
+    <Compile Include="v201309\Reporting\DownloadCriteriaReportWithAwql.cs" />
+    <Compile Include="v201309\Reporting\GetReportFields.cs" />
+    <Compile Include="v201309\Targeting\AddCampaignTargetingCriteria.cs" />
+    <Compile Include="v201309\Targeting\GetCampaignTargetingCriteria.cs" />
+    <Compile Include="v201309\Targeting\GetTargetableLanguagesAndCarriers.cs" />
+    <Compile Include="v201309\Targeting\LookupLocation.cs" />
+    <Compile Include="v201402\AccountManagement\GetAccountChanges.cs" />
+    <Compile Include="v201402\AdvancedOperations\AddAdGroupBidModifier.cs" />
+    <Compile Include="v201402\AdvancedOperations\GetAdGroupBidModifiers.cs" />
+    <Compile Include="v201402\AdvancedOperations\UploadOfflineConversions.cs" />
+    <Compile Include="v201402\AdvancedOperations\UseSharedBiddingStrategy.cs" />
+    <Compile Include="v201402\BasicOperations\AddAdGroupDemographicCriteria.cs" />
+    <Compile Include="v201402\BasicOperations\AddAdGroups.cs" />
+    <Compile Include="v201402\BasicOperations\AddCampaigns.cs" />
+    <Compile Include="v201402\BasicOperations\AddPlacements.cs" />
+    <Compile Include="v201402\BasicOperations\AddThirdPartyRedirectAds.cs" />
+    <Compile Include="v201402\BasicOperations\DeleteAd.cs" />
+    <Compile Include="v201402\BasicOperations\DeleteAdGroup.cs" />
+    <Compile Include="v201402\BasicOperations\DeleteCampaign.cs" />
+    <Compile Include="v201402\BasicOperations\DeletePlacement.cs" />
+    <Compile Include="v201402\BasicOperations\GetAdGroups.cs" />
+    <Compile Include="v201402\BasicOperations\GetCampaigns.cs" />
+    <Compile Include="v201402\BasicOperations\GetCampaignsWithAwql.cs" />
+    <Compile Include="v201402\BasicOperations\GetPlacements.cs" />
+    <Compile Include="v201402\BasicOperations\GetThirdPartyRedirectAds.cs" />
+    <Compile Include="v201402\BasicOperations\PauseAd.cs" />
+    <Compile Include="v201402\BasicOperations\UpdateAdGroup.cs" />
+    <Compile Include="v201402\BasicOperations\UpdateCampaign.cs" />
+    <Compile Include="v201402\BasicOperations\UpdatePlacement.cs" />
+    <Compile Include="v201402\CampaignManagement\AddPlacementsInBulk.cs" />
+    <Compile Include="v201402\CampaignManagement\GetAllDisapprovedAds.cs" />
+    <Compile Include="v201402\CampaignManagement\GetAllDisapprovedAdsWihAwql.cs" />
+    <Compile Include="v201402\ErrorHandling\HandlePartialFailures.cs" />
+    <Compile Include="v201402\ErrorHandling\HandlePolicyViolationError.cs" />
+    <Compile Include="v201402\ErrorHandling\HandleRateExceededError.cs" />
+    <Compile Include="v201402\Miscellaneous\GetAllVideosAndImages.cs" />
+    <Compile Include="v201402\Miscellaneous\UploadImage.cs" />
+    <Compile Include="v201402\Optimization\GetPlacementIdeas.cs" />
+    <Compile Include="v201402\Remarketing\AddAudience.cs" />
+    <Compile Include="v201402\Remarketing\AddConversionTracker.cs" />
+    <Compile Include="v201402\Reporting\DownloadCriteriaReport.cs" />
+    <Compile Include="v201402\Reporting\DownloadCriteriaReportWithAwql.cs" />
+    <Compile Include="v201402\Reporting\GetReportFields.cs" />
+    <Compile Include="v201402\Targeting\AddCampaignTargetingCriteria.cs" />
+    <Compile Include="v201402\Targeting\GetCampaignTargetingCriteria.cs" />
+    <Compile Include="v201402\Targeting\GetTargetableLanguagesAndCarriers.cs" />
+    <Compile Include="v201402\Targeting\LookupLocation.cs" />
+    <Compile Include="ExampleBase.cs" />
+    <Compile Include="ExampleUtilities.cs" />
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\AdWords\AdWords.csproj">
+      <Name>AdWords</Name>
+    </ProjectReference>
+          <ProjectReference Include="..\..\..\src\Common\Common.csproj">
+            <Name>Common</Name>
+          </ProjectReference></ItemGroup>
+</Project>
