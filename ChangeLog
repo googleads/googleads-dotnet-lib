@@ -1,0 +1,179 @@
+7.1.0
+- Added support for v201405.
+- OAuth authentication moved from SOAP header to HTTP headers.
+- Updated v201403 examples to use the newest StatementBuilder features.
+
+7.0.0
+- The library now uses System.Trace for logging. If you are not familiar with
+  Trace listeners, you can read about them at
+  http://msdn.microsoft.com/en-us/library/4y5y10s7(v=vs.110).aspx.
+
+  The following configuration keys are no longer available:
+  -- LogPath
+  -- LogToFile
+  -- LogErrorsOnly
+
+  Instead, the following trace sources/switches have been added:
+  -- AdsClientLibs.SoapXmlLogs: Trace source / switch for logging SOAP xmls.
+  -- AdsClientLibs.RequestInfoLogs: Trace source / switch for logging request
+     details.
+
+  You may add an appropriate listener type to the trace source to save the logs
+  to a data store of your choice. We have added a TextWriterTraceListener
+  entry in the default App.config; this listener gives you the functionality
+  of the old behaviour where logs were written to a file on disk. The path of
+  the log file can be configured using the initializeData setting of the
+  listener, and is the equivalent of the old LogPath setting.
+
+  To turn logging on / off and to set its level, you can use the trace
+  switches. You can set the trace switches to one of the following values:
+  - Off: This turns off logging, and is the equivalent of LogToFile: false
+  - Info: This turns on logging, and is the equivalent of LogErrorsOnly: false.
+  - Error: This turns on logging, and is the equivalent of LogErrorsOnly: true.
+
+- Common library version was bumped to 2.3.0.
+
+6.4.0
+- Added support for v201403.
+- Added LiveStreamEventService and RateCardCustomizationGroupService.
+- Removed all non-bulk methods.
+- Statement builder can now be used to construct statements in parts.
+- Common library version was bumped to 2.2.0.
+- OAuthTokenGenerator added Google Places for Business as a valid API scope.
+
+6.3.0
+- Common library version was bumped to 2.1.0.
+
+6.2.1
+- Fixed incorrect stub generated for ContentMetadataKeyHierarchyTargeting
+  class.
+
+6.2.0
+- Added support for v201311.
+- OAuthTokenGenerator is now a Windows Form application. The source is included
+  as a .csproj in the source distribution as well as in the
+  utilities\OAuthTokenGenerator folder of the repository. Compiled binary is
+  available in the lib\ folder of the binary distribution.
+- Updated README to add a section on announcements.
+- Common library version was bumped to 2.0.0.
+
+6.1.0
+- Added support for v201308.
+- Removed support for deprecated versions.
+- PqlUtilities.ResultSetToStringArrayList will format DateValue in yyyy-mm-dd
+  format. DateTimeValue is formatted in yyyy-mm-dd HH:mm:ss Z format
+
+6.0.0
+- Support for ClientLogin has been deprecated. OAuth2 is now the default
+  authentication mechanism.
+- Compile-time deprecation warnings have been added to AuthToken,
+  AuthTokenException, AuthTokenCache, and DefaultAuthTokenCache.
+- The libary will now generate Trace warnings if you use a deprecated class.
+- Added a new utility class in Common\Utils\OAuth2TokenGenerator.cs, that
+  generates the config keys needed for using the library with OAuth2.
+- Google.Ads.Common.OAuth assembly has been deprecated. Its functionality
+  has been moved to Google.Ads.Common assembly instead.
+- Configuration keys for ClientLogin support were moved to AppConfig interface.
+- OAuth2 class was refactored to split its functionality into two classes.
+  Web / Installed application flow will use OAuth2ProviderForApplications.cs,
+  and serviced account flow will use OAuth2ProviderForServiceAccounts.cs.
+- DFP services has now support for proactively refreshing OAuth2 tokens.
+- All classes which expose An AppConfig property now implement Configurable
+  interface instead.
+- All configuration parameters are now validated properly at runtime.
+- We have improved the documentation of App.config and Web.config.
+- Common library version was bumped to 1.8.0
+
+5.3.0
+- Common library version was bumped to 1.7.0.
+
+5.2.0
+- Added support for v201302.
+
+5.1.0
+- Common library version was bumped to 1.6.0.
+- Removed support for OAuth 1.0a.
+
+5.0.0
+- Common library version was bumped to 1.5.0.
+- Added support for v201211.
+- Removed support for v201108, v201111, and v201201.
+
+4.9.0
+- Common library version was bumped to 1.4.0.
+- Fixed the retry mechanism for recovering from OAuth2 and ClientLogin errors.
+- RetryCount configuration key is now available through App.config.
+
+4.8.0
+- Added support for v201208.
+- Common library version was bumped to 1.3.
+
+4.7.0
+- Regenerated v201206 stub code for supporting ComputedStatus.DELIVERY_EXTENDED.
+
+4.6.0
+- Fixed issues 13, 14.
+
+4.5.0
+- Added experimental support for OAuth2 as an authentication mechanism.
+- Added support for v201206.
+- Common library version was bumped to 1.2.0.
+- Changed the way user agents are constructed for SOAP requests.
+
+4.4.0
+- Added support for v201204.
+- Fixed issue 10.
+
+4.3.0
+- Added support for v201203.
+- Removed support for v201103, v201104, v201107.
+
+4.2.0
+- Fixed issues 8, 9
+- Added support for OAuth 1.0a in non ASP.NET environments.
+
+4.1.0
+- Added support for v201201.
+- Added new code examples for Team.
+- Added new reports examples and fixed some existing ones.
+
+4.0.0
+- Split the project into Google.Ads.Common and Google.Dfp. If you are using
+  a binary distribution, you need to add reference to Google.Ads.Common.dll in
+  addition to Google.Dfp.dll. You also need to update your Web.config and
+  App.config to fix the assembly name.
+
+3.7.0
+- Added support for ThirdPartySlotService.
+
+3.6.0
+- Added support for v201111.
+
+3.5.0
+- Exposed Timeout setting in App.config.
+- Default service Timeout is now infinite.
+
+3.4.0
+- Fixed issues 4, 5, 6
+- Fixed broken csproj files.
+
+3.3.0
+- Added support for v201108.
+
+3.2.0
+- Added OAuth support.
+- Added support for v201107.
+
+3.1.0
+- Added support for v201104.
+
+3.0.0
+- Added support for v201103.
+
+2.0.0
+- Added support for v201101.
+
+1.0.0
+- Released the first version of client library.
+- Added support for v201004 and v201010.
+- Code examples for all services.
