@@ -1,3 +1,7 @@
+7.1.1
+- Added new LineItem error reason.
+- Added TokenError to UserService.
+
 7.1.0
 - Added support for v201405.
 - OAuth authentication moved from SOAP header to HTTP headers.

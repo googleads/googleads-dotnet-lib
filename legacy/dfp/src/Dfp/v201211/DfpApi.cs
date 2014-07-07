@@ -591,6 +591,7 @@ namespace Google.Api.Ads.Dfp.v201211 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompanyCreditStatusError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClickTrackingLineItemError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeTemplateError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TokenError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompanyError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitTypeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventoryUnitSizesError))]
@@ -11984,6 +11985,43 @@ User[] users) {
       get { return this.descriptionField; }
       set { this.descriptionField = value; }
     }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201211")]
+  public partial class TokenError : ApiError {
+    private TokenErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public TokenErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TokenError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201211")]
+  public enum TokenErrorReason {
+    INVALID,
+    EXPIRED,
+    UNKNOWN
   }
 
 
