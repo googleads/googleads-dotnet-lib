@@ -1,7 +1,6 @@
 #Google Ads API .NET Client Library
 
 This project hosts the .NET client library for the various SOAP-Based Ads APIs - AdWords API, DoubleClick Ad Exchange Buyer SOAP (AdxBuyer) API, DoubleClick for Advertisers (DFA) API, and Google's DoubleClick for Publishers (DFP) API at Google.
-
 ##Features
 - Distributed via Nuget
 - Stub classes for all the supported API versions and services.
