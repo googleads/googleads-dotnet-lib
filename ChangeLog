@@ -1,0 +1,23 @@
+18.0.0
+======
+
+- AdWords, AdxBuyer, DFP and DFA .NET client libraries were combined into a
+  single repository and given a single version number. The older versions
+  and ChangeLog may be obtained from
+  https://github.com/googleads/googleads-dotnet-lib/tree/master/legacy.
+
+AdWords:
+- Added support for v201406, except for AdWords for Video.
+- Updated OAuth scope. See
+  https://developers.google.com/adwords/api/docs/guides/authentication#scope
+  for details.
+
+DFA:
+  -
+
+DFP:
+  -
+
+Common:
+  - Version was bumped to 3.0.0.
+
