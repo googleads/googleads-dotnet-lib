@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201308_1_1_get_user_team_associations_by_statement =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201308_1_1_get_user_team_associations_by_statement.html#a6fd2749af3bdb5494f2009f2bdfd2f7a", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201308_1_1_get_user_team_associations_by_statement.html#a112fbe0f9cbcfc6bc37a11a4320fcf1f", null ]
+];

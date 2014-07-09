@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201208_1_1_has_html_snippet_dynamic_allocation_creative =
+[
+    [ "codeSnippet", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201208_1_1_has_html_snippet_dynamic_allocation_creative.html#acbc6ed2233608621ec44f7c1e4ba2268", null ]
+];

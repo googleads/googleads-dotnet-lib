@@ -1,0 +1,11 @@
+var namespace_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference =
+[
+    [ "AdType", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_ad_type.html", null ],
+    [ "AdTypeContract", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_ad_type_contract.html", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_ad_type_contract" ],
+    [ "ApiException", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_api_exception.html", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_api_exception" ],
+    [ "Base", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_base.html", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_base" ],
+    [ "IWcfService", "interface_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_i_wcf_service.html", "interface_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_i_wcf_service" ],
+    [ "IWcfServiceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_i_wcf_service_channel.html", null ],
+    [ "ReportContract", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_report_contract.html", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_report_contract" ],
+    [ "WcfServiceClient", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_wcf_service_client.html", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_wcf_1_1_wcf_service_reference_1_1_wcf_service_client" ]
+];

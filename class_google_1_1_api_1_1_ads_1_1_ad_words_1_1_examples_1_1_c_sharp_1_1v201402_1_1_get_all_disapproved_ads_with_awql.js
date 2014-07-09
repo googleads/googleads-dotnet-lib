@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201402_1_1_get_all_disapproved_ads_with_awql =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201402_1_1_get_all_disapproved_ads_with_awql.html#a6fd46c1a882db2d07bce346afd36e600", null ],
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201402_1_1_get_all_disapproved_ads_with_awql.html#a6fd46c1a882db2d07bce346afd36e600", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201402_1_1_get_all_disapproved_ads_with_awql.html#aa868907b84bcbbb3170a339de667500d", null ]
+];

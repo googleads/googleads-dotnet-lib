@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201309_1_1_ad_group_bid_modifier_page =
+[
+    [ "entries", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201309_1_1_ad_group_bid_modifier_page.html#aca1314a7bf18d1a190f02fab1accab8a", null ]
+];

@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201311_1_1_deactivate_all_line_item_custom_fields =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201311_1_1_deactivate_all_line_item_custom_fields.html#aade1fa923658a3d3b96324f052af8d7e", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201311_1_1_deactivate_all_line_item_custom_fields.html#a3d94161d18db53923e5d6aa38a1d5688", null ]
+];

@@ -1,0 +1,25 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company =
+[
+    [ "address", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a673ce5c8ea938cb33ecc473f49c602de", null ],
+    [ "appliedLabels", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a29574e7cada273ee42bc4cb09ae93d0f", null ],
+    [ "appliedTeamIds", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a77ed9519e794182f6cef967c24fb224c", null ],
+    [ "comment", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#acf374802bd27fe6ed98e976ce725b8f5", null ],
+    [ "creditStatus", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a6f9e4b95c4a3b7ba6eb32a7dda317c41", null ],
+    [ "creditStatusSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a52d02d19e30445440e3dddcb183d2a21", null ],
+    [ "email", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a1dd318843aa94c10746e7433bac6d65a", null ],
+    [ "enableSameAdvertiserCompetitiveExclusion", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#aa0077365a0a3c1d5fc2a106be82c0f32", null ],
+    [ "enableSameAdvertiserCompetitiveExclusionSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#aef9e721bb77b8ff7af9bac45c1ad45b9", null ],
+    [ "externalId", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#ab5cc18d041a219f1b2631afdaa03ddb6", null ],
+    [ "faxPhone", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a50f273248f7bd2e8fbc8fb66f4a0b7c7", null ],
+    [ "id", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#af941e60f00652d50567cb5f37963f674", null ],
+    [ "idSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#aad463aaa9d0f6020281aaa291b5073ff", null ],
+    [ "lastModifiedDateTime", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#aca9a041e50c0ecb6ca9d6121f1a4b2ff", null ],
+    [ "name", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#ad69acce103de07b2a890b5b8b4534eda", null ],
+    [ "primaryContactId", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a6a88a752d67097385799cb3754b3f88c", null ],
+    [ "primaryContactIdSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a89738dc84195fbd604f24a171ca060f5", null ],
+    [ "primaryPhone", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a377bd41b47c9f09efe22df60313225d0", null ],
+    [ "thirdPartyCompanyId", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a70f53b5711896e68e4369960ff313991", null ],
+    [ "thirdPartyCompanyIdSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a6927221183d09abfb8889928b2c194aa", null ],
+    [ "type", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#a7d42e8e9b8d85454cb1a350da1bc5fb3", null ],
+    [ "typeSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_company.html#ae686ec7538465c5ebe0a831c6335a955", null ]
+];

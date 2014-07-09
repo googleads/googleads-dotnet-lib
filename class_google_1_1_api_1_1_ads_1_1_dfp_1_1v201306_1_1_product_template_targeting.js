@@ -1,0 +1,27 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting =
+[
+    [ "allowAdUnitTargetingCustomization", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#ae4ddcdd59354e32f86a4a2988a94c3d5", null ],
+    [ "allowAdUnitTargetingCustomizationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a635883302a6a9997e6811d25ec616b22", null ],
+    [ "allowBandwidthGroupTargetingCustomization", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a340865a0ac41159d1bc9989de2903bfc", null ],
+    [ "allowBandwidthGroupTargetingCustomizationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a31dc865ae879c3bd12184f5c96925841", null ],
+    [ "allowBrowserLanguageTargetingCustomization", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a6b562a9418ad22c46bc54944d3d8c7aa", null ],
+    [ "allowBrowserLanguageTargetingCustomizationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a036f38e57ff61d640904e44cc7862f6e", null ],
+    [ "allowBrowserTargetingCustomization", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a9c968121965a6b46fdfe9798a2a33847", null ],
+    [ "allowBrowserTargetingCustomizationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a24a05f17e100040b03b5013a339a7c25", null ],
+    [ "allowGeoTargetingCustomization", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a5cdb87cf352fca884fcce22d49700a39", null ],
+    [ "allowGeoTargetingCustomizationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a7470a12ef258dbb7a4ca12b7a971fb15", null ],
+    [ "allowOperatingSystemTargetingCustomization", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#afe69ef7f46e741bc6c9677e968d59238", null ],
+    [ "allowOperatingSystemTargetingCustomizationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#acb87a50e6135edfd07c6703f42e4ced8", null ],
+    [ "allowPlacementTargetingCustomization", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a45569f7d6057148379319cd86b51cb9e", null ],
+    [ "allowPlacementTargetingCustomizationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a56ef9aefea1e3cdcc0ee2062174819b7", null ],
+    [ "allowUserDomainTargetingCustomization", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a829ef0a1517163288840b381043d2af2", null ],
+    [ "allowUserDomainTargetingCustomizationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a8c15146ebf6a6c0ddcec98e25a1a704e", null ],
+    [ "bandwidthGroupTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a148cf69372eae2bf000249ce931d699e", null ],
+    [ "browserLanguageTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#ab57dc063e0e2c740642e2771c70e3dde", null ],
+    [ "browserTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#afa534e7cd1d9591369dd9a35a5629d06", null ],
+    [ "customizableCustomTargetingKeyIds", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a984ad53a306a20db985310f972f23fc8", null ],
+    [ "geoTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a1f21e0ba64f8879eb4f3fb950ee96170", null ],
+    [ "inventoryTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a87354de2cc3564423753be79ae14b1b8", null ],
+    [ "operatingSystemTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#aa080d95fedd6133a169cae678334f5f6", null ],
+    [ "userDomainTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product_template_targeting.html#a5f1e5e3c7523c25c7e5e0671fd050efc", null ]
+];

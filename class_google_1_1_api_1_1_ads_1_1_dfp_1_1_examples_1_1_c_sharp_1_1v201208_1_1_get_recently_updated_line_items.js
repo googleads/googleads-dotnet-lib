@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201208_1_1_get_recently_updated_line_items =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201208_1_1_get_recently_updated_line_items.html#abce93c06f7a442dadd68b9af7c6f77f9", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201208_1_1_get_recently_updated_line_items.html#a2fe2285cfacefcb32ab2ebbd657b07c6", null ]
+];

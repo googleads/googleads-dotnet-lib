@@ -1,0 +1,28 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product =
+[
+    [ "allowFrequencyCapsCustomization", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a57abf86c798bb44201c288e8f917f0ad", null ],
+    [ "allowFrequencyCapsCustomizationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a82042a26d1851c5d97f9caa8d4077911", null ],
+    [ "creativePlaceholders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a64a46a97a1ca200daae0e81e1151552f", null ],
+    [ "customFieldValues", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a6fbf1c3510693bc24776b860aea90f0a", null ],
+    [ "frequencyCaps", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a5014c2b6d3a6841b942d34e384b2074f", null ],
+    [ "id", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#ae71092b641c75e85854509abff3abf6c", null ],
+    [ "lastModifiedDateTime", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a4480b1f67d8d935ae7701d55e42274e1", null ],
+    [ "lineItemType", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#ad2029c2ff05c9d23efa055c44edecb20", null ],
+    [ "lineItemTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a0c55dd55f82ae0b38ad1b0f5a45be329", null ],
+    [ "name", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#af0f34ae06f4bf673aa2093049f76b4ba", null ],
+    [ "notes", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a7bcf441b566f57357bbd70d463d11a81", null ],
+    [ "priority", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a7d55480329cb364c75724df3bcbf7f00", null ],
+    [ "prioritySpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a4c451e4eb93c18e2ec079f0f7b313778", null ],
+    [ "productTemplateDescription", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#ae92651e4ef248f35e76856103c1a97b2", null ],
+    [ "productTemplateId", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a23bafcf5819b4b68d13b6d7a17ea81ee", null ],
+    [ "productTemplateIdSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#aa4dde7147f6e929defddc13752a5dcfb", null ],
+    [ "productType", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a0d3b6fbf0375c75ac00bfae8d55c5cda", null ],
+    [ "productTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a04b9dde0bea47c90b459e847a219f77a", null ],
+    [ "rateType", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a3a9079a9af65822f04d804f95e93076f", null ],
+    [ "rateTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a1ef07938fc0eddcd9019f4ec25af4040", null ],
+    [ "roadblockingType", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a45a213eaec72a69582c418b0bef0d96d", null ],
+    [ "roadblockingTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a907230f995b87785817110dfe0783cac", null ],
+    [ "status", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#abb6b9d775d14932aa7ae571b093abd73", null ],
+    [ "statusSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#a7e355cb092ad4b4f98a90ce62d696304", null ],
+    [ "targeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_product.html#aaac01152b4bb7706360f328d652480c2", null ]
+];

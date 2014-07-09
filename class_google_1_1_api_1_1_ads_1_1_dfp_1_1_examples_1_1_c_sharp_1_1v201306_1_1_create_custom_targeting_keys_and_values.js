@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201306_1_1_create_custom_targeting_keys_and_values =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201306_1_1_create_custom_targeting_keys_and_values.html#a135acdbdbd62d5c3dfc5852ec6009e29", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201306_1_1_create_custom_targeting_keys_and_values.html#adce3938e3d090d0bc069d7e212bd103b", null ]
+];
