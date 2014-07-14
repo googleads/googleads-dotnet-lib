@@ -25,9 +25,7 @@ Imports System.Text
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201309
   ''' <summary>
   ''' This code example illustrates how to create an account. Note by default,
-  ''' this account will only be accessible via parent MCC. This code example
-  ''' won't work with Test Accounts. See
-  ''' https://developers.google.com/adwords/api/docs/test-accounts
+  ''' this account will only be accessible via its parent MCC.
   '''
   ''' Tags: ManagedCustomerService.mutate
   ''' </summary>
@@ -54,9 +52,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201309
     Public Overrides ReadOnly Property Description() As String
       Get
         Return "This code example illustrates how to create an account. Note by default," & _
-            " this account will only be accessible via parent MCC. This code example won't " & _
-            "work with Test Accounts. See " & _
-            "https://developers.google.com/adwords/api/docs/test-accounts"
+            " this account will only be accessible via its parent MCC."
       End Get
     End Property
 

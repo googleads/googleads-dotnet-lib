@@ -223,11 +223,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
       coolBrand.value = "CoolBrand"
       helper.CreateUnit(otherCondition, coolBrand, 900000, False)
 
-      Dim cheapBrand = New ProductBrand()
+      Dim cheapBrand As New ProductBrand()
       cheapBrand.value = "CheapBrand"
       helper.CreateUnit(otherCondition, cheapBrand, 10000, False)
 
-      Dim otherBrand = helper.CreateSubdivision(otherCondition, New ProductBrand())
+      Dim otherBrand As ProductPartition = helper.CreateSubdivision( _
+          otherCondition, New ProductBrand())
 
       ' The value for the bidding category is a fixed ID for the
       ' Luggage & Bags' category. You can retrieve IDs for categories from the

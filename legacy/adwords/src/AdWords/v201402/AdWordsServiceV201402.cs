@@ -121,6 +121,12 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature CampaignService;
 
       /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201402/CampaignSharedSetService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature CampaignSharedSetService;
+
+      /// <summary>
       /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201402/ConstantDataService">
       /// this page</a> for details.
       /// </summary>
@@ -228,6 +234,18 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature ReportDefinitionService;
 
       /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201402/SharedCriterionService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature SharedCriterionService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201402/SharedSetService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature SharedSetService;
+
+      /// <summary>
       /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201402/TargetingIdeaService">
       /// this page</a> for details.
       /// </summary>
@@ -329,6 +347,8 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201402", "cm", "CampaignService");
         CampaignFeedService =
             AdWordsService.MakeServiceSignature("v201402", "cm", "CampaignFeedService");
+        CampaignSharedSetService =
+            AdWordsService.MakeServiceSignature("v201402", "cm", "CampaignSharedSetService");
         ConstantDataService =
             AdWordsService.MakeServiceSignature("v201402", "cm", "ConstantDataService");
         ConversionTrackerService =
@@ -361,6 +381,10 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201402", "cm", "MutateJobService");
         ReportDefinitionService =
             AdWordsService.MakeServiceSignature("v201402", "cm", "ReportDefinitionService");
+        SharedCriterionService =
+            AdWordsService.MakeServiceSignature("v201402", "cm", "SharedCriterionService");
+        SharedSetService =
+            AdWordsService.MakeServiceSignature("v201402", "cm", "SharedSetService");
         TargetingIdeaService =
             AdWordsService.MakeServiceSignature("v201402", "o", "TargetingIdeaService");
         TrafficEstimatorService =

@@ -173,6 +173,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201402 {
       // Create campaign.
       Campaign campaign = new Campaign();
       campaign.name = name;
+      campaign.advertisingChannelType = AdvertisingChannelType.SEARCH;
 
       // Set the budget.
       campaign.budget = new Budget();

@@ -53,7 +53,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Key name for placesOAuth2RefreshToken.
     /// </summary>
     private const string PLACES_OAUTH2_REFRESH_TOKEN = "GooglePlaces.OAuth2RefreshToken";
-    
+
     /// <summary>
     /// Key name for developerToken.
     /// </summary>
@@ -86,6 +86,11 @@ namespace Google.Api.Ads.AdWords.Lib {
         AdWordsAuthorizationMethod.OAuth2;
 
     /// <summary>
+    /// Default OAuth2 scope for AdWords API.
+    /// </summary>
+    private const string DEFAULT_OAUTH_SCOPE = "https://www.googleapis.com/auth/adwords";
+
+    /// <summary>
     /// ClientCustomerId to be used in SOAP headers.
     /// </summary>
     private string clientCustomerId;
@@ -109,7 +114,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Merchant Center ID to be used for Shopping campaigns.
     /// </summary>
     private long merchantCenterId;
-    
+
     /// <summary>
     /// Useragent to be used in the SOAP header.
     /// </summary>
@@ -233,7 +238,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Gets the default OAuth2 scope.
     /// </summary>
     public override string GetDefaultOAuth2Scope() {
-      return string.Format("{0}/api/adwords/", this.AdWordsApiServer);
+      return DEFAULT_OAUTH_SCOPE;
     }
 
     /// <summary>
@@ -261,7 +266,7 @@ namespace Google.Api.Ads.AdWords.Lib {
 
       clientCustomerId = ReadSetting(settings, CLIENT_CUSTOMER_ID, clientCustomerId);
       developerToken = ReadSetting(settings, DEVELOPER_TOKEN, developerToken);
-      
+
       // Configuration keys where AdWords API integrates with other products
       // that have their own settings.
       long.TryParse(ReadSetting(settings, MERCHANT_CENTER_ID, merchantCenterId.ToString()),

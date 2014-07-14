@@ -37,7 +37,7 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator {
     public MainForm() {
       InitializeComponent();
 
-      scopeMap.Add("AdWords API", "https://adwords.google.com/api/adwords");
+      scopeMap.Add("AdWords API", "https://www.googleapis.com/auth/adwords");
       scopeMap.Add("Doubleclick for Publishers API", "https://www.google.com/apis/ads/publisher");
       scopeMap.Add("DoubleClick for Advertisers API",
           "https://www.googleapis.com/auth/dfatrafficking");

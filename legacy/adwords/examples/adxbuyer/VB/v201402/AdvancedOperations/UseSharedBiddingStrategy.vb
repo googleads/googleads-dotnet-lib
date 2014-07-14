@@ -178,6 +178,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
       ' Create campaign.
       Dim campaign As New Campaign()
       campaign.name = name
+      campaign.advertisingChannelType = AdvertisingChannelType.SEARCH
 
       ' Set the budget.
       campaign.budget = New Budget()

@@ -75,6 +75,7 @@
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Util\v201309\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201402\MapUtilitiesTest.cs" />
+    <Compile Include="Util\v201406\MapUtilitiesTest.cs" />
     <Compile Include="v201309\AccountManagementTest.cs" />
     <Compile Include="v201309\AdvancedOperationsTest.cs" />
     <Compile Include="v201309\BasicOperationsTest.cs" />
@@ -99,6 +100,18 @@
     <Compile Include="v201402\TargetingTest.cs" />
     <Compile Include="v201402\TestUtils.cs" />
     <Compile Include="v201402\VersionedExampleTestsBase.cs" />
+    <Compile Include="v201406\AccountManagementTest.cs" />
+    <Compile Include="v201406\AdvancedOperationsTest.cs" />
+    <Compile Include="v201406\BasicOperationsTest.cs" />
+    <Compile Include="v201406\CampaignManagementTest.cs" />
+    <Compile Include="v201406\ErrorHandlingTest.cs" />
+    <Compile Include="v201406\MiscellaneousTest.cs" />
+    <Compile Include="v201406\OptimizationTest.cs" />
+    <Compile Include="v201406\RemarketingTest.cs" />
+    <Compile Include="v201406\ReportingTest.cs" />
+    <Compile Include="v201406\TargetingTest.cs" />
+    <Compile Include="v201406\TestUtils.cs" />
+    <Compile Include="v201406\VersionedExampleTestsBase.cs" />
     <Compile Include="AdWordsRequestInterceptor.cs" />
     <Compile Include="ExamplesMockData.cs" />
     <Compile Include="ExampleTestsBase.cs" />

@@ -157,11 +157,30 @@ namespace Google.Api.Ads.Common.Util {
     public static string SerializeAsXmlText(object objToSerialize) {
       string retval = "";
 
-      using (MemoryStream memStream = new MemoryStream()) {
-        new XmlSerializer(objToSerialize.GetType()).Serialize(memStream, objToSerialize);
-        retval = Encoding.UTF8.GetString(memStream.ToArray());
+      using (StringWriter writer = new Utf8StringWriter()) {
+        new XmlSerializer(objToSerialize.GetType()).Serialize(writer, objToSerialize);
+        retval = writer.ToString();
       }
       return retval;
+    }
+
+    /// <summary>
+    /// Used for serializing string into UTF-8 xml, instead of default Unicode.
+    /// (utf-16). 
+    /// </summary>
+    class Utf8StringWriter : StringWriter {
+      /// <summary>
+      /// Gets the <see cref="T:System.Text.Encoding" /> in which the output is
+      /// written.
+      /// </summary>
+      /// <returns>
+      /// The Encoding in which the output is written.
+      ///   </returns>
+      public override Encoding Encoding {
+        get {
+          return new UTF8Encoding(false);
+        }
+      }
     }
   }
 }

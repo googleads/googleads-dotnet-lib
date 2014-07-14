@@ -165,4 +165,8 @@
     <value>ClientLogin is not supported in version {0}. Please upgrade to OAuth2.</value>
     <comment>Used when attempting to use ClientLogin in an unsupported version</comment>
   </data>
+  <data name="ReturnMoneyInMicrosNotSupported" xml:space="preserve">
+    <value>returnMoneyInMicros header is not supported in AdWords API v201406 and later. Use the overloaded method that doesn't specify this parameter.</value>
+    <comment>returnMoneyInMicros header is not supported in AdWords API v201406 and later. Use the overloaded method that doesn't specify this parameter.</comment>
+  </data>
 </root>

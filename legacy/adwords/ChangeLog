@@ -1,3 +1,13 @@
+17.1.0
+- Fixed issue 8 (https://github.com/googleads/googleads-adwords-dotnet-lib/issues/8)
+  on github. The fix is based on contribution by bosak (https://github.com/bosak).
+  through https://github.com/googleads/googleads-adwords-dotnet-lib/pull/19
+- Added support for v201406, except for AdWords for Video.
+- Updated OAuth scope. See
+  https://developers.google.com/adwords/api/docs/guides/authentication#scope
+  for details.
+- Common library version was bumped to 2.4.
+  
 17.0.0
 - Added support for ProductServiceService for AdWords Express in v201309 and
   v201402. Stub classes for both v201309 and v201402 were regenerated.

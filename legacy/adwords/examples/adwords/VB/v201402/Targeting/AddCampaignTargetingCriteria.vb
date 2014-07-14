@@ -82,6 +82,49 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
       languageCriterion2.campaignId = campaignId
       languageCriterion2.criterion = language2
 
+      ' Target Tier 3 income group near Miami, Florida.
+      Dim incomeLocationGroups As New LocationGroups
+
+      Dim incomeOperand As New IncomeOperand
+      ' Tiers are numbered 1-10, and represent 10% segments of earners.
+      ' For example, TIER_1 is the top 10%, TIER_2 is the 80-90%, etc.
+      ' Tiers 6 through 10 are grouped into TIER_6_TO_10.
+      incomeOperand.tier = IncomeTier.TIER_3
+
+      Dim geoTargetOperand1 As New GeoTargetOperand
+      geoTargetOperand1.locations = New Long() {1015116} ' Miami, FL.
+
+      incomeLocationGroups.matchingFunction = New [Function]
+      incomeLocationGroups.matchingFunction.lhsOperand = _
+          New FunctionArgumentOperand() {incomeOperand}
+      incomeLocationGroups.matchingFunction.operator = FunctionOperator.AND
+      incomeLocationGroups.matchingFunction.rhsOperand = _
+          New FunctionArgumentOperand() {geoTargetOperand1}
+
+      Dim locationGroupCriterion1 As New CampaignCriterion
+      locationGroupCriterion1.campaignId = campaignId
+      locationGroupCriterion1.criterion = incomeLocationGroups
+
+      ' Target places of interest near Downtown Miami, Florida.
+      Dim interestLocationGroups As New LocationGroups
+
+      Dim placesOfInterestOperand As New PlacesOfInterestOperand()
+      placesOfInterestOperand.category = PlacesOfInterestOperandCategory.DOWNTOWN
+
+      Dim geoTargetOperand2 As New GeoTargetOperand
+      geoTargetOperand2.locations = New Long() {1015116} ' Miami, FL.
+
+      interestLocationGroups.matchingFunction = New [Function]
+      interestLocationGroups.matchingFunction.lhsOperand = _
+          New FunctionArgumentOperand() {placesOfInterestOperand}
+      interestLocationGroups.matchingFunction.operator = FunctionOperator.AND
+      interestLocationGroups.matchingFunction.rhsOperand = _
+          New FunctionArgumentOperand() {geoTargetOperand2}
+
+      Dim locationGroupCriterion2 As New CampaignCriterion
+      locationGroupCriterion2.campaignId = campaignId
+      locationGroupCriterion2.criterion = interestLocationGroups
+
       ' Create location criteria.
       ' See http://code.google.com/apis/adwords/docs/appendix/countrycodes.html
       ' for a detailed list of country codes.
@@ -108,7 +151,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
       negativeCriterion.criterion = keyword
 
       Dim criteria() As CampaignCriterion = {languageCriterion1, languageCriterion2, _
-          locationCriterion1, locationCriterion2, negativeCriterion}
+          locationCriterion1, locationCriterion2, negativeCriterion, locationGroupCriterion1, _
+          locationGroupCriterion2}
 
       Dim operations As New List(Of CampaignCriterionOperation)
 

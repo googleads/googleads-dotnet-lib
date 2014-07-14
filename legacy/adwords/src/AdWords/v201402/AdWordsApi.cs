@@ -26,6 +26,7 @@ namespace Google.Api.Ads.AdWords.v201402 {
   using System.Diagnostics;
   using System.Web.Services;
   using System.Xml.Serialization;
+
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -111,6 +112,9 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupCriterionReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignSharedSetReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedCriterionReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedSetReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupBidModifierReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BiddingStrategyReturnValue))]
@@ -479,6 +483,7 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExperimentServiceError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeedError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeedItemError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityAccessDenied))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeedMappingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeoLocationError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationCriterionServiceError))]
@@ -488,7 +493,6 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionPolicyError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(JobError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionLimitExceeded))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityAccessDenied))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BulkMutateJobError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupServiceError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionError))]
@@ -521,6 +525,9 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressBusinessError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PromotionError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignSharedSetError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedCriterionError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedSetError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdParamPolicyError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdParamError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AlertError))]
@@ -1662,6 +1669,9 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressBusinessOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PromotionOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignSharedSetOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedCriterionOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedSetOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdParamOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BiddingStrategyOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BudgetOrderOperation))]
@@ -1755,6 +1765,9 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressBusinessPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PromotionPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductServicePage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignSharedSetPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedCriterionPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedSetPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupBidModifierPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(McmNoStatsPage))]
@@ -7034,6 +7047,8 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeedItemPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeedMappingPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupFeedPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignSharedSetPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedSetPage))]
   public abstract partial class NullStatsPage : Page {
   }
 
@@ -12619,6 +12634,40 @@ string query1) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class EntityAccessDenied : ApiError {
+    private EntityAccessDeniedReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public EntityAccessDeniedReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityAccessDenied.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public enum EntityAccessDeniedReason {
+    READ_ACCESS_DENIED,
+    WRITE_ACCESS_DENIED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
   public partial class FeedItemOperation : Operation {
     private FeedItem operandField;
 
@@ -15701,6 +15750,7 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     [System.Xml.Serialization.XmlElementAttribute("FeedItemErrorReason", typeof(FeedItemErrorReason))]
     [System.Xml.Serialization.XmlElementAttribute("ForwardCompatibilityErrorReason", typeof(ForwardCompatibilityErrorReason))]
     [System.Xml.Serialization.XmlElementAttribute("FunctionErrorReason", typeof(FunctionErrorReason))]
+    [System.Xml.Serialization.XmlElementAttribute("FunctionParsingErrorReason", typeof(FunctionParsingErrorReason))]
     [System.Xml.Serialization.XmlElementAttribute("IdErrorReason", typeof(IdErrorReason))]
     [System.Xml.Serialization.XmlElementAttribute("ImageErrorReason", typeof(ImageErrorReason))]
     [System.Xml.Serialization.XmlElementAttribute("InternalApiErrorReason", typeof(InternalApiErrorReason))]
@@ -15832,10 +15882,20 @@ Operation[] operations, BulkMutateJobPolicy policy) {
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityAccessDenied.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
-  public enum EntityAccessDeniedReason {
-    READ_ACCESS_DENIED,
-    WRITE_ACCESS_DENIED
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FunctionParsingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public enum FunctionParsingErrorReason {
+    NO_MORE_INPUT,
+    EXPECTED_CHARACTER,
+    UNEXPECTED_SEPARATOR,
+    UNMATCHED_LEFT_BRACKET,
+    UNMATCHED_RIGHT_BRACKET,
+    TOO_MANY_NESTED_FUNCTIONS,
+    MISSING_RIGHT_HAND_OPERAND,
+    INVALID_OPERATOR_NAME,
+    FEED_ATTRIBUTE_OPERAND_ARGUMENT_NOT_INTEGER,
+    NO_OPERANDS,
+    TOO_MANY_OPERANDS,
+    UNKNOWN
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -16154,32 +16214,6 @@ Operation[] operations, BulkMutateJobPolicy policy) {
     ADGROUP_WEBSITE,
     ADGROUP_CRITERION,
     UNKNOWN
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
-  public partial class EntityAccessDenied : ApiError {
-    private EntityAccessDeniedReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public EntityAccessDeniedReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -17144,6 +17178,9 @@ OfflineConversionFeedOperation[] operations) {
     CAMPAIGN_NEGATIVE_PLACEMENTS_PERFORMANCE_REPORT,
     AD_EXTENSIONS_PERFORMANCE_REPORT,
     DESTINATION_URL_REPORT,
+    SHARED_SET_REPORT,
+    CAMPAIGN_SHARED_SET_REPORT,
+    SHARED_SET_CRITERIA_REPORT,
     CREATIVE_CONVERSION_REPORT,
     CALL_METRICS_CALL_DETAILS_REPORT,
     KEYWORDLESS_QUERY_REPORT,
@@ -18287,54 +18324,8 @@ OfflineConversionFeedOperation[] operations) {
     }
   }
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201402")]
-  public partial class DoubleComparisonOperation {
-    private double minimumField;
-
-    private bool minimumFieldSpecified;
-
-    private double maximumField;
-
-    private bool maximumFieldSpecified;
-
-    public double minimum {
-      get { return this.minimumField; }
-      set {
-        this.minimumField = value;
-        this.minimumSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool minimumSpecified {
-      get { return this.minimumFieldSpecified; }
-      set { this.minimumFieldSpecified = value; }
-    }
-
-    public double maximum {
-      get { return this.maximumField; }
-      set {
-        this.maximumField = value;
-        this.maximumSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool maximumSpecified {
-      get { return this.maximumFieldSpecified; }
-      set { this.maximumFieldSpecified = value; }
-    }
-  }
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SeedAdGroupIdSearchParameter))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SearchVolumeSearchParameter))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SearchVolumeDeltaSearchParameter))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RelatedToUrlSearchParameter))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RelatedToQuerySearchParameter))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PlacementTypeSearchParameter))]
@@ -18399,27 +18390,6 @@ OfflineConversionFeedOperation[] operations) {
     public LongComparisonOperation operation {
       get { return this.operationField; }
       set { this.operationField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201402")]
-  public partial class SearchVolumeDeltaSearchParameter : SearchParameter {
-    private DoubleComparisonOperation relativeField;
-
-    private LongComparisonOperation absoluteField;
-
-    public DoubleComparisonOperation relative {
-      get { return this.relativeField; }
-      set { this.relativeField = value; }
-    }
-
-    public LongComparisonOperation absolute {
-      get { return this.absoluteField; }
-      set { this.absoluteField = value; }
     }
   }
 
@@ -18867,6 +18837,10 @@ OfflineConversionFeedOperation[] operations) {
 
     private bool averagePositionFieldSpecified;
 
+    private double clickThroughRateField;
+
+    private bool clickThroughRateFieldSpecified;
+
     private float clicksPerDayField;
 
     private bool clicksPerDayFieldSpecified;
@@ -18874,10 +18848,6 @@ OfflineConversionFeedOperation[] operations) {
     private float impressionsPerDayField;
 
     private bool impressionsPerDayFieldSpecified;
-
-    private double clickThroughRateField;
-
-    private bool clickThroughRateFieldSpecified;
 
     private Money totalCostField;
 
@@ -18899,6 +18869,21 @@ OfflineConversionFeedOperation[] operations) {
     public bool averagePositionSpecified {
       get { return this.averagePositionFieldSpecified; }
       set { this.averagePositionFieldSpecified = value; }
+    }
+
+    public double clickThroughRate {
+      get { return this.clickThroughRateField; }
+      set {
+        this.clickThroughRateField = value;
+        this.clickThroughRateSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool clickThroughRateSpecified {
+      get { return this.clickThroughRateFieldSpecified; }
+      set { this.clickThroughRateFieldSpecified = value; }
     }
 
     public float clicksPerDay {
@@ -18929,21 +18914,6 @@ OfflineConversionFeedOperation[] operations) {
     public bool impressionsPerDaySpecified {
       get { return this.impressionsPerDayFieldSpecified; }
       set { this.impressionsPerDayFieldSpecified = value; }
-    }
-
-    public double clickThroughRate {
-      get { return this.clickThroughRateField; }
-      set {
-        this.clickThroughRateField = value;
-        this.clickThroughRateSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool clickThroughRateSpecified {
-      get { return this.clickThroughRateFieldSpecified; }
-      set { this.clickThroughRateFieldSpecified = value; }
     }
 
     public Money totalCost {
@@ -19919,7 +19889,6 @@ UserListOperation[] operations) {
     INVALID_DESCRIPTION,
     INVALID_NAME,
     INVALID_TYPE,
-    INVALID_INTEGRATION_CODE,
     INVALID_USER_LIST_LOGICAL_RULE_OPERAND,
     NAME_ALREADY_USED,
     NEW_CONVERSION_TYPE_NAME_REQUIRED,
@@ -27428,6 +27397,8 @@ PromotionOperation[] operations) {
 
     private string destinationUrlField;
 
+    private PhoneNumber phoneNumberField;
+
     private bool streetAddressVisibleField;
 
     private bool streetAddressVisibleFieldSpecified;
@@ -27490,6 +27461,11 @@ PromotionOperation[] operations) {
       set { this.destinationUrlField = value; }
     }
 
+    public PhoneNumber phoneNumber {
+      get { return this.phoneNumberField; }
+      set { this.phoneNumberField = value; }
+    }
+
     public bool streetAddressVisible {
       get { return this.streetAddressVisibleField; }
       set {
@@ -27550,7 +27526,8 @@ PromotionOperation[] operations) {
     DRAFT,
     ACTIVE,
     PAUSED,
-    DELETED
+    DELETED,
+    UPGRADED_TO_ADWORDS
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -27768,6 +27745,676 @@ PromotionOperation[] operations) {
       get { return this.entriesField; }
       set { this.entriesField = value; }
     }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "CampaignSharedSetServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class CampaignSharedSetService : AdWordsSoapClient, ICampaignSharedSetService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public CampaignSharedSetService() {
+      this.Url = "https://adwords.google.com/api/adwords/cm/v201402/CampaignSharedSetService";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201402", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201402", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual CampaignSharedSetPage get(Selector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((CampaignSharedSetPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201402", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201402", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual CampaignSharedSetReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
+CampaignSharedSetOperation[] operations) {
+      object[] results = this.Invoke("mutate", new object[] { operations });
+      return ((CampaignSharedSetReturnValue) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class CampaignSharedSetReturnValue : ListReturnValue {
+    private CampaignSharedSet[] valueField;
+
+    [System.Xml.Serialization.XmlElementAttribute("value")]
+    public CampaignSharedSet[] value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class CampaignSharedSet {
+    private long sharedSetIdField;
+
+    private bool sharedSetIdFieldSpecified;
+
+    private long campaignIdField;
+
+    private bool campaignIdFieldSpecified;
+
+    private string sharedSetNameField;
+
+    private SharedSetType sharedSetTypeField;
+
+    private bool sharedSetTypeFieldSpecified;
+
+    private string campaignNameField;
+
+    private CampaignSharedSetStatus statusField;
+
+    private bool statusFieldSpecified;
+
+    public long sharedSetId {
+      get { return this.sharedSetIdField; }
+      set {
+        this.sharedSetIdField = value;
+        this.sharedSetIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool sharedSetIdSpecified {
+      get { return this.sharedSetIdFieldSpecified; }
+      set { this.sharedSetIdFieldSpecified = value; }
+    }
+
+    public long campaignId {
+      get { return this.campaignIdField; }
+      set {
+        this.campaignIdField = value;
+        this.campaignIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool campaignIdSpecified {
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
+    }
+
+    public string sharedSetName {
+      get { return this.sharedSetNameField; }
+      set { this.sharedSetNameField = value; }
+    }
+
+    public SharedSetType sharedSetType {
+      get { return this.sharedSetTypeField; }
+      set {
+        this.sharedSetTypeField = value;
+        this.sharedSetTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool sharedSetTypeSpecified {
+      get { return this.sharedSetTypeFieldSpecified; }
+      set { this.sharedSetTypeFieldSpecified = value; }
+    }
+
+    public string campaignName {
+      get { return this.campaignNameField; }
+      set { this.campaignNameField = value; }
+    }
+
+    public CampaignSharedSetStatus status {
+      get { return this.statusField; }
+      set {
+        this.statusField = value;
+        this.statusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool statusSpecified {
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public enum SharedSetType {
+    NEGATIVE_KEYWORDS,
+    NEGATIVE_PLACEMENTS,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignSharedSet.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public enum CampaignSharedSetStatus {
+    ACTIVE,
+    DELETED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class CampaignSharedSetOperation : Operation {
+    private CampaignSharedSet operandField;
+
+    public CampaignSharedSet operand {
+      get { return this.operandField; }
+      set { this.operandField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class CampaignSharedSetPage : NullStatsPage {
+    private CampaignSharedSet[] entriesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public CampaignSharedSet[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class CampaignSharedSetError : ApiError {
+    private CampaignSharedSetErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public CampaignSharedSetErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignSharedSetError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public enum CampaignSharedSetErrorReason {
+    CAMPAIGN_SHARED_SET_DOES_NOT_EXIST,
+    SHARED_SET_NOT_ACTIVE,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "SharedCriterionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class SharedCriterionService : AdWordsSoapClient, ISharedCriterionService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public SharedCriterionService() {
+      this.Url = "https://adwords.google.com/api/adwords/cm/v201402/SharedCriterionService";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201402", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201402", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual SharedCriterionPage get(Selector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((SharedCriterionPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201402", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201402", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual SharedCriterionReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
+SharedCriterionOperation[] operations) {
+      object[] results = this.Invoke("mutate", new object[] { operations });
+      return ((SharedCriterionReturnValue) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class SharedCriterionReturnValue : ListReturnValue {
+    private SharedCriterion[] valueField;
+
+    [System.Xml.Serialization.XmlElementAttribute("value")]
+    public SharedCriterion[] value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class SharedCriterion {
+    private long sharedSetIdField;
+
+    private bool sharedSetIdFieldSpecified;
+
+    private Criterion criterionField;
+
+    private bool negativeField;
+
+    private bool negativeFieldSpecified;
+
+    public long sharedSetId {
+      get { return this.sharedSetIdField; }
+      set {
+        this.sharedSetIdField = value;
+        this.sharedSetIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool sharedSetIdSpecified {
+      get { return this.sharedSetIdFieldSpecified; }
+      set { this.sharedSetIdFieldSpecified = value; }
+    }
+
+    public Criterion criterion {
+      get { return this.criterionField; }
+      set { this.criterionField = value; }
+    }
+
+    public bool negative {
+      get { return this.negativeField; }
+      set {
+        this.negativeField = value;
+        this.negativeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool negativeSpecified {
+      get { return this.negativeFieldSpecified; }
+      set { this.negativeFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class SharedCriterionOperation : Operation {
+    private SharedCriterion operandField;
+
+    public SharedCriterion operand {
+      get { return this.operandField; }
+      set { this.operandField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class SharedCriterionPage : Page {
+    private SharedCriterion[] entriesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public SharedCriterion[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class SharedCriterionError : ApiError {
+    private SharedCriterionErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public SharedCriterionErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SharedCriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public enum SharedCriterionErrorReason {
+    EXCEEDS_CRITERIA_LIMIT,
+    INCORRECT_CRITERION_TYPE,
+    CANNOT_TARGET_AND_EXCLUDE,
+    NEGATIVE_CRITERION_REQUIRED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "SharedSetServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class SharedSetService : AdWordsSoapClient, ISharedSetService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public SharedSetService() {
+      this.Url = "https://adwords.google.com/api/adwords/cm/v201402/SharedSetService";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201402", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201402", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual SharedSetPage get(Selector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((SharedSetPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201402", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201402", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual SharedSetReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
+SharedSetOperation[] operations) {
+      object[] results = this.Invoke("mutate", new object[] { operations });
+      return ((SharedSetReturnValue) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class SharedSetReturnValue : ListReturnValue {
+    private SharedSet[] valueField;
+
+    [System.Xml.Serialization.XmlElementAttribute("value")]
+    public SharedSet[] value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class SharedSet {
+    private long sharedSetIdField;
+
+    private bool sharedSetIdFieldSpecified;
+
+    private string nameField;
+
+    private SharedSetType typeField;
+
+    private bool typeFieldSpecified;
+
+    private int memberCountField;
+
+    private bool memberCountFieldSpecified;
+
+    private int referenceCountField;
+
+    private bool referenceCountFieldSpecified;
+
+    private SharedSetStatus statusField;
+
+    private bool statusFieldSpecified;
+
+    public long sharedSetId {
+      get { return this.sharedSetIdField; }
+      set {
+        this.sharedSetIdField = value;
+        this.sharedSetIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool sharedSetIdSpecified {
+      get { return this.sharedSetIdFieldSpecified; }
+      set { this.sharedSetIdFieldSpecified = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public SharedSetType type {
+      get { return this.typeField; }
+      set {
+        this.typeField = value;
+        this.typeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool typeSpecified {
+      get { return this.typeFieldSpecified; }
+      set { this.typeFieldSpecified = value; }
+    }
+
+    public int memberCount {
+      get { return this.memberCountField; }
+      set {
+        this.memberCountField = value;
+        this.memberCountSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool memberCountSpecified {
+      get { return this.memberCountFieldSpecified; }
+      set { this.memberCountFieldSpecified = value; }
+    }
+
+    public int referenceCount {
+      get { return this.referenceCountField; }
+      set {
+        this.referenceCountField = value;
+        this.referenceCountSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool referenceCountSpecified {
+      get { return this.referenceCountFieldSpecified; }
+      set { this.referenceCountFieldSpecified = value; }
+    }
+
+    public SharedSetStatus status {
+      get { return this.statusField; }
+      set {
+        this.statusField = value;
+        this.statusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool statusSpecified {
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SharedSet.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public enum SharedSetStatus {
+    ACTIVE,
+    DELETED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class SharedSetOperation : Operation {
+    private SharedSet operandField;
+
+    public SharedSet operand {
+      get { return this.operandField; }
+      set { this.operandField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class SharedSetPage : NullStatsPage {
+    private SharedSet[] entriesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public SharedSet[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public partial class SharedSetError : ApiError {
+    private SharedSetErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public SharedSetErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SharedSetError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201402")]
+  public enum SharedSetErrorReason {
+    CUSTOMER_CANNOT_CREATE_SHARED_SET_OF_THIS_TYPE,
+    DUPLICATE_NAME,
+    EXCEEDS_MAX_SHARED_SETS_FOR_TYPE,
+    INVALID_SET_NAME,
+    SHARED_SET_DELETED,
+    SHARED_SET_IN_USE,
+    TYPE_CANNOT_BE_CHANGED,
+    UNKNOWN
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -29664,6 +30311,42 @@ BudgetOrderOperation[] operations) {
       set;
     }
     ProductServicePage get(Selector selector);
+  }
+  public interface ICampaignSharedSetService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    CampaignSharedSetPage get(Selector selector);
+    CampaignSharedSetReturnValue mutate(CampaignSharedSetOperation[] operations);
+  }
+  public interface ISharedCriterionService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    SharedCriterionPage get(Selector selector);
+    SharedCriterionReturnValue mutate(SharedCriterionOperation[] operations);
+  }
+  public interface ISharedSetService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    SharedSetPage get(Selector selector);
+    SharedSetReturnValue mutate(SharedSetOperation[] operations);
   }
   public interface IAdGroupService {
     RequestHeader RequestHeader {

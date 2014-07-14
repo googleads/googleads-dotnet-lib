@@ -151,6 +151,15 @@ namespace Google.Api.Ads.AdWords {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to returnMoneyInMicros header is not supported in AdWords API v201406 and later. Use the overloaded method that doesn&apos;t specify this parameter..
+        /// </summary>
+        internal static string ReturnMoneyInMicrosNotSupported {
+            get {
+                return ResourceManager.GetString("ReturnMoneyInMicrosNotSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Signature should be a {0} instance..
         /// </summary>
         internal static string SignatureIsOfWrongType {

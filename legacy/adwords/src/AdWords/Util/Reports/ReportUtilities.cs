@@ -43,7 +43,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Default report version.
     /// </summary>
-    private const string DEFAULT_REPORT_VERSION = "v201402";
+    private const string DEFAULT_REPORT_VERSION = "v201406";
 
     /// <summary>
     /// Sets the reporting API version to use.
@@ -66,6 +66,11 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// ClientLogin.
     /// </summary>
     private const string CLIENT_LOGIN_PREFIX = "GoogleLogin auth=";
+
+    /// <summary>
+    /// Last version that supported returnMoneyInMicros header.
+    /// </summary>
+    private const string LAST_VERSION_WITH_MONEY_MICROS_FLAG = "v201402";
 
     /// <summary>
     /// Gets or sets the reporting API version to use.
@@ -106,7 +111,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="format">The report format.</param>
     /// <returns>The client report.</returns>
     public ClientReport GetClientReport(string query, string format) {
-      return GetClientReport(query, format, true);
+      return GetClientReport(query, format, null);
     }
 
     /// <summary>
@@ -119,7 +124,10 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="returnMoneyInMicros">True, if the money values in the
     /// report should be returned as micros, False otherwise.</param>
     /// <returns>The client report.</returns>
-    public ClientReport GetClientReport(string query, string format, bool returnMoneyInMicros) {
+    [Obsolete("returnMoneyInMicros header was sunset in AdWords API version v201406. " +
+        "This method wlll be removed when AdWords API version v201402 is sunset. Use " +
+        "GetClientReport(string query, string format) instead.")]
+    public ClientReport GetClientReport(string query, string format, bool? returnMoneyInMicros) {
       AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
       string downloadUrl = string.Format(QUERY_REPORT_URL_FORMAT, config.AdWordsApiServer,
             reportVersion, format);
@@ -133,7 +141,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="reportDefinition">The report definition.</param>
     /// <returns>The client report.</returns>
     public ClientReport GetClientReport<T>(T reportDefinition) {
-      return GetClientReport(reportDefinition, true);
+      return GetClientReport(reportDefinition, null);
     }
 
     /// <summary>
@@ -143,7 +151,10 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="returnMoneyInMicros">True, if the money values in the
     /// report should be returned as micros, False otherwise.</param>
     /// <returns>The client report.</returns>
-    public ClientReport GetClientReport<T>(T reportDefinition, bool returnMoneyInMicros) {
+    [Obsolete("returnMoneyInMicros header was sunset in AdWords API version v201406. " +
+        "This method wlll be removed when AdWords API version v201402 is sunset. Use " +
+        "GetClientReport<T>(T reportDefinition) instead.")]
+    public ClientReport GetClientReport<T>(T reportDefinition, bool? returnMoneyInMicros) {
       AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
 
       string postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(
@@ -162,7 +173,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// </param>
     /// <returns>The client report.</returns>
     public ClientReport DownloadClientReport(string query, string format, string path) {
-      return DownloadClientReport(query, format, true, path);
+      return DownloadClientReport(query, format, null, path);
     }
 
     /// <summary>
@@ -175,8 +186,11 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="returnMoneyInMicros">True, if the money values in the
     /// report should be returned as micros, False otherwise.</param>
     /// <returns>The client report.</returns>
-    public ClientReport DownloadClientReport(string query, string format, bool returnMoneyInMicros,
-        string path) {
+    [Obsolete("returnMoneyInMicros header was sunset in AdWords API version v201406. " +
+        "This method wlll be removed when AdWords API version v201402 is sunset. Use " +
+        "DownloadClientReport(string query, string format, string path) instead.")]
+    public ClientReport DownloadClientReport(string query, string format,
+        bool? returnMoneyInMicros, string path) {
       AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
       string downloadUrl = string.Format(QUERY_REPORT_URL_FORMAT, config.AdWordsApiServer,
             reportVersion, format);
@@ -192,7 +206,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// </param>
     /// <returns>The client report.</returns>
     public ClientReport DownloadClientReport<T>(T reportDefinition, string path) {
-      return DownloadClientReport(reportDefinition, true, path);
+      return DownloadClientReport(reportDefinition, null, path);
     }
 
     /// <summary>
@@ -204,7 +218,10 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="path">The path to which report should be downloaded.
     /// </param>
     /// <returns>The client report.</returns>
-    public ClientReport DownloadClientReport<T>(T reportDefinition, bool returnMoneyInMicros,
+    [Obsolete("returnMoneyInMicros header was sunset in AdWords API version v201406. " +
+        "This method wlll be removed when AdWords API version v201402 is sunset. Use " +
+        "DownloadClientReport<T>(T reportDefinition, string path) instead.")]
+    public ClientReport DownloadClientReport<T>(T reportDefinition, bool? returnMoneyInMicros,
         string path) {
       AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
 
@@ -226,7 +243,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// </param>
     /// <returns>The client report.</returns>
     private ClientReport GetClientReportInternal(string downloadUrl, string postBody,
-        bool returnMoneyInMicros) {
+        bool? returnMoneyInMicros) {
       MemoryStream memStream = new MemoryStream();
       DownloadReportToStream(downloadUrl, returnMoneyInMicros, postBody, memStream);
 
@@ -246,7 +263,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// </param>
     /// <returns>The client report.</returns>
     private ClientReport DownloadClientReportInternal(string downloadUrl, string postBody,
-        bool returnMoneyInMicros, string path) {
+        bool? returnMoneyInMicros, string path) {
       ClientReport retval = new ClientReport();
       using (FileStream fileStream = File.OpenWrite(path)) {
         fileStream.SetLength(0);
@@ -265,7 +282,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="postBody">The POST body.</param>
     /// <param name="outputStream">The stream to which report is downloaded.
     /// </param>
-    private void DownloadReportToStream(string downloadUrl, bool returnMoneyInMicros,
+    private void DownloadReportToStream(string downloadUrl, bool? returnMoneyInMicros,
         string postBody, Stream outputStream) {
       AdWordsErrorHandler errorHandler = new AdWordsErrorHandler(user);
       while (true) {
@@ -312,6 +329,17 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     }
 
     /// <summary>
+    /// Validates the version reqirements for returnMoneyInMicrosHeader.
+    /// </summary>
+    /// <exception cref="ReportsException">Thrown if returnMoneyInMicrosHeader
+    /// header is used in a version that doesn't support it.</exception>
+    private void ValidateVersionReqirementsForMoneyMicros() {
+      if (string.Compare(ReportVersion, LAST_VERSION_WITH_MONEY_MICROS_FLAG, true) > 0) {
+        throw new ReportsException(AdWordsErrorMessages.ReturnMoneyInMicrosNotSupported);
+      }
+    }
+
+    /// <summary>
     /// Builds an HTTP request for downloading reports.
     /// </summary>
     /// <param name="downloadUrl">The download url.</param>
@@ -319,7 +347,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// in micros.</param>
     /// <param name="postBody">The POST body.</param>
     /// <returns>A webrequest to download reports.</returns>
-    private HttpWebRequest BuildRequest(string downloadUrl, bool returnMoneyInMicros,
+    private HttpWebRequest BuildRequest(string downloadUrl, bool? returnMoneyInMicros,
         string postBody) {
       AdWordsAppConfig config = user.Config as AdWordsAppConfig;
 
@@ -349,7 +377,10 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         request.Headers["Authorization"] = CLIENT_LOGIN_PREFIX + authToken;
       }
 
-      request.Headers.Add("returnMoneyInMicros: " + returnMoneyInMicros.ToString().ToLower());
+      if (returnMoneyInMicros.HasValue) {
+        ValidateVersionReqirementsForMoneyMicros();
+        request.Headers.Add("returnMoneyInMicros: " + returnMoneyInMicros.ToString().ToLower());
+      }
       request.Headers.Add("developerToken: " + config.DeveloperToken);
       // The client library will use only apiMode = true.
       request.Headers.Add("apiMode", "true");
