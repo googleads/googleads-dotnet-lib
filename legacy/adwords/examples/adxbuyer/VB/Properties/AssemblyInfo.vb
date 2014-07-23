@@ -23,22 +23,22 @@ Imports System.Runtime.InteropServices
 ' associated with an assembly.
 <Assembly: AssemblyTitle("AdWords API DotNet Library Samples")>
 <Assembly: AssemblyDescription("This application contains samples that shows " & _
-    "how to AdWords API using the client library.")>
-<Assembly: AssemblyConfiguration("")>
-<Assembly: AssemblyTrademark("")>
-<Assembly: AssemblyCulture("")>
+    "how to AdWords API using the client library.")> 
+<Assembly: AssemblyConfiguration("")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyCulture("")> 
 
 ' Setting ComVisible to false makes the types in this assembly not visible
 ' to COM components.  If you need to access a type in this assembly from
 ' COM, set the ComVisible attribute to true on that type.
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(False)> 
 
 ' The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("ccc25b61-18d8-49d5-993c-5fd838a03234")>
+<Assembly: Guid("ccc25b61-18d8-49d5-993c-5fd838a03234")> 
 
-<Assembly: AssemblyCompany("Google")>
-<Assembly: AssemblyProduct("AdWords API DotNet Client Library")>
-<Assembly: AssemblyCopyright("Copyright 2011, Google Inc. All Rights Reserved.")>
+<Assembly: AssemblyCompany("Google")> 
+<Assembly: AssemblyProduct("AdWords API DotNet Client Library")> 
+<Assembly: AssemblyCopyright("Copyright 2011, Google Inc. All Rights Reserved.")> 
 
-<Assembly: AssemblyVersion("17.1.0.0")> 
-<Assembly: AssemblyFileVersion("17.1.0.0")> 
+<Assembly: AssemblyVersion("17.2.0.0")> 
+<Assembly: AssemblyFileVersion("17.2.0.0")> 

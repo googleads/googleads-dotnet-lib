@@ -147,6 +147,7 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SettingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuotaError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ForwardCompatibilityError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityAccessDenied))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BiddingTransitionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BiddingErrors))]
@@ -162,7 +163,6 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FunctionParsingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExperimentError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdCountLimitExceeded))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityAccessDenied))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DataError))]
@@ -191,6 +191,23 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TrafficEstimatorError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingIdeaError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserListError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoAdError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TimeSeriesError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SortingError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SegmentationError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReportError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(PersistenceError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityNotFoundError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdsApiError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AccessError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCampaignCriterionError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupCriterionError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCampaignError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoBudgetError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoBiddingError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoServiceError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressBusinessError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PromotionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignSharedSetError))]
@@ -256,9 +273,15 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupFeedReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(OfflineConversionFeedReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserListReturnValue))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignSharedSetReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoAdReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCampaignCriterionReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCampaignReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupCriterionReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionLabelReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignSharedSetReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedCriterionReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedSetReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LabelReturnValue))]
@@ -597,6 +620,13 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupFeedOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(OfflineConversionFeedOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserListOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoAdOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCampaignCriterionOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCampaignOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCallToActionOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupCriterionOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressBusinessOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PromotionOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignSharedSetOperation))]
@@ -683,12 +713,21 @@ string query1) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManagedCustomerPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupFeedPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserListPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoAdPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCampaignReportPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCampaignCriterionPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCampaignPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoSearchPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupReportPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupCriterionPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionPage))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingGroupPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressNoStatsPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressBusinessPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PromotionPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductServicePage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignSharedSetPage))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedCriterionPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedSetPage))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LabelPage))]
@@ -6908,6 +6947,40 @@ string query1) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
+  public partial class EntityAccessDenied : ApiError {
+    private EntityAccessDeniedReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public EntityAccessDeniedReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityAccessDenied.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
+  public enum EntityAccessDeniedReason {
+    READ_ACCESS_DENIED,
+    WRITE_ACCESS_DENIED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
   public partial class CampaignError : ApiError {
     private CampaignErrorReason reasonField;
 
@@ -11364,40 +11437,6 @@ string query1) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
   public partial class AdGroupAdCountLimitExceeded : EntityCountLimitExceeded {
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
-  public partial class EntityAccessDenied : ApiError {
-    private EntityAccessDeniedReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public EntityAccessDeniedReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityAccessDenied.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
-  public enum EntityAccessDeniedReason {
-    READ_ACCESS_DENIED,
-    WRITE_ACCESS_DENIED
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -20883,6 +20922,6975 @@ UserListOperation[] operations) {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "VideoAdServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class VideoAdService : AdWordsSoapClient, IVideoAdService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public VideoAdService() {
+      this.Url = "https://adwords.google.com/api/adwords/video/v201406/VideoAdService";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual VideoAdPage get(VideoAdSelector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((VideoAdPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual VideoAdReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
+VideoAdOperation[] operations) {
+      object[] results = this.Invoke("mutate", new object[] { operations });
+      return ((VideoAdReturnValue) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoAdReturnValue : ListReturnValue {
+    private VideoAd[] valueField;
+
+    [System.Xml.Serialization.XmlElementAttribute("value")]
+    public VideoAd[] value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoAd {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private string nameField;
+
+    private string videoIdField;
+
+    private long campaignIdField;
+
+    private bool campaignIdFieldSpecified;
+
+    private TargetingGroupAssociation[] targetingGroupAssociationsField;
+
+    private VideoEntityStats statsField;
+
+    private VideoEntityStats[] segmentedStatsField;
+
+    private ServingInfo issuesField;
+
+    private string campaignNameField;
+
+    private string headlineField;
+
+    private string description1Field;
+
+    private string description2Field;
+
+    private VideoImage imageField;
+
+    private VideoAdYouTubeDestinationPage youTubeDestinationPageField;
+
+    private bool youTubeDestinationPageFieldSpecified;
+
+    private string destinationUrlField;
+
+    private string displayUrlField;
+
+    private VideoImage companionBannerField;
+
+    private bool showVideoAnnotationsField;
+
+    private bool showVideoAnnotationsFieldSpecified;
+
+    private VideoAdStatus statusField;
+
+    private bool statusFieldSpecified;
+
+    private ApprovalContext_VideoAd_ApprovalStatusMapEntry[] approvalStatusesField;
+
+    private ApprovalContext_VideoAd_ApprovalLimitMapEntry[] approvalLimitsField;
+
+    private ScopedDisapprovalReason[] disapprovalReasonsField;
+
+    private VideoAdDisplayFormat_VideoAdStatusMapEntry[] statusByFormatField;
+
+    public long id {
+      get { return this.idField; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public string videoId {
+      get { return this.videoIdField; }
+      set { this.videoIdField = value; }
+    }
+
+    public long campaignId {
+      get { return this.campaignIdField; }
+      set {
+        this.campaignIdField = value;
+        this.campaignIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool campaignIdSpecified {
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("targetingGroupAssociations")]
+    public TargetingGroupAssociation[] targetingGroupAssociations {
+      get { return this.targetingGroupAssociationsField; }
+      set { this.targetingGroupAssociationsField = value; }
+    }
+
+    public VideoEntityStats stats {
+      get { return this.statsField; }
+      set { this.statsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("segmentedStats")]
+    public VideoEntityStats[] segmentedStats {
+      get { return this.segmentedStatsField; }
+      set { this.segmentedStatsField = value; }
+    }
+
+    public ServingInfo issues {
+      get { return this.issuesField; }
+      set { this.issuesField = value; }
+    }
+
+    public string campaignName {
+      get { return this.campaignNameField; }
+      set { this.campaignNameField = value; }
+    }
+
+    public string headline {
+      get { return this.headlineField; }
+      set { this.headlineField = value; }
+    }
+
+    public string description1 {
+      get { return this.description1Field; }
+      set { this.description1Field = value; }
+    }
+
+    public string description2 {
+      get { return this.description2Field; }
+      set { this.description2Field = value; }
+    }
+
+    public VideoImage image {
+      get { return this.imageField; }
+      set { this.imageField = value; }
+    }
+
+    public VideoAdYouTubeDestinationPage youTubeDestinationPage {
+      get { return this.youTubeDestinationPageField; }
+      set {
+        this.youTubeDestinationPageField = value;
+        this.youTubeDestinationPageSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool youTubeDestinationPageSpecified {
+      get { return this.youTubeDestinationPageFieldSpecified; }
+      set { this.youTubeDestinationPageFieldSpecified = value; }
+    }
+
+    public string destinationUrl {
+      get { return this.destinationUrlField; }
+      set { this.destinationUrlField = value; }
+    }
+
+    public string displayUrl {
+      get { return this.displayUrlField; }
+      set { this.displayUrlField = value; }
+    }
+
+    public VideoImage companionBanner {
+      get { return this.companionBannerField; }
+      set { this.companionBannerField = value; }
+    }
+
+    public bool showVideoAnnotations {
+      get { return this.showVideoAnnotationsField; }
+      set {
+        this.showVideoAnnotationsField = value;
+        this.showVideoAnnotationsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool showVideoAnnotationsSpecified {
+      get { return this.showVideoAnnotationsFieldSpecified; }
+      set { this.showVideoAnnotationsFieldSpecified = value; }
+    }
+
+    public VideoAdStatus status {
+      get { return this.statusField; }
+      set {
+        this.statusField = value;
+        this.statusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool statusSpecified {
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("approvalStatuses")]
+    public ApprovalContext_VideoAd_ApprovalStatusMapEntry[] approvalStatuses {
+      get { return this.approvalStatusesField; }
+      set { this.approvalStatusesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("approvalLimits")]
+    public ApprovalContext_VideoAd_ApprovalLimitMapEntry[] approvalLimits {
+      get { return this.approvalLimitsField; }
+      set { this.approvalLimitsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("disapprovalReasons")]
+    public ScopedDisapprovalReason[] disapprovalReasons {
+      get { return this.disapprovalReasonsField; }
+      set { this.disapprovalReasonsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("statusByFormat")]
+    public VideoAdDisplayFormat_VideoAdStatusMapEntry[] statusByFormat {
+      get { return this.statusByFormatField; }
+      set { this.statusByFormatField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupAssociation {
+    private long targetingGroupIdField;
+
+    private bool targetingGroupIdFieldSpecified;
+
+    private TargetingGroupAssociationStatus statusField;
+
+    private bool statusFieldSpecified;
+
+    public long targetingGroupId {
+      get { return this.targetingGroupIdField; }
+      set {
+        this.targetingGroupIdField = value;
+        this.targetingGroupIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool targetingGroupIdSpecified {
+      get { return this.targetingGroupIdFieldSpecified; }
+      set { this.targetingGroupIdFieldSpecified = value; }
+    }
+
+    public TargetingGroupAssociationStatus status {
+      get { return this.statusField; }
+      set {
+        this.statusField = value;
+        this.statusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool statusSpecified {
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TargetingGroupAssociation.Status", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum TargetingGroupAssociationStatus {
+    ACTIVE,
+    PAUSED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoEntityStats {
+    private VideoEntityStatsSummaryType summaryTypeField;
+
+    private bool summaryTypeFieldSpecified;
+
+    private SegmentKey segmentKeyField;
+
+    private string startDateField;
+
+    private string endDateField;
+
+    private long viewsField;
+
+    private bool viewsFieldSpecified;
+
+    private Money costField;
+
+    private Money averageCpcField;
+
+    private Money averageCpvField;
+
+    private Money averageCpmField;
+
+    private Integer_LongMapEntry[] impressionReachFrequenciesField;
+
+    private double averageImpressionFrequencyField;
+
+    private bool averageImpressionFrequencyFieldSpecified;
+
+    private double averageViewFrequencyField;
+
+    private bool averageViewFrequencyFieldSpecified;
+
+    private long uniqueViewsField;
+
+    private bool uniqueViewsFieldSpecified;
+
+    private long thumbnailImpressionsField;
+
+    private bool thumbnailImpressionsFieldSpecified;
+
+    private long videoImpressionsField;
+
+    private bool videoImpressionsFieldSpecified;
+
+    private long totalImpressionsField;
+
+    private bool totalImpressionsFieldSpecified;
+
+    private long websiteClicksField;
+
+    private bool websiteClicksFieldSpecified;
+
+    private long totalClicksField;
+
+    private bool totalClicksFieldSpecified;
+
+    private double totalCtrField;
+
+    private bool totalCtrFieldSpecified;
+
+    private Money totalCostPerClickField;
+
+    private long conversionsField;
+
+    private bool conversionsFieldSpecified;
+
+    private Money costPerConversionField;
+
+    private double conversionRateField;
+
+    private bool conversionRateFieldSpecified;
+
+    private long viewThroughConversionsField;
+
+    private bool viewThroughConversionsFieldSpecified;
+
+    private long conversionsManyPerViewField;
+
+    private bool conversionsManyPerViewFieldSpecified;
+
+    private Money costPerConversionManyPerViewField;
+
+    private double conversionRateManyPerViewField;
+
+    private bool conversionRateManyPerViewFieldSpecified;
+
+    private double totalConversionValueField;
+
+    private bool totalConversionValueFieldSpecified;
+
+    private double valuePerConvField;
+
+    private bool valuePerConvFieldSpecified;
+
+    private double valuePerConvManyPerViewField;
+
+    private bool valuePerConvManyPerViewFieldSpecified;
+
+    private long followOnViewsField;
+
+    private bool followOnViewsFieldSpecified;
+
+    private double followOnViewRateField;
+
+    private bool followOnViewRateFieldSpecified;
+
+    private long followOnSubscribesField;
+
+    private bool followOnSubscribesFieldSpecified;
+
+    private double followOnSubscribeRateField;
+
+    private bool followOnSubscribeRateFieldSpecified;
+
+    private long followOnLikesField;
+
+    private bool followOnLikesFieldSpecified;
+
+    private long followOnCommentsField;
+
+    private bool followOnCommentsFieldSpecified;
+
+    private long followOnSharesField;
+
+    private bool followOnSharesFieldSpecified;
+
+    private long followOnAddToPlaylistField;
+
+    private bool followOnAddToPlaylistFieldSpecified;
+
+    private double ctrField;
+
+    private bool ctrFieldSpecified;
+
+    private double vtrField;
+
+    private bool vtrFieldSpecified;
+
+    private long videoStartsField;
+
+    private bool videoStartsFieldSpecified;
+
+    private long quartile25sField;
+
+    private bool quartile25sFieldSpecified;
+
+    private long quartile50sField;
+
+    private bool quartile50sFieldSpecified;
+
+    private long quartile75sField;
+
+    private bool quartile75sFieldSpecified;
+
+    private long quartile100sField;
+
+    private bool quartile100sFieldSpecified;
+
+    private double quartile25PercentsField;
+
+    private bool quartile25PercentsFieldSpecified;
+
+    private double quartile50PercentsField;
+
+    private bool quartile50PercentsFieldSpecified;
+
+    private double quartile75PercentsField;
+
+    private bool quartile75PercentsFieldSpecified;
+
+    private double quartile100PercentsField;
+
+    private bool quartile100PercentsFieldSpecified;
+
+    private double percentServedField;
+
+    private bool percentServedFieldSpecified;
+
+    private long eligibleFollowOnClicksField;
+
+    private bool eligibleFollowOnClicksFieldSpecified;
+
+    private double engagementScoreField;
+
+    private bool engagementScoreFieldSpecified;
+
+    private double retentionScoreField;
+
+    private bool retentionScoreFieldSpecified;
+
+    private long totalViewsField;
+
+    private bool totalViewsFieldSpecified;
+
+    private long ctaImpressionsField;
+
+    private bool ctaImpressionsFieldSpecified;
+
+    private long ctaClicksField;
+
+    private bool ctaClicksFieldSpecified;
+
+    private double ctaCtrField;
+
+    private bool ctaCtrFieldSpecified;
+
+    public VideoEntityStatsSummaryType summaryType {
+      get { return this.summaryTypeField; }
+      set {
+        this.summaryTypeField = value;
+        this.summaryTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool summaryTypeSpecified {
+      get { return this.summaryTypeFieldSpecified; }
+      set { this.summaryTypeFieldSpecified = value; }
+    }
+
+    public SegmentKey segmentKey {
+      get { return this.segmentKeyField; }
+      set { this.segmentKeyField = value; }
+    }
+
+    public string startDate {
+      get { return this.startDateField; }
+      set { this.startDateField = value; }
+    }
+
+    public string endDate {
+      get { return this.endDateField; }
+      set { this.endDateField = value; }
+    }
+
+    public long views {
+      get { return this.viewsField; }
+      set {
+        this.viewsField = value;
+        this.viewsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool viewsSpecified {
+      get { return this.viewsFieldSpecified; }
+      set { this.viewsFieldSpecified = value; }
+    }
+
+    public Money cost {
+      get { return this.costField; }
+      set { this.costField = value; }
+    }
+
+    public Money averageCpc {
+      get { return this.averageCpcField; }
+      set { this.averageCpcField = value; }
+    }
+
+    public Money averageCpv {
+      get { return this.averageCpvField; }
+      set { this.averageCpvField = value; }
+    }
+
+    public Money averageCpm {
+      get { return this.averageCpmField; }
+      set { this.averageCpmField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("impressionReachFrequencies")]
+    public Integer_LongMapEntry[] impressionReachFrequencies {
+      get { return this.impressionReachFrequenciesField; }
+      set { this.impressionReachFrequenciesField = value; }
+    }
+
+    public double averageImpressionFrequency {
+      get { return this.averageImpressionFrequencyField; }
+      set {
+        this.averageImpressionFrequencyField = value;
+        this.averageImpressionFrequencySpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool averageImpressionFrequencySpecified {
+      get { return this.averageImpressionFrequencyFieldSpecified; }
+      set { this.averageImpressionFrequencyFieldSpecified = value; }
+    }
+
+    public double averageViewFrequency {
+      get { return this.averageViewFrequencyField; }
+      set {
+        this.averageViewFrequencyField = value;
+        this.averageViewFrequencySpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool averageViewFrequencySpecified {
+      get { return this.averageViewFrequencyFieldSpecified; }
+      set { this.averageViewFrequencyFieldSpecified = value; }
+    }
+
+    public long uniqueViews {
+      get { return this.uniqueViewsField; }
+      set {
+        this.uniqueViewsField = value;
+        this.uniqueViewsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool uniqueViewsSpecified {
+      get { return this.uniqueViewsFieldSpecified; }
+      set { this.uniqueViewsFieldSpecified = value; }
+    }
+
+    public long thumbnailImpressions {
+      get { return this.thumbnailImpressionsField; }
+      set {
+        this.thumbnailImpressionsField = value;
+        this.thumbnailImpressionsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool thumbnailImpressionsSpecified {
+      get { return this.thumbnailImpressionsFieldSpecified; }
+      set { this.thumbnailImpressionsFieldSpecified = value; }
+    }
+
+    public long videoImpressions {
+      get { return this.videoImpressionsField; }
+      set {
+        this.videoImpressionsField = value;
+        this.videoImpressionsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool videoImpressionsSpecified {
+      get { return this.videoImpressionsFieldSpecified; }
+      set { this.videoImpressionsFieldSpecified = value; }
+    }
+
+    public long totalImpressions {
+      get { return this.totalImpressionsField; }
+      set {
+        this.totalImpressionsField = value;
+        this.totalImpressionsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool totalImpressionsSpecified {
+      get { return this.totalImpressionsFieldSpecified; }
+      set { this.totalImpressionsFieldSpecified = value; }
+    }
+
+    public long websiteClicks {
+      get { return this.websiteClicksField; }
+      set {
+        this.websiteClicksField = value;
+        this.websiteClicksSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool websiteClicksSpecified {
+      get { return this.websiteClicksFieldSpecified; }
+      set { this.websiteClicksFieldSpecified = value; }
+    }
+
+    public long totalClicks {
+      get { return this.totalClicksField; }
+      set {
+        this.totalClicksField = value;
+        this.totalClicksSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool totalClicksSpecified {
+      get { return this.totalClicksFieldSpecified; }
+      set { this.totalClicksFieldSpecified = value; }
+    }
+
+    public double totalCtr {
+      get { return this.totalCtrField; }
+      set {
+        this.totalCtrField = value;
+        this.totalCtrSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool totalCtrSpecified {
+      get { return this.totalCtrFieldSpecified; }
+      set { this.totalCtrFieldSpecified = value; }
+    }
+
+    public Money totalCostPerClick {
+      get { return this.totalCostPerClickField; }
+      set { this.totalCostPerClickField = value; }
+    }
+
+    public long conversions {
+      get { return this.conversionsField; }
+      set {
+        this.conversionsField = value;
+        this.conversionsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool conversionsSpecified {
+      get { return this.conversionsFieldSpecified; }
+      set { this.conversionsFieldSpecified = value; }
+    }
+
+    public Money costPerConversion {
+      get { return this.costPerConversionField; }
+      set { this.costPerConversionField = value; }
+    }
+
+    public double conversionRate {
+      get { return this.conversionRateField; }
+      set {
+        this.conversionRateField = value;
+        this.conversionRateSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool conversionRateSpecified {
+      get { return this.conversionRateFieldSpecified; }
+      set { this.conversionRateFieldSpecified = value; }
+    }
+
+    public long viewThroughConversions {
+      get { return this.viewThroughConversionsField; }
+      set {
+        this.viewThroughConversionsField = value;
+        this.viewThroughConversionsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool viewThroughConversionsSpecified {
+      get { return this.viewThroughConversionsFieldSpecified; }
+      set { this.viewThroughConversionsFieldSpecified = value; }
+    }
+
+    public long conversionsManyPerView {
+      get { return this.conversionsManyPerViewField; }
+      set {
+        this.conversionsManyPerViewField = value;
+        this.conversionsManyPerViewSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool conversionsManyPerViewSpecified {
+      get { return this.conversionsManyPerViewFieldSpecified; }
+      set { this.conversionsManyPerViewFieldSpecified = value; }
+    }
+
+    public Money costPerConversionManyPerView {
+      get { return this.costPerConversionManyPerViewField; }
+      set { this.costPerConversionManyPerViewField = value; }
+    }
+
+    public double conversionRateManyPerView {
+      get { return this.conversionRateManyPerViewField; }
+      set {
+        this.conversionRateManyPerViewField = value;
+        this.conversionRateManyPerViewSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool conversionRateManyPerViewSpecified {
+      get { return this.conversionRateManyPerViewFieldSpecified; }
+      set { this.conversionRateManyPerViewFieldSpecified = value; }
+    }
+
+    public double totalConversionValue {
+      get { return this.totalConversionValueField; }
+      set {
+        this.totalConversionValueField = value;
+        this.totalConversionValueSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool totalConversionValueSpecified {
+      get { return this.totalConversionValueFieldSpecified; }
+      set { this.totalConversionValueFieldSpecified = value; }
+    }
+
+    public double valuePerConv {
+      get { return this.valuePerConvField; }
+      set {
+        this.valuePerConvField = value;
+        this.valuePerConvSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool valuePerConvSpecified {
+      get { return this.valuePerConvFieldSpecified; }
+      set { this.valuePerConvFieldSpecified = value; }
+    }
+
+    public double valuePerConvManyPerView {
+      get { return this.valuePerConvManyPerViewField; }
+      set {
+        this.valuePerConvManyPerViewField = value;
+        this.valuePerConvManyPerViewSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool valuePerConvManyPerViewSpecified {
+      get { return this.valuePerConvManyPerViewFieldSpecified; }
+      set { this.valuePerConvManyPerViewFieldSpecified = value; }
+    }
+
+    public long followOnViews {
+      get { return this.followOnViewsField; }
+      set {
+        this.followOnViewsField = value;
+        this.followOnViewsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool followOnViewsSpecified {
+      get { return this.followOnViewsFieldSpecified; }
+      set { this.followOnViewsFieldSpecified = value; }
+    }
+
+    public double followOnViewRate {
+      get { return this.followOnViewRateField; }
+      set {
+        this.followOnViewRateField = value;
+        this.followOnViewRateSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool followOnViewRateSpecified {
+      get { return this.followOnViewRateFieldSpecified; }
+      set { this.followOnViewRateFieldSpecified = value; }
+    }
+
+    public long followOnSubscribes {
+      get { return this.followOnSubscribesField; }
+      set {
+        this.followOnSubscribesField = value;
+        this.followOnSubscribesSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool followOnSubscribesSpecified {
+      get { return this.followOnSubscribesFieldSpecified; }
+      set { this.followOnSubscribesFieldSpecified = value; }
+    }
+
+    public double followOnSubscribeRate {
+      get { return this.followOnSubscribeRateField; }
+      set {
+        this.followOnSubscribeRateField = value;
+        this.followOnSubscribeRateSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool followOnSubscribeRateSpecified {
+      get { return this.followOnSubscribeRateFieldSpecified; }
+      set { this.followOnSubscribeRateFieldSpecified = value; }
+    }
+
+    public long followOnLikes {
+      get { return this.followOnLikesField; }
+      set {
+        this.followOnLikesField = value;
+        this.followOnLikesSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool followOnLikesSpecified {
+      get { return this.followOnLikesFieldSpecified; }
+      set { this.followOnLikesFieldSpecified = value; }
+    }
+
+    public long followOnComments {
+      get { return this.followOnCommentsField; }
+      set {
+        this.followOnCommentsField = value;
+        this.followOnCommentsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool followOnCommentsSpecified {
+      get { return this.followOnCommentsFieldSpecified; }
+      set { this.followOnCommentsFieldSpecified = value; }
+    }
+
+    public long followOnShares {
+      get { return this.followOnSharesField; }
+      set {
+        this.followOnSharesField = value;
+        this.followOnSharesSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool followOnSharesSpecified {
+      get { return this.followOnSharesFieldSpecified; }
+      set { this.followOnSharesFieldSpecified = value; }
+    }
+
+    public long followOnAddToPlaylist {
+      get { return this.followOnAddToPlaylistField; }
+      set {
+        this.followOnAddToPlaylistField = value;
+        this.followOnAddToPlaylistSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool followOnAddToPlaylistSpecified {
+      get { return this.followOnAddToPlaylistFieldSpecified; }
+      set { this.followOnAddToPlaylistFieldSpecified = value; }
+    }
+
+    public double ctr {
+      get { return this.ctrField; }
+      set {
+        this.ctrField = value;
+        this.ctrSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool ctrSpecified {
+      get { return this.ctrFieldSpecified; }
+      set { this.ctrFieldSpecified = value; }
+    }
+
+    public double vtr {
+      get { return this.vtrField; }
+      set {
+        this.vtrField = value;
+        this.vtrSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool vtrSpecified {
+      get { return this.vtrFieldSpecified; }
+      set { this.vtrFieldSpecified = value; }
+    }
+
+    public long videoStarts {
+      get { return this.videoStartsField; }
+      set {
+        this.videoStartsField = value;
+        this.videoStartsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool videoStartsSpecified {
+      get { return this.videoStartsFieldSpecified; }
+      set { this.videoStartsFieldSpecified = value; }
+    }
+
+    public long quartile25s {
+      get { return this.quartile25sField; }
+      set {
+        this.quartile25sField = value;
+        this.quartile25sSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool quartile25sSpecified {
+      get { return this.quartile25sFieldSpecified; }
+      set { this.quartile25sFieldSpecified = value; }
+    }
+
+    public long quartile50s {
+      get { return this.quartile50sField; }
+      set {
+        this.quartile50sField = value;
+        this.quartile50sSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool quartile50sSpecified {
+      get { return this.quartile50sFieldSpecified; }
+      set { this.quartile50sFieldSpecified = value; }
+    }
+
+    public long quartile75s {
+      get { return this.quartile75sField; }
+      set {
+        this.quartile75sField = value;
+        this.quartile75sSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool quartile75sSpecified {
+      get { return this.quartile75sFieldSpecified; }
+      set { this.quartile75sFieldSpecified = value; }
+    }
+
+    public long quartile100s {
+      get { return this.quartile100sField; }
+      set {
+        this.quartile100sField = value;
+        this.quartile100sSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool quartile100sSpecified {
+      get { return this.quartile100sFieldSpecified; }
+      set { this.quartile100sFieldSpecified = value; }
+    }
+
+    public double quartile25Percents {
+      get { return this.quartile25PercentsField; }
+      set {
+        this.quartile25PercentsField = value;
+        this.quartile25PercentsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool quartile25PercentsSpecified {
+      get { return this.quartile25PercentsFieldSpecified; }
+      set { this.quartile25PercentsFieldSpecified = value; }
+    }
+
+    public double quartile50Percents {
+      get { return this.quartile50PercentsField; }
+      set {
+        this.quartile50PercentsField = value;
+        this.quartile50PercentsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool quartile50PercentsSpecified {
+      get { return this.quartile50PercentsFieldSpecified; }
+      set { this.quartile50PercentsFieldSpecified = value; }
+    }
+
+    public double quartile75Percents {
+      get { return this.quartile75PercentsField; }
+      set {
+        this.quartile75PercentsField = value;
+        this.quartile75PercentsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool quartile75PercentsSpecified {
+      get { return this.quartile75PercentsFieldSpecified; }
+      set { this.quartile75PercentsFieldSpecified = value; }
+    }
+
+    public double quartile100Percents {
+      get { return this.quartile100PercentsField; }
+      set {
+        this.quartile100PercentsField = value;
+        this.quartile100PercentsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool quartile100PercentsSpecified {
+      get { return this.quartile100PercentsFieldSpecified; }
+      set { this.quartile100PercentsFieldSpecified = value; }
+    }
+
+    public double percentServed {
+      get { return this.percentServedField; }
+      set {
+        this.percentServedField = value;
+        this.percentServedSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool percentServedSpecified {
+      get { return this.percentServedFieldSpecified; }
+      set { this.percentServedFieldSpecified = value; }
+    }
+
+    public long eligibleFollowOnClicks {
+      get { return this.eligibleFollowOnClicksField; }
+      set {
+        this.eligibleFollowOnClicksField = value;
+        this.eligibleFollowOnClicksSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool eligibleFollowOnClicksSpecified {
+      get { return this.eligibleFollowOnClicksFieldSpecified; }
+      set { this.eligibleFollowOnClicksFieldSpecified = value; }
+    }
+
+    public double engagementScore {
+      get { return this.engagementScoreField; }
+      set {
+        this.engagementScoreField = value;
+        this.engagementScoreSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool engagementScoreSpecified {
+      get { return this.engagementScoreFieldSpecified; }
+      set { this.engagementScoreFieldSpecified = value; }
+    }
+
+    public double retentionScore {
+      get { return this.retentionScoreField; }
+      set {
+        this.retentionScoreField = value;
+        this.retentionScoreSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool retentionScoreSpecified {
+      get { return this.retentionScoreFieldSpecified; }
+      set { this.retentionScoreFieldSpecified = value; }
+    }
+
+    public long totalViews {
+      get { return this.totalViewsField; }
+      set {
+        this.totalViewsField = value;
+        this.totalViewsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool totalViewsSpecified {
+      get { return this.totalViewsFieldSpecified; }
+      set { this.totalViewsFieldSpecified = value; }
+    }
+
+    public long ctaImpressions {
+      get { return this.ctaImpressionsField; }
+      set {
+        this.ctaImpressionsField = value;
+        this.ctaImpressionsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool ctaImpressionsSpecified {
+      get { return this.ctaImpressionsFieldSpecified; }
+      set { this.ctaImpressionsFieldSpecified = value; }
+    }
+
+    public long ctaClicks {
+      get { return this.ctaClicksField; }
+      set {
+        this.ctaClicksField = value;
+        this.ctaClicksSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool ctaClicksSpecified {
+      get { return this.ctaClicksFieldSpecified; }
+      set { this.ctaClicksFieldSpecified = value; }
+    }
+
+    public double ctaCtr {
+      get { return this.ctaCtrField; }
+      set {
+        this.ctaCtrField = value;
+        this.ctaCtrSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool ctaCtrSpecified {
+      get { return this.ctaCtrFieldSpecified; }
+      set { this.ctaCtrFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoEntityStats.SummaryType", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoEntityStatsSummaryType {
+    ALL,
+    ALL_ENABLED,
+    ALL_BUT_DELETED,
+    ALL_DELETED,
+    ALL_NON_VIDEO,
+    COMBINED_VIDEO_NON_VIDEO,
+    PERFORMANCE_OTHER,
+    NON_SUMMARY,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class SegmentKey {
+    private object itemField;
+
+    [System.Xml.Serialization.XmlElementAttribute("CampaignKey", typeof(CampaignKey))]
+    [System.Xml.Serialization.XmlElementAttribute("ConversionCategoryKey", typeof(ConversionCategoryKey))]
+    [System.Xml.Serialization.XmlElementAttribute("ConversionTypeKey", typeof(ConversionTypeKey))]
+    [System.Xml.Serialization.XmlElementAttribute("DateKey", typeof(DateKey))]
+    [System.Xml.Serialization.XmlElementAttribute("DayOfWeekKey", typeof(DayOfWeekKey))]
+    [System.Xml.Serialization.XmlElementAttribute("DeviceKey", typeof(DeviceKey))]
+    [System.Xml.Serialization.XmlElementAttribute("DisplayFormatKey", typeof(DisplayFormatKey))]
+    [System.Xml.Serialization.XmlElementAttribute("DisplayFormatNetworkKey", typeof(DisplayFormatNetworkKey))]
+    [System.Xml.Serialization.XmlElementAttribute("DisplayFormatTypeKey", typeof(DisplayFormatTypeKey))]
+    [System.Xml.Serialization.XmlElementAttribute("HourOfDayKey", typeof(HourOfDayKey))]
+    [System.Xml.Serialization.XmlElementAttribute("NetworkKey", typeof(NetworkKey))]
+    [System.Xml.Serialization.XmlElementAttribute("PaidViewsKey", typeof(PaidViewsKey))]
+    [System.Xml.Serialization.XmlElementAttribute("TargetingGroupKey", typeof(TargetingGroupKey))]
+    [System.Xml.Serialization.XmlElementAttribute("VideoAdKey", typeof(VideoAdKey))]
+    public object Item {
+      get { return this.itemField; }
+      set { this.itemField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class CampaignKey {
+    private string campaignNameField;
+
+    public string campaignName {
+      get { return this.campaignNameField; }
+      set { this.campaignNameField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ConversionCategoryKey {
+    private ConversionCategoryKeyConversionCategory conversionCategoryField;
+
+    private bool conversionCategoryFieldSpecified;
+
+    public ConversionCategoryKeyConversionCategory conversionCategory {
+      get { return this.conversionCategoryField; }
+      set {
+        this.conversionCategoryField = value;
+        this.conversionCategorySpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool conversionCategorySpecified {
+      get { return this.conversionCategoryFieldSpecified; }
+      set { this.conversionCategoryFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConversionCategoryKey.ConversionCategory", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum ConversionCategoryKeyConversionCategory {
+    CONVERSION_CATEGORY_PURCHASE,
+    CONVERSION_CATEGORY_SIGNUP,
+    CONVERSION_CATEGORY_LEAD,
+    CONVERSION_CATEGORY_PAGE_VIEW,
+    CONVERSION_CATEGORY_OTHER
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ConversionTypeKey {
+    private long conversionTypeIdField;
+
+    private bool conversionTypeIdFieldSpecified;
+
+    private string conversionTypeNameField;
+
+    public long conversionTypeId {
+      get { return this.conversionTypeIdField; }
+      set {
+        this.conversionTypeIdField = value;
+        this.conversionTypeIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool conversionTypeIdSpecified {
+      get { return this.conversionTypeIdFieldSpecified; }
+      set { this.conversionTypeIdFieldSpecified = value; }
+    }
+
+    public string conversionTypeName {
+      get { return this.conversionTypeNameField; }
+      set { this.conversionTypeNameField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class DateKey {
+    private string dateField;
+
+    private SegmentationDimension dimensionField;
+
+    private bool dimensionFieldSpecified;
+
+    public string date {
+      get { return this.dateField; }
+      set { this.dateField = value; }
+    }
+
+    public SegmentationDimension dimension {
+      get { return this.dimensionField; }
+      set {
+        this.dimensionField = value;
+        this.dimensionSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool dimensionSpecified {
+      get { return this.dimensionFieldSpecified; }
+      set { this.dimensionFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum SegmentationDimension {
+    NONE,
+    CONVERSION_CATEGORY,
+    DATE_DAY,
+    DATE_WEEK,
+    DATE_MONTH,
+    DATE_QUARTER,
+    DATE_YEAR,
+    DAY_OF_WEEK,
+    DEVICE_TYPE,
+    DISPLAY_FORMAT,
+    DISPLAY_FORMATxNETWORK,
+    HOUR_OF_DAY,
+    NETWORK,
+    TARGETING_GROUP,
+    VIDEO_AD,
+    CONVERSION_TYPE,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class DayOfWeekKey {
+    private VideoDayOfWeek dayOfWeekField;
+
+    private bool dayOfWeekFieldSpecified;
+
+    public VideoDayOfWeek dayOfWeek {
+      get { return this.dayOfWeekField; }
+      set {
+        this.dayOfWeekField = value;
+        this.dayOfWeekSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool dayOfWeekSpecified {
+      get { return this.dayOfWeekFieldSpecified; }
+      set { this.dayOfWeekFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoDayOfWeek {
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY,
+    SUNDAY
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class DeviceKey {
+    private DeviceKeyDeviceType deviceTypeField;
+
+    private bool deviceTypeFieldSpecified;
+
+    public DeviceKeyDeviceType deviceType {
+      get { return this.deviceTypeField; }
+      set {
+        this.deviceTypeField = value;
+        this.deviceTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool deviceTypeSpecified {
+      get { return this.deviceTypeFieldSpecified; }
+      set { this.deviceTypeFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DeviceKey.DeviceType", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum DeviceKeyDeviceType {
+    DESKTOP,
+    HIGHENDMOBILE,
+    TABLET,
+    OTHER
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class DisplayFormatKey {
+    private VideoAdDisplayFormat displayFormatField;
+
+    private bool displayFormatFieldSpecified;
+
+    public VideoAdDisplayFormat displayFormat {
+      get { return this.displayFormatField; }
+      set {
+        this.displayFormatField = value;
+        this.displayFormatSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool displayFormatSpecified {
+      get { return this.displayFormatFieldSpecified; }
+      set { this.displayFormatFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoAdDisplayFormat {
+    TRUE_VIEW_IN_SEARCH,
+    TRUE_VIEW_IN_SLATE,
+    TRUE_VIEW_IN_DISPLAY,
+    TRUE_VIEW_IN_STREAM,
+    STANDARD_IN_STREAM,
+    ALL
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class DisplayFormatNetworkKey {
+    private VideoAdDisplayFormat formatField;
+
+    private bool formatFieldSpecified;
+
+    private VideoAdNetwork networkField;
+
+    private bool networkFieldSpecified;
+
+    public VideoAdDisplayFormat format {
+      get { return this.formatField; }
+      set {
+        this.formatField = value;
+        this.formatSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool formatSpecified {
+      get { return this.formatFieldSpecified; }
+      set { this.formatFieldSpecified = value; }
+    }
+
+    public VideoAdNetwork network {
+      get { return this.networkField; }
+      set {
+        this.networkField = value;
+        this.networkSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool networkSpecified {
+      get { return this.networkFieldSpecified; }
+      set { this.networkFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoAdNetwork {
+    YOUTUBE_SEARCH,
+    YOUTUBE_WATCH,
+    GOOGLE_DISPLAY_NETWORK,
+    GOOGLE_SEARCH,
+    ALL
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class DisplayFormatTypeKey {
+    private VideoAdDisplayFormatType displayFormatTypeField;
+
+    private bool displayFormatTypeFieldSpecified;
+
+    public VideoAdDisplayFormatType displayFormatType {
+      get { return this.displayFormatTypeField; }
+      set {
+        this.displayFormatTypeField = value;
+        this.displayFormatTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool displayFormatTypeSpecified {
+      get { return this.displayFormatTypeFieldSpecified; }
+      set { this.displayFormatTypeFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoAdDisplayFormat.Type", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoAdDisplayFormatType {
+    TRUE_VIEW,
+    STANDARD,
+    ALL
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class HourOfDayKey {
+    private int hourOfDayField;
+
+    private bool hourOfDayFieldSpecified;
+
+    public int hourOfDay {
+      get { return this.hourOfDayField; }
+      set {
+        this.hourOfDayField = value;
+        this.hourOfDaySpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool hourOfDaySpecified {
+      get { return this.hourOfDayFieldSpecified; }
+      set { this.hourOfDayFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class NetworkKey {
+    private VideoAdNetwork networkField;
+
+    private bool networkFieldSpecified;
+
+    public VideoAdNetwork network {
+      get { return this.networkField; }
+      set {
+        this.networkField = value;
+        this.networkSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool networkSpecified {
+      get { return this.networkFieldSpecified; }
+      set { this.networkFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class PaidViewsKey {
+    private bool paidViewsField;
+
+    private bool paidViewsFieldSpecified;
+
+    public bool paidViews {
+      get { return this.paidViewsField; }
+      set {
+        this.paidViewsField = value;
+        this.paidViewsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool paidViewsSpecified {
+      get { return this.paidViewsFieldSpecified; }
+      set { this.paidViewsFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupKey {
+    private long targetingGroupIdField;
+
+    private bool targetingGroupIdFieldSpecified;
+
+    private string targetingGroupNameField;
+
+    public long targetingGroupId {
+      get { return this.targetingGroupIdField; }
+      set {
+        this.targetingGroupIdField = value;
+        this.targetingGroupIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool targetingGroupIdSpecified {
+      get { return this.targetingGroupIdFieldSpecified; }
+      set { this.targetingGroupIdFieldSpecified = value; }
+    }
+
+    public string targetingGroupName {
+      get { return this.targetingGroupNameField; }
+      set { this.targetingGroupNameField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoAdKey {
+    private string videoAdNameField;
+
+    private long videoAdIdField;
+
+    private bool videoAdIdFieldSpecified;
+
+    public string videoAdName {
+      get { return this.videoAdNameField; }
+      set { this.videoAdNameField = value; }
+    }
+
+    public long videoAdId {
+      get { return this.videoAdIdField; }
+      set {
+        this.videoAdIdField = value;
+        this.videoAdIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool videoAdIdSpecified {
+      get { return this.videoAdIdFieldSpecified; }
+      set { this.videoAdIdFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class Integer_LongMapEntry {
+    private int keyField;
+
+    private bool keyFieldSpecified;
+
+    private long valueField;
+
+    private bool valueFieldSpecified;
+
+    public int key {
+      get { return this.keyField; }
+      set {
+        this.keyField = value;
+        this.keySpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool keySpecified {
+      get { return this.keyFieldSpecified; }
+      set { this.keyFieldSpecified = value; }
+    }
+
+    public long value {
+      get { return this.valueField; }
+      set {
+        this.valueField = value;
+        this.valueSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool valueSpecified {
+      get { return this.valueFieldSpecified; }
+      set { this.valueFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ServingInfo {
+    private ServingIssue[] issuesField;
+
+    private VideoServingStatus servingStatusField;
+
+    private bool servingStatusFieldSpecified;
+
+    [System.Xml.Serialization.XmlElementAttribute("issues")]
+    public ServingIssue[] issues {
+      get { return this.issuesField; }
+      set { this.issuesField = value; }
+    }
+
+    public VideoServingStatus servingStatus {
+      get { return this.servingStatusField; }
+      set {
+        this.servingStatusField = value;
+        this.servingStatusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool servingStatusSpecified {
+      get { return this.servingStatusFieldSpecified; }
+      set { this.servingStatusFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ServingIssue {
+    private ServingIssueReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    private long campaignIdField;
+
+    private bool campaignIdFieldSpecified;
+
+    private long targetingGroupIdField;
+
+    private bool targetingGroupIdFieldSpecified;
+
+    private long videoAdIdField;
+
+    private bool videoAdIdFieldSpecified;
+
+    private string videoIdField;
+
+    private bool hideActionLinkField;
+
+    private bool hideActionLinkFieldSpecified;
+
+    private ServingIssueSeverity severityField;
+
+    private bool severityFieldSpecified;
+
+    private ServingIssueType typeField;
+
+    private bool typeFieldSpecified;
+
+    public ServingIssueReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+
+    public long campaignId {
+      get { return this.campaignIdField; }
+      set {
+        this.campaignIdField = value;
+        this.campaignIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool campaignIdSpecified {
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
+    }
+
+    public long targetingGroupId {
+      get { return this.targetingGroupIdField; }
+      set {
+        this.targetingGroupIdField = value;
+        this.targetingGroupIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool targetingGroupIdSpecified {
+      get { return this.targetingGroupIdFieldSpecified; }
+      set { this.targetingGroupIdFieldSpecified = value; }
+    }
+
+    public long videoAdId {
+      get { return this.videoAdIdField; }
+      set {
+        this.videoAdIdField = value;
+        this.videoAdIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool videoAdIdSpecified {
+      get { return this.videoAdIdFieldSpecified; }
+      set { this.videoAdIdFieldSpecified = value; }
+    }
+
+    public string videoId {
+      get { return this.videoIdField; }
+      set { this.videoIdField = value; }
+    }
+
+    public bool hideActionLink {
+      get { return this.hideActionLinkField; }
+      set {
+        this.hideActionLinkField = value;
+        this.hideActionLinkSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool hideActionLinkSpecified {
+      get { return this.hideActionLinkFieldSpecified; }
+      set { this.hideActionLinkFieldSpecified = value; }
+    }
+
+    public ServingIssueSeverity severity {
+      get { return this.severityField; }
+      set {
+        this.severityField = value;
+        this.severitySpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool severitySpecified {
+      get { return this.severityFieldSpecified; }
+      set { this.severityFieldSpecified = value; }
+    }
+
+    public ServingIssueType type {
+      get { return this.typeField; }
+      set {
+        this.typeField = value;
+        this.typeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool typeSpecified {
+      get { return this.typeFieldSpecified; }
+      set { this.typeFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ServingIssue.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum ServingIssueReason {
+    ACCOUNT_SUSPENDED,
+    ACCOUNT_CLOSED,
+    ACCOUNT_DISABLED,
+    SUSPENDED,
+    LIMITED_BY_BUDGET,
+    INSTREAM_TOO_HIGH,
+    ALL_CREATIVES_UNHEALTHY,
+    SOME_CREATIVES_DISAPPROVED,
+    ALL_CREATIVES_DISAPPROVED,
+    SOME_CREATIVES_LABELED,
+    ALL_CREATIVES_LABELED,
+    SOME_CREATIVES_UNREVIEWED,
+    ALL_CREATIVES_UNREVIEWED,
+    SOME_CREATIVES_ELIGIBLE,
+    ALL_CREATIVES_ELIGIBLE,
+    VIDEO_ADS_WITHOUT_TARGETING,
+    ACTIVE_AD_WITH_ALL_FORMATS_PAUSED,
+    TARGETING_BID_REQUIRED,
+    INSLATE_DEPRECATED,
+    TARGETING_DUPLICATE_NAME,
+    TARGETING_MISMATCH,
+    TARGETING_NO_VIDEOAD,
+    STUDY_INVITATION,
+    SURVEY_INVITATION,
+    NO_VIDEO_AD_SERVING,
+    ALL_VIDEO_ADS_PENDING,
+    SOME_VIDEO_ADS_PENDING,
+    ALL_VIDEO_ADS_UNHEALTHY,
+    SOME_VIDEO_ADS_UNHEALTHY,
+    NO_VIDEO,
+    NO_TARGETING,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ServingIssue.Severity", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum ServingIssueSeverity {
+    HIGH,
+    MEDIUM,
+    LOW
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ServingIssue.Type", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum ServingIssueType {
+    BLOCKING,
+    ISSUE,
+    NOTIFICATION,
+    PENDING
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoServingStatus {
+    UNDEFINED,
+    REMOVED,
+    CAMPAIGN_REMOVED,
+    PAUSED,
+    CAMPAIGN_PAUSED,
+    ENDED,
+    SUSPENDED,
+    BROKEN,
+    IMPROVABLE,
+    LIMITED_BY_BUDGET,
+    NOTIFICATION,
+    PENDING,
+    SERVING,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoImage {
+    private VideoImageType typeField;
+
+    private bool typeFieldSpecified;
+
+    private VideoImageType secondaryTypeField;
+
+    private bool secondaryTypeFieldSpecified;
+
+    private long mediaIdField;
+
+    private bool mediaIdFieldSpecified;
+
+    private string urlField;
+
+    private VideoImageMimeType mimeTypeField;
+
+    private bool mimeTypeFieldSpecified;
+
+    public VideoImageType type {
+      get { return this.typeField; }
+      set {
+        this.typeField = value;
+        this.typeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool typeSpecified {
+      get { return this.typeFieldSpecified; }
+      set { this.typeFieldSpecified = value; }
+    }
+
+    public VideoImageType secondaryType {
+      get { return this.secondaryTypeField; }
+      set {
+        this.secondaryTypeField = value;
+        this.secondaryTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool secondaryTypeSpecified {
+      get { return this.secondaryTypeFieldSpecified; }
+      set { this.secondaryTypeFieldSpecified = value; }
+    }
+
+    public long mediaId {
+      get { return this.mediaIdField; }
+      set {
+        this.mediaIdField = value;
+        this.mediaIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool mediaIdSpecified {
+      get { return this.mediaIdFieldSpecified; }
+      set { this.mediaIdFieldSpecified = value; }
+    }
+
+    public string url {
+      get { return this.urlField; }
+      set { this.urlField = value; }
+    }
+
+    public VideoImageMimeType mimeType {
+      get { return this.mimeTypeField; }
+      set {
+        this.mimeTypeField = value;
+        this.mimeTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool mimeTypeSpecified {
+      get { return this.mimeTypeFieldSpecified; }
+      set { this.mimeTypeFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoImage.Type", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoImageType {
+    MEDIA,
+    DEFAULT_THUMBNAIL,
+    THUMBNAIL1,
+    THUMBNAIL2,
+    THUMBNAIL3,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoImage.MimeType", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoImageMimeType {
+    IMAGE_JPEG,
+    IMAGE_GIF,
+    IMAGE_PNG,
+    FLASH
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoAd.YouTubeDestinationPage", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoAdYouTubeDestinationPage {
+    WATCH_PAGE,
+    CHANNEL_PAGE,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoAdStatus {
+    ENABLED,
+    PAUSED,
+    REMOVED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ApprovalContext_VideoAd_ApprovalStatusMapEntry {
+    private ApprovalContext keyField;
+
+    private VideoAdApprovalStatus valueField;
+
+    private bool valueFieldSpecified;
+
+    public ApprovalContext key {
+      get { return this.keyField; }
+      set { this.keyField = value; }
+    }
+
+    public VideoAdApprovalStatus value {
+      get { return this.valueField; }
+      set {
+        this.valueField = value;
+        this.valueSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool valueSpecified {
+      get { return this.valueFieldSpecified; }
+      set { this.valueFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ApprovalContext {
+    private TargetingScope targetingScopeField;
+
+    private bool targetingScopeFieldSpecified;
+
+    private DestinationType destinationTypeField;
+
+    private bool destinationTypeFieldSpecified;
+
+    public TargetingScope targetingScope {
+      get { return this.targetingScopeField; }
+      set {
+        this.targetingScopeField = value;
+        this.targetingScopeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool targetingScopeSpecified {
+      get { return this.targetingScopeFieldSpecified; }
+      set { this.targetingScopeFieldSpecified = value; }
+    }
+
+    public DestinationType destinationType {
+      get { return this.destinationTypeField; }
+      set {
+        this.destinationTypeField = value;
+        this.destinationTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool destinationTypeSpecified {
+      get { return this.destinationTypeFieldSpecified; }
+      set { this.destinationTypeFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum TargetingScope {
+    TRUE_VIEW_IN_SEARCH_ON_YOUTUBE_SEARCH,
+    TRUE_VIEW_IN_SLATE_ON_YOUTUBE_WATCH,
+    TRUE_VIEW_IN_DISPLAY_ON_YOUTUBE_WATCH,
+    TRUE_VIEW_IN_STREAM_ON_YOUTUBE_WATCH,
+    TRUE_VIEW_IN_SLATE_ON_GOOGLE_DISPLAY_NETWORK,
+    TRUE_VIEW_IN_DISPLAY_ON_GOOGLE_DISPLAY_NETWORK,
+    TRUE_VIEW_IN_STREAM_ON_GOOGLE_DISPLAY_NETWORK,
+    TRUE_VIEW_IN_SEARCH_ON_GOOGLE_SEARCH,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum DestinationType {
+    YOUTUBE,
+    ADVERTISER_SITE,
+    LEGACY_BOTH,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoAd.ApprovalStatus", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoAdApprovalStatus {
+    APPROVED,
+    APPROVED_LIMITED,
+    ELIGIBLE,
+    UNDER_REVIEW,
+    DISAPPROVED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ApprovalContext_VideoAd_ApprovalLimitMapEntry {
+    private ApprovalContext keyField;
+
+    private VideoAdApprovalLimit valueField;
+
+    private bool valueFieldSpecified;
+
+    public ApprovalContext key {
+      get { return this.keyField; }
+      set { this.keyField = value; }
+    }
+
+    public VideoAdApprovalLimit value {
+      get { return this.valueField; }
+      set {
+        this.valueField = value;
+        this.valueSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool valueSpecified {
+      get { return this.valueFieldSpecified; }
+      set { this.valueFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoAd.ApprovalLimit", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoAdApprovalLimit {
+    FAMILY_SAFE,
+    NON_FAMILY_SAFE,
+    ADULT_CONTENT,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ScopedDisapprovalReason {
+    private ApprovalContext approvalContextField;
+
+    private DisapprovalReason disapprovalReasonField;
+
+    public ApprovalContext approvalContext {
+      get { return this.approvalContextField; }
+      set { this.approvalContextField = value; }
+    }
+
+    public DisapprovalReason disapprovalReason {
+      get { return this.disapprovalReasonField; }
+      set { this.disapprovalReasonField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class DisapprovalReason {
+    private string reasonField;
+
+    private int helpIdField;
+
+    private bool helpIdFieldSpecified;
+
+    public string reason {
+      get { return this.reasonField; }
+      set { this.reasonField = value; }
+    }
+
+    public int helpId {
+      get { return this.helpIdField; }
+      set {
+        this.helpIdField = value;
+        this.helpIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool helpIdSpecified {
+      get { return this.helpIdFieldSpecified; }
+      set { this.helpIdFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoAdDisplayFormat_VideoAdStatusMapEntry {
+    private VideoAdDisplayFormat keyField;
+
+    private bool keyFieldSpecified;
+
+    private VideoAdStatus valueField;
+
+    private bool valueFieldSpecified;
+
+    public VideoAdDisplayFormat key {
+      get { return this.keyField; }
+      set {
+        this.keyField = value;
+        this.keySpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool keySpecified {
+      get { return this.keyFieldSpecified; }
+      set { this.keyFieldSpecified = value; }
+    }
+
+    public VideoAdStatus value {
+      get { return this.valueField; }
+      set {
+        this.valueField = value;
+        this.valueSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool valueSpecified {
+      get { return this.valueFieldSpecified; }
+      set { this.valueFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoAdOperation : Operation {
+    private VideoAd operandField;
+
+    private ExemptionRequest[] exemptionRequestsField;
+
+    public VideoAd operand {
+      get { return this.operandField; }
+      set { this.operandField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("exemptionRequests")]
+    public ExemptionRequest[] exemptionRequests {
+      get { return this.exemptionRequestsField; }
+      set { this.exemptionRequestsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoAdPage : Page {
+    private VideoAd[] entriesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public VideoAd[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class Sortable {
+    private object itemField;
+
+    [System.Xml.Serialization.XmlElementAttribute("StatsSortable", typeof(StatsSortable))]
+    [System.Xml.Serialization.XmlElementAttribute("VideoAdSortable", typeof(VideoAdSortable))]
+    public object Item {
+      get { return this.itemField; }
+      set { this.itemField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum StatsSortable {
+    AVERAGE_CPV,
+    AVERAGE_CPM,
+    VIEWS,
+    VIEW_RATE,
+    CTR,
+    COST,
+    COST_PER_CONVERSION,
+    IMPRESSIONS,
+    WEBSITE_CLICKS,
+    CONVERSIONS,
+    CONVERSION_RATE,
+    VIEW_THROUGH_CONVERSIONS,
+    CONVERSIONS_MANY_PER_VIEW,
+    CONVERSION_RATE_MANY_PER_VIEW,
+    COST_PER_CONVERSION_MANY_PER_VIEW,
+    TOTAL_CONV_VALUE,
+    VALUE_PER_CONV,
+    VALUE_PER_CONV_MANY_PER_VIEW,
+    PERCENT_SERVED,
+    VIDEO_STARTS,
+    QUARTILE_25S,
+    QUARTILE_50S,
+    QUARTILE_75S,
+    QUARTILE_100S,
+    QUARTILE_25_PERCENTS,
+    QUARTILE_50_PERCENTS,
+    QUARTILE_75_PERCENTS,
+    QUARTILE_100_PERCENTS,
+    FOLLOW_ON_SUBSCRIBES,
+    FOLLOW_ON_SUBSCRIBE_RATE,
+    FOLLOW_ON_VIEWS,
+    FOLLOW_ON_VIEW_RATE,
+    FOLLOW_ON_ADD_TO_PLAYLIST,
+    FOLLOW_ON_COMMENTS,
+    FOLLOW_ON_LIKES,
+    FOLLOW_ON_SHARES,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoAdSortable {
+    CAMPAIGN_ID,
+    CAMPAIGN_NAME,
+    NAME,
+    STATUS,
+    VIDEOAD_ID,
+    VIDEO_NAME,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class Sorting {
+    private Sortable fieldField;
+
+    private VideoSortOrder sortOrderField;
+
+    private bool sortOrderFieldSpecified;
+
+    private Sortable[] fieldsField;
+
+    private VideoSortOrder[] sortOrdersField;
+
+    public Sortable field {
+      get { return this.fieldField; }
+      set { this.fieldField = value; }
+    }
+
+    public VideoSortOrder sortOrder {
+      get { return this.sortOrderField; }
+      set {
+        this.sortOrderField = value;
+        this.sortOrderSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool sortOrderSpecified {
+      get { return this.sortOrderFieldSpecified; }
+      set { this.sortOrderFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("fields")]
+    public Sortable[] fields {
+      get { return this.fieldsField; }
+      set { this.fieldsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("sortOrders")]
+    public VideoSortOrder[] sortOrders {
+      get { return this.sortOrdersField; }
+      set { this.sortOrdersField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoSortOrder {
+    ASCENDING,
+    DESCENDING
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class StatsSelector {
+    private DateRange dateRangeField;
+
+    private SegmentationDimension[] segmentationDimensionsField;
+
+    private Metric[] metricsField;
+
+    private VideoEntityStatsSummaryType[] summaryTypesField;
+
+    private VideoEntityStatsSummaryType segmentedSummaryTypeField;
+
+    private bool segmentedSummaryTypeFieldSpecified;
+
+    private StatsSelectorAllTimeRestrict allTimeRestrictField;
+
+    private bool allTimeRestrictFieldSpecified;
+
+    public DateRange dateRange {
+      get { return this.dateRangeField; }
+      set { this.dateRangeField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("segmentationDimensions")]
+    public SegmentationDimension[] segmentationDimensions {
+      get { return this.segmentationDimensionsField; }
+      set { this.segmentationDimensionsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("metrics")]
+    public Metric[] metrics {
+      get { return this.metricsField; }
+      set { this.metricsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("summaryTypes")]
+    public VideoEntityStatsSummaryType[] summaryTypes {
+      get { return this.summaryTypesField; }
+      set { this.summaryTypesField = value; }
+    }
+
+    public VideoEntityStatsSummaryType segmentedSummaryType {
+      get { return this.segmentedSummaryTypeField; }
+      set {
+        this.segmentedSummaryTypeField = value;
+        this.segmentedSummaryTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool segmentedSummaryTypeSpecified {
+      get { return this.segmentedSummaryTypeFieldSpecified; }
+      set { this.segmentedSummaryTypeFieldSpecified = value; }
+    }
+
+    public StatsSelectorAllTimeRestrict allTimeRestrict {
+      get { return this.allTimeRestrictField; }
+      set {
+        this.allTimeRestrictField = value;
+        this.allTimeRestrictSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool allTimeRestrictSpecified {
+      get { return this.allTimeRestrictFieldSpecified; }
+      set { this.allTimeRestrictFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum Metric {
+    VIEWS,
+    THUMBNAIL_IMPRESSIONS,
+    VIDEO_IMPRESSIONS,
+    TOTAL_IMPRESSIONS,
+    COST,
+    AVERAGE_CPV,
+    VTR,
+    CONVERSIONS,
+    DAILY_UNIQUE_VIEWERS,
+    WEEKLY_UNIQUE_VIEWERS,
+    MONTHLY_UNIQUE_VIEWERS,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StatsSelector.AllTimeRestrict", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum StatsSelectorAllTimeRestrict {
+    NONE,
+    SINCE_VIDEO_AD_START,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoAdSelector {
+    private long[] campaignIdsField;
+
+    private long[] idsField;
+
+    private VideoAdStatus[] statusesField;
+
+    private VideoCampaignStatus[] campaignStatusesField;
+
+    private StatsSelector statsSelectorField;
+
+    private Paging pagingField;
+
+    private Sorting sortingField;
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignIds")]
+    public long[] campaignIds {
+      get { return this.campaignIdsField; }
+      set { this.campaignIdsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("ids")]
+    public long[] ids {
+      get { return this.idsField; }
+      set { this.idsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("statuses")]
+    public VideoAdStatus[] statuses {
+      get { return this.statusesField; }
+      set { this.statusesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignStatuses")]
+    public VideoCampaignStatus[] campaignStatuses {
+      get { return this.campaignStatusesField; }
+      set { this.campaignStatusesField = value; }
+    }
+
+    public StatsSelector statsSelector {
+      get { return this.statsSelectorField; }
+      set { this.statsSelectorField = value; }
+    }
+
+    public Paging paging {
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
+    }
+
+    public Sorting sorting {
+      get { return this.sortingField; }
+      set { this.sortingField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoCampaignStatus {
+    ENABLED,
+    REMOVED,
+    PAUSED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoAdError : ApiError {
+    private VideoAdErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public VideoAdErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoAdError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoAdErrorReason {
+    UNKNOWN,
+    INVALID_FORMAT,
+    INVALID_INPUT,
+    EMPTY_FIELD,
+    URL_INVALID_TOP_LEVEL_DOMAIN,
+    URL_MALFORMED,
+    URL_NO_HOST,
+    URL_NO_SCHEME,
+    TOO_LONG,
+    LINE_TOO_WIDE,
+    INVALID_IMAGE_MEDIA_ID,
+    INVALID_COMPANION_BANNER_IMAGE_TYPE,
+    UNSUPPORTED_COMPANION_IMAGE_SIZE,
+    TOO_MANY_TARGETING_GROUP_ASSOCIATIONS,
+    TOO_MANY_VIDEO_ADS_PER_CUSTOMER,
+    TOO_MANY_VIDEO_ADS_PER_CAMPAIGN,
+    CANNOT_OPERATE_ON_DELETED_AD,
+    UNSUPPORTED_SCOPE_STATUS,
+    NO_SCOPE_STATUSES_SPECIFIED,
+    TARGETING_GROUP_FROM_DIFFERENT_CAMPAIGN,
+    APPROXIMATELY_TOO_LONG,
+    APPROXIMATELY_TOO_SHORT,
+    BAD_SNIPPET,
+    CUSTOMER_NOT_APPROVED_MOBILEADS,
+    CUSTOMER_NOT_ELIGIBLE,
+    INCORRECT_LENGTH,
+    INVALID_AD_ADDRESS_CAMPAIGN_TARGET,
+    INVALID_CHARACTER_FOR_URL,
+    INVALID_COUNTRY_CODE,
+    INVALID_MARKUP_LANGUAGE,
+    INVALID_MOBILE_CARRIER,
+    INVALID_MOBILE_CARRIER_TARGET,
+    TOO_SHORT,
+    URL_INVALID_SCHEME,
+    URL_HOST_NAME_TOO_LONG,
+    URL_NO_TOP_LEVEL_DOMAIN,
+    URL_PATH_NOT_ALLOWED,
+    URL_PORT_NOT_ALLOWED,
+    URL_QUERY_NOT_ALLOWED,
+    URL_SCHEME_BEFORE_DSA_TAG,
+    USER_DOES_NOT_HAVE_ACCESS_TO_TEMPLATE,
+    INVALID_FIELD_TEXT,
+    IMAGE_ERROR,
+    VIDEO_RETRIEVAL_ERROR,
+    AUDIO_ERROR,
+    DEPRECATED_FORMAT_ERROR
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TimeSeriesError : ApiError {
+    private TimeSeriesErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public TimeSeriesErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TimeSeriesError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum TimeSeriesErrorReason {
+    UNKNOWN,
+    INVALID_SEGMENTATION_DIMENSION
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class SortingError : ApiError {
+    private SortingErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public SortingErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SortingError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum SortingErrorReason {
+    SORT_ORDER_MISMATCH,
+    INVALID_FIELD,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class SegmentationError : ApiError {
+    private SegmentationErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public SegmentationErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SegmentationError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum SegmentationErrorReason {
+    INCOMPATIBLE_DIMENSIONS,
+    UNSUPPORTED_SEGMENTATION,
+    MAXIMUM_SEGMENTATION_DIMENSIONS_EXCEEDED,
+    DATE_RANGE_TOO_LONG,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ReportError : ApiError {
+    private ReportErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public ReportErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum ReportErrorReason {
+    UNKNOWN,
+    CRITERIA_TYPE_NOT_SUPPORTED,
+    INVALID_TARGETING_GROUP_ID_COUNT,
+    NO_STATS_SELECTOR
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class PersistenceError : ApiError {
+    private PersistenceErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public PersistenceErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PersistenceError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum PersistenceErrorReason {
+    LOAD_FAILED,
+    SAVE_FAILED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class EntityNotFoundError : ApiError {
+    private EntityNotFoundErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public EntityNotFoundErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityNotFoundError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum EntityNotFoundErrorReason {
+    INVALID_ID
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class AdsApiError : ApiError {
+    private AdsApiErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public AdsApiErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdsApiError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum AdsApiErrorReason {
+    UNHANDLED_ADS_API_ERROR,
+    INTERNAL_ERROR,
+    UNEXPECTED_ERROR,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class AccessError : ApiError {
+    private AccessErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public AccessErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AccessError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum AccessErrorReason {
+    ACTION_NOT_PERMITTED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "VideoCampaignCriterionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class VideoCampaignCriterionService : AdWordsSoapClient, IVideoCampaignCriterionService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public VideoCampaignCriterionService() {
+      this.Url = "https://adwords.google.com/api/adwords/video/v201406/VideoCampaignCriterionServic" + "e";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual VideoCampaignCriterionPage get(VideoCampaignCriterionSelector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((VideoCampaignCriterionPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual VideoCampaignCriterionReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
+VideoCampaignCriterionOperation[] operations) {
+      object[] results = this.Invoke("mutate", new object[] { operations });
+      return ((VideoCampaignCriterionReturnValue) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignCriterionReturnValue : ListReturnValue {
+    private VideoCampaignCriterion[] valueField;
+
+    [System.Xml.Serialization.XmlElementAttribute("value")]
+    public VideoCampaignCriterion[] value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+  }
+
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReportedVideoCampaignCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(NegativeVideoCampaignCriterion))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignCriterion {
+    private long campaignIdField;
+
+    private bool campaignIdFieldSpecified;
+
+    private string campaignNameField;
+
+    private BaseCriterion criterionField;
+
+    private string videoCampaignCriterionTypeField;
+
+    public long campaignId {
+      get { return this.campaignIdField; }
+      set {
+        this.campaignIdField = value;
+        this.campaignIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool campaignIdSpecified {
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
+    }
+
+    public string campaignName {
+      get { return this.campaignNameField; }
+      set { this.campaignNameField = value; }
+    }
+
+    public BaseCriterion criterion {
+      get { return this.criterionField; }
+      set { this.criterionField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("VideoCampaignCriterion.Type")]
+    public string VideoCampaignCriterionType {
+      get { return this.videoCampaignCriterionTypeField; }
+      set { this.videoCampaignCriterionTypeField = value; }
+    }
+  }
+
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(YouTubePlacement))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(WebSite))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Topic))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(RunOfYoutube))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(PlatformVideoCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(OperatingSystemVersionVideoCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(MobileDeviceVideoCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(MobileApplicationVideoCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(MobileAppCategoryVideoCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationVideoCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(LanguageVideoCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseKeyword))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SearchKeyword))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentKeyword))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentCategoryLabel))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Channel))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CarrierVideoCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceUserList))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceInterest))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceGender))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceAge))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdScheduleVideoCriterion))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public abstract partial class BaseCriterion {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private string baseCriterionTypeField;
+
+    public long id {
+      get { return this.idField; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("BaseCriterion.Type")]
+    public string BaseCriterionType {
+      get { return this.baseCriterionTypeField; }
+      set { this.baseCriterionTypeField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class YouTubePlacement : BaseCriterion {
+    private string urlField;
+
+    public string url {
+      get { return this.urlField; }
+      set { this.urlField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class WebSite : BaseCriterion {
+    private string urlField;
+
+    public string url {
+      get { return this.urlField; }
+      set { this.urlField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCriterion : BaseCriterion {
+    private string videoIdField;
+
+    private string videoNameField;
+
+    public string videoId {
+      get { return this.videoIdField; }
+      set { this.videoIdField = value; }
+    }
+
+    public string videoName {
+      get { return this.videoNameField; }
+      set { this.videoNameField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class Topic : BaseCriterion {
+    private long verticalIdField;
+
+    private bool verticalIdFieldSpecified;
+
+    private string[] verticalPathField;
+
+    public long verticalId {
+      get { return this.verticalIdField; }
+      set {
+        this.verticalIdField = value;
+        this.verticalIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool verticalIdSpecified {
+      get { return this.verticalIdFieldSpecified; }
+      set { this.verticalIdFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("verticalPath")]
+    public string[] verticalPath {
+      get { return this.verticalPathField; }
+      set { this.verticalPathField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class RunOfYoutube : BaseCriterion {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class PlatformVideoCriterion : BaseCriterion {
+    private string platformNameField;
+
+    public string platformName {
+      get { return this.platformNameField; }
+      set { this.platformNameField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class OperatingSystemVersionVideoCriterion : BaseCriterion {
+    private string nameField;
+
+    private int osMajorVersionField;
+
+    private bool osMajorVersionFieldSpecified;
+
+    private int osMinorVersionField;
+
+    private bool osMinorVersionFieldSpecified;
+
+    private VideoOperatingSystemVersionOperatorType operatorTypeField;
+
+    private bool operatorTypeFieldSpecified;
+
+    private long operatingSystemIdField;
+
+    private bool operatingSystemIdFieldSpecified;
+
+    private bool obsoleteField;
+
+    private bool obsoleteFieldSpecified;
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public int osMajorVersion {
+      get { return this.osMajorVersionField; }
+      set {
+        this.osMajorVersionField = value;
+        this.osMajorVersionSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool osMajorVersionSpecified {
+      get { return this.osMajorVersionFieldSpecified; }
+      set { this.osMajorVersionFieldSpecified = value; }
+    }
+
+    public int osMinorVersion {
+      get { return this.osMinorVersionField; }
+      set {
+        this.osMinorVersionField = value;
+        this.osMinorVersionSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool osMinorVersionSpecified {
+      get { return this.osMinorVersionFieldSpecified; }
+      set { this.osMinorVersionFieldSpecified = value; }
+    }
+
+    public VideoOperatingSystemVersionOperatorType operatorType {
+      get { return this.operatorTypeField; }
+      set {
+        this.operatorTypeField = value;
+        this.operatorTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool operatorTypeSpecified {
+      get { return this.operatorTypeFieldSpecified; }
+      set { this.operatorTypeFieldSpecified = value; }
+    }
+
+    public long operatingSystemId {
+      get { return this.operatingSystemIdField; }
+      set {
+        this.operatingSystemIdField = value;
+        this.operatingSystemIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool operatingSystemIdSpecified {
+      get { return this.operatingSystemIdFieldSpecified; }
+      set { this.operatingSystemIdFieldSpecified = value; }
+    }
+
+    public bool obsolete {
+      get { return this.obsoleteField; }
+      set {
+        this.obsoleteField = value;
+        this.obsoleteSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool obsoleteSpecified {
+      get { return this.obsoleteFieldSpecified; }
+      set { this.obsoleteFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoOperatingSystemVersion.OperatorType", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoOperatingSystemVersionOperatorType {
+    GREATER_THAN_EQUAL_TO,
+    EQUAL_TO,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class MobileDeviceVideoCriterion : BaseCriterion {
+    private string deviceNameField;
+
+    private string manufacturerNameField;
+
+    private VideoMobileDeviceDeviceType deviceTypeField;
+
+    private bool deviceTypeFieldSpecified;
+
+    private string operatingSystemNameField;
+
+    public string deviceName {
+      get { return this.deviceNameField; }
+      set { this.deviceNameField = value; }
+    }
+
+    public string manufacturerName {
+      get { return this.manufacturerNameField; }
+      set { this.manufacturerNameField = value; }
+    }
+
+    public VideoMobileDeviceDeviceType deviceType {
+      get { return this.deviceTypeField; }
+      set {
+        this.deviceTypeField = value;
+        this.deviceTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool deviceTypeSpecified {
+      get { return this.deviceTypeFieldSpecified; }
+      set { this.deviceTypeFieldSpecified = value; }
+    }
+
+    public string operatingSystemName {
+      get { return this.operatingSystemNameField; }
+      set { this.operatingSystemNameField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoMobileDevice.DeviceType", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoMobileDeviceDeviceType {
+    DEVICE_TYPE_MOBILE,
+    DEVICE_TYPE_TABLET
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class MobileApplicationVideoCriterion : BaseCriterion {
+    private string appIdField;
+
+    public string appId {
+      get { return this.appIdField; }
+      set { this.appIdField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class MobileAppCategoryVideoCriterion : BaseCriterion {
+    private int mobileAppCategoryIdField;
+
+    private bool mobileAppCategoryIdFieldSpecified;
+
+    public int mobileAppCategoryId {
+      get { return this.mobileAppCategoryIdField; }
+      set {
+        this.mobileAppCategoryIdField = value;
+        this.mobileAppCategoryIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool mobileAppCategoryIdSpecified {
+      get { return this.mobileAppCategoryIdFieldSpecified; }
+      set { this.mobileAppCategoryIdFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class LocationVideoCriterion : BaseCriterion {
+    private string locationNameField;
+
+    private string displayTypeField;
+
+    private bool isObsoleteField;
+
+    private bool isObsoleteFieldSpecified;
+
+    private LocationVideoCriterion[] parentLocationsField;
+
+    public string locationName {
+      get { return this.locationNameField; }
+      set { this.locationNameField = value; }
+    }
+
+    public string displayType {
+      get { return this.displayTypeField; }
+      set { this.displayTypeField = value; }
+    }
+
+    public bool isObsolete {
+      get { return this.isObsoleteField; }
+      set {
+        this.isObsoleteField = value;
+        this.isObsoleteSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool isObsoleteSpecified {
+      get { return this.isObsoleteFieldSpecified; }
+      set { this.isObsoleteFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("parentLocations")]
+    public LocationVideoCriterion[] parentLocations {
+      get { return this.parentLocationsField; }
+      set { this.parentLocationsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class LanguageVideoCriterion : BaseCriterion {
+    private string codeField;
+
+    private string nameField;
+
+    public string code {
+      get { return this.codeField; }
+      set { this.codeField = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+  }
+
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(SearchKeyword))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentKeyword))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class BaseKeyword : BaseCriterion {
+    private string textField;
+
+    private BaseKeywordMatchType matchTypeField;
+
+    private bool matchTypeFieldSpecified;
+
+    public string text {
+      get { return this.textField; }
+      set { this.textField = value; }
+    }
+
+    public BaseKeywordMatchType matchType {
+      get { return this.matchTypeField; }
+      set {
+        this.matchTypeField = value;
+        this.matchTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool matchTypeSpecified {
+      get { return this.matchTypeFieldSpecified; }
+      set { this.matchTypeFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BaseKeyword.MatchType", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum BaseKeywordMatchType {
+    EXACT,
+    PHRASE,
+    BROAD,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class SearchKeyword : BaseKeyword {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ContentKeyword : BaseKeyword {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ContentCategoryLabel : BaseCriterion {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class Channel : BaseCriterion {
+    private string userNameField;
+
+    private string userIdField;
+
+    private string publicNameField;
+
+    public string userName {
+      get { return this.userNameField; }
+      set { this.userNameField = value; }
+    }
+
+    public string userId {
+      get { return this.userIdField; }
+      set { this.userIdField = value; }
+    }
+
+    public string publicName {
+      get { return this.publicNameField; }
+      set { this.publicNameField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class CarrierVideoCriterion : BaseCriterion {
+    private string nameField;
+
+    private string countryCodeField;
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public string countryCode {
+      get { return this.countryCodeField; }
+      set { this.countryCodeField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class AudienceUserList : BaseCriterion {
+    private long listIdField;
+
+    private bool listIdFieldSpecified;
+
+    private string nameField;
+
+    public long listId {
+      get { return this.listIdField; }
+      set {
+        this.listIdField = value;
+        this.listIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool listIdSpecified {
+      get { return this.listIdFieldSpecified; }
+      set { this.listIdFieldSpecified = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class AudienceInterest : BaseCriterion {
+    private long interestIdField;
+
+    private bool interestIdFieldSpecified;
+
+    private string[] interestPathField;
+
+    public long interestId {
+      get { return this.interestIdField; }
+      set {
+        this.interestIdField = value;
+        this.interestIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool interestIdSpecified {
+      get { return this.interestIdFieldSpecified; }
+      set { this.interestIdFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("interestPath")]
+    public string[] interestPath {
+      get { return this.interestPathField; }
+      set { this.interestPathField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class AudienceGender : BaseCriterion {
+    private AudienceGenderGenderType genderTypeField;
+
+    private bool genderTypeFieldSpecified;
+
+    public AudienceGenderGenderType genderType {
+      get { return this.genderTypeField; }
+      set {
+        this.genderTypeField = value;
+        this.genderTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool genderTypeSpecified {
+      get { return this.genderTypeFieldSpecified; }
+      set { this.genderTypeFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudienceGender.GenderType", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum AudienceGenderGenderType {
+    GENDER_MALE,
+    GENDER_FEMALE,
+    GENDER_UNDETERMINED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class AudienceAge : BaseCriterion {
+    private AudienceAgeAgeRange ageRangeField;
+
+    private bool ageRangeFieldSpecified;
+
+    public AudienceAgeAgeRange ageRange {
+      get { return this.ageRangeField; }
+      set {
+        this.ageRangeField = value;
+        this.ageRangeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool ageRangeSpecified {
+      get { return this.ageRangeFieldSpecified; }
+      set { this.ageRangeFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudienceAge.AgeRange", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum AudienceAgeAgeRange {
+    AGE_RANGE_18_24,
+    AGE_RANGE_25_34,
+    AGE_RANGE_35_44,
+    AGE_RANGE_45_54,
+    AGE_RANGE_55_64,
+    AGE_RANGE_65_UP,
+    AGE_RANGE_UNDETERMINED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class AdScheduleVideoCriterion : BaseCriterion {
+    private VideoDayOfWeek dayOfWeekField;
+
+    private bool dayOfWeekFieldSpecified;
+
+    private int startHourField;
+
+    private bool startHourFieldSpecified;
+
+    private VideoMinuteOfHour startMinuteField;
+
+    private bool startMinuteFieldSpecified;
+
+    private int endHourField;
+
+    private bool endHourFieldSpecified;
+
+    private VideoMinuteOfHour endMinuteField;
+
+    private bool endMinuteFieldSpecified;
+
+    public VideoDayOfWeek dayOfWeek {
+      get { return this.dayOfWeekField; }
+      set {
+        this.dayOfWeekField = value;
+        this.dayOfWeekSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool dayOfWeekSpecified {
+      get { return this.dayOfWeekFieldSpecified; }
+      set { this.dayOfWeekFieldSpecified = value; }
+    }
+
+    public int startHour {
+      get { return this.startHourField; }
+      set {
+        this.startHourField = value;
+        this.startHourSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool startHourSpecified {
+      get { return this.startHourFieldSpecified; }
+      set { this.startHourFieldSpecified = value; }
+    }
+
+    public VideoMinuteOfHour startMinute {
+      get { return this.startMinuteField; }
+      set {
+        this.startMinuteField = value;
+        this.startMinuteSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool startMinuteSpecified {
+      get { return this.startMinuteFieldSpecified; }
+      set { this.startMinuteFieldSpecified = value; }
+    }
+
+    public int endHour {
+      get { return this.endHourField; }
+      set {
+        this.endHourField = value;
+        this.endHourSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool endHourSpecified {
+      get { return this.endHourFieldSpecified; }
+      set { this.endHourFieldSpecified = value; }
+    }
+
+    public VideoMinuteOfHour endMinute {
+      get { return this.endMinuteField; }
+      set {
+        this.endMinuteField = value;
+        this.endMinuteSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool endMinuteSpecified {
+      get { return this.endMinuteFieldSpecified; }
+      set { this.endMinuteFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoMinuteOfHour {
+    ZERO,
+    FIFTEEN,
+    THIRTY,
+    FORTY_FIVE
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ReportedVideoCampaignCriterion : VideoCampaignCriterion {
+    private VideoEntityStats statsField;
+
+    private VideoEntityStats[] segmentedStatsField;
+
+    private bool excludedField;
+
+    private bool excludedFieldSpecified;
+
+    public VideoEntityStats stats {
+      get { return this.statsField; }
+      set { this.statsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("segmentedStats")]
+    public VideoEntityStats[] segmentedStats {
+      get { return this.segmentedStatsField; }
+      set { this.segmentedStatsField = value; }
+    }
+
+    public bool excluded {
+      get { return this.excludedField; }
+      set {
+        this.excludedField = value;
+        this.excludedSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool excludedSpecified {
+      get { return this.excludedFieldSpecified; }
+      set { this.excludedFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class NegativeVideoCampaignCriterion : VideoCampaignCriterion {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignCriterionOperation : Operation {
+    private VideoCampaignCriterion operandField;
+
+    public VideoCampaignCriterion operand {
+      get { return this.operandField; }
+      set { this.operandField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignReportPage : Page {
+    private ReportedVideoCampaignCriterion[] entriesField;
+
+    private VideoEntityStats[] summaryStatsField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public ReportedVideoCampaignCriterion[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("summaryStats")]
+    public VideoEntityStats[] summaryStats {
+      get { return this.summaryStatsField; }
+      set { this.summaryStatsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignCriterionPage : Page {
+    private VideoCampaignCriterion[] entriesField;
+
+    private VideoEntityStats[] summaryStatsField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public VideoCampaignCriterion[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("summaryStats")]
+    public VideoEntityStats[] summaryStats {
+      get { return this.summaryStatsField; }
+      set { this.summaryStatsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoCampaignCriterionSortable {
+    CAMPAIGN_ID
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignCriterionSelector {
+    private long[] campaignIdsField;
+
+    private VideoCampaignStatus[] campaignStatusesField;
+
+    private BaseCriterionType[] criterionTypesField;
+
+    private Sorting sortingField;
+
+    private Paging pagingField;
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignIds")]
+    public long[] campaignIds {
+      get { return this.campaignIdsField; }
+      set { this.campaignIdsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignStatuses")]
+    public VideoCampaignStatus[] campaignStatuses {
+      get { return this.campaignStatusesField; }
+      set { this.campaignStatusesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("criterionTypes")]
+    public BaseCriterionType[] criterionTypes {
+      get { return this.criterionTypesField; }
+      set { this.criterionTypesField = value; }
+    }
+
+    public Sorting sorting {
+      get { return this.sortingField; }
+      set { this.sortingField = value; }
+    }
+
+    public Paging paging {
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BaseCriterion.Type", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum BaseCriterionType {
+    AGE,
+    CARRIER,
+    CHANNEL,
+    CONTENT_KEYWORD,
+    CONTENT_LABEL,
+    GENDER,
+    INTEREST,
+    KEYWORD,
+    LANGUAGE,
+    LOCATION,
+    MOBILE_APPLICATION,
+    MOBILE_APP_CATEGORY,
+    MOBILE_DEVICE,
+    OPERATING_SYSTEM_VERSION,
+    PLATFORM,
+    RUN_OF_YOUTUBE,
+    SCHEDULE,
+    SEARCH_KEYWORD,
+    USER_LIST,
+    VERTICAL,
+    VIDEO,
+    WEB_SITE,
+    YOUTUBE_PLACEMENT,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignCriterionError : ApiError {
+    private VideoCampaignCriterionErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public VideoCampaignCriterionErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoCampaignCriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoCampaignCriterionErrorReason {
+    UNKNOWN,
+    INVALID_CRITERION_USE,
+    INVALID_CRITERION_TYPE
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupCriterionError : ApiError {
+    private TargetingGroupCriterionErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public TargetingGroupCriterionErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TargetingGroupCriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum TargetingGroupCriterionErrorReason {
+    UNKNOWN,
+    WEBSITE_NOT_ALLOWED_FOR_NETWORK,
+    NETWORK_NOT_SUPPORTED,
+    INVALID_KEYWORD_TEXT,
+    KEYWORD_TEXT_TOO_LONG,
+    KEYWORD_HAS_TOO_MANY_WORDS,
+    KEYWORD_HAS_INVALID_CHARS,
+    INVALID_WEBSITE_URL,
+    INVALID_FORMAT_FOR_WEBSITE_URL,
+    WEBSITE_URL_IS_TOO_LONG,
+    WEBSITE_URL_HAS_ILLEGAL_CHAR,
+    WEBSITE_URL_HAS_MULTIPLE_SITES_IN_LINE,
+    WEBSITE_DOMAIN_BLACKLISTED,
+    INVALID_VIDEO_ID,
+    INVALID_CHANNEL_ID,
+    INVALID_VERTICAL_PATH,
+    INVALID_USER_LIST_ID,
+    KEYWORD_UNSUPPORTED,
+    INVALID_TARGETING_GROUP_ID,
+    INVALID_CRITERION_ID,
+    IMMUTABLE_NEGATIVE,
+    WEBSITE_URL_HAS_SCHEMA,
+    USER_ID_OF_CHANNEL_MISSING,
+    TOO_MANY_CRITERIONS_PER_TARGETING_GROUP,
+    INVALID_STATUS,
+    MUTATING_REPORTED_TGC,
+    UNSUPPORTED_BID_OVERRIDE,
+    CANNOT_TARGET_AND_EXCLUDE,
+    CANNOT_REMOVE_CRITERION,
+    CANNOT_TARGET_CRITERION,
+    CANNOT_TARGET_OBSOLETE_CRITERION,
+    TOO_MANY_OPERTAIONS
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "VideoCampaignServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class VideoCampaignService : AdWordsSoapClient, IVideoCampaignService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public VideoCampaignService() {
+      this.Url = "https://adwords.google.com/api/adwords/video/v201406/VideoCampaignService";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual VideoCampaignPage get(VideoCampaignSelector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((VideoCampaignPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual VideoCampaignReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
+VideoCampaignOperation[] operations) {
+      object[] results = this.Invoke("mutate", new object[] { operations });
+      return ((VideoCampaignReturnValue) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignReturnValue : ListReturnValue {
+    private VideoCampaign[] valueField;
+
+    [System.Xml.Serialization.XmlElementAttribute("value")]
+    public VideoCampaign[] value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaign {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private string nameField;
+
+    private VideoCampaignStatus statusField;
+
+    private bool statusFieldSpecified;
+
+    private string startDateField;
+
+    private string endDateField;
+
+    private long budgetIdField;
+
+    private bool budgetIdFieldSpecified;
+
+    private VideoCampaignBiddingMode biddingModeField;
+
+    private bool biddingModeFieldSpecified;
+
+    private VideoCampaignTargetingMode targetingModeField;
+
+    private bool targetingModeFieldSpecified;
+
+    private VideoCampaignSpendingStatus spendingStatusField;
+
+    private bool spendingStatusFieldSpecified;
+
+    private CampaignSchedulingStatus schedulingStatusField;
+
+    private bool schedulingStatusFieldSpecified;
+
+    private VideoAdServingOptimizationStatus adServingOptimizationStatusField;
+
+    private bool adServingOptimizationStatusFieldSpecified;
+
+    private VideoFrequencyCap frequencyCapField;
+
+    private VideoAdNetwork[] networksField;
+
+    private VideoEntityStats statsField;
+
+    private VideoEntityStats[] segmentedStatsField;
+
+    public long id {
+      get { return this.idField; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public VideoCampaignStatus status {
+      get { return this.statusField; }
+      set {
+        this.statusField = value;
+        this.statusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool statusSpecified {
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
+    }
+
+    public string startDate {
+      get { return this.startDateField; }
+      set { this.startDateField = value; }
+    }
+
+    public string endDate {
+      get { return this.endDateField; }
+      set { this.endDateField = value; }
+    }
+
+    public long budgetId {
+      get { return this.budgetIdField; }
+      set {
+        this.budgetIdField = value;
+        this.budgetIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool budgetIdSpecified {
+      get { return this.budgetIdFieldSpecified; }
+      set { this.budgetIdFieldSpecified = value; }
+    }
+
+    public VideoCampaignBiddingMode biddingMode {
+      get { return this.biddingModeField; }
+      set {
+        this.biddingModeField = value;
+        this.biddingModeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool biddingModeSpecified {
+      get { return this.biddingModeFieldSpecified; }
+      set { this.biddingModeFieldSpecified = value; }
+    }
+
+    public VideoCampaignTargetingMode targetingMode {
+      get { return this.targetingModeField; }
+      set {
+        this.targetingModeField = value;
+        this.targetingModeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool targetingModeSpecified {
+      get { return this.targetingModeFieldSpecified; }
+      set { this.targetingModeFieldSpecified = value; }
+    }
+
+    public VideoCampaignSpendingStatus spendingStatus {
+      get { return this.spendingStatusField; }
+      set {
+        this.spendingStatusField = value;
+        this.spendingStatusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool spendingStatusSpecified {
+      get { return this.spendingStatusFieldSpecified; }
+      set { this.spendingStatusFieldSpecified = value; }
+    }
+
+    public CampaignSchedulingStatus schedulingStatus {
+      get { return this.schedulingStatusField; }
+      set {
+        this.schedulingStatusField = value;
+        this.schedulingStatusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool schedulingStatusSpecified {
+      get { return this.schedulingStatusFieldSpecified; }
+      set { this.schedulingStatusFieldSpecified = value; }
+    }
+
+    public VideoAdServingOptimizationStatus adServingOptimizationStatus {
+      get { return this.adServingOptimizationStatusField; }
+      set {
+        this.adServingOptimizationStatusField = value;
+        this.adServingOptimizationStatusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool adServingOptimizationStatusSpecified {
+      get { return this.adServingOptimizationStatusFieldSpecified; }
+      set { this.adServingOptimizationStatusFieldSpecified = value; }
+    }
+
+    public VideoFrequencyCap frequencyCap {
+      get { return this.frequencyCapField; }
+      set { this.frequencyCapField = value; }
+    }
+
+    [System.Xml.Serialization.XmlArrayItemAttribute("networks", IsNullable = false)]
+    public VideoAdNetwork[] networks {
+      get { return this.networksField; }
+      set { this.networksField = value; }
+    }
+
+    public VideoEntityStats stats {
+      get { return this.statsField; }
+      set { this.statsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("segmentedStats")]
+    public VideoEntityStats[] segmentedStats {
+      get { return this.segmentedStatsField; }
+      set { this.segmentedStatsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoCampaign.BiddingMode", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoCampaignBiddingMode {
+    AUTO,
+    MANUAL,
+    NONE
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoCampaign.TargetingMode", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoCampaignTargetingMode {
+    AUTO,
+    MANUAL
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoCampaign.SpendingStatus", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoCampaignSpendingStatus {
+    UNAVAILABLE,
+    SUSPENDED,
+    CONSTRAINED,
+    NON_CONSTRAINED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum CampaignSchedulingStatus {
+    UNAVAILABLE,
+    CURRENT,
+    ENDED,
+    PENDING
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoAdServingOptimizationStatus {
+    OPTIMIZE,
+    CONVERSION_OPTIMIZE,
+    ROTATE,
+    ROTATE_FOREVER,
+    UNAVAILABLE
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoFrequencyCap {
+    private long impressionsField;
+
+    private bool impressionsFieldSpecified;
+
+    private VideoTimeUnit timeUnitField;
+
+    private bool timeUnitFieldSpecified;
+
+    private VideoLevel levelField;
+
+    private bool levelFieldSpecified;
+
+    public long impressions {
+      get { return this.impressionsField; }
+      set {
+        this.impressionsField = value;
+        this.impressionsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool impressionsSpecified {
+      get { return this.impressionsFieldSpecified; }
+      set { this.impressionsFieldSpecified = value; }
+    }
+
+    public VideoTimeUnit timeUnit {
+      get { return this.timeUnitField; }
+      set {
+        this.timeUnitField = value;
+        this.timeUnitSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool timeUnitSpecified {
+      get { return this.timeUnitFieldSpecified; }
+      set { this.timeUnitFieldSpecified = value; }
+    }
+
+    public VideoLevel level {
+      get { return this.levelField; }
+      set {
+        this.levelField = value;
+        this.levelSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool levelSpecified {
+      get { return this.levelFieldSpecified; }
+      set { this.levelFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoTimeUnit {
+    MINUTE,
+    HOUR,
+    DAY,
+    WEEK,
+    MONTH,
+    LIFETIME
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoLevel {
+    VIDEO_CAMPAIGN,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignOperation : Operation {
+    private VideoCampaign operandField;
+
+    public VideoCampaign operand {
+      get { return this.operandField; }
+      set { this.operandField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoBudget {
+    private long budgetIdField;
+
+    private bool budgetIdFieldSpecified;
+
+    private string nameField;
+
+    private Money amountField;
+
+    private VideoBudgetBudgetDeliveryMethod deliveryMethodField;
+
+    private bool deliveryMethodFieldSpecified;
+
+    private bool isExplicitlySharedField;
+
+    private bool isExplicitlySharedFieldSpecified;
+
+    public long budgetId {
+      get { return this.budgetIdField; }
+      set {
+        this.budgetIdField = value;
+        this.budgetIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool budgetIdSpecified {
+      get { return this.budgetIdFieldSpecified; }
+      set { this.budgetIdFieldSpecified = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public Money amount {
+      get { return this.amountField; }
+      set { this.amountField = value; }
+    }
+
+    public VideoBudgetBudgetDeliveryMethod deliveryMethod {
+      get { return this.deliveryMethodField; }
+      set {
+        this.deliveryMethodField = value;
+        this.deliveryMethodSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool deliveryMethodSpecified {
+      get { return this.deliveryMethodFieldSpecified; }
+      set { this.deliveryMethodFieldSpecified = value; }
+    }
+
+    public bool isExplicitlyShared {
+      get { return this.isExplicitlySharedField; }
+      set {
+        this.isExplicitlySharedField = value;
+        this.isExplicitlySharedSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool isExplicitlySharedSpecified {
+      get { return this.isExplicitlySharedFieldSpecified; }
+      set { this.isExplicitlySharedFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoBudget.BudgetDeliveryMethod", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoBudgetBudgetDeliveryMethod {
+    STANDARD,
+    ACCELERATED
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class SummaryBudgets {
+    private VideoBudget totalVideoBudgetField;
+
+    private Money nonVideoBudgetField;
+
+    private Money combinedBudgetField;
+
+    public VideoBudget totalVideoBudget {
+      get { return this.totalVideoBudgetField; }
+      set { this.totalVideoBudgetField = value; }
+    }
+
+    public Money nonVideoBudget {
+      get { return this.nonVideoBudgetField; }
+      set { this.nonVideoBudgetField = value; }
+    }
+
+    public Money combinedBudget {
+      get { return this.combinedBudgetField; }
+      set { this.combinedBudgetField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignPage : Page {
+    private VideoCampaign[] entriesField;
+
+    private VideoEntityStats[] summaryStatsField;
+
+    private SummaryBudgets summaryBudgetsField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public VideoCampaign[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("summaryStats")]
+    public VideoEntityStats[] summaryStats {
+      get { return this.summaryStatsField; }
+      set { this.summaryStatsField = value; }
+    }
+
+    public SummaryBudgets summaryBudgets {
+      get { return this.summaryBudgetsField; }
+      set { this.summaryBudgetsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoCampaignSortable {
+    BUDGET_AMOUNT,
+    CAMPAIGN_ID,
+    END_DATE,
+    NAME,
+    START_DATE,
+    STATUS,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignSelector {
+    private long[] idsField;
+
+    private VideoCampaignStatus[] campaignStatusesField;
+
+    private StatsSelector statsSelectorField;
+
+    private Paging pagingField;
+
+    private Sorting sortingField;
+
+    [System.Xml.Serialization.XmlElementAttribute("ids")]
+    public long[] ids {
+      get { return this.idsField; }
+      set { this.idsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignStatuses")]
+    public VideoCampaignStatus[] campaignStatuses {
+      get { return this.campaignStatusesField; }
+      set { this.campaignStatusesField = value; }
+    }
+
+    public StatsSelector statsSelector {
+      get { return this.statsSelectorField; }
+      set { this.statsSelectorField = value; }
+    }
+
+    public Paging paging {
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
+    }
+
+    public Sorting sorting {
+      get { return this.sortingField; }
+      set { this.sortingField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignError : ApiError {
+    private VideoCampaignErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public VideoCampaignErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoCampaignError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoCampaignErrorReason {
+    UNKNOWN,
+    AFTER_MAXIMUM_ALLOWABLE_DATE,
+    CANNOT_SET_DATE_TO_PAST,
+    DUPLICATE_CAMPAIGN_NAME,
+    INVALID_CAMPAIGN_NAME,
+    START_DATE_AFTER_END_DATE,
+    CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED,
+    INVALID_OPERATION_IF_SERVING_STATUS_HAS_ENDED,
+    CAMPAIGN_LIMIT
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoBudgetError : ApiError {
+    private VideoBudgetErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public VideoBudgetErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoBudgetError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoBudgetErrorReason {
+    MONEY_AMOUNT_LESS_THAN_CURRENCY_MINIMUM_CPC,
+    MONEY_AMOUNT_LESS_THAN_MAXIMUM_AD_GROUP_CPM,
+    MONEY_AMOUNT_LESS_THAN_MAXIMUM_SITE_CPM,
+    MONEY_AMOUNT_LESS_THAN_MINIMUM_AD_GROUP_CPC,
+    MONEY_AMOUNT_LESS_THAN_MINIMUM_CRITERIA_CPC,
+    MONEY_AMOUNT_TOO_LARGE,
+    NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoBiddingError : ApiError {
+    private VideoBiddingErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public VideoBiddingErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoBiddingError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoBiddingErrorReason {
+    BID_AMOUNT_REQUIRED,
+    BID_TOO_SMALL,
+    BID_TOO_BIG,
+    BID_TOO_MANY_FRACTIONAL_DIGITS,
+    BID_TOO_HIGH_FOR_DAILY_BUDGET,
+    NON_POSITIVE_BID,
+    BID_FOR_DEPRECATED_FORMAT,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class NetworkError : ApiError {
+    private NetworkErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public NetworkErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NetworkError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum NetworkErrorReason {
+    EMPTY,
+    INVALID,
+    NOT_ALLOWED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "VideoServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class VideoService : AdWordsSoapClient, IVideoService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public VideoService() {
+      this.Url = "https://adwords.google.com/api/adwords/video/v201406/VideoService";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual VideoPage get(VideoSelector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((VideoPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual VideoReturnValue mutateCallToAction([System.Xml.Serialization.XmlElementAttribute("operations")]
+VideoCallToActionOperation[] operations) {
+      object[] results = this.Invoke("mutateCallToAction", new object[] { operations });
+      return ((VideoReturnValue) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual VideoSearchPage search(VideoSearchSelector selector) {
+      object[] results = this.Invoke("search", new object[] { selector });
+      return ((VideoSearchPage) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoSearchSelector {
+    private VideoSearchSelectorSearchType searchTypeField;
+
+    private bool searchTypeFieldSpecified;
+
+    private string[] videoIdsField;
+
+    private string queryField;
+
+    private string[] channelUserNamesField;
+
+    private string[] channelUserIdsField;
+
+    private Paging pagingField;
+
+    private Sorting sortingField;
+
+    public VideoSearchSelectorSearchType searchType {
+      get { return this.searchTypeField; }
+      set {
+        this.searchTypeField = value;
+        this.searchTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool searchTypeSpecified {
+      get { return this.searchTypeFieldSpecified; }
+      set { this.searchTypeFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("videoIds")]
+    public string[] videoIds {
+      get { return this.videoIdsField; }
+      set { this.videoIdsField = value; }
+    }
+
+    public string query {
+      get { return this.queryField; }
+      set { this.queryField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("channelUserNames")]
+    public string[] channelUserNames {
+      get { return this.channelUserNamesField; }
+      set { this.channelUserNamesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("channelUserIds")]
+    public string[] channelUserIds {
+      get { return this.channelUserIdsField; }
+      set { this.channelUserIdsField = value; }
+    }
+
+    public Paging paging {
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
+    }
+
+    public Sorting sorting {
+      get { return this.sortingField; }
+      set { this.sortingField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoSearchSelector.SearchType", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoSearchSelectorSearchType {
+    VIDEO,
+    CHANNEL
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoSearchSortable {
+    RELEVANCE,
+    DATE_UPLOADED,
+    VIEW_COUNT,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoSortable {
+    TITLE,
+    DATE_UPLOADED,
+    DURATION,
+    CHANNEL,
+    VIEW_COUNT,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoStatsSortable {
+    TOTAL_VIEWS,
+    CTA_IMPRESSIONS,
+    CTA_CLICKS,
+    CTA_CTR,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoReturnValue : ListReturnValue {
+    private YouTubeVideo[] valueField;
+
+    [System.Xml.Serialization.XmlElementAttribute("value")]
+    public YouTubeVideo[] value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class YouTubeVideo {
+    private string idField;
+
+    private string titleField;
+
+    private string descriptionField;
+
+    private string dateUploadedField;
+
+    private long durationSecField;
+
+    private bool durationSecFieldSpecified;
+
+    private string userPublicNameField;
+
+    private string userIdField;
+
+    private long viewCountField;
+
+    private bool viewCountFieldSpecified;
+
+    private VideoCampaignInfo[] campaignInfosField;
+
+    private CallToAction callToActionField;
+
+    private VideoEntityStats statsField;
+
+    private VideoEntityStats[] segmentedStatsField;
+
+    private YouTubeVideoAccessLevel accessLevelField;
+
+    private bool accessLevelFieldSpecified;
+
+    public string id {
+      get { return this.idField; }
+      set { this.idField = value; }
+    }
+
+    public string title {
+      get { return this.titleField; }
+      set { this.titleField = value; }
+    }
+
+    public string description {
+      get { return this.descriptionField; }
+      set { this.descriptionField = value; }
+    }
+
+    public string dateUploaded {
+      get { return this.dateUploadedField; }
+      set { this.dateUploadedField = value; }
+    }
+
+    public long durationSec {
+      get { return this.durationSecField; }
+      set {
+        this.durationSecField = value;
+        this.durationSecSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool durationSecSpecified {
+      get { return this.durationSecFieldSpecified; }
+      set { this.durationSecFieldSpecified = value; }
+    }
+
+    public string userPublicName {
+      get { return this.userPublicNameField; }
+      set { this.userPublicNameField = value; }
+    }
+
+    public string userId {
+      get { return this.userIdField; }
+      set { this.userIdField = value; }
+    }
+
+    public long viewCount {
+      get { return this.viewCountField; }
+      set {
+        this.viewCountField = value;
+        this.viewCountSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool viewCountSpecified {
+      get { return this.viewCountFieldSpecified; }
+      set { this.viewCountFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignInfos")]
+    public VideoCampaignInfo[] campaignInfos {
+      get { return this.campaignInfosField; }
+      set { this.campaignInfosField = value; }
+    }
+
+    public CallToAction callToAction {
+      get { return this.callToActionField; }
+      set { this.callToActionField = value; }
+    }
+
+    public VideoEntityStats stats {
+      get { return this.statsField; }
+      set { this.statsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("segmentedStats")]
+    public VideoEntityStats[] segmentedStats {
+      get { return this.segmentedStatsField; }
+      set { this.segmentedStatsField = value; }
+    }
+
+    public YouTubeVideoAccessLevel accessLevel {
+      get { return this.accessLevelField; }
+      set {
+        this.accessLevelField = value;
+        this.accessLevelSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool accessLevelSpecified {
+      get { return this.accessLevelFieldSpecified; }
+      set { this.accessLevelFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCampaignInfo {
+    private long campaignIdField;
+
+    private bool campaignIdFieldSpecified;
+
+    private string campaignNameField;
+
+    public long campaignId {
+      get { return this.campaignIdField; }
+      set {
+        this.campaignIdField = value;
+        this.campaignIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool campaignIdSpecified {
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
+    }
+
+    public string campaignName {
+      get { return this.campaignNameField; }
+      set { this.campaignNameField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class CallToAction {
+    private CallToActionCreative creativeField;
+
+    private bool isEnabledOnMobileField;
+
+    private bool isEnabledOnMobileFieldSpecified;
+
+    private CallToActionStatus statusField;
+
+    private bool statusFieldSpecified;
+
+    private CallToActionPolicyViolation[] policyViolationsField;
+
+    public CallToActionCreative creative {
+      get { return this.creativeField; }
+      set { this.creativeField = value; }
+    }
+
+    public bool isEnabledOnMobile {
+      get { return this.isEnabledOnMobileField; }
+      set {
+        this.isEnabledOnMobileField = value;
+        this.isEnabledOnMobileSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool isEnabledOnMobileSpecified {
+      get { return this.isEnabledOnMobileFieldSpecified; }
+      set { this.isEnabledOnMobileFieldSpecified = value; }
+    }
+
+    public CallToActionStatus status {
+      get { return this.statusField; }
+      set {
+        this.statusField = value;
+        this.statusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool statusSpecified {
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("policyViolations")]
+    public CallToActionPolicyViolation[] policyViolations {
+      get { return this.policyViolationsField; }
+      set { this.policyViolationsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CallToAction.Creative", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class CallToActionCreative {
+    private CallToActionCreativeType typeField;
+
+    private bool typeFieldSpecified;
+
+    private string headlineField;
+
+    private string displayUrlField;
+
+    private string destinationUrlField;
+
+    private CallToActionImage imageField;
+
+    public CallToActionCreativeType type {
+      get { return this.typeField; }
+      set {
+        this.typeField = value;
+        this.typeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool typeSpecified {
+      get { return this.typeFieldSpecified; }
+      set { this.typeFieldSpecified = value; }
+    }
+
+    public string headline {
+      get { return this.headlineField; }
+      set { this.headlineField = value; }
+    }
+
+    public string displayUrl {
+      get { return this.displayUrlField; }
+      set { this.displayUrlField = value; }
+    }
+
+    public string destinationUrl {
+      get { return this.destinationUrlField; }
+      set { this.destinationUrlField = value; }
+    }
+
+    public CallToActionImage image {
+      get { return this.imageField; }
+      set { this.imageField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CallToAction.Creative.Type", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum CallToActionCreativeType {
+    TEXT_ONLY,
+    TEXT_AND_IMAGE,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class CallToActionImage {
+    private byte[] dataField;
+
+    private string imageUrlField;
+
+    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
+    public byte[] data {
+      get { return this.dataField; }
+      set { this.dataField = value; }
+    }
+
+    public string imageUrl {
+      get { return this.imageUrlField; }
+      set { this.imageUrlField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CallToAction.Status", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum CallToActionStatus {
+    ACTIVE,
+    INACTIVE,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CallToAction.PolicyViolation", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class CallToActionPolicyViolation {
+    private string textField;
+
+    public string text {
+      get { return this.textField; }
+      set { this.textField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "YouTubeVideo.AccessLevel", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum YouTubeVideoAccessLevel {
+    FULL_LINKED,
+    LIMITED_NOT_LINKED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCallToAction {
+    private string idField;
+
+    private CallToAction callToActionField;
+
+    public string id {
+      get { return this.idField; }
+      set { this.idField = value; }
+    }
+
+    public CallToAction callToAction {
+      get { return this.callToActionField; }
+      set { this.callToActionField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoOperation : Operation {
+    private YouTubeVideo operandField;
+
+    public YouTubeVideo operand {
+      get { return this.operandField; }
+      set { this.operandField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoCallToActionOperation : Operation {
+    private VideoCallToAction operandField;
+
+    public VideoCallToAction operand {
+      get { return this.operandField; }
+      set { this.operandField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoSearchPage : Page {
+    private string[] recommendedChannelsField;
+
+    private YouTubeVideo[] entriesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("recommendedChannels")]
+    public string[] recommendedChannels {
+      get { return this.recommendedChannelsField; }
+      set { this.recommendedChannelsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public YouTubeVideo[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoPage : Page {
+    private YouTubeVideo[] entriesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public YouTubeVideo[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoSelector {
+    private string[] videoIdsField;
+
+    private long[] campaignIdsField;
+
+    private VideoCampaignStatus[] campaignStatusesField;
+
+    private bool includeCallToActionsField;
+
+    private bool includeCallToActionsFieldSpecified;
+
+    private StatsSelector statsSelectorField;
+
+    private Paging pagingField;
+
+    private Sorting sortingField;
+
+    [System.Xml.Serialization.XmlElementAttribute("videoIds")]
+    public string[] videoIds {
+      get { return this.videoIdsField; }
+      set { this.videoIdsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignIds")]
+    public long[] campaignIds {
+      get { return this.campaignIdsField; }
+      set { this.campaignIdsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignStatuses")]
+    public VideoCampaignStatus[] campaignStatuses {
+      get { return this.campaignStatusesField; }
+      set { this.campaignStatusesField = value; }
+    }
+
+    public bool includeCallToActions {
+      get { return this.includeCallToActionsField; }
+      set {
+        this.includeCallToActionsField = value;
+        this.includeCallToActionsSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool includeCallToActionsSpecified {
+      get { return this.includeCallToActionsFieldSpecified; }
+      set { this.includeCallToActionsFieldSpecified = value; }
+    }
+
+    public StatsSelector statsSelector {
+      get { return this.statsSelectorField; }
+      set { this.statsSelectorField = value; }
+    }
+
+    public Paging paging {
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
+    }
+
+    public Sorting sorting {
+      get { return this.sortingField; }
+      set { this.sortingField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoServiceError : ApiError {
+    private VideoServiceErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public VideoServiceErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoServiceErrorReason {
+    UNKNOWN,
+    INVALID_VIDEO_ID,
+    VIDEO_NOT_FOUND,
+    INVALID_CHANNEL,
+    VIDEO_LOOKUP_SERVICE_UNAVAILABLE,
+    VIDEO_SEARCH_SERVICE_UNAVAILABLE,
+    CHANNEL_SEARCH_SERVICE_UNAVAILABLE,
+    YOUTUBE_ANALYTICS_SERVICE_UNAVAILABLE,
+    VIDEO_NOT_OWNED_BY_LINKED_ACCOUNT,
+    VIDEO_NOT_ENABLED_FOR_CALL_TO_ACTION,
+    CALL_TO_ACTION_NOT_FOUND,
+    INVALID_CALL_TO_ACTION,
+    UNKNOWN_CALL_TO_ACTION_ERROR,
+    CALL_TO_ACTION_TOO_LONG,
+    CALL_TO_ACTION_INVALID_FORMAT,
+    CALL_TO_ACTION_INVALID_CHARS,
+    CALL_TO_ACTION_INVALID_INPUT,
+    INVALID_FORMAT,
+    INVALID_INPUT,
+    INVALID_IMAGE_FILESIZE,
+    UNSUPPORTED_IMAGE_FORMAT,
+    DUPLICATE_VIDEO_ID,
+    TOO_LONG
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "VideoTargetingGroupCriterionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class VideoTargetingGroupCriterionService : AdWordsSoapClient, IVideoTargetingGroupCriterionService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public VideoTargetingGroupCriterionService() {
+      this.Url = "https://adwords.google.com/api/adwords/video/v201406/VideoTargetingGroupCriterion" + "Service";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual TargetingGroupCriterionPage get(TargetingGroupCriterionSelector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((TargetingGroupCriterionPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual TargetingGroupCriterionReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
+TargetingGroupCriterionOperation[] operations) {
+      object[] results = this.Invoke("mutate", new object[] { operations });
+      return ((TargetingGroupCriterionReturnValue) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupCriterionReturnValue : ListReturnValue {
+    private TargetingGroupCriterion[] valueField;
+
+    [System.Xml.Serialization.XmlElementAttribute("value")]
+    public TargetingGroupCriterion[] value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+  }
+
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReportedTargetingGroupCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(NegativeTargetingGroupCriterion))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(BiddableTargetingGroupCriterion))]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupCriterion {
+    private long targetingGroupIdField;
+
+    private bool targetingGroupIdFieldSpecified;
+
+    private string targetingGroupNameField;
+
+    private BaseCriterion criterionField;
+
+    private long campaignIdField;
+
+    private bool campaignIdFieldSpecified;
+
+    private string targetingGroupCriterionTypeField;
+
+    public long targetingGroupId {
+      get { return this.targetingGroupIdField; }
+      set {
+        this.targetingGroupIdField = value;
+        this.targetingGroupIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool targetingGroupIdSpecified {
+      get { return this.targetingGroupIdFieldSpecified; }
+      set { this.targetingGroupIdFieldSpecified = value; }
+    }
+
+    public string targetingGroupName {
+      get { return this.targetingGroupNameField; }
+      set { this.targetingGroupNameField = value; }
+    }
+
+    public BaseCriterion criterion {
+      get { return this.criterionField; }
+      set { this.criterionField = value; }
+    }
+
+    public long campaignId {
+      get { return this.campaignIdField; }
+      set {
+        this.campaignIdField = value;
+        this.campaignIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool campaignIdSpecified {
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("TargetingGroupCriterion.Type")]
+    public string TargetingGroupCriterionType {
+      get { return this.targetingGroupCriterionTypeField; }
+      set { this.targetingGroupCriterionTypeField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class ReportedTargetingGroupCriterion : TargetingGroupCriterion {
+    private VideoEntityStats statsField;
+
+    private VideoEntityStats[] segmentedStatsField;
+
+    private bool excludedField;
+
+    private bool excludedFieldSpecified;
+
+    private bool partiallyExcludedField;
+
+    private bool partiallyExcludedFieldSpecified;
+
+    public VideoEntityStats stats {
+      get { return this.statsField; }
+      set { this.statsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("segmentedStats")]
+    public VideoEntityStats[] segmentedStats {
+      get { return this.segmentedStatsField; }
+      set { this.segmentedStatsField = value; }
+    }
+
+    public bool excluded {
+      get { return this.excludedField; }
+      set {
+        this.excludedField = value;
+        this.excludedSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool excludedSpecified {
+      get { return this.excludedFieldSpecified; }
+      set { this.excludedFieldSpecified = value; }
+    }
+
+    public bool partiallyExcluded {
+      get { return this.partiallyExcludedField; }
+      set {
+        this.partiallyExcludedField = value;
+        this.partiallyExcludedSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool partiallyExcludedSpecified {
+      get { return this.partiallyExcludedFieldSpecified; }
+      set { this.partiallyExcludedFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class NegativeTargetingGroupCriterion : TargetingGroupCriterion {
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class BiddableTargetingGroupCriterion : TargetingGroupCriterion {
+    private VideoUserStatus userStatusField;
+
+    private bool userStatusFieldSpecified;
+
+    private VideoEntityStats statsField;
+
+    private VideoEntityStats[] segmentedStatsField;
+
+    public VideoUserStatus userStatus {
+      get { return this.userStatusField; }
+      set {
+        this.userStatusField = value;
+        this.userStatusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool userStatusSpecified {
+      get { return this.userStatusFieldSpecified; }
+      set { this.userStatusFieldSpecified = value; }
+    }
+
+    public VideoEntityStats stats {
+      get { return this.statsField; }
+      set { this.statsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("segmentedStats")]
+    public VideoEntityStats[] segmentedStats {
+      get { return this.segmentedStatsField; }
+      set { this.segmentedStatsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoUserStatus {
+    ENABLED,
+    REMOVED,
+    PAUSED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupCriterionOperation : Operation {
+    private TargetingGroupCriterion operandField;
+
+    private ExemptionRequest[] exemptionRequestsField;
+
+    public TargetingGroupCriterion operand {
+      get { return this.operandField; }
+      set { this.operandField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("exemptionRequests")]
+    public ExemptionRequest[] exemptionRequests {
+      get { return this.exemptionRequestsField; }
+      set { this.exemptionRequestsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupReportPage : Page {
+    private ReportedTargetingGroupCriterion[] entriesField;
+
+    private VideoEntityStats[] summaryStatsField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public ReportedTargetingGroupCriterion[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("summaryStats")]
+    public VideoEntityStats[] summaryStats {
+      get { return this.summaryStatsField; }
+      set { this.summaryStatsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupCriterionPage : Page {
+    private TargetingGroupCriterion[] entriesField;
+
+    private VideoEntityStats[] summaryStatsField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public TargetingGroupCriterion[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("summaryStats")]
+    public VideoEntityStats[] summaryStats {
+      get { return this.summaryStatsField; }
+      set { this.summaryStatsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum TargetingGroupCriterionSortable {
+    UNKNOWN,
+    CRITERION_ID,
+    TARGETING_GROUP_ID,
+    STATUS,
+    NAME,
+    TYPE,
+    TARGETING_GROUP_NAME
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupCriterionSelector {
+    private CriteriaDimension criteriaDimensionField;
+
+    private bool criteriaDimensionFieldSpecified;
+
+    private BaseCriterionType[] criterionTypesField;
+
+    private VideoUserStatus[] userStatusesField;
+
+    private VideoCampaignStatus[] campaignStatusesField;
+
+    private StatsSelector statsSelectorField;
+
+    private Paging pagingField;
+
+    private Sorting sortingField;
+
+    private long[] campaignIdsField;
+
+    private long[] targetingGroupIdsField;
+
+    private long[] criterionIdsField;
+
+    private TargetingGroupCriterionSelectorCriterionUse criterionUseField;
+
+    private bool criterionUseFieldSpecified;
+
+    public CriteriaDimension criteriaDimension {
+      get { return this.criteriaDimensionField; }
+      set {
+        this.criteriaDimensionField = value;
+        this.criteriaDimensionSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool criteriaDimensionSpecified {
+      get { return this.criteriaDimensionFieldSpecified; }
+      set { this.criteriaDimensionFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("criterionTypes")]
+    public BaseCriterionType[] criterionTypes {
+      get { return this.criterionTypesField; }
+      set { this.criterionTypesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("userStatuses")]
+    public VideoUserStatus[] userStatuses {
+      get { return this.userStatusesField; }
+      set { this.userStatusesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignStatuses")]
+    public VideoCampaignStatus[] campaignStatuses {
+      get { return this.campaignStatusesField; }
+      set { this.campaignStatusesField = value; }
+    }
+
+    public StatsSelector statsSelector {
+      get { return this.statsSelectorField; }
+      set { this.statsSelectorField = value; }
+    }
+
+    public Paging paging {
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
+    }
+
+    public Sorting sorting {
+      get { return this.sortingField; }
+      set { this.sortingField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignIds")]
+    public long[] campaignIds {
+      get { return this.campaignIdsField; }
+      set { this.campaignIdsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("targetingGroupIds")]
+    public long[] targetingGroupIds {
+      get { return this.targetingGroupIdsField; }
+      set { this.targetingGroupIdsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("criterionIds")]
+    public long[] criterionIds {
+      get { return this.criterionIdsField; }
+      set { this.criterionIdsField = value; }
+    }
+
+    public TargetingGroupCriterionSelectorCriterionUse criterionUse {
+      get { return this.criterionUseField; }
+      set {
+        this.criterionUseField = value;
+        this.criterionUseSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool criterionUseSpecified {
+      get { return this.criterionUseFieldSpecified; }
+      set { this.criterionUseFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum CriteriaDimension {
+    AGE,
+    GENDER,
+    KEYWORD,
+    PLACEMENT,
+    TOPIC,
+    USER,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TargetingGroupCriterionSelector.CriterionUse", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum TargetingGroupCriterionSelectorCriterionUse {
+    BIDDABLE,
+    NEGATIVE,
+    ALL
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "AdGroupCriterionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionParameter))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class AdGroupCriterionService : AdWordsSoapClient, IAdGroupCriterionService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public AdGroupCriterionService() {
+      this.Url = "https://adwords.google.com/api/adwords/cm/v201406/AdGroupCriterionService";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual AdGroupCriterionPage get(Selector serviceSelector) {
+      object[] results = this.Invoke("get", new object[] { serviceSelector });
+      return ((AdGroupCriterionPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual AdGroupCriterionReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
+AdGroupCriterionOperation[] operations) {
+      object[] results = this.Invoke("mutate", new object[] { operations });
+      return ((AdGroupCriterionReturnValue) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual AdGroupCriterionLabelReturnValue mutateLabel([System.Xml.Serialization.XmlElementAttribute("operations")]
+AdGroupCriterionLabelOperation[] operations) {
+      object[] results = this.Invoke("mutateLabel", new object[] { operations });
+      return ((AdGroupCriterionLabelReturnValue) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual AdGroupCriterionPage query([System.Xml.Serialization.XmlElementAttribute("query")]
+string query1) {
+      object[] results = this.Invoke("query", new object[] { query1 });
+      return ((AdGroupCriterionPage) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
+  public partial class AdGroupCriterionReturnValue : ListReturnValue {
+    private AdGroupCriterion[] valueField;
+
+    private ApiError[] partialFailureErrorsField;
+
+    [System.Xml.Serialization.XmlElementAttribute("value")]
+    public AdGroupCriterion[] value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("partialFailureErrors")]
+    public ApiError[] partialFailureErrors {
+      get { return this.partialFailureErrorsField; }
+      set { this.partialFailureErrorsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
+  public partial class AdGroupCriterionLabelReturnValue : ListReturnValue {
+    private AdGroupCriterionLabel[] valueField;
+
+    private ApiError[] partialFailureErrorsField;
+
+    [System.Xml.Serialization.XmlElementAttribute("value")]
+    public AdGroupCriterionLabel[] value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("partialFailureErrors")]
+    public ApiError[] partialFailureErrors {
+      get { return this.partialFailureErrorsField; }
+      set { this.partialFailureErrorsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
+  public partial class AdGroupCriterionPage : Page {
+    private AdGroupCriterion[] entriesField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public AdGroupCriterion[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Web.Services.WebServiceBindingAttribute(Name = "VideoTargetingGroupServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
+  public partial class VideoTargetingGroupService : AdWordsSoapClient, IVideoTargetingGroupService {
+    private RequestHeader requestHeaderField;
+
+    private ResponseHeader responseHeaderField;
+
+    public VideoTargetingGroupService() {
+      this.Url = "https://adwords.google.com/api/adwords/video/v201406/VideoTargetingGroupService";
+    }
+
+    public virtual RequestHeader RequestHeader {
+      get { return this.requestHeaderField; }
+      set { this.requestHeaderField = value; }
+    }
+
+    public virtual ResponseHeader ResponseHeader {
+      get { return this.responseHeaderField; }
+      set { this.responseHeaderField = value; }
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual TargetingGroupPage get(TargetingGroupSelector selector) {
+      object[] results = this.Invoke("get", new object[] { selector });
+      return ((TargetingGroupPage) (results[0]));
+    }
+
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/video/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/video/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
+    public virtual TargetingGroupReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
+TargetingGroupOperation[] operations) {
+      object[] results = this.Invoke("mutate", new object[] { operations });
+      return ((TargetingGroupReturnValue) (results[0]));
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupReturnValue : ListReturnValue {
+    private TargetingGroup[] valueField;
+
+    [System.Xml.Serialization.XmlElementAttribute("value")]
+    public TargetingGroup[] value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroup {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private long campaignIdField;
+
+    private bool campaignIdFieldSpecified;
+
+    private string nameField;
+
+    private TargetingGroupStatus statusField;
+
+    private bool statusFieldSpecified;
+
+    private VideoAdDisplayFormat_VideoBidMapEntry[] bidsByFormatField;
+
+    private VideoEntityStats statsField;
+
+    private ServingInfo issuesField;
+
+    private VideoEntityStats[] segmentedStatsField;
+
+    private string campaignNameField;
+
+    public long id {
+      get { return this.idField; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
+    }
+
+    public long campaignId {
+      get { return this.campaignIdField; }
+      set {
+        this.campaignIdField = value;
+        this.campaignIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool campaignIdSpecified {
+      get { return this.campaignIdFieldSpecified; }
+      set { this.campaignIdFieldSpecified = value; }
+    }
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public TargetingGroupStatus status {
+      get { return this.statusField; }
+      set {
+        this.statusField = value;
+        this.statusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool statusSpecified {
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlArrayItemAttribute("bidsByFormat", IsNullable = false)]
+    public VideoAdDisplayFormat_VideoBidMapEntry[] bidsByFormat {
+      get { return this.bidsByFormatField; }
+      set { this.bidsByFormatField = value; }
+    }
+
+    public VideoEntityStats stats {
+      get { return this.statsField; }
+      set { this.statsField = value; }
+    }
+
+    public ServingInfo issues {
+      get { return this.issuesField; }
+      set { this.issuesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("segmentedStats")]
+    public VideoEntityStats[] segmentedStats {
+      get { return this.segmentedStatsField; }
+      set { this.segmentedStatsField = value; }
+    }
+
+    public string campaignName {
+      get { return this.campaignNameField; }
+      set { this.campaignNameField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum TargetingGroupStatus {
+    ENABLED,
+    REMOVED,
+    PAUSED,
+    UNKNOWN
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoAdDisplayFormat_VideoBidMapEntry {
+    private VideoAdDisplayFormat keyField;
+
+    private bool keyFieldSpecified;
+
+    private VideoBid valueField;
+
+    public VideoAdDisplayFormat key {
+      get { return this.keyField; }
+      set {
+        this.keyField = value;
+        this.keySpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool keySpecified {
+      get { return this.keyFieldSpecified; }
+      set { this.keyFieldSpecified = value; }
+    }
+
+    public VideoBid value {
+      get { return this.valueField; }
+      set { this.valueField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class VideoBid {
+    private Money amountField;
+
+    private VideoBidSource sourceField;
+
+    private bool sourceFieldSpecified;
+
+    public Money amount {
+      get { return this.amountField; }
+      set { this.amountField = value; }
+    }
+
+    public VideoBidSource source {
+      get { return this.sourceField; }
+      set {
+        this.sourceField = value;
+        this.sourceSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool sourceSpecified {
+      get { return this.sourceFieldSpecified; }
+      set { this.sourceFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoBid.Source", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum VideoBidSource {
+    TARGETING_GROUP,
+    CRITERION
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupOperation : Operation {
+    private TargetingGroup operandField;
+
+    public TargetingGroup operand {
+      get { return this.operandField; }
+      set { this.operandField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupPage : Page {
+    private TargetingGroup[] entriesField;
+
+    private VideoEntityStats[] summaryStatsField;
+
+    [System.Xml.Serialization.XmlElementAttribute("entries")]
+    public TargetingGroup[] entries {
+      get { return this.entriesField; }
+      set { this.entriesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("summaryStats")]
+    public VideoEntityStats[] summaryStats {
+      get { return this.summaryStatsField; }
+      set { this.summaryStatsField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum TargetingGroupSortable {
+    UNKNOWN,
+    TARGETING_GROUP_NAME,
+    STATUS,
+    BID,
+    TARGETING_GROUP_ID
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupSelector {
+    private long[] idsField;
+
+    private long[] campaignIdsField;
+
+    private TargetingGroupStatus[] statusesField;
+
+    private VideoCampaignStatus[] campaignStatusesField;
+
+    private StatsSelector statsSelectorField;
+
+    private Paging pagingField;
+
+    private Sorting sortingField;
+
+    [System.Xml.Serialization.XmlElementAttribute("ids")]
+    public long[] ids {
+      get { return this.idsField; }
+      set { this.idsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignIds")]
+    public long[] campaignIds {
+      get { return this.campaignIdsField; }
+      set { this.campaignIdsField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("statuses")]
+    public TargetingGroupStatus[] statuses {
+      get { return this.statusesField; }
+      set { this.statusesField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("campaignStatuses")]
+    public VideoCampaignStatus[] campaignStatuses {
+      get { return this.campaignStatusesField; }
+      set { this.campaignStatusesField = value; }
+    }
+
+    public StatsSelector statsSelector {
+      get { return this.statsSelectorField; }
+      set { this.statsSelectorField = value; }
+    }
+
+    public Paging paging {
+      get { return this.pagingField; }
+      set { this.pagingField = value; }
+    }
+
+    public Sorting sorting {
+      get { return this.sortingField; }
+      set { this.sortingField = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public partial class TargetingGroupError : ApiError {
+    private TargetingGroupErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public TargetingGroupErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TargetingGroupError.Reason", Namespace = "https://adwords.google.com/api/adwords/video/v201406")]
+  public enum TargetingGroupErrorReason {
+    UNKNOWN,
+    DUPLICATE_TARGETING_GROUP_ID,
+    DUPLICATE_TARGETING_GROUP_NAME,
+    DETECTED_DUPLICATE_TARGETING_GROUP_NAME,
+    IMMUTABLE_FIELD,
+    INVALID_TARGETING_GROUP_ID,
+    INVALID_TARGETING_GROUP_NAME,
+    NOT_PERSISTENT,
+    TARGETING_GROUP_NOT_FOUND,
+    TOO_MANY_TARGETING_GROUPS
+  }
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ExpressBusinessServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/express/v201406")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
@@ -22527,136 +29535,6 @@ CampaignSharedSetOperation[] operations) {
     CAMPAIGN_SHARED_SET_DOES_NOT_EXIST,
     SHARED_SET_NOT_ACTIVE,
     UNKNOWN
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Web.Services.WebServiceBindingAttribute(Name = "AdGroupCriterionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListReturnValue))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Operation))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ComparableValue))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionParameter))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(Page))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationException))]
-  public partial class AdGroupCriterionService : AdWordsSoapClient, IAdGroupCriterionService {
-    private RequestHeader requestHeaderField;
-
-    private ResponseHeader responseHeaderField;
-
-    public AdGroupCriterionService() {
-      this.Url = "https://adwords.google.com/api/adwords/cm/v201406/AdGroupCriterionService";
-    }
-
-    public virtual RequestHeader RequestHeader {
-      get { return this.requestHeaderField; }
-      set { this.requestHeaderField = value; }
-    }
-
-    public virtual ResponseHeader ResponseHeader {
-      get { return this.responseHeaderField; }
-      set { this.responseHeaderField = value; }
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public virtual AdGroupCriterionPage get(Selector serviceSelector) {
-      object[] results = this.Invoke("get", new object[] { serviceSelector });
-      return ((AdGroupCriterionPage) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public virtual AdGroupCriterionReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")]
-AdGroupCriterionOperation[] operations) {
-      object[] results = this.Invoke("mutate", new object[] { operations });
-      return ((AdGroupCriterionReturnValue) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public virtual AdGroupCriterionLabelReturnValue mutateLabel([System.Xml.Serialization.XmlElementAttribute("operations")]
-AdGroupCriterionLabelOperation[] operations) {
-      object[] results = this.Invoke("mutateLabel", new object[] { operations });
-      return ((AdGroupCriterionLabelReturnValue) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/cm/v201406", ResponseNamespace = "https://adwords.google.com/api/adwords/cm/v201406", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public virtual AdGroupCriterionPage query([System.Xml.Serialization.XmlElementAttribute("query")]
-string query1) {
-      object[] results = this.Invoke("query", new object[] { query1 });
-      return ((AdGroupCriterionPage) (results[0]));
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
-  public partial class AdGroupCriterionReturnValue : ListReturnValue {
-    private AdGroupCriterion[] valueField;
-
-    private ApiError[] partialFailureErrorsField;
-
-    [System.Xml.Serialization.XmlElementAttribute("value")]
-    public AdGroupCriterion[] value {
-      get { return this.valueField; }
-      set { this.valueField = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("partialFailureErrors")]
-    public ApiError[] partialFailureErrors {
-      get { return this.partialFailureErrorsField; }
-      set { this.partialFailureErrorsField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
-  public partial class AdGroupCriterionLabelReturnValue : ListReturnValue {
-    private AdGroupCriterionLabel[] valueField;
-
-    private ApiError[] partialFailureErrorsField;
-
-    [System.Xml.Serialization.XmlElementAttribute("value")]
-    public AdGroupCriterionLabel[] value {
-      get { return this.valueField; }
-      set { this.valueField = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("partialFailureErrors")]
-    public ApiError[] partialFailureErrors {
-      get { return this.partialFailureErrorsField; }
-      set { this.partialFailureErrorsField = value; }
-    }
-  }
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201406")]
-  public partial class AdGroupCriterionPage : Page {
-    private AdGroupCriterion[] entriesField;
-
-    [System.Xml.Serialization.XmlElementAttribute("entries")]
-    public AdGroupCriterion[] entries {
-      get { return this.entriesField; }
-      set { this.entriesField = value; }
-    }
   }
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -25026,6 +31904,93 @@ BudgetOrderOperation[] operations) {
     UserListPage get(Selector serviceSelector);
     UserListReturnValue mutate(UserListOperation[] operations);
   }
+  public interface IVideoAdService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    VideoAdPage get(VideoAdSelector selector);
+    VideoAdReturnValue mutate(VideoAdOperation[] operations);
+  }
+  public interface IVideoCampaignCriterionService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    VideoCampaignCriterionPage get(VideoCampaignCriterionSelector selector);
+    VideoCampaignCriterionReturnValue mutate(VideoCampaignCriterionOperation[] operations);
+  }
+  public interface IVideoCampaignService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    VideoCampaignPage get(VideoCampaignSelector selector);
+    VideoCampaignReturnValue mutate(VideoCampaignOperation[] operations);
+  }
+  public interface IVideoService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    VideoPage get(VideoSelector selector);
+    VideoReturnValue mutateCallToAction(VideoCallToActionOperation[] operations);
+    VideoSearchPage search(VideoSearchSelector selector);
+  }
+  public interface IVideoTargetingGroupCriterionService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    TargetingGroupCriterionPage get(TargetingGroupCriterionSelector selector);
+    TargetingGroupCriterionReturnValue mutate(TargetingGroupCriterionOperation[] operations);
+  }
+  public interface IAdGroupCriterionService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    AdGroupCriterionPage get(Selector serviceSelector);
+    AdGroupCriterionReturnValue mutate(AdGroupCriterionOperation[] operations);
+    AdGroupCriterionLabelReturnValue mutateLabel(AdGroupCriterionLabelOperation[] operations);
+    AdGroupCriterionPage query(string query1);
+  }
+  public interface IVideoTargetingGroupService {
+    RequestHeader RequestHeader {
+      get;
+      set;
+    }
+    ResponseHeader ResponseHeader {
+      get;
+      set;
+    }
+    TargetingGroupPage get(TargetingGroupSelector selector);
+    TargetingGroupReturnValue mutate(TargetingGroupOperation[] operations);
+  }
   public interface IExpressBusinessService {
     RequestHeader RequestHeader {
       get;
@@ -25093,20 +32058,6 @@ BudgetOrderOperation[] operations) {
     }
     CampaignSharedSetPage get(Selector selector);
     CampaignSharedSetReturnValue mutate(CampaignSharedSetOperation[] operations);
-  }
-  public interface IAdGroupCriterionService {
-    RequestHeader RequestHeader {
-      get;
-      set;
-    }
-    ResponseHeader ResponseHeader {
-      get;
-      set;
-    }
-    AdGroupCriterionPage get(Selector serviceSelector);
-    AdGroupCriterionReturnValue mutate(AdGroupCriterionOperation[] operations);
-    AdGroupCriterionLabelReturnValue mutateLabel(AdGroupCriterionLabelOperation[] operations);
-    AdGroupCriterionPage query(string query1);
   }
   public interface ISharedCriterionService {
     RequestHeader RequestHeader {

@@ -1,3 +1,8 @@
+17.2.0
+- Removed support for AdWords API v201309.
+- Added support for AdWords For Video API v201406.
+- Code examples no longer rename AdGroups and Campaigns when removing them.
+
 17.1.0
 - Fixed issue 8 (https://github.com/googleads/googleads-adwords-dotnet-lib/issues/8)
   on github. The fix is based on contribution by bosak (https://github.com/bosak).

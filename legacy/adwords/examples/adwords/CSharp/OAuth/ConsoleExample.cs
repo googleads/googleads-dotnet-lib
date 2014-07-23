@@ -15,7 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201309;
+using Google.Api.Ads.AdWords.v201406;
 using Google.Api.Ads.Common.Lib;
 
 using System;
@@ -74,7 +74,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
 
       // Get the CampaignService.
       CampaignService campaignService =
-          (CampaignService) user.GetService(AdWordsService.v201309.CampaignService);
+          (CampaignService) user.GetService(AdWordsService.v201406.CampaignService);
 
       // Create the selector.
       Selector selector = new Selector();

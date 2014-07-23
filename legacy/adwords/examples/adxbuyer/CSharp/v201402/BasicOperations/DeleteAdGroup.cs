@@ -68,10 +68,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201402 {
       // Create ad group with DELETED status.
       AdGroup adGroup = new AdGroup();
       adGroup.id = adGroupId;
-
-      // When deleting an ad group, rename it to avoid name collisions with new
-      // adgroups.
-      adGroup.name = "Deleted AdGroup - " + ExampleUtilities.GetRandomString();
       adGroup.status = AdGroupStatus.DELETED;
 
       // Create the operation.
