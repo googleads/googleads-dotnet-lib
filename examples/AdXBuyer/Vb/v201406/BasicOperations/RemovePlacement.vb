@@ -23,7 +23,7 @@ Imports System.IO
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
   ''' <summary>
-  ''' This code example deletes a placement using the 'REMOVE' operator. To get
+  ''' This code example removes a placement using the 'REMOVE' operator. To get
   ''' placements, run GetPlacements.vb.
   '''
   ''' Tags: AdGroupCriterionService.mutate
@@ -52,7 +52,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example deletes a placement using the 'REMOVE' operator. To get " & _
+        Return "This code example removes a placement using the 'REMOVE' operator. To get " & _
             "placements, run GetPlacements.vb."
       End Get
     End Property
@@ -63,7 +63,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="adGroupId">Id of the ad group that contains the keyword.
     ''' </param>
-    ''' <param name="placementId">Id of the placement to be deleted.</param>
+    ''' <param name="placementId">Id of the placement to be removed.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal placementId As Long)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
@@ -85,21 +85,21 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
       operation.operator = [Operator].REMOVE
 
       Try
-        ' Delete the placement.
+        ' Remove the placement.
         Dim retVal As AdGroupCriterionReturnValue = adGroupCriterionService.mutate( _
             New AdGroupCriterionOperation() {operation})
 
         ' Display the results.
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
-          Dim deletedPlacement As AdGroupCriterion = retVal.value(0)
+          Dim removedPlacement As AdGroupCriterion = retVal.value(0)
           Console.WriteLine("Placement with ad group id = ""{0}"" and id = ""{1}"" was " & _
-                "deleted.", deletedPlacement.adGroupId, deletedPlacement.criterion.id)
+                "removed.", removedPlacement.adGroupId, removedPlacement.criterion.id)
         Else
-          Console.WriteLine("No placement was deleted.")
+          Console.WriteLine("No placement was removed.")
         End If
       Catch ex As Exception
-        Console.WriteLine("Failed to delete placement. Exception says ""{0}""", ex.Message)
+        Console.WriteLine("Failed to remove placement. Exception says ""{0}""", ex.Message)
       End Try
     End Sub
   End Class

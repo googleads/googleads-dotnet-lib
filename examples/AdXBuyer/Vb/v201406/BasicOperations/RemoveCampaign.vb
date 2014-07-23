@@ -69,10 +69,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
       ' Create campaign with REMOVED status.
       Dim campaign As New Campaign
       campaign.id = campaignId
-
-      ' When removing a campaign, rename it to avoid name collisions with new
-      ' campaigns.
-      campaign.name = "Removed Campaign - " + ExampleUtilities.GetRandomString
       campaign.status = CampaignStatus.REMOVED
 
       ' Create the operation.

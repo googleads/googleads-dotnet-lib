@@ -55,7 +55,6 @@
     <Compile Include="Lib\AdWordsErrorHandler.cs" />
     <Compile Include="Util\v201406\MapUtilities.cs" />
     <Compile Include="Util\v201402\MapUtilities.cs" />
-    <Compile Include="Util\v201309\MapUtilities.cs" />
     <Compile Include="Util\ErrorUtilities.cs" />
     <Compile Include="Util\Reports\ClientReport.cs" />
     <Compile Include="Util\Reports\ReportDownloadError.cs" />
@@ -73,9 +72,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Util\Reports\ReportUtilities.cs" />
-    <Compile Include="v201309\AdWordsApi.cs" />
-    <Compile Include="v201309\AdWordsServiceV201309.cs" />
-    <Compile Include="v201309\ReportDefinition.cs" />
     <Compile Include="v201402\AdWordsApi.cs" />
     <Compile Include="v201402\AdWordsServiceV201402.cs" />
     <Compile Include="v201402\ReportDefinition.cs" />

@@ -68,10 +68,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201402 {
       // Create campaign with DELETED status.
       Campaign campaign = new Campaign();
       campaign.id = campaignId;
-
-      // When deleting a campaign, rename it to avoid name collisions with new
-      // campaigns.
-      campaign.name = "Deleted Campaign - " + ExampleUtilities.GetRandomString();
       campaign.status = CampaignStatus.DELETED;
 
       // Create the operation.

@@ -240,6 +240,42 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature TrafficEstimatorService;
 
       /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/video/v201406/VideoAdService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature VideoAdService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/video/v201406/VideoCampaignCriterionService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature VideoCampaignCriterionService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/video/v201406/VideoCampaignService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature VideoCampaignService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/video/v201406/VideoService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature VideoService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/video/v201406/VideoTargetingGroupCriterionService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature VideoTargetingGroupCriterionService;
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/video/v201406/VideoTargetingGroupService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature VideoTargetingGroupService;
+
+      /// <summary>
       /// See <a href="https://developers.google.com/adwords/api/docs/reference/express/v201406/ExpressBusinessService">
       /// this page</a> for details.
       /// </summary>
@@ -359,6 +395,21 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201406", "o", "TargetingIdeaService");
         TrafficEstimatorService =
             AdWordsService.MakeServiceSignature("v201406", "o", "TrafficEstimatorService");
+
+        VideoAdService =
+            AdWordsService.MakeServiceSignature("v201406", "video", "VideoAdService");
+        VideoCampaignCriterionService =
+            AdWordsService.MakeServiceSignature("v201406", "video",
+                "VideoCampaignCriterionService");
+        VideoCampaignService =
+            AdWordsService.MakeServiceSignature("v201406", "video", "VideoCampaignService");
+        VideoService =
+            AdWordsService.MakeServiceSignature("v201406", "video", "VideoService");
+        VideoTargetingGroupCriterionService =
+            AdWordsService.MakeServiceSignature("v201406", "video",
+                "VideoTargetingGroupCriterionService");
+        VideoTargetingGroupService =
+          AdWordsService.MakeServiceSignature("v201406", "video", "VideoTargetingGroupService");
 
         ExpressBusinessService =
             AdWordsService.MakeServiceSignature("v201406", "express",

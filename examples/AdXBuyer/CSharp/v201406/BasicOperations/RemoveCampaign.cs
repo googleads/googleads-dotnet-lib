@@ -68,10 +68,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
       // Create campaign with REMOVED status.
       Campaign campaign = new Campaign();
       campaign.id = campaignId;
-
-      // When removing a campaign, rename it to avoid name collisions with new
-      // campaigns.
-      campaign.name = "Removed Campaign - " + ExampleUtilities.GetRandomString();
       campaign.status = CampaignStatus.REMOVED;
 
       // Create the operation.

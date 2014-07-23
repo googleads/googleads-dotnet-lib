@@ -68,10 +68,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
       ' Create ad group with DELETED status.
       Dim adGroup As New AdGroup
       adGroup.id = adGroupId
-
-      ' When deleting an ad group, rename it to avoid name collisions with new
-      ' ad groups.
-      adGroup.name = "Deleted AdGroup - " + ExampleUtilities.GetRandomString
       adGroup.status = AdGroupStatus.DELETED
 
       ' Create the operation.

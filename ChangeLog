@@ -1,3 +1,27 @@
+18.1.0
+======
+
+- Fixed issue 3 in https://github.com/googleads/googleads-dotnet-lib/issues
+
+AdWords:
+- Removed support for AdWords API v201309.
+- Added support for AdWords For Video API v201406.
+- Code examples no longer rename AdGroups and Campaigns when removing them.
+
+AdXBuyer:
+- Removed support for AdXBuyer API v201309.
+- Code examples no longer rename AdGroups and Campaigns when removing them.
+- Fixed some comments in RemovePlacement.cs and RemovePlacement.vb.
+
+DFA:
+  -
+
+DFP:
+  -
+
+Common:
+  - Version was bumped to 3.1.0.
+
 18.0.0
 ======
 

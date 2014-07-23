@@ -23,7 +23,7 @@ using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
   /// <summary>
-  /// This code example deletes a placement using the 'REMOVE' operator. To get
+  /// This code example removes a placement using the 'REMOVE' operator. To get
   /// placements, run GetPlacements.cs.
   ///
   /// Tags: AdGroupCriterionService.mutate
@@ -51,7 +51,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example deletes a placement using the 'REMOVE' operator. To get " +
+        return "This code example removes a placement using the 'REMOVE' operator. To get " +
             "placements, run GetPlacements.cs.";
       }
     }
@@ -62,7 +62,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="adGroupId">Id of the ad group that contains the placement.
     /// </param>
-    /// <param name="placementId">Id of the placement to be deleted.</param>
+    /// <param name="placementId">Id of the placement to be removed.</param>
     public void Run(AdWordsUser user, long adGroupId, long placementId) {
       // Get the AdGroupCriterionService.
       AdGroupCriterionService adGroupCriterionService = (AdGroupCriterionService)user.GetService(
@@ -83,20 +83,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
       operation.@operator = Operator.REMOVE;
 
       try {
-        // Delete the placement.
+        // Remove the placement.
         AdGroupCriterionReturnValue retVal = adGroupCriterionService.mutate(
             new AdGroupCriterionOperation[] {operation});
 
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-          AdGroupCriterion deletedPlacement = retVal.value[0];
-          Console.WriteLine("Placement with ad group id = \"{0}\" and id = \"{1}\" was deleted.",
-              deletedPlacement.adGroupId, deletedPlacement.criterion.id);
+          AdGroupCriterion removedPlacement = retVal.value[0];
+          Console.WriteLine("Placement with ad group id = \"{0}\" and id = \"{1}\" was removed.",
+              removedPlacement.adGroupId, removedPlacement.criterion.id);
         } else {
-          Console.WriteLine("No placement was deleted.");
+          Console.WriteLine("No placement was removed.");
         }
       } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to delete placement.", ex);
+        throw new System.ApplicationException("Failed to remove placement.", ex);
       }
     }
   }
