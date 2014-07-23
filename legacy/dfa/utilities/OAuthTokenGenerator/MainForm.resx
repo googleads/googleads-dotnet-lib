@@ -120,9 +120,9 @@
   <data name="textBox1.Text" xml:space="preserve">
     <value>This application generates an OAuth2 refresh token for use with Ads* API .NET client libraries.
 
-This application requires an OAuth2 client id and secret. If you don't have one yet, you can register a new application of type "Native" from  the Google Cloud Console (https://cloud.google.com/console).
+This application requires an OAuth2 client id and secret. If you don't have one yet, you can create a OAuth2 Client ID of type "Installed Application" from the Google Developers Console (https://console.developers.google.com).
 
-You can refer to https://developers.google.com/console/help/new/ on how to navigate and use the Google Cloud Console.
+You can refer to https://developers.google.com/console/help/new/ on how to navigate and use the Google Developers Console.
 </value>
   </data>
 </root>

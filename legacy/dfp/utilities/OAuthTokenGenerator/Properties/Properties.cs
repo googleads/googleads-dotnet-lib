@@ -19,5 +19,5 @@ using System.Reflection;
 [assembly: AssemblyCompany("Google")]
 [assembly: AssemblyProduct("Ads API Dotnet Common Library")]
 [assembly: AssemblyCopyright("Copyright 2012, Google Inc. All Rights Reserved.")]
-[assembly: AssemblyVersion("2.3.0.0")]
-[assembly: AssemblyFileVersion("2.3.0.0")]
+[assembly: AssemblyVersion("2.4.0.0")]
+[assembly: AssemblyFileVersion("2.4.0.0")]
