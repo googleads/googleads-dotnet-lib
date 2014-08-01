@@ -46,7 +46,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <param name="parameters">The method parameters.</param>
     protected override void InitForCall(string methodName, object[] parameters) {
       AdWordsAppConfig config = this.User.Config as AdWordsAppConfig;
-      string oAuthHeader = null;
       RequestHeader header = GetRequestHeader();
 
       if (string.IsNullOrEmpty(header.developerToken)) {
@@ -57,19 +56,11 @@ namespace Google.Api.Ads.AdWords.Lib {
         TraceUtilities.WriteGeneralWarnings(AdWordsErrorMessages.ClientCustomerIdIsEmpty);
       }
 
-      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
-        if (this.User.OAuthProvider != null) {
-          oAuthHeader = this.User.OAuthProvider.GetAuthHeader();
-        } else {
-          throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
-        }
-      } else if (config.AuthorizationMethod == AdWordsAuthorizationMethod.ClientLogin) {
-        if (header != null) {
-          header.authToken = (!string.IsNullOrEmpty(config.AuthToken)) ? config.AuthToken :
-              new AuthToken(config, SERVICE_NAME).GetToken();
-        } else {
-          throw new AdWordsApiException(null, AdWordsErrorMessages.FailedToSetAuthorizationHeader);
-        }
+      string oAuthHeader = null;
+      if (this.User.OAuthProvider != null) {
+        oAuthHeader = this.User.OAuthProvider.GetAuthHeader();
+      } else {
+        throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
       }
       ContextStore.AddKey("OAuthHeader", oAuthHeader);
       base.InitForCall(methodName, parameters);
@@ -140,9 +131,7 @@ namespace Google.Api.Ads.AdWords.Lib {
                     faultNode.OuterXml, Assembly.GetExecutingAssembly().GetType(
                     this.GetType().Namespace + ".ApiException"), defaultNs, "ApiExceptionFault"),
                     AdWordsErrorMessages.AnApiExceptionOccurred, ex);
-            if (AdWordsErrorHandler.IsCookieInvalidError(awapiException)) {
-              return new AdWordsCredentialsExpiredException(this.GetRequestHeader().authToken);
-            } else if (AdWordsErrorHandler.IsOAuthTokenExpiredError(awapiException)) {
+            if (AdWordsErrorHandler.IsOAuthTokenExpiredError(awapiException)) {
               return new AdWordsCredentialsExpiredException(
                   (string) ContextStore.GetValue("OAuthHeader"));
             } else {

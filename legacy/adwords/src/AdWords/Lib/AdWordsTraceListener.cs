@@ -112,7 +112,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// </summary>
     /// <returns>The list of fields to be masked.</returns>
     protected override string[] GetFieldsToMask() {
-      return new string[] {"password", "developerToken", "applicationToken", "authToken"};
+      return new string[] {"developerToken", "Authorization"};
     }
   }
 }

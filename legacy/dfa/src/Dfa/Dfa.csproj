@@ -56,28 +56,28 @@
   </Target>
   -->
   <ItemGroup>
-    <Compile Include="Lib\DfaCredentialsExpiredException.cs" />
-    <Compile Include="Lib\LoginTokenCache.cs" />
     <Compile Include="Lib\DefaultLoginTokenCache.cs" />
-    <Compile Include="Lib\DfaAuthorizationMethod.cs" />
-    <Compile Include="Lib\DfaErrorHandler.cs" />
-    <Compile Include="Lib\ResponseHeader.cs" />
-    <Compile Include="Lib\DfaException.cs" />
-    <Compile Include="Lib\DfaServiceSignature.cs" />
     <Compile Include="Lib\DfaApiException.cs" />
-    <Compile Include="Lib\DfaSoapClient.cs" />
-    <Compile Include="Lib\DfaServiceFactory.cs" />
     <Compile Include="Lib\DfaAppConfig.cs" />
+    <Compile Include="Lib\DfaAuthorizationMethod.cs" />
+    <Compile Include="Lib\DfaCredentialsExpiredException.cs" />
+    <Compile Include="Lib\DfaErrorHandler.cs" />
+    <Compile Include="Lib\DfaException.cs" />
     <Compile Include="Lib\DfaService.cs" />
+    <Compile Include="Lib\DfaServiceFactory.cs" />
+    <Compile Include="Lib\DfaServiceSignature.cs" />
+    <Compile Include="Lib\DfaSoapClient.cs" />
     <Compile Include="Lib\DfaTraceListener.cs" />
     <Compile Include="Lib\DfaUser.cs" />
+    <Compile Include="Lib\LoginTokenCache.cs" />
     <Compile Include="Lib\RequestHeader.cs" />
-    <Compile Include="Lib\UserToken.cs" />
+    <Compile Include="Lib\ResponseHeader.cs" />
     <Compile Include="Lib\SoapHeaderListener.cs" />
+    <Compile Include="Lib\UserToken.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Properties.cs" />
     <Compile Include="Util\ApiCodes\ErrorCode.cs" />
     <Compile Include="Util\LoginUtil.cs" />
-    <Compile Include="Properties\Properties.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="v1_19\DfaApi.cs" />
     <Compile Include="v1_19\DfaServiceV1_19.cs" />
     <Compile Include="v1_20\DfaApi.cs" />

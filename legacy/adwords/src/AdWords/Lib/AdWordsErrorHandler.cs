@@ -90,13 +90,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     public override void PrepareForRetry(Exception ex) {
       try {
         if (ex is AdWordsCredentialsExpiredException) {
-          AdWordsCredentialsExpiredException e = (AdWordsCredentialsExpiredException) ex;
-          if (this.Config.AuthorizationMethod == AdWordsAuthorizationMethod.ClientLogin) {
-            AuthToken.Cache.InvalidateToken(e.ExpiredCredential);
-            Config.AuthToken = null;
-          } else if (this.Config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
-            this.user.OAuthProvider.RefreshAccessToken();
-          }
+          this.user.OAuthProvider.RefreshAccessToken();
         } else if (IsTransientError(ex)) {
           DoExponentialBackoff();
         }
@@ -123,22 +117,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// false otherwise.</returns>
     public static bool IsExpiredCredentialsError(Exception ex) {
       return ex is AdWordsCredentialsExpiredException;
-    }
-
-    /// <summary>
-    /// Determines whether the exception thrown by the server is an AuthToken
-    /// Invalid Error.
-    /// </summary>
-    /// <param name="ex">The exception.</param>
-    /// <returns>True, if the server exception is a AuthToken invalid error,
-    /// false otherwise.</returns>
-    public static bool IsCookieInvalidError(Exception ex) {
-      if (ex is AdWordsApiException) {
-        return MatchesError((AdWordsApiException) ex, new string[] {COOKIE_INVALID_ERROR});
-      } else if (ex is ReportsException) {
-        return MatchesError((ReportsException) ex, new string[] {COOKIE_INVALID_ERROR});
-      }
-      return false;
     }
 
     /// <summary>

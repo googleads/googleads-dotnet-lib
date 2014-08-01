@@ -62,12 +62,6 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     private const string ADHOC_REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/{1}";
 
     /// <summary>
-    /// The Authorization header prefix to be used when Authorization method is
-    /// ClientLogin.
-    /// </summary>
-    private const string CLIENT_LOGIN_PREFIX = "GoogleLogin auth=";
-
-    /// <summary>
     /// Last version that supported returnMoneyInMicros header.
     /// </summary>
     private const string LAST_VERSION_WITH_MONEY_MICROS_FLAG = "v201402";
@@ -305,10 +299,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
               reportsException = ParseException(exceptionBody);
             }
 
-            if (AdWordsErrorHandler.IsCookieInvalidError(reportsException)) {
-              reportsException = new AdWordsCredentialsExpiredException(
-                  request.Headers["Authorization"].Replace(CLIENT_LOGIN_PREFIX, ""));
-            } else if (AdWordsErrorHandler.IsOAuthTokenExpiredError(reportsException)) {
+            if (AdWordsErrorHandler.IsOAuthTokenExpiredError(reportsException)) {
               reportsException = new AdWordsCredentialsExpiredException(
                   request.Headers["Authorization"]);
             }
@@ -365,16 +356,10 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       } else {
         (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.None;
       }
-      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
-        if (this.User.OAuthProvider != null) {
-          request.Headers["Authorization"] = this.User.OAuthProvider.GetAuthHeader();
-        } else {
-          throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
-        }
-      } else if (config.AuthorizationMethod == AdWordsAuthorizationMethod.ClientLogin) {
-        string authToken = (!string.IsNullOrEmpty(config.AuthToken)) ? config.AuthToken :
-            new AuthToken(config, AdWordsSoapClient.SERVICE_NAME).GetToken();
-        request.Headers["Authorization"] = CLIENT_LOGIN_PREFIX + authToken;
+      if (this.User.OAuthProvider != null) {
+        request.Headers["Authorization"] = this.User.OAuthProvider.GetAuthHeader();
+      } else {
+        throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
       }
 
       if (returnMoneyInMicros.HasValue) {

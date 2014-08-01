@@ -84,7 +84,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     /// <returns>The list of fields to be masked.</returns>
     protected override string[] GetFieldsToMask() {
-      return new string[] {"Password"};
+      return new string[] {"Password", "Authorization"};
     }
   }
 }

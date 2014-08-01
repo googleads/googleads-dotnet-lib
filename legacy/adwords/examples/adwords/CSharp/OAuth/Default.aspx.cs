@@ -56,16 +56,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
       // application. If your application uses a single MCC login to make calls
       // to all your accounts, you shouldn't use this code example. Instead, you
       // should run Common\Util\OAuth2TokenGenerator.cs to generate a refresh
-      // token and set that in user.Config.OAuth2RefreshToken field, or set
-      // OAuth2RefreshToken key in your App.config / Web.config.
+      // token and set that in your website's Web.config.
       AdWordsAppConfig config = user.Config as AdWordsAppConfig;
-      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
-        if (user.Config.OAuth2Mode == OAuth2Flow.APPLICATION &&
-              string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
-          Response.Redirect("OAuthLogin.aspx");
-        }
-      } else {
-        throw new Exception("Authorization mode is not OAuth.");
+      if (user.Config.OAuth2Mode == OAuth2Flow.APPLICATION &&
+            string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
+        Response.Redirect("OAuthLogin.aspx");
       }
     }
 
@@ -192,14 +187,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     /// </summary>
     private void ConfigureUserForOAuth() {
       AdWordsAppConfig config = (user.Config as AdWordsAppConfig);
-      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
+      if (config.OAuth2Mode == OAuth2Flow.APPLICATION &&
+            string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
         user.OAuthProvider = (OAuth2ProviderForApplications) Session["OAuthProvider"];
-        if (config.OAuth2Mode == OAuth2Flow.APPLICATION &&
-              string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
-          user.OAuthProvider = (OAuth2ProviderForApplications) Session["OAuthProvider"];
-        }
-      } else {
-        throw new Exception("Authorization mode is not OAuth.");
       }
     }
 

@@ -107,7 +107,6 @@
     <Compile Include="v201402\ErrorHandling\HandlePartialFailures.vb" />
     <Compile Include="v201402\ErrorHandling\HandlePolicyViolationError.vb" />
     <Compile Include="v201402\ErrorHandling\HandleRateExceededError.vb" />
-    <Compile Include="v201402\ErrorHandling\HandleTwoFactorAuthorizationError.vb" />
     <Compile Include="v201402\Miscellaneous\GetAllVideosAndImages.vb" />
     <Compile Include="v201402\Miscellaneous\UploadImage.vb" />
     <Compile Include="v201402\Optimization\EstimateKeywordTraffic.vb" />
@@ -173,7 +172,6 @@
     <Compile Include="v201406\ErrorHandling\HandlePartialFailures.vb" />
     <Compile Include="v201406\ErrorHandling\HandlePolicyViolationError.vb" />
     <Compile Include="v201406\ErrorHandling\HandleRateExceededError.vb" />
-    <Compile Include="v201406\ErrorHandling\HandleTwoFactorAuthorizationError.vb" />
     <Compile Include="v201406\Miscellaneous\GetAllVideosAndImages.vb" />
     <Compile Include="v201406\Miscellaneous\UploadImage.vb" />
     <Compile Include="v201406\Optimization\EstimateKeywordTraffic.vb" />

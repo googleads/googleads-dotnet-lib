@@ -58,14 +58,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     /// <param name="args">Command line arguments.</param>
     static void Main(string[] args) {
       AdWordsUser user = new AdWordsUser();
+      // This code example shows how to run an AdWords API installed application
+      // while incorporating the OAuth2 installed application flow into your
+      // application. If your application uses a single MCC login to make calls
+      // to all your accounts, you shouldn't use this code example. Instead, you
+      // should run Common\Util\OAuth2TokenGenerator.cs to generate a refresh
+      // token and set that configuration in your application's App.config.
       AdWordsAppConfig config = (user.Config as AdWordsAppConfig);
-      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
-        if (config.OAuth2Mode == OAuth2Flow.APPLICATION &&
-            string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
-          DoAuth2Authorization(user);
-        }
-      } else {
-        throw new Exception("Authorization mode is not OAuth.");
+      if (config.OAuth2Mode == OAuth2Flow.APPLICATION &&
+          string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
+        DoAuth2Authorization(user);
       }
 
       Console.Write("Enter the customer id: ");

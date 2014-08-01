@@ -55,15 +55,10 @@
       <LastGenOutput>SoapMessages.v201402.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SoapMessages.v201309.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SoapMessages.v201309.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\GetAccountAlerts.v201406.txt" />
     <Content Include="Resources\GetAccountAlerts.v201402.txt" />
-    <Content Include="Resources\GetAccountAlerts.v201309.txt" />
     <Content Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -128,7 +123,6 @@
     <Compile Include="ExamplesMockData.cs" />
     <Compile Include="ExampleTestsBase.cs" />
     <Compile Include="ServiceCreationTests.cs" />
-    <Compile Include="SoapMessages.v201309.Designer.cs" />
     <Compile Include="SoapMessages.v201402.Designer.cs" />
     <Compile Include="SoapMessages.v201406.Designer.cs" />
   </ItemGroup>

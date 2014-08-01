@@ -37,6 +37,12 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
   /// Test cases for all the code examples under v201406\AccountManagement.
   /// </summary>
   class AccountManagementTest : VersionedExampleTestsBase {
+
+    [SetUp()]
+    private void Init() {
+      SetMockOAuth2Tokens();
+    }
+
     /// <summary>
     /// Tests the GetAccountAlerts VB.NET code example.
     /// </summary>

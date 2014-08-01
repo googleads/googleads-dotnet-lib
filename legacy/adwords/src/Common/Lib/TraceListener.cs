@@ -18,22 +18,22 @@ using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Globalization;
-using System.IO;
 using System.Net;
-using System.Runtime.Remoting.Messaging;
 using System.Text;
-using System.Threading;
-using System.Web;
-using System.Web.Services;
-using System.Web.Services.Protocols;
 using System.Xml;
-using System.Xml.Serialization;
 
 namespace Google.Api.Ads.Common.Lib {
+
   /// <summary>
   /// Listens to SOAP messages sent and received by this library.
   /// </summary>
   public abstract class TraceListener : SoapListener {
+
+    /// <summary>
+    /// The mask pattern to be used when masking sensitive data in logs.
+    /// </summary>
+    private const string MASK_PATTERN = "******";
+
     /// <summary>
     /// The config class to be used with this class.
     /// </summary>
@@ -169,8 +169,19 @@ namespace Google.Api.Ads.Common.Lib {
 
       headerBuilder.AppendFormat("{0} {1}\r\n", webRequest.Method,
           webRequest.RequestUri.AbsolutePath);
+
+      string[] fieldsToMask = GetFieldsToMask();
+
       foreach (string key in webRequest.Headers) {
-        headerBuilder.AppendFormat("{0}: {1}\r\n", key, webRequest.Headers[key]);
+        string value = webRequest.Headers[key];
+        if (config.MaskCredentials) {
+          if (Array.Exists(fieldsToMask, delegate(string match) {
+            return StringComparer.OrdinalIgnoreCase.Equals(match, key);
+          })) {
+            value = MASK_PATTERN;
+          }
+        }
+        headerBuilder.AppendFormat("{0}: {1}\r\n", key, value);
       }
       headerBuilder.AppendFormat("TimeStamp: {0}\r\n", this.GetTimeStamp());
       builder.AppendFormat("\r\n{0}\r\n", AppendHeadersToSoapXml(soapRequest,
@@ -240,9 +251,9 @@ namespace Google.Api.Ads.Common.Lib {
 
       foreach (XmlElement node in nodes) {
         if (Array.Exists<string>(fieldNames, delegate(string match) {
-          return string.Compare(match, node.LocalName, true) == 0;
+          return StringComparer.OrdinalIgnoreCase.Equals(match, node.LocalName);
         })) {
-          node.InnerText = "******";
+          node.InnerText = MASK_PATTERN;
         }
       }
     }

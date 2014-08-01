@@ -133,10 +133,6 @@
     <value>Signature should be a {0} instance.</value>
     <comment>Used for ArgumentException by AdWordsServiceFactory.CreateService and LegacyAdWordsServiceFactory if the signature is not of desired type.</comment>
   </data>
-  <data name="Unknownv13SoapExceptionOccurred" xml:space="preserve">
-    <value>Unknown error occurred while converting v13 SoapException. See innerException for the original SoapException.</value>
-    <comment>Used for LegacyAdWordsApiException by LegacyAdWordsApiService.GetCustomException when it gets an error code which cannot be mapped to an existing list of error codes and corresponding exception classes.</comment>
-  </data>
   <data name="AnApiExceptionOccurred" xml:space="preserve">
     <value>An API exception has occurred. See ApiException and InnerException fields for more details.</value>
     <comment>Used by AdWordsSoapClient while throwing AdWordsApiException.</comment>
@@ -144,10 +140,6 @@
   <data name="ReportNumPollsExceeded" xml:space="preserve">
     <value>Report could not be downloaded after {0} polling attempts. Try requesting a report with lesser amount of data, increase the number of polling attempts, or use the asynchronous download methods.</value>
     <comment>Used by ReportUtilites when number of polling attempts exceeds MaxPollingAttempts.</comment>
-  </data>
-  <data name="FailedToSetAuthorizationHeader" xml:space="preserve">
-    <value>Could not set AuthToken for outgoing API call. Please check if service.RequestHeader is not null.</value>
-    <comment>Used by AdWordsSoapClient.MakeApiCall when setting authorization headers.</comment>
   </data>
   <data name="OAuthProviderCannotBeNull" xml:space="preserve">
     <value>OAuth provider cannot be null when selecting Authorization method as "OAuth".</value>
@@ -160,10 +152,6 @@
   <data name="ClientCustomerIdIsEmpty" xml:space="preserve">
     <value>AdWords API can find out effective user from the authorization headers, but setting a client customer ID explicitly is recommended. If the credentials in your configuration corresponds to an MCC account, you may not see any data.</value>
     <comment>Warning message printed when clientCustomerID header is empty.</comment>
-  </data>
-  <data name="ClientLoginNotSupported" xml:space="preserve">
-    <value>ClientLogin is not supported in version {0}. Please upgrade to OAuth2.</value>
-    <comment>Used when attempting to use ClientLogin in an unsupported version</comment>
   </data>
   <data name="ReturnMoneyInMicrosNotSupported" xml:space="preserve">
     <value>returnMoneyInMicros header is not supported in AdWords API v201406 and later. Use the overloaded method that doesn't specify this parameter.</value>

@@ -43,11 +43,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
       // Create an AdWordsAppConfig object with the default settings in
       // App.config.
       AdWordsAppConfig config = new AdWordsAppConfig();
-      if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2) {
-        if (config.OAuth2Mode == OAuth2Flow.APPLICATION &&
-            string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
-          DoAuth2Configuration(config);
-        }
+      if (config.OAuth2Mode == OAuth2Flow.APPLICATION &&
+          string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
+        DoAuth2Configuration(config);
       }
     }
 

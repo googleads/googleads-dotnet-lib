@@ -59,7 +59,6 @@
     <Compile Include="Headers\ResponseHeaderStub.cs" />
     <Compile Include="Lib\AdWordsApiException.cs" />
     <Compile Include="Lib\AdWordsAppConfig.cs" />
-    <Compile Include="Lib\AdWordsAuthorizationMethod.cs" />
     <Compile Include="Lib\AdWordsCallListener.cs" />
     <Compile Include="Lib\AdWordsCredentialsExpiredException.cs" />
     <Compile Include="Lib\AdWordsErrorHandler.cs" />
