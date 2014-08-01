@@ -1,28 +1,23 @@
 18.2.0
 ======
 
-- Removed support for ClientLogin.
 - Fixed issue 20 (https://github.com/googleads/googleads-dotnet-lib/issues/20).
 - Fixed issue 21 (https://github.com/googleads/googleads-dotnet-lib/issues/21).
 
 AdWords:
-- Removed support for AdWords API v201309.
-- Added support for AdWords For Video API v201406.
-- Code examples no longer rename AdGroups and Campaigns when removing them.
+- Removed support for ClientLogin.
 
 AdXBuyer:
-- Removed support for AdXBuyer API v201309.
-- Code examples no longer rename AdGroups and Campaigns when removing them.
-- Fixed some comments in RemovePlacement.cs and RemovePlacement.vb.
-
+- Removed support for ClientLogin.
+  
 DFA:
-  -
+-
 
 DFP:
-  -
+-
 
 Common:
-  - Version was bumped to 3.1.0.
+- Version was bumped to 3.2.0.
 
 18.1.0
 ======
