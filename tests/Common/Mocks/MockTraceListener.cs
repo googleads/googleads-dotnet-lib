@@ -15,7 +15,9 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Common.Lib;
+
 using System;
+using System.Collections.Generic;
 
 namespace Google.Api.Ads.Common.Tests.Mocks {
   /// <summary>
@@ -35,8 +37,9 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     /// <returns>
     /// The list of fields to be masked.
     /// </returns>
-    protected override string[] GetFieldsToMask() {
-      return new string[] {"authToken", "developerToken"};
+    protected override ISet<string> GetFieldsToMask() {
+      return new HashSet<string>(new string[] { "authToken", "developerToken" },
+          StringComparer.OrdinalIgnoreCase);
     }
 
     /// <summary>

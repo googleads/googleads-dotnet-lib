@@ -34,8 +34,6 @@ namespace Google.Api.Ads.AdWords.Lib {
   /// </summary>
   public class AdWordsServiceFactory : ServiceFactory {
 
-    private const string FINAL_CLIENT_LOGIN_VERSION = "v201309";
-
     /// <summary>
     /// The request header to be used with AdWords API services.
     /// </summary>
@@ -162,16 +160,6 @@ namespace Google.Api.Ads.AdWords.Lib {
         throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
             AdWordsErrorMessages.SignatureIsOfWrongType, typeof(AdWordsServiceSignature)));
       }
-
-      AdWordsAppConfig adWordsAppConfig = (AdWordsAppConfig) Config;
-      AdWordsServiceSignature adWordsSingature = signature as AdWordsServiceSignature;
-      String version = adWordsSingature.Version;
-      if (adWordsAppConfig.AuthorizationMethod == AdWordsAuthorizationMethod.ClientLogin
-          && version.CompareTo(FINAL_CLIENT_LOGIN_VERSION) > 0) {
-        throw new AdWordsException(string.Format(AdWordsErrorMessages.ClientLoginNotSupported,
-            version));
-      }
     }
-
   }
 }

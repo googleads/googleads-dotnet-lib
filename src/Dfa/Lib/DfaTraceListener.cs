@@ -14,19 +14,21 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using Google.Api.Ads.Dfa.Lib;
+
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
+using System.Threading;
 using System.Web;
 using System.Web.Services;
 using System.Web.Services.Protocols;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Globalization;
-using System.Threading;
-using Google.Api.Ads.Dfa.Lib;
 
 namespace Google.Api.Ads.Common.Lib {
   /// <summary>
@@ -83,8 +85,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets a list of fields to be masked in xml logs.
     /// </summary>
     /// <returns>The list of fields to be masked.</returns>
-    protected override string[] GetFieldsToMask() {
-      return new string[] {"Password"};
+    protected override ISet<string> GetFieldsToMask() {
+      return new HashSet<string>(new string[] {"Password", "Authorization"},
+          StringComparer.OrdinalIgnoreCase);
     }
   }
 }

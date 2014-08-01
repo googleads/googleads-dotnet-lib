@@ -26,18 +26,6 @@ namespace Google.Api.Ads.AdWords.Headers {
   [XmlRootAttribute(ElementName = "RequestHeader", Namespace =
       "https://adwords.google.com/api/adwords{gp}{version}")]
   public class RequestHeaderStub {
-    /// <summary>
-    /// Auth token to authenticate the API call.
-    /// </summary>
-    [XmlElementAttribute(Namespace = "https://adwords.google.com/api/adwords/cm{version}")]
-    public string authToken;
-
-    /// <summary>
-    /// Application token.
-    /// </summary>
-    [XmlElementAttribute(Namespace = "https://adwords.google.com/api/adwords/cm{version}")]
-    [Obsolete("AdWords API no longer requires application tokens.")]
-    public string applicationToken;
 
     /// <summary>
     /// Developer token.
@@ -50,12 +38,6 @@ namespace Google.Api.Ads.AdWords.Headers {
     /// </summary>
     [XmlElementAttribute(Namespace = "https://adwords.google.com/api/adwords/cm{version}")]
     public string clientCustomerId;
-
-    /// <summary>
-    /// Client email for which API calls are made.
-    /// </summary>
-    [XmlElementAttribute(Namespace = "https://adwords.google.com/api/adwords/cm{version}")]
-    public string clientEmail;
 
     /// <summary>
     /// User agent to identify the requesting application.

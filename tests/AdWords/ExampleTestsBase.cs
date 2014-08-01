@@ -38,13 +38,6 @@ namespace Google.Api.Ads.AdWords.Tests {
     protected AdWordsUser user = new AdWordsUser();
 
     /// <summary>
-    /// The interceptor for ClientLogin requests when running mocked code
-    /// examples.
-    /// </summary>
-    protected ClientLoginRequestInterceptor clientLoginInterceptor =
-        ClientLoginRequestInterceptor.Instance as ClientLoginRequestInterceptor;
-
-    /// <summary>
     /// The interceptor for AdWords API requests when running mocked code
     /// examples.
     /// </summary>
@@ -74,24 +67,20 @@ namespace Google.Api.Ads.AdWords.Tests {
         WebRequestInterceptor.OnBeforeSendResponse callback) {
       TextWriter oldWriter = Console.Out;
       try {
-        clientLoginInterceptor.Intercept = true;
-        clientLoginInterceptor.RaiseException = false;
         awapiInterceptor.Intercept = true;
-        AuthToken.Cache.Clear();
         awapiInterceptor.LoadMessages(mockData.MockMessages,
              delegate(Uri requestUri, WebHeaderCollection headers, String body) {
+               VerifyHttpHeaders(headers);
                VerifySoapHeaders(requestUri, body);
                callback(requestUri, headers, body);
              }
          );
         StringWriter newWriter = new StringWriter();
         Console.SetOut(newWriter);
-        AdWordsAppConfig config = (user.Config as AdWordsAppConfig);
         exampleDelegate.Invoke();
         Assert.AreEqual(newWriter.ToString().Trim(), mockData.ExpectedOutput.Trim());
       } finally {
         Console.SetOut(oldWriter);
-        clientLoginInterceptor.Intercept = false;
         awapiInterceptor.Intercept = false;
       }
     }
@@ -107,7 +96,6 @@ namespace Google.Api.Ads.AdWords.Tests {
       Assert.DoesNotThrow(delegate() {
         TextWriter oldWriter = Console.Out;
         Console.SetOut(writer);
-        AuthToken.Cache.Clear();
         exampleDelegate.Invoke();
         Console.SetOut(oldWriter);
         Console.WriteLine(writer.ToString());
@@ -136,6 +124,23 @@ namespace Google.Api.Ads.AdWords.Tests {
     }
 
     /// <summary>
+    /// Sets the mock OAuth2 tokens.
+    /// </summary>
+    protected void SetMockOAuth2Tokens() {
+      user.OAuthProvider.UpdatedOn = DateTime.Now;
+      user.OAuthProvider.ExpiresIn = int.Parse(OAuth2RequestInterceptor.EXPIRES_IN);
+      user.OAuthProvider.AccessToken = OAuth2RequestInterceptor.TEST_ACCESS_TOKEN;
+    }
+
+    /// <summary>
+    /// Verifies the HTTP headers.
+    /// </summary>
+    /// <param name="headers">The HTTP headers.</param>
+    protected void VerifyHttpHeaders(WebHeaderCollection headers) {
+      Assert.AreEqual(headers["Authorization"], user.OAuthProvider.GetAuthHeader());
+    }
+    
+    /// <summary>
     /// Verifies the SOAP headers.
     /// </summary>
     /// <param name="requestUri">The request URI.</param>
@@ -155,10 +160,6 @@ namespace Google.Api.Ads.AdWords.Tests {
         Assert.AreEqual(requestHeaders.Name, "RequestHeader");
         foreach (XmlElement childNode in requestHeaders.ChildNodes) {
           switch (childNode.Name) {
-            case "authToken":
-              Assert.AreEqual(childNode.InnerText, "AUTH_TOKEN");
-              break;
-
             case "developerToken":
               Assert.AreEqual(childNode.InnerText, config.DeveloperToken);
               break;

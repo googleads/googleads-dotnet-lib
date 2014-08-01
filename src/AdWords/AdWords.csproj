@@ -47,7 +47,6 @@
     <Compile Include="Headers\AdWordsSoapHeader.cs" />
     <Compile Include="Headers\RequestHeaderStub.cs" />
     <Compile Include="Headers\ResponseHeaderStub.cs" />
-    <Compile Include="Lib\AdWordsAuthorizationMethod.cs" />
     <Compile Include="Lib\AdWordsCredentialsExpiredException.cs" />
     <Compile Include="Lib\AdWordsException.cs" />
     <Compile Include="Lib\AdWordsTraceListener.cs" />

@@ -56,18 +56,6 @@ namespace Google.Api.Ads.AdWords.Headers {
     }
 
     /// <summary>
-    /// Gets or sets the auth token.
-    /// </summary>
-    public string authToken {
-      get {
-        return stub.authToken;
-      }
-      set {
-        stub.authToken = value;
-      }
-    }
-
-    /// <summary>
     /// Gets or sets the client customer id.
     /// </summary>
     public string clientCustomerId {

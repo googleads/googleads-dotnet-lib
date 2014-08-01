@@ -18,6 +18,7 @@ using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util;
 
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Net;
@@ -111,8 +112,9 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Gets a list of fields to be masked in xml logs.
     /// </summary>
     /// <returns>The list of fields to be masked.</returns>
-    protected override string[] GetFieldsToMask() {
-      return new string[] {"password", "developerToken", "applicationToken", "authToken"};
+    protected override ISet<string> GetFieldsToMask() {
+      return new HashSet<string>(new string[] { "developerToken", "Authorization" },
+          StringComparer.OrdinalIgnoreCase);
     }
   }
 }

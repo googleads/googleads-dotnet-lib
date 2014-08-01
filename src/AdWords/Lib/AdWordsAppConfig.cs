@@ -80,12 +80,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     private const string DEFAULT_ADWORDSAPI_SERVER = "https://adwords.google.com";
 
     /// <summary>
-    /// Default value for authorizationMethod.
-    /// </summary>
-    private const AdWordsAuthorizationMethod DEFAULT_AUTHORIZATION_METHOD =
-        AdWordsAuthorizationMethod.OAuth2;
-
-    /// <summary>
     /// Default OAuth2 scope for AdWords API.
     /// </summary>
     private const string DEFAULT_OAUTH_SCOPE = "https://www.googleapis.com/auth/adwords";
@@ -124,11 +118,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Url for AdWords API.
     /// </summary>
     private string adWordsApiServer;
-
-    /// <summary>
-    /// Authorization method to be used when making API calls.
-    /// </summary>
-    private AdWordsAuthorizationMethod authorizationMethod;
 
     /// <summary>
     /// Gets or sets the client customerId to be used in SOAP headers.
@@ -215,18 +204,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
-    /// Gets or sets the authorization method to be used when making API calls.
-    /// </summary>
-    public AdWordsAuthorizationMethod AuthorizationMethod {
-      get {
-        return authorizationMethod;
-      }
-      set {
-        SetPropertyField("AuthorizationMethod", ref authorizationMethod, value);
-      }
-    }
-
-    /// <summary>
     /// Gets a useragent string that can be used with the library.
     /// </summary>
     public string GetUserAgent() {
@@ -252,7 +229,6 @@ namespace Google.Api.Ads.AdWords.Lib {
       placesLoginEmail = "";
       userAgent = "";
       adWordsApiServer = DEFAULT_ADWORDSAPI_SERVER;
-      authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
 
       ReadSettings((Hashtable) ConfigurationManager.GetSection("AdWordsApi"));
     }
@@ -277,13 +253,6 @@ namespace Google.Api.Ads.AdWords.Lib {
 
       userAgent = ReadSetting(settings, USER_AGENT, userAgent);
       adWordsApiServer = ReadSetting(settings, ADWORDSAPI_SERVER, adWordsApiServer);
-      try {
-        authorizationMethod = (AdWordsAuthorizationMethod) Enum.Parse(
-            typeof(AdWordsAuthorizationMethod),
-            ReadSetting(settings, AUTHORIZATION_METHOD, authorizationMethod.ToString()));
-      } catch {
-        authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
-      }
 
       // If there is an OAuth2 scope mentioned in App.config, this will be
       // loaded by the above call. If there isn't one, we will initialize it

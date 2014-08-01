@@ -17,23 +17,24 @@
 using Google.Api.Ads.Common.Util;
 
 using System;
+using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Net;
-using System.Runtime.Remoting.Messaging;
 using System.Text;
-using System.Threading;
-using System.Web;
-using System.Web.Services;
-using System.Web.Services.Protocols;
 using System.Xml;
-using System.Xml.Serialization;
 
 namespace Google.Api.Ads.Common.Lib {
+
   /// <summary>
   /// Listens to SOAP messages sent and received by this library.
   /// </summary>
   public abstract class TraceListener : SoapListener {
+
+    /// <summary>
+    /// The mask pattern to be used when masking sensitive data in logs.
+    /// </summary>
+    private const string MASK_PATTERN = "******";
+
     /// <summary>
     /// The config class to be used with this class.
     /// </summary>
@@ -133,7 +134,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets a list of fields to be masked in xml logs.
     /// </summary>
     /// <returns>The list of fields to be masked.</returns>
-    protected abstract string[] GetFieldsToMask();
+    protected abstract ISet<string> GetFieldsToMask();
 
     /// <summary>
     /// Creates a formatted http request text, to be written into HTTP logs.
@@ -169,9 +170,19 @@ namespace Google.Api.Ads.Common.Lib {
 
       headerBuilder.AppendFormat("{0} {1}\r\n", webRequest.Method,
           webRequest.RequestUri.AbsolutePath);
+
+      ISet<string> fieldsToMask = GetFieldsToMask();
+
       foreach (string key in webRequest.Headers) {
-        headerBuilder.AppendFormat("{0}: {1}\r\n", key, webRequest.Headers[key]);
+        string value = webRequest.Headers[key];
+        if (config.MaskCredentials) {
+          if (fieldsToMask.Contains(key)) {
+            value = MASK_PATTERN;
+          }
+        }
+        headerBuilder.AppendFormat("{0}: {1}\r\n", key, value);
       }
+
       headerBuilder.AppendFormat("TimeStamp: {0}\r\n", this.GetTimeStamp());
       builder.AppendFormat("\r\n{0}\r\n", AppendHeadersToSoapXml(soapRequest,
           headerBuilder.ToString()));
@@ -232,17 +243,15 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="soapMessageXml">The SOAP message, loaded as an XmlDocument.
     /// </param>
     /// <param name="fieldNames">The list of field names to be masked.</param>
-    protected void MaskCredentialsInLogs(XmlDocument soapMessageXml, string[] fieldNames) {
+    protected void MaskCredentialsInLogs(XmlDocument soapMessageXml, ISet<string> fieldNames) {
       XmlNamespaceManager xmlns = new XmlNamespaceManager(soapMessageXml.NameTable);
       xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
       XmlNodeList nodes =
           soapMessageXml.SelectNodes("soap:Envelope/soap:Header/descendant::*", xmlns);
 
       foreach (XmlElement node in nodes) {
-        if (Array.Exists<string>(fieldNames, delegate(string match) {
-          return string.Compare(match, node.LocalName, true) == 0;
-        })) {
-          node.InnerText = "******";
+        if (fieldNames.Contains(node.LocalName)) {
+          node.InnerText = MASK_PATTERN;
         }
       }
     }

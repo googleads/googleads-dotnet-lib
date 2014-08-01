@@ -28,8 +28,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
   /// </summary>
   [TestFixture]
   class AdWordsServiceFactoryTests {
-    private const string DEPRECATED_CLIENT_LOGIN_VERSION = "v201402";
-    private const string SUPPORTED_CLIENT_LOGIN_VERSION = "v201309";
+    private const string TEST_API_VERSION = "v201406";
     private const string TEST_SERVICE = "MediaService";
     private const string TEST_GROUP_NAME = "express";
 
@@ -51,62 +50,13 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     }
 
     /// <summary>
-    /// Test that creating a service using ClientLogin in a deprecated version
-    /// throws an exception
+    /// Test creating a service using OAuth2.
     /// </summary>
     [Test]
-    [ExpectedException(typeof(AdWordsException))]
-    public void TestCreateServiceClientLoginDeprecated() {
-      ConfigureForClientLogin();
-      serviceSignature = new AdWordsServiceSignature(DEPRECATED_CLIENT_LOGIN_VERSION,
+    public void TestCreateService() {
+      serviceSignature = new AdWordsServiceSignature(TEST_API_VERSION,
           TEST_SERVICE, TEST_GROUP_NAME);
       serviceFactory.CreateService(serviceSignature, new AdWordsUser(), testUri);
-    }
-
-    /// <summary>
-    /// Test that creating a service using ClientLogin in a supported version does not
-    /// throw an exception
-    /// </summary>
-    [Test]
-    public void TestCreateServiceClientLoginSupported() {
-      ConfigureForClientLogin();
-      serviceSignature = new AdWordsServiceSignature(SUPPORTED_CLIENT_LOGIN_VERSION,
-          TEST_SERVICE, TEST_GROUP_NAME);
-      serviceFactory.CreateService(serviceSignature, new AdWordsUser(), testUri);
-    }
-
-    /// <summary>
-    /// Test creating a service using OAuth2 in a version where ClientLogin is supported
-    /// </summary>
-    [Test]
-    public void TestCreateServiceOAuth2ClientLoginSupported() {
-      ConfigureForOAuth2();
-      serviceSignature = new AdWordsServiceSignature(SUPPORTED_CLIENT_LOGIN_VERSION,
-          TEST_SERVICE, TEST_GROUP_NAME);
-      serviceFactory.CreateService(serviceSignature, new AdWordsUser(), testUri);
-    }
-
-    /// <summary>
-    /// Test creating a service using OAuth2 in a version where ClientLogin is deprecated
-    /// </summary>
-    [Test]
-    public void TestCreateServiceOAuth2ClientLoginDeprecated() {
-      ConfigureForOAuth2();
-      serviceSignature = new AdWordsServiceSignature(DEPRECATED_CLIENT_LOGIN_VERSION,
-          TEST_SERVICE, TEST_GROUP_NAME);
-      serviceFactory.CreateService(serviceSignature, new AdWordsUser(), testUri);
-    }
-
-    private void ConfigureForOAuth2() {
-      AdWordsAppConfig config = new AdWordsAppConfig();
-      config.AuthorizationMethod = AdWordsAuthorizationMethod.OAuth2;
-      serviceFactory.Config = config;
-    }
-
-    private void ConfigureForClientLogin() {
-      AdWordsAppConfig config = new AdWordsAppConfig();
-      config.AuthorizationMethod = AdWordsAuthorizationMethod.ClientLogin;
-      serviceFactory.Config = config;
     }
   }
 }

@@ -60,12 +60,6 @@ namespace Google.Api.Ads.AdWords.Tests {
             }
         }
         
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
-        ///&lt;Example&gt;
-        ///  &lt;SOAP&gt;
-        ///    &lt;Request&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&amp;gt;&amp;lt;soap:Header&amp;gt;&amp;lt;RequestHeader xmlns=&quot;https://adwords.google.com/api/adwords/mcm/v201406&quot;&amp;gt;&amp;lt;authToken xmlns=&quot;https://adwords.google.com/api/adwords/cm/v201406&quot;&amp;gt;******&amp;lt;/authToken&amp;gt;&amp;lt;developerToken xmlns=&quot;https://adwords [rest of string was truncated]&quot;;.
-        /// </summary>
         internal static string GetAccountAlerts {
             get {
                 return ResourceManager.GetString("GetAccountAlerts", resourceCulture);

@@ -79,29 +79,11 @@ namespace Google.Api.Ads.AdWords {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ClientLogin is not supported in version {0}. Please upgrade to OAuth2..
-        /// </summary>
-        internal static string ClientLoginNotSupported {
-            get {
-                return ResourceManager.GetString("ClientLoginNotSupported", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to AdWords API requires a developer token. If you don&apos;t have one, you can refer to the instructions at https://developers.google.com/adwords/api/docs/signingup to get one..
         /// </summary>
         internal static string DeveloperTokenCannotBeEmpty {
             get {
                 return ResourceManager.GetString("DeveloperTokenCannotBeEmpty", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Could not set AuthToken for outgoing API call. Please check if service.RequestHeader is not null..
-        /// </summary>
-        internal static string FailedToSetAuthorizationHeader {
-            get {
-                return ResourceManager.GetString("FailedToSetAuthorizationHeader", resourceCulture);
             }
         }
         
@@ -165,15 +147,6 @@ namespace Google.Api.Ads.AdWords {
         internal static string SignatureIsOfWrongType {
             get {
                 return ResourceManager.GetString("SignatureIsOfWrongType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unknown error occurred while converting v13 SoapException. See innerException for the original SoapException..
-        /// </summary>
-        internal static string Unknownv13SoapExceptionOccurred {
-            get {
-                return ResourceManager.GetString("Unknownv13SoapExceptionOccurred", resourceCulture);
             }
         }
     }
