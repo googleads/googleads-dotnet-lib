@@ -75,15 +75,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
-    <Compile Include="ConsoleExample.cs" />
-    <Compile Include="Default.aspx.cs" />
-    <Compile Include="Default.aspx.designer.cs" />
     <Compile Include="OAuthLogin.aspx.cs" />
+    <Compile Include="Default.aspx.cs" />
     <Compile Include="OAuthLogin.aspx.designer.cs" />
+    <Compile Include="ConsoleExample.cs" />
+    <Compile Include="Default.aspx.designer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
-    <Content Include="OAuthLogin.aspx" />
     <Content Include="Web.config" />
+    <Content Include="OAuthLogin.aspx" />
+    <Content Include="Default.aspx" />
   </ItemGroup>
 </Project>

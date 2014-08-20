@@ -1,3 +1,27 @@
+18.3.0
+======
+
+AdWords:
+- Added code example for Ad Customizers.
+
+AdXBuyer:
+  -
+
+DFA:
+  -
+
+DFP:
+- Added support for DFP API v201408.
+- Removed RateCardCustomizationService and RateCardCustomizationGroupService,
+  replaced with PremiumRateService.
+- Removed support for DFP API v201208, v201211, v201302.
+- Removed examples for DFP API v201306, v201308.
+- Updated create line item and get forecast examples in v201408 to show how to
+  set Goal.goalType.
+
+Common:
+  -
+
 18.2.0
 ======
 
@@ -9,7 +33,7 @@ AdWords:
 
 AdXBuyer:
 - Removed support for ClientLogin.
-  
+
 DFA:
 -
 

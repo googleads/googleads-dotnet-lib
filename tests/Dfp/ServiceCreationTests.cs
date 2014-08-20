@@ -16,7 +16,7 @@
 
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.v201311;
+using Google.Api.Ads.Dfp.v201408;
 
 using NUnit.Framework;
 

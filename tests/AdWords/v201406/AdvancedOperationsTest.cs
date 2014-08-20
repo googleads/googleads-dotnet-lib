@@ -35,7 +35,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
   /// </summary>
   class AdvancedOperationsTest : VersionedExampleTestsBase {
     long campaignId;
-    long adGroupId;
+    long adGroupId1;
+    long adGroupId2;
     const double BID_MODIFIER = 0.2;
     string placesAccessToken = "";
 
@@ -45,7 +46,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     [SetUp]
     public void Init() {
       campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
-      adGroupId = utils.CreateAdGroup(user, campaignId);
+      adGroupId1 = utils.CreateAdGroup(user, campaignId);
+      adGroupId2 = utils.CreateAdGroup(user, campaignId);
 
       // Load defaults from config file.
       AdWordsAppConfig appConfig = new AdWordsAppConfig();
@@ -63,7 +65,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     [Test]
     public void TestAddClickToDownloadAdVBExample() {
       RunExample(delegate() {
-        new VBExamples.AddClickToDownloadAd().Run(user, adGroupId);
+        new VBExamples.AddClickToDownloadAd().Run(user, adGroupId1);
       });
     }
 
@@ -73,7 +75,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     [Test]
     public void TestAddClickToDownloadAdCSharpExample() {
       RunExample(delegate() {
-        new CSharpExamples.AddClickToDownloadAd().Run(user, adGroupId);
+        new CSharpExamples.AddClickToDownloadAd().Run(user, adGroupId1);
       });
     }
 
@@ -103,7 +105,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     [Test]
     public void TestAddAdGroupBidModifierCSharpExample() {
       RunExample(delegate() {
-        new CSharpExamples.AddAdGroupBidModifier().Run(user, adGroupId, BID_MODIFIER);
+        new CSharpExamples.AddAdGroupBidModifier().Run(user, adGroupId1, BID_MODIFIER);
       });
     }
 
@@ -113,7 +115,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     [Test]
     public void TestAddAdGroupBidModifierVBExample() {
       RunExample(delegate() {
-        new VBExamples.AddAdGroupBidModifier().Run(user, adGroupId, BID_MODIFIER);
+        new VBExamples.AddAdGroupBidModifier().Run(user, adGroupId1, BID_MODIFIER);
       });
     }
 
@@ -160,6 +162,30 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
       RunExample(delegate() {
         new VBExamples.AddPlacesLocationExtension().Run(user, config.PlacesLoginEmail,
             placesAccessToken);
+      });
+    }
+
+    /// <summary>
+    /// Tests the AddAdCustomizers C# code example.
+    /// </summary>
+    [Test]
+    public void TestAddAdCustomizersCSharpExample() {
+      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+
+      RunExample(delegate() {
+        new CSharpExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2);
+      });
+    }
+
+    /// <summary>
+    /// Tests the AddAdCustomizers VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestAddAdCustomizersVBExample() {
+      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+
+      RunExample(delegate() {
+        new VBExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2);
       });
     }
   }

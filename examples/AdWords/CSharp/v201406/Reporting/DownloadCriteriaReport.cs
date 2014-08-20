@@ -76,7 +76,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
       Predicate predicate = new Predicate();
       predicate.field = "Status";
       predicate.@operator = PredicateOperator.IN;
-      predicate.values = new string[] {"ENABLED", "PAUSED"};
+      predicate.values = new string[] {"ACTIVE", "PAUSED"};
       selector.predicates = new Predicate[] {predicate};
 
       definition.selector = selector;

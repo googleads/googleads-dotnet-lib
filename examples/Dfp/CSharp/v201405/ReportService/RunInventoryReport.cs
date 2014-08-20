@@ -64,11 +64,11 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201405 {
       // Get the root ad unit ID to filter on.
       String rootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
 
-      // Create statement to filter on an ancestor ad unit with the root ad unit ID to include all
+      // Create statement to filter on a parent ad unit with the root ad unit ID to include all
       // ad units in the network.
       StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("AD_UNIT_ANCESTOR_AD_UNIT_ID = :ancestorAdUnitId")
-          .AddValue("ancestorAdUnitId", long.Parse(rootAdUnitId));
+          .Where("PARENT_AD_UNIT_ID = :parentAdUnitId")
+          .AddValue("parentAdUnitId", long.Parse(rootAdUnitId));
 
       // Create report query.
       ReportQuery reportQuery = new ReportQuery();

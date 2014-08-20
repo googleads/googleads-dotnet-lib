@@ -93,8 +93,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>
-    <Content Include="Default.aspx" />
-    <Content Include="OAuthLogin.aspx" />
     <Content Include="Web.config" />
+    <Content Include="OAuthLogin.aspx" />
+    <Content Include="Default.aspx" />
   </ItemGroup>
 </Project>

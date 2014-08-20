@@ -1191,6 +1191,7 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PublisherQueryLanguageSyntaxError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PublisherQueryLanguageContextError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PermissionError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ParseError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotNullError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InternalApiError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeatureError))]
@@ -1217,7 +1218,6 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequiredCollectionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RegExError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProgrammaticError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ParseError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(OrderError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LineItemOperationError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LineItemFlightDateError))]
@@ -1281,13 +1281,13 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventoryUnitPartnerAssociationError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidColorError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitHierarchyError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(PrecisionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExchangeRateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RateCardCustomizationError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProposalLineItemError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProposalLineItemActionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProposalError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(PrecisionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BillingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseRateActionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(OrderActionError))]
@@ -1302,6 +1302,7 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(WorkflowRequestError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PlacementError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentPartnerError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TokenError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContactError))]
   public abstract partial class ApiError {
     private string fieldPathField;
@@ -1635,6 +1636,42 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PermissionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
   public enum PermissionErrorReason {
     PERMISSION_DENIED,
+    UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public partial class ParseError : ApiError {
+    private ParseErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public ParseErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ParseError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public enum ParseErrorReason {
+    UNPARSABLE,
     UNKNOWN
   }
 
@@ -5823,42 +5860,6 @@ FirstPartyAudienceSegment[] segments) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
-  public partial class ParseError : ApiError {
-    private ParseErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public ParseErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ParseError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
-  public enum ParseErrorReason {
-    UNPARSABLE,
-    UNKNOWN
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
   public partial class OrderError : ApiError {
     private OrderErrorReason reasonField;
 
@@ -6058,6 +6059,7 @@ FirstPartyAudienceSegment[] segments) {
     CANNOT_CHANGE_CURRENCY,
     INVALID_FOR_OFFLINE,
     INVALID_LINE_ITEM_DATE_TIME,
+    UNSUPPORTED_LINE_ITEM_TYPE_FOR_THIS_API_VERSION,
     UNKNOWN
   }
 
@@ -15722,6 +15724,42 @@ Team[] teams) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public partial class PrecisionError : ApiError {
+    private PrecisionErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public PrecisionErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PrecisionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public enum PrecisionErrorReason {
+    WRONG_PRECISION,
+    UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
   public partial class NetworkError : ApiError {
     private NetworkErrorReason reasonField;
 
@@ -17056,42 +17094,6 @@ ProposalLineItem[] proposalLineItems) {
     DUPLICATED_SALES_PLANNER,
     DUPLICATED_TRAFFICKER,
     HAS_NO_UNARCHIVED_PROPOSAL_LINEITEMS,
-    UNKNOWN
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
-  public partial class PrecisionError : ApiError {
-    private PrecisionErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public PrecisionErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PrecisionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
-  public enum PrecisionErrorReason {
-    WRONG_PRECISION,
     UNKNOWN
   }
 
@@ -26689,6 +26691,43 @@ User[] users) {
       get { return this.descriptionField; }
       set { this.descriptionField = value; }
     }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public partial class TokenError : ApiError {
+    private TokenErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public TokenErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TokenError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public enum TokenErrorReason {
+    INVALID,
+    EXPIRED,
+    UNKNOWN
   }
 
 

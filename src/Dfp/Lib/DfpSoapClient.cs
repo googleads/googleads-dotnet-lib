@@ -1,4 +1,4 @@
-// Copyright 2011, Google Inc. All Rights Reserved.
+// Copyright 2014, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -96,8 +96,8 @@ namespace Google.Api.Ads.Dfp.Lib {
       if (!(this.GetType().Name == "NetworkService" && (methodName == "getAllNetworks"
           || methodName == "makeTestNetwork"))) {
         if (string.IsNullOrEmpty(header.networkCode)) {
-          throw new SoapHeaderException("networkCode header is required in all API versions >= " +
-              "v201203. The only exceptions are NetworkService.getAllNetworks and " +
+          throw new SoapHeaderException("networkCode header is required in all API versions. " +
+              "The only exceptions are NetworkService.getAllNetworks and " +
               "NetworkService.makeTestNetwork.", XmlQualifiedName.Empty);
         }
       }
