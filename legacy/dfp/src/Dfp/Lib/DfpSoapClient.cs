@@ -96,8 +96,8 @@ namespace Google.Api.Ads.Dfp.Lib {
       if (!(this.GetType().Name == "NetworkService" && (methodName == "getAllNetworks"
           || methodName == "makeTestNetwork"))) {
         if (string.IsNullOrEmpty(header.networkCode)) {
-          throw new SoapHeaderException("networkCode header is required in all API versions >= " +
-              "v201203. The only exceptions are NetworkService.getAllNetworks and " +
+          throw new SoapHeaderException("networkCode header is required in all API versions. " +
+              "The only exceptions are NetworkService.getAllNetworks and " +
               "NetworkService.makeTestNetwork.", XmlQualifiedName.Empty);
         }
       }

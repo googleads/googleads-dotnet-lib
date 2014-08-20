@@ -1,4 +1,4 @@
-﻿// Copyright 2012, Google Inc. All Rights Reserved.
+﻿// Copyright 2014, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,8 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.v201208;
+using Google.Api.Ads.Dfp.Util.v201405;
+using Google.Api.Ads.Dfp.v201405;
 using Google.Api.Ads.Common.Lib;
 
 using System;
@@ -69,20 +70,20 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
       }
 
       // Get the UserService.
-      UserService userService = (UserService)user.GetService(DfpService.v201208.UserService);
+      UserService userService = (UserService)user.GetService(DfpService.v201405.UserService);
 
-      // Sets defaults for page and Statement.
+      // Create a Statement to get all users.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+      // Set default for page.
       UserPage page = new UserPage();
-      Statement statement = new Statement();
-      int offset = 0;
 
       try {
         do {
-          // Create a Statement to get all users.
-          statement.query = string.Format("LIMIT 500 OFFSET {0}", offset);
-
           // Get users by Statement.
-          page = userService.getUsersByStatement(statement);
+          page = userService.getUsersByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
             int i = page.startIndex;
@@ -92,8 +93,8 @@ namespace Google.Api.Ads.Dfp.Examples.OAuth {
               i++;
             }
           }
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {

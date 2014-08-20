@@ -1,3 +1,7 @@
+7.4.0
+- Removed support for v201208, v201211, and v201302.
+- Removed examples for v201306 and v201308.
+
 7.3.0
 - Common library version was bumped to v2.5.0.
 
