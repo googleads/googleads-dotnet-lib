@@ -93,7 +93,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
         adGroup.biddingStrategyConfiguration = biddingConfig;
 
         // Optional: Set targeting restrictions.
-        // These setting only affect serving for the Display Network.
+        // These settings only affect serving for the Display Network.
         TargetingSetting targetingSetting = new TargetingSetting();
 
         TargetingSettingDetail placementDetail = new TargetingSettingDetail();

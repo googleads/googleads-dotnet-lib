@@ -70,26 +70,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
       string filePath = ExampleUtilities.GetHomeDir() + Path.DirectorySeparatorChar + fileName;
 
       try {
-        // If you know that your report is small enough to fit in memory, then
-        // you can instead use
-        // ReportUtilities utilities = new ReportUtilities(user);
-        // utilities.ReportVersion = "v201406";
-        // ClientReport report = utilities.GetClientReport(query, format);
-        //
-        // // Get the text report directly if you requested a text format
-        // // (e.g. xml)
-        // string reportText = report.Text;
-        //
-        // // Get the binary report if you requested a binary format
-        // // (e.g. gzip)
-        // byte[] reportBytes = report.Contents;
-        //
-        // // Deflate a zipped binary report for further processing.
-        // string deflatedReportText = Encoding.UTF8.GetString(
-        //     MediaUtilities.DeflateGZipData(report.Contents));
-        ReportUtilities utilities = new ReportUtilities(user);
-        utilities.ReportVersion = "v201406";
-        utilities.DownloadClientReport(query, DownloadFormat.GZIPPED_CSV.ToString(), filePath);
+        ReportUtilities utilities = new ReportUtilities(user, "v201406", query,
+            DownloadFormat.GZIPPED_CSV.ToString());
+        utilities.GetResponse().Save(fileName);
         Console.WriteLine("Report was downloaded to '{0}'.", filePath);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to download report.", ex);

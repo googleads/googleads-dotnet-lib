@@ -17,7 +17,7 @@
 
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfa.Lib;
-using Google.Api.Ads.Dfa.v1_19;
+using Google.Api.Ads.Dfa.v1_20;
 
 using System;
 using System.Collections.Generic;
@@ -31,11 +31,6 @@ namespace Google.Api.Ads.Dfa.Examples.Wcf {
   /// </summary>
   public class DfaClient {
     /// <summary>
-    /// Time to wait between checks for report status.
-    /// </summary>
-    private const int TIME_BETWEEN_CHECKS = 10 * 60 * 1000;
-
-    /// <summary>
     /// The dfa user making calls.
     /// </summary>
     DfaUser user = new DfaUser();
@@ -47,67 +42,10 @@ namespace Google.Api.Ads.Dfa.Examples.Wcf {
     internal AdType[] GetAdTypes() {
        // Create AdRemoteService instance.
       AdRemoteService service = (AdRemoteService) user.GetService(
-          DfaService.v1_19.AdRemoteService);
+          DfaService.v1_20.AdRemoteService);
 
       // Get ad types.
       return service.getAdTypes();
-    }
-
-    /// <summary>
-    /// Schedules and downloads a report given a query id.
-    /// </summary>
-    /// <param name="queryId">The query id.</param>
-    /// <param name="reportFilePath">The path to which the report should be
-    /// downloaded.</param>
-    /// <returns>True, if the report was downloaded successfully, false
-    /// otherwise.</returns>
-    internal bool GetReport(long queryId, string reportFilePath) {
-      // Create ReportRemoteService instance.
-      ReportRemoteService service = (ReportRemoteService)user.GetService(
-          DfaService.v1_19.ReportRemoteService);
-      return ScheduleAndDownloadReport(service, queryId, reportFilePath);
-    }
-
-    /// <summary>
-    /// Schedules and downloads a report.
-    /// </summary>
-    /// <param name="service">The report service instance.</param>
-    /// <param name="queryId">The query id to be used for generating reports.
-    /// </param>
-    /// <param name="reportFilePath">The file path to which the downloaded report
-    /// should be saved.</param>
-    private bool ScheduleAndDownloadReport(ReportRemoteService service, long queryId,
-        string reportFilePath) {
-      // Create report request and submit it to the server.
-      ReportRequest reportRequest = new ReportRequest();
-      reportRequest.queryId = queryId;
-
-      ReportInfo reportInfo = service.runDeferredReport(reportRequest);
-      long reportId = reportInfo.reportId;
-      reportRequest.reportId = reportId;
-
-      while (reportInfo.status.name != "COMPLETE") {
-        Thread.Sleep(TIME_BETWEEN_CHECKS);
-        reportInfo = service.getReport(reportRequest);
-        if (reportInfo.status.name == "ERROR") {
-          throw new Exception("Deferred report failed with errors. Run in the UI to " +
-              "troubleshoot.");
-        }
-      }
-
-      FileStream fs = null;
-      try {
-        fs = File.OpenWrite(reportFilePath);
-        byte[] data = MediaUtilities.GetAssetDataFromUrl(reportInfo.url);
-        fs.Write(data, 0, data.Length);
-        return true;
-      } catch {
-        return false;
-      } finally {
-        if (fs != null) {
-          fs.Close();
-        }
-      }
     }
   }
 }

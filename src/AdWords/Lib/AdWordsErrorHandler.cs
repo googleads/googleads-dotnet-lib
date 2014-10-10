@@ -16,6 +16,7 @@
 
 using Google.Api.Ads.AdWords.Headers;
 using Google.Api.Ads.AdWords.Util.Reports;
+using Google.Api.Ads.AdWords.Util.Reports.Legacy;
 using Google.Api.Ads.Common.Lib;
 
 using System;
@@ -129,8 +130,12 @@ namespace Google.Api.Ads.AdWords.Lib {
     public static bool IsOAuthTokenExpiredError(Exception ex) {
       if (ex is AdWordsApiException) {
         return MatchesError((AdWordsApiException) ex, new string[] {OAUTH_TOKEN_EXPIRED_ERROR});
+      } else if (ex is AdWordsReportsException) {
+        return MatchesError((AdWordsReportsException) ex,
+            new string[] { OAUTH_TOKEN_EXPIRED_ERROR });
       } else if (ex is ReportsException) {
-        return MatchesError((ReportsException) ex, new string[] {OAUTH_TOKEN_EXPIRED_ERROR});
+        return MatchesError((ReportsException) ex,
+            new string[] { OAUTH_TOKEN_EXPIRED_ERROR });
       }
       return false;
     }
@@ -144,6 +149,25 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <returns>True, if the server exception matches the known error, false
     /// otherwise.</returns>
     private static bool MatchesError(ReportsException ex, string[] errorMessages) {
+      foreach (ReportDownloadError error in ex.Errors) {
+        foreach (String errorMessage in errorMessages) {
+          if (error.ErrorType.Contains(errorMessage)) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
+    /// <summary>
+    /// Determines whether the exception thrown by the server matches a known
+    /// error.
+    /// </summary>
+    /// <param name="ex">The exception.</param>
+    /// <param name="errorMessage">The known error message.</param>
+    /// <returns>True, if the server exception matches the known error, false
+    /// otherwise.</returns>
+    private static bool MatchesError(AdWordsReportsException ex, string[] errorMessages) {
       foreach (ReportDownloadError error in ex.Errors) {
         foreach (String errorMessage in errorMessages) {
           if (error.ErrorType.Contains(errorMessage)) {

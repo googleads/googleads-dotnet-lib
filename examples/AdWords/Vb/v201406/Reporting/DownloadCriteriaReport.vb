@@ -87,27 +87,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
           fileName
 
       Try
-        ' If you know that your report is small enough to fit in memory, then
-        ' you can instead use
-        ' Dim utilities As New ReportUtilities(user)
-        ' utilities.ReportVersion = "v201406"
-        ' Dim report As ClientReport = utilities.GetClientReport( _
-        '     Of ReportDefinition)(definition)
-        '
-        ' ' Get the text report directly if you requested a text format
-        ' ' (e.g. xml)
-        ' Dim reportText As String = report.Text
-        '
-        ' ' Get the binary report if you requested a binary format
-        ' ' (e.g. gzip)
-        ' Dim reportBytes As Byte() = report.Contents
-        '
-        ' ' Deflate a zipped binary report for further processing.
-        ' Dim deflatedReportText As String = Encoding.UTF8.GetString( _
-        '     MediaUtilities.DeflateGZipData(report.Contents))
-        Dim utilities As New ReportUtilities(user)
-        utilities.ReportVersion = "v201406"
-        utilities.DownloadClientReport(Of ReportDefinition)(definition, filePath)
+        Dim utilities As New ReportUtilities(user, "v201406", definition)
+        utilities.GetResponse().Save(filePath)
         Console.WriteLine("Report was downloaded to '{0}'.", filePath)
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to download report.", ex)

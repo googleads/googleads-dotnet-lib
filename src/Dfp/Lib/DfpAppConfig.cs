@@ -62,7 +62,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// <summary>
     /// The OAuth2 scope for DFP API.
     /// </summary>
-    private const string DFP_OAUTH2_SCOPE = "https://www.googleapis.com/auth/dfp/";
+    private const string DFP_OAUTH2_SCOPE = "https://www.googleapis.com/auth/dfp";
 
     /// <summary>
     /// Default value for authorizationMethod.

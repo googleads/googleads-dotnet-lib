@@ -93,7 +93,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
         adGroup.biddingStrategyConfiguration = biddingConfig
 
         ' Optional: Set targeting restrictions.
-        ' These setting only affect serving for the Display Network.
+        ' These settings only affect serving for the Display Network.
         Dim targetingSetting As New TargetingSetting()
 
         Dim placementDetail As New TargetingSettingDetail()

@@ -71,7 +71,8 @@ namespace Google.Api.Ads.AdWords.Headers {
 
     /// <summary>
     /// Specifies the AdWords Express business ID. This field applies only
-    /// for AdWords Express API services.
+    /// for AdWords Express API services.  This field should not be set if
+    /// <see cref="pageId"/> is set.
     /// </summary>
     [XmlElementAttribute(Namespace = "https://adwords.google.com/api/adwords/express{version}")]
     public long expressBusinessId;
@@ -82,5 +83,20 @@ namespace Google.Api.Ads.AdWords.Headers {
     /// </summary>
     [XmlIgnoreAttribute]
     public bool expressBusinessIdSpecified;
+
+    /// <summary>
+    /// Specifies the AdWords Express Plus Page ID. This field applies only
+    /// for AdWords Express API services. This field should not be set if
+    /// <see cref="expressBusinessId"/> is set.
+    /// </summary>
+    [XmlElementAttribute(Namespace = "https://adwords.google.com/api/adwords/express{version}")]
+    public string pageId;
+
+    /// <summary>
+    /// Specifies whether <seealso cref="pageId"/> is provided. This
+    /// field applies only for AdWords Express API services.
+    /// </summary>
+    [XmlIgnoreAttribute]
+    public bool pageIdSpecified;
   }
 }

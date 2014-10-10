@@ -79,20 +79,28 @@ namespace Google.Api.Ads.Dfa.Util {
       if (!String.IsNullOrEmpty(config.DfaAuthToken)) {
         return new UserToken(config.DfaUserName, config.DfaAuthToken);
       }
+
+      String dfaUserName = config.DfaUserName;
+      String dfaPassword = config.DfaPassword;
+
       if (config.AuthorizationMethod == DfaAuthorizationMethod.LoginService) {
-        if (string.IsNullOrEmpty(config.DfaUserName)) {
+        if (string.IsNullOrEmpty(dfaUserName)) {
           throw new ArgumentNullException(DfaErrorMessages.UserNameCannotBeEmpty);
         }
-        if (string.IsNullOrEmpty(config.DfaPassword)) {
+        if (string.IsNullOrEmpty(dfaPassword)) {
           throw new ArgumentNullException(DfaErrorMessages.PasswordCannotBeEmpty);
         }
+      } else if (config.AuthorizationMethod == DfaAuthorizationMethod.OAuth2) {
+        // DFA password should not be set when using OAuth2
+        dfaPassword = "";
       }
+
       try {
         DfaServiceSignature loginServiceSignature = new DfaServiceSignature(serviceVersion,
               "LoginRemoteService");
         AdsClient loginService = user.GetService(loginServiceSignature, config.DfaApiServer);
         object userProfile = loginService.GetType().GetMethod("authenticate").Invoke(
-            loginService, new object[] {config.DfaUserName, config.DfaPassword});
+            loginService, new object[] {dfaUserName, dfaPassword});
         return new UserToken(
             userProfile.GetType().GetProperty("name").GetValue(userProfile, null).ToString(),
             userProfile.GetType().GetProperty("token").GetValue(userProfile, null).ToString());

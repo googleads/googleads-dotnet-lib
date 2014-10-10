@@ -14,10 +14,10 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.AdWords.Examples.CSharp.v201406;
+using Google.Api.Ads.AdWords.Examples.CSharp.v201409;
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.Tests.v201406;
-using Google.Api.Ads.AdWords.v201406;
+using Google.Api.Ads.AdWords.Tests.v201409;
+using Google.Api.Ads.AdWords.v201409;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests;
 using Google.Api.Ads.Common.Util;
@@ -34,10 +34,12 @@ using System.Threading;
 using System.Xml;
 
 namespace Google.Api.Ads.AdWords.Tests.Lib {
+
   /// <summary>
   /// Test cases for AdWordsCallListener.
   /// </summary>
-  class AdWordsCallListenerTest : VersionedExampleTestsBase {
+  internal class AdWordsCallListenerTest : VersionedExampleTestsBase {
+    private const long TEST_CAMPAIGN_ID = 12345;
 
     /// <summary>
     /// Inits this instance.
@@ -52,18 +54,24 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     /// </summary>
     [Test]
     [Category("Integration")]
-    public void TestGetAccountAlertsCSharpExample() {
-      ExamplesMockData mockData = LoadMockData(SoapMessages_v201406.GetAccountAlerts);
+    public void TestUpdateCampaignsCSharpExample() {
+      ExamplesMockData mockData = LoadMockData(SoapMessages_v201409.UpdateCampaign);
       RunMockedExample(mockData, delegate() {
-        new GetAccountAlerts().Run(user);
-        Assert.AreEqual(user.GetTotalOperationCount(), 2);
-        Assert.AreEqual(user.GetOperationCountForLastCall(), 2);
+        new UpdateCampaign().Run(user, TEST_CAMPAIGN_ID);
+
+        // API no longer returns operation count.
+        Assert.AreEqual(user.GetTotalOperationCount(), 0);
+        Assert.AreEqual(user.GetOperationCountForLastCall(), 0);
+
         ApiCallEntry[] callEntries = user.GetCallDetails();
         Assert.AreEqual(callEntries.Length, 1);
         ApiCallEntry callEntry = user.GetCallDetails()[0];
-        Assert.AreEqual(callEntry.OperationCount, 2);
-        Assert.AreEqual(callEntry.Method, "get");
-        Assert.AreEqual(callEntry.Service.Signature.ServiceName, "AlertService");
+
+        // API no longer returns operation count.
+        Assert.AreEqual(callEntry.OperationCount, 0);
+
+        Assert.AreEqual(callEntry.Method, "mutate");
+        Assert.AreEqual(callEntry.Service.Signature.ServiceName, "CampaignService");
       }, new WebRequestInterceptor.OnBeforeSendResponse(delegate(Uri uri,
             WebHeaderCollection headers, String body) {
       }));
@@ -76,25 +84,30 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     [Category("Small")]
     public void TestHandleMessage() {
       try {
-        ContextStore.AddKey("SoapMethod", "get");
+        ContextStore.AddKey("SoapMethod", "mutate");
 
         XmlDocument xDoc = new XmlDocument();
-        xDoc.LoadXml(SoapMessages_v201406.GetAccountAlerts);
+        xDoc.LoadXml(SoapMessages_v201409.UpdateCampaign);
         XmlElement xRequest = (XmlElement) xDoc.SelectSingleNode("/Example/SOAP/Response");
         xDoc.LoadXml(xRequest.InnerText);
-        AlertService service = (AlertService) user.GetService(AdWordsService.v201406.AlertService);
+        CampaignService service = (CampaignService) user.GetService(
+            AdWordsService.v201409.CampaignService);
 
         AdWordsCallListener.Instance.HandleMessage(xDoc, service, SoapMessageDirection.IN);
 
-        Assert.AreEqual(user.GetTotalOperationCount(), 2);
-        Assert.AreEqual(user.GetOperationCountForLastCall(), 2);
+        // API no longer returns operation count.
+        Assert.AreEqual(user.GetTotalOperationCount(), 0);
+        Assert.AreEqual(user.GetOperationCountForLastCall(), 0);
+
         ApiCallEntry[] callEntries = user.GetCallDetails();
         Assert.AreEqual(callEntries.Length, 1);
         ApiCallEntry callEntry = user.GetCallDetails()[0];
 
-        Assert.AreEqual(callEntry.OperationCount, 2);
-        Assert.AreEqual(callEntry.Method, "get");
-        Assert.AreEqual(callEntry.Service.Signature.ServiceName, "AlertService");
+        // API no longer returns operation count.
+        Assert.AreEqual(callEntry.OperationCount, 0);
+
+        Assert.AreEqual(callEntry.Method, "mutate");
+        Assert.AreEqual(callEntry.Service.Signature.ServiceName, "CampaignService");
       } finally {
         ContextStore.RemoveKey("SoapMethod");
       }

@@ -1,3 +1,35 @@
+18.4.0
+======
+
+AdWords:
+- Added support for v201409.
+- Added a new version of ReportUtilities class. The new ReportUtilities class refactors common
+  functionality into the Common library so that it may be reused by other libraries (e.g. DFP).
+  The new version also provides access to the underlying Stream, in case you need to process the
+  report without downloading it first. The existing ReportUtilities class has been marked deprecated
+  and moved to Google.Api.Ads.AdWords.Util.Reports.Legacy namespace. The deprecated version of
+  ReportUtilities class will be removed on Feb 1, 2015.
+  See Reporting\DownloadCriteriaReport.cs for an example.
+
+AdXBuyer:
+  -
+
+DFA:
+- Deprecated services and operations that are no longer supported in DCM. See the
+  [DCM upgrade guide](https://developers.google.com/doubleclick-advertisers/docs/upgrading) for
+  details.
+- Removed obsolete DFA6-specific examples.
+- Updated DFA OAuth and WCF examples to use v1.20 of the API and removed references to the
+  deprecated report service.
+- Fixed a bug where the OAuth2 service account flow won't work if LoginPassword field is set in the
+  App.config. 
+
+DFP:
+- Added support for OAuth2 service accounts.
+
+Common:
+  - Version was bumped to 3.3.0.
+
 18.3.0
 ======
 

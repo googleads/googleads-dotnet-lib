@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:49193/WcfService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Google.Api.Ads.Dfa.Examples.Wcf" />
-  <xs:import schemaLocation="http://localhost:49193/WcfService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Google.Api.Ads.Dfa.v1_13" />
+  <xs:import schemaLocation="http://localhost:49193/WcfService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Google.Api.Ads.Dfa.v1_20" />
   <xs:element name="GetReport">
     <xs:complexType>
       <xs:sequence>
@@ -39,7 +39,7 @@
   <xs:element name="GetAdTypesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Google.Api.Ads.Dfa.v1_13" minOccurs="0" name="GetAdTypesResult" nillable="true" type="q3:ArrayOfAdType" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Google.Api.Ads.Dfa.v1_20" minOccurs="0" name="GetAdTypesResult" nillable="true" type="q3:ArrayOfAdType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

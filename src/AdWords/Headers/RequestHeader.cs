@@ -143,7 +143,8 @@ namespace Google.Api.Ads.AdWords.Headers {
 
     /// <summary>
     /// Gets or sets the AdWords Express business ID. This header applies only
-    /// for AdWords Express API services.
+    /// for AdWords Express API services. This field should not be set if 
+    /// <see cref="pageId"/> is set.
     /// </summary>
     public long expressBusinessId {
       get {
@@ -167,5 +168,34 @@ namespace Google.Api.Ads.AdWords.Headers {
         stub.expressBusinessIdSpecified = value;
       }
     }
+
+    /// <summary>
+    /// Gets or sets the AdWords Express Plus Page ID. This header applies only
+    /// for AdWords Express API services. This field should not be set if
+    /// <see cref="expressBusinessId"/> is set.
+    /// </summary>
+    public string pageId {
+      get {
+        return stub.pageId;
+      }
+      set {
+        stub.pageIdSpecified = true;
+        stub.pageId = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets whether <see cref="expressBusinessId"/> is specified. This
+    /// field applies only for AdWords Express API services.
+    /// </summary>
+    public bool pageIdSpecified {
+      get {
+        return stub.pageIdSpecified;
+      }
+      set {
+        stub.pageIdSpecified = value;
+      }
+    }
+
   }
 }

@@ -53,9 +53,6 @@
     <Compile Include="v1_20\CreateFlashInpageCreative.cs" />
     <Compile Include="v1_20\CreateHTMLAsset.cs" />
     <Compile Include="v1_20\CreateImageAsset.cs" />
-    <Compile Include="v1_20\CreateInStreamVideoCreative.cs" />
-    <Compile Include="v1_20\CreateMobileAsset.cs" />
-    <Compile Include="v1_20\CreateMobileCreative.cs" />
     <Compile Include="v1_20\CreatePlacement.cs" />
     <Compile Include="v1_20\CreatePlacementStrategy.cs" />
     <Compile Include="v1_20\CreateRotationGroup.cs" />
@@ -86,19 +83,12 @@
     <Compile Include="v1_20\GetPlacementStrategies.cs" />
     <Compile Include="v1_20\GetPlacementTypes.cs" />
     <Compile Include="v1_20\GetPricingTypes.cs" />
-    <Compile Include="v1_20\GetReport.cs" />
-    <Compile Include="v1_20\GetReports.cs" />
     <Compile Include="v1_20\GetSize.cs" />
     <Compile Include="v1_20\GetSubnetworks.cs" />
     <Compile Include="v1_20\GetTagMethodTypes.cs" />
     <Compile Include="v1_20\GetUserFilterTypes.cs" />
     <Compile Include="v1_20\GetUserRoles.cs" />
     <Compile Include="v1_20\GetUsers.cs" />
-    <Compile Include="v1_20\ModifyInStreamMediaFilesAndAds.cs" />
-    <Compile Include="v1_20\RCReport.cs" />
-    <Compile Include="v1_20\ReplaceInStreamAsset.cs" />
-    <Compile Include="v1_20\RunDeferredReport.cs" />
-    <Compile Include="v1_20\UploadInStreamAsset.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SampleBase.cs" />
@@ -116,9 +106,6 @@
     <Compile Include="v1_19\CreateFlashInpageCreative.cs" />
     <Compile Include="v1_19\CreateHTMLAsset.cs" />
     <Compile Include="v1_19\CreateImageAsset.cs" />
-    <Compile Include="v1_19\CreateInStreamVideoCreative.cs" />
-    <Compile Include="v1_19\CreateMobileAsset.cs" />
-    <Compile Include="v1_19\CreateMobileCreative.cs" />
     <Compile Include="v1_19\CreatePlacement.cs" />
     <Compile Include="v1_19\CreatePlacementStrategy.cs" />
     <Compile Include="v1_19\CreateRotationGroup.cs" />
@@ -149,19 +136,12 @@
     <Compile Include="v1_19\GetPlacementStrategies.cs" />
     <Compile Include="v1_19\GetPlacementTypes.cs" />
     <Compile Include="v1_19\GetPricingTypes.cs" />
-    <Compile Include="v1_19\GetReport.cs" />
-    <Compile Include="v1_19\GetReports.cs" />
     <Compile Include="v1_19\GetSize.cs" />
     <Compile Include="v1_19\GetSubnetworks.cs" />
     <Compile Include="v1_19\GetTagMethodTypes.cs" />
     <Compile Include="v1_19\GetUserFilterTypes.cs" />
     <Compile Include="v1_19\GetUserRoles.cs" />
     <Compile Include="v1_19\GetUsers.cs" />
-    <Compile Include="v1_19\ModifyInStreamMediaFilesAndAds.cs" />
-    <Compile Include="v1_19\RCReport.cs" />
-    <Compile Include="v1_19\ReplaceInStreamAsset.cs" />
-    <Compile Include="v1_19\RunDeferredReport.cs" />
-    <Compile Include="v1_19\UploadInStreamAsset.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Common\Common.csproj">

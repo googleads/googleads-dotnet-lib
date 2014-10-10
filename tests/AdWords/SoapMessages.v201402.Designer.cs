@@ -60,9 +60,9 @@ namespace Google.Api.Ads.AdWords.Tests {
             }
         }
         
-        internal static string GetAccountAlerts {
+        internal static string UpdateCampaign {
             get {
-                return ResourceManager.GetString("GetAccountAlerts", resourceCulture);
+                return ResourceManager.GetString("UpdateCampaign", resourceCulture);
             }
         }
     }

@@ -111,7 +111,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     [Category("Small")]
     public void TestProperties() {
-      AuthToken authToken = new AuthToken();
+      AuthToken authToken = new AuthToken(config, SERVICE);
       authToken.Email = EMAIL;
       Assert.AreEqual(authToken.Email, EMAIL);
 

@@ -96,29 +96,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
       string filePath = Path.GetTempFileName();
 
       try {
-        // If you know that your report is small enough to fit in memory, then
-        // you can instead use
-        // ReportUtilities utilities = new ReportUtilities(user);
-        // utilities.ReportVersion = "v201406";
-        // ClientReport report = utilities.GetClientReport(definition);
-        //
-        // // Get the text report directly if you requested a text format
-        // // (e.g. xml)
-        // string reportText = report.Text;
-        //
-        // // Get the binary report if you requested a binary format
-        // // (e.g. gzip)
-        // byte[] reportBytes = report.Contents;
-        //
-        // // Deflate a zipped binary report for further processing.
-        // string deflatedReportText = Encoding.UTF8.GetString(
-        //     MediaUtilities.DeflateGZipData(report.Contents));
-
-        // Set the customer id.
-        (user.Config as AdWordsAppConfig).ClientCustomerId = txtCustomerId.Text;
-        ReportUtilities utilities = new ReportUtilities(user);
-        utilities.ReportVersion = "v201406";
-        utilities.DownloadClientReport(definition, filePath);
+        ReportUtilities utilities = new ReportUtilities(user, "v201406", definition);
+        utilities.GetResponse().Save(filePath);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to download report.", ex);
       }

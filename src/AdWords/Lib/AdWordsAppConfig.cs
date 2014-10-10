@@ -75,6 +75,16 @@ namespace Google.Api.Ads.AdWords.Lib {
     private const string AUTHORIZATION_METHOD = "AuthorizationMethod";
 
     /// <summary>
+    /// Key name for skipReportingHeader.
+    /// </summary>
+    private const string SKIP_REPORT_HEADER = "SkipReportHeader";
+
+    /// <summary>
+    /// Key name for skipReportingSummary.
+    /// </summary>
+    private const string SKIP_REPORT_SUMMARY = "SkipReportSummary";
+
+    /// <summary>
     /// Default value for AdWords API URL.
     /// </summary>
     private const string DEFAULT_ADWORDSAPI_SERVER = "https://adwords.google.com";
@@ -83,6 +93,16 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Default OAuth2 scope for AdWords API.
     /// </summary>
     private const string DEFAULT_OAUTH_SCOPE = "https://www.googleapis.com/auth/adwords";
+
+    /// <summary>
+    /// Default value for skipping reports header.
+    /// </summary>
+    private const bool DEFAULT_SKIP_REPORT_HEADER = false;
+
+    /// <summary>
+    /// Default value for skipping reports summary.
+    /// </summary>
+    private const bool DEFAULT_SKIP_REPORT_SUMMARY = false;
 
     /// <summary>
     /// ClientCustomerId to be used in SOAP headers.
@@ -118,6 +138,16 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Url for AdWords API.
     /// </summary>
     private string adWordsApiServer;
+
+    /// <summary>
+    /// Flag to decide whether or not to skip report header.
+    /// </summary>
+    private bool skipReportHeader;
+
+    /// <summary>
+    /// Flag to decide whether or not to skip report summary.
+    /// </summary>
+    private bool skipReportSummary;
 
     /// <summary>
     /// Gets or sets the client customerId to be used in SOAP headers.
@@ -180,6 +210,30 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
+    /// Gets or sets whether reporting headers should be skipped.
+    /// </summary>
+    public bool SkipReportHeader {
+      get {
+        return skipReportHeader;
+      }
+      set {
+        SetPropertyField("SkipReportHeader", ref skipReportHeader, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets whether report summary should be skipped.
+    /// </summary>
+    public bool SkipReportSummary {
+      get {
+        return skipReportSummary;
+      }
+      set {
+        SetPropertyField("SkipReportSummary", ref skipReportSummary, value);
+      }
+    }
+
+    /// <summary>
     /// Gets or sets the useragent to be used in SOAP headers.
     /// </summary>
     public string UserAgent {
@@ -229,6 +283,8 @@ namespace Google.Api.Ads.AdWords.Lib {
       placesLoginEmail = "";
       userAgent = "";
       adWordsApiServer = DEFAULT_ADWORDSAPI_SERVER;
+      skipReportHeader = DEFAULT_SKIP_REPORT_HEADER;
+      skipReportSummary = DEFAULT_SKIP_REPORT_SUMMARY;
 
       ReadSettings((Hashtable) ConfigurationManager.GetSection("AdWordsApi"));
     }
@@ -260,6 +316,12 @@ namespace Google.Api.Ads.AdWords.Lib {
       if (string.IsNullOrEmpty(this.OAuth2Scope)) {
         this.OAuth2Scope = GetDefaultOAuth2Scope();
       }
+
+      // Configure report downloading settings.
+      bool.TryParse(ReadSetting(settings, SKIP_REPORT_HEADER, skipReportHeader.ToString()),
+          out skipReportHeader);
+      bool.TryParse(ReadSetting(settings, SKIP_REPORT_SUMMARY, skipReportSummary.ToString()),
+          out skipReportSummary);
     }
   }
 }

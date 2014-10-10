@@ -28,9 +28,9 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
   /// </summary>
   [TestFixture]
   class AdWordsServiceFactoryTests {
-    private const string TEST_API_VERSION = "v201406";
+    private const string TEST_API_VERSION = "v201409";
     private const string TEST_SERVICE = "MediaService";
-    private const string TEST_GROUP_NAME = "express";
+    private const string TEST_GROUP_NAME = "cm";
 
     private AdWordsServiceFactory serviceFactory;
     private ServiceSignature serviceSignature;
@@ -46,6 +46,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     [SetUp]
     public void Init() {
       serviceFactory = new AdWordsServiceFactory();
+      serviceFactory.Config = new AdWordsAppConfig();
       testUri = new Uri("https://google.com");
     }
 

@@ -16,7 +16,7 @@
 
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Dfa.Lib;
-using Google.Api.Ads.Dfa.v1_19;
+using Google.Api.Ads.Dfa.v1_20;
 
 using System;
 using System.Data;
@@ -84,7 +84,7 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.OAuth {
 
         // Create AdRemoteService instance.
         AdRemoteService service = (AdRemoteService) user.GetService(
-            DfaService.v1_19.AdRemoteService);
+            DfaService.v1_20.AdRemoteService);
 
         // Get ad types.
         AdType[] adTypes = service.getAdTypes();

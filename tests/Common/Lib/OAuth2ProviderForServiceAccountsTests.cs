@@ -130,7 +130,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     public void TestGenerateAccessTokenForServiceAccounts() {
       TestUtils.ValidateRequiredParameters(provider, new string[] {"ServiceAccountEmail",
-          "Scope", "PrnEmail", "JwtCertificatePath", "JwtCertificatePassword"},
+          "Scope", "JwtCertificatePath", "JwtCertificatePassword"},
           delegate() {
             provider.GenerateAccessTokenForServiceAccount();
           }

@@ -14,7 +14,7 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.Dfa.v1_19;
+using Google.Api.Ads.Dfa.v1_20;
 
 namespace Google.Api.Ads.Dfa.Examples.Wcf {
   /// <summary>
@@ -25,30 +25,6 @@ namespace Google.Api.Ads.Dfa.Examples.Wcf {
     /// The DFA client that makes calls to the server.
     /// </summary>
     DfaClient client = new DfaClient();
-
-    /// <summary>
-    /// Schedules and downloads a report given a query id.
-    /// </summary>
-    /// <param name="queryId">The query id.</param>
-    /// <param name="reportFilePath">The path to which the report should be
-    /// downloaded.</param>
-    /// <returns>True, if the report was downloaded successfully, false
-    /// otherwise.</returns>
-    public bool GetReport(long queryId, string reportFilePath) {
-      return client.GetReport(queryId, reportFilePath);
-    }
-
-    /// <summary>
-    /// Schedules and downloads a report given a query id.
-    /// </summary>
-    /// <param name="contract">The report contract.</param>
-    /// <returns>
-    /// The report contract, with report contents populated.
-    /// </returns>
-    public ReportContract GetReportUsingContract(ReportContract contract) {
-      contract.IsSuccess = GetReport(contract.QueryId, contract.ReportFilePath);
-      return contract;
-    }
 
     /// <summary>
     /// Gets the ad types supported by DFA.

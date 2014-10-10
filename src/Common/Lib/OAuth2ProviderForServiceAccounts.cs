@@ -1,4 +1,4 @@
-﻿// Copyright 2013, Google Inc. All Rights Reserved.
+﻿// Copyright 2014, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
+// Author: Chris Seeley (https://github.com/Narwalter)
 
 using System;
 using System.Text;
@@ -40,12 +40,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// Header for generating JWT string.
     /// </summary>
     private const string JWT_HEADER = "{\"alg\":\"RS256\",\"typ\":\"JWT\"}";
-
-    /// <summary>
-    /// Claimset template for generating JWT string.
-    /// </summary>
-    private const string JWT_CLAIMSET_TEMPLATE = "{{\"iss\":\"{0}\", \"scope\":\"{1}\", " +
-        "\"aud\":\"{2}\", \"exp\":{3}, \"iat\":{4}, \"prn\":\"{5}\"}}";
 
     /// <summary>
     /// Default expiry period for access token.
@@ -111,7 +105,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets the access token for service account.
     /// </summary>
     /// <exception cref="ArgumentNullException">Thrown if one of the following
-    /// OAuth2 parameters are empty: ServiceAccountEmail, Scope, PrnEmail,
+    /// OAuth2 parameters are empty: ServiceAccountEmail, Scope,
     /// JwtCertificatePath, JwtCertificatePassword.</exception>
     public void GenerateAccessTokenForServiceAccount() {
       long timestamp = config.UnixTimestamp;
@@ -119,15 +113,20 @@ namespace Google.Api.Ads.Common.Lib {
 
       ValidateOAuth2Parameter("ServiceAccountEmail", ServiceAccountEmail);
       ValidateOAuth2Parameter("Scope", Scope);
-      ValidateOAuth2Parameter("PrnEmail", PrnEmail);
       ValidateOAuth2Parameter("JwtCertificatePath", JwtCertificatePath);
       ValidateOAuth2Parameter("JwtCertificatePassword", JwtCertificatePassword);
 
-      string jwtClaimset = string.Format(JWT_CLAIMSET_TEMPLATE, ServiceAccountEmail, Scope,
-          JWT_AUDIENCE, expiry, timestamp, PrnEmail);
+      OAuth2JwtClaimset jwtClaimset = new OAuth2JwtClaimsetBuilder()
+          .WithScope(Scope)
+          .WithServiceAccountEmail(ServiceAccountEmail)
+          .WithImpersonationEmail(PrnEmail)
+          .WithAudience(JWT_AUDIENCE)
+          .WithTimestamp(timestamp)
+          .WithExpiry(expiry)
+          .Build();
 
       string encodedHeader = Base64UrlEncode(Encoding.UTF8.GetBytes(JWT_HEADER));
-      string encodedClaimset = Base64UrlEncode(Encoding.UTF8.GetBytes(jwtClaimset));
+      string encodedClaimset = Base64UrlEncode(Encoding.UTF8.GetBytes(jwtClaimset.ToJson()));
       string inputForSignature = encodedHeader + "." + encodedClaimset;
 
       X509Certificate2 jwtCertificate = new X509Certificate2(JwtCertificatePath,

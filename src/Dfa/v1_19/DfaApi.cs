@@ -3685,6 +3685,9 @@ namespace Google.Api.Ads.Dfa.v1_19 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "reportSoapBinding", Namespace = "http://www.doubleclick.net/dfa-api/v1.19")]
   [System.Xml.Serialization.SoapIncludeAttribute(typeof(Base))]
+  [Obsolete("The Report Service is not supported by DoubleClick Campaign Manager."
+    + " Use the DFA Reporting API to access reporting, instead:"
+    + " https://developers.google.com/doubleclick-advertisers/reporting/.")]
   public partial class ReportRemoteService : DfaSoapClient {
     public ReportRemoteService() {
       this.Url = "https://advertisersapi.doubleclick.net/v1.19/api/dfa-api/report";
@@ -6004,6 +6007,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("getBandwidthsReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public Bandwidth[] getBandwidths() {
       object[] results = this.Invoke("getBandwidths", new object[0]);
       return ((Bandwidth[]) (results[0]));
@@ -6032,6 +6036,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("getMobilePlatformsReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public MobilePlatform[] getMobilePlatforms() {
       object[] results = this.Invoke("getMobilePlatforms", new object[0]);
       return ((MobilePlatform[]) (results[0]));
@@ -6053,6 +6058,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("getAreaCodesReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public AreaCode[] getAreaCodes(long[] countryIds) {
       object[] results = this.Invoke("getAreaCodes", new object[] {countryIds});
       return ((AreaCode[]) (results[0]));
@@ -6074,6 +6080,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("getDomainTypesReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public DomainType[] getDomainTypes() {
       object[] results = this.Invoke("getDomainTypes", new object[0]);
       return ((DomainType[]) (results[0]));
@@ -6081,6 +6088,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("getISPsReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public ISP[] getISPs() {
       object[] results = this.Invoke("getISPs", new object[0]);
       return ((ISP[]) (results[0]));
@@ -6088,6 +6096,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("getOSPsReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public OSP[] getOSPs() {
       object[] results = this.Invoke("getOSPs", new object[0]);
       return ((OSP[]) (results[0]));
@@ -6107,6 +6116,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("getDomainNamesBySearchCriteriaReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public DomainNameRecordSet getDomainNamesBySearchCriteria(DomainNameSearchCriteria searchCriteria) {
       object[] results = this.Invoke("getDomainNamesBySearchCriteria", new object[] {searchCriteria});
       return ((DomainNameRecordSet) (results[0]));
@@ -6114,6 +6124,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("getUserListGroupsByCriteriaReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public UserListGroup[] getUserListGroupsByCriteria(UserListSearchCriteria searchCriteria) {
       object[] results = this.Invoke("getUserListGroupsByCriteria", new object[] {searchCriteria});
       return ((UserListGroup[]) (results[0]));
@@ -6939,6 +6950,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public void deleteCampaign(long campaignId) {
       this.Invoke("deleteCampaign", new object[] {campaignId});
     }
@@ -7210,11 +7222,13 @@ namespace Google.Api.Ads.Dfa.v1_19 {
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public void updateChangeLogRecordComments(long changeLogRecordId, string comments) {
       this.Invoke("updateChangeLogRecordComments", new object[] {changeLogRecordId, comments});
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public void updateChangeLogRecordCommentsForObjectType(long changeLogRecordId, string comments, long objectTypeId) {
       this.Invoke("updateChangeLogRecordCommentsForObjectType", new object[] {changeLogRecordId, comments, objectTypeId});
     }
@@ -7554,6 +7568,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("uploadRichMediaAssetReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public RichMediaCreativeBase uploadRichMediaAsset(RichMediaAssetUploadRequest uploadRequest) {
       object[] results = this.Invoke("uploadRichMediaAsset", new object[] {uploadRequest});
       return ((RichMediaCreativeBase) (results[0]));
@@ -7561,6 +7576,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("replaceRichMediaAssetReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public RichMediaCreativeBase replaceRichMediaAsset(string oldAssetFileName, RichMediaAssetUploadRequest replaceRequest) {
       object[] results = this.Invoke("replaceRichMediaAsset", new object[] {oldAssetFileName, replaceRequest});
       return ((RichMediaCreativeBase) (results[0]));
@@ -7568,6 +7584,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("deleteRichMediaAssetReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public RichMediaCreativeBase deleteRichMediaAsset(long creativeId, string assetFileName) {
       object[] results = this.Invoke("deleteRichMediaAsset", new object[] {creativeId, assetFileName});
       return ((RichMediaCreativeBase) (results[0]));
@@ -7575,6 +7592,7 @@ namespace Google.Api.Ads.Dfa.v1_19 {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("uploadRichMediaCreativePackageReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public RichMediaCreativeBase uploadRichMediaCreativePackage(long advertiserId, [System.Xml.Serialization.SoapElementAttribute(DataType = "base64Binary")]
 byte[] fileData, bool uploadAsFlashInFlashCreative) {
       object[] results = this.Invoke("uploadRichMediaCreativePackage", new object[] {advertiserId, fileData, uploadAsFlashInFlashCreative});
@@ -7583,6 +7601,7 @@ byte[] fileData, bool uploadAsFlashInFlashCreative) {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("replaceRichMediaCreativePackageReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public RichMediaCreativeBase replaceRichMediaCreativePackage(long creativeId, [System.Xml.Serialization.SoapElementAttribute(DataType = "base64Binary")]
 byte[] fileData) {
       object[] results = this.Invoke("replaceRichMediaCreativePackage", new object[] {creativeId, fileData});
@@ -7591,6 +7610,7 @@ byte[] fileData) {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("getRichMediaPreviewURLReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public string getRichMediaPreviewURL(long creativeId) {
       object[] results = this.Invoke("getRichMediaPreviewURL", new object[] {creativeId});
       return ((string) (results[0]));
@@ -7605,6 +7625,7 @@ byte[] fileData) {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("uploadInStreamAssetReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public InStreamVideoCreative uploadInStreamAsset(InStreamAssetUploadRequest assetUploadRequest) {
       object[] results = this.Invoke("uploadInStreamAsset", new object[] {assetUploadRequest});
       return ((InStreamVideoCreative) (results[0]));
@@ -7612,6 +7633,7 @@ byte[] fileData) {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("deleteInStreamAssetReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public InStreamVideoCreative deleteInStreamAsset(long creativeId, string assetName) {
       object[] results = this.Invoke("deleteInStreamAsset", new object[] {creativeId, assetName});
       return ((InStreamVideoCreative) (results[0]));
@@ -7619,6 +7641,7 @@ byte[] fileData) {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("replaceInStreamAssetReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public InStreamVideoCreative replaceInStreamAsset(string assetName, InStreamAssetUploadRequest assetReplaceRequest) {
       object[] results = this.Invoke("replaceInStreamAsset", new object[] {assetName, assetReplaceRequest});
       return ((InStreamVideoCreative) (results[0]));
@@ -7626,6 +7649,7 @@ byte[] fileData) {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("generateCreativeUploadSessionReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public CreativeUploadSession generateCreativeUploadSession(CreativeUploadSessionRequest creativeUploadSessionRequest) {
       object[] results = this.Invoke("generateCreativeUploadSession", new object[] {creativeUploadSessionRequest});
       return ((CreativeUploadSession) (results[0]));
@@ -7633,6 +7657,7 @@ byte[] fileData) {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("uploadCreativeFilesReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public CreativeUploadSession uploadCreativeFiles(CreativeUploadRequest uploadRequest) {
       object[] results = this.Invoke("uploadCreativeFiles", new object[] {uploadRequest});
       return ((CreativeUploadSession) (results[0]));
@@ -7640,6 +7665,7 @@ byte[] fileData) {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("getCompleteCreativeUploadSessionReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public CreativeUploadSession getCompleteCreativeUploadSession(CreativeUploadSessionSummary uploadSession) {
       object[] results = this.Invoke("getCompleteCreativeUploadSession", new object[] {uploadSession});
       return ((CreativeUploadSession) (results[0]));
@@ -7647,12 +7673,14 @@ byte[] fileData) {
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
     [return: System.Xml.Serialization.SoapElementAttribute("createCreativesFromCreativeUploadSessionReturn")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public CreativeUploadSession createCreativesFromCreativeUploadSession(CreativeUploadSession uploadSession) {
       object[] results = this.Invoke("createCreativesFromCreativeUploadSession", new object[] {uploadSession});
       return ((CreativeUploadSession) (results[0]));
     }
 
     [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace = "http://www.doubleclick.net/dfa-api/v1.19", ResponseNamespace = "http://www.doubleclick.net/dfa-api/v1.19")]
+    [Obsolete("This method is not supported by DoubleClick Campaign Manager.")]
     public void deleteCreative(long creativeId) {
       this.Invoke("deleteCreative", new object[] {creativeId});
     }

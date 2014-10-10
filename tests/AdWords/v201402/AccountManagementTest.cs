@@ -42,10 +42,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201402 {
     /// </summary>
     [Test]
     public void TestGetAccountAlertsVBExample() {
-      ExamplesMockData mockData = LoadMockData(SoapMessages_v201402.GetAccountAlerts);
-      RunMockedExample(mockData, delegate() {
+      RunExample(delegate() {
         new VBExamples.GetAccountAlerts().Run(user);
-      }, new WebRequestInterceptor.OnBeforeSendResponse(VerifyGetAccountAlertsRequest));
+      });
     }
 
     /// <summary>
@@ -53,41 +52,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201402 {
     /// </summary>
     [Test]
     public void TestGetAccountAlertsCSharpExample() {
-      ExamplesMockData mockData = LoadMockData(SoapMessages_v201402.GetAccountAlerts);
-      RunMockedExample(mockData, delegate() {
+      RunExample(delegate() {
         new CSharpExamples.GetAccountAlerts().Run(user);
-      }, new WebRequestInterceptor.OnBeforeSendResponse(VerifyGetAccountAlertsRequest));
-    }
-
-    /// <summary>
-    /// Verifies whether GetAccountAlerts is serializing the request correctly.
-    /// </summary>
-    /// <param name="requestUri">The request URI.</param>
-    /// <param name="headers">The headers.</param>
-    /// <param name="body">The body.</param>
-    private void VerifyGetAccountAlertsRequest(Uri requestUri, WebHeaderCollection headers,
-        string body) {
-      XmlDocument doc = new XmlDocument();
-      doc.LoadXml(body);
-      XmlElement node = (XmlElement) doc.GetElementsByTagName("selector")[0];
-      AlertSelector selector =
-          (AlertSelector) SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
-              node.OuterXml, typeof(AlertSelector),
-              "https://adwords.google.com/api/adwords/mcm/v201402", "selector");
-
-      Assert.AreEqual(selector.query.filterSpec, FilterSpec.ALL);
-      Assert.AreEqual(selector.query.clientSpec, ClientSpec.ALL);
-      Assert.AreEqual(selector.query.triggerTimeSpec, TriggerTimeSpec.ALL_TIME);
-      Assert.Contains(AlertSeverity.GREEN, selector.query.severities);
-      Assert.Contains(AlertSeverity.YELLOW, selector.query.severities);
-      Assert.Contains(AlertSeverity.RED, selector.query.severities);
-
-      foreach (AlertType alertType in Enum.GetValues(typeof(AlertType))) {
-        Assert.Contains(alertType, selector.query.types);
-      }
-
-      Assert.AreEqual(selector.paging.startIndex, 0);
-      Assert.AreEqual(selector.paging.numberResults, 500);
+      });
     }
 
     /// <summary>

@@ -44,8 +44,8 @@ namespace Google.Api.Ads.Dfa.Examples.Wcf {
 
       StringBuilder builder = new StringBuilder();
       foreach (AdType adType in adTypes) {
-        builder.AppendFormat("Ad type name is '{0}' and id is {1}.\n", adType.idField,
-            adType.nameField);
+        builder.AppendFormat("Ad type name is '{0}' and id is {1}.\n", adType.nameField,
+          adType.idField);
       }
       MessageBox.Show(builder.ToString());
     }

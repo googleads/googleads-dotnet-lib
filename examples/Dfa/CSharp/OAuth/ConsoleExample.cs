@@ -14,7 +14,7 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.Dfa.v1_19;
+using Google.Api.Ads.Dfa.v1_20;
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Common.Lib;
 
@@ -76,7 +76,7 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.OAuth {
 
       // Create AdRemoteService instance.
       AdRemoteService service = (AdRemoteService) user.GetService(
-          DfaService.v1_19.AdRemoteService);
+          DfaService.v1_20.AdRemoteService);
 
       try {
         // Get ad types.

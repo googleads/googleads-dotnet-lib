@@ -47,6 +47,7 @@
     <Compile Include="Lib\AuthTokenTest.cs" />
     <Compile Include="ClientLoginRequestInterceptor.cs" />
     <Compile Include="HttpMessage.cs" />
+    <Compile Include="Lib\OAuth2JwtClaimsetTests.cs" />
     <Compile Include="Lib\DefaultAuthTokenCacheTests.cs" />
     <Compile Include="MockWebRequest.cs" />
     <Compile Include="MockWebResponse.cs" />

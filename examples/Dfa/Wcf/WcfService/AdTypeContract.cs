@@ -14,7 +14,7 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.Dfa.v1_19;
+using Google.Api.Ads.Dfa.v1_20;
 
 using System;
 using System.Runtime.Serialization;
