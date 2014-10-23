@@ -61,6 +61,7 @@
     <Compile Include="Util\DeprecationUtilitiesTest.cs" />
     <Compile Include="Util\MediaUtilitiesTests.cs" />
     <Compile Include="Util\CsvFileTests.cs" />
+    <Compile Include="Util\Reports\ReportResponseTests.cs" />
     <Compile Include="WebRequestInterceptor.cs" />
     <Compile Include="Mocks\MockAuthTokenCache.cs" />
     <Compile Include="Mocks\MockAdsClient.cs" />

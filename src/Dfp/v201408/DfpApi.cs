@@ -1267,6 +1267,7 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitHierarchyError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeTemplateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentMetadataKeyHierarchyError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CollectionSizeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PremiumRateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivityError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LabelError))]
@@ -2581,7 +2582,8 @@ ReconciliationReport[] reconciliationReports) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201408")]
   public enum UnitType {
     IMPRESSIONS,
-    CLICKS
+    CLICKS,
+    UNKNOWN
   }
 
 
@@ -5837,6 +5839,7 @@ ReconciliationReport[] reconciliationReports) {
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProgrammaticError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201408")]
   public enum ProgrammaticErrorReason {
     AUDIENCE_EXTENSION_NOT_SUPPORTED,
+    AUTO_EXTENSION_DAYS_NOT_SUPPORTED,
     VIDEO_NOT_SUPPORTED,
     ROADBLOCKING_NOT_SUPPORTED,
     INVALID_CREATIVE_ROTATION,
@@ -10267,6 +10270,42 @@ CustomTargetingValue[] values) {
   public enum CustomTargetingKeyType {
     PREDEFINED,
     FREEFORM
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201408")]
+  public partial class CollectionSizeError : ApiError {
+    private CollectionSizeErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public CollectionSizeErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CollectionSizeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201408")]
+  public enum CollectionSizeErrorReason {
+    TOO_FEW,
+    TOO_MANY
   }
 
 
@@ -15645,6 +15684,9 @@ Proposal[] proposals) {
   public enum BillingCap {
     NO_CAP,
     CAPPED_CUMULATIVE,
+    CAPPED_PER_BILLING_CYCLE,
+    CAPPED_CUMULATIVE_PER_BILLING_CYCLE,
+    CAPPED_WITH_ROLLOVER_PER_BILLING_CYCLE,
     UNKNOWN
   }
 
@@ -15653,6 +15695,9 @@ Proposal[] proposals) {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201408")]
   public enum BillingSchedule {
+    PREPAID,
+    END_OF_THE_CAMPAIGN,
+    STRAIGHTLINE,
     PRORATED,
     UNKNOWN
   }
@@ -16005,6 +16050,8 @@ Proposal[] proposals) {
     MISSING_BILLING_CAP,
     INVALID_BILLING_SOURCE_FOR_OFFLINE,
     UPDATE_BILLING_NOT_ALLOWED,
+    MISSING_BILLING_BASE,
+    INVALID_BILLING_BASE,
     UNKNOWN
   }
 
@@ -18874,13 +18921,25 @@ BaseRate[] baseRates) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201408")]
   public partial class ProductBaseRate : BaseRate {
-    private string productIdField;
+    private long productIdField;
+
+    private bool productIdFieldSpecified;
 
     private Money rateField;
 
-    public string productId {
+    public long productId {
       get { return this.productIdField; }
-      set { this.productIdField = value; }
+      set {
+        this.productIdField = value;
+        this.productIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool productIdSpecified {
+      get { return this.productIdFieldSpecified; }
+      set { this.productIdFieldSpecified = value; }
     }
 
     public Money rate {
@@ -22090,7 +22149,9 @@ Product[] products) {
 
     private bool productTemplateIdFieldSpecified;
 
-    private string idField;
+    private long idField;
+
+    private bool idFieldSpecified;
 
     private string notesField;
 
@@ -22176,9 +22237,19 @@ Product[] products) {
       set { this.productTemplateIdFieldSpecified = value; }
     }
 
-    public string id {
+    public long id {
       get { return this.idField; }
-      set { this.idField = value; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public string notes {
@@ -24073,7 +24144,9 @@ ProposalLineItem[] proposalLineItems) {
 
     private bool rateCardIdFieldSpecified;
 
-    private string productIdField;
+    private long productIdField;
+
+    private bool productIdFieldSpecified;
 
     private string nameField;
 
@@ -24238,9 +24311,19 @@ ProposalLineItem[] proposalLineItems) {
       set { this.rateCardIdFieldSpecified = value; }
     }
 
-    public string productId {
+    public long productId {
       get { return this.productIdField; }
-      set { this.productIdField = value; }
+      set {
+        this.productIdField = value;
+        this.productIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool productIdSpecified {
+      get { return this.productIdFieldSpecified; }
+      set { this.productIdFieldSpecified = value; }
     }
 
     public string name {

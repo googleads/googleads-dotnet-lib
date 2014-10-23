@@ -28,11 +28,6 @@ namespace Google.Api.Ads.Common.Util.Reports {
   public class ReportResponse : IDisposable {
 
     /// <summary>
-    /// The path to which the report was downloaded.
-    /// </summary>
-    private string path;
-
-    /// <summary>
     /// The report contents in memory.
     /// </summary>
     private byte[] contents;
@@ -43,37 +38,26 @@ namespace Google.Api.Ads.Common.Util.Reports {
     private WebResponse response;
 
     /// <summary>
+    /// Flag to keep track if this report response has been disposed.
+    /// </summary>
+    private bool disposed = false;
+
+    /// <summary>
     /// Delegate to be triggered when asynchronous report download is completed
     /// successfully.
     /// </summary>
-    public delegate void OnSuccessCallback();
+    public delegate void OnDownloadSuccessCallback(byte[] contents);
+
+    /// <summary>
+    /// Delegate to be triggered when asynchronous report save is completed
+    /// successfully.
+    /// </summary>
+    public delegate void OnSaveSuccessCallback();
 
     /// <summary>
     /// Delegate to be triggered when asynchronous report download fails.
     /// </summary>
     public delegate void OnFailedCallback(AdsReportsException exception);
-
-    /// <summary>
-    /// The callback that will be triggered when the asynchronous report
-    /// download is completed successfully.
-    /// </summary>
-    private OnSuccessCallback onSuccess;
-
-    /// <summary>
-    /// The callback that will be triggered when the asynchronous report
-    /// download fails.
-    /// </summary>
-    private OnFailedCallback onFailed;
-
-    /// <summary>
-    /// The thread to use when downloading the report in an asynchronous manner.
-    /// </summary>
-    private Thread asyncThread;
-
-    /// <summary>
-    /// Flag to keep track if this report response has been disposed.
-    /// </summary>
-    private bool disposed = false;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ReportResponse"/> class.
@@ -89,34 +73,27 @@ namespace Google.Api.Ads.Common.Util.Reports {
     /// <summary>
     /// The callback that will be triggered when the asynchronous report
     /// download is completed successfully.
-    /// </value>
-    public OnSuccessCallback OnSuccess {
-      get {
-        return onSuccess;
-      }
-      set {
-        onSuccess = value;
-      }
-    }
+    /// </summary>
+    public OnDownloadSuccessCallback OnDownloadSuccess { get; set; }
+
+    /// <summary>
+    /// The callback that will be triggered when the asynchronous report
+    /// save is completed successfully.
+    /// </summary>
+    public OnSaveSuccessCallback OnSaveSuccess { get; set; }
 
     /// <summary>
     /// Gets the callback that will be triggered when the asynchronous report
     /// download fails.
-    /// </value>
-    public OnFailedCallback OnFailed {
-      get {
-        return onFailed;
-      }
-      set {
-        onFailed = value;
-      }
-    }
+    /// </summary>
+    public OnFailedCallback OnFailed { get; set; }
 
     /// <summary>
     /// Gets the report contents as a stream.
     /// </summary>
     public Stream Stream {
       get {
+        this.EnsureStreamIsOpen();
         return response.GetResponseStream();
       }
     }
@@ -124,68 +101,47 @@ namespace Google.Api.Ads.Common.Util.Reports {
     /// <summary>
     /// Gets the path to the downloaded report.
     /// </summary>
-    public string Path {
-      get {
-        return path;
-      }
-    }
+    public string Path { get; private set; }
 
     /// <summary>
-    /// Gets the report contents as an array of bytes.
-    /// </summary>
-    public byte[] Contents {
-      get {
-        Download();
-        return contents;
-      }
-    }
-
-    /// <summary>
-    /// Gets the report contents as string.
-    /// </summary>
-    public string Text {
-      get {
-        return Encoding.UTF8.GetString(contents);
-      }
-    }
-
-    /// <summary>
-    /// Saves the report to a specified path.
+    /// Saves the report to a specified path and closes the underlying stream.
     /// </summary>
     /// <param name="path">The path to which report is saved.</param>
+    /// <exception cref="AdsReportsException">If there was an error saving the report.</exception>
     public void Save(string path) {
-      if (response != null) {
-        try {
-          using (FileStream fileStream = File.OpenWrite(path)) {
-            fileStream.SetLength(0);
-            MediaUtilities.CopyStream(response.GetResponseStream(), fileStream);
-            CloseWebResponse();
-          }
-          this.path = path;
-        } catch (Exception e) {
-          throw new AdsReportsException("Failed to save report. See inner exception " +
-              "for more details.", e);
+      this.EnsureStreamIsOpen();
+
+      try {
+        using (FileStream fileStream = File.OpenWrite(path)) {
+          fileStream.SetLength(0);
+          MediaUtilities.CopyStream(this.Stream, fileStream);
+          this.CloseWebResponse();
         }
+        this.Path = path;
+      } catch (Exception e) {
+        throw new AdsReportsException("Failed to save report. See inner exception " +
+            "for more details.", e);
       }
     }
 
     /// <summary>
-    /// Saves the report to a specified path asynchronously. <see cref="OnSuccess"/>
-    /// callback will be triggered when the download completes successfully,
-    /// and <see cref="OnFailed"/> callback will be triggered when the download
+    /// Saves the report to a specified path asynchronously and closes the underlying stream.
+    /// <see cref="OnSaveSuccess"/> callback will be triggered when the download completes
+    /// successfully, and <see cref="OnFailed"/> callback will be triggered when the download
     /// fails.
     /// </summary>
     /// <param name="path">The path to which report is saved.</param>
+    /// <exception cref="AdsReportsException">If there was an error saving the report.</exception>
     public void SaveAsync(string path) {
-      asyncThread = new Thread(new ThreadStart(delegate() {
+      Thread asyncThread = new Thread(new ThreadStart(delegate() {
         try {
           Save(path);
-          if (OnSuccess != null) {
-            OnSuccess();
+          if (this.OnSaveSuccess != null) {
+            this.OnSaveSuccess();
           }
         } catch (AdsReportsException e) {
-          if (onFailed != null) {
-            onFailed(e);
+          if (this.OnFailed != null) {
+            this.OnFailed(e);
           } else {
             throw;
           }
@@ -195,45 +151,61 @@ namespace Google.Api.Ads.Common.Util.Reports {
     }
 
     /// <summary>
-    /// Downloads the report to memory.
+    /// Downloads the report to memory and closes the underlying stream.
     /// </summary>
-    public void Download() {
-      if (response != null) {
-        try {
-          MemoryStream memStream = new MemoryStream();
-          MediaUtilities.CopyStream(response.GetResponseStream(), memStream);
-          this.contents = memStream.ToArray();
-          CloseWebResponse();
-        } catch (Exception e) {
-          throw new AdsReportsException("Failed to download report. See inner exception " +
-              "for more details.", e);
-        }
+    /// <exception cref="AdsReportsException">If there was an error downloading the report.
+    /// </exception>
+    public byte[] Download() {
+      this.EnsureStreamIsOpen();
+
+      try {
+        MemoryStream memStream = new MemoryStream();
+        MediaUtilities.CopyStream(this.Stream, memStream);
+        this.contents = memStream.ToArray();
+        this.CloseWebResponse();
+      } catch (Exception e) {
+        throw new AdsReportsException("Failed to download report. See inner exception " +
+            "for more details.", e);
       }
+
+      return this.contents;
     }
 
     /// <summary>
-    /// Downloads the report to memory asynchronously. <see cref="OnSuccess"/>
-    /// callback will be triggered when the download completes successfully,
-    /// and <see cref="OnFailed"/> callback will be triggered when the download
+    /// Downloads the report to memory asynchronously and closes the underlying stream.
+    /// <see cref="OnDownloadSuccess"/> callback will be triggered when the download completes
+    /// successfully, and <see cref="OnFailed"/> callback will be triggered when the download
     /// fails.
     /// </summary>
-    /// <param name="path">The path to which report is saved.</param>
+    /// <exception cref="AdsReportsException">If there was an error downloading the report.
+    /// </exception>
     public void DownloadAsync() {
-      asyncThread = new Thread(new ThreadStart(delegate() {
+      Thread asyncThread = new Thread(new ThreadStart(delegate() {
         try {
-          Download();
-          if (OnSuccess != null) {
-            OnSuccess();
+          byte[] contents = Download();
+          if (this.OnDownloadSuccess != null) {
+            this.OnDownloadSuccess(contents);
           }
         } catch (AdsReportsException e) {
-          if (onFailed != null) {
-            onFailed(e);
+          if (this.OnFailed != null) {
+            this.OnFailed(e);
           } else {
             throw;
           }
         }
       }));
       asyncThread.Start();
+    }
+
+    /// <summary>
+    /// Checks to ensure that the underlying stream has not been closed.
+    /// </summary>
+    /// <exception cref="AdsReportsException">If the underlying stream has been closed.
+    /// </exception>
+    private void EnsureStreamIsOpen() {
+      if (response == null) {
+        throw new AdsReportsException("Cannot access a closed report response stream.");
+      }
     }
 
     /// <summary>
@@ -241,7 +213,7 @@ namespace Google.Api.Ads.Common.Util.Reports {
     /// or resetting unmanaged resources.
     /// </summary>
     public void Dispose() {
-      Dispose(true);
+      this.Dispose(true);
       GC.SuppressFinalize(this);
     }
 
@@ -254,7 +226,7 @@ namespace Google.Api.Ads.Common.Util.Reports {
     protected virtual void Dispose(bool disposing) {
       if (!this.disposed) {
         if (disposing) {
-          CloseWebResponse();
+          this.CloseWebResponse();
         }
         disposed = true;
       }
@@ -274,7 +246,7 @@ namespace Google.Api.Ads.Common.Util.Reports {
     /// Finalizes an instance of the <see cref="ReportResponse"/> class.
     /// </summary>
     ~ReportResponse() {
-      Dispose(false);
+      this.Dispose(false);
     }
   }
 }

@@ -1,3 +1,22 @@
+18.5.0
+======
+AdWords:
+  -
+
+AdXBuyer:
+  -
+
+DFA:
+  -
+
+DFP:
+  - Regenerated v201408 services to fix issue #34.
+
+Common:
+  - Overhauled the ReportResponse class to fix issue #33.
+  - Version was bumped to 3.4.0
+
+
 18.4.0
 ======
 
