@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201308_1_1_get_recently_updated_line_items =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201308_1_1_get_recently_updated_line_items.html#afacc9d22eb74943b314ead6179755c97", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201308_1_1_get_recently_updated_line_items.html#a19a1f30797e80b95e56777a21bf40ac5", null ]
-];

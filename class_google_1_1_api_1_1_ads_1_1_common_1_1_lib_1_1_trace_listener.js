@@ -7,10 +7,10 @@ var class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener =
     [ "FormatHttpResponse", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html#a114979606ca78df61dd86b0716431fbe", null ],
     [ "FormatSoapRequest", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html#a9314d11874c9e30465d048a87e17b5a2", null ],
     [ "FormatSoapResponse", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html#a4159e1bd2d1331650e1f3adb101e8c8c", null ],
-    [ "GetFieldsToMask", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html#a54367524a023d4b68bfb78578ae4b0e1", null ],
+    [ "GetFieldsToMask", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html#addc2b504afd34df9390e28d6b553db91", null ],
     [ "GetTimeStamp", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html#aebcd0c90daa6a194104dc4947989d88c", null ],
     [ "HandleMessage", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html#a624e0c8245654c8120e349632c46d8da", null ],
     [ "InitForCall", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html#a8c7f0d00aab2b4bfa30b4c033fe4ced7", null ],
-    [ "MaskCredentialsInLogs", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html#af7113e35426d7540465e84ea7e3a5012", null ],
+    [ "MaskCredentialsInLogs", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html#a64f17bb12656063e8cac7f23faf391ec", null ],
     [ "Config", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html#a1e638b551439a708b395a91fb25344fb", null ]
 ];

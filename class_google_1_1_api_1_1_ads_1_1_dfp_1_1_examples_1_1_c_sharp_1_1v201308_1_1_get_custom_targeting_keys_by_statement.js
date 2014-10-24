@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201308_1_1_get_custom_targeting_keys_by_statement =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201308_1_1_get_custom_targeting_keys_by_statement.html#a3d0260a5bea0a7d1d8f2171da6c31b5e", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201308_1_1_get_custom_targeting_keys_by_statement.html#a83bc0621a67c52054424b98eb7f88668", null ]
-];

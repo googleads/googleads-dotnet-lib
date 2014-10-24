@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201309_1_1_get_targetable_languages_and_carriers =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201309_1_1_get_targetable_languages_and_carriers.html#a48ce35a2df2d0ee27f60f47f70ea4e75", null ],
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201309_1_1_get_targetable_languages_and_carriers.html#a48ce35a2df2d0ee27f60f47f70ea4e75", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201309_1_1_get_targetable_languages_and_carriers.html#aa72858ff4aa12e702260ffae29f27b92", null ]
-];

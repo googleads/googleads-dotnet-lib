@@ -46,6 +46,7 @@ var v201311_2_dfp_api_8cs =
     [ "PublisherQueryLanguageSyntaxError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_publisher_query_language_syntax_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_publisher_query_language_syntax_error" ],
     [ "PublisherQueryLanguageContextError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_publisher_query_language_context_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_publisher_query_language_context_error" ],
     [ "PermissionError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_permission_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_permission_error" ],
+    [ "ParseError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_parse_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_parse_error" ],
     [ "NotNullError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_not_null_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_not_null_error" ],
     [ "InternalApiError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_internal_api_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_internal_api_error" ],
     [ "FeatureError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_feature_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_feature_error" ],
@@ -126,7 +127,6 @@ var v201311_2_dfp_api_8cs =
     [ "RequiredNumberError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_required_number_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_required_number_error" ],
     [ "RequiredCollectionError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_required_collection_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_required_collection_error" ],
     [ "RegExError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_reg_ex_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_reg_ex_error" ],
-    [ "ParseError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_parse_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_parse_error" ],
     [ "OrderError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_order_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_order_error" ],
     [ "LineItemOperationError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_line_item_operation_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_line_item_operation_error" ],
     [ "LineItemFlightDateError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_line_item_flight_date_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_line_item_flight_date_error" ],
@@ -182,6 +182,7 @@ var v201311_2_dfp_api_8cs =
     [ "User", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_user.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_user" ],
     [ "UserRecord", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_user_record.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_user_record" ],
     [ "Role", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_role.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_role" ],
+    [ "TokenError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_token_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_token_error" ],
     [ "LineItemService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_line_item_service.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_line_item_service" ],
     [ "LineItemAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_line_item_action.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_line_item_action" ],
     [ "UnarchiveLineItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201311_1_1_unarchive_line_items.html", null ],
@@ -2555,6 +2556,11 @@ var v201311_2_dfp_api_8cs =
       [ "LIFETIME", "v201311_2_dfp_api_8cs.html#a3a02e318cb2adf8b32cf4d1ea7cdc35fa0c4408d480b783ccb279ea84bedda77a", null ],
       [ "POD", "v201311_2_dfp_api_8cs.html#a3a02e318cb2adf8b32cf4d1ea7cdc35fa7c9d2c64290a49546e6e24ab1afda809", null ],
       [ "STREAM", "v201311_2_dfp_api_8cs.html#a3a02e318cb2adf8b32cf4d1ea7cdc35fa2f05998d2a71cdc19b7109549bbe2646", null ]
+    ] ],
+    [ "TokenErrorReason", "v201311_2_dfp_api_8cs.html#a1c168c63421ee5ce22f3bf32337ac2e4", [
+      [ "INVALID", "v201311_2_dfp_api_8cs.html#a1c168c63421ee5ce22f3bf32337ac2e4accc0377a8afbf50e7094f5c23a8af223", null ],
+      [ "EXPIRED", "v201311_2_dfp_api_8cs.html#a1c168c63421ee5ce22f3bf32337ac2e4a38afd7ae34bd5e3e6fc170d8b09178a3", null ],
+      [ "UNKNOWN", "v201311_2_dfp_api_8cs.html#a1c168c63421ee5ce22f3bf32337ac2e4a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "UnitType", "v201311_2_dfp_api_8cs.html#a7b429379900b7b4a5bff2858dd4bcc8f", [
       [ "IMPRESSIONS", "v201311_2_dfp_api_8cs.html#a7b429379900b7b4a5bff2858dd4bcc8fafdc9d3fe42b54fffad294941ab8db65e", null ],

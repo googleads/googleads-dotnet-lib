@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201309_1_1_add_video_campaign_criteria =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201309_1_1_add_video_campaign_criteria.html#ac76e78b43f2e0d533ea7e7200f5d3705", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201309_1_1_add_video_campaign_criteria.html#aec69ce24addc49efd8dc0991d38adda4", null ]
-];

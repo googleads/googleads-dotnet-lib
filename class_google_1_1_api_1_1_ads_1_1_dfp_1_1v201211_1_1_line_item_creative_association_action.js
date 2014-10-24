@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201211_1_1_line_item_creative_association_action =
-[
-    [ "LineItemCreativeAssociationActionType", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201211_1_1_line_item_creative_association_action.html#a46f8114bca405d0119263534e9b45f91", null ]
-];

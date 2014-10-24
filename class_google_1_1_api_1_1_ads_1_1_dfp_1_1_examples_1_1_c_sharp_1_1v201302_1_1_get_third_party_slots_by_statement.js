@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201302_1_1_get_third_party_slots_by_statement =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201302_1_1_get_third_party_slots_by_statement.html#aca595aefd6359891f25147dd97c43e57", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201302_1_1_get_third_party_slots_by_statement.html#aae1dc4b55e490b1a0ceff8b1b042a77c", null ]
-];

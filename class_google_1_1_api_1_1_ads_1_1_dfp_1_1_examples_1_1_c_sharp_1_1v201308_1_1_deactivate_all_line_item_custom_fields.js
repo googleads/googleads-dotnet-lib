@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201308_1_1_deactivate_all_line_item_custom_fields =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201308_1_1_deactivate_all_line_item_custom_fields.html#a6472e7de52d4c8272ab68cac5135ffdb", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201308_1_1_deactivate_all_line_item_custom_fields.html#a1f35d9bd536cd8338a91cebda4b083f1", null ]
-];

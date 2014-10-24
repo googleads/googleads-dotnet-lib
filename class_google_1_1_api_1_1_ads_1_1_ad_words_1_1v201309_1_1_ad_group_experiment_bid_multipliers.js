@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201309_1_1_ad_group_experiment_bid_multipliers =
-[
-    [ "AdGroupExperimentBidMultipliersType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201309_1_1_ad_group_experiment_bid_multipliers.html#a4c5417f40277e1da28bec93096292fed", null ]
-];

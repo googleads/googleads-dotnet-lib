@@ -488,6 +488,7 @@ var namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306 =
     [ "TextValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_text_value.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_text_value" ],
     [ "ThirdPartyCreative", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_third_party_creative.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_third_party_creative" ],
     [ "TimeOfDay", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_time_of_day.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_time_of_day" ],
+    [ "TokenError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_token_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_token_error" ],
     [ "TypeError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_type_error.html", null ],
     [ "UnarchiveLineItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_unarchive_line_items.html", null ],
     [ "UnarchiveOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201306_1_1_unarchive_orders.html", null ],

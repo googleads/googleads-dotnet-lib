@@ -164,6 +164,7 @@ var v201406_2_ad_words_api_8cs =
     [ "SettingError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_setting_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_setting_error" ],
     [ "QuotaError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_quota_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_quota_error" ],
     [ "ForwardCompatibilityError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_forward_compatibility_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_forward_compatibility_error" ],
+    [ "EntityAccessDenied", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_entity_access_denied.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_entity_access_denied" ],
     [ "CampaignError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_campaign_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_campaign_error" ],
     [ "BiddingTransitionError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_bidding_transition_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_bidding_transition_error" ],
     [ "BiddingErrors", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_bidding_errors.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_bidding_errors" ],
@@ -251,7 +252,6 @@ var v201406_2_ad_words_api_8cs =
     [ "FunctionParsingError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_function_parsing_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_function_parsing_error" ],
     [ "ExperimentError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_experiment_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_experiment_error" ],
     [ "AdGroupAdCountLimitExceeded", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_ad_count_limit_exceeded.html", null ],
-    [ "EntityAccessDenied", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_entity_access_denied.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_entity_access_denied" ],
     [ "AdGroupAdError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_ad_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_ad_error" ],
     [ "AdError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_error" ],
     [ "DataService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_data_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_data_service" ],
@@ -485,6 +485,138 @@ var v201406_2_ad_words_api_8cs =
     [ "UserListOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_user_list_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_user_list_operation" ],
     [ "UserListPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_user_list_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_user_list_page" ],
     [ "UserListError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_user_list_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_user_list_error" ],
+    [ "VideoAdService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_service" ],
+    [ "VideoAdReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_return_value" ],
+    [ "VideoAd", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad" ],
+    [ "TargetingGroupAssociation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_association.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_association" ],
+    [ "VideoEntityStats", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_entity_stats.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_entity_stats" ],
+    [ "SegmentKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_segment_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_segment_key" ],
+    [ "CampaignKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_campaign_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_campaign_key" ],
+    [ "ConversionCategoryKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_conversion_category_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_conversion_category_key" ],
+    [ "ConversionTypeKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_conversion_type_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_conversion_type_key" ],
+    [ "DateKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_date_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_date_key" ],
+    [ "DayOfWeekKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_day_of_week_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_day_of_week_key" ],
+    [ "DeviceKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_device_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_device_key" ],
+    [ "DisplayFormatKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_display_format_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_display_format_key" ],
+    [ "DisplayFormatNetworkKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_display_format_network_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_display_format_network_key" ],
+    [ "DisplayFormatTypeKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_display_format_type_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_display_format_type_key" ],
+    [ "HourOfDayKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_hour_of_day_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_hour_of_day_key" ],
+    [ "NetworkKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_network_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_network_key" ],
+    [ "PaidViewsKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_paid_views_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_paid_views_key" ],
+    [ "TargetingGroupKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_key" ],
+    [ "VideoAdKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_key.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_key" ],
+    [ "Integer_LongMapEntry", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_integer___long_map_entry.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_integer___long_map_entry" ],
+    [ "ServingInfo", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_serving_info.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_serving_info" ],
+    [ "ServingIssue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_serving_issue.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_serving_issue" ],
+    [ "VideoImage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_image.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_image" ],
+    [ "ApprovalContext_VideoAd_ApprovalStatusMapEntry", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_approval_context___video_ad___approval_status_map_entry.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_approval_context___video_ad___approval_status_map_entry" ],
+    [ "ApprovalContext", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_approval_context.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_approval_context" ],
+    [ "ApprovalContext_VideoAd_ApprovalLimitMapEntry", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_approval_context___video_ad___approval_limit_map_entry.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_approval_context___video_ad___approval_limit_map_entry" ],
+    [ "ScopedDisapprovalReason", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_scoped_disapproval_reason.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_scoped_disapproval_reason" ],
+    [ "DisapprovalReason", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_disapproval_reason.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_disapproval_reason" ],
+    [ "VideoAdDisplayFormat_VideoAdStatusMapEntry", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_display_format___video_ad_status_map_entry.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_display_format___video_ad_status_map_entry" ],
+    [ "VideoAdOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_operation" ],
+    [ "VideoAdPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_page" ],
+    [ "Sortable", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_sortable.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_sortable" ],
+    [ "Sorting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_sorting.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_sorting" ],
+    [ "StatsSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_stats_selector.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_stats_selector" ],
+    [ "VideoAdSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_selector.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_selector" ],
+    [ "VideoAdError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_error" ],
+    [ "TimeSeriesError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_time_series_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_time_series_error" ],
+    [ "SortingError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_sorting_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_sorting_error" ],
+    [ "SegmentationError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_segmentation_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_segmentation_error" ],
+    [ "ReportError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_report_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_report_error" ],
+    [ "PersistenceError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_persistence_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_persistence_error" ],
+    [ "EntityNotFoundError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_entity_not_found_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_entity_not_found_error" ],
+    [ "AdsApiError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ads_api_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ads_api_error" ],
+    [ "AccessError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_access_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_access_error" ],
+    [ "VideoCampaignCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion_service" ],
+    [ "VideoCampaignCriterionReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion_return_value" ],
+    [ "VideoCampaignCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion" ],
+    [ "BaseCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_base_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_base_criterion" ],
+    [ "YouTubePlacement", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_you_tube_placement.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_you_tube_placement" ],
+    [ "WebSite", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_web_site.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_web_site" ],
+    [ "VideoCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_criterion" ],
+    [ "Topic", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_topic.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_topic" ],
+    [ "RunOfYoutube", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_run_of_youtube.html", null ],
+    [ "PlatformVideoCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_platform_video_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_platform_video_criterion" ],
+    [ "OperatingSystemVersionVideoCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_operating_system_version_video_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_operating_system_version_video_criterion" ],
+    [ "MobileDeviceVideoCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_mobile_device_video_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_mobile_device_video_criterion" ],
+    [ "MobileApplicationVideoCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_mobile_application_video_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_mobile_application_video_criterion" ],
+    [ "MobileAppCategoryVideoCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_mobile_app_category_video_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_mobile_app_category_video_criterion" ],
+    [ "LocationVideoCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_location_video_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_location_video_criterion" ],
+    [ "LanguageVideoCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_language_video_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_language_video_criterion" ],
+    [ "BaseKeyword", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_base_keyword.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_base_keyword" ],
+    [ "SearchKeyword", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_search_keyword.html", null ],
+    [ "ContentKeyword", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_content_keyword.html", null ],
+    [ "ContentCategoryLabel", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_content_category_label.html", null ],
+    [ "Channel", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_channel.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_channel" ],
+    [ "CarrierVideoCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_carrier_video_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_carrier_video_criterion" ],
+    [ "AudienceUserList", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_audience_user_list.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_audience_user_list" ],
+    [ "AudienceInterest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_audience_interest.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_audience_interest" ],
+    [ "AudienceGender", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_audience_gender.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_audience_gender" ],
+    [ "AudienceAge", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_audience_age.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_audience_age" ],
+    [ "AdScheduleVideoCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_schedule_video_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_schedule_video_criterion" ],
+    [ "ReportedVideoCampaignCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_reported_video_campaign_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_reported_video_campaign_criterion" ],
+    [ "NegativeVideoCampaignCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_negative_video_campaign_criterion.html", null ],
+    [ "VideoCampaignCriterionOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion_operation" ],
+    [ "VideoCampaignReportPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_report_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_report_page" ],
+    [ "VideoCampaignCriterionPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion_page" ],
+    [ "VideoCampaignCriterionSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion_selector.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion_selector" ],
+    [ "VideoCampaignCriterionError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_criterion_error" ],
+    [ "TargetingGroupCriterionError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_criterion_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_criterion_error" ],
+    [ "VideoCampaignService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_service" ],
+    [ "VideoCampaignReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_return_value" ],
+    [ "VideoCampaign", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign" ],
+    [ "VideoFrequencyCap", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_frequency_cap.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_frequency_cap" ],
+    [ "VideoCampaignOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_operation" ],
+    [ "VideoBudget", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_budget.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_budget" ],
+    [ "SummaryBudgets", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_summary_budgets.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_summary_budgets" ],
+    [ "VideoCampaignPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_page" ],
+    [ "VideoCampaignSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_selector.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_selector" ],
+    [ "VideoCampaignError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_error" ],
+    [ "VideoBudgetError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_budget_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_budget_error" ],
+    [ "VideoBiddingError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_bidding_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_bidding_error" ],
+    [ "NetworkError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_network_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_network_error" ],
+    [ "VideoService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_service" ],
+    [ "VideoSearchSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_search_selector.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_search_selector" ],
+    [ "VideoReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_return_value" ],
+    [ "YouTubeVideo", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_you_tube_video.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_you_tube_video" ],
+    [ "VideoCampaignInfo", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_info.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_campaign_info" ],
+    [ "CallToAction", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_call_to_action.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_call_to_action" ],
+    [ "CallToActionCreative", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_call_to_action_creative.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_call_to_action_creative" ],
+    [ "CallToActionImage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_call_to_action_image.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_call_to_action_image" ],
+    [ "CallToActionPolicyViolation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_call_to_action_policy_violation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_call_to_action_policy_violation" ],
+    [ "VideoCallToAction", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_call_to_action.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_call_to_action" ],
+    [ "VideoOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_operation" ],
+    [ "VideoCallToActionOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_call_to_action_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_call_to_action_operation" ],
+    [ "VideoSearchPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_search_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_search_page" ],
+    [ "VideoPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_page" ],
+    [ "VideoSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_selector.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_selector" ],
+    [ "VideoServiceError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_service_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_service_error" ],
+    [ "VideoTargetingGroupCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_targeting_group_criterion_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_targeting_group_criterion_service" ],
+    [ "TargetingGroupCriterionReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_criterion_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_criterion_return_value" ],
+    [ "TargetingGroupCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_criterion" ],
+    [ "ReportedTargetingGroupCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_reported_targeting_group_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_reported_targeting_group_criterion" ],
+    [ "NegativeTargetingGroupCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_negative_targeting_group_criterion.html", null ],
+    [ "BiddableTargetingGroupCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_biddable_targeting_group_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_biddable_targeting_group_criterion" ],
+    [ "TargetingGroupCriterionOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_criterion_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_criterion_operation" ],
+    [ "TargetingGroupReportPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_report_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_report_page" ],
+    [ "TargetingGroupCriterionPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_criterion_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_criterion_page" ],
+    [ "TargetingGroupCriterionSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_criterion_selector.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_criterion_selector" ],
+    [ "AdGroupCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_service" ],
+    [ "AdGroupCriterionReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_return_value" ],
+    [ "AdGroupCriterionLabelReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_label_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_label_return_value" ],
+    [ "AdGroupCriterionPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_page" ],
+    [ "VideoTargetingGroupService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_targeting_group_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_targeting_group_service" ],
+    [ "TargetingGroupReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_return_value" ],
+    [ "TargetingGroup", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group" ],
+    [ "VideoAdDisplayFormat_VideoBidMapEntry", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_display_format___video_bid_map_entry.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_ad_display_format___video_bid_map_entry" ],
+    [ "VideoBid", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_bid.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_video_bid" ],
+    [ "TargetingGroupOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_operation" ],
+    [ "TargetingGroupPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_page" ],
+    [ "TargetingGroupSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_selector.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_selector" ],
+    [ "TargetingGroupError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_targeting_group_error" ],
     [ "ExpressBusinessService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_express_business_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_express_business_service" ],
     [ "ExpressBusinessOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_express_business_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_express_business_operation" ],
     [ "ExpressBusiness", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_express_business.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_express_business" ],
@@ -513,10 +645,6 @@ var v201406_2_ad_words_api_8cs =
     [ "CampaignSharedSetOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_campaign_shared_set_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_campaign_shared_set_operation" ],
     [ "CampaignSharedSetPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_campaign_shared_set_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_campaign_shared_set_page" ],
     [ "CampaignSharedSetError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_campaign_shared_set_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_campaign_shared_set_error" ],
-    [ "AdGroupCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_service" ],
-    [ "AdGroupCriterionReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_return_value" ],
-    [ "AdGroupCriterionLabelReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_label_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_label_return_value" ],
-    [ "AdGroupCriterionPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_ad_group_criterion_page" ],
     [ "SharedCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_shared_criterion_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_shared_criterion_service" ],
     [ "SharedCriterionReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_shared_criterion_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_shared_criterion_return_value" ],
     [ "SharedCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_shared_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_shared_criterion" ],
@@ -597,13 +725,19 @@ var v201406_2_ad_words_api_8cs =
     [ "ITargetingIdeaService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_targeting_idea_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_targeting_idea_service" ],
     [ "ITrafficEstimatorService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_traffic_estimator_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_traffic_estimator_service" ],
     [ "IAdwordsUserListService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_adwords_user_list_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_adwords_user_list_service" ],
+    [ "IVideoAdService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_video_ad_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_video_ad_service" ],
+    [ "IVideoCampaignCriterionService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_video_campaign_criterion_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_video_campaign_criterion_service" ],
+    [ "IVideoCampaignService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_video_campaign_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_video_campaign_service" ],
+    [ "IVideoService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_video_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_video_service" ],
+    [ "IVideoTargetingGroupCriterionService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_video_targeting_group_criterion_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_video_targeting_group_criterion_service" ],
+    [ "IAdGroupCriterionService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_ad_group_criterion_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_ad_group_criterion_service" ],
+    [ "IVideoTargetingGroupService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_video_targeting_group_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_video_targeting_group_service" ],
     [ "IExpressBusinessService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_express_business_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_express_business_service" ],
     [ "IBudgetSuggestionService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_budget_suggestion_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_budget_suggestion_service" ],
     [ "IProductService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_product_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_product_service" ],
     [ "IPromotionService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_promotion_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_promotion_service" ],
     [ "IProductServiceService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_product_service_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_product_service_service" ],
     [ "ICampaignSharedSetService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_campaign_shared_set_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_campaign_shared_set_service" ],
-    [ "IAdGroupCriterionService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_ad_group_criterion_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_ad_group_criterion_service" ],
     [ "ISharedCriterionService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_shared_criterion_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_shared_criterion_service" ],
     [ "ISharedSetService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_shared_set_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_shared_set_service" ],
     [ "ILabelService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_label_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_label_service" ],
@@ -613,6 +747,10 @@ var v201406_2_ad_words_api_8cs =
     [ "IAlertService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_alert_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_alert_service" ],
     [ "IBiddingStrategyService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_bidding_strategy_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_bidding_strategy_service" ],
     [ "IBudgetOrderService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_budget_order_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201406_1_1_i_budget_order_service" ],
+    [ "AccessErrorReason", "v201406_2_ad_words_api_8cs.html#ab6a5ac9c1202bb7573dd0e1638a69193", [
+      [ "ACTION_NOT_PERMITTED", "v201406_2_ad_words_api_8cs.html#ab6a5ac9c1202bb7573dd0e1638a69193adebcfc8a4239995095099ed5e5698a6c", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#ab6a5ac9c1202bb7573dd0e1638a69193a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
     [ "AccessReason", "v201406_2_ad_words_api_8cs.html#a2caa6989894bec36b777b4185c3b1140", [
       [ "OWNED", "v201406_2_ad_words_api_8cs.html#a2caa6989894bec36b777b4185c3b1140a93964512ba6191b671f19f34ddfd51ca", null ],
       [ "SHARED", "v201406_2_ad_words_api_8cs.html#a2caa6989894bec36b777b4185c3b1140a049518eb4dc1859c7cebbe15876cfd63", null ],
@@ -882,6 +1020,12 @@ var v201406_2_ad_words_api_8cs =
       [ "MUST_SPECIFY_ADGROUP_ID", "v201406_2_ad_words_api_8cs.html#ae66575188c73185818241727f7ad887aaf283a6f600e9a85b1bbe623e748b7f29", null ],
       [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#ae66575188c73185818241727f7ad887aa696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
+    [ "AdsApiErrorReason", "v201406_2_ad_words_api_8cs.html#a099afdb13466c6e15f5ad0955fe9b01e", [
+      [ "UNHANDLED_ADS_API_ERROR", "v201406_2_ad_words_api_8cs.html#a099afdb13466c6e15f5ad0955fe9b01ea6e2a3e27a56fc07078addd753e6fb03c", null ],
+      [ "INTERNAL_ERROR", "v201406_2_ad_words_api_8cs.html#a099afdb13466c6e15f5ad0955fe9b01eae8c0c70879b5895c615677261d64a1ee", null ],
+      [ "UNEXPECTED_ERROR", "v201406_2_ad_words_api_8cs.html#a099afdb13466c6e15f5ad0955fe9b01eaeafbdbe5ce244ead76ec9b9c62d1d616", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a099afdb13466c6e15f5ad0955fe9b01ea696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
     [ "AdServingOptimizationStatus", "v201406_2_ad_words_api_8cs.html#ae244f7eae2ea6663529a8c14e73f88d5", [
       [ "OPTIMIZE", "v201406_2_ad_words_api_8cs.html#ae244f7eae2ea6663529a8c14e73f88d5a1e3694515211d22b83d11e850b588c79", null ],
       [ "CONVERSION_OPTIMIZE", "v201406_2_ad_words_api_8cs.html#ae244f7eae2ea6663529a8c14e73f88d5a6e197d2b7eea780a16b1cf9b67688b3a", null ],
@@ -993,6 +1137,20 @@ var v201406_2_ad_words_api_8cs =
       [ "AVERAGE_CPC", "v201406_2_ad_words_api_8cs.html#af44b202cc98ecd18362a8dd2147bd783a67a2282ef8566ea4d5298cc10a143067", null ],
       [ "TARGETED_MONTHLY_SEARCHES", "v201406_2_ad_words_api_8cs.html#af44b202cc98ecd18362a8dd2147bd783a81d2ed32316e114c25d53ef5b9497128", null ]
     ] ],
+    [ "AudienceAgeAgeRange", "v201406_2_ad_words_api_8cs.html#ab97da520539ad85fe3f87ec5a5d6902a", [
+      [ "AGE_RANGE_18_24", "v201406_2_ad_words_api_8cs.html#ab97da520539ad85fe3f87ec5a5d6902aaa283c0c494e61b355b724c69df54261b", null ],
+      [ "AGE_RANGE_25_34", "v201406_2_ad_words_api_8cs.html#ab97da520539ad85fe3f87ec5a5d6902aa66684d1208af16996fd6749d44ef1d13", null ],
+      [ "AGE_RANGE_35_44", "v201406_2_ad_words_api_8cs.html#ab97da520539ad85fe3f87ec5a5d6902aa818c1080c92e362a0e2dcf1f9f185a53", null ],
+      [ "AGE_RANGE_45_54", "v201406_2_ad_words_api_8cs.html#ab97da520539ad85fe3f87ec5a5d6902aaaa50ae74fac083f3cae4c1a5e13dd7e8", null ],
+      [ "AGE_RANGE_55_64", "v201406_2_ad_words_api_8cs.html#ab97da520539ad85fe3f87ec5a5d6902aa96597db6cb33494a37f4d26442676109", null ],
+      [ "AGE_RANGE_65_UP", "v201406_2_ad_words_api_8cs.html#ab97da520539ad85fe3f87ec5a5d6902aab4b598fa08bbcdb02477a59f5d832096", null ],
+      [ "AGE_RANGE_UNDETERMINED", "v201406_2_ad_words_api_8cs.html#ab97da520539ad85fe3f87ec5a5d6902aa678b27273238800b1ad342bfc9e78118", null ]
+    ] ],
+    [ "AudienceGenderGenderType", "v201406_2_ad_words_api_8cs.html#acda6d4be5daa1cb5c43cf72a041e2118", [
+      [ "GENDER_MALE", "v201406_2_ad_words_api_8cs.html#acda6d4be5daa1cb5c43cf72a041e2118adc8dd7c5b3d222e7897bf83055811f9b", null ],
+      [ "GENDER_FEMALE", "v201406_2_ad_words_api_8cs.html#acda6d4be5daa1cb5c43cf72a041e2118a2187061e7b1f06bb964bf79bf8d266f6", null ],
+      [ "GENDER_UNDETERMINED", "v201406_2_ad_words_api_8cs.html#acda6d4be5daa1cb5c43cf72a041e2118aad76b5d95fd7a4e9292b815070f9ac4e", null ]
+    ] ],
     [ "AudioErrorReason", "v201406_2_ad_words_api_8cs.html#a5c023c7023c93fa8af0ae3c8f46dbef6", [
       [ "INVALID_AUDIO", "v201406_2_ad_words_api_8cs.html#a5c023c7023c93fa8af0ae3c8f46dbef6a48bc0ce63f14df828e32b952212d9a93", null ],
       [ "PROBLEM_READING_AUDIO_FILE", "v201406_2_ad_words_api_8cs.html#a5c023c7023c93fa8af0ae3c8f46dbef6a26b240fc1a189ead12458667077aefed", null ],
@@ -1032,6 +1190,38 @@ var v201406_2_ad_words_api_8cs =
       [ "USER_HAS_READONLY_PERMISSION", "v201406_2_ad_words_api_8cs.html#a9d5e9cabf2a101b269d923120a26c6f0a5b39bca3f3dc27208e651267e2967709", null ],
       [ "NO_CUSTOMER_FOUND", "v201406_2_ad_words_api_8cs.html#a9d5e9cabf2a101b269d923120a26c6f0aa312612763412c781c23d05b02e5be5b", null ],
       [ "SERVICE_ACCESS_DENIED", "v201406_2_ad_words_api_8cs.html#a9d5e9cabf2a101b269d923120a26c6f0a9456a2a109a4d4147f1e15aa93fd7174", null ]
+    ] ],
+    [ "BaseCriterionType", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285c", [
+      [ "AGE", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285ca56213e46aba7fd7411eb0b25ecf7bce8", null ],
+      [ "CARRIER", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285ca65ec4a0c583406bbf98a5be33dd9e110", null ],
+      [ "CHANNEL", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285caf52e9c50a060add65a035429b2a22229", null ],
+      [ "CONTENT_KEYWORD", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285cad3d58b7d477f0c26ba542a5ac0eed33f", null ],
+      [ "CONTENT_LABEL", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285cad11c4eb8888bd34d21d928efd0ddad2b", null ],
+      [ "GENDER", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285ca62eb33fae593edd0057718fd9eac51fc", null ],
+      [ "INTEREST", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285cac1833ca6521c2a6c481c6dbe9671738d", null ],
+      [ "KEYWORD", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285ca780bc0722dd01d4a8d9869f060734be6", null ],
+      [ "LANGUAGE", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285ca5b64a5253f843da2950972747ac9a3b0", null ],
+      [ "LOCATION", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285ca71233d73cc90bba8f4d5bbea0792e551", null ],
+      [ "MOBILE_APPLICATION", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285cae09e158e1b9ef9c6dcad060ea36fd5a6", null ],
+      [ "MOBILE_APP_CATEGORY", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285caf7de7a180ec1410a53b86e7610e665d9", null ],
+      [ "MOBILE_DEVICE", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285cab7bbb4a05957e11f1edac8719d329de6", null ],
+      [ "OPERATING_SYSTEM_VERSION", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285ca714b8118116361b51a4a8f40830d4122", null ],
+      [ "PLATFORM", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285ca8b55a44b49368262df89fd0e17b1a181", null ],
+      [ "RUN_OF_YOUTUBE", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285caef693bb75de9b3d87b3f2c85a4edf31d", null ],
+      [ "SCHEDULE", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285caecb7e253d295f3bbbfe12e491c9b7120", null ],
+      [ "SEARCH_KEYWORD", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285ca1fdf1bf7530ce745357ccbaca40fbe25", null ],
+      [ "USER_LIST", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285ca67606b15e14378f4d696952a1e07e509", null ],
+      [ "VERTICAL", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285ca3e1b74251c07310c5f1b968145bf00dc", null ],
+      [ "VIDEO", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285cae60ae31f67ab883c746bb71c7a145c18", null ],
+      [ "WEB_SITE", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285cac9a70e63510b664d91c87d56c823d0ce", null ],
+      [ "YOUTUBE_PLACEMENT", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285caa4d546048b0b92d2a75cdb1a09fbecf7", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a49160cd1df7dc61d5d7e146c1099285ca696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "BaseKeywordMatchType", "v201406_2_ad_words_api_8cs.html#afc778b0dc845da0593c47092227e2790", [
+      [ "EXACT", "v201406_2_ad_words_api_8cs.html#afc778b0dc845da0593c47092227e2790ac41e056424136b6e8c4e23dd6326efa1", null ],
+      [ "PHRASE", "v201406_2_ad_words_api_8cs.html#afc778b0dc845da0593c47092227e2790a326989110ddd70abcc96d1e4bf40afc9", null ],
+      [ "BROAD", "v201406_2_ad_words_api_8cs.html#afc778b0dc845da0593c47092227e2790a8620a3e751383e2564072eef8d2957b2", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#afc778b0dc845da0593c47092227e2790a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "BasicJobStatus", "v201406_2_ad_words_api_8cs.html#ad60deeb08d9f880d393f0e7a844cdd99", [
       [ "COMPLETED", "v201406_2_ad_words_api_8cs.html#ad60deeb08d9f880d393f0e7a844cdd99a8f7afecbc8fbc4cd0f50a57d1172482e", null ],
@@ -1240,6 +1430,16 @@ var v201406_2_ad_words_api_8cs =
       [ "BATCH_FAILURE", "v201406_2_ad_words_api_8cs.html#af2d6d56e98447098f811b2ab73cd2476aa5605e7d74969712218ccd077cf9f5eb", null ],
       [ "SERVICE_PROVIDED_NO_RESULT", "v201406_2_ad_words_api_8cs.html#af2d6d56e98447098f811b2ab73cd2476a5071b55bd698973927a66e9df6cea78d", null ]
     ] ],
+    [ "CallToActionCreativeType", "v201406_2_ad_words_api_8cs.html#ace8e92558c67cc7f835eadb9bdd4f17a", [
+      [ "TEXT_ONLY", "v201406_2_ad_words_api_8cs.html#ace8e92558c67cc7f835eadb9bdd4f17aa3e380f5fb3b2482487df3ae4244de2d8", null ],
+      [ "TEXT_AND_IMAGE", "v201406_2_ad_words_api_8cs.html#ace8e92558c67cc7f835eadb9bdd4f17aa5a76e0c4814931f9ab25e625f0a7b318", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#ace8e92558c67cc7f835eadb9bdd4f17aa696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "CallToActionStatus", "v201406_2_ad_words_api_8cs.html#a777f061c3b4bdec61e2f5914422f6739", [
+      [ "ACTIVE", "v201406_2_ad_words_api_8cs.html#a777f061c3b4bdec61e2f5914422f6739a18ff74f43da410c5529f7d6fca84f115", null ],
+      [ "INACTIVE", "v201406_2_ad_words_api_8cs.html#a777f061c3b4bdec61e2f5914422f6739a6b273343c454f9c53dcfc9c4ccf171d2", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a777f061c3b4bdec61e2f5914422f6739a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
     [ "CampaignAdExtensionApprovalStatus", "v201406_2_ad_words_api_8cs.html#a80b6092cda01714ba598464d6e568b86", [
       [ "APPROVED", "v201406_2_ad_words_api_8cs.html#a80b6092cda01714ba598464d6e568b86a21e5b3f076cbce27a9926a00c82a6c55", null ],
       [ "UNCHECKED", "v201406_2_ad_words_api_8cs.html#a80b6092cda01714ba598464d6e568b86acb05b13dd1c5294579396a615f2fae82", null ],
@@ -1304,6 +1504,12 @@ var v201406_2_ad_words_api_8cs =
       [ "ENABLED", "v201406_2_ad_words_api_8cs.html#a094ceacad7c0c4a2be12b9d93172dc30ac8cf6eea8f096ed51160b484d97c5bbd", null ],
       [ "REMOVED", "v201406_2_ad_words_api_8cs.html#a094ceacad7c0c4a2be12b9d93172dc30ab3461745d64b12346503b2980e436db5", null ],
       [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a094ceacad7c0c4a2be12b9d93172dc30a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "CampaignSchedulingStatus", "v201406_2_ad_words_api_8cs.html#ab6a70c5fe366e7186aa2453b23a118ef", [
+      [ "UNAVAILABLE", "v201406_2_ad_words_api_8cs.html#ab6a70c5fe366e7186aa2453b23a118efa084f4ca2c0fe703e46514a144b4d6ead", null ],
+      [ "CURRENT", "v201406_2_ad_words_api_8cs.html#ab6a70c5fe366e7186aa2453b23a118efaa2770969c827f0f2910f6179418462df", null ],
+      [ "ENDED", "v201406_2_ad_words_api_8cs.html#ab6a70c5fe366e7186aa2453b23a118efa3032bcfd5e671852750a0304cd2b024a", null ],
+      [ "PENDING", "v201406_2_ad_words_api_8cs.html#ab6a70c5fe366e7186aa2453b23a118efac69f06e1a9b016d133907b4e5f5864d2", null ]
     ] ],
     [ "CampaignSharedSetErrorReason", "v201406_2_ad_words_api_8cs.html#ace1602ce40770c99f080473142998d67", [
       [ "CAMPAIGN_SHARED_SET_DOES_NOT_EXIST", "v201406_2_ad_words_api_8cs.html#ace1602ce40770c99f080473142998d67acf735d459dc43b3a4f779972530b7ea3", null ],
@@ -1378,6 +1584,13 @@ var v201406_2_ad_words_api_8cs =
       [ "VIDEO", "v201406_2_ad_words_api_8cs.html#a3eb4290d6c512943f3fa5d03b2eca00dae60ae31f67ab883c746bb71c7a145c18", null ],
       [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a3eb4290d6c512943f3fa5d03b2eca00da696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
+    [ "ConversionCategoryKeyConversionCategory", "v201406_2_ad_words_api_8cs.html#aa42432b8df1e9ccc54add93e908f3c38", [
+      [ "CONVERSION_CATEGORY_PURCHASE", "v201406_2_ad_words_api_8cs.html#aa42432b8df1e9ccc54add93e908f3c38a8aec0dee7801dcb25874bcb5f0938338", null ],
+      [ "CONVERSION_CATEGORY_SIGNUP", "v201406_2_ad_words_api_8cs.html#aa42432b8df1e9ccc54add93e908f3c38acfacae09696eb71fe950dd1dc06e177e", null ],
+      [ "CONVERSION_CATEGORY_LEAD", "v201406_2_ad_words_api_8cs.html#aa42432b8df1e9ccc54add93e908f3c38a2111805f597464a19c5dfabfe93bb734", null ],
+      [ "CONVERSION_CATEGORY_PAGE_VIEW", "v201406_2_ad_words_api_8cs.html#aa42432b8df1e9ccc54add93e908f3c38a5a54a50ff83689faf9b63d83ff7bdf90", null ],
+      [ "CONVERSION_CATEGORY_OTHER", "v201406_2_ad_words_api_8cs.html#aa42432b8df1e9ccc54add93e908f3c38a53003c24ff73359c1c20421028a00f87", null ]
+    ] ],
     [ "ConversionDeduplicationMode", "v201406_2_ad_words_api_8cs.html#a8757b07c06122b6317795fd8470931dc", [
       [ "ONE_PER_CLICK", "v201406_2_ad_words_api_8cs.html#a8757b07c06122b6317795fd8470931dca3a96f50ba36f2495b598c467252885f0", null ],
       [ "MANY_PER_CLICK", "v201406_2_ad_words_api_8cs.html#a8757b07c06122b6317795fd8470931dcaa19ae70ff4e9413f432e4509f69ac4d5", null ]
@@ -1438,6 +1651,15 @@ var v201406_2_ad_words_api_8cs =
       [ "NO_SNIPPET", "v201406_2_ad_words_api_8cs.html#ae7b4c7c18c2422ce38f94cfff4e1032ea3353e0f01c2a38c937b345e35c109438", null ],
       [ "TOO_MANY_WEBPAGES", "v201406_2_ad_words_api_8cs.html#ae7b4c7c18c2422ce38f94cfff4e1032eac0f28767bd209efb55ae00fc286f2d43", null ],
       [ "UNKNOWN_SORTING_TYPE", "v201406_2_ad_words_api_8cs.html#ae7b4c7c18c2422ce38f94cfff4e1032ea23ffdd5455f77716aa8f30451e7cb56f", null ]
+    ] ],
+    [ "CriteriaDimension", "v201406_2_ad_words_api_8cs.html#acd6c8dcd046a74866ee2dd4b6943638b", [
+      [ "AGE", "v201406_2_ad_words_api_8cs.html#acd6c8dcd046a74866ee2dd4b6943638ba56213e46aba7fd7411eb0b25ecf7bce8", null ],
+      [ "GENDER", "v201406_2_ad_words_api_8cs.html#acd6c8dcd046a74866ee2dd4b6943638ba62eb33fae593edd0057718fd9eac51fc", null ],
+      [ "KEYWORD", "v201406_2_ad_words_api_8cs.html#acd6c8dcd046a74866ee2dd4b6943638ba780bc0722dd01d4a8d9869f060734be6", null ],
+      [ "PLACEMENT", "v201406_2_ad_words_api_8cs.html#acd6c8dcd046a74866ee2dd4b6943638bad5829bb83e9a51bb48fb0a1e5d77423e", null ],
+      [ "TOPIC", "v201406_2_ad_words_api_8cs.html#acd6c8dcd046a74866ee2dd4b6943638ba2da12adc565af7b24bbcd165192d98f0", null ],
+      [ "USER", "v201406_2_ad_words_api_8cs.html#acd6c8dcd046a74866ee2dd4b6943638ba2e40ad879e955201df4dedbf8d479a12", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#acd6c8dcd046a74866ee2dd4b6943638ba696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "CriterionErrorReason", "v201406_2_ad_words_api_8cs.html#a20c3906fce15a1976847d29cebf80827", [
       [ "CONCRETE_TYPE_REQUIRED", "v201406_2_ad_words_api_8cs.html#a20c3906fce15a1976847d29cebf80827ae6bd81141238c83fcf4dee31cf79b754", null ],
@@ -1920,6 +2142,18 @@ var v201406_2_ad_words_api_8cs =
       [ "AUDIO_TEMPLATE", "v201406_2_ad_words_api_8cs.html#a77cc0ead26bbb5cb4494048e1de48caeac576600c7a9e541427a954883ac57cd5", null ],
       [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a77cc0ead26bbb5cb4494048e1de48caea696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
+    [ "DestinationType", "v201406_2_ad_words_api_8cs.html#ae0593f2ff70dbf4d56c4ce01e3224324", [
+      [ "YOUTUBE", "v201406_2_ad_words_api_8cs.html#ae0593f2ff70dbf4d56c4ce01e3224324ac3cd4ebac97e2be2e0e1648179a834ad", null ],
+      [ "ADVERTISER_SITE", "v201406_2_ad_words_api_8cs.html#ae0593f2ff70dbf4d56c4ce01e3224324aa511455bbfa239de12c2cf127a0bf4a6", null ],
+      [ "LEGACY_BOTH", "v201406_2_ad_words_api_8cs.html#ae0593f2ff70dbf4d56c4ce01e3224324a4151dc98c2ac856aaa629201063687f9", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#ae0593f2ff70dbf4d56c4ce01e3224324a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "DeviceKeyDeviceType", "v201406_2_ad_words_api_8cs.html#a2018665bae674ed79c544e43fd1d8971", [
+      [ "DESKTOP", "v201406_2_ad_words_api_8cs.html#a2018665bae674ed79c544e43fd1d8971a835669054d277609644215a014523c42", null ],
+      [ "HIGHENDMOBILE", "v201406_2_ad_words_api_8cs.html#a2018665bae674ed79c544e43fd1d8971aea3081ff413934f748b7516717dec916", null ],
+      [ "TABLET", "v201406_2_ad_words_api_8cs.html#a2018665bae674ed79c544e43fd1d8971a440b4b508351f7eb1ea3158eaff7961a", null ],
+      [ "OTHER", "v201406_2_ad_words_api_8cs.html#a2018665bae674ed79c544e43fd1d8971a03570470bad94692ce93e32700d2e1cb", null ]
+    ] ],
     [ "DisplayAdSpecActivationOption", "v201406_2_ad_words_api_8cs.html#ab651fff6bb319b615d51e392bf483d31", [
       [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#ab651fff6bb319b615d51e392bf483d31a696b031073e74bf2cb98e5ef201d4aa3", null ],
       [ "NONE", "v201406_2_ad_words_api_8cs.html#ab651fff6bb319b615d51e392bf483d31ab50339a10e1de285ac99d4c3990b8693", null ],
@@ -1940,6 +2174,9 @@ var v201406_2_ad_words_api_8cs =
       [ "SHARED_SET_LIMIT", "v201406_2_ad_words_api_8cs.html#a4eaf2b7dee080b31d906de41221dfc9da241c8716caff38d7106abce7701bd53f", null ],
       [ "MATCHING_FUNCTION_LIMIT", "v201406_2_ad_words_api_8cs.html#a4eaf2b7dee080b31d906de41221dfc9dacdb19605e1ae9854b242843d8a4e169e", null ],
       [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a4eaf2b7dee080b31d906de41221dfc9da696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "EntityNotFoundErrorReason", "v201406_2_ad_words_api_8cs.html#a54a7a276a4d872956f6529109d45affb", [
+      [ "INVALID_ID", "v201406_2_ad_words_api_8cs.html#a54a7a276a4d872956f6529109d45affba9acfdae2d16e2592e0c192805f9427d8", null ]
     ] ],
     [ "EntityNotFoundReason", "v201406_2_ad_words_api_8cs.html#aa2171bc7f436bd2e3d1a54d55c8f5c0d", [
       [ "INVALID_ID", "v201406_2_ad_words_api_8cs.html#aa2171bc7f436bd2e3d1a54d55c8f5c0da9acfdae2d16e2592e0c192805f9427d8", null ]
@@ -2678,6 +2915,20 @@ var v201406_2_ad_words_api_8cs =
       [ "PREVIEW", "v201406_2_ad_words_api_8cs.html#a8bbd13b7b74badb75f796e3a9e40978ea16146de8c60e5b0d74bf6d2a78d4f576", null ],
       [ "VIDEO_THUMBNAIL", "v201406_2_ad_words_api_8cs.html#a8bbd13b7b74badb75f796e3a9e40978ea4a7305f11126de8ba8300ef6df324829", null ]
     ] ],
+    [ "Metric", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09", [
+      [ "VIEWS", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09a8f56a72923a6ca8ff53462533d89e567", null ],
+      [ "THUMBNAIL_IMPRESSIONS", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09a369483d2e4e8192e55533c3f39f38e11", null ],
+      [ "VIDEO_IMPRESSIONS", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09aea1bc050bd384765ec4d9ea297f8336d", null ],
+      [ "TOTAL_IMPRESSIONS", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09aacbbabb543227a963a024a1e07380335", null ],
+      [ "COST", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09aab9e914fdb40ef4b89248140f0082aa4", null ],
+      [ "AVERAGE_CPV", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09a1eaaae30fd43d8b73d547f80840e3b54", null ],
+      [ "VTR", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09ab259070354d6d8923d98c2800f8ad26c", null ],
+      [ "CONVERSIONS", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09a6207a5950bbd660e067ff566e1e0eebc", null ],
+      [ "DAILY_UNIQUE_VIEWERS", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09a88564d150df0987c1d9ba3c2bf7bc3e3", null ],
+      [ "WEEKLY_UNIQUE_VIEWERS", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09ae1f0c5cf52917eb23f4890745648c025", null ],
+      [ "MONTHLY_UNIQUE_VIEWERS", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09a68571505af4f74d7ccb84888d39eaff7", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a465446c7a197ea4f56a0b8021b102a09a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
     [ "MinuteOfHour", "v201406_2_ad_words_api_8cs.html#af2c236e27e9312c7d597754c2e2d6c72", [
       [ "ZERO", "v201406_2_ad_words_api_8cs.html#af2c236e27e9312c7d597754c2e2d6c72a529e9e0beb5f85d1f132917c1a09860c", null ],
       [ "FIFTEEN", "v201406_2_ad_words_api_8cs.html#af2c236e27e9312c7d597754c2e2d6c72af5d480d3abc4bdfeff0430a7356fe0ab", null ],
@@ -2708,6 +2959,12 @@ var v201406_2_ad_words_api_8cs =
       [ "ADGROUP", "v201406_2_ad_words_api_8cs.html#a8b2f619d9a2c7a01b8c1e7406625a01ca639d1ba014cf943d1ff4e2b7a0e105b1", null ],
       [ "CRITERION", "v201406_2_ad_words_api_8cs.html#a8b2f619d9a2c7a01b8c1e7406625a01ca4e9af8c54914500a82cda62a516729bc", null ],
       [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a8b2f619d9a2c7a01b8c1e7406625a01ca696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "NetworkErrorReason", "v201406_2_ad_words_api_8cs.html#a651fe5ee221d6d3f33453934947624a5", [
+      [ "EMPTY", "v201406_2_ad_words_api_8cs.html#a651fe5ee221d6d3f33453934947624a5aba2b45bdc11e2a4a6e86aab2ac693cbb", null ],
+      [ "INVALID", "v201406_2_ad_words_api_8cs.html#a651fe5ee221d6d3f33453934947624a5accc0377a8afbf50e7094f5c23a8af223", null ],
+      [ "NOT_ALLOWED", "v201406_2_ad_words_api_8cs.html#a651fe5ee221d6d3f33453934947624a5a4596302bc1e8ce6e62188e769aac94cf", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a651fe5ee221d6d3f33453934947624a5a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "NewEntityCreationErrorReason", "v201406_2_ad_words_api_8cs.html#acc31cd2c49e6c2f80223f5b748954f20", [
       [ "CANNOT_SET_ID_FOR_ADD", "v201406_2_ad_words_api_8cs.html#acc31cd2c49e6c2f80223f5b748954f20a2262c447132d590d8c628b4addc63ff6", null ]
@@ -2770,6 +3027,11 @@ var v201406_2_ad_words_api_8cs =
       [ "START_INDEX_CANNOT_BE_NEGATIVE", "v201406_2_ad_words_api_8cs.html#a277f5db93303d155a4ddfaec34b5911badda5d60ecffbb59b1c9e0c7a11e45e47", null ],
       [ "NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE", "v201406_2_ad_words_api_8cs.html#a277f5db93303d155a4ddfaec34b5911ba3b222c276308d8263996888869c91e8d", null ],
       [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a277f5db93303d155a4ddfaec34b5911ba696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "PersistenceErrorReason", "v201406_2_ad_words_api_8cs.html#a9a8e1bd9a690d3e9e8623aa4c7bdf628", [
+      [ "LOAD_FAILED", "v201406_2_ad_words_api_8cs.html#a9a8e1bd9a690d3e9e8623aa4c7bdf628a7b0d329a6efd1e7a527acf8970807616", null ],
+      [ "SAVE_FAILED", "v201406_2_ad_words_api_8cs.html#a9a8e1bd9a690d3e9e8623aa4c7bdf628aeaaebf324fb85288163eb830362fe0f2", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a9a8e1bd9a690d3e9e8623aa4c7bdf628a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "PlacesOfInterestOperandCategory", "v201406_2_ad_words_api_8cs.html#a2b86cd8a23eb82d122cabe4f0356d246", [
       [ "AIRPORT", "v201406_2_ad_words_api_8cs.html#a2b86cd8a23eb82d122cabe4f0356d246a00179dc54b90f459e87b0f3d53f95187", null ],
@@ -2974,6 +3236,12 @@ var v201406_2_ad_words_api_8cs =
       [ "AD_PLACEHOLDER_FEED_ITEM_REPORT", "v201406_2_ad_words_api_8cs.html#aab5e052791ab8c4181e70cfe26820c4ca68c8b05636b97b70788ed28249186f23", null ],
       [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#aab5e052791ab8c4181e70cfe26820c4ca696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
+    [ "ReportErrorReason", "v201406_2_ad_words_api_8cs.html#a8a9e4ebd0e634d6e03286fa9ade4e2e5", [
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a8a9e4ebd0e634d6e03286fa9ade4e2e5a696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "CRITERIA_TYPE_NOT_SUPPORTED", "v201406_2_ad_words_api_8cs.html#a8a9e4ebd0e634d6e03286fa9ade4e2e5a7f613ef96a22873f46278dcd42eb8b92", null ],
+      [ "INVALID_TARGETING_GROUP_ID_COUNT", "v201406_2_ad_words_api_8cs.html#a8a9e4ebd0e634d6e03286fa9ade4e2e5a35215fee41e5d13654a000edc8aca004", null ],
+      [ "NO_STATS_SELECTOR", "v201406_2_ad_words_api_8cs.html#a8a9e4ebd0e634d6e03286fa9ade4e2e5a711fcbd42875eda11ef838ba92655e2a", null ]
+    ] ],
     [ "RequestContextOperandContextType", "v201406_2_ad_words_api_8cs.html#a6ce9b425ce1e1a0aebad5110b8774c83", [
       [ "FEED_ITEM_ID", "v201406_2_ad_words_api_8cs.html#a6ce9b425ce1e1a0aebad5110b8774c83a4a67dfa2df96e562a806a412000fea0b", null ],
       [ "DEVICE_PLATFORM", "v201406_2_ad_words_api_8cs.html#a6ce9b425ce1e1a0aebad5110b8774c83a4091425b6fe145a25d333423683eb941", null ],
@@ -2999,6 +3267,32 @@ var v201406_2_ad_words_api_8cs =
       [ "STANDARD", "v201406_2_ad_words_api_8cs.html#afcd878ddadc3df47cc1fae7456cebd64a94e94133f4bdc1794c6b647b8ea134d0", null ],
       [ "IN_STREAM_VIDEO", "v201406_2_ad_words_api_8cs.html#afcd878ddadc3df47cc1fae7456cebd64aa39a3b8f70ba67071a66cccba772c7e2", null ]
     ] ],
+    [ "SegmentationDimension", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426", [
+      [ "NONE", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426ab50339a10e1de285ac99d4c3990b8693", null ],
+      [ "CONVERSION_CATEGORY", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426a72964d4571ebd867005a028bc2fa83b4", null ],
+      [ "DATE_DAY", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426a13632a01f8b3b23d2d0e8578e4bcf07e", null ],
+      [ "DATE_WEEK", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426a19ed74a55dc54a85534b9056b856845b", null ],
+      [ "DATE_MONTH", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426ab264575191b3a9b4e9830679df5397c0", null ],
+      [ "DATE_QUARTER", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426a4d01d5d98c143f5bed8cf6e1cb931b27", null ],
+      [ "DATE_YEAR", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426a0752546f257b26e2c6ae656c6ae0142f", null ],
+      [ "DAY_OF_WEEK", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426ab1cf7f45045a41ca5ee7cd971ab09b1a", null ],
+      [ "DEVICE_TYPE", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426a95bd57c6138070a4b42fdf36f51857eb", null ],
+      [ "DISPLAY_FORMAT", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426a6bdfdd97e5f174b3192d2ff2925a0423", null ],
+      [ "DISPLAY_FORMATxNETWORK", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426aa474a8b7ecde0e589164d82c8742e4d1", null ],
+      [ "HOUR_OF_DAY", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426af062d9f2625f4ac064fd16400f31d8b6", null ],
+      [ "NETWORK", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426a25835188a2355e9530d3a10fcbe4c65b", null ],
+      [ "TARGETING_GROUP", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426a0f398796808075a59fa09e21a3ca47ad", null ],
+      [ "VIDEO_AD", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426a3102061fde14fd303ccb1a626827d583", null ],
+      [ "CONVERSION_TYPE", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426a2da407ef4a75e836766becd008f4f0a7", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a8f411a04202c1e6fa523fc63d2249426a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "SegmentationErrorReason", "v201406_2_ad_words_api_8cs.html#af5aa4f67e8d9f5eec1a3f2c8e52c5f21", [
+      [ "INCOMPATIBLE_DIMENSIONS", "v201406_2_ad_words_api_8cs.html#af5aa4f67e8d9f5eec1a3f2c8e52c5f21a2a6d0cbc82e0c24db8d5a27129877023", null ],
+      [ "UNSUPPORTED_SEGMENTATION", "v201406_2_ad_words_api_8cs.html#af5aa4f67e8d9f5eec1a3f2c8e52c5f21a37f4a3c20750f8521594461ba7069391", null ],
+      [ "MAXIMUM_SEGMENTATION_DIMENSIONS_EXCEEDED", "v201406_2_ad_words_api_8cs.html#af5aa4f67e8d9f5eec1a3f2c8e52c5f21ad2a20e3471364698070806c8f65f15dd", null ],
+      [ "DATE_RANGE_TOO_LONG", "v201406_2_ad_words_api_8cs.html#af5aa4f67e8d9f5eec1a3f2c8e52c5f21ac8977d93f73c75945922c721818b4e31", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#af5aa4f67e8d9f5eec1a3f2c8e52c5f21a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
     [ "SelectorErrorReason", "v201406_2_ad_words_api_8cs.html#abcdaf36d02d993f9e879dbad2b3ad1d3", [
       [ "INVALID_FIELD_NAME", "v201406_2_ad_words_api_8cs.html#abcdaf36d02d993f9e879dbad2b3ad1d3a0737c183c10b7dfa9c979dcff204bfc0", null ],
       [ "MISSING_FIELDS", "v201406_2_ad_words_api_8cs.html#abcdaf36d02d993f9e879dbad2b3ad1d3adcd19971175946b1bb97ffa4e3f8891d", null ],
@@ -3017,6 +3311,51 @@ var v201406_2_ad_words_api_8cs =
       [ "START_INDEX_IS_TOO_HIGH", "v201406_2_ad_words_api_8cs.html#abcdaf36d02d993f9e879dbad2b3ad1d3a560a76936707c60aa4a64188e04449d1", null ],
       [ "TOO_MANY_PREDICATE_VALUES", "v201406_2_ad_words_api_8cs.html#abcdaf36d02d993f9e879dbad2b3ad1d3a92cc441d2efa1bea8a9147873d89187f", null ],
       [ "UNKNOWN_ERROR", "v201406_2_ad_words_api_8cs.html#abcdaf36d02d993f9e879dbad2b3ad1d3a9a10f345b0f755d461a8673a5e9ef6b4", null ]
+    ] ],
+    [ "ServingIssueReason", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4c", [
+      [ "ACCOUNT_SUSPENDED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca4f8b150d14506b293765aa8832affb08", null ],
+      [ "ACCOUNT_CLOSED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4caf13b7b617ae5c0cb4dc0374d08aa4b56", null ],
+      [ "ACCOUNT_DISABLED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4caac90134d6d4e9356d569da222c319e6e", null ],
+      [ "SUSPENDED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca0cb707127aebaa0023eb38363993843a", null ],
+      [ "LIMITED_BY_BUDGET", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca1b693ab0a75b36a8daf50cc941ba0f60", null ],
+      [ "INSTREAM_TOO_HIGH", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca106bf07cc876806818999ab29ba3de25", null ],
+      [ "ALL_CREATIVES_UNHEALTHY", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4cad0da63f9ea77d9d70fa9eef3b05fbfe3", null ],
+      [ "SOME_CREATIVES_DISAPPROVED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca3876ea0ee4e275728e0ad5bbb75ffebe", null ],
+      [ "ALL_CREATIVES_DISAPPROVED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4cace2d6494d677ef95f7eef1ab7b00122b", null ],
+      [ "SOME_CREATIVES_LABELED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca462ac706b92e6af2b45a306d2bfd3eac", null ],
+      [ "ALL_CREATIVES_LABELED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca03801745729f71c0663ac0b474fd4710", null ],
+      [ "SOME_CREATIVES_UNREVIEWED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca0dcb5eb999bd94883b7267afd02babcc", null ],
+      [ "ALL_CREATIVES_UNREVIEWED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca223c7cdbe350b1414aa4a3174852d749", null ],
+      [ "SOME_CREATIVES_ELIGIBLE", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca2674e76ba677dc36dfb6b51912d8b9c5", null ],
+      [ "ALL_CREATIVES_ELIGIBLE", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca2dc5ac0eba883888e8211c4d66261858", null ],
+      [ "VIDEO_ADS_WITHOUT_TARGETING", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4cabb508cb2716886c8a2f6daaf863d4694", null ],
+      [ "ACTIVE_AD_WITH_ALL_FORMATS_PAUSED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4cab130df73535708c5764b0314ea0fa04f", null ],
+      [ "TARGETING_BID_REQUIRED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca91353c8a081cb16bf812f4444e0d9f47", null ],
+      [ "INSLATE_DEPRECATED", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4cafd82aee1effc647908e1abcfcc897f08", null ],
+      [ "TARGETING_DUPLICATE_NAME", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca4a629fa8ba12de4c8112ce5b0599c254", null ],
+      [ "TARGETING_MISMATCH", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca215180ffd441bd68730470a40cb64568", null ],
+      [ "TARGETING_NO_VIDEOAD", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca4062fb538ae8b170c10ff096eef9eb33", null ],
+      [ "STUDY_INVITATION", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4cac9d4050736507d981930de587ff397fe", null ],
+      [ "SURVEY_INVITATION", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca08a05315451a06b743e1a054e07488ed", null ],
+      [ "NO_VIDEO_AD_SERVING", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4cab4a72ab76a71db74abe3bf6f0a043802", null ],
+      [ "ALL_VIDEO_ADS_PENDING", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4cab4dce1126c57960fe47b84f23435f7da", null ],
+      [ "SOME_VIDEO_ADS_PENDING", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca52a0dd8ed1ed09d2d710f793f06b5d9c", null ],
+      [ "ALL_VIDEO_ADS_UNHEALTHY", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca5b071a42108dfc3c22993bb2de96b226", null ],
+      [ "SOME_VIDEO_ADS_UNHEALTHY", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4cad231b273834689f54790fa633637b2ba", null ],
+      [ "NO_VIDEO", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca9514f99c27ac6349646be49406aafdcc", null ],
+      [ "NO_TARGETING", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca03e0aac8ee53422f94cc4c1be104388b", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a19b89de6ccd31132321c746deef8ae4ca696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "ServingIssueSeverity", "v201406_2_ad_words_api_8cs.html#a595adca1e0e616df092435d48e3fb65e", [
+      [ "HIGH", "v201406_2_ad_words_api_8cs.html#a595adca1e0e616df092435d48e3fb65eab89de3b4b81c4facfac906edf29aec8c", null ],
+      [ "MEDIUM", "v201406_2_ad_words_api_8cs.html#a595adca1e0e616df092435d48e3fb65eac87f3be66ffc3c0d4249f1c2cc5f3cce", null ],
+      [ "LOW", "v201406_2_ad_words_api_8cs.html#a595adca1e0e616df092435d48e3fb65ea41bc94cbd8eebea13ce0491b2ac11b88", null ]
+    ] ],
+    [ "ServingIssueType", "v201406_2_ad_words_api_8cs.html#affd6a83ae948d5d6c63f3e5a746ee3d2", [
+      [ "BLOCKING", "v201406_2_ad_words_api_8cs.html#affd6a83ae948d5d6c63f3e5a746ee3d2a72323e5457d8fb855145bfee934aa415", null ],
+      [ "ISSUE", "v201406_2_ad_words_api_8cs.html#affd6a83ae948d5d6c63f3e5a746ee3d2a1c8ef82c6249e38b3b032a915a28343f", null ],
+      [ "NOTIFICATION", "v201406_2_ad_words_api_8cs.html#affd6a83ae948d5d6c63f3e5a746ee3d2a9814d942b7e24870084a3dce24867ab3", null ],
+      [ "PENDING", "v201406_2_ad_words_api_8cs.html#affd6a83ae948d5d6c63f3e5a746ee3d2ac69f06e1a9b016d133907b4e5f5864d2", null ]
     ] ],
     [ "ServingStatus", "v201406_2_ad_words_api_8cs.html#a10b55f5960f5be2b14ec696138b18375", [
       [ "SERVING", "v201406_2_ad_words_api_8cs.html#a10b55f5960f5be2b14ec696138b18375a8f62a15be91745994dc59fb41d396e5a", null ],
@@ -3104,12 +3443,61 @@ var v201406_2_ad_words_api_8cs =
       [ "THIRTY_MILLION_TO_FIFTY_MILLION", "v201406_2_ad_words_api_8cs.html#a59e56309fa636fb92f930e3d60ca107dafa212b14e2a5e24a8ef27db801af17b7", null ],
       [ "OVER_FIFTY_MILLION", "v201406_2_ad_words_api_8cs.html#a59e56309fa636fb92f930e3d60ca107da12859cff447ad6bb00bf2e26db7a6e2c", null ]
     ] ],
+    [ "SortingErrorReason", "v201406_2_ad_words_api_8cs.html#a083928ad12d4f298fc65b9f01ac7957d", [
+      [ "SORT_ORDER_MISMATCH", "v201406_2_ad_words_api_8cs.html#a083928ad12d4f298fc65b9f01ac7957daabd089616646231e1ee48b34ad33bcdc", null ],
+      [ "INVALID_FIELD", "v201406_2_ad_words_api_8cs.html#a083928ad12d4f298fc65b9f01ac7957dab0b3809be1740d3f1c8d5f4c225ed774", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a083928ad12d4f298fc65b9f01ac7957da696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
     [ "SortOrder", "v201406_2_ad_words_api_8cs.html#a59672b83abf74ab9724c480a3ff40464", [
       [ "ASCENDING", "v201406_2_ad_words_api_8cs.html#a59672b83abf74ab9724c480a3ff40464a83ec681a20197326c163ea3b39ef7c32", null ],
       [ "DESCENDING", "v201406_2_ad_words_api_8cs.html#a59672b83abf74ab9724c480a3ff40464acff818f0ae4cef845577e39283886a53", null ]
     ] ],
     [ "StatsQueryErrorReason", "v201406_2_ad_words_api_8cs.html#af033ff2c81f1d2ebf14a9f668caad116", [
       [ "DATE_NOT_IN_VALID_RANGE", "v201406_2_ad_words_api_8cs.html#af033ff2c81f1d2ebf14a9f668caad116a4dba67ae94418d011cd8949cd5a6f917", null ]
+    ] ],
+    [ "StatsSelectorAllTimeRestrict", "v201406_2_ad_words_api_8cs.html#a6e507b29c0b972ada599c99b15f27638", [
+      [ "NONE", "v201406_2_ad_words_api_8cs.html#a6e507b29c0b972ada599c99b15f27638ab50339a10e1de285ac99d4c3990b8693", null ],
+      [ "SINCE_VIDEO_AD_START", "v201406_2_ad_words_api_8cs.html#a6e507b29c0b972ada599c99b15f27638a24861605144da7c4b7cc33365cb8c4f3", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a6e507b29c0b972ada599c99b15f27638a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "StatsSortable", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752a", [
+      [ "AVERAGE_CPV", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa1eaaae30fd43d8b73d547f80840e3b54", null ],
+      [ "AVERAGE_CPM", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa28048eb7ea752f1e9ca441625c05fab3", null ],
+      [ "VIEWS", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa8f56a72923a6ca8ff53462533d89e567", null ],
+      [ "VIEW_RATE", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aac1bbb03a6aa25da58d7ca11a1fd5b2e7", null ],
+      [ "CTR", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aaff2a7a5418a49af64a57ef3cf31d7721", null ],
+      [ "COST", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aaab9e914fdb40ef4b89248140f0082aa4", null ],
+      [ "COST_PER_CONVERSION", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa80f6e013f1f1fe8b0dbb5139754fbf2d", null ],
+      [ "IMPRESSIONS", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aafdc9d3fe42b54fffad294941ab8db65e", null ],
+      [ "WEBSITE_CLICKS", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa8e22012e479b67fc942d4cdc4d27a8b1", null ],
+      [ "CONVERSIONS", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa6207a5950bbd660e067ff566e1e0eebc", null ],
+      [ "CONVERSION_RATE", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa405a60b25843e24f927db862ad4e717c", null ],
+      [ "VIEW_THROUGH_CONVERSIONS", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa134437e8459370aedc6564df16fbf708", null ],
+      [ "CONVERSIONS_MANY_PER_VIEW", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa2f0fd27594e669b69a59dfc9a0e20097", null ],
+      [ "CONVERSION_RATE_MANY_PER_VIEW", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa8a23d35f1d9f217bc8d21939306bebbe", null ],
+      [ "COST_PER_CONVERSION_MANY_PER_VIEW", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa48806ce348ceb812cb96d263dda4438a", null ],
+      [ "TOTAL_CONV_VALUE", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aabf37ed5a8c7223f0dc6ce6a397c52c9f", null ],
+      [ "VALUE_PER_CONV", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa1c0c17c091e0de808fe3f50ad39270a8", null ],
+      [ "VALUE_PER_CONV_MANY_PER_VIEW", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa13e6d66e9937bfcade0c9ea962b3a7a0", null ],
+      [ "PERCENT_SERVED", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aac8014290177219d5497bf9ef21fb1621", null ],
+      [ "VIDEO_STARTS", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa5e1f468c8fd1671d213d491b4746b47d", null ],
+      [ "QUARTILE_25S", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa29d377d504d5043bcc496d37cb45e438", null ],
+      [ "QUARTILE_50S", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa596c78cda9d0ccf1d0809f127ec0c736", null ],
+      [ "QUARTILE_75S", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa8b91d2d8460543d3d3904e9c409b62cd", null ],
+      [ "QUARTILE_100S", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa1063cfc59f46c7410a8bc1cc65c828d0", null ],
+      [ "QUARTILE_25_PERCENTS", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aad4bc550f49ae98da7b5d8a616603b993", null ],
+      [ "QUARTILE_50_PERCENTS", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa8d28496a8cf726019f09803151cf901b", null ],
+      [ "QUARTILE_75_PERCENTS", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aaba66388976311d30b2d6c38487aec62b", null ],
+      [ "QUARTILE_100_PERCENTS", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aadd5c4b534605f799d20cb7d41f1b7ded", null ],
+      [ "FOLLOW_ON_SUBSCRIBES", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa5cf9377e1f7e2443cc2403188bb630ec", null ],
+      [ "FOLLOW_ON_SUBSCRIBE_RATE", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa810ed9ed1ece9988c55ac2531905696a", null ],
+      [ "FOLLOW_ON_VIEWS", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa8729d2ed98ff18a453f82f53107e7b12", null ],
+      [ "FOLLOW_ON_VIEW_RATE", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa19379e0ef63c063f42a2e926208d3b7a", null ],
+      [ "FOLLOW_ON_ADD_TO_PLAYLIST", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa454c65e5282f22ba4fb99bdc53086579", null ],
+      [ "FOLLOW_ON_COMMENTS", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aabcd39fa8bdab689500e662a042d0c2f3", null ],
+      [ "FOLLOW_ON_LIKES", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa29058f4730be619079e1b0adf7fe712a", null ],
+      [ "FOLLOW_ON_SHARES", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa3f7e5784fdaef696fc1bfd8e2b9ea79b", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#af7eb5a7d50f1db76098e889c2d36752aa696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "StringLengthErrorReason", "v201406_2_ad_words_api_8cs.html#a23fcbc6f9e2b5acc3e680f5a98d9c15c", [
       [ "TOO_SHORT", "v201406_2_ad_words_api_8cs.html#a23fcbc6f9e2b5acc3e680f5a98d9c15ca694c27369974d8d153e35d3fac0abc28", null ],
@@ -3193,6 +3581,84 @@ var v201406_2_ad_words_api_8cs =
       [ "WARNING_NOW_TARGETS_CHINESE", "v201406_2_ad_words_api_8cs.html#aa4a39a0677e2ef995b47df2342bba314a9611551ee86341f52bff0cee4a335f82", null ],
       [ "TARGET_ERROR", "v201406_2_ad_words_api_8cs.html#aa4a39a0677e2ef995b47df2342bba314ac6ae4b439f50f67c9dbc2a9573ff1c3d", null ]
     ] ],
+    [ "TargetingGroupAssociationStatus", "v201406_2_ad_words_api_8cs.html#a378691762e1175da1f90179cea446274", [
+      [ "ACTIVE", "v201406_2_ad_words_api_8cs.html#a378691762e1175da1f90179cea446274a18ff74f43da410c5529f7d6fca84f115", null ],
+      [ "PAUSED", "v201406_2_ad_words_api_8cs.html#a378691762e1175da1f90179cea446274a99b2439e63f73ad515f7ab2447a80673", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a378691762e1175da1f90179cea446274a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "TargetingGroupCriterionErrorReason", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edb", [
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "WEBSITE_NOT_ALLOWED_FOR_NETWORK", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba00ef811eebbf01cadddb197ff678dfce", null ],
+      [ "NETWORK_NOT_SUPPORTED", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edbaf16a7ee8aa83b1c8872b313c1e0750c1", null ],
+      [ "INVALID_KEYWORD_TEXT", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edbac1e6687269c060e6af8e0b58201b92ad", null ],
+      [ "KEYWORD_TEXT_TOO_LONG", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba126d1b7acd410647a257f1aaa05f8166", null ],
+      [ "KEYWORD_HAS_TOO_MANY_WORDS", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba48b3ce0fd6025e097725504f33e1dfac", null ],
+      [ "KEYWORD_HAS_INVALID_CHARS", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba52484122bf296cbc0f3f89588fa36284", null ],
+      [ "INVALID_WEBSITE_URL", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edbadad4dd1e4d065692540d766d8972e9e6", null ],
+      [ "INVALID_FORMAT_FOR_WEBSITE_URL", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edbadcd47b6c35973d1edbb786a59b926048", null ],
+      [ "WEBSITE_URL_IS_TOO_LONG", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba7ec40f91d02ff91f5782843bfebb5c91", null ],
+      [ "WEBSITE_URL_HAS_ILLEGAL_CHAR", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edbaae673cfbe83d6059b397215163adedaf", null ],
+      [ "WEBSITE_URL_HAS_MULTIPLE_SITES_IN_LINE", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba0ec7169b56d15f05f6b2ad9e6ef4db0b", null ],
+      [ "WEBSITE_DOMAIN_BLACKLISTED", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba8a970d2c7c39820521b43c277f3c3aa9", null ],
+      [ "INVALID_VIDEO_ID", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edbae9754c28dd58f2b9182edb30bc48a180", null ],
+      [ "INVALID_CHANNEL_ID", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba73a461ad9ea18c07e1acaa49eef51440", null ],
+      [ "INVALID_VERTICAL_PATH", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba0fda5835d1afc944bf27b3c1da7c49d4", null ],
+      [ "INVALID_USER_LIST_ID", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba17827e4481c3b50e9006b5cb4a9ec998", null ],
+      [ "KEYWORD_UNSUPPORTED", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edbaf9978a46db0ce95708b0a3bfb22db660", null ],
+      [ "INVALID_TARGETING_GROUP_ID", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba17c35cd26dcbff1a6942f4c50ff60db3", null ],
+      [ "INVALID_CRITERION_ID", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba603dffb9084b67b5a17438d0d795862e", null ],
+      [ "IMMUTABLE_NEGATIVE", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba693fb435d2996218916d084207082b08", null ],
+      [ "WEBSITE_URL_HAS_SCHEMA", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba07d5a6430bf07f7cfed8fa8ac6667e66", null ],
+      [ "USER_ID_OF_CHANNEL_MISSING", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba985913764ee9c78fa3c54ebacb76918d", null ],
+      [ "TOO_MANY_CRITERIONS_PER_TARGETING_GROUP", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba69b5671931692df058a2168055fb4864", null ],
+      [ "INVALID_STATUS", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba884f1084f298c36f956dbdede6891820", null ],
+      [ "MUTATING_REPORTED_TGC", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba7e86e1393a1408031936eb5b91d3fef4", null ],
+      [ "UNSUPPORTED_BID_OVERRIDE", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba72ac08abd4df50379bd95b2fcb9d6d9a", null ],
+      [ "CANNOT_TARGET_AND_EXCLUDE", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba46801518efb2c101850f9f0d1da6f983", null ],
+      [ "CANNOT_REMOVE_CRITERION", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edbaf41551c46e08422cffc01113e30e8f11", null ],
+      [ "CANNOT_TARGET_CRITERION", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edba8d7dcf4d89abce2b3dfa4d9d80096467", null ],
+      [ "CANNOT_TARGET_OBSOLETE_CRITERION", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edbaea874ed891198bec150609f495633c6c", null ],
+      [ "TOO_MANY_OPERTAIONS", "v201406_2_ad_words_api_8cs.html#ada8038cda3f98e8b374dec9fb1806edbaf31246e4ccb11c7eb801d00b44186bee", null ]
+    ] ],
+    [ "TargetingGroupCriterionSelectorCriterionUse", "v201406_2_ad_words_api_8cs.html#a01eebc2c12937cad5297a86a59d1b0be", [
+      [ "BIDDABLE", "v201406_2_ad_words_api_8cs.html#a01eebc2c12937cad5297a86a59d1b0bea4ef686c26b10afd7b1d32ab89b43b46c", null ],
+      [ "NEGATIVE", "v201406_2_ad_words_api_8cs.html#a01eebc2c12937cad5297a86a59d1b0bea50546bf973283065b6ccf09faf7a580a", null ],
+      [ "ALL", "v201406_2_ad_words_api_8cs.html#a01eebc2c12937cad5297a86a59d1b0bea5fb1f955b45e38e31789286a1790398d", null ]
+    ] ],
+    [ "TargetingGroupCriterionSortable", "v201406_2_ad_words_api_8cs.html#a3afa3f3afc6132a4a6d04b3750417dac", [
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a3afa3f3afc6132a4a6d04b3750417daca696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "CRITERION_ID", "v201406_2_ad_words_api_8cs.html#a3afa3f3afc6132a4a6d04b3750417dacabc0d4c19344671cab2c172264e4dc8b0", null ],
+      [ "TARGETING_GROUP_ID", "v201406_2_ad_words_api_8cs.html#a3afa3f3afc6132a4a6d04b3750417daca89ec93bb9a855ee9ae4b1191176b3406", null ],
+      [ "STATUS", "v201406_2_ad_words_api_8cs.html#a3afa3f3afc6132a4a6d04b3750417daca5f241c8c8f985b3c51e05d39cf030f4c", null ],
+      [ "NAME", "v201406_2_ad_words_api_8cs.html#a3afa3f3afc6132a4a6d04b3750417dacaad32e604e17467fc435538334fbddf3e", null ],
+      [ "TYPE", "v201406_2_ad_words_api_8cs.html#a3afa3f3afc6132a4a6d04b3750417daca948495146facadfe8859789036313d79", null ],
+      [ "TARGETING_GROUP_NAME", "v201406_2_ad_words_api_8cs.html#a3afa3f3afc6132a4a6d04b3750417daca5332868bf5562b643161c9e0f2c1ea29", null ]
+    ] ],
+    [ "TargetingGroupErrorReason", "v201406_2_ad_words_api_8cs.html#a4e8104537044136a7c03e2536f7e1d0b", [
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a4e8104537044136a7c03e2536f7e1d0ba696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "DUPLICATE_TARGETING_GROUP_ID", "v201406_2_ad_words_api_8cs.html#a4e8104537044136a7c03e2536f7e1d0ba632edf8dc403c6db0ff8f88eaa62af16", null ],
+      [ "DUPLICATE_TARGETING_GROUP_NAME", "v201406_2_ad_words_api_8cs.html#a4e8104537044136a7c03e2536f7e1d0ba88cc5455897137a64dfa0698bcebd244", null ],
+      [ "DETECTED_DUPLICATE_TARGETING_GROUP_NAME", "v201406_2_ad_words_api_8cs.html#a4e8104537044136a7c03e2536f7e1d0ba24346153e92ed376facddd376f45b8fa", null ],
+      [ "IMMUTABLE_FIELD", "v201406_2_ad_words_api_8cs.html#a4e8104537044136a7c03e2536f7e1d0ba205c65460d486ab0cbe51bc9c823b927", null ],
+      [ "INVALID_TARGETING_GROUP_ID", "v201406_2_ad_words_api_8cs.html#a4e8104537044136a7c03e2536f7e1d0ba17c35cd26dcbff1a6942f4c50ff60db3", null ],
+      [ "INVALID_TARGETING_GROUP_NAME", "v201406_2_ad_words_api_8cs.html#a4e8104537044136a7c03e2536f7e1d0baf60cf5f7ae2c14def2ea086c71a58310", null ],
+      [ "NOT_PERSISTENT", "v201406_2_ad_words_api_8cs.html#a4e8104537044136a7c03e2536f7e1d0bace4c924b1ac9d72a832679c7dbed6a0c", null ],
+      [ "TARGETING_GROUP_NOT_FOUND", "v201406_2_ad_words_api_8cs.html#a4e8104537044136a7c03e2536f7e1d0baa4718de0173778b9db3f1cc12636d652", null ],
+      [ "TOO_MANY_TARGETING_GROUPS", "v201406_2_ad_words_api_8cs.html#a4e8104537044136a7c03e2536f7e1d0ba3afd7b9af7c843d5f1fa21aabc656d97", null ]
+    ] ],
+    [ "TargetingGroupSortable", "v201406_2_ad_words_api_8cs.html#af8ce49943ceaef62c4f8b722fff695b0", [
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#af8ce49943ceaef62c4f8b722fff695b0a696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "TARGETING_GROUP_NAME", "v201406_2_ad_words_api_8cs.html#af8ce49943ceaef62c4f8b722fff695b0a5332868bf5562b643161c9e0f2c1ea29", null ],
+      [ "STATUS", "v201406_2_ad_words_api_8cs.html#af8ce49943ceaef62c4f8b722fff695b0a5f241c8c8f985b3c51e05d39cf030f4c", null ],
+      [ "BID", "v201406_2_ad_words_api_8cs.html#af8ce49943ceaef62c4f8b722fff695b0a61613d5a4896bfbf5bdb8cb2f476b7f6", null ],
+      [ "TARGETING_GROUP_ID", "v201406_2_ad_words_api_8cs.html#af8ce49943ceaef62c4f8b722fff695b0a89ec93bb9a855ee9ae4b1191176b3406", null ]
+    ] ],
+    [ "TargetingGroupStatus", "v201406_2_ad_words_api_8cs.html#acc67aba6bd52914facd7360037599a20", [
+      [ "ENABLED", "v201406_2_ad_words_api_8cs.html#acc67aba6bd52914facd7360037599a20ac8cf6eea8f096ed51160b484d97c5bbd", null ],
+      [ "REMOVED", "v201406_2_ad_words_api_8cs.html#acc67aba6bd52914facd7360037599a20ab3461745d64b12346503b2980e436db5", null ],
+      [ "PAUSED", "v201406_2_ad_words_api_8cs.html#acc67aba6bd52914facd7360037599a20a99b2439e63f73ad515f7ab2447a80673", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#acc67aba6bd52914facd7360037599a20a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
     [ "TargetingIdeaErrorReason", "v201406_2_ad_words_api_8cs.html#a7d60f36ce83a674fd89afec85805a72c", [
       [ "DUPLICATE_SEARCH_FILTER_TYPES_PRESENT", "v201406_2_ad_words_api_8cs.html#a7d60f36ce83a674fd89afec85805a72ca7389b585d101d32998661a36b7c55796", null ],
       [ "INSUFFICIENT_SEARCH_PARAMETERS", "v201406_2_ad_words_api_8cs.html#a7d60f36ce83a674fd89afec85805a72ca360c4e3d558a35445d64bb24cc8a9b7a", null ],
@@ -3205,6 +3671,17 @@ var v201406_2_ad_words_api_8cs =
       [ "TOO_MANY_RESULTS_REQUESTED", "v201406_2_ad_words_api_8cs.html#a7d60f36ce83a674fd89afec85805a72ca04af946b70b1c90e581389af5e978174", null ],
       [ "NO_PAGING_IN_SELECTOR", "v201406_2_ad_words_api_8cs.html#a7d60f36ce83a674fd89afec85805a72ca39686bd121c0c85d091464978b6b7f5e", null ],
       [ "INVALID_INCLUDED_EXCLUDED_KEYWORDS", "v201406_2_ad_words_api_8cs.html#a7d60f36ce83a674fd89afec85805a72ca2adc57012630e7ab0142a2b5a142f777", null ]
+    ] ],
+    [ "TargetingScope", "v201406_2_ad_words_api_8cs.html#a2852ff98a3f8c198ad37f69746e27c74", [
+      [ "TRUE_VIEW_IN_SEARCH_ON_YOUTUBE_SEARCH", "v201406_2_ad_words_api_8cs.html#a2852ff98a3f8c198ad37f69746e27c74ab449fdeca088d4a96daf1de227751d0c", null ],
+      [ "TRUE_VIEW_IN_SLATE_ON_YOUTUBE_WATCH", "v201406_2_ad_words_api_8cs.html#a2852ff98a3f8c198ad37f69746e27c74a3bec05b1036abd845315eb84370c1409", null ],
+      [ "TRUE_VIEW_IN_DISPLAY_ON_YOUTUBE_WATCH", "v201406_2_ad_words_api_8cs.html#a2852ff98a3f8c198ad37f69746e27c74a0883497ea512909208710d0de686fbc9", null ],
+      [ "TRUE_VIEW_IN_STREAM_ON_YOUTUBE_WATCH", "v201406_2_ad_words_api_8cs.html#a2852ff98a3f8c198ad37f69746e27c74ac3e98e64e93fe4bfc39969bc33ff2ee7", null ],
+      [ "TRUE_VIEW_IN_SLATE_ON_GOOGLE_DISPLAY_NETWORK", "v201406_2_ad_words_api_8cs.html#a2852ff98a3f8c198ad37f69746e27c74a7d56f33e95ea8cd2f961c12fd28637b2", null ],
+      [ "TRUE_VIEW_IN_DISPLAY_ON_GOOGLE_DISPLAY_NETWORK", "v201406_2_ad_words_api_8cs.html#a2852ff98a3f8c198ad37f69746e27c74a7fb90720ca6230d2ef8729ee581a12ff", null ],
+      [ "TRUE_VIEW_IN_STREAM_ON_GOOGLE_DISPLAY_NETWORK", "v201406_2_ad_words_api_8cs.html#a2852ff98a3f8c198ad37f69746e27c74af565d3e6b76f3cbfe779432f6ea058fb", null ],
+      [ "TRUE_VIEW_IN_SEARCH_ON_GOOGLE_SEARCH", "v201406_2_ad_words_api_8cs.html#a2852ff98a3f8c198ad37f69746e27c74ab0c19e5c5cf88b76927de349f0f0a4ab", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a2852ff98a3f8c198ad37f69746e27c74a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "TemplateElementFieldType", "v201406_2_ad_words_api_8cs.html#ae69521c2e5ccf2aebaab2de1082cb7d5", [
       [ "ADDRESS", "v201406_2_ad_words_api_8cs.html#ae69521c2e5ccf2aebaab2de1082cb7d5a2664f03ac6b8bb9eee4287720e407db3", null ],
@@ -3229,6 +3706,10 @@ var v201406_2_ad_words_api_8cs =
       [ "EXPANDING_UPRIGHT", "v201406_2_ad_words_api_8cs.html#a5140103527f61695b7dd17bc5468300aa954d666b78b43b222a6fef8c101f37f9", null ],
       [ "EXPANDING_DOWNLEFT", "v201406_2_ad_words_api_8cs.html#a5140103527f61695b7dd17bc5468300aaa47e5ae4fd3e3c9bee013fd0db3e3213", null ],
       [ "EXPANDING_DOWNRIGHT", "v201406_2_ad_words_api_8cs.html#a5140103527f61695b7dd17bc5468300aae12cbd2437dc25477e109286823a2c16", null ]
+    ] ],
+    [ "TimeSeriesErrorReason", "v201406_2_ad_words_api_8cs.html#a3b2b80e6050d9b762a68aec08c91380d", [
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a3b2b80e6050d9b762a68aec08c91380da696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "INVALID_SEGMENTATION_DIMENSION", "v201406_2_ad_words_api_8cs.html#a3b2b80e6050d9b762a68aec08c91380dabb185808ace3271db1800b7984465827", null ]
     ] ],
     [ "TimeUnit", "v201406_2_ad_words_api_8cs.html#a9c56ce1d22b71e0107c7e719861b6a1b", [
       [ "MINUTE", "v201406_2_ad_words_api_8cs.html#a9c56ce1d22b71e0107c7e719861b6a1ba46bda4cde2f10bdb9e51e3bbefa4a2bf", null ],
@@ -3319,6 +3800,210 @@ var v201406_2_ad_words_api_8cs =
       [ "REMOVED", "v201406_2_ad_words_api_8cs.html#a407a45b63acc9646cde20cde2d61fd9eab3461745d64b12346503b2980e436db5", null ],
       [ "PAUSED", "v201406_2_ad_words_api_8cs.html#a407a45b63acc9646cde20cde2d61fd9ea99b2439e63f73ad515f7ab2447a80673", null ]
     ] ],
+    [ "VideoAdApprovalLimit", "v201406_2_ad_words_api_8cs.html#a40750b53c5ed6156bac508c60ae2377c", [
+      [ "FAMILY_SAFE", "v201406_2_ad_words_api_8cs.html#a40750b53c5ed6156bac508c60ae2377ca13834cd0025656a8ddc2238011eacb49", null ],
+      [ "NON_FAMILY_SAFE", "v201406_2_ad_words_api_8cs.html#a40750b53c5ed6156bac508c60ae2377cac438f7717a7a0575d42058ca4224f383", null ],
+      [ "ADULT_CONTENT", "v201406_2_ad_words_api_8cs.html#a40750b53c5ed6156bac508c60ae2377caccc4023791c25124f55b91ffea8607e6", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a40750b53c5ed6156bac508c60ae2377ca696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoAdApprovalStatus", "v201406_2_ad_words_api_8cs.html#aa61702a705a41c917cb294584c03b5fe", [
+      [ "APPROVED", "v201406_2_ad_words_api_8cs.html#aa61702a705a41c917cb294584c03b5fea21e5b3f076cbce27a9926a00c82a6c55", null ],
+      [ "APPROVED_LIMITED", "v201406_2_ad_words_api_8cs.html#aa61702a705a41c917cb294584c03b5fea66b87d81b63aff9f909054230ac7bf64", null ],
+      [ "ELIGIBLE", "v201406_2_ad_words_api_8cs.html#aa61702a705a41c917cb294584c03b5feabaf0980e76893ee6a7b0f9035bf145d4", null ],
+      [ "UNDER_REVIEW", "v201406_2_ad_words_api_8cs.html#aa61702a705a41c917cb294584c03b5fea4c95b3d00bb3dd589819036a3d687403", null ],
+      [ "DISAPPROVED", "v201406_2_ad_words_api_8cs.html#aa61702a705a41c917cb294584c03b5fea8be662338d2cf521ddffcff3229fbe38", null ]
+    ] ],
+    [ "VideoAdDisplayFormat", "v201406_2_ad_words_api_8cs.html#a19332fd15e2974fe1ea3cff50b6b6bf4", [
+      [ "TRUE_VIEW_IN_SEARCH", "v201406_2_ad_words_api_8cs.html#a19332fd15e2974fe1ea3cff50b6b6bf4a7807332a2582e6f6c284a1a285060503", null ],
+      [ "TRUE_VIEW_IN_SLATE", "v201406_2_ad_words_api_8cs.html#a19332fd15e2974fe1ea3cff50b6b6bf4ad41dd4d217f18ae3096ba869a821bb76", null ],
+      [ "TRUE_VIEW_IN_DISPLAY", "v201406_2_ad_words_api_8cs.html#a19332fd15e2974fe1ea3cff50b6b6bf4ae6e10ccee47c88e4c292ad2c56170891", null ],
+      [ "TRUE_VIEW_IN_STREAM", "v201406_2_ad_words_api_8cs.html#a19332fd15e2974fe1ea3cff50b6b6bf4a81642a81ee7cd59d97f3f1b5d386237b", null ],
+      [ "STANDARD_IN_STREAM", "v201406_2_ad_words_api_8cs.html#a19332fd15e2974fe1ea3cff50b6b6bf4a3e13c7cf42f74aa41f1a4123a65baf5b", null ],
+      [ "ALL", "v201406_2_ad_words_api_8cs.html#a19332fd15e2974fe1ea3cff50b6b6bf4a5fb1f955b45e38e31789286a1790398d", null ]
+    ] ],
+    [ "VideoAdDisplayFormatType", "v201406_2_ad_words_api_8cs.html#a4ecaff60c5993264363553333582216d", [
+      [ "TRUE_VIEW", "v201406_2_ad_words_api_8cs.html#a4ecaff60c5993264363553333582216da8edd76c817b5d8a8131165ce18efbc71", null ],
+      [ "STANDARD", "v201406_2_ad_words_api_8cs.html#a4ecaff60c5993264363553333582216da94e94133f4bdc1794c6b647b8ea134d0", null ],
+      [ "ALL", "v201406_2_ad_words_api_8cs.html#a4ecaff60c5993264363553333582216da5fb1f955b45e38e31789286a1790398d", null ]
+    ] ],
+    [ "VideoAdErrorReason", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35e", [
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "INVALID_FORMAT", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea252d8e34178da47f2208605a66051241", null ],
+      [ "INVALID_INPUT", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eac063281d4adc16ebccfec66aa885b4dd", null ],
+      [ "EMPTY_FIELD", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea2b893a1d4fd2e0d67e9d5f6e5ab895e7", null ],
+      [ "URL_INVALID_TOP_LEVEL_DOMAIN", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea2bf6ab1afe7dae43867dd2d164abb754", null ],
+      [ "URL_MALFORMED", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eae13df746517b55a0f02f31c79e4fedd0", null ],
+      [ "URL_NO_HOST", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea27faabfd275d529bc0180001168c5551", null ],
+      [ "URL_NO_SCHEME", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea107c49ff4c53f1e4db40d193e1b54d88", null ],
+      [ "TOO_LONG", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea96307b673d66e1f465af10eaaa8f7f37", null ],
+      [ "LINE_TOO_WIDE", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea0f6a6a56b844633a234fa23579efbde6", null ],
+      [ "INVALID_IMAGE_MEDIA_ID", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eaa6cd0d8f8addb3a847625a91c2a8f2aa", null ],
+      [ "INVALID_COMPANION_BANNER_IMAGE_TYPE", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea04e80c8229df3b840739c51f1b323d06", null ],
+      [ "UNSUPPORTED_COMPANION_IMAGE_SIZE", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eaedfe68a8feaab899e7da1f271908bd64", null ],
+      [ "TOO_MANY_TARGETING_GROUP_ASSOCIATIONS", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea51c6d99a305b91e3313d5b60566db1ae", null ],
+      [ "TOO_MANY_VIDEO_ADS_PER_CUSTOMER", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eaa31246a566f5e1f277b7af58a5795ce4", null ],
+      [ "TOO_MANY_VIDEO_ADS_PER_CAMPAIGN", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eaa4b336febb5f6eb5af76a99439cf3ef4", null ],
+      [ "CANNOT_OPERATE_ON_DELETED_AD", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea3c837db2515f98072895833f8f3102da", null ],
+      [ "UNSUPPORTED_SCOPE_STATUS", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ead66be6200e9eb57e8d78bb21ac5d1c45", null ],
+      [ "NO_SCOPE_STATUSES_SPECIFIED", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea9de1fd9de40651d86437a5b6a8071dd1", null ],
+      [ "TARGETING_GROUP_FROM_DIFFERENT_CAMPAIGN", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eae05799c91dcdc78f082710c4a8608ad0", null ],
+      [ "APPROXIMATELY_TOO_LONG", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea921b0b143e8c483f6238bef190315db0", null ],
+      [ "APPROXIMATELY_TOO_SHORT", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea31c795bedadb0b9a8649c94aa8563026", null ],
+      [ "BAD_SNIPPET", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea3a07f9d571b0d6a0a467c663fc4b73a0", null ],
+      [ "CUSTOMER_NOT_APPROVED_MOBILEADS", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea277e584c3734517a628d3cd821b71668", null ],
+      [ "CUSTOMER_NOT_ELIGIBLE", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea58a064034a5ec1407951a3ada9b3d1d7", null ],
+      [ "INCORRECT_LENGTH", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eaa64b123cf90c0ed925ae74d79dff91c7", null ],
+      [ "INVALID_AD_ADDRESS_CAMPAIGN_TARGET", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea659bdab2b8ad5ab8eaaed07de8d33b05", null ],
+      [ "INVALID_CHARACTER_FOR_URL", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eaa7b301fc7b308d75317975032e7e2d07", null ],
+      [ "INVALID_COUNTRY_CODE", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea9e99d5bc9dd439de8ec5c6684bc0ac92", null ],
+      [ "INVALID_MARKUP_LANGUAGE", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea8089c12ba180a74fd2909595ae13e6dc", null ],
+      [ "INVALID_MOBILE_CARRIER", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eae9d315a55ceb6bdaf2d99a821a4d880e", null ],
+      [ "INVALID_MOBILE_CARRIER_TARGET", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea8e23898f731e5c0cb13395fcccc680d2", null ],
+      [ "TOO_SHORT", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea694c27369974d8d153e35d3fac0abc28", null ],
+      [ "URL_INVALID_SCHEME", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea39b8f4ac408bfb37ba8d8ad51741edb5", null ],
+      [ "URL_HOST_NAME_TOO_LONG", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea531350d63f435008e196bd122f105ac7", null ],
+      [ "URL_NO_TOP_LEVEL_DOMAIN", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eadd258577c135ae54f4e8bed13f9e5afc", null ],
+      [ "URL_PATH_NOT_ALLOWED", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eab00796e301f1a5ebe75e214a50c21d86", null ],
+      [ "URL_PORT_NOT_ALLOWED", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea7efa623bc93ad0bd564422fa9d844864", null ],
+      [ "URL_QUERY_NOT_ALLOWED", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea558ee140333ce626e0597b34255de61d", null ],
+      [ "URL_SCHEME_BEFORE_DSA_TAG", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea4a969150ebd6fb52468d2ea6cd496b47", null ],
+      [ "USER_DOES_NOT_HAVE_ACCESS_TO_TEMPLATE", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eaf0c3494d9dab1dc544289a03c73638ae", null ],
+      [ "INVALID_FIELD_TEXT", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea6a5b8de6617485c4d55de90ca86572e5", null ],
+      [ "IMAGE_ERROR", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eacf29f7dfb19419d6d7d614e1b31b1b73", null ],
+      [ "VIDEO_RETRIEVAL_ERROR", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea80b8b16d073fcb21d9206ab904b835d4", null ],
+      [ "AUDIO_ERROR", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35ea84f5f9751c25517eb0f003b13d6c1525", null ],
+      [ "DEPRECATED_FORMAT_ERROR", "v201406_2_ad_words_api_8cs.html#a0f73a32588271bd8b142897c120cd35eacd84cfd0cac1e8deefe7ebf931fec587", null ]
+    ] ],
+    [ "VideoAdNetwork", "v201406_2_ad_words_api_8cs.html#aa0cee2ae175e7c8b5a5be4cddd3ebc7e", [
+      [ "YOUTUBE_SEARCH", "v201406_2_ad_words_api_8cs.html#aa0cee2ae175e7c8b5a5be4cddd3ebc7eae8decc7443d546790790542c345b2f5a", null ],
+      [ "YOUTUBE_WATCH", "v201406_2_ad_words_api_8cs.html#aa0cee2ae175e7c8b5a5be4cddd3ebc7ea70c13cf1ec1d556ae3504a10a0ef2837", null ],
+      [ "GOOGLE_DISPLAY_NETWORK", "v201406_2_ad_words_api_8cs.html#aa0cee2ae175e7c8b5a5be4cddd3ebc7eaaf023ebb5e1e526f66c89cbf5a016f98", null ],
+      [ "GOOGLE_SEARCH", "v201406_2_ad_words_api_8cs.html#aa0cee2ae175e7c8b5a5be4cddd3ebc7ea7cffd9ca7a229d91292569628837f6f7", null ],
+      [ "ALL", "v201406_2_ad_words_api_8cs.html#aa0cee2ae175e7c8b5a5be4cddd3ebc7ea5fb1f955b45e38e31789286a1790398d", null ]
+    ] ],
+    [ "VideoAdServingOptimizationStatus", "v201406_2_ad_words_api_8cs.html#abad699daab53f0239b27fda9d6587a2f", [
+      [ "OPTIMIZE", "v201406_2_ad_words_api_8cs.html#abad699daab53f0239b27fda9d6587a2fa1e3694515211d22b83d11e850b588c79", null ],
+      [ "CONVERSION_OPTIMIZE", "v201406_2_ad_words_api_8cs.html#abad699daab53f0239b27fda9d6587a2fa6e197d2b7eea780a16b1cf9b67688b3a", null ],
+      [ "ROTATE", "v201406_2_ad_words_api_8cs.html#abad699daab53f0239b27fda9d6587a2fa9faf4e337734315fde20af1922cc6f9d", null ],
+      [ "ROTATE_FOREVER", "v201406_2_ad_words_api_8cs.html#abad699daab53f0239b27fda9d6587a2fabb8cd7ba3adbd86a1741681460bdf8b7", null ],
+      [ "UNAVAILABLE", "v201406_2_ad_words_api_8cs.html#abad699daab53f0239b27fda9d6587a2fa084f4ca2c0fe703e46514a144b4d6ead", null ]
+    ] ],
+    [ "VideoAdSortable", "v201406_2_ad_words_api_8cs.html#a0efe6143fdede5a1095fdb0e7e1c9dbd", [
+      [ "CAMPAIGN_ID", "v201406_2_ad_words_api_8cs.html#a0efe6143fdede5a1095fdb0e7e1c9dbda01a220bd4982b0e773fa5feb5d15dbc6", null ],
+      [ "CAMPAIGN_NAME", "v201406_2_ad_words_api_8cs.html#a0efe6143fdede5a1095fdb0e7e1c9dbda190ece6465793f183b221d2ac0b973d1", null ],
+      [ "NAME", "v201406_2_ad_words_api_8cs.html#a0efe6143fdede5a1095fdb0e7e1c9dbdaad32e604e17467fc435538334fbddf3e", null ],
+      [ "STATUS", "v201406_2_ad_words_api_8cs.html#a0efe6143fdede5a1095fdb0e7e1c9dbda5f241c8c8f985b3c51e05d39cf030f4c", null ],
+      [ "VIDEOAD_ID", "v201406_2_ad_words_api_8cs.html#a0efe6143fdede5a1095fdb0e7e1c9dbda06c3e01465636e53134f1402ce9b62d4", null ],
+      [ "VIDEO_NAME", "v201406_2_ad_words_api_8cs.html#a0efe6143fdede5a1095fdb0e7e1c9dbda7baabaec538f38bd3cd6230a6883dc4f", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a0efe6143fdede5a1095fdb0e7e1c9dbda696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoAdStatus", "v201406_2_ad_words_api_8cs.html#a750b42f9d2a2dd0fd82cc65a102122fd", [
+      [ "ENABLED", "v201406_2_ad_words_api_8cs.html#a750b42f9d2a2dd0fd82cc65a102122fdac8cf6eea8f096ed51160b484d97c5bbd", null ],
+      [ "PAUSED", "v201406_2_ad_words_api_8cs.html#a750b42f9d2a2dd0fd82cc65a102122fda99b2439e63f73ad515f7ab2447a80673", null ],
+      [ "REMOVED", "v201406_2_ad_words_api_8cs.html#a750b42f9d2a2dd0fd82cc65a102122fdab3461745d64b12346503b2980e436db5", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a750b42f9d2a2dd0fd82cc65a102122fda696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoAdYouTubeDestinationPage", "v201406_2_ad_words_api_8cs.html#aa838776b9bb9d2fe940cd00a733aa695", [
+      [ "WATCH_PAGE", "v201406_2_ad_words_api_8cs.html#aa838776b9bb9d2fe940cd00a733aa695a1b19bf54d28000c371022bacd99c42fe", null ],
+      [ "CHANNEL_PAGE", "v201406_2_ad_words_api_8cs.html#aa838776b9bb9d2fe940cd00a733aa695af7e0f9fadea335acba4e6d390dd32d65", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#aa838776b9bb9d2fe940cd00a733aa695a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoBiddingErrorReason", "v201406_2_ad_words_api_8cs.html#a8d87ba3f24be36e0564cfdb75d4c775d", [
+      [ "BID_AMOUNT_REQUIRED", "v201406_2_ad_words_api_8cs.html#a8d87ba3f24be36e0564cfdb75d4c775da362619822cc7c4ecb008d867c49bfcb4", null ],
+      [ "BID_TOO_SMALL", "v201406_2_ad_words_api_8cs.html#a8d87ba3f24be36e0564cfdb75d4c775dadf58cf791f32ea206320cbe6712bd121", null ],
+      [ "BID_TOO_BIG", "v201406_2_ad_words_api_8cs.html#a8d87ba3f24be36e0564cfdb75d4c775dac21e575ef1cb80a6184bf3c347bd262f", null ],
+      [ "BID_TOO_MANY_FRACTIONAL_DIGITS", "v201406_2_ad_words_api_8cs.html#a8d87ba3f24be36e0564cfdb75d4c775da972d89bb4d78e9d02d694e410d756f5d", null ],
+      [ "BID_TOO_HIGH_FOR_DAILY_BUDGET", "v201406_2_ad_words_api_8cs.html#a8d87ba3f24be36e0564cfdb75d4c775dacc88a5bf8af467a18c05773fa7c74ce9", null ],
+      [ "NON_POSITIVE_BID", "v201406_2_ad_words_api_8cs.html#a8d87ba3f24be36e0564cfdb75d4c775da06674c2b3663640ef2ebc4ce23984c6e", null ],
+      [ "BID_FOR_DEPRECATED_FORMAT", "v201406_2_ad_words_api_8cs.html#a8d87ba3f24be36e0564cfdb75d4c775da5c192492edd528bfd597ad4928f03116", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a8d87ba3f24be36e0564cfdb75d4c775da696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoBidSource", "v201406_2_ad_words_api_8cs.html#a49e625b331c51a4f9efca36606a70fe3", [
+      [ "TARGETING_GROUP", "v201406_2_ad_words_api_8cs.html#a49e625b331c51a4f9efca36606a70fe3a0f398796808075a59fa09e21a3ca47ad", null ],
+      [ "CRITERION", "v201406_2_ad_words_api_8cs.html#a49e625b331c51a4f9efca36606a70fe3a4e9af8c54914500a82cda62a516729bc", null ]
+    ] ],
+    [ "VideoBudgetBudgetDeliveryMethod", "v201406_2_ad_words_api_8cs.html#a2b8d7dfbea83cfcd0de95074db4e9d97", [
+      [ "STANDARD", "v201406_2_ad_words_api_8cs.html#a2b8d7dfbea83cfcd0de95074db4e9d97a94e94133f4bdc1794c6b647b8ea134d0", null ],
+      [ "ACCELERATED", "v201406_2_ad_words_api_8cs.html#a2b8d7dfbea83cfcd0de95074db4e9d97a8f1270de21fbcf7d1a5216d7761ee58c", null ]
+    ] ],
+    [ "VideoBudgetErrorReason", "v201406_2_ad_words_api_8cs.html#a72a0e8069af71659b7b1e2d629b82347", [
+      [ "MONEY_AMOUNT_LESS_THAN_CURRENCY_MINIMUM_CPC", "v201406_2_ad_words_api_8cs.html#a72a0e8069af71659b7b1e2d629b82347ac2f6dd8a63c74ed78551515b5c57b591", null ],
+      [ "MONEY_AMOUNT_LESS_THAN_MAXIMUM_AD_GROUP_CPM", "v201406_2_ad_words_api_8cs.html#a72a0e8069af71659b7b1e2d629b82347afe2dba26f457c84415fca16473243b90", null ],
+      [ "MONEY_AMOUNT_LESS_THAN_MAXIMUM_SITE_CPM", "v201406_2_ad_words_api_8cs.html#a72a0e8069af71659b7b1e2d629b82347a870d08ee0025a68de69c3f2e95871679", null ],
+      [ "MONEY_AMOUNT_LESS_THAN_MINIMUM_AD_GROUP_CPC", "v201406_2_ad_words_api_8cs.html#a72a0e8069af71659b7b1e2d629b82347a4436b889e39a9fc89b3a58190c185993", null ],
+      [ "MONEY_AMOUNT_LESS_THAN_MINIMUM_CRITERIA_CPC", "v201406_2_ad_words_api_8cs.html#a72a0e8069af71659b7b1e2d629b82347a7db0b0aff8dae6c576a8e884b7bca5be", null ],
+      [ "MONEY_AMOUNT_TOO_LARGE", "v201406_2_ad_words_api_8cs.html#a72a0e8069af71659b7b1e2d629b82347aff3de31e75994f802ba56687712904e1", null ],
+      [ "NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT", "v201406_2_ad_words_api_8cs.html#a72a0e8069af71659b7b1e2d629b82347a70e31c11a245a01a608cd3ff3a9f74f4", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a72a0e8069af71659b7b1e2d629b82347a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoCampaignBiddingMode", "v201406_2_ad_words_api_8cs.html#a63f13dadb02b60a2d7feecd6f99acafe", [
+      [ "AUTO", "v201406_2_ad_words_api_8cs.html#a63f13dadb02b60a2d7feecd6f99acafeae1f2d5134ed2543d38a0de9751cf75d9", null ],
+      [ "MANUAL", "v201406_2_ad_words_api_8cs.html#a63f13dadb02b60a2d7feecd6f99acafeaa60a6a471c0681e5a49c4f5d00f6bc5a", null ],
+      [ "NONE", "v201406_2_ad_words_api_8cs.html#a63f13dadb02b60a2d7feecd6f99acafeab50339a10e1de285ac99d4c3990b8693", null ]
+    ] ],
+    [ "VideoCampaignCriterionErrorReason", "v201406_2_ad_words_api_8cs.html#a98993eba40b39e9b1835967fd65562e3", [
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a98993eba40b39e9b1835967fd65562e3a696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "INVALID_CRITERION_USE", "v201406_2_ad_words_api_8cs.html#a98993eba40b39e9b1835967fd65562e3a45bf6c37526f65da02647c803a67a54d", null ],
+      [ "INVALID_CRITERION_TYPE", "v201406_2_ad_words_api_8cs.html#a98993eba40b39e9b1835967fd65562e3afea9e15ec94a60ee6917c16ccd3c0903", null ]
+    ] ],
+    [ "VideoCampaignCriterionSortable", "v201406_2_ad_words_api_8cs.html#a0d8c7b9b443e6668bd0f01f236ad225f", [
+      [ "CAMPAIGN_ID", "v201406_2_ad_words_api_8cs.html#a0d8c7b9b443e6668bd0f01f236ad225fa01a220bd4982b0e773fa5feb5d15dbc6", null ]
+    ] ],
+    [ "VideoCampaignErrorReason", "v201406_2_ad_words_api_8cs.html#a9bcda7f4fef1359cc1b5dcc77316b350", [
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a9bcda7f4fef1359cc1b5dcc77316b350a696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "AFTER_MAXIMUM_ALLOWABLE_DATE", "v201406_2_ad_words_api_8cs.html#a9bcda7f4fef1359cc1b5dcc77316b350a00b50ac5fa8faca38e44eba618f68d08", null ],
+      [ "CANNOT_SET_DATE_TO_PAST", "v201406_2_ad_words_api_8cs.html#a9bcda7f4fef1359cc1b5dcc77316b350a0c2508a5f4d28d43e8cd599f77206004", null ],
+      [ "DUPLICATE_CAMPAIGN_NAME", "v201406_2_ad_words_api_8cs.html#a9bcda7f4fef1359cc1b5dcc77316b350ae6926faf8ad632f0e690bc91de5bf961", null ],
+      [ "INVALID_CAMPAIGN_NAME", "v201406_2_ad_words_api_8cs.html#a9bcda7f4fef1359cc1b5dcc77316b350abb6b3d4271c7f3df7568846d85805244", null ],
+      [ "START_DATE_AFTER_END_DATE", "v201406_2_ad_words_api_8cs.html#a9bcda7f4fef1359cc1b5dcc77316b350a449d94841957876085e1e6b1594fbbfc", null ],
+      [ "CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED", "v201406_2_ad_words_api_8cs.html#a9bcda7f4fef1359cc1b5dcc77316b350a9a80d938c32cd1676ec213b1d23df1e6", null ],
+      [ "INVALID_OPERATION_IF_SERVING_STATUS_HAS_ENDED", "v201406_2_ad_words_api_8cs.html#a9bcda7f4fef1359cc1b5dcc77316b350ad0bb822be01c4266aac9278a5e984c6a", null ],
+      [ "CAMPAIGN_LIMIT", "v201406_2_ad_words_api_8cs.html#a9bcda7f4fef1359cc1b5dcc77316b350a2de7733444e57f3f5aa96a7214aed73a", null ]
+    ] ],
+    [ "VideoCampaignSortable", "v201406_2_ad_words_api_8cs.html#a631967c6e415c977b6066c77d7f66238", [
+      [ "BUDGET_AMOUNT", "v201406_2_ad_words_api_8cs.html#a631967c6e415c977b6066c77d7f66238a1d9e71ab8b77dac96cd18a274f9eb059", null ],
+      [ "CAMPAIGN_ID", "v201406_2_ad_words_api_8cs.html#a631967c6e415c977b6066c77d7f66238a01a220bd4982b0e773fa5feb5d15dbc6", null ],
+      [ "END_DATE", "v201406_2_ad_words_api_8cs.html#a631967c6e415c977b6066c77d7f66238a426f2a672ca0fe681dd7e28cc5fbf8c4", null ],
+      [ "NAME", "v201406_2_ad_words_api_8cs.html#a631967c6e415c977b6066c77d7f66238aad32e604e17467fc435538334fbddf3e", null ],
+      [ "START_DATE", "v201406_2_ad_words_api_8cs.html#a631967c6e415c977b6066c77d7f66238affb1293d58e2d25e06ac2ce3eb5612e9", null ],
+      [ "STATUS", "v201406_2_ad_words_api_8cs.html#a631967c6e415c977b6066c77d7f66238a5f241c8c8f985b3c51e05d39cf030f4c", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a631967c6e415c977b6066c77d7f66238a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoCampaignSpendingStatus", "v201406_2_ad_words_api_8cs.html#ac7abb8522e6c42d5451a9b1eaf09064a", [
+      [ "UNAVAILABLE", "v201406_2_ad_words_api_8cs.html#ac7abb8522e6c42d5451a9b1eaf09064aa084f4ca2c0fe703e46514a144b4d6ead", null ],
+      [ "SUSPENDED", "v201406_2_ad_words_api_8cs.html#ac7abb8522e6c42d5451a9b1eaf09064aa0cb707127aebaa0023eb38363993843a", null ],
+      [ "CONSTRAINED", "v201406_2_ad_words_api_8cs.html#ac7abb8522e6c42d5451a9b1eaf09064aaa2a67551c7115f8d5c7eb854f6b84551", null ],
+      [ "NON_CONSTRAINED", "v201406_2_ad_words_api_8cs.html#ac7abb8522e6c42d5451a9b1eaf09064aac899066d6d2cf721cae383f9fa8f40aa", null ]
+    ] ],
+    [ "VideoCampaignStatus", "v201406_2_ad_words_api_8cs.html#aea7c668b6d51253d256f75defb3eda0d", [
+      [ "ENABLED", "v201406_2_ad_words_api_8cs.html#aea7c668b6d51253d256f75defb3eda0dac8cf6eea8f096ed51160b484d97c5bbd", null ],
+      [ "REMOVED", "v201406_2_ad_words_api_8cs.html#aea7c668b6d51253d256f75defb3eda0dab3461745d64b12346503b2980e436db5", null ],
+      [ "PAUSED", "v201406_2_ad_words_api_8cs.html#aea7c668b6d51253d256f75defb3eda0da99b2439e63f73ad515f7ab2447a80673", null ]
+    ] ],
+    [ "VideoCampaignTargetingMode", "v201406_2_ad_words_api_8cs.html#a1bf09606763f809a708c9bae1b5e713b", [
+      [ "AUTO", "v201406_2_ad_words_api_8cs.html#a1bf09606763f809a708c9bae1b5e713bae1f2d5134ed2543d38a0de9751cf75d9", null ],
+      [ "MANUAL", "v201406_2_ad_words_api_8cs.html#a1bf09606763f809a708c9bae1b5e713baa60a6a471c0681e5a49c4f5d00f6bc5a", null ]
+    ] ],
+    [ "VideoDayOfWeek", "v201406_2_ad_words_api_8cs.html#a372954022a676d3ee74021075314064a", [
+      [ "MONDAY", "v201406_2_ad_words_api_8cs.html#a372954022a676d3ee74021075314064aa98617021b249af0ace0f84ee92ccc7cd", null ],
+      [ "TUESDAY", "v201406_2_ad_words_api_8cs.html#a372954022a676d3ee74021075314064aa5f5140afce13197a89e848004f292f14", null ],
+      [ "WEDNESDAY", "v201406_2_ad_words_api_8cs.html#a372954022a676d3ee74021075314064aaaaebdc947e9f7d4ea362e5dc4fe7f825", null ],
+      [ "THURSDAY", "v201406_2_ad_words_api_8cs.html#a372954022a676d3ee74021075314064aa7a61b324afb4dd8b2fb4a38afc34f755", null ],
+      [ "FRIDAY", "v201406_2_ad_words_api_8cs.html#a372954022a676d3ee74021075314064aa86fb6d343289267f3e9edb9b7403d936", null ],
+      [ "SATURDAY", "v201406_2_ad_words_api_8cs.html#a372954022a676d3ee74021075314064aafd5ae113ac00b67f69541bc8c7f21ef7", null ],
+      [ "SUNDAY", "v201406_2_ad_words_api_8cs.html#a372954022a676d3ee74021075314064aa95fa12cb2100ce7081b71f7c44bc12a5", null ]
+    ] ],
+    [ "VideoEntityStatsSummaryType", "v201406_2_ad_words_api_8cs.html#a2af427d736dd286704285ae4d2084865", [
+      [ "ALL", "v201406_2_ad_words_api_8cs.html#a2af427d736dd286704285ae4d2084865a5fb1f955b45e38e31789286a1790398d", null ],
+      [ "ALL_ENABLED", "v201406_2_ad_words_api_8cs.html#a2af427d736dd286704285ae4d2084865aea2bd2366556012b64348e564650b666", null ],
+      [ "ALL_BUT_DELETED", "v201406_2_ad_words_api_8cs.html#a2af427d736dd286704285ae4d2084865a9f4973c4e28acfa271551de562a10b12", null ],
+      [ "ALL_DELETED", "v201406_2_ad_words_api_8cs.html#a2af427d736dd286704285ae4d2084865ad8e4881f11c1aafdb69f6dbadfa529f4", null ],
+      [ "ALL_NON_VIDEO", "v201406_2_ad_words_api_8cs.html#a2af427d736dd286704285ae4d2084865ad09d451e91872508103a3ce3a9e79305", null ],
+      [ "COMBINED_VIDEO_NON_VIDEO", "v201406_2_ad_words_api_8cs.html#a2af427d736dd286704285ae4d2084865a28d57d1c66b1c6a9f852cc81710999ca", null ],
+      [ "PERFORMANCE_OTHER", "v201406_2_ad_words_api_8cs.html#a2af427d736dd286704285ae4d2084865a220f32cab3fb0395ee1a1bd4c83ef3cb", null ],
+      [ "NON_SUMMARY", "v201406_2_ad_words_api_8cs.html#a2af427d736dd286704285ae4d2084865a5346b5b7c3c69d8d10ca894edc75244c", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a2af427d736dd286704285ae4d2084865a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
     [ "VideoErrorReason", "v201406_2_ad_words_api_8cs.html#a4798f6344fbf0ac2309c7225cc138537", [
       [ "INVALID_VIDEO", "v201406_2_ad_words_api_8cs.html#a4798f6344fbf0ac2309c7225cc138537aecbb7717dba3901aa141c944c265c406", null ],
       [ "STORAGE_ERROR", "v201406_2_ad_words_api_8cs.html#a4798f6344fbf0ac2309c7225cc138537a7ae7f2a13f0d5a18b0db91af9c5aef34", null ],
@@ -3333,11 +4018,128 @@ var v201406_2_ad_words_api_8cs =
       [ "INVALID_ISCI", "v201406_2_ad_words_api_8cs.html#a4798f6344fbf0ac2309c7225cc138537a57d76b4e33e7c2cd4df35c78a5526536", null ],
       [ "INVALID_AD_ID", "v201406_2_ad_words_api_8cs.html#a4798f6344fbf0ac2309c7225cc138537a5b33b1db16c4f1428240ad1169029e2d", null ]
     ] ],
+    [ "VideoImageMimeType", "v201406_2_ad_words_api_8cs.html#a7435b5d597eafb01f16c5b41058304e9", [
+      [ "IMAGE_JPEG", "v201406_2_ad_words_api_8cs.html#a7435b5d597eafb01f16c5b41058304e9a427ffbe564add3e6d2ff20ce4a619d30", null ],
+      [ "IMAGE_GIF", "v201406_2_ad_words_api_8cs.html#a7435b5d597eafb01f16c5b41058304e9a04d23b4755d85744171757cb85e1fa2e", null ],
+      [ "IMAGE_PNG", "v201406_2_ad_words_api_8cs.html#a7435b5d597eafb01f16c5b41058304e9a8c6389b18fb13958f3c2425aaa33d9d9", null ],
+      [ "FLASH", "v201406_2_ad_words_api_8cs.html#a7435b5d597eafb01f16c5b41058304e9a227b519e83a8b99329302ad2d37d0bbb", null ]
+    ] ],
+    [ "VideoImageType", "v201406_2_ad_words_api_8cs.html#a52946c9e6c5e4143dee21f63200f4944", [
+      [ "MEDIA", "v201406_2_ad_words_api_8cs.html#a52946c9e6c5e4143dee21f63200f4944a977806a0d7f179f6a006aebba13a8eac", null ],
+      [ "DEFAULT_THUMBNAIL", "v201406_2_ad_words_api_8cs.html#a52946c9e6c5e4143dee21f63200f4944aba68585ba2d21544e0cb710736ba3477", null ],
+      [ "THUMBNAIL1", "v201406_2_ad_words_api_8cs.html#a52946c9e6c5e4143dee21f63200f4944ab70a0f2f9616ed92c27e37dc810d7811", null ],
+      [ "THUMBNAIL2", "v201406_2_ad_words_api_8cs.html#a52946c9e6c5e4143dee21f63200f4944afc121c2c4f2b17af551a2f4dddc69c12", null ],
+      [ "THUMBNAIL3", "v201406_2_ad_words_api_8cs.html#a52946c9e6c5e4143dee21f63200f4944abf252fcc69988b801b4542b378ab173e", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a52946c9e6c5e4143dee21f63200f4944a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoLevel", "v201406_2_ad_words_api_8cs.html#aa2ce168f06bf58f68cb9ed3e9428c9e6", [
+      [ "VIDEO_CAMPAIGN", "v201406_2_ad_words_api_8cs.html#aa2ce168f06bf58f68cb9ed3e9428c9e6a62d49f7b7977e896b08fb97ffa14733c", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#aa2ce168f06bf58f68cb9ed3e9428c9e6a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoMinuteOfHour", "v201406_2_ad_words_api_8cs.html#a47b794cea28d35392f70af37d65846ca", [
+      [ "ZERO", "v201406_2_ad_words_api_8cs.html#a47b794cea28d35392f70af37d65846caa529e9e0beb5f85d1f132917c1a09860c", null ],
+      [ "FIFTEEN", "v201406_2_ad_words_api_8cs.html#a47b794cea28d35392f70af37d65846caaf5d480d3abc4bdfeff0430a7356fe0ab", null ],
+      [ "THIRTY", "v201406_2_ad_words_api_8cs.html#a47b794cea28d35392f70af37d65846caad63d462c490b1b3877f63e98f4d8aa77", null ],
+      [ "FORTY_FIVE", "v201406_2_ad_words_api_8cs.html#a47b794cea28d35392f70af37d65846caabf36de07efabbfbfbe685a3fc1687f9e", null ]
+    ] ],
+    [ "VideoMobileDeviceDeviceType", "v201406_2_ad_words_api_8cs.html#a2fd0b8d59254c0c5ff5e35e39e503d42", [
+      [ "DEVICE_TYPE_MOBILE", "v201406_2_ad_words_api_8cs.html#a2fd0b8d59254c0c5ff5e35e39e503d42a2b5ebd6adaa5b6ece238ca67c8f111f7", null ],
+      [ "DEVICE_TYPE_TABLET", "v201406_2_ad_words_api_8cs.html#a2fd0b8d59254c0c5ff5e35e39e503d42a31c747db02ee5e4c50ca4b86241084d4", null ]
+    ] ],
+    [ "VideoOperatingSystemVersionOperatorType", "v201406_2_ad_words_api_8cs.html#af23ded7219bcb18d0bead86e95ae96aa", [
+      [ "GREATER_THAN_EQUAL_TO", "v201406_2_ad_words_api_8cs.html#af23ded7219bcb18d0bead86e95ae96aaa71037df38b31959b580b012ca2ded68c", null ],
+      [ "EQUAL_TO", "v201406_2_ad_words_api_8cs.html#af23ded7219bcb18d0bead86e95ae96aaa52b88e097f0d16f711b174a6b576cc3b", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#af23ded7219bcb18d0bead86e95ae96aaa696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoSearchSelectorSearchType", "v201406_2_ad_words_api_8cs.html#a4bbf3ad6aa6aff57dd0fb6dbb072ea1c", [
+      [ "VIDEO", "v201406_2_ad_words_api_8cs.html#a4bbf3ad6aa6aff57dd0fb6dbb072ea1cae60ae31f67ab883c746bb71c7a145c18", null ],
+      [ "CHANNEL", "v201406_2_ad_words_api_8cs.html#a4bbf3ad6aa6aff57dd0fb6dbb072ea1caf52e9c50a060add65a035429b2a22229", null ]
+    ] ],
+    [ "VideoSearchSortable", "v201406_2_ad_words_api_8cs.html#a15e496047f84559f74a2fb295c46c27f", [
+      [ "RELEVANCE", "v201406_2_ad_words_api_8cs.html#a15e496047f84559f74a2fb295c46c27fabaa19962dbd6b12c63759e561391fe92", null ],
+      [ "DATE_UPLOADED", "v201406_2_ad_words_api_8cs.html#a15e496047f84559f74a2fb295c46c27fa1a8e4fd0f379de8cad7482e98a8dc184", null ],
+      [ "VIEW_COUNT", "v201406_2_ad_words_api_8cs.html#a15e496047f84559f74a2fb295c46c27fadcc41ffc35a5e6af5d4898bcae2a92e3", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a15e496047f84559f74a2fb295c46c27fa696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoServiceErrorReason", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4b", [
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "INVALID_VIDEO_ID", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4bae9754c28dd58f2b9182edb30bc48a180", null ],
+      [ "VIDEO_NOT_FOUND", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba45312c22031ad483dc87bafd64212930", null ],
+      [ "INVALID_CHANNEL", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba141b94509ad9973b5ff2f08830956e07", null ],
+      [ "VIDEO_LOOKUP_SERVICE_UNAVAILABLE", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4baaad92536c3e397a4e7c3453ef80aafb4", null ],
+      [ "VIDEO_SEARCH_SERVICE_UNAVAILABLE", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba96a1c0ff2ced73488f5539adb65279a2", null ],
+      [ "CHANNEL_SEARCH_SERVICE_UNAVAILABLE", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4baa89496600db83587bee752835f093435", null ],
+      [ "YOUTUBE_ANALYTICS_SERVICE_UNAVAILABLE", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba73cdefff3c799ff894761c21351f18a7", null ],
+      [ "VIDEO_NOT_OWNED_BY_LINKED_ACCOUNT", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4baa7a8a82b5a6d5b2cba0e6d63ec00cfb1", null ],
+      [ "VIDEO_NOT_ENABLED_FOR_CALL_TO_ACTION", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba557fe95ea90422317bf2339607403de4", null ],
+      [ "CALL_TO_ACTION_NOT_FOUND", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba24d43edf6fc31d0967796809e7b73448", null ],
+      [ "INVALID_CALL_TO_ACTION", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4bab6bb2619cad0b9ec2ce9491ebdc5dd75", null ],
+      [ "UNKNOWN_CALL_TO_ACTION_ERROR", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba8851ae5289ca8320f077b15ad0f750fd", null ],
+      [ "CALL_TO_ACTION_TOO_LONG", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba8ef70eeae53efdf78ff902c0fafc643d", null ],
+      [ "CALL_TO_ACTION_INVALID_FORMAT", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba0add91704093704fa46513ba0c62e482", null ],
+      [ "CALL_TO_ACTION_INVALID_CHARS", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4bafba7d54bac90b51d6f3a55793d7a2ce7", null ],
+      [ "CALL_TO_ACTION_INVALID_INPUT", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba776125a2ef6b94af970dd6ae7c553e65", null ],
+      [ "INVALID_FORMAT", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba252d8e34178da47f2208605a66051241", null ],
+      [ "INVALID_INPUT", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4bac063281d4adc16ebccfec66aa885b4dd", null ],
+      [ "INVALID_IMAGE_FILESIZE", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba28773dc557b2f87823bb6c1af713cc37", null ],
+      [ "UNSUPPORTED_IMAGE_FORMAT", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba730297ad19b0faeb62440ec8dc19e6e8", null ],
+      [ "DUPLICATE_VIDEO_ID", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba6ee8b80afd871048edaa8ce04c775ede", null ],
+      [ "TOO_LONG", "v201406_2_ad_words_api_8cs.html#aaa36d5025c5270ce25bbdbe62a27fe4ba96307b673d66e1f465af10eaaa8f7f37", null ]
+    ] ],
+    [ "VideoServingStatus", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354", [
+      [ "UNDEFINED", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354a0db45d2a4141101bdfe48e3314cfbca3", null ],
+      [ "REMOVED", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354ab3461745d64b12346503b2980e436db5", null ],
+      [ "CAMPAIGN_REMOVED", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354ad24c4312d557dbce0df3f55315ef3987", null ],
+      [ "PAUSED", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354a99b2439e63f73ad515f7ab2447a80673", null ],
+      [ "CAMPAIGN_PAUSED", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354aa76cfc8441914616a64b826ba521e13b", null ],
+      [ "ENDED", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354a3032bcfd5e671852750a0304cd2b024a", null ],
+      [ "SUSPENDED", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354a0cb707127aebaa0023eb38363993843a", null ],
+      [ "BROKEN", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354a10c4a304905dd48439743b393540ce88", null ],
+      [ "IMPROVABLE", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354a8e0b596a28432ed188990150f10bec7e", null ],
+      [ "LIMITED_BY_BUDGET", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354a1b693ab0a75b36a8daf50cc941ba0f60", null ],
+      [ "NOTIFICATION", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354a9814d942b7e24870084a3dce24867ab3", null ],
+      [ "PENDING", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354ac69f06e1a9b016d133907b4e5f5864d2", null ],
+      [ "SERVING", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354a8f62a15be91745994dc59fb41d396e5a", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a5baf1b62169a5f7d1165ff80fff8d354a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoSortable", "v201406_2_ad_words_api_8cs.html#a70080f70272726db32f3e7b480c5409a", [
+      [ "TITLE", "v201406_2_ad_words_api_8cs.html#a70080f70272726db32f3e7b480c5409aa6f9dccd85b2e0786c8d522045365eb48", null ],
+      [ "DATE_UPLOADED", "v201406_2_ad_words_api_8cs.html#a70080f70272726db32f3e7b480c5409aa1a8e4fd0f379de8cad7482e98a8dc184", null ],
+      [ "DURATION", "v201406_2_ad_words_api_8cs.html#a70080f70272726db32f3e7b480c5409aa46b4d9ff37717009d48acedceece6914", null ],
+      [ "CHANNEL", "v201406_2_ad_words_api_8cs.html#a70080f70272726db32f3e7b480c5409aaf52e9c50a060add65a035429b2a22229", null ],
+      [ "VIEW_COUNT", "v201406_2_ad_words_api_8cs.html#a70080f70272726db32f3e7b480c5409aadcc41ffc35a5e6af5d4898bcae2a92e3", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a70080f70272726db32f3e7b480c5409aa696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoSortOrder", "v201406_2_ad_words_api_8cs.html#a65c64177364b8c4888f3c28c1361282d", [
+      [ "ASCENDING", "v201406_2_ad_words_api_8cs.html#a65c64177364b8c4888f3c28c1361282da83ec681a20197326c163ea3b39ef7c32", null ],
+      [ "DESCENDING", "v201406_2_ad_words_api_8cs.html#a65c64177364b8c4888f3c28c1361282dacff818f0ae4cef845577e39283886a53", null ]
+    ] ],
+    [ "VideoStatsSortable", "v201406_2_ad_words_api_8cs.html#a2eecbf207862bf16109bbcb7f7d8366a", [
+      [ "TOTAL_VIEWS", "v201406_2_ad_words_api_8cs.html#a2eecbf207862bf16109bbcb7f7d8366aac5bb66060d6e1a540a225f012d870050", null ],
+      [ "CTA_IMPRESSIONS", "v201406_2_ad_words_api_8cs.html#a2eecbf207862bf16109bbcb7f7d8366aa27619d0d7377ff53fee7aaab95778c90", null ],
+      [ "CTA_CLICKS", "v201406_2_ad_words_api_8cs.html#a2eecbf207862bf16109bbcb7f7d8366aa396bf2d6de7bf2d6eda3307df0394192", null ],
+      [ "CTA_CTR", "v201406_2_ad_words_api_8cs.html#a2eecbf207862bf16109bbcb7f7d8366aa57328ee74c274ff8358f77634382efff", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a2eecbf207862bf16109bbcb7f7d8366aa696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "VideoTimeUnit", "v201406_2_ad_words_api_8cs.html#a2ed8e26ec1f3eb6bea559913aa4fa860", [
+      [ "MINUTE", "v201406_2_ad_words_api_8cs.html#a2ed8e26ec1f3eb6bea559913aa4fa860a46bda4cde2f10bdb9e51e3bbefa4a2bf", null ],
+      [ "HOUR", "v201406_2_ad_words_api_8cs.html#a2ed8e26ec1f3eb6bea559913aa4fa860add3f965174e8bb2f64523981626ced1a", null ],
+      [ "DAY", "v201406_2_ad_words_api_8cs.html#a2ed8e26ec1f3eb6bea559913aa4fa860a5b1d59b5451c06afb65ab1bc2713cfb4", null ],
+      [ "WEEK", "v201406_2_ad_words_api_8cs.html#a2ed8e26ec1f3eb6bea559913aa4fa860a02854858ab6190b2e40f3d9b1ee16982", null ],
+      [ "MONTH", "v201406_2_ad_words_api_8cs.html#a2ed8e26ec1f3eb6bea559913aa4fa860a383316922f2516abe5abe53370284a7f", null ],
+      [ "LIFETIME", "v201406_2_ad_words_api_8cs.html#a2ed8e26ec1f3eb6bea559913aa4fa860a0c4408d480b783ccb279ea84bedda77a", null ]
+    ] ],
     [ "VideoType", "v201406_2_ad_words_api_8cs.html#a2b19b91d935e16fc27634cd3f5273a59", [
       [ "ADOBE", "v201406_2_ad_words_api_8cs.html#a2b19b91d935e16fc27634cd3f5273a59ae66fb857e48e693271f76d3043daec74", null ],
       [ "REALPLAYER", "v201406_2_ad_words_api_8cs.html#a2b19b91d935e16fc27634cd3f5273a59a2b7a3ab349579c1b85a8dfd2b1d3072a", null ],
       [ "QUICKTIME", "v201406_2_ad_words_api_8cs.html#a2b19b91d935e16fc27634cd3f5273a59a22544e5fb544c793a71e7d935bff11e2", null ],
       [ "WINDOWSMEDIA", "v201406_2_ad_words_api_8cs.html#a2b19b91d935e16fc27634cd3f5273a59a5d5800aa877f7711d53bfba9d1b68bc4", null ]
+    ] ],
+    [ "VideoUserStatus", "v201406_2_ad_words_api_8cs.html#a09e11176434d9978ae333ad46b597f16", [
+      [ "ENABLED", "v201406_2_ad_words_api_8cs.html#a09e11176434d9978ae333ad46b597f16ac8cf6eea8f096ed51160b484d97c5bbd", null ],
+      [ "REMOVED", "v201406_2_ad_words_api_8cs.html#a09e11176434d9978ae333ad46b597f16ab3461745d64b12346503b2980e436db5", null ],
+      [ "PAUSED", "v201406_2_ad_words_api_8cs.html#a09e11176434d9978ae333ad46b597f16a99b2439e63f73ad515f7ab2447a80673", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a09e11176434d9978ae333ad46b597f16a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "WebpageConditionOperand", "v201406_2_ad_words_api_8cs.html#a76a7045dda2198f37ee2375c2f1ebd26", [
       [ "URL", "v201406_2_ad_words_api_8cs.html#a76a7045dda2198f37ee2375c2f1ebd26ae6b391a8d2c4d45902a23a8b6585703d", null ],
@@ -3345,5 +4147,10 @@ var v201406_2_ad_words_api_8cs =
       [ "PAGE_TITLE", "v201406_2_ad_words_api_8cs.html#a76a7045dda2198f37ee2375c2f1ebd26abf4e5952ce83fa2afb613e86eac5b9bf", null ],
       [ "PAGE_CONTENT", "v201406_2_ad_words_api_8cs.html#a76a7045dda2198f37ee2375c2f1ebd26af23aaffa4c3dbc1b123812b5b1c79a20", null ],
       [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#a76a7045dda2198f37ee2375c2f1ebd26a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "YouTubeVideoAccessLevel", "v201406_2_ad_words_api_8cs.html#af83365e0a17c41842aad2b1198f3eb4d", [
+      [ "FULL_LINKED", "v201406_2_ad_words_api_8cs.html#af83365e0a17c41842aad2b1198f3eb4dabd7970cf2dca192f6ac24d34e4baa384", null ],
+      [ "LIMITED_NOT_LINKED", "v201406_2_ad_words_api_8cs.html#af83365e0a17c41842aad2b1198f3eb4dadbe5430bcc9ef333190536b8ad1f8af3", null ],
+      [ "UNKNOWN", "v201406_2_ad_words_api_8cs.html#af83365e0a17c41842aad2b1198f3eb4da696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ]
 ];
