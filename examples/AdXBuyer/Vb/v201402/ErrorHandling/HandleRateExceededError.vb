@@ -133,8 +133,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
       ''' <summary>
       ''' Main method for the thread.
       ''' </summary>
-      ''' <param name="obj">The thread parameter.</param>
-      Public Sub Run(ByVal obj As Object)
+      Public Sub Run()
         ' Create the operations.
         Dim operations As New List(Of AdGroupCriterionOperation)
         For j As Integer = 0 To NUM_KEYWORDS
@@ -159,8 +158,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
         ' Get the AdGroupCriterionService. This should be done within the
         ' thread, since a service can only handle one outgoing HTTP request
         ' at a time.
-        Dim service As AdGroupCriterionService = user.GetService( _
-            AdWordsService.v201402.AdGroupCriterionService)
+        Dim service As AdGroupCriterionService = CType(user.GetService( _
+            AdWordsService.v201402.AdGroupCriterionService), AdGroupCriterionService)
         service.RequestHeader.validateOnly = True
         Dim retryCount As Integer = 0
         Const NUM_RETRIES As Integer = 3

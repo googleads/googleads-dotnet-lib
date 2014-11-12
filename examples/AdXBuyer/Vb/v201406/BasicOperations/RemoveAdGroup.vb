@@ -63,7 +63,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="adGroupId">Id of the ad group to be removed.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupService.
-      Dim adGroupService As AdGroupService = user.GetService(AdWordsService.v201406.AdGroupService)
+      Dim adGroupService As AdGroupService = CType(user.GetService( _
+          AdWordsService.v201406.AdGroupService), AdGroupService)
 
       ' Create ad group with REMOVED status.
       Dim adGroup As New AdGroup

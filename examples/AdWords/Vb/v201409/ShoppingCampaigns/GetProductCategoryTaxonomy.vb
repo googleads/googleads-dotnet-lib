@@ -113,8 +113,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the ConstantDataService.
-      Dim constantDataService As ConstantDataService = user.GetService( _
-          AdWordsService.v201409.ConstantDataService)
+      Dim constantDataService As ConstantDataService = CType(user.GetService( _
+          AdWordsService.v201409.ConstantDataService), AdWords.v201409.ConstantDataService)
 
       Dim selector As New Selector()
 

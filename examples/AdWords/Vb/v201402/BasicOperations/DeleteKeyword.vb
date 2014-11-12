@@ -66,8 +66,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
     ''' <param name="keywordId">Id of the keyword to be deleted.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal keywordId As Long)
       ' Get the AdGroupCriterionService.
-      Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
-          AdWordsService.v201402.AdGroupCriterionService)
+      Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService( _
+          AdWordsService.v201402.AdGroupCriterionService), AdGroupCriterionService)
 
       ' Create base class criterion to avoid setting keyword-specific
       ' fields.

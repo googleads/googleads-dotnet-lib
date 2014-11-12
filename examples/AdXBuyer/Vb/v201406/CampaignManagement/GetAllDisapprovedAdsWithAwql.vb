@@ -67,7 +67,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' are retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = user.GetService(AdWordsService.v201406.AdGroupAdService)
+      Dim service As AdGroupAdService = CType(user.GetService( _
+          AdWordsService.v201406.AdGroupAdService), AdGroupAdService)
 
       ' Get all the disapproved ads for this campaign.
       Dim query As String = String.Format("SELECT Id, AdGroupAdDisapprovalReasons WHERE " & _
@@ -89,7 +90,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
 
           ' Display the results.
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = offset
+            Dim i As Integer = CInt(offset)
             For Each adGroupAd As AdGroupAd In page.entries
               Console.WriteLine("{0}) Ad id {1} has been disapproved for the following " & _
                   "reason(s):", i, adGroupAd.ad.id)

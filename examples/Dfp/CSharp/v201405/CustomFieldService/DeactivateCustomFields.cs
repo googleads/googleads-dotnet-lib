@@ -99,7 +99,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201405 {
           statementBuilder.RemoveLimitAndOffset();
 
           // Create action.
-          Dfp.v201405.DeactivateCustomFields action = new Dfp.v201405.DeactivateCustomFields();
+          Google.Api.Ads.Dfp.v201405.DeactivateCustomFields action =
+              new Google.Api.Ads.Dfp.v201405.DeactivateCustomFields();
 
           // Perform action.
           UpdateResult result = customFieldService.performCustomFieldAction(action,

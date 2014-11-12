@@ -63,8 +63,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
     ''' </param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupCriterionService.
-      Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
-          AdWordsService.v201402.AdGroupCriterionService)
+      Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService( _
+          AdWordsService.v201402.AdGroupCriterionService), AdGroupCriterionService)
 
       ' Set partial failure mode for the service.
       adGroupCriterionService.RequestHeader.partialFailure = True

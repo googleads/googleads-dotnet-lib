@@ -64,8 +64,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' modifiers are retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the AdGroupBidModifierService.
-      Dim adGroupBidModifierService As AdGroupBidModifierService = user.GetService( _
-          AdWordsService.v201406.AdGroupBidModifierService)
+      Dim adGroupBidModifierService As AdGroupBidModifierService = CType(user.GetService( _
+          AdWordsService.v201406.AdGroupBidModifierService), AdGroupBidModifierService)
 
       Const PAGE_SIZE As Integer = 500
 

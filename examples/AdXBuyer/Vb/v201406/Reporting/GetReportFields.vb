@@ -37,8 +37,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
       Dim codeExample As New GetReportFields
       Console.WriteLine(codeExample.Description)
       Try
-        Dim reportType As ReportDefinitionReportType = [Enum].Parse( _
-            GetType(ReportDefinitionReportType), "INSERT_REPORT_TYPE_HERE")
+        Dim reportType As ReportDefinitionReportType = CType([Enum].Parse( _
+            GetType(ReportDefinitionReportType), "INSERT_REPORT_TYPE_HERE"),  _
+            ReportDefinitionReportType)
         codeExample.Run(New AdWordsUser, reportType)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
@@ -62,8 +63,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="reportType">The report type to be run.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal reportType As ReportDefinitionReportType)
       ' Get the ReportDefinitionService.
-      Dim reportDefinitionService As ReportDefinitionService = user.GetService( _
-          AdWordsService.v201406.ReportDefinitionService)
+      Dim reportDefinitionService As ReportDefinitionService = CType(user.GetService( _
+          AdWordsService.v201406.ReportDefinitionService), ReportDefinitionService)
 
       ' The type of the report to get fields for.
       ' E.g.: KEYWORDS_PERFORMANCE_REPORT

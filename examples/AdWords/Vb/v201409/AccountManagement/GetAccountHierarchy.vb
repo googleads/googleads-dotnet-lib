@@ -64,8 +64,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the ManagedCustomerService.
-      Dim mcService As ManagedCustomerService = user.GetService( _
-          AdWordsService.v201409.ManagedCustomerService)
+      Dim mcService As ManagedCustomerService = CType(user.GetService( _
+          AdWordsService.v201409.ManagedCustomerService), ManagedCustomerService)
 
       ' Create selector.
       Dim selector As New Selector()

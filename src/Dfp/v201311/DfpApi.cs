@@ -1236,6 +1236,7 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateTimeRangeTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomFieldValueError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CrossSellError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentMetadataTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompanyCreditStatusError))]
@@ -1254,6 +1255,7 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RateCardCustomizationError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeTemplateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentMetadataKeyHierarchyError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CollectionSizeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductTemplateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductTemplateActionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseRateError))]
@@ -2986,7 +2988,8 @@ ReconciliationReportRow[] reconciliationReportRows) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201311")]
   public enum UnitType {
     IMPRESSIONS,
-    CLICKS
+    CLICKS,
+    UNKNOWN
   }
 
 
@@ -6837,6 +6840,54 @@ ReconciliationReportRow[] reconciliationReportRows) {
     CUSTOM_FIELD_NOT_FOUND,
     CUSTOM_FIELD_INACTIVE,
     CUSTOM_FIELD_OPTION_NOT_FOUND,
+    UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201311")]
+  public partial class CrossSellError : ApiError {
+    private CrossSellErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public CrossSellErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CrossSellError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201311")]
+  public enum CrossSellErrorReason {
+    UNSUPPORTED_RESERVATION_TYPE,
+    NO_VALID_ELIGIBLE_RESERVATION_TYPES,
+    COMPANY_IS_NOT_DISTRIBUTION_PARTNER,
+    CHANGING_PARTNER_NETWORK_IS_NOT_SUPPORTED,
+    MISSING_DISTRIBUTOR_PARTNER_NAME,
+    DISTRIBUTOR_NETWORK_MISSING_PUBLISHER_FEATURE,
+    CONTENT_PROVIDER_NETWORK_MISSING_PUBLISHER_FEATURE,
+    INVALID_DISTRIBUTOR_PARTNER_NAME,
+    INVALID_CONTENT_PROVIDER_NETWORK,
+    CONTENT_PROVIDER_NETWORK_CANNOT_BE_ACTIVE_NETWORK,
+    CONTENT_PROVIDER_NETWORK_ALREADY_ENABLED_FOR_CROSS_SELLING,
+    DISTRIBUTOR_RULE_VIOLATION_ERROR,
+    DISTRIBUTOR_RULE_VIOLATION_WARNING,
     UNKNOWN
   }
 
@@ -10873,6 +10924,42 @@ CustomTargetingValue[] values) {
   public enum CustomTargetingKeyType {
     PREDEFINED,
     FREEFORM
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201311")]
+  public partial class CollectionSizeError : ApiError {
+    private CollectionSizeErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public CollectionSizeErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CollectionSizeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201311")]
+  public enum CollectionSizeErrorReason {
+    TOO_FEW,
+    TOO_MANY
   }
 
 
@@ -19063,13 +19150,25 @@ BaseRate[] baseRates) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201311")]
   public partial class ProductBaseRate : BaseRate {
-    private string productIdField;
+    private long productIdField;
+
+    private bool productIdFieldSpecified;
 
     private Money rateField;
 
-    public string productId {
+    public long productId {
       get { return this.productIdField; }
-      set { this.productIdField = value; }
+      set {
+        this.productIdField = value;
+        this.productIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool productIdSpecified {
+      get { return this.productIdFieldSpecified; }
+      set { this.productIdFieldSpecified = value; }
     }
 
     public Money rate {
@@ -22800,7 +22899,9 @@ ProposalLineItem[] proposalLineItems) {
 
     private bool rateCardIdFieldSpecified;
 
-    private string productIdField;
+    private long productIdField;
+
+    private bool productIdFieldSpecified;
 
     private string nameField;
 
@@ -22945,9 +23046,19 @@ ProposalLineItem[] proposalLineItems) {
       set { this.rateCardIdFieldSpecified = value; }
     }
 
-    public string productId {
+    public long productId {
       get { return this.productIdField; }
-      set { this.productIdField = value; }
+      set {
+        this.productIdField = value;
+        this.productIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool productIdSpecified {
+      get { return this.productIdFieldSpecified; }
+      set { this.productIdFieldSpecified = value; }
     }
 
     public string name {
@@ -24476,15 +24587,6 @@ Activity[] activities) {
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201311", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201311", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public virtual Product getProduct(string productId) {
-      object[] results = this.Invoke("getProduct", new object[] { productId });
-      return ((Product) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201311", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201311", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ProductPage getProductsByStatement(Statement statement) {
       object[] results = this.Invoke("getProductsByStatement", new object[] { statement });
       return ((ProductPage) (results[0]));
@@ -24571,60 +24673,6 @@ Product[] products) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201311")]
-  public partial class ProductPage {
-    private int totalResultSetSizeField;
-
-    private bool totalResultSetSizeFieldSpecified;
-
-    private int startIndexField;
-
-    private bool startIndexFieldSpecified;
-
-    private Product[] resultsField;
-
-    public int totalResultSetSize {
-      get { return this.totalResultSetSizeField; }
-      set {
-        this.totalResultSetSizeField = value;
-        this.totalResultSetSizeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool totalResultSetSizeSpecified {
-      get { return this.totalResultSetSizeFieldSpecified; }
-      set { this.totalResultSetSizeFieldSpecified = value; }
-    }
-
-    public int startIndex {
-      get { return this.startIndexField; }
-      set {
-        this.startIndexField = value;
-        this.startIndexSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool startIndexSpecified {
-      get { return this.startIndexFieldSpecified; }
-      set { this.startIndexFieldSpecified = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("results")]
-    public Product[] results {
-      get { return this.resultsField; }
-      set { this.resultsField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201311")]
   public partial class Product {
     private string nameField;
 
@@ -24640,7 +24688,9 @@ Product[] products) {
 
     private bool productTemplateIdFieldSpecified;
 
-    private string idField;
+    private long idField;
+
+    private bool idFieldSpecified;
 
     private string notesField;
 
@@ -24726,9 +24776,19 @@ Product[] products) {
       set { this.productTemplateIdFieldSpecified = value; }
     }
 
-    public string id {
+    public long id {
       get { return this.idField; }
-      set { this.idField = value; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public string notes {
@@ -24854,6 +24914,60 @@ Product[] products) {
     INACTIVE,
     ARCHIVED,
     UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201311")]
+  public partial class ProductPage {
+    private int totalResultSetSizeField;
+
+    private bool totalResultSetSizeFieldSpecified;
+
+    private int startIndexField;
+
+    private bool startIndexFieldSpecified;
+
+    private Product[] resultsField;
+
+    public int totalResultSetSize {
+      get { return this.totalResultSetSizeField; }
+      set {
+        this.totalResultSetSizeField = value;
+        this.totalResultSetSizeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool totalResultSetSizeSpecified {
+      get { return this.totalResultSetSizeFieldSpecified; }
+      set { this.totalResultSetSizeFieldSpecified = value; }
+    }
+
+    public int startIndex {
+      get { return this.startIndexField; }
+      set {
+        this.startIndexField = value;
+        this.startIndexSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool startIndexSpecified {
+      get { return this.startIndexFieldSpecified; }
+      set { this.startIndexFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("results")]
+    public Product[] results {
+      get { return this.resultsField; }
+      set { this.resultsField = value; }
+    }
   }
 
 
@@ -26829,7 +26943,6 @@ CreativeWrapper[] creativeWrappers) {
       get;
       set;
     }
-    Product getProduct(string productId);
     ProductPage getProductsByStatement(Statement statement);
     UpdateResult performProductAction(ProductAction productAction, Statement filterStatement);
     Product updateProduct(Product product);

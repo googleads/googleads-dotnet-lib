@@ -69,12 +69,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' parameters are set.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal criterionId As Long)
       ' Get the AdGroupAdService.
-      Dim adGroupAdService As AdGroupAdService = user.GetService( _
-          AdWordsService.v201409.AdGroupAdService)
+      Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
+          AdWordsService.v201409.AdGroupAdService), AdWords.v201409.AdGroupAdService)
 
       ' Get the AdParamService.
-      Dim adParamService As AdParamService = user.GetService( _
-          AdWordsService.v201409.AdParamService)
+      Dim adParamService As AdParamService = CType(user.GetService( _
+          AdWordsService.v201409.AdParamService), AdWords.v201409.AdParamService)
 
       ' Create the text ad.
       Dim textAd As New TextAd

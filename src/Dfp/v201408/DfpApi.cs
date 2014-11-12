@@ -1246,6 +1246,7 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateTimeRangeTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomFieldValueError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CrossSellError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentMetadataTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompanyCreditStatusError))]
@@ -1959,24 +1960,6 @@ FirstPartyAudienceSegment[] segments) {
       set { this.errorsField = value; }
     }
   }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201408")]
-  public abstract partial class Authentication {
-    private string authenticationTypeField;
-
-    [System.Xml.Serialization.XmlElementAttribute("Authentication.Type")]
-    public string AuthenticationType {
-      get { return this.authenticationTypeField; }
-      set { this.authenticationTypeField = value; }
-    }
-  }
-
-
 
 
 
@@ -6665,6 +6648,54 @@ ReconciliationReport[] reconciliationReports) {
     CUSTOM_FIELD_NOT_FOUND,
     CUSTOM_FIELD_INACTIVE,
     CUSTOM_FIELD_OPTION_NOT_FOUND,
+    UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201408")]
+  public partial class CrossSellError : ApiError {
+    private CrossSellErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public CrossSellErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CrossSellError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201408")]
+  public enum CrossSellErrorReason {
+    UNSUPPORTED_RESERVATION_TYPE,
+    NO_VALID_ELIGIBLE_RESERVATION_TYPES,
+    COMPANY_IS_NOT_DISTRIBUTION_PARTNER,
+    CHANGING_PARTNER_NETWORK_IS_NOT_SUPPORTED,
+    MISSING_DISTRIBUTOR_PARTNER_NAME,
+    DISTRIBUTOR_NETWORK_MISSING_PUBLISHER_FEATURE,
+    CONTENT_PROVIDER_NETWORK_MISSING_PUBLISHER_FEATURE,
+    INVALID_DISTRIBUTOR_PARTNER_NAME,
+    INVALID_CONTENT_PROVIDER_NETWORK,
+    CONTENT_PROVIDER_NETWORK_CANNOT_BE_ACTIVE_NETWORK,
+    CONTENT_PROVIDER_NETWORK_ALREADY_ENABLED_FOR_CROSS_SELLING,
+    DISTRIBUTOR_RULE_VIOLATION_ERROR,
+    DISTRIBUTOR_RULE_VIOLATION_WARNING,
     UNKNOWN
   }
 

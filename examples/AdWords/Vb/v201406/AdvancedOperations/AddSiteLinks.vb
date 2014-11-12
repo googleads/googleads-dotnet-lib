@@ -118,7 +118,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     Private Sub createSiteLinksFeed( _
       ByVal user As AdWordsUser, ByVal siteLinksData As SiteLinksDataHolder)
       ' Get the FeedService.
-      Dim feedService As FeedService = user.GetService(AdWordsService.v201406.FeedService)
+      Dim feedService As FeedService = CType(user.GetService( _
+          AdWordsService.v201406.FeedService), FeedService)
 
       ' Create attributes.
       Dim textAttribute As New FeedAttribute
@@ -157,7 +158,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
         ByVal user As AdWordsUser, ByVal siteLinksData As SiteLinksDataHolder)
       ' Get the FeedItemService.
       Dim feedItemService As FeedItemService = _
-        user.GetService(AdWordsService.v201406.FeedItemService)
+        CType(user.GetService(AdWordsService.v201406.FeedItemService), FeedItemService)
 
       ' Create operations to add FeedItems.
       Dim home As FeedItemOperation = _
@@ -196,7 +197,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
        ByVal user As AdWordsUser, ByVal siteLinksData As SiteLinksDataHolder)
       ' Get the FeedItemService.
       Dim feedMappingService As FeedMappingService = _
-        user.GetService(AdWordsService.v201406.FeedMappingService)
+        CType(user.GetService(AdWordsService.v201406.FeedMappingService), FeedMappingService)
 
       ' Map the FeedAttributeIds to the fieldId constants.
       Dim linkTextFieldMapping As New AttributeFieldMapping
@@ -230,7 +231,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
       ByVal siteLinksData As SiteLinksDataHolder, ByVal campaignId As Long)
       ' Get the CampaignFeedService.
       Dim campaignFeedService As CampaignFeedService = _
-        user.GetService(AdWordsService.v201406.CampaignFeedService)
+        CType(user.GetService(AdWordsService.v201406.CampaignFeedService), CampaignFeedService)
 
       ' Map the feed item ids to the campaign using an IN operation.
       Dim feedItemRequestContextOperand As New RequestContextOperand()

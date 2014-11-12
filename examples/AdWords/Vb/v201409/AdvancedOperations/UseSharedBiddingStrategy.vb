@@ -63,13 +63,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the services.
-      Dim biddingStrategyService As BiddingStrategyService = user.GetService( _
-          AdWordsService.v201409.BiddingStrategyService)
+      Dim biddingStrategyService As BiddingStrategyService = CType(user.GetService( _
+          AdWordsService.v201409.BiddingStrategyService), AdWords.v201409.BiddingStrategyService)
 
-      Dim budgetService As BudgetService = user.GetService(AdWordsService.v201409.BudgetService)
+      Dim budgetService As BudgetService = CType(user.GetService( _
+          AdWordsService.v201409.BudgetService), AdWords.v201409.BudgetService)
 
-      Dim campaignService As CampaignService = user.GetService( _
-          AdWordsService.v201409.CampaignService)
+      Dim campaignService As CampaignService = CType(user.GetService( _
+          AdWordsService.v201409.CampaignService), AdWords.v201409.CampaignService)
 
       Dim biddingStrategyName As String = "Maximize Clicks " & ExampleUtilities.GetRandomString()
       Dim bidCeiling As Long = 2000000

@@ -64,8 +64,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' added.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupCriterionService.
-      Dim adGroupCriterionService As AdGroupCriterionService = _
-          user.GetService(AdWordsService.v201406.AdGroupCriterionService)
+      Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService( _
+          AdWordsService.v201406.AdGroupCriterionService), AdGroupCriterionService)
 
       ' Create biddable ad group criterion for gender
       Dim genderTarget As New Gender()
@@ -103,7 +103,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
       Try
         ' Add ad group criteria.
         Dim result As AdGroupCriterionReturnValue = adGroupCriterionService.mutate( _
-            operations.ToArray)
+            CType(operations.ToArray, AdGroupCriterionOperation()))
 
         ' Display ad group criteria.
         If (Not result Is Nothing) AndAlso Not (result.value Is Nothing) Then

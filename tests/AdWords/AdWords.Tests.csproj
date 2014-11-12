@@ -147,8 +147,8 @@
     <Compile Include="v201409\TestUtils.cs" />
     <Compile Include="v201409\VersionedExampleTestsBase.cs" />
     <Compile Include="AdWordsRequestInterceptor.cs" />
-    <Compile Include="ExamplesMockData.cs" />
     <Compile Include="ExampleTestsBase.cs" />
+    <Compile Include="ExamplesMockData.cs" />
     <Compile Include="MockUtilities.cs" />
     <Compile Include="ServiceCreationTests.cs" />
     <Compile Include="SoapMessages.v201402.Designer.cs" />

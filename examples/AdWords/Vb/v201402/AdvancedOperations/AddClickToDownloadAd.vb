@@ -67,7 +67,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupAdService.
       Dim adGroupAdService As AdGroupAdService = _
-          user.GetService(AdWordsService.v201402.AdGroupAdService)
+          CType(user.GetService(AdWordsService.v201402.AdGroupAdService), AdGroupAdService)
 
       ' Create the template ad.
       Dim clickToDownloadAppAd As New TemplateAd()

@@ -66,7 +66,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <param name="adGroupId">ID of the adgroup to which ad is added.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = user.GetService(AdWordsService.v201409.AdGroupAdService)
+      Dim service As AdGroupAdService = CType(user.GetService( _
+          AdWordsService.v201409.AdGroupAdService), AdGroupAdService)
 
       ' Create the text ad.
       Dim textAd As New TextAd
@@ -135,7 +136,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
           Console.WriteLine("New text ad with ID = {0} and display URL = '{1}' was " & _
               "created.", newAdGroupAd.ad.id, newAdGroupAd.ad.displayUrl)
           Console.WriteLine("Upgraded URL properties:")
-          Dim newTextAd As TextAd = newAdGroupAd.ad
+          Dim newTextAd As TextAd = CType(newAdGroupAd.ad, AdWords.v201409.TextAd)
 
           Console.WriteLine("  Final URLs: {0}", String.Join(", ", newTextAd.finalUrls))
           Console.WriteLine("  Final Mobile URLS: {0}", _

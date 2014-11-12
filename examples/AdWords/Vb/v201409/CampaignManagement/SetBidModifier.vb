@@ -70,8 +70,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <param name="bidModifier">The bid modifier.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long, ByVal bidModifier As Double)
       ' Get the CampaignCriterionService.
-      Dim campaignCriterionService As CampaignCriterionService = user.GetService( _
-          AdWordsService.v201409.CampaignCriterionService)
+      Dim campaignCriterionService As CampaignCriterionService = CType(user.GetService( _
+          AdWordsService.v201409.CampaignCriterionService),  _
+          AdWords.v201409.CampaignCriterionService)
 
       ' Create mobile platform. The ID can be found in the documentation.
       ' https://developers.google.com/adwords/api/docs/appendix/platforms

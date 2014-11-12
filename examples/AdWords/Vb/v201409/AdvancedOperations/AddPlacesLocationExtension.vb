@@ -80,11 +80,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     Public Sub Run(ByVal user As AdWordsUser, ByVal placesEmailAddress As String, _
                    ByVal placesAccessToken As String)
       ' Get the FeedService.
-      Dim feedService As FeedService = user.GetService(AdWordsService.v201409.FeedService)
+      Dim feedService As FeedService = CType(user.GetService( _
+          AdWordsService.v201409.FeedService), AdWords.v201409.FeedService)
 
       ' Get the CustomerFeedService.
-      Dim customerFeedService As CustomerFeedService = user.GetService( _
-          AdWordsService.v201409.CustomerFeedService)
+      Dim customerFeedService As CustomerFeedService = CType(user.GetService( _
+          AdWordsService.v201409.CustomerFeedService), AdWords.v201409.CustomerFeedService)
 
       ' Create a feed that will sync to the Google Places account specified
       ' by placesEmailAddress. Do not add FeedAttributes to this object,
@@ -165,7 +166,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
                 addedCustomerFeed.feedId, addedCustomerFeed.placeholderTypes(0))
             Exit Try
           Catch e As AdWordsApiException
-            Dim apiException As ApiException = e.ApiException
+            Dim apiException As ApiException = CType(e.ApiException, AdWords.v201409.ApiException)
             For Each apiError As ApiError In apiException.errors
               If TypeOf apiError Is CustomerFeedError Then
                 If (DirectCast(apiError, CustomerFeedError).reason = _

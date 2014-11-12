@@ -1237,6 +1237,7 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateTimeRangeTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomFieldValueError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CrossSellError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentMetadataTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompanyCreditStatusError))]
@@ -1256,6 +1257,7 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RateCardActionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeTemplateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentMetadataKeyHierarchyError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CollectionSizeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductActionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseRateError))]
@@ -1953,24 +1955,6 @@ FirstPartyAudienceSegment[] segments) {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
-  public abstract partial class Authentication {
-    private string authenticationTypeField;
-
-    [System.Xml.Serialization.XmlElementAttribute("Authentication.Type")]
-    public string AuthenticationType {
-      get { return this.authenticationTypeField; }
-      set { this.authenticationTypeField = value; }
-    }
-  }
-
-
-
-
 
 
 
@@ -2618,7 +2602,8 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
   public enum UnitType {
     IMPRESSIONS,
-    CLICKS
+    CLICKS,
+    UNKNOWN
   }
 
 
@@ -5843,6 +5828,7 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProgrammaticError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
   public enum ProgrammaticErrorReason {
     AUDIENCE_EXTENSION_NOT_SUPPORTED,
+    AUTO_EXTENSION_DAYS_NOT_SUPPORTED,
     VIDEO_NOT_SUPPORTED,
     ROADBLOCKING_NOT_SUPPORTED,
     INVALID_CREATIVE_ROTATION,
@@ -6668,6 +6654,54 @@ FirstPartyAudienceSegment[] segments) {
     CUSTOM_FIELD_NOT_FOUND,
     CUSTOM_FIELD_INACTIVE,
     CUSTOM_FIELD_OPTION_NOT_FOUND,
+    UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public partial class CrossSellError : ApiError {
+    private CrossSellErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public CrossSellErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CrossSellError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public enum CrossSellErrorReason {
+    UNSUPPORTED_RESERVATION_TYPE,
+    NO_VALID_ELIGIBLE_RESERVATION_TYPES,
+    COMPANY_IS_NOT_DISTRIBUTION_PARTNER,
+    CHANGING_PARTNER_NETWORK_IS_NOT_SUPPORTED,
+    MISSING_DISTRIBUTOR_PARTNER_NAME,
+    DISTRIBUTOR_NETWORK_MISSING_PUBLISHER_FEATURE,
+    CONTENT_PROVIDER_NETWORK_MISSING_PUBLISHER_FEATURE,
+    INVALID_DISTRIBUTOR_PARTNER_NAME,
+    INVALID_CONTENT_PROVIDER_NETWORK,
+    CONTENT_PROVIDER_NETWORK_CANNOT_BE_ACTIVE_NETWORK,
+    CONTENT_PROVIDER_NETWORK_ALREADY_ENABLED_FOR_CROSS_SELLING,
+    DISTRIBUTOR_RULE_VIOLATION_ERROR,
+    DISTRIBUTOR_RULE_VIOLATION_WARNING,
     UNKNOWN
   }
 
@@ -10432,6 +10466,42 @@ CustomTargetingValue[] values) {
 
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public partial class CollectionSizeError : ApiError {
+    private CollectionSizeErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public CollectionSizeErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CollectionSizeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public enum CollectionSizeErrorReason {
+    TOO_FEW,
+    TOO_MANY
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ProductServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
@@ -10912,7 +10982,9 @@ Product[] products) {
 
     private bool productTemplateIdFieldSpecified;
 
-    private string idField;
+    private long idField;
+
+    private bool idFieldSpecified;
 
     private string notesField;
 
@@ -10998,9 +11070,19 @@ Product[] products) {
       set { this.productTemplateIdFieldSpecified = value; }
     }
 
-    public string id {
+    public long id {
       get { return this.idField; }
-      set { this.idField = value; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
     }
 
     public string notes {
@@ -16308,7 +16390,9 @@ ProposalLineItem[] proposalLineItems) {
 
     private bool rateCardIdFieldSpecified;
 
-    private string productIdField;
+    private long productIdField;
+
+    private bool productIdFieldSpecified;
 
     private string nameField;
 
@@ -16467,9 +16551,19 @@ ProposalLineItem[] proposalLineItems) {
       set { this.rateCardIdFieldSpecified = value; }
     }
 
-    public string productId {
+    public long productId {
       get { return this.productIdField; }
-      set { this.productIdField = value; }
+      set {
+        this.productIdField = value;
+        this.productIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool productIdSpecified {
+      get { return this.productIdFieldSpecified; }
+      set { this.productIdFieldSpecified = value; }
     }
 
     public string name {
@@ -19986,13 +20080,25 @@ BaseRate[] baseRates) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
   public partial class ProductBaseRate : BaseRate {
-    private string productIdField;
+    private long productIdField;
+
+    private bool productIdFieldSpecified;
 
     private Money rateField;
 
-    public string productId {
+    public long productId {
       get { return this.productIdField; }
-      set { this.productIdField = value; }
+      set {
+        this.productIdField = value;
+        this.productIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool productIdSpecified {
+      get { return this.productIdFieldSpecified; }
+      set { this.productIdFieldSpecified = value; }
     }
 
     public Money rate {

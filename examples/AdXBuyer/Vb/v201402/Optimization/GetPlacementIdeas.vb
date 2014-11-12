@@ -61,8 +61,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the TargetingIdeaService.
-      Dim targetingIdeaService As TargetingIdeaService = user.GetService( _
-          AdWordsService.v201402.TargetingIdeaService)
+      Dim targetingIdeaService As TargetingIdeaService = CType(user.GetService( _
+          AdWordsService.v201402.TargetingIdeaService), TargetingIdeaService)
 
       ' Create seed url.
       Dim url As String = "mars.google.com"
@@ -103,8 +103,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
             For Each idea As TargetingIdea In page.entries
               For Each entry As Type_AttributeMapEntry In idea.data
                 If (entry.key = AttributeType.CRITERION) Then
-                  Dim placementAttribute As CriterionAttribute = entry.value
-                  Dim placement As Placement = placementAttribute.value
+                  Dim placementAttribute As CriterionAttribute = CType(entry.value,  _
+                      CriterionAttribute)
+                  Dim placement As Placement = CType(placementAttribute.value, Placement)
                   Console.WriteLine("{0}) Related placement urls were found at '{1}'.", _
                       i, placement.url)
                 End If

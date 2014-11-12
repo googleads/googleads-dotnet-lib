@@ -65,8 +65,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="experimentId">Id of the experiment to be promoted.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal experimentId As Long)
       ' Get the ExperimentService.
-      Dim experimentService As ExperimentService = user.GetService( _
-          AdWordsService.v201406.ExperimentService)
+      Dim experimentService As ExperimentService = CType(user.GetService( _
+          AdWordsService.v201406.ExperimentService), ExperimentService)
 
       ' Set experiment's status to PROMOTED.
       Dim experiment As New Experiment

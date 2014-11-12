@@ -66,8 +66,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' criteria are retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the CampaignCriterionService.
-      Dim campaignCriterionService As CampaignCriterionService = user.GetService( _
-          AdWordsService.v201409.CampaignCriterionService)
+      Dim campaignCriterionService As CampaignCriterionService = CType(user.GetService( _
+          AdWordsService.v201409.CampaignCriterionService),  _
+          AdWords.v201409.CampaignCriterionService)
 
       ' Create the selector.
       Dim selector As New Selector

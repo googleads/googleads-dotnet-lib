@@ -70,8 +70,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
                    ByVal campaignId2 As Long, ByVal labelId As Long)
       Try
         ' Get the CampaignService.
-        Dim campaignService As CampaignService = user.GetService( _
-            AdWordsService.v201406.CampaignService)
+        Dim campaignService As CampaignService = CType(user.GetService( _
+            AdWordsService.v201406.CampaignService), CampaignService)
 
         ' Create label operations.
         Dim operations As New List(Of CampaignLabelOperation)

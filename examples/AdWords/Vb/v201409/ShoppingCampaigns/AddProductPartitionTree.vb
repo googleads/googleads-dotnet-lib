@@ -198,8 +198,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' added.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupCriterionService.
-      Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
-          AdWordsService.v201409.AdGroupCriterionService)
+      Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService( _
+          AdWordsService.v201409.AdGroupCriterionService), AdWords.v201409.AdGroupCriterionService)
 
       Dim helper As New ProductPartitionHelper(adGroupId)
 
@@ -256,7 +256,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
         ' We always create the parent before the child, so we can rely on that
         ' here.
         For Each adGroupCriterion As AdGroupCriterion In retval.value
-          Dim newCriterion As ProductPartition = adGroupCriterion.criterion
+          Dim newCriterion As ProductPartition = _
+              CType(adGroupCriterion.criterion, ProductPartition)
           children(newCriterion.id) = New List(Of ProductPartition)
 
           If (newCriterion.parentCriterionIdSpecified) Then
@@ -307,7 +308,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
         End Select
       End If
 
-      Console.WriteLine("{0}id: {1}, type: {2}, value: {3}", "".PadLeft(level, " "), _
+      Console.WriteLine("{0}id: {1}, type: {2}, value: {3}", "".PadLeft(level, CChar(" ")), _
                         node.id, type, value)
       For Each childNode As ProductPartition In children(node.id)
         DisplayTree(childNode, children, level + 1, writer)

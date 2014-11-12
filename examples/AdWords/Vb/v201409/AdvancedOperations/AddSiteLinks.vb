@@ -118,7 +118,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     Private Sub createSiteLinksFeed( _
       ByVal user As AdWordsUser, ByVal siteLinksData As SiteLinksDataHolder)
       ' Get the FeedService.
-      Dim feedService As FeedService = user.GetService(AdWordsService.v201409.FeedService)
+      Dim feedService As FeedService = CType(user.GetService( _
+          AdWordsService.v201409.FeedService), AdWords.v201409.FeedService)
 
       ' Create attributes.
       Dim textAttribute As New FeedAttribute
@@ -156,8 +157,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     Private Sub createSiteLinksFeedItems( _
         ByVal user As AdWordsUser, ByVal siteLinksData As SiteLinksDataHolder)
       ' Get the FeedItemService.
-      Dim feedItemService As FeedItemService = _
-        user.GetService(AdWordsService.v201409.FeedItemService)
+      Dim feedItemService As FeedItemService = CType(user.GetService( _
+          AdWordsService.v201409.FeedItemService), AdWords.v201409.FeedItemService)
 
       ' Create operations to add FeedItems.
       Dim home As FeedItemOperation = _
@@ -195,8 +196,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     Private Sub createSiteLinksFeedMapping( _
        ByVal user As AdWordsUser, ByVal siteLinksData As SiteLinksDataHolder)
       ' Get the FeedItemService.
-      Dim feedMappingService As FeedMappingService = _
-        user.GetService(AdWordsService.v201409.FeedMappingService)
+      Dim feedMappingService As FeedMappingService = CType(user.GetService( _
+          AdWordsService.v201409.FeedMappingService), AdWords.v201409.FeedMappingService)
 
       ' Map the FeedAttributeIds to the fieldId constants.
       Dim linkTextFieldMapping As New AttributeFieldMapping
@@ -229,8 +230,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     Private Sub createSiteLinksCampaignFeed(ByVal user As AdWordsUser, _
       ByVal siteLinksData As SiteLinksDataHolder, ByVal campaignId As Long)
       ' Get the CampaignFeedService.
-      Dim campaignFeedService As CampaignFeedService = _
-        user.GetService(AdWordsService.v201409.CampaignFeedService)
+      Dim campaignFeedService As CampaignFeedService = CType(user.GetService( _
+          AdWordsService.v201409.CampaignFeedService), AdWords.v201409.CampaignFeedService)
 
       ' Map the feed item ids to the campaign using an IN operation.
       Dim feedItemRequestContextOperand As New RequestContextOperand()

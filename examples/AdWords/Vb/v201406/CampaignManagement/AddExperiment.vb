@@ -79,15 +79,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long, ByVal adGroupId As Long, _
         ByVal criterionId As Long)
       ' Get the ExperimentService.
-      Dim experimentService As ExperimentService = user.GetService( _
-          AdWordsService.v201406.ExperimentService)
+      Dim experimentService As ExperimentService = CType(user.GetService( _
+          AdWordsService.v201406.ExperimentService), ExperimentService)
 
       ' Get the AdGroupService.
-      Dim adGroupService As AdGroupService = user.GetService(AdWordsService.v201406.AdGroupService)
+      Dim adGroupService As AdGroupService = CType(user.GetService( _
+          AdWordsService.v201406.AdGroupService), AdGroupService)
 
       ' Get the AdGroupCriterionService.
-      Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
-          AdWordsService.v201406.AdGroupCriterionService)
+      Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService( _
+          AdWordsService.v201406.AdGroupCriterionService), AdGroupCriterionService)
 
       ' Create the experiment.
       Dim experiment As New Experiment

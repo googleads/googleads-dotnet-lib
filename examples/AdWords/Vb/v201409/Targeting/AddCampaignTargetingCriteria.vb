@@ -64,8 +64,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' are added.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the CampaignCriterionService.
-      Dim campaignCriterionService As CampaignCriterionService = user.GetService( _
-          AdWordsService.v201409.CampaignCriterionService)
+      Dim campaignCriterionService As CampaignCriterionService = CType(user.GetService( _
+          AdWordsService.v201409.CampaignCriterionService),  _
+          AdWords.v201409.CampaignCriterionService)
 
       ' Create language criteria.
       ' See http://code.google.com/apis/adwords/docs/appendix/languagecodes.html

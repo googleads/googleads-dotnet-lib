@@ -59,12 +59,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the UserListService.
-      Dim userListService As AdwordsUserListService = user.GetService( _
-          AdWordsService.v201409.AdwordsUserListService)
+      Dim userListService As AdwordsUserListService = CType(user.GetService( _
+          AdWordsService.v201409.AdwordsUserListService), AdwordsUserListService)
 
       ' Get the ConversionTrackerService.
-      Dim conversionTrackerService As ConversionTrackerService = user.GetService( _
-          AdWordsService.v201409.ConversionTrackerService)
+      Dim conversionTrackerService As ConversionTrackerService = CType(user.GetService( _
+          AdWordsService.v201409.ConversionTrackerService),  _
+          AdWords.v201409.ConversionTrackerService)
 
       Dim userList As New BasicUserList
 

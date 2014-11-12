@@ -199,7 +199,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     Private Shared Function CreateCustomizerFeed(ByVal user As AdWordsUser) _
         As CustomizersDataHolder
       ' Get the FeedService.
-      Dim feedService As FeedService = user.GetService(AdWordsService.v201409.FeedService)
+      Dim feedService As FeedService = CType(user.GetService(AdWordsService.v201409.FeedService), AdWords.v201409.FeedService)
 
       Dim customizerFeed As New Feed
       customizerFeed.name = "CustomizerFeed"
@@ -251,8 +251,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     Private Shared Sub CreateFeedMapping(ByVal user As AdWordsUser, _
                                          ByVal dataHolder As CustomizersDataHolder)
       ' Get the FeedMappingService.
-      Dim feedMappingService As FeedMappingService = user.GetService( _
-          AdWordsService.v201409.FeedMappingService)
+      Dim feedMappingService As FeedMappingService = CType(user.GetService( _
+          AdWordsService.v201409.FeedMappingService), AdWords.v201409.FeedMappingService)
 
       Dim feedMapping As New FeedMapping
       feedMapping.feedId = dataHolder.FeedId
@@ -303,8 +303,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
                                                  ByVal adGroupIds As Long(), _
                                                  ByVal dataHolder As CustomizersDataHolder)
       ' Get the FeedItemService.
-      Dim feedItemService As FeedItemService = user.GetService( _
-          AdWordsService.v201409.FeedItemService)
+      Dim feedItemService As FeedItemService = CType(user.GetService( _
+          AdWordsService.v201409.FeedItemService), AdWords.v201409.FeedItemService)
 
       Dim feedItemOperations As New List(Of FeedItemOperation)
       feedItemOperations.Add(CreateFeedItemAddOperation("Mars", "$1234.56", _
@@ -381,8 +381,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     Private Shared Sub CreateCustomerFeed(ByVal user As AdWordsUser, _
                                           ByVal dataHolder As CustomizersDataHolder)
       ' Get the CustomerFeedService.
-      Dim customerFeedService As CustomerFeedService = user.GetService( _
-          AdWordsService.v201409.CustomerFeedService)
+      Dim customerFeedService As CustomerFeedService = CType(user.GetService( _
+          AdWordsService.v201409.CustomerFeedService), AdWords.v201409.CustomerFeedService)
 
       Dim customerFeed As New CustomerFeed
       customerFeed.feedId = dataHolder.FeedId
@@ -418,8 +418,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     Private Shared Sub CreateAdsWithCustomizations(ByVal user As AdWordsUser, _
                                                    ByVal adGroupIds As Long())
       ' Get the AdGroupAdService.
-      Dim adGroupAdService As AdGroupAdService = user.GetService( _
-          AdWordsService.v201409.AdGroupAdService)
+      Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
+          AdWordsService.v201409.AdGroupAdService), AdWords.v201409.AdGroupAdService)
 
       Dim textAd As New TextAd
       textAd.headline = "Luxury Cruise to {=CustomizerFeed.Name}"

@@ -63,7 +63,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the MediaService.
-      Dim mediaService As MediaService = user.GetService(AdWordsService.v201406.MediaService)
+      Dim mediaService As MediaService = CType(user.GetService( _
+          AdWordsService.v201406.MediaService), MediaService)
 
       ' Create the video selector.
       Dim selector As New Selector
@@ -98,11 +99,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
 
             For Each media As Media In page.entries
               If TypeOf media Is Video Then
-                Dim video As Video = media
+                Dim video As Video = CType(media, Video)
                 Console.WriteLine("{0}) Video with id '{1}' and name '{2}' was found.", _
                     i, video.mediaId, video.name)
               ElseIf TypeOf media Is Image Then
-                Dim image As Image = media
+                Dim image As Image = CType(media, Image)
                 Dim dimensions As Dictionary(Of MediaSize, Dimensions) = _
                     CreateMediaDimensionMap(image.dimensions)
                 Console.WriteLine("{0}) Image with id '{1}', dimensions '{2}x{3}', and MIME " & _

@@ -79,12 +79,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     Public Sub Run(ByVal user As AdWordsUser, ByVal conversionName As String, _
         ByVal gClid As String, ByVal conversionTime As String, ByVal conversionValue As Double)
       ' Get the ConversionTrackerService.
-      Dim conversionTrackerService As ConversionTrackerService = user.GetService( _
-          AdWordsService.v201406.ConversionTrackerService)
+      Dim conversionTrackerService As ConversionTrackerService = CType(user.GetService( _
+          AdWordsService.v201406.ConversionTrackerService), ConversionTrackerService)
 
       ' Get the OfflineConversionFeedService.
-      Dim offlineConversionFeedService As OfflineConversionFeedService = user.GetService( _
-              AdWordsService.v201406.OfflineConversionFeedService)
+      Dim offlineConversionFeedService As OfflineConversionFeedService = CType(user.GetService( _
+              AdWordsService.v201406.OfflineConversionFeedService), OfflineConversionFeedService)
 
       Const VIEWTHROUGH_LOOKBACK_WINDOW As Integer = 30
       Const CTC_LOOKBACK_WINDOW As Integer = 90
@@ -106,7 +106,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
             conversionTrackerService.mutate(New ConversionTrackerOperation() { _
                 uploadConversionOperation})
 
-        Dim newUploadConversion As UploadConversion = conversionTrackerRetval.value(0)
+        Dim newUploadConversion As UploadConversion = _
+          CType(conversionTrackerRetval.value(0), UploadConversion)
 
         Console.WriteLine("New upload conversion type with name = '{0}' and id = {1} was " & _
             "created.", newUploadConversion.name, newUploadConversion.id)

@@ -62,8 +62,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="campaignId">Id of the campaign to be updated.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the CampaignService.
-      Dim campaignService As CampaignService = user.GetService( _
-          AdWordsService.v201406.CampaignService)
+      Dim campaignService As CampaignService = CType(user.GetService( _
+          AdWordsService.v201406.CampaignService), CampaignService)
 
       ' Create campaign with updated budget.
       Dim campaign As New Campaign

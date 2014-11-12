@@ -65,8 +65,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <param name="adId">Id of the ad being removed.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal adId As Long)
       ' Get the AdGroupAdService.
-      Dim adGroupAdService As AdGroupAdService = user.GetService( _
-          AdWordsService.v201409.AdGroupAdService)
+      Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
+          AdWordsService.v201409.AdGroupAdService), AdWords.v201409.AdGroupAdService)
 
       ' Since we do not need to update any ad-specific fields, it is enough to
       ' create the base type.

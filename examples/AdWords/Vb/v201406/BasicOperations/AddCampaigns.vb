@@ -64,12 +64,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the BudgetService.
-      Dim budgetService As BudgetService = user.GetService( _
-          AdWordsService.v201406.BudgetService)
+      Dim budgetService As BudgetService = CType(user.GetService( _
+          AdWordsService.v201406.BudgetService), BudgetService)
 
       ' Get the CampaignService.
-      Dim campaignService As CampaignService = user.GetService( _
-          AdWordsService.v201406.CampaignService)
+      Dim campaignService As CampaignService = CType(user.GetService( _
+          AdWordsService.v201406.CampaignService), CampaignService)
 
       ' Create the campaign budget.
       Dim budget As New Budget

@@ -64,8 +64,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
     ''' </param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = user.GetService( _
-          AdWordsService.v201402.AdGroupAdService)
+      Dim service As AdGroupAdService = CType(user.GetService( _
+          AdWordsService.v201402.AdGroupAdService), AdGroupAdService)
 
       ' Create the text ad.
       Dim textAd As New TextAd
@@ -118,7 +118,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
 
             ' Handle policy violation errors.
             If TypeOf apiError Is PolicyViolationError Then
-              Dim policyError As PolicyViolationError = apiError
+              Dim policyError As PolicyViolationError = CType(apiError, PolicyViolationError)
 
               If policyError.isExemptable Then
                 ' If the policy violation error is exemptable, add an exemption

@@ -61,8 +61,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the CustomerSyncService.
-      Dim customerSyncService As CustomerSyncService = user.GetService( _
-          AdWordsService.v201406.CustomerSyncService)
+      Dim customerSyncService As CustomerSyncService = CType(user.GetService( _
+          AdWordsService.v201406.CustomerSyncService), CustomerSyncService)
 
       ' The date time string should be of the form  yyyyMMdd HHmmss zzz.
       Dim minDateTime As String = (DateTime.Now.AddDays(-1).ToUniversalTime.ToString( _
@@ -159,8 +159,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <returns>The list of campaign ids.</returns>
     Private Function GetAllCampaignIds(ByVal user As AdWordsUser) As Long()
       ' Get the CampaignService.
-      Dim campaignService As CampaignService = user.GetService( _
-          AdWordsService.v201406.CampaignService)
+      Dim campaignService As CampaignService = CType(user.GetService( _
+          AdWordsService.v201406.CampaignService), CampaignService)
 
       Dim allCampaigns As New List(Of Long)
 

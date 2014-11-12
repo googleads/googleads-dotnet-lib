@@ -63,8 +63,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the CampaignService.
-      Dim campaignService As CampaignService = user.GetService( _
-          AdWordsService.v201409.CampaignService)
+      Dim campaignService As CampaignService = CType(user.GetService( _
+          AdWordsService.v201409.CampaignService), AdWords.v201409.CampaignService)
 
       ' Create the query.
       Dim query As String = "SELECT Id, Name, Status ORDER BY Name"
@@ -84,7 +84,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
 
           ' Display the results.
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = offset
+            Dim i As Integer = CInt(offset)
             For Each campaign As Campaign In page.entries
               Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = " & _
                   "'{3}' was found.", i, campaign.id, campaign.name, campaign.status)

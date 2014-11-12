@@ -64,8 +64,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' extensions are added.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the CampaignAdExtensionService.
-      Dim campaignExtensionService As CampaignAdExtensionService = user.GetService( _
-          AdWordsService.v201409.CampaignAdExtensionService)
+      Dim campaignExtensionService As CampaignAdExtensionService = CType(user.GetService( _
+          AdWordsService.v201409.CampaignAdExtensionService), CampaignAdExtensionService)
 
       ' Add location 1: 1600 Amphitheatre Pkwy, Mountain View, US.
       Dim address1 As New Address
@@ -83,8 +83,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
       address2.countryCode = "FR"
 
       ' Get the GeoLocationService.
-      Dim geoService As GeoLocationService = user.GetService( _
-          AdWordsService.v201409.GeoLocationService)
+      Dim geoService As GeoLocationService = CType(user.GetService( _
+          AdWordsService.v201409.GeoLocationService), GeoLocationService)
 
       ' Create the selector.
       Dim selector As New GeoLocationSelector

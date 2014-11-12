@@ -69,8 +69,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' added.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the AdGroupService.
-      Dim adGroupService As AdGroupService = user.GetService( _
-          AdWordsService.v201409.AdGroupService)
+      Dim adGroupService As AdGroupService = CType(user.GetService( _
+          AdWordsService.v201409.AdGroupService), AdWords.v201409.AdGroupService)
 
       Dim operations As New List(Of AdGroupOperation)
 

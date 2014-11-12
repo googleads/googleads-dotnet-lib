@@ -65,7 +65,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the AlertService.
-      Dim alertService As AlertService = user.GetService(AdWordsService.v201402.AlertService)
+      Dim alertService As AlertService = CType(user.GetService( _
+          AdWordsService.v201402.AlertService), AlertService)
 
       ' Create the selector.
       Dim selector As New AlertSelector
@@ -83,7 +84,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
       ' follows:
       ' query.types = new AlertType() {AlertType.CAMPAIGN_ENDING,
       '     AlertType.CAMPAIGN_ENDED}
-      query.types = [Enum].GetValues(GetType(AlertType))
+      query.types = CType([Enum].GetValues(GetType(AlertType)), AlertType())
       selector.query = query
 
       ' Set paging for selector.

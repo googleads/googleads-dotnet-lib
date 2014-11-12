@@ -62,8 +62,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the ConstantDataService.
-      Dim constantDataService As ConstantDataService = user.GetService( _
-          AdWordsService.v201406.ConstantDataService)
+      Dim constantDataService As ConstantDataService = CType(user.GetService( _
+          AdWordsService.v201406.ConstantDataService), ConstantDataService)
 
       Try
         ' Get all carriers.

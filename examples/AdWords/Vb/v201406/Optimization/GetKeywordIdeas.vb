@@ -60,8 +60,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the TargetingIdeaService.
-      Dim targetingIdeaService As TargetingIdeaService = user.GetService( _
-          AdWordsService.v201406.TargetingIdeaService)
+      Dim targetingIdeaService As TargetingIdeaService = CType(user.GetService( _
+          AdWordsService.v201406.TargetingIdeaService), TargetingIdeaService)
 
       Dim keywordText As String = "mars cruise"
 
@@ -101,8 +101,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
 
       Try
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
+          selector.paging.startIndex = CInt(offset)
+          selector.paging.numberResults = CInt(pageSize)
 
           ' Get related keywords.
           page = targetingIdeaService.get(selector)
@@ -110,7 +110,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
           'Display the results.
 
           If Not page.entries Is Nothing AndAlso page.entries.Length > 0 Then
-            Dim i As Integer = offset
+            Dim i As Integer = CInt(offset)
             For Each targetingIdea As TargetingIdea In page.entries
               Dim keyword As String = Nothing
               Dim categories As String = Nothing
@@ -121,12 +121,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
                   keyword = DirectCast(entry.value, StringAttribute).value
                 End If
                 If entry.key = AttributeType.CATEGORY_PRODUCTS_AND_SERVICES Then
-                  Dim categorySet As IntegerSetAttribute = entry.value
+                  Dim categorySet As IntegerSetAttribute = CType(entry.value, IntegerSetAttribute)
                   Dim builder As New StringBuilder()
                   For Each value As Integer In categorySet.value
                     builder.AppendFormat("{0}, ", value)
                   Next
-                  Dim trimChars As Char() = New Char() {",", " "}
+                  Dim trimChars As Char() = New Char() {","c, " "c}
                   categories = builder.ToString().Trim(trimChars)
                 End If
                 If entry.key = AttributeType.SEARCH_VOLUME Then

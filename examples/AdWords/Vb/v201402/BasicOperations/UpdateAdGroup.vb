@@ -63,7 +63,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
     ''' <param name="adGroupId">Id of the ad group to be updated.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupService.
-      Dim adGroupService As AdGroupService = user.GetService(AdWordsService.v201402.AdGroupService)
+      Dim adGroupService As AdGroupService = CType(user.GetService( _
+          AdWordsService.v201402.AdGroupService), AdGroupService)
 
       ' Create the ad group.
       Dim adGroup As New AdGroup

@@ -159,8 +159,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
         ' Get the AdGroupCriterionService. This should be done within the
         ' thread, since a service can only handle one outgoing HTTP request
         ' at a time.
-        Dim service As AdGroupCriterionService = user.GetService( _
-            AdWordsService.v201409.AdGroupCriterionService)
+        Dim service As AdGroupCriterionService = CType(user.GetService( _
+            AdWordsService.v201409.AdGroupCriterionService), AdGroupCriterionService)
         service.RequestHeader.validateOnly = True
         Dim retryCount As Integer = 0
         Const NUM_RETRIES As Integer = 3

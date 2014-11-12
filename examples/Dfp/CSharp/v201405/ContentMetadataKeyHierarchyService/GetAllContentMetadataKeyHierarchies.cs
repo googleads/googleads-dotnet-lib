@@ -54,7 +54,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201405 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(Lib.DfpUser user) {
+    public override void Run(DfpUser user) {
       // Get the ContentMetadataKeyHierarchy service.
       ContentMetadataKeyHierarchyService contentMetadataKeyHierarchyService =
           (ContentMetadataKeyHierarchyService) user.GetService(

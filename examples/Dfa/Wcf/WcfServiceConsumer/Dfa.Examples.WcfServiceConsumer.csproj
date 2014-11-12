@@ -97,8 +97,8 @@
     <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="Properties\Settings.Designer.cs" />
     <Compile Include="ServiceReferences\WcfServiceReference\Reference.cs" />
-    <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs" />
+    <Compile Include="MainForm.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
 </Project>

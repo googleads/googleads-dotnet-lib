@@ -59,8 +59,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the LocationCriterionService.
-      Dim locationCriterionService As LocationCriterionService = user.GetService( _
-          AdWordsService.v201406.LocationCriterionService)
+      Dim locationCriterionService As LocationCriterionService = CType(user.GetService( _
+          AdWordsService.v201406.LocationCriterionService), LocationCriterionService)
 
       Dim locationNames As String() = New String() {"Paris", "Quebec", "Spain", "Deutschland"}
 

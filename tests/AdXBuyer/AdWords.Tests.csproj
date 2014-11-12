@@ -117,8 +117,8 @@
     <Compile Include="v201409\TestUtils.cs" />
     <Compile Include="v201409\VersionedExampleTestsBase.cs" />
     <Compile Include="AdWordsRequestInterceptor.cs" />
-    <Compile Include="ExamplesMockData.cs" />
     <Compile Include="ExampleTestsBase.cs" />
+    <Compile Include="ExamplesMockData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

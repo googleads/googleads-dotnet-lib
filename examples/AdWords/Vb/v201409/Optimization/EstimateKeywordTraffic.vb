@@ -59,8 +59,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the TrafficEstimatorService.
-      Dim trafficEstimatorService As TrafficEstimatorService = user.GetService( _
-          AdWordsService.v201409.TrafficEstimatorService)
+      Dim trafficEstimatorService As TrafficEstimatorService = CType(user.GetService( _
+          AdWordsService.v201409.TrafficEstimatorService), AdWords.v201409.TrafficEstimatorService)
 
       ' Create keywords. Up to 2000 keywords can be passed in a single request.
       Dim keyword1 As New Keyword
@@ -145,14 +145,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
                 End If
 
                 ' Find the mean of the min and max values.
-                Dim meanAverageCpc As Long = ((keywordEstimate.min.averageCpc.microAmount + _
-                    keywordEstimate.max.averageCpc.microAmount) / 2)
+                Dim meanAverageCpc As Long = CLng(((keywordEstimate.min.averageCpc.microAmount + _
+                    keywordEstimate.max.averageCpc.microAmount) / 2))
                 Dim meanAveragePosition As Double = ((keywordEstimate.min.averagePosition + _
                     keywordEstimate.max.averagePosition) / 2)
                 Dim meanClicks As Single = ((keywordEstimate.min.clicksPerDay + _
                     keywordEstimate.max.clicksPerDay) / 2)
-                Dim meanTotalCost As Long = ((keywordEstimate.min.totalCost.microAmount + _
-                    keywordEstimate.max.totalCost.microAmount) / 2)
+                Dim meanTotalCost As Long = CLng(((keywordEstimate.min.totalCost.microAmount + _
+                    keywordEstimate.max.totalCost.microAmount) / 2))
 
                 Console.WriteLine("Results for the keyword with text = '{0}' and match type " & _
                     "= '{1}':", keyword.text, keyword.matchType)

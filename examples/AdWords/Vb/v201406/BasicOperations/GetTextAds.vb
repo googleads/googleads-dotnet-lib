@@ -64,7 +64,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = user.GetService(AdWordsService.v201406.AdGroupAdService)
+      Dim service As AdGroupAdService = CType(user.GetService( _
+          AdWordsService.v201406.AdGroupAdService), AdGroupAdService)
 
       ' Create a selector.
       Dim selector As New Selector
@@ -121,7 +122,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
             Dim i As Integer = offset
 
             For Each adGroupAd As AdGroupAd In page.entries
-              Dim textAd As TextAd = adGroupAd.ad
+              Dim textAd As TextAd = CType(adGroupAd.ad, TextAd)
               Console.WriteLine("{0}) Ad id is {1} and status is {2}", i, textAd.id, _
                   adGroupAd.status)
               Console.WriteLine("  {0}\n  {1}\n  {2}\n  {3}", textAd.headline, _

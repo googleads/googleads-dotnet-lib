@@ -63,8 +63,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <param name="campaignId">Id of the campaign to be removed.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the CampaignService.
-      Dim campaignService As CampaignService = user.GetService( _
-          AdWordsService.v201409.CampaignService)
+      Dim campaignService As CampaignService = CType(user.GetService( _
+          AdWordsService.v201409.CampaignService), AdWords.v201409.CampaignService)
 
       ' Create campaign with REMOVED status.
       Dim campaign As New Campaign

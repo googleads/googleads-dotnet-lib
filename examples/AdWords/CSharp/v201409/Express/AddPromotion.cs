@@ -122,19 +122,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
 
       marsTourPromotion.criteria = new Criterion[] { productService, language, proximity };
 
-      // Creatives
+      // Creative
+      Creative creative = new Creative();
+      creative.headline = "Standard Mars Trip";
+      creative.line1 = "Fly coach to Mars";
+      creative.line2 = "Free in-flight pretzels";
 
-      Creative creative1 = new Creative();
-      creative1.headline = "Standard Mars Trip";
-      creative1.line1 = "Fly coach to Mars";
-      creative1.line2 = "Free in-flight pretzels";
-
-      Creative creative2 = new Creative();
-      creative2.headline = "Deluxe Mars Trip";
-      creative2.line1 = "Fly first class to Mars";
-      creative2.line2 = "Unlimited powdered orange drink";
-
-      marsTourPromotion.creatives = new Creative[] { creative1, creative2 };
+      marsTourPromotion.creatives = new Creative[] { creative };
 
       PromotionOperation operation = new PromotionOperation();
       operation.@operator = Operator.ADD;

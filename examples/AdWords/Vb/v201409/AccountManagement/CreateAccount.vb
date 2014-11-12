@@ -62,8 +62,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the ManagedCustomerService.
-      Dim managedCustomerService As ManagedCustomerService = user.GetService( _
-          AdWordsService.v201409.ManagedCustomerService)
+      Dim managedCustomerService As ManagedCustomerService = CType(user.GetService( _
+          AdWordsService.v201409.ManagedCustomerService), AdWords.v201409.ManagedCustomerService)
 
       ' Create account.
       Dim customer As New ManagedCustomer()

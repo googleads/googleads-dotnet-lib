@@ -64,7 +64,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="adId">Id of the ad to be paused.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal adId As Long)
       ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = user.GetService(AdWordsService.v201406.AdGroupAdService)
+      Dim service As AdGroupAdService = CType(user.GetService( _
+          AdWordsService.v201406.AdGroupAdService), AdGroupAdService)
 
       Dim status As AdGroupAdStatus = AdGroupAdStatus.PAUSED
 

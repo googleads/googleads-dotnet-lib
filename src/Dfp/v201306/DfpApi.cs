@@ -57,16 +57,6 @@ namespace Google.Api.Ads.Dfp.v201306 {
     }
   }
 
-
-
-
-
-
-
-
-
-
-
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(OAuth))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClientLogin))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
@@ -560,6 +550,7 @@ namespace Google.Api.Ads.Dfp.v201306 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeWrapperError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TeamError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidEmailError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CrossSellError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompanyError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompanyCreditStatusError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequiredNumberError))]
@@ -641,6 +632,7 @@ namespace Google.Api.Ads.Dfp.v201306 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProposalActionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeTemplateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContactError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CollectionSizeError))]
   public abstract partial class ApiError {
     private string fieldPathField;
 
@@ -2673,6 +2665,54 @@ Company[] companies) {
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InvalidEmailError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
   public enum InvalidEmailErrorReason {
     INVALID_FORMAT,
+    UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
+  public partial class CrossSellError : ApiError {
+    private CrossSellErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public CrossSellErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CrossSellError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
+  public enum CrossSellErrorReason {
+    UNSUPPORTED_RESERVATION_TYPE,
+    NO_VALID_ELIGIBLE_RESERVATION_TYPES,
+    COMPANY_IS_NOT_DISTRIBUTION_PARTNER,
+    CHANGING_PARTNER_NETWORK_IS_NOT_SUPPORTED,
+    MISSING_DISTRIBUTOR_PARTNER_NAME,
+    DISTRIBUTOR_NETWORK_MISSING_PUBLISHER_FEATURE,
+    CONTENT_PROVIDER_NETWORK_MISSING_PUBLISHER_FEATURE,
+    INVALID_DISTRIBUTOR_PARTNER_NAME,
+    INVALID_CONTENT_PROVIDER_NETWORK,
+    CONTENT_PROVIDER_NETWORK_CANNOT_BE_ACTIVE_NETWORK,
+    CONTENT_PROVIDER_NETWORK_ALREADY_ENABLED_FOR_CROSS_SELLING,
+    DISTRIBUTOR_RULE_VIOLATION_ERROR,
+    DISTRIBUTOR_RULE_VIOLATION_WARNING,
     UNKNOWN
   }
 
@@ -5492,7 +5532,7 @@ AdRule[] adRules) {
 
     private string nameField;
 
-    private long[] userIdsField;
+    private WorkflowActionPerformer[] performersField;
 
     private WorkflowActionType typeField;
 
@@ -5518,10 +5558,10 @@ AdRule[] adRules) {
       set { this.nameField = value; }
     }
 
-    [System.Xml.Serialization.XmlElementAttribute("userIds")]
-    public long[] userIds {
-      get { return this.userIdsField; }
-      set { this.userIdsField = value; }
+    [System.Xml.Serialization.XmlElementAttribute("performers")]
+    public WorkflowActionPerformer[] performers {
+      get { return this.performersField; }
+      set { this.performersField = value; }
     }
 
     public WorkflowActionType type {
@@ -5538,6 +5578,100 @@ AdRule[] adRules) {
       get { return this.typeFieldSpecified; }
       set { this.typeFieldSpecified = value; }
     }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
+  public partial class WorkflowActionPerformer {
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private WorkflowRoundActionPerformerType typeField;
+
+    private bool typeFieldSpecified;
+
+    private long userIdField;
+
+    private bool userIdFieldSpecified;
+
+    private long teamIdField;
+
+    private bool teamIdFieldSpecified;
+
+    public long id {
+      get { return this.idField; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
+    }
+
+    public WorkflowRoundActionPerformerType type {
+      get { return this.typeField; }
+      set {
+        this.typeField = value;
+        this.typeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool typeSpecified {
+      get { return this.typeFieldSpecified; }
+      set { this.typeFieldSpecified = value; }
+    }
+
+    public long userId {
+      get { return this.userIdField; }
+      set {
+        this.userIdField = value;
+        this.userIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool userIdSpecified {
+      get { return this.userIdFieldSpecified; }
+      set { this.userIdFieldSpecified = value; }
+    }
+
+    public long teamId {
+      get { return this.teamIdField; }
+      set {
+        this.teamIdField = value;
+        this.teamIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool teamIdSpecified {
+      get { return this.teamIdFieldSpecified; }
+      set { this.teamIdFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
+  public enum WorkflowRoundActionPerformerType {
+    USER,
+    TEAM,
+    UNKNOWN
   }
 
 
@@ -7503,7 +7637,9 @@ ProposalLineItem[] proposalLineItems) {
 
     private bool rateCardIdFieldSpecified;
 
-    private string productIdField;
+    private long productIdField;
+
+    private bool productIdFieldSpecified;
 
     private string nameField;
 
@@ -7642,9 +7778,19 @@ ProposalLineItem[] proposalLineItems) {
       set { this.rateCardIdFieldSpecified = value; }
     }
 
-    public string productId {
+    public long productId {
       get { return this.productIdField; }
-      set { this.productIdField = value; }
+      set {
+        this.productIdField = value;
+        this.productIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool productIdSpecified {
+      get { return this.productIdFieldSpecified; }
+      set { this.productIdFieldSpecified = value; }
     }
 
     public string name {
@@ -11157,7 +11303,8 @@ LineItem[] lineItems) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
   public enum UnitType {
     IMPRESSIONS,
-    CLICKS
+    CLICKS,
+    UNKNOWN
   }
 
 
@@ -13297,15 +13444,6 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201306", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201306", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public virtual Product getProduct(string productId) {
-      object[] results = this.Invoke("getProduct", new object[] { productId });
-      return ((Product) (results[0]));
-    }
-
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201306", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201306", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ProductPage getProductsByStatement(Statement statement) {
       object[] results = this.Invoke("getProductsByStatement", new object[] { statement });
       return ((ProductPage) (results[0]));
@@ -13384,319 +13522,6 @@ Product[] products) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
   public partial class ActivateProducts : ProductAction {
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
-  public partial class ProductPage {
-    private int totalResultSetSizeField;
-
-    private bool totalResultSetSizeFieldSpecified;
-
-    private int startIndexField;
-
-    private bool startIndexFieldSpecified;
-
-    private Product[] resultsField;
-
-    public int totalResultSetSize {
-      get { return this.totalResultSetSizeField; }
-      set {
-        this.totalResultSetSizeField = value;
-        this.totalResultSetSizeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool totalResultSetSizeSpecified {
-      get { return this.totalResultSetSizeFieldSpecified; }
-      set { this.totalResultSetSizeFieldSpecified = value; }
-    }
-
-    public int startIndex {
-      get { return this.startIndexField; }
-      set {
-        this.startIndexField = value;
-        this.startIndexSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool startIndexSpecified {
-      get { return this.startIndexFieldSpecified; }
-      set { this.startIndexFieldSpecified = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("results")]
-    public Product[] results {
-      get { return this.resultsField; }
-      set { this.resultsField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
-  public partial class Product {
-    private string nameField;
-
-    private ProductStatus statusField;
-
-    private bool statusFieldSpecified;
-
-    private ProductType productTypeField;
-
-    private bool productTypeFieldSpecified;
-
-    private long productTemplateIdField;
-
-    private bool productTemplateIdFieldSpecified;
-
-    private string idField;
-
-    private string notesField;
-
-    private string productTemplateDescriptionField;
-
-    private DateTime lastModifiedDateTimeField;
-
-    private RateType rateTypeField;
-
-    private bool rateTypeFieldSpecified;
-
-    private RoadblockingType roadblockingTypeField;
-
-    private bool roadblockingTypeFieldSpecified;
-
-    private CreativePlaceholder[] creativePlaceholdersField;
-
-    private LineItemType lineItemTypeField;
-
-    private bool lineItemTypeFieldSpecified;
-
-    private int priorityField;
-
-    private bool priorityFieldSpecified;
-
-    private FrequencyCap[] frequencyCapsField;
-
-    private bool allowFrequencyCapsCustomizationField;
-
-    private bool allowFrequencyCapsCustomizationFieldSpecified;
-
-    private ProductTemplateTargeting targetingField;
-
-    private BaseCustomFieldValue[] customFieldValuesField;
-
-    public string name {
-      get { return this.nameField; }
-      set { this.nameField = value; }
-    }
-
-    public ProductStatus status {
-      get { return this.statusField; }
-      set {
-        this.statusField = value;
-        this.statusSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool statusSpecified {
-      get { return this.statusFieldSpecified; }
-      set { this.statusFieldSpecified = value; }
-    }
-
-    public ProductType productType {
-      get { return this.productTypeField; }
-      set {
-        this.productTypeField = value;
-        this.productTypeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool productTypeSpecified {
-      get { return this.productTypeFieldSpecified; }
-      set { this.productTypeFieldSpecified = value; }
-    }
-
-    public long productTemplateId {
-      get { return this.productTemplateIdField; }
-      set {
-        this.productTemplateIdField = value;
-        this.productTemplateIdSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool productTemplateIdSpecified {
-      get { return this.productTemplateIdFieldSpecified; }
-      set { this.productTemplateIdFieldSpecified = value; }
-    }
-
-    public string id {
-      get { return this.idField; }
-      set { this.idField = value; }
-    }
-
-    public string notes {
-      get { return this.notesField; }
-      set { this.notesField = value; }
-    }
-
-    public string productTemplateDescription {
-      get { return this.productTemplateDescriptionField; }
-      set { this.productTemplateDescriptionField = value; }
-    }
-
-    public DateTime lastModifiedDateTime {
-      get { return this.lastModifiedDateTimeField; }
-      set { this.lastModifiedDateTimeField = value; }
-    }
-
-    public RateType rateType {
-      get { return this.rateTypeField; }
-      set {
-        this.rateTypeField = value;
-        this.rateTypeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool rateTypeSpecified {
-      get { return this.rateTypeFieldSpecified; }
-      set { this.rateTypeFieldSpecified = value; }
-    }
-
-    public RoadblockingType roadblockingType {
-      get { return this.roadblockingTypeField; }
-      set {
-        this.roadblockingTypeField = value;
-        this.roadblockingTypeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool roadblockingTypeSpecified {
-      get { return this.roadblockingTypeFieldSpecified; }
-      set { this.roadblockingTypeFieldSpecified = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("creativePlaceholders")]
-    public CreativePlaceholder[] creativePlaceholders {
-      get { return this.creativePlaceholdersField; }
-      set { this.creativePlaceholdersField = value; }
-    }
-
-    public LineItemType lineItemType {
-      get { return this.lineItemTypeField; }
-      set {
-        this.lineItemTypeField = value;
-        this.lineItemTypeSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool lineItemTypeSpecified {
-      get { return this.lineItemTypeFieldSpecified; }
-      set { this.lineItemTypeFieldSpecified = value; }
-    }
-
-    public int priority {
-      get { return this.priorityField; }
-      set {
-        this.priorityField = value;
-        this.prioritySpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool prioritySpecified {
-      get { return this.priorityFieldSpecified; }
-      set { this.priorityFieldSpecified = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("frequencyCaps")]
-    public FrequencyCap[] frequencyCaps {
-      get { return this.frequencyCapsField; }
-      set { this.frequencyCapsField = value; }
-    }
-
-    public bool allowFrequencyCapsCustomization {
-      get { return this.allowFrequencyCapsCustomizationField; }
-      set {
-        this.allowFrequencyCapsCustomizationField = value;
-        this.allowFrequencyCapsCustomizationSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool allowFrequencyCapsCustomizationSpecified {
-      get { return this.allowFrequencyCapsCustomizationFieldSpecified; }
-      set { this.allowFrequencyCapsCustomizationFieldSpecified = value; }
-    }
-
-    public ProductTemplateTargeting targeting {
-      get { return this.targetingField; }
-      set { this.targetingField = value; }
-    }
-
-    [System.Xml.Serialization.XmlElementAttribute("customFieldValues")]
-    public BaseCustomFieldValue[] customFieldValues {
-      get { return this.customFieldValuesField; }
-      set { this.customFieldValuesField = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
-  public enum ProductStatus {
-    ACTIVE,
-    INACTIVE,
-    ARCHIVED,
-    UNKNOWN
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
-  public enum ProductType {
-    DFP,
-    OFFLINE,
-    UNKNOWN
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
-  public enum RateType {
-    CPM,
-    CPC,
-    CPD,
-    FLAT_RATE,
-    UNKNOWN
   }
 
 
@@ -13913,6 +13738,331 @@ Product[] products) {
     public bool allowOperatingSystemTargetingCustomizationSpecified {
       get { return this.allowOperatingSystemTargetingCustomizationFieldSpecified; }
       set { this.allowOperatingSystemTargetingCustomizationFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
+  public partial class Product {
+    private string nameField;
+
+    private ProductStatus statusField;
+
+    private bool statusFieldSpecified;
+
+    private ProductType productTypeField;
+
+    private bool productTypeFieldSpecified;
+
+    private long productTemplateIdField;
+
+    private bool productTemplateIdFieldSpecified;
+
+    private long idField;
+
+    private bool idFieldSpecified;
+
+    private string notesField;
+
+    private string productTemplateDescriptionField;
+
+    private DateTime lastModifiedDateTimeField;
+
+    private RateType rateTypeField;
+
+    private bool rateTypeFieldSpecified;
+
+    private RoadblockingType roadblockingTypeField;
+
+    private bool roadblockingTypeFieldSpecified;
+
+    private CreativePlaceholder[] creativePlaceholdersField;
+
+    private LineItemType lineItemTypeField;
+
+    private bool lineItemTypeFieldSpecified;
+
+    private int priorityField;
+
+    private bool priorityFieldSpecified;
+
+    private FrequencyCap[] frequencyCapsField;
+
+    private bool allowFrequencyCapsCustomizationField;
+
+    private bool allowFrequencyCapsCustomizationFieldSpecified;
+
+    private ProductTemplateTargeting targetingField;
+
+    private BaseCustomFieldValue[] customFieldValuesField;
+
+    public string name {
+      get { return this.nameField; }
+      set { this.nameField = value; }
+    }
+
+    public ProductStatus status {
+      get { return this.statusField; }
+      set {
+        this.statusField = value;
+        this.statusSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool statusSpecified {
+      get { return this.statusFieldSpecified; }
+      set { this.statusFieldSpecified = value; }
+    }
+
+    public ProductType productType {
+      get { return this.productTypeField; }
+      set {
+        this.productTypeField = value;
+        this.productTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool productTypeSpecified {
+      get { return this.productTypeFieldSpecified; }
+      set { this.productTypeFieldSpecified = value; }
+    }
+
+    public long productTemplateId {
+      get { return this.productTemplateIdField; }
+      set {
+        this.productTemplateIdField = value;
+        this.productTemplateIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool productTemplateIdSpecified {
+      get { return this.productTemplateIdFieldSpecified; }
+      set { this.productTemplateIdFieldSpecified = value; }
+    }
+
+    public long id {
+      get { return this.idField; }
+      set {
+        this.idField = value;
+        this.idSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool idSpecified {
+      get { return this.idFieldSpecified; }
+      set { this.idFieldSpecified = value; }
+    }
+
+    public string notes {
+      get { return this.notesField; }
+      set { this.notesField = value; }
+    }
+
+    public string productTemplateDescription {
+      get { return this.productTemplateDescriptionField; }
+      set { this.productTemplateDescriptionField = value; }
+    }
+
+    public DateTime lastModifiedDateTime {
+      get { return this.lastModifiedDateTimeField; }
+      set { this.lastModifiedDateTimeField = value; }
+    }
+
+    public RateType rateType {
+      get { return this.rateTypeField; }
+      set {
+        this.rateTypeField = value;
+        this.rateTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool rateTypeSpecified {
+      get { return this.rateTypeFieldSpecified; }
+      set { this.rateTypeFieldSpecified = value; }
+    }
+
+    public RoadblockingType roadblockingType {
+      get { return this.roadblockingTypeField; }
+      set {
+        this.roadblockingTypeField = value;
+        this.roadblockingTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool roadblockingTypeSpecified {
+      get { return this.roadblockingTypeFieldSpecified; }
+      set { this.roadblockingTypeFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("creativePlaceholders")]
+    public CreativePlaceholder[] creativePlaceholders {
+      get { return this.creativePlaceholdersField; }
+      set { this.creativePlaceholdersField = value; }
+    }
+
+    public LineItemType lineItemType {
+      get { return this.lineItemTypeField; }
+      set {
+        this.lineItemTypeField = value;
+        this.lineItemTypeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool lineItemTypeSpecified {
+      get { return this.lineItemTypeFieldSpecified; }
+      set { this.lineItemTypeFieldSpecified = value; }
+    }
+
+    public int priority {
+      get { return this.priorityField; }
+      set {
+        this.priorityField = value;
+        this.prioritySpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool prioritySpecified {
+      get { return this.priorityFieldSpecified; }
+      set { this.priorityFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("frequencyCaps")]
+    public FrequencyCap[] frequencyCaps {
+      get { return this.frequencyCapsField; }
+      set { this.frequencyCapsField = value; }
+    }
+
+    public bool allowFrequencyCapsCustomization {
+      get { return this.allowFrequencyCapsCustomizationField; }
+      set {
+        this.allowFrequencyCapsCustomizationField = value;
+        this.allowFrequencyCapsCustomizationSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool allowFrequencyCapsCustomizationSpecified {
+      get { return this.allowFrequencyCapsCustomizationFieldSpecified; }
+      set { this.allowFrequencyCapsCustomizationFieldSpecified = value; }
+    }
+
+    public ProductTemplateTargeting targeting {
+      get { return this.targetingField; }
+      set { this.targetingField = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("customFieldValues")]
+    public BaseCustomFieldValue[] customFieldValues {
+      get { return this.customFieldValuesField; }
+      set { this.customFieldValuesField = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
+  public enum ProductStatus {
+    ACTIVE,
+    INACTIVE,
+    ARCHIVED,
+    UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
+  public enum ProductType {
+    DFP,
+    OFFLINE,
+    UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
+  public enum RateType {
+    CPM,
+    CPC,
+    CPD,
+    FLAT_RATE,
+    UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
+  public partial class ProductPage {
+    private int totalResultSetSizeField;
+
+    private bool totalResultSetSizeFieldSpecified;
+
+    private int startIndexField;
+
+    private bool startIndexFieldSpecified;
+
+    private Product[] resultsField;
+
+    public int totalResultSetSize {
+      get { return this.totalResultSetSizeField; }
+      set {
+        this.totalResultSetSizeField = value;
+        this.totalResultSetSizeSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool totalResultSetSizeSpecified {
+      get { return this.totalResultSetSizeFieldSpecified; }
+      set { this.totalResultSetSizeFieldSpecified = value; }
+    }
+
+    public int startIndex {
+      get { return this.startIndexField; }
+      set {
+        this.startIndexField = value;
+        this.startIndexSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool startIndexSpecified {
+      get { return this.startIndexFieldSpecified; }
+      set { this.startIndexFieldSpecified = value; }
+    }
+
+    [System.Xml.Serialization.XmlElementAttribute("results")]
+    public Product[] results {
+      get { return this.resultsField; }
+      set { this.resultsField = value; }
     }
   }
 
@@ -15560,13 +15710,25 @@ BaseRate[] baseRates) {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
   public partial class ProductBaseRate : BaseRate {
-    private string productIdField;
+    private long productIdField;
+
+    private bool productIdFieldSpecified;
 
     private Money rateField;
 
-    public string productId {
+    public long productId {
       get { return this.productIdField; }
-      set { this.productIdField = value; }
+      set {
+        this.productIdField = value;
+        this.productIdSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool productIdSpecified {
+      get { return this.productIdFieldSpecified; }
+      set { this.productIdFieldSpecified = value; }
     }
 
     public Money rate {
@@ -24860,6 +25022,42 @@ CustomTargetingValue[] values) {
     PREDEFINED,
     FREEFORM
   }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
+  public partial class CollectionSizeError : ApiError {
+    private CollectionSizeErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public CollectionSizeErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CollectionSizeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201306")]
+  public enum CollectionSizeErrorReason {
+    TOO_FEW,
+    TOO_MANY
+  }
   public interface IAudienceSegmentService {
     RequestHeader RequestHeader {
       get;
@@ -25144,7 +25342,6 @@ CustomTargetingValue[] values) {
       get;
       set;
     }
-    Product getProduct(string productId);
     ProductPage getProductsByStatement(Statement statement);
     UpdateResult performProductAction(ProductAction productAction, Statement filterStatement);
     Product updateProduct(Product product);

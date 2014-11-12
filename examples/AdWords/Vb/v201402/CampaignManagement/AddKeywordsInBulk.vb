@@ -66,8 +66,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
     ''' added.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the MutateJobService.
-      Dim mutateJobService As MutateJobService = user.GetService( _
-          AdWordsService.v201402.MutateJobService)
+      Dim mutateJobService As MutateJobService = CType(user.GetService( _
+          AdWordsService.v201402.MutateJobService), MutateJobService)
 
       Const RETRY_INTERVAL As Integer = 30
       Const RETRIES_COUNT As Integer = 30
@@ -112,7 +112,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201402
         Try
           Dim allJobs As Job() = mutateJobService.get(selector)
           If ((Not allJobs Is Nothing) AndAlso (allJobs.Length > 0)) Then
-            job = allJobs(0)
+            job = CType(allJobs(0), SimpleMutateJob)
             If ((job.status = BasicJobStatus.COMPLETED) OrElse _
                 (job.status = BasicJobStatus.FAILED)) Then
               completed = True

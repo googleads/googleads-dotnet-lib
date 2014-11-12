@@ -63,8 +63,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' is set.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the CampaignCriterionService.
-      Dim campaignCriterionService As CampaignCriterionService = user.GetService( _
-          AdWordsService.v201406.CampaignCriterionService)
+      Dim campaignCriterionService As CampaignCriterionService = CType(user.GetService( _
+          AdWordsService.v201406.CampaignCriterionService), CampaignCriterionService)
 
       ' ProductSalesChannel is a fixed id criterion, with the possible values
       ' defined here.

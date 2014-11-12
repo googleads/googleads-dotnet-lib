@@ -63,8 +63,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <param name="campaignId">The campaign id to add product scope.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the CampaignCriterionService.
-      Dim campaignCriterionService As CampaignCriterionService = user.GetService( _
-          AdWordsService.v201409.CampaignCriterionService)
+      Dim campaignCriterionService As CampaignCriterionService = CType(user.GetService( _
+          AdWordsService.v201409.CampaignCriterionService),  _
+          AdWords.v201409.CampaignCriterionService)
 
       Dim productScope As New ProductScope()
       ' This set of dimensions is for demonstration purposes only. It would be
