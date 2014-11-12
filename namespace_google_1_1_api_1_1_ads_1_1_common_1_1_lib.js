@@ -18,7 +18,6 @@ var namespace_google_1_1_api_1_1_ads_1_1_common_1_1_lib =
     [ "ContextStore", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_context_store.html", null ],
     [ "CredentialsExpiredException< T >", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_credentials_expired_exception_3_01_t_01_4.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_credentials_expired_exception_3_01_t_01_4" ],
     [ "DefaultAuthTokenCache", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_default_auth_token_cache.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_default_auth_token_cache" ],
-    [ "DfaTraceListener", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_dfa_trace_listener.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_dfa_trace_listener" ],
     [ "ErrorHandler", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_error_handler.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_error_handler" ],
     [ "InMemoryTokenCache< T >", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_in_memory_token_cache_3_01_t_01_4.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_in_memory_token_cache_3_01_t_01_4" ],
     [ "OAuth2JwtClaimset", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_jwt_claimset.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_jwt_claimset" ],
@@ -32,5 +31,6 @@ var namespace_google_1_1_api_1_1_ads_1_1_common_1_1_lib =
     [ "SoapListener", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_listener.html", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_listener" ],
     [ "SoapListenerExtension", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_listener_extension.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_listener_extension" ],
     [ "SoapListenerExtensionAttribute", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_listener_extension_attribute.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_listener_extension_attribute" ],
-    [ "TraceListener", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener" ]
+    [ "TraceListener", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_trace_listener" ],
+    [ "DfaTraceListener", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_dfa_trace_listener.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_dfa_trace_listener" ]
 ];

@@ -55,7 +55,6 @@ var v201408_2_dfp_api_8cs =
     [ "ApiVersionError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_api_version_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_api_version_error" ],
     [ "ApplicationException", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_application_exception.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_application_exception" ],
     [ "ApiException", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_api_exception.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_api_exception" ],
-    [ "Authentication", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_authentication.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_authentication" ],
     [ "ReconciliationReportService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_reconciliation_report_service.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_reconciliation_report_service" ],
     [ "ReconciliationReport", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_reconciliation_report.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_reconciliation_report" ],
     [ "ReconciliationReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_reconciliation_report_page.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_reconciliation_report_page" ],
@@ -147,6 +146,7 @@ var v201408_2_dfp_api_8cs =
     [ "DateTimeRangeTargetingError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_date_time_range_targeting_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_date_time_range_targeting_error" ],
     [ "CustomTargetingError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_custom_targeting_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_custom_targeting_error" ],
     [ "CustomFieldValueError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_custom_field_value_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_custom_field_value_error" ],
+    [ "CrossSellError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_cross_sell_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_cross_sell_error" ],
     [ "CreativeError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_creative_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_creative_error" ],
     [ "ContentMetadataTargetingError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_content_metadata_targeting_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_content_metadata_targeting_error" ],
     [ "CompanyCreditStatusError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_company_credit_status_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_company_credit_status_error" ],
@@ -1483,6 +1483,22 @@ var v201408_2_dfp_api_8cs =
     [ "CreativeWrapperStatus", "v201408_2_dfp_api_8cs.html#ab59167614e518cd1a48eb3a67c50fd85", [
       [ "ACTIVE", "v201408_2_dfp_api_8cs.html#ab59167614e518cd1a48eb3a67c50fd85a18ff74f43da410c5529f7d6fca84f115", null ],
       [ "INACTIVE", "v201408_2_dfp_api_8cs.html#ab59167614e518cd1a48eb3a67c50fd85a6b273343c454f9c53dcfc9c4ccf171d2", null ]
+    ] ],
+    [ "CrossSellErrorReason", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5c", [
+      [ "UNSUPPORTED_RESERVATION_TYPE", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5cae3d8492d33705af869b9c63e5007e4fe", null ],
+      [ "NO_VALID_ELIGIBLE_RESERVATION_TYPES", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5ca371b23cbd848956bf5f30f15066c192c", null ],
+      [ "COMPANY_IS_NOT_DISTRIBUTION_PARTNER", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5ca8fc0aff1131e37d367f2aa0a05859f23", null ],
+      [ "CHANGING_PARTNER_NETWORK_IS_NOT_SUPPORTED", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5ca90819d5b9a59a1e9e97bd7340aa339e0", null ],
+      [ "MISSING_DISTRIBUTOR_PARTNER_NAME", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5ca002ac3841bce4640be7be4e641ccab0c", null ],
+      [ "DISTRIBUTOR_NETWORK_MISSING_PUBLISHER_FEATURE", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5ca41793e9845cb0823d31fd464db05c343", null ],
+      [ "CONTENT_PROVIDER_NETWORK_MISSING_PUBLISHER_FEATURE", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5ca64b0564519d95f51a08d8d76c21560c4", null ],
+      [ "INVALID_DISTRIBUTOR_PARTNER_NAME", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5ca8d0102369f55341452f9744ef1c54f5a", null ],
+      [ "INVALID_CONTENT_PROVIDER_NETWORK", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5cacff764296e35aa0cfa0076f389ff7026", null ],
+      [ "CONTENT_PROVIDER_NETWORK_CANNOT_BE_ACTIVE_NETWORK", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5ca2f7d9a08cac9f043deea789bfd1a970a", null ],
+      [ "CONTENT_PROVIDER_NETWORK_ALREADY_ENABLED_FOR_CROSS_SELLING", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5ca772adc04121c03d97d2f77f534b790d2", null ],
+      [ "DISTRIBUTOR_RULE_VIOLATION_ERROR", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5cac813eb28b7a24d21de7ade0ea09289a4", null ],
+      [ "DISTRIBUTOR_RULE_VIOLATION_WARNING", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5ca515116642ab00f78e6d084455897ebab", null ],
+      [ "UNKNOWN", "v201408_2_dfp_api_8cs.html#a8c73d58fef5e338e9101012901839e5ca696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "CustomCreativeErrorReason", "v201408_2_dfp_api_8cs.html#a328be04fe49daacd2c536e7169f19585", [
       [ "DUPLICATE_MACRO_NAME_FOR_CREATIVE", "v201408_2_dfp_api_8cs.html#a328be04fe49daacd2c536e7169f19585ab825799b45ccec757c7f15758adac11a", null ],
