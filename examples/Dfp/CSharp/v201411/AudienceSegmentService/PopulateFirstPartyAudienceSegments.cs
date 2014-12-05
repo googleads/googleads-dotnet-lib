@@ -70,7 +70,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           .AddValue("audienceSegmentId", audienceSegmentId);
 
       try {
-        // Get audience segment by Statement.
+        // Get audience segment by statement.
         AudienceSegment audienceSegment =
             audienceSegmentService.getAudienceSegmentsByStatement(statementBuilder.ToStatement())
             .results[0];

@@ -57,7 +57,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       CreativeService creativeService =
           (CreativeService) user.GetService(DfpService.v201411.CreativeService);
 
-      // Create a Statement to only select image creatives.
+      // Create a statement to only select image creatives.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("creativeType = :creativeType")
           .OrderBy("id ASC")
@@ -69,7 +69,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get creatives by Statement.
+          // Get creatives by statement.
           page = creativeService.getCreativesByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
@@ -85,7 +85,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
-        Console.WriteLine("Failed to get creatives by Statement. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get creatives by statement. Exception says \"{0}\"",
             ex.Message);
       }
     }

@@ -57,7 +57,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       CompanyService companyService =
           (CompanyService) user.GetService(DfpService.v201411.CompanyService);
 
-      // Create a Statement to only select companies that are advertisers sorted
+      // Create a statement to only select companies that are advertisers sorted
       // by name.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("type = :advertiser")
@@ -69,7 +69,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get companies by Statement.
+          // Get companies by statement.
           page = companyService.getCompaniesByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

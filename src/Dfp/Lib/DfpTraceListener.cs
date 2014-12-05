@@ -14,27 +14,20 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Logging;
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Net;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading;
-using System.Web;
-using System.Web.Services;
-using System.Web.Services.Protocols;
 using System.Xml;
-using System.Xml.Serialization;
+using System.Text;
 
 namespace Google.Api.Ads.Dfp.Lib {
+
   /// <summary>
   /// Listens to SOAP messages sent and received by this library.
   /// </summary>
   public class DfpTraceListener : TraceListener {
+
     /// <summary>
     /// The singleton instance.
     /// </summary>
@@ -43,7 +36,8 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// <summary>
     /// Protected constructor.
     /// </summary>
-    protected DfpTraceListener() : base(new DfpAppConfig()) {
+    protected DfpTraceListener()
+      : base(new DfpAppConfig()) {
     }
 
     /// <summary>
@@ -56,11 +50,11 @@ namespace Google.Api.Ads.Dfp.Lib {
     }
 
     /// <summary>
-    /// Create a formatted HTTP request text, to be written into HTTP logs.
+    /// Gets the summary request logs.
     /// </summary>
-    /// <param name="soapRequest">The request XML for this SOAP call.</param>
-    /// <returns>A formatted string that represents the HTTP request.</returns>
-    protected override string FormatHttpRequest(string soapRequest) {
+    /// <param name="soapRequest">The request xml for this SOAP call.</param>
+    /// <returns>The summary request logs.</returns>
+    protected override string GetSummaryRequestLogs(string soapRequest) {
       XmlDocument xDoc = new XmlDocument();
       xDoc.LoadXml(soapRequest);
       XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
@@ -71,11 +65,11 @@ namespace Google.Api.Ads.Dfp.Lib {
     }
 
     /// <summary>
-    /// Create a formatted http response text, to be written into HTTP logs.
+    /// Gets the summary response logs.
     /// </summary>
     /// <param name="soapResponse">The response xml for this SOAP call.</param>
-    /// <returns>A formatted string that represents the HTTP response.</returns>
-    protected override string FormatHttpResponse(string soapResponse) {
+    /// <returns>The summary response logs.</returns>
+    protected override string GetSummaryResponseLogs(string soapResponse) {
       XmlDocument xDoc = new XmlDocument();
       xDoc.LoadXml(soapResponse);
       XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
@@ -99,7 +93,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// </summary>
     /// <returns>The list of fields to be masked.</returns>
     protected override ISet<string> GetFieldsToMask() {
-      return new HashSet<string>(new string[] {"authToken", "token", "Authorization"},
+      return new HashSet<string>(new string[] { "authToken", "token", "Authorization" },
           StringComparer.OrdinalIgnoreCase);
     }
   }

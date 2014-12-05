@@ -56,7 +56,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Get the UserService.
       UserService userService = (UserService) user.GetService(DfpService.v201411.UserService);
 
-      // Create a Statement to get all active users sorted by name.
+      // Create a statement to get all active users sorted by name.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("status = :status")
           .OrderBy("name ASC")
@@ -68,7 +68,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get users by Statement.
+          // Get users by statement.
           page = userService.getUsersByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

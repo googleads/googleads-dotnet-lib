@@ -69,7 +69,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Set the ID of the order to get line items from.
       long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
-      // Create Statement to select approved line items from a given order.
+      // Create statement to select approved line items from a given order.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("orderId = :orderId and status = :status")
           .AddValue("orderId", orderId)
@@ -81,7 +81,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get line items by Statement.
+          // Get line items by statement.
           page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
@@ -105,7 +105,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         Console.WriteLine("Number of line items to be activated: {0}", lineItemIds.Count);
 
         if (lineItemIds.Count > 0) {
-          // Modify Statement.
+          // Modify statement.
           statementBuilder.RemoveLimitAndOffset();
 
           // Create action.

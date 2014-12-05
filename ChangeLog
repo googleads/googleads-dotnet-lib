@@ -1,3 +1,47 @@
+18.7.0
+======
+
+AdWords:
+  - Removed support for version v201402 of AdWords API.
+  - Removed support for reportMoneyInMicros headers in ReportUtilities.
+  - Added additional validation for AdWords for Express SOAP headers.
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/14
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/10
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/15
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/10
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/14
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/22
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/36
+  - Added CONTRIBUTING.md to the repository.
+  - Report download requests and responses are now logged.
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/26
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/10
+
+AdXBuyer:
+  - Removed support for version v201402 of AdWords API.
+  - Report download requests and responses are now logged.
+
+DFA:
+  - Removed support for the DFA6 report service.
+
+DFP:
+  - Added ProposalLineItemService examples.
+  - Added ProductService examples.
+  - Added RateCardService examples.
+  - Added BaseRateService examples.
+
+Common:
+  - AdsClientLibs.SoapXmlLogs log source has been renamed to AdsClientLibs.DetailedRequestLogs.
+AdsClientLibs.RequestInfoLogs log source has been renamed to AdsClientLibs.SummaryRequestLogs. All
+the detailed HTTP(s) logs (Report downloads, OAuth, ClientLogin, SOAP) will be logged to
+AdsClientLibs.DetailedRequestLogs, and a summary of each request will be logged to
+AdsClientLibs.SummaryRequestLogs. The old log source names will still work, but will also generate
+a deprecation warning at startup. To fix your code, update your application's Web.config or
+App.config as per the instructions on
+https://github.com/googleads/googleads-dotnet-lib/wiki/How-to-capture-SOAP-messages.
+  - All OAuth2 and ClientLogin requests and responses are logged.
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/30
+
 18.6.0
 ======
 AdWords:

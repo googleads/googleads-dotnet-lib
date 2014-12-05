@@ -56,7 +56,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       InventoryService inventoryService =
           (InventoryService) user.GetService(DfpService.v201411.InventoryService);
 
-      // Create a Statement to get all ad units.
+      // Create a statement to get all ad units.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
@@ -66,7 +66,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get ad units by Statement.
+          // Get ad units by statement.
           page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

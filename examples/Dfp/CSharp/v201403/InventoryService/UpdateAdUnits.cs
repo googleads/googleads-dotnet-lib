@@ -76,7 +76,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201403 {
         adUnit.inheritedAdSenseSettings.value.adSenseEnabled = true;
 
         // Update the ad units on the server.
-        AdUnit[] updatedAdUnits = inventoryService.updateAdUnits(new AdUnit[] { adUnit });
+        AdUnit[] updatedAdUnits = inventoryService.updateAdUnits(new AdUnit[] {adUnit});
 
         foreach (AdUnit updatedAdUnit in updatedAdUnits) {
           Console.WriteLine("Ad unit with ID \"{0}\", name \"{1}\", and is AdSense enabled " +

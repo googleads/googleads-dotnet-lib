@@ -64,7 +64,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Set the creative to get LICAs by.
       long creativeId = long.Parse(_T("INSERT_CREATIVE_ID_HERE"));
 
-      // Create a Statement to get all LICAs.
+      // Create a statement to get all LICAs.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("lineItemId = :lineItemId AND creativeId = :creativeId")
           .OrderBy("id ASC")
@@ -73,7 +73,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           .AddValue("creativeId", creativeId);
 
       try {
-        // Get LICAs by Statement.
+        // Get LICAs by statement.
         LineItemCreativeAssociationPage page =
             licaService.getLineItemCreativeAssociationsByStatement(statementBuilder.ToStatement());
 

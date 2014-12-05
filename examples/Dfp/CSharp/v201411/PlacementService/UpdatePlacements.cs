@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
 
 using System;
@@ -58,35 +59,40 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       PlacementService placementService =
           (PlacementService) user.GetService(DfpService.v201411.PlacementService);
 
-      // Create a statement to select first 500 placements.
-      Statement filterStatement = new Statement();
-      filterStatement.query = "LIMIT 500";
+      // Set the ID of the placement to update.
+      long placementId = long.Parse(_T("INSERT_PLACEMENT_ID_HERE"));
+
+      // Create a statement to select a placement by ID.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("id = :id")
+          .OrderBy("id ASC")
+          .Limit(1)
+          .AddValue("id", placementId);
 
       try {
         // Get placements by statement.
-        PlacementPage page = placementService.getPlacementsByStatement(filterStatement);
+        PlacementPage page = placementService.getPlacementsByStatement(
+            statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          Placement[] placements = page.results;
+        if(page.results != null) {
+          Placement placement = page.results[0];
 
-          // Update each local placement object by enabling AdSense targeting.
-          foreach (Placement placement in placements) {
-            placement.targetingDescription = (string.IsNullOrEmpty(placement.description))?
-                "Generic description" : placement.description;
-            placement.targetingAdLocation = "All images on sports pages.";
-            placement.targetingSiteName = "http://code.google.com";
-            placement.isAdSenseTargetingEnabled = true;
-          }
+          // Update local placement object by enabling AdSense targeting.
+          placement.targetingDescription = (string.IsNullOrEmpty(placement.description))?
+              "Generic description" : placement.description;
+          placement.targetingAdLocation = "All images on sports pages.";
+          placement.targetingSiteName = "http://code.google.com";
+          placement.isAdSenseTargetingEnabled = true;
 
-          // Update the placements on the server.
-          placements = placementService.updatePlacements(placements);
+          // Update the placement on the server.
+          Placement[] placements = placementService.updatePlacements(new Placement[] {placement});
 
           // Display results.
           if (placements != null) {
-            foreach (Placement placement in placements) {
+            foreach (Placement updatedPlacement in placements) {
               Console.WriteLine("A placement with ID \"{0}\", name \"{1}\", and AdSense targeting" +
-                  " enabled \"{2}\" was updated.", placement.id, placement.name,
-                  placement.isAdSenseTargetingEnabled);
+                  " enabled \"{2}\" was updated.", updatedPlacement.id, updatedPlacement.name,
+                  updatedPlacement.isAdSenseTargetingEnabled);
             }
           } else {
             Console.WriteLine("No placements updated.");

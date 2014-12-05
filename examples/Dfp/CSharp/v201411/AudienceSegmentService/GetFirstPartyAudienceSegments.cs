@@ -69,7 +69,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get audience segment by Statement.
+          // Get audience segment by statement.
           page = audienceSegmentService.getAudienceSegmentsByStatement(
               statementBuilder.ToStatement());
 

@@ -15,14 +15,16 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Common.Util.Reports;
 
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Globalization;
 using System.IO;
 using System.Net;
-using System.Text;
 using System.Web;
 using System.Xml;
 
@@ -55,6 +57,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     private const string ADHOC_REPORT_URL_FORMAT = "{0}/api/adwords/reportdownload/{1}";
 
     /// <summary>
+    /// The list of headers to mask in the logs.
+    /// </summary>
+    private readonly HashSet<string> HEADERS_TO_MASK = new HashSet<string> {
+        "developerToken", "Authorization"
+    };
+
+    /// <summary>
     /// The AWQL query for downloading this report.
     /// </summary>
     private string query;
@@ -83,7 +92,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="query">The AWQL for downloading reports.</param>
     /// <param name="format">The report download format.</param>
     public ReportUtilities(AdWordsUser user, string query, string format)
-      : this(user, DEFAULT_REPORT_VERSION, query, format) {}
+      : this(user, DEFAULT_REPORT_VERSION, query, format) { }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ReportUtilities"/> class.
@@ -92,7 +101,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// utilities object.</param>
     /// <param name="reportDefinition">The report definition.</param>
     public ReportUtilities(AdWordsUser user, object reportDefinition)
-      : this(user, DEFAULT_REPORT_VERSION, reportDefinition) {}
+      : this(user, DEFAULT_REPORT_VERSION, reportDefinition) { }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ReportUtilities" /> class.
@@ -158,27 +167,37 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       while (true) {
         WebResponse response = null;
         HttpWebRequest request = BuildRequest(downloadUrl, postBody);
+
+        LogEntry logEntry = new LogEntry(User.Config, new DefaultDateTimeProvider());
+
+        logEntry.LogRequest(request, postBody, HEADERS_TO_MASK);
+
         try {
           response = request.GetResponse();
+
+          logEntry.LogResponse(response, false, "Response truncated.");
+          logEntry.Flush();
           return new ReportResponse(response);
-        } catch (WebException ex) {
+        } catch (WebException e) {
+          string contents = "";
           Exception reportsException = null;
 
-          using (response = ex.Response) {
+          using (response = e.Response) {
             try {
-              if (response != null) {
-                MemoryStream memStream = new MemoryStream();
-                MediaUtilities.CopyStream(response.GetResponseStream(), memStream);
-                String exceptionBody = Encoding.UTF8.GetString(memStream.ToArray());
-                reportsException = ParseException(exceptionBody, ex);
-              }
+              contents = MediaUtilities.GetStreamContentsAsString(
+                  response.GetResponseStream());
+            } catch {
+              contents = e.Message;
+            }
 
-              if (AdWordsErrorHandler.IsOAuthTokenExpiredError(reportsException)) {
-                reportsException = new AdWordsCredentialsExpiredException(
-                    request.Headers["Authorization"]);
-              }
-            } catch (Exception) {
-              reportsException = ex;
+            logEntry.LogResponse(response, true, contents);
+            logEntry.Flush();
+
+            reportsException = ParseException(e, contents);
+
+            if (AdWordsErrorHandler.IsOAuthTokenExpiredError(reportsException)) {
+              reportsException = new AdWordsCredentialsExpiredException(
+                  request.Headers["Authorization"]);
             }
           }
           if (errorHandler.ShouldRetry(reportsException)) {
@@ -238,18 +257,21 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="errorsXml">The errors XML.</param>
     /// <param name="e">The original exception.</param>
     /// <returns>An AdWords Reports exception that represents the error.</returns>
-    private AdWordsReportsException ParseException(string errorsXml, Exception e) {
-      XmlDocument xDoc = new XmlDocument();
-      xDoc.LoadXml(errorsXml);
-      XmlNodeList errorNodes = xDoc.DocumentElement.SelectNodes("ApiError");
+    private AdWordsReportsException ParseException(Exception e, string contents) {
       List<ReportDownloadError> errorList = new List<ReportDownloadError>();
-      foreach (XmlElement errorNode in errorNodes) {
-        ReportDownloadError downloadError = new ReportDownloadError();
-        downloadError.ErrorType = errorNode.SelectSingleNode("type").InnerText;
-        downloadError.FieldPath = errorNode.SelectSingleNode("fieldPath").InnerText;
-        downloadError.Trigger = errorNode.SelectSingleNode("trigger").InnerText;
+      try {
+        XmlDocument xDoc = new XmlDocument();
+        xDoc.LoadXml(contents);
+        XmlNodeList errorNodes = xDoc.DocumentElement.SelectNodes("ApiError");
+        foreach (XmlElement errorNode in errorNodes) {
+          ReportDownloadError downloadError = new ReportDownloadError();
+          downloadError.ErrorType = errorNode.SelectSingleNode("type").InnerText;
+          downloadError.FieldPath = errorNode.SelectSingleNode("fieldPath").InnerText;
+          downloadError.Trigger = errorNode.SelectSingleNode("trigger").InnerText;
 
-        errorList.Add(downloadError);
+          errorList.Add(downloadError);
+        }
+      } catch {
       }
       AdWordsReportsException ex = new AdWordsReportsException(
           "Report download errors occurred.", e);

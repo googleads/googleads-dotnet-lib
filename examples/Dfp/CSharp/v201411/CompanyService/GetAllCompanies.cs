@@ -56,7 +56,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       CompanyService companyService =
           (CompanyService) user.GetService(DfpService.v201411.CompanyService);
 
-      // Set defaults for page and Statement.
+      // Set defaults for page and statement.
       CompanyPage page = new CompanyPage();
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
@@ -64,7 +64,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get companies by Statement.
+          // Get companies by statement.
           page = companyService.getCompaniesByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

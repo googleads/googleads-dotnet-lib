@@ -64,7 +64,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Create statement to select user team associations by the user ID.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("userId = :userId")
-          .OrderBy("id ASC")
+          .OrderBy("userId ASC, teamId ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
           .AddValue("userId", userId);
 

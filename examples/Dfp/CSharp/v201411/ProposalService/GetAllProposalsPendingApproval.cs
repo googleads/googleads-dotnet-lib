@@ -57,7 +57,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       ProposalService proposalService =
           (ProposalService) user.GetService(DfpService.v201411.ProposalService);
 
-      // Create a Statement to only select proposals that are pending approval.
+      // Create a statement to only select proposals that are pending approval.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("status = :status")
           .OrderBy("id ASC")
@@ -69,7 +69,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get proposals by Statement.
+          // Get proposals by statement.
           page = proposalService.getProposalsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

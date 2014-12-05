@@ -81,7 +81,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201408 {
         }
 
         // Update the creatives on the server.
-        Creative[] creatives = creativeService.updateCreatives(new Creative[] { creative });
+        Creative[] creatives = creativeService.updateCreatives(new Creative[] {creative});
 
         foreach (Creative updatedCreative in creatives) {
           if (creative is ImageCreative) {

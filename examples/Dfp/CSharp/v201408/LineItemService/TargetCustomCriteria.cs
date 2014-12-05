@@ -117,7 +117,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201408 {
         lineItem.targeting.customTargeting = topCustomCriteriaSet;
 
         // Update the line items on the server.
-        LineItem[] updatedLineItems = lineItemService.updateLineItems(new LineItem[] { lineItem });
+        LineItem[] updatedLineItems = lineItemService.updateLineItems(new LineItem[] {lineItem});
 
         foreach (LineItem updatedLineItem in updatedLineItems) {
           // Display the updated line item.

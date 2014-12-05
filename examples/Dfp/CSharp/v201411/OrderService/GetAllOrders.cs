@@ -54,7 +54,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Get the OrderService.
       OrderService orderService = (OrderService) user.GetService(DfpService.v201411.OrderService);
 
-      // Create a Statement to get all orders.
+      // Create a statement to get all orders.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
@@ -64,7 +64,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get orders by Statement.
+          // Get orders by statement.
           page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

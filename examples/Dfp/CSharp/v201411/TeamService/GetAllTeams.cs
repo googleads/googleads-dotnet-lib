@@ -60,7 +60,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Set defaults for page and filterStatement.
+      // Set default for page.
       TeamPage page = new TeamPage();
 
       try {

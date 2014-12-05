@@ -88,6 +88,15 @@ namespace Google.Api.Ads.AdWords {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to expressBusinessId and pageId headers should only be specified for PromotionService..
+        /// </summary>
+        internal static string ExpressHeadersShouldNotBeSpecified {
+            get {
+                return ResourceManager.GetString("ExpressHeadersShouldNotBeSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid stage for Soap message..
         /// </summary>
         internal static string InvalidStageForSoapMessage {
@@ -97,11 +106,29 @@ namespace Google.Api.Ads.AdWords {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No AdWords Express headers were found on PromotionService request..
+        /// </summary>
+        internal static string MissingExpressHeaders {
+            get {
+                return ResourceManager.GetString("MissingExpressHeaders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OAuth provider cannot be null when selecting Authorization method as &quot;OAuth&quot;..
         /// </summary>
         internal static string OAuthProviderCannotBeNull {
             get {
                 return ResourceManager.GetString("OAuthProviderCannotBeNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You should set one of the &apos;expressBusinessId&apos; or &apos;pageId&apos; headers for PromotionService, but not both..
+        /// </summary>
+        internal static string OnlyOneExpressHeaderShouldBeSpecified {
+            get {
+                return ResourceManager.GetString("OnlyOneExpressHeaderShouldBeSpecified", resourceCulture);
             }
         }
         
@@ -129,15 +156,6 @@ namespace Google.Api.Ads.AdWords {
         internal static string ReportNumPollsExceeded {
             get {
                 return ResourceManager.GetString("ReportNumPollsExceeded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to returnMoneyInMicros header is not supported in AdWords API v201406 and later. Use the overloaded method that doesn&apos;t specify this parameter..
-        /// </summary>
-        internal static string ReturnMoneyInMicrosNotSupported {
-            get {
-                return ResourceManager.GetString("ReturnMoneyInMicrosNotSupported", resourceCulture);
             }
         }
         

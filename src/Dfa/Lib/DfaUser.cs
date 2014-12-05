@@ -15,26 +15,24 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Logging;
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Net;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Web.Services;
-using System.Web.Services.Protocols;
 
 namespace Google.Api.Ads.Dfa.Lib {
+
   /// <summary>
   /// Represents a DFA API user.
   /// </summary>
   public partial class DfaUser : AdsUser {
+
     /// <summary>
     /// Public constructor. Use this version if you want the library to
     /// use all settings from App.config.
     /// </summary>
-    public DfaUser() : base(new DfaAppConfig()) {
+    public DfaUser()
+      : base(new DfaAppConfig()) {
     }
 
     /// <summary>
@@ -42,7 +40,8 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// a DfaUser with a custom set of headers.
     /// </summary>
     /// <param name="headers">The custom set of headers.</param>
-    public DfaUser(Dictionary<string, string> headers) : base(new DfaAppConfig(), headers) {
+    public DfaUser(Dictionary<string, string> headers)
+      : base(new DfaAppConfig(), headers) {
     }
 
     /// <summary>
@@ -60,7 +59,7 @@ namespace Google.Api.Ads.Dfa.Lib {
     public override SoapListener[] GetDefaultListeners() {
       // Order is important, WseSecurityListener should get the first shot, so
       // DfaTraceListener writes log with header.
-      return new SoapListener[] {SoapHeaderListener.Instance, DfaTraceListener.Instance};
+      return new SoapListener[] { SoapHeaderListener.Instance, DfaTraceListener.Instance };
     }
   }
 }

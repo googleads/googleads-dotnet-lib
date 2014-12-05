@@ -60,29 +60,29 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       SuggestedAdUnitService suggestedAdUnitService = (SuggestedAdUnitService) user.GetService(
           DfpService.v201411.SuggestedAdUnitService);
 
-      // Set defaults for page and filterStatement.
+      // Set default for page.
       SuggestedAdUnitPage page = new SuggestedAdUnitPage();
-      Statement filterStatement = new Statement();
-      int offset = 0;
+
+      // Create a statement to get all suggested ad units.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
       try {
         do {
-          // Create a statement to get all suggested ad units.
-          filterStatement.query = "LIMIT 500 OFFSET " + offset;
-
           // Get suggested ad units by statement.
-          page = suggestedAdUnitService.getSuggestedAdUnitsByStatement(filterStatement);
+          page = suggestedAdUnitService.getSuggestedAdUnitsByStatement(
+              statementBuilder.ToStatement());
 
           if (page.results != null) {
             int i = page.startIndex;
             foreach (SuggestedAdUnit suggestedAdUnit in page.results) {
               Console.WriteLine("{0}) Suggested ad unit with ID \"{1}\", and number of requests " +
-                  "\"{2}\" was found.", i, suggestedAdUnit.id, suggestedAdUnit.numRequests);
-              i++;
+                  "\"{2}\" was found.", i++, suggestedAdUnit.id, suggestedAdUnit.numRequests);
             }
           }
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {

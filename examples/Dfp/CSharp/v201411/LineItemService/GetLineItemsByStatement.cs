@@ -74,7 +74,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get line items by Statement.
+          // Get line items by statement.
           page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
@@ -89,7 +89,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
-        Console.WriteLine("Failed to get line item by Statement. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get line item by statement. Exception says \"{0}\"",
             ex.Message);
       }
     }

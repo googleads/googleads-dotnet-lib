@@ -143,5 +143,18 @@ namespace Google.Api.Ads.Common.Util {
     public static void CopyStream(Stream sourceStream, Stream targetStream) {
       CopyStreamWithPreview(sourceStream, targetStream, 0);
     }
+
+    /// <summary>
+    /// Gets the stream contents as string.
+    /// </summary>
+    /// <param name="stream">The stream.</param>
+    /// <returns>Contents of the stream, as a string.</returns>
+    public static string GetStreamContentsAsString(Stream stream) {
+      string contents = "";
+      using (StreamReader reader = new StreamReader(stream)) {
+        contents = reader.ReadToEnd();
+      }
+      return contents;
+    }
   }
 }

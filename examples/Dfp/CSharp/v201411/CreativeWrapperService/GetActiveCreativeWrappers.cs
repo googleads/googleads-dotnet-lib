@@ -57,7 +57,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       CreativeWrapperService creativeWrapperService = (CreativeWrapperService) user.GetService(
           DfpService.v201411.CreativeWrapperService);
 
-     // Create a Statement to get all active creative wrappers.
+     // Create a statement to get all active creative wrappers.
      StatementBuilder statementBuilder = new StatementBuilder()
           .Where("status = :status")
           .OrderBy("id ASC")
@@ -69,7 +69,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get creative wrappers by Statement.
+          // Get creative wrappers by statement.
           page = creativeWrapperService.getCreativeWrappersByStatement(
               statementBuilder.ToStatement());
 

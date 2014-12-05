@@ -62,7 +62,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Set the ID of the user to deactivate
       long userId = long.Parse(_T("INSERT_USER_ID_HERE"));
 
-      // Create Statement text to select user by id.
+      // Create statement text to select user by id.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("id = :userId")
           .OrderBy("id ASC")
@@ -75,7 +75,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get users by Statement.
+          // Get users by statement.
           page = userService.getUsersByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

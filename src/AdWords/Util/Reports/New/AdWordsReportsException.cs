@@ -28,8 +28,19 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
   /// </summary>
   [Serializable]
   public class AdWordsReportsException : AdsReportsException {
+    /// <summary>
+    /// The errors returned by reports server.
+    /// </summary>
     private ReportDownloadError[] errors;
 
+    /// <summary>
+    /// The exception message.
+    /// </summary>
+    private string message;
+
+    /// <summary>
+    /// Gets or sets the errors.
+    /// </summary>
     public ReportDownloadError[] Errors {
       get {
         return errors;
@@ -51,7 +62,8 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// </summary>
     /// <param name="message">Error message for this API exception.</param>
     public AdWordsReportsException(string message)
-      : base(message) {
+      : base("") {
+      this.message = message;
     }
 
     /// <summary>
@@ -60,7 +72,8 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="message">Error message for this API exception.</param>
     /// <param name="innerException">Inner exception, if any.</param>
     public AdWordsReportsException(string message, Exception innerException)
-      : base(message, innerException) {
+      : base("", innerException) {
+      this.message = message;
     }
 
     /// <summary>
@@ -96,29 +109,22 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     }
 
     /// <summary>
-    /// Returns a <see cref="System.String" /> that represents this instance.
+    /// Gets a message that describes the current exception.
     /// </summary>
-    /// <returns>
-    /// A <see cref="System.String" /> that represents this instance.
-    /// </returns>
-    public override string ToString() {
-      StringBuilder exceptionBuilder = new StringBuilder();
-      exceptionBuilder.AppendFormat("{0}: {1}", this.GetType().Name, this.Message);
+    /// <returns>The error message that explains the reason for the exception,
+    /// or an empty string("").</returns>
+    public override string Message {
+      get {
+        StringBuilder exceptionBuilder = new StringBuilder();
+        exceptionBuilder.AppendFormat("{0}: {1} ", this.GetType().Name, this.message);
 
-      if (errors != null) {
-        exceptionBuilder.AppendFormat("{0}{0}{1}{0}{0}", Environment.NewLine,
-            string.Join<ReportDownloadError>(Environment.NewLine, errors));
+        if (errors != null) {
+          exceptionBuilder.AppendFormat("{0}{0}{1}{0}{0}", Environment.NewLine,
+              string.Join<ReportDownloadError>(Environment.NewLine, errors));
+        }
+
+        return exceptionBuilder.ToString();
       }
-
-      if (this.InnerException != null) {
-        exceptionBuilder.AppendFormat(" ---> {0}", this.InnerException);
-        exceptionBuilder.AppendFormat("{0}   --- End of inner exception stack trace ---{0}",
-            Environment.NewLine);
-      }
-
-      exceptionBuilder.Append(this.StackTrace);
-
-      return exceptionBuilder.ToString();
     }
   }
 }

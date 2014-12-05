@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
 
 using System;
@@ -57,11 +58,11 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
-    /// Create a formatted HTTP request text, to be written into HTTP logs.
+    /// Gets the summary request logs.
     /// </summary>
-    /// <param name="soapRequest">The request XML for this SOAP call.</param>
-    /// <returns>A formatted string that represents the HTTP request.</returns>
-    protected override string FormatHttpRequest(string soapRequest) {
+    /// <param name="soapRequest">The request xml for this SOAP call.</param>
+    /// <returns>The summary request logs.</returns>
+    protected override string GetSummaryRequestLogs(string soapRequest) {
       XmlDocument xDoc = SerializationUtilities.LoadXml(soapRequest);
       XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
       xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
@@ -86,11 +87,11 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
-    /// Create a formatted http response text, to be written into HTTP logs.
+    /// Gets the summary response logs.
     /// </summary>
     /// <param name="soapResponse">The response xml for this SOAP call.</param>
-    /// <returns>A formatted string that represents the HTTP response.</returns>
-    protected override string FormatHttpResponse(string soapResponse) {
+    /// <returns>The summary response logs.</returns>
+    protected override string GetSummaryResponseLogs(string soapResponse) {
       XmlDocument xDoc = SerializationUtilities.LoadXml(soapResponse);
       XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
       xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");

@@ -60,7 +60,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Set the ID of the company to update.
       int companyId = int.Parse(_T("INSERT_COMPANY_ID_HERE"));
 
-      // Create a Statement to select the company by ID.
+      // Create a statement to select the company by ID.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("id = :companyId")
           .OrderBy("id ASC")
@@ -68,7 +68,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           .AddValue("id", companyId);
 
       try {
-        // Get the companies by Statement.
+        // Get the companies by statement.
         CompanyPage page = companyService.getCompaniesByStatement(statementBuilder.ToStatement());
 
         Company company = page.results[0];

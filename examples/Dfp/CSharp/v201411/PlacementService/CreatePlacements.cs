@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
 
 using System;
@@ -86,15 +87,16 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       List<Placement> placementList = new List<Placement>();
 
       // Get the first 500 ad units.
-      Statement statement = new Statement();
-      statement.query = "LIMIT 500";
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
       List<string> mediumSquareTargetedUnitIds = new List<string>();
       List<string> skyscraperTargetedUnitIds = new List<string>();
       List<string> bannerTargetedUnitIds = new List<string>();
 
       try {
-        AdUnitPage page = inventoryService.getAdUnitsByStatement(statement);
+        AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
         // Separate the ad units by size.
         if (page.results != null) {

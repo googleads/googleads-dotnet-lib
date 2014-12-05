@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Logging;
 
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     /// </summary>
     /// <param name="config">The config class.</param>
     public MockTraceListener(AppConfig config) : base(config) {
+      this.DateTimeProvider = new MockDateTimeProvider();
     }
 
     /// <summary>
@@ -40,26 +42,6 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     protected override ISet<string> GetFieldsToMask() {
       return new HashSet<string>(new string[] { "authToken", "developerToken" },
           StringComparer.OrdinalIgnoreCase);
-    }
-
-    /// <summary>
-    /// Gets the time stamp for test.
-    /// </summary>
-    /// <returns>The current timestamp, in string format.</returns>
-    public string GetTimeStampForTest() {
-      return base.GetTimeStamp();
-    }
-
-    /// <summary>
-    /// Gets the current timestamp as a formatted string.
-    /// </summary>
-    /// <returns>
-    /// The current timestamp.
-    /// </returns>
-    /// <remarks>The mock version returns a predefined text, so that the soap
-    /// logs may be compared with a known log for correctness.</remarks>
-    protected override string GetTimeStamp() {
-      return "TEST_TIMESTAMP";
     }
   }
 }

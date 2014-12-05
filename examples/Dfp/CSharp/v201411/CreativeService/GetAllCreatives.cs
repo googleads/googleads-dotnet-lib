@@ -56,7 +56,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       CreativeService creativeService =
           (CreativeService) user.GetService(DfpService.v201411.CreativeService);
 
-      // Create a Statement to get all creatives.
+      // Create a statement to get all creatives.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
@@ -66,7 +66,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get creatives by Statement.
+          // Get creatives by statement.
           page = creativeService.getCreativesByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

@@ -495,6 +495,11 @@
     <Compile Include="v201411\AudienceSegmentService\GetFirstPartyAudienceSegments.cs" />
     <Compile Include="v201411\AudienceSegmentService\PopulateFirstPartyAudienceSegments.cs" />
     <Compile Include="v201411\AudienceSegmentService\UpdateAudienceSegments.cs" />
+    <Compile Include="v201411\BaseRateService\CreateProductBaseRates.cs" />
+    <Compile Include="v201411\BaseRateService\CreateProductTemplateBaseRates.cs" />
+    <Compile Include="v201411\BaseRateService\GetAllBaseRates.cs" />
+    <Compile Include="v201411\BaseRateService\GetBaseRatesByStatement.cs" />
+    <Compile Include="v201411\BaseRateService\UpdateBaseRates.cs" />
     <Compile Include="v201411\CompanyService\CreateCompanies.cs" />
     <Compile Include="v201411\CompanyService\GetAllCompanies.cs" />
     <Compile Include="v201411\CompanyService\GetCompaniesByStatement.cs" />
@@ -578,6 +583,14 @@
     <Compile Include="v201411\PlacementService\GetAllPlacements.cs" />
     <Compile Include="v201411\PlacementService\GetPlacementsByStatement.cs" />
     <Compile Include="v201411\PlacementService\UpdatePlacements.cs" />
+    <Compile Include="v201411\ProductService\GetAllProducts.cs" />
+    <Compile Include="v201411\ProductService\GetProductsForProductTemplate.cs" />
+    <Compile Include="v201411\ProductService\UpdateProducts.cs" />
+    <Compile Include="v201411\ProposalLineItemService\ArchiveProposalLineItems.cs" />
+    <Compile Include="v201411\ProposalLineItemService\CreateProposalLineItems.cs" />
+    <Compile Include="v201411\ProposalLineItemService\GetAllProposalLineItems.cs" />
+    <Compile Include="v201411\ProposalLineItemService\GetProposalLineItemsByStatement.cs" />
+    <Compile Include="v201411\ProposalLineItemService\UpdateProposalLineItems.cs" />
     <Compile Include="v201411\ProposalService\CreateProposals.cs" />
     <Compile Include="v201411\ProposalService\GetAllProposals.cs" />
     <Compile Include="v201411\ProposalService\GetAllProposalsPendingApproval.cs" />
@@ -587,6 +600,8 @@
     <Compile Include="v201411\PublisherQueryLanguageService\GetAllLineItemsUsingPql.cs" />
     <Compile Include="v201411\PublisherQueryLanguageService\GetGeoTargets.cs" />
     <Compile Include="v201411\PublisherQueryLanguageService\GetLineItemsNamedLike.cs" />
+    <Compile Include="v201411\RateCardService\GetAllRateCards.cs" />
+    <Compile Include="v201411\RateCardService\GetUsdRateCards.cs" />
     <Compile Include="v201411\ReportService\DisplayReport.cs" />
     <Compile Include="v201411\ReportService\DownloadReport.cs" />
     <Compile Include="v201411\ReportService\RunDeliveryReport.cs" />

@@ -57,7 +57,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       AudienceSegmentService audienceSegmentService =
           (AudienceSegmentService) user.GetService(DfpService.v201411.AudienceSegmentService);
 
-      // Create a Statement to get all audience segments.
+      // Create a statement to get all audience segments.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
@@ -67,7 +67,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get audience segment by Statement.
+          // Get audience segment by statement.
           page = audienceSegmentService.getAudienceSegmentsByStatement(
               statementBuilder.ToStatement());
 

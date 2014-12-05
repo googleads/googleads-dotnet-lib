@@ -61,7 +61,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Set the ID of the creative to update.
       int creativeId = int.Parse(_T("INSERT_CREATIVE_ID_HERE"));
 
-      // Create a Statement to get all image creatives.
+      // Create a statement to get all image creatives.
       Statement statement = new StatementBuilder()
           .Where("id = :id")
           .OrderBy("id ASC")
@@ -69,7 +69,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           .AddValue("id", creativeId).ToStatement();
 
       try {
-        // Get creatives by Statement.
+        // Get creatives by statement.
         CreativePage page = creativeService.getCreativesByStatement(statement);
 
         Creative creative = page.results[0];
@@ -81,7 +81,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         }
 
         // Update the creatives on the server.
-        Creative[] creatives = creativeService.updateCreatives(new Creative[] { creative });
+        Creative[] creatives = creativeService.updateCreatives(new Creative[] {creative});
 
         foreach (Creative updatedCreative in creatives) {
           if (creative is ImageCreative) {

@@ -73,7 +73,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Create report query.
       ReportQuery reportQuery = new ReportQuery();
       reportQuery.dimensions =
-          new Dimension[] { Dimension.AD_UNIT_ID, Dimension.AD_UNIT_NAME };
+          new Dimension[] {Dimension.AD_UNIT_ID, Dimension.AD_UNIT_NAME};
       reportQuery.columns = new Column[] {Column.AD_SERVER_IMPRESSIONS,
         Column.AD_SERVER_CLICKS, Column.DYNAMIC_ALLOCATION_INVENTORY_LEVEL_IMPRESSIONS,
         Column.DYNAMIC_ALLOCATION_INVENTORY_LEVEL_CLICKS,

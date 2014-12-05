@@ -62,7 +62,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Set the ID of the line item.
       long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
 
-      // Create a Statement to get the line item.
+      // Create a statement to get the line item.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("id = :lineItemid")
           .OrderBy("id ASC")
@@ -70,7 +70,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           .AddValue("lineItemId", lineItemId);
 
       try {
-        // Get line items by Statement.
+        // Get line items by statement.
         LineItemPage page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
         LineItem lineItem = page.results[0];

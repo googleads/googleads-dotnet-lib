@@ -17,6 +17,7 @@
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.Reports;
 using Google.Api.Ads.AdWords.v201409;
+using Google.Api.Ads.Common.Util.Reports;
 
 using System;
 using System.Collections.Generic;
@@ -86,7 +87,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
 
       try {
         ReportUtilities utilities = new ReportUtilities(user, "v201409", definition);
-        utilities.GetResponse().Save(filePath);
+        using (ReportResponse response = utilities.GetResponse()) {
+          response.Save(filePath);
+        } 
         Console.WriteLine("Report was downloaded to '{0}'.", filePath);
       } catch (Exception ex) {
         throw new System.ApplicationException("Failed to download report.", ex);

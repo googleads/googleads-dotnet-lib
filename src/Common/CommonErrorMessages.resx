@@ -192,8 +192,16 @@
     <value>Text to split cannot be null.</value>
     <comment>Used for ArgumentNullException by CsvFile.SplitCsvLine for 'text' parameter.</comment>
   </data>
+  <data name="UnknownTraceSource" xml:space="preserve">
+    <value>Unknown trace source : {0}.</value>
+    <comment>Used by TraceUtilites.GetSource method when someone requests an unknown trace source.</comment>
+  </data>
   <data name="UnregisteredServiceTypeRequested" xml:space="preserve">
     <value>Unregistered service type {0} was requested.</value>
     <comment>Used for InvalidCastException by AdsUser.GetService for serviceSignature parameter if an unregistered service type is requested.</comment>
+  </data>
+  <data name="UsingDeprecatedLogSource" xml:space="preserve">
+    <value>You are using a deprecated log source '{0}'. See https://github.com/googleads/googleads-dotnet-lib/wiki/How-to-capture-SOAP-messages for details on how to configure logging.</value>
+    <comment>Used for writng deprecation warnings if the user is using a deprecated log source.</comment>
   </data>
 </root>

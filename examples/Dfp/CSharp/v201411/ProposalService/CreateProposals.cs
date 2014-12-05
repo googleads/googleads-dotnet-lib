@@ -87,7 +87,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       SalespersonSplit secondarySalesperson = new SalespersonSplit();
       secondarySalesperson.userId = secondarySalespersonId;
       secondarySalesperson.split = 25000;
-      proposal.secondarySalespeople = new SalespersonSplit[] { secondarySalesperson };
+      proposal.secondarySalespeople = new SalespersonSplit[] {secondarySalesperson};
 
       // Set the probability to close to 100%.
       proposal.probabilityOfClose = 100000L;
@@ -106,7 +106,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         // Create the proposal on the server.
-        Proposal[] proposals = proposalService.createProposals(new Proposal[] { proposal });
+        Proposal[] proposals = proposalService.createProposals(new Proposal[] {proposal});
 
         foreach (Proposal createdProposal in proposals) {
           Console.WriteLine("A proposal with ID \"{0}\" and name \"{1}\" was created.",

@@ -17,6 +17,7 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.Util.Reports
 Imports Google.Api.Ads.AdWords.v201409
+Imports Google.Api.Ads.Common.Util.Reports
 
 Imports System
 Imports System.Collections.Generic
@@ -74,7 +75,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
       Try
         Dim utilities As New ReportUtilities(user, "v201409", query, _
                                              DownloadFormat.GZIPPED_CSV.ToString())
-        utilities.GetResponse().Save(filePath)
+        Using reportResponse As ReportResponse = utilities.GetResponse()
+          reportResponse.Save(filePath)
+        End Using
         Console.WriteLine("Report was downloaded to '{0}'.", filePath)
       Catch ex As Exception
         Throw New System.ApplicationException("Failed to download report.", ex)

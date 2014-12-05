@@ -14,31 +14,31 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using Google.Api.Ads.Common.Logging;
+
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Net;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Web.Services;
-using System.Web.Services.Protocols;
 using System.Xml;
 
 namespace Google.Api.Ads.Common.Lib {
+
   /// <summary>
   /// Represents an Ads API user.
   /// </summary>
   public abstract class AdsUser : Configurable {
+
     /// <summary>
     /// The list of SOAP listeners.
     /// </summary>
-    List<SoapListener> listeners = new List<SoapListener>();
+    private List<SoapListener> listeners = new List<SoapListener>();
 
     /// <summary>
     /// The OAuth provider.
     /// </summary>
-    AdsOAuthProvider oAuthProvider = null;
+    private AdsOAuthProvider oAuthProvider = null;
 
     /// <summary>
     /// The application configuration for this user.
@@ -85,7 +85,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// Protected constructor. Use this version from a derived class if you want
     /// the library to use all settings from App.config.
     /// </summary>
-    protected AdsUser(AppConfigBase config) : this (config, null) {
+    protected AdsUser(AppConfigBase config)
+      : this(config, null) {
     }
 
     /// <summary>

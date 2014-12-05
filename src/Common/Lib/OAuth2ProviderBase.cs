@@ -14,18 +14,23 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
+using System.Web;
 
 namespace Google.Api.Ads.Common.Lib {
+
   public abstract class OAuth2ProviderBase : AdsOAuthProvider {
+
     /// <summary>
     /// The OAuth2 endpoint for obtaining an authorization token.
     /// </summary>
@@ -46,13 +51,13 @@ namespace Google.Api.Ads.Common.Lib {
     /// A parameter that your application can use for keeping state. The
     /// OAuth Authorization Server roundtrips this parameter.
     /// </summary>
-    string state;
+    private string state;
 
     /// <summary>
     /// Indicates the type of token returned by the server. This field will
     /// always have the value Bearer for now.
     /// </summary>
-    string tokenType;
+    private string tokenType;
 
     /// <summary>
     /// The time at which access token was updated.
@@ -70,10 +75,25 @@ namespace Google.Api.Ads.Common.Lib {
     protected AppConfig config = null;
 
     /// <summary>
+    /// The list of headers to mask in the logs.
+    /// </summary>
+    private readonly ISet<string> REQUEST_HEADERS_TO_MASK = new HashSet<string>() {
+        "client_secret",
+        "refresh_token"
+    };
+
+    /// <summary>
+    /// The list of fields to mask in the response logs.
+    /// </summary>
+    private readonly ISet<string> RESPONSE_FIELDS_TO_MASK = new HashSet<string>() {
+        "access_token"
+    };
+
+    /// <summary>
     /// Callback triggered when this provider obtains a new access token or
     /// refresh token from the OAuth server.
     /// </summary>
-    OAuthTokensObtainedCallback oAuthTokensObtained =
+    private OAuthTokensObtainedCallback oAuthTokensObtained =
         new OAuthTokensObtainedCallback(TokensUpdatedCallback);
 
     /// <summary>
@@ -139,7 +159,6 @@ namespace Google.Api.Ads.Common.Lib {
       }
     }
 
-
     /// <summary>
     /// Gets the type of token returned by the server. This field will
     /// always have the value Bearer for now.
@@ -187,6 +206,7 @@ namespace Google.Api.Ads.Common.Lib {
         updatedOn = value;
       }
     }
+
     /// <summary>
     /// Gets the remaining lifetime on the access token.
     /// </summary>
@@ -268,7 +288,6 @@ namespace Google.Api.Ads.Common.Lib {
           new TimeSpan(0, 0, this.ExpiresIn - oAuth2RefreshCutoffLimit) < DateTime.Now;
     }
 
-
     /// <summary>
     /// Calls the token endpoint to obtain an access token.
     /// </summary>
@@ -285,8 +304,19 @@ namespace Google.Api.Ads.Common.Lib {
         writer.Write(body);
       }
 
+      LogEntry logEntry = new LogEntry(config, new DefaultDateTimeProvider());
+      logEntry.LogRequest(request, body, REQUEST_HEADERS_TO_MASK);
+
+      WebResponse response = null;
+
       try {
-        string contents = GetResponseText(request.GetResponse());
+        response = request.GetResponse();
+
+        string contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
+        logEntry.LogResponse(response, false, contents, RESPONSE_FIELDS_TO_MASK,
+            new JsonBodyFormatter());
+        logEntry.Flush();
+
         Dictionary<string, string> values = ParseJsonObjectResponse(contents);
         if (values.ContainsKey("access_token")) {
           this.AccessToken = values["access_token"];
@@ -305,8 +335,26 @@ namespace Google.Api.Ads.Common.Lib {
         if (this.OnOAuthTokensObtained != null) {
           this.OnOAuthTokensObtained(this);
         }
-      } catch (WebException ex) {
-        throw new ApplicationException(GetResponseText(ex.Response));
+      } catch (WebException e) {
+        string contents = "";
+        response = e.Response;
+
+        try {
+          contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
+          logEntry.LogResponse(response, true, contents, RESPONSE_FIELDS_TO_MASK,
+              new JsonBodyFormatter());
+        } catch {
+          contents = e.Message;
+          logEntry.LogResponse(response, true, contents);
+        }
+
+        logEntry.Flush();
+
+        throw new ApplicationException(contents, e);
+      } finally {
+        if (response != null) {
+          response.Close();
+        }
       }
     }
 
@@ -341,20 +389,6 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets the response text from a web response.
-    /// </summary>
-    /// <param name="response">The web response.</param>
-    /// <returns>The web response contents.</returns>
-    protected static string GetResponseText(WebResponse response) {
-      if (response == null) {
-        return String.Empty;
-      }
-      MemoryStream memStream = new MemoryStream();
-      MediaUtilities.CopyStream(response.GetResponseStream(), memStream);
-      return Encoding.UTF8.GetString(memStream.ToArray());
-    }
-
-    /// <summary>
     /// Parses a json object response.
     /// </summary>
     /// <param name="contents">The json contents.</param>
@@ -364,12 +398,12 @@ namespace Google.Api.Ads.Common.Lib {
     /// </remarks>
     protected Dictionary<string, string> ParseJsonObjectResponse(string contents) {
       Dictionary<string, string> retval = new Dictionary<string, string>();
-      string[] splits = contents.Trim(new char[] {' ', '{', '}'}).Split(',');
+      string[] splits = contents.Trim(new char[] { ' ', '{', '}' }).Split(',');
       foreach (string split in splits) {
-        string[] subSplits = split.Trim(new char[] {' ', '\r', '\n'}).Split(':');
+        string[] subSplits = split.Trim(new char[] { ' ', '\r', '\n' }).Split(':');
         if (subSplits.Length == 2) {
-          retval.Add(subSplits[0].Trim(new char[] {'"', ' '}),
-              subSplits[1].Trim(new char[] {'"', ' '}));
+          retval.Add(subSplits[0].Trim(new char[] { '"', ' ' }),
+              subSplits[1].Trim(new char[] { '"', ' ' }));
         }
       }
       return retval;

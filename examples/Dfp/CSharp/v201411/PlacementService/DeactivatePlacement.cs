@@ -59,7 +59,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       PlacementService placementService =
           (PlacementService) user.GetService(DfpService.v201411.PlacementService);
 
-      // Create Statement to select active placements.
+      // Create statement to select active placements.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("status = :status")
           .OrderBy("id ASC")
@@ -72,7 +72,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get placements by Statement.
+          // Get placements by statement.
           page = placementService.getPlacementsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

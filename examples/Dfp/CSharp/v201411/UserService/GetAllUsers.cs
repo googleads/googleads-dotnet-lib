@@ -54,17 +54,17 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Get the UserService.
       UserService userService = (UserService) user.GetService(DfpService.v201411.UserService);
 
-      // Create a Statement to get all users.
+      // Create a statement to get all users.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Sets defaults for page and Statement.
+      // Sets defaults for page and statement.
       UserPage page = new UserPage();
 
       try {
         do {
-          // Get users by Statement.
+          // Get users by statement.
           page = userService.getUsersByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

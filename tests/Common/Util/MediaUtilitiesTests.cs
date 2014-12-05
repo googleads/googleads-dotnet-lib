@@ -118,11 +118,21 @@ namespace Google.Api.Ads.Common.Tests.Util {
     /// </summary>
     [Test]
     [Category("Small")]
-    public void CopyStreamWithPreview() {
+    public void TestCopyStreamWithPreview() {
       byte[] preview = MediaUtilities.CopyStreamWithPreview(sourceStream, targetStream, 5);
       Assert.AreEqual(FILE_CONTENTS.Substring(0, 5), Encoding.UTF8.GetString(preview));
       Assert.AreEqual(FILE_CONTENTS, Encoding.UTF8.GetString(sourceStream.ToArray()));
     }
 
+    /// <summary>
+    /// Tests if data can be read from a stream as string.
+    /// preview.
+    /// </summary>
+    [Test]
+    [Category("Small")]
+    public void TestGetStreamContentsAsString() {
+      string contents = MediaUtilities.GetStreamContentsAsString(sourceStream);
+      Assert.AreEqual(FILE_CONTENTS, contents);
+    }
   }
 }

@@ -102,12 +102,6 @@ namespace Google.Api.Ads.Dfa.Lib {
       public static readonly ServiceSignature PlacementRemoteService;
 
       /// <summary>
-      /// See <a href="http://code.google.com/apis/dfa/docs/reference/v1.20/report/service.html">
-      /// this page </a> for details.
-      /// </summary>
-      public static readonly ServiceSignature ReportRemoteService;
-
-      /// <summary>
       /// See <a href="http://code.google.com/apis/dfa/docs/reference/v1.20/site/service.html">
       /// this page </a> for details.
       /// </summary>
@@ -175,7 +169,6 @@ namespace Google.Api.Ads.Dfa.Lib {
         LoginRemoteService = DfaService.MakeServiceSignature("v1.20", "LoginRemoteService");
         NetworkRemoteService = DfaService.MakeServiceSignature("v1.20", "NetworkRemoteService");
         PlacementRemoteService = DfaService.MakeServiceSignature("v1.20", "PlacementRemoteService");
-        ReportRemoteService = DfaService.MakeServiceSignature("v1.20", "ReportRemoteService");
         SiteRemoteService = DfaService.MakeServiceSignature("v1.20", "SiteRemoteService");
         SizeRemoteService = DfaService.MakeServiceSignature("v1.20", "SizeRemoteService");
         SpotlightRemoteService = DfaService.MakeServiceSignature("v1.20", "SpotlightRemoteService");

@@ -57,30 +57,31 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       CreativeWrapperService creativeWrapperService = (CreativeWrapperService) user.GetService(
           DfpService.v201411.CreativeWrapperService);
 
-      // Set defaults for page and Statement.
+      // Set default for page.
       CreativeWrapperPage page = new CreativeWrapperPage();
-      Statement statement = new Statement();
-      int offset = 0;
+
+      // Create a statement to get all creative wrappers.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("id ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
       try {
         do {
-          // Create a Statement to get all creative wrappers.
-          statement.query = string.Format("LIMIT 500 OFFSET {0}", offset);
-
-          // Get creative wrappers by Statement.
-          page = creativeWrapperService.getCreativeWrappersByStatement(statement);
+          // Get creative wrappers by statement.
+          page = creativeWrapperService.getCreativeWrappersByStatement(
+              statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
             int i = page.startIndex;
             foreach (CreativeWrapper wrapper in page.results) {
-              Console.WriteLine("Creative wrapper with ID \'{0}\' applying to label \'{1}\' with " +
-                "status \'{2}\' was found.", wrapper.id, wrapper.labelId, wrapper.status);
-              i++;
+              Console.WriteLine("{0}) Creative wrapper with ID \'{1}\' applying to label " +
+                "\'{2}\' with status \'{3}\' was found.", i++, wrapper.id, wrapper.labelId,
+                wrapper.status);
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {

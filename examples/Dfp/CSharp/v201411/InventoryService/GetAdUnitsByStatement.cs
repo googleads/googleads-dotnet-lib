@@ -78,7 +78,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get ad units by Statement.
+          // Get ad units by statement.
           page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

@@ -57,7 +57,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       LineItemService lineItemService =
           (LineItemService) user.GetService(DfpService.v201411.LineItemService);
 
-      // Create a Statement to get all line items.
+      // Create a statement to get all line items.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
@@ -66,7 +66,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       LineItemPage page = new LineItemPage();
       try {
         do {
-          // Get line items by Statement.
+          // Get line items by statement.
           page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

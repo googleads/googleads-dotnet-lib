@@ -22,7 +22,7 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
-  /// This code example gets all active placements by using a Statement. To
+  /// This code example gets all active placements by using a statement. To
   /// create a placement, run CreatePlacements.cs.
   ///
   /// Tags: PlacementService.getPlacementsByStatement
@@ -33,7 +33,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all active placements by using a Statement. To create a " +
+        return "This code example gets all active placements by using a statement. To create a " +
             "placement, run CreatePlacements.cs.";
       }
     }
@@ -57,7 +57,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       PlacementService placementService =
           (PlacementService) user.GetService(DfpService.v201411.PlacementService);
 
-      // Create a Statement to only select active placements.
+      // Create a statement to only select active placements.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("status = :status")
           .OrderBy("id ASC")
@@ -69,7 +69,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get placements by Statement.
+          // Get placements by statement.
           page = placementService.getPlacementsByStatement(statementBuilder.ToStatement());
 
           // Display results.
@@ -86,7 +86,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
-        Console.WriteLine("Failed to get placement by Statement. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get placement by statement. Exception says \"{0}\"",
             ex.Message);
       }
     }

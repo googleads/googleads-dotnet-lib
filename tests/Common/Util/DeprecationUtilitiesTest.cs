@@ -14,17 +14,17 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using Google.Api.Ads.Common.Util;
 using NUnit.Framework;
 
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Reflection;
-using Google.Api.Ads.Common.Util;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
+using System.Text;
 
 namespace Google.Api.Ads.Common.Tests.Util {
+
   /// <summary>
   /// Tests for DeprecationUtilities class.
   /// </summary>
@@ -33,6 +33,7 @@ namespace Google.Api.Ads.Common.Tests.Util {
     private const string DEPRECATION_MESSAGE = "This is a deprecation message.";
 
 #pragma warning disable 414
+
     [Obsolete(DEPRECATION_MESSAGE)]
     private string deprecatedField = "";
 
@@ -50,7 +51,16 @@ namespace Google.Api.Ads.Common.Tests.Util {
     public void Init() {
       memStream = new MemoryStream();
       TextWriterTraceListener textListener = new TextWriterTraceListener(memStream);
-      Trace.Listeners.Add(textListener);
+      TraceSource traceSource = TraceUtilities.GetSource(
+          TraceUtilities.DEPRECATION_MESSAGES_SOURCE);
+
+      // Set the switch level to log all warnings. Setting this key is required
+      // for the tests to pass, since this key usually comes from
+      // App.config, but would be unset when running the test standalone since
+      // Common lib doesn't have its own App.config.
+      traceSource.Switch.Level = SourceLevels.All;
+      traceSource.Listeners.Add(textListener);
+
       deprecatedMemberInfo = this.GetType().GetField("deprecatedField",
           BindingFlags.NonPublic | BindingFlags.Instance);
       nonDeprecatedMemberInfo = this.GetType().GetField("nonDeprecatedField",

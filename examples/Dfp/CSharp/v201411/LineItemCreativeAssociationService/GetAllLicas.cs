@@ -57,7 +57,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       LineItemCreativeAssociationService licaService = (LineItemCreativeAssociationService)
           user.GetService(DfpService.v201411.LineItemCreativeAssociationService);
 
-       // Create a Statement to get all LICAs.
+       // Create a statement to get all LICAs.
        StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("lineItemId ASC, creativeId ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
@@ -67,7 +67,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get LICAs by Statement.
+          // Get LICAs by statement.
           page = licaService.getLineItemCreativeAssociationsByStatement(
               statementBuilder.ToStatement());
 

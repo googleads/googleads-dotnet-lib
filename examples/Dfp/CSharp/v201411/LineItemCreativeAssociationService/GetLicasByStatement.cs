@@ -60,7 +60,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Set the line item to get LICAs by.
       long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
 
-      // Create a Statement to only select LICAs for the given lineItem ID.
+      // Create a statement to only select LICAs for the given lineItem ID.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("lineItemId = :lineItemId")
           .OrderBy("lineItemId ASC, creativeId ASC")
@@ -72,7 +72,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get LICAs by Statement.
+          // Get LICAs by statement.
           page = licaService.getLineItemCreativeAssociationsByStatement(
               statementBuilder.ToStatement());
 

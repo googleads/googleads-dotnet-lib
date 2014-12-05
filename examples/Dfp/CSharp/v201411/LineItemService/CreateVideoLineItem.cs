@@ -80,11 +80,11 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       ContentMetadataKeyHierarchyTargeting contentMetadataTargeting =
           new ContentMetadataKeyHierarchyTargeting();
       contentMetadataTargeting.customTargetingValueIds =
-          new long[] { contentCustomTargetingValueId };
+          new long[] {contentCustomTargetingValueId};
 
       ContentTargeting contentTargeting = new ContentTargeting();
       contentTargeting.targetedContentMetadata =
-          new ContentMetadataKeyHierarchyTargeting[] { contentMetadataTargeting };
+          new ContentMetadataKeyHierarchyTargeting[] {contentMetadataTargeting};
 
       // Create inventory targeting.
       InventoryTargeting inventoryTargeting = new InventoryTargeting();

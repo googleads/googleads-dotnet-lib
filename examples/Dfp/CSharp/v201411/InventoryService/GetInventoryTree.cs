@@ -87,7 +87,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       InventoryService inventoryService =
           (InventoryService) user.GetService(DfpService.v201411.InventoryService);
 
-      // Create a Statement to get all ad units.
+      // Create a statement to get all ad units.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
@@ -96,7 +96,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       AdUnitPage page = new AdUnitPage();
 
       do {
-        // Get ad units by Statement.
+        // Get ad units by statement.
         page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
         if (page.results != null && page.results.Length > 0) {
@@ -118,13 +118,13 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       InventoryService inventoryService =
           (InventoryService) user.GetService(DfpService.v201411.InventoryService);
 
-      // Create a Statement to only select the root ad unit.
+      // Create a statement to only select the root ad unit.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("parentId IS NULL")
           .OrderBy("id ASC")
           .Limit(1);
 
-      // Get ad units by Statement.
+      // Get ad units by statement.
       AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
       if (page.results != null && page.results.Length > 0) {

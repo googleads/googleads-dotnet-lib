@@ -57,31 +57,31 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       UserTeamAssociationService userTeamAssociationService = (UserTeamAssociationService)
           dfpUser.GetService(DfpService.v201411.UserTeamAssociationService);
 
-      // Set defaults for page and filterStatement.
+      // Set default for page.
       UserTeamAssociationPage page = new UserTeamAssociationPage();
-      Statement filterStatement = new Statement();
-      int offset = 0;
+
+      // Create a statement to get all user team associations.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .OrderBy("teamId ASC, userId ASC")
+          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
       try {
         do {
-          // Create a statement to get all user team associations.
-          filterStatement.query = "LIMIT 500 OFFSET " + offset;
-
           // Get user team associations by statement.
-          page = userTeamAssociationService.getUserTeamAssociationsByStatement(filterStatement);
+          page = userTeamAssociationService.getUserTeamAssociationsByStatement(
+              statementBuilder.ToStatement());
 
           if (page.results != null) {
             int i = page.startIndex;
             foreach (UserTeamAssociation userTeamAssociation in page.results) {
               Console.WriteLine("{0}) User team association between user with ID \"{1}\" and " +
-                  "team with ID \"{2}\" was found.", i, userTeamAssociation.userId,
+                  "team with ID \"{2}\" was found.", i++, userTeamAssociation.userId,
                   userTeamAssociation.teamId);
-              i++;
             }
           }
 
-          offset += 500;
-        } while (offset < page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}." + page.totalResultSetSize);
       } catch (Exception ex) {

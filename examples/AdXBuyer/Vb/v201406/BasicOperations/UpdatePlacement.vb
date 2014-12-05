@@ -67,7 +67,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal placementId As Long)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
-          AdWordsService.v201402.AdGroupCriterionService)
+          AdWordsService.v201406.AdGroupCriterionService)
 
       ' Since we are not updating any placement-specific fields, it is enough to
       ' create a criterion object.

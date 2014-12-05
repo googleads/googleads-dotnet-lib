@@ -30,10 +30,12 @@ using System.Xml;
 using System.Xml.Serialization;
 
 namespace Google.Api.Ads.AdWords.Lib {
+
   /// <summary>
   /// Base class for AdWords API services.
   /// </summary>
   public class AdWordsSoapClient : AdsSoapClient {
+
     /// <summary>
     /// Service name to be used when getting auth token for AdWords.
     /// </summary>
@@ -54,6 +56,20 @@ namespace Google.Api.Ads.AdWords.Lib {
 
       if (string.IsNullOrEmpty(header.clientCustomerId)) {
         TraceUtilities.WriteGeneralWarnings(AdWordsErrorMessages.ClientCustomerIdIsEmpty);
+      }
+
+      // Validate Express business headers.
+      if (this.Signature.ServiceName == "PromotionService") {
+        if (header.expressBusinessIdSpecified && header.pageIdSpecified) {
+          throw new ArgumentException(AdWordsErrorMessages.OnlyOneExpressHeaderShouldBeSpecified);
+        } else if (!header.expressBusinessIdSpecified && !header.pageIdSpecified) {
+          throw new ArgumentException(AdWordsErrorMessages.MissingExpressHeaders + ' ' +
+              AdWordsErrorMessages.OnlyOneExpressHeaderShouldBeSpecified);
+        }
+      } else {
+        if (header.expressBusinessIdSpecified || header.pageIdSpecified) {
+          throw new ArgumentException(AdWordsErrorMessages.ExpressHeadersShouldNotBeSpecified);
+        }
       }
 
       string oAuthHeader = null;

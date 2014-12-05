@@ -1,4 +1,4 @@
-// Copyright 2011, Google Inc. All Rights Reserved.
+﻿// Copyright 2011, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,19 +14,20 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
 using System.Net;
-using System.Reflection;
 using System.Text;
 using System.Web;
 
 namespace Google.Api.Ads.Common.Lib {
+
   /// <summary>
   /// This class wraps the ClientLogin API. See
   /// http://code.google.com/apis/accounts/docs/AuthForInstalledApps.html
@@ -38,6 +39,7 @@ namespace Google.Api.Ads.Common.Lib {
       " on how to use OAUth2 in your application. You can use Util\\OAuth2TokenGenerator.cs for " +
       "generating OAuth2 refresh tokens for offline access to various Ads* APIs.")]
   public class AuthToken : Configurable {
+
     /// <summary>
     /// Url endpoint for ClientLogin API.
     /// </summary>
@@ -62,6 +64,20 @@ namespace Google.Api.Ads.Common.Lib {
     /// The configuration class to configure this instance.
     /// </summary>
     private AppConfig config;
+
+    /// <summary>
+    /// The list of request headers to mask in the logs.
+    /// </summary>
+    private readonly HashSet<string> REQUEST_HEADERS_TO_MASK = new HashSet<string> {
+        "Email", "Passwd"
+    };
+
+    /// <summary>
+    /// The list of response fields to mask in the logs.
+    /// </summary>
+    private readonly HashSet<string> RESPONSE_FIELDS_TO_MASK = new HashSet<string> {
+        "Auth"
+    };
 
     /// <summary>
     /// The cache for storing authtokens.
@@ -134,7 +150,8 @@ namespace Google.Api.Ads.Common.Lib {
     public AppConfig Config {
       get {
         return config;
-      } set {
+      }
+      set {
         config = value;
       }
     }
@@ -154,7 +171,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Initializes a new instance of the <see cref="AuthToken"/> class.
     /// </summary>
-    public AuthToken() : this(null, null) {
+    public AuthToken()
+      : this(null, null) {
     }
 
     /// <summary>
@@ -244,14 +262,36 @@ namespace Google.Api.Ads.Common.Lib {
         strmReq.Write(postBytes, 0, postBytes.Length);
       }
 
+      LogEntry logEntry = new LogEntry(config, new DefaultDateTimeProvider());
+
+      logEntry.LogRequest(webRequest, postParams, REQUEST_HEADERS_TO_MASK);
+
       Dictionary<string, string> tblResponse = null;
       WebResponse response = null;
 
       try {
         response = webRequest.GetResponse();
-        tblResponse = ParseResponse(response);
-      } catch (WebException ex) {
-        AuthTokenException authException = ExtractException(ex);
+        string contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
+        logEntry.LogResponse(response, false, contents, RESPONSE_FIELDS_TO_MASK,
+            new KeyValueMessageFormatter());
+        logEntry.Flush();
+
+        tblResponse = ParseResponse(contents);
+      } catch (WebException e) {
+        string contents = "";
+        response = e.Response;
+
+        try {
+          contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
+        } catch {
+          contents = e.Message;
+        }
+
+        logEntry.LogResponse(response, true, contents, RESPONSE_FIELDS_TO_MASK,
+            new KeyValueMessageFormatter());
+        logEntry.Flush();
+
+        AuthTokenException authException = ExtractException(e, contents);
         throw authException;
       } finally {
         if (response != null) {
@@ -274,7 +314,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="ex">The exception originally thrown by webrequest
     /// to ClientLogin endpoint.</param>
     /// <returns></returns>
-    private AuthTokenException ExtractException(WebException ex) {
+    private AuthTokenException ExtractException(WebException ex, string contents) {
       Uri url = null;
       string error = String.Empty;
       string captchaToken = String.Empty;
@@ -284,7 +324,7 @@ namespace Google.Api.Ads.Common.Lib {
       AuthTokenErrorCode errCode = AuthTokenErrorCode.Unknown;
 
       try {
-        Dictionary<string, string> tblResponse = ParseResponse(ex.Response);
+        Dictionary<string, string> tblResponse = ParseResponse(contents);
 
         if (tblResponse.ContainsKey("Url")) {
           url = new Uri(tblResponse["Url"]);
@@ -292,7 +332,7 @@ namespace Google.Api.Ads.Common.Lib {
         if (tblResponse.ContainsKey("Error")) {
           error = tblResponse["Error"];
         }
-        if (tblResponse.ContainsKey("CaptchaToken")) { 
+        if (tblResponse.ContainsKey("CaptchaToken")) {
           captchaToken = tblResponse["CaptchaToken"];
         }
         if (tblResponse.ContainsKey("CaptchaUrl")) {
@@ -306,7 +346,7 @@ namespace Google.Api.Ads.Common.Lib {
           // Enum does not have a tryParse.
         }
 
-        if (tblResponse.ContainsKey("Info")) { 
+        if (tblResponse.ContainsKey("Info")) {
           info = tblResponse["Info"];
         }
       } catch (Exception) {
@@ -323,19 +363,16 @@ namespace Google.Api.Ads.Common.Lib {
     /// endpoint.</param>
     /// <returns>The parsed response, as key-value pairs, in a Hashtable.
     /// </returns>
-    private static Dictionary<string, string> ParseResponse(WebResponse response) {
+    private static Dictionary<string, string> ParseResponse(string contents) {
       Dictionary<string, string> retVal = new Dictionary<string, string>();
 
-      using (StreamReader reader = new StreamReader(response.GetResponseStream())) {
-        string sResponse = reader.ReadToEnd();
-        string[] splits = sResponse.Split('\n');
-        foreach (string split in splits) {
-          string[] subsplits = split.Split('=');
-          if (subsplits.Length >= 2) {
-            if (!string.IsNullOrEmpty(subsplits[0])) {
-              if (!retVal.ContainsKey(subsplits[0])) {
-                retVal.Add(subsplits[0], split.Substring(subsplits[0].Length + 1));
-              }
+      string[] splits = contents.Split('\n');
+      foreach (string split in splits) {
+        string[] subsplits = split.Split('=');
+        if (subsplits.Length >= 2) {
+          if (!string.IsNullOrEmpty(subsplits[0])) {
+            if (!retVal.ContainsKey(subsplits[0])) {
+              retVal.Add(subsplits[0], split.Substring(subsplits[0].Length + 1));
             }
           }
         }

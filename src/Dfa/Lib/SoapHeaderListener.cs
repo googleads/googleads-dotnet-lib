@@ -15,6 +15,7 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Dfa.Lib;
 
 using System;
@@ -117,8 +118,10 @@ namespace Google.Api.Ads.Dfa.Lib {
               "xmlns:" + WSSE_PREFIX + "='" + WSSE_NAMESPACE + "'",
               SOAP_PREFIX + ":mustUnderstand='1'>",
             "<" + WSSE_PREFIX + ":UsernameToken>",
-              "<" + WSSE_PREFIX + ":Username>" + token.Username + "</" + WSSE_PREFIX + ":Username>",
-              "<" + WSSE_PREFIX + ":Password>" + token.Password + "</" + WSSE_PREFIX + ":Password>",
+              "<" + WSSE_PREFIX + ":Username>" + token.Username + "</" + WSSE_PREFIX +
+                  ":Username>",
+              "<" + WSSE_PREFIX + ":Password>" + token.Password + "</" + WSSE_PREFIX +
+                  ":Password>",
             "</" + WSSE_PREFIX + ":UsernameToken>",
           "</" + WSSE_PREFIX + ":Security>"});
       XmlDocumentFragment securityHeader = soapHeader.OwnerDocument.CreateDocumentFragment();
@@ -152,7 +155,8 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// <param name="soapMessage">The SOAP message.</param>
     /// <param name="xmlnt">The xml name table.</param>
     /// <returns>The response header.</returns>
-    private ResponseHeader ParseResponseHeader(XmlDocument soapMessage, XmlNamespaceManager xmlnt) {
+    private ResponseHeader ParseResponseHeader(XmlDocument soapMessage,
+        XmlNamespaceManager xmlnt) {
       ResponseHeader responseHeader = null;
       XmlElement soapHeader = GetSoapHeaderNode(soapMessage, xmlnt, false);
       if (soapHeader != null) {

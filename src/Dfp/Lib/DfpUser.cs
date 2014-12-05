@@ -15,26 +15,24 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Logging;
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Net;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Web.Services;
-using System.Web.Services.Protocols;
 
 namespace Google.Api.Ads.Dfp.Lib {
+
   /// <summary>
   /// Represents an DFP API user.
   /// </summary>
   public partial class DfpUser : AdsUser {
+
     /// <summary>
     /// Public constructor. Use this version if you want the library to
     /// use all settings from App.config.
     /// </summary>
-    public DfpUser() : base(new DfpAppConfig()) {
+    public DfpUser()
+      : base(new DfpAppConfig()) {
     }
 
     /// <summary>
@@ -42,7 +40,8 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// a DfpUser with a custom set of headers.
     /// </summary>
     /// <param name="headers">The custom set of headers.</param>
-    public DfpUser(Dictionary<string, string> headers) : base(new DfpAppConfig(), headers) {
+    public DfpUser(Dictionary<string, string> headers)
+      : base(new DfpAppConfig(), headers) {
     }
 
     /// <summary>
@@ -58,7 +57,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// </summary>
     /// <returns>A list of default listeners</returns>
     public override SoapListener[] GetDefaultListeners() {
-      return new SoapListener[] {DfpTraceListener.Instance};
+      return new SoapListener[] { DfpTraceListener.Instance };
     }
   }
 }

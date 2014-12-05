@@ -61,7 +61,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       // Set the name of the advertiser (company) to get orders for.
       String advertiserId = _T("INSERT_ADVERTISER_COMPANY_ID_HERE");
 
-      // Create a Statement to only select orders for a given advertiser.
+      // Create a statement to only select orders for a given advertiser.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("advertiserId = :advertiserId")
           .OrderBy("id ASC")
@@ -73,7 +73,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get orders by Statement.
+          // Get orders by statement.
           page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {
@@ -88,7 +88,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } while(statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
       } catch (Exception ex) {
-        Console.WriteLine("Failed to get orders by Statement. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get orders by statement. Exception says \"{0}\"",
             ex.Message);
       }
     }

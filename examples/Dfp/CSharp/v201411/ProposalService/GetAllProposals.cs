@@ -55,7 +55,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
       ProposalService proposalService =
           (ProposalService) user.GetService(DfpService.v201411.ProposalService);
 
-      // Create a Statement to get all proposals.
+      // Create a statement to get all proposals.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
@@ -65,7 +65,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       try {
         do {
-          // Get proposals by Statement.
+          // Get proposals by statement.
           page = proposalService.getProposalsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null && page.results.Length > 0) {

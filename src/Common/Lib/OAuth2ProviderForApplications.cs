@@ -14,16 +14,24 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using Google.Api.Ads.Common.Logging;
+using Google.Api.Ads.Common.Util;
+
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Net;
 using System.Web;
 
 namespace Google.Api.Ads.Common.Lib {
+
   /// <summary>
   /// Provides OAuth authorization mechanism for Ads services when using Web and
   /// installed application flows.
   /// </summary>
-  public class OAuth2ProviderForApplications : OAuth2ProviderBase, AdsOAuthProviderForApplications {
+  public class OAuth2ProviderForApplications : OAuth2ProviderBase,
+      AdsOAuthProviderForApplications {
+
     /// <summary>
     /// The OAuth2 endpoint for revoking a refresh token programmatically.
     /// </summary>
@@ -47,7 +55,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Indicates if your application needs to access APIs when the user is not
     /// present at the browser. This is defaulted to true.
     /// </summary>
-    bool isOffline = true;
+    private bool isOffline = true;
 
     /// <summary>
     /// Indicates if your application needs to access APIs when the user is not
@@ -80,7 +88,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// Initializes a new instance of the OAuth2ProviderForApplications class.
     /// </summary>
     /// <param name="config">The config.</param>
-    public OAuth2ProviderForApplications(AppConfig config) : base(config) { }
+    public OAuth2ProviderForApplications(AppConfig config)
+      : base(config) {
+    }
 
     /// <summary>
     /// Builds the OAuth2 authorization url.
@@ -177,11 +187,36 @@ namespace Google.Api.Ads.Common.Lib {
       string url = string.Format("{0}?token={1}", REVOKE_ENDPOINT, RefreshToken);
       WebRequest request = HttpWebRequest.Create(url);
       request.Proxy = config.Proxy;
+
+      LogEntry logEntry = new LogEntry(this.Config, new DefaultDateTimeProvider());
+      logEntry.LogRequest(request, "", new HashSet<string>());
+
+      WebResponse response = null;
+
       try {
-        WebResponse response = request.GetResponse();
-      } catch (WebException ex) {
-        throw new AdsOAuthException("Failed to revoke refresh token.\n" +
-            GetResponseText(ex.Response));
+        response = request.GetResponse();
+
+        string contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
+        logEntry.LogResponse(response, false, contents);
+        logEntry.Flush();
+      } catch (WebException e) {
+        string contents = "";
+        response = e.Response;
+
+        try {
+          contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
+        } catch {
+          contents = e.Message;
+        }
+
+        logEntry.LogResponse(response, true, contents);
+        logEntry.Flush();
+
+        throw new AdsOAuthException("Failed to revoke refresh token.\n" + contents, e);
+      } finally {
+        if (response != null) {
+          response.Close();
+        }
       }
     }
 

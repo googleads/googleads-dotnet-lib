@@ -60,7 +60,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       long proposalId = long.Parse(_T("INSERT_PROPOSAL_ID_HERE"));
 
-      // Create a Statement to get the proposal.
+      // Create a statement to get the proposal.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("id = :id")
           .OrderBy("id ASC")
@@ -68,7 +68,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           .AddValue("id", proposalId);
 
       try {
-        // Get proposals by Statement.
+        // Get proposals by statement.
         ProposalPage page =
             proposalService.getProposalsByStatement(statementBuilder.ToStatement());
 

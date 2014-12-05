@@ -59,7 +59,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
       long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
-      // Create a Statement to get the order.
+      // Create a statement to get the order.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("id = :id")
           .OrderBy("id ASC")
@@ -67,7 +67,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           .AddValue("id", orderId);
 
       try {
-        // Get orders by Statement.
+        // Get orders by statement.
         OrderPage page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
 
         Order order = page.results[0];
