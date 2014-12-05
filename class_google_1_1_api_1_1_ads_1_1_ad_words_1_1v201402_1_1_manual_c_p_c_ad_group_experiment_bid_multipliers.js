@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201402_1_1_manual_c_p_c_ad_group_experiment_bid_multipliers =
-[
-    [ "maxContentCpcMultiplier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201402_1_1_manual_c_p_c_ad_group_experiment_bid_multipliers.html#ab8417c6a2888ff8098692f0db894b48f", null ],
-    [ "maxCpcMultiplier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201402_1_1_manual_c_p_c_ad_group_experiment_bid_multipliers.html#ab9762013ec097615f9389077d7a2cf97", null ]
-];

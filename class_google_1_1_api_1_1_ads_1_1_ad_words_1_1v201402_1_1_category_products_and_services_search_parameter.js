@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201402_1_1_category_products_and_services_search_parameter =
-[
-    [ "categoryId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201402_1_1_category_products_and_services_search_parameter.html#a3f212a264af97379f7cd7556a9f6ba87", null ],
-    [ "categoryIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201402_1_1_category_products_and_services_search_parameter.html#acdacd0e5ff42c1baedccf3219313ca94", null ]
-];
