@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_reconciliation_order_report_action =
-[
-    [ "ReconciliationOrderReportActionType", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_reconciliation_order_report_action.html#aca0e2d9d0efdba1d787025d2dc4ae775", null ]
-];

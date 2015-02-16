@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201406_1_1_get_third_party_redirect_ads =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201406_1_1_get_third_party_redirect_ads.html#a058d827393396e23f9d5a17d7eb96a2b", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201406_1_1_get_third_party_redirect_ads.html#a412f86f5786d66001e72ac0f83be95f6", null ]
-];

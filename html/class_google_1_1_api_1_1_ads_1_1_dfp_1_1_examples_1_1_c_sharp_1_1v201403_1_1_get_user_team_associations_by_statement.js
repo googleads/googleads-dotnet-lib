@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201403_1_1_get_user_team_associations_by_statement =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201403_1_1_get_user_team_associations_by_statement.html#a2bc57dbd030be7e0159bb14c1957a5ce", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201403_1_1_get_user_team_associations_by_statement.html#ae229c9746ccbb8d311ab30c2023cbcc4", null ]
-];
