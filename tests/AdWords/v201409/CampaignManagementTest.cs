@@ -37,7 +37,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
     long adGroupId;
     long criterionId;
     long adId;
-    long locationExtensionId;
 
     const Double BID_MODIFIER = 1.5;
 
@@ -50,7 +49,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
       adGroupId = utils.CreateAdGroup(user, campaignId);
       criterionId = utils.CreateKeyword(user, adGroupId);
       adId = utils.CreateTextAd(user, adGroupId, false);
-      locationExtensionId = utils.CreateLocationExtension(user, campaignId);
     }
 
     /// <summary>

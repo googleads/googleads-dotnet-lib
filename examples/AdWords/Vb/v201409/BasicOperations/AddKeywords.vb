@@ -20,10 +20,11 @@ Imports Google.Api.Ads.AdWords.v201409
 Imports System
 Imports System.Collections.Generic
 Imports System.IO
+Imports System.Web
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
   ''' <summary>
-  ''' This code example adds a keyword to an ad group. To get ad groups, run
+  ''' This code example adds keywords to an ad group. To get ad groups, run
   ''' GetAdGroups.vb.
   '''
   ''' Tags: AdGroupCriterionService.mutate
@@ -31,9 +32,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
   Public Class AddKeywords
     Inherits ExampleBase
     ''' <summary>
-    ''' Number of items being added / updated in this code example.
+    ''' Items being added in this code example.
     ''' </summary>
-    Const NUM_ITEMS As Integer = 5
+    ReadOnly KEYWORDS As String() = New String() {"mars cruise", "space hotel"}
 
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -56,7 +57,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example adds a keyword to an ad group. To get ad groups, run " & _
+        Return "This code example adds keywords to an ad group. To get ad groups, run " & _
             "GetAdGroups.vb."
       End Get
     End Property
@@ -74,10 +75,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
 
       Dim operations As New List(Of AdGroupCriterionOperation)
 
-      For i As Integer = 1 To NUM_ITEMS
+      For Each keywordText As String In KEYWORDS
         ' Create the keyword.
         Dim keyword As New Keyword
-        keyword.text = "mars cruise"
+        keyword.text = keywordText
         keyword.matchType = KeywordMatchType.BROAD
 
         ' Create the biddable ad group criterion.
@@ -89,7 +90,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
         keywordCriterion.userStatus = UserStatus.PAUSED
 
         ' Optional: Set the keyword destination url.
-        keywordCriterion.destinationUrl = "http://example.com/mars/cruise/" & i
+        keywordCriterion.finalUrls = New UrlList()
+        keywordCriterion.finalUrls.urls = New String() {"http://example.com/mars/cruise/?kw=" & _
+             HttpUtility.UrlEncode(keywordText)}
 
         ' Create the operations.
         Dim operation As New AdGroupCriterionOperation

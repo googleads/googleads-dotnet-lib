@@ -74,8 +74,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
 
       clickToDownloadAppAd.name = "Ad for demo game"
       clickToDownloadAppAd.templateId = 353
-      clickToDownloadAppAd.url = _
-          "http://play.google.com/store/apps/details?id=com.example.demogame"
+      clickToDownloadAppAd.finalUrls = New String() { _
+          "http://play.google.com/store/apps/details?id=com.example.demogame" _
+      }
       clickToDownloadAppAd.displayUrl = "play.google.com"
 
       ' Create the template elements for the ad. You can refer to
@@ -135,7 +136,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
         If Not retval Is Nothing AndAlso Not retval.value Is Nothing Then
           For Each adGroupAd As AdGroupAd In retval.value
             Console.WriteLine("New click-to-download ad with id = '{0}' and url = '{1}' " & _
-                "was created.", adGroupAd.ad.id, adGroupAd.ad.url)
+                "was created.", adGroupAd.ad.id, adGroupAd.ad.finalUrls(0))
           Next
         Else
           Console.WriteLine("No click-to-download ads were created.")

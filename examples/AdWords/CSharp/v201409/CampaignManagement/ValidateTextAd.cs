@@ -76,7 +76,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
       textAd.description1 = "Visit the Red Planet in style.";
       textAd.description2 = "Low-gravity fun for everyone!!";
       textAd.displayUrl = "www.example.com";
-      textAd.url = "http://www.example.com";
+      textAd.finalUrls = new string[] { "http://www.example.com" };
 
       AdGroupAd textAdGroupAd = new AdGroupAd();
       textAdGroupAd.adGroupId = adGroupId;

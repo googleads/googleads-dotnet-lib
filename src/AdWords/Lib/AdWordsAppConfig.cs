@@ -45,14 +45,16 @@ namespace Google.Api.Ads.AdWords.Lib {
     private const string MERCHANT_CENTER_ID = "MerchantCenter.AccountId";
 
     /// <summary>
-    /// Key name for placesLoginEmail.
+    /// Key name for gmbLoginEmail.
     /// </summary>
-    private const string PLACES_LOGIN_EMAIL = "GooglePlaces.LoginEmail";
+    /// <remarks>This field is used only for testing purposes.</remarks>
+    private const string GMB_LOGIN_EMAIL = "GoogleMyBusiness.LoginEmail";
 
     /// <summary>
-    /// Key name for placesOAuth2RefreshToken.
+    /// Key name for gmbOAuth2RefreshToken.
     /// </summary>
-    private const string PLACES_OAUTH2_REFRESH_TOKEN = "GooglePlaces.OAuth2RefreshToken";
+    /// <remarks>This field is used only for testing purposes.</remarks>
+    private const string GMB_OAUTH2_REFRESH_TOKEN = "GoogleMyBusiness.OAuth2RefreshToken";
 
     /// <summary>
     /// Key name for developerToken.
@@ -115,14 +117,16 @@ namespace Google.Api.Ads.AdWords.Lib {
     private string developerToken;
 
     /// <summary>
-    /// Login email to be used with Google Places account.
+    /// Login email to be used with Google My Business account.
     /// </summary>
-    private string placesLoginEmail;
+    /// <remarks>This field is used only for testing purposes.</remarks>
+    private string gmbLoginEmail;
 
     /// <summary>
-    /// OAuth2 refresh token to be used for Google Places account.
+    /// OAuth2 refresh token to be used for Google My Business account.
     /// </summary>
-    private string placesOAuth2RefreshToken;
+    /// <remarks>This field is used only for testing purposes.</remarks>
+    private string gmbOAuth2RefreshToken;
 
     /// <summary>
     /// Merchant Center ID to be used for Shopping campaigns.
@@ -186,26 +190,28 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
-    /// Gets or sets the Google Places OAuth2 login email.
+    /// Gets or sets the Google My Business (GMB) OAuth2 login email.
     /// </summary>
-    public string PlacesLoginEmail {
+    /// <remarks>This property is used only for testing purposes.</remarks>
+    public string GMBLoginEmail {
       get {
-        return placesLoginEmail;
+        return gmbLoginEmail;
       }
       set {
-        SetPropertyField("PlacesLoginEmail", ref placesLoginEmail, value);
+        SetPropertyField("GMBLoginEmail", ref gmbLoginEmail, value);
       }
     }
 
     /// <summary>
-    /// Gets or sets the Google Places OAuth2 refresh token.
+    /// Gets or sets the Google My Business (GMB) OAuth2 refresh token.
     /// </summary>
-    public string PlacesOAuth2RefreshToken {
+    /// <remarks>This property is used only for testing purposes.</remarks>
+    public string GMBOAuth2RefreshToken {
       get {
-        return placesOAuth2RefreshToken;
+        return gmbOAuth2RefreshToken;
       }
       set {
-        SetPropertyField("PlacesOAuth2RefreshToken", ref placesOAuth2RefreshToken, value);
+        SetPropertyField("GMBOAuth2RefreshToken", ref gmbOAuth2RefreshToken, value);
       }
     }
 
@@ -279,8 +285,8 @@ namespace Google.Api.Ads.AdWords.Lib {
       clientCustomerId = "";
       developerToken = "";
       merchantCenterId = -1;
-      placesOAuth2RefreshToken = "";
-      placesLoginEmail = "";
+      gmbOAuth2RefreshToken = "";
+      gmbLoginEmail = "";
       userAgent = "";
       adWordsApiServer = DEFAULT_ADWORDSAPI_SERVER;
       skipReportHeader = DEFAULT_SKIP_REPORT_HEADER;
@@ -303,9 +309,9 @@ namespace Google.Api.Ads.AdWords.Lib {
       // that have their own settings.
       long.TryParse(ReadSetting(settings, MERCHANT_CENTER_ID, merchantCenterId.ToString()),
           out merchantCenterId);
-      placesLoginEmail = ReadSetting(settings, PLACES_LOGIN_EMAIL, placesLoginEmail);
-      placesOAuth2RefreshToken = ReadSetting(settings, PLACES_OAUTH2_REFRESH_TOKEN,
-          placesOAuth2RefreshToken);
+      gmbLoginEmail = ReadSetting(settings, GMB_LOGIN_EMAIL, gmbLoginEmail);
+      gmbOAuth2RefreshToken = ReadSetting(settings, GMB_OAUTH2_REFRESH_TOKEN,
+          gmbOAuth2RefreshToken);
 
       userAgent = ReadSetting(settings, USER_AGENT, userAgent);
       adWordsApiServer = ReadSetting(settings, ADWORDSAPI_SERVER, adWordsApiServer);

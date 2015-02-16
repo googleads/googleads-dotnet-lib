@@ -24,9 +24,8 @@ using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
   /// <summary>
-  /// This code example adds a text ad that uses upgraded URLs. This example
-  /// will only work if your account is a test account or is whitelisted for
-  /// this feature.
+  /// This code example adds a text ad that uses advanced features of upgraded
+  /// URLs.
   ///
   /// Tags: AdGroupAdService.mutate
   /// </summary>
@@ -53,8 +52,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example adds a text ad that uses upgraded URLs. This example will " +
-            "only work if your account is a test account or is whitelisted for this feature.";
+        return "This code example adds a text ad that uses advanced features of upgraded URLs.";
       }
     }
 

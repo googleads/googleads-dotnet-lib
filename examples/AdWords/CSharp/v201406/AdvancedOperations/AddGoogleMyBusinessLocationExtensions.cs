@@ -15,21 +15,21 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201409;
+using Google.Api.Ads.AdWords.v201406;
 using Google.Api.Ads.Common.Lib;
 
 using System;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
 
   /// <summary>
   /// This code example adds a feed that syncs feed items from a Google
-  /// Places account and associates the feed with a customer.
+  /// My Business (GMB) account and associates the feed with a customer.
   ///
   /// Tags: CustomerFeedService.mutate, FeedItemService.mutate
   /// Tags:  FeedMappingService.mutate, FeedService.mutate
   /// </summary>
-  public class AddPlacesLocationExtension : ExampleBase {
+  public class AddGoogleMyBusinessLocationExtensions : ExampleBase {
 
     /// <summary>
     /// The placeholder type for location extensions. See the Placeholder
@@ -44,8 +44,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example adds a feed that syncs feed items from a Google Places " +
-            "account and associates the feed with a customer.";
+        return "This code example adds a feed that syncs feed items from a Google My Business " +
+            "(GMB) account and associates the feed with a customer.";
       }
     }
 
@@ -54,15 +54,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      AddPlacesLocationExtension codeExample = new AddPlacesLocationExtension();
+      AddGoogleMyBusinessLocationExtensions codeExample =
+          new AddGoogleMyBusinessLocationExtensions();
       Console.WriteLine(codeExample.Description);
       try {
-        string placesEmailAddress = "INSERT_PLACES_EMAIL_ADDRESS_HERE";
-        // To obtain an access token for your Places account, run the
-        // OAuthTokenGenerator utility and capture the Credential's
-        // access token.
-        string placesAccessToken = "INSERT_PLACES_ACCESS_TOKEN_HERE";
-        codeExample.Run(new AdWordsUser(), placesEmailAddress, placesAccessToken);
+        // The email address of an owner of the GMB account.
+        string gmbEmailAddress = "INSERT_GMB_EMAIL_ADDRESS_HERE";
+
+        // To obtain an access token for your GMB account, run the OAuth Token
+        // generator utility and copy the access token. Make sure you are
+        // logged in as the same user as gmbEmailAddress above when running the
+        // OAuth token generator utility.
+        string gmbAccessToken = "INSERT_GMB_OAUTH_ACCESS_TOKEN_HERE";
+
+        codeExample.Run(new AdWordsUser(), gmbEmailAddress, gmbAccessToken);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -73,40 +78,44 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="placesEmailAddress">The email address for Google Places
+    /// <param name="gmbEmailAddress">The email address for Google My Business
     /// account.</param>
-    /// <param name="placesAccessToken">The OAuth2 access token for Google
-    /// Places account.</param>
-    public void Run(AdWordsUser user, string placesEmailAddress, string placesAccessToken) {
-      FeedService feedService = (FeedService) user.GetService(AdWordsService.v201409.FeedService);
+    /// <param name="gmbAccessToken">The OAuth2 access token for Google
+    /// My Business account.</param>
+    public void Run(AdWordsUser user, string gmbEmailAddress, string gmbAccessToken) {
+      FeedService feedService = (FeedService) user.GetService(AdWordsService.v201406.FeedService);
 
       CustomerFeedService customerFeedService = (CustomerFeedService) user.GetService(
-          AdWordsService.v201409.CustomerFeedService);
+          AdWordsService.v201406.CustomerFeedService);
 
-      // Create a feed that will sync to the Google Places account specified
-      // by placesEmailAddress. Do not add FeedAttributes to this object,
+      // Create a feed that will sync to the Google My Business account
+      // specified by gmbEmailAddress. Do not add FeedAttributes to this object,
       // as AdWords will add them automatically because this will be a
       // system generated feed.
-      Feed placesFeed = new Feed();
-      placesFeed.name = String.Format("Places feed #{0}", ExampleUtilities.GetRandomString());
+      Feed gmbFeed = new Feed();
+      gmbFeed.name = String.Format("Google My Business feed #{0}",
+          ExampleUtilities.GetRandomString());
 
       PlacesLocationFeedData feedData = new PlacesLocationFeedData();
-      feedData.emailAddress = placesEmailAddress;
+      feedData.emailAddress = gmbEmailAddress;
+
       OAuthInfo oAuthInfo = new OAuthInfo();
       oAuthInfo.httpMethod = "GET";
-      oAuthInfo.httpRequestUrl = "https://www.google.com/local/add";
-      oAuthInfo.httpAuthorizationHeader = string.Format("Bearer {0}", placesAccessToken);
+
+      // Permissions for the AdWords API scope will also cover GMB.
+      oAuthInfo.httpRequestUrl = user.Config.GetDefaultOAuth2Scope();
+      oAuthInfo.httpAuthorizationHeader = string.Format("Bearer {0}", gmbAccessToken);
       feedData.oAuthInfo = oAuthInfo;
 
-      placesFeed.systemFeedGenerationData = feedData;
+      gmbFeed.systemFeedGenerationData = feedData;
 
       // Since this feed's feed items will be managed by AdWords,
       // you must set its origin to ADWORDS.
-      placesFeed.origin = FeedOrigin.ADWORDS;
+      gmbFeed.origin = FeedOrigin.ADWORDS;
 
       // Create an operation to add the feed.
       FeedOperation feedOperation = new FeedOperation();
-      feedOperation.operand = placesFeed;
+      feedOperation.operand = gmbFeed;
       feedOperation.@operator = Operator.ADD;
 
       try {
@@ -118,7 +127,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
         //    type.
         FeedReturnValue addFeedResult = feedService.mutate(new FeedOperation[] { feedOperation });
         Feed addedFeed = addFeedResult.value[0];
-        Console.WriteLine("Added places feed with ID {0}", addedFeed.id);
+        Console.WriteLine("Added GMB feed with ID {0}", addedFeed.id);
 
         // Add a CustomerFeed that associates the feed with this customer for
         // the LOCATION placeholder type.
@@ -142,7 +151,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
 
         // After the completion of the Feed ADD operation above the added feed
         // will not be available for usage in a CustomerFeed until the sync
-        // between the AdWords and Places accounts completes.  The loop below
+        // between the AdWords and GMB accounts completes.  The loop below
         // will retry adding the CustomerFeed up to ten times with an
         // exponential back-off policy.
         CustomerFeed addedCustomerFeed = null;
@@ -173,7 +182,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
                 }
               }
             }
-
           }
         } while (errorHandler.HaveMoreRetryAttemptsLeft());
 

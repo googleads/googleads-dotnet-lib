@@ -81,7 +81,7 @@
     <Compile Include="v201406\AdvancedOperations\AddAdCustomizers.cs" />
     <Compile Include="v201406\AdvancedOperations\AddAdGroupBidModifier.cs" />
     <Compile Include="v201406\AdvancedOperations\AddClickToDownloadAd.cs" />
-    <Compile Include="v201406\AdvancedOperations\AddPlacesLocationExtension.cs" />
+    <Compile Include="v201406\AdvancedOperations\AddGoogleMyBusinessLocationExtensions.cs" />
     <Compile Include="v201406\AdvancedOperations\AddSiteLinks.cs" />
     <Compile Include="v201406\AdvancedOperations\AddTextAdWithUpgradedUrls.cs" />
     <Compile Include="v201406\AdvancedOperations\GetAdGroupBidModifiers.cs" />
@@ -154,8 +154,6 @@
     <Compile Include="v201409\AdvancedOperations\AddAdCustomizers.cs" />
     <Compile Include="v201409\AdvancedOperations\AddAdGroupBidModifier.cs" />
     <Compile Include="v201409\AdvancedOperations\AddClickToDownloadAd.cs" />
-    <Compile Include="v201409\AdvancedOperations\AddPlacesLocationExtension.cs" />
-    <Compile Include="v201409\AdvancedOperations\AddSiteLinks.cs" />
     <Compile Include="v201409\AdvancedOperations\AddTextAdWithUpgradedUrls.cs" />
     <Compile Include="v201409\AdvancedOperations\GetAdGroupBidModifiers.cs" />
     <Compile Include="v201409\AdvancedOperations\UploadOfflineConversions.cs" />
@@ -181,7 +179,6 @@
     <Compile Include="v201409\CampaignManagement\AddCampaignLabels.cs" />
     <Compile Include="v201409\CampaignManagement\AddExperiment.cs" />
     <Compile Include="v201409\CampaignManagement\AddKeywordsInBulk.cs" />
-    <Compile Include="v201409\CampaignManagement\AddLocationExtension.cs" />
     <Compile Include="v201409\CampaignManagement\GetAllDisapprovedAds.cs" />
     <Compile Include="v201409\CampaignManagement\GetAllDisapprovedAdsWihAwql.cs" />
     <Compile Include="v201409\CampaignManagement\GetCampaignsByLabel.cs" />
@@ -200,6 +197,9 @@
     <Compile Include="v201409\Express\GetPromotions.cs" />
     <Compile Include="v201409\Express\UpdateExpressBusiness.cs" />
     <Compile Include="v201409\Express\UpdatePromotion.cs" />
+    <Compile Include="v201409\Extensions\AddGoogleMyBusinessLocationExtensions.cs" />
+    <Compile Include="v201409\Extensions\AddLocationExtension.cs" />
+    <Compile Include="v201409\Migration\UpgradeAdUrl.cs" />
     <Compile Include="v201409\Miscellaneous\GetAllVideosAndImages.cs" />
     <Compile Include="v201409\Miscellaneous\UploadImage.cs" />
     <Compile Include="v201409\Optimization\EstimateKeywordTraffic.cs" />

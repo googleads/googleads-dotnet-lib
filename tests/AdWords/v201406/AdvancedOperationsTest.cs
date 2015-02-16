@@ -38,7 +38,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     long adGroupId1;
     long adGroupId2;
     const double BID_MODIFIER = 0.2;
-    string placesAccessToken = "";
+    string gmbAccessToken = "";
 
     /// <summary>
     /// Inits this instance.
@@ -51,12 +51,12 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
 
       // Load defaults from config file.
       AdWordsAppConfig appConfig = new AdWordsAppConfig();
-      appConfig.OAuth2RefreshToken = appConfig.PlacesOAuth2RefreshToken;
+      appConfig.OAuth2RefreshToken = appConfig.GMBOAuth2RefreshToken;
 
       AdsOAuthProviderForApplications oAuth2Provider = new OAuth2ProviderForApplications(appConfig);
       oAuth2Provider.RefreshAccessToken();
-      
-      placesAccessToken = oAuth2Provider.AccessToken;
+
+      gmbAccessToken = oAuth2Provider.AccessToken;
     }
 
     /// <summary>
@@ -84,8 +84,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     /// </summary>
     [Test]
     public void TestAddSiteLinksVBExample() {
+      string feedName = "SitelinkFeed" + utils.GetTimeStampAlpha();
       RunExample(delegate() {
-        new VBExamples.AddSiteLinks().Run(user, campaignId);
+        new VBExamples.AddSiteLinks().Run(user, campaignId, feedName);
       });
     }
 
@@ -94,8 +95,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     /// </summary>
     [Test]
     public void TestAddSiteLinksCSharpExample() {
+      string feedName = "SitelinkFeed" + utils.GetTimeStampAlpha();
       RunExample(delegate() {
-        new CSharpExamples.AddSiteLinks().Run(user, campaignId);
+        new CSharpExamples.AddSiteLinks().Run(user, campaignId, feedName);
       });
     }
 
@@ -143,12 +145,12 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     /// Tests the AddPlacesLocationExtension C# code example.
     /// </summary>
     [Test]
-    public void TestAddPlacesLocationExtensionCSharpExample() {
+    public void TestAddGoogleMyBusinessLocationExtensionCSharpExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
 
       RunExample(delegate() {
-        new CSharpExamples.AddPlacesLocationExtension().Run(user, config.PlacesLoginEmail,
-            placesAccessToken);
+        new CSharpExamples.AddGoogleMyBusinessLocationExtensions().Run(user,
+            config.GMBLoginEmail, gmbAccessToken);
       });
     }
 
@@ -156,12 +158,12 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     /// Tests the AddPlacesLocationExtension VB.NET code example.
     /// </summary>
     [Test]
-    public void TestAddPlacesLocationExtensionVBExample() {
+    public void TestAddGoogleMyBusinessLocationExtensionVBExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
 
       RunExample(delegate() {
-        new VBExamples.AddPlacesLocationExtension().Run(user, config.PlacesLoginEmail,
-            placesAccessToken);
+        new VBExamples.AddGoogleMyBusinessLocationExtensions().Run(user, config.GMBLoginEmail,
+            gmbAccessToken);
       });
     }
 
@@ -171,9 +173,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     [Test]
     public void TestAddAdCustomizersCSharpExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+      string feedName = "AdCustomizerFeed" + utils.GetTimeStampAlpha();
 
       RunExample(delegate() {
-        new CSharpExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2);
+        new CSharpExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2, feedName);
       });
     }
 
@@ -183,9 +186,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     [Test]
     public void TestAddAdCustomizersVBExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-
+      string feedName = "AdCustomizerFeed" + utils.GetTimeStampAlpha();
       RunExample(delegate() {
-        new VBExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2);
+        new VBExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2, feedName);
       });
     }
   }

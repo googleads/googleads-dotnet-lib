@@ -40,7 +40,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.OAuth {
   ///
   /// 1. You should create a new Console Application project.
   /// 2. Add reference to the following assemblies:
-  /// <list type="table">
+  /// <list>
   /// <item>Google.Ads.Common.dll</item>
   /// <item>Google.Ads.OAuth.dll</item>
   /// <item>Google.Dfp.dll</item>

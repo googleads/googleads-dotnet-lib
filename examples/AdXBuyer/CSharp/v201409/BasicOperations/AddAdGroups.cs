@@ -96,13 +96,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
         // These settings only affect serving for the Display Network.
         TargetingSetting targetingSetting = new TargetingSetting();
 
+        // Restricting to serve ads that match your ad group placements.
+        // This is equivalent to choosing "Target and bid" in the UI.
         TargetingSettingDetail placementDetail = new TargetingSettingDetail();
         placementDetail.criterionTypeGroup = CriterionTypeGroup.PLACEMENT;
-        placementDetail.targetAll = true;
+        placementDetail.targetAll = false;
 
+        // Using your ad group verticals only for bidding. This is equivalent
+        // to choosing "Bid only" in the UI.
         TargetingSettingDetail verticalDetail = new TargetingSettingDetail();
         verticalDetail.criterionTypeGroup = CriterionTypeGroup.VERTICAL;
-        verticalDetail.targetAll = false;
+        verticalDetail.targetAll = true;
 
         targetingSetting.details = new TargetingSettingDetail[] {placementDetail, verticalDetail};
 

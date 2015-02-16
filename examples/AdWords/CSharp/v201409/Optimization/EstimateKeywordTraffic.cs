@@ -74,7 +74,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
       keyword3.text = "cruise";
       keyword3.matchType = KeywordMatchType.EXACT;
 
-      Keyword[] keywords = new Keyword[] {keyword1, keyword2, keyword3};
+      Keyword[] keywords = new Keyword[] { keyword1, keyword2, keyword3 };
 
       // Create a keyword estimate request for each keyword.
       List<KeywordEstimateRequest> keywordEstimateRequests = new List<KeywordEstimateRequest>();
@@ -116,11 +116,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
       Language languageCriterion = new Language();
       languageCriterion.id = 1000; //en
 
-      campaignEstimateRequest.criteria = new Criterion[] {countryCriterion, languageCriterion};
+      campaignEstimateRequest.criteria = new Criterion[] { countryCriterion, languageCriterion };
 
       // Create the selector.
       TrafficEstimatorSelector selector = new TrafficEstimatorSelector();
-      selector.campaignEstimateRequests = new CampaignEstimateRequest[] {campaignEstimateRequest};
+      selector.campaignEstimateRequests = new CampaignEstimateRequest[] { campaignEstimateRequest };
 
       try {
         // Get traffic estimates.
@@ -144,21 +144,35 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
                 }
 
                 // Find the mean of the min and max values.
-                long meanAverageCpc = (keywordEstimate.min.averageCpc.microAmount
-                    + keywordEstimate.max.averageCpc.microAmount) / 2;
-                double meanAveragePosition = (keywordEstimate.min.averagePosition
-                    + keywordEstimate.max.averagePosition) / 2;
-                float meanClicks = (keywordEstimate.min.clicksPerDay
-                   + keywordEstimate.max.clicksPerDay) / 2;
-                long meanTotalCost = (keywordEstimate.min.totalCost.microAmount
-                   + keywordEstimate.max.totalCost.microAmount) / 2;
+                long meanAverageCpc = 0;
+                double meanAveragePosition = 0;
+                float meanClicks = 0;
+                long meanTotalCost = 0;
 
-               Console.WriteLine("Results for the keyword with text = '{0}' and match type = " +
-                    "'{1}':", keyword.text, keyword.matchType);
-               Console.WriteLine("  Estimated average CPC: {0}", meanAverageCpc);
-               Console.WriteLine("  Estimated ad position: {0:0.00}", meanAveragePosition);
-               Console.WriteLine("  Estimated daily clicks: {0}", meanClicks);
-               Console.WriteLine("  Estimated daily cost: {0}", meanTotalCost);
+                if (keywordEstimate.min != null && keywordEstimate.max != null) {
+                  if (keywordEstimate.min.averageCpc != null &&
+                      keywordEstimate.max.averageCpc != null) {
+                    meanAverageCpc = (keywordEstimate.min.averageCpc.microAmount +
+                        keywordEstimate.max.averageCpc.microAmount) / 2;
+                  }
+
+                  meanAveragePosition = (keywordEstimate.min.averagePosition +
+                      keywordEstimate.max.averagePosition) / 2;
+                  meanClicks = (keywordEstimate.min.clicksPerDay +
+                      keywordEstimate.max.clicksPerDay) / 2;
+                  if (keywordEstimate.min.totalCost != null &&
+                      keywordEstimate.max.totalCost != null) {
+                    meanTotalCost = (keywordEstimate.min.totalCost.microAmount +
+                        keywordEstimate.max.totalCost.microAmount) / 2;
+                  }
+                }
+
+                Console.WriteLine("Results for the keyword with text = '{0}' and match type = " +
+                     "'{1}':", keyword.text, keyword.matchType);
+                Console.WriteLine("  Estimated average CPC: {0}", meanAverageCpc);
+                Console.WriteLine("  Estimated ad position: {0:0.00}", meanAveragePosition);
+                Console.WriteLine("  Estimated daily clicks: {0}", meanClicks);
+                Console.WriteLine("  Estimated daily cost: {0}", meanTotalCost);
               }
             }
           }

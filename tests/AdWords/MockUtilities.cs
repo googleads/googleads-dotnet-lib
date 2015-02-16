@@ -77,11 +77,13 @@ namespace Google.Api.Ads.AdWords.Tests {
     /// <param name="user">The user for which service should be mocked.</param>
     /// <param name="signature">The service signature to be mocked.</param>
     /// <param name="mockType">Type of the mock service.</param>
-    public static void RegisterMockService(AdsUser user, ServiceSignature signature,
+    /// <returns>The mock service signature.</returns>
+    public static ServiceSignature RegisterMockService(AdsUser user, ServiceSignature signature,
         Type mockType) {
       MockAdWordsServiceSignature mockSignature = MockAdWordsServiceSignature.FromSignature(
           signature, mockType);
       user.RegisterService(signature.Id, user.GetServiceFactory(mockSignature.Id));
+      return mockSignature;
     }
   }
 

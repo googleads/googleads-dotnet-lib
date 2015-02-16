@@ -73,8 +73,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
 
       clickToDownloadAppAd.name = "Ad for demo game";
       clickToDownloadAppAd.templateId = 353;
-      clickToDownloadAppAd.url =
-          "http://play.google.com/store/apps/details?id=com.example.demogame";
+      clickToDownloadAppAd.finalUrls = new string[] {
+          "http://play.google.com/store/apps/details?id=com.example.demogame"
+      };
       clickToDownloadAppAd.displayUrl = "play.google.com";
 
       // Create the template elements for the ad. You can refer to
@@ -133,7 +134,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
         if (retval != null && retval.value != null) {
           foreach (AdGroupAd adGroupAd in retval.value) {
             Console.WriteLine("New click-to-download ad with id = \"{0}\" and url = \"{1}\" " +
-                "was created.", adGroupAd.ad.id, adGroupAd.ad.url);
+                "was created.", adGroupAd.ad.id, adGroupAd.ad.finalUrls[0]);
           }
         } else {
           Console.WriteLine("No click-to-download ads were created.");

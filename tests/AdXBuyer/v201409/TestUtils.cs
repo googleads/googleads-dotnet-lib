@@ -339,48 +339,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
     }
 
     /// <summary>
-    /// Creates a campaign ad extension for running further tests.
-    /// </summary>
-    /// <param name="user">The AdWords user.</param>
-    /// <param name="campaignId">The campaign id for which extension is
-    /// created.</param>
-    /// <returns>The campaign ad extension id.</returns>
-    public long CreateLocationExtension(AdWordsUser user, long campaignId) {
-      CampaignAdExtensionService campaignExtensionService =
-          (CampaignAdExtensionService) user.GetService(AdWordsService.v201409.
-               CampaignAdExtensionService);
-
-      CampaignAdExtensionOperation operation = new CampaignAdExtensionOperation();
-      operation.@operator = Operator.ADD;
-
-      CampaignAdExtension extension = new CampaignAdExtension();
-      extension.campaignId = campaignId;
-      extension.status = CampaignAdExtensionStatus.ENABLED;
-
-      Address address = new Address();
-      address.streetAddress = "1600 Amphitheatre Pkwy, Mountain View";
-      address.countryCode = "US";
-
-      GeoLocation location = GetLocationForAddress(user, address);
-
-      LocationExtension locationExtension = new LocationExtension();
-
-      // Note: Do not populate an address directly. Instead, use
-      // GeoLocationService to obtain the location of an address,
-      // and use the address as per the location it returns.
-      locationExtension.address = location.address;
-      locationExtension.geoPoint = location.geoPoint;
-      locationExtension.encodedLocation = location.encodedLocation;
-      locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND;
-
-      extension.adExtension = locationExtension;
-      operation.operand = extension;
-      CampaignAdExtensionReturnValue retVal =
-          campaignExtensionService.mutate(new CampaignAdExtensionOperation[] {operation});
-      return retVal.value[0].adExtension.id;
-    }
-
-    /// <summary>
     /// Adds an experiment.
     /// </summary>
     /// <param name="user">The user.</param>
@@ -487,6 +445,22 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
     public string GetTimeStamp() {
       return (DateTime.UtcNow - new DateTime(1970, 1, 1)).
           TotalMilliseconds.ToString();
+    }
+
+    /// <summary>
+    /// Gets the current timestamp as an alphabetic string.
+    /// </summary>
+    /// <returns>The timestamp as a string.</returns>
+    public string GetTimeStampAlpha() {
+      string timeStamp = GetTimeStamp();
+      StringBuilder builder = new StringBuilder();
+      for (int i = 0; i < timeStamp.Length; i++) {
+        if (timeStamp[i] == '.') {
+          continue;
+        }
+        builder.Append(Convert.ToChar('a' + int.Parse(timeStamp[i].ToString())));
+      }
+      return builder.ToString();
     }
   }
 }

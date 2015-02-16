@@ -145,14 +145,29 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
                 End If
 
                 ' Find the mean of the min and max values.
-                Dim meanAverageCpc As Long = CLng(((keywordEstimate.min.averageCpc.microAmount + _
-                    keywordEstimate.max.averageCpc.microAmount) / 2))
-                Dim meanAveragePosition As Double = ((keywordEstimate.min.averagePosition + _
-                    keywordEstimate.max.averagePosition) / 2)
-                Dim meanClicks As Single = ((keywordEstimate.min.clicksPerDay + _
-                    keywordEstimate.max.clicksPerDay) / 2)
-                Dim meanTotalCost As Long = CLng(((keywordEstimate.min.totalCost.microAmount + _
-                    keywordEstimate.max.totalCost.microAmount) / 2))
+                Dim meanAverageCpc As Long = 0
+                Dim meanAveragePosition As Double = 0
+                Dim meanClicks As Double = 0
+                Dim meanTotalCost As Long = 0
+
+                If (Not (keywordEstimate.min Is Nothing) AndAlso
+                    Not (keywordEstimate.max Is Nothing)) Then
+                  If (Not (keywordEstimate.min.averageCpc Is Nothing) AndAlso
+                      Not (keywordEstimate.max.averageCpc Is Nothing)) Then
+                    meanAverageCpc = CLng((keywordEstimate.min.averageCpc.microAmount + _
+                        keywordEstimate.max.averageCpc.microAmount) / 2)
+                  End If
+
+                  meanAveragePosition = (keywordEstimate.min.averagePosition +
+                      keywordEstimate.max.averagePosition) / 2
+                  meanClicks = (keywordEstimate.min.clicksPerDay +
+                      keywordEstimate.max.clicksPerDay) / 2
+                  If (Not (keywordEstimate.min.totalCost Is Nothing) AndAlso _
+                      Not (keywordEstimate.max.totalCost Is Nothing)) Then
+                    meanTotalCost = CLng((keywordEstimate.min.totalCost.microAmount + _
+                        keywordEstimate.max.totalCost.microAmount) / 2)
+                  End If
+                End If
 
                 Console.WriteLine("Results for the keyword with text = '{0}' and match type " & _
                     "= '{1}':", keyword.text, keyword.matchType)

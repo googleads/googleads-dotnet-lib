@@ -16,6 +16,7 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201409;
+using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests;
 using Google.Api.Ads.Common.Util;
 
@@ -36,7 +37,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
   /// UnitTests for mocking a SOAP service.
   /// </summary>
   [TestFixture]
-  internal class MockTests : ExampleTestsBase {
+  internal class MockTests : VersionedExampleTestsBase {
 
     /// <summary>
     /// A mocked version of CampaignService. The get() method is mocked, and
@@ -124,6 +125,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
       }
     }
 
+    private long budgetId;
+
     /// <summary>
     /// Default public constructor.
     /// </summary>
@@ -136,6 +139,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
     /// </summary>
     [SetUp]
     public void Init() {
+      budgetId = utils.CreateBudget(user);
     }
 
     /// <summary>
@@ -143,10 +147,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
     /// </summary>
     [Test]
     public void TestGetAllCampaignsMockOnly() {
-      MockUtilities.RegisterMockService(user, AdWordsService.v201409.CampaignService,
-          typeof(MockCampaignService));
-      CampaignService campaignService = (CampaignService) user.GetService(
-          AdWordsService.v201409.CampaignService);
+      ServiceSignature mockSignature = MockUtilities.RegisterMockService(user,
+          AdWordsService.v201409.CampaignService, typeof(MockCampaignService));
+
+      CampaignService campaignService = (CampaignService) user.GetService(mockSignature);
       Assert.That(campaignService is MockCampaignService);
 
       // Create a selector.
@@ -169,10 +173,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
     /// </summary>
     [Test]
     public void TestGetAllCampaignsMockAndCallServer() {
-      MockUtilities.RegisterMockService(user, AdWordsService.v201409.CampaignService,
-          typeof(MockCampaignServiceEx));
-      CampaignService campaignService = (CampaignService) user.GetService(
-          AdWordsService.v201409.CampaignService);
+      ServiceSignature mockSignature = MockUtilities.RegisterMockService(user,
+          AdWordsService.v201406.CampaignService, typeof(MockCampaignServiceEx));
+
+      CampaignService campaignService = (CampaignService) user.GetService(mockSignature);
       Assert.That(campaignService is MockCampaignServiceEx);
 
       Campaign campaign = new Campaign();
@@ -182,10 +186,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
       campaign.biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
 
       Budget budget = new Budget();
-      budget.period = BudgetBudgetPeriod.DAILY;
-      budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
-      budget.amount = new Money();
-      budget.amount.microAmount = 50000000;
+      budget.budgetId = budgetId;
+
+      campaign.budget = budget;
 
       campaign.budget = budget;
 

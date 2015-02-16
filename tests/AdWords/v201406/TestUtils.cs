@@ -129,7 +129,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
       campaignOperation.operand.settings = settings.ToArray();
 
       CampaignReturnValue retVal =
-          campaignService.mutate(new CampaignOperation[] {campaignOperation});
+          campaignService.mutate(new CampaignOperation[] { campaignOperation });
       return retVal.value[0].id;
     }
 
@@ -167,17 +167,17 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
         CpmBid cpmBid = new CpmBid();
         cpmBid.bid = new Money();
         cpmBid.bid.microAmount = 10000000;
-        biddingConfig.bids = new Bids[] {cpmBid};
+        biddingConfig.bids = new Bids[] { cpmBid };
         adGroupOperation.operand.biddingStrategyConfiguration = biddingConfig;
       } else {
         BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
         CpcBid cpcBid = new CpcBid();
         cpcBid.bid = new Money();
         cpcBid.bid.microAmount = 10000000;
-        biddingConfig.bids = new Bids[] {cpcBid};
+        biddingConfig.bids = new Bids[] { cpcBid };
         adGroupOperation.operand.biddingStrategyConfiguration = biddingConfig;
       }
-      AdGroupReturnValue retVal = adGroupService.mutate(new AdGroupOperation[] {adGroupOperation});
+      AdGroupReturnValue retVal = adGroupService.mutate(new AdGroupOperation[] { adGroupOperation });
       return retVal.value[0].id;
     }
 
@@ -212,7 +212,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
       adGroupAdOperation.operand.ad = ad;
 
       AdGroupAdReturnValue retVal =
-          adGroupAdService.mutate(new AdGroupAdOperation[] {adGroupAdOperation});
+          adGroupAdService.mutate(new AdGroupAdOperation[] { adGroupAdOperation });
       return retVal.value[0].ad.id;
     }
 
@@ -254,7 +254,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
       adGroupAdOperation.operand.ad = redirectAd;
 
       AdGroupAdReturnValue retVal =
-          adGroupAdService.mutate(new AdGroupAdOperation[] {adGroupAdOperation});
+          adGroupAdService.mutate(new AdGroupAdOperation[] { adGroupAdOperation });
       return retVal.value[0].ad.id;
     }
 
@@ -282,7 +282,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
       adParamOperation.operand = adParam;
 
       // Set ad parameters.
-      AdParam[] newAdParams = adParamService.mutate(new AdParamOperation[] {adParamOperation});
+      AdParam[] newAdParams = adParamService.mutate(new AdParamOperation[] { adParamOperation });
       return;
     }
 
@@ -308,7 +308,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
 
       operation.operand.criterion = keyword;
       AdGroupCriterionReturnValue retVal =
-          adGroupCriterionService.mutate(new AdGroupCriterionOperation[] {operation});
+          adGroupCriterionService.mutate(new AdGroupCriterionOperation[] { operation });
       return retVal.value[0].criterion.id;
     }
 
@@ -335,51 +335,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
       placementOperation.operand = placementCriterion;
 
       AdGroupCriterionReturnValue retVal = adGroupCriterionService.mutate(
-          new AdGroupCriterionOperation[] {placementOperation});
+          new AdGroupCriterionOperation[] { placementOperation });
 
       return retVal.value[0].criterion.id;
-    }
-
-    /// <summary>
-    /// Creates a campaign ad extension for running further tests.
-    /// </summary>
-    /// <param name="user">The AdWords user.</param>
-    /// <param name="campaignId">The campaign id for which extension is
-    /// created.</param>
-    /// <returns>The campaign ad extension id.</returns>
-    public long CreateLocationExtension(AdWordsUser user, long campaignId) {
-      CampaignAdExtensionService campaignExtensionService =
-          (CampaignAdExtensionService) user.GetService(AdWordsService.v201406.
-               CampaignAdExtensionService);
-
-      CampaignAdExtensionOperation operation = new CampaignAdExtensionOperation();
-      operation.@operator = Operator.ADD;
-
-      CampaignAdExtension extension = new CampaignAdExtension();
-      extension.campaignId = campaignId;
-      extension.status = CampaignAdExtensionStatus.ENABLED;
-
-      Address address = new Address();
-      address.streetAddress = "1600 Amphitheatre Pkwy, Mountain View";
-      address.countryCode = "US";
-
-      GeoLocation location = GetLocationForAddress(user, address);
-
-      LocationExtension locationExtension = new LocationExtension();
-
-      // Note: Do not populate an address directly. Instead, use
-      // GeoLocationService to obtain the location of an address,
-      // and use the address as per the location it returns.
-      locationExtension.address = location.address;
-      locationExtension.geoPoint = location.geoPoint;
-      locationExtension.encodedLocation = location.encodedLocation;
-      locationExtension.source = LocationExtensionSource.ADWORDS_FRONTEND;
-
-      extension.adExtension = locationExtension;
-      operation.operand = extension;
-      CampaignAdExtensionReturnValue retVal =
-          campaignExtensionService.mutate(new CampaignAdExtensionOperation[] {operation});
-      return retVal.value[0].adExtension.id;
     }
 
     /// <summary>
@@ -417,7 +375,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
 
       // Add the experiment.
       ExperimentReturnValue experimentRetVal = experimentService.mutate(
-          new ExperimentOperation[] {experimentOperation});
+          new ExperimentOperation[] { experimentOperation });
 
       return experimentRetVal.value[0].id;
     }
@@ -443,7 +401,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
       languageCriterion1.campaignId = campaignId;
       languageCriterion1.criterion = language1;
 
-      CampaignCriterion[] criteria = new CampaignCriterion[] {languageCriterion1};
+      CampaignCriterion[] criteria = new CampaignCriterion[] { languageCriterion1 };
 
       List<CampaignCriterionOperation> operations = new List<CampaignCriterionOperation>();
 
@@ -478,7 +436,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
           (GeoLocationService) user.GetService(AdWordsService.v201406.GeoLocationService);
 
       GeoLocationSelector selector = new GeoLocationSelector();
-      selector.addresses = new Address[] {address};
+      selector.addresses = new Address[] { address };
       return geoService.get(selector)[0];
     }
 
@@ -488,6 +446,22 @@ namespace Google.Api.Ads.AdWords.Tests.v201406 {
     /// <returns>The timestamp as a string.</returns>
     public string GetTimeStamp() {
       return (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds.ToString();
+    }
+
+    /// <summary>
+    /// Gets the current timestamp as an alphabetic string.
+    /// </summary>
+    /// <returns>The timestamp as a string.</returns>
+    public string GetTimeStampAlpha() {
+      string timeStamp = GetTimeStamp();
+      StringBuilder builder = new StringBuilder();
+      for (int i = 0; i < timeStamp.Length; i++) {
+        if (timeStamp[i] == '.') {
+          continue;
+        }
+        builder.Append('a' + int.Parse(timeStamp[i].ToString()));
+      }
+      return builder.ToString();
     }
   }
 }

@@ -78,7 +78,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
 
       ' Create the text ad.
       Dim textAd As New TextAd
-      textAd.url = "http://www.example.com"
+      textAd.finalUrls = New String() {"http://www.example.com"}
       textAd.displayUrl = "example.com"
       textAd.headline = " Mars Cruises"
       textAd.description1 = "Low-gravity fun for {param1:cheap}."

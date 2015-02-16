@@ -96,13 +96,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
         ' These settings only affect serving for the Display Network.
         Dim targetingSetting As New TargetingSetting()
 
+        ' Restricting to serve ads that match your ad group placements.
+        ' This is equivalent to choosing "Target and bid" in the UI.
         Dim placementDetail As New TargetingSettingDetail()
         placementDetail.criterionTypeGroup = CriterionTypeGroup.PLACEMENT
-        placementDetail.targetAll = True
+        placementDetail.targetAll = False
 
+        ' Using your ad group verticals only for bidding. This is equivalent
+        ' to choosing "Bid only" in the UI.
         Dim verticalDetail As New TargetingSettingDetail()
         verticalDetail.criterionTypeGroup = CriterionTypeGroup.VERTICAL
-        verticalDetail.targetAll = False
+        verticalDetail.targetAll = True
 
         targetingSetting.details = New TargetingSettingDetail() {placementDetail, verticalDetail}
 

@@ -84,7 +84,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
       Console.WriteLine(codeExample.Description);
       try {
         long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
-        codeExample.Run(new AdWordsUser(), campaignId);
+        string feedName = "INSERT_FEED_NAME_HERE";
+        codeExample.Run(new AdWordsUser(), campaignId, feedName);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -96,7 +97,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example adds a sitelinks feed and associates it with a campaign.";
+        return "This code example adds sitelinks to a campaign using feed services. To create a " +
+            "campaign, run AddCampaign.cs.";
       }
     }
 
@@ -106,16 +108,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="campaignId">Id of the campaign with which sitelinks are associated.
     /// </param>
-    public void Run(AdWordsUser user, long campaignId) {
+    /// <param name="feedName">Name of the feed to be created.</param>
+    public void Run(AdWordsUser user, long campaignId, string feedName) {
       SiteLinksDataHolder siteLinksData = new SiteLinksDataHolder();
-      createSiteLinksFeed(user, siteLinksData);
+      createSiteLinksFeed(user, siteLinksData, feedName);
       createSiteLinksFeedItems(user, siteLinksData);
       createSiteLinksFeedMapping(user, siteLinksData);
       createSiteLinksCampaignFeed(user, siteLinksData, campaignId);
     }
 
-    private static void createSiteLinksFeed(
-      AdWordsUser user, SiteLinksDataHolder siteLinksData) {
+    private static void createSiteLinksFeed(AdWordsUser user, SiteLinksDataHolder siteLinksData,
+        string feedName) {
       // Get the FeedService.
       FeedService feedService = (FeedService) user.GetService(AdWordsService.v201406.FeedService);
 
@@ -129,7 +132,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
 
       // Create the feed.
       Feed siteLinksFeed = new Feed();
-      siteLinksFeed.name = "Feed For Site Links";
+      siteLinksFeed.name = feedName;
       siteLinksFeed.attributes = new FeedAttribute[] {textAttribute, urlAttribute};
       siteLinksFeed.origin = FeedOrigin.USER;
 

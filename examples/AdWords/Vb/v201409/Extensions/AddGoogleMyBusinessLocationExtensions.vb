@@ -25,12 +25,12 @@ Imports System.IO
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
   ''' <summary>
   ''' This code example adds a feed that syncs feed items from a Google
-  ''' Places account and associates the feed with a customer.
+  ''' My Business (GMB) account and associates the feed with a customer.
   '''
   ''' Tags: CustomerFeedService.mutate, FeedItemService.mutate
   ''' Tags:  FeedMappingService.mutate, FeedService.mutate
   ''' </summary>
-  Public Class AddPlacesLocationExtension
+  Public Class AddGoogleMyBusinessLocationExtensions
     Inherits ExampleBase
 
     ''' <summary>
@@ -46,13 +46,27 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' </summary>
     ''' <param name="args">The command line arguments.</param>
     Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New AddPlacesLocationExtension
+      Dim codeExample As New AddGoogleMyBusinessLocationExtensions
       Console.WriteLine(codeExample.Description)
       Try
-        Dim placesEmailAddress As String = "INSERT_PLACES_EMAIL_ADDRESS_HERE"
-        Dim placesAccessToken As String = "INSERT_PLACES_ACCESS_TOKEN_HERE"
+        ' The email address of either an owner or a manager of the GMB account.
+        Dim gmbEmailAddress As String = "INSERT_GMB_EMAIL_ADDRESS_HERE"
 
-        codeExample.Run(New AdWordsUser, placesEmailAddress, placesAccessToken)
+        ' To obtain an access token for your GMB account, run the OAuth Token
+        ' generator utility and copy the access token. Make sure you are
+        ' logged in as the same user as gmbEmailAddress above when running the
+        ' OAuth token generator utility.
+        Dim gmbAccessToken As String = "INSERT_GMB_OAUTH_ACCESS_TOKEN_HERE"
+
+        ' If the gmbEmailAddress above is for a GMB manager instead of the GMB
+        ' account owner, then set businessAccountIdentifier to the +Page ID of
+        ' a location for which the manager has access. See the location
+        ' extensions guide at
+        ' https://developers.google.com/adwords/api/docs/guides/feed-services-locations
+        ' for details.
+        Dim businessAccountIdentifier As String = Nothing
+        codeExample.Run(New AdWordsUser(), gmbEmailAddress, gmbAccessToken, _
+                        businessAccountIdentifier)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -64,8 +78,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example adds a feed that syncs feed items from a Google Places " & _
-            "account and associates the feed with a customer."
+        Return "This code example adds a feed that syncs feed items from a Google my Business " & _
+            "(GMB) account and associates the feed with a customer."
       End Get
     End Property
 
@@ -73,45 +87,51 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="placesEmailAddress">The email address for Google Places
+    ''' <param name="gmbEmailAddress">The email address for Google My Business
     ''' account.</param>
-    ''' <param name="placesAccessToken">The OAuth2 access token for Google
-    ''' Places account.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal placesEmailAddress As String, _
-                   ByVal placesAccessToken As String)
+    ''' <param name="gmbAccessToken">The OAuth2 access token for Google
+    ''' My Business account.</param>
+    ''' <param name="businessAccountIdentifier">The account identifier for
+    ''' Google My Business account.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal gmbEmailAddress As String, _
+                   ByVal gmbAccessToken As String, ByVal businessAccountIdentifier As String)
       ' Get the FeedService.
       Dim feedService As FeedService = CType(user.GetService( _
-          AdWordsService.v201409.FeedService), AdWords.v201409.FeedService)
+          AdWordsService.v201409.FeedService), FeedService)
 
       ' Get the CustomerFeedService.
       Dim customerFeedService As CustomerFeedService = CType(user.GetService( _
-          AdWordsService.v201409.CustomerFeedService), AdWords.v201409.CustomerFeedService)
+          AdWordsService.v201409.CustomerFeedService), CustomerFeedService)
 
-      ' Create a feed that will sync to the Google Places account specified
-      ' by placesEmailAddress. Do not add FeedAttributes to this object,
+      ' Create a feed that will sync to the Google My Business account
+      ' specified by gmbEmailAddress. Do not add FeedAttributes to this object,
       ' as AdWords will add them automatically because this will be a
       ' system generated feed.
-      Dim placesFeed As New Feed()
-      placesFeed.name = String.Format("Places feed #{0}", ExampleUtilities.GetRandomString())
+      Dim gmbFeed As New Feed()
+      gmbFeed.name = String.Format("Google My Business feed #{0}", _
+                                   ExampleUtilities.GetRandomString())
 
       Dim feedData As New PlacesLocationFeedData()
-      feedData.emailAddress = placesEmailAddress
+      feedData.emailAddress = gmbEmailAddress
+      feedData.businessAccountIdentifier = businessAccountIdentifier
 
       Dim oAuthInfo As New OAuthInfo()
       oAuthInfo.httpMethod = "GET"
-      oAuthInfo.httpRequestUrl = "https://www.google.com/local/add"
-      oAuthInfo.httpAuthorizationHeader = String.Format("Bearer {0}", placesAccessToken)
+
+      ' Permissions for the AdWords API scope will also cover GMB.
+      oAuthInfo.httpRequestUrl = user.Config.GetDefaultOAuth2Scope()
+      oAuthInfo.httpAuthorizationHeader = String.Format("Bearer {0}", gmbAccessToken)
       feedData.oAuthInfo = oAuthInfo
 
-      placesFeed.systemFeedGenerationData = feedData
+      gmbFeed.systemFeedGenerationData = feedData
 
       ' Since this feed's feed items will be managed by AdWords,
       ' you must set its origin to ADWORDS.
-      placesFeed.origin = FeedOrigin.ADWORDS
+      gmbFeed.origin = FeedOrigin.ADWORDS
 
       ' Create an operation to add the feed.
       Dim feedOperation As New FeedOperation()
-      feedOperation.operand = placesFeed
+      feedOperation.operand = gmbFeed
       feedOperation.operator = [Operator].ADD
 
       Try
@@ -123,7 +143,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
         Dim addFeedResult As FeedReturnValue = feedService.mutate( _
             New FeedOperation() {feedOperation})
         Dim addedFeed As Feed = addFeedResult.value(0)
-        Console.WriteLine("Added places feed with ID {0}", addedFeed.id)
+        Console.WriteLine("Added GMB feed with ID {0}", addedFeed.id)
 
         ' Add a CustomerFeed that associates the feed with this customer for
         ' the LOCATION placeholder type.
@@ -147,11 +167,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
 
         ' After the completion of the Feed ADD operation above the added feed
         ' will not be available for usage in a CustomerFeed until the sync
-        ' between the AdWords and Places accounts completes.  The loop below
+        ' between the AdWords and GMB accounts completes.  The loop below
         ' will retry adding the CustomerFeed up to ten times with an
         ' exponential back-off policy.
         Dim addedCustomerFeed As CustomerFeed = Nothing
-        
+
         Dim config As New AdWordsAppConfig()
         config.RetryCount = 10
 
@@ -166,7 +186,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
                 addedCustomerFeed.feedId, addedCustomerFeed.placeholderTypes(0))
             Exit Try
           Catch e As AdWordsApiException
-            Dim apiException As ApiException = CType(e.ApiException, AdWords.v201409.ApiException)
+            Dim apiException As ApiException = CType(e.ApiException, ApiException)
             For Each apiError As ApiError In apiException.errors
               If TypeOf apiError Is CustomerFeedError Then
                 If (DirectCast(apiError, CustomerFeedError).reason = _

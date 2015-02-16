@@ -26,7 +26,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
   /// <summary>
   /// This code example adds text ads to a given ad group. To list ad groups,
   /// run GetAdGroups.cs. To learn how to handle policy violations and add
-  /// exemption requests, see HandlePolicyViolationError.cs.
+  /// exemption requests, see HandlePolicyViolationError.cs. This code example
+  /// uses only the final URL field when creating the Ad. To see more options,
+  /// see AddTextAdWithUpgradedUrls.cs.
   ///
   /// Tags: AdGroupAdService.mutate
   /// </summary>
@@ -59,7 +61,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
       get {
         return "This code example adds text ads to a given ad group. To list ad groups, run " +
             "GetAdGroups.cs. To learn how to handle policy violations and add exemption " +
-            "requests, see HandlePolicyViolationError.cs.";
+            "requests, see HandlePolicyViolationError.cs. This code example uses only the " +
+            "final URL field when creating the Ad. To see more options, see " +
+            "AddTextAdWithUpgradedUrls.cs.";
       }
     }
 
@@ -83,7 +87,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
         textAd.description1 = "Visit the Red Planet in style.";
         textAd.description2 = "Low-gravity fun for everyone!";
         textAd.displayUrl = "www.example.com";
-        textAd.url = "http://www.example.com/" + i;
+        textAd.finalUrls = new string[] { "http://www.example.com/" + i };
 
         AdGroupAd textAdGroupAd = new AdGroupAd();
         textAdGroupAd.adGroupId = adGroupId;

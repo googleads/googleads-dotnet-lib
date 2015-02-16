@@ -144,14 +144,28 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201406 {
                 }
 
                 // Find the mean of the min and max values.
-                long meanAverageCpc = (keywordEstimate.min.averageCpc.microAmount
-                    + keywordEstimate.max.averageCpc.microAmount) / 2;
-                double meanAveragePosition = (keywordEstimate.min.averagePosition
-                    + keywordEstimate.max.averagePosition) / 2;
-                float meanClicks = (keywordEstimate.min.clicksPerDay
-                   + keywordEstimate.max.clicksPerDay) / 2;
-                long meanTotalCost = (keywordEstimate.min.totalCost.microAmount
-                   + keywordEstimate.max.totalCost.microAmount) / 2;
+                long meanAverageCpc = 0;
+                double meanAveragePosition = 0;
+                float meanClicks = 0;
+                long meanTotalCost = 0;
+
+                if (keywordEstimate.min != null && keywordEstimate.max != null) {
+                  if (keywordEstimate.min.averageCpc != null &&
+                      keywordEstimate.max.averageCpc != null) {
+                    meanAverageCpc = (keywordEstimate.min.averageCpc.microAmount +
+                        keywordEstimate.max.averageCpc.microAmount) / 2;
+                  }
+
+                  meanAveragePosition = (keywordEstimate.min.averagePosition +
+                      keywordEstimate.max.averagePosition) / 2;
+                  meanClicks = (keywordEstimate.min.clicksPerDay +
+                      keywordEstimate.max.clicksPerDay) / 2;
+                  if (keywordEstimate.min.totalCost != null &&
+                      keywordEstimate.max.totalCost != null) {
+                    meanTotalCost = (keywordEstimate.min.totalCost.microAmount +
+                        keywordEstimate.max.totalCost.microAmount) / 2;
+                  }
+                }
 
                Console.WriteLine("Results for the keyword with text = '{0}' and match type = " +
                     "'{1}':", keyword.text, keyword.matchType);

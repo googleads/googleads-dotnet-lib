@@ -78,7 +78,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
       Dim predicate As New Predicate
       predicate.field = "Status"
       predicate.operator = PredicateOperator.IN
-      predicate.values = New String() {"ACTIVE", "PAUSED"}
+      predicate.values = New String() {"ENABLED", "PAUSED"}
       selector.predicates = New Predicate() {predicate}
 
       definition.selector = selector

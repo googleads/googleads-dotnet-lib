@@ -540,6 +540,10 @@
     <Compile Include="v201411\CustomTargetingService\GetCustomTargetingValuesByStatement.cs" />
     <Compile Include="v201411\CustomTargetingService\UpdateCustomTargetingKeys.cs" />
     <Compile Include="v201411\CustomTargetingService\UpdateCustomTargetingValues.cs" />
+    <Compile Include="v201411\ExchangeRateService\CreateExchangeRates.cs" />
+    <Compile Include="v201411\ExchangeRateService\GetAllExchangeRates.cs" />
+    <Compile Include="v201411\ExchangeRateService\GetExchangeRatesByStatement.cs" />
+    <Compile Include="v201411\ExchangeRateService\UpdateExchangeRates.cs" />
     <Compile Include="v201411\ForecastService\GetForecast.cs" />
     <Compile Include="v201411\ForecastService\GetForecastById.cs" />
     <Compile Include="v201411\InventoryService\CreateAdUnits.cs" />
@@ -583,9 +587,18 @@
     <Compile Include="v201411\PlacementService\GetAllPlacements.cs" />
     <Compile Include="v201411\PlacementService\GetPlacementsByStatement.cs" />
     <Compile Include="v201411\PlacementService\UpdatePlacements.cs" />
+    <Compile Include="v201411\PremiumRateService\CreatePremiumRates.cs" />
+    <Compile Include="v201411\PremiumRateService\GetAllPremiumRates.cs" />
+    <Compile Include="v201411\PremiumRateService\GetPremiumRatesByStatement.cs" />
+    <Compile Include="v201411\PremiumRateService\UpdatePremiumRates.cs" />
     <Compile Include="v201411\ProductService\GetAllProducts.cs" />
     <Compile Include="v201411\ProductService\GetProductsForProductTemplate.cs" />
     <Compile Include="v201411\ProductService\UpdateProducts.cs" />
+    <Compile Include="v201411\ProductTemplateService\ActivateProductTemplates.cs" />
+    <Compile Include="v201411\ProductTemplateService\CreateProductTemplates.cs" />
+    <Compile Include="v201411\ProductTemplateService\GetAllProductTemplates.cs" />
+    <Compile Include="v201411\ProductTemplateService\GetSponsorshipProductTemplates.cs" />
+    <Compile Include="v201411\ProductTemplateService\UpdateProductTemplates.cs" />
     <Compile Include="v201411\ProposalLineItemService\ArchiveProposalLineItems.cs" />
     <Compile Include="v201411\ProposalLineItemService\CreateProposalLineItems.cs" />
     <Compile Include="v201411\ProposalLineItemService\GetAllProposalLineItems.cs" />
@@ -628,6 +641,10 @@
     <Compile Include="v201411\UserTeamAssociationService\GetAllUserTeamAssociations.cs" />
     <Compile Include="v201411\UserTeamAssociationService\GetUserTeamAssociationsByStatement.cs" />
     <Compile Include="v201411\UserTeamAssociationService\UpdateUserTeamAssociations.cs" />
+    <Compile Include="v201411\WorkflowRequestService\ApproveWorkflowApprovalRequests.cs" />
+    <Compile Include="v201411\WorkflowRequestService\GetWorkflowApprovalRequests.cs" />
+    <Compile Include="v201411\WorkflowRequestService\GetWorkflowExternalConditionRequests.cs" />
+    <Compile Include="v201411\WorkflowRequestService\TriggerWorkflowExternalConditionRequests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="SampleBase.cs" />
   </ItemGroup>

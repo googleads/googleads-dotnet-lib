@@ -42,7 +42,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
       try {
         long adGroupId1 = long.Parse("INSERT_ADGROUP_ID_HERE");
         long adGroupId2 = long.Parse("INSERT_ADGROUP_ID_HERE");
-        codeExample.Run(new AdWordsUser(), adGroupId1, adGroupId2);
+        string feedName = "INSERT_FEED_NAME_HERE";
+        codeExample.Run(new AdWordsUser(), adGroupId1, adGroupId2, feedName);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -169,9 +170,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
     /// customizers are added.</param>
     /// <param name="adGroupId2">Id of the second adgroup to which ads with ad
     /// customizers are added.</param>
-    public void Run(AdWordsUser user, long adGroupId1, long adGroupId2) {
+    /// <param name="feedName">Name of the feed to be created.</param>
+    public void Run(AdWordsUser user, long adGroupId1, long adGroupId2, string feedName) {
       // Create a customizer feed. One feed per account can be used for all ads.
-      CustomizersDataHolder dataHolder = CreateCustomizerFeed(user);
+      CustomizersDataHolder dataHolder = CreateCustomizerFeed(user, feedName);
 
       // Create a feed mapping to map the fields with customizer IDs.
       CreateFeedMapping(user, dataHolder);
@@ -187,21 +189,22 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
       CreateCustomerFeed(user, dataHolder);
 
       // All set! We can now create ads with customizations.
-      CreateAdsWithCustomizations(user, new long[] { adGroupId1, adGroupId2 });
+      CreateAdsWithCustomizations(user, new long[] { adGroupId1, adGroupId2 }, feedName);
     }
 
     /// <summary>
     /// Creates a new Feed for ad customizers.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
+    /// <param name="feedName">Name of the feed to be created.</param>
     /// <returns>A new CustomizersDataHolder, populated with the feed ID and
     /// attribute IDs of the new Feed.</returns>
-    private static CustomizersDataHolder CreateCustomizerFeed(AdWordsUser user) {
+    private static CustomizersDataHolder CreateCustomizerFeed(AdWordsUser user, string feedName) {
       // Get the FeedService.
       FeedService feedService = (FeedService) user.GetService(AdWordsService.v201409.FeedService);
 
       Feed customizerFeed = new Feed();
-      customizerFeed.name = "CustomizerFeed";
+      customizerFeed.name = feedName;
 
       FeedAttribute nameAttribute = new FeedAttribute();
       nameAttribute.name = "Name";
@@ -411,16 +414,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="adGroupIds">IDs of the ad groups to which customized ads
     /// are added.</param>
-    private static void CreateAdsWithCustomizations(AdWordsUser user, long[] adGroupIds) {
+    /// <param name="feedName">Name of the feed to be used.</param>
+    private static void CreateAdsWithCustomizations(AdWordsUser user, long[] adGroupIds,
+        string feedName) {
       // Get the AdGroupAdService.
       AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
           AdWordsService.v201409.AdGroupAdService);
 
       TextAd textAd = new TextAd();
-      textAd.headline = "Luxury Cruise to {=CustomizerFeed.Name}";
-      textAd.description1 = "Only {=CustomizerFeed.Price}";
-      textAd.description2 = "Offer ends in {=countdown(CustomizerFeed.Date)}!";
-      textAd.url = "http://www.example.com";
+      textAd.headline = string.Format("Luxury Cruise to {{={0}.Name}}", feedName);
+      textAd.description1 = string.Format("Only {{={0}.Price}}", feedName);
+      textAd.description2 = string.Format("Offer ends in {{=countdown({0}.Date)}}!", feedName);
+      textAd.finalUrls = new string[] { "http://www.example.com" };
       textAd.displayUrl = "www.example.com";
 
       // We add the same ad to both ad groups. When they serve, they will show

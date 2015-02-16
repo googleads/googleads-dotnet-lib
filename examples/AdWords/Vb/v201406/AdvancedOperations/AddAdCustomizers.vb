@@ -134,7 +134,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
       Try
         Dim adGroupId1 As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         Dim adGroupId2 As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
-        codeExample.Run(New AdWordsUser(), adGroupId1, adGroupId2)
+        Dim feedName As String = "INSERT_FEED_NAME_HERE"
+        codeExample.Run(New AdWordsUser(), adGroupId1, adGroupId2, feedName)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -169,9 +170,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' customizers are added.</param>
     ''' <param name="adGroupId2">Id of the second adgroup to which ads with ad
     ''' customizers are added.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId1 As Long, ByVal adGroupId2 As Long)
+    ''' <param name="feedName">Name of the feed.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId1 As Long, ByVal adGroupId2 As Long, _
+                   ByVal feedName As String)
       ' Create a customizer feed. One feed per account can be used for all ads.
-      Dim dataHolder As CustomizersDataHolder = CreateCustomizerFeed(user)
+      Dim dataHolder As CustomizersDataHolder = CreateCustomizerFeed(user, feedName)
 
       ' Create a feed mapping to map the fields with customizer IDs.
       CreateFeedMapping(user, dataHolder)
@@ -187,23 +190,25 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
       CreateCustomerFeed(user, dataHolder)
 
       ' All set! We can now create ads with customizations.
-      CreateAdsWithCustomizations(user, New Long() {adGroupId1, adGroupId2})
+      CreateAdsWithCustomizations(user, New Long() {adGroupId1, adGroupId2}, feedName)
     End Sub
 
     ''' <summary>
     ''' Creates a new Feed for ad customizers.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
+    ''' <param name="feedName">Name of the feed.</param>
     ''' <returns>A new CustomizersDataHolder, populated with the feed ID and
     ''' attribute IDs of the new Feed.</returns>
-    Private Shared Function CreateCustomizerFeed(ByVal user As AdWordsUser) _
+    Private Shared Function CreateCustomizerFeed(ByVal user As AdWordsUser, _
+                                                 ByVal feedName As String) _
         As CustomizersDataHolder
       ' Get the FeedService.
       Dim feedService As FeedService = CType(user.GetService( _
           AdWordsService.v201406.FeedService), FeedService)
 
       Dim customizerFeed As New Feed
-      customizerFeed.name = "CustomizerFeed"
+      customizerFeed.name = feedName
 
       Dim nameAttribute As New FeedAttribute
       nameAttribute.name = "Name"
@@ -416,16 +421,18 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="adGroupIds">IDs of the ad groups to which customized ads
     ''' are added.</param>
+    ''' <param name="feedName">Name of the feed.</param>
     Private Shared Sub CreateAdsWithCustomizations(ByVal user As AdWordsUser, _
-                                                   ByVal adGroupIds As Long())
+                                                   ByVal adGroupIds As Long(), _
+                                                   ByVal feedName As String)
       ' Get the AdGroupAdService.
       Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
           AdWordsService.v201406.AdGroupAdService), AdGroupAdService)
 
       Dim textAd As New TextAd
-      textAd.headline = "Luxury Cruise to {=CustomizerFeed.Name}"
-      textAd.description1 = "Only {=CustomizerFeed.Price}"
-      textAd.description2 = "Offer ends in {=countdown(CustomizerFeed.Date)}!"
+      textAd.headline = String.Format("Luxury Cruise to {{={0}.Name}}", feedName)
+      textAd.description1 = String.Format("Only {{={0}.Price}}", feedName)
+      textAd.description2 = String.Format("Offer ends in {{=countdown({0}.Date)}}!", feedName)
       textAd.url = "http://www.example.com"
       textAd.displayUrl = "www.example.com"
 

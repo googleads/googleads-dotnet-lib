@@ -117,6 +117,7 @@
     <Compile Include="v201409\BasicOperationsTest.cs" />
     <Compile Include="v201409\CampaignManagementTest.cs" />
     <Compile Include="v201409\ErrorHandlingTest.cs" />
+    <Compile Include="v201409\MigrationTest.cs" />
     <Compile Include="v201409\MiscellaneousTest.cs" />
     <Compile Include="v201409\MockTests.cs" />
     <Compile Include="v201409\OptimizationTest.cs" />

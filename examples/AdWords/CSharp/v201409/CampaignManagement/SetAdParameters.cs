@@ -76,7 +76,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
 
       // Create the text ad.
       TextAd textAd = new TextAd();
-      textAd.url = "http://www.example.com";
+      textAd.finalUrls = new string[] { "http://www.example.com" };
       textAd.displayUrl = "example.com";
       textAd.headline = " Mars Cruises";
       textAd.description1 = "Low-gravity fun for {param1:cheap}.";

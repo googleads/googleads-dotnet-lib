@@ -23,9 +23,8 @@ Imports System.IO
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
   ''' <summary>
-  ''' This code example adds a text ad that uses upgraded URLs. This example
-  ''' will only work if your account is a test account or is whitelisted for
-  ''' this feature.
+  ''' This code example adds a text ad that uses advanced features of upgraded
+  ''' URLs.
   '''
   ''' Tags: AdGroupAdService.mutate
   ''' </summary>
@@ -53,9 +52,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example adds a text ad that uses upgraded URLs. This example " & _
-            " will only work if your account is a test account or is whitelisted for" & _
-            " this feature."
+        Return "This code example adds a text ad that uses advanced features of upgraded URLs."
       End Get
     End Property
 

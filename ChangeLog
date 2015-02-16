@@ -1,3 +1,30 @@
+18.8.0
+======
+
+AdWords:
+  - Renamed AddPlacesLocationExtension example to
+  AddGoogleMyBusinessLocationExtensions and rewrote it to use Google My
+  Business account.
+  - Fixed a few tests and code examples to ensure all the tests pass.
+  - Modified all the code examples to use final URLs instead of destination
+  URLs.
+  - Fixed the comments and settings for targetAll in AddAdGroups examples.
+
+AdXBuyer:
+  -
+
+DFA:
+  -
+
+DFP:
+  - Added ExchangeRateService examples.
+  - Added PremiumRateService examples.
+  - Added ProductTemplateService examples.
+  - Added WorkflowRequestService examples.
+
+Common:
+  -
+
 18.7.0
 ======
 

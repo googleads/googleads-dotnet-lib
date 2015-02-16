@@ -72,7 +72,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
       // Create selector.
       Selector selector = new Selector();
       selector.fields = new string[] {"CampaignId", "AdGroupId", "Id", "CriteriaType", "Criteria",
-          "CriteriaDestinationUrl", "Clicks", "Impressions", "Cost"};
+          "FinalUrls", "Clicks", "Impressions", "Cost"};
 
       Predicate predicate = new Predicate();
       predicate.field = "Status";

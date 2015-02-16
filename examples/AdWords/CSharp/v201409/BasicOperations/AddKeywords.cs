@@ -20,19 +20,20 @@ using Google.Api.Ads.AdWords.v201409;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Web;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
   /// <summary>
-  /// This code example adds a keyword to an ad group. To get ad groups, run
+  /// This code example adds keywords to an ad group. To get ad groups, run
   /// GetAdGroups.cs.
   ///
   /// Tags: AdGroupCriterionService.mutate
   /// </summary>
   public class AddKeywords : ExampleBase {
     /// <summary>
-    /// Number of items being added / updated in this code example.
+    /// Items being added in this code example.
     /// </summary>
-    const int NUM_ITEMS = 5;
+    readonly string[] KEYWORDS = new string[] { "mars cruise", "space hotel" };
 
     /// <summary>
     /// Main method, to run this code example as a standalone application.
@@ -55,7 +56,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example adds a keyword to an ad group. To get ad groups, run " +
+        return "This code example adds keywords to an ad group. To get ad groups, run " +
             "GetAdGroups.cs.";
       }
     }
@@ -74,10 +75,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
 
       List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
 
-      for (int i = 0; i < NUM_ITEMS; i++) {
+      foreach (string keywordText in KEYWORDS) {
         // Create the keyword.
         Keyword keyword = new Keyword();
-        keyword.text = "mars cruise";
+        keyword.text = keywordText;
         keyword.matchType = KeywordMatchType.BROAD;
 
         // Create the biddable ad group criterion.
@@ -89,7 +90,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
         keywordCriterion.userStatus = UserStatus.PAUSED;
 
         // Optional: Set the keyword destination url.
-        keywordCriterion.destinationUrl = "http://example.com/mars/cruise/" + i;
+        keywordCriterion.finalUrls = new UrlList() {
+          urls = new string[] { "http://example.com/mars/cruise/?kw=" +
+              HttpUtility.UrlEncode(keywordText) }
+        };
 
         // Create the operations.
         AdGroupCriterionOperation operation = new AdGroupCriterionOperation();

@@ -85,7 +85,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
       Console.WriteLine(codeExample.Description)
       Try
         Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
-        codeExample.Run(New AdWordsUser, campaignId)
+        Dim feedName As String = "INSERT_FEED_NAME_HERE"
+        codeExample.Run(New AdWordsUser, campaignId, feedName)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -105,18 +106,19 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' <param name="campaignId">Id of the campaign with which sitelinks are associated.
-    ''' </param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
+    ''' <param name="campaignId">Id of the campaign with which sitelinks are associated.</param>
+    ''' <param name="feedName">Name of the feed.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long, ByVal feedName As String)
       Dim siteLinksData As New SiteLinksDataHolder
-      createSiteLinksFeed(user, siteLinksData)
+      createSiteLinksFeed(user, siteLinksData, feedName)
       createSiteLinksFeedItems(user, siteLinksData)
       createSiteLinksFeedMapping(user, siteLinksData)
       createSiteLinksCampaignFeed(user, siteLinksData, campaignId)
     End Sub
 
     Private Sub createSiteLinksFeed( _
-      ByVal user As AdWordsUser, ByVal siteLinksData As SiteLinksDataHolder)
+      ByVal user As AdWordsUser, ByVal siteLinksData As SiteLinksDataHolder, _
+      ByVal feedName As String)
       ' Get the FeedService.
       Dim feedService As FeedService = CType(user.GetService( _
           AdWordsService.v201406.FeedService), FeedService)
@@ -131,7 +133,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201406
 
       ' Create the feed.
       Dim siteLinksFeed As New Feed
-      siteLinksFeed.name = "Feed For Site Links"
+      siteLinksFeed.name = feedName
       siteLinksFeed.attributes = New FeedAttribute() {textAttribute, urlAttribute}
       siteLinksFeed.origin = FeedOrigin.USER
 

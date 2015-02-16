@@ -14,31 +14,25 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201409;
+using Google.Api.Ads.Common.Lib;
 
 using NUnit.Framework;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Threading;
-
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201409;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201409;
-using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.Common.Lib;
 
 namespace Google.Api.Ads.AdWords.Tests.v201409 {
+
   /// <summary>
   /// Test cases for all the code examples under v201409\AdvancedOperations.
   /// </summary>
-  class AdvancedOperationsTest : VersionedExampleTestsBase {
-    long campaignId;
-    long adGroupId1;
-    long adGroupId2;
-    const double BID_MODIFIER = 0.2;
-    string placesAccessToken = "";
+  internal class AdvancedOperationsTest : VersionedExampleTestsBase {
+    private long campaignId;
+    private long adGroupId1;
+    private long adGroupId2;
+    private const double BID_MODIFIER = 0.2;
 
     /// <summary>
     /// Inits this instance.
@@ -51,12 +45,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
 
       // Load defaults from config file.
       AdWordsAppConfig appConfig = new AdWordsAppConfig();
-      appConfig.OAuth2RefreshToken = appConfig.PlacesOAuth2RefreshToken;
+      appConfig.OAuth2RefreshToken = appConfig.GMBOAuth2RefreshToken;
 
       AdsOAuthProviderForApplications oAuth2Provider = new OAuth2ProviderForApplications(appConfig);
       oAuth2Provider.RefreshAccessToken();
-      
-      placesAccessToken = oAuth2Provider.AccessToken;
     }
 
     /// <summary>
@@ -76,26 +68,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
     public void TestAddClickToDownloadAdCSharpExample() {
       RunExample(delegate() {
         new CSharpExamples.AddClickToDownloadAd().Run(user, adGroupId1);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddSiteLinks VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddSiteLinksVBExample() {
-      RunExample(delegate() {
-        new VBExamples.AddSiteLinks().Run(user, campaignId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddSiteLinks C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddSiteLinksCSharpExample() {
-      RunExample(delegate() {
-        new CSharpExamples.AddSiteLinks().Run(user, campaignId);
       });
     }
 
@@ -140,40 +112,14 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
     }
 
     /// <summary>
-    /// Tests the AddPlacesLocationExtension C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddPlacesLocationExtensionCSharpExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-
-      RunExample(delegate() {
-        new CSharpExamples.AddPlacesLocationExtension().Run(user, config.PlacesLoginEmail,
-            placesAccessToken);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddPlacesLocationExtension VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddPlacesLocationExtensionVBExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-
-      RunExample(delegate() {
-        new VBExamples.AddPlacesLocationExtension().Run(user, config.PlacesLoginEmail,
-            placesAccessToken);
-      });
-    }
-
-    /// <summary>
     /// Tests the AddAdCustomizers C# code example.
     /// </summary>
     [Test]
     public void TestAddAdCustomizersCSharpExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-
+      string feedName = "AdCustomizerFeed" + utils.GetTimeStampAlpha();
       RunExample(delegate() {
-        new CSharpExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2);
+        new CSharpExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2, feedName);
       });
     }
 
@@ -183,9 +129,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
     [Test]
     public void TestAddAdCustomizersVBExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-
+      string feedName = "AdCustomizerFeed" + utils.GetTimeStampAlpha();
       RunExample(delegate() {
-        new VBExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2);
+        new VBExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2, feedName);
       });
     }
   }

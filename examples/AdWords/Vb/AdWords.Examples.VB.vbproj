@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -85,7 +86,7 @@
     <Compile Include="v201406\AdvancedOperations\AddAdCustomizers.vb" />
     <Compile Include="v201406\AdvancedOperations\AddAdGroupBidModifier.vb" />
     <Compile Include="v201406\AdvancedOperations\AddClickToDownloadAd.vb" />
-    <Compile Include="v201406\AdvancedOperations\AddPlacesLocationExtension.vb" />
+    <Compile Include="v201406\AdvancedOperations\AddGoogleMyBusinessLocationExtensions.vb" />
     <Compile Include="v201406\AdvancedOperations\AddSiteLinks.vb" />
     <Compile Include="v201406\AdvancedOperations\AddTextAdWithUpgradedUrls.vb" />
     <Compile Include="v201406\AdvancedOperations\GetAdGroupBidModifiers.vb" />
@@ -150,8 +151,6 @@
     <Compile Include="v201409\AdvancedOperations\AddAdCustomizers.vb" />
     <Compile Include="v201409\AdvancedOperations\AddAdGroupBidModifier.vb" />
     <Compile Include="v201409\AdvancedOperations\AddClickToDownloadAd.vb" />
-    <Compile Include="v201409\AdvancedOperations\AddPlacesLocationExtension.vb" />
-    <Compile Include="v201409\AdvancedOperations\AddSiteLinks.vb" />
     <Compile Include="v201409\AdvancedOperations\AddTextAdWithUpgradedUrls.vb" />
     <Compile Include="v201409\AdvancedOperations\GetAdGroupBidModifiers.vb" />
     <Compile Include="v201409\AdvancedOperations\UploadOfflineConversions.vb" />
@@ -177,7 +176,6 @@
     <Compile Include="v201409\CampaignManagement\AddCampaignLabels.vb" />
     <Compile Include="v201409\CampaignManagement\AddExperiment.vb" />
     <Compile Include="v201409\CampaignManagement\AddKeywordsInBulk.vb" />
-    <Compile Include="v201409\CampaignManagement\AddLocationExtension.vb" />
     <Compile Include="v201409\CampaignManagement\GetAllDisapprovedAds.vb" />
     <Compile Include="v201409\CampaignManagement\GetAllDisapprovedAdsWithAwql.vb" />
     <Compile Include="v201409\CampaignManagement\GetCampaignsByLabel.vb" />
@@ -188,6 +186,9 @@
     <Compile Include="v201409\ErrorHandling\HandlePartialFailures.vb" />
     <Compile Include="v201409\ErrorHandling\HandlePolicyViolationError.vb" />
     <Compile Include="v201409\ErrorHandling\HandleRateExceededError.vb" />
+    <Compile Include="v201409\Extensions\AddGoogleMyBusinessLocationExtensions.vb" />
+    <Compile Include="v201409\Extensions\AddLocationExtension.vb" />
+    <Compile Include="v201409\Migration\UpgradeAdUrl.vb" />
     <Compile Include="v201409\Miscellaneous\GetAllVideosAndImages.vb" />
     <Compile Include="v201409\Miscellaneous\UploadImage.vb" />
     <Compile Include="v201409\Optimization\EstimateKeywordTraffic.vb" />
