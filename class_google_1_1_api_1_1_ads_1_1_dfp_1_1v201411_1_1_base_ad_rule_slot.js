@@ -1,0 +1,25 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot =
+[
+    [ "BaseAdRuleSlotType", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#a7d0191fff1efffb54eb091fb1ccc9fbd", null ],
+    [ "bumper", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#a9944add43d859a8abbd0ba1da32f7c98", null ],
+    [ "bumperSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#a4f3ab8396eb8b00b954736ba2d5d2ba8", null ],
+    [ "id", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#aa7ebb5bdd9d0d80018cab9ee971cf83f", null ],
+    [ "idSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#a3d3a5d927758f8d15669902dbbebc31c", null ],
+    [ "maxAdsInPod", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#aa9ecf8729cc7668d29e30de720a5a113", null ],
+    [ "maxAdsInPodSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#a776f45486bf426e4c2b253ec39244840", null ],
+    [ "maxBumperDuration", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#a877958e232414cc0673b403f96531372", null ],
+    [ "maxBumperDurationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#a5fc0b5ab2327087f340838a6a4d9413f", null ],
+    [ "maxPodDuration", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#acaff8ed85267e81bb93041907e496f29", null ],
+    [ "maxPodDurationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#ad8c6eb672d1989208de41d990069b5a5", null ],
+    [ "maxVideoAdDuration", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#a0158b927348ee52886097d4e960184d8", null ],
+    [ "maxVideoAdDurationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#aaf4f66322893fa311da4f64eda896f74", null ],
+    [ "minPodDuration", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#a9924175fff4afbd5e9d4cb85e76d6b97", null ],
+    [ "minPodDurationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#aa153e8098166ad159ca1dda1b80af881", null ],
+    [ "minVideoAdDuration", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#abf7ef21d588871edaf08e3884f39ea06", null ],
+    [ "minVideoAdDurationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#a594c76a97b56628686863d69a95925b8", null ],
+    [ "slotBehavior", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#ab77ba2e7606ea56d05d14ef788b20c35", null ],
+    [ "slotBehaviorSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#abfc005b0e38d250b79fbf6609c9f0efc", null ],
+    [ "videoMidrollFrequency", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#a32e5775e2500fd52598b6729e652d3a4", null ],
+    [ "videoMidrollFrequencyType", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#a0a33d9594e493593eb153e194ab8d5f7", null ],
+    [ "videoMidrollFrequencyTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_base_ad_rule_slot.html#aab7fcc0cff9bca39a9d286794816728d", null ]
+];

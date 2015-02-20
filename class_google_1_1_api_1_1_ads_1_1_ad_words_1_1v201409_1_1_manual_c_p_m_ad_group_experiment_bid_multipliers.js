@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_manual_c_p_m_ad_group_experiment_bid_multipliers =
+[
+    [ "maxCpmMultiplier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_manual_c_p_m_ad_group_experiment_bid_multipliers.html#a042e0f88b0aa69c75bddc31e218eab3b", null ]
+];

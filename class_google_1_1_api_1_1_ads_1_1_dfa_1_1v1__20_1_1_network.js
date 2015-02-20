@@ -1,0 +1,26 @@
+var class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network =
+[
+    [ "abbreviation", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#ad09bb51af6bc47681944c434ef76183e", null ],
+    [ "active", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#a65eee22ad3f79af461bd69b82f6d48c8", null ],
+    [ "activeAdsLimit", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#ac3fa233265aeecad6ab682756faafefe", null ],
+    [ "availableAds", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#af7e4bb0268e4af5b7d95267a6fff52bc", null ],
+    [ "availablePermissions", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#aea5acb41412b650a96f2e69362fa5977", null ],
+    [ "country", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#afe35b65dece8e3d0c33699d153448883", null ],
+    [ "currency", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#ae240c67df80f75016129804396d6ee52", null ],
+    [ "defaultCreativeSize", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#a9cf7bd87dda6c729dbc3a0b39d1c68ba", null ],
+    [ "defaultEncoding", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#a3b0a1587a042cd1f347d3eddea3db726", null ],
+    [ "defaultLanguage", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#ac3c0738b180534c6a18d1790221370e7", null ],
+    [ "description", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#aa29487513b6114f9bd1454e5a7c026b8", null ],
+    [ "frequencyCapGroups", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#a6d232e5ef7f39c2ee3e5d66a96e661da", null ],
+    [ "loginAttempts", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#a3fe035248dd7d9f76fbc879430cd36c5", null ],
+    [ "maximumImageSize", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#ae46d8928932a6015b6a0c457970ca30a", null ],
+    [ "minimumPasswordLength", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#aa2e2554f95a36e5866e91839cb9d0630", null ],
+    [ "networkPermissions", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#ab167334235dba807c93a43c3b96f3fa9", null ],
+    [ "notificationEmailAddress", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#a6a94a3ed9dcb0cbe4798f5f77c95e86f", null ],
+    [ "passwordExpirePeriod", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#a307cde20d0a66b053f9f3e1aca0ebd21", null ],
+    [ "reportGenerationTimeZone", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#a0fb9150d67fb0ac2255c0cde037f7bc8", null ],
+    [ "reportsConfiguration", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#aa04281aadebd45f562a14d0e7bb2f7f6", null ],
+    [ "richmediaNetworkConfig", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#abca5236d8c0f9e8880e1ae4ac03cd0fd", null ],
+    [ "totalActiveAds", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#a54240dc711a21d3ca671561ca1ebd232", null ],
+    [ "widgetNetworkConfig", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__20_1_1_network.html#af7a9ebfa4ae3657d9b26438752a008ee", null ]
+];

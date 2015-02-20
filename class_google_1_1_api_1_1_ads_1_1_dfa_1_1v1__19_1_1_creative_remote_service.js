@@ -1,0 +1,28 @@
+var class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service =
+[
+    [ "CreativeRemoteService", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#a5370372884e8b26736d4ee2ca4383777", null ],
+    [ "assignCreativesToPlacements", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#ab44bbf9ef72a51693eee291b7f243c92", null ],
+    [ "associateCreativesToCampaign", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#ae8619f6838224e26cd69c780784abebd", null ],
+    [ "copyCreative", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#ab021c4e662eea91f2b53ac63e0ea639d", null ],
+    [ "createCreativesFromCreativeUploadSession", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#a80f05a182bcd4d88dab95e43cf40f7fc", null ],
+    [ "deleteCreative", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#a1a6ca87850961c464008d801e9cb5fa8", null ],
+    [ "deleteInStreamAsset", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#ab7b20c52a3cfa59105238e9f0a92ce10", null ],
+    [ "deleteRichMediaAsset", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#afe7f74261b25fe1f06b32608f6137368", null ],
+    [ "generateCreativeUploadSession", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#af1e43de0edcfdb7161c623ade55e98eb", null ],
+    [ "getCompleteCreativeUploadSession", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#ae3efb26f77f55f00862bf0e8cc72d207", null ],
+    [ "getCreative", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#a68957f2d1b8fa8eba5347eb334f42326", null ],
+    [ "getCreativeAssets", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#aa1e263524a7f799e62f725760c31a334", null ],
+    [ "getCreativeRenderings", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#a4947737cf6f9651ce45cec64b543ed50", null ],
+    [ "getCreatives", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#a4ba2b4c3e604b8d08408a55be6f19c43", null ],
+    [ "getCreativeTypes", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#aca55c111184eefc5b6690af7537e9c36", null ],
+    [ "getRichMediaPreviewURL", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#a30b073fd0220ba06c53dfff37c0ccde0", null ],
+    [ "replaceInStreamAsset", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#abd6b6e4ec36c8b328ada1b37f30ca84b", null ],
+    [ "replaceRichMediaAsset", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#ae9ec37428487c8880c7d409344c1611e", null ],
+    [ "replaceRichMediaCreativePackage", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#af3e3134acb3ff219f5525c5dedadff2a", null ],
+    [ "saveCreative", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#a878d73f2da4f147823e2124cca30aaf6", null ],
+    [ "saveCreativeAsset", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#a0c808675ec170eaf74c80a6d5dcdb1e4", null ],
+    [ "uploadCreativeFiles", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#ae0f7cbd12a3697c649dca42287b51159", null ],
+    [ "uploadInStreamAsset", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#a4688d5cc2d3ce69e67bbea90e865ee98", null ],
+    [ "uploadRichMediaAsset", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#ae0edb8af7905d71bf9de11266097c852", null ],
+    [ "uploadRichMediaCreativePackage", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1v1__19_1_1_creative_remote_service.html#aca94df3332d94b6314f24b4b3f9200d3", null ]
+];
