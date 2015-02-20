@@ -1,4 +1,4 @@
-// Copyright 2014, Google Inc. All Rights Reserved.
+// Copyright 2015, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley (https://github.com/Narwalter)
+// Author: Chris Seeley
 
 using Google.Api.Ads.Common.Lib;
 
@@ -195,7 +195,7 @@ namespace Google.Api.Ads.Dfp.Lib {
       /// </summary>
       public static readonly ServiceSignature PremiumRateService;
 
-     /// See <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201411/ProductService">
+      /// See <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201411/ProductService">
       /// this page </a> for details.
       /// </summary>
       public static readonly ServiceSignature ProductService;
@@ -287,7 +287,7 @@ namespace Google.Api.Ads.Dfp.Lib {
       /// </summary>
       public static readonly ServiceSignature WorkflowRequestService;
 
-       /// <summary>
+      /// <summary>
       /// Factory type for v201411 services.
       /// </summary>
       public static readonly Type factoryType = typeof(DfpServiceFactory);

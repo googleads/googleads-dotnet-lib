@@ -1,3 +1,25 @@
+18.9.0
+=====
+AdWords:
+  - No changes.
+
+AdXBuyer:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201502.
+  - Removed support for v201311, v201308, and v201306.
+  - Removed examples for v201403.
+  - Updated ForecastService examples.
+  - Added PackageService, ProductPackageService and ProductPackageItemService.
+  - Removed support for ClientLogin with the removal of v201311 and earlier.
+
+Common:
+  - No Changes.
+
 18.8.0
 ======
 
