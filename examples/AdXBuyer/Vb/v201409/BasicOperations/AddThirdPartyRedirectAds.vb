@@ -71,7 +71,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
       ' Create standard third party redirect ad.
       Dim standardAd As New ThirdPartyRedirectAd
       standardAd.name = String.Format("Example third party ad #{0}", ExampleUtilities.GetRandomString)
-      standardAd.url = "http://www.example.com"
+      standardAd.finalUrls = New String() {"http://www.example.com"}
 
       standardAd.dimensions = New Dimensions
       standardAd.dimensions.height = 250
@@ -98,7 +98,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
       ' Create in-stream third party redirect ad.
       Dim inStreamAd As New ThirdPartyRedirectAd()
       inStreamAd.name = String.Format("Example third party ad #{0}", ExampleUtilities.GetRandomString)
-      inStreamAd.url = "http://www.example.com"
+      inStreamAd.finalUrls = New String() {"http://www.example.com"}
       ' Set the duration to 15 secs.
       inStreamAd.adDuration = 15000
       inStreamAd.sourceUrl = "http://ad.doubleclick.net/pfadx/N270.126913.6102203221521/B3876671.21;dcadv=2215309;sz=0x0;ord=%5btimestamp%5d;dcmt=text/xml"
@@ -137,7 +137,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
           ' to identify the ad type.
           For Each adGroupAd As AdGroupAd In retVal.value
             Console.WriteLine("New third party redirect ad with id = ""{0}"" and url = ""{1}"" " & _
-                "was created.", adGroupAd.ad.id, DirectCast(adGroupAd.ad, ThirdPartyRedirectAd).url)
+                "was created.", adGroupAd.ad.id, _
+                DirectCast(adGroupAd.ad, ThirdPartyRedirectAd).finalUrls(0))
           Next
         Else
           Console.WriteLine("No third party redirect ads were created.")

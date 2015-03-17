@@ -1,3 +1,30 @@
+18.10.0
+=======
+AdWords:
+  - Add support for ExtensionSetting services in v201409.
+  - Added support for AdWords API v201502.
+  - Removed AddLocationExtension code example from v201409.
+  - Updated AddShoppingCampaign code example to enable local inventory ads.
+  - Fixed trackingUrlTemplate on AddTextAdWithUpgradedUrls code example.
+  - Fixed issue 42 - Stackoverflow in legacy ReportUtilities.
+  - Updated AddCustomizers code example to use AdCustomizerFeedService instead
+  of feed services.
+
+AdXBuyer:
+  - Added support for AdWords API v201502.
+  - Updated AddThirdPartyRedirectAds code example to use Upgraded URLs.
+  - Added UpgradeAdUrl code example that shows how to update your ads to use
+ Upgraded URLs.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added PackageService and ProductPackageService examples.
+
+Common:
+  - No changes.
+
 18.9.0
 =====
 AdWords:

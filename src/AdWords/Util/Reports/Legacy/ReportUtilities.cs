@@ -103,7 +103,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.Legacy {
     /// <returns>The client report.</returns>
     public ClientReport GetClientReport(string query, string format) {
       DeprecationUtilities.ShowDeprecationMessage(this.GetType());
-      return GetClientReport(query, format);
+
+      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
+      string downloadUrl = string.Format(QUERY_REPORT_URL_FORMAT, config.AdWordsApiServer,
+            reportVersion, format);
+      string postData = string.Format("__rdquery={0}", HttpUtility.UrlEncode(query));
+      return GetClientReportInternal(downloadUrl, postData);
     }
 
     /// <summary>
@@ -113,7 +118,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports.Legacy {
     /// <returns>The client report.</returns>
     public ClientReport GetClientReport<T>(T reportDefinition) {
       DeprecationUtilities.ShowDeprecationMessage(this.GetType());
-      return GetClientReport(reportDefinition);
+      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
+
+      string postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(
+          reportDefinition));
+      string downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer,
+            reportVersion);
+      return GetClientReportInternal(downloadUrl, postBody);
     }
 
     /// <summary>
@@ -126,7 +137,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.Legacy {
     /// <returns>The client report.</returns>
     public ClientReport DownloadClientReport(string query, string format, string path) {
       DeprecationUtilities.ShowDeprecationMessage(this.GetType());
-      return DownloadClientReport(query, format, path);
+
+      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
+      string downloadUrl = string.Format(QUERY_REPORT_URL_FORMAT, config.AdWordsApiServer,
+            reportVersion, format);
+      string postData = string.Format("__rdquery={0}", HttpUtility.UrlEncode(query));
+      return DownloadClientReportInternal(downloadUrl, postData, path);
     }
 
     /// <summary>
@@ -138,7 +154,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports.Legacy {
     /// <returns>The client report.</returns>
     public ClientReport DownloadClientReport<T>(T reportDefinition, string path) {
       DeprecationUtilities.ShowDeprecationMessage(this.GetType());
-      return DownloadClientReport(reportDefinition, path);
+      AdWordsAppConfig config = (AdWordsAppConfig) User.Config;
+
+      string postBody = "__rdxml=" + HttpUtility.UrlEncode(ConvertDefinitionToXml(
+          reportDefinition));
+      string downloadUrl = string.Format(ADHOC_REPORT_URL_FORMAT, config.AdWordsApiServer,
+            reportVersion);
+      return DownloadClientReportInternal(downloadUrl, postBody, path);
     }
 
     /// <summary>

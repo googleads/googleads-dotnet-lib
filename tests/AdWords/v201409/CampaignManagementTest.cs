@@ -92,26 +92,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
     }
 
     /// <summary>
-    /// Tests the AddLocationExtension VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddLocationExtensionVBExample() {
-      RunExample(delegate() {
-        new VBExamples.AddLocationExtension().Run(user, campaignId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddLocationExtension C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddLocationExtensionCSharpExample() {
-      RunExample(delegate() {
-        new CSharpExamples.AddLocationExtension().Run(user, campaignId);
-      });
-    }
-
-    /// <summary>
     /// Tests the GetAllDisapprovedAds VB.NET code example.
     /// </summary>
     [Test]

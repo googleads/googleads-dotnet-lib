@@ -12,7 +12,7 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: thagikura@gmail.com (Takeshi Hagikura)
+' Author: api.anash@gmail.com (Anash P. Oommen)
 
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201409
@@ -77,7 +77,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
       ' specify one at customer, campaign, ad group, ad, criterion or
       ' feed item levels.
       textAd.trackingUrlTemplate = _
-          "http://tracker.example.com/?cid={_season}&promocode={_promocode}&u={lpurl}"
+          "http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}"
 
       ' Since your tracking URL has two custom parameters, provide their
       ' values too. This can be provided at campaign, ad group, ad, criterion

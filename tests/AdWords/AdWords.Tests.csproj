@@ -67,6 +67,11 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SoapMessages.v201502.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SoapMessages.v201502.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SoapMessages.v201409.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SoapMessages.v201409.Designer.cs</LastGenOutput>
@@ -79,6 +84,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\UpdateCampaign.v201502.txt" />
     <Content Include="Resources\UpdateCampaign.v201409.txt" />
     <Content Include="Resources\UpdateCampaign.v201406.txt" />
     <Content Include="App.config" />
@@ -98,6 +104,7 @@
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Util\v201406\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201409\MapUtilitiesTest.cs" />
+    <Compile Include="Util\v201502\MapUtilitiesTest.cs" />
     <Compile Include="v201406\AccountManagementTest.cs" />
     <Compile Include="v201406\AdvancedOperationsTest.cs" />
     <Compile Include="v201406\BasicOperationsTest.cs" />
@@ -117,6 +124,7 @@
     <Compile Include="v201409\BasicOperationsTest.cs" />
     <Compile Include="v201409\CampaignManagementTest.cs" />
     <Compile Include="v201409\ErrorHandlingTest.cs" />
+    <Compile Include="v201409\ExtensionsTest.cs" />
     <Compile Include="v201409\MigrationTest.cs" />
     <Compile Include="v201409\MiscellaneousTest.cs" />
     <Compile Include="v201409\MockTests.cs" />
@@ -127,6 +135,22 @@
     <Compile Include="v201409\TargetingTest.cs" />
     <Compile Include="v201409\TestUtils.cs" />
     <Compile Include="v201409\VersionedExampleTestsBase.cs" />
+    <Compile Include="v201502\AccountManagementTest.cs" />
+    <Compile Include="v201502\AdvancedOperationsTest.cs" />
+    <Compile Include="v201502\BasicOperationsTest.cs" />
+    <Compile Include="v201502\CampaignManagementTest.cs" />
+    <Compile Include="v201502\ErrorHandlingTest.cs" />
+    <Compile Include="v201502\ExtensionsTest.cs" />
+    <Compile Include="v201502\MigrationTest.cs" />
+    <Compile Include="v201502\MiscellaneousTest.cs" />
+    <Compile Include="v201502\MockTests.cs" />
+    <Compile Include="v201502\OptimizationTest.cs" />
+    <Compile Include="v201502\RemarketingTest.cs" />
+    <Compile Include="v201502\ReportingTest.cs" />
+    <Compile Include="v201502\ShoppingCampaignsTest.cs" />
+    <Compile Include="v201502\TargetingTest.cs" />
+    <Compile Include="v201502\TestUtils.cs" />
+    <Compile Include="v201502\VersionedExampleTestsBase.cs" />
     <Compile Include="AdWordsRequestInterceptor.cs" />
     <Compile Include="ExampleTestsBase.cs" />
     <Compile Include="ExamplesMockData.cs" />
@@ -134,5 +158,6 @@
     <Compile Include="ServiceCreationTests.cs" />
     <Compile Include="SoapMessages.v201406.Designer.cs" />
     <Compile Include="SoapMessages.v201409.Designer.cs" />
+    <Compile Include="SoapMessages.v201502.Designer.cs" />
   </ItemGroup>
 </Project>

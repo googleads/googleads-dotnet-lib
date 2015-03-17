@@ -126,7 +126,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
               Console.WriteLine("{0}) Ad id is {1} and status is {2}", i, thirdPartyRedirectAd.id,
                   adGroupAd.status);
               Console.WriteLine("  Url: {0}\n  Display Url: {1}\n  Snippet:{2}",
-                  thirdPartyRedirectAd.url, thirdPartyRedirectAd.displayUrl,
+                  thirdPartyRedirectAd.finalUrls[0], thirdPartyRedirectAd.displayUrl,
                   thirdPartyRedirectAd.snippet);
               i++;
             }

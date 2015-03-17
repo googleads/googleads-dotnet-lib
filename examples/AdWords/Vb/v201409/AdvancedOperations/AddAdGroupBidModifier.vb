@@ -12,7 +12,7 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: thagikura@gmail.com (Takeshi Hagikura)
+' Author: api.anash@gmail.com (Anash P. Oommen)
 
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201409

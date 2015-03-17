@@ -617,6 +617,11 @@
     <Compile Include="v201502\OrderService\GetAllOrders.cs" />
     <Compile Include="v201502\OrderService\GetOrdersByStatement.cs" />
     <Compile Include="v201502\OrderService\UpdateOrders.cs" />
+    <Compile Include="v201502\PackageService\CreatePackages.cs" />
+    <Compile Include="v201502\PackageService\CreateProposalLineItemsFromPackage.cs" />
+    <Compile Include="v201502\PackageService\GetAllPackages.cs" />
+    <Compile Include="v201502\PackageService\GetInProgressPackages.cs" />
+    <Compile Include="v201502\PackageService\UpdatePackages.cs" />
     <Compile Include="v201502\PlacementService\CreatePlacements.cs" />
     <Compile Include="v201502\PlacementService\DeactivatePlacement.cs" />
     <Compile Include="v201502\PlacementService\GetAllPlacements.cs" />
@@ -626,6 +631,11 @@
     <Compile Include="v201502\PremiumRateService\GetAllPremiumRates.cs" />
     <Compile Include="v201502\PremiumRateService\GetPremiumRatesByStatement.cs" />
     <Compile Include="v201502\PremiumRateService\UpdatePremiumRates.cs" />
+    <Compile Include="v201502\ProductPackageService\ActivateProductPackage.cs" />
+    <Compile Include="v201502\ProductPackageService\CreateProductPackages.cs" />
+    <Compile Include="v201502\ProductPackageService\GetActiveProductPackages.cs" />
+    <Compile Include="v201502\ProductPackageService\GetAllProductPackages.cs" />
+    <Compile Include="v201502\ProductPackageService\UpdateProductPackages.cs" />
     <Compile Include="v201502\ProductService\GetAllProducts.cs" />
     <Compile Include="v201502\ProductService\GetProductsForProductTemplate.cs" />
     <Compile Include="v201502\ProductService\UpdateProducts.cs" />

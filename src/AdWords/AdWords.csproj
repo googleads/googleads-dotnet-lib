@@ -52,6 +52,7 @@
     <Compile Include="Lib\AdWordsTraceListener.cs" />
     <Compile Include="Lib\AdWordsCallListener.cs" />
     <Compile Include="Lib\AdWordsErrorHandler.cs" />
+    <Compile Include="Util\v201502\MapUtilities.cs" />
     <Compile Include="Util\v201409\MapUtilities.cs" />
     <Compile Include="Util\Reports\Legacy\ClientReport.cs" />
     <Compile Include="Util\Reports\Legacy\ReportsException.cs" />
@@ -79,6 +80,9 @@
     <Compile Include="v201409\AdWordsApi.cs" />
     <Compile Include="v201409\AdWordsServiceV201409.cs" />
     <Compile Include="v201409\ReportDefinition.cs" />
+    <Compile Include="v201502\AdWordsApi.cs" />
+    <Compile Include="v201502\AdWordsServiceV201502.cs" />
+    <Compile Include="v201502\ReportDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

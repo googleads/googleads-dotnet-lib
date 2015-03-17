@@ -71,5 +71,25 @@ namespace Google.Api.Ads.AdWords.Tests.v201409 {
         new CSharpExamples.UpgradeAdUrl().Run(user, adGroupId, adId);
       });
     }
+
+    /// <summary>
+    /// Tests the MigrateToExtensionSettings VB.NET code example.
+    /// </summary>
+    [Test]
+    public void MigrateToExtensionSettingsVBExample() {
+      RunExample(delegate() {
+        new VBExamples.MigrateToExtensionSettings().Run(user);
+      });
+    }
+
+    /// <summary>
+    /// Tests the MigrateToExtensionSettings C# code example.
+    /// </summary>
+    [Test]
+    public void MigrateToExtensionSettingsCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.MigrateToExtensionSettings().Run(user);
+      });
+    }
   }
 }

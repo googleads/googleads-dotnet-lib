@@ -75,7 +75,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
       ThirdPartyRedirectAd standardAd = new ThirdPartyRedirectAd();
       standardAd.name = String.Format("Example third party ad #{0}",
           ExampleUtilities.GetRandomString());
-      standardAd.url = "http://www.example.com";
+      standardAd.finalUrls = new string[] { "http://www.example.com" };
 
       standardAd.dimensions = new Dimensions();
       standardAd.dimensions.height = 250;
@@ -103,7 +103,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
       ThirdPartyRedirectAd inStreamAd = new ThirdPartyRedirectAd();
       inStreamAd.name = String.Format("Example third party ad #{0}",
           ExampleUtilities.GetRandomString());
-      inStreamAd.url = "http://www.example.com";
+      inStreamAd.finalUrls = new string[] { "http://www.example.com" };
       // Set the duration to 15 secs.
       inStreamAd.adDuration = 15000;
       inStreamAd.sourceUrl = "http://ad.doubleclick.net/pfadx/N270.126913.6102203221521/B3876671.21;dcadv=2215309;sz=0x0;ord=%5btimestamp%5d;dcmt=text/xml";
@@ -141,7 +141,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201409 {
           // to identify the ad type.
           foreach (AdGroupAd newAdGroupAd in retVal.value) {
             Console.WriteLine("New third party redirect ad with url = \"{0}\" and id = {1}" +
-                " was created.", ((ThirdPartyRedirectAd) newAdGroupAd.ad).url,
+                " was created.", ((ThirdPartyRedirectAd) newAdGroupAd.ad).finalUrls[0],
                 newAdGroupAd.ad.id);
           }
         } else {

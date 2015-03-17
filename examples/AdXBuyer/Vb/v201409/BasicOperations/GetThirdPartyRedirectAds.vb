@@ -123,11 +123,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
 
             For Each adGroupAd As AdGroupAd In page.entries
               Dim thirdPartyRedirectAd As ThirdPartyRedirectAd = adGroupAd.ad
-              Console.WriteLine("{0}) Ad id is {1} and status is {2}", i, thirdPartyRedirectAd.id, _
-                  adGroupAd.status)
+              Console.WriteLine("{0}) Ad id is {1} and status is {2}", i, _
+                                thirdPartyRedirectAd.id, adGroupAd.status)
               Console.WriteLine("  Url: {0}\n  Display Url: {1}\n  Snippet:{2}", _
-                  thirdPartyRedirectAd.url, thirdPartyRedirectAd.displayUrl, _
-                  thirdPartyRedirectAd.snippet)
+                  String.Join(",", thirdPartyRedirectAd.finalUrls), _
+                  thirdPartyRedirectAd.displayUrl, thirdPartyRedirectAd.snippet)
             Next
             i += 1
           End If

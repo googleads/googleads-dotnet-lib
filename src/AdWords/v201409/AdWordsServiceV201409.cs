@@ -308,6 +308,34 @@ namespace Google.Api.Ads.AdWords.Lib {
 
       #endregion
 
+      #region Extension setting
+
+      /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201409/AdCustomizerFeedService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature AdCustomizerFeedService;
+
+            /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201409/AdGroupExtensionSettingService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature AdGroupExtensionSettingService;
+
+            /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201409/CampaignExtensionSettingService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature CampaignExtensionSettingService;
+
+            /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201409/CustomerExtensionSettingService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature CustomerExtensionSettingService;
+
+      #endregion
+
       /// <summary>
       /// Static constructor to initialize the service constants.
       /// </summary>
@@ -432,6 +460,21 @@ namespace Google.Api.Ads.AdWords.Lib {
 
         #endregion
 
+        #region Extension setting
+
+        AdCustomizerFeedService =
+            AdWordsService.MakeServiceSignature("v201409", "cm", "AdCustomizerFeedService");
+        AdGroupExtensionSettingService =
+            AdWordsService.MakeServiceSignature("v201409", "cm", "AdGroupExtensionSettingService");
+
+        CampaignExtensionSettingService =
+            AdWordsService.MakeServiceSignature("v201409", "cm",
+                "CampaignExtensionSettingService");
+        CustomerExtensionSettingService =
+            AdWordsService.MakeServiceSignature("v201409", "cm",
+                "CustomerExtensionSettingService");
+
+        #endregion
       }
     }
   }
