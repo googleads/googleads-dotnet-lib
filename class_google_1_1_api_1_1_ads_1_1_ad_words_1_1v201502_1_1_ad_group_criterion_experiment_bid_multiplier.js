@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_criterion_experiment_bid_multiplier =
+[
+    [ "AdGroupCriterionExperimentBidMultiplierType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_criterion_experiment_bid_multiplier.html#a53ef31fdfb8a79b4cd25422a14245a25", null ]
+];

@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_category_products_and_services_search_parameter =
+[
+    [ "categoryId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_category_products_and_services_search_parameter.html#ac2f08c85479e0ccb2d410c192eff92ff", null ],
+    [ "categoryIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_category_products_and_services_search_parameter.html#a1329c9cacc250e75e1a00ac6596cdeb8", null ]
+];

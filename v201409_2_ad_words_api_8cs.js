@@ -419,7 +419,6 @@ var v201409_2_ad_words_api_8cs =
     [ "StringAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_string_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_string_attribute" ],
     [ "PlacementTypeAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_placement_type_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_placement_type_attribute" ],
     [ "PlacementAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_placement_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_placement_attribute" ],
-    [ "OpportunityIdeaTypeAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_opportunity_idea_type_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_opportunity_idea_type_attribute" ],
     [ "MonthlySearchVolumeAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_monthly_search_volume_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_monthly_search_volume_attribute" ],
     [ "MoneyAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_money_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_money_attribute" ],
     [ "LongRangeAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_long_range_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_long_range_attribute" ],
@@ -432,7 +431,6 @@ var v201409_2_ad_words_api_8cs =
     [ "DoubleAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_double_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_double_attribute" ],
     [ "CriterionAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_criterion_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_criterion_attribute" ],
     [ "BooleanAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_boolean_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_boolean_attribute" ],
-    [ "BidLandscapeAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_bid_landscape_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_bid_landscape_attribute" ],
     [ "AdSpecListAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_spec_list_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_spec_list_attribute" ],
     [ "AdFormatSpecListAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_format_spec_list_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_format_spec_list_attribute" ],
     [ "Type_AttributeMapEntry", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_type___attribute_map_entry.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_type___attribute_map_entry" ],
@@ -541,6 +539,36 @@ var v201409_2_ad_words_api_8cs =
     [ "LabelOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_label_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_label_operation" ],
     [ "LabelPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_label_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_label_page" ],
     [ "LabelError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_label_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_label_error" ],
+    [ "AdCustomizerFeedService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed_service" ],
+    [ "AdCustomizerFeedReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed_return_value" ],
+    [ "AdCustomizerFeed", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed" ],
+    [ "AdCustomizerFeedAttribute", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed_attribute.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed_attribute" ],
+    [ "AdCustomizerFeedOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed_operation" ],
+    [ "AdCustomizerFeedPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed_page" ],
+    [ "AdCustomizerFeedError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_customizer_feed_error" ],
+    [ "AdGroupExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_extension_setting_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_extension_setting_service" ],
+    [ "AdGroupExtensionSettingReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_extension_setting_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_extension_setting_return_value" ],
+    [ "AdGroupExtensionSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_extension_setting.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_extension_setting" ],
+    [ "ExtensionSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_extension_setting.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_extension_setting" ],
+    [ "ExtensionFeedItem", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_extension_feed_item.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_extension_feed_item" ],
+    [ "SitelinkFeedItem", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_sitelink_feed_item.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_sitelink_feed_item" ],
+    [ "ReviewFeedItem", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_review_feed_item.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_review_feed_item" ],
+    [ "CallFeedItem", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_call_feed_item.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_call_feed_item" ],
+    [ "CallConversionType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_call_conversion_type.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_call_conversion_type" ],
+    [ "AppFeedItem", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_app_feed_item.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_app_feed_item" ],
+    [ "AdGroupExtensionSettingOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_extension_setting_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_extension_setting_operation" ],
+    [ "AdGroupExtensionSettingPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_extension_setting_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_extension_setting_page" ],
+    [ "ExtensionSettingError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_extension_setting_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_extension_setting_error" ],
+    [ "CampaignExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_campaign_extension_setting_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_campaign_extension_setting_service" ],
+    [ "CampaignExtensionSettingReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_campaign_extension_setting_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_campaign_extension_setting_return_value" ],
+    [ "CampaignExtensionSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_campaign_extension_setting.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_campaign_extension_setting" ],
+    [ "CampaignExtensionSettingOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_campaign_extension_setting_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_campaign_extension_setting_operation" ],
+    [ "CampaignExtensionSettingPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_campaign_extension_setting_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_campaign_extension_setting_page" ],
+    [ "CustomerExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_customer_extension_setting_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_customer_extension_setting_service" ],
+    [ "CustomerExtensionSettingReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_customer_extension_setting_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_customer_extension_setting_return_value" ],
+    [ "CustomerExtensionSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_customer_extension_setting.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_customer_extension_setting" ],
+    [ "CustomerExtensionSettingOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_customer_extension_setting_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_customer_extension_setting_operation" ],
+    [ "CustomerExtensionSettingPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_customer_extension_setting_page.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_customer_extension_setting_page" ],
     [ "AdGroupService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_service" ],
     [ "AdGroupReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_return_value" ],
     [ "AdGroupLabelReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_label_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_ad_group_label_return_value" ],
@@ -608,6 +636,10 @@ var v201409_2_ad_words_api_8cs =
     [ "IAdGroupCriterionService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_ad_group_criterion_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_ad_group_criterion_service" ],
     [ "ISharedSetService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_shared_set_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_shared_set_service" ],
     [ "ILabelService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_label_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_label_service" ],
+    [ "IAdCustomizerFeedService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_ad_customizer_feed_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_ad_customizer_feed_service" ],
+    [ "IAdGroupExtensionSettingService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_ad_group_extension_setting_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_ad_group_extension_setting_service" ],
+    [ "ICampaignExtensionSettingService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_campaign_extension_setting_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_campaign_extension_setting_service" ],
+    [ "ICustomerExtensionSettingService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_customer_extension_setting_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_customer_extension_setting_service" ],
     [ "IAdGroupService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_ad_group_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_ad_group_service" ],
     [ "IAdGroupBidModifierService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_ad_group_bid_modifier_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_ad_group_bid_modifier_service" ],
     [ "IAdParamService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_ad_param_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201409_1_1_i_ad_param_service" ],
@@ -623,6 +655,23 @@ var v201409_2_ad_words_api_8cs =
     [ "AccountUserListStatus", "v201409_2_ad_words_api_8cs.html#ad65e5a1d5cfc65b9e29a16b8614cc765", [
       [ "ACTIVE", "v201409_2_ad_words_api_8cs.html#ad65e5a1d5cfc65b9e29a16b8614cc765a18ff74f43da410c5529f7d6fca84f115", null ],
       [ "INACTIVE", "v201409_2_ad_words_api_8cs.html#ad65e5a1d5cfc65b9e29a16b8614cc765a6b273343c454f9c53dcfc9c4ccf171d2", null ]
+    ] ],
+    [ "AdCustomizerFeedAttributeType", "v201409_2_ad_words_api_8cs.html#a2511957dfb6182e76a38dfd21d4b7064", [
+      [ "INTEGER", "v201409_2_ad_words_api_8cs.html#a2511957dfb6182e76a38dfd21d4b7064a5d5cd46919fa987731fb2edefe0f2a0c", null ],
+      [ "PRICE", "v201409_2_ad_words_api_8cs.html#a2511957dfb6182e76a38dfd21d4b7064a6da7ab78b59d24c57919aa4011b1392e", null ],
+      [ "DATE_TIME", "v201409_2_ad_words_api_8cs.html#a2511957dfb6182e76a38dfd21d4b7064a43354b9116100a9ffc05d385bd6eb65a", null ],
+      [ "STRING", "v201409_2_ad_words_api_8cs.html#a2511957dfb6182e76a38dfd21d4b7064a63b588d5559f64f89a416e656880b949", null ],
+      [ "UNKNOWN", "v201409_2_ad_words_api_8cs.html#a2511957dfb6182e76a38dfd21d4b7064a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "AdCustomizerFeedErrorReason", "v201409_2_ad_words_api_8cs.html#a54488b907d97e7fa217537ac6106980d", [
+      [ "CANNOT_ADD_KEY_ATTRIBUTE", "v201409_2_ad_words_api_8cs.html#a54488b907d97e7fa217537ac6106980daada38e71b0296d3e26e7ad3ab4aeee78", null ],
+      [ "NOT_AD_CUSTOMIZER_FEED", "v201409_2_ad_words_api_8cs.html#a54488b907d97e7fa217537ac6106980dab7b089387456c8eb69f167ece767f5a0", null ],
+      [ "INVALID_FEED_NAME", "v201409_2_ad_words_api_8cs.html#a54488b907d97e7fa217537ac6106980da8debda65d35c934ff30d9afd56427bf9", null ],
+      [ "TOO_MANY_FEED_ATTRIBUTES_FOR_FEED", "v201409_2_ad_words_api_8cs.html#a54488b907d97e7fa217537ac6106980dacb5514b3373c8425bac1f4ee6f2aa260", null ],
+      [ "ATTRIBUTE_NAMES_NOT_UNIQUE", "v201409_2_ad_words_api_8cs.html#a54488b907d97e7fa217537ac6106980da5a387cd2cf5ab397fd3abbfb1a025403", null ],
+      [ "FEED_DELETED", "v201409_2_ad_words_api_8cs.html#a54488b907d97e7fa217537ac6106980da896fd6d72b8979b9c355d233aded6358", null ],
+      [ "DUPLICATE_FEED_NAME", "v201409_2_ad_words_api_8cs.html#a54488b907d97e7fa217537ac6106980daad32f1342f6c83ee801c98934ae61f84", null ],
+      [ "UNKNOWN", "v201409_2_ad_words_api_8cs.html#a54488b907d97e7fa217537ac6106980da696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "AdErrorReason", "v201409_2_ad_words_api_8cs.html#ab2164355ceb54498debfbe9d19550280", [
       [ "AD_CUSTOMIZERS_NOT_SUPPORTED_FOR_AD_TYPE", "v201409_2_ad_words_api_8cs.html#ab2164355ceb54498debfbe9d19550280af26cde60bfa429080635216bd71a48e5", null ],
@@ -961,6 +1010,11 @@ var v201409_2_ad_words_api_8cs =
       [ "ITUNES", "v201409_2_ad_words_api_8cs.html#af865066232ced61aea26e8d575fc6d7da2f31611bbac2a5d9ea8f7600f77b1ac6", null ],
       [ "ANDROID_MARKET", "v201409_2_ad_words_api_8cs.html#af865066232ced61aea26e8d575fc6d7dacee721b8aa9f30e0e8e414b68019bea4", null ],
       [ "MOBILE_APP_CHANNEL", "v201409_2_ad_words_api_8cs.html#af865066232ced61aea26e8d575fc6d7da905388f9fc62a96316b65d115f274996", null ]
+    ] ],
+    [ "AppFeedItemAppStore", "v201409_2_ad_words_api_8cs.html#adf85c24f08c648d26d398ac7ee1f5cd4", [
+      [ "APPLE_ITUNES", "v201409_2_ad_words_api_8cs.html#adf85c24f08c648d26d398ac7ee1f5cd4ae947652a334137a3b3f661cb826527c8", null ],
+      [ "GOOGLE_PLAY", "v201409_2_ad_words_api_8cs.html#adf85c24f08c648d26d398ac7ee1f5cd4a5d9fc0521304fc429859ee71e956d05d", null ],
+      [ "UNKNOWN", "v201409_2_ad_words_api_8cs.html#adf85c24f08c648d26d398ac7ee1f5cd4a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "AppPaymentModelAppPaymentModelType", "v201409_2_ad_words_api_8cs.html#a482c37ba196b53c7daff1b4841abbd31", [
       [ "APP_PAYMENT_MODEL_PAID", "v201409_2_ad_words_api_8cs.html#a482c37ba196b53c7daff1b4841abbd31af06649b14a8c22eaa63b07c9a748001c", null ],
@@ -2320,6 +2374,55 @@ var v201409_2_ad_words_api_8cs =
       [ "UN155", "v201409_2_ad_words_api_8cs.html#a781fe86beb3a32d149ba23d5257ed3baa15b88fc0cb30c6b7d970111efb69d818", null ],
       [ "UN419", "v201409_2_ad_words_api_8cs.html#a781fe86beb3a32d149ba23d5257ed3baa700adba8d47ae3148c8310cab6ed4daf", null ]
     ] ],
+    [ "ExtensionSettingErrorReason", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0d", [
+      [ "EXTENSIONS_REQUIRED", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0dab7489f47c3846fb32a78dd1e4c9eabc6", null ],
+      [ "FEED_TYPE_EXTENSION_TYPE_MISMATCH", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0dacd067e5c7951eb40a5a43c9af4026f7b", null ],
+      [ "INVALID_FEED_TYPE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da7a4157cd57e0b91257b4f5a6fecc65a5", null ],
+      [ "INVALID_FEED_TYPE_FOR_CUSTOMER_EXTENSION_SETTING", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da5a2aa1d69655c7632d74779395ab6c39", null ],
+      [ "CANNOT_CHANGE_FEED_ITEM_ON_ADD", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da52521a5d434bceb0ce7bf50944282da3", null ],
+      [ "NO_EXISTING_AD_GROUP_EXTENSION_SETTING_FOR_TYPE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da4731e27d73775208856072ef91d0b7d0", null ],
+      [ "NO_EXISTING_CAMPAIGN_EXTENSION_SETTING_FOR_TYPE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da84b63172ea59f28485a113a6d538ec00", null ],
+      [ "NO_EXISTING_CUSTOMER_EXTENSION_SETTING_FOR_TYPE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0dada8c1c11b070cd59730ebaf2e284db33", null ],
+      [ "AD_GROUP_EXTENSION_SETTING_ALREADY_EXISTS", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da844b0ae32205aa1634ea3e707ceaefc7", null ],
+      [ "CAMPAIGN_EXTENSION_SETTING_ALREADY_EXISTS", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0dad4331bbb8ba7be6d76ee766869535794", null ],
+      [ "CUSTOMER_EXTENSION_SETTING_ALREADY_EXISTS", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da357ed71bbfba9d5ebd1d410c58e8326e", null ],
+      [ "AD_GROUP_FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da9b9633e975a202071da924fb7b9afa17", null ],
+      [ "CAMPAIGN_FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da7b3cd944a7ad8df7e855fab9ecf1be4e", null ],
+      [ "CUSTOMER_FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da4e71f372819ba6b1828c17600c32c3a3", null ],
+      [ "VALUE_OUT_OF_RANGE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0daa4cc566642dfcc62a204b2e89e3cae3b", null ],
+      [ "URL_LIST_TOO_LONG", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0daec4ad2c9730ec5d6887637f876a44d52", null ],
+      [ "CANNOT_SET_WITH_FINAL_URLS", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da7367595f46796e0aa4c41b7f7a9be3df", null ],
+      [ "CANNOT_SET_WITHOUT_FINAL_URLS", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0dacfa983e993f3ac723a4b01d38f67f39f", null ],
+      [ "INVALID_PHONE_NUMBER", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0dad38f7b08498efa8a99a91467df482716", null ],
+      [ "PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da3f78d711c94ec97ad83d15a53dbe47a1", null ],
+      [ "CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da70c180c097c71f8353161bbfc7eb7bdf", null ],
+      [ "PREMIUM_RATE_NUMBER_NOT_ALLOWED", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da725d4aa543166bedaa44e6855cd7d3a7", null ],
+      [ "DISALLOWED_NUMBER_TYPE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da8f6c72399648000717d4ab949e91197e", null ],
+      [ "INVALID_DOMESTIC_PHONE_NUMBER_FORMAT", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da4fb03c206dfba472c442e3b64b45d72b", null ],
+      [ "VANITY_PHONE_NUMBER_NOT_ALLOWED", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0dae899754e64d8f05f42e933913e9c5423", null ],
+      [ "INVALID_COUNTRY_CODE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da9e99d5bc9dd439de8ec5c6684bc0ac92", null ],
+      [ "INVALID_CALL_CONVERSION_TYPE_ID", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da64b582943e65a7ee66eb7cfaad4260be", null ],
+      [ "CUSTOMER_NOT_WHITELISTED_FOR_CALLTRACKING", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da9eb335b39721ce0f074cbb135de3d2cb", null ],
+      [ "CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0daea04c7ee315f78601ba2860d49ff13b0", null ],
+      [ "INVALID_APP_ID", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0daa6abcc89f8b157c5491159f10b9ff1cc", null ],
+      [ "QUOTES_IN_REVIEW_EXTENSION_SNIPPET", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da3a85926cd6faad697afb40b5e7be1271", null ],
+      [ "HYPHENS_IN_REVIEW_EXTENSION_SNIPPET", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da5f9ac930ce7b6176d93632051875eceb", null ],
+      [ "REVIEW_EXTENSION_SOURCE_INELIGIBLE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da4a2a0682e7223315905dc3d17ad50da4", null ],
+      [ "SOURCE_NAME_IN_REVIEW_EXTENSION_TEXT", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da55a8cd4a40930e0521cf6bc226005f8d", null ],
+      [ "MISSING_FIELD", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0dac6d316099c81f4839ad197599d20edbd", null ],
+      [ "INVALID_DEVICE_PREFERENCE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da6c58a4505d6d587518a4e2d5ca9c7e5c", null ],
+      [ "INVALID_SCHEDULE_END", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da26008b484857550fff1480a00d2916b8", null ],
+      [ "DATE_TIME_MUST_BE_IN_ACCOUNT_TIME_ZONE", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da8c098dff270187a6b853ad246320898d", null ],
+      [ "OVERLAPPING_SCHEDULES", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da1354f3e3055817da694b7dc691f32ba4", null ],
+      [ "SCHEDULE_END_NOT_AFTER_START", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0daa72a0416f094422b7cae67609b34283b", null ],
+      [ "TOO_MANY_SCHEDULES_PER_DAY", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0daed0ffba0ffe32a62072bec79f1c0b7ce", null ],
+      [ "UNKNOWN", "v201409_2_ad_words_api_8cs.html#a3864945536150fa4f51719971cbf0b0da696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "ExtensionSettingPlatform", "v201409_2_ad_words_api_8cs.html#a2e28c6aa9772633490c6c3a1eaba5418", [
+      [ "DESKTOP", "v201409_2_ad_words_api_8cs.html#a2e28c6aa9772633490c6c3a1eaba5418a835669054d277609644215a014523c42", null ],
+      [ "MOBILE", "v201409_2_ad_words_api_8cs.html#a2e28c6aa9772633490c6c3a1eaba5418ad9e3110063ba107ab79340dceebc2d7b", null ],
+      [ "NONE", "v201409_2_ad_words_api_8cs.html#a2e28c6aa9772633490c6c3a1eaba5418ab50339a10e1de285ac99d4c3990b8693", null ]
+    ] ],
     [ "FeedAttributeType", "v201409_2_ad_words_api_8cs.html#a2aad2f6469a49e012e76874cce594e1c", [
       [ "INT64", "v201409_2_ad_words_api_8cs.html#a2aad2f6469a49e012e76874cce594e1ca4e866b275c85fbb439f6484251cfb31c", null ],
       [ "FLOAT", "v201409_2_ad_words_api_8cs.html#a2aad2f6469a49e012e76874cce594e1cae738c26bf4ce1037fa81b039a915cbf6", null ],
@@ -2416,6 +2519,13 @@ var v201409_2_ad_words_api_8cs =
       [ "ENABLED", "v201409_2_ad_words_api_8cs.html#a664eab6732517ca21f99d61a2812becaac8cf6eea8f096ed51160b484d97c5bbd", null ],
       [ "REMOVED", "v201409_2_ad_words_api_8cs.html#a664eab6732517ca21f99d61a2812becaab3461745d64b12346503b2980e436db5", null ],
       [ "UNKNOWN", "v201409_2_ad_words_api_8cs.html#a664eab6732517ca21f99d61a2812becaa696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "FeedType", "v201409_2_ad_words_api_8cs.html#abf8ff115a306b35b84f8be6ffd25ea94", [
+      [ "NONE", "v201409_2_ad_words_api_8cs.html#abf8ff115a306b35b84f8be6ffd25ea94ab50339a10e1de285ac99d4c3990b8693", null ],
+      [ "SITELINK", "v201409_2_ad_words_api_8cs.html#abf8ff115a306b35b84f8be6ffd25ea94ae5269c347fced435c6fe2cafaf1ac9de", null ],
+      [ "CALL", "v201409_2_ad_words_api_8cs.html#abf8ff115a306b35b84f8be6ffd25ea94aca3547acb9162b49fb4a6594ed9b3030", null ],
+      [ "APP", "v201409_2_ad_words_api_8cs.html#abf8ff115a306b35b84f8be6ffd25ea94a0bdbb2c325525e986d55ef50ca66d056", null ],
+      [ "REVIEW", "v201409_2_ad_words_api_8cs.html#abf8ff115a306b35b84f8be6ffd25ea94a50e13ee63f086c2fe84229348bc91b5b", null ]
     ] ],
     [ "ForwardCompatibilityErrorReason", "v201409_2_ad_words_api_8cs.html#a69edf1085c37c252117f716fc77a51fa", [
       [ "INVALID_FORWARD_COMPATIBILITY_MAP_VALUE", "v201409_2_ad_words_api_8cs.html#a69edf1085c37c252117f716fc77a51faad2b598c043e9cfacd725ade88a4910a0", null ],
@@ -2762,11 +2872,6 @@ var v201409_2_ad_words_api_8cs =
     [ "OperatorErrorReason", "v201409_2_ad_words_api_8cs.html#a1ef817c7637676356d0387e511bb28aa", [
       [ "OPERATOR_NOT_SUPPORTED", "v201409_2_ad_words_api_8cs.html#a1ef817c7637676356d0387e511bb28aaaad9b18594a047833bad5f96c8c69ca26", null ]
     ] ],
-    [ "OpportunityIdeaType", "v201409_2_ad_words_api_8cs.html#a7700e7ba91e05ee63841801a556a1cbf", [
-      [ "KEYWORD", "v201409_2_ad_words_api_8cs.html#a7700e7ba91e05ee63841801a556a1cbfa780bc0722dd01d4a8d9869f060734be6", null ],
-      [ "BID", "v201409_2_ad_words_api_8cs.html#a7700e7ba91e05ee63841801a556a1cbfa61613d5a4896bfbf5bdb8cb2f476b7f6", null ],
-      [ "BUDGET", "v201409_2_ad_words_api_8cs.html#a7700e7ba91e05ee63841801a556a1cbfa2c0ec584dd5548f224082d3273fdc247", null ]
-    ] ],
     [ "PageOnePromotedBiddingSchemeStrategyGoal", "v201409_2_ad_words_api_8cs.html#afeb13cf94142ff82ef8bd935071b9f3c", [
       [ "PAGE_ONE", "v201409_2_ad_words_api_8cs.html#afeb13cf94142ff82ef8bd935071b9f3ca03413691c537d0fe2bbee4b349ef433c", null ],
       [ "PAGE_ONE_PROMOTED", "v201409_2_ad_words_api_8cs.html#afeb13cf94142ff82ef8bd935071b9f3ca85d0834e98a4639466249758cd0ecec6", null ]
@@ -2839,12 +2944,15 @@ var v201409_2_ad_words_api_8cs =
     ] ],
     [ "PromotionErrorReason", "v201409_2_ad_words_api_8cs.html#af714b5aa8c31b176bf3605a702a706f7", [
       [ "BUSINESS_DELETED", "v201409_2_ad_words_api_8cs.html#af714b5aa8c31b176bf3605a702a706f7aac9f42d24fa593bb4055db0c5b90dd13", null ],
+      [ "BUSINESS_COUNTRY_NOT_SUPPORTED", "v201409_2_ad_words_api_8cs.html#af714b5aa8c31b176bf3605a702a706f7a0fbdfb62e2e9f7cd942e51075e3487e3", null ],
+      [ "BUSINESS_LANGUAGE_NOT_SUPPORTED", "v201409_2_ad_words_api_8cs.html#af714b5aa8c31b176bf3605a702a706f7ac5fc20d14441d4f927d54c1bb3a95cec", null ],
       [ "CURRENCY_NOT_SUPPORTED", "v201409_2_ad_words_api_8cs.html#af714b5aa8c31b176bf3605a702a706f7a90e9de044987f881b041483b32243475", null ],
       [ "GOOGLE_GRANT_ACCOUNT", "v201409_2_ad_words_api_8cs.html#af714b5aa8c31b176bf3605a702a706f7a4110a181dd0a914f259d0e5cbcce1508", null ],
       [ "AOL_ACCOUNT", "v201409_2_ad_words_api_8cs.html#af714b5aa8c31b176bf3605a702a706f7a59b47e2ede119d0e5f916e6a31d5b070", null ],
       [ "MCC_ACCOUNT", "v201409_2_ad_words_api_8cs.html#af714b5aa8c31b176bf3605a702a706f7a34d7228564d1bdf9c737cd1e24745f08", null ],
       [ "INVALID_DESTINATION_URL", "v201409_2_ad_words_api_8cs.html#af714b5aa8c31b176bf3605a702a706f7acf62e063a7cd7f874ad35729c9f5f270", null ],
       [ "CALL_TRACKING_NOT_SUPPORTED", "v201409_2_ad_words_api_8cs.html#af714b5aa8c31b176bf3605a702a706f7ae1bdab811f9a735358ae30f77154811d", null ],
+      [ "DISABLED_ACCOUNT", "v201409_2_ad_words_api_8cs.html#af714b5aa8c31b176bf3605a702a706f7afb01342151407ad85b8a84469ce2a64f", null ],
       [ "UNKNOWN", "v201409_2_ad_words_api_8cs.html#af714b5aa8c31b176bf3605a702a706f7a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "PromotionStatus", "v201409_2_ad_words_api_8cs.html#a862f834a3ea577049fcd68218625e05a", [
@@ -2952,9 +3060,6 @@ var v201409_2_ad_words_api_8cs =
       [ "CALL_METRICS_CALL_DETAILS_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5a06460a4b71a8647effc35abf82c1ae71", null ],
       [ "KEYWORDLESS_QUERY_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5ae6798c0dfb5a27ff154d33bb4a18beea", null ],
       [ "KEYWORDLESS_CATEGORY_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5ad1aac85d9d962a76e22d9ff1e20a7590", null ],
-      [ "ACCOUNT_REACH_FREQUENCY_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5a08a24b0e583ef3d572f66cf4a93e96bc", null ],
-      [ "CAMPAIGN_REACH_FREQUENCY_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5aba739867bed7aa0b888b5c1450d92cb0", null ],
-      [ "ADGROUP_REACH_FREQUENCY_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5a686a72411ab429eb67b61e0a53cac926", null ],
       [ "CRITERIA_PERFORMANCE_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5a9115f2e3adcfc082fedef60ef37a0d89", null ],
       [ "CLICK_PERFORMANCE_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5ac2dabea2a4d7e4ef296295e85e2075b1", null ],
       [ "BUDGET_PERFORMANCE_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5ae02bd0f714ec1414e020af5b6f5ec884", null ],
@@ -2974,7 +3079,7 @@ var v201409_2_ad_words_api_8cs =
       [ "SHOPPING_PERFORMANCE_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5aa4564a3d97ac593fcb70f397029b9967", null ],
       [ "PRODUCT_PARTITION_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5a785bea152fa5face0f9d32bfdd1e7871", null ],
       [ "PLACEHOLDER_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5abce4d7ef9b88f159e391d7dcfc568d24", null ],
-      [ "AD_PLACEHOLDER_FEED_ITEM_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5a68c8b05636b97b70788ed28249186f23", null ],
+      [ "AD_CUSTOMIZERS_FEED_ITEM_REPORT", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5a6425370801eddcab8ebfb90241ac2334", null ],
       [ "UNKNOWN", "v201409_2_ad_words_api_8cs.html#a6c3bbd471979946a8281838836c8b7e5a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "RequestContextOperandContextType", "v201409_2_ad_words_api_8cs.html#aed5ffbd67bc204bfa88dd34f2e3189ae", [
