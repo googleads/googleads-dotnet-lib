@@ -77,16 +77,10 @@
       <LastGenOutput>SoapMessages.v201409.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SoapMessages.v201406.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SoapMessages.v201406.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\UpdateCampaign.v201502.txt" />
     <Content Include="Resources\UpdateCampaign.v201409.txt" />
-    <Content Include="Resources\UpdateCampaign.v201406.txt" />
     <Content Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -102,23 +96,8 @@
     <Compile Include="Lib\AdWordsServiceFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
-    <Compile Include="Util\v201406\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201409\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201502\MapUtilitiesTest.cs" />
-    <Compile Include="v201406\AccountManagementTest.cs" />
-    <Compile Include="v201406\AdvancedOperationsTest.cs" />
-    <Compile Include="v201406\BasicOperationsTest.cs" />
-    <Compile Include="v201406\CampaignManagementTest.cs" />
-    <Compile Include="v201406\ErrorHandlingTest.cs" />
-    <Compile Include="v201406\MiscellaneousTest.cs" />
-    <Compile Include="v201406\MockTests.cs" />
-    <Compile Include="v201406\OptimizationTest.cs" />
-    <Compile Include="v201406\RemarketingTest.cs" />
-    <Compile Include="v201406\ReportingTest.cs" />
-    <Compile Include="v201406\ShoppingCampaignsTest.cs" />
-    <Compile Include="v201406\TargetingTest.cs" />
-    <Compile Include="v201406\TestUtils.cs" />
-    <Compile Include="v201406\VersionedExampleTestsBase.cs" />
     <Compile Include="v201409\AccountManagementTest.cs" />
     <Compile Include="v201409\AdvancedOperationsTest.cs" />
     <Compile Include="v201409\BasicOperationsTest.cs" />
@@ -156,7 +135,6 @@
     <Compile Include="ExamplesMockData.cs" />
     <Compile Include="MockUtilities.cs" />
     <Compile Include="ServiceCreationTests.cs" />
-    <Compile Include="SoapMessages.v201406.Designer.cs" />
     <Compile Include="SoapMessages.v201409.Designer.cs" />
     <Compile Include="SoapMessages.v201502.Designer.cs" />
   </ItemGroup>

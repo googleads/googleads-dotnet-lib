@@ -50,6 +50,7 @@
     <Compile Include="Util\v201502\DateTimeUtilities.cs" />
     <Compile Include="Util\v201502\PqlUtilities.cs" />
     <Compile Include="Util\v201502\StatementBuilder.cs" />
+    <Compile Include="Util\v201502\ReportUtilities.cs" />
     <Compile Include="Util\v201411\DateTimeUtilities.cs" />
     <Compile Include="Util\v201411\PqlUtilities.cs" />
     <Compile Include="Util\v201411\StatementBuilder.cs" />

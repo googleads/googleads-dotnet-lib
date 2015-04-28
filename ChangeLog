@@ -1,3 +1,34 @@
+18.11.0
+=======
+AdWords:
+  - Removed support for v201406.
+  - Removed support for legacy ReportUtilities.
+  - Fixed issue 44.
+  - Added support for SkipColumnHeader setting in ReportUtilities.
+  - Updated the Feed examples to use functionString instead of MatchingFunction.
+  - Updated MigrateToExtensionSettings code example to handle platform restrictions.
+  - Fixed the AddSitelinks code example to use the account's timezone.
+  - Published two new solutions.
+    - Budget Utilization report shows your campaigns' budget utilization. This may be used to
+      reallocate your campaign budgets.
+    - GetNewKeywords shows how to research for new keywords based on input from multiple data
+      sources.
+
+AdXBuyer:
+  - Removed support for v201406.
+  - Fixed issue 44.
+  - Added support for SkipColumnHeader setting in ReportUtilities.
+
+DFA:
+  -
+
+DFP:
+  - Added ReportUtilities to v201502.
+  - Updated ReportService examples to use ReportUtilities.
+
+Common:
+  - Added utility method to PreconditionUtilities.
+
 18.10.0
 =======
 AdWords:
@@ -183,7 +214,7 @@ DFA:
 - Updated DFA OAuth and WCF examples to use v1.20 of the API and removed references to the
   deprecated report service.
 - Fixed a bug where the OAuth2 service account flow won't work if LoginPassword field is set in the
-  App.config. 
+  App.config.
 
 DFP:
 - Added support for OAuth2 service accounts.

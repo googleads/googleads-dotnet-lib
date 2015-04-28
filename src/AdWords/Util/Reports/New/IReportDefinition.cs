@@ -1,4 +1,4 @@
-﻿// Copyright 2013, Google Inc. All Rights Reserved.
+﻿// Copyright 2015, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,10 +14,12 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using System.Reflection;
+using System;
 
-[assembly: AssemblyCompany("Google")]
-[assembly: AssemblyProduct("Ads API Dotnet Common Library")]
-[assembly: AssemblyCopyright("Copyright 2012, Google Inc. All Rights Reserved.")]
-[assembly: AssemblyVersion("3.6.0.0")]
-[assembly: AssemblyFileVersion("3.6.0.0")]
+namespace Google.Api.Ads.AdWords.Util.Reports {
+  /// <summary>
+  /// Marker interface for ReportDefinition.
+  /// </summary>
+  public interface IReportDefinition {
+  }
+}

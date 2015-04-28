@@ -242,56 +242,29 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       CampaignFeedService campaignFeedService =
         (CampaignFeedService) user.GetService(AdWordsService.v201502.CampaignFeedService);
 
-      // Map the feed item ids to the campaign using an IN operation.
-      RequestContextOperand feedItemRequestContextOperand = new RequestContextOperand();
-      feedItemRequestContextOperand.contextType = RequestContextOperandContextType.FEED_ITEM_ID;
+      // Construct a matching function that associates the sitelink feeditems
+      // to the campaign, and set the device preference to Mobile. See the
+      // matching function guide at
+      // https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
+      // for more details.
+      string matchingFunctionString = string.Format(@"
+          AND(
+            IN(FEED_ITEM_ID, {{{0}}}),
+            EQUALS(CONTEXT.DEVICE, 'Mobile')
+          )",
+          string.Join(",", sitelinksData.FeedItemIds));
 
-      List<FunctionArgumentOperand> feedItemOperands = new List<FunctionArgumentOperand>();
-      foreach (long feedItemId in sitelinksData.FeedItemIds) {
-        ConstantOperand feedItemOperand = new ConstantOperand();
-        feedItemOperand.longValue = feedItemId;
-        feedItemOperand.type = ConstantOperandConstantType.LONG;
-        feedItemOperands.Add(feedItemOperand);
-      }
 
-      Function feedItemfunction = new Function();
-      feedItemfunction.lhsOperand = new FunctionArgumentOperand[] {feedItemRequestContextOperand};
-      feedItemfunction.@operator = FunctionOperator.IN;
-      feedItemfunction.rhsOperand = feedItemOperands.ToArray();
-
-      // Optional: to target to a platform, define a function and 'AND' it with
-      // the feed item ID link:
-      RequestContextOperand platformRequestContextOperand = new RequestContextOperand();
-      platformRequestContextOperand.contextType = RequestContextOperandContextType.DEVICE_PLATFORM;
-
-      ConstantOperand platformOperand = new ConstantOperand();
-      platformOperand.stringValue = "Mobile";
-      platformOperand.type = ConstantOperandConstantType.STRING;
-
-      Function platformFunction = new Function();
-      platformFunction.lhsOperand = new FunctionArgumentOperand[] {platformRequestContextOperand};
-      platformFunction.@operator = FunctionOperator.EQUALS;
-      platformFunction.rhsOperand = new FunctionArgumentOperand[] {platformOperand};
-
-      // Combine the two functions using an AND operation.
-      FunctionOperand feedItemFunctionOperand = new FunctionOperand();
-      feedItemFunctionOperand.value = feedItemfunction;
-
-      FunctionOperand platformFunctionOperand = new FunctionOperand();
-      platformFunctionOperand.value = platformFunction;
-
-      Function combinedFunction = new Function();
-      combinedFunction.@operator = FunctionOperator.AND;
-      combinedFunction.lhsOperand = new FunctionArgumentOperand[] {
-          feedItemFunctionOperand, platformFunctionOperand};
-
-      CampaignFeed campaignFeed = new CampaignFeed();
-      campaignFeed.feedId = sitelinksData.FeedId;
-      campaignFeed.campaignId = campaignId;
-      campaignFeed.matchingFunction = combinedFunction;
-      // Specifying placeholder types on the CampaignFeed allows the same feed
-      // to be used for different placeholders in different Campaigns.
-      campaignFeed.placeholderTypes = new int[] {PLACEHOLDER_SITELINKS};
+      CampaignFeed campaignFeed = new CampaignFeed() {
+        feedId = sitelinksData.FeedId,
+        campaignId = campaignId,
+        matchingFunction = new Function() {
+          functionString = matchingFunctionString
+        },
+        // Specifying placeholder types on the CampaignFeed allows the same feed
+        // to be used for different placeholders in different Campaigns.
+        placeholderTypes = new int[] { PLACEHOLDER_SITELINKS }
+      };
 
       CampaignFeedOperation operation = new CampaignFeedOperation();
       operation.operand = campaignFeed;

@@ -55,6 +55,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
       Public Const URL As Long = 2
       Public Const LINE2 As Long = 3
       Public Const LINE3 As Long = 4
+      Public Const FINAL_URLS As Long = 5
+      Public Const FINAL_MOBILE_URLS As Long = 6
+      Public Const TRACKING_URL_TEMPLATE As Long = 7
     End Class
 
     ''' <summary>
@@ -108,7 +111,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
       Private line3Field As String
 
       ''' <summary>
-      ''' The sitelnk scheduling details.
+      ''' The sitelink scheduling details.
       ''' </summary>
       Private schedulingField As FeedItemSchedule()
 
@@ -286,16 +289,25 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
             ' Retrieve the sitelinks that have been associated with this
             ' campaign.
             Dim feedItemIds As List(Of Long) = GetFeedItemsForCampaign(campaignFeed)
+            Dim platformRestrictions As ExtensionSettingPlatform = _
+                GetPlatformRestrictionsForCampaign(campaignFeed)
 
-            ' Delete the campaign feed that associates the sitelinks from the
-            ' feed to the campaign.
-            DeleteCampaignFeed(user, campaignFeed)
+            If feedItemIds.Count = 0 Then
+              Console.WriteLine("Migration skipped for campaign feed with campaign ID {0} " & _
+                  "and feed ID {1} because no mapped feed item IDs were found in the campaign " & _
+                  "feed's matching function.", campaignFeed.campaignId, campaignFeed.feedId)
+            Else
+              ' Delete the campaign feed that associates the sitelinks from the
+              ' feed to the campaign.
+              DeleteCampaignFeed(user, campaignFeed)
 
-            ' Create extension settings instead of sitelinks.
-            CreateExtensionSetting(user, feedItems, campaignFeed.campaignId, feedItemIds)
+              ' Create extension settings instead of sitelinks.
+              CreateExtensionSetting(user, feedItems, campaignFeed.campaignId, feedItemIds, _
+                                     platformRestrictions)
 
-            ' Mark the sitelinks from the feed for deletion.
-            allFeedItemsToDelete.UnionWith(feedItemIds)
+              ' Mark the sitelinks from the feed for deletion.
+              allFeedItemsToDelete.UnionWith(feedItemIds)
+            End If
           Next
           ' Delete all the sitelinks from the feed.
           DeleteOldFeedItems(user, New List(Of Long)(allFeedItemsToDelete), feed.id)
@@ -343,6 +355,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
 
                 Case SiteLinkFields.URL
                   sitelinkFromFeed.Url = attributeValue.stringValue
+
+                Case SiteLinkFields.FINAL_URLS
+                  sitelinkFromFeed.FinalUrls = attributeValue.stringValues
+
+                Case SiteLinkFields.FINAL_MOBILE_URLS
+                  sitelinkFromFeed.FinalMobileUrls = attributeValue.stringValues
+
+                Case SiteLinkFields.TRACKING_URL_TEMPLATE
+                  sitelinkFromFeed.TrackingUrlTemplate = attributeValue.stringValue
 
                 Case SiteLinkFields.LINE2
                   sitelinkFromFeed.Line2 = attributeValue.stringValue
@@ -441,7 +462,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
 
         operation.operand = New FeedItem()
         operation.operand.feedItemId = feedItemId
-        Operation.operand.feedId = feedId
+        operation.operand.feedId = feedId
 
         operations.Add(operation)
       Next
@@ -461,10 +482,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' are added.</param>
     ''' <param name="feedItemIds">IDs of the feed items for which extension
     ''' settings should be created.</param>
+    ''' <param name="platformRestrictions">The platform restrictions for the
+    ''' extension setting.</param>
     Private Sub CreateExtensionSetting(ByVal user As AdWordsUser, ByVal feedItems As  _
                                        Dictionary(Of Long, SiteLinkFromFeed), _
                                        ByVal campaignId As Long, _
-                                       ByVal feedItemIds As List(Of Long))
+                                       ByVal feedItemIds As List(Of Long),
+                                       ByVal platformRestrictions As ExtensionSettingPlatform)
       Dim extensionSetting As New CampaignExtensionSetting()
       extensionSetting.campaignId = campaignId
       extensionSetting.extensionType = FeedType.SITELINK
@@ -478,6 +502,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
         Dim newFeedItem As New SitelinkFeedItem()
         newFeedItem.sitelinkText = feedItem.Text
         newFeedItem.sitelinkUrl = feedItem.Url
+        newFeedItem.sitelinkFinalUrls = feedItem.FinalUrls
+        newFeedItem.sitelinkFinalMobileUrls = feedItem.FinalMobileUrls
+        newFeedItem.sitelinkTrackingUrlTemplate = feedItem.TrackingUrlTemplate
         newFeedItem.sitelinkLine2 = feedItem.Line2
         newFeedItem.sitelinkLine3 = feedItem.Line3
         newFeedItem.scheduling = feedItem.Scheduling
@@ -485,6 +512,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
         extensionFeedItems.Add(newFeedItem)
       Next
       extensionSetting.extensionSetting.extensions = extensionFeedItems.ToArray()
+      extensionSetting.extensionSetting.platformRestrictions = platformRestrictions
       extensionSetting.extensionType = FeedType.SITELINK
 
       Dim campaignExtensionSettingService As CampaignExtensionSettingService = _
@@ -518,6 +546,40 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     End Function
 
     ''' <summary>
+    ''' Gets the platform restrictions for sitelinks in a campaign.
+    ''' </summary>
+    ''' <param name="campaignFeed">The campaign feed.</param>
+    ''' <returns>The platform restrictions.</returns>
+    Private Function GetPlatformRestrictionsForCampaign(ByVal campaignFeed As CampaignFeed) As  _
+        ExtensionSettingPlatform
+      Dim platformRestrictions As String = "NONE"
+
+      If campaignFeed.matchingFunction.operator = FunctionOperator.AND Then
+
+        For Each argument As FunctionArgumentOperand In campaignFeed.matchingFunction.lhsOperand
+          ' Check if matchingFunction is of the form EQUALS(CONTEXT.DEVICE, 'Mobile').
+          If TypeOf argument Is FunctionOperand Then
+            Dim operand As FunctionOperand = CType(argument, FunctionOperand)
+            If operand.value.operator = FunctionOperator.EQUALS Then
+              Dim requestContextOperand As RequestContextOperand = _
+                  CType(operand.value.lhsOperand(0), RequestContextOperand)
+              If (Not requestContextOperand Is Nothing) AndAlso _
+                (requestContextOperand.contextType = _
+                    RequestContextOperandContextType.DEVICE_PLATFORM) Then
+                platformRestrictions = DirectCast(operand.value.rhsOperand(0),  _
+                    ConstantOperand).stringValue
+              End If
+            End If
+          End If
+        Next
+      End If
+
+      Return CType([Enum].Parse(GetType(ExtensionSettingPlatform), platformRestrictions, True),  _
+              ExtensionSettingPlatform)
+    End Function
+
+
+    ''' <summary>
     ''' Gets the list of feed items that are used by a campaign through a given
     ''' campaign feed.
     ''' </summary>
@@ -525,17 +587,48 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201409
     ''' <returns>The list of feed items.</returns>
     Private Function GetFeedItemsForCampaign(ByVal campaignFeed As CampaignFeed) As List(Of Long)
       Dim feedItems As New List(Of Long)()
-      If (campaignFeed.matchingFunction.lhsOperand.Length = 1) AndAlso _
-        (TypeOf campaignFeed.matchingFunction.lhsOperand(0) Is RequestContextOperand) AndAlso _
-        (DirectCast(campaignFeed.matchingFunction.lhsOperand(0),  _
-            RequestContextOperand).contextType = _
-                RequestContextOperandContextType.FEED_ITEM_ID) AndAlso _
-        (campaignFeed.matchingFunction.operator = FunctionOperator.IN) Then
 
-        For Each argument As ConstantOperand In campaignFeed.matchingFunction.rhsOperand
-          feedItems.Add(argument.longValue)
-        Next
+      Select Case campaignFeed.matchingFunction.operator
+        Case FunctionOperator.IN
+          ' Check if matchingFunction is of the form IN(FEED_ITEM_ID,{xxx,xxx}).
+          ' Extract feedItems if applicable.
+          feedItems.AddRange(GetFeedItemsFromArgument(campaignFeed.matchingFunction))
+
+        Case FunctionOperator.AND
+          ' Check each condition.
+
+          For Each argument As FunctionArgumentOperand In campaignFeed.matchingFunction.lhsOperand
+            ' Check if matchingFunction is of the form IN(FEED_ITEM_ID,{xxx,xxx}).
+            ' Extract feedItems if applicable.
+            If TypeOf argument Is FunctionOperand Then
+              Dim operand As FunctionOperand = CType(argument, FunctionOperand)
+              If operand.value.operator = FunctionOperator.IN Then
+                feedItems.AddRange(GetFeedItemsFromArgument(operand.value))
+              End If
+            End If
+          Next
+
+        Case Else
+          ' There are no other matching functions involving feeditem ids.
+      End Select
+
+      Return feedItems
+    End Function
+
+    Private Function GetFeedItemsFromArgument(ByVal func As [Function]) As List(Of Long)
+      Dim feedItems As New List(Of Long)()
+
+      If func.lhsOperand.Length = 1 Then
+        Dim requestContextOperand As RequestContextOperand = _
+            CType(func.lhsOperand(0), RequestContextOperand)
+        If Not (requestContextOperand Is Nothing) AndAlso _
+            (requestContextOperand.contextType = RequestContextOperandContextType.FEED_ITEM_ID) Then
+          For Each argument As ConstantOperand In func.rhsOperand
+            feedItems.Add(argument.longValue)
+          Next
+        End If
       End If
+
       Return feedItems
     End Function
 

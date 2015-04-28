@@ -236,59 +236,30 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Dim campaignFeedService As CampaignFeedService = CType(user.GetService( _
           AdWordsService.v201502.CampaignFeedService), AdWords.v201502.CampaignFeedService)
 
-      ' Map the feed item ids to the campaign using an IN operation.
-      Dim feedItemRequestContextOperand As New RequestContextOperand()
-      feedItemRequestContextOperand.contextType = RequestContextOperandContextType.FEED_ITEM_ID
-
-      Dim feedItemOperands As New List(Of FunctionArgumentOperand)()
-      For Each feedItemId As Long In sitelinksData.SitelinkFeedItemIds
-        Dim feedItemOperand As New ConstantOperand()
-        feedItemOperand.longValue = feedItemId
-        feedItemOperand.type = ConstantOperandConstantType.LONG
-        feedItemOperands.Add(feedItemOperand)
-      Next
-
-      Dim feedItemfunction As New [Function]()
-      feedItemfunction.lhsOperand = New FunctionArgumentOperand() {feedItemRequestContextOperand}
-      feedItemfunction.operator = FunctionOperator.IN
-      feedItemfunction.rhsOperand = feedItemOperands.ToArray()
-
-      ' Optional: to target to a platform, define a function and 'AND' it with
-      ' the feed item ID link:
-      Dim platformRequestContextOperand As New RequestContextOperand()
-      platformRequestContextOperand.contextType = RequestContextOperandContextType.DEVICE_PLATFORM
-
-      Dim platformOperand As New ConstantOperand()
-      platformOperand.stringValue = "Mobile"
-      platformOperand.type = ConstantOperandConstantType.STRING
-
-      Dim platformFunction As New [Function]()
-      platformFunction.lhsOperand = New FunctionArgumentOperand() {platformRequestContextOperand}
-      platformFunction.operator = FunctionOperator.EQUALS
-      platformFunction.rhsOperand = New FunctionArgumentOperand() {platformOperand}
-
-      ' Combine the two functions using an AND operation.
-      Dim feedItemFunctionOperand As New FunctionOperand()
-      feedItemFunctionOperand.value = feedItemfunction
-
-      Dim platformFunctionOperand As New FunctionOperand()
-      platformFunctionOperand.value = platformFunction
-
-      Dim combinedFunction As New [Function]()
-      combinedFunction.operator = FunctionOperator.AND
-      combinedFunction.lhsOperand = New FunctionArgumentOperand() { _
-          feedItemFunctionOperand, platformFunctionOperand}
+      ' Construct a matching function that associates the sitelink feeditems to
+      ' the campaign, and set the device preference to Mobile. See the matching
+      ' function guide at
+      ' https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
+      ' for more details.
+      Dim matchingFunctionString As String = String.Format( _
+          "AND(" & _
+          "  IN(FEED_ITEM_ID, {{{0}}})," & _
+          "  EQUALS(CONTEXT.DEVICE, 'Mobile')" & _
+          ")", _
+          String.Join(",", sitelinksData.SitelinkFeedItemIds))
 
       Dim campaignFeed As New CampaignFeed()
       campaignFeed.feedId = sitelinksData.SitelinksFeedId
       campaignFeed.campaignId = campaignId
-      campaignFeed.matchingFunction = combinedFunction
+      campaignFeed.matchingFunction = New [Function]()
+      campaignFeed.matchingFunction.functionString = matchingFunctionString
+
       ' Specifying placeholder types on the CampaignFeed allows the same feed
       ' to be used for different placeholders in different Campaigns.
       campaignFeed.placeholderTypes = New Integer() {PLACEHOLDER_SITELINKS}
 
       Dim operation As New CampaignFeedOperation
-      operation.operand = CampaignFeed
+      operation.operand = campaignFeed
       operation.operator = [Operator].ADD
       Dim result As CampaignFeedReturnValue = _
           campaignFeedService.mutate(New CampaignFeedOperation() {operation})

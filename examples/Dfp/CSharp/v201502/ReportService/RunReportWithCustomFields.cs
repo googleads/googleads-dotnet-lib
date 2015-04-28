@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
+// Author: Chris Seeley
 
+using Google.Api.Ads.Common.Util.Reports;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
 using Google.Api.Ads.Dfp.Util.v201502;
 
 using System;
-using System.Threading;
 using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
@@ -28,7 +28,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// line items of an order. To download the report see DownloadReport.cs.
   ///
   /// Tag: ReportService.runReportJob
-  /// Tag: ReportService.getReportJob
   /// Tag: LineItemService.getLineItemsByStatement
   /// </summary>
   class RunReportWithCustomFields : SampleBase {
@@ -38,7 +37,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
     public override string Description {
       get {
         return "This code example runs a report that includes custom fields found in the " +
-            "line items of an order. To download the report see DownloadReport.cs.";
+            "line items of an order. The report is saved to the specified file path.";
       }
     }
 
@@ -67,6 +66,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
       try {
         // Set the ID of the order to get line items from.
         long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
+
+        // Set the file path where the report will be saved.
+        String filePath = _T("INSERT_FILE_PATH_HERE");
 
         // Sets default for page.
         LineItemPage page = new LineItemPage();
@@ -119,19 +121,20 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
         // Run report job.
         reportJob = reportService.runReportJob(reportJob);
 
-        do {
-          Console.WriteLine("Report with ID '{0}' is still running.", reportJob.id);
-          Thread.Sleep(30000);
-          // Get report job.
-          reportJob = reportService.getReportJob(reportJob.id);
-        } while (reportJob.reportJobStatus == ReportJobStatus.IN_PROGRESS);
+        ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
 
-        if (reportJob.reportJobStatus == ReportJobStatus.FAILED) {
-          Console.WriteLine("Report job with ID '{0}' failed to finish successfully.",
-              reportJob.id);
-        } else {
-          Console.WriteLine("Report job with ID '{0}' completed successfully.", reportJob.id);
+        // Set download options.
+        ReportDownloadOptions options = new ReportDownloadOptions();
+        options.exportFormat = ExportFormat.CSV_DUMP;
+        options.useGzipCompression = true;
+        reportUtilities.reportDownloadOptions = options;
+
+        // Download the report.
+        using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
+          reportResponse.Save(filePath);
         }
+        Console.WriteLine("Report saved to \"{0}\".", filePath);
+
       } catch (Exception ex) {
         Console.WriteLine("Failed to run cusom fields report. Exception says \"{0}\"",
             ex.Message);

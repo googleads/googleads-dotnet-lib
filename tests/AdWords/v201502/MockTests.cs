@@ -174,7 +174,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
     [Test]
     public void TestGetAllCampaignsMockAndCallServer() {
       ServiceSignature mockSignature = MockUtilities.RegisterMockService(user,
-          AdWordsService.v201406.CampaignService, typeof(MockCampaignServiceEx));
+          AdWordsService.v201502.CampaignService, typeof(MockCampaignServiceEx));
 
       CampaignService campaignService = (CampaignService) user.GetService(mockSignature);
       Assert.That(campaignService is MockCampaignServiceEx);

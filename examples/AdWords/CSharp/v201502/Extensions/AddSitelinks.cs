@@ -67,6 +67,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
           (CampaignExtensionSettingService) user.GetService(
                AdWordsService.v201502.CampaignExtensionSettingService);
 
+      CustomerService customerService = (CustomerService) user.GetService(
+          AdWordsService.v201502.CustomerService);
+      Customer customer = customerService.get();
+      
       // Create your sitelinks.
       SitelinkFeedItem sitelink1 = new SitelinkFeedItem() {
         sitelinkText = "Store Hours",
@@ -77,8 +81,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       SitelinkFeedItem sitelink2 = new SitelinkFeedItem() {
         sitelinkText = "Thanksgiving Specials",
         sitelinkFinalUrls = new string[] { "http://www.example.com/thanksgiving" },
-        startTime = string.Format("{0}1120 000000 EST", DateTime.Now.Year),
-        endTime = string.Format("{0}1127 235959 EST",  DateTime.Now.Year)
+        startTime = string.Format("{0}1120 000000 {1}", DateTime.Now.Year, customer.dateTimeZone),
+        endTime = string.Format("{0}1127 235959 {1}", DateTime.Now.Year, customer.dateTimeZone)
       };
 
       // Show the wifi details primarily for high end mobile users.

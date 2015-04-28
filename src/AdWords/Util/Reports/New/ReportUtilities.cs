@@ -76,7 +76,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// The report definition for downloading this report.
     /// </summary>
-    private object reportDefinition;
+    private IReportDefinition reportDefinition;
 
     /// <summary>
     /// True, if the user wants to use AWQL for downloading reports, false if
@@ -100,7 +100,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="user">AdWords user to be used along with this
     /// utilities object.</param>
     /// <param name="reportDefinition">The report definition.</param>
-    public ReportUtilities(AdWordsUser user, object reportDefinition)
+    public ReportUtilities(AdWordsUser user, IReportDefinition reportDefinition)
       : this(user, DEFAULT_REPORT_VERSION, reportDefinition) { }
 
     /// <summary>
@@ -126,7 +126,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// utilities object.</param>
     /// <param name="reportDefinition">The report definition.</param>
     /// <param name="reportVersion">The report version.</param>
-    public ReportUtilities(AdWordsUser user, string reportVersion, object reportDefinition)
+    public ReportUtilities(AdWordsUser user, string reportVersion, IReportDefinition reportDefinition)
       : base(user) {
       this.reportVersion = reportVersion;
       this.reportDefinition = reportDefinition;
@@ -244,6 +244,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
 
       request.Headers.Add("skipReportHeader", config.SkipReportHeader.ToString().ToLower());
       request.Headers.Add("skipReportSummary", config.SkipReportSummary.ToString().ToLower());
+      request.Headers.Add("skipColumnHeader", config.SkipColumnHeader.ToString().ToLower());
 
       using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
         writer.Write(postBody);
@@ -284,7 +285,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// </summary>
     /// <param name="definition">The report definition.</param>
     /// <returns>The report definition serialized as an XML string.</returns>
-    private string ConvertDefinitionToXml(object definition) {
+    private string ConvertDefinitionToXml(IReportDefinition definition) {
       string xml = SerializationUtilities.SerializeAsXmlText(definition).Replace(
           "ReportDefinition", "reportDefinition");
       XmlDocument doc = new XmlDocument();

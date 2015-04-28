@@ -87,6 +87,11 @@ namespace Google.Api.Ads.AdWords.Lib {
     private const string SKIP_REPORT_SUMMARY = "SkipReportSummary";
 
     /// <summary>
+    /// Key name for skipColumnHeader.
+    /// </summary>
+    private const string SKIP_COLUMN_HEADER = "SkipColumnHeader";
+
+    /// <summary>
     /// Default value for AdWords API URL.
     /// </summary>
     private const string DEFAULT_ADWORDSAPI_SERVER = "https://adwords.google.com";
@@ -105,6 +110,11 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Default value for skipping reports summary.
     /// </summary>
     private const bool DEFAULT_SKIP_REPORT_SUMMARY = false;
+
+    /// <summary>
+    /// Default value for skipping column header.
+    /// </summary>
+    private const bool DEFAULT_SKIP_COLUMN_HEADER = false;
 
     /// <summary>
     /// ClientCustomerId to be used in SOAP headers.
@@ -152,6 +162,11 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Flag to decide whether or not to skip report summary.
     /// </summary>
     private bool skipReportSummary;
+
+    /// <summary>
+    /// Flag to decide whether or not to skip column header.
+    /// </summary>
+    private bool skipColumnHeader;
 
     /// <summary>
     /// Gets or sets the client customerId to be used in SOAP headers.
@@ -240,6 +255,18 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
+    /// Gets or sets whether report column header should be skipped.
+    /// </summary>
+    public bool SkipColumnHeader {
+      get {
+        return skipColumnHeader;
+      }
+      set {
+        SetPropertyField("SkipColumnHeader", ref skipColumnHeader, value);
+      }
+    }
+
+    /// <summary>
     /// Gets or sets the useragent to be used in SOAP headers.
     /// </summary>
     public string UserAgent {
@@ -291,6 +318,7 @@ namespace Google.Api.Ads.AdWords.Lib {
       adWordsApiServer = DEFAULT_ADWORDSAPI_SERVER;
       skipReportHeader = DEFAULT_SKIP_REPORT_HEADER;
       skipReportSummary = DEFAULT_SKIP_REPORT_SUMMARY;
+      skipColumnHeader = DEFAULT_SKIP_COLUMN_HEADER;
 
       ReadSettings((Hashtable) ConfigurationManager.GetSection("AdWordsApi"));
     }
@@ -328,6 +356,8 @@ namespace Google.Api.Ads.AdWords.Lib {
           out skipReportHeader);
       bool.TryParse(ReadSetting(settings, SKIP_REPORT_SUMMARY, skipReportSummary.ToString()),
           out skipReportSummary);
+      bool.TryParse(ReadSetting(settings, SKIP_COLUMN_HEADER, skipColumnHeader.ToString()),
+          out skipColumnHeader);
     }
   }
 }

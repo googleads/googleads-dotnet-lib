@@ -660,8 +660,6 @@
     <Compile Include="v201502\PublisherQueryLanguageService\GetLineItemsNamedLike.cs" />
     <Compile Include="v201502\RateCardService\GetAllRateCards.cs" />
     <Compile Include="v201502\RateCardService\GetUsdRateCards.cs" />
-    <Compile Include="v201502\ReportService\DisplayReport.cs" />
-    <Compile Include="v201502\ReportService\DownloadReport.cs" />
     <Compile Include="v201502\ReportService\RunDeliveryReport.cs" />
     <Compile Include="v201502\ReportService\RunInventoryReport.cs" />
     <Compile Include="v201502\ReportService\RunReachReport.cs" />

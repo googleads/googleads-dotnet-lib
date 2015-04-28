@@ -70,6 +70,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
           DirectCast(user.GetService(AdWordsService.v201502.CampaignExtensionSettingService),  _
                                     CampaignExtensionSettingService)
 
+      Dim customerService As CustomerService = _
+          DirectCast(user.GetService(AdWordsService.v201502.CustomerService),  _
+                                    CustomerService)
+
+      Dim customer As Customer = customerService.get()
+
       ' Create your sitelinks.
       Dim sitelink1 As New SitelinkFeedItem()
       sitelink1.sitelinkText = "Store Hours"
@@ -79,8 +85,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Dim sitelink2 As New SitelinkFeedItem()
       sitelink2.sitelinkText = "Thanksgiving Specials"
       sitelink2.sitelinkFinalUrls = New String() {"http://www.example.com/thanksgiving"}
-      sitelink2.startTime = String.Format("{0}1120 000000 EST", DateTime.Now.Year)
-      sitelink2.endTime = String.Format("{0}1127 235959 EST", DateTime.Now.Year)
+      sitelink2.startTime = String.Format("{0}1120 000000 {1}", DateTime.Now.Year, _
+                                          customer.dateTimeZone)
+      sitelink2.endTime = String.Format("{0}1127 235959 {1}", DateTime.Now.Year, _
+                                        customer.dateTimeZone)
 
       ' Show the wifi details primarily for high end mobile users.
       Dim sitelink3 As New SitelinkFeedItem()

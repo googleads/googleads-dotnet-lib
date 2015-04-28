@@ -165,16 +165,25 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
             // Retrieve the sitelinks that have been associated with this
             // campaign.
             List<long> feedItemIds = GetFeedItemsForCampaign(campaignFeed);
+            ExtensionSettingPlatform platformRestrictions = GetPlatformRestrictionsForCampaign(
+                campaignFeed);
 
-            // Delete the campaign feed that associates the sitelinks from the
-            // feed to the campaign.
-            DeleteCampaignFeed(user, campaignFeed);
+            if (feedItemIds.Count == 0) {
+              Console.WriteLine("Migration skipped for campaign feed with campaign ID {0} " +
+                  "and feed ID {1} because no mapped feed item IDs were found in the campaign " +
+                  "feed's matching function.", campaignFeed.campaignId, campaignFeed.feedId);
+            } else {
+              // Delete the campaign feed that associates the sitelinks from the
+              // feed to the campaign.
+              DeleteCampaignFeed(user, campaignFeed);
 
-            // Create extension settings instead of sitelinks.
-            CreateExtensionSetting(user, feedItems, campaignFeed.campaignId, feedItemIds);
+              // Create extension settings instead of sitelinks.
+              CreateExtensionSetting(user, feedItems, campaignFeed.campaignId, feedItemIds,
+                  platformRestrictions);
 
-            // Mark the sitelinks from the feed for deletion.
-            allFeedItemsToDelete.UnionWith(feedItemIds);
+              // Mark the sitelinks from the feed for deletion.
+              allFeedItemsToDelete.UnionWith(feedItemIds);
+            }
           }
           // Delete all the sitelinks from the feed.
           DeleteOldFeedItems(user, new List<long>(allFeedItemsToDelete), feed.id);
@@ -354,8 +363,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
     /// are added.</param>
     /// <param name="feedItemIds">IDs of the feed items for which extension
     /// settings should be created.</param>
+    /// <param name="platformRestrictions">The platform restrictions for the
+    /// extension setting.</param>
     private static void CreateExtensionSetting(AdWordsUser user, Dictionary<long,
-        SiteLinkFromFeed> feedItems, long campaignId, List<long> feedItemIds) {
+        SiteLinkFromFeed> feedItems, long campaignId, List<long> feedItemIds,
+        ExtensionSettingPlatform platformRestrictions) {
       CampaignExtensionSetting extensionSetting = new CampaignExtensionSetting() {
         campaignId = campaignId,
         extensionType = FeedType.SITELINK,
@@ -381,6 +393,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         extensionFeedItems.Add(newFeedItem);
       }
       extensionSetting.extensionSetting.extensions = extensionFeedItems.ToArray();
+      extensionSetting.extensionSetting.platformRestrictions = platformRestrictions;
       extensionSetting.extensionType = FeedType.SITELINK;
 
       CampaignExtensionSettingService campaignExtensionSettingService =
@@ -414,6 +427,37 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
     }
 
     /// <summary>
+    /// Gets the platform restrictions for sitelinks in a campaign.
+    /// </summary>
+    /// <param name="campaignFeed">The campaign feed.</param>
+    /// <returns>The platform restrictions.</returns>
+    private ExtensionSettingPlatform GetPlatformRestrictionsForCampaign(
+          CampaignFeed campaignFeed) {
+      string platformRestrictions = "NONE";
+
+      if (campaignFeed.matchingFunction.@operator == FunctionOperator.AND) {
+        foreach (FunctionArgumentOperand argument in campaignFeed.matchingFunction.lhsOperand) {
+          // Check if matchingFunction is of the form EQUALS(CONTEXT.DEVICE, 'Mobile').
+          if (argument is FunctionOperand) {
+            FunctionOperand operand = (argument as FunctionOperand);
+            if (operand.value.@operator == FunctionOperator.EQUALS) {
+              RequestContextOperand requestContextOperand = operand.value.lhsOperand[0] as
+                  RequestContextOperand;
+              if (requestContextOperand != null && requestContextOperand.contextType ==
+                  RequestContextOperandContextType.DEVICE_PLATFORM) {
+                platformRestrictions = (operand.value.rhsOperand[0] as ConstantOperand)
+                      .stringValue;
+              }
+            }
+          }
+        }
+      }
+
+      return (ExtensionSettingPlatform) Enum.Parse(typeof(ExtensionSettingPlatform),
+              platformRestrictions, true);
+    }
+
+    /// <summary>
     /// Gets the list of feed items that are used by a campaign through a given
     /// campaign feed.
     /// </summary>
@@ -421,13 +465,48 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
     /// <returns>The list of feed items.</returns>
     private List<long> GetFeedItemsForCampaign(CampaignFeed campaignFeed) {
       List<long> feedItems = new List<long>();
-      if (campaignFeed.matchingFunction.lhsOperand.Length == 1 &&
-        campaignFeed.matchingFunction.lhsOperand[0] is RequestContextOperand &&
-        (campaignFeed.matchingFunction.lhsOperand[0] as RequestContextOperand).contextType ==
-            RequestContextOperandContextType.FEED_ITEM_ID &&
-        campaignFeed.matchingFunction.@operator == FunctionOperator.IN) {
-        foreach (ConstantOperand argument in campaignFeed.matchingFunction.rhsOperand) {
-          feedItems.Add(argument.longValue);
+
+      switch (campaignFeed.matchingFunction.@operator) {
+        case FunctionOperator.IN:
+          // Check if matchingFunction is of the form IN(FEED_ITEM_ID,{xxx,xxx}).
+          // Extract feedItems if applicable.
+          feedItems.AddRange(GetFeedItemsFromArgument(campaignFeed.matchingFunction));
+
+          break;
+
+        case FunctionOperator.AND:
+          // Check each condition.
+
+          foreach (FunctionArgumentOperand argument in campaignFeed.matchingFunction.lhsOperand) {
+            // Check if matchingFunction is of the form IN(FEED_ITEM_ID,{xxx,xxx}).
+            // Extract feedItems if applicable.
+            if (argument is FunctionOperand) {
+              FunctionOperand operand = (argument as FunctionOperand);
+              if (operand.value.@operator == FunctionOperator.IN) {
+                feedItems.AddRange(GetFeedItemsFromArgument(operand.value));
+              }
+            }
+          }
+          break;
+
+        default:
+          // There are no other matching functions involving feeditem ids.
+          break;
+      }
+
+      return feedItems;
+    }
+
+    private List<long> GetFeedItemsFromArgument(Function function) {
+      List<long> feedItems = new List<long>();
+      if (function.lhsOperand.Length == 1) {
+        RequestContextOperand requestContextOperand = function.lhsOperand[0] as
+            RequestContextOperand;
+        if (requestContextOperand != null && requestContextOperand.contextType ==
+            RequestContextOperandContextType.FEED_ITEM_ID) {
+          foreach (ConstantOperand argument in function.rhsOperand) {
+            feedItems.Add(argument.longValue);
+          }
         }
       }
       return feedItems;

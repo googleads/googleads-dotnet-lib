@@ -19,6 +19,7 @@
 namespace Google.Api.Ads.AdWords.v201502 {
   using Google.Api.Ads.AdWords.Headers;
   using Google.Api.Ads.AdWords.Lib;
+  using Google.Api.Ads.AdWords.Util.Reports;
 
   using System.Web.Services.Protocols;
   using System;
@@ -26,13 +27,13 @@ namespace Google.Api.Ads.AdWords.v201502 {
   using System.Diagnostics;
   using System.Web.Services;
   using System.Xml.Serialization;
-
+  
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201502")]
-  public partial class ReportDefinition {
+  public partial class ReportDefinition : IReportDefinition {
     private long idField;
 
     private bool idFieldSpecified;

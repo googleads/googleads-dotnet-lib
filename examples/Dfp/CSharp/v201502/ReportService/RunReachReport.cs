@@ -12,21 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
+// Author: Chris Seeley
 
+using Google.Api.Ads.Common.Util.Reports;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
+using Google.Api.Ads.Dfp.Util.v201502;
 
 using System;
-using System.Threading;
-using Google.Api.Ads.Dfp.Util.v201502;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
-  /// This code example runs a reach report. To download the report see
-  /// DownloadReport.cs.
+  /// This code example runs a reach report. The report is saved to the specified file path.
   ///
-  /// Tags: ReportService.runReportJob, ReportService.getReportJob
+  /// Tags: ReportService.runReportJob
   /// </summary>
   class RunReachReport : SampleBase {
     /// <summary>
@@ -34,8 +33,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example runs a reach report. To download the report see " +
-            "DownloadReport.cs.";
+        return "This code example runs a reach report. The report is saved to the specified " +
+            "file path.";
       }
     }
 
@@ -57,6 +56,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
       ReportService reportService = (ReportService) user.GetService(
           DfpService.v201502.ReportService);
 
+      // Set the file path where the report will be saved.
+      String filePath = _T("INSERT_FILE_PATH_HERE");
+
       // Create report job.
       ReportJob reportJob = new ReportJob();
 
@@ -71,20 +73,21 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
       try {
         // Run report.
         reportJob = reportService.runReportJob(reportJob);
-        // Wait for report to complete.
-        while (reportJob.reportJobStatus == ReportJobStatus.IN_PROGRESS) {
-          Console.WriteLine("Report job with id = '{0}' is still running.", reportJob.id);
-          Thread.Sleep(30000);
-          // Get report job.
-          reportJob = reportService.getReportJob(reportJob.id);
-        }
 
-        if (reportJob.reportJobStatus == ReportJobStatus.COMPLETED) {
-          Console.WriteLine("Report job with id = '{0}' completed successfully.", reportJob.id);
-        } else if (reportJob.reportJobStatus == ReportJobStatus.FAILED) {
-          Console.WriteLine("Report job with id = '{0}' failed to complete successfully.",
-              reportJob.id);
+        ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
+
+        // Set download options.
+        ReportDownloadOptions options = new ReportDownloadOptions();
+        options.exportFormat = ExportFormat.CSV_DUMP;
+        options.useGzipCompression = true;
+        reportUtilities.reportDownloadOptions = options;
+
+        // Download the report.
+        using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
+          reportResponse.Save(filePath);
         }
+        Console.WriteLine("Report saved to \"{0}\".", filePath);
+
       } catch (Exception ex) {
         Console.WriteLine("Failed to run delivery report. Exception says \"{0}\"",
             ex.Message);
