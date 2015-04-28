@@ -22,6 +22,5 @@ var namespacemembers_enum =
     [ "t", "namespacemembers_enum_0x74.html", null ],
     [ "u", "namespacemembers_enum_0x75.html", null ],
     [ "v", "namespacemembers_enum_0x76.html", null ],
-    [ "w", "namespacemembers_enum_0x77.html", null ],
-    [ "y", "namespacemembers_enum_0x79.html", null ]
+    [ "w", "namespacemembers_enum_0x77.html", null ]
 ];
