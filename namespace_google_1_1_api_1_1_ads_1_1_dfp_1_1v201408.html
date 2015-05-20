@@ -211,6 +211,10 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_feature_error.html">FeatureError</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_entity_limit_reached_error.html">EntityLimitReachedError</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_entity_children_limit_reached_error.html">EntityChildrenLimitReachedError</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_common_error.html">CommonError</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_collection_size_error.html">CollectionSizeError</a></td></tr>
@@ -396,10 +400,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_frequency_cap_error.html">FrequencyCapError</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast_error.html">ForecastError</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_entity_limit_reached_error.html">EntityLimitReachedError</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_entity_children_limit_reached_error.html">EntityChildrenLimitReachedError</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_day_part_targeting_error.html">DayPartTargetingError</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1401,6 +1401,16 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a09d44075ec4392d81d09c252fe5c84b0a696b031073e74bf2cb98e5ef201d4aa3">FeatureErrorReason.UNKNOWN</a>
  }</td></tr>
 <tr class="separator:a09d44075ec4392d81d09c252fe5c84b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37f5611726d51a8fe18d85fc48fc63f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af37f5611726d51a8fe18d85fc48fc63f">EntityChildrenLimitReachedErrorReason</a> { <br/>
+&#160;&#160;<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af37f5611726d51a8fe18d85fc48fc63fa615e6f6351521de1a0a47a49e0c96c91">EntityChildrenLimitReachedErrorReason.LINE_ITEM_LIMIT_FOR_ORDER_REACHED</a>, 
+<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af37f5611726d51a8fe18d85fc48fc63faa024300e769cd19f9c3a85b3096493ce">EntityChildrenLimitReachedErrorReason.CREATIVE_ASSOCIATION_LIMIT_FOR_LINE_ITEM_REACHED</a>, 
+<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af37f5611726d51a8fe18d85fc48fc63fa19fba452d82b3409073a412fc76dfa46">EntityChildrenLimitReachedErrorReason.AD_UNIT_LIMIT_FOR_PLACEMENT_REACHED</a>, 
+<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af37f5611726d51a8fe18d85fc48fc63fa3d8814c3c83ebfeaf1d2b82b276b0249">EntityChildrenLimitReachedErrorReason.TARGETING_EXPRESSION_LIMIT_FOR_LINE_ITEM_REACHED</a>, 
+<br/>
+&#160;&#160;<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af37f5611726d51a8fe18d85fc48fc63fa696b031073e74bf2cb98e5ef201d4aa3">EntityChildrenLimitReachedErrorReason.UNKNOWN</a>
+<br/>
+ }</td></tr>
+<tr class="separator:af37f5611726d51a8fe18d85fc48fc63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fef7b483d04dfed06e4351bb555e4dc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a1fef7b483d04dfed06e4351bb555e4dc">CommonErrorReason</a> { <br/>
 &#160;&#160;<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a1fef7b483d04dfed06e4351bb555e4dca8c02547a8a3b02382bac3557bcb2280d">CommonErrorReason.NOT_FOUND</a>, 
 <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a1fef7b483d04dfed06e4351bb555e4dca08e6da8e58b2bcd070be3b5274d51eed">CommonErrorReason.ALREADY_EXISTS</a>, 
@@ -2025,16 +2035,6 @@ Enumerations</h2></td></tr>
 <br/>
  }</td></tr>
 <tr class="separator:a3f61d57ff57dfad6dcaf39f319eb4468"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af37f5611726d51a8fe18d85fc48fc63f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af37f5611726d51a8fe18d85fc48fc63f">EntityChildrenLimitReachedErrorReason</a> { <br/>
-&#160;&#160;<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af37f5611726d51a8fe18d85fc48fc63fa615e6f6351521de1a0a47a49e0c96c91">EntityChildrenLimitReachedErrorReason.LINE_ITEM_LIMIT_FOR_ORDER_REACHED</a>, 
-<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af37f5611726d51a8fe18d85fc48fc63faa024300e769cd19f9c3a85b3096493ce">EntityChildrenLimitReachedErrorReason.CREATIVE_ASSOCIATION_LIMIT_FOR_LINE_ITEM_REACHED</a>, 
-<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af37f5611726d51a8fe18d85fc48fc63fa19fba452d82b3409073a412fc76dfa46">EntityChildrenLimitReachedErrorReason.AD_UNIT_LIMIT_FOR_PLACEMENT_REACHED</a>, 
-<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af37f5611726d51a8fe18d85fc48fc63fa3d8814c3c83ebfeaf1d2b82b276b0249">EntityChildrenLimitReachedErrorReason.TARGETING_EXPRESSION_LIMIT_FOR_LINE_ITEM_REACHED</a>, 
-<br/>
-&#160;&#160;<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af37f5611726d51a8fe18d85fc48fc63fa696b031073e74bf2cb98e5ef201d4aa3">EntityChildrenLimitReachedErrorReason.UNKNOWN</a>
-<br/>
- }</td></tr>
-<tr class="separator:af37f5611726d51a8fe18d85fc48fc63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85fa523c3c66c6f2ab747ff3c23370e3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a85fa523c3c66c6f2ab747ff3c23370e3">DayPartTargetingErrorReason</a> { <br/>
 &#160;&#160;<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a85fa523c3c66c6f2ab747ff3c23370e3a0f0871be63b50f67c19f1572d4b0a727">DayPartTargetingErrorReason.INVALID_HOUR</a>, 
 <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a85fa523c3c66c6f2ab747ff3c23370e3a13c22c27a0ea50f3fa722f6c9375f1f5">DayPartTargetingErrorReason.INVALID_MINUTE</a>, 
@@ -11242,7 +11242,7 @@ Enumerations</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html">v201408</a></li>
-    <li class="footer">Generated on Tue Apr 28 2015 13:02:43 for Ads API .NET library by
+    <li class="footer">Generated on Wed May 20 2015 12:43:54 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

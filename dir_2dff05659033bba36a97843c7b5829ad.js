@@ -1,5 +1,0 @@
-var dir_2dff05659033bba36a97843c7b5829ad =
-[
-    [ "CSharp", "dir_763e6f158ff99f92ab809912dc756618.html", "dir_763e6f158ff99f92ab809912dc756618" ],
-    [ "Wcf", "dir_4b9961034d9849ae34907694eb4d987d.html", "dir_4b9961034d9849ae34907694eb4d987d" ]
-];

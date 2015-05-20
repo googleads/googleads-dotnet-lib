@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201505_1_1_trigger_workflow_external_condition_requests =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201505_1_1_trigger_workflow_external_condition_requests.html#a497bf96bed6a5da3b2e383152222817a", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201505_1_1_trigger_workflow_external_condition_requests.html#a64d662ea265ebb4cb3724f14dc8033ad", null ]
+];
