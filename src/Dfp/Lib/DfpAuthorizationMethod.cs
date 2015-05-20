@@ -20,11 +20,6 @@ namespace Google.Api.Ads.Dfp.Lib {
   /// </summary>
   public enum DfpAuthorizationMethod {
     /// <summary>
-    /// ClientLogin API.
-    /// </summary>
-    ClientLogin,
-
-    /// <summary>
     /// OAuth 2.0 draft 10 API.
     /// </summary>
     OAuth2

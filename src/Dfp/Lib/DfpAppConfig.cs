@@ -68,7 +68,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// Default value for authorizationMethod.
     /// </summary>
     private const DfpAuthorizationMethod DEFAULT_AUTHORIZATION_METHOD =
-        DfpAuthorizationMethod.ClientLogin;
+        DfpAuthorizationMethod.OAuth2;
 
     /// <summary>
     /// The default value for application name.

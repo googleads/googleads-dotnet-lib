@@ -44,11 +44,6 @@ namespace Google.Api.Ads.Dfp.Lib {
     private const string OAUTH_TOKEN_EXPIRED_ERROR = "AuthenticationError.AUTHENTICATION_FAILED";
 
     /// <summary>
-    /// The service name for use with ClientLogin server.
-    /// </summary>
-    private const string SERVICE_NAME = "gam";
-
-    /// <summary>
     /// Gets a custom exception that wraps the SOAP exception thrown
     /// by the server.
     /// </summary>
@@ -113,12 +108,8 @@ namespace Google.Api.Ads.Dfp.Lib {
         } else {
           throw new DfpApiException(null, DfpErrorMessages.OAuthProviderCannotBeNull);
         }
-      } else if (config.AuthorizationMethod == DfpAuthorizationMethod.ClientLogin) {
-        string authToken = (!string.IsNullOrEmpty(config.AuthToken)) ? config.AuthToken :
-            new AuthToken(config, SERVICE_NAME).GetToken();
-        ClientLogin clientLogin = (header.authentication as ClientLogin) ?? new ClientLogin();
-        clientLogin.token = authToken;
-        header.authentication = clientLogin;
+      } else {
+        throw new DfpApiException(null, DfpErrorMessages.UnsupportedAuthorizationMethod);
       }
 
       ContextStore.AddKey("OAuthHeader", oAuthHeader);

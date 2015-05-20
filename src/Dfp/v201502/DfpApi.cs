@@ -158,6 +158,7 @@ Contact[] contacts) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomFieldValueError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomCreativeError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeTemplateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeSetError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativePreviewError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeError))]
@@ -238,7 +239,6 @@ Contact[] contacts) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdRulePriorityError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdRuleFrequencyCapError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdRuleDateError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeTemplateError))]
   public abstract partial class ApiError {
     private string fieldPathField;
 
@@ -5137,6 +5137,52 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     CUSTOM_CREATIVE_NOT_ALLOWED,
     MISSING_INTERSTITIAL_MACRO,
     DUPLICATE_ASSET_IN_MACROS,
+    UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
+  public partial class CreativeTemplateError : ApiError {
+    private CreativeTemplateErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public CreativeTemplateErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeTemplateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
+  public enum CreativeTemplateErrorReason {
+    CANNOT_PARSE_CREATIVE_TEMPLATE,
+    VARIABLE_DUPLICATE_UNIQUE_NAME,
+    VARIABLE_INVALID_UNIQUE_NAME,
+    LIST_CHOICE_DUPLICATE_VALUE,
+    LIST_CHOICE_NEEDS_DEFAULT,
+    LIST_CHOICES_EMPTY,
+    NO_TARGET_PLATFORMS,
+    MULTIPLE_TARGET_PLATFORMS,
+    UNRECOGNIZED_PLACEHOLDER,
+    PLACEHOLDERS_NOT_IN_FORMATTER,
+    MISSING_INTERSTITIAL_MACRO,
     UNKNOWN
   }
 
@@ -10464,9 +10510,9 @@ Company[] companies) {
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201502", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201502", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public virtual Package[] createPackages([System.Xml.Serialization.XmlElementAttribute("packageDtos")]
-Package[] packageDtos) {
-      object[] results = this.Invoke("createPackages", new object[] { packageDtos });
+    public virtual Package[] createPackages([System.Xml.Serialization.XmlElementAttribute("packages")]
+Package[] packages) {
+      object[] results = this.Invoke("createPackages", new object[] { packages });
       return ((Package[]) (results[0]));
     }
 
@@ -10492,9 +10538,9 @@ Package[] packageDtos) {
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201502", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201502", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
-    public virtual Package[] updatePackages([System.Xml.Serialization.XmlElementAttribute("packageDtos")]
-Package[] packageDtos) {
-      object[] results = this.Invoke("updatePackages", new object[] { packageDtos });
+    public virtual Package[] updatePackages([System.Xml.Serialization.XmlElementAttribute("packages")]
+Package[] packages) {
+      object[] results = this.Invoke("updatePackages", new object[] { packages });
       return ((Package[]) (results[0]));
     }
   }
@@ -31207,15 +31253,10 @@ AdRule[] adRules) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
   public partial class CreativeTemplatePage {
     private int totalResultSetSizeField;
-
     private bool totalResultSetSizeFieldSpecified;
-
     private int startIndexField;
-
     private bool startIndexFieldSpecified;
-
     private CreativeTemplate[] resultsField;
-
     public int totalResultSetSize {
       get { return this.totalResultSetSizeField; }
       set {
@@ -31223,14 +31264,12 @@ AdRule[] adRules) {
         this.totalResultSetSizeSpecified = true;
       }
     }
-
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool totalResultSetSizeSpecified {
       get { return this.totalResultSetSizeFieldSpecified; }
       set { this.totalResultSetSizeFieldSpecified = value; }
     }
-
     public int startIndex {
       get { return this.startIndexField; }
       set {
@@ -31238,65 +31277,17 @@ AdRule[] adRules) {
         this.startIndexSpecified = true;
       }
     }
-
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool startIndexSpecified {
       get { return this.startIndexFieldSpecified; }
       set { this.startIndexFieldSpecified = value; }
     }
-
     [System.Xml.Serialization.XmlElementAttribute("results")]
     public CreativeTemplate[] results {
       get { return this.resultsField; }
       set { this.resultsField = value; }
     }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
-  public partial class CreativeTemplateError : ApiError {
-    private CreativeTemplateErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public CreativeTemplateErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeTemplateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
-  public enum CreativeTemplateErrorReason {
-    CANNOT_PARSE_CREATIVE_TEMPLATE,
-    VARIABLE_DUPLICATE_UNIQUE_NAME,
-    VARIABLE_INVALID_UNIQUE_NAME,
-    LIST_CHOICE_DUPLICATE_VALUE,
-    LIST_CHOICE_NEEDS_DEFAULT,
-    LIST_CHOICES_EMPTY,
-    NO_TARGET_PLATFORMS,
-    MULTIPLE_TARGET_PLATFORMS,
-    UNRECOGNIZED_PLACEHOLDER,
-    PLACEHOLDERS_NOT_IN_FORMATTER,
-    MISSING_INTERSTITIAL_MACRO,
-    UNKNOWN
   }
   public interface IContactService {
     RequestHeader RequestHeader {
@@ -31455,10 +31446,10 @@ AdRule[] adRules) {
       get;
       set;
     }
-    Package[] createPackages(Package[] packageDtos);
+    Package[] createPackages(Package[] packages);
     PackagePage getPackagesByStatement(Statement filterStatement);
     UpdateResult performPackageAction(PackageAction packageAction, Statement filterStatement);
-    Package[] updatePackages(Package[] packageDtos);
+    Package[] updatePackages(Package[] packages);
   }
   public interface ICreativeWrapperService {
     RequestHeader RequestHeader {

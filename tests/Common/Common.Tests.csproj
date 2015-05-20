@@ -47,11 +47,8 @@
     <Compile Include="Lib\AdsOAuthExceptionTests.cs" />
     <Compile Include="Lib\AdsExceptionTests.cs" />
     <Compile Include="Lib\AppConfigBaseTests.cs" />
-    <Compile Include="Lib\AuthTokenTest.cs" />
-    <Compile Include="ClientLoginRequestInterceptor.cs" />
     <Compile Include="HttpMessage.cs" />
     <Compile Include="Lib\OAuth2JwtClaimsetTests.cs" />
-    <Compile Include="Lib\DefaultAuthTokenCacheTests.cs" />
     <Compile Include="Logging\UrlEncodedBodyFormatterTests.cs" />
     <Compile Include="Logging\KeyValueMessageFormatterTests.cs" />
     <Compile Include="Logging\TraceHelperTests.cs" />
@@ -73,7 +70,6 @@
     <Compile Include="Util\CsvFileTests.cs" />
     <Compile Include="Util\Reports\ReportResponseTests.cs" />
     <Compile Include="WebRequestInterceptor.cs" />
-    <Compile Include="Mocks\MockAuthTokenCache.cs" />
     <Compile Include="Mocks\MockAdsClient.cs" />
     <Compile Include="Mocks\MockAdsException.cs" />
     <Compile Include="Mocks\MockAdsUser.cs" />

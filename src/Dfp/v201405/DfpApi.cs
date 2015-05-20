@@ -1195,6 +1195,8 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotNullError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InternalApiError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeatureError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityLimitReachedError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityChildrenLimitReachedError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CommonError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CollectionSizeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthenticationError))]
@@ -1234,8 +1236,6 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(GenericTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FrequencyCapError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ForecastError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityLimitReachedError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityChildrenLimitReachedError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DayPartTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateTimeRangeTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomTargetingError))]
@@ -1790,6 +1790,54 @@ FirstPartyAudienceSegment[] segments) {
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FeatureError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
   public enum FeatureErrorReason {
     MISSING_FEATURE,
+    UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public partial class EntityLimitReachedError : ApiError {
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public partial class EntityChildrenLimitReachedError : ApiError {
+    private EntityChildrenLimitReachedErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public EntityChildrenLimitReachedErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityChildrenLimitReachedError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
+  public enum EntityChildrenLimitReachedErrorReason {
+    LINE_ITEM_LIMIT_FOR_ORDER_REACHED,
+    CREATIVE_ASSOCIATION_LIMIT_FOR_LINE_ITEM_REACHED,
+    AD_UNIT_LIMIT_FOR_PLACEMENT_REACHED,
+    TARGETING_EXPRESSION_LIMIT_FOR_LINE_ITEM_REACHED,
     UNKNOWN
   }
 
@@ -6561,54 +6609,6 @@ FirstPartyAudienceSegment[] segments) {
     SUCCESS,
     ZERO_LENGTH_RESERVATION,
     EXCEEDED_QUOTA,
-    UNKNOWN
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
-  public partial class EntityLimitReachedError : ApiError {
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
-  public partial class EntityChildrenLimitReachedError : ApiError {
-    private EntityChildrenLimitReachedErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public EntityChildrenLimitReachedErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityChildrenLimitReachedError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201405")]
-  public enum EntityChildrenLimitReachedErrorReason {
-    LINE_ITEM_LIMIT_FOR_ORDER_REACHED,
-    CREATIVE_ASSOCIATION_LIMIT_FOR_LINE_ITEM_REACHED,
-    AD_UNIT_LIMIT_FOR_PLACEMENT_REACHED,
-    TARGETING_EXPRESSION_LIMIT_FOR_LINE_ITEM_REACHED,
     UNKNOWN
   }
 

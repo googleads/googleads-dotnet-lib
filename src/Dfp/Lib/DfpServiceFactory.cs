@@ -34,8 +34,6 @@ namespace Google.Api.Ads.Dfp.Lib {
   /// </summary>
   public class DfpServiceFactory : ServiceFactory {
 
-    private const string FINAL_CLIENT_LOGIN_VERSION = "v201311";
-
     /// <summary>
     /// The request header to be used with DFP API services.
     /// </summary>
@@ -117,13 +115,6 @@ namespace Google.Api.Ads.Dfp.Lib {
       if (!(signature is DfpServiceSignature)) {
         throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
             DfpErrorMessages.SignatureIsOfWrongType, typeof(DfpServiceSignature)));
-      }
-      DfpAppConfig dfpConfig = (DfpAppConfig) Config;
-      DfpServiceSignature dfpSignature = signature as DfpServiceSignature;
-      String version = dfpSignature.Version;
-      if (dfpConfig.AuthorizationMethod == DfpAuthorizationMethod.ClientLogin
-          && version.CompareTo(FINAL_CLIENT_LOGIN_VERSION) > 0) {
-        throw new DfpException(string.Format(DfpErrorMessages.ClientLoginNotSupported, version));
       }
     }
   }

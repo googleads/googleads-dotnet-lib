@@ -41,12 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Headers\Authentication.cs" />
-    <Compile Include="Headers\ClientLogin.cs" />
     <Compile Include="Headers\ResponseHeaderStub.cs" />
     <Compile Include="Headers\DfpSoapHeader.cs" />
     <Compile Include="Headers\RequestHeaderStub.cs" />
     <Compile Include="Headers\OAuth.cs" />
     <Compile Include="Lib\DfpAuthorizationMethod.cs" />
+    <Compile Include="Util\v201505\DateTimeUtilities.cs" />
+    <Compile Include="Util\v201505\PqlUtilities.cs" />
+    <Compile Include="Util\v201505\StatementBuilder.cs" />
+    <Compile Include="Util\v201505\ReportUtilities.cs" />
     <Compile Include="Util\v201502\DateTimeUtilities.cs" />
     <Compile Include="Util\v201502\PqlUtilities.cs" />
     <Compile Include="Util\v201502\StatementBuilder.cs" />
@@ -91,6 +94,8 @@
     <Compile Include="v201411\DfpServiceV201411.cs" />
     <Compile Include="v201502\DfpApi.cs" />
     <Compile Include="v201502\DfpServiceV201502.cs" />
+    <Compile Include="v201505\DfpApi.cs" />
+    <Compile Include="v201505\DfpServiceV201505.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

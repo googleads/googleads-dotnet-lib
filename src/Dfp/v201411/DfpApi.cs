@@ -134,6 +134,7 @@ Contact[] contacts) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseRateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseRateActionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequiredCollectionError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityLimitReachedError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdExclusionRuleError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TypeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateInstantiatedCreativeError))]
@@ -149,9 +150,9 @@ Contact[] contacts) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidPhoneNumberError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityLimitReachedError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomFieldValueError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomCreativeError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeTemplateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeSetError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeAssetMacroError))]
@@ -230,7 +231,6 @@ Contact[] contacts) {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdRulePriorityError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdRuleFrequencyCapError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdRuleDateError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreativeTemplateError))]
   public abstract partial class ApiError {
     private string fieldPathField;
 
@@ -3040,6 +3040,15 @@ AdExclusionRule[] adExclusionRules) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201411")]
+  public partial class EntityLimitReachedError : ApiError {
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201411")]
   public partial class AdExclusionRuleError : ApiError {
     private AdExclusionRuleErrorReason reasonField;
 
@@ -4596,15 +4605,6 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201411")]
-  public partial class EntityLimitReachedError : ApiError {
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201411")]
   public partial class CustomFieldValueError : ApiError {
     private CustomFieldValueErrorReason reasonField;
 
@@ -4675,6 +4675,52 @@ LineItemCreativeAssociation[] lineItemCreativeAssociations) {
     CUSTOM_CREATIVE_NOT_ALLOWED,
     MISSING_INTERSTITIAL_MACRO,
     DUPLICATE_ASSET_IN_MACROS,
+    UNKNOWN
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201411")]
+  public partial class CreativeTemplateError : ApiError {
+    private CreativeTemplateErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public CreativeTemplateErrorReason reason {
+      get { return this.reasonField; }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get { return this.reasonFieldSpecified; }
+      set { this.reasonFieldSpecified = value; }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeTemplateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201411")]
+  public enum CreativeTemplateErrorReason {
+    CANNOT_PARSE_CREATIVE_TEMPLATE,
+    VARIABLE_DUPLICATE_UNIQUE_NAME,
+    VARIABLE_INVALID_UNIQUE_NAME,
+    LIST_CHOICE_DUPLICATE_VALUE,
+    LIST_CHOICE_NEEDS_DEFAULT,
+    LIST_CHOICES_EMPTY,
+    NO_TARGET_PLATFORMS,
+    MULTIPLE_TARGET_PLATFORMS,
+    UNRECOGNIZED_PLACEHOLDER,
+    PLACEHOLDERS_NOT_IN_FORMATTER,
+    MISSING_INTERSTITIAL_MACRO,
     UNKNOWN
   }
 
@@ -29274,15 +29320,10 @@ AdRule[] adRules) {
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201411")]
   public partial class CreativeTemplatePage {
     private int totalResultSetSizeField;
-
     private bool totalResultSetSizeFieldSpecified;
-
     private int startIndexField;
-
     private bool startIndexFieldSpecified;
-
     private CreativeTemplate[] resultsField;
-
     public int totalResultSetSize {
       get { return this.totalResultSetSizeField; }
       set {
@@ -29290,14 +29331,12 @@ AdRule[] adRules) {
         this.totalResultSetSizeSpecified = true;
       }
     }
-
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool totalResultSetSizeSpecified {
       get { return this.totalResultSetSizeFieldSpecified; }
       set { this.totalResultSetSizeFieldSpecified = value; }
     }
-
     public int startIndex {
       get { return this.startIndexField; }
       set {
@@ -29305,65 +29344,17 @@ AdRule[] adRules) {
         this.startIndexSpecified = true;
       }
     }
-
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     [EditorBrowsable(EditorBrowsableState.Never)]
     public bool startIndexSpecified {
       get { return this.startIndexFieldSpecified; }
       set { this.startIndexFieldSpecified = value; }
     }
-
     [System.Xml.Serialization.XmlElementAttribute("results")]
     public CreativeTemplate[] results {
       get { return this.resultsField; }
       set { this.resultsField = value; }
     }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201411")]
-  public partial class CreativeTemplateError : ApiError {
-    private CreativeTemplateErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public CreativeTemplateErrorReason reason {
-      get { return this.reasonField; }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get { return this.reasonFieldSpecified; }
-      set { this.reasonFieldSpecified = value; }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeTemplateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201411")]
-  public enum CreativeTemplateErrorReason {
-    CANNOT_PARSE_CREATIVE_TEMPLATE,
-    VARIABLE_DUPLICATE_UNIQUE_NAME,
-    VARIABLE_INVALID_UNIQUE_NAME,
-    LIST_CHOICE_DUPLICATE_VALUE,
-    LIST_CHOICE_NEEDS_DEFAULT,
-    LIST_CHOICES_EMPTY,
-    NO_TARGET_PLATFORMS,
-    MULTIPLE_TARGET_PLATFORMS,
-    UNRECOGNIZED_PLACEHOLDER,
-    PLACEHOLDERS_NOT_IN_FORMATTER,
-    MISSING_INTERSTITIAL_MACRO,
-    UNKNOWN
   }
   public interface IContactService {
     RequestHeader RequestHeader {

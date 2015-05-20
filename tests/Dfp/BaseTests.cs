@@ -34,14 +34,11 @@ namespace Google.Api.Ads.Dfp.Tests {
     /// <summary>
     /// Default public constructor.
     /// </summary>
-    /// <remarks>The constructor adds a 2000 ms delay between running individual
-    /// tests so that we don't hit the ClientLogin server frequently and cause
-    /// it throw captcha errors. You shouldn't do this in your code, instead
-    /// you should generate an authtoken, set it in your App.config and reuse
-    /// it to avoid performance issues.
+    /// <remarks>The constructor adds a 200 ms delay between running individual
+    /// tests so that we don't hit the server frequently and cause quota errors.
     /// </remarks>
     public BaseTests() {
-      Thread.Sleep(2000);
+      Thread.Sleep(200);
     }
   }
 }

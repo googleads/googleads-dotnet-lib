@@ -21,7 +21,6 @@ namespace Google.Api.Ads.Dfp.Headers {
   /// <summary>
   /// The authentication header.
   /// </summary>
-  [XmlIncludeAttribute(typeof(ClientLogin))]
   [XmlIncludeAttribute(typeof(OAuth))]
   [XmlRootAttribute(Namespace = "https://www.google.com/apis/ads/publisher{version}")]
   public abstract class Authentication {

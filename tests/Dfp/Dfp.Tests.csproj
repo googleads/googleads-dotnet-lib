@@ -164,6 +164,20 @@
     <Compile Include="v201502\StatementBuilderTests.cs" />
     <Compile Include="v201502\TestUtils.cs" />
     <Compile Include="v201502\UserServiceTests.cs" />
+    <Compile Include="v201505\CompanyServiceTests.cs" />
+    <Compile Include="v201505\CreativeServiceTests.cs" />
+    <Compile Include="v201505\DateTimeUtilitiesTests.cs" />
+    <Compile Include="v201505\ForecastServiceTests.cs" />
+    <Compile Include="v201505\InventoryServiceTests.cs" />
+    <Compile Include="v201505\LineItemCreativeAssociationServiceTests.cs" />
+    <Compile Include="v201505\LineItemServiceTests.cs" />
+    <Compile Include="v201505\OrderServiceTests.cs" />
+    <Compile Include="v201505\PlacementServiceTests.cs" />
+    <Compile Include="v201505\PqlUtilitiesTests.cs" />
+    <Compile Include="v201505\ReportServiceTests.cs" />
+    <Compile Include="v201505\StatementBuilderTests.cs" />
+    <Compile Include="v201505\TestUtils.cs" />
+    <Compile Include="v201505\UserServiceTests.cs" />
     <Compile Include="BaseTests.cs" />
     <Compile Include="ServiceCreationTests.cs" />
   </ItemGroup>

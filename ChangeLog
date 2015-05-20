@@ -1,3 +1,24 @@
+18.12.0
+=======
+AdWords:
+  - No changes.
+
+AdXBuyer:
+  - No changes.
+
+DFA:
+  - No changes.
+
+DFP:
+  - Added support for v201505.
+  - Updated report utility to use the new getReportJobStatus method.
+  - Added advanced ProposalLineItem actions.
+  - Updated DateTimeUtilities to require time zone IDs.
+  - Removed v201405 examples.
+
+Common:
+  - Removed support for ClientLogin.
+
 18.11.0
 =======
 AdWords:

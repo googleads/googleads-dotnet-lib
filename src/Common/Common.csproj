@@ -55,10 +55,6 @@
     <Compile Include="Lib\AdsUser.cs" />
     <Compile Include="Lib\AppConfig.cs" />
     <Compile Include="Lib\AppConfigBase.cs" />
-    <Compile Include="Lib\AuthToken.cs" />
-    <Compile Include="Lib\AuthTokenCache.cs" />
-    <Compile Include="Lib\AuthTokenErrorCode.cs" />
-    <Compile Include="Lib\AuthTokenException.cs" />
     <Compile Include="Lib\Configurable.cs" />
     <Compile Include="Logging\KeyValueMessageFormatter.cs" />
     <Compile Include="Util\DateTimeProvider.cs" />
@@ -67,7 +63,6 @@
     <Compile Include="Lib\CredentialsExpiredException.cs" />
     <Compile Include="Lib\ErrorHandler.cs" />
     <Compile Include="Lib\ContextStore.cs" />
-    <Compile Include="Lib\DefaultAuthTokenCache.cs" />
     <Compile Include="Lib\AdsOAuthProviderForApplications.cs" />
     <Compile Include="Lib\AdsOAuthProviderForServiceAccounts.cs" />
     <Compile Include="Logging\DefaultBodyFormatter.cs" />
