@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_third_party_redirect_ads =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_third_party_redirect_ads.html#a60b042686a8ed81f606467afb0ae4c2f", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_third_party_redirect_ads.html#a1196ebbcea6224f553416c7c90369020", null ]
+];

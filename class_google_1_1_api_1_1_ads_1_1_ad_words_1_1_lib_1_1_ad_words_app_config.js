@@ -9,6 +9,7 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_app_config =
     [ "DeveloperToken", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_app_config.html#a43041b441f183cc35cab707633f7cf56", null ],
     [ "GMBLoginEmail", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_app_config.html#aa1e44bf871a15542d23df8ff9b2515c6", null ],
     [ "GMBOAuth2RefreshToken", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_app_config.html#ad05f65e5b17151c216932dea4df29c9c", null ],
+    [ "IncludeZeroImpressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_app_config.html#acdeb659b286994273fdd631f8e9301ca", null ],
     [ "MerchantCenterId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_app_config.html#a7e7fe132d738bcea166a63060a6c114b", null ],
     [ "SkipColumnHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_app_config.html#ad9d4f73f6feabac09e793c2cdfa4fd60", null ],
     [ "SkipReportHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_app_config.html#a7c17d669b8d2e1ae3ebf0b4d3c1ca474", null ],

@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_manual_c_p_c_ad_group_criterion_experiment_bid_multiplier =
+[
+    [ "maxCpcMultiplier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_manual_c_p_c_ad_group_criterion_experiment_bid_multiplier.html#a235d75928300bc004d39d8549162b20d", null ],
+    [ "multiplierSource", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_manual_c_p_c_ad_group_criterion_experiment_bid_multiplier.html#a7c6fbc50c3c9d95e916879b33d1d9e6d", null ],
+    [ "multiplierSourceSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_manual_c_p_c_ad_group_criterion_experiment_bid_multiplier.html#ad3e41ce18212262c34b85d64226ef107", null ]
+];
