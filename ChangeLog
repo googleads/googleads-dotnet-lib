@@ -1,3 +1,30 @@
+18.13.0
+=======
+
+AdWords:
+  - Added support for AdWords API v201506.
+  - Added support for includeZeroImpressions HTTP header in ReportUtilites class. This header may be
+  controlled using the new IncludeZeroImpressions setting in App.config / Web.config. See the
+  Reporting code examples in v201506 for more details on how to use this feature.
+  - AddCampaignTargetingCriteria example accepts an optional feedId in v201506. This is required
+  when creating LocationGroups criteria for distance targeting.
+  - AddGoogleMyBusinessLocationExtensions example was enhanced in v201506 to reuse the AdWords API
+  access token to handle the most common case where GMB and AdWords accounts share the same login
+  email.
+  - Enhanced ExampleUtilities class to handle Nullable arguments.
+
+AdXBuyer:
+  -
+
+DFA:
+  -
+
+DFP:
+  -
+
+Common:
+  - Fixed the namespace for Common\Util\PreconditionUtilities.cs class.
+
 18.12.0
 =======
 AdWords:

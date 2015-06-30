@@ -17,18 +17,16 @@
 using Google.Api.Ads.Common.Lib;
 
 using System;
-using System.Configuration;
 using System.Collections;
-using System.Collections.Specialized;
-using System.IO;
-using System.Net;
-using System.Xml;
+using System.Configuration;
 
 namespace Google.Api.Ads.AdWords.Lib {
+
   /// <summary>
   /// This class reads the configuration keys from App.config.
   /// </summary>
   public class AdWordsAppConfig : AppConfigBase {
+
     /// <summary>
     /// The short name to identify this assembly.
     /// </summary>
@@ -92,6 +90,11 @@ namespace Google.Api.Ads.AdWords.Lib {
     private const string SKIP_COLUMN_HEADER = "SkipColumnHeader";
 
     /// <summary>
+    /// Key name for includeZeroImpressions.
+    /// </summary>
+    private const string INCLUDE_ZERO_IMPRESSIONS = "IncludeZeroImpressions";
+
+    /// <summary>
     /// Default value for AdWords API URL.
     /// </summary>
     private const string DEFAULT_ADWORDSAPI_SERVER = "https://adwords.google.com";
@@ -115,6 +118,11 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Default value for skipping column header.
     /// </summary>
     private const bool DEFAULT_SKIP_COLUMN_HEADER = false;
+
+    /// <summary>
+    /// Default value for including zero impression rows.
+    /// </summary>
+    private readonly bool? DEFAULT_INCLUDE_ZERO_IMPRESSIONS = null;
 
     /// <summary>
     /// ClientCustomerId to be used in SOAP headers.
@@ -167,6 +175,19 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Flag to decide whether or not to skip column header.
     /// </summary>
     private bool skipColumnHeader;
+
+    /// <summary>
+    /// Flag to decide whether or not to include zero impression rows.
+    /// </summary>
+    /// <remarks>This setting is a three-valued logic. If this field is set to
+    /// true or false, the client library sends the value to the server, and the
+    /// server responds by including or excluding the zero impression rows. If
+    /// this value is set to null (either explicitly in the code, or by
+    /// commenting out the key in App.config / Web.config), then this value is
+    /// not sent to the server, and the server behaves as explained on
+    /// https://developers.google.com/adwords/api/docs/guides/zero-impression-reports#default_behavior.
+    /// </remarks>
+    private bool? includeZeroImpressions;
 
     /// <summary>
     /// Gets or sets the client customerId to be used in SOAP headers.
@@ -267,6 +288,26 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
+    /// Gets or sets whether zero impression rows should be skipped.
+    /// </summary>
+    /// <remarks>This setting is a three-valued logic. If this field is set to
+    /// true or false, the client library sends the value to the server, and the
+    /// server responds by including or excluding the zero impression rows. If
+    /// this value is set to null (either explicitly in the code, or by
+    /// commenting out the key in App.config / Web.config), then this value is
+    /// not sent to the server, and the server behaves as explained on
+    /// https://developers.google.com/adwords/api/docs/guides/zero-impression-reports#default_behavior.
+    /// </remarks>
+    public bool? IncludeZeroImpressions {
+      get {
+        return includeZeroImpressions;
+      }
+      set {
+        SetPropertyField("IncludeZeroImpressions", ref includeZeroImpressions, value);
+      }
+    }
+
+    /// <summary>
     /// Gets or sets the useragent to be used in SOAP headers.
     /// </summary>
     public string UserAgent {
@@ -319,6 +360,7 @@ namespace Google.Api.Ads.AdWords.Lib {
       skipReportHeader = DEFAULT_SKIP_REPORT_HEADER;
       skipReportSummary = DEFAULT_SKIP_REPORT_SUMMARY;
       skipColumnHeader = DEFAULT_SKIP_COLUMN_HEADER;
+      includeZeroImpressions = DEFAULT_INCLUDE_ZERO_IMPRESSIONS;
 
       ReadSettings((Hashtable) ConfigurationManager.GetSection("AdWordsApi"));
     }
@@ -358,6 +400,15 @@ namespace Google.Api.Ads.AdWords.Lib {
           out skipReportSummary);
       bool.TryParse(ReadSetting(settings, SKIP_COLUMN_HEADER, skipColumnHeader.ToString()),
           out skipColumnHeader);
+
+      bool tempFlag = false;
+
+      if (!bool.TryParse(ReadSetting(settings, INCLUDE_ZERO_IMPRESSIONS, ""),
+          out tempFlag)) {
+        includeZeroImpressions = DEFAULT_INCLUDE_ZERO_IMPRESSIONS;
+      } else {
+        includeZeroImpressions = tempFlag;
+      }
     }
   }
 }

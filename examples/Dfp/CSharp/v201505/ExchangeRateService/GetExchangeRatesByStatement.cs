@@ -58,7 +58,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
           (ExchangeRateService) user.GetService(DfpService.v201505.ExchangeRateService);
 
       // Set the currency code to get the exchange rate for.
-      long currencyCode = long.Parse(_T("INSERT_CURRENCY_CODE_HERE"));
+      string currencyCode = "INSERT_CURRENCY_CODE_HERE";
 
       // Create a statement to select a single exchange rate by currency code.
       StatementBuilder statementBuilder = new StatementBuilder()

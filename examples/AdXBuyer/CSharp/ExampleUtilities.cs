@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Reflection;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp {
@@ -67,6 +68,25 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
     }
 
     /// <summary>
+    /// Determines whether the specified type is Nullable.
+    /// </summary>
+    /// <param name="type">The type.</param>
+    /// <returns>True, if the type is nullable, false otherwise.</returns>
+    public static bool IsNullable(Type type) {
+      return type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>);
+    }
+
+    /// <summary>
+    /// Gets the underlying type of a given type.
+    /// </summary>
+    /// <param name="type">The type.</param>
+    /// <returns>The type, if the given type is not nullable, the underlying
+    /// type if it is nullable.</returns>
+    public static Type GetUnderlyingType(Type type) {
+      return IsNullable(type) ? type.GetGenericArguments()[0] : type;
+    }
+
+    /// <summary>
     /// Gets the parameters for running the code example.
     /// </summary>
     /// <param name="methodInfo">The method info for Run method in code
@@ -77,21 +97,26 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
       ParameterInfo[] paramInfos = methodInfo.GetParameters();
       for (int i = 1; i < paramInfos.Length; i++) {
         ParameterInfo paramInfo = paramInfos[i];
+
+        Type underlyingType = GetUnderlyingType(paramInfo.ParameterType);
+        bool isNullable = IsNullable(underlyingType);
+        if (isNullable) {
+          Console.Write("[Optional] ");
+        }
+
         Console.Write("Enter {0}: ", paramInfo.Name);
         string value = Console.ReadLine();
         object objValue = null;
-        if (paramInfo.ParameterType == typeof(long)) {
-          objValue = long.Parse(value);
-        } else if (paramInfo.ParameterType == typeof(double)) {
-          objValue = double.Parse(value);
-        } else if (paramInfo.ParameterType == typeof(string)) {
-          objValue = value;
-        } else if (paramInfo.ParameterType.IsEnum) {
-          objValue = Enum.Parse(paramInfo.ParameterType, value);
-        } else {
-          throw new ApplicationException("Unknown parameter type : " +
-              paramInfo.ParameterType.FullName);
+
+        TypeConverter typeConverter = TypeDescriptor.GetConverter(underlyingType);
+        try {
+          objValue = typeConverter.ConvertFromString(value);
+        } catch {
+          if (!isNullable) {
+            throw;
+          }
         }
+
         retval.Add(objValue);
       }
       return retval;

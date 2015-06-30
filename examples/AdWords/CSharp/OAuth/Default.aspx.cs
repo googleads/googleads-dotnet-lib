@@ -16,7 +16,7 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.Reports;
-using Google.Api.Ads.AdWords.v201502;
+using Google.Api.Ads.AdWords.v201506;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util.Reports;
 
@@ -92,12 +92,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
       selector.predicates = new Predicate[] {predicate};
 
       definition.selector = selector;
-      definition.includeZeroImpressions = true;
+
+      // Optional: Include zero impression rows.
+      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+      config.IncludeZeroImpressions = true;
 
       string filePath = Path.GetTempFileName();
 
       try {
-        ReportUtilities utilities = new ReportUtilities(user, "v201502", definition);
+        ReportUtilities utilities = new ReportUtilities(user, "v201506", definition);
         using (ReportResponse response = utilities.GetResponse()) {
           response.Save(filePath);
         }
@@ -132,7 +135,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
 
       try {
         CampaignService service =
-            (CampaignService) user.GetService(AdWordsService.v201502.CampaignService);
+            (CampaignService) user.GetService(AdWordsService.v201506.CampaignService);
 
         CampaignPage page = service.get(selector);
 

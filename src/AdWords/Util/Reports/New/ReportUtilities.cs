@@ -38,7 +38,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Default report version.
     /// </summary>
-    private const string DEFAULT_REPORT_VERSION = "v201502";
+    private const string DEFAULT_REPORT_VERSION = "v201506";
 
     /// <summary>
     /// Sets the reporting API version to use.
@@ -245,6 +245,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       request.Headers.Add("skipReportHeader", config.SkipReportHeader.ToString().ToLower());
       request.Headers.Add("skipReportSummary", config.SkipReportSummary.ToString().ToLower());
       request.Headers.Add("skipColumnHeader", config.SkipColumnHeader.ToString().ToLower());
+
+      // Send the includeZeroImpressions header only if the user explicitly
+      // requested it through the config object.
+      if (config.IncludeZeroImpressions.HasValue) {
+        request.Headers.Add("includeZeroImpressions", config.IncludeZeroImpressions.ToString().
+            ToLower());
+      }
 
       using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
         writer.Write(postBody);

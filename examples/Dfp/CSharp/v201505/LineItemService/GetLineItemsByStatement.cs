@@ -63,7 +63,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
       // Create a statement to only select line items that need creatives from a
       // given order.
       StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("orderId = :orderId AND status = :status")
+          .Where("orderId = :orderId AND isMissingCreatives = :isMissingCreatives")
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
           .AddValue("orderId", orderId)

@@ -16,6 +16,7 @@
 
 Imports System
 Imports System.Collections.Generic
+Imports System.ComponentModel
 Imports System.Reflection
 
 Namespace Google.Api.Ads.AdWords.Examples.VB
@@ -75,34 +76,67 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
     End Function
 
     ''' <summary>
-    ''' Gets the parameters required to run the code example.
+    ''' Determines whether the specified type is Nullable.
     ''' </summary>
-    ''' <param name="methodInfo">The method info for the code example's Run
-    ''' method.</param>
-    ''' <returns>The list of parameters.</returns>
+    ''' <param name="type">The type.</param>
+    ''' <returns>True, if the type is nullable, false otherwise.</returns>
+    Public Shared Function IsNullable(ByVal type As Type) As Boolean
+      If type.IsGenericType AndAlso type.GetGenericTypeDefinition() = GetType(Nullable(Of )) Then
+        Return True
+      Else
+        Return False
+      End If
+    End Function
+
+    ''' <summary>
+    ''' Gets the underlying type of a given type.
+    ''' </summary>
+    ''' <param name="type">The type.</param>
+    ''' <returns>The type, if the given type is not nullable, the underlying
+    ''' type if it is nullable.</returns>
+    Public Shared Function GetUnderlyingType(ByVal type As Type) As Type
+      If IsNullable(type) Then
+        Return type.GetGenericArguments()(0)
+      Else
+        Return type
+      End If
+    End Function
+
+    ''' <summary>
+    ''' Gets the parameters for running the code example.
+    ''' </summary>
+    ''' <param name="methodInfo">The method info for Run method in code
+    ''' example.</param>
+    ''' <returns>An array of parameters for running the code example.</returns>
     Public Shared Function GetParameters(ByVal methodInfo As MethodInfo) As List(Of Object)
-      Dim retval As New List(Of Object)
-      Dim paramInfos As ParameterInfo() = methodInfo.GetParameters
-      Dim i As Integer
-      For i = 1 To paramInfos.Length - 1
+      Dim retval As New List(Of Object)()
+      Dim paramInfos As ParameterInfo() = methodInfo.GetParameters()
+
+      For i As Integer = 1 To paramInfos.Length
         Dim paramInfo As ParameterInfo = paramInfos(i)
-        Console.Write("Enter {0}: ", paramInfo.Name)
-        Dim value As String = Console.ReadLine
-        Dim objValue As Object = Nothing
-        If (paramInfo.ParameterType Is GetType(Long)) Then
-          objValue = Long.Parse(value)
-        ElseIf (paramInfo.ParameterType Is GetType(Double)) Then
-          objValue = Double.Parse(value)
-        ElseIf (paramInfo.ParameterType Is GetType(String)) Then
-          objValue = value
-        ElseIf (paramInfo.ParameterType.IsEnum) Then
-          objValue = [Enum].Parse(paramInfo.ParameterType, value)
-        Else
-          Throw New ApplicationException(("Unknown parameter type : " & _
-                                          paramInfo.ParameterType.FullName))
+
+        Dim underlyingType As Type = GetUnderlyingType(paramInfo.ParameterType)
+        Dim isNullable As Boolean = ExampleUtilities.IsNullable(underlyingType)
+        If isNullable Then
+          Console.Write("[Optional] ")
         End If
+
+        Console.Write("Enter {0}: ", paramInfo.Name)
+        Dim value As String = Console.ReadLine()
+        Dim objValue As Object = Nothing
+
+        Dim typeConverter As TypeConverter = TypeDescriptor.GetConverter(underlyingType)
+        Try
+          objValue = typeConverter.ConvertFromString(value)
+        Catch
+          If Not isNullable Then
+            Throw
+          End If
+        End Try
+
         retval.Add(objValue)
-      Next i
+      Next
+
       Return retval
     End Function
   End Class

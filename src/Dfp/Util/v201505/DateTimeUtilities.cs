@@ -14,6 +14,7 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
+using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.v201505;
 
 using System;

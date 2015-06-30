@@ -82,7 +82,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}" + page.totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception ex) {
         Console.WriteLine("Failed to get all placements. Exception says \"{0}\"",
             ex.Message);

@@ -15,10 +15,13 @@
 // Author: api.anash@gmail.com (Anash P. Oommen)
 // Author: Chris Seeley (https://github.com/Narwalter)
 
+using Google.Api.Ads.Common.Util;
+using Google.Api.Ads.Dfp.v201403;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Google.Api.Ads.Dfp.v201403;
+
 using DateTime = Google.Api.Ads.Dfp.v201403.DateTime;
 
 namespace Google.Api.Ads.Dfp.Util.v201403 {

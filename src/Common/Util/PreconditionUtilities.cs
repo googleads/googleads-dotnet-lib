@@ -18,7 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Google.Api.Ads.Dfp.Util {
+namespace Google.Api.Ads.Common.Util {
 
   public class PreconditionUtilities {
 
@@ -34,6 +34,17 @@ namespace Google.Api.Ads.Dfp.Util {
     }
 
     /// <summary>
+    /// Utility method for null checking arguments.
+    /// </summary>
+    /// <param name="obj">The Object to check</param>
+    /// <param name="argument">The name of the argument being checked</param>
+    public static void CheckArgument(bool condition, string message) {
+      if (!condition) {
+        throw new ArgumentException(message);
+      }
+    }
+
+    /// <summary>
     /// Utility method for checking values.
     /// </summary>
     /// <param name="value">The Object to check</param>
@@ -41,6 +52,18 @@ namespace Google.Api.Ads.Dfp.Util {
     public static void CheckNotNull(object value, string message) {
       if (value == null) {
         throw new NullReferenceException(message);
+      }
+    }
+
+    /// <summary>
+    /// Utility method for checking the state of a class or method.
+    /// </summary>
+    /// <param name="condition">The condition to check.</param>
+    /// <param name="message">The error message to use if the condition check
+    /// fails.</param>
+    public static void CheckState(bool condition, string message) {
+      if (!condition) {
+        throw new InvalidOperationException(message);
       }
     }
   }

@@ -84,7 +84,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}.", totalResultsCounter);
       } catch (Exception ex) {
-        Console.WriteLine("Failed to get contacts. Exception says \"{0}\"", ex.Message);
+        Console.WriteLine("Failed to get activities. Exception says \"{0}\"", ex.Message);
       }
     }
   }

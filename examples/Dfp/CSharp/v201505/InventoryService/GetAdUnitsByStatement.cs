@@ -22,8 +22,8 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
-  /// This code example gets the root ad unit. To create an ad unit, run
-  /// CreateAdUnits.cs.
+  /// This code example gets all child ad units of the effective root ad unit. To create an ad
+  /// unit, run CreateAdUnits.cs.
   ///
   /// Tags: InventoryService.getAdUnitsByStatement
   /// Tags: NetworkService.getCurrentNetwork
@@ -34,8 +34,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets the root ad unit. To create an ad unit, run " +
-            "CreateAdUnits.cs.";
+        return "This code example gets all child ad units of the effective root ad unit. To " +
+            "create an ad unit, run CreateAdUnits.cs.";
       }
     }
 

@@ -74,13 +74,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
           if (page.results != null) {
             int i = page.startIndex;
             foreach (Label label in page.results) {
-              StringBuilder builder = new StringBuilder();
-              foreach (LabelType labelType in label.types) {
-                builder.AppendFormat("{0} | ", labelType);
-              }
-
-              Console.WriteLine("{0}) Label with ID '{1}', name '{2}' and type '{3}' was found.",
-                  i, label.id, label.name, builder.ToString().TrimEnd(' ', '|'));
+              Console.WriteLine("{0}) Label with ID '{1}' and name '{2}' was found.",
+                  i, label.id, label.name);
               i++;
             }
           }
