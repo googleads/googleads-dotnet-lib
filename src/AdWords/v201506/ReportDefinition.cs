@@ -32,7 +32,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201502")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
   public partial class ReportDefinition : IReportDefinition {
     private long idField;
 
@@ -172,7 +172,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportDefinition.DateRangeType", Namespace = "https://adwords.google.com/api/adwords/cm/v201502")]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportDefinition.DateRangeType", Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
   public enum ReportDefinitionDateRangeType {
     TODAY,
     YESTERDAY,
@@ -192,7 +192,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201502")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
   public enum DownloadFormat {
     CSVFOREXCEL,
     CSV,

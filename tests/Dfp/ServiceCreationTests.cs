@@ -34,6 +34,7 @@ namespace Google.Api.Ads.Dfp.Tests {
   /// UnitTests for service creation.
   /// </summary>
   [TestFixture]
+  [Category("Smoke")]
   public class ServiceCreationTests : BaseTests {
 
     /// <summary>
