@@ -254,7 +254,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201506 {
     [Test]
     public void TestGetKeywordsVBExample() {
       RunExample(delegate() {
-        new VBExamples.GetKeywords().Run(user);
+        new VBExamples.GetKeywords().Run(user, adGroupId);
       });
     }
 
@@ -264,7 +264,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201506 {
     [Test]
     public void TestGetKeywordsCSharpExample() {
       RunExample(delegate() {
-        new CSharpExamples.GetKeywords().Run(user);
+        new CSharpExamples.GetKeywords().Run(user, adGroupId);
       });
     }
 

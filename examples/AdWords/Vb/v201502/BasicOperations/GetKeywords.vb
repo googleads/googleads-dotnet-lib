@@ -23,7 +23,7 @@ Imports System.IO
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' <summary>
-  ''' This code example gets all keywords in an account. To add keywords, run
+  ''' This code example gets all keywords in an ad group. To add keywords, run
   ''' AddKeywords.vb.
   '''
   ''' Tags: AdGroupCriterionService.get
@@ -38,7 +38,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Dim codeExample As New GetKeywords
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
       Catch ex As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
             ExampleUtilities.FormatException(ex))
@@ -50,7 +51,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example gets all keywords in an account. To add keywords, run " & _
+        Return "This code example gets all keywords in an ad group. To add keywords, run " & _
             "AddKeywords.vb."
       End Get
     End Property
@@ -59,21 +60,30 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    Public Sub Run(ByVal user As AdWordsUser)
+    ''' <param name="adGroupId">ID of the ad group from which keywords are
+    ''' retrieved.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService( _
           AdWordsService.v201502.AdGroupCriterionService), AdWords.v201502.AdGroupCriterionService)
 
       ' Create a selector.
       Dim selector As New Selector
-      selector.fields = New String() {"Id", "AdGroupId", "KeywordText"}
+      selector.fields = New String() {"Id", "KeywordMatchType", "KeywordText", "CriteriaType"}
 
       ' Select only keywords.
-      Dim predicate As New Predicate
-      predicate.field = "CriteriaType"
-      predicate.operator = PredicateOperator.EQUALS
-      predicate.values = New String() {"KEYWORD"}
-      selector.predicates = New Predicate() {predicate}
+      Dim criteriaPredicate As New Predicate
+      criteriaPredicate.field = "CriteriaType"
+      criteriaPredicate.operator = PredicateOperator.IN
+      criteriaPredicate.values = New String() {"KEYWORD"}
+
+      ' Restrict search to an ad group.
+      Dim adGroupPredicate As New Predicate
+      adGroupPredicate.field = "AdGroupId"
+      adGroupPredicate.operator = PredicateOperator.EQUALS
+      adGroupPredicate.values = New String() {adGroupId.ToString()}
+
+      selector.predicates = New Predicate() {adGroupPredicate, criteriaPredicate}
 
       ' Set the selector paging.
       selector.paging = New Paging
@@ -105,15 +115,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
               '
               ' to identify the criterion type.
               Dim keyword As Keyword = CType(adGroupCriterion.criterion, AdWords.v201502.Keyword)
+              Dim keywordType As String = "Keyword"
               If isNegative Then
-                Console.WriteLine("{0}) Negative keyword with ad group ID = '{1}', keyword ID " & _
-                    "= '{2}', and text = '{3}' was found.", i, adGroupCriterion.adGroupId, _
-                    keyword.id, keyword.text)
-              Else
-                Console.WriteLine("{0}) Keyword with ad group ID = '{1}', keyword ID = '{2}', " & _
-                    "text = '{3}' and matchType = '{4} was found.", i, adGroupCriterion.adGroupId, _
-                    keyword.id, keyword.text, keyword.matchType)
+                keywordType = "Negative keyword"
               End If
+
+              Console.WriteLine("{0}) {1} with text = '{2}', matchtype = '{3}', ID = '{4}' " & _
+                                "and criteria type = '{5}' was found.", i + 1, keywordType, _
+                                keyword.text, keyword.matchType, keyword.id, keyword.CriterionType)
               i += 1
             Next
           End If

@@ -23,7 +23,7 @@ using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// <summary>
-  /// This code example gets all keywords in an account. To add keywords, run
+  /// This code example gets all keywords in an ad group. To add keywords, run
   /// AddKeywords.cs.
   ///
   /// Tags: AdGroupCriterionService.get
@@ -37,7 +37,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       GetKeywords codeExample = new GetKeywords();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser());
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception ex) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(ex));
@@ -49,7 +50,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all keywords in an account. To add keywords, run " +
+        return "This code example gets all keywords in an ad group. To add keywords, run " +
             "AddKeywords.cs.";
       }
     }
@@ -58,21 +59,31 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    public void Run(AdWordsUser user) {
+    /// <param name="adGroupId">ID of the ad group from which keywords are
+    /// retrieved.</param>
+    public void Run(AdWordsUser user, long adGroupId) {
       // Get the AdGroupCriterionService.
       AdGroupCriterionService adGroupCriterionService =
-          (AdGroupCriterionService) user.GetService(AdWordsService.v201506.AdGroupCriterionService);
+          (AdGroupCriterionService) user.GetService(
+              AdWordsService.v201506.AdGroupCriterionService);
 
       // Create a selector.
       Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "AdGroupId", "KeywordText"};
+      selector.fields = new string[] { "Id", "KeywordMatchType", "KeywordText", "CriteriaType" };
 
       // Select only keywords.
-      Predicate predicate = new Predicate();
-      predicate.field = "CriteriaType";
-      predicate.@operator = PredicateOperator.EQUALS;
-      predicate.values = new string[] {"KEYWORD"};
-      selector.predicates = new Predicate[] {predicate};
+      Predicate criteriaPredicate = new Predicate();
+      criteriaPredicate.field = "CriteriaType";
+      criteriaPredicate.@operator = PredicateOperator.IN;
+      criteriaPredicate.values = new string[] {"KEYWORD"};
+
+      // Restrict search to an ad group.
+      Predicate adGroupPredicate = new Predicate();
+      adGroupPredicate.field = "AdGroupId";
+      adGroupPredicate.@operator = PredicateOperator.EQUALS;
+      adGroupPredicate.values = new string[] { adGroupId.ToString() };
+
+      selector.predicates = new Predicate[] {adGroupPredicate, criteriaPredicate};
 
       // Set the selector paging.
       selector.paging = new Paging();
@@ -104,15 +115,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
               //
               // to identify the criterion type.
               Keyword keyword = (Keyword) adGroupCriterion.criterion;
-              if (isNegative) {
-                Console.WriteLine("{0}) Negative keyword with ad group ID = '{1}', keyword ID " +
-                    "= '{2}', and text = '{3}' was found.", i + 1, adGroupCriterion.adGroupId,
-                    keyword.id, keyword.text);
-              } else {
-                Console.WriteLine("{0}) Keyword with ad group ID = '{1}', keyword ID = '{2}', " +
-                    "text = '{3}' and matchType = '{4} was found.", i + 1,
-                    adGroupCriterion.adGroupId, keyword.id, keyword.text, keyword.matchType);
-              }
+              string keywordType = isNegative ? "Negative keyword" : "Keyword";
+
+              Console.WriteLine("{0}) {1} with text = '{2}', matchtype = '{3}', ID = '{4}' and " +
+                  "criteria type = '{5}' was found.", i + 1, keywordType, keyword.text,
+                  keyword.matchType, keyword.id, keyword.CriterionType);
               i++;
             }
           }

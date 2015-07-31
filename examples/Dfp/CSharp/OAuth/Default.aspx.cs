@@ -14,10 +14,11 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.Util.v201405;
-using Google.Api.Ads.Dfp.v201405;
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Util.Reports;
+using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201505;
+using Google.Api.Ads.Dfp.v201505;
 
 using System;
 using System.Data;
@@ -80,7 +81,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.OAuth {
 
       try {
         // Get the UserService.
-        UserService userService = (UserService)user.GetService(DfpService.v201405.UserService);
+        UserService userService = (UserService)user.GetService(DfpService.v201505.UserService);
 
         // Create a Statement to get all users.
         StatementBuilder statementBuilder = new StatementBuilder()
@@ -122,6 +123,63 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.OAuth {
         Response.Write(string.Format("Failed to get users. Exception says \"{0}\"",
             ex.Message));
       }
+    }
+
+    /// <summary>
+    /// Handles the Click event of the btnDownloadReport control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="System.EventArgs"/> instance containing
+    /// the event data.</param>
+    protected void OnDownloadReportButtonClick(object sender, EventArgs e) {
+      ConfigureUserForOAuth();
+      ReportService reportService = (ReportService) user.GetService(
+          DfpService.v201505.ReportService);
+
+      ReportQuery reportQuery = new ReportQuery();
+      reportQuery.dimensions =
+          new Dimension[] { Dimension.AD_UNIT_ID, Dimension.AD_UNIT_NAME };
+      reportQuery.columns = new Column[] {
+        Column.AD_SERVER_IMPRESSIONS,
+        Column.AD_SERVER_CLICKS,
+        Column.DYNAMIC_ALLOCATION_INVENTORY_LEVEL_IMPRESSIONS,
+        Column.DYNAMIC_ALLOCATION_INVENTORY_LEVEL_CLICKS,
+        Column.TOTAL_INVENTORY_LEVEL_IMPRESSIONS,
+        Column.TOTAL_INVENTORY_LEVEL_CPM_AND_CPC_REVENUE
+      };
+
+      reportQuery.adUnitView = ReportQueryAdUnitView.HIERARCHICAL;
+      reportQuery.dateRangeType = DateRangeType.YESTERDAY;
+
+      // Create report job.
+      ReportJob reportJob = new ReportJob();
+      reportJob.reportQuery = reportQuery;
+
+      string filePath = Path.GetTempFileName();
+
+      try {
+        // Run report.
+        reportJob = reportService.runReportJob(reportJob);
+
+        ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
+
+        // Set download options.
+        ReportDownloadOptions options = new ReportDownloadOptions();
+        options.exportFormat = ExportFormat.CSV_DUMP;
+        options.useGzipCompression = true;
+        reportUtilities.reportDownloadOptions = options;
+
+        // Download the report.
+        using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
+          reportResponse.Save(filePath);
+        }
+
+      } catch (Exception ex) {
+        throw new System.ApplicationException("Failed to download report.", ex);
+      }
+      Response.AddHeader("content-disposition", "attachment;filename=report.csv.gzip");
+      Response.WriteFile(filePath);
+      Response.End();
     }
 
     /// <summary>

@@ -14,10 +14,11 @@
 
 // Author: api.anash@gmail.com (Anash P. Oommen)
 
-using Google.Api.Ads.AdWords.Examples.CSharp.v201409;
+using Google.Api.Ads.AdWords.Examples.CSharp.v201506;
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.Tests.v201409;
-using Google.Api.Ads.AdWords.v201409;
+using Google.Api.Ads.AdWords.Tests.v201506;
+using Google.Api.Ads.AdWords.v201506;
+
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests;
 using Google.Api.Ads.Common.Util;
@@ -55,7 +56,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     [Test]
     [Category("Integration")]
     public void TestUpdateCampaignsCSharpExample() {
-      ExamplesMockData mockData = LoadMockData(SoapMessages_v201409.UpdateCampaign);
+      ExamplesMockData mockData = LoadMockData(SoapMessages_v201506.UpdateCampaign);
       RunMockedExample(mockData, delegate() {
         new UpdateCampaign().Run(user, TEST_CAMPAIGN_ID);
 
@@ -87,11 +88,11 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
         ContextStore.AddKey("SoapMethod", "mutate");
 
         XmlDocument xDoc = new XmlDocument();
-        xDoc.LoadXml(SoapMessages_v201409.UpdateCampaign);
+        xDoc.LoadXml(SoapMessages_v201506.UpdateCampaign);
         XmlElement xRequest = (XmlElement) xDoc.SelectSingleNode("/Example/SOAP/Response");
         xDoc.LoadXml(xRequest.InnerText);
         CampaignService service = (CampaignService) user.GetService(
-            AdWordsService.v201409.CampaignService);
+            AdWordsService.v201506.CampaignService);
 
         AdWordsCallListener.Instance.HandleMessage(xDoc, service, SoapMessageDirection.IN);
 

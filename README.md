@@ -92,8 +92,8 @@ To run the code examples:
 - Open the Properties dialog for the Examples project (Right click the Examples project of your
  choice in the Solution Explorer and select the Properties option from the context menu.).
 - Navigate to the Debug Tab and enter the command line options. The command line options are of
- the form `version.examplename`. For instance, `v201402.AddCampaign` is the command line option to
- run `AddCampaign` example in `v201402` version of the AdWords API.
+ the form `version.examplename`. For instance, `v201506.AddCampaign` is the command line option to
+ run `AddCampaign` example in `v201506` version of the AdWords API.
 - Compile and run the Examples project.
 
 Alternatively, each code example has a `main()` method, so you can set the appropriate code example
@@ -117,11 +117,11 @@ AdWordsUser user = new AdWordsUser();
 
 // Create the required service.
 CampaignService service = (CampaignService) user.GetService(
-     AdWordsService.v201402.CampaignService);
+     AdWordsService.v201506.CampaignService);
 
 // make more calls to service class.
 ```
-You can refer to [this wiki article](/googleads/googleads-dotnet-lib/wiki/Getting-Started) for
+You can refer to [this wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/Getting-Started) for
  more details.
 
 ##Source distribution
@@ -163,8 +163,8 @@ To compile and run the project:
 - Open the Properties dialog for the Examples project (Right click the Examples project in the
  Solution Explorer and select the Properties option from the context menu.).
 - Navigate to the Debug tab and enter the command line options. The command line options are of
- the form `version.examplename`. For instance, `v201402.AddCampaign` is the command line option
- to run the `AddCampaign` example for the `v201402` version of the AdWords API.
+ the form `version.examplename`. For instance, `v201506.AddCampaign` is the command line option
+ to run the `AddCampaign` example for the `v201506` version of the AdWords API.
 - Set the Examples project as the Startup project.
 - Compile and run the Examples project.
 

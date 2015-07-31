@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs"
-  Inherits="Google.Api.Ads.Dfp.Examples.OAuth.Default" %>
+  Inherits="Google.Api.Ads.Dfp.Examples.CSharp.OAuth.Default" %>
 <!--
   Copyright 2011, Google Inc. All Rights Reserved.
 
@@ -36,6 +36,8 @@
      onclick="OnLogoutButtonClick" /><br /><br />
   <asp:Button ID="btnGetUsers" runat="server" Text="Get users"
      onclick="OnGetUsersButtonClick" />
+  <asp:Button ID="btnDownloadReport" runat="server" Text="Download inventory report"
+     onclick="OnDownloadReportButtonClick" />
   <br />
   <br />
   <asp:GridView ID="UserGrid" runat="server"

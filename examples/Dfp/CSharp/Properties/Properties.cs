@@ -20,5 +20,5 @@ using System.Reflection;
 [assembly: AssemblyProduct("Google's DoubleClick for Publishers API DotNet Client Library")]
 [assembly: AssemblyCopyright("Copyright 2011, Google Inc. All Rights Reserved.")]
 
-[assembly: AssemblyVersion("18.14.0.0")]
-[assembly: AssemblyFileVersion("18.14.0.0")]
+[assembly: AssemblyVersion("18.15.0.0")]
+[assembly: AssemblyFileVersion("18.15.0.0")]

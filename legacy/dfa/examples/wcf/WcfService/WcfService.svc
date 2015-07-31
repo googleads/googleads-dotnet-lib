@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Google.Api.Ads.Dfa.Examples.Wcf.WcfService" CodeBehind="WcfService.svc.cs" %>

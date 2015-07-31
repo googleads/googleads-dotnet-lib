@@ -112,7 +112,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
       Dim retval As New List(Of Object)()
       Dim paramInfos As ParameterInfo() = methodInfo.GetParameters()
 
-      For i As Integer = 1 To paramInfos.Length
+      ' The first argument is AdWordsUser, skip it.
+      For i As Integer = 1 To paramInfos.Length - 1
         Dim paramInfo As ParameterInfo = paramInfos(i)
 
         Dim underlyingType As Type = GetUnderlyingType(paramInfo.ParameterType)

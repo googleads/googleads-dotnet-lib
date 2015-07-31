@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OAuthLogin.aspx.cs"
-    Inherits="Google.Api.Ads.Dfp.Examples.OAuth.OAuthLogin" %>
+    Inherits="Google.Api.Ads.Dfp.Examples.CSharp.OAuth.OAuthLogin" %>
 <!--
   Copyright 2012, Google Inc. All Rights Reserved.
 
