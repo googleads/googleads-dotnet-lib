@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201409_1_1_add_ad_group_demographic_criteria =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201409_1_1_add_ad_group_demographic_criteria.html#a04432323c003d8ec58734f9e8a6a0023", null ],
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201409_1_1_add_ad_group_demographic_criteria.html#a04432323c003d8ec58734f9e8a6a0023", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201409_1_1_add_ad_group_demographic_criteria.html#a38bf410a57ad9bfe19ea34f4bb03037d", null ]
-];

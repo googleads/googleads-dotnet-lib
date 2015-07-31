@@ -6,7 +6,5 @@ var searchData=
   ['lookuplocation_2ecs',['LookupLocation.cs',['../_ad_words_2_c_sharp_2v201506_2_targeting_2_lookup_location_8cs.html',1,'']]],
   ['lookuplocation_2ecs',['LookupLocation.cs',['../_ad_x_buyer_2_c_sharp_2v201506_2_targeting_2_lookup_location_8cs.html',1,'']]],
   ['lookuplocation_2ecs',['LookupLocation.cs',['../_ad_x_buyer_2_c_sharp_2v201502_2_targeting_2_lookup_location_8cs.html',1,'']]],
-  ['lookuplocation_2ecs',['LookupLocation.cs',['../_ad_words_2_c_sharp_2v201502_2_targeting_2_lookup_location_8cs.html',1,'']]],
-  ['lookuplocation_2ecs',['LookupLocation.cs',['../_ad_words_2_c_sharp_2v201409_2_targeting_2_lookup_location_8cs.html',1,'']]],
-  ['lookuplocation_2ecs',['LookupLocation.cs',['../_ad_x_buyer_2_c_sharp_2v201409_2_targeting_2_lookup_location_8cs.html',1,'']]]
+  ['lookuplocation_2ecs',['LookupLocation.cs',['../_ad_words_2_c_sharp_2v201502_2_targeting_2_lookup_location_8cs.html',1,'']]]
 ];
