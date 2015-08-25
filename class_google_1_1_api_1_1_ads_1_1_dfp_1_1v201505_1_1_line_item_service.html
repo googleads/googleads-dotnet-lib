@@ -111,6 +111,9 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201505.LineItemService Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provides methods for creating, updating and retrieving <a href="LineItem">LineItem</a> objects.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item_service.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.Dfp.v201505.LineItemService:</div>
 <div class="dyncontent">
@@ -118,7 +121,7 @@ Inheritance diagram for Google.Api.Ads.Dfp.v201505.LineItemService:</div>
   <img src="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item_service.png" usemap="#Google.Api.Ads.Dfp.v201505.LineItemService_map" alt=""/>
   <map id="Google.Api.Ads.Dfp.v201505.LineItemService_map" name="Google.Api.Ads.Dfp.v201505.LineItemService_map">
 <area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html" title="Base class for DFP API services. " alt="Google.Api.Ads.Dfp.Lib.DfpSoapClient" shape="rect" coords="142,112,417,136"/>
-<area href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_line_item_service.html" alt="Google.Api.Ads.Dfp.v201505.ILineItemService" shape="rect" coords="427,112,702,136"/>
+<area href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_line_item_service.html" title="Provides methods for creating, updating and retrieving LineItem objects. " alt="Google.Api.Ads.Dfp.v201505.ILineItemService" shape="rect" coords="427,112,702,136"/>
 <area href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html" title="Base class for all SOAP services supported by this library. " alt="Google.Api.Ads.Common.Lib.AdsSoapClient" shape="rect" coords="142,56,417,80"/>
 <area href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html" title="This interface defines a client protocol (SOAP, WSE, REST, etc.) supported by the library..." alt="Google.Api.Ads.Common.Lib.AdsClient" shape="rect" coords="285,0,560,24"/>
 </map>
@@ -127,14 +130,19 @@ Inheritance diagram for Google.Api.Ads.Dfp.v201505.LineItemService:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8489f10c2cb367505fcb577a741aaa8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item_service.html#a8489f10c2cb367505fcb577a741aaa8b">LineItemService</a> ()</td></tr>
+<tr class="memdesc:a8489f10c2cb367505fcb577a741aaa8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item_service.html" title="Provides methods for creating, updating and retrieving LineItem objects. ">LineItemService</a> class.  <a href="#a8489f10c2cb367505fcb577a741aaa8b">More...</a><br/></td></tr>
 <tr class="separator:a8489f10c2cb367505fcb577a741aaa8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae77e88a662def836b609ba6cc4df0607"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item.html">LineItem</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item_service.html#ae77e88a662def836b609ba6cc4df0607">createLineItems</a> ([System.Xml.Serialization.XmlElementAttribute(&quot;lineItems&quot;)] LineItem[] lineItems)</td></tr>
+<tr class="memdesc:ae77e88a662def836b609ba6cc4df0607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new <a href="LineItem">LineItem</a> objects.  <a href="#ae77e88a662def836b609ba6cc4df0607">More...</a><br/></td></tr>
 <tr class="separator:ae77e88a662def836b609ba6cc4df0607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a362e5bd587018a60eda9b7fcc463e729"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item_page.html">LineItemPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item_service.html#a362e5bd587018a60eda9b7fcc463e729">getLineItemsByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_statement.html">Statement</a> filterStatement)</td></tr>
+<tr class="memdesc:a362e5bd587018a60eda9b7fcc463e729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="LineItemPage">LineItemPage</a> of <a href="LineItem">LineItem</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering:  <a href="#a362e5bd587018a60eda9b7fcc463e729">More...</a><br/></td></tr>
 <tr class="separator:a362e5bd587018a60eda9b7fcc463e729"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f03af2ff6c78a6baf132a5b34b8f008"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_update_result.html">UpdateResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item_service.html#a1f03af2ff6c78a6baf132a5b34b8f008">performLineItemAction</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item_action.html">LineItemAction</a> lineItemAction, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_statement.html">Statement</a> filterStatement)</td></tr>
+<tr class="memdesc:a1f03af2ff6c78a6baf132a5b34b8f008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs actions on <a href="LineItem">LineItem</a> objects that match the given <a href="Statement#query">Statement::query</a>.  <a href="#a1f03af2ff6c78a6baf132a5b34b8f008">More...</a><br/></td></tr>
 <tr class="separator:a1f03af2ff6c78a6baf132a5b34b8f008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5356e18c592391629e318f6d0c19e1c6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item.html">LineItem</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item_service.html#a5356e18c592391629e318f6d0c19e1c6">updateLineItems</a> ([System.Xml.Serialization.XmlElementAttribute(&quot;lineItems&quot;)] LineItem[] lineItems)</td></tr>
+<tr class="memdesc:a5356e18c592391629e318f6d0c19e1c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the specified <a href="LineItem">LineItem</a> objects.  <a href="#a5356e18c592391629e318f6d0c19e1c6">More...</a><br/></td></tr>
 <tr class="separator:a5356e18c592391629e318f6d0c19e1c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -220,9 +228,9 @@ Properties</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html">Google.Api.Ads.Dfp.Lib.DfpSoapClient</a></td></tr>
-<tr class="memitem:a67270c142f918824005ee52558156bf6 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memItemLeft" align="right" valign="top">override Exception&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html#a67270c142f918824005ee52558156bf6">GetCustomException</a> (SoapException ex)</td></tr>
-<tr class="memdesc:a67270c142f918824005ee52558156bf6 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a custom exception that wraps the SOAP exception thrown by the server.  <a href="#a67270c142f918824005ee52558156bf6">More...</a><br/></td></tr>
-<tr class="separator:a67270c142f918824005ee52558156bf6 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb1cdad13d7455193ec47a7db0fa103 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memItemLeft" align="right" valign="top">override Exception&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html#adfb1cdad13d7455193ec47a7db0fa103">GetCustomException</a> (SoapException exception)</td></tr>
+<tr class="memdesc:adfb1cdad13d7455193ec47a7db0fa103 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a custom exception that wraps the SOAP exception thrown by the server.  <a href="#adfb1cdad13d7455193ec47a7db0fa103">More...</a><br/></td></tr>
+<tr class="separator:adfb1cdad13d7455193ec47a7db0fa103 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acca43da862b505be5ba3812e650ce92f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html#acca43da862b505be5ba3812e650ce92f">InitForCall</a> (string methodName, object[] parameters)</td></tr>
 <tr class="memdesc:acca43da862b505be5ba3812e650ce92f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the service before MakeApiCall.  <a href="#acca43da862b505be5ba3812e650ce92f">More...</a><br/></td></tr>
 <tr class="separator:acca43da862b505be5ba3812e650ce92f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -265,7 +273,20 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a09d0abbb91ee39bc84e9992d5369a713 inherit pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the fault xml node from soap exception.  <a href="#a09d0abbb91ee39bc84e9992d5369a713">More...</a><br/></td></tr>
 <tr class="separator:a09d0abbb91ee39bc84e9992d5369a713 inherit pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides methods for creating, updating and retrieving <a href="LineItem">LineItem</a> objects. </p>
+<p>Line items define the campaign. For example, line items define:</p>
+<ul>
+<li>
+a budget </li>
+<li>
+a span of time to run </li>
+<li>
+ad unit targeting </li>
+</ul>
+<p>In short, line items connect all of the elements of an ad campaign.</p>
+<p>Line items and creatives can be associated with each other through <a href="LineItemCreativeAssociation">LineItemCreativeAssociation</a> objects. An ad unit will host a creative through both this association and the <a href="LineItem#targeting">LineItem::targeting</a> to it.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8489f10c2cb367505fcb577a741aaa8b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -286,6 +307,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item_service.html" title="Provides methods for creating, updating and retrieving LineItem objects. ">LineItemService</a> class. </p>
 
 </div>
 </div>
@@ -312,6 +335,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates new <a href="LineItem">LineItem</a> objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItems</td><td>the line items to create</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the created line items with their IDs filled in</dd></dl>
+
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_line_item_service.html#a9dbb34c593d37eefbdcc39af05a46435">Google.Api.Ads.Dfp.v201505.ILineItemService</a>.</p>
 
 </div>
@@ -337,6 +369,51 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets a <a href="LineItemPage">LineItemPage</a> of <a href="LineItem">LineItem</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering: </p>
+<table class="doxtable">
+<tr>
+<th scope="col">PQL property </th><th scope="col">Entity property  </th></tr>
+<tr>
+<td><code>CostType</code> </td><td><a href="LineItem#costType">LineItem::costType</a>  </td></tr>
+<tr>
+<td><code>CreationDateTime</code> </td><td><a href="LineItem#creationDateTime">LineItem::creationDateTime</a>  </td></tr>
+<tr>
+<td><code>DeliveryRateType</code> </td><td><a href="LineItem#deliveryRateType">LineItem::deliveryRateType</a>  </td></tr>
+<tr>
+<td><code>EndDateTime</code> </td><td><a href="LineItem#endDateTime">LineItem::endDateTime</a>  </td></tr>
+<tr>
+<td><code>ExternalId</code> </td><td><a href="LineItem#externalId">LineItem::externalId</a>  </td></tr>
+<tr>
+<td><code>Id</code> </td><td><a href="LineItem#id">LineItem::id</a>  </td></tr>
+<tr>
+<td><code>IsMissingCreatives</code> </td><td><a href="LineItem#isMissingCreatives">LineItem::isMissingCreatives</a>  </td></tr>
+<tr>
+<td><code>IsSetTopBoxEnabled</code> </td><td><a href="LineItem#isSetTopBoxEnabled">LineItem::isSetTopBoxEnabled</a>  </td></tr>
+<tr>
+<td><code>LastModifiedDateTime</code> </td><td><a href="LineItem#lastModifiedDateTime">LineItem::lastModifiedDateTime</a>  </td></tr>
+<tr>
+<td><code>LineItemType</code> </td><td><a href="LineItem#lineItemType">LineItem::lineItemType</a>  </td></tr>
+<tr>
+<td><code>Name</code> </td><td><a href="LineItem#name">LineItem::name</a>  </td></tr>
+<tr>
+<td><code>OrderId</code> </td><td><a href="LineItem#orderId">LineItem::orderId</a>  </td></tr>
+<tr>
+<td><code>StartDateTime</code> </td><td><a href="LineItem#startDateTime">LineItem::startDateTime</a>  </td></tr>
+<tr>
+<td><code>Status</code> </td><td><a href="LineItem#status">LineItem::status</a>  </td></tr>
+<tr>
+<td><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_targeting.html" title="Contains targeting criteria for LineItem objects. See LineItem::targeting. ">Targeting</a></code> </td><td><a href="LineItem#targeting">LineItem::targeting</a>  </td></tr>
+<tr>
+<td><code>UnitsBought</code> </td><td><a href="LineItem#unitsBought">LineItem::unitsBought</a>  </td></tr>
+</table>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filterStatement</td><td>a Publisher Query Language statement used to filter a set of line items.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the line items that match the given filter</dd></dl>
 
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_line_item_service.html#ae1ef273f459c1143b692c6ac41ae1de6">Google.Api.Ads.Dfp.v201505.ILineItemService</a>.</p>
 
@@ -374,6 +451,16 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Performs actions on <a href="LineItem">LineItem</a> objects that match the given <a href="Statement#query">Statement::query</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItemAction</td><td>the action to perform</td></tr>
+    <tr><td class="paramname">filterStatement</td><td>a Publisher Query Language statement used to filter a set of line items</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the result of the action performed</dd></dl>
+
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_line_item_service.html#a32481b4aa250b82c79d5940c6cc66525">Google.Api.Ads.Dfp.v201505.ILineItemService</a>.</p>
 
 </div>
@@ -399,6 +486,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Updates the specified <a href="LineItem">LineItem</a> objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItems</td><td>the line items to update</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the updated line items</dd></dl>
 
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_line_item_service.html#a6ff692bd79e0db736a3f14a1c227dbcc">Google.Api.Ads.Dfp.v201505.ILineItemService</a>.</p>
 
@@ -446,7 +542,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201505/<a class="el" href="v201505_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201505/<a class="el" href="v201505_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -454,7 +550,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505.html">v201505</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_line_item_service.html">LineItemService</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:13 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:45 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

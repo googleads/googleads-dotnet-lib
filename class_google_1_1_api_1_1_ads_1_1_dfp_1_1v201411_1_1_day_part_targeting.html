@@ -110,17 +110,24 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201411.DayPartTargeting Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Modify the delivery times of line items for particular days of the week. By default, line items are served at all days and times.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_day_part_targeting.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a813505a5220886467fcb4ea09ecbc201"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_day_part.html">DayPart</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_day_part_targeting.html#a813505a5220886467fcb4ea09ecbc201">dayParts</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a813505a5220886467fcb4ea09ecbc201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies days of the week and times at which a  <a href="#a813505a5220886467fcb4ea09ecbc201">More...</a><br/></td></tr>
 <tr class="separator:a813505a5220886467fcb4ea09ecbc201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f082dbbf38b8f7d9ed1380b2fc2b9d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html#a6b716d95053daebf160d736e2055cf49">DeliveryTimeZone</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_day_part_targeting.html#a0f082dbbf38b8f7d9ed1380b2fc2b9d5">timeZone</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0f082dbbf38b8f7d9ed1380b2fc2b9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the time zone to be used for delivering <a href="LineItem">LineItem</a> objects. This attribute is optional and defaults to <a href="DeliveryTimeZone#BROWSER">DeliveryTimeZone::BROWSER</a>.  <a href="#a0f082dbbf38b8f7d9ed1380b2fc2b9d5">More...</a><br/></td></tr>
 <tr class="separator:a0f082dbbf38b8f7d9ed1380b2fc2b9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeafcd9f513033524fa2213024d8bd08e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_day_part_targeting.html#aeafcd9f513033524fa2213024d8bd08e">timeZoneSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:aeafcd9f513033524fa2213024d8bd08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Modify the delivery times of line items for particular days of the week. By default, line items are served at all days and times. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a813505a5220886467fcb4ea09ecbc201"></a>
 <div class="memitem">
 <div class="memproto">
@@ -138,6 +145,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Specifies days of the week and times at which a </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_line_item.html">LineItem</a></code> will be delivered. </p>
+<p>If targeting all days and times, this value will be ignored.</p>
 
 </div>
 </div>
@@ -159,6 +170,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Specifies the time zone to be used for delivering <a href="LineItem">LineItem</a> objects. This attribute is optional and defaults to <a href="DeliveryTimeZone#BROWSER">DeliveryTimeZone::BROWSER</a>. </p>
+<p>Setting this has no effect if targeting all days and times.</p>
+
 </div>
 </div>
 <a class="anchor" id="aeafcd9f513033524fa2213024d8bd08e"></a>
@@ -179,10 +193,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_day_part_targeting.html#a0f082dbbf38b8f7d9ed1380b2fc2b9d5" title="Specifies the time zone to be used for delivering LineItem objects. This attribute is optional and de...">timeZone</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -190,7 +207,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html">v201411</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_day_part_targeting.html">DayPartTargeting</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:02 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:33 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

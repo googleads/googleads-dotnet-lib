@@ -111,6 +111,9 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201502.ForecastService Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provided for <a href="LineItem">LineItem</a> objects that exist in the system or which have not had an ID set yet.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_forecast_service.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.Dfp.v201502.ForecastService:</div>
 <div class="dyncontent">
@@ -118,7 +121,7 @@ Inheritance diagram for Google.Api.Ads.Dfp.v201502.ForecastService:</div>
   <img src="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_forecast_service.png" usemap="#Google.Api.Ads.Dfp.v201502.ForecastService_map" alt=""/>
   <map id="Google.Api.Ads.Dfp.v201502.ForecastService_map" name="Google.Api.Ads.Dfp.v201502.ForecastService_map">
 <area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html" title="Base class for DFP API services. " alt="Google.Api.Ads.Dfp.Lib.DfpSoapClient" shape="rect" coords="144,112,423,136"/>
-<area href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_forecast_service.html" alt="Google.Api.Ads.Dfp.v201502.IForecastService" shape="rect" coords="433,112,712,136"/>
+<area href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_forecast_service.html" title="Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provide..." alt="Google.Api.Ads.Dfp.v201502.IForecastService" shape="rect" coords="433,112,712,136"/>
 <area href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html" title="Base class for all SOAP services supported by this library. " alt="Google.Api.Ads.Common.Lib.AdsSoapClient" shape="rect" coords="144,56,423,80"/>
 <area href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html" title="This interface defines a client protocol (SOAP, WSE, REST, etc.) supported by the library..." alt="Google.Api.Ads.Common.Lib.AdsClient" shape="rect" coords="289,0,568,24"/>
 </map>
@@ -127,14 +130,19 @@ Inheritance diagram for Google.Api.Ads.Dfp.v201502.ForecastService:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9dab7a415f2c8d3f5940cf9ac0135f74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_forecast_service.html#a9dab7a415f2c8d3f5940cf9ac0135f74">ForecastService</a> ()</td></tr>
+<tr class="memdesc:a9dab7a415f2c8d3f5940cf9ac0135f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_forecast_service.html" title="Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provide...">ForecastService</a> class.  <a href="#a9dab7a415f2c8d3f5940cf9ac0135f74">More...</a><br/></td></tr>
 <tr class="separator:a9dab7a415f2c8d3f5940cf9ac0135f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc0ed331c41c290cacb92109547c6d81"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_availability_forecast.html">AvailabilityForecast</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_forecast_service.html#abc0ed331c41c290cacb92109547c6d81">getAvailabilityForecast</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_prospective_line_item.html">ProspectiveLineItem</a> lineItem, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_availability_forecast_options.html">AvailabilityForecastOptions</a> forecastOptions)</td></tr>
+<tr class="memdesc:abc0ed331c41c290cacb92109547c6d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the availability forecast for a <a href="ProspectiveLineItem">ProspectiveLineItem</a>. An availability forecast reports the maximum number of available units that the line item can book, and the total number of units matching the line item's targeting.  <a href="#abc0ed331c41c290cacb92109547c6d81">More...</a><br/></td></tr>
 <tr class="separator:abc0ed331c41c290cacb92109547c6d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe419a784259a744804e4e1b637955f7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_availability_forecast.html">AvailabilityForecast</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_forecast_service.html#abe419a784259a744804e4e1b637955f7">getAvailabilityForecastById</a> (long lineItemId, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_availability_forecast_options.html">AvailabilityForecastOptions</a> forecastOptions)</td></tr>
+<tr class="memdesc:abe419a784259a744804e4e1b637955f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a href="AvailabilityForecast">AvailabilityForecast</a> for an existing <a href="LineItem">LineItem</a> object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting.  <a href="#abe419a784259a744804e4e1b637955f7">More...</a><br/></td></tr>
 <tr class="separator:abe419a784259a744804e4e1b637955f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88b1dee5aac0554f00e43188e4f839a6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_delivery_forecast.html">DeliveryForecast</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_forecast_service.html#a88b1dee5aac0554f00e43188e4f839a6">getDeliveryForecast</a> ([System.Xml.Serialization.XmlElementAttribute(&quot;lineItems&quot;)] ProspectiveLineItem[] lineItems, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_delivery_forecast_options.html">DeliveryForecastOptions</a> forecastOptions)</td></tr>
+<tr class="memdesc:a88b1dee5aac0554f00e43188e4f839a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delivery forecast for a list of <a href="ProspectiveLineItem">ProspectiveLineItem</a> objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.  <a href="#a88b1dee5aac0554f00e43188e4f839a6">More...</a><br/></td></tr>
 <tr class="separator:a88b1dee5aac0554f00e43188e4f839a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add937b2c5d01f10043804feff264d843"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_delivery_forecast.html">DeliveryForecast</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_forecast_service.html#add937b2c5d01f10043804feff264d843">getDeliveryForecastByIds</a> ([System.Xml.Serialization.XmlElementAttribute(&quot;lineItemIds&quot;)] long[] lineItemIds, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_delivery_forecast_options.html">DeliveryForecastOptions</a> forecastOptions)</td></tr>
+<tr class="memdesc:add937b2c5d01f10043804feff264d843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delivery forecast for a list of existing <a href="LineItem">LineItem</a> objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.  <a href="#add937b2c5d01f10043804feff264d843">More...</a><br/></td></tr>
 <tr class="separator:add937b2c5d01f10043804feff264d843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -220,9 +228,9 @@ Properties</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html">Google.Api.Ads.Dfp.Lib.DfpSoapClient</a></td></tr>
-<tr class="memitem:a67270c142f918824005ee52558156bf6 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memItemLeft" align="right" valign="top">override Exception&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html#a67270c142f918824005ee52558156bf6">GetCustomException</a> (SoapException ex)</td></tr>
-<tr class="memdesc:a67270c142f918824005ee52558156bf6 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a custom exception that wraps the SOAP exception thrown by the server.  <a href="#a67270c142f918824005ee52558156bf6">More...</a><br/></td></tr>
-<tr class="separator:a67270c142f918824005ee52558156bf6 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb1cdad13d7455193ec47a7db0fa103 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memItemLeft" align="right" valign="top">override Exception&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html#adfb1cdad13d7455193ec47a7db0fa103">GetCustomException</a> (SoapException exception)</td></tr>
+<tr class="memdesc:adfb1cdad13d7455193ec47a7db0fa103 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a custom exception that wraps the SOAP exception thrown by the server.  <a href="#adfb1cdad13d7455193ec47a7db0fa103">More...</a><br/></td></tr>
+<tr class="separator:adfb1cdad13d7455193ec47a7db0fa103 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acca43da862b505be5ba3812e650ce92f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html#acca43da862b505be5ba3812e650ce92f">InitForCall</a> (string methodName, object[] parameters)</td></tr>
 <tr class="memdesc:acca43da862b505be5ba3812e650ce92f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the service before MakeApiCall.  <a href="#acca43da862b505be5ba3812e650ce92f">More...</a><br/></td></tr>
 <tr class="separator:acca43da862b505be5ba3812e650ce92f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -265,7 +273,42 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a09d0abbb91ee39bc84e9992d5369a713 inherit pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the fault xml node from soap exception.  <a href="#a09d0abbb91ee39bc84e9992d5369a713">More...</a><br/></td></tr>
 <tr class="separator:a09d0abbb91ee39bc84e9992d5369a713 inherit pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provided for <a href="LineItem">LineItem</a> objects that exist in the system or which have not had an ID set yet. </p>
+<h4>Test network behavior</h4>
+<p>Test networks are unable to provide forecasts that would be comparable to the production environment because forecasts require traffic history. For test networks, a consistent behavior can be expected for forecast requests, according to the following rules:</p>
+<table class="doxtable">
+<tr>
+<th colspan="2">Inputs<br/>
+ (<a href="LineItem">LineItem</a> Fields) </th><th colspan="4">Outputs<br/>
+ (<a href="Forecast">Forecast</a> Fields)  </th></tr>
+<tr>
+<th><a href="LineItem#lineItemType">lineItemType</a> </th><th><a href="LineItem#unitsBought">unitsBought</a> </th><th><a href="Forecast#availableUnits">availableUnits</a> </th><th><a href="Forecast#forecastUnits">forecastUnits (matchedUnits)</a> </th><th><a href="Forecast#deliveredUnits">deliveredUnits</a> </th><th>Exception   </th></tr>
+<tr>
+<td>Sponsorship </td><td>13 </td><td>#x2013;#x2013; </td><td>#x2013;#x2013; </td><td>#x2013;#x2013; </td><td><a href="ForecastError.Reason#NO_FORECAST_YET">NO_FORECAST_YET</a>   </td></tr>
+<tr>
+<td>Sponsorship </td><td>20 </td><td>#x2013;#x2013; </td><td>#x2013;#x2013; </td><td>#x2013;#x2013; </td><td><a href="ForecastError.Reason#SERVER_NOT_AVAILABLE">SERVER_NOT_AVAILABLE</a>   </td></tr>
+<tr>
+<td>Sponsorship </td><td>50 </td><td>1,200,000 </td><td>6,000,000 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Sponsorship </td><td>!= 20 and<br/>
+ != 50 </td><td>1,200,000 </td><td>1,200,000 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Not Sponsorship </td><td>&lt;= 500,000 </td><td>3 * unitsBought / 2 </td><td>unitsBought * 6 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Not Sponsorship </td><td>&gt; 500,000 and &lt;= 1,000,000 </td><td>unitsBought / 2 </td><td>unitsBought * 6 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Not Sponsorship </td><td>&gt; 1,000,000 and &lt;= 1,500,000 </td><td>unitsBought / 2 </td><td>3 * unitsBought / 2 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Not Sponsorship </td><td>&gt; 1,500,000 </td><td>unitsBought / 4 </td><td>3 * unitsBought / 2 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+</table>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9dab7a415f2c8d3f5940cf9ac0135f74"></a>
 <div class="memitem">
 <div class="memproto">
@@ -286,6 +329,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_forecast_service.html" title="Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provide...">ForecastService</a> class. </p>
 
 </div>
 </div>
@@ -321,6 +366,16 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets the availability forecast for a <a href="ProspectiveLineItem">ProspectiveLineItem</a>. An availability forecast reports the maximum number of available units that the line item can book, and the total number of units matching the line item's targeting. </p>
+<p>Note: Beginning in <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502.html">v201502</a>, this replaces the previous getForecast method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItem</td><td>the prospective line item (new or existing) to be forecasted for availability</td></tr>
+    <tr><td class="paramname">forecastOptions</td><td>options controlling the forecast</td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_forecast_service.html#a7b614f9a663692e0c0f10e2a22addbce">Google.Api.Ads.Dfp.v201502.IForecastService</a>.</p>
 
@@ -358,6 +413,17 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Gets an <a href="AvailabilityForecast">AvailabilityForecast</a> for an existing <a href="LineItem">LineItem</a> object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting. </p>
+<p>Only line items having type <a href="LineItemType#SPONSORSHIP">LineItemType::SPONSORSHIP</a> or <a href="LineItemType#STANDARD">LineItemType::STANDARD</a> are valid. Other types will result in <a href="ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED">ReservationDetailsError.Reason::LINE_ITEM_TYPE_NOT_ALLOWED</a>.</p>
+<p>Note: Beginning in <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502.html">v201502</a>, this replaces the previous getForecastById method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItemId</td><td>the ID of a <a href="LineItem">LineItem</a> to run the forecast on.</td></tr>
+    <tr><td class="paramname">forecastOptions</td><td>options controlling the forecast</td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_forecast_service.html#a9f0faf44bd325f2ae17d5697876d9148">Google.Api.Ads.Dfp.v201502.IForecastService</a>.</p>
 
 </div>
@@ -394,6 +460,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Gets the delivery forecast for a list of <a href="ProspectiveLineItem">ProspectiveLineItem</a> objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItems</td><td>line items to be forecasted for delivery</td></tr>
+    <tr><td class="paramname">forecastOptions</td><td>options controlling the forecast</td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_forecast_service.html#a06864cf52eaa6ee924e97de19a02019e">Google.Api.Ads.Dfp.v201502.IForecastService</a>.</p>
 
 </div>
@@ -429,6 +504,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets the delivery forecast for a list of existing <a href="LineItem">LineItem</a> objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItemIds</td><td>the IDs of line items to be forecasted for delivery</td></tr>
+    <tr><td class="paramname">forecastOptions</td><td>options controlling the forecast</td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_forecast_service.html#a4d24130712a96f647f3e58f35ea3cc0e">Google.Api.Ads.Dfp.v201502.IForecastService</a>.</p>
 
@@ -476,7 +560,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201502/<a class="el" href="v201502_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201502/<a class="el" href="v201502_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -484,7 +568,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502.html">v201502</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_forecast_service.html">ForecastService</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:08 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:39 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

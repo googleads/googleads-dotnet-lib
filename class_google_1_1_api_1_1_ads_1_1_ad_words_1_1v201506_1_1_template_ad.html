@@ -110,67 +110,92 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_ad_wo
 <div class="title">Google.Api.Ads.AdWords.v201506.TemplateAd Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a <a href="//www.google.com/adwords/displaynetwork/plan-creative-campaigns/display-ad-builder.html">Display Ad Builder</a> template ad. A template ad is composed of a template (specified by its ID) and the data that populates the template's fields. For a list of available templates and their required fields, see <a href="/adwords/api/docs/appendix/templateads">Template Ads</a>. <span class="constraint AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD, SET.</span>  
+ <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.AdWords.v201506.TemplateAd:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.png" usemap="#Google.Api.Ads.AdWords.v201506.TemplateAd_map" alt=""/>
   <map id="Google.Api.Ads.AdWords.v201506.TemplateAd_map" name="Google.Api.Ads.AdWords.v201506.TemplateAd_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html" alt="Google.Api.Ads.AdWords.v201506.Ad" shape="rect" coords="0,0,280,24"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html" title="The base class of all ad types. " alt="Google.Api.Ads.AdWords.v201506.Ad" shape="rect" coords="0,0,280,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a99b135b498497fdbfbaae93f69c932f3"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#a99b135b498497fdbfbaae93f69c932f3">templateId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a99b135b498497fdbfbaae93f69c932f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of the template to use. <span class="constraint Selectable">This field can be selected using the value "TemplateId".</span><span class="constraint
+Filterable">This field can be filtered on.</span>  <a href="#a99b135b498497fdbfbaae93f69c932f3">More...</a><br/></td></tr>
 <tr class="separator:a99b135b498497fdbfbaae93f69c932f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab46873c93e59f02533b1a7dc9c6bcd4b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#ab46873c93e59f02533b1a7dc9c6bcd4b">templateIdSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ab46873c93e59f02533b1a7dc9c6bcd4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97dab52c8a2b692ade74cd404f7dd3ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_union_id.html">AdUnionId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#a97dab52c8a2b692ade74cd404f7dd3ec">adUnionId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a97dab52c8a2b692ade74cd404f7dd3ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Group ID of all template ads, which should be created together. Template ads in the same union reference the same data but have different dimensions. Single ads do not have a union ID. If a template ad specifies an ad union with only one ad, no union will be created. <span class="constraint Selectable">This field can be selected using the value "TemplateAdUnionId".</span>  <a href="#a97dab52c8a2b692ade74cd404f7dd3ec">More...</a><br/></td></tr>
 <tr class="separator:a97dab52c8a2b692ade74cd404f7dd3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4bdf67d13795a6eae4125d6ed702168"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_element.html">TemplateElement</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#ad4bdf67d13795a6eae4125d6ed702168">templateElements</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad4bdf67d13795a6eae4125d6ed702168"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of elements (each containing a set of fields) for the template referenced by  <a href="#ad4bdf67d13795a6eae4125d6ed702168">More...</a><br/></td></tr>
 <tr class="separator:ad4bdf67d13795a6eae4125d6ed702168"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af207b177aa8af5b8c19d8e66aff3e333"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#af207b177aa8af5b8c19d8e66aff3e333">adAsImage</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af207b177aa8af5b8c19d8e66aff3e333"><td class="mdescLeft">&#160;</td><td class="mdescRight">The template ad rendered as an image.  <a href="#af207b177aa8af5b8c19d8e66aff3e333">More...</a><br/></td></tr>
 <tr class="separator:af207b177aa8af5b8c19d8e66aff3e333"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8805598621677cec681a4181a15b3041"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_dimensions.html">Dimensions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#a8805598621677cec681a4181a15b3041">dimensions</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8805598621677cec681a4181a15b3041"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dimensions for this ad.  <a href="#a8805598621677cec681a4181a15b3041">More...</a><br/></td></tr>
 <tr class="separator:a8805598621677cec681a4181a15b3041"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a787885facc92610260786012fd68f0de"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#a787885facc92610260786012fd68f0de">name</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a787885facc92610260786012fd68f0de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of this ad. <span class="constraint Selectable">This field can be selected using the value "TemplateAdName".</span> <span class="constraint Required">This field is required and should not be </span> <a href="#a787885facc92610260786012fd68f0de">More...</a><br/></td></tr>
 <tr class="separator:a787885facc92610260786012fd68f0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d636ae5da98e3ec3427d517f319733b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#a4d636ae5da98e3ec3427d517f319733b">duration</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4d636ae5da98e3ec3427d517f319733b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration of this ad (if it contains playable media). <span class="constraint
+Selectable">This field can be selected using the value "TemplateAdDuration".</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a4d636ae5da98e3ec3427d517f319733b">More...</a><br/></td></tr>
 <tr class="separator:a4d636ae5da98e3ec3427d517f319733b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a426d2c435bbd49a9d25b038a5d73d5cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#a426d2c435bbd49a9d25b038a5d73d5cb">durationSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a426d2c435bbd49a9d25b038a5d73d5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada0d702e3799e45cf3f2377dff8409f5"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#ada0d702e3799e45cf3f2377dff8409f5">originAdId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ada0d702e3799e45cf3f2377dff8409f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">For copies, the ad id of the ad this was or should be copied from. <span class="constraint Selectable">This field can be selected using the value "TemplateOriginAdId".</span>  <a href="#ada0d702e3799e45cf3f2377dff8409f5">More...</a><br/></td></tr>
 <tr class="separator:ada0d702e3799e45cf3f2377dff8409f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0fec3e93ac78137f389a056119f40a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#ad0fec3e93ac78137f389a056119f40a1">originAdIdSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ad0fec3e93ac78137f389a056119f40a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td colspan="2" onclick="javascript:toggleInherit('properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html">Google.Api.Ads.AdWords.v201506.Ad</a></td></tr>
 <tr class="memitem:a79644933020153ec58a5711264b3bed0 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#a79644933020153ec58a5711264b3bed0">id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a79644933020153ec58a5711264b3bed0 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of this ad. This field is ignored when creating ads using  <a href="#a79644933020153ec58a5711264b3bed0">More...</a><br/></td></tr>
 <tr class="separator:a79644933020153ec58a5711264b3bed0 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3023de6833c3fedc2cd88ff3150b2d93 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#a3023de6833c3fedc2cd88ff3150b2d93">idSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a3023de6833c3fedc2cd88ff3150b2d93 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa266c9d8c0e02407e2de9af8a4762519 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#aa266c9d8c0e02407e2de9af8a4762519">url</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa266c9d8c0e02407e2de9af8a4762519 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination URL.  <a href="#aa266c9d8c0e02407e2de9af8a4762519">More...</a><br/></td></tr>
 <tr class="separator:aa266c9d8c0e02407e2de9af8a4762519 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2fcc52ad66f9a8a83f1eca23e2b78f9 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#ab2fcc52ad66f9a8a83f1eca23e2b78f9">displayUrl</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab2fcc52ad66f9a8a83f1eca23e2b78f9 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visible URL. <span class="constraint Selectable">This field can be selected using the value "DisplayUrl".</span><span class="constraint Filterable">This field can be filtered on.</span>  <a href="#ab2fcc52ad66f9a8a83f1eca23e2b78f9">More...</a><br/></td></tr>
 <tr class="separator:ab2fcc52ad66f9a8a83f1eca23e2b78f9 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a498472beaeadf1b80931a589a3c2d2ef inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#a498472beaeadf1b80931a589a3c2d2ef">finalUrls</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a498472beaeadf1b80931a589a3c2d2ef inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of possible final URLs after all cross domain redirects.  <a href="#a498472beaeadf1b80931a589a3c2d2ef">More...</a><br/></td></tr>
 <tr class="separator:a498472beaeadf1b80931a589a3c2d2ef inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22bdab749d0591d5c1871be7863b2f4c inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#a22bdab749d0591d5c1871be7863b2f4c">finalMobileUrls</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a22bdab749d0591d5c1871be7863b2f4c inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of possible final mobile URLs after all cross domain redirects.  <a href="#a22bdab749d0591d5c1871be7863b2f4c">More...</a><br/></td></tr>
 <tr class="separator:a22bdab749d0591d5c1871be7863b2f4c inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0577ac58ddcb6cc8adf370283d8e730a inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_app_url.html">AppUrl</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#a0577ac58ddcb6cc8adf370283d8e730a">finalAppUrls</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0577ac58ddcb6cc8adf370283d8e730a inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of final app URLs that will be used on mobile if the user has the specific app installed.  <a href="#a0577ac58ddcb6cc8adf370283d8e730a">More...</a><br/></td></tr>
 <tr class="separator:a0577ac58ddcb6cc8adf370283d8e730a inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f5bd6ef5a9bb205d96fbdfc452b792e inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#a0f5bd6ef5a9bb205d96fbdfc452b792e">trackingUrlTemplate</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0f5bd6ef5a9bb205d96fbdfc452b792e inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">URL template for constructing a tracking URL.  <a href="#a0f5bd6ef5a9bb205d96fbdfc452b792e">More...</a><br/></td></tr>
 <tr class="separator:a0f5bd6ef5a9bb205d96fbdfc452b792e inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b589ad16fe2d70dea410c3d4374118a inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_custom_parameters.html">CustomParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#a6b589ad16fe2d70dea410c3d4374118a">urlCustomParameters</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a6b589ad16fe2d70dea410c3d4374118a inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of mappings to be used for substituting URL custom parameter tags in the trackingUrlTemplate, finalUrls, and/or finalMobileUrls.  <a href="#a6b589ad16fe2d70dea410c3d4374118a">More...</a><br/></td></tr>
 <tr class="separator:a6b589ad16fe2d70dea410c3d4374118a inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac36c8b45f09b2ca10e30594c0be2edbb inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#ac36c8b45f09b2ca10e30594c0be2edbb">devicePreference</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac36c8b45f09b2ca10e30594c0be2edbb inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The device preference for the ad. <span class="constraint Selectable">This field can be selected using the value "DevicePreference".</span><span class="constraint Filterable">This field can be filtered on.</span>  <a href="#ac36c8b45f09b2ca10e30594c0be2edbb">More...</a><br/></td></tr>
 <tr class="separator:ac36c8b45f09b2ca10e30594c0be2edbb inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1bf2f5aa0534375826380f08c44ec7c inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#ad1bf2f5aa0534375826380f08c44ec7c">devicePreferenceSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ad1bf2f5aa0534375826380f08c44ec7c inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d9fed192659b1d7d30a2b1f598fcb16 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#a8d9fed192659b1d7d30a2b1f598fcb16">AdType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8d9fed192659b1d7d30a2b1f598fcb16 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that this instance is a subtype of <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html" title="The base class of all ad types. ">Ad</a>. Although this field is returned in the response, it is ignored on input and cannot be selected. Specify xsi:type instead.  <a href="#a8d9fed192659b1d7d30a2b1f598fcb16">More...</a><br/></td></tr>
 <tr class="separator:a8d9fed192659b1d7d30a2b1f598fcb16 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a <a href="//www.google.com/adwords/displaynetwork/plan-creative-campaigns/display-ad-builder.html">Display Ad Builder</a> template ad. A template ad is composed of a template (specified by its ID) and the data that populates the template's fields. For a list of available templates and their required fields, see <a href="/adwords/api/docs/appendix/templateads">Template Ads</a>. <span class="constraint AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD, SET.</span> </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="af207b177aa8af5b8c19d8e66aff3e333"></a>
 <div class="memitem">
 <div class="memproto">
@@ -188,6 +213,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The template ad rendered as an image. </p>
 
 </div>
 </div>
@@ -209,6 +236,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Group ID of all template ads, which should be created together. Template ads in the same union reference the same data but have different dimensions. Single ads do not have a union ID. If a template ad specifies an ad union with only one ad, no union will be created. <span class="constraint Selectable">This field can be selected using the value "TemplateAdUnionId".</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="a8805598621677cec681a4181a15b3041"></a>
@@ -228,6 +257,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The dimensions for this ad. </p>
 
 </div>
 </div>
@@ -249,6 +280,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Duration of this ad (if it contains playable media). <span class="constraint
+Selectable">This field can be selected using the value "TemplateAdDuration".</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="a426d2c435bbd49a9d25b038a5d73d5cb"></a>
@@ -268,6 +302,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#a4d636ae5da98e3ec3427d517f319733b" title="Duration of this ad (if it contains playable media). This field can be selected using the value &quot;Temp...">duration</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -289,6 +326,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Name of this ad. <span class="constraint Selectable">This field can be selected using the value "TemplateAdName".</span> <span class="constraint Required">This field is required and should not be </span></p>
+<p><code>null</code>. </p>
+
 </div>
 </div>
 <a class="anchor" id="ada0d702e3799e45cf3f2377dff8409f5"></a>
@@ -308,6 +348,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>For copies, the ad id of the ad this was or should be copied from. <span class="constraint Selectable">This field can be selected using the value "TemplateOriginAdId".</span> </p>
 
 </div>
 </div>
@@ -329,6 +371,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#ada0d702e3799e45cf3f2377dff8409f5" title="For copies, the ad id of the ad this was or should be copied from. This field can be selected using t...">originAdId</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="ad4bdf67d13795a6eae4125d6ed702168"></a>
@@ -348,6 +393,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>List of elements (each containing a set of fields) for the template referenced by </p>
+<p><code>templateId</code>. See <a href="/adwords/api/docs/appendix/templateads">Template Ads</a> for the elements and fields required for each template. </p>
 
 </div>
 </div>
@@ -369,6 +417,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>ID of the template to use. <span class="constraint Selectable">This field can be selected using the value "TemplateId".</span><span class="constraint
+Filterable">This field can be filtered on.</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="ab46873c93e59f02533b1a7dc9c6bcd4b"></a>
@@ -389,10 +440,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html#a99b135b498497fdbfbaae93f69c932f3" title="ID of the template to use. This field can be selected using the value &quot;TemplateId&quot;.This field can be filtered on. ">templateId</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -400,7 +454,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html">v201506</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_template_ad.html">TemplateAd</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:30 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:05 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

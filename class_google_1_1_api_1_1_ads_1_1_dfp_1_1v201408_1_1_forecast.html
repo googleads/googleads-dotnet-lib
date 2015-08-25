@@ -110,45 +110,69 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201408.Forecast Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Describes predicted inventory availability for a line item with the specified properties.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:aa7a61456e3750b010302f0373800b96c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#aa7a61456e3750b010302f0373800b96c">id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa7a61456e3750b010302f0373800b96c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uniquely identifies the  <a href="#aa7a61456e3750b010302f0373800b96c">More...</a><br/></td></tr>
 <tr class="separator:aa7a61456e3750b010302f0373800b96c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a795f3c8a69616aa2c3a28ebacccc32e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a795f3c8a69616aa2c3a28ebacccc32e6">idSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a795f3c8a69616aa2c3a28ebacccc32e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addf319dc01c9c4773148060ae1d50ece"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#addf319dc01c9c4773148060ae1d50ece">orderId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:addf319dc01c9c4773148060ae1d50ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique ID for the <a href="Order">Order</a> object that counts this reservation as a member, or  <a href="#addf319dc01c9c4773148060ae1d50ece">More...</a><br/></td></tr>
 <tr class="separator:addf319dc01c9c4773148060ae1d50ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b790a0c2381d7e8f7ecbeb9685e4c19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a6b790a0c2381d7e8f7ecbeb9685e4c19">orderIdSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a6b790a0c2381d7e8f7ecbeb9685e4c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a147bfc0c284ae3eea1066834ed38efa6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a0c4a262a2cfb28cffc16bdf3cf33bc08">UnitType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a147bfc0c284ae3eea1066834ed38efa6">unitType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a147bfc0c284ae3eea1066834ed38efa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unit with which the goal or cap of the <a href="LineItem">LineItem</a> is defined. Will be the same value as <a href="LineItem#unitType">LineItem::unitType</a> for both a set line item or a prospective one.  <a href="#a147bfc0c284ae3eea1066834ed38efa6">More...</a><br/></td></tr>
 <tr class="separator:a147bfc0c284ae3eea1066834ed38efa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab952500cf8383f644245c7cd002a8952"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#ab952500cf8383f644245c7cd002a8952">unitTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ab952500cf8383f644245c7cd002a8952"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bc6240838a8480e0861c0430c3fa131"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a3bc6240838a8480e0861c0430c3fa131">availableUnits</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3bc6240838a8480e0861c0430c3fa131"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of units, defined by <a href="Forecast#unitType">Forecast::unitType</a>, that can be booked without affecting the delivery of any reserved line items. Exceeding this value will not cause an overbook, but lower-priority line items may not run.  <a href="#a3bc6240838a8480e0861c0430c3fa131">More...</a><br/></td></tr>
 <tr class="separator:a3bc6240838a8480e0861c0430c3fa131"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9d40fd424986675ec9e2c6a40870b2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#af9d40fd424986675ec9e2c6a40870b2f">availableUnitsSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:af9d40fd424986675ec9e2c6a40870b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a123565eee2c86455af539e8c53a03cfe"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a123565eee2c86455af539e8c53a03cfe">deliveredUnits</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a123565eee2c86455af539e8c53a03cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of units, defined by <a href="Forecast#unitType">Forecast::unitType</a>, that have already been served if the reservation is already running.  <a href="#a123565eee2c86455af539e8c53a03cfe">More...</a><br/></td></tr>
 <tr class="separator:a123565eee2c86455af539e8c53a03cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a5dd753b36b717a8a91759ec79c3b1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a3a5dd753b36b717a8a91759ec79c3b1a">deliveredUnitsSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a3a5dd753b36b717a8a91759ec79c3b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a071b4555f3398a109bb845fa2ad7e89a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a071b4555f3398a109bb845fa2ad7e89a">matchedUnits</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a071b4555f3398a109bb845fa2ad7e89a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of units, defined by <a href="Forecast#unitType">Forecast::unitType</a>, that match the specified targeting and delivery settings.  <a href="#a071b4555f3398a109bb845fa2ad7e89a">More...</a><br/></td></tr>
 <tr class="separator:a071b4555f3398a109bb845fa2ad7e89a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2baa8b6932c7b1ac6ecf03b0f6c4560"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#aa2baa8b6932c7b1ac6ecf03b0f6c4560">matchedUnitsSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:aa2baa8b6932c7b1ac6ecf03b0f6c4560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9a092fb54c533dca1251d318ff3cb8b"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#ad9a092fb54c533dca1251d318ff3cb8b">possibleUnits</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad9a092fb54c533dca1251d318ff3cb8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of units, defined by <a href="Forecast#unitType">Forecast::unitType</a>, that could be booked by taking inventory away from lower-priority line items and some same-priority line items. Please note: booking this number may cause lower-priority line items and some same-priority line items to underdeliver.  <a href="#ad9a092fb54c533dca1251d318ff3cb8b">More...</a><br/></td></tr>
 <tr class="separator:ad9a092fb54c533dca1251d318ff3cb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3162fd5453a14c223e17a7af45a46f19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a3162fd5453a14c223e17a7af45a46f19">possibleUnitsSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a3162fd5453a14c223e17a7af45a46f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13cb935955b6ad79b42615ebbb42b2ac"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a13cb935955b6ad79b42615ebbb42b2ac">reservedUnits</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a13cb935955b6ad79b42615ebbb42b2ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of reserved units, defined by <a href="Forecast#unitType">Forecast::unitType</a>, requested. This can be an absolute or percentage value.  <a href="#a13cb935955b6ad79b42615ebbb42b2ac">More...</a><br/></td></tr>
 <tr class="separator:a13cb935955b6ad79b42615ebbb42b2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae86857d724a115bbb63785e1b7f64ed5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#ae86857d724a115bbb63785e1b7f64ed5">reservedUnitsSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ae86857d724a115bbb63785e1b7f64ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad900a2e469f3a46b501c2b20bb5b2e7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_contending_line_item.html">ContendingLineItem</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#ad900a2e469f3a46b501c2b20bb5b2e7b">contendingLineItems</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad900a2e469f3a46b501c2b20bb5b2e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of <a href="ContendingLineItem">contending line items</a> for this forecast.  <a href="#ad900a2e469f3a46b501c2b20bb5b2e7b">More...</a><br/></td></tr>
 <tr class="separator:ad900a2e469f3a46b501c2b20bb5b2e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Describes predicted inventory availability for a line item with the specified properties. </p>
+<p>Inventory has three threshold values along a line of possible inventory. From least to most, these are:</p>
+<dl>
+<dt>Available units </dt>
+<dd>How many units can be booked without affecting any other line items. Booking more than this number can cause lower- and same-priority line items to underdeliver. </dd>
+<dt>Possible units </dt>
+<dd>How many units can be booked without affecting any higher priority line items. Booking more than this number can cause the line item to underdeliver. </dd>
+<dt>Matched (forecast) units </dt>
+<dd>How many units satisfy all specified criteria. </dd>
+</dl>
+<p>Underdelivery is caused by overbooking. However, if more impressions are served than are predicted, the extra available inventory might enable all inventory guarantees to be met without overbooking.</p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a3bc6240838a8480e0861c0430c3fa131"></a>
 <div class="memitem">
 <div class="memproto">
@@ -167,7 +191,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201408_1_1_get_forecast_by_id.html#a38621bd7980c82ac4a32fe706022cbf8">Google.Api.Ads.Dfp.Examples.CSharp.v201408.GetForecastById.Run()</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201408_1_1_get_forecast.html#a2d9a32223665472660d9146742dfcdf8">Google.Api.Ads.Dfp.Examples.CSharp.v201408.GetForecast.Run()</a>.</p>
+<p>The number of units, defined by <a href="Forecast#unitType">Forecast::unitType</a>, that can be booked without affecting the delivery of any reserved line items. Exceeding this value will not cause an overbook, but lower-priority line items may not run. </p>
 
 </div>
 </div>
@@ -189,6 +213,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a3bc6240838a8480e0861c0430c3fa131" title="The number of units, defined by Forecast::unitType, that can be booked without affecting the delivery...">availableUnits</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="ad900a2e469f3a46b501c2b20bb5b2e7b"></a>
@@ -209,7 +236,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201408_1_1_get_forecast_by_id.html#a38621bd7980c82ac4a32fe706022cbf8">Google.Api.Ads.Dfp.Examples.CSharp.v201408.GetForecastById.Run()</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201408_1_1_get_forecast.html#a2d9a32223665472660d9146742dfcdf8">Google.Api.Ads.Dfp.Examples.CSharp.v201408.GetForecast.Run()</a>.</p>
+<p>List of <a href="ContendingLineItem">contending line items</a> for this forecast. </p>
 
 </div>
 </div>
@@ -231,6 +258,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The number of units, defined by <a href="Forecast#unitType">Forecast::unitType</a>, that have already been served if the reservation is already running. </p>
+
 </div>
 </div>
 <a class="anchor" id="a3a5dd753b36b717a8a91759ec79c3b1a"></a>
@@ -250,6 +279,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a123565eee2c86455af539e8c53a03cfe" title="The number of units, defined by Forecast::unitType, that have already been served if the reservation ...">deliveredUnits</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -271,6 +303,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Uniquely identifies the </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html" title="Describes predicted inventory availability for a line item with the specified properties. ">Forecast</a></code>. This value is read-only and is assigned by <a class="el" href="namespace_google.html">Google</a> when the forecast is created. The attribute will be either the ID of the <a href="LineItem">LineItem</a> object it represents, or <code>null</code> if the forecast represents a prospective line item. </p>
+
 </div>
 </div>
 <a class="anchor" id="a795f3c8a69616aa2c3a28ebacccc32e6"></a>
@@ -290,6 +325,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#aa7a61456e3750b010302f0373800b96c" title="Uniquely identifies the ">id</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -311,6 +349,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The number of units, defined by <a href="Forecast#unitType">Forecast::unitType</a>, that match the specified targeting and delivery settings. </p>
+
 </div>
 </div>
 <a class="anchor" id="aa2baa8b6932c7b1ac6ecf03b0f6c4560"></a>
@@ -330,6 +370,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a071b4555f3398a109bb845fa2ad7e89a" title="The number of units, defined by Forecast::unitType, that match the specified targeting and delivery s...">matchedUnits</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -351,6 +394,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The unique ID for the <a href="Order">Order</a> object that counts this reservation as a member, or </p>
+<p><code>null</code> if the forecast represents a prospective line item without an <a href="LineItem#orderId">LineItem::orderId</a> set. </p>
+
 </div>
 </div>
 <a class="anchor" id="a6b790a0c2381d7e8f7ecbeb9685e4c19"></a>
@@ -370,6 +416,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#addf319dc01c9c4773148060ae1d50ece" title="The unique ID for the Order object that counts this reservation as a member, or ">orderId</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -391,7 +440,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201408_1_1_get_forecast_by_id.html#a38621bd7980c82ac4a32fe706022cbf8">Google.Api.Ads.Dfp.Examples.CSharp.v201408.GetForecastById.Run()</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201408_1_1_get_forecast.html#a2d9a32223665472660d9146742dfcdf8">Google.Api.Ads.Dfp.Examples.CSharp.v201408.GetForecast.Run()</a>.</p>
+<p>The maximum number of units, defined by <a href="Forecast#unitType">Forecast::unitType</a>, that could be booked by taking inventory away from lower-priority line items and some same-priority line items. Please note: booking this number may cause lower-priority line items and some same-priority line items to underdeliver. </p>
 
 </div>
 </div>
@@ -413,7 +462,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201408_1_1_get_forecast_by_id.html#a38621bd7980c82ac4a32fe706022cbf8">Google.Api.Ads.Dfp.Examples.CSharp.v201408.GetForecastById.Run()</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201408_1_1_get_forecast.html#a2d9a32223665472660d9146742dfcdf8">Google.Api.Ads.Dfp.Examples.CSharp.v201408.GetForecast.Run()</a>.</p>
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#ad9a092fb54c533dca1251d318ff3cb8b" title="The maximum number of units, defined by Forecast::unitType, that could be booked by taking inventory ...">possibleUnits</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -435,6 +485,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The number of reserved units, defined by <a href="Forecast#unitType">Forecast::unitType</a>, requested. This can be an absolute or percentage value. </p>
+
 </div>
 </div>
 <a class="anchor" id="ae86857d724a115bbb63785e1b7f64ed5"></a>
@@ -454,6 +506,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a13cb935955b6ad79b42615ebbb42b2ac" title="The number of reserved units, defined by Forecast::unitType, requested. This can be an absolute or pe...">reservedUnits</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -475,6 +530,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The unit with which the goal or cap of the <a href="LineItem">LineItem</a> is defined. Will be the same value as <a href="LineItem#unitType">LineItem::unitType</a> for both a set line item or a prospective one. </p>
+
 </div>
 </div>
 <a class="anchor" id="ab952500cf8383f644245c7cd002a8952"></a>
@@ -495,10 +552,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html#a147bfc0c284ae3eea1066834ed38efa6" title="The unit with which the goal or cap of the LineItem is defined. Will be the same value as LineItem::u...">unitType</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201408/<a class="el" href="v201408_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201408/<a class="el" href="v201408_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -506,7 +566,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html">v201408</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_forecast.html">Forecast</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:58 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:29 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

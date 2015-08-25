@@ -110,45 +110,66 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_ad_wo
 <div class="title">Google.Api.Ads.AdWords.v201502.ReportDefinitionField Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents the fields that can be used to create a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition.html">ReportDefinition</a>. This class allows the user to query the list of fields applicable to a given report type. Consumers of reports will be able use the retrieved fields through the <a href="ReportDefinitionService#getReportFields">ReportDefinitionService::getReportFields</a> api and run the corresponding reports.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ae0bbcb9f26a6d320d82fae20e05fafc0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#ae0bbcb9f26a6d320d82fae20e05fafc0">fieldName</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ae0bbcb9f26a6d320d82fae20e05fafc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The field name. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#ae0bbcb9f26a6d320d82fae20e05fafc0">More...</a><br/></td></tr>
 <tr class="separator:ae0bbcb9f26a6d320d82fae20e05fafc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37c046f640bbd73d78d9dc293710f1ef"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a37c046f640bbd73d78d9dc293710f1ef">displayFieldName</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a37c046f640bbd73d78d9dc293710f1ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name that is displayed in the downloaded report. <span class="constraint
+ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a37c046f640bbd73d78d9dc293710f1ef">More...</a><br/></td></tr>
 <tr class="separator:a37c046f640bbd73d78d9dc293710f1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77a4ec168d22e26e57f9c67efa545f34"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a77a4ec168d22e26e57f9c67efa545f34">xmlAttributeName</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a77a4ec168d22e26e57f9c67efa545f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">The XML attribute in the downloaded report. <span class="constraint
+ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a77a4ec168d22e26e57f9c67efa545f34">More...</a><br/></td></tr>
 <tr class="separator:a77a4ec168d22e26e57f9c67efa545f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28294f622f17425b03b573ef048e9bcc"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a28294f622f17425b03b573ef048e9bcc">fieldType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a28294f622f17425b03b573ef048e9bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of field. Useful for knowing what operation type to pass in for a given field in a predicate. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a28294f622f17425b03b573ef048e9bcc">More...</a><br/></td></tr>
 <tr class="separator:a28294f622f17425b03b573ef048e9bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ae7841486050b8553a3acf02dbf0787"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a4ae7841486050b8553a3acf02dbf0787">fieldBehavior</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4ae7841486050b8553a3acf02dbf0787"><td class="mdescLeft">&#160;</td><td class="mdescRight">The behavior of this field. Possible values are: "ATTRIBUTE", "METRIC" and "SEGMENT". <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a4ae7841486050b8553a3acf02dbf0787">More...</a><br/></td></tr>
 <tr class="separator:a4ae7841486050b8553a3acf02dbf0787"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac627da429cfb902aeb530636ef2a4cb6"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#ac627da429cfb902aeb530636ef2a4cb6">enumValues</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac627da429cfb902aeb530636ef2a4cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of enum values for the corresponding field iff the field is an enum type. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#ac627da429cfb902aeb530636ef2a4cb6">More...</a><br/></td></tr>
 <tr class="separator:ac627da429cfb902aeb530636ef2a4cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c153f03f59b07e5a8252266082642b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a9c153f03f59b07e5a8252266082642b3">canSelect</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9c153f03f59b07e5a8252266082642b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the user can select this field. <span class="constraint
+ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a9c153f03f59b07e5a8252266082642b3">More...</a><br/></td></tr>
 <tr class="separator:a9c153f03f59b07e5a8252266082642b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a522ca2425aec0aefa7272de496112ef9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a522ca2425aec0aefa7272de496112ef9">canSelectSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a522ca2425aec0aefa7272de496112ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a972eeab61d3844e1071c76df3f9c9b5d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a972eeab61d3844e1071c76df3f9c9b5d">canFilter</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a972eeab61d3844e1071c76df3f9c9b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the user can filter on this field. <span class="constraint
+ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a972eeab61d3844e1071c76df3f9c9b5d">More...</a><br/></td></tr>
 <tr class="separator:a972eeab61d3844e1071c76df3f9c9b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac72252a94354bbe9b8865971749f1653"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#ac72252a94354bbe9b8865971749f1653">canFilterSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ac72252a94354bbe9b8865971749f1653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9f305e6a674838de71d48d71f2759a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#ae9f305e6a674838de71d48d71f2759a4">isEnumType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ae9f305e6a674838de71d48d71f2759a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the field is an enum type. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#ae9f305e6a674838de71d48d71f2759a4">More...</a><br/></td></tr>
 <tr class="separator:ae9f305e6a674838de71d48d71f2759a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9de321982a25378d30b2d21a3d55d360"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a9de321982a25378d30b2d21a3d55d360">isEnumTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a9de321982a25378d30b2d21a3d55d360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02b897a999aaee1bb18fc3c7e81146e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a02b897a999aaee1bb18fc3c7e81146e1">isBeta</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a02b897a999aaee1bb18fc3c7e81146e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the field is only available with beta access. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a02b897a999aaee1bb18fc3c7e81146e1">More...</a><br/></td></tr>
 <tr class="separator:a02b897a999aaee1bb18fc3c7e81146e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab88e22efd11bbfdebfacc982c57635d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#ab88e22efd11bbfdebfacc982c57635d9">isBetaSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ab88e22efd11bbfdebfacc982c57635d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3755729213b21d277bd34431f52c2fee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a3755729213b21d277bd34431f52c2fee">isZeroRowCompatible</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3755729213b21d277bd34431f52c2fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the field can be selected in queries that explicitly request zero rows. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a3755729213b21d277bd34431f52c2fee">More...</a><br/></td></tr>
 <tr class="separator:a3755729213b21d277bd34431f52c2fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab79b352aad595dc37e7485837446d2c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#ab79b352aad595dc37e7485837446d2c6">isZeroRowCompatibleSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ab79b352aad595dc37e7485837446d2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c0f830b7859c13ea927d92dde9e1987"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_enum_value_pair.html">EnumValuePair</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a2c0f830b7859c13ea927d92dde9e1987">enumValuePairs</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a2c0f830b7859c13ea927d92dde9e1987"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of enum values in api to their corresponding display values in the downloaded reports. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a2c0f830b7859c13ea927d92dde9e1987">More...</a><br/></td></tr>
 <tr class="separator:a2c0f830b7859c13ea927d92dde9e1987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents the fields that can be used to create a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition.html">ReportDefinition</a>. This class allows the user to query the list of fields applicable to a given report type. Consumers of reports will be able use the retrieved fields through the <a href="ReportDefinitionService#getReportFields">ReportDefinitionService::getReportFields</a> api and run the corresponding reports. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a972eeab61d3844e1071c76df3f9c9b5d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -166,6 +187,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Indicates if the user can filter on this field. <span class="constraint
+ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
 
 </div>
 </div>
@@ -187,6 +211,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a972eeab61d3844e1071c76df3f9c9b5d" title="Indicates if the user can filter on this field. This field is read only and will be ignored when sent...">canFilter</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a9c153f03f59b07e5a8252266082642b3"></a>
@@ -206,6 +233,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Indicates if the user can select this field. <span class="constraint
+ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
 
 </div>
 </div>
@@ -227,6 +257,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a9c153f03f59b07e5a8252266082642b3" title="Indicates if the user can select this field. This field is read only and will be ignored when sent to...">canSelect</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a37c046f640bbd73d78d9dc293710f1ef"></a>
@@ -246,6 +279,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The name that is displayed in the downloaded report. <span class="constraint
+ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
 
 </div>
 </div>
@@ -267,6 +303,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>List of enum values in api to their corresponding display values in the downloaded reports. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="ac627da429cfb902aeb530636ef2a4cb6"></a>
@@ -286,6 +324,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>List of enum values for the corresponding field iff the field is an enum type. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
 
 <p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_get_report_fields.html#a3a182aecabcc137f57430815b8237f57">Google.Api.Ads.AdWords.Examples.CSharp.v201502.GetReportFields.Run()</a>.</p>
 
@@ -309,6 +349,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The behavior of this field. Possible values are: "ATTRIBUTE", "METRIC" and "SEGMENT". <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="ae0bbcb9f26a6d320d82fae20e05fafc0"></a>
@@ -328,6 +370,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The field name. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
 
 </div>
 </div>
@@ -349,6 +393,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The type of field. Useful for knowing what operation type to pass in for a given field in a predicate. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="a02b897a999aaee1bb18fc3c7e81146e1"></a>
@@ -368,6 +414,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Indicates that the field is only available with beta access. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
 
 </div>
 </div>
@@ -389,6 +437,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a02b897a999aaee1bb18fc3c7e81146e1" title="Indicates that the field is only available with beta access. This field is read only and will be igno...">isBeta</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="ae9f305e6a674838de71d48d71f2759a4"></a>
@@ -408,6 +459,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Indicates that the field is an enum type. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
 
 </div>
 </div>
@@ -429,6 +482,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#ae9f305e6a674838de71d48d71f2759a4" title="Indicates that the field is an enum type. This field is read only and will be ignored when sent to th...">isEnumType</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a3755729213b21d277bd34431f52c2fee"></a>
@@ -448,6 +504,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Indicates if the field can be selected in queries that explicitly request zero rows. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
 
 </div>
 </div>
@@ -469,6 +527,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html#a3755729213b21d277bd34431f52c2fee" title="Indicates if the field can be selected in queries that explicitly request zero rows. This field is read only and will be ignored when sent to the API. ">isZeroRowCompatible</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a77a4ec168d22e26e57f9c67efa545f34"></a>
@@ -489,10 +550,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The XML attribute in the downloaded report. <span class="constraint
+ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201502/<a class="el" href="v201502_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201502/<a class="el" href="v201502_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -500,7 +564,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502.html">v201502</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html">ReportDefinitionField</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:26 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:03 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

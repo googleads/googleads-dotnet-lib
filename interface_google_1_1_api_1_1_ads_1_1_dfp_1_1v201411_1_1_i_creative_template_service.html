@@ -111,19 +111,23 @@ $(document).ready(function(){initNavTree('interface_google_1_1_api_1_1_ads_1_1_d
 <div class="title">Google.Api.Ads.Dfp.v201411.ICreativeTemplateService Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provides methods for retrieving <a href="CreativeTemplate">CreativeTemplate</a> objects.  
+ <a href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_creative_template_service.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.Dfp.v201411.ICreativeTemplateService:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_creative_template_service.png" usemap="#Google.Api.Ads.Dfp.v201411.ICreativeTemplateService_map" alt=""/>
   <map id="Google.Api.Ads.Dfp.v201411.ICreativeTemplateService_map" name="Google.Api.Ads.Dfp.v201411.ICreativeTemplateService_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_creative_template_service.html" alt="Google.Api.Ads.Dfp.v201411.CreativeTemplateService" shape="rect" coords="0,56,327,80"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_creative_template_service.html" title="Provides methods for retrieving CreativeTemplate objects. " alt="Google.Api.Ads.Dfp.v201411.CreativeTemplateService" shape="rect" coords="0,56,327,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa47492180d6599d014b5ddd5e66948e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_creative_template_page.html">CreativeTemplatePage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_creative_template_service.html#aa47492180d6599d014b5ddd5e66948e0">getCreativeTemplatesByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_statement.html">Statement</a> filterStatement)</td></tr>
+<tr class="memdesc:aa47492180d6599d014b5ddd5e66948e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="CreativeTemplatePage">CreativeTemplatePage</a> of <a href="CreativeTemplate">CreativeTemplate</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering:  <a href="#aa47492180d6599d014b5ddd5e66948e0">More...</a><br/></td></tr>
 <tr class="separator:aa47492180d6599d014b5ddd5e66948e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -133,7 +137,9 @@ Properties</h2></td></tr>
 <tr class="memitem:a13f8f8f7c3d9f28a2b3c5cf03e70625a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_response_header.html">ResponseHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_creative_template_service.html#a13f8f8f7c3d9f28a2b3c5cf03e70625a">ResponseHeader</a><code> [get, set]</code></td></tr>
 <tr class="separator:a13f8f8f7c3d9f28a2b3c5cf03e70625a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides methods for retrieving <a href="CreativeTemplate">CreativeTemplate</a> objects. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aa47492180d6599d014b5ddd5e66948e0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -147,6 +153,27 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets a <a href="CreativeTemplatePage">CreativeTemplatePage</a> of <a href="CreativeTemplate">CreativeTemplate</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering: </p>
+<table class="doxtable">
+<tr>
+<th scope="col">PQL Property </th><th scope="col">Object Property  </th></tr>
+<tr>
+<td><code>id</code> </td><td><a href="CreativeTemplate#id">CreativeTemplate::id</a>  </td></tr>
+<tr>
+<td><code>name</code> </td><td><a href="CreativeTemplate#name">CreativeTemplate::name</a>  </td></tr>
+<tr>
+<td><code>type</code> </td><td><a href="CreativeTemplate#type">CreativeTemplate::type</a>  </td></tr>
+<tr>
+<td><code>status</code> </td><td><a href="CreativeTemplate#status">CreativeTemplate::status</a>  </td></tr>
+</table>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filterStatement</td><td>a Publisher Query Language statement used to filter a set of creative templates.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the creative templates that match the given filter</dd></dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_creative_template_service.html#afbdbc643c38218a5aef4c5f91e22ca01">Google.Api.Ads.Dfp.v201411.CreativeTemplateService</a>.</p>
 
@@ -194,7 +221,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -202,7 +229,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html">v201411</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_creative_template_service.html">ICreativeTemplateService</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:06 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:37 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

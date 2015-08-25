@@ -44,5 +44,5 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_template_targeti
     [ "mobileDeviceTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_template_targeting.html#adbe0be4975a4243f5b3a215f0848eebf", null ],
     [ "operatingSystemTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_template_targeting.html#a81c7597882c63146fcc0cac4051da274", null ],
     [ "userDomainTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_template_targeting.html#a89207a38a966529bfbf3826a7d50b74d", null ],
-    [ "videoPositionTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_template_targeting.html#af936103520a6e5bed7d48664bcff4ebe", null ]
+    [ "videoPositionTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_template_targeting.html#afaafeee0fb1059d4f533dc8435e8d226", null ]
 ];

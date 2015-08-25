@@ -110,35 +110,48 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201505.AdExclusionRule Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents an inventory blocking rule, which prevents certain ads from being served to specified ad units.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ac7c96af480a0248d3d532fed09cc8b2d"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#ac7c96af480a0248d3d532fed09cc8b2d">id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac7c96af480a0248d3d532fed09cc8b2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique ID of the  <a href="#ac7c96af480a0248d3d532fed09cc8b2d">More...</a><br/></td></tr>
 <tr class="separator:ac7c96af480a0248d3d532fed09cc8b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cb031907db86deb547c50604755317c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#a9cb031907db86deb547c50604755317c">idSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a9cb031907db86deb547c50604755317c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7d48d567feb58fc53689170477e0100"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#af7d48d567feb58fc53689170477e0100">name</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af7d48d567feb58fc53689170477e0100"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the  <a href="#af7d48d567feb58fc53689170477e0100">More...</a><br/></td></tr>
 <tr class="separator:af7d48d567feb58fc53689170477e0100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abecb52dfbfa1de7b529000e2989ea31a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#abecb52dfbfa1de7b529000e2989ea31a">isActive</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abecb52dfbfa1de7b529000e2989ea31a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not the  <a href="#abecb52dfbfa1de7b529000e2989ea31a">More...</a><br/></td></tr>
 <tr class="separator:abecb52dfbfa1de7b529000e2989ea31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d6c8ac1e89a58920ec10128159b11d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#a1d6c8ac1e89a58920ec10128159b11d7">isActiveSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a1d6c8ac1e89a58920ec10128159b11d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02d061a767abfc3d955fd93da4c496c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_inventory_targeting.html">InventoryTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#a02d061a767abfc3d955fd93da4c496c6">inventoryTargeting</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a02d061a767abfc3d955fd93da4c496c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The targeting information about which <a href="AdUnitTargeting">AdUnitTargeting</a> objects this rule is in effect for. Any <a href="AdUnitTargeting">AdUnitTargeting</a> objects included here will have their children included implicitly. Children of a targeted ad unit can be excluded. This attribute is required.  <a href="#a02d061a767abfc3d955fd93da4c496c6">More...</a><br/></td></tr>
 <tr class="separator:a02d061a767abfc3d955fd93da4c496c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a336f3f0caca4ba8f318f9298c46f6782"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#a336f3f0caca4ba8f318f9298c46f6782">isBlockAll</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a336f3f0caca4ba8f318f9298c46f6782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not this rule blocks all ads from serving other than the labels or advertisers specified. This attribute is optional and defaults to false.  <a href="#a336f3f0caca4ba8f318f9298c46f6782">More...</a><br/></td></tr>
 <tr class="separator:a336f3f0caca4ba8f318f9298c46f6782"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85f72e266df652c5b67a40a9a9bfacf1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#a85f72e266df652c5b67a40a9a9bfacf1">isBlockAllSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a85f72e266df652c5b67a40a9a9bfacf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40ad0cfdbed8fcd94de9d1aa44cf5844"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#a40ad0cfdbed8fcd94de9d1aa44cf5844">blockedLabelIds</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a40ad0cfdbed8fcd94de9d1aa44cf5844"><td class="mdescLeft">&#160;</td><td class="mdescRight">The labels that will be blocked from serving. Any advertiser, order or line item with one of these labels will not serve on the relevant ad units and their children.  <a href="#a40ad0cfdbed8fcd94de9d1aa44cf5844">More...</a><br/></td></tr>
 <tr class="separator:a40ad0cfdbed8fcd94de9d1aa44cf5844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad87a40f96e7aba98cf9394f438f846a5"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#ad87a40f96e7aba98cf9394f438f846a5">allowedLabelIds</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad87a40f96e7aba98cf9394f438f846a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The allowed list of labels that will not be blocked by this rule. This trumps the values of <a href="#isBlockAllLabels">#isBlockAllLabels</a> and <a href="#blockedLabelIds">#blockedLabelIds</a>. For example, if a rule specifies a blocked label "Cars", and an allowed label "Sports", any ad that is labeled both "Sports" and "Cars" will not be blocked by this rule.  <a href="#ad87a40f96e7aba98cf9394f438f846a5">More...</a><br/></td></tr>
 <tr class="separator:ad87a40f96e7aba98cf9394f438f846a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad691ab6a10a19a9516d71efb29df65df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505.html#ab0110d67b83d37428b685f3e30a49c09">AdExclusionRuleType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#ad691ab6a10a19a9516d71efb29df65df">type</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad691ab6a10a19a9516d71efb29df65df"><td class="mdescLeft">&#160;</td><td class="mdescRight">The derived type of this rule: whether it is associated with labels, unified entities, or competitive groups. Because it is derived, it is also read-only, so changes made to this field will not be persisted.  <a href="#ad691ab6a10a19a9516d71efb29df65df">More...</a><br/></td></tr>
 <tr class="separator:ad691ab6a10a19a9516d71efb29df65df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54bdd2a5e8800d4b4eb77bc222fab0a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#a54bdd2a5e8800d4b4eb77bc222fab0a5">typeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a54bdd2a5e8800d4b4eb77bc222fab0a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents an inventory blocking rule, which prevents certain ads from being served to specified ad units. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="ad87a40f96e7aba98cf9394f438f846a5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -156,6 +169,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The allowed list of labels that will not be blocked by this rule. This trumps the values of <a href="#isBlockAllLabels">#isBlockAllLabels</a> and <a href="#blockedLabelIds">#blockedLabelIds</a>. For example, if a rule specifies a blocked label "Cars", and an allowed label "Sports", any ad that is labeled both "Sports" and "Cars" will not be blocked by this rule. </p>
 
 </div>
 </div>
@@ -177,6 +192,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The labels that will be blocked from serving. Any advertiser, order or line item with one of these labels will not serve on the relevant ad units and their children. </p>
+
 </div>
 </div>
 <a class="anchor" id="ac7c96af480a0248d3d532fed09cc8b2d"></a>
@@ -196,6 +213,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The unique ID of the </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html" title="Represents an inventory blocking rule, which prevents certain ads from being served to specified ad u...">AdExclusionRule</a></code>. This attribute is readonly and is assigned by <a class="el" href="namespace_google.html">Google</a>. </p>
 
 </div>
 </div>
@@ -217,6 +237,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#ac7c96af480a0248d3d532fed09cc8b2d" title="The unique ID of the ">id</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a02d061a767abfc3d955fd93da4c496c6"></a>
@@ -236,6 +259,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The targeting information about which <a href="AdUnitTargeting">AdUnitTargeting</a> objects this rule is in effect for. Any <a href="AdUnitTargeting">AdUnitTargeting</a> objects included here will have their children included implicitly. Children of a targeted ad unit can be excluded. This attribute is required. </p>
 
 </div>
 </div>
@@ -257,6 +282,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Whether or not the </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html" title="Represents an inventory blocking rule, which prevents certain ads from being served to specified ad u...">AdExclusionRule</a></code> is active. An inactive rule will have no effect on adserving. This attribute is readonly. </p>
+
 </div>
 </div>
 <a class="anchor" id="a1d6c8ac1e89a58920ec10128159b11d7"></a>
@@ -276,6 +304,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#abecb52dfbfa1de7b529000e2989ea31a" title="Whether or not the ">isActive</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -297,6 +328,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Whether or not this rule blocks all ads from serving other than the labels or advertisers specified. This attribute is optional and defaults to false. </p>
+
 </div>
 </div>
 <a class="anchor" id="a85f72e266df652c5b67a40a9a9bfacf1"></a>
@@ -316,6 +349,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#a336f3f0caca4ba8f318f9298c46f6782" title="Whether or not this rule blocks all ads from serving other than the labels or advertisers specified...">isBlockAll</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -337,6 +373,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The name of the </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html" title="Represents an inventory blocking rule, which prevents certain ads from being served to specified ad u...">AdExclusionRule</a></code>. This attribute is required. </p>
+
 </div>
 </div>
 <a class="anchor" id="ad691ab6a10a19a9516d71efb29df65df"></a>
@@ -356,6 +395,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The derived type of this rule: whether it is associated with labels, unified entities, or competitive groups. Because it is derived, it is also read-only, so changes made to this field will not be persisted. </p>
 
 </div>
 </div>
@@ -377,10 +418,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html#ad691ab6a10a19a9516d71efb29df65df" title="The derived type of this rule: whether it is associated with labels, unified entities, or competitive groups. Because it is derived, it is also read-only, so changes made to this field will not be persisted. ">type</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201505/<a class="el" href="v201505_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201505/<a class="el" href="v201505_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -388,7 +432,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505.html">v201505</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_ad_exclusion_rule.html">AdExclusionRule</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:11 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:48 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

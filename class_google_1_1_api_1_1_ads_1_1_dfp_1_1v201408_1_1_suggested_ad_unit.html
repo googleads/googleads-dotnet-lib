@@ -110,31 +110,44 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201408.SuggestedAdUnit Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a089ce1344fadebed78f183885b771b7d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#a089ce1344fadebed78f183885b771b7d">id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a089ce1344fadebed78f183885b771b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique ID of the suggested ad unit. After API version 201311 this field will be a numerical ID. Earlier versions will return a string value which is the complete path to the suggested ad unit with path elements separated by '/' characters. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>.  <a href="#a089ce1344fadebed78f183885b771b7d">More...</a><br/></td></tr>
 <tr class="separator:a089ce1344fadebed78f183885b771b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7afc0951567e07c8e2ff736636a8d2b"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#ae7afc0951567e07c8e2ff736636a8d2b">numRequests</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ae7afc0951567e07c8e2ff736636a8d2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of times the ad tag corresponding to this suggested ad unit has been served in the previous week. Suggested ad units are only created when they have been served at least ten times in that period. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>.  <a href="#ae7afc0951567e07c8e2ff736636a8d2b">More...</a><br/></td></tr>
 <tr class="separator:ae7afc0951567e07c8e2ff736636a8d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5db2d55cd5f0f8019591e488fe699a55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#a5db2d55cd5f0f8019591e488fe699a55">numRequestsSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a5db2d55cd5f0f8019591e488fe699a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c61da7902a95474e5c0714855936abb"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#a9c61da7902a95474e5c0714855936abb">path</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9c61da7902a95474e5c0714855936abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hierarchical path from the <a href="#parentPath">last existing ad unit</a> after this and all suggested parent ad units have been created. Each path element is a separate ad unit code in the returned list. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>.  <a href="#a9c61da7902a95474e5c0714855936abb">More...</a><br/></td></tr>
 <tr class="separator:a9c61da7902a95474e5c0714855936abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c1d0d84e4195cc891febe831225605f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit_parent.html">AdUnitParent</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#a8c1d0d84e4195cc891febe831225605f">parentPath</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8c1d0d84e4195cc891febe831225605f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The existing hierarchical path leading up to, and including, the parent of the first suggested ad unit in the ad unit hierarchy. The  <a href="#a8c1d0d84e4195cc891febe831225605f">More...</a><br/></td></tr>
 <tr class="separator:a8c1d0d84e4195cc891febe831225605f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0b5a1cae40c8a622a7cea6f026a3096"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a36de8c64f1f659ecf999d83f1498d698">AdUnitTargetWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#ab0b5a1cae40c8a622a7cea6f026a3096">targetWindow</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab0b5a1cae40c8a622a7cea6f026a3096"><td class="mdescLeft">&#160;</td><td class="mdescRight">The  <a href="#ab0b5a1cae40c8a622a7cea6f026a3096">More...</a><br/></td></tr>
 <tr class="separator:ab0b5a1cae40c8a622a7cea6f026a3096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cdd2c3613373c5c17d6dfbc0d68afec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#a0cdd2c3613373c5c17d6dfbc0d68afec">targetWindowSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a0cdd2c3613373c5c17d6dfbc0d68afec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae47920c5d5af1024fede3815e1bfa11d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af77caa050b597c0d348d72981ad5ecf8">TargetPlatform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#ae47920c5d5af1024fede3815e1bfa11d">targetPlatform</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ae47920c5d5af1024fede3815e1bfa11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The target platform for the browser that clicked the underlying ad tag. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>.  <a href="#ae47920c5d5af1024fede3815e1bfa11d">More...</a><br/></td></tr>
 <tr class="separator:ae47920c5d5af1024fede3815e1bfa11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a6a439b3ab9e509fbed6739ec4571fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#a8a6a439b3ab9e509fbed6739ec4571fb">targetPlatformSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a8a6a439b3ab9e509fbed6739ec4571fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af676c2ceca4516927fdccff02559aee7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit_size.html">AdUnitSize</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#af676c2ceca4516927fdccff02559aee7">suggestedAdUnitSizes</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af676c2ceca4516927fdccff02559aee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The target sizes associated with this  <a href="#af676c2ceca4516927fdccff02559aee7">More...</a><br/></td></tr>
 <tr class="separator:af676c2ceca4516927fdccff02559aee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html" title="A ">SuggestedAdUnit</a></code> represents a suggestion for a new ad unit, based on an ad tag that has been served at least ten times in the past week, but which does not correspond to a defined ad unit. This type is read-only. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a089ce1344fadebed78f183885b771b7d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -152,6 +165,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The unique ID of the suggested ad unit. After API version 201311 this field will be a numerical ID. Earlier versions will return a string value which is the complete path to the suggested ad unit with path elements separated by '/' characters. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>. </p>
 
 </div>
 </div>
@@ -173,6 +188,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the number of times the ad tag corresponding to this suggested ad unit has been served in the previous week. Suggested ad units are only created when they have been served at least ten times in that period. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>. </p>
+
 </div>
 </div>
 <a class="anchor" id="a5db2d55cd5f0f8019591e488fe699a55"></a>
@@ -192,6 +209,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#ae7afc0951567e07c8e2ff736636a8d2b" title="Returns the number of times the ad tag corresponding to this suggested ad unit has been served in the...">numRequests</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -213,6 +233,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The existing hierarchical path leading up to, and including, the parent of the first suggested ad unit in the ad unit hierarchy. The </p>
+<p><code>parentPath</code> and the <code>path</code> make up the full path of the suggested ad unit after it is approved. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>. </p>
+<p><b>Note:</b> The ad unit code for each of the parent ad units will not be provided.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9c61da7902a95474e5c0714855936abb"></a>
@@ -232,6 +256,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The hierarchical path from the <a href="#parentPath">last existing ad unit</a> after this and all suggested parent ad units have been created. Each path element is a separate ad unit code in the returned list. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>. </p>
 
 </div>
 </div>
@@ -253,6 +279,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The target sizes associated with this </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html" title="A ">SuggestedAdUnit</a></code>. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>. </p>
+
 </div>
 </div>
 <a class="anchor" id="ae47920c5d5af1024fede3815e1bfa11d"></a>
@@ -272,6 +301,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The target platform for the browser that clicked the underlying ad tag. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>. </p>
 
 </div>
 </div>
@@ -293,6 +324,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#ae47920c5d5af1024fede3815e1bfa11d" title="The target platform for the browser that clicked the underlying ad tag. This attribute is read-only a...">targetPlatform</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="ab0b5a1cae40c8a622a7cea6f026a3096"></a>
@@ -312,6 +346,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The </p>
+<p><code>target</code> attribute of the underlying ad tag, as defined in the <a href="AdUnit">AdUnit</a>. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>. </p>
 
 </div>
 </div>
@@ -333,10 +370,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html#ab0b5a1cae40c8a622a7cea6f026a3096" title="The ">targetWindow</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201408/<a class="el" href="v201408_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201408/<a class="el" href="v201408_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -344,7 +384,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html">v201408</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_suggested_ad_unit.html">SuggestedAdUnit</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:59 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:29 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

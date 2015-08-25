@@ -111,25 +111,32 @@ $(document).ready(function(){initNavTree('interface_google_1_1_api_1_1_ads_1_1_d
 <div class="title">Google.Api.Ads.Dfp.v201408.IReportService Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provides methods for executing a <a href="ReportJob">ReportJob</a> and retrieving performance and statistics about ad campaigns, networks, inventory and sales.  
+ <a href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_i_report_service.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.Dfp.v201408.IReportService:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_i_report_service.png" usemap="#Google.Api.Ads.Dfp.v201408.IReportService_map" alt=""/>
   <map id="Google.Api.Ads.Dfp.v201408.IReportService_map" name="Google.Api.Ads.Dfp.v201408.IReportService_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_service.html" alt="Google.Api.Ads.Dfp.v201408.ReportService" shape="rect" coords="0,56,266,80"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_service.html" title="Provides methods for executing a ReportJob and retrieving performance and statistics about ad campaig..." alt="Google.Api.Ads.Dfp.v201408.ReportService" shape="rect" coords="0,56,266,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e2863ad899b621921017d434ec3332d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_i_report_service.html#a9e2863ad899b621921017d434ec3332d">getReportDownloadURL</a> (long reportJobId, <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a05c90f3c9e0c65198eb796254445892b">ExportFormat</a> exportFormat)</td></tr>
+<tr class="memdesc:a9e2863ad899b621921017d434ec3332d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the URL at which the report file can be downloaded.  <a href="#a9e2863ad899b621921017d434ec3332d">More...</a><br/></td></tr>
 <tr class="separator:a9e2863ad899b621921017d434ec3332d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad47969b0ffa8164322ae5cfa9ba3fa38"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_i_report_service.html#ad47969b0ffa8164322ae5cfa9ba3fa38">getReportDownloadUrlWithOptions</a> (long reportJobId, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_download_options.html">ReportDownloadOptions</a> reportDownloadOptions)</td></tr>
+<tr class="memdesc:ad47969b0ffa8164322ae5cfa9ba3fa38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the URL at which the report file can be downloaded, and allows for customization of the downloaded report.  <a href="#ad47969b0ffa8164322ae5cfa9ba3fa38">More...</a><br/></td></tr>
 <tr class="separator:ad47969b0ffa8164322ae5cfa9ba3fa38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb0d7009cb785c02ab4e59f26ecf6469"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_job.html">ReportJob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_i_report_service.html#aeb0d7009cb785c02ab4e59f26ecf6469">getReportJob</a> (long reportJobId)</td></tr>
+<tr class="memdesc:aeb0d7009cb785c02ab4e59f26ecf6469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a href="ReportJob">ReportJob</a> uniquely identified by the given ID with only the <a href="ReportJob#reportJobStatus">ReportJob::reportJobStatus</a> and <a href="ReportJob#id">ReportJob::id</a> fields filled in.  <a href="#aeb0d7009cb785c02ab4e59f26ecf6469">More...</a><br/></td></tr>
 <tr class="separator:aeb0d7009cb785c02ab4e59f26ecf6469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab104723dcb6bd5eb200030ae6c4c305d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_job.html">ReportJob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_i_report_service.html#ab104723dcb6bd5eb200030ae6c4c305d">runReportJob</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_job.html">ReportJob</a> reportJob)</td></tr>
+<tr class="memdesc:ab104723dcb6bd5eb200030ae6c4c305d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiates the execution of a <a href="ReportQuery">ReportQuery</a> on the server.  <a href="#ab104723dcb6bd5eb200030ae6c4c305d">More...</a><br/></td></tr>
 <tr class="separator:ab104723dcb6bd5eb200030ae6c4c305d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -139,7 +146,25 @@ Properties</h2></td></tr>
 <tr class="memitem:a82247aac0ea41a15bbc8efd3e31a736d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_response_header.html">ResponseHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_i_report_service.html#a82247aac0ea41a15bbc8efd3e31a736d">ResponseHeader</a><code> [get, set]</code></td></tr>
 <tr class="separator:a82247aac0ea41a15bbc8efd3e31a736d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides methods for executing a <a href="ReportJob">ReportJob</a> and retrieving performance and statistics about ad campaigns, networks, inventory and sales. </p>
+<p>Follow the steps outlined below:</p>
+<ul>
+<li>
+Create the <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_job.html" title="Represents a report job that will be run to retrieve performance and statistics information about ad ...">ReportJob</a></code> object by invoking <a href="ReportService#runReportJob">ReportService::runReportJob</a>. </li>
+<li>
+Poll the <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_job.html" title="Represents a report job that will be run to retrieve performance and statistics information about ad ...">ReportJob</a></code> object using <a href="ReportService#getReportJob">ReportService::getReportJob</a>. </li>
+<li>
+Continue to poll the <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_job.html" title="Represents a report job that will be run to retrieve performance and statistics information about ad ...">ReportJob</a></code> object until the <a href="ReportJob#reportJobStatus">ReportJob::reportJobStatus</a> field is equal to <a href="ReportJobStatus#COMPLETED">ReportJobStatus::COMPLETED</a> or <a href="ReportJobStatus#FAILED">ReportJobStatus::FAILED</a>. </li>
+<li>
+If successful, fetch the URL for downloading the report by invoking <a href="ReportService#getReportDownloadURL">ReportService::getReportDownloadURL</a>. </li>
+</ul>
+<p><br/>
+ <br/>
+ </p>
+<h4>Test network behavior</h4>
+<p>The networks created using <a href="NetworkService#makeTestNetwork">NetworkService::makeTestNetwork</a> are unable to provide reports that would be comparable to the production environment because reports require traffic history. In the test networks, reports will consistently return no data for all reports.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a9e2863ad899b621921017d434ec3332d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -163,6 +188,17 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the URL at which the report file can be downloaded. </p>
+<p>The report will be generated as a gzip archive, containing the report file itself. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reportJobId</td><td>the ID of the <a href="ReportJob">ReportJob</a></td></tr>
+    <tr><td class="paramname">exportFormat</td><td>the <a href="ExportFormat">ExportFormat</a> for the report file</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the URL for report file download</dd></dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_service.html#af4da714435aac47e4491952233786913">Google.Api.Ads.Dfp.v201408.ReportService</a>.</p>
 
@@ -192,6 +228,17 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the URL at which the report file can be downloaded, and allows for customization of the downloaded report. </p>
+<p>By default, the report will be generated as a gzip archive, containing the report file itself. This can be changed by setting <a href="ReportDownloadOptions#useGzipCompression">ReportDownloadOptions::useGzipCompression</a> to false. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reportJobId</td><td>the ID of the <a href="ReportJob">ReportJob</a></td></tr>
+    <tr><td class="paramname">reportDownloadOptions</td><td>the <a href="ReportDownloadOptions">ReportDownloadOptions</a> for the request</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the URL for report file download</dd></dl>
+
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_service.html#a49d5f8dac9197e0d62fc4e433fdf4f3c">Google.Api.Ads.Dfp.v201408.ReportService</a>.</p>
 
 </div>
@@ -210,6 +257,16 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the <a href="ReportJob">ReportJob</a> uniquely identified by the given ID with only the <a href="ReportJob#reportJobStatus">ReportJob::reportJobStatus</a> and <a href="ReportJob#id">ReportJob::id</a> fields filled in. </p>
+<p>Replaced with <code>ReportService.getReportJobStatus</code> beginning in V201505. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reportJobId</td><td>the Id of the report job which must already exist</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_job.html" title="Represents a report job that will be run to retrieve performance and statistics information about ad ...">ReportJob</a></code> uniquely identified by the given ID with the ID and status fields filled in.</dd></dl>
+
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_service.html#a3acc8bdec4196bf4fa3a7e034ac2ac63">Google.Api.Ads.Dfp.v201408.ReportService</a>.</p>
 
 </div>
@@ -227,6 +284,20 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initiates the execution of a <a href="ReportQuery">ReportQuery</a> on the server. </p>
+<p>The following fields are required:</p>
+<ul>
+<li>
+<a href="ReportJob#reportQuery">ReportJob::reportQuery</a> </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reportJob</td><td>the report job to run</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the report job with its ID filled in</dd></dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_report_service.html#a9d70bfb314911120b011b1a9eb8b1bcb">Google.Api.Ads.Dfp.v201408.ReportService</a>.</p>
 
@@ -274,7 +345,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201408/<a class="el" href="v201408_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201408/<a class="el" href="v201408_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -282,7 +353,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html">v201408</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_i_report_service.html">IReportService</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:01 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:31 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

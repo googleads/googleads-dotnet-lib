@@ -110,25 +110,39 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_ad_wo
 <div class="title">Google.Api.Ads.AdWords.v201506.LanguageSearchParameter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A <a href="SearchParameter">SearchParameter</a> used to indicate multiple language being targeted. This can be used, for example, to search for  
+ <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_language_search_parameter.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.AdWords.v201506.LanguageSearchParameter:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_language_search_parameter.png" usemap="#Google.Api.Ads.AdWords.v201506.LanguageSearchParameter_map" alt=""/>
   <map id="Google.Api.Ads.AdWords.v201506.LanguageSearchParameter_map" name="Google.Api.Ads.AdWords.v201506.LanguageSearchParameter_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_search_parameter.html" alt="Google.Api.Ads.AdWords.v201506.SearchParameter" shape="rect" coords="0,0,369,24"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_search_parameter.html" title="A set of SearchParameters is supplied to the TargetingIdeaSelector to specify how the user wants to f..." alt="Google.Api.Ads.AdWords.v201506.SearchParameter" shape="rect" coords="0,0,369,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:af4eab86d1d0685bb1abc1a7bb0487cb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_language.html">Language</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_language_search_parameter.html#af4eab86d1d0685bb1abc1a7bb0487cb9">languages</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af4eab86d1d0685bb1abc1a7bb0487cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of <a href="Language">Language</a>s indicating the desired languages being targeted in the results. <span class="constraint ContentsDistinct">This field must contain distinct elements.</span> <span class="constraint
+ContentsNotNull">This field must not contain </span> <a href="#af4eab86d1d0685bb1abc1a7bb0487cb9">More...</a><br/></td></tr>
 <tr class="separator:af4eab86d1d0685bb1abc1a7bb0487cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_search_parameter"><td colspan="2" onclick="javascript:toggleInherit('properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_search_parameter')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_search_parameter.html">Google.Api.Ads.AdWords.v201506.SearchParameter</a></td></tr>
 <tr class="memitem:a401c03123b1b7684e6d49ed19391040c inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_search_parameter"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_search_parameter.html#a401c03123b1b7684e6d49ed19391040c">SearchParameterType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a401c03123b1b7684e6d49ed19391040c inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_search_parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that this instance is a subtype of <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_search_parameter.html" title="A set of SearchParameters is supplied to the TargetingIdeaSelector to specify how the user wants to f...">SearchParameter</a>. Although this field is returned in the response, it is ignored on input and cannot be selected. Specify xsi:type instead.  <a href="#a401c03123b1b7684e6d49ed19391040c">More...</a><br/></td></tr>
 <tr class="separator:a401c03123b1b7684e6d49ed19391040c inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_search_parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A <a href="SearchParameter">SearchParameter</a> used to indicate multiple language being targeted. This can be used, for example, to search for </p>
+<p><code>KEYWORD</code> <a href="IdeaType">IdeaType</a>s that are best for Japanese language. </p>
+<p>The service allows at most one language to be targeted for <code>KEYWORD</code> requests.</p>
+<p>In the <code>KEYWORD</code> <a href="IdeaType">IdeaType</a> <code></code> <a href="RequestType">RequestType</a> requests, those keywords that are from different language than specified in <code></code> or have unknown language will be filtered out in the response. To avoid filtering, do not include <code></code> in the request.</p>
+<p>This search parameter can be used in bulk keyword requests through the <a href="TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)">TargetingIdeaService::getBulkKeywordIdeas(TargetingIdeaSelector)</a> method. It must be single-valued when used in a call to that method.</p>
+<p>This element is supported by following <a href="IdeaType">IdeaType</a>s: KEYWORD, PLACEMENT.</p>
+<p>This element is supported by following <a href="RequestType">RequestType</a>s: IDEAS, STATS.</p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="af4eab86d1d0685bb1abc1a7bb0487cb9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -147,10 +161,14 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>A list of <a href="Language">Language</a>s indicating the desired languages being targeted in the results. <span class="constraint ContentsDistinct">This field must contain distinct elements.</span> <span class="constraint
+ContentsNotNull">This field must not contain </span></p>
+<p><code>null</code> elements. <span class="constraint NotEmpty">This field must contain at least one element.</span> <span class="constraint Required">This field is required and should not be <code>null</code>.</span> </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -158,7 +176,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html">v201506</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_language_search_parameter.html">LanguageSearchParameter</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:32 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:08 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

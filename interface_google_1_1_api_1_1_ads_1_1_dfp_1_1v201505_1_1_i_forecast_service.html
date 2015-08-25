@@ -111,25 +111,32 @@ $(document).ready(function(){initNavTree('interface_google_1_1_api_1_1_ads_1_1_d
 <div class="title">Google.Api.Ads.Dfp.v201505.IForecastService Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provided for <a href="LineItem">LineItem</a> objects that exist in the system or which have not had an ID set yet.  
+ <a href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_forecast_service.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.Dfp.v201505.IForecastService:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_forecast_service.png" usemap="#Google.Api.Ads.Dfp.v201505.IForecastService_map" alt=""/>
   <map id="Google.Api.Ads.Dfp.v201505.IForecastService_map" name="Google.Api.Ads.Dfp.v201505.IForecastService_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_forecast_service.html" alt="Google.Api.Ads.Dfp.v201505.ForecastService" shape="rect" coords="0,56,279,80"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_forecast_service.html" title="Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provide..." alt="Google.Api.Ads.Dfp.v201505.ForecastService" shape="rect" coords="0,56,279,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a00394d6ed82324c56aeb40654dbac431"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_availability_forecast.html">AvailabilityForecast</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_forecast_service.html#a00394d6ed82324c56aeb40654dbac431">getAvailabilityForecast</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_prospective_line_item.html">ProspectiveLineItem</a> lineItem, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_availability_forecast_options.html">AvailabilityForecastOptions</a> forecastOptions)</td></tr>
+<tr class="memdesc:a00394d6ed82324c56aeb40654dbac431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the availability forecast for a <a href="ProspectiveLineItem">ProspectiveLineItem</a>. An availability forecast reports the maximum number of available units that the line item can book, and the total number of units matching the line item's targeting.  <a href="#a00394d6ed82324c56aeb40654dbac431">More...</a><br/></td></tr>
 <tr class="separator:a00394d6ed82324c56aeb40654dbac431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e6a59341d981d95dcae46a672dbb3c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_availability_forecast.html">AvailabilityForecast</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_forecast_service.html#a8e6a59341d981d95dcae46a672dbb3c9">getAvailabilityForecastById</a> (long lineItemId, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_availability_forecast_options.html">AvailabilityForecastOptions</a> forecastOptions)</td></tr>
+<tr class="memdesc:a8e6a59341d981d95dcae46a672dbb3c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a href="AvailabilityForecast">AvailabilityForecast</a> for an existing <a href="LineItem">LineItem</a> object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting.  <a href="#a8e6a59341d981d95dcae46a672dbb3c9">More...</a><br/></td></tr>
 <tr class="separator:a8e6a59341d981d95dcae46a672dbb3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45db7fdfee051f588cbf555ed9c48c52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_delivery_forecast.html">DeliveryForecast</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_forecast_service.html#a45db7fdfee051f588cbf555ed9c48c52">getDeliveryForecast</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_prospective_line_item.html">ProspectiveLineItem</a>[] lineItems, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_delivery_forecast_options.html">DeliveryForecastOptions</a> forecastOptions)</td></tr>
+<tr class="memdesc:a45db7fdfee051f588cbf555ed9c48c52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delivery forecast for a list of <a href="ProspectiveLineItem">ProspectiveLineItem</a> objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.  <a href="#a45db7fdfee051f588cbf555ed9c48c52">More...</a><br/></td></tr>
 <tr class="separator:a45db7fdfee051f588cbf555ed9c48c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa589bc2f67ac6b3025e198f21ea785b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_delivery_forecast.html">DeliveryForecast</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_forecast_service.html#aa589bc2f67ac6b3025e198f21ea785b9">getDeliveryForecastByIds</a> (long[] lineItemIds, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_delivery_forecast_options.html">DeliveryForecastOptions</a> forecastOptions)</td></tr>
+<tr class="memdesc:aa589bc2f67ac6b3025e198f21ea785b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delivery forecast for a list of existing <a href="LineItem">LineItem</a> objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.  <a href="#aa589bc2f67ac6b3025e198f21ea785b9">More...</a><br/></td></tr>
 <tr class="separator:aa589bc2f67ac6b3025e198f21ea785b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -139,7 +146,42 @@ Properties</h2></td></tr>
 <tr class="memitem:a79963557cfa468d17b4aa229bd1f25c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_response_header.html">ResponseHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_forecast_service.html#a79963557cfa468d17b4aa229bd1f25c3">ResponseHeader</a><code> [get, set]</code></td></tr>
 <tr class="separator:a79963557cfa468d17b4aa229bd1f25c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provided for <a href="LineItem">LineItem</a> objects that exist in the system or which have not had an ID set yet. </p>
+<h4>Test network behavior</h4>
+<p>Test networks are unable to provide forecasts that would be comparable to the production environment because forecasts require traffic history. For test networks, a consistent behavior can be expected for forecast requests, according to the following rules:</p>
+<table class="doxtable">
+<tr>
+<th colspan="2">Inputs<br/>
+ (<a href="LineItem">LineItem</a> Fields) </th><th colspan="4">Outputs<br/>
+ (<a href="Forecast">Forecast</a> Fields)  </th></tr>
+<tr>
+<th><a href="LineItem#lineItemType">lineItemType</a> </th><th><a href="LineItem#unitsBought">unitsBought</a> </th><th><a href="Forecast#availableUnits">availableUnits</a> </th><th><a href="Forecast#forecastUnits">forecastUnits (matchedUnits)</a> </th><th><a href="Forecast#deliveredUnits">deliveredUnits</a> </th><th>Exception   </th></tr>
+<tr>
+<td>Sponsorship </td><td>13 </td><td>#x2013;#x2013; </td><td>#x2013;#x2013; </td><td>#x2013;#x2013; </td><td><a href="ForecastError.Reason#NO_FORECAST_YET">NO_FORECAST_YET</a>   </td></tr>
+<tr>
+<td>Sponsorship </td><td>20 </td><td>#x2013;#x2013; </td><td>#x2013;#x2013; </td><td>#x2013;#x2013; </td><td><a href="ForecastError.Reason#SERVER_NOT_AVAILABLE">SERVER_NOT_AVAILABLE</a>   </td></tr>
+<tr>
+<td>Sponsorship </td><td>50 </td><td>1,200,000 </td><td>6,000,000 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Sponsorship </td><td>!= 20 and<br/>
+ != 50 </td><td>1,200,000 </td><td>1,200,000 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Not Sponsorship </td><td>&lt;= 500,000 </td><td>3 * unitsBought / 2 </td><td>unitsBought * 6 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Not Sponsorship </td><td>&gt; 500,000 and &lt;= 1,000,000 </td><td>unitsBought / 2 </td><td>unitsBought * 6 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Not Sponsorship </td><td>&gt; 1,000,000 and &lt;= 1,500,000 </td><td>unitsBought / 2 </td><td>3 * unitsBought / 2 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Not Sponsorship </td><td>&gt; 1,500,000 </td><td>unitsBought / 4 </td><td>3 * unitsBought / 2 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+</table>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a00394d6ed82324c56aeb40654dbac431"></a>
 <div class="memitem">
 <div class="memproto">
@@ -163,6 +205,16 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the availability forecast for a <a href="ProspectiveLineItem">ProspectiveLineItem</a>. An availability forecast reports the maximum number of available units that the line item can book, and the total number of units matching the line item's targeting. </p>
+<p>Note: Beginning in <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502.html">v201502</a>, this replaces the previous getForecast method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItem</td><td>the prospective line item (new or existing) to be forecasted for availability</td></tr>
+    <tr><td class="paramname">forecastOptions</td><td>options controlling the forecast</td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_forecast_service.html#af542e53864ddea5e326c6394e8f78720">Google.Api.Ads.Dfp.v201505.ForecastService</a>.</p>
 
@@ -192,6 +244,17 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets an <a href="AvailabilityForecast">AvailabilityForecast</a> for an existing <a href="LineItem">LineItem</a> object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting. </p>
+<p>Only line items having type <a href="LineItemType#SPONSORSHIP">LineItemType::SPONSORSHIP</a> or <a href="LineItemType#STANDARD">LineItemType::STANDARD</a> are valid. Other types will result in <a href="ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED">ReservationDetailsError.Reason::LINE_ITEM_TYPE_NOT_ALLOWED</a>.</p>
+<p>Note: Beginning in <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502.html">v201502</a>, this replaces the previous getForecastById method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItemId</td><td>the ID of a <a href="LineItem">LineItem</a> to run the forecast on.</td></tr>
+    <tr><td class="paramname">forecastOptions</td><td>options controlling the forecast</td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_forecast_service.html#a8e59b1c86f18ae3d94a5a6fab3bc8531">Google.Api.Ads.Dfp.v201505.ForecastService</a>.</p>
 
 </div>
@@ -220,6 +283,15 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets the delivery forecast for a list of <a href="ProspectiveLineItem">ProspectiveLineItem</a> objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItems</td><td>line items to be forecasted for delivery</td></tr>
+    <tr><td class="paramname">forecastOptions</td><td>options controlling the forecast</td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_forecast_service.html#a472c98d73edc8deff62018c03108c95e">Google.Api.Ads.Dfp.v201505.ForecastService</a>.</p>
 
 </div>
@@ -247,6 +319,15 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the delivery forecast for a list of existing <a href="LineItem">LineItem</a> objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItemIds</td><td>the IDs of line items to be forecasted for delivery</td></tr>
+    <tr><td class="paramname">forecastOptions</td><td>options controlling the forecast</td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_forecast_service.html#a5d8d3077a55457c90307fc4636f267e2">Google.Api.Ads.Dfp.v201505.ForecastService</a>.</p>
 
@@ -294,7 +375,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201505/<a class="el" href="v201505_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201505/<a class="el" href="v201505_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -302,7 +383,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505.html">v201505</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_i_forecast_service.html">IForecastService</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:14 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:49 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

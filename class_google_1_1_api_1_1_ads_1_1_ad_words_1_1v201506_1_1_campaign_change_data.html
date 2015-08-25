@@ -110,33 +110,47 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_ad_wo
 <div class="title">Google.Api.Ads.AdWords.v201506.CampaignChangeData Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Holds information about a changed campaign and any ad groups under that have changed.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:af29f33239d7e2c6adfe94adcab62d3e2"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#af29f33239d7e2c6adfe94adcab62d3e2">campaignId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af29f33239d7e2c6adfe94adcab62d3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The campaign ID.  <a href="#af29f33239d7e2c6adfe94adcab62d3e2">More...</a><br/></td></tr>
 <tr class="separator:af29f33239d7e2c6adfe94adcab62d3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12bf8859b9b7736d000bff0d605109df"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#a12bf8859b9b7736d000bff0d605109df">campaignIdSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a12bf8859b9b7736d000bff0d605109df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2043fe1aff337f739027d1edfc2bbe55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html#ab33a562fae7993fba631b7b3550abde4">ChangeStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#a2043fe1aff337f739027d1edfc2bbe55">campaignChangeStatus</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a2043fe1aff337f739027d1edfc2bbe55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not the fields of this campaign have changed. Changes to campaign level criteria and ad extensions are enumerated in their respective lists and will not be reflected in this status.  <a href="#a2043fe1aff337f739027d1edfc2bbe55">More...</a><br/></td></tr>
 <tr class="separator:a2043fe1aff337f739027d1edfc2bbe55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af912dbf0fa5a95209ac2971446e0a822"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#af912dbf0fa5a95209ac2971446e0a822">campaignChangeStatusSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:af912dbf0fa5a95209ac2971446e0a822"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc26d2152abfb7a543bb062ba1da8470"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_change_data.html">AdGroupChangeData</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#afc26d2152abfb7a543bb062ba1da8470">changedAdGroups</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:afc26d2152abfb7a543bb062ba1da8470"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of change information for all changed adgroups belonging to the campaign.  <a href="#afc26d2152abfb7a543bb062ba1da8470">More...</a><br/></td></tr>
 <tr class="separator:afc26d2152abfb7a543bb062ba1da8470"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5acf6baf576133e50beb9bd40816a15"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#af5acf6baf576133e50beb9bd40816a15">addedCampaignCriteria</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af5acf6baf576133e50beb9bd40816a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of criteria IDs that have been added as campaign criteria. This list includes any criteria that can be downloaded using <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_criterion_service.html" title="Use this service to manage campaign-level criteria. ">CampaignCriterionService</a>.  <a href="#af5acf6baf576133e50beb9bd40816a15">More...</a><br/></td></tr>
 <tr class="separator:af5acf6baf576133e50beb9bd40816a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0ab844559cca717f08f55acd27c5dde"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#ac0ab844559cca717f08f55acd27c5dde">removedCampaignCriteria</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac0ab844559cca717f08f55acd27c5dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of criteria IDs that have been deleted as campaign criteria. This list includes any criteria that can be downloaded using <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_criterion_service.html" title="Use this service to manage campaign-level criteria. ">CampaignCriterionService</a>.  <a href="#ac0ab844559cca717f08f55acd27c5dde">More...</a><br/></td></tr>
 <tr class="separator:ac0ab844559cca717f08f55acd27c5dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5de1aa22068380cd98c86fea6d405cf"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#ac5de1aa22068380cd98c86fea6d405cf">addedAdExtensions</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac5de1aa22068380cd98c86fea6d405cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of ad extension IDs that have been added to the campaign.  <a href="#ac5de1aa22068380cd98c86fea6d405cf">More...</a><br/></td></tr>
 <tr class="separator:ac5de1aa22068380cd98c86fea6d405cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a588eecca445fd039bdc2f9463e90ec56"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#a588eecca445fd039bdc2f9463e90ec56">removedAdExtensions</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a588eecca445fd039bdc2f9463e90ec56"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of ad extension IDs that have been removed from the campaign.  <a href="#a588eecca445fd039bdc2f9463e90ec56">More...</a><br/></td></tr>
 <tr class="separator:a588eecca445fd039bdc2f9463e90ec56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a078301491d4f62affdfe19ba872c6d31"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#a078301491d4f62affdfe19ba872c6d31">changedFeeds</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a078301491d4f62affdfe19ba872c6d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of feed IDs for CampaignFeeds that have been changed in this campaign. If a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_feed.html" title="CampaignFeeds are used to link a feed to a campaign using a matching function, making the feed&#39;s feed...">CampaignFeed</a> is deleted after a modification, it will not be included in this list.  <a href="#a078301491d4f62affdfe19ba872c6d31">More...</a><br/></td></tr>
 <tr class="separator:a078301491d4f62affdfe19ba872c6d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa18a5c4a7679344ff29daf97822553ee"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#aa18a5c4a7679344ff29daf97822553ee">removedFeeds</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa18a5c4a7679344ff29daf97822553ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of feed IDs for CampaignFeeds that have been removed from the campaign.  <a href="#aa18a5c4a7679344ff29daf97822553ee">More...</a><br/></td></tr>
 <tr class="separator:aa18a5c4a7679344ff29daf97822553ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Holds information about a changed campaign and any ad groups under that have changed. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="ac5de1aa22068380cd98c86fea6d405cf"></a>
 <div class="memitem">
 <div class="memproto">
@@ -154,6 +168,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A list of ad extension IDs that have been added to the campaign. </p>
 
 <p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_get_account_changes.html#a9b66cf683910b6cf22249af88d4d0bc7">Google.Api.Ads.AdWords.Examples.CSharp.v201506.GetAccountChanges.Run()</a>.</p>
 
@@ -177,6 +193,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>A list of criteria IDs that have been added as campaign criteria. This list includes any criteria that can be downloaded using <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_criterion_service.html" title="Use this service to manage campaign-level criteria. ">CampaignCriterionService</a>. </p>
+
 <p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_get_account_changes.html#a9b66cf683910b6cf22249af88d4d0bc7">Google.Api.Ads.AdWords.Examples.CSharp.v201506.GetAccountChanges.Run()</a>.</p>
 
 </div>
@@ -198,6 +216,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Whether or not the fields of this campaign have changed. Changes to campaign level criteria and ad extensions are enumerated in their respective lists and will not be reflected in this status. </p>
 
 <p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_get_account_changes.html#a9b66cf683910b6cf22249af88d4d0bc7">Google.Api.Ads.AdWords.Examples.CSharp.v201506.GetAccountChanges.Run()</a>.</p>
 
@@ -221,6 +241,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#a2043fe1aff337f739027d1edfc2bbe55" title="Whether or not the fields of this campaign have changed. Changes to campaign level criteria and ad ex...">campaignChangeStatus</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="af29f33239d7e2c6adfe94adcab62d3e2"></a>
@@ -240,6 +263,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The campaign ID. </p>
 
 </div>
 </div>
@@ -261,6 +286,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#af29f33239d7e2c6adfe94adcab62d3e2" title="The campaign ID. ">campaignId</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="afc26d2152abfb7a543bb062ba1da8470"></a>
@@ -280,6 +308,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A list of change information for all changed adgroups belonging to the campaign. </p>
 
 <p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_get_account_changes.html#a9b66cf683910b6cf22249af88d4d0bc7">Google.Api.Ads.AdWords.Examples.CSharp.v201506.GetAccountChanges.Run()</a>.</p>
 
@@ -303,6 +333,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>A list of feed IDs for CampaignFeeds that have been changed in this campaign. If a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_feed.html" title="CampaignFeeds are used to link a feed to a campaign using a matching function, making the feed&#39;s feed...">CampaignFeed</a> is deleted after a modification, it will not be included in this list. </p>
+
 </div>
 </div>
 <a class="anchor" id="a588eecca445fd039bdc2f9463e90ec56"></a>
@@ -322,6 +354,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A list of ad extension IDs that have been removed from the campaign. </p>
 
 <p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_get_account_changes.html#a9b66cf683910b6cf22249af88d4d0bc7">Google.Api.Ads.AdWords.Examples.CSharp.v201506.GetAccountChanges.Run()</a>.</p>
 
@@ -345,6 +379,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>A list of criteria IDs that have been deleted as campaign criteria. This list includes any criteria that can be downloaded using <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_criterion_service.html" title="Use this service to manage campaign-level criteria. ">CampaignCriterionService</a>. </p>
+
 </div>
 </div>
 <a class="anchor" id="aa18a5c4a7679344ff29daf97822553ee"></a>
@@ -365,10 +401,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>A list of feed IDs for CampaignFeeds that have been removed from the campaign. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -376,7 +414,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html">v201506</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html">CampaignChangeData</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:30 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:07 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -110,45 +110,60 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_ad_wo
 <div class="title">Google.Api.Ads.AdWords.v201502.PageOnePromotedBiddingScheme Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Page-One Promoted bidding scheme, which sets max cpc bids to target impressions on page one or page one promoted slots on google.com. <span class="constraint
+AdxEnabled">This is disabled for AdX.</span>  
+ <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.AdWords.v201502.PageOnePromotedBiddingScheme:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.png" usemap="#Google.Api.Ads.AdWords.v201502.PageOnePromotedBiddingScheme_map" alt=""/>
   <map id="Google.Api.Ads.AdWords.v201502.PageOnePromotedBiddingScheme_map" name="Google.Api.Ads.AdWords.v201502.PageOnePromotedBiddingScheme_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_scheme.html" alt="Google.Api.Ads.AdWords.v201502.BiddingScheme" shape="rect" coords="0,0,407,24"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_scheme.html" title="Base class for all bidding schemes. This is disabled for AdX. " alt="Google.Api.Ads.AdWords.v201502.BiddingScheme" shape="rect" coords="0,0,407,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ad10d7fc4bb8f7a65f116154358b99493"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502.html#a1f9cd8f2a85bd8fe936966186e3952f4">PageOnePromotedBiddingSchemeStrategyGoal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#ad10d7fc4bb8f7a65f116154358b99493">strategyGoal</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad10d7fc4bb8f7a65f116154358b99493"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the strategy goal: where impressions are desired to be shown on search result pages.  <a href="#ad10d7fc4bb8f7a65f116154358b99493">More...</a><br/></td></tr>
 <tr class="separator:ad10d7fc4bb8f7a65f116154358b99493"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad46a4c9e50ba567d295f37d0cf8019ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#ad46a4c9e50ba567d295f37d0cf8019ef">strategyGoalSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ad46a4c9e50ba567d295f37d0cf8019ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a885105e29d4a0ecde6e316ecd2c6e628"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_money.html">Money</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#a885105e29d4a0ecde6e316ecd2c6e628">bidCeiling</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a885105e29d4a0ecde6e316ecd2c6e628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strategy maximum bid limit in advertiser local currency micro units. This upper limit applies to all keywords managed by the strategy. <span class="constraint
+InRange">This field must be greater than or equal to 0.</span>  <a href="#a885105e29d4a0ecde6e316ecd2c6e628">More...</a><br/></td></tr>
 <tr class="separator:a885105e29d4a0ecde6e316ecd2c6e628"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecb6b786bc7f2dbede2bc457c2452997"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#aecb6b786bc7f2dbede2bc457c2452997">bidModifier</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aecb6b786bc7f2dbede2bc457c2452997"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bid.html" title="Represents a bid of a certain amount. ">Bid</a> Multiplier to be applied to the relevant bid estimate (depending on the strategyGoal) in determining a keyword's new max cpc bid. <span class="constraint InRange">This field must be greater than or equal to 0.</span>  <a href="#aecb6b786bc7f2dbede2bc457c2452997">More...</a><br/></td></tr>
 <tr class="separator:aecb6b786bc7f2dbede2bc457c2452997"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a294283f8d3709227ca7e74ba14382c13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#a294283f8d3709227ca7e74ba14382c13">bidModifierSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a294283f8d3709227ca7e74ba14382c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0abd0f5383331a3c86a1fcbbe3c58d64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#a0abd0f5383331a3c86a1fcbbe3c58d64">bidChangesForRaisesOnly</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0abd0f5383331a3c86a1fcbbe3c58d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls whether the strategy always follows bid estimate changes, or only increases. If false, always set a keyword's new bid to the current bid estimate. If true, only updates a keyword's bid if the current bid estimate is greater than the current bid.  <a href="#a0abd0f5383331a3c86a1fcbbe3c58d64">More...</a><br/></td></tr>
 <tr class="separator:a0abd0f5383331a3c86a1fcbbe3c58d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8026601be6fd9b20d1e796fc8e3bbfa5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#a8026601be6fd9b20d1e796fc8e3bbfa5">bidChangesForRaisesOnlySpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a8026601be6fd9b20d1e796fc8e3bbfa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7bdb916c232a36bb31ddef26bb70711"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#ae7bdb916c232a36bb31ddef26bb70711">raiseBidWhenBudgetConstrained</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ae7bdb916c232a36bb31ddef26bb70711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls whether the strategy is allowed to raise bids when the throttling rate of the budget it is serving out of rises above a threshold.  <a href="#ae7bdb916c232a36bb31ddef26bb70711">More...</a><br/></td></tr>
 <tr class="separator:ae7bdb916c232a36bb31ddef26bb70711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4ae94a0b4a76d1d5b5fabc6a50330b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#ab4ae94a0b4a76d1d5b5fabc6a50330b4">raiseBidWhenBudgetConstrainedSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ab4ae94a0b4a76d1d5b5fabc6a50330b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8332c243dd9307b4677682311b70ed2b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#a8332c243dd9307b4677682311b70ed2b">raiseBidWhenLowQualityScore</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8332c243dd9307b4677682311b70ed2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls whether the strategy is allowed to raise bids on keywords with lower-range quality scores.  <a href="#a8332c243dd9307b4677682311b70ed2b">More...</a><br/></td></tr>
 <tr class="separator:a8332c243dd9307b4677682311b70ed2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a935b2e9504ac886739c7b97b62a96363"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#a935b2e9504ac886739c7b97b62a96363">raiseBidWhenLowQualityScoreSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a935b2e9504ac886739c7b97b62a96363"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_scheme"><td colspan="2" onclick="javascript:toggleInherit('properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_scheme')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_scheme.html">Google.Api.Ads.AdWords.v201502.BiddingScheme</a></td></tr>
 <tr class="memitem:ae63622a83c1eafc92a673a16b77d3b3d inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_scheme"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_scheme.html#ae63622a83c1eafc92a673a16b77d3b3d">BiddingSchemeType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ae63622a83c1eafc92a673a16b77d3b3d inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_scheme"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that this instance is a subtype of <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_scheme.html" title="Base class for all bidding schemes. This is disabled for AdX. ">BiddingScheme</a>. Although this field is returned in the response, it is ignored on input and cannot be selected. Specify xsi:type instead.  <a href="#ae63622a83c1eafc92a673a16b77d3b3d">More...</a><br/></td></tr>
 <tr class="separator:ae63622a83c1eafc92a673a16b77d3b3d inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_scheme"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Page-One Promoted bidding scheme, which sets max cpc bids to target impressions on page one or page one promoted slots on google.com. <span class="constraint
+AdxEnabled">This is disabled for AdX.</span> </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a885105e29d4a0ecde6e316ecd2c6e628"></a>
 <div class="memitem">
 <div class="memproto">
@@ -166,6 +181,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Strategy maximum bid limit in advertiser local currency micro units. This upper limit applies to all keywords managed by the strategy. <span class="constraint
+InRange">This field must be greater than or equal to 0.</span> </p>
 
 </div>
 </div>
@@ -187,6 +205,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Controls whether the strategy always follows bid estimate changes, or only increases. If false, always set a keyword's new bid to the current bid estimate. If true, only updates a keyword's bid if the current bid estimate is greater than the current bid. </p>
+
 </div>
 </div>
 <a class="anchor" id="a8026601be6fd9b20d1e796fc8e3bbfa5"></a>
@@ -206,6 +226,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#a0abd0f5383331a3c86a1fcbbe3c58d64" title="Controls whether the strategy always follows bid estimate changes, or only increases. If false, always set a keyword&#39;s new bid to the current bid estimate. If true, only updates a keyword&#39;s bid if the current bid estimate is greater than the current bid. ">bidChangesForRaisesOnly</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -227,6 +250,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bid.html" title="Represents a bid of a certain amount. ">Bid</a> Multiplier to be applied to the relevant bid estimate (depending on the strategyGoal) in determining a keyword's new max cpc bid. <span class="constraint InRange">This field must be greater than or equal to 0.</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="a294283f8d3709227ca7e74ba14382c13"></a>
@@ -246,6 +271,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#aecb6b786bc7f2dbede2bc457c2452997" title="Bid Multiplier to be applied to the relevant bid estimate (depending on the strategyGoal) in determin...">bidModifier</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -267,6 +295,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Controls whether the strategy is allowed to raise bids when the throttling rate of the budget it is serving out of rises above a threshold. </p>
+
 </div>
 </div>
 <a class="anchor" id="ab4ae94a0b4a76d1d5b5fabc6a50330b4"></a>
@@ -286,6 +316,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#ae7bdb916c232a36bb31ddef26bb70711" title="Controls whether the strategy is allowed to raise bids when the throttling rate of the budget it is s...">raiseBidWhenBudgetConstrained</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -307,6 +340,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Controls whether the strategy is allowed to raise bids on keywords with lower-range quality scores. </p>
+
 </div>
 </div>
 <a class="anchor" id="a935b2e9504ac886739c7b97b62a96363"></a>
@@ -326,6 +361,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#a8332c243dd9307b4677682311b70ed2b" title="Controls whether the strategy is allowed to raise bids on keywords with lower-range quality scores...">raiseBidWhenLowQualityScore</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -347,6 +385,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Specifies the strategy goal: where impressions are desired to be shown on search result pages. </p>
+
 </div>
 </div>
 <a class="anchor" id="ad46a4c9e50ba567d295f37d0cf8019ef"></a>
@@ -367,10 +407,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#ad10d7fc4bb8f7a65f116154358b99493" title="Specifies the strategy goal: where impressions are desired to be shown on search result pages...">strategyGoal</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201502/<a class="el" href="v201502_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201502/<a class="el" href="v201502_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -378,7 +421,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502.html">v201502</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html">PageOnePromotedBiddingScheme</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:25 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:01 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

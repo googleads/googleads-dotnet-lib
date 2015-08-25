@@ -110,23 +110,32 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_ad_wo
 <div class="title">Google.Api.Ads.AdWords.v201506.ConversionTrackingSettings Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A collection of customer-wide settings related to <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> Conversion Tracking. Settings that apply at the conversion type level can be accessed and modified though  
+ <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracking_settings.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ab4bc519cbdbe0560c3c192c6eb2ed683"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html#a066e87a9aa957dbcc3862a8a2e10b8ca">ConversionDeduplicationMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracking_settings.html#ab4bc519cbdbe0560c3c192c6eb2ed683">conversionOptimizerMode</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab4bc519cbdbe0560c3c192c6eb2ed683"><td class="mdescLeft">&#160;</td><td class="mdescRight">When set to <a href="ConversionOptimizerDeduplicationMode#MANY_PER_CLICK">ConversionOptimizerDeduplicationMode::MANY_PER_CLICK</a>, Conversion Optimizer will focus on increasing the number of conversions (e.g.: If a click results in 15 conversions, it will be more heavily favored than a click that results in only one conversion)  <a href="#ab4bc519cbdbe0560c3c192c6eb2ed683">More...</a><br/></td></tr>
 <tr class="separator:ab4bc519cbdbe0560c3c192c6eb2ed683"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3eb9a7cb9176fa72ecfd3b1744b72204"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracking_settings.html#a3eb9a7cb9176fa72ecfd3b1744b72204">conversionOptimizerModeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a3eb9a7cb9176fa72ecfd3b1744b72204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a9a8b86ee02a00a140d52e53ffd67d4"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracking_settings.html#a4a9a8b86ee02a00a140d52e53ffd67d4">effectiveConversionTrackingId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4a9a8b86ee02a00a140d52e53ffd67d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">With Cross-Account Conversion Tracking, a manager can share its conversion tracking ID among the clients it manages. If a customer is using a manager's conversion tracking ID we store it as the customer's effective conversion tracking ID.  <a href="#a4a9a8b86ee02a00a140d52e53ffd67d4">More...</a><br/></td></tr>
 <tr class="separator:a4a9a8b86ee02a00a140d52e53ffd67d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20273567238deb6ca6db99798c0d153f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracking_settings.html#a20273567238deb6ca6db99798c0d153f">effectiveConversionTrackingIdSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a20273567238deb6ca6db99798c0d153f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a621bc4b1f33bc2ddd875d41e1c3a6c04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracking_settings.html#a621bc4b1f33bc2ddd875d41e1c3a6c04">usesCrossAccountConversionTracking</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a621bc4b1f33bc2ddd875d41e1c3a6c04"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if a customer is using cross-account conversion tracking. False if the customer is not using conversion tracking, or if the customer is using his own conversion tracking ID. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a621bc4b1f33bc2ddd875d41e1c3a6c04">More...</a><br/></td></tr>
 <tr class="separator:a621bc4b1f33bc2ddd875d41e1c3a6c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abaaecd2ba39b9c79d009296bb26e840e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracking_settings.html#abaaecd2ba39b9c79d009296bb26e840e">usesCrossAccountConversionTrackingSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:abaaecd2ba39b9c79d009296bb26e840e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A collection of customer-wide settings related to <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> Conversion Tracking. Settings that apply at the conversion type level can be accessed and modified though </p>
+<p><code></code>. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="ab4bc519cbdbe0560c3c192c6eb2ed683"></a>
 <div class="memitem">
 <div class="memproto">
@@ -144,6 +153,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>When set to <a href="ConversionOptimizerDeduplicationMode#MANY_PER_CLICK">ConversionOptimizerDeduplicationMode::MANY_PER_CLICK</a>, Conversion Optimizer will focus on increasing the number of conversions (e.g.: If a click results in 15 conversions, it will be more heavily favored than a click that results in only one conversion) </p>
+<p>When set to <a href="ConversionOptimizerDeduplicationMode#ONE_PER_CLICK">ConversionOptimizerDeduplicationMode::ONE_PER_CLICK</a>, Conversion Optimizer will focus on increasing the number of clicks that convert (e.g.: If a click results in 15 conversions, it will be just as favored as a click that results in only one conversion)</p>
 
 </div>
 </div>
@@ -165,6 +177,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracking_settings.html#ab4bc519cbdbe0560c3c192c6eb2ed683" title="When set to ConversionOptimizerDeduplicationMode::MANY_PER_CLICK, Conversion Optimizer will focus on ...">conversionOptimizerMode</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a4a9a8b86ee02a00a140d52e53ffd67d4"></a>
@@ -184,6 +199,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>With Cross-Account Conversion Tracking, a manager can share its conversion tracking ID among the clients it manages. If a customer is using a manager's conversion tracking ID we store it as the customer's effective conversion tracking ID. </p>
+<p>This is the conversion tracking ID used for this customer. If this is 0, the customer is not using conversion tracking. If the customer is using cross-account conversion tracking, this conversion tracking ID has been shared from the manager's account. Otherwise, for a customer who is not using cross-account conversion tracking, this is the customer's own conversion tracking ID. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span></p>
 
 </div>
 </div>
@@ -205,6 +223,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracking_settings.html#a4a9a8b86ee02a00a140d52e53ffd67d4" title="With Cross-Account Conversion Tracking, a manager can share its conversion tracking ID among the clie...">effectiveConversionTrackingId</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a621bc4b1f33bc2ddd875d41e1c3a6c04"></a>
@@ -224,6 +245,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>True if a customer is using cross-account conversion tracking. False if the customer is not using conversion tracking, or if the customer is using his own conversion tracking ID. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
 
 </div>
 </div>
@@ -245,10 +268,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracking_settings.html#a621bc4b1f33bc2ddd875d41e1c3a6c04" title="True if a customer is using cross-account conversion tracking. False if the customer is not using con...">usesCrossAccountConversionTracking</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -256,7 +282,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html">v201506</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracking_settings.html">ConversionTrackingSettings</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:30 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:07 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

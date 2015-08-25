@@ -110,41 +110,55 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_ad_wo
 <div class="title">Google.Api.Ads.AdWords.v201506.ProductPartition Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Product partition (product group) in a shopping campaign. Depending on its type, a product partition subdivides products along some product dimension, specifies a bid for products, or excludes products from bidding.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.AdWords.v201506.ProductPartition:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.png" usemap="#Google.Api.Ads.AdWords.v201506.ProductPartition_map" alt=""/>
   <map id="Google.Api.Ads.AdWords.v201506.ProductPartition_map" name="Google.Api.Ads.AdWords.v201506.ProductPartition_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion.html" alt="Google.Api.Ads.AdWords.v201506.Criterion" shape="rect" coords="0,0,304,24"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion.html" title="Represents a criterion (such as a keyword, placement, or vertical). This is disabled for AdX when it ..." alt="Google.Api.Ads.AdWords.v201506.Criterion" shape="rect" coords="0,0,304,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a25bdcdb2696d9e015fd267104b30d75c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html#aed5cd78e0e224d83f4011ff5be07a866">ProductPartitionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.html#a25bdcdb2696d9e015fd267104b30d75c">partitionType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a25bdcdb2696d9e015fd267104b30d75c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the product partition. <span class="constraint Selectable">This field can be selected using the value "PartitionType".</span> <span class="constraint
+Required">This field is required and should not be </span> <a href="#a25bdcdb2696d9e015fd267104b30d75c">More...</a><br/></td></tr>
 <tr class="separator:a25bdcdb2696d9e015fd267104b30d75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab528bcbdd8e4a86c25a109f4dcb325d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.html#ab528bcbdd8e4a86c25a109f4dcb325d7">partitionTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ab528bcbdd8e4a86c25a109f4dcb325d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3924755dc88206c3269f79335b165302"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.html#a3924755dc88206c3269f79335b165302">parentCriterionId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3924755dc88206c3269f79335b165302"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of the parent product partition subdivision. Undefined for the root partition. <span class="constraint Selectable">This field can be selected using the value "ParentCriterionId".</span>  <a href="#a3924755dc88206c3269f79335b165302">More...</a><br/></td></tr>
 <tr class="separator:a3924755dc88206c3269f79335b165302"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18f2912827e65070ce46bd8219287a07"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.html#a18f2912827e65070ce46bd8219287a07">parentCriterionIdSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a18f2912827e65070ce46bd8219287a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6afa132779c6f0507c802085bc3795c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_dimension.html">ProductDimension</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.html#a6afa132779c6f0507c802085bc3795c3">caseValue</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a6afa132779c6f0507c802085bc3795c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension value with which this product partition is refining its parent. Undefined for the root partition. <span class="constraint Selectable">This field can be selected using the value "CaseValue".</span>  <a href="#a6afa132779c6f0507c802085bc3795c3">More...</a><br/></td></tr>
 <tr class="separator:a6afa132779c6f0507c802085bc3795c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td colspan="2" onclick="javascript:toggleInherit('properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion.html">Google.Api.Ads.AdWords.v201506.Criterion</a></td></tr>
 <tr class="memitem:a12a21f319603b56e1acedd99c8337bc2 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion.html#a12a21f319603b56e1acedd99c8337bc2">id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a12a21f319603b56e1acedd99c8337bc2 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of this criterion. <span class="constraint Selectable">This field can be selected using the value "Id".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint Required">This field is required and should not be </span> <a href="#a12a21f319603b56e1acedd99c8337bc2">More...</a><br/></td></tr>
 <tr class="separator:a12a21f319603b56e1acedd99c8337bc2 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4158ca7a24c991e41ce6c22bf1f1687f inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion.html#a4158ca7a24c991e41ce6c22bf1f1687f">idSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a4158ca7a24c991e41ce6c22bf1f1687f inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81705588e757d19af33df713d6a502f9 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html#a6f7df16894bceef6c55f0bdfb759ed89">CriterionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion.html#a81705588e757d19af33df713d6a502f9">type</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a81705588e757d19af33df713d6a502f9 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="constraint Selectable">This field can be selected using the value "CriteriaType".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a81705588e757d19af33df713d6a502f9">More...</a><br/></td></tr>
 <tr class="separator:a81705588e757d19af33df713d6a502f9 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e4db61d3ca2aa5d6a401821b888c349 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion.html#a1e4db61d3ca2aa5d6a401821b888c349">typeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a1e4db61d3ca2aa5d6a401821b888c349 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f4ee0fc67d0c6784dad2fe1fb178762 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion.html#a3f4ee0fc67d0c6784dad2fe1fb178762">CriterionType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3f4ee0fc67d0c6784dad2fe1fb178762 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that this instance is a subtype of <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion.html" title="Represents a criterion (such as a keyword, placement, or vertical). This is disabled for AdX when it ...">Criterion</a>. Although this field is returned in the response, it is ignored on input and cannot be selected. Specify xsi:type instead.  <a href="#a3f4ee0fc67d0c6784dad2fe1fb178762">More...</a><br/></td></tr>
 <tr class="separator:a3f4ee0fc67d0c6784dad2fe1fb178762 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Product partition (product group) in a shopping campaign. Depending on its type, a product partition subdivides products along some product dimension, specifies a bid for products, or excludes products from bidding. </p>
+<p>Inner nodes of a product partition hierarchy are always subdivisions. Each child is linked to the subdivision via the <code>parentCriterionId</code> and defines a <code>caseValue</code>. For all children of the same subdivision, the <code>caseValue</code>s must be mutually different but instances of the same class. To create a subdivision and child node in the same API request, they should refer to each other using temporary criterion IDs in the <code></code> of the child, and ID field of the subdivision. Temporary IDs are specified by using any negative integer. Temporary IDs only exist within the scope of a single API request. The API will assign real criterion IDs, and replace the temporary values, and the API response will reflect this. <span class="constraint
+AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD, SET.</span></p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a6afa132779c6f0507c802085bc3795c3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -162,6 +176,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Dimension value with which this product partition is refining its parent. Undefined for the root partition. <span class="constraint Selectable">This field can be selected using the value "CaseValue".</span> </p>
 
 </div>
 </div>
@@ -183,6 +199,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>ID of the parent product partition subdivision. Undefined for the root partition. <span class="constraint Selectable">This field can be selected using the value "ParentCriterionId".</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="a18f2912827e65070ce46bd8219287a07"></a>
@@ -202,6 +220,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.html#a3924755dc88206c3269f79335b165302" title="ID of the parent product partition subdivision. Undefined for the root partition. This field can be s...">parentCriterionId</a>, <code>false</code> otherwise. </p>
 
 <p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_product_partition_tree.html#a58c4d49066ec9ffeed43eff0c1d0fa2a">Google.Api.Ads.AdWords.Examples.CSharp.v201506.AddProductPartitionTree.Run()</a>.</p>
 
@@ -225,6 +246,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Type of the product partition. <span class="constraint Selectable">This field can be selected using the value "PartitionType".</span> <span class="constraint
+Required">This field is required and should not be </span></p>
+<p><code>null</code> when it is contained within <a href="Operator">Operator</a>s : ADD. </p>
+
 </div>
 </div>
 <a class="anchor" id="ab528bcbdd8e4a86c25a109f4dcb325d7"></a>
@@ -245,10 +270,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.html#a25bdcdb2696d9e015fd267104b30d75c" title="Type of the product partition. This field can be selected using the value &quot;PartitionType&quot;. This field is required and should not be ">partitionType</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -256,7 +284,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html">v201506</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.html">ProductPartition</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:31 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:07 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -110,43 +110,57 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201411.VideoMetadata Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Metadata for a video asset.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ab9f2b018e9386deb0a9047624a7087ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html#a411ef069321c15ff85f2cd89a2229743">ScalableType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#ab9f2b018e9386deb0a9047624a7087ae">scalableType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab9f2b018e9386deb0a9047624a7087ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">The scalable type of the asset. This attribute is required.  <a href="#ab9f2b018e9386deb0a9047624a7087ae">More...</a><br/></td></tr>
 <tr class="separator:ab9f2b018e9386deb0a9047624a7087ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e3ce6834831a7371d253a14fc4a50c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a0e3ce6834831a7371d253a14fc4a50c3">scalableTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a0e3ce6834831a7371d253a14fc4a50c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1b7b303fb133847e239e3c0a12b2f62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#aa1b7b303fb133847e239e3c0a12b2f62">duration</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa1b7b303fb133847e239e3c0a12b2f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">The duration of the asset in milliseconds. This attribute is required.  <a href="#aa1b7b303fb133847e239e3c0a12b2f62">More...</a><br/></td></tr>
 <tr class="separator:aa1b7b303fb133847e239e3c0a12b2f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a478a828fb37c815c097ad9167f85f202"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a478a828fb37c815c097ad9167f85f202">durationSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a478a828fb37c815c097ad9167f85f202"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adecf97f429a69ac57f5c29f8a57a5ec0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#adecf97f429a69ac57f5c29f8a57a5ec0">bitRate</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:adecf97f429a69ac57f5c29f8a57a5ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bit rate of the asset in kbps. If the asset can play at a range of bit rates (such as an Http Live Streaming video), then set the bit rate to zero and populate the minimum and maximum bit rate instead.  <a href="#adecf97f429a69ac57f5c29f8a57a5ec0">More...</a><br/></td></tr>
 <tr class="separator:adecf97f429a69ac57f5c29f8a57a5ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adec885dbec5446859bf09df327234086"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#adec885dbec5446859bf09df327234086">bitRateSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:adec885dbec5446859bf09df327234086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29c44c6d933286bc328f9f62f7a3576d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a29c44c6d933286bc328f9f62f7a3576d">minimumBitRate</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a29c44c6d933286bc328f9f62f7a3576d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum bitrate of the video in kbps. Only set this if the asset can play at a range of bit rates.  <a href="#a29c44c6d933286bc328f9f62f7a3576d">More...</a><br/></td></tr>
 <tr class="separator:a29c44c6d933286bc328f9f62f7a3576d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad311af85e38bc59ed6d3f6594822bcc8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#ad311af85e38bc59ed6d3f6594822bcc8">minimumBitRateSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ad311af85e38bc59ed6d3f6594822bcc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82be0fbafb61fcd0466eca8da1f61bde"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a82be0fbafb61fcd0466eca8da1f61bde">maximumBitRate</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a82be0fbafb61fcd0466eca8da1f61bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum bitrate of the video in kbps. Only set this if the asset can play at a range of bit rates.  <a href="#a82be0fbafb61fcd0466eca8da1f61bde">More...</a><br/></td></tr>
 <tr class="separator:a82be0fbafb61fcd0466eca8da1f61bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d89c6ce0c3be5965784ae2b792a8f82"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a1d89c6ce0c3be5965784ae2b792a8f82">maximumBitRateSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a1d89c6ce0c3be5965784ae2b792a8f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43ca055687de9d8c2311495f3224f637"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_size.html">Size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a43ca055687de9d8c2311495f3224f637">size</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a43ca055687de9d8c2311495f3224f637"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size (width and height) of the asset. This attribute is required.  <a href="#a43ca055687de9d8c2311495f3224f637">More...</a><br/></td></tr>
 <tr class="separator:a43ca055687de9d8c2311495f3224f637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ba39af797c1ec8430155cf4001f9064"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html#abba3037be01886e11eb43330c4962eb5">MimeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a3ba39af797c1ec8430155cf4001f9064">mimeType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3ba39af797c1ec8430155cf4001f9064"><td class="mdescLeft">&#160;</td><td class="mdescRight">The mime type of the asset. This attribute is required.  <a href="#a3ba39af797c1ec8430155cf4001f9064">More...</a><br/></td></tr>
 <tr class="separator:a3ba39af797c1ec8430155cf4001f9064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab14cdffb9fc64f4abead439bf723e927"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#ab14cdffb9fc64f4abead439bf723e927">mimeTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ab14cdffb9fc64f4abead439bf723e927"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8039869f52629e76bbe377d330918432"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html#a9505e904e58f43bd2ff94dc7d4f36096">VideoDeliveryType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a8039869f52629e76bbe377d330918432">deliveryType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8039869f52629e76bbe377d330918432"><td class="mdescLeft">&#160;</td><td class="mdescRight">The delivery type of the asset. This attribute is required.  <a href="#a8039869f52629e76bbe377d330918432">More...</a><br/></td></tr>
 <tr class="separator:a8039869f52629e76bbe377d330918432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c7ae82172a9a39f827c6d52b422adeb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a4c7ae82172a9a39f827c6d52b422adeb">deliveryTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a4c7ae82172a9a39f827c6d52b422adeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9eb3b0e13a343822c19973a7cd0a7b4d"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a9eb3b0e13a343822c19973a7cd0a7b4d">codecs</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9eb3b0e13a343822c19973a7cd0a7b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The codecs of the asset. This attribute is optional and defaults to an empty list.  <a href="#a9eb3b0e13a343822c19973a7cd0a7b4d">More...</a><br/></td></tr>
 <tr class="separator:a9eb3b0e13a343822c19973a7cd0a7b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Metadata for a video asset. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="adecf97f429a69ac57f5c29f8a57a5ec0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -164,6 +178,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The bit rate of the asset in kbps. If the asset can play at a range of bit rates (such as an Http Live Streaming video), then set the bit rate to zero and populate the minimum and maximum bit rate instead. </p>
 
 </div>
 </div>
@@ -185,6 +201,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#adecf97f429a69ac57f5c29f8a57a5ec0" title="The bit rate of the asset in kbps. If the asset can play at a range of bit rates (such as an Http Liv...">bitRate</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a9eb3b0e13a343822c19973a7cd0a7b4d"></a>
@@ -204,6 +223,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The codecs of the asset. This attribute is optional and defaults to an empty list. </p>
 
 </div>
 </div>
@@ -225,6 +246,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The delivery type of the asset. This attribute is required. </p>
+
 </div>
 </div>
 <a class="anchor" id="a4c7ae82172a9a39f827c6d52b422adeb"></a>
@@ -244,6 +267,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a8039869f52629e76bbe377d330918432" title="The delivery type of the asset. This attribute is required. ">deliveryType</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -265,6 +291,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The duration of the asset in milliseconds. This attribute is required. </p>
+
 </div>
 </div>
 <a class="anchor" id="a478a828fb37c815c097ad9167f85f202"></a>
@@ -284,6 +312,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#aa1b7b303fb133847e239e3c0a12b2f62" title="The duration of the asset in milliseconds. This attribute is required. ">duration</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -305,6 +336,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The maximum bitrate of the video in kbps. Only set this if the asset can play at a range of bit rates. </p>
+
 </div>
 </div>
 <a class="anchor" id="a1d89c6ce0c3be5965784ae2b792a8f82"></a>
@@ -324,6 +357,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a82be0fbafb61fcd0466eca8da1f61bde" title="The maximum bitrate of the video in kbps. Only set this if the asset can play at a range of bit rates...">maximumBitRate</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -345,6 +381,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The mime type of the asset. This attribute is required. </p>
+
 </div>
 </div>
 <a class="anchor" id="ab14cdffb9fc64f4abead439bf723e927"></a>
@@ -364,6 +402,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a3ba39af797c1ec8430155cf4001f9064" title="The mime type of the asset. This attribute is required. ">mimeType</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -385,6 +426,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The minimum bitrate of the video in kbps. Only set this if the asset can play at a range of bit rates. </p>
+
 </div>
 </div>
 <a class="anchor" id="ad311af85e38bc59ed6d3f6594822bcc8"></a>
@@ -404,6 +447,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#a29c44c6d933286bc328f9f62f7a3576d" title="The minimum bitrate of the video in kbps. Only set this if the asset can play at a range of bit rates...">minimumBitRate</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -425,6 +471,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The scalable type of the asset. This attribute is required. </p>
+
 </div>
 </div>
 <a class="anchor" id="a0e3ce6834831a7371d253a14fc4a50c3"></a>
@@ -444,6 +492,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html#ab9f2b018e9386deb0a9047624a7087ae" title="The scalable type of the asset. This attribute is required. ">scalableType</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -465,10 +516,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The size (width and height) of the asset. This attribute is required. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -476,7 +529,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html">v201411</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_video_metadata.html">VideoMetadata</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:05 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:35 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -110,31 +110,42 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_ad_wo
 <div class="title">Google.Api.Ads.AdWords.v201506.TargetRoasBiddingScheme Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Target Roas bidding strategy helps you maximize revenue while averaging a specific target Return On Average Spend (ROAS). For example: If TargetRoas is 1.5, the strategy will create as much revenue as possible while ensuring that every $1.00 of clicks provides $1.50 in conversion value.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.AdWords.v201506.TargetRoasBiddingScheme:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme.png" usemap="#Google.Api.Ads.AdWords.v201506.TargetRoasBiddingScheme_map" alt=""/>
   <map id="Google.Api.Ads.AdWords.v201506.TargetRoasBiddingScheme_map" name="Google.Api.Ads.AdWords.v201506.TargetRoasBiddingScheme_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_scheme.html" alt="Google.Api.Ads.AdWords.v201506.BiddingScheme" shape="rect" coords="0,0,365,24"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_scheme.html" title="Base class for all bidding schemes. This is disabled for AdX. " alt="Google.Api.Ads.AdWords.v201506.BiddingScheme" shape="rect" coords="0,0,365,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a0de1f4025926e1cbb4dd215cfbe77208"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme.html#a0de1f4025926e1cbb4dd215cfbe77208">targetRoas</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0de1f4025926e1cbb4dd215cfbe77208"><td class="mdescLeft">&#160;</td><td class="mdescRight">The desired revenue (based on conversion data) per unit of spend. <span class="constraint InRange">This field must be between 0.01 and 1000.0, inclusive.</span>  <a href="#a0de1f4025926e1cbb4dd215cfbe77208">More...</a><br/></td></tr>
 <tr class="separator:a0de1f4025926e1cbb4dd215cfbe77208"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6769e08bf1d249a041048e583372a131"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme.html#a6769e08bf1d249a041048e583372a131">targetRoasSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a6769e08bf1d249a041048e583372a131"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a060e33571f660fd735da6f8ddf021ea4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_money.html">Money</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme.html#a060e33571f660fd735da6f8ddf021ea4">bidCeiling</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a060e33571f660fd735da6f8ddf021ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum bid limit that applies to all keywords managed by the strategy. <span class="constraint InRange">This field must be greater than or equal to 0.</span>  <a href="#a060e33571f660fd735da6f8ddf021ea4">More...</a><br/></td></tr>
 <tr class="separator:a060e33571f660fd735da6f8ddf021ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5566d54f2702cacf8fadc0f3e962ad0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_money.html">Money</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme.html#a5566d54f2702cacf8fadc0f3e962ad0d">bidFloor</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5566d54f2702cacf8fadc0f3e962ad0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum bid limit that applies to all keywords managed by the strategy. <span class="constraint InRange">This field must be greater than or equal to 0.</span>  <a href="#a5566d54f2702cacf8fadc0f3e962ad0d">More...</a><br/></td></tr>
 <tr class="separator:a5566d54f2702cacf8fadc0f3e962ad0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_scheme"><td colspan="2" onclick="javascript:toggleInherit('properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_scheme')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_scheme.html">Google.Api.Ads.AdWords.v201506.BiddingScheme</a></td></tr>
 <tr class="memitem:a5218d9b9579aa0ddcf97ada810b1ffcf inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_scheme"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_scheme.html#a5218d9b9579aa0ddcf97ada810b1ffcf">BiddingSchemeType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5218d9b9579aa0ddcf97ada810b1ffcf inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_scheme"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that this instance is a subtype of <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_scheme.html" title="Base class for all bidding schemes. This is disabled for AdX. ">BiddingScheme</a>. Although this field is returned in the response, it is ignored on input and cannot be selected. Specify xsi:type instead.  <a href="#a5218d9b9579aa0ddcf97ada810b1ffcf">More...</a><br/></td></tr>
 <tr class="separator:a5218d9b9579aa0ddcf97ada810b1ffcf inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_scheme"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Target Roas bidding strategy helps you maximize revenue while averaging a specific target Return On Average Spend (ROAS). For example: If TargetRoas is 1.5, the strategy will create as much revenue as possible while ensuring that every $1.00 of clicks provides $1.50 in conversion value. </p>
+<p>Note that campaigns must meet <a href="//support.google.com/adwords/bin/answer.py?answer=2471188">specific eligibility requirements</a> before they can use the <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme.html" title="Target Roas bidding strategy helps you maximize revenue while averaging a specific target Return On A...">TargetRoasBiddingScheme</a></code> bidding strategy. <span class="constraint
+AdxEnabled">This is disabled for AdX.</span></p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a060e33571f660fd735da6f8ddf021ea4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -152,6 +163,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Maximum bid limit that applies to all keywords managed by the strategy. <span class="constraint InRange">This field must be greater than or equal to 0.</span> </p>
 
 </div>
 </div>
@@ -173,6 +186,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Minimum bid limit that applies to all keywords managed by the strategy. <span class="constraint InRange">This field must be greater than or equal to 0.</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="a0de1f4025926e1cbb4dd215cfbe77208"></a>
@@ -192,6 +207,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The desired revenue (based on conversion data) per unit of spend. <span class="constraint InRange">This field must be between 0.01 and 1000.0, inclusive.</span> </p>
 
 </div>
 </div>
@@ -213,10 +230,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme.html#a0de1f4025926e1cbb4dd215cfbe77208" title="The desired revenue (based on conversion data) per unit of spend. This field must be between 0...">targetRoas</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -224,7 +244,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html">v201506</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme.html">TargetRoasBiddingScheme</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:30 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:06 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

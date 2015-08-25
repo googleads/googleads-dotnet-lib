@@ -110,19 +110,26 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201502.VideoPosition Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a targetable position within a video. A video ad can be targeted to a position (pre-roll, all mid-rolls, or post-roll), or to a specific mid-roll index.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_video_position.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ad81d353f70c13ae14884c1e0ecf218a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502.html#a428987fbfe429787f3ed4312eb76763d">VideoPositionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_video_position.html#ad81d353f70c13ae14884c1e0ecf218a0">positionType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad81d353f70c13ae14884c1e0ecf218a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of video position (pre-roll, mid-roll, or post-roll).  <a href="#ad81d353f70c13ae14884c1e0ecf218a0">More...</a><br/></td></tr>
 <tr class="separator:ad81d353f70c13ae14884c1e0ecf218a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a575e8b3e1536044cb960a9819715f718"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_video_position.html#a575e8b3e1536044cb960a9819715f718">positionTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a575e8b3e1536044cb960a9819715f718"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28628aeac9dadbd90b936b0066ef0d73"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_video_position.html#a28628aeac9dadbd90b936b0066ef0d73">midrollIndex</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a28628aeac9dadbd90b936b0066ef0d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of the mid-roll to target. Only valid if the <a href="positionType">positionType</a> is <a href="VideoPositionType#MIDROLL">VideoPositionType::MIDROLL</a>, otherwise this field will be ignored.  <a href="#a28628aeac9dadbd90b936b0066ef0d73">More...</a><br/></td></tr>
 <tr class="separator:a28628aeac9dadbd90b936b0066ef0d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f7577a57adfdf206686d4a5659722a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_video_position.html#a9f7577a57adfdf206686d4a5659722a7">midrollIndexSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a9f7577a57adfdf206686d4a5659722a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a targetable position within a video. A video ad can be targeted to a position (pre-roll, all mid-rolls, or post-roll), or to a specific mid-roll index. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a28628aeac9dadbd90b936b0066ef0d73"></a>
 <div class="memitem">
 <div class="memproto">
@@ -140,6 +147,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The index of the mid-roll to target. Only valid if the <a href="positionType">positionType</a> is <a href="VideoPositionType#MIDROLL">VideoPositionType::MIDROLL</a>, otherwise this field will be ignored. </p>
 
 </div>
 </div>
@@ -161,6 +170,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_video_position.html#a28628aeac9dadbd90b936b0066ef0d73" title="The index of the mid-roll to target. Only valid if the positionType is VideoPositionType::MIDROLL, otherwise this field will be ignored. ">midrollIndex</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="ad81d353f70c13ae14884c1e0ecf218a0"></a>
@@ -180,6 +192,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The type of video position (pre-roll, mid-roll, or post-roll). </p>
 
 </div>
 </div>
@@ -201,10 +215,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_video_position.html#ad81d353f70c13ae14884c1e0ecf218a0" title="The type of video position (pre-roll, mid-roll, or post-roll). ">positionType</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201502/<a class="el" href="v201502_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201502/<a class="el" href="v201502_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -212,7 +229,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502.html">v201502</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_video_position.html">VideoPosition</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:07 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:39 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

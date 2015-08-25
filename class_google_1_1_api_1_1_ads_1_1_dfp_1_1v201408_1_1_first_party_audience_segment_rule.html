@@ -110,15 +110,22 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201408.FirstPartyAudienceSegmentRule Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Rule of a <a href="FirstPartyAudienceSegment">FirstPartyAudienceSegment</a> that defines user's eligibility criteria to be part of a segment.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_first_party_audience_segment_rule.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:aa563f9029393f91d0c467cd860d386f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_inventory_targeting.html">InventoryTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_first_party_audience_segment_rule.html#aa563f9029393f91d0c467cd860d386f2">inventoryRule</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa563f9029393f91d0c467cd860d386f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the inventory (i.e. ad units and placements) that are part of the rule of a <a href="FirstPartyAudienceSegment">FirstPartyAudienceSegment</a>. This attribute is required.  <a href="#aa563f9029393f91d0c467cd860d386f2">More...</a><br/></td></tr>
 <tr class="separator:aa563f9029393f91d0c467cd860d386f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88d71193eea4324bd9ccd63c1b0ccdfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_custom_criteria_set.html">CustomCriteriaSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_first_party_audience_segment_rule.html#a88d71193eea4324bd9ccd63c1b0ccdfe">customCriteriaRule</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a88d71193eea4324bd9ccd63c1b0ccdfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the collection of custom criteria that are part of the rule of a <a href="FirstPartyAudienceSegment">FirstPartyAudienceSegment</a>.  <a href="#a88d71193eea4324bd9ccd63c1b0ccdfe">More...</a><br/></td></tr>
 <tr class="separator:a88d71193eea4324bd9ccd63c1b0ccdfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Rule of a <a href="FirstPartyAudienceSegment">FirstPartyAudienceSegment</a> that defines user's eligibility criteria to be part of a segment. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a88d71193eea4324bd9ccd63c1b0ccdfe"></a>
 <div class="memitem">
 <div class="memproto">
@@ -136,6 +143,24 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Specifies the collection of custom criteria that are part of the rule of a <a href="FirstPartyAudienceSegment">FirstPartyAudienceSegment</a>. </p>
+<p>Once the <a href="FirstPartyAudienceSegment">FirstPartyAudienceSegment</a> is updated or modified with custom criteria, the server may return a normalized, but equivalent representation of the custom criteria rule.</p>
+<ul>
+<li style="list-style: none">
+<code>customCriteriaRule</code> will have up to three levels including itself. </li>
+<li>
+The top level <a href="CustomCriteriaSet">CustomCriteriaSet</a> i.e. the <code>customTargeting</code> object can only contain a <a href="CustomCriteriaSet.LogicalOperator#OR">CustomCriteriaSet.LogicalOperator::OR</a> of all its children. </li>
+<li>
+The second level of <a href="CustomCriteriaSet">CustomCriteriaSet</a> objects can only contain <a href="CustomCriteriaSet.LogicalOperator#AND">CustomCriteriaSet.LogicalOperator::AND</a> of all their children. If a <a href="CustomCriteria">CustomCriteria</a> is placed on this level, the server will wrap it in a <a href="CustomCriteriaSet">CustomCriteriaSet</a>. </li>
+<li>
+The third level can only comprise of <a href="CustomCriteria">CustomCriteria</a> objects. </li>
+</ul>
+<p>The resulting custom criteria rule would be of the form:<br/>
+ </p>
+<div class="image">
+<img src="http://chart.apis.google.com/chart?cht=gv&amp;chl=digraph{customTargeting_LogicalOperator_OR-%3ECustomCriteriaSet_LogicalOperator_AND_1-%3ECustomCriteria_1;CustomCriteriaSet_LogicalOperator_AND_1-%3Eellipsis1;customTargeting_LogicalOperator_OR-%3Eellipsis2;ellipsis1[label=%22...%22,shape=none,fontsize=32];ellipsis2[label=%22...%22,shape=none,fontsize=32]}&amp;chs=450x200" />
+</div>
 
 </div>
 </div>
@@ -157,10 +182,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Specifies the inventory (i.e. ad units and placements) that are part of the rule of a <a href="FirstPartyAudienceSegment">FirstPartyAudienceSegment</a>. This attribute is required. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201408/<a class="el" href="v201408_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201408/<a class="el" href="v201408_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -168,7 +195,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html">v201408</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_first_party_audience_segment_rule.html">FirstPartyAudienceSegmentRule</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:57 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:30 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

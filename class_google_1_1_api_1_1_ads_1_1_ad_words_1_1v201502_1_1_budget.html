@@ -110,39 +110,56 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_ad_wo
 <div class="title">Google.Api.Ads.AdWords.v201502.Budget Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Budgets are used for managing the amount of money spent on <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a>.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ae8a438f4ed8ca9a5e005d09cf17da53b"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#ae8a438f4ed8ca9a5e005d09cf17da53b">budgetId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ae8a438f4ed8ca9a5e005d09cf17da53b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> is created using the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_service.html" title="Budget Service to get/mutate budgets. ">BudgetService</a> ADD operation and is assigned a BudgetId. The BudgetId is used when modifying the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> with <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_service.html" title="Budget Service to get/mutate budgets. ">BudgetService</a>, or associating the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> to a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign.html" title="Data representing an AdWords campaign. ">Campaign</a> with <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_service.html" title="Use this service to manage campaigns. A campaign organizes one or more ad groups together and has its...">CampaignService</a>. A BudgetId can be shared across different campaigns&ndash;the system will then allocate the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> among the Campaigns to get the optimum result. <span class="constraint
+Selectable">This field can be selected using the value "BudgetId".</span><span class="constraint Filterable">This field can be filtered on.</span>  <a href="#ae8a438f4ed8ca9a5e005d09cf17da53b">More...</a><br/></td></tr>
 <tr class="separator:ae8a438f4ed8ca9a5e005d09cf17da53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd47c46544178b78c371e7f67651d274"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#abd47c46544178b78c371e7f67651d274">budgetIdSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:abd47c46544178b78c371e7f67651d274"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62bd89f3d57ef9370d033bf6413018e5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#a62bd89f3d57ef9370d033bf6413018e5">name</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a62bd89f3d57ef9370d033bf6413018e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a>. When creating a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> through <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_service.html" title="Budget Service to get/mutate budgets. ">BudgetService</a>, every explicitly shared <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> must have a non-null non-empty name. In addition, all explicitly shared <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> names owned by an account must be distinct. Budgets that are not explicitly shared derive their name from the attached <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign.html" title="Data representing an AdWords campaign. ">Campaign</a>'s name. <span class="constraint Selectable">This field can be selected using the value "BudgetName".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span> <span class="constraint
+StringLength">The length of this string should be between 1 and 255, inclusive, in UTF-8 bytes, (trimmed).</span>  <a href="#a62bd89f3d57ef9370d033bf6413018e5">More...</a><br/></td></tr>
 <tr class="separator:a62bd89f3d57ef9370d033bf6413018e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8845a1fece210c75f0f39c42482c2502"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502.html#ac841052e128c40dff8fa7f12402c2707">BudgetBudgetPeriod</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#a8845a1fece210c75f0f39c42482c2502">period</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8845a1fece210c75f0f39c42482c2502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Period over which to spend the budget. Defaults to DAILY when creating a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> through <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_service.html" title="Budget Service to get/mutate budgets. ">BudgetService</a>.  <a href="#a8845a1fece210c75f0f39c42482c2502">More...</a><br/></td></tr>
 <tr class="separator:a8845a1fece210c75f0f39c42482c2502"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a4f361028e08c92cc20f1ec5beae445"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#a7a4f361028e08c92cc20f1ec5beae445">periodSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a7a4f361028e08c92cc20f1ec5beae445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4e38412a8964099b99efdd6d59a4554"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_money.html">Money</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#aa4e38412a8964099b99efdd6d59a4554">amount</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa4e38412a8964099b99efdd6d59a4554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amount of budget in the local currency for the account. <span class="constraint
+Selectable">This field can be selected using the value "Amount".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint InRange">This field must be greater than or equal to 1.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span>  <a href="#aa4e38412a8964099b99efdd6d59a4554">More...</a><br/></td></tr>
 <tr class="separator:aa4e38412a8964099b99efdd6d59a4554"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac166fcfbfa5857392d0602aa1aa20ab5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502.html#acdebdc89aeb67e89e5716f3f5b918538">BudgetBudgetDeliveryMethod</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#ac166fcfbfa5857392d0602aa1aa20ab5">deliveryMethod</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac166fcfbfa5857392d0602aa1aa20ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delivery method for the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> which determines the rate at which the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> is spent. Defaults to STANDARD and can be changed through <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_service.html" title="Budget Service to get/mutate budgets. ">BudgetService</a> ADD or SET operations. <span class="constraint Selectable">This field can be selected using the value "DeliveryMethod".</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span>  <a href="#ac166fcfbfa5857392d0602aa1aa20ab5">More...</a><br/></td></tr>
 <tr class="separator:ac166fcfbfa5857392d0602aa1aa20ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ab0777370281d4406535451490c2902"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#a7ab0777370281d4406535451490c2902">deliveryMethodSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a7ab0777370281d4406535451490c2902"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada5605e891be0bc82a91d2016ca36280"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#ada5605e891be0bc82a91d2016ca36280">referenceCount</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ada5605e891be0bc82a91d2016ca36280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of campaigns actively using this budget. This field is only populated for Get operations. <span class="constraint Selectable">This field can be selected using the value "BudgetReferenceCount".</span> <span class="constraint
+ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#ada5605e891be0bc82a91d2016ca36280">More...</a><br/></td></tr>
 <tr class="separator:ada5605e891be0bc82a91d2016ca36280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6499280da2c4272b206395e2822ecc9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#a6499280da2c4272b206395e2822ecc9a">referenceCountSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a6499280da2c4272b206395e2822ecc9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dafb17c9b76f6ba6783853df89683a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#a8dafb17c9b76f6ba6783853df89683a1">isExplicitlyShared</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8dafb17c9b76f6ba6783853df89683a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, this budget was created with the purpose of sharing this budget across one or more campaigns.  <a href="#a8dafb17c9b76f6ba6783853df89683a1">More...</a><br/></td></tr>
 <tr class="separator:a8dafb17c9b76f6ba6783853df89683a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac96c96df92e8f794744c5ef0736d3637"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#ac96c96df92e8f794744c5ef0736d3637">isExplicitlySharedSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ac96c96df92e8f794744c5ef0736d3637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89cb33845226bdc5c90e2e2f6f937732"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502.html#aae77704c676a4bd5cdbee67c83021b6b">BudgetBudgetStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#a89cb33845226bdc5c90e2e2f6f937732">status</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a89cb33845226bdc5c90e2e2f6f937732"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="constraint Selectable">This field can be selected using the value "BudgetStatus".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a89cb33845226bdc5c90e2e2f6f937732">More...</a><br/></td></tr>
 <tr class="separator:a89cb33845226bdc5c90e2e2f6f937732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a560795a829689f4afd679d86756cba02"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#a560795a829689f4afd679d86756cba02">statusSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a560795a829689f4afd679d86756cba02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Budgets are used for managing the amount of money spent on <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a>. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="aa4e38412a8964099b99efdd6d59a4554"></a>
 <div class="memitem">
 <div class="memproto">
@@ -160,6 +177,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Amount of budget in the local currency for the account. <span class="constraint
+Selectable">This field can be selected using the value "Amount".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint InRange">This field must be greater than or equal to 1.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span> </p>
 
 </div>
 </div>
@@ -181,6 +201,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>A <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> is created using the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_service.html" title="Budget Service to get/mutate budgets. ">BudgetService</a> ADD operation and is assigned a BudgetId. The BudgetId is used when modifying the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> with <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_service.html" title="Budget Service to get/mutate budgets. ">BudgetService</a>, or associating the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> to a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign.html" title="Data representing an AdWords campaign. ">Campaign</a> with <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_service.html" title="Use this service to manage campaigns. A campaign organizes one or more ad groups together and has its...">CampaignService</a>. A BudgetId can be shared across different campaigns&ndash;the system will then allocate the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> among the Campaigns to get the optimum result. <span class="constraint
+Selectable">This field can be selected using the value "BudgetId".</span><span class="constraint Filterable">This field can be filtered on.</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="abd47c46544178b78c371e7f67651d274"></a>
@@ -200,6 +223,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#ae8a438f4ed8ca9a5e005d09cf17da53b" title="A Budget is created using the BudgetService ADD operation and is assigned a BudgetId. The BudgetId is used when modifying the Budget with BudgetService, or associating the Budget to a Campaign with CampaignService. A BudgetId can be shared across different campaigns–the system will then allocate the Budget among the Campaigns to get the optimum result. This field can be selected using the value &quot;BudgetId&quot;.This field can be filtered on. ">budgetId</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -221,6 +247,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Delivery method for the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> which determines the rate at which the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> is spent. Defaults to STANDARD and can be changed through <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_service.html" title="Budget Service to get/mutate budgets. ">BudgetService</a> ADD or SET operations. <span class="constraint Selectable">This field can be selected using the value "DeliveryMethod".</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="a7ab0777370281d4406535451490c2902"></a>
@@ -240,6 +268,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#ac166fcfbfa5857392d0602aa1aa20ab5" title="Delivery method for the Budget which determines the rate at which the Budget is spent. Defaults to STANDARD and can be changed through BudgetService ADD or SET operations. This field can be selected using the value &quot;DeliveryMethod&quot;. This field is read only and will be ignored when sent to the API for the following Operators: REMOVE. ">deliveryMethod</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -261,6 +292,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>If true, this budget was created with the purpose of sharing this budget across one or more campaigns. </p>
+<p>If false, this budget was created with the intention to be dedicatedly used with a single campaign, and the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a>'s name and status will stay in the sync with the associated <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign.html" title="Data representing an AdWords campaign. ">Campaign</a>'s name and status. Attempting to share this budget with a second <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign.html" title="Data representing an AdWords campaign. ">Campaign</a> will result in an error.</p>
+<p><span class="constraint Selectable">This field can be selected using the value "IsBudgetExplicitlyShared".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="ac96c96df92e8f794744c5ef0736d3637"></a>
@@ -280,6 +315,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#a8dafb17c9b76f6ba6783853df89683a1" title="If true, this budget was created with the purpose of sharing this budget across one or more campaigns...">isExplicitlyShared</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -301,6 +339,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Name of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a>. When creating a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> through <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_service.html" title="Budget Service to get/mutate budgets. ">BudgetService</a>, every explicitly shared <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> must have a non-null non-empty name. In addition, all explicitly shared <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> names owned by an account must be distinct. Budgets that are not explicitly shared derive their name from the attached <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign.html" title="Data representing an AdWords campaign. ">Campaign</a>'s name. <span class="constraint Selectable">This field can be selected using the value "BudgetName".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span> <span class="constraint
+StringLength">The length of this string should be between 1 and 255, inclusive, in UTF-8 bytes, (trimmed).</span> </p>
+
 </div>
 </div>
 <a class="anchor" id="a8845a1fece210c75f0f39c42482c2502"></a>
@@ -320,6 +361,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Period over which to spend the budget. Defaults to DAILY when creating a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> through <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_service.html" title="Budget Service to get/mutate budgets. ">BudgetService</a>. </p>
+<p><code>MONTHLY</code> is not available to most users. <span class="constraint Selectable">This field can be selected using the value "Period".</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span> </p>
 
 </div>
 </div>
@@ -341,6 +385,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#a8845a1fece210c75f0f39c42482c2502" title="Period over which to spend the budget. Defaults to DAILY when creating a Budget through BudgetService...">period</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="ada5605e891be0bc82a91d2016ca36280"></a>
@@ -360,6 +407,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Number of campaigns actively using this budget. This field is only populated for Get operations. <span class="constraint Selectable">This field can be selected using the value "BudgetReferenceCount".</span> <span class="constraint
+ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
 
 </div>
 </div>
@@ -381,6 +431,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#ada5605e891be0bc82a91d2016ca36280" title="Number of campaigns actively using this budget. This field is only populated for Get operations...">referenceCount</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a89cb33845226bdc5c90e2e2f6f937732"></a>
@@ -400,6 +453,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><span class="constraint Selectable">This field can be selected using the value "BudgetStatus".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
 
 </div>
 </div>
@@ -421,10 +476,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#a89cb33845226bdc5c90e2e2f6f937732" title="This field can be selected using the value &quot;BudgetStatus&quot;.This field can be filtered on...">status</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201502/<a class="el" href="v201502_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201502/<a class="el" href="v201502_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -432,7 +490,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502.html">v201502</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html">Budget</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:25 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:01 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

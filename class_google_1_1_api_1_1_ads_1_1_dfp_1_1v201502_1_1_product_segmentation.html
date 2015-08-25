@@ -110,43 +110,65 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201502.ProductSegmentation Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Segmentations used to create products. Within a product template, for each segmentation, a product will be created for the combination of all other segments within other segmentations.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a2f3b00ed5ead7fed1a0f82702787408e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_geo_targeting.html">GeoTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a2f3b00ed5ead7fed1a0f82702787408e">geoSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a2f3b00ed5ead7fed1a0f82702787408e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The geographic segmentation. Segments should be set on the <a href="GeoTargeting#targetedLocations">GeoTargeting::targetedLocations</a> field.  <a href="#a2f3b00ed5ead7fed1a0f82702787408e">More...</a><br/></td></tr>
 <tr class="separator:a2f3b00ed5ead7fed1a0f82702787408e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3f4dc8f86b8d9d85b49f29f6a205611"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_ad_unit_targeting.html">AdUnitTargeting</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#ad3f4dc8f86b8d9d85b49f29f6a205611">adUnitSegments</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad3f4dc8f86b8d9d85b49f29f6a205611"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ad unit targeting segmentation. For each ad unit segment, <a href="AdUnitTargeting#includeDescendants">AdUnitTargeting::includeDescendants</a> must be true.  <a href="#ad3f4dc8f86b8d9d85b49f29f6a205611">More...</a><br/></td></tr>
 <tr class="separator:ad3f4dc8f86b8d9d85b49f29f6a205611"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ffaae1ee5cb4a94857dec3390a6decf"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a9ffaae1ee5cb4a94857dec3390a6decf">placementSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9ffaae1ee5cb4a94857dec3390a6decf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The placement targeting segmentation.  <a href="#a9ffaae1ee5cb4a94857dec3390a6decf">More...</a><br/></td></tr>
 <tr class="separator:a9ffaae1ee5cb4a94857dec3390a6decf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fc699e34c14915a14e8b079f7d0dbec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_custom_criteria.html">CustomCriteria</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a0fc699e34c14915a14e8b079f7d0dbec">customTargetingSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0fc699e34c14915a14e8b079f7d0dbec"><td class="mdescLeft">&#160;</td><td class="mdescRight">The custom targeting segmentation.  <a href="#a0fc699e34c14915a14e8b079f7d0dbec">More...</a><br/></td></tr>
 <tr class="separator:a0fc699e34c14915a14e8b079f7d0dbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e3b8e7e3f3ce0d29b6a112e1688e5d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_user_domain_targeting.html">UserDomainTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a5e3b8e7e3f3ce0d29b6a112e1688e5d6">userDomainSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5e3b8e7e3f3ce0d29b6a112e1688e5d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user domain segmentation. <a href="UserDomainTargeting#isTargeted">UserDomainTargeting::isTargeted</a> must be  <a href="#a5e3b8e7e3f3ce0d29b6a112e1688e5d6">More...</a><br/></td></tr>
 <tr class="separator:a5e3b8e7e3f3ce0d29b6a112e1688e5d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ac04b982a04fd182af5fdf72cfe3526"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_bandwidth_group_targeting.html">BandwidthGroupTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a6ac04b982a04fd182af5fdf72cfe3526">bandwidthSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a6ac04b982a04fd182af5fdf72cfe3526"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bandwidth segmentation. <a href="BandwidthGroupTargeting#isTargeted">BandwidthGroupTargeting::isTargeted</a> must be  <a href="#a6ac04b982a04fd182af5fdf72cfe3526">More...</a><br/></td></tr>
 <tr class="separator:a6ac04b982a04fd182af5fdf72cfe3526"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a289b22ff78bfd94e994dcafcd5b9914a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_browser_targeting.html">BrowserTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a289b22ff78bfd94e994dcafcd5b9914a">browserSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a289b22ff78bfd94e994dcafcd5b9914a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The browser segmentation. <a href="BrowserTargeting#isTargeted">BrowserTargeting::isTargeted</a> must be  <a href="#a289b22ff78bfd94e994dcafcd5b9914a">More...</a><br/></td></tr>
 <tr class="separator:a289b22ff78bfd94e994dcafcd5b9914a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08ab664be85d2a628e9264511631ffa5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_browser_language_targeting.html">BrowserLanguageTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a08ab664be85d2a628e9264511631ffa5">browserLanguageSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a08ab664be85d2a628e9264511631ffa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The browser language segmentation. <a href="BrowserLanguageTargeting#isTargeted">BrowserLanguageTargeting::isTargeted</a> must be  <a href="#a08ab664be85d2a628e9264511631ffa5">More...</a><br/></td></tr>
 <tr class="separator:a08ab664be85d2a628e9264511631ffa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a738ab79703129170ce79976a143e54d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_operating_system_targeting.html">OperatingSystemTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a738ab79703129170ce79976a143e54d9">operatingSystemSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a738ab79703129170ce79976a143e54d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The operating system segmentation. <a href="OperatingSystemTargeting#isTargeted">OperatingSystemTargeting::isTargeted</a> must be  <a href="#a738ab79703129170ce79976a143e54d9">More...</a><br/></td></tr>
 <tr class="separator:a738ab79703129170ce79976a143e54d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4637c5ee87b095b15844a407bd052a65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_mobile_carrier_targeting.html">MobileCarrierTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a4637c5ee87b095b15844a407bd052a65">mobileCarrierSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4637c5ee87b095b15844a407bd052a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">The mobile carrier segmentation. <a href="MobileCarrierTargeting#isTargeted">MobileCarrierTargeting::isTargeted</a> must be  <a href="#a4637c5ee87b095b15844a407bd052a65">More...</a><br/></td></tr>
 <tr class="separator:a4637c5ee87b095b15844a407bd052a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f54f977b25f5c9fe6605f49f6af16c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_device_capability_targeting.html">DeviceCapabilityTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a8f54f977b25f5c9fe6605f49f6af16c2">deviceCapabilitySegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8f54f977b25f5c9fe6605f49f6af16c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The device capability segmentation. <a href="DeviceCapabilityTargeting#excludedDeviceCapabilities">DeviceCapabilityTargeting::excludedDeviceCapabilities</a> must be empty or null.  <a href="#a8f54f977b25f5c9fe6605f49f6af16c2">More...</a><br/></td></tr>
 <tr class="separator:a8f54f977b25f5c9fe6605f49f6af16c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaedf060c8bc628fc6c79170befb1a90f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_device_category_targeting.html">DeviceCategoryTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#aaedf060c8bc628fc6c79170befb1a90f">deviceCategorySegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aaedf060c8bc628fc6c79170befb1a90f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The device category segmentation. <a href="DeviceCategoryTargeting#excludedDeviceCategories">DeviceCategoryTargeting::excludedDeviceCategories</a> must be empty or null.  <a href="#aaedf060c8bc628fc6c79170befb1a90f">More...</a><br/></td></tr>
 <tr class="separator:aaedf060c8bc628fc6c79170befb1a90f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c4259fb2e8318fe2b636b9934260e3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_device_manufacturer_targeting.html">DeviceManufacturerTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a9c4259fb2e8318fe2b636b9934260e3b">deviceManufacturerSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9c4259fb2e8318fe2b636b9934260e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The device manufacturer segmentation. <a href="DeviceFamilyTargeting#isTargeted">DeviceFamilyTargeting::isTargeted</a> must be  <a href="#a9c4259fb2e8318fe2b636b9934260e3b">More...</a><br/></td></tr>
 <tr class="separator:a9c4259fb2e8318fe2b636b9934260e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eac5fc5a1360a9926aceed75b0becb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_mobile_device_targeting.html">MobileDeviceTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a2eac5fc5a1360a9926aceed75b0becb6">mobileDeviceSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a2eac5fc5a1360a9926aceed75b0becb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The mobile device segmentation. <a href="MobileDeviceTargeting#excludedMobileDevices">MobileDeviceTargeting::excludedMobileDevices</a> must be empty or null.  <a href="#a2eac5fc5a1360a9926aceed75b0becb6">More...</a><br/></td></tr>
 <tr class="separator:a2eac5fc5a1360a9926aceed75b0becb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88d47eaccc93e8a70d5509801590893e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_mobile_device_submodel_targeting.html">MobileDeviceSubmodelTargeting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a88d47eaccc93e8a70d5509801590893e">mobileDeviceSubmodelSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a88d47eaccc93e8a70d5509801590893e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The mobile device submodel segmentation. <a href="MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels">MobileDeviceSubmodelTargeting::excludedMobileDeviceSubmodels</a> must be empty or null.  <a href="#a88d47eaccc93e8a70d5509801590893e">More...</a><br/></td></tr>
 <tr class="separator:a88d47eaccc93e8a70d5509801590893e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4227a2230ba709880003e3cd633d65cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_video_position_target.html">VideoPositionTarget</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html#a4227a2230ba709880003e3cd633d65cb">videoPositionSegment</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4227a2230ba709880003e3cd633d65cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The video position segmentation.  <a href="#a4227a2230ba709880003e3cd633d65cb">More...</a><br/></td></tr>
 <tr class="separator:a4227a2230ba709880003e3cd633d65cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Segmentations used to create products. Within a product template, for each segmentation, a product will be created for the combination of all other segments within other segmentations. </p>
+<p>For example, a product with 3 segmentations with only 1 segment for each will produce <code>1 x 1 x 1 = 1</code> product. A product with 3 segmentations with 2 segments for each will produce <code>2 x 2 x 2 = 8</code> products.</p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="ad3f4dc8f86b8d9d85b49f29f6a205611"></a>
 <div class="memitem">
 <div class="memproto">
@@ -164,6 +186,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The ad unit targeting segmentation. For each ad unit segment, <a href="AdUnitTargeting#includeDescendants">AdUnitTargeting::includeDescendants</a> must be true. </p>
+<p>This attribute is optional.</p>
 
 </div>
 </div>
@@ -185,6 +210,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The bandwidth segmentation. <a href="BandwidthGroupTargeting#isTargeted">BandwidthGroupTargeting::isTargeted</a> must be </p>
+<p><code>true</code>. </p>
+<p>This attribute is optional.</p>
+
 </div>
 </div>
 <a class="anchor" id="a08ab664be85d2a628e9264511631ffa5"></a>
@@ -204,6 +233,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The browser language segmentation. <a href="BrowserLanguageTargeting#isTargeted">BrowserLanguageTargeting::isTargeted</a> must be </p>
+<p><code>true</code>. </p>
+<p>This attribute is optional.</p>
 
 </div>
 </div>
@@ -225,6 +258,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The browser segmentation. <a href="BrowserTargeting#isTargeted">BrowserTargeting::isTargeted</a> must be </p>
+<p><code>true</code>. </p>
+<p>This attribute is optional.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0fc699e34c14915a14e8b079f7d0dbec"></a>
@@ -244,6 +281,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The custom targeting segmentation. </p>
+<p>This attribute is optional.</p>
 
 </div>
 </div>
@@ -265,6 +305,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The device capability segmentation. <a href="DeviceCapabilityTargeting#excludedDeviceCapabilities">DeviceCapabilityTargeting::excludedDeviceCapabilities</a> must be empty or null. </p>
+<p>This attribute is optional.</p>
+
 </div>
 </div>
 <a class="anchor" id="aaedf060c8bc628fc6c79170befb1a90f"></a>
@@ -284,6 +327,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The device category segmentation. <a href="DeviceCategoryTargeting#excludedDeviceCategories">DeviceCategoryTargeting::excludedDeviceCategories</a> must be empty or null. </p>
+<p>This attribute is optional.</p>
 
 </div>
 </div>
@@ -305,6 +351,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The device manufacturer segmentation. <a href="DeviceFamilyTargeting#isTargeted">DeviceFamilyTargeting::isTargeted</a> must be </p>
+<p><code>true</code>. </p>
+<p>This attribute is optional.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2f3b00ed5ead7fed1a0f82702787408e"></a>
@@ -324,6 +374,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The geographic segmentation. Segments should be set on the <a href="GeoTargeting#targetedLocations">GeoTargeting::targetedLocations</a> field. </p>
+<p>This attribute is optional.</p>
 
 </div>
 </div>
@@ -345,6 +398,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The mobile carrier segmentation. <a href="MobileCarrierTargeting#isTargeted">MobileCarrierTargeting::isTargeted</a> must be </p>
+<p><code>true</code>. </p>
+<p>This attribute is optional.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2eac5fc5a1360a9926aceed75b0becb6"></a>
@@ -364,6 +421,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The mobile device segmentation. <a href="MobileDeviceTargeting#excludedMobileDevices">MobileDeviceTargeting::excludedMobileDevices</a> must be empty or null. </p>
+<p>This attribute is optional.</p>
 
 </div>
 </div>
@@ -385,6 +445,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The mobile device submodel segmentation. <a href="MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels">MobileDeviceSubmodelTargeting::excludedMobileDeviceSubmodels</a> must be empty or null. </p>
+
 </div>
 </div>
 <a class="anchor" id="a738ab79703129170ce79976a143e54d9"></a>
@@ -404,6 +466,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The operating system segmentation. <a href="OperatingSystemTargeting#isTargeted">OperatingSystemTargeting::isTargeted</a> must be </p>
+<p><code>true</code>. We only allow segment by Operating_System, not Operating_System_Version (will be ignored). </p>
+<p>This attribute is optional.</p>
 
 </div>
 </div>
@@ -425,6 +491,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The placement targeting segmentation. </p>
+<p>This attribute is optional.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5e3b8e7e3f3ce0d29b6a112e1688e5d6"></a>
@@ -444,6 +513,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The user domain segmentation. <a href="UserDomainTargeting#isTargeted">UserDomainTargeting::isTargeted</a> must be </p>
+<p><code>true</code>. </p>
+<p>This attribute is optional.</p>
 
 </div>
 </div>
@@ -465,10 +538,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The video position segmentation. </p>
+<p>This attribute is optional.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201502/<a class="el" href="v201502_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201502/<a class="el" href="v201502_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -476,7 +552,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502.html">v201502</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_product_segmentation.html">ProductSegmentation</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:08 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:42 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

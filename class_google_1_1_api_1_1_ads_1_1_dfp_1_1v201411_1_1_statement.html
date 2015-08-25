@@ -110,15 +110,32 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201411.Statement Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Captures the  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_statement.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a0448a6d2a2654106cc73b7099e24ed0e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_statement.html#a0448a6d2a2654106cc73b7099e24ed0e">query</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0448a6d2a2654106cc73b7099e24ed0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the query in PQL syntax. The syntax is:<br/>
+  <a href="#a0448a6d2a2654106cc73b7099e24ed0e">More...</a><br/></td></tr>
 <tr class="separator:a0448a6d2a2654106cc73b7099e24ed0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af38f1a45e7c4c73e0a99609a8f6bd7e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_string___value_map_entry.html">String_ValueMapEntry</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_statement.html#af38f1a45e7c4c73e0a99609a8f6bd7e8">values</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af38f1a45e7c4c73e0a99609a8f6bd7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds keys and values for bind variables and their values. The key is the name of the bind variable. The value is the literal value of the variable.  <a href="#af38f1a45e7c4c73e0a99609a8f6bd7e8">More...</a><br/></td></tr>
 <tr class="separator:af38f1a45e7c4c73e0a99609a8f6bd7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Captures the </p>
+<p><code>WHERE</code>, <code>ORDER BY</code> and <code>LIMIT</code> clauses of a PQL query. Statements are typically used to retrieve objects of a predefined domain type, which makes SELECT clause unnecessary. </p>
+<p>An example query text might be <code>"WHERE status = 'ACTIVE' ORDER BY id LIMIT
+30"</code>.</p>
+<p>Statements support bind variables. These are substitutes for literals and can be thought of as input parameters to a PQL query.</p>
+<p>An example of such a query might be <code>"WHERE id = :idValue"</code>.</p>
+<p>Statements also support use of the LIKE keyword. This provides partial and wildcard string matching.</p>
+<p>An example of such a query might be <code>"WHERE name LIKE 'startswith%'"</code>.</p>
+<p>If using an API version newer than V201010, the value for the variable idValue must then be set with an object of type <a href="Value">Value</a> and is one of <a href="NumberValue">NumberValue</a>, <a href="TextValue">TextValue</a> or <a href="BooleanValue">BooleanValue</a>. </p>
+<p>If using an API version older than or equal to V201010, the value for the variable idValue must then be set with an object of type <a href="Param">Param</a> and is one of <a href="DoubleParam">DoubleParam</a>, <a href="LongParam">LongParam</a> or <a href="StringParam">StringParam</a>.</p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a0448a6d2a2654106cc73b7099e24ed0e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -136,6 +153,22 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Holds the query in PQL syntax. The syntax is:<br/>
+ </p>
+<p><code>[WHERE &lt;condition&gt; {[AND | OR] &lt;condition&gt; ...}]</code><br/>
+ <code>[ORDER BY &lt;property&gt; [ASC | DESC]]</code><br/>
+ <code>[LIMIT {[&lt;offset&gt;,] &lt;count&gt;} | {&lt;count&gt; OFFSET &lt;offset&gt;}]</code><br/>
+ </p>
+<p><code>&lt;condition&gt;</code><br/>
+ #x160;#x160;#x160;#x160; <code>:= &lt;property&gt; {&lt; | &lt;= | &gt; | &gt;= | = | != } &lt;value&gt;</code><br/>
+ <code>&lt;condition&gt;</code><br/>
+ #x160;#x160;#x160;#x160; <code>:= &lt;property&gt; {&lt; | &lt;= | &gt; | &gt;= | = | != } &lt;bind variable&gt;</code><br/>
+ <code>&lt;condition&gt; := &lt;property&gt; IN &lt;list&gt;</code><br/>
+ <code>&lt;condition&gt; := &lt;property&gt; IS NULL</code><br/>
+ <code>&lt;condition&gt; := &lt;property&gt; LIKE &lt;wildcardmatch&gt;</code><br/>
+ <code>&lt;bind variable&gt; := :&lt;name&gt;</code><br/>
+ </p>
 
 </div>
 </div>
@@ -157,10 +190,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Holds keys and values for bind variables and their values. The key is the name of the bind variable. The value is the literal value of the variable. </p>
+<p>In the example <code>"WHERE status = :bindStatus ORDER BY id LIMIT 30"</code>, the bind variable, represented by <code>:bindStatus</code> is named <code>bindStatus</code>, which would also be the parameter map key. The bind variable's value would be represented by a parameter map value of type <a href="TextValue">TextValue</a>. The final result, for example, would be an entry of <code>"bindStatus" =&gt; StringParam("ACTIVE")</code>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -168,7 +204,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html">v201411</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_statement.html">Statement</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:02 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:32 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

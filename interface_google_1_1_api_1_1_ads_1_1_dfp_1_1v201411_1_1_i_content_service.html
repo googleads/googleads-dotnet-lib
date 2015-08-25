@@ -111,21 +111,26 @@ $(document).ready(function(){initNavTree('interface_google_1_1_api_1_1_ads_1_1_d
 <div class="title">Google.Api.Ads.Dfp.v201411.IContentService Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Service for retrieving <a href="Content">Content</a>.  
+ <a href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_content_service.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.Dfp.v201411.IContentService:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_content_service.png" usemap="#Google.Api.Ads.Dfp.v201411.IContentService_map" alt=""/>
   <map id="Google.Api.Ads.Dfp.v201411.IContentService_map" name="Google.Api.Ads.Dfp.v201411.IContentService_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_content_service.html" alt="Google.Api.Ads.Dfp.v201411.ContentService" shape="rect" coords="0,56,272,80"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_content_service.html" title="Service for retrieving Content. " alt="Google.Api.Ads.Dfp.v201411.ContentService" shape="rect" coords="0,56,272,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a68547280043d087164d2e5b3593a2acd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_content_page.html">ContentPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_content_service.html#a68547280043d087164d2e5b3593a2acd">getContentByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_statement.html">Statement</a> statement)</td></tr>
+<tr class="memdesc:a68547280043d087164d2e5b3593a2acd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering:  <a href="#a68547280043d087164d2e5b3593a2acd">More...</a><br/></td></tr>
 <tr class="separator:a68547280043d087164d2e5b3593a2acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d46cf546d5ffc39c69dc143366c17bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_content_page.html">ContentPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_content_service.html#a5d46cf546d5ffc39c69dc143366c17bb">getContentByStatementAndCustomTargetingValue</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_statement.html">Statement</a> filterStatement, long customTargetingValueId)</td></tr>
+<tr class="memdesc:a5d46cf546d5ffc39c69dc143366c17bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. Additionally, filters on the given value ID and key ID that the value belongs to. The following fields are supported for filtering:  <a href="#a5d46cf546d5ffc39c69dc143366c17bb">More...</a><br/></td></tr>
 <tr class="separator:a5d46cf546d5ffc39c69dc143366c17bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -135,7 +140,20 @@ Properties</h2></td></tr>
 <tr class="memitem:ad0bf44f7af031feaaf939f6c431df70e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_response_header.html">ResponseHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_content_service.html#ad0bf44f7af031feaaf939f6c431df70e">ResponseHeader</a><code> [get, set]</code></td></tr>
 <tr class="separator:ad0bf44f7af031feaaf939f6c431df70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Service for retrieving <a href="Content">Content</a>. </p>
+<p><code></code> entities can be targeted in video <a href="LineItem">LineItem</a>s. You can query for content that belongs to a particular category or has assigned metadata. Categories and metadata for <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_content.html" title="A ">Content</a></code> are stored in DFP as <a href="CustomCriteria">CustomCriteria</a>. </p>
+<p>For example, to find all <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_content.html" title="A ">Content</a></code> that is "genre=comedy", you would:</p>
+<ul>
+<li>
+Retrieve the custom targeting key corresponding to "genre" using <a href="CustomTargetingService#getCustomTargetingKeysByStatement">CustomTargetingService::getCustomTargetingKeysByStatement</a> </li>
+<li>
+Using the <a href="CustomTargetingService#getCustomTargetingValuesByStatement">CustomTargetingService::getCustomTargetingValuesByStatement</a> method and a filter like "WHERE customTargetingKeyId = :genreKeyId and name =
+'comedy'", retrieve the ID for the "comedy" custom targeting value. </li>
+<li>
+Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatementAndCustomTargetingValue</a> with a filter like "WHERE status = 'ACTIVE'" and the ID of the custom targeting value from step 2. </li>
+</ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a68547280043d087164d2e5b3593a2acd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -149,6 +167,27 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering: </p>
+<table class="doxtable">
+<tr>
+<th scope="col">PQL Property </th><th scope="col">Object Property  </th></tr>
+<tr>
+<td><code>id</code> </td><td><a href="Content#id">Content::id</a>  </td></tr>
+<tr>
+<td><code>status</code> </td><td><a href="Content#status">Content::status</a>  </td></tr>
+<tr>
+<td><code>name</code> </td><td><a href="Content#name">Content::name</a>  </td></tr>
+<tr>
+<td><code>lastModifiedDateTime</code> </td><td><a href="Content#lastModifiedDateTime">Content::lastModifiedDateTime</a>  </td></tr>
+</table>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">statement</td><td>a Publisher Query Language statement used to filter a set of content</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the content that matches the given filter</dd></dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_content_service.html#add8ea3171e4658c656dbbf2bef7e889b">Google.Api.Ads.Dfp.v201411.ContentService</a>.</p>
 
@@ -177,6 +216,28 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. Additionally, filters on the given value ID and key ID that the value belongs to. The following fields are supported for filtering: </p>
+<table class="doxtable">
+<tr>
+<th scope="col">PQL Property </th><th scope="col">Object Property  </th></tr>
+<tr>
+<td><code>id</code> </td><td><a href="Content#id">Content::id</a>  </td></tr>
+<tr>
+<td><code>status</code> </td><td><a href="Content#status">Content::status</a>  </td></tr>
+<tr>
+<td><code>name</code> </td><td><a href="Content#name">Content::name</a>  </td></tr>
+<tr>
+<td><code>lastModifiedDateTime</code> </td><td><a href="Content#lastModifiedDateTime&amp;gt;">Content::lastModifiedDateTime&gt;</a>  </td></tr>
+</table>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filterStatement</td><td>a Publisher Query Language statement used to filter a set of content</td></tr>
+    <tr><td class="paramname">customTargetingValueId</td><td>the id of the value to match</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the content that matches the given filter</dd></dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_content_service.html#a229be434faf6628ee8be4950d0e5939c">Google.Api.Ads.Dfp.v201411.ContentService</a>.</p>
 
@@ -224,7 +285,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -232,7 +293,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html">v201411</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_content_service.html">IContentService</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:06 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:38 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

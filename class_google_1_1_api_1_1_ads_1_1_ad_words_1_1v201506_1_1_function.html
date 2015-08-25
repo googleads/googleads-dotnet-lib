@@ -111,10 +111,14 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_ad_wo
 <div class="title">Google.Api.Ads.AdWords.v201506.Function Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a function where its operator is applied to its argument operands resulting in a return value. It has the form (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a>... Operator <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a>...). The type of the return value depends on the operator being applied and the type of the operands.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a6c11a0064b5c0aa96d1f956af036fddb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html#ae427c87302886ddeccf7f968571d1bf5">FunctionOperator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html#a6c11a0064b5c0aa96d1f956af036fddb">operator{get{return this.operatorField</a></td></tr>
+<tr class="memdesc:a6c11a0064b5c0aa96d1f956af036fddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator for a function. <span class="constraint Required">This field is required and should not be </span> <a href="#a6c11a0064b5c0aa96d1f956af036fddb">More...</a><br/></td></tr>
 <tr class="separator:a6c11a0064b5c0aa96d1f956af036fddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -123,13 +127,33 @@ Properties</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html#a19eac2a8ec642796866c435d0527f2e9">operatorSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a19eac2a8ec642796866c435d0527f2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa60e07c3ae12da42592b4e503fed0464"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_argument_operand.html">FunctionArgumentOperand</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html#aa60e07c3ae12da42592b4e503fed0464">lhsOperand</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa60e07c3ae12da42592b4e503fed0464"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> on the LHS in the equation. This is also the operand to be used for single operand expressions such as NOT. <span class="constraint
+CollectionSize">The minimum size of this collection is 1.</span>  <a href="#aa60e07c3ae12da42592b4e503fed0464">More...</a><br/></td></tr>
 <tr class="separator:aa60e07c3ae12da42592b4e503fed0464"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e27edfabcddac4d12a48425ea8f799f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_argument_operand.html">FunctionArgumentOperand</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html#a0e27edfabcddac4d12a48425ea8f799f">rhsOperand</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0e27edfabcddac4d12a48425ea8f799f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> on the RHS of the equation.  <a href="#a0e27edfabcddac4d12a48425ea8f799f">More...</a><br/></td></tr>
 <tr class="separator:a0e27edfabcddac4d12a48425ea8f799f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac37f62a695ffdb611d0281a999cb9823"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html#ac37f62a695ffdb611d0281a999cb9823">functionString</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac37f62a695ffdb611d0281a999cb9823"><td class="mdescLeft">&#160;</td><td class="mdescRight">String representation of the  <a href="#ac37f62a695ffdb611d0281a999cb9823">More...</a><br/></td></tr>
 <tr class="separator:ac37f62a695ffdb611d0281a999cb9823"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a function where its operator is applied to its argument operands resulting in a return value. It has the form (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a>... Operator <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a>...). The type of the return value depends on the operator being applied and the type of the operands. </p>
+<p>Operands per function is limited to <b>20</b>.</p>
+<p>Here is a code example:</p>
+<pre> <code> // For example
+"feed_attribute == 30" can be represented as: FeedId feedId = (FeedId of <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed.html" title="A Feed identifies a source of data and its schema. The data for the Feed can either be user-entered v...">Feed</a>
+associated with feed_attribute) FeedAttributeId feedAttributeId =
+(FeedAttributeId of feed_attribute) <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html" title="Represents a function where its operator is applied to its argument operands resulting in a return va...">Function</a> function = new Function();
+function.setLhsOperand( Arrays.asList((<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a>) new <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_attribute_operand.html" title="Represents a feed attribute reference to use in a function. ">FeedAttributeOperand</a>(feedId,
+feedAttributeId))); function.setOperator(Operator.IN); function.setRhsOperand(
+Arrays.asList((<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a>) new ConstantOperand(30L))); // Another example matching
+on multiple values: "feed_item_id IN (10, 20, 30)" can be represented as:
+<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html" title="Represents a function where its operator is applied to its argument operands resulting in a return va...">Function</a> function = new Function(); function.setLhsOperand(
+Arrays.asList((<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a>) new <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_request_context_operand.html" title="An operand in a function referring to a value in the request context. ">RequestContextOperand</a>(ContextType.FEED_ITEM_ID)));
+function.setOperator(Operator.IN); function.setRhsOperand(Arrays.asList(
+(<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a>) new ConstantOperand(10L), new ConstantOperand(20L), new
+ConstantOperand(30L))); </code> </pre> </div><h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a6c11a0064b5c0aa96d1f956af036fddb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -139,6 +163,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Operator for a function. <span class="constraint Required">This field is required and should not be </span></p>
+<p><code>null</code>. </p>
 
 </div>
 </div>
@@ -161,6 +188,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
+<p>String representation of the </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html" title="Represents a function where its operator is applied to its argument operands resulting in a return va...">Function</a></code>. </p>
+<p>For mutate actions, this field can be set instead of the <code></code>, <code>lhsOperand</code>, and <code>rhsOperand</code> fields. This field will be parsed and used to populate the other fields.</p>
+<p>When <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html" title="Represents a function where its operator is applied to its argument operands resulting in a return va...">Function</a></code> objects are returned from get or mutate calls, this field contains the string representation of the <code></code>. Note that because multiple strings may map to the same <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html" title="Represents a function where its operator is applied to its argument operands resulting in a return va...">Function</a></code> (whitespace and single versus double quotation marks, for example), the value returned may not be identical to the string sent in the request.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa60e07c3ae12da42592b4e503fed0464"></a>
@@ -180,6 +212,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> on the LHS in the equation. This is also the operand to be used for single operand expressions such as NOT. <span class="constraint
+CollectionSize">The minimum size of this collection is 1.</span> </p>
 
 </div>
 </div>
@@ -221,10 +256,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> on the RHS of the equation. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -232,7 +269,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html">v201506</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html">Function</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:29 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:06 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

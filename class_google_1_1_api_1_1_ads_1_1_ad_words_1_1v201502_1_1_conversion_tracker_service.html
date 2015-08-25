@@ -111,6 +111,9 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_ad_wo
 <div class="title">Google.Api.Ads.AdWords.v201502.ConversionTrackerService Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Use this service to manage conversion trackers. A conversion tracker provides a snippet of code which records every time a user visits a page that contains it. The data this provides can be used to gauge the effectiveness of your ads and keywords.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_service.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.AdWords.v201502.ConversionTrackerService:</div>
 <div class="dyncontent">
@@ -118,7 +121,7 @@ Inheritance diagram for Google.Api.Ads.AdWords.v201502.ConversionTrackerService:
   <img src="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_service.png" usemap="#Google.Api.Ads.AdWords.v201502.ConversionTrackerService_map" alt=""/>
   <map id="Google.Api.Ads.AdWords.v201502.ConversionTrackerService_map" name="Google.Api.Ads.AdWords.v201502.ConversionTrackerService_map">
 <area href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client.html" title="Base class for AdWords API services. " alt="Google.Api.Ads.AdWords.Lib.AdWordsSoapClient" shape="rect" coords="190,112,560,136"/>
-<area href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service.html" alt="Google.Api.Ads.AdWords.v201502.IConversionTrackerService" shape="rect" coords="570,112,940,136"/>
+<area href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service.html" title="Use this service to manage conversion trackers. A conversion tracker provides a snippet of code which..." alt="Google.Api.Ads.AdWords.v201502.IConversionTrackerService" shape="rect" coords="570,112,940,136"/>
 <area href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html" title="Base class for all SOAP services supported by this library. " alt="Google.Api.Ads.Common.Lib.AdsSoapClient" shape="rect" coords="190,56,560,80"/>
 <area href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html" title="This interface defines a client protocol (SOAP, WSE, REST, etc.) supported by the library..." alt="Google.Api.Ads.Common.Lib.AdsClient" shape="rect" coords="380,0,750,24"/>
 </map>
@@ -127,20 +130,26 @@ Inheritance diagram for Google.Api.Ads.AdWords.v201502.ConversionTrackerService:
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9d9994ed7eab3b276442320224670d54"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_service.html#a9d9994ed7eab3b276442320224670d54">ConversionTrackerService</a> ()</td></tr>
+<tr class="memdesc:a9d9994ed7eab3b276442320224670d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_service.html" title="Use this service to manage conversion trackers. A conversion tracker provides a snippet of code which...">ConversionTrackerService</a> class.  <a href="#a9d9994ed7eab3b276442320224670d54">More...</a><br/></td></tr>
 <tr class="separator:a9d9994ed7eab3b276442320224670d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1d5eb7c856c008f4715bd45eb83cef5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_page.html">ConversionTrackerPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_service.html#ab1d5eb7c856c008f4715bd45eb83cef5">get</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_selector.html">Selector</a> serviceSelector)</td></tr>
+<tr class="memdesc:ab1d5eb7c856c008f4715bd45eb83cef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of the conversion trackers that match the selector. The actual objects contained in the page's list of entries will be specific subclasses of the abstract <a href="ConversionTracker">ConversionTracker</a> class.  <a href="#ab1d5eb7c856c008f4715bd45eb83cef5">More...</a><br/></td></tr>
 <tr class="separator:ab1d5eb7c856c008f4715bd45eb83cef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63063e73ca517388bfd4a99847832e72"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
 <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_return_value.html">ConversionTrackerReturnValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_service.html#a63063e73ca517388bfd4a99847832e72">mutate</a> ([System.Xml.Serialization.XmlElementAttribute(&quot;operations&quot;)] ConversionTrackerOperation[] operations)</td></tr>
+<tr class="memdesc:a63063e73ca517388bfd4a99847832e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the list of mutate operations such as adding or updating conversion trackers.  <a href="#a63063e73ca517388bfd4a99847832e72">More...</a><br/></td></tr>
 <tr class="separator:a63063e73ca517388bfd4a99847832e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac911c036e26ffa124a662950fba2a18d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_page.html">ConversionTrackerPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_service.html#ac911c036e26ffa124a662950fba2a18d">query</a> ([System.Xml.Serialization.XmlElementAttribute(&quot;query&quot;)] string query1)</td></tr>
+<tr class="memdesc:ac911c036e26ffa124a662950fba2a18d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of conversion trackers that match the query.  <a href="#ac911c036e26ffa124a662950fba2a18d">More...</a><br/></td></tr>
 <tr class="separator:ac911c036e26ffa124a662950fba2a18d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ac43ff290de5acd36de901dbe8ee2877f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_headers_1_1_request_header.html">RequestHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_service.html#ac43ff290de5acd36de901dbe8ee2877f">RequestHeader</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac43ff290de5acd36de901dbe8ee2877f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the required and optional elements within the header of a SOAP request.  <a href="#ac43ff290de5acd36de901dbe8ee2877f">More...</a><br/></td></tr>
 <tr class="separator:ac43ff290de5acd36de901dbe8ee2877f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10183cae1fd1922ac293927120deae31"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_headers_1_1_response_header.html">ResponseHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_service.html#a10183cae1fd1922ac293927120deae31">ResponseHeader</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a10183cae1fd1922ac293927120deae31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the elements within the header of a SOAP response.  <a href="#a10183cae1fd1922ac293927120deae31">More...</a><br/></td></tr>
 <tr class="separator:a10183cae1fd1922ac293927120deae31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td colspan="2" onclick="javascript:toggleInherit('properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html">Google.Api.Ads.Common.Lib.AdsSoapClient</a></td></tr>
 <tr class="memitem:a7f82182b246d465061f61c5d449a191b inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_user.html">AdsUser</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a7f82182b246d465061f61c5d449a191b">User</a><code> [get, set]</code></td></tr>
@@ -212,8 +221,10 @@ Properties</h2></td></tr>
 <tr class="separator:a4ab7f8a50d91ac17c78edc49bb1a86c3 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service.html">Google.Api.Ads.AdWords.v201502.IConversionTrackerService</a></td></tr>
 <tr class="memitem:aad49429fc76ddcb3814d96bb48e217c6 inherit properties_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_headers_1_1_request_header.html">RequestHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service.html#aad49429fc76ddcb3814d96bb48e217c6">RequestHeader</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aad49429fc76ddcb3814d96bb48e217c6 inherit properties_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the required and optional elements within the header of a SOAP request.  <a href="#aad49429fc76ddcb3814d96bb48e217c6">More...</a><br/></td></tr>
 <tr class="separator:aad49429fc76ddcb3814d96bb48e217c6 inherit properties_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab65da7dd3f1af42a21f042976edf1b27 inherit properties_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_headers_1_1_response_header.html">ResponseHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service.html#ab65da7dd3f1af42a21f042976edf1b27">ResponseHeader</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab65da7dd3f1af42a21f042976edf1b27 inherit properties_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the elements within the header of a SOAP response.  <a href="#ab65da7dd3f1af42a21f042976edf1b27">More...</a><br/></td></tr>
 <tr class="separator:ab65da7dd3f1af42a21f042976edf1b27 inherit properties_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -235,9 +246,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a7a3d3e972b70124d704f18b536829b6b inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client"><td class="memItemLeft" align="right" valign="top">override WebRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client.html#a7a3d3e972b70124d704f18b536829b6b">GetWebRequest</a> (Uri uri)</td></tr>
 <tr class="memdesc:a7a3d3e972b70124d704f18b536829b6b inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a WebRequest instance for the specified url.  <a href="#a7a3d3e972b70124d704f18b536829b6b">More...</a><br/></td></tr>
 <tr class="separator:a7a3d3e972b70124d704f18b536829b6b inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5f546ff767ad4c0b6e5a885530519e4 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client"><td class="memItemLeft" align="right" valign="top">override Exception&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client.html#ae5f546ff767ad4c0b6e5a885530519e4">GetCustomException</a> (SoapException ex)</td></tr>
-<tr class="memdesc:ae5f546ff767ad4c0b6e5a885530519e4 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a custom exception that wraps the SOAP exception thrown by the server.  <a href="#ae5f546ff767ad4c0b6e5a885530519e4">More...</a><br/></td></tr>
-<tr class="separator:ae5f546ff767ad4c0b6e5a885530519e4 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad93ad97e3183409a61fe454fe5cfa1e8 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client"><td class="memItemLeft" align="right" valign="top">override Exception&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client.html#ad93ad97e3183409a61fe454fe5cfa1e8">GetCustomException</a> (SoapException exception)</td></tr>
+<tr class="memdesc:ad93ad97e3183409a61fe454fe5cfa1e8 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a custom exception that wraps the SOAP exception thrown by the server.  <a href="#ad93ad97e3183409a61fe454fe5cfa1e8">More...</a><br/></td></tr>
+<tr class="separator:ad93ad97e3183409a61fe454fe5cfa1e8 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html">Google.Api.Ads.Common.Lib.AdsSoapClient</a></td></tr>
 <tr class="memitem:a801bed05baa3db145ecd128e410782f0 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">new object[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a801bed05baa3db145ecd128e410782f0">Invoke</a> (string methodName, object[] parameters)</td></tr>
 <tr class="memdesc:a801bed05baa3db145ecd128e410782f0 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes a SOAP service method synchronously using SOAP.  <a href="#a801bed05baa3db145ecd128e410782f0">More...</a><br/></td></tr>
@@ -268,7 +279,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a09d0abbb91ee39bc84e9992d5369a713 inherit pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the fault xml node from soap exception.  <a href="#a09d0abbb91ee39bc84e9992d5369a713">More...</a><br/></td></tr>
 <tr class="separator:a09d0abbb91ee39bc84e9992d5369a713 inherit pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Use this service to manage conversion trackers. A conversion tracker provides a snippet of code which records every time a user visits a page that contains it. The data this provides can be used to gauge the effectiveness of your ads and keywords. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9d9994ed7eab3b276442320224670d54"></a>
 <div class="memitem">
 <div class="memproto">
@@ -289,6 +302,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_service.html" title="Use this service to manage conversion trackers. A conversion tracker provides a snippet of code which...">ConversionTrackerService</a> class. </p>
 
 </div>
 </div>
@@ -314,6 +329,21 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns a list of the conversion trackers that match the selector. The actual objects contained in the page's list of entries will be specific subclasses of the abstract <a href="ConversionTracker">ConversionTracker</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serviceSelector</td><td>The selector specifying the <a href="ConversionTracker">ConversionTracker</a>s to return.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>List of conversion trackers specified by the selector.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_api_exception.html" title="Exception class for holding a list of service errors. ">ApiException</a></td><td>if problems occurred while retrieving results.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service.html#a9f46e1bc6bb73b630d30f6fbf7ba2f02">Google.Api.Ads.AdWords.v201502.IConversionTrackerService</a>.</p>
 
@@ -341,6 +371,23 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Applies the list of mutate operations such as adding or updating conversion trackers. </p>
+<p><b>Note:</b> <a href="ConversionTrackerOperation">ConversionTrackerOperation</a> does not support the <code>REMOVE</code> operator. In order to 'disable' a conversion type, send a <code>SET</code> operation for the conversion tracker with the <code>status</code> property set to <code>DISABLED</code></p>
+<p>You can mutate any <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker.html" title="An abstract Conversion base class. ">ConversionTracker</a> that belongs to your account. You may not mutate a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker.html" title="An abstract Conversion base class. ">ConversionTracker</a> that belongs to some other account. You may not directly mutate a system-defined <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker.html" title="An abstract Conversion base class. ">ConversionTracker</a>, but you can create a mutable copy of it in your account by sending a mutate request with an ADD operation specifying an originalConversionTypeId matching a system-defined conversion tracker's ID. That new ADDed <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker.html" title="An abstract Conversion base class. ">ConversionTracker</a> will inherit the statistics and properties of the system-defined type, but will be editable as usual.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">operations</td><td>A list of mutate operations to perform.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The list of the conversion trackers as they appear after mutation, in the same order as they appeared in the list of operations.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_api_exception.html" title="Exception class for holding a list of service errors. ">ApiException</a></td><td>if problems occurred while updating the data.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service.html#a62c16c613ca37678b5b5b22c4d2cdd1e">Google.Api.Ads.AdWords.v201502.IConversionTrackerService</a>.</p>
 
 </div>
@@ -367,6 +414,21 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns a list of conversion trackers that match the query. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query1</td><td>The SQL-like AWQL query string.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A list of conversion trackers.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_api_exception.html" title="Exception class for holding a list of service errors. ">ApiException</a></td><td>if problems occur while parsing the query or fetching conversion trackers.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_conversion_tracker_service.html#a562cc88875233f9c273d91433c25a8d5">Google.Api.Ads.AdWords.v201502.IConversionTrackerService</a>.</p>
 
 </div>
@@ -390,6 +452,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Defines the required and optional elements within the header of a SOAP request. </p>
+
 </div>
 </div>
 <a class="anchor" id="a10183cae1fd1922ac293927120deae31"></a>
@@ -410,10 +474,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Defines the elements within the header of a SOAP response. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201502/<a class="el" href="v201502_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201502/<a class="el" href="v201502_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -421,7 +487,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502.html">v201502</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_service.html">ConversionTrackerService</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:25 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:01 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

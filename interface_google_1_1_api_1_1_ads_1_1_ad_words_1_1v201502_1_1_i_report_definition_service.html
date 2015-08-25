@@ -111,6 +111,9 @@ $(document).ready(function(){initNavTree('interface_google_1_1_api_1_1_ads_1_1_a
 <div class="title">Google.Api.Ads.AdWords.v201502.IReportDefinitionService Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p> 
+ <a href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_report_definition_service.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.AdWords.v201502.IReportDefinitionService:</div>
 <div class="dyncontent">
@@ -124,16 +127,24 @@ Inheritance diagram for Google.Api.Ads.AdWords.v201502.IReportDefinitionService:
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0c8237b7982c443faaee1adfc5af59f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html">ReportDefinitionField</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_report_definition_service.html#a0c8237b7982c443faaee1adfc5af59f8">getReportFields</a> (<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502.html#a363abfc72613c960584f2e021c2a91a5">ReportDefinitionReportType</a> reportType)</td></tr>
+<tr class="memdesc:a0c8237b7982c443faaee1adfc5af59f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the available report fields for a given report type.  <a href="#a0c8237b7982c443faaee1adfc5af59f8">More...</a><br/></td></tr>
 <tr class="separator:a0c8237b7982c443faaee1adfc5af59f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a2fdb233255df81b34c747ac216b19a07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_headers_1_1_request_header.html">RequestHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_report_definition_service.html#a2fdb233255df81b34c747ac216b19a07">RequestHeader</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a2fdb233255df81b34c747ac216b19a07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the required and optional elements within the header of a SOAP request.  <a href="#a2fdb233255df81b34c747ac216b19a07">More...</a><br/></td></tr>
 <tr class="separator:a2fdb233255df81b34c747ac216b19a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42d96c4ccbdec554668b992bedab8dcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_headers_1_1_response_header.html">ResponseHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_report_definition_service.html#a42d96c4ccbdec554668b992bedab8dcd">ResponseHeader</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a42d96c4ccbdec554668b992bedab8dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the elements within the header of a SOAP response.  <a href="#a42d96c4ccbdec554668b992bedab8dcd">More...</a><br/></td></tr>
 <tr class="separator:a42d96c4ccbdec554668b992bedab8dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><b>Note:</b> As of v201109 this service is read-only. New report definitions are no longer allowed.</p>
+<p>A report definition describes the report type, date range, and <a href="Selector">fields to include in the report</a>. Additionally, you can specify <a href="Predicate">predicates</a> to filter which rows are returned in a generated report. Please note that sorting and paging are not supported for report downloads.</p>
+<p>To find out which report fields are available based on report type, see the <a href="/adwords/api/docs/appendix/reports">Report Types</a> appendix or call <a href="#getReportFields">#getReportFields</a>.</p>
+<p>For more information about retrieving reports, see <a href="/adwords/api/docs/guides/reporting">Reporting Basics</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a0c8237b7982c443faaee1adfc5af59f8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -147,6 +158,21 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the available report fields for a given report type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reportType</td><td>The type of report.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The list of available report fields. Each <a href="ReportDefinitionField">ReportDefinitionField</a> encapsulates the field name, the field data type, and the enum values (if the field's type is <code>enum</code>).</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_api_exception.html" title="Exception class for holding a list of service errors. ">ApiException</a></td><td>if a problem occurred while fetching the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_field.html" title="Represents the fields that can be used to create a ReportDefinition. This class allows the user to qu...">ReportDefinitionField</a> information.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_report_definition_service.html#af75766ed1f13bd7f6dec0aa3f3e4ad45">Google.Api.Ads.AdWords.v201502.ReportDefinitionService</a>.</p>
 
@@ -171,6 +197,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Defines the required and optional elements within the header of a SOAP request. </p>
+
 </div>
 </div>
 <a class="anchor" id="a42d96c4ccbdec554668b992bedab8dcd"></a>
@@ -191,10 +219,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Defines the elements within the header of a SOAP response. </p>
+
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201502/<a class="el" href="v201502_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201502/<a class="el" href="v201502_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -202,7 +232,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502.html">v201502</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_i_report_definition_service.html">IReportDefinitionService</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:28 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:04 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

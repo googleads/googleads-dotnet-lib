@@ -110,73 +110,102 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201408.AdUnit Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>An  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:adae19e575f786fc0ac20d98f90cc3da6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#adae19e575f786fc0ac20d98f90cc3da6">id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:adae19e575f786fc0ac20d98f90cc3da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uniquely identifies the  <a href="#adae19e575f786fc0ac20d98f90cc3da6">More...</a><br/></td></tr>
 <tr class="separator:adae19e575f786fc0ac20d98f90cc3da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8338c49bce2a3285093c883ff1f5bcf0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a8338c49bce2a3285093c883ff1f5bcf0">parentId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8338c49bce2a3285093c883ff1f5bcf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ID of the ad unit's parent. Every ad unit has a parent except for the root ad unit, which is created by <a class="el" href="namespace_google.html">Google</a>. This attribute is required when creating the ad unit. Once the ad unit is created this value will be read-only.  <a href="#a8338c49bce2a3285093c883ff1f5bcf0">More...</a><br/></td></tr>
 <tr class="separator:a8338c49bce2a3285093c883ff1f5bcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab29fe97f85609160be72cbc5e5834e33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#ab29fe97f85609160be72cbc5e5834e33">hasChildren</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab29fe97f85609160be72cbc5e5834e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">This field is set to  <a href="#ab29fe97f85609160be72cbc5e5834e33">More...</a><br/></td></tr>
 <tr class="separator:ab29fe97f85609160be72cbc5e5834e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd10fba109770e8256c71dba254cfa4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#acd10fba109770e8256c71dba254cfa4f">hasChildrenSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:acd10fba109770e8256c71dba254cfa4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87cdf991f5ce589015e13617c58ee4d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit_parent.html">AdUnitParent</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a87cdf991f5ce589015e13617c58ee4d5">parentPath</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a87cdf991f5ce589015e13617c58ee4d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The path to this ad unit in the ad unit hierarchy represented as a list from the root to this ad unit's parent. For root ad units, this list is empty. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>.  <a href="#a87cdf991f5ce589015e13617c58ee4d5">More...</a><br/></td></tr>
 <tr class="separator:a87cdf991f5ce589015e13617c58ee4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1663ef37fde3598cf1b43702f2cfdb55"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a1663ef37fde3598cf1b43702f2cfdb55">name</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a1663ef37fde3598cf1b43702f2cfdb55"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the ad unit. This attribute is required and its maximum length is 255 characters. This attribute must also be case-insensitive unique. Beginning in V201311, this attribute can be updated. In versions before v201311, this attribute is read-only after creation.  <a href="#a1663ef37fde3598cf1b43702f2cfdb55">More...</a><br/></td></tr>
 <tr class="separator:a1663ef37fde3598cf1b43702f2cfdb55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5509dd7a347c332e4c6cd401aca585c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#ac5509dd7a347c332e4c6cd401aca585c">description</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac5509dd7a347c332e4c6cd401aca585c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A description of the ad unit. This value is optional and its maximum length is 65,535 characters.  <a href="#ac5509dd7a347c332e4c6cd401aca585c">More...</a><br/></td></tr>
 <tr class="separator:ac5509dd7a347c332e4c6cd401aca585c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00c7858ae7f075c95e71620619aa66cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a36de8c64f1f659ecf999d83f1498d698">AdUnitTargetWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a00c7858ae7f075c95e71620619aa66cc">targetWindow</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a00c7858ae7f075c95e71620619aa66cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value to use for the HTML link's  <a href="#a00c7858ae7f075c95e71620619aa66cc">More...</a><br/></td></tr>
 <tr class="separator:a00c7858ae7f075c95e71620619aa66cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e42afb50f4b40fdfccb2c3b44ab8530"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a4e42afb50f4b40fdfccb2c3b44ab8530">targetWindowSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a4e42afb50f4b40fdfccb2c3b44ab8530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f514ef3db05097022bf3d8ac20b311d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#aefc2baf6ec49d286da16df20c005b5f0">InventoryStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a1f514ef3db05097022bf3d8ac20b311d">status</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a1f514ef3db05097022bf3d8ac20b311d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The status of this ad unit. It defaults to <a href="InventoryStatus#ACTIVE">InventoryStatus::ACTIVE</a>. This value cannot be updated directly using <a href="InventoryService#updateAdUnit">InventoryService::updateAdUnit</a>. It can only be modified by performing actions via <a href="InventoryService#performAdUnitAction">InventoryService::performAdUnitAction</a>.  <a href="#a1f514ef3db05097022bf3d8ac20b311d">More...</a><br/></td></tr>
 <tr class="separator:a1f514ef3db05097022bf3d8ac20b311d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab038c532536cf1d67b6b3fcd6faaf755"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#ab038c532536cf1d67b6b3fcd6faaf755">statusSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ab038c532536cf1d67b6b3fcd6faaf755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4218853aa6244ed45a2951340648c4f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#ae4218853aa6244ed45a2951340648c4f">adUnitCode</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ae4218853aa6244ed45a2951340648c4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A string used to uniquely identify the ad unit for the purposes of serving the ad. Beginning in V201311, this attribute is optional and can be set during ad unit creation. If it is not provided, it will be assigned by <a class="el" href="namespace_google.html">Google</a> based off of the inventory unit ID. Before V201311, this attribute is read-only and assigned by <a class="el" href="namespace_google.html">Google</a>. Once an ad unit is created, its  <a href="#ae4218853aa6244ed45a2951340648c4f">More...</a><br/></td></tr>
 <tr class="separator:ae4218853aa6244ed45a2951340648c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba806ca5d0515a4fb7499875f8b414da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit_size.html">AdUnitSize</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#aba806ca5d0515a4fb7499875f8b414da">adUnitSizes</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aba806ca5d0515a4fb7499875f8b414da"><td class="mdescLeft">&#160;</td><td class="mdescRight">The permissible creative sizes that can be served inside this ad unit. This attribute is optional. This attribute replaces the  <a href="#aba806ca5d0515a4fb7499875f8b414da">More...</a><br/></td></tr>
 <tr class="separator:aba806ca5d0515a4fb7499875f8b414da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01a954c08e365bb38ecf7caf8f04be53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#af77caa050b597c0d348d72981ad5ecf8">TargetPlatform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a01a954c08e365bb38ecf7caf8f04be53">targetPlatform</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a01a954c08e365bb38ecf7caf8f04be53"><td class="mdescLeft">&#160;</td><td class="mdescRight">The platform that the  <a href="#a01a954c08e365bb38ecf7caf8f04be53">More...</a><br/></td></tr>
 <tr class="separator:a01a954c08e365bb38ecf7caf8f04be53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f0c85798ec181fe242b1335fd79d06b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a0f0c85798ec181fe242b1335fd79d06b">targetPlatformSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a0f0c85798ec181fe242b1335fd79d06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b2947a0b93a239fab873295ad63a595"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#aa6d651f9b87f7ebc2d98be1283e41a45">MobilePlatform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a9b2947a0b93a239fab873295ad63a595">mobilePlatform</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9b2947a0b93a239fab873295ad63a595"><td class="mdescLeft">&#160;</td><td class="mdescRight">The platform associated with a mobile  <a href="#a9b2947a0b93a239fab873295ad63a595">More...</a><br/></td></tr>
 <tr class="separator:a9b2947a0b93a239fab873295ad63a595"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73b89dfac3f559300d585f24000ae483"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a73b89dfac3f559300d585f24000ae483">mobilePlatformSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a73b89dfac3f559300d585f24000ae483"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af832b2756c2640e9f0ba06a52c17756e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#af832b2756c2640e9f0ba06a52c17756e">explicitlyTargeted</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af832b2756c2640e9f0ba06a52c17756e"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this field is set to  <a href="#af832b2756c2640e9f0ba06a52c17756e">More...</a><br/></td></tr>
 <tr class="separator:af832b2756c2640e9f0ba06a52c17756e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaff830be580228fdd931e235f4914d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#aeaff830be580228fdd931e235f4914d4">explicitlyTargetedSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:aeaff830be580228fdd931e235f4914d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d6d95083f17d783e9f5cfe6a56b0510"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_sense_settings_inherited_property.html">AdSenseSettingsInheritedProperty</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a5d6d95083f17d783e9f5cfe6a56b0510">inheritedAdSenseSettings</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5d6d95083f17d783e9f5cfe6a56b0510"><td class="mdescLeft">&#160;</td><td class="mdescRight">AdSense specific settings. This value is optional and if left blank will be inherited from the parent ad unit.  <a href="#a5d6d95083f17d783e9f5cfe6a56b0510">More...</a><br/></td></tr>
 <tr class="separator:a5d6d95083f17d783e9f5cfe6a56b0510"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50255c5162c500db8312b03f579dfda6"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a50255c5162c500db8312b03f579dfda6">partnerId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a50255c5162c500db8312b03f579dfda6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique ID of the <a href="Company">Company</a>, which is of type <a href="Company.Type#AFFILIATE_DISTRIBUTION_PARTNER">Company.Type::AFFILIATE_DISTRIBUTION_PARTNER</a>, to which this ad unit belongs. This attribute is optional. Setting this attribute to  <a href="#a50255c5162c500db8312b03f579dfda6">More...</a><br/></td></tr>
 <tr class="separator:a50255c5162c500db8312b03f579dfda6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f6f58cc7836ccad50cbd8f747c4a3de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a1f6f58cc7836ccad50cbd8f747c4a3de">partnerIdSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a1f6f58cc7836ccad50cbd8f747c4a3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67aaa13b5bc45449aee6d7bb370d9f36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_label_frequency_cap.html">LabelFrequencyCap</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a67aaa13b5bc45449aee6d7bb370d9f36">appliedLabelFrequencyCaps</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a67aaa13b5bc45449aee6d7bb370d9f36"><td class="mdescLeft">&#160;</td><td class="mdescRight">The set of label frequency caps applied directly to this ad unit. There is a limit of 10 label frequency caps per ad unit.  <a href="#a67aaa13b5bc45449aee6d7bb370d9f36">More...</a><br/></td></tr>
 <tr class="separator:a67aaa13b5bc45449aee6d7bb370d9f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59326aae166688d82f36a1d74c0c55f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_label_frequency_cap.html">LabelFrequencyCap</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a59326aae166688d82f36a1d74c0c55f6">effectiveLabelFrequencyCaps</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a59326aae166688d82f36a1d74c0c55f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the set of labels applied directly to the ad unit as well as those inherited from parent ad units. This field is readonly and is assigned by <a class="el" href="namespace_google.html">Google</a>.  <a href="#a59326aae166688d82f36a1d74c0c55f6">More...</a><br/></td></tr>
 <tr class="separator:a59326aae166688d82f36a1d74c0c55f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0caa7e574e0b8e66486b5b601a140455"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_applied_label.html">AppliedLabel</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a0caa7e574e0b8e66486b5b601a140455">appliedLabels</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0caa7e574e0b8e66486b5b601a140455"><td class="mdescLeft">&#160;</td><td class="mdescRight">The set of labels applied directly to this ad unit.  <a href="#a0caa7e574e0b8e66486b5b601a140455">More...</a><br/></td></tr>
 <tr class="separator:a0caa7e574e0b8e66486b5b601a140455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb32020223a58e1708ab440efbbe1be4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_applied_label.html">AppliedLabel</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#afb32020223a58e1708ab440efbbe1be4">effectiveAppliedLabels</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:afb32020223a58e1708ab440efbbe1be4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the set of labels applied directly to the ad unit as well as those inherited from the parent ad units. If a label has been negated, only the negated label is returned. This field is readonly and is assigned by <a class="el" href="namespace_google.html">Google</a>.  <a href="#afb32020223a58e1708ab440efbbe1be4">More...</a><br/></td></tr>
 <tr class="separator:afb32020223a58e1708ab440efbbe1be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c1e253bf2ff200845ac80d69f2d1a2c"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a0c1e253bf2ff200845ac80d69f2d1a2c">effectiveTeamIds</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0c1e253bf2ff200845ac80d69f2d1a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The IDs of all teams that this ad unit is on as well as those inherited from parent ad units. This value is read-only and is set by <a class="el" href="namespace_google.html">Google</a>.  <a href="#a0c1e253bf2ff200845ac80d69f2d1a2c">More...</a><br/></td></tr>
 <tr class="separator:a0c1e253bf2ff200845ac80d69f2d1a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01b84dc81b4bb312a1c131bcc4ff3dd9"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a01b84dc81b4bb312a1c131bcc4ff3dd9">appliedTeamIds</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a01b84dc81b4bb312a1c131bcc4ff3dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The IDs of all teams that this ad unit is on directly.  <a href="#a01b84dc81b4bb312a1c131bcc4ff3dd9">More...</a><br/></td></tr>
 <tr class="separator:a01b84dc81b4bb312a1c131bcc4ff3dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0db26934ccf34f2ab62677434e511ac7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_date_time.html">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a0db26934ccf34f2ab62677434e511ac7">lastModifiedDateTime</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0db26934ccf34f2ab62677434e511ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The date and time this ad unit was last modified.  <a href="#a0db26934ccf34f2ab62677434e511ac7">More...</a><br/></td></tr>
 <tr class="separator:a0db26934ccf34f2ab62677434e511ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a142ee1c184ee0c3107c043c2fd35c232"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a280cb34039e7e42ce54cbd67e7c92020">SmartSizeMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a142ee1c184ee0c3107c043c2fd35c232">smartSizeMode</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a142ee1c184ee0c3107c043c2fd35c232"><td class="mdescLeft">&#160;</td><td class="mdescRight">The smart size mode for this ad unit. This attribute is optional and defaults to <a href="SmartSizeMode#NONE">SmartSizeMode::NONE</a> for fixed sizes.  <a href="#a142ee1c184ee0c3107c043c2fd35c232">More...</a><br/></td></tr>
 <tr class="separator:a142ee1c184ee0c3107c043c2fd35c232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ea6dce8041182e82c240e028054b07d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a1ea6dce8041182e82c240e028054b07d">smartSizeModeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a1ea6dce8041182e82c240e028054b07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html" title="An ">AdUnit</a></code> represents a chunk of identified inventory for the publisher. It contains all the settings that need to be associated with inventory in order to serve ads to it. An <code></code> can also be the parent of other ad units in the inventory hierarchy. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="ae4218853aa6244ed45a2951340648c4f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -194,6 +223,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A string used to uniquely identify the ad unit for the purposes of serving the ad. Beginning in V201311, this attribute is optional and can be set during ad unit creation. If it is not provided, it will be assigned by <a class="el" href="namespace_google.html">Google</a> based off of the inventory unit ID. Before V201311, this attribute is read-only and assigned by <a class="el" href="namespace_google.html">Google</a>. Once an ad unit is created, its </p>
+<p><code>adUnitCode</code> cannot be changed. </p>
 
 </div>
 </div>
@@ -215,7 +247,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201408_1_1_create_placements.html#afed3346ddfd7fb47722d16456fb4a5d1">Google.Api.Ads.Dfp.Examples.CSharp.v201408.CreatePlacements.Run()</a>.</p>
+<p>The permissible creative sizes that can be served inside this ad unit. This attribute is optional. This attribute replaces the </p>
+<p><code>sizes</code> attribute. </p>
 
 </div>
 </div>
@@ -237,6 +270,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The set of label frequency caps applied directly to this ad unit. There is a limit of 10 label frequency caps per ad unit. </p>
+
 </div>
 </div>
 <a class="anchor" id="a0caa7e574e0b8e66486b5b601a140455"></a>
@@ -256,6 +291,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The set of labels applied directly to this ad unit. </p>
 
 </div>
 </div>
@@ -277,6 +314,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The IDs of all teams that this ad unit is on directly. </p>
+
 </div>
 </div>
 <a class="anchor" id="ac5509dd7a347c332e4c6cd401aca585c"></a>
@@ -296,6 +335,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A description of the ad unit. This value is optional and its maximum length is 65,535 characters. </p>
 
 </div>
 </div>
@@ -317,6 +358,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Contains the set of labels applied directly to the ad unit as well as those inherited from the parent ad units. If a label has been negated, only the negated label is returned. This field is readonly and is assigned by <a class="el" href="namespace_google.html">Google</a>. </p>
+
 </div>
 </div>
 <a class="anchor" id="a59326aae166688d82f36a1d74c0c55f6"></a>
@@ -336,6 +379,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Contains the set of labels applied directly to the ad unit as well as those inherited from parent ad units. This field is readonly and is assigned by <a class="el" href="namespace_google.html">Google</a>. </p>
 
 </div>
 </div>
@@ -357,6 +402,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The IDs of all teams that this ad unit is on as well as those inherited from parent ad units. This value is read-only and is set by <a class="el" href="namespace_google.html">Google</a>. </p>
+
 </div>
 </div>
 <a class="anchor" id="af832b2756c2640e9f0ba06a52c17756e"></a>
@@ -376,6 +423,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>If this field is set to </p>
+<p><code>true</code>, then the <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html" title="An ">AdUnit</a></code> will not be implicitly targeted when its parent is. Traffickers must explicitly target such an ad unit or else no line items will serve to it. This feature is only available for DFP Premium accounts. </p>
 
 </div>
 </div>
@@ -397,6 +447,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#af832b2756c2640e9f0ba06a52c17756e" title="If this field is set to ">explicitlyTargeted</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="ab29fe97f85609160be72cbc5e5834e33"></a>
@@ -416,6 +469,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This field is set to </p>
+<p><code>true</code> if the ad unit has any children. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>. </p>
 
 </div>
 </div>
@@ -437,6 +493,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#ab29fe97f85609160be72cbc5e5834e33" title="This field is set to ">hasChildren</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="adae19e575f786fc0ac20d98f90cc3da6"></a>
@@ -457,7 +516,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201408_1_1_create_placements.html#afed3346ddfd7fb47722d16456fb4a5d1">Google.Api.Ads.Dfp.Examples.CSharp.v201408.CreatePlacements.Run()</a>.</p>
+<p>Uniquely identifies the </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html" title="An ">AdUnit</a></code>. This value is read-only and is assigned by <a class="el" href="namespace_google.html">Google</a> when an ad unit is created. This attribute is required for updates. </p>
 
 </div>
 </div>
@@ -479,6 +539,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>AdSense specific settings. This value is optional and if left blank will be inherited from the parent ad unit. </p>
+
 </div>
 </div>
 <a class="anchor" id="a0db26934ccf34f2ab62677434e511ac7"></a>
@@ -498,6 +560,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The date and time this ad unit was last modified. </p>
 
 </div>
 </div>
@@ -519,6 +583,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The platform associated with a mobile </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html" title="An ">AdUnit</a></code>, i.e. whether this ad unit appears in a mobile application or in a mobile web site. This attribute can only be used with <a href="TargetPlatform#MOBILE">TargetPlatform::MOBILE</a> ad units. This attribute is optional and defaults to <a href="MobilePlatform#SITE">MobilePlatform::SITE</a>. </p>
+
 </div>
 </div>
 <a class="anchor" id="a73b89dfac3f559300d585f24000ae483"></a>
@@ -538,6 +605,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a9b2947a0b93a239fab873295ad63a595" title="The platform associated with a mobile ">mobilePlatform</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -559,6 +629,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The name of the ad unit. This attribute is required and its maximum length is 255 characters. This attribute must also be case-insensitive unique. Beginning in V201311, this attribute can be updated. In versions before v201311, this attribute is read-only after creation. </p>
+
 </div>
 </div>
 <a class="anchor" id="a8338c49bce2a3285093c883ff1f5bcf0"></a>
@@ -579,7 +651,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201408_1_1_create_placements.html#afed3346ddfd7fb47722d16456fb4a5d1">Google.Api.Ads.Dfp.Examples.CSharp.v201408.CreatePlacements.Run()</a>.</p>
+<p>The ID of the ad unit's parent. Every ad unit has a parent except for the root ad unit, which is created by <a class="el" href="namespace_google.html">Google</a>. This attribute is required when creating the ad unit. Once the ad unit is created this value will be read-only. </p>
 
 </div>
 </div>
@@ -601,6 +673,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The path to this ad unit in the ad unit hierarchy represented as a list from the root to this ad unit's parent. For root ad units, this list is empty. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>. </p>
+
 </div>
 </div>
 <a class="anchor" id="a50255c5162c500db8312b03f579dfda6"></a>
@@ -620,6 +694,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The unique ID of the <a href="Company">Company</a>, which is of type <a href="Company.Type#AFFILIATE_DISTRIBUTION_PARTNER">Company.Type::AFFILIATE_DISTRIBUTION_PARTNER</a>, to which this ad unit belongs. This attribute is optional. Setting this attribute to </p>
+<p><code>null</code> will disassociate the partner from this ad unit. </p>
 
 </div>
 </div>
@@ -641,6 +718,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a50255c5162c500db8312b03f579dfda6" title="The unique ID of the Company, which is of type Company.Type::AFFILIATE_DISTRIBUTION_PARTNER, to which this ad unit belongs. This attribute is optional. Setting this attribute to ">partnerId</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a142ee1c184ee0c3107c043c2fd35c232"></a>
@@ -660,6 +740,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The smart size mode for this ad unit. This attribute is optional and defaults to <a href="SmartSizeMode#NONE">SmartSizeMode::NONE</a> for fixed sizes. </p>
 
 </div>
 </div>
@@ -681,6 +763,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a142ee1c184ee0c3107c043c2fd35c232" title="The smart size mode for this ad unit. This attribute is optional and defaults to SmartSizeMode::NONE ...">smartSizeMode</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a1f514ef3db05097022bf3d8ac20b311d"></a>
@@ -700,6 +785,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The status of this ad unit. It defaults to <a href="InventoryStatus#ACTIVE">InventoryStatus::ACTIVE</a>. This value cannot be updated directly using <a href="InventoryService#updateAdUnit">InventoryService::updateAdUnit</a>. It can only be modified by performing actions via <a href="InventoryService#performAdUnitAction">InventoryService::performAdUnitAction</a>. </p>
 
 </div>
 </div>
@@ -721,6 +808,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a1f514ef3db05097022bf3d8ac20b311d" title="The status of this ad unit. It defaults to InventoryStatus::ACTIVE. This value cannot be updated dire...">status</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a01a954c08e365bb38ecf7caf8f04be53"></a>
@@ -740,6 +830,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The platform that the </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html" title="An ">AdUnit</a></code> is serving, the default value is <a href="TargetPlatform#WEB">TargetPlatform::WEB</a>. </p>
+<p>This field is deprecated in favor of desktop and mobile unification and should not be used or set to anything other than <a href="TargetPlatform#WEB">TargetPlatform::WEB</a>.</p>
 
 </div>
 </div>
@@ -761,6 +855,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a01a954c08e365bb38ecf7caf8f04be53" title="The platform that the ">targetPlatform</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="a00c7858ae7f075c95e71620619aa66cc"></a>
@@ -780,6 +877,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The value to use for the HTML link's </p>
+<p><code>target</code> attribute. This value is optional and will be interpreted as <a href="TargetWindow#TOP">TargetWindow::TOP</a> if left blank. </p>
 
 </div>
 </div>
@@ -801,10 +901,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html#a00c7858ae7f075c95e71620619aa66cc" title="The value to use for the HTML link&#39;s ">targetWindow</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201408/<a class="el" href="v201408_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201408/<a class="el" href="v201408_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -812,7 +915,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html">v201408</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_ad_unit.html">AdUnit</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:59 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:27 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

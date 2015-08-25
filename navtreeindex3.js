@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_product_partition_tree.html":[1,0,0,0,0,0,0,0,2,68],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_product_partition_tree.html#a58c4d49066ec9ffeed43eff0c1d0fa2a":[1,0,0,0,0,0,0,0,2,68,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_product_partition_tree.html#abe0983518363c62b09eaeedbeff91568":[1,0,0,0,0,0,0,0,2,68,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_product_scope.html":[1,0,0,0,0,0,0,0,2,69],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_product_scope.html#a1acc4e0d30e2dfdd6f604e946098b7e7":[1,0,0,0,0,0,0,0,2,69,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_product_scope.html#a825bc98cc43dbea6e2f7438e99090129":[1,0,0,0,0,0,0,0,2,69,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_promotion.html":[1,0,0,0,0,0,0,0,2,44],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_update_placement.html":[1,0,0,0,0,0,0,0,2,83],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_update_placement.html#aadfe6fc9a4cce8a0cb698448d482ff19":[1,0,0,0,0,0,0,0,2,83,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_update_placement.html#ad845f0919bda30ea1bb68ddd31d4cf50":[1,0,0,0,0,0,0,0,2,83,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_update_promotion.html":[1,0,0,0,0,0,0,0,2,50],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_update_promotion.html#a4df85d1899b0c2a36e50131fc1b98b01":[1,0,0,0,0,0,0,0,2,50,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_update_promotion.html#ae4c0e8c769d85fccd60de72638b3300f":[1,0,0,0,0,0,0,0,2,50,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_upgrade_ad_url.html":[1,0,0,0,0,0,0,0,2,55],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_upgrade_ad_url.html#a6b4695206ae4d20d44bef0eb196b6567":[1,0,0,0,0,0,0,0,2,55,2]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_update_promotion.html":[1,0,0,0,0,0,0,0,2,50]
 };

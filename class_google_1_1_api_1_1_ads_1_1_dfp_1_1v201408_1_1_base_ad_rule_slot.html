@@ -110,67 +110,84 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201408.BaseAdRuleSlot Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Simple object representing an ad slot within an <a href="AdRule">AdRule</a>. Ad rule slots contain information about the types/number of ads to display, as well as additional information on how the ad server will generate playlists.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.Dfp.v201408.BaseAdRuleSlot:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.png" usemap="#Google.Api.Ads.Dfp.v201408.BaseAdRuleSlot_map" alt=""/>
   <map id="Google.Api.Ads.Dfp.v201408.BaseAdRuleSlot_map" name="Google.Api.Ads.Dfp.v201408.BaseAdRuleSlot_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_no_podding_ad_rule_slot.html" alt="Google.Api.Ads.Dfp.v201408.NoPoddingAdRuleSlot" shape="rect" coords="0,56,345,80"/>
-<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_optimized_podding_ad_rule_slot.html" alt="Google.Api.Ads.Dfp.v201408.OptimizedPoddingAdRuleSlot" shape="rect" coords="355,56,700,80"/>
-<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_standard_podding_ad_rule_slot.html" alt="Google.Api.Ads.Dfp.v201408.StandardPoddingAdRuleSlot" shape="rect" coords="710,56,1055,80"/>
-<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_unknown_ad_rule_slot.html" alt="Google.Api.Ads.Dfp.v201408.UnknownAdRuleSlot" shape="rect" coords="1065,56,1410,80"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_no_podding_ad_rule_slot.html" title="An ad rule slot with no podding. It is defined by a BaseAdRuleSlot::maxVideoAdDuration. " alt="Google.Api.Ads.Dfp.v201408.NoPoddingAdRuleSlot" shape="rect" coords="0,56,345,80"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_optimized_podding_ad_rule_slot.html" title="Ad rule slot with optimized podding. Optimized pods are defined by a BaseAdRuleSlot::maxPodDuration a..." alt="Google.Api.Ads.Dfp.v201408.OptimizedPoddingAdRuleSlot" shape="rect" coords="355,56,700,80"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_standard_podding_ad_rule_slot.html" title="An ad rule slot with standard podding. A standard pod is a series of video ads played back to back..." alt="Google.Api.Ads.Dfp.v201408.StandardPoddingAdRuleSlot" shape="rect" coords="710,56,1055,80"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_unknown_ad_rule_slot.html" title="The BaseAdRuleSlot subtype returned if the actual type is not exposed by the requested API version..." alt="Google.Api.Ads.Dfp.v201408.UnknownAdRuleSlot" shape="rect" coords="1065,56,1410,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a321395b1eb5beda2b5954576094f5d0d"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a321395b1eb5beda2b5954576094f5d0d">id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a321395b1eb5beda2b5954576094f5d0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique ID for this ad rule slot. This attribute is required.  <a href="#a321395b1eb5beda2b5954576094f5d0d">More...</a><br/></td></tr>
 <tr class="separator:a321395b1eb5beda2b5954576094f5d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5a0adfffa4c1e0d6263011f5542e193"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#ab5a0adfffa4c1e0d6263011f5542e193">idSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ab5a0adfffa4c1e0d6263011f5542e193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a218a4cb3732770424e6cacf7b6b23596"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a2fd37527fe7a45ad04df4b25b7abd43c">AdRuleSlotBehavior</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a218a4cb3732770424e6cacf7b6b23596">slotBehavior</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a218a4cb3732770424e6cacf7b6b23596"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a href="AdRuleSlotBehavior">AdRuleSlotBehavior</a> for video ads for this slot. This attribute is optional and defaults to <a href="AdRuleSlotBehavior#DEFER">AdRuleSlotBehavior::DEFER</a>.  <a href="#a218a4cb3732770424e6cacf7b6b23596">More...</a><br/></td></tr>
 <tr class="separator:a218a4cb3732770424e6cacf7b6b23596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a105c9331711ac30be5ce56c41de3a187"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a105c9331711ac30be5ce56c41de3a187">slotBehaviorSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a105c9331711ac30be5ce56c41de3a187"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eafe5f62964b95bb5d430705b932344"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a2eafe5f62964b95bb5d430705b932344">minVideoAdDuration</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a2eafe5f62964b95bb5d430705b932344"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum duration in milliseconds of video ads within this slot. This attribute is optional and defaults to 0.  <a href="#a2eafe5f62964b95bb5d430705b932344">More...</a><br/></td></tr>
 <tr class="separator:a2eafe5f62964b95bb5d430705b932344"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49fe1f7b7de436b6d174f37958e96f1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a49fe1f7b7de436b6d174f37958e96f1c">minVideoAdDurationSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a49fe1f7b7de436b6d174f37958e96f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3305998fbeaa0c1f4aeec10a2ab2db22"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a3305998fbeaa0c1f4aeec10a2ab2db22">maxVideoAdDuration</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3305998fbeaa0c1f4aeec10a2ab2db22"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum duration in milliseconds of video ads within this slot. This attribute is optional and defaults to 0.  <a href="#a3305998fbeaa0c1f4aeec10a2ab2db22">More...</a><br/></td></tr>
 <tr class="separator:a3305998fbeaa0c1f4aeec10a2ab2db22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74c2ac7c1b84e8996ef99b4ad1ff0780"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a74c2ac7c1b84e8996ef99b4ad1ff0780">maxVideoAdDurationSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a74c2ac7c1b84e8996ef99b4ad1ff0780"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4447f98a5d3b5bda38d930a2a8c11df0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a81131609e8d2220e44be9fe7670fcf75">MidrollFrequencyType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a4447f98a5d3b5bda38d930a2a8c11df0">videoMidrollFrequencyType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4447f98a5d3b5bda38d930a2a8c11df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frequency type for video ads in this ad rule slot. This attribute is required for mid-rolls, but if this is not a mid-roll, the value is set to <a href="MidrollFrequencyType#NONE">MidrollFrequencyType::NONE</a>.  <a href="#a4447f98a5d3b5bda38d930a2a8c11df0">More...</a><br/></td></tr>
 <tr class="separator:a4447f98a5d3b5bda38d930a2a8c11df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b38cfcb33fe431e9554b4e37ffaa727"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a0b38cfcb33fe431e9554b4e37ffaa727">videoMidrollFrequencyTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a0b38cfcb33fe431e9554b4e37ffaa727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ab8ba6ce310d76322d268f07b1e92d7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a6ab8ba6ce310d76322d268f07b1e92d7">videoMidrollFrequency</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a6ab8ba6ce310d76322d268f07b1e92d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The mid-roll frequency of this ad rule slot for video ads. This attribute is required for mid-rolls, but if <a href="MidrollFrequencyType">MidrollFrequencyType</a> is set to <a href="MidrollFrequencyType#NONE">MidrollFrequencyType::NONE</a>, this value should be ignored. For example, if this slot has a frequency type of <a href="MidrollFrequencyType#EVERY_N_SECONDS">MidrollFrequencyType::EVERY_N_SECONDS</a> and  <a href="#a6ab8ba6ce310d76322d268f07b1e92d7">More...</a><br/></td></tr>
 <tr class="separator:a6ab8ba6ce310d76322d268f07b1e92d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acec2107c2ad9485cd65c89def213f6ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html#a312d476a9064d931179895dc07947b70">AdRuleSlotBumper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#acec2107c2ad9485cd65c89def213f6ff">bumper</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:acec2107c2ad9485cd65c89def213f6ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a href="AdRuleSlotBumper">AdRuleSlotBumper</a> for this slot. This attribute is optional and defaults to <a href="AdRuleSlotBumper#NONE">AdRuleSlotBumper::NONE</a>.  <a href="#acec2107c2ad9485cd65c89def213f6ff">More...</a><br/></td></tr>
 <tr class="separator:acec2107c2ad9485cd65c89def213f6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af92c0e12c7d490429f28b1133cf8ef28"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#af92c0e12c7d490429f28b1133cf8ef28">bumperSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:af92c0e12c7d490429f28b1133cf8ef28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b21624686fbd528ad743452a4be08c4"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a5b21624686fbd528ad743452a4be08c4">maxBumperDuration</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5b21624686fbd528ad743452a4be08c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum duration of bumper ads within this slot. This attribute is optional and defaults to 0.  <a href="#a5b21624686fbd528ad743452a4be08c4">More...</a><br/></td></tr>
 <tr class="separator:a5b21624686fbd528ad743452a4be08c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd1be771376e6a2704b126ad1a5860e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#afd1be771376e6a2704b126ad1a5860e7">maxBumperDurationSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:afd1be771376e6a2704b126ad1a5860e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a020df5a47c5dd4020796df6c76a73adc"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a020df5a47c5dd4020796df6c76a73adc">minPodDuration</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a020df5a47c5dd4020796df6c76a73adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum pod duration in milliseconds for this slot. This attribute is optional and defaults to 0.  <a href="#a020df5a47c5dd4020796df6c76a73adc">More...</a><br/></td></tr>
 <tr class="separator:a020df5a47c5dd4020796df6c76a73adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdc7fb9453b37b974764226566ea8b54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#abdc7fb9453b37b974764226566ea8b54">minPodDurationSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:abdc7fb9453b37b974764226566ea8b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedc9fa5eb3e0ae131113d5a8fd54be9e"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#aedc9fa5eb3e0ae131113d5a8fd54be9e">maxPodDuration</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aedc9fa5eb3e0ae131113d5a8fd54be9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum pod duration in milliseconds for this slot. This attribute is optional and defaults to 0.  <a href="#aedc9fa5eb3e0ae131113d5a8fd54be9e">More...</a><br/></td></tr>
 <tr class="separator:aedc9fa5eb3e0ae131113d5a8fd54be9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab52c61aec70b41a81d5d9887740489ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#ab52c61aec70b41a81d5d9887740489ca">maxPodDurationSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ab52c61aec70b41a81d5d9887740489ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47cd78f38d026ce740d72e96a99b1123"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a47cd78f38d026ce740d72e96a99b1123">maxAdsInPod</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a47cd78f38d026ce740d72e96a99b1123"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of ads allowed in a pod in this slot. This attribute is optional and defaults to 0.  <a href="#a47cd78f38d026ce740d72e96a99b1123">More...</a><br/></td></tr>
 <tr class="separator:a47cd78f38d026ce740d72e96a99b1123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71307b51da18b6a05e9207aab130d913"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a71307b51da18b6a05e9207aab130d913">maxAdsInPodSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a71307b51da18b6a05e9207aab130d913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13e19bef38ffb46fee5bcfb08583a9bb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a13e19bef38ffb46fee5bcfb08583a9bb">BaseAdRuleSlotType</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a13e19bef38ffb46fee5bcfb08583a9bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that this instance is a subtype of <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html" title="Simple object representing an ad slot within an AdRule. Ad rule slots contain information about the t...">BaseAdRuleSlot</a>. Although this field is returned in the response, it is ignored on input and cannot be selected. Specify xsi:type instead.  <a href="#a13e19bef38ffb46fee5bcfb08583a9bb">More...</a><br/></td></tr>
 <tr class="separator:a13e19bef38ffb46fee5bcfb08583a9bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Simple object representing an ad slot within an <a href="AdRule">AdRule</a>. Ad rule slots contain information about the types/number of ads to display, as well as additional information on how the ad server will generate playlists. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a13e19bef38ffb46fee5bcfb08583a9bb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -188,6 +205,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Indicates that this instance is a subtype of <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html" title="Simple object representing an ad slot within an AdRule. Ad rule slots contain information about the t...">BaseAdRuleSlot</a>. Although this field is returned in the response, it is ignored on input and cannot be selected. Specify xsi:type instead. </p>
 
 </div>
 </div>
@@ -209,6 +228,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The <a href="AdRuleSlotBumper">AdRuleSlotBumper</a> for this slot. This attribute is optional and defaults to <a href="AdRuleSlotBumper#NONE">AdRuleSlotBumper::NONE</a>. </p>
+
 </div>
 </div>
 <a class="anchor" id="af92c0e12c7d490429f28b1133cf8ef28"></a>
@@ -228,6 +249,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#acec2107c2ad9485cd65c89def213f6ff" title="The AdRuleSlotBumper for this slot. This attribute is optional and defaults to AdRuleSlotBumper::NONE...">bumper</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -249,6 +273,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The unique ID for this ad rule slot. This attribute is required. </p>
+
 </div>
 </div>
 <a class="anchor" id="ab5a0adfffa4c1e0d6263011f5542e193"></a>
@@ -268,6 +294,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a321395b1eb5beda2b5954576094f5d0d" title="The unique ID for this ad rule slot. This attribute is required. ">id</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -289,6 +318,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The maximum number of ads allowed in a pod in this slot. This attribute is optional and defaults to 0. </p>
+
 </div>
 </div>
 <a class="anchor" id="a71307b51da18b6a05e9207aab130d913"></a>
@@ -308,6 +339,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a47cd78f38d026ce740d72e96a99b1123" title="The maximum number of ads allowed in a pod in this slot. This attribute is optional and defaults to 0...">maxAdsInPod</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -329,6 +363,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The maximum duration of bumper ads within this slot. This attribute is optional and defaults to 0. </p>
+
 </div>
 </div>
 <a class="anchor" id="afd1be771376e6a2704b126ad1a5860e7"></a>
@@ -348,6 +384,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a5b21624686fbd528ad743452a4be08c4" title="The maximum duration of bumper ads within this slot. This attribute is optional and defaults to 0...">maxBumperDuration</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -369,6 +408,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The maximum pod duration in milliseconds for this slot. This attribute is optional and defaults to 0. </p>
+
 </div>
 </div>
 <a class="anchor" id="ab52c61aec70b41a81d5d9887740489ca"></a>
@@ -388,6 +429,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#aedc9fa5eb3e0ae131113d5a8fd54be9e" title="The maximum pod duration in milliseconds for this slot. This attribute is optional and defaults to 0...">maxPodDuration</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -409,6 +453,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The maximum duration in milliseconds of video ads within this slot. This attribute is optional and defaults to 0. </p>
+
 </div>
 </div>
 <a class="anchor" id="a74c2ac7c1b84e8996ef99b4ad1ff0780"></a>
@@ -428,6 +474,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a3305998fbeaa0c1f4aeec10a2ab2db22" title="The maximum duration in milliseconds of video ads within this slot. This attribute is optional and de...">maxVideoAdDuration</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -449,6 +498,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The minimum pod duration in milliseconds for this slot. This attribute is optional and defaults to 0. </p>
+
 </div>
 </div>
 <a class="anchor" id="abdc7fb9453b37b974764226566ea8b54"></a>
@@ -468,6 +519,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a020df5a47c5dd4020796df6c76a73adc" title="The minimum pod duration in milliseconds for this slot. This attribute is optional and defaults to 0...">minPodDuration</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -489,6 +543,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The minimum duration in milliseconds of video ads within this slot. This attribute is optional and defaults to 0. </p>
+
 </div>
 </div>
 <a class="anchor" id="a49fe1f7b7de436b6d174f37958e96f1c"></a>
@@ -508,6 +564,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a2eafe5f62964b95bb5d430705b932344" title="The minimum duration in milliseconds of video ads within this slot. This attribute is optional and de...">minVideoAdDuration</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -529,6 +588,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The <a href="AdRuleSlotBehavior">AdRuleSlotBehavior</a> for video ads for this slot. This attribute is optional and defaults to <a href="AdRuleSlotBehavior#DEFER">AdRuleSlotBehavior::DEFER</a>. </p>
+<p>Indicates whether video ads are allowed for this slot, or if the decision is deferred to a lower-priority ad rule.</p>
+
 </div>
 </div>
 <a class="anchor" id="a105c9331711ac30be5ce56c41de3a187"></a>
@@ -548,6 +610,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a218a4cb3732770424e6cacf7b6b23596" title="The AdRuleSlotBehavior for video ads for this slot. This attribute is optional and defaults to AdRule...">slotBehavior</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -569,6 +634,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The mid-roll frequency of this ad rule slot for video ads. This attribute is required for mid-rolls, but if <a href="MidrollFrequencyType">MidrollFrequencyType</a> is set to <a href="MidrollFrequencyType#NONE">MidrollFrequencyType::NONE</a>, this value should be ignored. For example, if this slot has a frequency type of <a href="MidrollFrequencyType#EVERY_N_SECONDS">MidrollFrequencyType::EVERY_N_SECONDS</a> and </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a6ab8ba6ce310d76322d268f07b1e92d7" title="The mid-roll frequency of this ad rule slot for video ads. This attribute is required for mid-rolls...">videoMidrollFrequency</a></code> = "60", this would mean " play a
+mid-roll every 60 seconds." </p>
+
 </div>
 </div>
 <a class="anchor" id="a4447f98a5d3b5bda38d930a2a8c11df0"></a>
@@ -588,6 +657,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The frequency type for video ads in this ad rule slot. This attribute is required for mid-rolls, but if this is not a mid-roll, the value is set to <a href="MidrollFrequencyType#NONE">MidrollFrequencyType::NONE</a>. </p>
 
 </div>
 </div>
@@ -609,10 +680,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html#a4447f98a5d3b5bda38d930a2a8c11df0" title="The frequency type for video ads in this ad rule slot. This attribute is required for mid-rolls...">videoMidrollFrequencyType</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201408/<a class="el" href="v201408_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201408/<a class="el" href="v201408_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -620,7 +694,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408.html">v201408</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201408_1_1_base_ad_rule_slot.html">BaseAdRuleSlot</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:58 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:29 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

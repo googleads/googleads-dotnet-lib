@@ -111,25 +111,32 @@ $(document).ready(function(){initNavTree('interface_google_1_1_api_1_1_ads_1_1_d
 <div class="title">Google.Api.Ads.Dfp.v201411.IProposalService Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provides methods for adding, updating and retrieving <a href="Proposal">Proposal</a> objects.  
+ <a href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_proposal_service.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.Dfp.v201411.IProposalService:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_proposal_service.png" usemap="#Google.Api.Ads.Dfp.v201411.IProposalService_map" alt=""/>
   <map id="Google.Api.Ads.Dfp.v201411.IProposalService_map" name="Google.Api.Ads.Dfp.v201411.IProposalService_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_proposal_service.html" alt="Google.Api.Ads.Dfp.v201411.ProposalService" shape="rect" coords="0,56,279,80"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_proposal_service.html" title="Provides methods for adding, updating and retrieving Proposal objects. " alt="Google.Api.Ads.Dfp.v201411.ProposalService" shape="rect" coords="0,56,279,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac21942472a50f2538f0121d38098b666"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_proposal.html">Proposal</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_proposal_service.html#ac21942472a50f2538f0121d38098b666">createProposals</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_proposal.html">Proposal</a>[] proposals)</td></tr>
+<tr class="memdesc:ac21942472a50f2538f0121d38098b666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new <a href="Proposal">Proposal</a> objects. For each proposal, the following fields are required:  <a href="#ac21942472a50f2538f0121d38098b666">More...</a><br/></td></tr>
 <tr class="separator:ac21942472a50f2538f0121d38098b666"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9309e1fa819f1135e0965e1b801282ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_proposal_page.html">ProposalPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_proposal_service.html#a9309e1fa819f1135e0965e1b801282ba">getProposalsByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_statement.html">Statement</a> filterStatement)</td></tr>
+<tr class="memdesc:a9309e1fa819f1135e0965e1b801282ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ProposalPage">ProposalPage</a> of <a href="Proposal">Proposal</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering:  <a href="#a9309e1fa819f1135e0965e1b801282ba">More...</a><br/></td></tr>
 <tr class="separator:a9309e1fa819f1135e0965e1b801282ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38b82219a16955bd755f958ef7b7a17b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_update_result.html">UpdateResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_proposal_service.html#a38b82219a16955bd755f958ef7b7a17b">performProposalAction</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_proposal_action.html">ProposalAction</a> proposalAction, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_statement.html">Statement</a> filterStatement)</td></tr>
+<tr class="memdesc:a38b82219a16955bd755f958ef7b7a17b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs actions on <a href="Proposal">Proposal</a> objects that match the given <a href="Statement#query">Statement::query</a>. The following fields are also required when submitting proposals for approval:  <a href="#a38b82219a16955bd755f958ef7b7a17b">More...</a><br/></td></tr>
 <tr class="separator:a38b82219a16955bd755f958ef7b7a17b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb0356efc528ca83cab53f83e7cf877c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_proposal.html">Proposal</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_proposal_service.html#abb0356efc528ca83cab53f83e7cf877c">updateProposals</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_proposal.html">Proposal</a>[] proposals)</td></tr>
+<tr class="memdesc:abb0356efc528ca83cab53f83e7cf877c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the specified <a href="Proposal">Proposal</a> objects.  <a href="#abb0356efc528ca83cab53f83e7cf877c">More...</a><br/></td></tr>
 <tr class="separator:abb0356efc528ca83cab53f83e7cf877c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -139,7 +146,10 @@ Properties</h2></td></tr>
 <tr class="memitem:a949556f6a499fd82800d3494ae6b35e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_response_header.html">ResponseHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_proposal_service.html#a949556f6a499fd82800d3494ae6b35e5">ResponseHeader</a><code> [get, set]</code></td></tr>
 <tr class="separator:a949556f6a499fd82800d3494ae6b35e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides methods for adding, updating and retrieving <a href="Proposal">Proposal</a> objects. </p>
+<p>To use this service, you need to have the new sales management solution enabled on your network. If you do not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will not be able to use this service.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="ac21942472a50f2538f0121d38098b666"></a>
 <div class="memitem">
 <div class="memproto">
@@ -153,6 +163,19 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates new <a href="Proposal">Proposal</a> objects. For each proposal, the following fields are required: </p>
+<ul>
+<li>
+<a href="Proposal#name">Proposal::name</a> </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">proposals</td><td>the proposals to create</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the created proposals with their IDs filled in</dd></dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_proposal_service.html#a7cac205dbef5780de4a03086b8de74aa">Google.Api.Ads.Dfp.v201411.ProposalService</a>.</p>
 
@@ -171,6 +194,37 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets a <a href="ProposalPage">ProposalPage</a> of <a href="Proposal">Proposal</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering: </p>
+<table class="doxtable">
+<tr>
+<th scope="col">PQL Property </th><th scope="col">Object Property  </th></tr>
+<tr>
+<td><code>id</code> </td><td><a href="Proposal#id">Proposal::id</a>  </td></tr>
+<tr>
+<td><code>dfpOrderId</code> </td><td><a href="Proposal#dfpOrderId">Proposal::dfpOrderId</a>  </td></tr>
+<tr>
+<td><code>name</code> </td><td><a href="Proposal#name">Proposal::name</a>  </td></tr>
+<tr>
+<td><code>status</code> </td><td><a href="Proposal#status">Proposal::status</a>  </td></tr>
+<tr>
+<td><code>isArchived</code> </td><td><a href="Proposal#isArchived">Proposal::isArchived</a>  </td></tr>
+<tr>
+<td><code>approvalStatus</code> </td><td><a href="Proposal#approvalStatus">Proposal::approvalStatus</a>  </td></tr>
+<tr>
+<td><code>lastModifiedDateTime</code> </td><td><a href="Proposal#lastModifiedDateTime">Proposal::lastModifiedDateTime</a>  </td></tr>
+<tr>
+<td><code>thirdPartyAdServerId</code> </td><td><a href="Proposal#thirdPartyAdServerId">Proposal::thirdPartyAdServerId</a>  </td></tr>
+<tr>
+<td><code>customThirdPartyAdServerName</code> </td><td><a href="Proposal#customThirdPartyAdServerName">Proposal::customThirdPartyAdServerName</a>  </td></tr>
+</table>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filterStatement</td><td>a Publisher Query Language statement used to filter a set of proposals</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the proposals that match the given filter</dd></dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_proposal_service.html#a68642d1c3c6126ec4bf7f70b9dafb327">Google.Api.Ads.Dfp.v201411.ProposalService</a>.</p>
 
@@ -200,6 +254,24 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Performs actions on <a href="Proposal">Proposal</a> objects that match the given <a href="Statement#query">Statement::query</a>. The following fields are also required when submitting proposals for approval: </p>
+<ul>
+<li>
+<a href="Proposal#advertiser">Proposal::advertiser</a> </li>
+<li>
+<a href="Proposal#primarySalesperson">Proposal::primarySalesperson</a> </li>
+<li>
+<a href="Proposal#primaryTraffickerId">Proposal::primaryTraffickerId</a> </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">proposalAction</td><td>the action to perform</td></tr>
+    <tr><td class="paramname">filterStatement</td><td>a Publisher Query Language statement used to filter a set of proposals</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the result of the action performed</dd></dl>
+
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_proposal_service.html#af5c703c15e1c45dc07512725111163ba">Google.Api.Ads.Dfp.v201411.ProposalService</a>.</p>
 
 </div>
@@ -217,6 +289,15 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Updates the specified <a href="Proposal">Proposal</a> objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">proposals</td><td>the proposals to update</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the updated proposals</dd></dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_proposal_service.html#a18afa59080941a4fcbacaf5d09c28ee8">Google.Api.Ads.Dfp.v201411.ProposalService</a>.</p>
 
@@ -264,7 +345,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -272,7 +353,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html">v201411</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_proposal_service.html">IProposalService</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:06 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:37 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

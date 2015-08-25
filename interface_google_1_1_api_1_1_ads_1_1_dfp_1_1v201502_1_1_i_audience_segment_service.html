@@ -111,25 +111,32 @@ $(document).ready(function(){initNavTree('interface_google_1_1_api_1_1_ads_1_1_d
 <div class="title">Google.Api.Ads.Dfp.v201502.IAudienceSegmentService Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provides operations for creating, updating and retrieving <a href="AudienceSegment">AudienceSegment</a> objects.  
+ <a href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_audience_segment_service.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.Dfp.v201502.IAudienceSegmentService:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_audience_segment_service.png" usemap="#Google.Api.Ads.Dfp.v201502.IAudienceSegmentService_map" alt=""/>
   <map id="Google.Api.Ads.Dfp.v201502.IAudienceSegmentService_map" name="Google.Api.Ads.Dfp.v201502.IAudienceSegmentService_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_audience_segment_service.html" alt="Google.Api.Ads.Dfp.v201502.AudienceSegmentService" shape="rect" coords="0,56,331,80"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_audience_segment_service.html" title="Provides operations for creating, updating and retrieving AudienceSegment objects. " alt="Google.Api.Ads.Dfp.v201502.AudienceSegmentService" shape="rect" coords="0,56,331,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b0ec5c55bb59bc107627ad26dad1bd0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_first_party_audience_segment.html">FirstPartyAudienceSegment</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_audience_segment_service.html#a2b0ec5c55bb59bc107627ad26dad1bd0">createAudienceSegments</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_first_party_audience_segment.html">FirstPartyAudienceSegment</a>[] segments)</td></tr>
+<tr class="memdesc:a2b0ec5c55bb59bc107627ad26dad1bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new <a href="RuleBasedFirstPartyAudienceSegment">RuleBasedFirstPartyAudienceSegment</a> objects.  <a href="#a2b0ec5c55bb59bc107627ad26dad1bd0">More...</a><br/></td></tr>
 <tr class="separator:a2b0ec5c55bb59bc107627ad26dad1bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2180134c7ae785704053641b02a782d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_audience_segment_page.html">AudienceSegmentPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_audience_segment_service.html#aa2180134c7ae785704053641b02a782d">getAudienceSegmentsByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_statement.html">Statement</a> filterStatement)</td></tr>
+<tr class="memdesc:aa2180134c7ae785704053641b02a782d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a href="AudienceSegmentPage">AudienceSegmentPage</a> of <a href="AudienceSegment">AudienceSegment</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering:  <a href="#aa2180134c7ae785704053641b02a782d">More...</a><br/></td></tr>
 <tr class="separator:aa2180134c7ae785704053641b02a782d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5b3c806892ec6a4a4f4aa9b58d8b4c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_update_result.html">UpdateResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_audience_segment_service.html#ab5b3c806892ec6a4a4f4aa9b58d8b4c8">performAudienceSegmentAction</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_audience_segment_action.html">AudienceSegmentAction</a> action, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_statement.html">Statement</a> filterStatement)</td></tr>
+<tr class="memdesc:ab5b3c806892ec6a4a4f4aa9b58d8b4c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the given <a href="AudienceSegmentAction">AudienceSegmentAction</a> on the set of segments identified by the given statement.  <a href="#ab5b3c806892ec6a4a4f4aa9b58d8b4c8">More...</a><br/></td></tr>
 <tr class="separator:ab5b3c806892ec6a4a4f4aa9b58d8b4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5741b964a1e90a5921dc15464eb414a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_first_party_audience_segment.html">FirstPartyAudienceSegment</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_audience_segment_service.html#a5741b964a1e90a5921dc15464eb414a4">updateAudienceSegments</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_first_party_audience_segment.html">FirstPartyAudienceSegment</a>[] segments)</td></tr>
+<tr class="memdesc:a5741b964a1e90a5921dc15464eb414a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the given <a href="RuleBasedFirstPartyAudienceSegment">RuleBasedFirstPartyAudienceSegment</a> objects.  <a href="#a5741b964a1e90a5921dc15464eb414a4">More...</a><br/></td></tr>
 <tr class="separator:a5741b964a1e90a5921dc15464eb414a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -139,7 +146,9 @@ Properties</h2></td></tr>
 <tr class="memitem:ad201605fc5b878df6db924e5ad3f658c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_response_header.html">ResponseHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_audience_segment_service.html#ad201605fc5b878df6db924e5ad3f658c">ResponseHeader</a><code> [get, set]</code></td></tr>
 <tr class="separator:ad201605fc5b878df6db924e5ad3f658c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides operations for creating, updating and retrieving <a href="AudienceSegment">AudienceSegment</a> objects. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a2b0ec5c55bb59bc107627ad26dad1bd0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -153,6 +162,15 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates new <a href="RuleBasedFirstPartyAudienceSegment">RuleBasedFirstPartyAudienceSegment</a> objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">segments</td><td>first-party audience segments to create</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>created first-party audience segments</dd></dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_audience_segment_service.html#a727aa3f31acb35c0d5e5c60ed1cf83e8">Google.Api.Ads.Dfp.v201502.AudienceSegmentService</a>.</p>
 
@@ -171,6 +189,39 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets an <a href="AudienceSegmentPage">AudienceSegmentPage</a> of <a href="AudienceSegment">AudienceSegment</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering: </p>
+<table class="doxtable">
+<tr>
+<th scope="col">PQL Property </th><th scope="col">Object Property  </th></tr>
+<tr>
+<td><code>id</code> </td><td><a href="AudienceSegment#id">AudienceSegment::id</a>  </td></tr>
+<tr>
+<td><code>name</code> </td><td><a href="AudienceSegment#name">AudienceSegment::name</a>  </td></tr>
+<tr>
+<td><code>status</code> </td><td><a href="AudienceSegment#status">AudienceSegment::status</a>  </td></tr>
+<tr>
+<td><code>type</code> </td><td><a href="AudienceSegment#type">AudienceSegment::type</a>  </td></tr>
+<tr>
+<td><code>size</code> </td><td><a href="AudienceSegment#size">AudienceSegment::size</a>  </td></tr>
+<tr>
+<td><code>dataProviderName</code> </td><td><a href="AudienceSegmentDataProvider#name">AudienceSegmentDataProvider::name</a>  </td></tr>
+<tr>
+<td><code>approvalStatus</code> </td><td><a href="ThirdPartyAudienceSegment#approvalStatus">ThirdPartyAudienceSegment::approvalStatus</a>  </td></tr>
+<tr>
+<td><code>cost</code> </td><td><a href="ThirdPartyAudienceSegment#cost">ThirdPartyAudienceSegment::cost</a>  </td></tr>
+<tr>
+<td><code>startDateTime</code> </td><td><a href="ThirdPartyAudienceSegment#startDateTime">ThirdPartyAudienceSegment::startDateTime</a>  </td></tr>
+<tr>
+<td><code>endDateTime</code> </td><td><a href="ThirdPartyAudienceSegment#endDateTime">ThirdPartyAudienceSegment::endDateTime</a>  </td></tr>
+</table>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filterStatement</td><td>a Publisher Query Language statement used to filter a set of audience segments</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the audience segments that match the given filter</dd></dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_audience_segment_service.html#a5dbbff3555a59474b71a5904e1678695">Google.Api.Ads.Dfp.v201502.AudienceSegmentService</a>.</p>
 
@@ -200,6 +251,16 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Performs the given <a href="AudienceSegmentAction">AudienceSegmentAction</a> on the set of segments identified by the given statement. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">action</td><td><a href="AudienceSegmentAction">AudienceSegmentAction</a> to perform</td></tr>
+    <tr><td class="paramname">filterStatement</td><td>a Publisher Query Language statement used to filter a set of audience segments</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a href="UpdateResult">UpdateResult</a> indicating the result</dd></dl>
+
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_audience_segment_service.html#ad42d1dc1da4a93dfb56e6eea02d30cd0">Google.Api.Ads.Dfp.v201502.AudienceSegmentService</a>.</p>
 
 </div>
@@ -217,6 +278,15 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Updates the given <a href="RuleBasedFirstPartyAudienceSegment">RuleBasedFirstPartyAudienceSegment</a> objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">segments</td><td>first-party audience segments to update</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>updated first-party audience segments</dd></dl>
 
 <p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_audience_segment_service.html#a31821aab2a409633b0fd77f702c36ae9">Google.Api.Ads.Dfp.v201502.AudienceSegmentService</a>.</p>
 
@@ -264,7 +334,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201502/<a class="el" href="v201502_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201502/<a class="el" href="v201502_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -272,7 +342,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502.html">v201502</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_i_audience_segment_service.html">IAudienceSegmentService</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:10 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:43 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

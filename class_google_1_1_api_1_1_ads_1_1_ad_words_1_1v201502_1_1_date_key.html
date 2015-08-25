@@ -110,13 +110,30 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_ad_wo
 <div class="title">Google.Api.Ads.AdWords.v201502.DateKey Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A custom parameter of date type. Supported date formats are listed as follows:  
+ <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_date_key.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a0b4534829f78a29c1f708f5a338b17af"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_date_key.html#a0b4534829f78a29c1f708f5a338b17af">name</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0b4534829f78a29c1f708f5a338b17af"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="constraint MatchesRegex">A name must begin with US-ascii letters or underscore or UTF8 code that is greater than 127 and consist of US-ascii letters or digits or underscore or UTF8 code that is greater than 127. This is checked by the regular expression '^[a-zA-Z_?-?][a-zA-Z0-9_?-?]*$'.</span> <span class="constraint Required">This field is required and should not be </span> <a href="#a0b4534829f78a29c1f708f5a338b17af">More...</a><br/></td></tr>
 <tr class="separator:a0b4534829f78a29c1f708f5a338b17af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A custom parameter of date type. Supported date formats are listed as follows: </p>
+<ul>
+<li>
+2011-03-31T12:20:19-05:00 </li>
+<li>
+03/31/2011 12:20:19-05:00 </li>
+<li>
+Fri, Mar 31 2011 12:20:19 EST </li>
+<li>
+Fri, Mar 31 12:20:19 EST 2011 </li>
+</ul>
+<p>If time zone information is not present in the value, it is assumed to be PST. If time value is not specified, it defaults to midnight of the day.</p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a0b4534829f78a29c1f708f5a338b17af"></a>
 <div class="memitem">
 <div class="memproto">
@@ -135,10 +152,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><span class="constraint MatchesRegex">A name must begin with US-ascii letters or underscore or UTF8 code that is greater than 127 and consist of US-ascii letters or digits or underscore or UTF8 code that is greater than 127. This is checked by the regular expression '^[a-zA-Z_?-?][a-zA-Z0-9_?-?]*$'.</span> <span class="constraint Required">This field is required and should not be </span></p>
+<p><code>null</code>. <span class="constraint StringLength">This string must not be empty, (trimmed).</span> </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/AdWords/v201502/<a class="el" href="v201502_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/AdWords/v201502/<a class="el" href="v201502_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -146,7 +166,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502.html">v201502</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_date_key.html">DateKey</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:23:27 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:03 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

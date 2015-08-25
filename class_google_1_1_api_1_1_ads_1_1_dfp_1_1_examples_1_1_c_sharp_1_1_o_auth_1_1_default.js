@@ -1,8 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default =
 [
     [ "OnAuthorizeButtonClick", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default.html#a1dfc2f0ae0b59113fbda0020434cb5a3", null ],
-    [ "OnDownloadReportButtonClick", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default.html#ad0b174146a2c22f8694253f238f36f9b", null ],
-    [ "OnGetUsersButtonClick", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default.html#a2be3169c0de591bd397ff3232a558f51", null ],
+    [ "OnDownloadReportButtonClick", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default.html#a945f63ba91a675c97de2ee6b9ac73f0d", null ],
+    [ "OnGetUsersButtonClick", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default.html#a20b2acfc1c6ba3b499dd2e5321d6724f", null ],
     [ "OnLogoutButtonClick", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default.html#a02aec9b961d9b08e493896abdb00cd7e", null ],
     [ "UserGrid_RowDataBound", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default.html#a898711d49da225a9c4034ea3ebe69ac4", null ],
     [ "btnAuthorize", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default.html#a7de26e5cad1151fbdcde163a4c390f89", null ],

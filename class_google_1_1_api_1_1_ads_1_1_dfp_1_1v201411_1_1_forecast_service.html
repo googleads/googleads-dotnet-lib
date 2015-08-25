@@ -111,6 +111,9 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201411.ForecastService Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provided for <a href="LineItem">LineItem</a> objects that exist in the system or which have not had an ID set yet.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_forecast_service.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.Dfp.v201411.ForecastService:</div>
 <div class="dyncontent">
@@ -118,7 +121,7 @@ Inheritance diagram for Google.Api.Ads.Dfp.v201411.ForecastService:</div>
   <img src="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_forecast_service.png" usemap="#Google.Api.Ads.Dfp.v201411.ForecastService_map" alt=""/>
   <map id="Google.Api.Ads.Dfp.v201411.ForecastService_map" name="Google.Api.Ads.Dfp.v201411.ForecastService_map">
 <area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html" title="Base class for DFP API services. " alt="Google.Api.Ads.Dfp.Lib.DfpSoapClient" shape="rect" coords="144,112,423,136"/>
-<area href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_forecast_service.html" alt="Google.Api.Ads.Dfp.v201411.IForecastService" shape="rect" coords="433,112,712,136"/>
+<area href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_forecast_service.html" title="Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provide..." alt="Google.Api.Ads.Dfp.v201411.IForecastService" shape="rect" coords="433,112,712,136"/>
 <area href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html" title="Base class for all SOAP services supported by this library. " alt="Google.Api.Ads.Common.Lib.AdsSoapClient" shape="rect" coords="144,56,423,80"/>
 <area href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html" title="This interface defines a client protocol (SOAP, WSE, REST, etc.) supported by the library..." alt="Google.Api.Ads.Common.Lib.AdsClient" shape="rect" coords="289,0,568,24"/>
 </map>
@@ -127,10 +130,13 @@ Inheritance diagram for Google.Api.Ads.Dfp.v201411.ForecastService:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2fe64bfc16e17d9360afa67f221913c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_forecast_service.html#a2fe64bfc16e17d9360afa67f221913c4">ForecastService</a> ()</td></tr>
+<tr class="memdesc:a2fe64bfc16e17d9360afa67f221913c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_forecast_service.html" title="Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provide...">ForecastService</a> class.  <a href="#a2fe64bfc16e17d9360afa67f221913c4">More...</a><br/></td></tr>
 <tr class="separator:a2fe64bfc16e17d9360afa67f221913c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea85c72fa02e374ce7f48c00dec6d8e3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_forecast.html">Forecast</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_forecast_service.html#aea85c72fa02e374ce7f48c00dec6d8e3">getForecast</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_line_item.html">LineItem</a> lineItem)</td></tr>
+<tr class="memdesc:aea85c72fa02e374ce7f48c00dec6d8e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="Forecast">Forecast</a> on a prospective <a href="LineItem">LineItem</a> object. Valid values for <a href="LineItem#lineItemType">LineItem::lineItemType</a> are <a href="LineItemType#SPONSORSHIP">LineItemType::SPONSORSHIP</a> and <a href="LineItemType#STANDARD">LineItemType::STANDARD</a>. Other values will result in <a href="ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED">ReservationDetailsError.Reason::LINE_ITEM_TYPE_NOT_ALLOWED</a>.  <a href="#aea85c72fa02e374ce7f48c00dec6d8e3">More...</a><br/></td></tr>
 <tr class="separator:aea85c72fa02e374ce7f48c00dec6d8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca1d8d19c6cea1df0aab34bc90be3ff8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_forecast.html">Forecast</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_forecast_service.html#aca1d8d19c6cea1df0aab34bc90be3ff8">getForecastById</a> (long lineItemId)</td></tr>
+<tr class="memdesc:aca1d8d19c6cea1df0aab34bc90be3ff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="Forecast">Forecast</a> for an existing <a href="LineItem">LineItem</a> object. Only line items having type <a href="LineItemType#SPONSORSHIP">LineItemType::SPONSORSHIP</a> or <a href="LineItemType#STANDARD">LineItemType::STANDARD</a> are valid. Other types will result in <a href="ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED">ReservationDetailsError.Reason::LINE_ITEM_TYPE_NOT_ALLOWED</a>.  <a href="#aca1d8d19c6cea1df0aab34bc90be3ff8">More...</a><br/></td></tr>
 <tr class="separator:aca1d8d19c6cea1df0aab34bc90be3ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -216,9 +222,9 @@ Properties</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html">Google.Api.Ads.Dfp.Lib.DfpSoapClient</a></td></tr>
-<tr class="memitem:a67270c142f918824005ee52558156bf6 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memItemLeft" align="right" valign="top">override Exception&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html#a67270c142f918824005ee52558156bf6">GetCustomException</a> (SoapException ex)</td></tr>
-<tr class="memdesc:a67270c142f918824005ee52558156bf6 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a custom exception that wraps the SOAP exception thrown by the server.  <a href="#a67270c142f918824005ee52558156bf6">More...</a><br/></td></tr>
-<tr class="separator:a67270c142f918824005ee52558156bf6 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb1cdad13d7455193ec47a7db0fa103 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memItemLeft" align="right" valign="top">override Exception&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html#adfb1cdad13d7455193ec47a7db0fa103">GetCustomException</a> (SoapException exception)</td></tr>
+<tr class="memdesc:adfb1cdad13d7455193ec47a7db0fa103 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a custom exception that wraps the SOAP exception thrown by the server.  <a href="#adfb1cdad13d7455193ec47a7db0fa103">More...</a><br/></td></tr>
+<tr class="separator:adfb1cdad13d7455193ec47a7db0fa103 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acca43da862b505be5ba3812e650ce92f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html#acca43da862b505be5ba3812e650ce92f">InitForCall</a> (string methodName, object[] parameters)</td></tr>
 <tr class="memdesc:acca43da862b505be5ba3812e650ce92f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the service before MakeApiCall.  <a href="#acca43da862b505be5ba3812e650ce92f">More...</a><br/></td></tr>
 <tr class="separator:acca43da862b505be5ba3812e650ce92f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -261,7 +267,42 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a09d0abbb91ee39bc84e9992d5369a713 inherit pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the fault xml node from soap exception.  <a href="#a09d0abbb91ee39bc84e9992d5369a713">More...</a><br/></td></tr>
 <tr class="separator:a09d0abbb91ee39bc84e9992d5369a713 inherit pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provided for <a href="LineItem">LineItem</a> objects that exist in the system or which have not had an ID set yet. </p>
+<h4>Test network behavior</h4>
+<p>Test networks are unable to provide forecasts that would be comparable to the production environment because forecasts require traffic history. For test networks, a consistent behavior can be expected for forecast requests, according to the following rules:</p>
+<table class="doxtable">
+<tr>
+<th colspan="2">Inputs<br/>
+ (<a href="LineItem">LineItem</a> Fields) </th><th colspan="4">Outputs<br/>
+ (<a href="Forecast">Forecast</a> Fields)  </th></tr>
+<tr>
+<th><a href="LineItem#lineItemType">lineItemType</a> </th><th><a href="LineItem#unitsBought">unitsBought</a> </th><th><a href="Forecast#availableUnits">availableUnits</a> </th><th><a href="Forecast#forecastUnits">forecastUnits (matchedUnits)</a> </th><th><a href="Forecast#deliveredUnits">deliveredUnits</a> </th><th>Exception   </th></tr>
+<tr>
+<td>Sponsorship </td><td>13 </td><td>#x2013;#x2013; </td><td>#x2013;#x2013; </td><td>#x2013;#x2013; </td><td><a href="ForecastError.Reason#NO_FORECAST_YET">NO_FORECAST_YET</a>   </td></tr>
+<tr>
+<td>Sponsorship </td><td>20 </td><td>#x2013;#x2013; </td><td>#x2013;#x2013; </td><td>#x2013;#x2013; </td><td><a href="ForecastError.Reason#SERVER_NOT_AVAILABLE">SERVER_NOT_AVAILABLE</a>   </td></tr>
+<tr>
+<td>Sponsorship </td><td>50 </td><td>1,200,000 </td><td>6,000,000 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Sponsorship </td><td>!= 20 and<br/>
+ != 50 </td><td>1,200,000 </td><td>1,200,000 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Not Sponsorship </td><td>&lt;= 500,000 </td><td>3 * unitsBought / 2 </td><td>unitsBought * 6 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Not Sponsorship </td><td>&gt; 500,000 and &lt;= 1,000,000 </td><td>unitsBought / 2 </td><td>unitsBought * 6 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Not Sponsorship </td><td>&gt; 1,000,000 and &lt;= 1,500,000 </td><td>unitsBought / 2 </td><td>3 * unitsBought / 2 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+<tr>
+<td>Not Sponsorship </td><td>&gt; 1,500,000 </td><td>unitsBought / 4 </td><td>3 * unitsBought / 2 </td><td>600,000<br/>
+ For prospective: 0 </td><td>#x2013;#x2013;  </td></tr>
+</table>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2fe64bfc16e17d9360afa67f221913c4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -282,6 +323,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_forecast_service.html" title="Provides methods for estimating traffic (clicks/impressions) for line items. Forecasts can be provide...">ForecastService</a> class. </p>
 
 </div>
 </div>
@@ -308,6 +351,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Gets a <a href="Forecast">Forecast</a> on a prospective <a href="LineItem">LineItem</a> object. Valid values for <a href="LineItem#lineItemType">LineItem::lineItemType</a> are <a href="LineItemType#SPONSORSHIP">LineItemType::SPONSORSHIP</a> and <a href="LineItemType#STANDARD">LineItemType::STANDARD</a>. Other values will result in <a href="ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED">ReservationDetailsError.Reason::LINE_ITEM_TYPE_NOT_ALLOWED</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItem</td><td>the target of the forecast. If <a href="LineItem#id">LineItem::id</a> is null or no line item exists with that ID, a forecast is computed for the the subject, predicting what would happen if it were added to the system. If a line item already exists with <a href="LineItem#id">LineItem::id</a>, the forecast is computed for the subject, predicting what would happen if the existing line item's settings were modified to match the subject.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the forecasted traffic estimates</dd></dl>
+
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_forecast_service.html#af03c2616102d39f455e4ecf1e3cef3e1">Google.Api.Ads.Dfp.v201411.IForecastService</a>.</p>
 
 </div>
@@ -333,6 +385,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets a <a href="Forecast">Forecast</a> for an existing <a href="LineItem">LineItem</a> object. Only line items having type <a href="LineItemType#SPONSORSHIP">LineItemType::SPONSORSHIP</a> or <a href="LineItemType#STANDARD">LineItemType::STANDARD</a> are valid. Other types will result in <a href="ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED">ReservationDetailsError.Reason::LINE_ITEM_TYPE_NOT_ALLOWED</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lineItemId</td><td>the ID of a <a href="LineItem">LineItem</a> to run the forecast on.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the forecasted traffic estimates</dd></dl>
 
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_i_forecast_service.html#a2e97f197323ab31e0983f7a7ca05b63c">Google.Api.Ads.Dfp.v201411.IForecastService</a>.</p>
 
@@ -380,7 +441,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -388,7 +449,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html">v201411</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_forecast_service.html">ForecastService</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:03 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:33 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

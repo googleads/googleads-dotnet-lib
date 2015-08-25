@@ -110,31 +110,42 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="title">Google.Api.Ads.Dfp.v201411.ActivityGroup Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Activities are organized within activity groups, which are sets of activities that share the same configuration. You create and manage activities from within activity groups.  
+ <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a5efe2f74031b2bb0f3f2c425863a1252"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#a5efe2f74031b2bb0f3f2c425863a1252">id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5efe2f74031b2bb0f3f2c425863a1252"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique ID of the  <a href="#a5efe2f74031b2bb0f3f2c425863a1252">More...</a><br/></td></tr>
 <tr class="separator:a5efe2f74031b2bb0f3f2c425863a1252"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a364b711778583d8c644b28eaf7e78cd5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#a364b711778583d8c644b28eaf7e78cd5">idSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a364b711778583d8c644b28eaf7e78cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2422b0b540f66721964dfa09c1c8c30b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#a2422b0b540f66721964dfa09c1c8c30b">name</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a2422b0b540f66721964dfa09c1c8c30b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the  <a href="#a2422b0b540f66721964dfa09c1c8c30b">More...</a><br/></td></tr>
 <tr class="separator:a2422b0b540f66721964dfa09c1c8c30b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa302a219e82072269d47d48249b3f81c"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#aa302a219e82072269d47d48249b3f81c">companyIds</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa302a219e82072269d47d48249b3f81c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The company ids whose ads will be included for conversion tracking on the activities in this group. Only clicks and impressions of ads from these companies will lead to conversions on the containing activities. This attribute is required when creating an activity group. The company types allowed are: <a href="Company.Type#ADVERTISER">Company.Type::ADVERTISER</a>, and <a href="Company.Type#AD_NETWORK">Company.Type::AD_NETWORK</a>, and <a href="Company.Type#HOUSE_ADVERTISER">Company.Type::HOUSE_ADVERTISER</a>  <a href="#aa302a219e82072269d47d48249b3f81c">More...</a><br/></td></tr>
 <tr class="separator:aa302a219e82072269d47d48249b3f81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a793ce1a530b9ba2cca6d28af31b2a658"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#a793ce1a530b9ba2cca6d28af31b2a658">impressionsLookback</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a793ce1a530b9ba2cca6d28af31b2a658"><td class="mdescLeft">&#160;</td><td class="mdescRight">DFP records view-through conversions for users who have previously viewed a DFP ad within the number of days that you set here (1 to 30 days), then visits a webpage containing activity tags from this activity group. To be counted, the ad needs to belong to one of the companies associated with the activity group. This attribute is required to create an activity group.  <a href="#a793ce1a530b9ba2cca6d28af31b2a658">More...</a><br/></td></tr>
 <tr class="separator:a793ce1a530b9ba2cca6d28af31b2a658"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bc0cc64e05fde0a46b2e3cb5a160023"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#a4bc0cc64e05fde0a46b2e3cb5a160023">impressionsLookbackSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a4bc0cc64e05fde0a46b2e3cb5a160023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac86eda89ac9a22b1f7612d7ec14e0878"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#ac86eda89ac9a22b1f7612d7ec14e0878">clicksLookback</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac86eda89ac9a22b1f7612d7ec14e0878"><td class="mdescLeft">&#160;</td><td class="mdescRight">DFP records click-through conversions for users who have previously clicked on a DFP ad within the number of days that you set here (1 to 30 days), then visits a webpage containing activity tags from this activity group. To be counted, the ad needs to belong to one of the companies associated with the activity group. This attribute is required to create an activity group.  <a href="#ac86eda89ac9a22b1f7612d7ec14e0878">More...</a><br/></td></tr>
 <tr class="separator:ac86eda89ac9a22b1f7612d7ec14e0878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb2141a1b13033d4db58cfdd7b5f09e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#adb2141a1b13033d4db58cfdd7b5f09e1">clicksLookbackSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:adb2141a1b13033d4db58cfdd7b5f09e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5db1a9dc4f885bdefffbb4fdde7f783d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html#a2cce16578c50c190317d9cfb48b3f0ed">ActivityGroupStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#a5db1a9dc4f885bdefffbb4fdde7f783d">status</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5db1a9dc4f885bdefffbb4fdde7f783d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The status of this activity group. This attribute is readonly.  <a href="#a5db1a9dc4f885bdefffbb4fdde7f783d">More...</a><br/></td></tr>
 <tr class="separator:a5db1a9dc4f885bdefffbb4fdde7f783d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abae4a29b4f5fb69e63c61ee355525250"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#abae4a29b4f5fb69e63c61ee355525250">statusSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:abae4a29b4f5fb69e63c61ee355525250"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Activities are organized within activity groups, which are sets of activities that share the same configuration. You create and manage activities from within activity groups. </p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="ac86eda89ac9a22b1f7612d7ec14e0878"></a>
 <div class="memitem">
 <div class="memproto">
@@ -152,6 +163,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>DFP records click-through conversions for users who have previously clicked on a DFP ad within the number of days that you set here (1 to 30 days), then visits a webpage containing activity tags from this activity group. To be counted, the ad needs to belong to one of the companies associated with the activity group. This attribute is required to create an activity group. </p>
 
 </div>
 </div>
@@ -173,6 +186,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#ac86eda89ac9a22b1f7612d7ec14e0878" title="DFP records click-through conversions for users who have previously clicked on a DFP ad within the nu...">clicksLookback</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <a class="anchor" id="aa302a219e82072269d47d48249b3f81c"></a>
@@ -192,6 +208,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The company ids whose ads will be included for conversion tracking on the activities in this group. Only clicks and impressions of ads from these companies will lead to conversions on the containing activities. This attribute is required when creating an activity group. The company types allowed are: <a href="Company.Type#ADVERTISER">Company.Type::ADVERTISER</a>, and <a href="Company.Type#AD_NETWORK">Company.Type::AD_NETWORK</a>, and <a href="Company.Type#HOUSE_ADVERTISER">Company.Type::HOUSE_ADVERTISER</a> </p>
 
 </div>
 </div>
@@ -213,6 +231,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The unique ID of the </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html" title="Activities are organized within activity groups, which are sets of activities that share the same con...">ActivityGroup</a></code>. This attribute is readonly and is assigned by <a class="el" href="namespace_google.html">Google</a>. </p>
+
 </div>
 </div>
 <a class="anchor" id="a364b711778583d8c644b28eaf7e78cd5"></a>
@@ -232,6 +253,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#a5efe2f74031b2bb0f3f2c425863a1252" title="The unique ID of the ">id</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -253,6 +277,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>DFP records view-through conversions for users who have previously viewed a DFP ad within the number of days that you set here (1 to 30 days), then visits a webpage containing activity tags from this activity group. To be counted, the ad needs to belong to one of the companies associated with the activity group. This attribute is required to create an activity group. </p>
+
 </div>
 </div>
 <a class="anchor" id="a4bc0cc64e05fde0a46b2e3cb5a160023"></a>
@@ -272,6 +298,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#a793ce1a530b9ba2cca6d28af31b2a658" title="DFP records view-through conversions for users who have previously viewed a DFP ad within the number ...">impressionsLookback</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -293,6 +322,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The name of the </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html" title="Activities are organized within activity groups, which are sets of activities that share the same con...">ActivityGroup</a></code>. This attribute is required to create an activity group and has a maximum length of 255 characters. </p>
+
 </div>
 </div>
 <a class="anchor" id="a5db1a9dc4f885bdefffbb4fdde7f783d"></a>
@@ -312,6 +344,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The status of this activity group. This attribute is readonly. </p>
 
 </div>
 </div>
@@ -333,10 +367,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p></p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html#a5db1a9dc4f885bdefffbb4fdde7f783d" title="The status of this activity group. This attribute is readonly. ">status</a>, <code>false</code> otherwise. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.PWmu6pvWty/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.NHuZpdyZzY/dist/github/src/Dfp/v201411/<a class="el" href="v201411_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -344,7 +381,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411.html">v201411</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201411_1_1_activity_group.html">ActivityGroup</a></li>
-    <li class="footer">Generated on Thu Jul 30 2015 22:24:03 for Ads API .NET library by
+    <li class="footer">Generated on Tue Aug 25 2015 17:07:35 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>
