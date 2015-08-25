@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201505;
 
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// This code example gets all networks that you have access to with the
   /// current login credentials. A networkCode should be left out for this
   /// request.
-  ///
-  /// Tags: NetworkService.getAllNetworks
   /// </summary>
   class GetAllNetworks : SampleBase {
     /// <summary>
@@ -72,9 +68,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
           i++;
         }
         Console.WriteLine("Number of networks found: {0}", i);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get all networks. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

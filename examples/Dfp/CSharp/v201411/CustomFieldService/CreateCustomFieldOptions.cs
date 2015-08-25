@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// field. Once created, custom field options can be found under the options
   /// fields of the drop-down custom field and they cannot be deleted. To
   /// determine which custom fields exist, run GetAllCustomFields.cs.
-  ///
-  /// Tags: CustomFieldService.createCustomFieldOptions
   /// </summary>
   class CreateCustomFieldOptions : SampleBase {
     /// <summary>
@@ -88,9 +84,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } else {
           Console.WriteLine("No custom field options created.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create custom field options. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

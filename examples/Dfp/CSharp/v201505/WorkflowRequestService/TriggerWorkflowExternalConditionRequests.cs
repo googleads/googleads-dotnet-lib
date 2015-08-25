@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -26,9 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// This code example triggers all workflow external condition requests belonging to a
   /// specific proposal. Workflow external condition requests must be triggered or skipped
   /// for a workflow to finish. To determine which proposals exist, run GetAllProposals.cs.
-  ///
-  /// Tags: WorkflowRequestService.getWorkflowRequestsByStatement
-  /// Tags: WorkflowRequestService.performWorkflowRequestAction
   /// </summary>
   class TriggerWorkflowExternalConditionRequests : SampleBase {
     /// <summary>
@@ -120,9 +115,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
             Console.WriteLine("No workflow external condition requests were triggered.");
           }
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to tirgger workflow external condition requests. Exception " +
-            "says \"{0}\"", ex.Message);
+            "says \"{0}\"", e.Message);
       }
     }
   }

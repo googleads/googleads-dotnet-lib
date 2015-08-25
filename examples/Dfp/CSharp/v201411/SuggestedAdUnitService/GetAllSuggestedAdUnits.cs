@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// This code example gets all suggested ad units. To approve suggested ad
   /// units, run ApproveSuggestedAdUnits.cs. This feature is only available to
   /// DFP premium solution networks.
-  ///
-  /// Tags: SuggestedAdUnitService.getSuggestedAdUnitsByStatement
   /// </summary>
   class GetAllSuggestedAdUnits : SampleBase {
     /// <summary>
@@ -85,9 +81,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get suggested ad units. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
@@ -24,8 +22,6 @@ using System;
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example gets all the system defined creative templates.
-  ///
-  /// Tags: CreativeTemplateService.getCreativeTemplatesByStatement
   /// </summary>
   class GetCreativeTemplatesByStatement : SampleBase {
     /// <summary>
@@ -84,9 +80,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get creative templates. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

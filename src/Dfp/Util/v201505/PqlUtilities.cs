@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.v201505;
 
@@ -73,7 +71,7 @@ namespace Google.Api.Ads.Dfp.Util.v201505 {
     /// <summary>
     /// Gets the result set as list of string arrays.
     /// </summary>
-    /// <param param name="resultSet">The result set to convert to a string array list.</param>
+    /// <param name="resultSet">The result set to convert to a string array list.</param>
     /// <returns>A list of string arrays representing the result set.</returns>
     public static List<String[]> ResultSetToStringArrayList(ResultSet resultSet) {
       List<string[]> stringArrayList = new List<string[]>();
@@ -135,7 +133,7 @@ namespace Google.Api.Ads.Dfp.Util.v201505 {
     /// <summary>
     /// Creates the row seperator given the maximum size for each column.
     /// </summary>
-    /// <param name="maxColumnSizes"The maximum size for each column.></param>
+    /// <param name="maxColumnSizes">The maximum size for each column.</param>
     /// <returns>The row seperator.</returns>
     private static String CreateRowSeperator(List<int> maxColumnSizes) {
       StringBuilder rowSeperator = new StringBuilder("+");

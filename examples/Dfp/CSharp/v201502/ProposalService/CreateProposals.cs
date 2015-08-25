@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
 
@@ -23,8 +21,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example creates new proposals. To determine which proposals exist,
   /// run GetAllProposals.cs.
-  ///
-  /// Tags: ProposalService.createProposals
   /// </summary>
   class CreateProposals : SampleBase {
     /// <summary>
@@ -112,9 +108,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
           Console.WriteLine("A proposal with ID \"{0}\" and name \"{1}\" was created.",
               createdProposal.id, createdProposal.name);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
           Console.WriteLine("Failed to create proposals. Exception says \"{0}\"",
-                            ex.Message);
+                            e.Message);
       }
     }
   }

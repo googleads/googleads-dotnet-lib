@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley (https://github.com/Narwalter)
-
 using System;
 using System.Collections.Generic;
 using Google.Api.Ads.Dfp.Lib;
@@ -26,9 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// This example updates a content metadata key hierarchy by adding a hierarchy level. To
   /// determine which content metadata key hierarchies exist, run
   /// GetAllContentMetadataKeyHierarchies.cs.
-  ///
-  /// Tags: ContentMetadataKeyHierarchyService.getContentMetadataKeyHierarchiesByStatement
-  /// Tags: ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchies
   /// </summary>
   class UpdateContentMetadataKeyHierarchies : SampleBase {
 
@@ -109,9 +104,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
               "\"{1}\" was updated.", updatedContentMetadataKeyHierarchy.id,
               updatedContentMetadataKeyHierarchy.name);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to update content metadata key hierarchies. Exception " +
-            "says \"{0}\"", ex.Message);
+            "says \"{0}\"", e.Message);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 using Google.Api.Ads.Common.Lib;
@@ -34,6 +32,11 @@ namespace Google.Api.Ads.AdWords.Tests.v201506 {
     private long adGroupId2;
     private const double BID_MODIFIER = 0.2;
 
+    private long mobileCampaignId;
+    private long mobileAdGroupId;
+
+    private long sharedSetId;
+
     /// <summary>
     /// Inits this instance.
     /// </summary>
@@ -42,6 +45,12 @@ namespace Google.Api.Ads.AdWords.Tests.v201506 {
       campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
       adGroupId1 = utils.CreateAdGroup(user, campaignId);
       adGroupId2 = utils.CreateAdGroup(user, campaignId);
+
+      mobileCampaignId = utils.CreateMobileSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
+      mobileAdGroupId = utils.CreateAdGroup(user, mobileCampaignId);
+
+      sharedSetId = utils.CreateSharedKeywordSet(user);
+      utils.AttachSharedSetToCampaign(user, campaignId, sharedSetId);
 
       // Load defaults from config file.
       AdWordsAppConfig appConfig = new AdWordsAppConfig();
@@ -52,12 +61,21 @@ namespace Google.Api.Ads.AdWords.Tests.v201506 {
     }
 
     /// <summary>
+    /// Tears down the test case.
+    /// </summary>
+    [TearDown]
+    public void TearDown() {
+      utils.DetachSharedSetFromCampaign(user, campaignId, sharedSetId);
+      utils.DeleteSharedSet(user, sharedSetId);
+    }
+
+    /// <summary>
     /// Tests the AddClickToDownloadAd VB.NET code example.
     /// </summary>
     [Test]
     public void TestAddClickToDownloadAdVBExample() {
       RunExample(delegate() {
-        new VBExamples.AddClickToDownloadAd().Run(user, adGroupId1);
+        new VBExamples.AddClickToDownloadAd().Run(user, mobileAdGroupId);
       });
     }
 
@@ -67,7 +85,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201506 {
     [Test]
     public void TestAddClickToDownloadAdCSharpExample() {
       RunExample(delegate() {
-        new CSharpExamples.AddClickToDownloadAd().Run(user, adGroupId1);
+        new CSharpExamples.AddClickToDownloadAd().Run(user, mobileAdGroupId);
       });
     }
 

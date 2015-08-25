@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 using Google.Api.Ads.Common.Util;
@@ -29,8 +27,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// exemption requests, see HandlePolicyViolationError.cs. This code example
   /// uses only the final URL field when creating the Ad. To see more options,
   /// see AddTextAdWithUpgradedUrls.cs.
-  ///
-  /// Tags: AdGroupAdService.mutate
   /// </summary>
   public class AddTextAds : ExampleBase {
     /// <summary>
@@ -48,9 +44,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       try {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -125,8 +121,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         } else {
           Console.WriteLine("No text ads were created.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to create text ad.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to create text ad.", e);
       }
     }
   }

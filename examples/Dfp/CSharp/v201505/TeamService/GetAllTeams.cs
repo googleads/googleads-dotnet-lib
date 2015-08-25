@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -24,8 +22,6 @@ using System.Collections.Generic;
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example gets all teams. To create teams, run CreateTeams.cs.
-  ///
-  /// Tags: TeamService.getTeamsByStatement
   /// </summary>
   class GetAllTeams : SampleBase {
     /// <summary>
@@ -80,9 +76,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get all teams. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

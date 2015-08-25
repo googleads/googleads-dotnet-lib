@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example gets all line items which have a name beginning with
   /// "line item". This code example may take a while to run.
-  ///
-  /// Tags: PublisherQueryLanguageService.select
   /// </summary>
   class GetLineItemsNamedLike : SampleBase {
     /// <summary>
@@ -99,8 +95,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
         file.Headers.AddRange(rows[0]);
         file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
         file.Write("line_items_named_like_" + GetTimeStamp() + ".csv");
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to get line items. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get line items. Exception says \"{0}\"", e.Message);
       }
     }
   }

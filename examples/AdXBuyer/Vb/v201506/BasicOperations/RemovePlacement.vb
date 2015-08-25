@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201506
 
@@ -25,8 +23,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' <summary>
   ''' This code example removes a placement using the 'REMOVE' operator. To get
   ''' placements, run GetPlacements.vb.
-  '''
-  ''' Tags: AdGroupCriterionService.mutate
   ''' </summary>
   Public Class RemovePlacement
     Inherits ExampleBase
@@ -41,9 +37,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         Dim placementId As Long = Long.Parse("INSERT_PLACEMENT_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId, placementId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -98,8 +94,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         Else
           Console.WriteLine("No placement was removed.")
         End If
-      Catch ex As Exception
-        Console.WriteLine("Failed to remove placement. Exception says ""{0}""", ex.Message)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to remove placements.", e)
       End Try
     End Sub
   End Class

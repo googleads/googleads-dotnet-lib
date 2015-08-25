@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
 using Google.Api.Ads.Dfp.Util.v201411;
@@ -132,9 +130,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } else {
           Console.WriteLine("Report job with ID '{0}' completed successfully.", reportJob.id);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to run cusom fields report. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

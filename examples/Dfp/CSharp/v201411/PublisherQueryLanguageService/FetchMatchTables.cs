@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example fetches and creates match table files from the
   /// Line_Item and Ad_Unit tables. This example may take a while to run.
-  ///
-  /// Tags: PublisherQueryLanguageService.select
   /// </summary>
   class FetchMatchTables : SampleBase {
     /// <summary>
@@ -79,8 +75,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
 
         Console.WriteLine("Ad units saved to %s", adUnitFilePath);
         Console.WriteLine("Line items saved to %s\n", lineItemFilePath);
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to get match tables. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get match tables. Exception says \"{0}\"", e.Message);
       }
     }
 

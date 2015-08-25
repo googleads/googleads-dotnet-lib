@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 #pragma warning disable 1591
 
 namespace Google.Api.Ads.AdWords.v201502 {

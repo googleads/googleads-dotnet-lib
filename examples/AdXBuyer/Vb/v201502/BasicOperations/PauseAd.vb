@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 
@@ -24,8 +22,6 @@ Imports System.IO
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' <summary>
   ''' This code example pauses a given ad. To list all ads, run GetTextAds.cs.
-  '''
-  ''' Tags: AdGroupAdService.mutate
   ''' </summary>
   Public Class PauseAd
     Inherits ExampleBase
@@ -40,9 +36,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         Dim adId As Long = Long.Parse("INSERT_AD_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId, adId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -95,8 +91,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
         Else
           Console.WriteLine("No ads were paused.")
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to pause ad.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to pause ad.", e)
       End Try
     End Sub
   End Class

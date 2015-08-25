@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// <summary>
   /// This code example creates an advertiser in a given DFA network. To get
   /// the network id, run Authenticate.cs.
-  ///
-  /// Tags: advertiser.saveAdvertiser
   /// </summary>
   class CreateAdvertiser : SampleBase {
     /// <summary>
@@ -80,9 +76,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         } else {
           Console.WriteLine("Could not create advertiser for the specified network id.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create advertiser. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

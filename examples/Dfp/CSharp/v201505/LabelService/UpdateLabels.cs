@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// This code example updates a label's description. To determine which labels
   /// exist, run GetAllLabels.cs. This feature is only available to DFP premium
   /// solution networks.
-  ///
-  /// Tags: LabelService.getLabelsByStatement, LabelService.updateLabels
   /// </summary>
   class UpdateLabels : SampleBase {
     /// <summary>
@@ -86,8 +82,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
               updatedLabel.id, updatedLabel.name);
         }
 
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to update labels. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to update labels. Exception says \"{0}\"", e.Message);
       }
     }
   }

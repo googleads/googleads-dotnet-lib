@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201505;
 using Google.Api.Ads.Dfp.Util.v201505;
@@ -24,9 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example updates contact addresses. To determine which contacts
   /// exist, run GetAllContacts.cs.
-  ///
-  /// Tags: ContactService.getContactsByStatement
-  /// Tags: ContactService.updateContacts
   /// </summary>
   class UpdateContacts : SampleBase {
     /// <summary>
@@ -83,8 +78,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
           Console.WriteLine("Contact with ID \"{0}\", name \"{1}\", and comment \"{2}\" was " +
               "updated.", updatedContact.id, updatedContact.name, updatedContact.comment);
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to update contacts. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to update contacts. Exception says \"{0}\"", e.Message);
       }
     }
   }

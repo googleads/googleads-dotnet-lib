@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// This code example updates all placements to allow for AdSense targeting
   /// up to the first 500. To determine which placements exist, run
   /// GetAllPlacements.cs.
-  ///
-  /// Tags: PlacementService.getPlacementsByStatement
-  /// Tags: PlacementService.updatePlacements
   /// </summary>
   class UpdatePlacements : SampleBase {
     /// <summary>
@@ -98,9 +93,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
             Console.WriteLine("No placements updated.");
           }
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to update placements. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

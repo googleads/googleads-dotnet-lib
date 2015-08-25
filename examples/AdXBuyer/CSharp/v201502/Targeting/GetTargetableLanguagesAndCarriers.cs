@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example illustrates how to retrieve all carriers and languages
   /// available for targeting.
-  ///
-  /// Tags: ConstantDataService.getCarrierCriterion
-  /// Tags: ConstantDataService.getLanguageCriterion
   /// </summary>
   public class GetTargetableLanguagesAndCarriers : ExampleBase {
     /// <summary>
@@ -39,9 +34,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       Console.WriteLine(codeExample.Description);
       try {
         codeExample.Run(new AdWordsUser());
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -90,9 +85,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No languages were found.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         throw new System.ApplicationException("Failed to get targetable carriers and languages.",
-            ex);
+            e);
       }
     }
   }

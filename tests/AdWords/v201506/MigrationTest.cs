@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 using Google.Api.Ads.Common.Tests;
@@ -50,26 +48,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201506 {
       campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
       adGroupId = utils.CreateAdGroup(user, campaignId);
       adId = utils.CreateTextAd(user, adGroupId, false);
-    }
-
-    /// <summary>
-    /// Tests the UpgradeAdUrl VB.NET code example.
-    /// </summary>
-    [Test]
-    public void UpgradeAdUrlVBExample() {
-      RunExample(delegate() {
-        new VBExamples.UpgradeAdUrl().Run(user, adGroupId, adId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the UpgradeAdUrl C# code example.
-    /// </summary>
-    [Test]
-    public void UpgradeAdUrlCSharpExample() {
-      RunExample(delegate() {
-        new CSharpExamples.UpgradeAdUrl().Run(user, adGroupId, adId);
-      });
     }
 
     /// <summary>

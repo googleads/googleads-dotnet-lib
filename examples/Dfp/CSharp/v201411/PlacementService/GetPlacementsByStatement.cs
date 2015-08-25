@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example gets all active placements by using a statement. To
   /// create a placement, run CreatePlacements.cs.
-  ///
-  /// Tags: PlacementService.getPlacementsByStatement
   /// </summary>
   class GetPlacementsByStatement : SampleBase {
     /// <summary>
@@ -85,9 +81,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get placement by statement. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

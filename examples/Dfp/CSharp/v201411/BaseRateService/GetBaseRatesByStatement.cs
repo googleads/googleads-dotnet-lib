@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// This code example gets all base rates belonging to a rate card. To create product base rates,
   /// run CreateProductBaseRates.cs. To create product template base rates, run
   /// CreateProductTemplateBaseRates.cs.
-  ///
-  /// Tags: BaseRateService.getBaseRatesByStatement
   /// </summary>
   class GetBaseRatesByStatement : SampleBase {
     /// <summary>
@@ -88,9 +84,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get base rates by statement. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

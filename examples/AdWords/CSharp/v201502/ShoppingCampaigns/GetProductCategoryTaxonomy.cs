@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
 
   /// <summary>
   /// This code example fetches the set of valid ProductBiddingCategories.
-  ///
-  /// Tags: ConstantDataService.getProductBiddingCategoryData
   /// </summary>
   public class GetProductCategoryTaxonomy : ExampleBase {
 
@@ -100,9 +96,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       Console.WriteLine(codeExample.Description);
       try {
         codeExample.Run(new AdWordsUser());
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -159,8 +155,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         }
 
         DisplayProductCategories(rootCategories, "");
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to set shopping product category.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to set shopping product category.", e);
       }
     }
 

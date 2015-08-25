@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// This code example imports offline conversion values for specific clicks to
   /// your account. To get Google Click ID for a click, run
   /// CLICK_PERFORMANCE_REPORT.
-  ///
-  /// Tags: ConversionTrackerService.mutate, OfflineConversionFeedService.mutate
   /// </summary>
   public class UploadOfflineConversions : ExampleBase {
     /// <summary>
@@ -46,9 +42,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       Console.WriteLine(codeExample.Description);
       try {
         codeExample.Run(new AdWordsUser(), conversionName, gClId, conversionTime, conversionValue);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -131,8 +127,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         Console.WriteLine("Uploaded offline conversion value of {0} for Google Click ID = " +
             "'{1}' to '{2}'.", newFeed.conversionValue, newFeed.googleClickId,
             newFeed.conversionName);
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed upload offline conversions.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed upload offline conversions.", e);
       }
     }
   }

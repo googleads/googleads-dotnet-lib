@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
 using Google.Api.Ads.Dfp.v201502;
@@ -28,8 +26,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// determine which line items exist, run GetAllLineItems.cs. To determine
   /// which custom targeting keys and values exist, run
   /// GetAllCustomTargetingKeysAndValues.cs.
-  ///
-  /// Tags: LineItemService.getLineItemsByStatement, LineItemService.updateLineItems
   /// </summary>
   class TargetCustomCriteria : SampleBase {
 
@@ -125,9 +121,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
               updatedLineItem.id,
               getCustomCriteriaSetString(updatedLineItem.targeting.customTargeting, 0));
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to add custom target criteria. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
 

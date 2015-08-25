@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// This code example creates new labels. To determine which labels exist, run
   /// GetAllLabels.cs. This feature is only available to DFP premium solution
   /// networks.
-  ///
-  /// Tags: LabelService.createLabels
   /// </summary>
   class CreateLabels : SampleBase {
     /// <summary>
@@ -85,8 +81,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } else {
           Console.WriteLine("No labels created.");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to create labels. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to create labels. Exception says \"{0}\"", e.Message);
       }
     }
   }

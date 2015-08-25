@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example approves an order and all line items belonging to that order. To determine
   /// which orders exist, run GetAllOrders.cs.
-  ///
-  /// Tags: OrderService.getOrdersByStatement, OrderService.performOrderAction
   /// </summary>
   class ApproveOrder : SampleBase {
     /// <summary>
@@ -110,9 +106,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
             Console.WriteLine("No orders were approved.");
           }
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to approve orders. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

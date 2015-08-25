@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201506
 
@@ -26,8 +24,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' This code example gets all videos and images. To upload video, see
   ''' http://adwords.google.com/support/aw/bin/answer.py?hl=en&amp;answer=39454.
   ''' To upload image, run UploadImage.vb.
-  '''
-  ''' Tags: MediaService.get
   ''' </summary>
   Public Class GetAllVideosAndImages
     Inherits ExampleBase
@@ -40,9 +36,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Console.WriteLine(codeExample.Description)
       Try
         codeExample.Run(New AdWordsUser)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -116,8 +112,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
           offset = offset + pageSize
         Loop While (offset < page.totalNumEntries)
         Console.WriteLine("Number of images and videos found: {0}", page.totalNumEntries)
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to get images and videos.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to get images and videos.", e)
       End Try
     End Sub
 

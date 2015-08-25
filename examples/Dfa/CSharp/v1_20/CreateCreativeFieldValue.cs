@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_20;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
   /// <summary>
   /// This code example creates a creative field value associated with a given
   /// creative field. To get the creative field id, run GetCreativeFields.cs.
-  ///
-  /// Tags: creativefield.saveCreativeFieldValue
   /// </summary>
   class CreateCreativeFieldValue : SampleBase {
     /// <summary>
@@ -77,9 +73,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
         // Display creative field value id.
         Console.WriteLine("Creative field value with id \"{0}\" was created.",
             creativeFieldValueSaveResult.id);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to add creative field value. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

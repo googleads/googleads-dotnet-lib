@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example deactivates all active ad units. To determine which ad
   /// units exist, run GetAllAdUnits.cs or GetInventoryTree.cs.
-  ///
-  /// Tags: InventoryService.getAdUnitsByStatement
-  /// Tags: InventoryService.performAdUnitAction
   /// </summary>
   class DeActivateAdUnits : SampleBase {
     /// <summary>
@@ -110,8 +105,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           Console.WriteLine("No ad units were deactivated.");
         }
 
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to deactivate ad units. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to deactivate ad units. Exception says \"{0}\"", e.Message);
       }
     }
   }

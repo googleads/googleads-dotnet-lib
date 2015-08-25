@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
 using Google.Api.Ads.Dfp.v201502;
@@ -24,9 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example updates a fixed exchange rate's value. To determine which
   /// exchange rates exist, run GetAllExchangeRates.cs.
-  ///
-  /// Tags: ExchangeRateService.getExchangeRatesByStatement
-  /// Tags: ExchangeRateService.updateExchangeRates
   /// </summary>
   class UpdateExchangeRates : SampleBase {
     /// <summary>
@@ -93,9 +88,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No exchange rates updated.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to update exchange rates. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

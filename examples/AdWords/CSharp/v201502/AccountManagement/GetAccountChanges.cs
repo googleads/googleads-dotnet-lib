@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example gets the changes in the account during the last 24
   /// hours.
-  ///
-  /// Tags: CustomerSyncService.get
   /// </summary>
   public class GetAccountChanges : ExampleBase {
     /// <summary>
@@ -39,9 +35,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       Console.WriteLine(codeExample.Description);
       try {
         codeExample.Run(new AdWordsUser());
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -123,8 +119,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No account changes were found.");;
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to get account changes.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to get account changes.", e);
       }
     }
 

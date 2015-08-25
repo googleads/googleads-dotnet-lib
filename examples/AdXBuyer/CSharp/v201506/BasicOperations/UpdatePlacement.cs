@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// <summary>
   /// This code example updates the bid of a placement. To get placement, run
   /// GetPlacements.cs.
-  ///
-  /// Tags: AdGroupCriterionService.mutate
   /// </summary>
   public class UpdatePlacement : ExampleBase {
     /// <summary>
@@ -40,9 +36,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         long placementId = long.Parse("INSERT_PLACEMENT_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId, placementId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -71,6 +67,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       // Since we are not updating any placement-specific fields, it is enough to
       // create a criterion object.
       Criterion criterion = new Criterion();
+      criterion.CriterionType = "PLACEMENT";
       criterion.id = placementId;
 
       // Create ad group criterion.
@@ -114,8 +111,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         } else {
           Console.WriteLine("No placement was updated.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to update placement.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to update placement.", e);
       }
     }
   }

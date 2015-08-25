@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201506
 
@@ -26,9 +24,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' This code example creates a shared keyword list, adds keywords to the list
   ''' and attaches it to an existing campaign. To get the list of campaigns,
   ''' run GetCampaigns.vb.
-  '''
-  ''' Tags: SharedSetService.mutate, SharedCriterionService.mutate
-  ''' Tags: CampaignSharedSetService.mutate
   ''' </summary>
   Public Class CreateAndAttachSharedKeywordSet
     Inherits ExampleBase
@@ -43,9 +38,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Try
         Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
         codeExample.Run(New AdWordsUser(), campaignId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -91,9 +86,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
 
         Console.WriteLine("Attached shared set with id = {0} to campaign id {1}.", _
             attachedSharedSet.sharedSetId, attachedSharedSet.campaignId)
-      Catch ex As Exception
+      Catch e As Exception
         Throw New System.ApplicationException("Failed to create shared keyword set and attach " & _
-            "it to a campaign.", ex)
+            "it to a campaign.", e)
       End Try
     End Sub
 

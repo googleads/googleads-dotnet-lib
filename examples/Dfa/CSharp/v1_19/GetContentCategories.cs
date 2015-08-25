@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// <summary>
   /// This code example displays available content categories for a given search
   /// string. Results are limited to 10.
-  ///
-  /// Tags: contentcategory.getContentCategories
   /// </summary>
   class GetContentCategories : SampleBase {
     /// <summary>
@@ -81,9 +77,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         } else {
           Console.WriteLine("No content categories found for your search criteria.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get content categories. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

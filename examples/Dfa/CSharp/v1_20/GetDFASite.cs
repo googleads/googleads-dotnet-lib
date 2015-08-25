@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_20;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
   /// <summary>
   /// This code example gets existing DFA sites based on a given search
   /// criteria. Results are limited to the first 10.
-  ///
-  /// Tags: site.getDfaSites
   /// </summary>
   class GetDFASite : SampleBase {
     /// <summary>
@@ -82,9 +78,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
           Console.WriteLine("No DFA sites found for your search criteria.");
         }
 
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to retrieve DFA sites. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

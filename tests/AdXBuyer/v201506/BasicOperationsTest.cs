@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.v201506;
 
 using NUnit.Framework;
@@ -44,7 +42,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201506 {
     public void Init() {
       campaignId = utils.CreateDisplayCampaign(user, BiddingStrategyType.MANUAL_CPM);
       adGroupId = utils.CreateAdGroup(user, campaignId, true);
-      adId = utils.CreateTextAd(user, adGroupId, false);
+      adId = utils.CreateThirdPartyRedirectAd(user, adGroupId);
       placementId = utils.CreatePlacement(user, adGroupId);
     }
 

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
 using Google.Api.Ads.Dfp.Util.v201411;
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example updates activity groups by adding a company. To
   /// determine which activity groups exist, run GetAllActivityGroups.cs.
-  ///
-  /// Tags: ActivityGroupService.getActivityGroupsByStatement
-  /// Tags: ActivityGroupService.updateActivityGroups
   /// </summary>
   class UpdateActivityGroups : SampleBase {
     /// <summary>
@@ -90,8 +85,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           Console.WriteLine("Activity group with ID \"{0}\" and name \"{1}\" was updated.",
               updatedActivityGroup.id, updatedActivityGroup.name);
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to update activity groups. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to update activity groups. Exception says \"{0}\"", e.Message);
       }
     }
   }

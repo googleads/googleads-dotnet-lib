@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using System;
 using System.Collections.Generic;
 using Google.Api.Ads.AdWords.Lib;
@@ -24,9 +22,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example adds an ad customizer feed. Then it adds an ad in two
   /// different adgroups that uses the feed to populate dynamic data.
-  ///
-  /// Tags: AdCustomizerFeedService.mutate, FeedItemService.mutate
-  /// Tags: AdGroupAdService.mutate
   /// </summary>
   public class AddAdCustomizers : ExampleBase {
 
@@ -42,9 +37,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         long adGroupId2 = long.Parse("INSERT_ADGROUP_ID_HERE");
         string feedName = "INSERT_FEED_NAME_HERE";
         codeExample.Run(new AdWordsUser(), adGroupId1, adGroupId2, feedName);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 

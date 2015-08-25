@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.v1_20;
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Common.Lib;
@@ -87,9 +85,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.OAuth {
           Console.WriteLine("Ad type with name \"{0}\" and id \"{1}\" was found.", result.name,
               result.id);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to retrieve ad types. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
 

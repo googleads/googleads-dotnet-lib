@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example creates all proposal line items within an IN_PROGRESS package. To determine
   /// which packages exist, run GetAllPackages.cs.
-  ///
-  /// Tags: PackageService.getPackagesByStatement, PackageService.performPackageAction
   /// </summary>
   class CreateProposalLineItemsFromPackage : SampleBase {
     /// <summary>
@@ -71,7 +67,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
       // Set default for page.
       PackagePage page = new PackagePage();
       List<string> packageIds = new List<string>();
-      int i = 0;
 
       try {
         // Get the package.
@@ -99,9 +94,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
           Console.WriteLine("No proposal line items were created.");
         }
 
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create proposal line items. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

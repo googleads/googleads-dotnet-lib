@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_20;
 
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
   /// This code example creates a new activity group for a given spotlight
   /// configuration. To get spotLight tag configuration, run GetAdvertisers.cs.
   /// To get activity types, run GetActivityTypes.cs.
-  ///
-  /// Tags: spotlight.saveSpotlightActivityGroup
   /// </summary>
   class CreateSpotlightActivityGroup : SampleBase {
     /// <summary>
@@ -82,9 +78,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
         if (result != null) {
           Console.WriteLine("Activity group with id \"{0}\" was created.", result.id);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create spotlight activity group. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// <summary>
   /// This code example adds a Shared Bidding Strategy and uses it to construct
   /// a campaign.
-  ///
-  /// Tags: BiddingStrategyService.mutate
-  /// Tags: BudgetService.mutate, CampaignService.mutate
   /// </summary>
   public class UseSharedBiddingStrategy : ExampleBase {
     /// <summary>
@@ -39,9 +34,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       Console.WriteLine(codeExample.Description);
       try {
         codeExample.Run(new AdWordsUser());
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -95,9 +90,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
               "created.", newCampaign.name, newCampaign.id,
               newCampaign.biddingStrategyConfiguration.biddingStrategyId);
 
-      } catch (Exception ex) {
+      } catch (Exception e) {
         throw new System.ApplicationException("Failed to create campaign that uses shared " +
-            "bidding strategy.", ex);
+            "bidding strategy.", e);
       }
     }
 

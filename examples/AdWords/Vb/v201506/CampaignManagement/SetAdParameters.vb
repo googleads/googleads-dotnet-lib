@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201506
 
@@ -26,8 +24,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' This code example illustrates how to create a text ad with ad parameters.
   ''' To add an ad group, run AddAdGroup.vb. To add a keyword, run
   ''' AddKeyword.vb.
-  '''
-  ''' Tags: AdGroupAdService.mutate, AdParamService.mutate
   ''' </summary>
   Public Class SetAdParameters
     Inherits ExampleBase
@@ -43,9 +39,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         Dim criterionId As Long = Long.Parse("INSERT_CRITERION_ID_HERE")
 
         codeExample.Run(New AdWordsUser, adGroupId, criterionId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -108,8 +104,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
           Console.WriteLine("No text ads were created.")
           Return
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to create text ads.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to create text ads.", e)
         Return
       End Try
 
@@ -147,8 +143,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         Else
           Console.WriteLine("No ad parameters were set.")
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to set ad parameter(s).", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to set ad parameter(s).", e)
       End Try
     End Sub
   End Class

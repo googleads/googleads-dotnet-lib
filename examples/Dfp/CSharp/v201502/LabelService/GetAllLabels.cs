@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
 using Google.Api.Ads.Dfp.v201502;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example gets all labels. To create labels, run CreateLabels.cs.
   /// This feature is only available to DFP premium solution networks.
-  ///
-  /// Tags: LabelService.getLabelsByStatement
   /// </summary>
   class GetAllLabels : SampleBase {
     /// <summary>
@@ -86,8 +82,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
           }
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to get labels. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get labels. Exception says \"{0}\"", e.Message);
       }
     }
   }

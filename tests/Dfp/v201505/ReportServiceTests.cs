@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201505;
 
@@ -70,11 +68,13 @@ namespace Google.Api.Ads.Dfp.Tests.v201505 {
           Column.AD_SERVER_WITHOUT_CPD_AVERAGE_ECPM};
       reportJob.reportQuery.dateRangeType = DateRangeType.LAST_MONTH;
 
+      ReportJob newReportJob = null;
+
       Assert.DoesNotThrow(delegate() {
-        reportJob = reportService.runReportJob(reportJob);
+        newReportJob = reportService.runReportJob(reportJob);
       });
 
-      Assert.NotNull(reportJob);
+      Assert.NotNull(newReportJob);
     }
 
     /// <summary>
@@ -92,11 +92,13 @@ namespace Google.Api.Ads.Dfp.Tests.v201505 {
           Column.TOTAL_INVENTORY_LEVEL_CPM_AND_CPC_REVENUE};
       reportJob.reportQuery.dateRangeType = DateRangeType.LAST_WEEK;
 
+      ReportJob newReportJob = null;
+
       Assert.DoesNotThrow(delegate() {
-        reportJob = reportService.runReportJob(reportJob);
+        newReportJob = reportService.runReportJob(reportJob);
       });
 
-      Assert.NotNull(reportJob);
+      Assert.NotNull(newReportJob);
     }
 
     /// <summary>
@@ -112,11 +114,13 @@ namespace Google.Api.Ads.Dfp.Tests.v201505 {
           Column.AD_SERVER_CPM_AND_CPC_REVENUE, Column.AD_SERVER_WITHOUT_CPD_AVERAGE_ECPM};
       reportJob.reportQuery.dateRangeType = DateRangeType.LAST_MONTH;
 
+      ReportJob newReportJob = null;
+
       Assert.DoesNotThrow(delegate() {
-        reportJob = reportService.runReportJob(reportJob);
+        newReportJob = reportService.runReportJob(reportJob);
       });
 
-      Assert.NotNull(reportJob);
+      Assert.NotNull(newReportJob);
     }
 
     /// <summary>

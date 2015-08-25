@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_20;
 
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
   /// This code example displays advertiser name, id and spotlight
   /// configuration id for the given search criteria. Results are limited to
   /// first 10 records.
-  ///
-  /// Tags: advertiser.getAdvertisers
   /// </summary>
   class GetAdvertisers : SampleBase {
     /// <summary>
@@ -81,8 +77,8 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
         } else {
           Console.WriteLine("No advertisers found for your criteria.");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to retrieve advertisers. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to retrieve advertisers. Exception says \"{0}\"", e.Message);
       }
     }
   }

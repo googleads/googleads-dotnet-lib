@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Dfa.Util;
 
@@ -104,13 +102,13 @@ namespace Google.Api.Ads.Dfa.Lib {
     /// Determines whether the exception thrown by the server is due to a login
     /// token expiration.
     /// </summary>
-    /// <param name="ex">The exception.</param>
+    /// <param name="exception">The exception.</param>
     /// <returns>True, if the server exception is a AuthToken invalid error,
     /// false otherwise.</returns>
-    public static bool IsTokenExpiredError(Exception ex) {
-      if (ex is DfaApiException) {
-        DfaApiException dfaEx = (DfaApiException) ex;
-        if (dfaEx.ErrorCode == TOKEN_EXPIRED_CODE && dfaEx.Message.CompareTo(
+    public static bool IsTokenExpiredError(Exception exception) {
+      if (exception is DfaApiException) {
+        DfaApiException dfaException = (DfaApiException) exception;
+        if (dfaException.ErrorCode == TOKEN_EXPIRED_CODE && dfaException.Message.CompareTo(
             TOKEN_EXPIRED_MESSAGE) == 0) {
           return true;
         }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley, (https://www.github.com/narwalter)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -23,8 +21,6 @@ using System;
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example gets all packages. To create packages, run CreatePackages.cs.
-  ///
-  /// Tags: PackageService.getPackagesByStatement
   /// </summary>
   class GetAllPackages : SampleBase {
     /// <summary>
@@ -80,9 +76,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get all packages. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

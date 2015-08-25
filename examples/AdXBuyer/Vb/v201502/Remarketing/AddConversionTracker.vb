@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 
@@ -24,8 +22,6 @@ Imports System.IO
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' <summary>
   ''' This code example adds an AdWords conversion tracker.
-  '''
-  ''' Tags: ConversionTrackerService.mutate
   ''' </summary>
   Public Class AddConversionTracker
     Inherits ExampleBase
@@ -38,9 +34,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Console.WriteLine(codeExample.Description)
       Try
         codeExample.Run(New AdWordsUser)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -102,8 +98,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
         Else
           Console.WriteLine("No conversion trackers were added.")
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to add conversion tracker.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to add conversion tracker.", e)
       End Try
     End Sub
   End Class

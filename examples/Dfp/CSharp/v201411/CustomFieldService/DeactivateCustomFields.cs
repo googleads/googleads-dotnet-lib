@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
@@ -26,9 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example deactivates a custom field. To determine which custom fields exist,
   /// run GetAllCustomFields.cs.
-  ///
-  /// Tags: CustomFieldService.getCustomFieldsByStatement
-  /// Tags: CustomFieldService.performCustomFieldAction
   /// </summary>
   class DeactivateCustomFields : SampleBase {
     /// <summary>
@@ -113,8 +108,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
             Console.WriteLine("No custom fields were deactivated.");
           }
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to deactivate custom fields. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to deactivate custom fields. Exception says \"{0}\"", e.Message);
       }
     }
   }

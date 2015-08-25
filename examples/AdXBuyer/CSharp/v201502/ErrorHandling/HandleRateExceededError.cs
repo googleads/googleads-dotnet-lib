@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -29,8 +27,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// 100 threads in parallel, each thread attempting to validate 100 keywords
   /// in a single request. Note that spawning 100 parallel threads is for
   /// illustrative purposes only, you shouldn't do this in your application.
-  ///
-  /// Tags: AdGroupAdService.mutate
   /// </summary>
   public class HandleRateExceededError: ExampleBase {
     /// <summary>
@@ -43,9 +39,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       try {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -168,12 +164,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
               // Validate the keywords.
               AdGroupCriterionReturnValue retval = service.mutate(operations.ToArray());
               break;
-            } catch (AdWordsApiException ex) {
+            } catch (AdWordsApiException e) {
               // Handle API errors.
-              ApiException innerException = ex.ApiException as ApiException;
+              ApiException innerException = e.ApiException as ApiException;
               if (innerException == null) {
                 throw new Exception("Failed to retrieve ApiError. See inner exception for more " +
-                    "details.", ex);
+                    "details.", e);
               }
               foreach (ApiError apiError in innerException.errors) {
                 if (!(apiError is RateExceededError)) {
@@ -195,8 +191,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
               }
             }
           }
-        } catch (Exception ex) {
-          throw new System.ApplicationException("Failed to validate keywords.", ex);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to validate keywords.", e);
         }
       }
     }

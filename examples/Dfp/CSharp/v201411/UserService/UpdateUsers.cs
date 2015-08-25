@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example updates a user by adding "Sr." to the end of its
   /// name. To determine which users exist, run GetAllUsers.cs.
-  ///
-  /// Tags: UserService.getUsersByStatement, UserService.updateUsers
   /// </summary>
   class UpdateUsers : SampleBase {
     /// <summary>
@@ -87,9 +83,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } else {
           Console.WriteLine("No users updated.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get user by ID. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

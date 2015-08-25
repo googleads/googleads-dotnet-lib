@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// This code example deactivates a user. Deactivated users can no longer make
   /// requests to the API. The user making the request cannot deactivate itself.
   /// To determine which users exist, run GetAllUsers.cs.
-  ///
-  /// Tags: UserService.getUsersByStatement, UserService.performUserAction
   /// </summary>
   class DeactivateUser : SampleBase {
     /// <summary>
@@ -112,9 +108,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
             Console.WriteLine("No users were deactivated.");
           }
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to deactivate users. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

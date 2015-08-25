@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 Imports Google.Api.Ads.Common.Util
@@ -25,8 +23,6 @@ Imports System.IO
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' <summary>
   ''' This code example uploads an image. To get images, run GetAllVideosAndImages.vb.
-  '''
-  ''' Tags: MediaService.upload
   ''' </summary>
   Public Class UploadImage
     Inherits ExampleBase
@@ -39,9 +35,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Console.WriteLine(codeExample.Description)
       Try
         codeExample.Run(New AdWordsUser)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -83,8 +79,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
         Else
           Console.WriteLine("No images were uploaded.")
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to upload images.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to upload images.", e)
       End Try
     End Sub
 

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example gets workflow external condition requests. Workflow external condition
   /// requests must be triggered or skipped for a workflow to finish.
-  ///
-  /// Tags: WorkflowRequestService.getWorkflowRequestsByStatement
   /// </summary>
   class GetWorkflowExternalConditionRequests : SampleBase {
     /// <summary>
@@ -84,9 +80,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get workflow requests by statement. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

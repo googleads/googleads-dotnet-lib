@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// This code example assigns creatives to placements and creates a unique ad
   /// for each assignment. To get creatives, run GetCreatives.cs. To get
   /// placements, run GetPlacement.cs.
-  ///
-  /// Tags: creative.assignCreativesToPlacements
   /// </summary>
   class AssignCreativesToPlacements : SampleBase {
     /// <summary>
@@ -82,9 +78,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
           Console.WriteLine("Ad with name \"{0}\" and id \"{1}\" was created.", result.adName,
               result.adId);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create ad. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

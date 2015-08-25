@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
 using Google.Api.Ads.Dfp.v201502;
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example deactivates all LICAs for a given line item. To determine
   /// which LICAs exist, run GetAllLicas.cs.
-  ///
-  /// Tags: LineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement
-  /// Tags: LineItemCreativeAssociationService.performLineItemCreativeAssociationAction
   /// </summary>
   class DeactivateLicas : SampleBase {
     /// <summary>
@@ -114,8 +109,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
             Console.WriteLine("No LICAs were deactivated.");
           }
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to deactivate LICAs. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to deactivate LICAs. Exception says \"{0}\"", e.Message);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// This code example retrieves available creatives for a given advertiser
   /// and displays the name and id. To create an advertiser, run
   /// CreateAdvertiser.cs. Results are limited to the first 10.
-  ///
-  /// Tags: creative.getCreatives
   /// </summary>
   class GetCreatives : SampleBase {
     /// <summary>
@@ -82,8 +78,8 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         } else {
           Console.WriteLine("No creatives found for your criteria");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to retrieve creatives. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to retrieve creatives. Exception says \"{0}\"", e.Message);
       }
     }
   }

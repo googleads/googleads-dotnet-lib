@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
 
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example gets all active creative wrappers. To create
   /// creative wrappers, run CreateCreativeWrappers.cs.
-  ///
-  /// Tags: CreativeWrapperService.getCreativeWrapperByStatement
   /// </summary>
   class GetActiveCreativeWrappers : SampleBase {
     /// <summary>
@@ -86,9 +82,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get active creative wrappers. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -27,9 +25,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// <summary>
   /// This code example shows how to add placements in bulk using the
   /// MutateJobService.
-  ///
-  /// Tags: MutateJobService.mutate, MutateJobService.get
-  /// Tags: MutateJobService.getResult
   /// </summary>
   public class AddPlacementsInBulk : ExampleBase {
     /// <summary>
@@ -42,9 +37,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       try {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -121,9 +116,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
               retryCount++;
             }
           }
-        } catch (Exception ex) {
+        } catch (Exception e) {
           throw new System.ApplicationException(string.Format("Failed to fetch simple mutate " +
-              "job with id = {0}.", job.id), ex);
+              "job with id = {0}.", job.id), e);
         }
       }
 

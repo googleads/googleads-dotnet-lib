@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
@@ -26,9 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example updates custom field descriptions. To determine which
   /// custom fields exist, run GetAllCustomFields.cs.
-  ///
-  /// Tags: CustomFieldService.getCustomFieldsByStatement
-  /// Tags: CustomFieldService.updateCustomFields
   /// </summary>
   class UpdateCustomFields : SampleBase {
     /// <summary>
@@ -88,8 +83,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
               "\"{2}\" was updated.", updatedCustomField.id, updatedCustomField.name,
               updatedCustomField.description);
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to update custom fields. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to update custom fields. Exception says \"{0}\"", e.Message);
       }
     }
   }

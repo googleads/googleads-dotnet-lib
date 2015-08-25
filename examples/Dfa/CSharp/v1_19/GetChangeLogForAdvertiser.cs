@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -30,8 +28,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// A similar pattern can be applied to get change logs for many other object
   /// types. Run GetChangeLogObjectTypes.cs for a list of other supported object
   /// types and their id numbers.
-  ///
-  /// Tags: changelog.getChangeLogRecords
   /// </summary>
   class GetChangeLogForAdvertiser : SampleBase {
     /// <summary>
@@ -95,9 +91,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         } else {
           Console.WriteLine("No change logs found for your search criteria.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to retrieve change logs. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -28,8 +26,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   ///
   /// CAUTION: An advertiser that has campaigns associated with it cannot be
   /// removed from an advertiser group once assigned.
-  ///
-  /// Tags: advertisergroup.assignAdvertisersToAdvertiserGroup
   /// </summary>
   class AssignAdvertisersToAdvertiserGroup : SampleBase {
     /// <summary>
@@ -75,9 +71,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         service.assignAdvertisersToAdvertiserGroup(advertiserGroupId, advertiserIds);
 
         Console.WriteLine("Assigned advertisers to advertiser group successfully.");
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to add advertisers to advertiser group. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

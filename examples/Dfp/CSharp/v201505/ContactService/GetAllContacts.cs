@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201505;
 using Google.Api.Ads.Dfp.Util.v201505;
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example gets all contacts. To create contacts, run
   /// CreateContacts.cs.
-  ///
-  /// Tags: ContactService.getContactsByStatement
   /// </summary>
   class GetAllContacts : SampleBase {
     /// <summary>
@@ -81,8 +77,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to get contacts. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get contacts. Exception says \"{0}\"", e.Message);
       }
     }
   }

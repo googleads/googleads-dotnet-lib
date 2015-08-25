@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 Imports Google.Api.Ads.Common.Util
@@ -27,8 +25,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' This code example adds text ads to a given ad group. To list ad groups,
   ''' run GetAdGroups.vb. To learn how to handle policy violations and add
   ''' exemption requests, see HandlePolicyViolationError.vb.
-  '''
-  ''' Tags: AdGroupAdService.mutate
   ''' </summary>
   Public Class AddTextAds
     Inherits ExampleBase
@@ -47,9 +43,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Try
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -122,8 +118,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
         Else
           Console.WriteLine("No text ads were created.")
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to create text ads.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to create text ads.", e)
       End Try
     End Sub
   End Class

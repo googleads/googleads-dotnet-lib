@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// This code example updates a first party audience segment's member
   /// expiration days. To determine which first party audience segments exist,
   /// run GetFirstPartyAudienceSegments.cs.
-  ///
-  /// Tags: AudienceSegmentService.getAudienceSegmentsByStatement
-  /// Tags: AudienceSegmentService.updateAudienceSegments
   /// </summary>
   class UpdateAudienceSegments : SampleBase {
     /// <summary>
@@ -89,9 +84,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
               "Audience segment with ID \"{0}\" and name \"{1}\" was updated.\n",
               updatedAudienceSegment.id, updatedAudienceSegment.name);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to update audience segment. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

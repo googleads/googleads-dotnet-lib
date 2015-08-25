@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -25,8 +23,6 @@ using Google.Api.Ads.Common.Util;
 namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// <summary>
   /// This code example gets the size id for a given width and height.
-  ///
-  /// Tags: size.getSize
   /// </summary>
   class GetSize : SampleBase {
     /// <summary>
@@ -76,8 +72,8 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
                 size.width, size.height, size.id);
           }
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to retrieve size. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to retrieve size. Exception says \"{0}\"", e.Message);
       }
     }
   }

@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 
@@ -25,9 +23,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' <summary>
   ''' This code example illustrates how to retrieve all carriers and languages
   ''' available for targeting.
-  '''
-  ''' Tags: ConstantDataService.getCarrierCriterion
-  ''' Tags: ConstantDataService.getLanguageCriterion
   ''' </summary>
   Public Class GetTargetableLanguagesAndCarriers
     Inherits ExampleBase
@@ -40,9 +35,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Console.WriteLine(codeExample.Description)
       Try
         codeExample.Run(New AdWordsUser)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -91,9 +86,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
         Else
           Console.WriteLine("No languages were found.")
         End If
-      Catch ex As Exception
+      Catch e As Exception
         Throw New System.ApplicationException("Failed to get targetable carriers and languages.", _
-            ex)
+            e)
       End Try
     End Sub
   End Class

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example updates the bid of a keyword. To get keyword, run
   /// GetKeywords.cs.
-  ///
-  /// Tags: AdGroupCriterionService.mutate
   /// </summary>
   public class UpdateKeyword : ExampleBase {
     /// <summary>
@@ -40,9 +36,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         long keywordId = long.Parse("INSERT_KEYWORD_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId, keywordId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -115,8 +111,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No keyword was updated.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to update keyword.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to update keyword.", e);
       }
     }
   }

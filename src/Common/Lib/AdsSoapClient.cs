@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using System;
 using System.IO;
 using System.Net;
@@ -210,8 +208,8 @@ namespace Google.Api.Ads.Common.Lib {
         try {
           InitForCall(methodName, parameters);
           return base.Invoke(methodName, parameters);
-        } catch (SoapException ex) {
-          Exception customException = GetCustomException(ex);
+        } catch (SoapException e) {
+          Exception customException = GetCustomException(e);
           if (errorHandler.ShouldRetry(customException)) {
             errorHandler.PrepareForRetry(customException);
           } else {
@@ -251,13 +249,13 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets a custom exception that wraps the SOAP exception thrown
     /// by the server.
     /// </summary>
-    /// <param name="ex">SOAPException that was thrown by the server.</param>
+    /// <param name="exception">SOAPException that was thrown by the server.</param>
     /// <returns>A custom exception object that wraps the SOAP exception.
     /// </returns>
     /// <remarks>Any service that wishes to provide a custom exception
     /// should override this method.</remarks>
-    protected virtual Exception GetCustomException(SoapException ex) {
-      return ex;
+    protected virtual Exception GetCustomException(SoapException exception) {
+      return exception;
     }
 
     /// <summary>

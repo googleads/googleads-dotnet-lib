@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
 
@@ -23,8 +21,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example gets all roles. This example can be used to determine
   /// which role ID is needed when getting and creating users.
-  ///
-  /// Tags: UserService.getAllRoles
   /// </summary>
   class GetAllRoles : SampleBase {
     /// <summary>
@@ -68,9 +64,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         }
 
         Console.WriteLine("Number of results found: " + numRoles);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get all roles. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

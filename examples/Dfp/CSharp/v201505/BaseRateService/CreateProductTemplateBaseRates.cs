@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201505;
 
@@ -23,8 +21,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example creates a product template base rate. To determine which base rates exist,
   /// run GetAllBaseRates.cs.
-  ///
-  /// Tags: BaseRateService.createBaseRates
   /// </summary>
   class CreateProductTemplateBaseRates : SampleBase {
     /// <summary>
@@ -85,8 +81,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
               (((ProductBaseRate) createdBaseRate).rate.microAmount / 1000000f),
               ((ProductBaseRate) createdBaseRate).rate.currencyCode);
         }
-      } catch (Exception ex) {
-          Console.WriteLine("Failed to create base rates. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+          Console.WriteLine("Failed to create base rates. Exception says \"{0}\"", e.Message);
       }
     }
   }

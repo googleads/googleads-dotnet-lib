@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.Util
 Imports Google.Api.Ads.AdWords.v201506
@@ -26,8 +24,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' <summary>
   ''' This code example adds a text ad, and shows how to handle a policy
   ''' violation.
-  '''
-  ''' Tags: AdGroupAdService.mutate
   ''' </summary>
   Public Class HandlePolicyViolationError
     Inherits ExampleBase
@@ -41,9 +37,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Try
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -108,11 +104,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
           ' Validate the operations.
           service.RequestHeader.validateOnly = True
           retVal = service.mutate(allOperations.ToArray)
-        Catch ex As AdWordsApiException
-          Dim innerException As ApiException = TryCast(ex.ApiException, ApiException)
+        Catch e As AdWordsApiException
+          Dim innerException As ApiException = TryCast(e.ApiException, ApiException)
           If (innerException Is Nothing) Then
             Throw New Exception("Failed to retrieve ApiError. See inner exception for more " & _
-                "details.", ex)
+                "details.", e)
           End If
 
           ' Examine each ApiError received from the server.
@@ -176,8 +172,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         Else
           Console.WriteLine("There are no ads to create after policy violation checks.")
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to create Ad(s).", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to create Ad(s).", e)
       End Try
     End Sub
   End Class

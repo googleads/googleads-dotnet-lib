@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -28,8 +26,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// GetAllPlacements.cs. To determine the IDs for locations, run
   /// GetAllCities.cs, GetAllCountries.cs, GetAllMetros.cs, GetAllRegions.cs and
   /// GetAllPostalCodes.
-  ///
-  /// Tags: LineItemService.createLineItems
   /// </summary>
   class CreateLineItems : SampleBase {
     /// <summary>
@@ -210,9 +206,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } else {
           Console.WriteLine("No line items created.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create line items. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

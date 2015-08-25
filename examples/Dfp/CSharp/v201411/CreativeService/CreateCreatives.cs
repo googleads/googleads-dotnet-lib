@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// This code example creates new image creatives for a given advertiser. To
   /// determine which companies are advertisers, run GetCompaniesByStatement.cs.
   /// To determine which creatives already exist, run GetAllCreatives.cs.
-  ///
-  /// Tags: CreativeService.createCreatives
   /// </summary>
   class CreateCreatives : SampleBase {
     /// <summary>
@@ -112,8 +108,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } else {
           Console.WriteLine("No creatives created.");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to create creatives. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to create creatives. Exception says \"{0}\"", e.Message);
       }
     }
   }

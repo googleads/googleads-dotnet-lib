@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// <summary>
   /// This code example adds various types of targeting criteria to a campaign.
   /// To get a list of campaigns, run GetCampaigns.cs.
-  ///
-  /// Tags: CampaignCriterionService.mutate
   /// </summary>
   public class AddCampaignTargetingCriteria : ExampleBase {
 
@@ -49,9 +45,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         }
 
         codeExample.Run(new AdWordsUser(), campaignId, feedId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -219,8 +215,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
                 " id = '{1}'.", criterion.criterion.CriterionType, criterion.campaignId);
           }
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to set Campaign criteria.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to set Campaign criteria.", e);
       }
     }
   }

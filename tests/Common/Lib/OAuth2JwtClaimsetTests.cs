@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley (https://github.com/Narwalter)
-
 using NUnit.Framework;
 
 using Google.Api.Ads.Common.Lib;

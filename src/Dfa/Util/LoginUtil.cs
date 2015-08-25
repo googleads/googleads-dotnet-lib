@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using System;
 
 using Google.Api.Ads.Common.Lib;
@@ -104,8 +102,8 @@ namespace Google.Api.Ads.Dfa.Util {
         return new UserToken(
             userProfile.GetType().GetProperty("name").GetValue(userProfile, null).ToString(),
             userProfile.GetType().GetProperty("token").GetValue(userProfile, null).ToString());
-      } catch (Exception ex) {
-        throw new DfaException("Failed to authenticate user. See inner exception for details.", ex);
+      } catch (Exception e) {
+        throw new DfaException("Failed to authenticate user. See inner exception for details.", e);
       }
     }
   }

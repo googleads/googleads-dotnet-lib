@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using System;
 using System.Collections.Generic;
 using Google.Api.Ads.AdWords.Lib;
@@ -23,8 +21,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
 
   /// <summary>
   /// This code example adds a label to multiple campaigns.
-  ///
-  /// Tags: CampaignService.mutateLabels
   /// </summary>
   public class AddCampaignLabels : ExampleBase {
 
@@ -40,9 +36,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         long campaignId2 = long.Parse("INSERT_CAMPAIGN_ID2_HERE");
         long labelId = long.Parse("INSERT_LABEL_ID_HERE");
         codeExample.Run(new AdWordsUser(), campaignId1, campaignId2, labelId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -96,8 +92,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         } else {
           Console.WriteLine("No campaign labels were added.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to add campaign label.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to add campaign label.", e);
       }
     }
   }

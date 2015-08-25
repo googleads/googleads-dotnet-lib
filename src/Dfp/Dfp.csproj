@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -46,6 +46,10 @@
     <Compile Include="Headers\RequestHeaderStub.cs" />
     <Compile Include="Headers\OAuth.cs" />
     <Compile Include="Lib\DfpAuthorizationMethod.cs" />
+    <Compile Include="Util\v201508\DateTimeUtilities.cs" />
+    <Compile Include="Util\v201508\PqlUtilities.cs" />
+    <Compile Include="Util\v201508\StatementBuilder.cs" />
+    <Compile Include="Util\v201508\ReportUtilities.cs" />
     <Compile Include="Util\v201505\DateTimeUtilities.cs" />
     <Compile Include="Util\v201505\PqlUtilities.cs" />
     <Compile Include="Util\v201505\StatementBuilder.cs" />
@@ -60,12 +64,6 @@
     <Compile Include="Util\v201408\DateTimeUtilities.cs" />
     <Compile Include="Util\v201408\PqlUtilities.cs" />
     <Compile Include="Util\v201408\StatementBuilder.cs" />
-    <Compile Include="Util\v201405\DateTimeUtilities.cs" />
-    <Compile Include="Util\v201405\PqlUtilities.cs" />
-    <Compile Include="Util\v201405\StatementBuilder.cs" />
-    <Compile Include="Util\v201403\DateTimeUtilities.cs" />
-    <Compile Include="Util\v201403\PqlUtilities.cs" />
-    <Compile Include="Util\v201403\StatementBuilder.cs" />
     <Compile Include="DfpErrorMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,10 +82,6 @@
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Headers\RequestHeader.cs" />
-    <Compile Include="v201403\DfpApi.cs" />
-    <Compile Include="v201403\DfpServiceV201403.cs" />
-    <Compile Include="v201405\DfpApi.cs" />
-    <Compile Include="v201405\DfpServiceV201405.cs" />
     <Compile Include="v201408\DfpApi.cs" />
     <Compile Include="v201408\DfpServiceV201408.cs" />
     <Compile Include="v201411\DfpApi.cs" />
@@ -96,6 +90,8 @@
     <Compile Include="v201502\DfpServiceV201502.cs" />
     <Compile Include="v201505\DfpApi.cs" />
     <Compile Include="v201505\DfpServiceV201505.cs" />
+    <Compile Include="v201508\DfpApi.cs" />
+    <Compile Include="v201508\DfpServiceV201508.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

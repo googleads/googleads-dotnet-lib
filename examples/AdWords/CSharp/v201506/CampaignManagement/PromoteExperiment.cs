@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// This example promotes an experiment, which permanently applies all the
   /// experiment changes made to its related ad groups, criteria and ads. To
   /// create an experiment, run AddExperiment.vb.
-  ///
-  /// Tags: ExperimentService.mutate
   /// </summary>
   public class PromoteExperiment : ExampleBase {
     /// <summary>
@@ -40,9 +36,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       try {
         long experimentId = long.Parse("INSERT_EXPERIMENT_ID_HERE");
         codeExample.Run(new AdWordsUser(), experimentId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -90,8 +86,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         } else {
           Console.WriteLine("No experiments were promoted.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to promote experiment.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to promote experiment.", e);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example updates the display name of custom targeting values.  To determine 
   /// which custom targeting keys exist, run GetAllCustomTargetingKeysAndValues.cs.
-  ///
-  /// Tags: CustomTargetingService.getCustomTargetingValuesByStatement
-  /// Tags: CustomTargetingService.updateCustomTargetingValues
   /// </summary>
   class UpdateCustomTargetingValues : SampleBase {
     /// <summary>
@@ -95,9 +90,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
               "display name \"{2}\" was updated.", updatedCustomTargetingValue.id,
               updatedCustomTargetingValue.name, updatedCustomTargetingValue.displayName);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to update display names of custom targeting values. Exception " +
-            "says \"{0}\"", ex.Message);
+            "says \"{0}\"", e.Message);
       }
     }
   }

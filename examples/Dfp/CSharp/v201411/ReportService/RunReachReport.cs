@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example runs a reach report. To download the report see
   /// DownloadReport.cs.
-  ///
-  /// Tags: ReportService.runReportJob, ReportService.getReportJob
   /// </summary>
   class RunReachReport : SampleBase {
     /// <summary>
@@ -85,9 +81,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           Console.WriteLine("Report job with id = '{0}' failed to complete successfully.",
               reportJob.id);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to run delivery report. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.Util
 Imports Google.Api.Ads.AdWords.v201502
@@ -25,8 +23,6 @@ Imports System.IO
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' <summary>
   ''' This code example demonstrates how to handle partial failures.
-  '''
-  ''' Tags: AdGroupCriterionService.mutate
   ''' </summary>
   Public Class HandlePartialFailures
     Inherits ExampleBase
@@ -40,9 +36,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Try
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -128,9 +124,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
             End If
           Next
         End If
-      Catch ex As Exception
+      Catch e As Exception
         Throw New System.ApplicationException("Failed to add keyword(s) in partial failure mode.", _
-            ex)
+            e)
       End Try
     End Sub
   End Class

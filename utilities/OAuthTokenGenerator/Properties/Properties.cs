@@ -12,12 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using System.Reflection;
 
 [assembly: AssemblyCompany("Google")]
 [assembly: AssemblyProduct("Ads API Dotnet Common Library")]
 [assembly: AssemblyCopyright("Copyright 2012, Google Inc. All Rights Reserved.")]
-[assembly: AssemblyVersion("3.8.0.0")]
-[assembly: AssemblyFileVersion("3.8.0.0")]
+[assembly: AssemblyVersion("3.9.0.0")]
+[assembly: AssemblyFileVersion("3.9.0.0")]

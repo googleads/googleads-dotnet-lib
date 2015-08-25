@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -29,10 +27,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// To learn more about migrating Feed based extensions to extension
   /// settings, see
   /// https://developers.google.com/adwords/api/docs/guides/migrate-to-extension-settings.
-  ///
-  /// Tags: FeedService.query, FeedMappingService.query, FeedItemService.query
-  /// Tags: CampaignExtensionSettingService.mutate, CampaignFeedService.query
-  /// Tags: CampaignFeedService.mutate
   /// </summary>
   public class MigrateToExtensionSettings : ExampleBase {
 
@@ -123,9 +117,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       Console.WriteLine(codeExample.Description);
       try {
         codeExample.Run(new AdWordsUser());
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 

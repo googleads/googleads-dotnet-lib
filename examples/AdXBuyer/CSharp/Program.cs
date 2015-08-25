@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 
 using System;
@@ -97,9 +95,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
       try {
         Console.WriteLine(GetDescription(codeExample));
         InvokeRun(codeExample, user);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       } finally {
         Console.WriteLine("Press [Enter] to continue");
         Console.ReadLine();

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
 using Google.Api.Ads.Dfp.v201502;
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   ///  This code example updates user team associations by setting the
   ///  overridden access type to read only for all teams that the user belongs
   ///  to. To determine which users exists, run GetAllUsers.cs.
-  ///
-  /// Tags: UserTeamAssociationService.getUserTeamAssociationsByStatement
-  /// Tags: UserTeamAssociationService.updateUserTeamAssociations
   /// </summary>
   class UpdateUserTeamAssociations : SampleBase {
     /// <summary>
@@ -100,9 +95,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No user team associations updated.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to update user team associations. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

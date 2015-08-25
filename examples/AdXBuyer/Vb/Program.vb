@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 
 Imports System
@@ -129,9 +127,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
       Try
         Console.WriteLine(GetDescription(codeExample))
         Program.InvokeRun(codeExample, user)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       Finally
         Console.WriteLine("Press [Enter] to continue")
         Console.ReadLine()

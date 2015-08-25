@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// <summary>
   /// This code example removes an ad using the 'REMOVE' operator. To list ads,
   /// run GetTextAds.cs.
-  ///
-  /// Tags: AdGroupAdService.mutate
   /// </summary>
   public class RemoveAd : ExampleBase {
     /// <summary>
@@ -40,9 +36,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         long adId = long.Parse("INSERT_AD_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId, adId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -95,8 +91,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         } else {
           Console.WriteLine("No ads were removed.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to remove ad.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to remove ad.", e);
       }
     }
   }

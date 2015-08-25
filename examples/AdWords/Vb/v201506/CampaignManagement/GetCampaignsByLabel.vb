@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201506
 
@@ -25,8 +23,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' <summary>
   ''' This code example gets all campaigns with a specific label. To add a
   ''' label to campaigns, run AddCampaignLabels.vb.
-  '''
-  ''' Tags: CampaignService.get
   ''' </summary>
   Public Class GetCampaignsByLabel
     Inherits ExampleBase
@@ -41,9 +37,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
 
       Try
         codeExample.Run(New AdWordsUser, labelId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -115,8 +111,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
           offset += pageSize
         Loop While offset < page.totalNumEntries
         Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to retrieve campaigns by label.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to retrieve campaigns by label.", e)
       End Try
     End Sub
   End Class

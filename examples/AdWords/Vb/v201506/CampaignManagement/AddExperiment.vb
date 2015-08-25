@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201506
 
@@ -29,8 +27,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' for criteria and ad groups. To get campaigns, run GetCampaigns.vb.
   ''' To get ad groups, run GetAdGroups.vb. To get criteria, run
   ''' GetKeywords.vb.
-  '''
-  ''' Tags: ExperimentService.mutate
   ''' </summary>
   Public Class AddExperiment
     Inherits ExampleBase
@@ -47,9 +43,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         Dim criterionId As Long = Long.Parse("INSERT_CRITERION_ID_HERE")
 
         codeExample.Run(New AdWordsUser, campaignId, adGroupId, criterionId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -209,8 +205,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         Else
           Console.WriteLine("No experiments were added.")
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to add experiment(s).", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to add experiment(s).", e)
       End Try
     End Sub
   End Class

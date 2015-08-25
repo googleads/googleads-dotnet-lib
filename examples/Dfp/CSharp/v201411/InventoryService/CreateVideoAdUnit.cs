@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
 
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// This code example creates a new video ad unit under the effective root
   /// ad unit. To determine which ad units exist, run GetInventoryTree.cs or
   /// GetAllAdUnits.cs.
-  ///
-  /// Tags: InventoryService.createAdUnits, NetworkService.getCurrentNetwork
   /// </summary>
   class CreateVideoAdUnit : SampleBase {
     /// <summary>
@@ -113,8 +109,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           Console.WriteLine("A video ad unit with ID \"{0}\" was created under parent with ID " +
               "\"{1}\".", createdAdUnit.id, createdAdUnit.parentId);
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to create video ad units. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to create video ad units. Exception says \"{0}\"", e.Message);
       }
     }
   }

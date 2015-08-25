@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -31,8 +29,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// A similar pattern can be applied to set filters limiting site, user role,
   /// and/or campaign access for any user. To get the Filter Criteria Type ID,
   /// run GetUserFilterTypes.cs.
-  ///
-  /// Tags: user.getUser, user.saveUser
   /// </summary>
   class AddAdvertiserUserFilter : SampleBase {
     /// <summary>
@@ -108,9 +104,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         // Save the changes made and display a success message.
         UserSaveResult userSaveResult = service.saveUser(userToModify);
         Console.WriteLine("User with id \"{0}\" was modified.", userSaveResult.id);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to add advertiser user filter. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

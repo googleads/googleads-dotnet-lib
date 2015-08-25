@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
 using Google.Api.Ads.Dfp.v201502;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// This code example gets all orders for a given advertiser. To create orders, run
   /// CreateOrders.cs. To determine which companies are advertisers,
   /// run GetCompaniesByStatement.cs.
-  ///
-  /// Tags: OrderService.getOrdersByStatement
   /// </summary>
   class GetOrdersByStatement : SampleBase {
     /// <summary>
@@ -87,9 +83,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while(statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get orders by statement. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

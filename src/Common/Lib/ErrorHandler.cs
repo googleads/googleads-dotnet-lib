@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using System;
 using System.Threading;
 
@@ -71,26 +69,26 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Determines whether the exception thrown by the server is a transient
     /// error.</summary>
-    /// <param name="ex">The exception.</param>
+    /// <param name="exception">The exception.</param>
     /// <returns>True, if the server exception is a transient error, false
     /// otherwise.</returns>
-    public virtual bool IsTransientError(Exception ex) {
+    public virtual bool IsTransientError(Exception exception) {
       return false;
     }
 
     /// <summary>
     /// Prepares the system for retrying the last failed call.
     /// </summary>
-    /// <param name="ex">The exception.</param>
-    public virtual void PrepareForRetry(Exception ex) {
+    /// <param name="exception">The exception.</param>
+    public virtual void PrepareForRetry(Exception exception) {
     }
 
     /// <summary>
     /// Checks if an API call should be retried when an exception occurs.
     /// </summary>
-    /// <param name="ex">The exception.</param>
+    /// <param name="exception">The exception.</param>
     /// <returns>True, if the call should be retried, false otherwise.</returns>
-    public virtual bool ShouldRetry(Exception ex) {
+    public virtual bool ShouldRetry(Exception exception) {
       return false;
     }
   }

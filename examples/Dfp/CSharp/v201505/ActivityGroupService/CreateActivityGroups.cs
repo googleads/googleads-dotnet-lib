@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201505;
 
@@ -23,8 +21,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example creates new activity groups. To determine which activity
   /// groups exist, run GetAllActivityGroups.cs.
-  ///
-  /// Tags: ActivityGroupService.createActivityGroups
   /// </summary>
   class CreateActivityGroups : SampleBase {
     /// <summary>
@@ -88,8 +84,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } else {
           Console.WriteLine("No activity groups were created.");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to create activity groups. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to create activity groups. Exception says \"{0}\"", e.Message);
       }
     }
   }

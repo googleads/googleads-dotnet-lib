@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
 
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// This code example adds a user to a team by creating an association
   /// between the two. To determine which teams exist, run GetAllTeams.cs. To
   /// determine which users exist, run GetAllUsers.cs.
-  ///
-  /// Tags: UserTeamAssociationService.createUserTeamAssociations
   /// </summary>
   class CreateUserTeamAssociations : SampleBase {
     /// <summary>
@@ -89,9 +85,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No user team associations created.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create user team associations. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

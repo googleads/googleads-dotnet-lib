@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -24,8 +22,6 @@ using System.IO;
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example pauses a given ad. To list all ads, run GetTextAds.cs.
-  ///
-  /// Tags: AdGroupAdService.mutate
   /// </summary>
   public class PauseAd : ExampleBase {
     /// <summary>
@@ -39,9 +35,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         long adId = long.Parse("INSERT_AD_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId, adId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -93,8 +89,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No ads were paused.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to pause ad.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to pause ad.", e);
       }
     }
   }

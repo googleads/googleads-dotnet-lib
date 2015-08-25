@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
@@ -262,10 +260,10 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Parses the error response into an exception.
     /// </summary>
-    /// <param name="errorsXml">The errors XML.</param>
-    /// <param name="e">The original exception.</param>
+    /// <param name="exception">The original exception.</param>
+    /// <param name="contents">The errors XML.</param>
     /// <returns>An AdWords Reports exception that represents the error.</returns>
-    private AdWordsReportsException ParseException(Exception e, string contents) {
+    private AdWordsReportsException ParseException(Exception exception, string contents) {
       List<ReportDownloadError> errorList = new List<ReportDownloadError>();
       try {
         XmlDocument xDoc = new XmlDocument();
@@ -281,10 +279,10 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         }
       } catch {
       }
-      AdWordsReportsException ex = new AdWordsReportsException(
-          "Report download errors occurred.", e);
-      ex.Errors = errorList.ToArray();
-      return ex;
+      AdWordsReportsException retval = new AdWordsReportsException(
+          "Report download errors occurred.", exception);
+      retval.Errors = errorList.ToArray();
+      return retval;
     }
 
     /// <summary>

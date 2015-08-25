@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// This code example creates a new proposal line items. To determine which
   /// proposal line items exist, run GetAllProposalLineItems.cs. To determine
   /// which proposals exist, run GetAllProposals.cs.
-  ///
-  /// Tags: ProposalLineItemService.createProposalLineItems
-  /// Tags: NetworkService.getCurrentNetwork
   /// </summary>
   class CreateProposalLineItems : SampleBase {
     /// <summary>
@@ -125,9 +120,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
               createdProposalLineItem.id, createdProposalLineItem.name);
         }
 
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create proposal line items. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

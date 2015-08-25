@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example gets all packages that are IN_PROGRESS. To create packages, run
   /// CreatePackages.cs.
-  ///
-  /// Tags: PackageService.getPackagesByStatement
   /// </summary>
   class GetInProgressPackages : SampleBase {
     /// <summary>
@@ -82,9 +78,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while(statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: " + page.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get packages. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

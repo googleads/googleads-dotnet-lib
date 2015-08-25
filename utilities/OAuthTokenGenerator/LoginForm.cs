@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Lib;
 
 using System;
@@ -49,11 +47,6 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator {
     /// The application configuration instance.
     /// </summary>
     private AppConfig appConfig = new SimpleAppConfig();
-
-    /// <summary>
-    /// Flag to indicate that the server thread can exit.
-    /// </summary>
-    private bool canExit;
 
     /// <summary>
     /// The address of the local server that receives the OAuth2 callback.
@@ -114,7 +107,6 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator {
     /// </summary>
     private void startLocalServer() {
       // Start the server on localhost.
-      canExit = false;
       newHttpListener = new System.Net.HttpListener();
       newHttpListener.Prefixes.Add(LOCALHOST_ADDRESS);
       newHttpListener.Start();

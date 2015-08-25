@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// This code example populates a specific rule base first party audience
   /// segment. To determine which audience segments exist, run
   /// GetAllAudienceSegments.cs.
-  ///
-  /// Tags: AudienceSegmentService.getAudienceSegmentsByStatement
-  /// Tags: AudienceSegmentService.performAudienceSegmentAction
   /// </summary>
   class PopulateFirstPartyAudienceSegments : SampleBase {
     /// <summary>
@@ -89,9 +84,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } else {
           Console.WriteLine("No audience segments were populated.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to populate audience segment. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

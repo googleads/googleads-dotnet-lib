@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 using Google.Api.Ads.Common.Lib;
@@ -111,8 +109,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
           offset += pageSize;
         } while (offset < page.totalNumEntries);
         Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to retrieve campaigns", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to retrieve campaigns", e);
       }
     }
 

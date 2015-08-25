@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_20;
 
@@ -32,8 +30,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
   /// belongs to. You may enter a subnetwork id to see the maximum permissions a
   /// user role belonging to it can have, or enter "0" as the subnetwork id to
   /// see all possible permissions.
-  ///
-  /// Tags: userrole.getAvailablePermissions
   /// </summary>
   class GetAvailablePermissions : SampleBase {
     /// <summary>
@@ -82,9 +78,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
                 permission.name, permission.id);
           }
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get permission. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

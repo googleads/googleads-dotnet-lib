@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201506
 
@@ -27,9 +25,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' <summary>
   ''' This code example shows how to add placements in bulk using the
   ''' MutateJobService.
-  '''
-  ''' Tags: MutateJobService.mutate, MutateJobService.get
-  ''' Tags: MutateJobService.getResult
   ''' </summary>
   Public Class AddPlacementsInBulk
     Inherits ExampleBase
@@ -43,9 +38,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Try
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -123,10 +118,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
               retryCount = retryCount + 1
             End If
           End If
-        Catch ex As Exception
-          Console.WriteLine("Failed to fetch simple mutate job with id = {0}. Exception " & _
-              "says ""{1}"".", job.id, ex.Message)
-          Return
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to fetch simple mutate job.", e)
         End Try
       End While
 

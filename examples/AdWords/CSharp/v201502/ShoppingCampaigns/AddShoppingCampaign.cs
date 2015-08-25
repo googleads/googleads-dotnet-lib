@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -24,9 +22,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
 
   /// <summary>
   /// This code example adds a Shopping campaign.
-  ///
-  /// Tags: CampaignService.mutate, AdGroupService.mutate
-  /// Tags: AdGroupAdService.mutate
   /// </summary>
   public class AddShoppingCampaign : ExampleBase {
 
@@ -50,9 +45,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         long budgetId = long.Parse("INSERT_BUDGET_ID_HERE");
         long merchantId = long.Parse("INSERT_MERCHANT_ID_HERE");
         codeExample.Run(new AdWordsUser(), budgetId, merchantId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -82,8 +77,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
 
         AdGroupAd adGroupAd = CreateProductAd(adGroupAdService, adGroup);
         Console.WriteLine("Product ad with ID {0}' was added.", adGroupAd.ad.id);
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to create shopping campaign.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to create shopping campaign.", e);
       }
     }
 

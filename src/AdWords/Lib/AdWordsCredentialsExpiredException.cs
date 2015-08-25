@@ -12,21 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Lib;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Google.Api.Ads.AdWords.Lib {
+
+  /// <summary>
+  /// Thrown when AdWords API credentials have expired.
+  /// </summary>
   public class AdWordsCredentialsExpiredException : CredentialsExpiredException<string> {
+
     /// <summary>
     /// Public constructor.
     /// </summary>
     /// <param name="expiredCredential">The expired credential.</param>
-    public AdWordsCredentialsExpiredException(string expiredCredential) : base(expiredCredential) {
+    public AdWordsCredentialsExpiredException(string expiredCredential)
+      : base(expiredCredential) {
     }
   }
 }

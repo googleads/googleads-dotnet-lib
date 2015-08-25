@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example illustrates how to update an ad group, setting its
   /// status to 'PAUSED'. To create an ad group, run AddAdGroup.cs.
-  ///
-  /// Tags: AdGroupService.mutate
   /// </summary>
   public class UpdateAdGroup : ExampleBase {
     /// <summary>
@@ -39,9 +35,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       try {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -87,8 +83,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No ad groups were updated.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to update ad group.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to update ad group.", e);
       }
     }
   }

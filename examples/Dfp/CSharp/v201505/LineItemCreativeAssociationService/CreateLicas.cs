@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -29,8 +27,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// solution networks, the creative ids can represent any creative. To copy
   /// creatives, run CopyImageCreatives.cs. To determine which LICAs exist, run
   /// GetAllLicasExample.cs.
-  ///
-  /// Tags: LineItemCreativeAssociationService.createLineItemCreativeAssociations
   /// </summary>
   class CreateLicas : SampleBase {
     /// <summary>
@@ -95,9 +91,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } else {
           Console.WriteLine("No LICAs created.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to associate creative with line item. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

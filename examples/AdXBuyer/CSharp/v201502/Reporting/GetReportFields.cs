@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -24,8 +22,6 @@ using System.IO;
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example gets report fields.
-  ///
-  /// Tags: ReportDefinitionService.getReportFields
   /// </summary>
   public class GetReportFields : ExampleBase {
     /// <summary>
@@ -39,9 +35,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         ReportDefinitionReportType reportType = (ReportDefinitionReportType) Enum.Parse(
             typeof(ReportDefinitionReportType), "INSERT_REPORT_TYPE_HERE");
         codeExample.Run(new AdWordsUser(), reportType);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -83,8 +79,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("This report type has no fields.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to retrieve fields for report type.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to retrieve fields for report type.", e);
       }
     }
   }

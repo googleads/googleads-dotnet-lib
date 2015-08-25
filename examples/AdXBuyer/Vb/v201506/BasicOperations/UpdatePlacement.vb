@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201506
 
@@ -25,8 +23,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' <summary>
   ''' This code example updates the bid of a placement. To get placement, run
   ''' GetPlacements.vb.
-  '''
-  ''' Tags: AdGroupCriterionService.mutate
   ''' </summary>
   Public Class UpdatePlacement
     Inherits ExampleBase
@@ -41,9 +37,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         Dim placementId As Long = Long.Parse("INSERT_PLACEMENT_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId, placementId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -69,15 +65,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Dim adGroupCriterionService As AdGroupCriterionService = user.GetService( _
           AdWordsService.v201506.AdGroupCriterionService)
 
-      ' Since we are not updating any placement-specific fields, it is enough to
-      ' create a criterion object.
-      Dim criterion As New Criterion
-      criterion.id = placementId
+      Dim placement As New Criterion
+      placement.id = placementId
 
       ' Create ad group criterion.
       Dim biddableAdGroupCriterion As New BiddableAdGroupCriterion
       biddableAdGroupCriterion.adGroupId = adGroupId
-      biddableAdGroupCriterion.criterion = criterion
+      biddableAdGroupCriterion.criterion = placement
 
       ' Create the bids.
       Dim biddingConfig As New BiddingStrategyConfiguration()
@@ -115,8 +109,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         Else
           Console.WriteLine("No placements were updated.")
         End If
-      Catch ex As Exception
-        Console.WriteLine("Failed to update placement. Exception says ""{0}""", ex.Message)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to update placement.", e)
       End Try
     End Sub
   End Class

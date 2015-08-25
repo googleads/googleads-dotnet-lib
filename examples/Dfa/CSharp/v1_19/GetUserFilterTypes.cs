@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -25,8 +23,6 @@ using Google.Api.Ads.Common.Util;
 namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// <summary>
   /// This code example displays user filter criteria type names and ids.
-  ///
-  /// Tags: user.getAvailableUserFilterCriteriaTypes
   /// </summary>
   class GetUserFilterTypes : SampleBase {
     /// <summary>
@@ -70,9 +66,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
                 "was found.", userFilterCriteriaType.name, userFilterCriteriaType.id);
           }
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to retrieve user filter and criteria types. Exception " +
-            "says \"{0}\"", ex.Message);
+            "says \"{0}\"", e.Message);
       }
     }
   }

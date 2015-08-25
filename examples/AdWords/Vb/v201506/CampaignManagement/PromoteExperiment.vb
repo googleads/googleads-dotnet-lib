@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201506
 
@@ -26,8 +24,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' This example promotes an experiment, which permanently applies all the
   ''' experiment changes made to its related ad groups, criteria and ads. To
   ''' create an experiment, run AddExperiment.vb.
-  '''
-  ''' Tags: ExperimentService.mutate
   ''' </summary>
   Public Class PromoteExperiment
     Inherits ExampleBase
@@ -41,9 +37,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Try
         Dim experimentId As Long = Long.Parse("INSERT_EXPERIMENT_ID_HERE")
         codeExample.Run(New AdWordsUser, experimentId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -92,8 +88,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         Else
           Console.WriteLine("No experiments were promoted.")
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to promote experiment(s).", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to promote experiment(s).", e)
       End Try
     End Sub
   End Class

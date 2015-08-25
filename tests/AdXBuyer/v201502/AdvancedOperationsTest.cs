@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.v201502;
 
 using NUnit.Framework;
@@ -34,8 +32,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
   class AdvancedOperationsTest : VersionedExampleTestsBase {
     long campaignId;
     long adGroupId;
-    long adId;
-    long keywordId;
     const double BID_MODIFIER = 0.2;
 
     /// <summary>

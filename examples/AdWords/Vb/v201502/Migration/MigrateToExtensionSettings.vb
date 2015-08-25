@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 
@@ -30,10 +28,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' To learn more about migrating Feed based extensions to extension
   ''' settings, see
   ''' https://developers.google.com/adwords/api/docs/guides/migrate-to-extension-settings.
-  '''
-  ''' Tags: FeedService.query, FeedMappingService.query, FeedItemService.query
-  ''' Tags: CampaignExtensionSettingService.mutate, CampaignFeedService.query
-  ''' Tags: CampaignFeedService.mutate
   ''' </summary>
   Public Class MigrateToExtensionSettings
     Inherits ExampleBase
@@ -245,9 +239,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Console.WriteLine(codeExample.Description)
       Try
         codeExample.Run(New AdWordsUser)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 

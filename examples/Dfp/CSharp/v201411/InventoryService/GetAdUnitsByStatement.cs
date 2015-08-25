@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -24,9 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example gets the root ad unit. To create an ad unit, run
   /// CreateAdUnits.cs.
-  ///
-  /// Tags: InventoryService.getAdUnitsByStatement
-  /// Tags: NetworkService.getCurrentNetwork
   /// </summary>
   class GetAdUnitsByStatement : SampleBase {
     /// <summary>
@@ -93,8 +88,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to get ad unit. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get ad unit. Exception says \"{0}\"", e.Message);
       }
     }
   }

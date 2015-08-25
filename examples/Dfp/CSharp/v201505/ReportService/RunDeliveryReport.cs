@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Common.Util.Reports;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201505;
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// This code example runs a report similar to the "Orders report" on the DFP
   /// website with additional attributes and can filter to include just one
   /// order. The report is saved to the specified file path.
-  ///
-  /// Tags: ReportService.runReportJob
   /// </summary>
   class RunDeliveryReport : SampleBase {
     /// <summary>
@@ -100,9 +96,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         }
         Console.WriteLine("Report saved to \"{0}\".", filePath);
 
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to run delivery report. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

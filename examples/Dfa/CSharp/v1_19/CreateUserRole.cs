@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -28,8 +26,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// the subnetwork id, run GetSubnetworks.cs. To get the available
   /// permissions, run GetAvailablePermissions.cs. To get the parent user role
   /// id, run GetUserRoles.cs.
-  ///
-  /// Tags: userrole.saveUserRole
   /// </summary>
   class CreateUserRole : SampleBase {
     /// <summary>
@@ -94,8 +90,8 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
           // Display user role id.
           Console.WriteLine("User role with id \"{0} was created.", userRoleResult.id);
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to create user role. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to create user role. Exception says \"{0}\"", e.Message);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example deactivates a placement. To determine which
   /// placements exist, run GetAllPlacements.cs.
-  ///
-  /// Tags: PlacementService.getPlacementsByStatement
-  /// Tags: PlacementService.performPlacementAction
   /// </summary>
   class DeactivatePlacement : SampleBase {
     /// <summary>
@@ -108,9 +103,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
             Console.WriteLine("No placements were deactivated.");
           }
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to deactivate placements. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

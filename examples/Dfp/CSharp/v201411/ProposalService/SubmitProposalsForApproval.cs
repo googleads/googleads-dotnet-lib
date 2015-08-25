@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley (https://www.github.com/narwalter)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example submits a proposal for approval. To determine which proposals exist,
   /// run GetAllProposals.cs.
-  ///
-  /// Tags: ProposalService.getProposalsByStatement, ProposalService.performProposalAction
   /// </summary>
   class ApproveProposal : SampleBase {
     /// <summary>
@@ -110,9 +106,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
             Console.WriteLine("No proposals were approved.");
           }
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to approve proposals. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

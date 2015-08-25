@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
 
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example creates new users. To determine which users
   /// exist, run GetAllUsers.cs.
-  ///
-  /// Tags: UserService.createUsers
   /// </summary>
   class CreateUsers : SampleBase {
     /// <summary>
@@ -91,9 +87,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } else {
           Console.WriteLine("No users created.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create users. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

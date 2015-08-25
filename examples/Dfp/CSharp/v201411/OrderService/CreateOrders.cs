@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
 
@@ -23,8 +21,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example creates new orders. To determine which orders exist,
   /// run GetAllOrders.cs.
-  ///
-  /// Tags: OrderService.createOrders
   /// </summary>
   class CreateOrders : SampleBase {
     /// <summary>
@@ -87,9 +83,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } else {
           Console.WriteLine("No orders created.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create orders. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

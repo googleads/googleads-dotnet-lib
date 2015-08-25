@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -24,8 +22,6 @@ using System.IO;
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// <summary>
   /// This code example retrieves all the disapproved ads in a given campaign.
-  ///
-  /// Tags: AdGroupAdService.get
   /// </summary>
   public class GetAllDisapprovedAds : ExampleBase {
     /// <summary>
@@ -38,9 +34,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       try {
         long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
         codeExample.Run(new AdWordsUser(), campaignId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -113,8 +109,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
           offset += pageSize;
         } while (offset < page.totalNumEntries);
         Console.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries);
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to get disapproved ads.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to get disapproved ads.", e);
       }
     }
   }

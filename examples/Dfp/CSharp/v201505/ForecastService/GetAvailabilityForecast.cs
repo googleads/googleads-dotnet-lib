@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example gets a forecast for a prospective line item. To
   /// determine which placements exist, run GetAllPlacements.cs.
-  ///
-  /// Tags: ForecastService.getForecast
   /// </summary>
   class GetForecast : SampleBase {
     /// <summary>
@@ -115,8 +111,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         }
         Console.WriteLine("{0} contending line items.", (forecast.contendingLineItems != null) ?
             forecast.contendingLineItems.Length : 0);
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to get forecast. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get forecast. Exception says \"{0}\"", e.Message);
       }
     }
   }

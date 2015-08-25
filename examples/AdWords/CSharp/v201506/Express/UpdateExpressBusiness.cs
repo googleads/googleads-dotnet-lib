@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// <summary>
   /// This code example updates an express business. To add an express
   /// business, run AddExpressBusinesses.cs.
-  ///
-  /// Tags: ExpressBusinessService.mutate
   /// </summary>
   public class UpdateExpressBusiness : ExampleBase {
 
@@ -49,9 +45,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       try {
         long businessId = long.Parse("INSERT_ADWORDS_EXPRESS_BUSINESS_ID_HERE");
         codeExample.Run(new AdWordsUser(), businessId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -81,8 +77,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
 
         Console.WriteLine("Express business with ID {0} and name '{1}' was updated.",
             updatedBusinesses[0].id, updatedBusinesses[0].name);
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to update express business.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to update express business.", e);
       }
     }
   }

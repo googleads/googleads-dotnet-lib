@@ -11,10 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
-// Author: api.anash@gmail.com (Anash P. Oommen)
-// Author: Chris Seeley (https://github.com/Narwalter)
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.v201505;
 

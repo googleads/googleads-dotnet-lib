@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
@@ -27,9 +25,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// determine which custom targeting keys and values exist, run
   /// GetAllCustomTargetingKeysAndValues.cs. To target these custom targeting
   /// keys and values, run TargetCustomCriteria.cs.
-  ///
-  /// Tags: CustomTargetingService.createCustomTargetingKeys
-  /// Tags: CustomTargetingService.createCustomTargetingValues
   /// </summary>
   class CreateCustomTargetingKeysAndValues : SampleBase {
     /// <summary>
@@ -149,9 +144,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } else {
           Console.WriteLine("No values were created.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create custom targeting keys and values. Exception " +
-            "says \"{0}\"", ex.Message);
+            "says \"{0}\"", e.Message);
       }
     }
   }

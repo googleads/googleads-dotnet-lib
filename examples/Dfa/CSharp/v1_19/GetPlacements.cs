@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// <summary>
   /// This code example displays available placements for a given search string.
   /// Results are limited to 10.
-  ///
-  /// Tags: placement.getPlacementsByCriteria
   /// </summary>
   class GetPlacements : SampleBase {
     /// <summary>
@@ -80,8 +76,8 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         } else {
           Console.WriteLine("No placements found for your criteria");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to retrieve placements. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to retrieve placements. Exception says \"{0}\"", e.Message);
       }
     }
   }

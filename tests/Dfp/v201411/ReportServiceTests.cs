@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
 
@@ -70,11 +68,13 @@ namespace Google.Api.Ads.Dfp.Tests.v201411 {
           Column.AD_SERVER_WITHOUT_CPD_AVERAGE_ECPM};
       reportJob.reportQuery.dateRangeType = DateRangeType.LAST_MONTH;
 
+      ReportJob newReportJob = null;
+
       Assert.DoesNotThrow(delegate() {
-        reportJob = reportService.runReportJob(reportJob);
+        newReportJob = reportService.runReportJob(reportJob);
       });
 
-      Assert.NotNull(reportJob);
+      Assert.NotNull(newReportJob);
     }
 
     /// <summary>
@@ -95,10 +95,10 @@ namespace Google.Api.Ads.Dfp.Tests.v201411 {
       ReportJob newReportJob = null;
 
       Assert.DoesNotThrow(delegate() {
-        reportJob = reportService.runReportJob(reportJob);
+        newReportJob = reportService.runReportJob(reportJob);
       });
 
-      Assert.NotNull(reportJob);
+      Assert.NotNull(newReportJob);
     }
 
     /// <summary>
@@ -117,10 +117,10 @@ namespace Google.Api.Ads.Dfp.Tests.v201411 {
       ReportJob newReportJob = null;
 
       Assert.DoesNotThrow(delegate() {
-        reportJob = reportService.runReportJob(reportJob);
+        newReportJob = reportService.runReportJob(reportJob);
       });
 
-      Assert.NotNull(reportJob);
+      Assert.NotNull(newReportJob);
     }
 
     /// <summary>

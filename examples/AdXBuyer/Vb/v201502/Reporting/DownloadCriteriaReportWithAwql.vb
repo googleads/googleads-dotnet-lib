@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.Util.Reports
 Imports Google.Api.Ads.AdWords.v201502
@@ -41,9 +39,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Try
         Dim fileName As String = "INSERT_OUTPUT_FILE_NAME"
         codeExample.Run(New AdWordsUser, fileName)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -79,8 +77,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
           reportResponse.Save(filePath)
         End Using
         Console.WriteLine("Report was downloaded to '{0}'.", filePath)
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to download report.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to download report.", e)
       End Try
 
     End Sub

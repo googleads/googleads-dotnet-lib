@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// <summary>
   /// This code example creates a campaign in a given advertiser. To create an
   /// advertiser, run CreateAdvertiser.cs.
-  ///
-  /// Tags: campaign.saveCampaign
   /// </summary>
   class CreateCampaign : SampleBase {
     /// <summary>
@@ -88,9 +84,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
 
         // Display new campaign id.
         Console.WriteLine("Campaign with id \"{0}\" was created.", result.id);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create campaign. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

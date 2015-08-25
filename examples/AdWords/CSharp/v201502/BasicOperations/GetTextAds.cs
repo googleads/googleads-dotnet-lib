@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example retrieves all text ads given an existing ad group.
   /// To add text ads to an existing ad group, run AddTextAds.cs.
-  ///
-  /// Tags: AdGroupAdService.get
   /// </summary>
   public class GetTextAds : ExampleBase {
     /// <summary>
@@ -39,9 +35,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       try {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -132,8 +128,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
           offset += pageSize;
         } while (offset < page.totalNumEntries);
         Console.WriteLine("Number of text ads found: {0}", page.totalNumEntries);
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to get text ads", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to get text ads", e);
       }
     }
   }

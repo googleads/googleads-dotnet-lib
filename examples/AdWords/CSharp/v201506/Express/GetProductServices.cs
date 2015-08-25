@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// <summary>
   /// This code example shows how to retrieve AdWords Express product/service
   /// objects related to specific criteria.
-  ///
-  /// Tags: ProductServiceService.get
   /// </summary>
   public class GetProductServices : ExampleBase {
 
@@ -50,9 +46,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         string productServiceSuggestion = "INSERT_PRODUCT_SERVICE_SUGGESTION_HERE";
         string localeText = "INSERT_LOCALE_TEXT_HERE";
         codeExample.Run(new AdWordsUser(), productServiceSuggestion, localeText);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -111,8 +107,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
           offset += pageSize;
         } while (offset < page.totalNumEntries);
         Console.WriteLine("Number of products/services found: {0}", page.totalNumEntries);
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to retrieve products/services.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to retrieve products/services.", e);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201411;
 using Google.Api.Ads.Dfp.v201411;
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example creates a new exchange rate. To determine which
   /// exchange rates exist, run GetAllExchangeRates.cs.
-  ///
-  /// Tags: ExchangeRateService.createExchangeRates
   /// </summary>
   class CreateExchangeRates : SampleBase {
     /// <summary>
@@ -84,9 +80,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
               (exchangeRate.exchangeRate / 10000000000f));
         }
 
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create exchange rates. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

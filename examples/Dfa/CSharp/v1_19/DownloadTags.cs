@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// This code example downloads HTML Tags for a given campaign and placement
   /// id. To create campaigns, run CreateCampaigns.cs. To create placements,
   /// run GetPlacements.cs.
-  ///
-  /// Tags: placement.getPlacementTagData
   /// </summary>
   class DownloadTags : SampleBase {
     /// <summary>
@@ -90,9 +86,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         Console.WriteLine("Placement name : {0}\nIframe/JavaScript tag : {1}\nStandard tag : {2}" +
             "\nInternal Redirect tag : {3}", temp.placement.name, temp.iframeJavaScriptTag,
             temp.javaScriptTag, temp.internalRedirectTag);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to download tags. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

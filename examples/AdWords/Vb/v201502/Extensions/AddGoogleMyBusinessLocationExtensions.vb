@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 Imports Google.Api.Ads.Common.Lib
@@ -26,9 +24,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' <summary>
   ''' This code example adds a feed that syncs feed items from a Google
   ''' My Business (GMB) account and associates the feed with a customer.
-  '''
-  ''' Tags: CustomerFeedService.mutate, FeedItemService.mutate
-  ''' Tags:  FeedMappingService.mutate, FeedService.mutate
   ''' </summary>
   Public Class AddGoogleMyBusinessLocationExtensions
     Inherits ExampleBase
@@ -67,9 +62,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
         Dim businessAccountIdentifier As String = Nothing
         codeExample.Run(New AdWordsUser(), gmbEmailAddress, gmbAccessToken, _
                         businessAccountIdentifier)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -210,8 +205,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
 
         ' OPTIONAL: Create an AdGroupFeed for even more fine grained control
         ' over which feed items are used at the AdGroup level.
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to create customer feed.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to create customer feed.", e)
       End Try
     End Sub
   End Class

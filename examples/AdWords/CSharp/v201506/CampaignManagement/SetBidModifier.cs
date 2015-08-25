@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// campaign. The campaign must be an enhanced type of campaign. To get
   /// campaigns, run GetCampaigns.cs. To enhance a campaign, run
   /// SetCampaignEnhanced.cs.
-  ///
-  /// Tags: CampaignCriterionService.mutate
   /// </summary>
   public class SetBidModifier : ExampleBase {
     /// <summary>
@@ -42,9 +38,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
         double bidModifier = double.Parse("INSERT_BID_MODIFIER_HERE");
         codeExample.Run(new AdWordsUser(), campaignId, bidModifier);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -103,8 +99,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         } else {
           Console.WriteLine("No campaign criteria were modified.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to set bid modifier for campaign.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to set bid modifier for campaign.", e);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// <summary>
   /// This code example creates a content category with the given name and
   /// description.
-  ///
-  /// Tags: contentcategory.saveContentCategory
   /// </summary>
   class CreateContentCategory : SampleBase {
     /// <summary>
@@ -74,9 +70,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         // Display content category id.
         Console.WriteLine("Content category with id \"{0}\" was created.",
             contentCategorySaveResult.id);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to add content category. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

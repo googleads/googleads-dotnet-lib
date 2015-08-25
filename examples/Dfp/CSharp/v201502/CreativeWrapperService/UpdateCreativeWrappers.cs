@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
 
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// This code example updates a creative wrapper to the 'OUTER' wrapping
   /// order. To determine which creative wrappers exist, run
   /// GetAllCreativeWrappers.cs.
-  ///
-  /// Tags: CreativeWrapperService.getCreativeWrappersByStatement
-  /// Tags: CreativeWrapperService.updateCreativeWrappers
   /// </summary>
   class UpdateCreativeWrappers : SampleBase {
     /// <summary>
@@ -81,9 +76,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
           Console.WriteLine("Creative wrapper with ID '{0}' and wrapping order '{1}' was " +
               "updated.", createdCreativeWrapper.id, createdCreativeWrapper.ordering);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to update creative wrappers. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

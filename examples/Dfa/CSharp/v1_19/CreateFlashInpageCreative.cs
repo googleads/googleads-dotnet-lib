@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -29,8 +27,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// the advertiser provided. To get assets file names, run CreateHTMLAsset.cs
   /// and CreateImageAsset.cs. To get a size id, run GetSize.cs. To get a
   /// creative type id, run GetCreativeType.cs.
-  ///
-  /// Tags: creative.saveCreative
   /// </summary>
   class CreateFlashInpageCreative : SampleBase {
     /// <summary>
@@ -105,9 +101,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
 
         // Display new creative id.
         Console.WriteLine("Flash inpage creative with id \"{0}\" was created.", result.id);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create advertiser. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

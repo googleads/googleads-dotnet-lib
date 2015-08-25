@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
@@ -28,10 +26,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// which custom fields exist, run GetAllCustomFields.cs. To create custom
   /// field options, run CreateCustomFieldOptions.cs. To determine which line
   /// items exist, run GetAllLineItems.cs.
-  ///
-  /// Tags: CustomFieldService.getCustomFieldsByStatement
-  /// Tags: LineItemService.getLineItemsByStatement
-  /// Tags: LineItemService.updateLineItems
   /// </summary>
   class SetLineItemCustomFieldValue : SampleBase {
     /// <summary>
@@ -144,8 +138,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No line items were updated.");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to update line items. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to update line items. Exception says \"{0}\"", e.Message);
       }
     }
   }

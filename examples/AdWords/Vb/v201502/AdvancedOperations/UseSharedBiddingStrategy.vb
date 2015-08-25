@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 
@@ -25,9 +23,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' <summary>
   ''' This code example adds a Shared Bidding Strategy and uses it to construct
   ''' a campaign.
-  '''
-  ''' Tags: BiddingStrategyService.mutate
-  ''' Tags: BudgetService.mutate, CampaignService.mutate
   ''' </summary>
   Public Class UseSharedBiddingStrategy
     Inherits ExampleBase
@@ -41,9 +36,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Console.WriteLine(codeExample.Description)
       Try
         codeExample.Run(New AdWordsUser)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -98,9 +93,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
             "created.", newCampaign.name, newCampaign.id, _
             newCampaign.biddingStrategyConfiguration.biddingStrategyId)
 
-      Catch ex As Exception
+      Catch e As Exception
         Throw New System.ApplicationException("Failed to create campaign that uses shared " & _
-            "bidding strategy.", ex)
+            "bidding strategy.", e)
       End Try
     End Sub
 

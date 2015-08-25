@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// This code example updates a team by adding an ad unit to it. To
   /// determine which teams exist, run GetAllTeams.cs. To determine which ad
   /// units exist, run GetAllAdUnits.cs.
-  ///
-  /// Tags: TeamService.getTeamsByStatement, TeamService.updateTeams
   /// </summary>
   class UpdateTeams : SampleBase {
     /// <summary>
@@ -99,8 +95,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No teams updated.");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to update teams. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to update teams. Exception says \"{0}\"", e.Message);
       }
     }
   }

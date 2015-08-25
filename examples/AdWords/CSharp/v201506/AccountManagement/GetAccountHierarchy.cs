@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// This code example illustrates how to retrieve the account hierarchy under
   /// an account. This code example won't work with Test Accounts. See
   /// https://developers.google.com/adwords/api/docs/test-accounts
-  ///
-  /// Tags: ManagedCustomerService.get
   /// </summary>
   public class GetAccountHierarchy : ExampleBase {
     /// <summary>
@@ -40,9 +36,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       Console.WriteLine(codeExample.Description);
       try {
         codeExample.Run(new AdWordsUser());
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -115,8 +111,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         } else {
           Console.WriteLine("No serviced accounts were found.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to create ad groups.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to create ad groups.", e);
       }
     }
 

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Examples.CSharp.v201506;
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Tests.v201506;

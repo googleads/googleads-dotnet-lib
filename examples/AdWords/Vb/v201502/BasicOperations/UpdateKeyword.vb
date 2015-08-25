@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 
@@ -25,8 +23,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' <summary>
   ''' This code example updates the bid of a keyword. To get keyword, run
   ''' GetKeywords.vb.
-  '''
-  ''' Tags: AdGroupCriterionService.mutate
   ''' </summary>
   Public Class UpdateKeyword
     Inherits ExampleBase
@@ -41,9 +37,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         Dim keywordId As Long = Long.Parse("INSERT_KEYWORD_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId, keywordId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -115,8 +111,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
         Else
           Console.WriteLine("No keyword was updated.")
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to update keyword.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to update keyword.", e)
       End Try
     End Sub
   End Class

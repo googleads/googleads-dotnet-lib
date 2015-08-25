@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201506
 
@@ -26,8 +24,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' This code example shows how to use the validateOnly header to validate
   ''' a text ad. No objects will be created, but exceptions will still be
   ''' thrown.
-  '''
-  ''' Tags: AdGroupAdService.mutate
   ''' </summary>
   Public Class ValidateTextAd
     Inherits ExampleBase
@@ -41,9 +37,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Try
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -92,18 +88,18 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
             New AdGroupAdOperation() {textAdOperation})
         ' Since validation is ON, result will be null.
         Console.WriteLine("text ad validated successfully.")
-      Catch ex As AdWordsApiException
+      Catch e As AdWordsApiException
         ' This block will be hit if there is a validation error from the server.
         Console.WriteLine("There were validation error(s) while adding text ad.")
 
-        If (Not ex.ApiException Is Nothing) Then
-          For Each apiError As ApiError In DirectCast(ex.ApiException, ApiException).errors
+        If (Not e.ApiException Is Nothing) Then
+          For Each apiError As ApiError In DirectCast(e.ApiException, ApiException).errors
             Console.WriteLine("  Error type is '{0}' and fieldPath is '{1}'.", _
                 apiError.ApiErrorType, apiError.fieldPath)
           Next
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to validate text ad.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to validate text ad.", e)
       End Try
     End Sub
   End Class

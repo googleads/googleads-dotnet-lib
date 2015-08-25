@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
 using Google.Api.Ads.Dfp.v201502;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example updates a base rate's value. To determine which base rates
   /// exist, run GetAllBaseRates.cs.
-  ///
-  /// Tags: BaseRateService.getBaseRatesByStatement, BaseRateService.updateBaseRates
   /// </summary>
   class UpdateBaseRates : SampleBase {
     /// <summary>
@@ -94,9 +90,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No base rates updated.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to update base rates. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

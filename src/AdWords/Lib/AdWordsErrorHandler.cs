@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Headers;
 using Google.Api.Ads.AdWords.Util.Reports;
 using Google.Api.Ads.Common.Lib;
@@ -86,12 +84,12 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <summary>
     /// Prepares the system for retrying the last failed call.
     /// </summary>
-    /// <param name="ex">The exception.</param>
-    public override void PrepareForRetry(Exception ex) {
+    /// <param name="exception">The exception.</param>
+    public override void PrepareForRetry(Exception exception) {
       try {
-        if (ex is AdWordsCredentialsExpiredException) {
+        if (exception is AdWordsCredentialsExpiredException) {
           this.user.OAuthProvider.RefreshAccessToken();
-        } else if (IsTransientError(ex)) {
+        } else if (IsTransientError(exception)) {
           DoExponentialBackoff();
         }
         IncrementRetriedAttempts();
@@ -105,7 +103,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         // a reasonable tradeoff.
         string msg = string.Format("An error occured while retrying a failed API call : " +
             "{0}. See inner exception for more details.", e.Message);
-        throw new ApplicationException(msg, ex);
+        throw new ApplicationException(msg, e);
       }
     }
 
@@ -140,12 +138,12 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Determines whether the exception thrown by the server matches a known
     /// error.
     /// </summary>
-    /// <param name="ex">The exception.</param>
-    /// <param name="errorMessage">The known error message.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="errorMessages">The known error message.</param>
     /// <returns>True, if the server exception matches the known error, false
     /// otherwise.</returns>
-    private static bool MatchesError(AdWordsReportsException ex, string[] errorMessages) {
-      foreach (ReportDownloadError error in ex.Errors) {
+    private static bool MatchesError(AdWordsReportsException exception, string[] errorMessages) {
+      foreach (ReportDownloadError error in exception.Errors) {
         foreach (String errorMessage in errorMessages) {
           if (error.ErrorType.Contains(errorMessage)) {
             return true;
@@ -160,7 +158,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// error.
     /// </summary>
     /// <param name="awapiException">The awapi exception.</param>
-    /// <param name="errorMessage">The known error message.</param>
+    /// <param name="errorMessages">The known error message.</param>
     /// <returns>True, if the server exception matches the known error, false
     /// otherwise.</returns>
     private static bool MatchesError(AdWordsApiException awapiException, string[] errorMessages) {

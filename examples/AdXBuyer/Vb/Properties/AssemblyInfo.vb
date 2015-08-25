@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
@@ -40,5 +38,5 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyProduct("AdWords API DotNet Client Library")> 
 <Assembly: AssemblyCopyright("Copyright 2011, Google Inc. All Rights Reserved.")> 
 
-<Assembly: AssemblyVersion("18.15.0.0")> 
-<Assembly: AssemblyFileVersion("18.15.0.0")> 
+<Assembly: AssemblyVersion("18.16.0.0")> 
+<Assembly: AssemblyFileVersion("18.16.0.0")> 

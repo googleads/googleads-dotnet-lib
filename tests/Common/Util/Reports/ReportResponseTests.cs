@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.jimper@gmail.com (Jonathon Imperiosi)
-
 using Google.Api.Ads.Common.Util;
 
 using NUnit.Framework;

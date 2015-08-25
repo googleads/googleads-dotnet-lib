@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
 
@@ -30,8 +28,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   ///
   /// Please see the following URL for more information:
   /// https://developers.google.com/doubleclick-publishers/docs/signup
-  ///
-  /// Tags: NetworkService.makeTestNetwork
   /// </summary>
   class MakeTestNetwork : SampleBase {
     /// <summary>
@@ -76,9 +72,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
         Console.WriteLine("Test network with network code \"{0}\" and display name \"{1}\" " +
             "created.\nYou may now sign in at http://www.google.com/dfp/main?networkCode={0}",
             network.networkCode, network.displayName);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to make test network. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

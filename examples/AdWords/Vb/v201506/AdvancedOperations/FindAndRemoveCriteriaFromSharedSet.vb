@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201506
 
@@ -26,8 +24,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' This code example demonstrates how to find and remove shared sets and
   ''' shared set criteria.
   ''' 
-  ''' Tags: SharedSetService.mutate, SharedSetCriterionService.mutate
-  ''' Tags: CampaignSharedSetService.mutate
   ''' </summary>
   Public Class FindAndRemoveCriteriaFromSharedSet
     Inherits ExampleBase
@@ -42,9 +38,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Try
         Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
         codeExample.Run(New AdWordsUser(), campaignId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -85,6 +81,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Dim campaignSharedSetService As CampaignSharedSetService = DirectCast(user.GetService( _
               AdWordsService.v201506.CampaignSharedSetService), CampaignSharedSetService)
 
+      Dim offset As Integer = 0
+      Dim pageSize As Integer = 500
+
       Dim selector As New Selector()
       selector.fields = New String() {"SharedSetId", "CampaignId", "SharedSetName", "SharedSetType"}
 
@@ -99,18 +98,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       predicate2.values = New String() {SharedSetType.NEGATIVE_KEYWORDS.ToString()}
 
       selector.predicates = New Predicate() {predicate1, predicate2}
+      selector.paging = New Paging()
+      selector.paging.numberResults = pageSize
 
       Dim sharedSetIds As New List(Of String)
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
 
       Dim page As New CampaignSharedSetPage()
 
       Try
         Do
           selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
 
           ' Get the campaigns.
           page = campaignSharedSetService.get(selector)
@@ -144,6 +141,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Dim sharedCriterionService As SharedCriterionService = DirectCast(user.GetService( _
           AdWordsService.v201506.SharedCriterionService), SharedCriterionService)
 
+      Dim offset As Integer = 0
+      Dim pageSize As Integer = 500
+
       Dim selector As New Selector()
       selector.fields = New String() {"SharedSetId", "Id", "KeywordText", _
           "KeywordMatchType", "PlacementUrl"}
@@ -154,18 +154,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       predicate.values = sharedSetIds.ToArray()
 
       selector.predicates = New Predicate() {predicate}
+      selector.paging = New Paging()
+      selector.paging.numberResults = pageSize
 
       Dim sharedCriteria As New List(Of SharedCriterion)
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
 
       Dim page As New SharedCriterionPage()
 
       Try
         Do
           selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
 
           ' Get the campaigns.
           page = sharedCriterionService.get(selector)

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example updates the notes of a product package. To determine which product packages
   /// exist, run GetAllProductPackages.cs.
-  ///
-  /// Tags: ProductPackageService.getProductPackagesByStatement,
   ///       ProductPackageService.updateProductPackages
   /// </summary>
   class UpdateProductPackages : SampleBase {
@@ -92,9 +88,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } else {
           Console.WriteLine("No product packages updated.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to update product packages. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

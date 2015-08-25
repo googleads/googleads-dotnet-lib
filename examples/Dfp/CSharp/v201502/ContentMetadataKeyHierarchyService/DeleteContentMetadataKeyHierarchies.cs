@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
@@ -26,9 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// This example deletes a content metadata key hierarchy. To determine
   /// which content metadata key hierarchies exist, run
   /// GetAllContentMetadataKeyHierarchies.cs.
-  ///
-  /// Tags: ContentMetadataKeyHierarchyService.getContentMetadataKeyHierarchiesByStatement
-  /// Tags: ContentMetadataKeyHierarchyService.performContentMetadataKeyHierarchyAction
   /// </summary>
   class DeleteContentMetadataKeyHierarchies : SampleBase {
     /// <summary>
@@ -95,9 +90,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
 
         Console.WriteLine("Number of content metadata key hierarchies deleted: {0}",
             result.numChanges);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to delete content metadata key hierarchies. " +
-            "Exception says \"{0}\"", ex.Message);
+            "Exception says \"{0}\"", e.Message);
       }
     }
   }

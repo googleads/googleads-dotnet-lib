@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 
@@ -30,8 +28,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' 100 threads in parallel, each thread attempting to validate 100 keywords
   ''' in a single request. Note that spawning 100 parallel threads is for
   ''' illustrative purposes only, you shouldn't do this in your application.
-  '''
-  ''' Tags: AdGroupAdService.mutate
   ''' </summary>
   Public Class HandleRateExceededError
     Inherits ExampleBase
@@ -45,9 +41,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Try
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -170,12 +166,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
               ' Validate the keywords.
               Dim retval As AdGroupCriterionReturnValue = service.mutate(operations.ToArray)
               Exit While
-            Catch ex As AdWordsApiException
+            Catch e As AdWordsApiException
               ' Handle API errors.
-              Dim innerException As ApiException = TryCast(ex.ApiException, ApiException)
+              Dim innerException As ApiException = TryCast(e.ApiException, ApiException)
               If (innerException Is Nothing) Then
                 Throw New Exception("Failed to retrieve ApiError. See inner exception for more " & _
-                    "details.", ex)
+                    "details.", e)
               End If
               For Each apiError As ApiError In innerException.errors
                 If Not TypeOf apiError Is RateExceededError Then
@@ -197,8 +193,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
               End If
             End Try
           End While
-        Catch ex As Exception
-          Throw New System.ApplicationException("Failed to validate keywords.", ex)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to validate keywords.", e)
         End Try
       End Sub
     End Class

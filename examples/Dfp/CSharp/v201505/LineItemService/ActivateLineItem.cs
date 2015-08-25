@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -29,9 +27,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// items, approve the order to which they belong by running ApproveOrders.cs.
   /// To create LICAs, run CreateLicas.cs. To determine which line items exist,
   /// run GetAllLineItem.cs.
-  ///
-  /// Tags: LineItemService.getLineItemsByStatement
-  /// Tags: LineItemService.performLineItemAction
   /// </summary>
   class ActivateLineItem : SampleBase {
     /// <summary>
@@ -122,9 +117,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
             Console.WriteLine("No line items were activated.");
           }
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to activate line items. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

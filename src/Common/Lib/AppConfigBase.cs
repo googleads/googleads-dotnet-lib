@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -593,12 +591,8 @@ namespace Google.Api.Ads.Common.Lib {
       maskCredentials = bool.Parse(ReadSetting(settings, MASK_CREDENTIALS,
           maskCredentials.ToString()));
 
-      try {
-        oAuth2Mode = (OAuth2Flow) Enum.Parse(typeof(OAuth2Flow), ReadSetting(settings, OAUTH2_MODE,
-            oAuth2Mode.ToString()));
-      } catch (Exception e) {
-        // No action.
-      }
+      Enum.TryParse<OAuth2Flow>(ReadSetting(settings, OAUTH2_MODE, oAuth2Mode.ToString()),
+          out oAuth2Mode);
 
       oAuth2ClientId = ReadSetting(settings, OAUTH2_CLIENTID, oAuth2ClientId);
       oAuth2ClientSecret = ReadSetting(settings, OAUTH2_CLIENTSECRET, oAuth2ClientSecret);

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// <summary>
   /// This code example downloads a completed report. To run a report, run
   /// RunDeliveryReport.cs.
-  ///
-  /// Tags: ReportService.getReportDownloadURL
   /// </summary>
   class DownloadReport : SampleBase {
     /// <summary>
@@ -75,8 +71,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         // Display results.
         Console.WriteLine("Report job with id '{0}' was downloaded to '{1}'.", reportJobId,
             fileName);
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to download report. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to download report. Exception says \"{0}\"", e.Message);
       }
     }
   }

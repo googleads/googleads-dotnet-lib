@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.Reports;
 using Google.Api.Ads.AdWords.v201506;
@@ -308,9 +306,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         string fileName = "INSERT_FILE_NAME_HERE";
 
         codeExample.Run(new AdWordsUser(), startDate, endDate, fileName);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example adds sitelinks to a campaign. To create a campaign,
   /// run AddCampaign.cs.
-  ///
-  /// Tags: CampaignExtensionSettingService.mutate
   /// </summary>
   public class AddSitelinks : ExampleBase {
 
@@ -39,9 +35,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       try {
         long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
         codeExample.Run(new AdWordsUser(), campaignId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -168,8 +164,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No extension settings were created.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to create extension settings.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to create extension settings.", e);
       }
     }
   }

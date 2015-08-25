@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// This code example gets all content metadata key hierarchies. To create
   /// content metadata key hierarchies, run
   /// CreateContentMetadataKeyHierarchies.cs.
-  ///
-  /// Tags: ContentMetadataKeyHierarchyService.getContentMetadataKeyHierarchiesByStatement
   /// </summary>
   class GetAllContentMetadataKeyHierarchies : SampleBase {
     /// <summary>
@@ -85,9 +81,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get content metadata key hierarchies. Exception " +
-            "says \"{0}\"", ex.Message);
+            "says \"{0}\"", e.Message);
       }
     }
   }

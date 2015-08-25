@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// <summary>
   /// This code example creates a HTML creative asset in a given advertiser. To
   /// create an advertiser, run CreateAdvertiser.cs.
-  ///
-  /// Tags: creative.saveCreativeAsset
   /// </summary>
   class CreateHTMLAsset : SampleBase {
     /// <summary>
@@ -78,9 +74,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
 
         // Display asset file name.
         Console.WriteLine("Asset was saved with file name of \"{0}\".", result.savedFilename);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create html asset. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

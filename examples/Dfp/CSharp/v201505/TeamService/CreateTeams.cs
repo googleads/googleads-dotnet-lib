@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201505;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example creates new teams. To determine which teams exist, run
   /// GetAllTeams.cs.
-  ///
-  /// Tags: TeamService.createTeams
   /// </summary>
   class CreateTeams : SampleBase {
     /// <summary>
@@ -80,8 +76,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } else {
           Console.WriteLine("No teams created.");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to create teams. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to create teams. Exception says \"{0}\"", e.Message);
       }
     }
   }

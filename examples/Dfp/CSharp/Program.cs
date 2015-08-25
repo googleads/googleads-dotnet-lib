@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 
 using System;
@@ -91,9 +89,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp {
       try {
         Console.WriteLine(example.Description);
         example.Run(user);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code sample.\n{0} at\n{1}",
-            ex.Message, ex.StackTrace);
+            e.Message, e.StackTrace);
       } finally {
         Console.WriteLine("Press [Enter] to continue");
         Console.ReadLine();

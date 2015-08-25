@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 
@@ -25,8 +23,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' <summary>
   ''' This code example adds demographic target criteria to an ad group. To get
   ''' ad groups, run AddAdGroup.vb.
-  '''
-  ''' Tags: AdGroupCriterionService.mutate
   ''' </summary>
   Public Class AddAdGroupDemographicCriteria
     Inherits ExampleBase
@@ -40,9 +36,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Try
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -116,8 +112,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
         Else
           Console.WriteLine("No ad group criteria were added.")
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to create ad group criteria.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to create ad group criteria.", e)
       End Try
     End Sub
   End Class

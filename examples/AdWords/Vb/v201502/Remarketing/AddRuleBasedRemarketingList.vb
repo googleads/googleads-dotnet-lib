@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 
@@ -28,8 +26,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' who visit your site in the next six months.  See
   ''' https://developers.google.com/adwords/api/docs/guides/rule-based-remarketing
   ''' to learn more about rule based remarketing.
-  '''
-  ''' Tags: AdwordsUserListService.mutate
   ''' </summary>
   Public Class AddRuleBasedRemarketingList
     Inherits ExampleBase
@@ -44,9 +40,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Console.WriteLine(codeExample.Description)
       Try
         codeExample.Run(New AdWordsUser)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -175,8 +171,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
               userListResult.accountUserListStatus,
               userListResult.description)
         Next
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to add rule based user lists.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to add rule based user lists.", e)
       End Try
     End Sub
   End Class

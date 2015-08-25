@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example removes a campaign by setting the status to 'REMOVED'.
   /// To get campaigns, run GetCampaigns.cs.
-  ///
-  /// Tags: CampaignService.mutate
   /// </summary>
   public class RemoveCampaign : ExampleBase {
     /// <summary>
@@ -39,9 +35,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       try {
         long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
         codeExample.Run(new AdWordsUser(), campaignId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -87,8 +83,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No campaigns were removed.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to remove campaign.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to remove campaign.", e);
       }
     }
   }

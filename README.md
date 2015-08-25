@@ -188,14 +188,23 @@ To run the test cases, you need to download and install the latest version of NU
 It is recommended that you run the test cases against a test environment. Refer to the
  appropriate API documentation for details on how this may be done.
 
-###Miscellaneous
-####Wiki
+##Working with OAuth2
+
+See https://github.com/googleads/googleads-dotnet-lib/wiki#oauth2 for details.
+
+##How to enable logging
+
+See https://github.com/googleads/googleads-dotnet-lib/wiki#logging for details. 
+ 
+##Miscellaneous
+
+###Wiki
 - https://github.com/googleads/googleads-dotnet-lib/wiki
 
-####Issue tracker
+###Issue tracker
 - https://github.com/googleads/googleads-dotnet-lib/issues
 
-####API Documentation:
+###API Documentation:
 - AdWords API: https://developers.google.com/adwords/api/
 - AdxBuyer API: https://developers.google.com/ad-exchange/buyer-soap/
 - DFP API: https://developers.google.com/doubleclick-publishers/

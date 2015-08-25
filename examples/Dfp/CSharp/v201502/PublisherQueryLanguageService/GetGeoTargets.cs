@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
@@ -29,8 +27,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// 'Region', 'State', 'Postal_Code', and 'DMA_Region' (i.e. Metro).
   /// A full list of available geo target types can be found at
   /// https://developers.google.com/doubleclick-publishers/docs/reference/v201502/PublisherQueryLanguageService
-  ///
-  /// Tags: PublisherQueryLanguageService.select
   /// </summary>
   class GetGeoTargets : SampleBase {
     /// <summary>
@@ -107,9 +103,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
         file.Headers.AddRange(rows[0]);
         file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
         file.Write(geoType + "_" + this.GetTimeStamp() + ".csv");
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get Geo type = '{0}'. Exception says \"{1}\"",
-            geoType, ex.Message);
+            geoType, e.Message);
       }
     }
   }

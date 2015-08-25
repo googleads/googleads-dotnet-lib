@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley (https://github.com/Narwalter)
-
 using System;
 using System.Text;
 using System.Security.Cryptography.X509Certificates;

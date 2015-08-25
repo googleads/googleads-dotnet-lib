@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util.Reports;
 using Google.Api.Ads.Dfp.Lib;
@@ -74,9 +72,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.OAuth {
     /// Handles the Click event of the btnGetUsers control.
     /// </summary>
     /// <param name="sender">The source of the event.</param>
-    /// <param name="e">The <see cref="System.EventArgs"/> instance containing
+    /// <param name="eventArgs">The <see cref="System.EventArgs"/> instance containing
     /// the event data.</param>
-    protected void OnGetUsersButtonClick(object sender, EventArgs e) {
+    protected void OnGetUsersButtonClick(object sender, EventArgs eventArgs) {
       ConfigureUserForOAuth();
 
       try {
@@ -119,9 +117,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.OAuth {
         } else {
           Response.Write("No users were found.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Response.Write(string.Format("Failed to get users. Exception says \"{0}\"",
-            ex.Message));
+            e.Message));
       }
     }
 
@@ -129,9 +127,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.OAuth {
     /// Handles the Click event of the btnDownloadReport control.
     /// </summary>
     /// <param name="sender">The source of the event.</param>
-    /// <param name="e">The <see cref="System.EventArgs"/> instance containing
+    /// <param name="eventArgs">The <see cref="System.EventArgs"/> instance containing
     /// the event data.</param>
-    protected void OnDownloadReportButtonClick(object sender, EventArgs e) {
+    protected void OnDownloadReportButtonClick(object sender, EventArgs eventArgs) {
       ConfigureUserForOAuth();
       ReportService reportService = (ReportService) user.GetService(
           DfpService.v201505.ReportService);
@@ -174,8 +172,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.OAuth {
           reportResponse.Save(filePath);
         }
 
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to download report.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to download report.", e);
       }
       Response.AddHeader("content-disposition", "attachment;filename=report.csv.gzip");
       Response.WriteFile(filePath);

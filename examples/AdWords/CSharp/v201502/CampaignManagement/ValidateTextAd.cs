@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// This code example shows how to use the validateOnly header to validate
   /// a text ad. No objects will be created, but exceptions will still be
   /// thrown.
-  ///
-  /// Tags: AdGroupAdService.mutate
   /// </summary>
   public class ValidateTextAd : ExampleBase {
     /// <summary>
@@ -40,9 +36,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       try {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -91,18 +87,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
             (new AdGroupAdOperation[] {textAdOperation}));
         // Since validation is ON, result will be null.
         Console.WriteLine("text ad validated successfully.");
-      } catch (AdWordsApiException ex) {
+      } catch (AdWordsApiException e) {
         // This block will be hit if there is a validation error from the server.
         Console.WriteLine("There were validation error(s) while adding text ad.");
 
-        if (ex.ApiException != null) {
-          foreach (ApiError error in ((ApiException) ex.ApiException).errors) {
+        if (e.ApiException != null) {
+          foreach (ApiError error in ((ApiException) e.ApiException).errors) {
             Console.WriteLine("  Error type is '{0}' and fieldPath is '{1}'.",
                 error.ApiErrorType, error.fieldPath);
           }
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to validate text ad.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to validate text ad.", e);
       }
     }
   }

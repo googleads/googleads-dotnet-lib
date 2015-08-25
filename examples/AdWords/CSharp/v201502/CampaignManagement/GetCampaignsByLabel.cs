@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using System;
 using System.Collections.Generic;
 using Google.Api.Ads.AdWords.Lib;
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example gets all campaigns with a specific label. To add a
   /// label to campaigns, run AddCampaignLabels.cs.
-  ///
-  /// Tags: CampaignService.get
   /// </summary>
   public class GetCampaignsByLabel : ExampleBase {
 
@@ -39,9 +35,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       try {
         long labelId = long.Parse("INSERT_LABEL_ID_HERE");
         codeExample.Run(new AdWordsUser(), labelId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -113,8 +109,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
           offset += pageSize;
         } while (offset < page.totalNumEntries);
         Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to retrieve campaigns by label", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to retrieve campaigns by label", e);
       }
     }
   }

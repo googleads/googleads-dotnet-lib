@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -24,9 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example updates a proposal line item's notes. To determine which 
   /// proposal line items exist, run GetAllProposalLineItems.cs.
-  ///
-  /// Tags: ProposalLineItemService.getProposalLineItemsByStatement
-  /// Tags: ProposalLineItemService.updateProposalLineItems
   /// </summary>
   class UpdateProposalLineItems : SampleBase {
     /// <summary>
@@ -90,9 +85,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } else {
           Console.WriteLine("No proposal line items updated.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to update proposal line items. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

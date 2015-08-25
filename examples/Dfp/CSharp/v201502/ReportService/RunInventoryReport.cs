@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Common.Util.Reports;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example runs a report equal to the "Whole network report" on the
   /// DFP website. The report is saved to the specified file path.
-  ///
-  /// Tags: ReportService.runReportJob
   /// </summary>
   class RunInventoryReport : SampleBase {
     /// <summary>
@@ -111,9 +107,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
         }
         Console.WriteLine("Report saved to \"{0}\".", filePath);
 
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to run inventory report. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

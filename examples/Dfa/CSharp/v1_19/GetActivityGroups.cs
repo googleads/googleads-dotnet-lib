@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// <summary>
   /// This code example displays activity groups names and ids for a given
   /// advertiser. To create an advertiser, run CreateAdvertiser.cs.
-  ///
-  /// Tags: spotlight.getSpotlightActivityGroups
   /// </summary>
   class GetActivityGroups : SampleBase {
     /// <summary>
@@ -82,9 +78,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         } else {
           Console.WriteLine("No activity groups found for your criteria.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to retrieve activity groups. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

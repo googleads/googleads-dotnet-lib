@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.Reports;
 using Google.Api.Ads.AdWords.v201506;
@@ -69,9 +67,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     /// Handles the Click event of the btnDownloadReport control.
     /// </summary>
     /// <param name="sender">The source of the event.</param>
-    /// <param name="e">The <see cref="System.EventArgs"/> instance containing
+    /// <param name="eventArgs">The <see cref="System.EventArgs"/> instance containing
     /// the event data.</param>
-    protected void OnDownloadReportButtonClick(object sender, EventArgs e) {
+    protected void OnDownloadReportButtonClick(object sender, EventArgs eventArgs) {
       ConfigureUserForOAuth();
       ReportDefinition definition = new ReportDefinition();
 
@@ -104,8 +102,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
         using (ReportResponse response = utilities.GetResponse()) {
           response.Save(filePath);
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to download report.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to download report.", e);
       }
       Response.AddHeader("content-disposition", "attachment;filename=report.gzip");
       Response.WriteFile(filePath);
@@ -116,9 +114,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     /// Handles the Click event of the btnGetCampaigns control.
     /// </summary>
     /// <param name="sender">The source of the event.</param>
-    /// <param name="e">The <see cref="System.EventArgs"/> instance containing
+    /// <param name="eventArgs">The <see cref="System.EventArgs"/> instance containing
     /// the event data.</param>
-    protected void OnGetCampaignsButtonClick(object sender, EventArgs e) {
+    protected void OnGetCampaignsButtonClick(object sender, EventArgs eventArgs) {
       ConfigureUserForOAuth();
 
       // Now proceed to make your API calls as usual.
@@ -161,9 +159,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
         } else {
           Response.Write("No campaigns were found.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Response.Write(string.Format("Failed to get campaigns. Exception says \"{0}\"",
-            ex.Message));
+            e.Message));
       }
     }
 

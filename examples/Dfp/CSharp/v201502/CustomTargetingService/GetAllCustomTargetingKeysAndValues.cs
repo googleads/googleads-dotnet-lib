@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
@@ -26,9 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// This code example gets all custom targeting keys and the values. To create
   /// custom targeting keys and values, run
   /// CreateCustomTargetingKeysAndValues.cs.
-  ///
-  /// Tags: CustomTargetingService.getCustomTargetingKeysByStatement
-  /// Tags: CustomTargetingService.getCustomTargetingValuesByStatement
   /// </summary>
   class GetAllCustomTargetingKeysAndValues : SampleBase {
     /// <summary>
@@ -114,9 +109,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
           keyStatementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (keyStatementBuilder.GetOffset() < keyPage.totalResultSetSize);
         Console.WriteLine("Number of results found: {0}", keyPage.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get custom targeting keys and the values. Exception " +
-            "says \"{0}\"", ex.Message);
+            "says \"{0}\"", e.Message);
       }
     }
   }

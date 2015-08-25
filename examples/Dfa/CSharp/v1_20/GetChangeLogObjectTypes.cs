@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_20;
 
@@ -25,8 +23,6 @@ using Google.Api.Ads.Common.Util;
 namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
   /// <summary>
   /// This code example displays change log object type names and ids.
-  ///
-  /// Tags: changelog.getChangeLogObjectTypes
   /// </summary>
   class GetChangeLogObjectTypes : SampleBase {
     /// <summary>
@@ -67,9 +63,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
           Console.WriteLine("Change Log Object type with name \"{0}\" and id \"{1}\" was found.",
               changeLogObjectType.name, changeLogObjectType.id);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get change log types. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

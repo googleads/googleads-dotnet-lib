@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example adds a new promotion to an express business. To get
   /// promotions, run GetPromotions.cs.
-  ///
-  /// Tags: ExpressBusinessService.get, PromotionService.mutate
   /// </summary>
   public class AddPromotion : ExampleBase {
 
@@ -49,9 +45,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       try {
         long businessId = long.Parse("INSERT_ADWORDS_EXPRESS_BUSINESS_ID_HERE");
         codeExample.Run(new AdWordsUser(), businessId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -140,8 +136,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
 
         Console.WriteLine("Added promotion ID {0} with name {1} to business ID {2}.",
         addedPromotions[0].id, addedPromotions[0].name, businessId);
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to add promotions.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to add promotions.", e);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201505;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// be associated with a LabelType.CREATIVE_WRAPPER label and applied to ad
   /// units by AdUnit.appliedLabels. To determine which creative wrappers exist,
   /// run GetAllCreativeWrappers.cs.
-  ///
-  /// Tags: CreativeWrapperService.createCreativeWrappers
   /// </summary>
   class CreateCreativeWrappers : SampleBase {
     /// <summary>
@@ -81,8 +77,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
           Console.WriteLine("Creative wrapper with ID \'{0}\' applying to label \'{1}\' was " +
               "created.", wrapper.id, wrapper.labelId);
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to create creative wrappers. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to create creative wrappers. Exception says \"{0}\"", e.Message);
       }
     }
   }

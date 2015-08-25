@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
 using Google.Api.Ads.Dfp.v201502;
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example removes the user from all its teams. To determine which
   /// users exist, run GetAllUsers.cs.
-  ///
-  /// Tags:  UserTeamAssociationService.performUserTeamAssociationAction
   /// </summary>
   class DeleteUserTeamAssociation : SampleBase {
     /// <summary>
@@ -111,9 +107,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
             Console.WriteLine("No user team associations were deleted.");
           }
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to delete user team associations. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

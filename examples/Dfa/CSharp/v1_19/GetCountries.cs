@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// <summary>
   /// This code example displays the country names, country codes and
   /// information whether country supports secure server.
-  ///
-  /// Tags: creativefield.getCreativeFields
   /// </summary>
   class GetCountries : SampleBase {
     /// <summary>
@@ -75,8 +71,8 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
                 "server? \"{2}\".", result.name, result.id, result.secure);
           }
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to retrieve countries. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to retrieve countries. Exception says \"{0}\"", e.Message);
       }
     }
   }

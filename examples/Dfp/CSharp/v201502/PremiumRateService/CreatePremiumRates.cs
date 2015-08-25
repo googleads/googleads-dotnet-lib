@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
 
@@ -23,8 +21,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example creates a premium rate. To determine which premium rates exist,
   /// run GetAllPremiumRates.cs.
-  ///
-  /// Tags: PremiumRateService.createPremiumRates
   /// </summary>
   class CreatePremiumRates : SampleBase {
     /// <summary>
@@ -103,8 +99,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
               + "ID of '{1}'.", createdPremiumRate.premiumFeature.GetType().Name,
               createdPremiumRate.rateCardId);
         }
-      } catch (Exception ex) {
-          Console.WriteLine("Failed to create premium rates. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+          Console.WriteLine("Failed to create premium rates. Exception says \"{0}\"", e.Message);
       }
     }
   }

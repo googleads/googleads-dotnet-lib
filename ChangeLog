@@ -1,3 +1,36 @@
+18.16.0
+=======
+All:
+  - Removed Author and Tag entries from all the source files.
+  - Cleaned up the code to fix several broken doc tags and standardize variable names.
+  - Updated README file with Logging and OAuth2 instructions.
+
+AdWords:
+  - Stub code for all the API versions were regenerated.
+  - Stub code now contains documentation from the WSDL files. This allows you to see documentation
+  as part of auto complete from within Visual Studio.
+
+AdXBuyer:
+  - Stub code for all the API versions were regenerated.
+  - Stub code now contains documentation from the WSDL files. This allows you to see documentation
+  as part of auto complete from within Visual Studio.
+  - Fixed several broken tests.
+
+DFA:
+  -
+
+DFP:
+  - Stub code for all the API versions were regenerated.
+  - Stub code now contains documentation from the WSDL files. This allows you to see documentation
+  as part of auto complete from within Visual Studio.
+  - Removed support for v201403 and v201405.
+  - Removed examples for v201408.
+  - Added support for v201508.
+  - Added ReconciliationLineItemReportService.
+
+Common:
+  - Common library version was bumped to 3.9.0.0
+
 18.15.0
 =======
 

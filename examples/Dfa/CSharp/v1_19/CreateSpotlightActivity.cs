@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -28,8 +26,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// To create an activity group, run CreateSpotlightActivityGroup.cs. To get
   /// tag methods types, run GetTagMethodTypes.cs. To get activity type ids,
   /// run GetActivityTypes.cs. To get available countries, run GetCountries.cs.
-  ///
-  /// Tags: spotlight.saveSpotlightActivity
   /// </summary>
   class CreateSpotlightActivity : SampleBase {
     /// <summary>
@@ -89,9 +85,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         if (result != null) {
           Console.WriteLine("Spotlight activity with id \"{0}\" was created.", result.id);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create spotlight activity. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
 
@@ -23,8 +21,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example gets the current network that you can make requests
   /// against.
-  ///
-  /// Tags: NetworkService.getCurrentNetwork
   /// </summary>
   class GetCurrentNetwork : SampleBase {
     /// <summary>
@@ -61,9 +57,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
 
         Console.WriteLine("Current network has network code \"{0}\" and display name \"{1}\".",
             network.networkCode, network.displayName);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get current network. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

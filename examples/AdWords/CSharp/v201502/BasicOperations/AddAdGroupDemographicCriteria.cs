@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example adds demographic target criteria to an ad group. To get
   /// ad groups, run AddAdGroup.cs.
-  ///
-  /// Tags: AdGroupCriterionService.mutate
   /// </summary>
   public class AddAdGroupDemographicCriteria : ExampleBase {
     /// <summary>
@@ -39,9 +35,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       try {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -115,8 +111,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("No ad group criteria were added.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to create ad group criteria.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to create ad group criteria.", e);
       }
     }
   }

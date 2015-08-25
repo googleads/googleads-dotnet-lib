@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
@@ -26,9 +24,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// This code example creates a copy of an image creative. This would
   /// typically be done to reuse creatives in a small business network. To
   /// determine which creatives exist, run GetAllCreatives.cs.
-  ///
-  /// Tags: CreativeService.getCreativesByStatement
-  /// Tags: CreativeService.createCreatives
   /// </summary>
   class CopyImageCreatives : SampleBase {
     /// <summary>
@@ -103,8 +98,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } else {
           Console.WriteLine("No creatives were copied.");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to copy creatives. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to copy creatives. Exception says \"{0}\"", e.Message);
       }
     }
   }

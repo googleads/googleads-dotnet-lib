@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 
@@ -25,9 +23,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' <summary>
   ''' This code example adds a Shared Bidding Strategy and uses it to construct
   ''' a campaign.
-  '''
-  ''' Tags: BiddingStrategyService.mutate
-  ''' Tags: BudgetService.mutate, CampaignService.mutate
   ''' </summary>
   Public Class UploadOfflineConversions
     Inherits ExampleBase
@@ -48,9 +43,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       Console.WriteLine(codeExample.Description)
       Try
         codeExample.Run(New AdWordsUser, conversionName, gClId, conversionTime, conversionValue)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -134,8 +129,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
         Console.WriteLine("Uploaded offline conversion value of {0} for Google Click ID = " & _
             "'{1}' to '{2}'.", newFeed.conversionValue, newFeed.googleClickId, _
             newFeed.conversionName)
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to upload offline conversions.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to upload offline conversions.", e)
       End Try
     End Sub
   End Class

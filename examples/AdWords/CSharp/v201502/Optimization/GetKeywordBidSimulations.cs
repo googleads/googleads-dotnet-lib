@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// This code example gets a bid landscape for an ad group and a keyword.
   /// To get ad groups, run GetAdGroups.cs. To get keywords, run
   /// GetKeywords.cs.
-  ///
-  /// Tags: DataService.getCriterionBidLandscape
   /// </summary>
   public class GetKeywordBidSimulations : ExampleBase {
     /// <summary>
@@ -41,9 +37,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         long keywordId = long.Parse("INSERT_KEYWORD_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId, keywordId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -124,8 +120,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
           offset += pageSize;
         } while (offset < page.totalNumEntries);
         Console.WriteLine("Number of keyword bid landscapes found: {0}", page.totalNumEntries);
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to retrieve keyword bid landscapes.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to retrieve keyword bid landscapes.", e);
       }
     }
   }

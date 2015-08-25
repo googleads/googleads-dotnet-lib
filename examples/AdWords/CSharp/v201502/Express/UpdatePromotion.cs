@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example updates a promotion for an express businesses. To add
   /// a promotion, run UpdatePromotion.cs.
-  ///
-  /// Tags: PromotionService.mutate
   /// </summary>
   public class UpdatePromotion : ExampleBase {
 
@@ -50,9 +46,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         long businessId = long.Parse("INSERT_ADWORDS_EXPRESS_BUSINESS_ID_HERE");
         long promotionId = long.Parse("INSERT_PROMOTION_ID_HERE");
         codeExample.Run(new AdWordsUser(), businessId, promotionId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -92,8 +88,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         Console.WriteLine("Promotion ID {0} for business ID {1} now has budget micro " +
             "amount {2}.", promotionId, businessId,
             updatedPromotions[0].budget.microAmount);
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to update promotions.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to update promotions.", e);
       }
     }
   }

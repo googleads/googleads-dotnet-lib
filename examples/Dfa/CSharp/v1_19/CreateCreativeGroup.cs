@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// This code example creates a creative group associated with a given
   /// advertiser. To get an advertiser id, run getAdvertisers.cs. Valid group
   /// numbers are limited to 1 or 2.
-  ///
-  /// Tags: creativegroup.saveCreativeGroup
   /// </summary>
   class CreateCreativeGroup : SampleBase {
     /// <summary>
@@ -80,9 +76,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         // Display new creative group id.
         Console.WriteLine("Creative group with id \"{0}\" was created.",
             creativeGroupSaveResult.id);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create creative group. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

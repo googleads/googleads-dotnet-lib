@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
 using Google.Api.Ads.Dfp.v201502;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// This code example updates an ad unit by enabling AdSense to the first
   /// 500. To determine which ad units exist, run GetAllAdUnits.cs or
   /// GetInventoryTree.cs.
-  ///
-  /// Tags: InventoryService.getAdUnitsByStatement, InventoryService.updateAdUnits
   /// </summary>
   class UpdateAdUnits : SampleBase {
     /// <summary>
@@ -83,8 +79,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
               "\"{2}\" was updated.", updatedAdUnit.id, updatedAdUnit.name,
               updatedAdUnit.inheritedAdSenseSettings.value.adSenseEnabled);
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to update ad units. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to update ad units. Exception says \"{0}\"", e.Message);
       }
     }
   }

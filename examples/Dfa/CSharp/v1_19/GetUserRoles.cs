@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// This code example displays user role name, id, subnetwork id, number of
   /// assigned users, and assigned permissions for the given search criteria.
   /// Results are limited to the first 10 records.
-  ///
-  /// Tags: userrole.getUserRoles
   /// </summary>
   class GetUserRoles : SampleBase {
     /// <summary>
@@ -94,8 +90,8 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         } else {
           Console.WriteLine("No user roles found for your criteria.");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to retrieve user roles. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to retrieve user roles. Exception says \"{0}\"", e.Message);
       }
     }
   }

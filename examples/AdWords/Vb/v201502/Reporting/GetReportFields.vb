@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201502
 
@@ -24,8 +22,6 @@ Imports System.IO
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
   ''' <summary>
   ''' This code example gets report fields.
-  '''
-  ''' Tags: ReportDefinitionService.getReportFields
   ''' </summary>
   Public Class GetReportFields
     Inherits ExampleBase
@@ -41,9 +37,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
             [Enum].Parse(GetType(ReportDefinitionReportType), "INSERT_REPORT_TYPE_HERE"),  _
             ReportDefinitionReportType)
         codeExample.Run(New AdWordsUser, reportType)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -90,8 +86,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
         Else
           Console.WriteLine("This report type has no fields.")
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to retrieve fields for report type.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to retrieve fields for report type.", e)
       End Try
     End Sub
   End Class

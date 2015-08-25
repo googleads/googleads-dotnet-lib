@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201505;
 
@@ -23,8 +21,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example gets a delivery forecast for existing line items. To determine
   /// which line items exist, run GetAllLineItems.cs.
-  ///
-  /// Tags: ForecastService.getForecastById
   /// </summary>
   class GetDeliveryForecastByIds : SampleBase {
     /// <summary>
@@ -76,8 +72,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
           Console.WriteLine("\t{0} {1} predicted", lineItemForecast.predictedDeliveryUnits,
               unitType);
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to get forecast by id. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get forecast by id. Exception says \"{0}\"", e.Message);
       }
     }
   }

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This example updates a product template's targeting to include a new GeoTarget.
   /// To determine which product templates exist, run GetAllProductTemplates.cs.
-  ///
-  /// Tags: ProductTemplateService.getProductTemplatesByStatement
-  /// Tags: ProductTemplateService.updateProductTemplates
   /// </summary>
   class UpdateProductTemplates : SampleBase {
     /// <summary>
@@ -112,9 +107,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } else {
           Console.WriteLine("No product templates updated.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to update product templates. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

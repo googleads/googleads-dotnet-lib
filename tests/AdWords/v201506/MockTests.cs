@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 using Google.Api.Ads.Common.Lib;
@@ -190,16 +188,17 @@ namespace Google.Api.Ads.AdWords.Tests.v201506 {
 
       campaign.budget = budget;
 
-      campaign.budget = budget;
+      campaign.advertisingChannelType = AdvertisingChannelType.SEARCH;
 
       // Set the campaign network options to GoogleSearch and SearchNetwork
       // only. Set ContentNetwork, PartnerSearchNetwork and ContentContextual
       // to false.
-      campaign.networkSetting = new NetworkSetting();
-      campaign.networkSetting.targetGoogleSearch = true;
-      campaign.networkSetting.targetSearchNetwork = true;
-      campaign.networkSetting.targetContentNetwork = false;
-      campaign.networkSetting.targetPartnerSearchNetwork = false;
+      campaign.networkSetting = new NetworkSetting() {
+        targetGoogleSearch = true,
+        targetSearchNetwork = true,
+        targetContentNetwork = false,
+        targetPartnerSearchNetwork = false
+      };
 
       // Create operations.
       CampaignOperation operation = new CampaignOperation();

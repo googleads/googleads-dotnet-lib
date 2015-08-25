@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_20;
 
@@ -29,8 +27,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
   /// campaign start and end dates. To create creatives, run
   /// CreateCreatives.cs. To get available placements, run GetPlacement.cs.
   /// To get a size id, run GetSize.cs.
-  ///
-  /// Tags: ad.saveAd
   /// </summary>
   class CreateRotationGroup : SampleBase {
     /// <summary>
@@ -115,8 +111,8 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
 
         // Display new ad id.
         Console.WriteLine("Ad with id \"{0}\" was created.", result.id);
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to create rotation group. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to create rotation group. Exception says \"{0}\"", e.Message);
       }
     }
   }

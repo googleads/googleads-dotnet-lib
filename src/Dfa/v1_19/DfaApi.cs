@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 namespace Google.Api.Ads.Dfa.v1_19 {
   using Google.Api.Ads.Dfa.Lib;
 

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// <summary>
   /// This code example retrieves available ad types and displays the name and
   /// id for each type.
-  ///
-  /// Tags: ad.getAdTypes
   /// </summary>
   class GetAdTypes : SampleBase {
     /// <summary>
@@ -69,9 +65,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
           Console.WriteLine("Ad type with name \"{0}\" and id \"{1}\" was found.", result.name,
               result.id);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to retrieve ad types. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

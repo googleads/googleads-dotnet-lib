@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// This code example displays advertiser group name, id, and advertiser
   /// count for the given search criteria. Results are limited to the first 10
   /// records.
-  ///
-  /// Tags: advertisergroup.getAdvertiserGroups
   /// </summary>
   class GetAdvertiserGroups : SampleBase {
     /// <summary>
@@ -83,9 +79,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         } else {
           Console.WriteLine("No advertiser groups found for your search criteria.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to retrieve advertiser groups. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

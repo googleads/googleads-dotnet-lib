@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
 using Google.Api.Ads.Dfp.v201502;
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example updates company comments. To determine which companies exist,
   /// run GetAllCompanies.cs.
-  ///
-  /// Tags: CompanyService.getCompaniesByStatement, CompanyService.updateCompanies
   /// </summary>
   class UpdateCompanies : SampleBase {
     /// <summary>
@@ -83,8 +79,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
           Console.WriteLine("Company with ID = {0}, name = {1}, and comment \"{2}\" was updated",
               updatedCompany.id, updatedCompany.name, updatedCompany.comment);
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to update companies. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to update companies. Exception says \"{0}\"", e.Message);
       }
     }
   }

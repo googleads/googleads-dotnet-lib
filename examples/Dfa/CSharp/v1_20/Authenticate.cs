@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_20;
 
@@ -33,8 +31,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
   /// create DfaUser using custom configuration, then you can run this example
   /// to obtain an authToken. See GetAdTypesNoConfig.cs to see how to construct
   /// a DfaUser with custom configuration.
-  ///
-  /// Tags: login.authenticate
   /// </summary>
   class Authenticate : SampleBase {
     /// <summary>
@@ -85,9 +81,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
         Console.WriteLine("User profile token is \"{0}\", DFA account name is \"{1}\", and " +
             "DFA account id is \"{2}\".", userProfile.token, userProfile.networkName,
             userProfile.networkId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to authenticate user. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

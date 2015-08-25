@@ -12,8 +12,6 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
-' Author: api.anash@gmail.com (Anash P. Oommen)
-
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201506
 
@@ -26,8 +24,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' <summary>
   ''' This code example adds sitelinks to a campaign. To create a campaign,
   ''' run AddCampaign.vb.
-  '''
-  ''' Tags: CampaignExtensionSettingService.mutate
   ''' </summary>
   Public Class AddSitelinks
     Inherits ExampleBase
@@ -42,9 +38,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Try
         Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
         codeExample.Run(New AdWordsUser, campaignId)
-      Catch ex As Exception
+      Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(ex))
+            ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -169,8 +165,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         Else
           Console.WriteLine("No extension settings were created.")
         End If
-      Catch ex As Exception
-        Throw New System.ApplicationException("Failed to create extension settings.", ex)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to create extension settings.", e)
       End Try
     End Sub
   End Class

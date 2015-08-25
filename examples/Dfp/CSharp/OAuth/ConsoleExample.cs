@@ -12,11 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.Util.v201405;
-using Google.Api.Ads.Dfp.v201405;
+using Google.Api.Ads.Dfp.Util.v201505;
+using Google.Api.Ads.Dfp.v201505;
 using Google.Api.Ads.Common.Lib;
 
 using System;
@@ -70,7 +68,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.OAuth {
       }
 
       // Get the UserService.
-      UserService userService = (UserService)user.GetService(DfpService.v201405.UserService);
+      UserService userService = (UserService)user.GetService(DfpService.v201505.UserService);
 
       // Create a Statement to get all users.
       StatementBuilder statementBuilder = new StatementBuilder()
@@ -97,9 +95,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.OAuth {
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get all users. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
 

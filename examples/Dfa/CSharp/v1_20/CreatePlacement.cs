@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_20;
 
@@ -29,8 +27,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
   /// To get DFA site id, run GetDfaSite.cs. To get a size id, run
   /// GetSize.cs. To get placement types, run GetPlacementTypes.cs. To get
   /// pricing types, run GetPricingTypes.cs.
-  ///
-  /// Tags: placement.savePlacement
   /// </summary>
   class CreatePlacement : SampleBase {
     /// <summary>
@@ -108,8 +104,8 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
 
         // Display new placment id.
         Console.WriteLine("Placment with id \"{0}\" was created.", placementSaveResult.id);
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to create placement. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to create placement. Exception says \"{0}\"", e.Message);
       }
     }
   }

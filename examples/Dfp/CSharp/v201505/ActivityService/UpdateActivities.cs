@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201505;
 using Google.Api.Ads.Dfp.Util.v201505;
@@ -24,9 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example updates activity expected URLs. To determine which
   /// activities exist, run GetAllActivities.cs.
-  ///
-  /// Tags: ActivityService.getActivitiesByStatement
-  /// Tags: ActivityService.updateActivities
   /// </summary>
   class UpdateActivities : SampleBase {
     /// <summary>
@@ -83,8 +78,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
           Console.WriteLine("Activity with ID \"{0}\" and name \"{1}\" was updated.",
               updatedActivity.id, updatedActivity.name);
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to update activities. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to update activities. Exception says \"{0}\"", e.Message);
       }
     }
   }

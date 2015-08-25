@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201502;
 
@@ -23,8 +21,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example creates a package. To determine which packages exist,
   /// run GetAllPackages.cs.
-  ///
-  /// Tags: PackageService.createPackages
   /// </summary>
   class CreatePackages : SampleBase {
     /// <summary>
@@ -87,8 +83,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
           Console.WriteLine("A package with ID \"{0}\" and name \"{1}\" was created.",
               createdPackage.id, createdPackage.name);
         }
-      } catch (Exception ex) {
-          Console.WriteLine("Failed to create packages. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+          Console.WriteLine("Failed to create packages. Exception says \"{0}\"", e.Message);
       }
     }
   }

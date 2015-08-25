@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -28,8 +26,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// advertiser and displays the name, id, advertiser id, and group number.
   /// To get an advertiser id, run GetAdvertisers.cs. Results are limited
   /// to the first 10.
-  ///
-  /// Tags: creativegroup.getCreativeGroups
   /// </summary>
   class GetCreativeGroups : SampleBase {
     /// <summary>
@@ -84,9 +80,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         } else {
           Console.WriteLine("No creative groups found for your search criteria");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to retrieve creative groups. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

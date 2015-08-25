@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_19;
 
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
   /// <summary>
   /// This code example gets existing campaigns based on a given search
   /// criteria. Results are limited to the first 10.
-  ///
-  /// Tags: campaign.getCampaignsByCriteria
   /// </summary>
   class GetCampaigns : SampleBase {
     /// <summary>
@@ -80,8 +76,8 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_19 {
         } else {
           Console.WriteLine("No campaigns found for your search criteria.");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to retrieve campaigns. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to retrieve campaigns. Exception says \"{0}\"", e.Message);
       }
     }
   }

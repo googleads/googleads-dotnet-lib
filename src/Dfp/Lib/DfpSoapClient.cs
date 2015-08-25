@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Headers;
@@ -47,14 +45,14 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// Gets a custom exception that wraps the SOAP exception thrown
     /// by the server.
     /// </summary>
-    /// <param name="ex">SOAPException that was thrown by the server.</param>
+    /// <param name="exception">SOAPException that was thrown by the server.</param>
     /// <returns>A custom exception object that wraps the SOAP exception.
     /// </returns>
-    protected override Exception GetCustomException(SoapException ex) {
+    protected override Exception GetCustomException(SoapException exception) {
       string defaultNs = GetDefaultNamespace();
       if (!string.IsNullOrEmpty(defaultNs)) {
         // Extract the ApiExceptionFault node.
-        XmlElement faultNode = GetFaultNode(ex, defaultNs, "ApiExceptionFault");
+        XmlElement faultNode = GetFaultNode(exception, defaultNs, "ApiExceptionFault");
 
         if (faultNode != null) {
           try {
@@ -64,14 +62,14 @@ namespace Google.Api.Ads.Dfp.Lib {
                     Assembly.GetExecutingAssembly().GetType(
                         this.GetType().Namespace + ".ApiException"), defaultNs,
                         "ApiExceptionFault"),
-                ex.Message, ex);
+                exception.Message, exception);
             return dfpException;
           } catch (Exception) {
             // deserialization failed, but we can safely ignore it.
           }
         }
       }
-      return new DfpApiException(null, ex.Message, ex);
+      return new DfpApiException(null, exception.Message, exception);
     }
 
     /// <summary>

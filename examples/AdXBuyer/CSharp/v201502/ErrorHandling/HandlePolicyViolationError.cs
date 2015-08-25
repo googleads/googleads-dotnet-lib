@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util;
 using Google.Api.Ads.AdWords.v201502;
@@ -26,8 +24,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example adds a text ad, and shows how to handle a policy
   /// violation.
-  ///
-  /// Tags: AdGroupAdService.mutate
   /// </summary>
   public class HandlePolicyViolationError : ExampleBase {
     /// <summary>
@@ -40,9 +36,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       try {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -105,11 +101,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
           // Validate the operations.
           service.RequestHeader.validateOnly = true;
           retVal = service.mutate(allOperations.ToArray());
-        } catch (AdWordsApiException ex) {
-          ApiException innerException = ex.ApiException as ApiException;
+        } catch (AdWordsApiException e) {
+          ApiException innerException = e.ApiException as ApiException;
           if (innerException == null) {
             throw new Exception("Failed to retrieve ApiError. See inner exception for more " +
-                "details.", ex);
+                "details.", e);
           }
 
           // Examine each ApiError received from the server.
@@ -172,8 +168,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
         } else {
           Console.WriteLine("There are no ads to create after policy violation checks.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to create ads.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to create ads.", e);
       }
     }
   }

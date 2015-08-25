@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley (https://github.com/Narwalter)
-
 using Google.Api.Ads.Common.Lib;
 
 using System;
@@ -179,37 +177,44 @@ namespace Google.Api.Ads.Dfp.Lib {
       /// </summary>
       public static readonly ServiceSignature OrderService;
 
+      /// <summary>
       /// See <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201408/PlacementService">
       /// this page </a> for details.
       /// </summary>
       public static readonly ServiceSignature PlacementService;
 
+      /// <summary>
       /// See <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201408/PremiumRateService">
       /// this page </a> for details.
       /// </summary>
       public static readonly ServiceSignature PremiumRateService;
 
-     /// See <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201408/ProductService">
+      /// <summary>
+      /// See <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201408/ProductService">
       /// this page </a> for details.
       /// </summary>
       public static readonly ServiceSignature ProductService;
 
+      /// <summary>
       /// See <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201408/ProductTemplateService">
       /// this page </a> for details.
       /// </summary>
       public static readonly ServiceSignature ProductTemplateService;
 
+      /// <summary>
       /// See <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201408/ProposalService">
       /// this page </a> for details.
       /// </summary>
       public static readonly ServiceSignature ProposalService;
 
+      /// <summary>
       /// See <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201408/ProposalLineItemService">
       /// this page </a> for details.
       /// </summary>
       public static readonly ServiceSignature ProposalLineItemService;
 
 
+      /// <summary>
       /// See <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201408/PublisherQueryLanguageService">
       /// this page </a> for details.
       /// </summary>

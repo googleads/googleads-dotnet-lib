@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// <summary>
   /// This code example lists all campaigns. To add a campaign, run
   /// AddCampaign.cs.
-  ///
-  /// Tags: CampaignService.get
   /// </summary>
   public class GetCampaigns : ExampleBase {
     /// <summary>
@@ -38,9 +34,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       Console.WriteLine(codeExample.Description);
       try {
         codeExample.Run(new AdWordsUser());
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -64,7 +60,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
 
       // Create the selector.
       Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "Name", "Status"};
+      selector.fields = new string[] { "Id", "Name", "Status" };
 
       // Set the selector paging.
       selector.paging = new Paging();
@@ -94,8 +90,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
           offset += pageSize;
         } while (offset < page.totalNumEntries);
         Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to retrieve campaigns", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to retrieve campaigns", e);
       }
     }
   }

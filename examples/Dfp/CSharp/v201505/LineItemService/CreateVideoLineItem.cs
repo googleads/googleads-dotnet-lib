@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -28,8 +26,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// which orders exist, run GetAllOrders.cs. To create a video ad unit, run
   /// CreateVideoAdUnit.cs. To determine which content metadata key hierarchies
   /// exist, run GetAllContentMetadataKeyHierarchies.cs.
-  ///
-  /// Tags: LineItemService.createLineItems
   /// </summary>
   class CreateVideoLineItem : SampleBase {
     /// <summary>
@@ -182,9 +178,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
               "named \"{2}\" was created.", createdLineItem.id, createdLineItem.orderId,
               createdLineItem.name);
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to create line items. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

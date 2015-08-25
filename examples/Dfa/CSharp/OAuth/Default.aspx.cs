@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_20;
@@ -72,9 +70,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.OAuth {
     /// Handles the Click event of the btnAdTypes control.
     /// </summary>
     /// <param name="sender">The source of the event.</param>
-    /// <param name="e">The <see cref="System.EventArgs"/> instance containing
+    /// <param name="eventArgs">The <see cref="System.EventArgs"/> instance containing
     /// the event data.</param>
-    protected void OnGetAdTypesButtonClick(object sender, EventArgs e) {
+    protected void OnGetAdTypesButtonClick(object sender, EventArgs eventArgs) {
       ConfigureUserForOAuth();
 
       try {
@@ -115,9 +113,9 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.OAuth {
         } else {
           Response.Write("No ad types were found.");
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Response.Write(string.Format("Failed to get ad types. Exception says \"{0}\"",
-            ex.Message));
+            e.Message));
       }
     }
 

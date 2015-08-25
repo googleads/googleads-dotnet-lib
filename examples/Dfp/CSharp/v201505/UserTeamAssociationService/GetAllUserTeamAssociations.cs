@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201505;
 using Google.Api.Ads.Dfp.v201505;
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// <summary>
   /// This code example gets all user team associations. To create user team
   /// associations, run CreateUserTeamAssociations.cs.
-  ///
-  /// Tags: UserTeamAssociationService.getUserTeamAssociationsByStatement
   /// </summary>
   class GetAllUserTeamAssociations : SampleBase {
     /// <summary>
@@ -84,9 +80,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to get user team associations. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

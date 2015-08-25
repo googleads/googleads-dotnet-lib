@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 using Google.Api.Ads.Common.Util;
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// This code example creates a click-to-download ad, also known as an
   /// app promotion ad to a given ad group. To list ad groups, run
   /// GetAdGroups.cs.
-  ///
-  /// Tags: AdGroupAdService.mutate
   /// </summary>
   public class AddClickToDownloadAd : ExampleBase {
     /// <summary>
@@ -41,9 +37,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       try {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         codeExample.Run(new AdWordsUser(), adGroupId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -139,8 +135,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         } else {
           Console.WriteLine("No click-to-download ads were created.");
         }
-      } catch (Exception ex) {
-        throw new System.ApplicationException("Failed to create click-to-download ad.", ex);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to create click-to-download ad.", e);
       }
     }
   }

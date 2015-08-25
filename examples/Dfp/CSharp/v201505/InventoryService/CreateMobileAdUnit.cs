@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Anash P. Oommen
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201505;
 
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
   /// ad unit. Mobile features need to be enabled on your account to use mobile
   /// targeting. To determine which ad units exist, run GetInventoryTree.cs or
   /// GetAllAdUnits.cs.
-  ///
-  /// Tags: InventoryService.createAdUnits, NetworkService.getCurrentNetwork
   /// </summary>
   class CreateMobileAdUnit : SampleBase {
     /// <summary>
@@ -94,8 +90,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201505 {
           Console.WriteLine("An ad unit with ID \"{0}\" was created under parent with ID " +
               "\"{1}\".", createdAdunit.id, createdAdunit.parentId);
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to create ad units. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to create ad units. Exception says \"{0}\"", e.Message);
       }
     }
   }

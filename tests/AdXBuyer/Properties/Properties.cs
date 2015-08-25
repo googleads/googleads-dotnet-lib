@@ -12,13 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using System.Reflection;
 
 [assembly: AssemblyCompany("Google")]
 [assembly: AssemblyProduct("AdWords API DotNet Client Library")]
 [assembly: AssemblyCopyright("Copyright 2011, Google Inc. All Rights Reserved.")]
 
-[assembly: AssemblyVersion("18.15.0.0")]
-[assembly: AssemblyFileVersion("18.15.0.0")]
+[assembly: AssemblyVersion("18.16.0.0")]
+[assembly: AssemblyFileVersion("18.16.0.0")]

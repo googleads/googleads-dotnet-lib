@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using System;
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
@@ -25,8 +23,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
   /// This code example demonstrates how to find and remove shared sets and
   /// shared set criteria.
   /// 
-  /// Tags: SharedSetService.mutate, SharedSetCriterionService.mutate
-  /// Tags: CampaignSharedSetService.mutate
   /// </summary>
   public class FindAndRemoveCriteriaFromSharedSet : ExampleBase {
 
@@ -50,9 +46,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       try {
         long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
         codeExample.Run(new AdWordsUser(), campaignId);
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(ex));
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -84,6 +80,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
           (CampaignSharedSetService) user.GetService(
               AdWordsService.v201506.CampaignSharedSetService);
 
+      int offset = 0;
+      int pageSize = 500;
+
       Selector selector = new Selector() {
         fields = new string[] { "SharedSetId", "CampaignId", "SharedSetName", "SharedSetType" },
         predicates = new Predicate[] {
@@ -97,20 +96,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
             @operator = PredicateOperator.IN,
             values = new string[] {SharedSetType.NEGATIVE_KEYWORDS.ToString()}
           }
+        },
+        paging = new Paging() {
+          numberResults = pageSize
         }
       };
 
       List<string> sharedSetIds = new List<string>();
-
-      int offset = 0;
-      int pageSize = 500;
-
       CampaignSharedSetPage page = new CampaignSharedSetPage();
 
       try {
         do {
           selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
 
           // Get the campaigns.
           page = campaignSharedSetService.get(selector);
@@ -144,6 +141,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       SharedCriterionService sharedCriterionService =
           (SharedCriterionService) user.GetService(AdWordsService.v201506.SharedCriterionService);
 
+      int offset = 0;
+      int pageSize = 500;
+      
       Selector selector = new Selector() {
         fields = new string[] { "SharedSetId", "Id", "KeywordText", "KeywordMatchType",
             "PlacementUrl" },
@@ -153,20 +153,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
             @operator = PredicateOperator.IN,
             values = sharedSetIds.ToArray()
           }
+        },
+        paging = new Paging() {
+          numberResults = pageSize
         }
       };
 
       List<SharedCriterion> sharedCriteria = new List<SharedCriterion>();
-
-      int offset = 0;
-      int pageSize = 500;
-
       SharedCriterionPage page = new SharedCriterionPage();
 
       try {
         do {
           selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
 
           // Get the campaigns.
           page = sharedCriterionService.get(selector);

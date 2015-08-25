@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_20;
 
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
   /// This code example creates a subnetwork in a given DFA network. To get
   /// the network id, run Authenticate.cs. To get the available permissions,
   /// run GetAvailablePermissions.cs.
-  ///
-  /// Tags: subnetwork.saveSubnetwork
   /// </summary>
   class CreateSubnetwork : SampleBase {
     /// <summary>
@@ -84,8 +80,8 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
 
         // Display subnetwork id.
         Console.WriteLine("Subnetwork with id \"{0}\" was created.", subnetworkSaveResult.id);
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to create subnetwork. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to create subnetwork. Exception says \"{0}\"", e.Message);
       }
     }
   }

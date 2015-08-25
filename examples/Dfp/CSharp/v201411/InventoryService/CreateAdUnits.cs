@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201411;
 
@@ -24,8 +22,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
   /// This code example creates new ad units under the effective root ad unit.
   /// To determine which ad units exist, run GetAdUnitTree.cs or
   /// GetAllAdUnits.cs.
-  ///
-  /// Tags: InventoryService.createAdUnits, NetworkService.getCurrentNetwork
   /// </summary>
   class CreateAdUnits : SampleBase {
     /// <summary>
@@ -100,8 +96,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201411 {
         } else {
           Console.WriteLine("No ad units created.");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to create ad units. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to create ad units. Exception says \"{0}\"", e.Message);
       }
     }
   }

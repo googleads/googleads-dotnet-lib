@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.Dfa.Lib;
 using Google.Api.Ads.Dfa.v1_20;
 
@@ -27,8 +25,6 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
   /// This code example displays user name, id, network id, subnetwork id,
   /// and user group id for the given search criteria. Results are limited
   /// to the first 10 records.
-  ///
-  /// Tags: user.getUsersByCriteria
   /// </summary>
   class GetUsers : SampleBase {
     /// <summary>
@@ -82,8 +78,8 @@ namespace Google.Api.Ads.Dfa.Examples.CSharp.v1_20 {
         } else {
           Console.WriteLine("No users found for your search criteria.");
         }
-      } catch (Exception ex) {
-        Console.WriteLine("Failed to retrieve users. Exception says \"{0}\"", ex.Message);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to retrieve users. Exception says \"{0}\"", e.Message);
       }
     }
   }

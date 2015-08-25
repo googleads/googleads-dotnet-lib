@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: Chris Seeley
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201502;
 using Google.Api.Ads.Dfp.v201502;
@@ -25,9 +23,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example activates a product template. To determine which product templates
   /// exist, run GetAllProductTemplates.cs.
-  ///
-  /// Tags: ProductTemplateService.getProductTemplatesByStatement
-  /// Tags: ProductTemplateService.performProductTemplateAction
   /// </summary>
   class ActivateProductTemplates : SampleBase {
     /// <summary>
@@ -113,9 +108,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
             Console.WriteLine("No product templates were activated.");
           }
         }
-      } catch (Exception ex) {
+      } catch (Exception e) {
         Console.WriteLine("Failed to activate product templates. Exception says \"{0}\"",
-            ex.Message);
+            e.Message);
       }
     }
   }

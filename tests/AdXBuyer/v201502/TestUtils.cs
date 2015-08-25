@@ -12,10 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Author: api.anash@gmail.com (Anash P. Oommen)
-
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.Util.v201502;
 using Google.Api.Ads.AdWords.v201502;
 using Google.Api.Ads.Common.Util;
 
@@ -23,15 +20,14 @@ using NUnit.Framework;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Net;
 using System.Text;
 
 namespace Google.Api.Ads.AdWords.Tests.v201502 {
+
   /// <summary>
   /// A utility class to assist the testing of v201502 services.
   /// </summary>
-  class TestUtils {
+  internal class TestUtils {
 
     public long CreateBudget(AdWordsUser user) {
       BudgetService budgetService =
@@ -52,6 +48,16 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
 
       BudgetReturnValue budgetRetval = budgetService.mutate(new BudgetOperation[] { budgetOperation });
       return budgetRetval.value[0].budgetId;
+    }
+
+    /// <summary>
+    /// Creates a test search campaign for running further tests.
+    /// </summary>
+    /// <param name="user">The user.</param>
+    /// <param name="biddingStrategy">The bidding strategy to be used.</param>
+    /// <returns>The campaign id.</returns>
+    public long CreateMobileSearchCampaign(AdWordsUser user, BiddingStrategyType strategyType) {
+      return CreateCampaign(user, AdvertisingChannelType.SEARCH, strategyType, true);
     }
 
     /// <summary>
@@ -88,46 +94,81 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
     /// Creates a test campaign for running further tests.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="biddingStrategy">The bidding strategy to be used.</param>
+    /// <param name="channelType">The advertising channel type for this
+    /// campaign.</param>
+    /// <param param name="strategyType">The bidding strategy to be used for
+    /// this campaign.</param>
     /// <returns>The campaign id.</returns>
     public long CreateCampaign(AdWordsUser user, AdvertisingChannelType channelType,
         BiddingStrategyType strategyType) {
+      return CreateCampaign(user, channelType, strategyType, false);
+    }
+
+    /// <summary>
+    /// Creates a test campaign for running further tests.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="channelType">The advertising channel type for this
+    /// campaign.</param>
+    /// <param param name="strategyType">The bidding strategy to be used for
+    /// this campaign.</param>
+    /// <param name="isMobile">True, if this campaign is mobile-only, false
+    /// otherwise.</param>
+    /// <returns>The campaign id.</returns>
+    public long CreateCampaign(AdWordsUser user, AdvertisingChannelType channelType,
+        BiddingStrategyType strategyType, bool isMobile) {
       CampaignService campaignService =
           (CampaignService) user.GetService(AdWordsService.v201502.CampaignService);
 
-      BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
-      biddingConfig.biddingStrategyType = strategyType;
+      Campaign campaign = new Campaign() {
+        name = string.Format("Campaign {0}", DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff")),
+        advertisingChannelType = channelType,
+        status = CampaignStatus.PAUSED,
+        biddingStrategyConfiguration = new BiddingStrategyConfiguration() {
+          biddingStrategyType = strategyType
+        },
+        budget = new Budget() {
+          budgetId = CreateBudget(user),
+          period = BudgetBudgetPeriod.DAILY,
+          amount = new Money() {
+            microAmount = 100000000,
+          },
+          deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
+        }
+      };
 
-      CampaignOperation campaignOperation = new CampaignOperation();
-      campaignOperation.@operator = Operator.ADD;
-      campaignOperation.operand = new Campaign();
-      campaignOperation.operand.name =
-          string.Format("Campaign {0}", DateTime.Now.ToString("yyyy-M-d H:m:s.ffffff"));
-      campaignOperation.operand.advertisingChannelType = channelType;
-      campaignOperation.operand.status = CampaignStatus.PAUSED;
-      campaignOperation.operand.biddingStrategyConfiguration = biddingConfig;
-      campaignOperation.operand.budget = new Budget();
-      campaignOperation.operand.budget.budgetId = CreateBudget(user);
-      campaignOperation.operand.budget.period = BudgetBudgetPeriod.DAILY;
-      campaignOperation.operand.budget.amount = new Money();
-      campaignOperation.operand.budget.amount.microAmount = 100000000;
-      campaignOperation.operand.budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
+      if (isMobile) {
+        switch (campaign.advertisingChannelType) {
+          case AdvertisingChannelType.SEARCH:
+            campaign.advertisingChannelSubType = AdvertisingChannelSubType.SEARCH_MOBILE_APP;
+            break;
+
+          case AdvertisingChannelType.DISPLAY:
+            campaign.advertisingChannelSubType = AdvertisingChannelSubType.DISPLAY_MOBILE_APP;
+            break;
+        }
+      }
 
       List<Setting> settings = new List<Setting>();
 
       if (channelType == AdvertisingChannelType.SHOPPING) {
         // All Shopping campaigns need a ShoppingSetting.
-        ShoppingSetting shoppingSetting = new ShoppingSetting();
-        shoppingSetting.salesCountry = "US";
-        shoppingSetting.campaignPriority = 0;
-        shoppingSetting.merchantId = (user.Config as AdWordsAppConfig).MerchantCenterId;
-
+        ShoppingSetting shoppingSetting = new ShoppingSetting() {
+          salesCountry = "US",
+          campaignPriority = 0,
+          merchantId = (user.Config as AdWordsAppConfig).MerchantCenterId
+        };
         settings.Add(shoppingSetting);
       }
-      campaignOperation.operand.settings = settings.ToArray();
+      campaign.settings = settings.ToArray();
+
+      CampaignOperation campaignOperation = new CampaignOperation() {
+        @operator = Operator.ADD,
+        operand = campaign
+      };
 
       CampaignReturnValue retVal =
-          campaignService.mutate(new CampaignOperation[] {campaignOperation});
+          campaignService.mutate(new CampaignOperation[] { campaignOperation });
       return retVal.value[0].id;
     }
 
@@ -165,17 +206,17 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
         CpmBid cpmBid = new CpmBid();
         cpmBid.bid = new Money();
         cpmBid.bid.microAmount = 10000000;
-        biddingConfig.bids = new Bids[] {cpmBid};
+        biddingConfig.bids = new Bids[] { cpmBid };
         adGroupOperation.operand.biddingStrategyConfiguration = biddingConfig;
       } else {
         BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
         CpcBid cpcBid = new CpcBid();
         cpcBid.bid = new Money();
         cpcBid.bid.microAmount = 10000000;
-        biddingConfig.bids = new Bids[] {cpcBid};
+        biddingConfig.bids = new Bids[] { cpcBid };
         adGroupOperation.operand.biddingStrategyConfiguration = biddingConfig;
       }
-      AdGroupReturnValue retVal = adGroupService.mutate(new AdGroupOperation[] {adGroupOperation});
+      AdGroupReturnValue retVal = adGroupService.mutate(new AdGroupOperation[] { adGroupOperation });
       return retVal.value[0].id;
     }
 
@@ -205,12 +246,12 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
         ad.description2 = "Low-gravity fun for everyone!";
       }
       ad.displayUrl = "example.com";
-      ad.url = "http://www.example.com";
+      ad.finalUrls = new string[] { "http://www.example.com" };
 
       adGroupAdOperation.operand.ad = ad;
 
       AdGroupAdReturnValue retVal =
-          adGroupAdService.mutate(new AdGroupAdOperation[] {adGroupAdOperation});
+          adGroupAdService.mutate(new AdGroupAdOperation[] { adGroupAdOperation });
       return retVal.value[0].ad.id;
     }
 
@@ -252,7 +293,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
       adGroupAdOperation.operand.ad = redirectAd;
 
       AdGroupAdReturnValue retVal =
-          adGroupAdService.mutate(new AdGroupAdOperation[] {adGroupAdOperation});
+          adGroupAdService.mutate(new AdGroupAdOperation[] { adGroupAdOperation });
       return retVal.value[0].ad.id;
     }
 
@@ -280,7 +321,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
       adParamOperation.operand = adParam;
 
       // Set ad parameters.
-      AdParam[] newAdParams = adParamService.mutate(new AdParamOperation[] {adParamOperation});
+      AdParam[] newAdParams = adParamService.mutate(new AdParamOperation[] { adParamOperation });
       return;
     }
 
@@ -306,7 +347,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
 
       operation.operand.criterion = keyword;
       AdGroupCriterionReturnValue retVal =
-          adGroupCriterionService.mutate(new AdGroupCriterionOperation[] {operation});
+          adGroupCriterionService.mutate(new AdGroupCriterionOperation[] { operation });
       return retVal.value[0].criterion.id;
     }
 
@@ -333,7 +374,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
       placementOperation.operand = placementCriterion;
 
       AdGroupCriterionReturnValue retVal = adGroupCriterionService.mutate(
-          new AdGroupCriterionOperation[] {placementOperation});
+          new AdGroupCriterionOperation[] { placementOperation });
 
       return retVal.value[0].criterion.id;
     }
@@ -373,7 +414,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
 
       // Add the experiment.
       ExperimentReturnValue experimentRetVal = experimentService.mutate(
-          new ExperimentOperation[] {experimentOperation});
+          new ExperimentOperation[] { experimentOperation });
 
       return experimentRetVal.value[0].id;
     }
@@ -399,7 +440,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
       languageCriterion1.campaignId = campaignId;
       languageCriterion1.criterion = language1;
 
-      CampaignCriterion[] criteria = new CampaignCriterion[] {languageCriterion1};
+      CampaignCriterion[] criteria = new CampaignCriterion[] { languageCriterion1 };
 
       List<CampaignCriterionOperation> operations = new List<CampaignCriterionOperation>();
 
@@ -434,8 +475,96 @@ namespace Google.Api.Ads.AdWords.Tests.v201502 {
           (GeoLocationService) user.GetService(AdWordsService.v201502.GeoLocationService);
 
       GeoLocationSelector selector = new GeoLocationSelector();
-      selector.addresses = new Address[] {address};
+      selector.addresses = new Address[] { address };
       return geoService.get(selector)[0];
+    }
+
+    /// <summary>
+    /// Creates the shared keyword set.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <returns>A shared keyword set.</returns>
+    public long CreateSharedKeywordSet(AdWordsUser user) {
+      // Get the SharedSetService.
+      SharedSetService sharedSetService = (SharedSetService)
+          user.GetService(AdWordsService.v201502.SharedSetService);
+
+      SharedSetOperation operation = new SharedSetOperation();
+      operation.@operator = Operator.ADD;
+      SharedSet sharedSet = new SharedSet();
+      sharedSet.name = "API Negative keyword list - " + GetTimeStampAlpha();
+      sharedSet.type = SharedSetType.NEGATIVE_KEYWORDS;
+      operation.operand = sharedSet;
+
+      SharedSetReturnValue retval = sharedSetService.mutate(
+          new SharedSetOperation[] { operation });
+      return retval.value[0].sharedSetId;
+    }
+
+    /// <summary>
+    /// Attaches a shared set to a campaign.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="campaignId">The campaign id.</param>
+    /// <param name="sharedSetId">The shared set id.</param>
+    /// <returns>A CampaignSharedSet object that represents a binding between
+    /// the specified campaign and the shared set.</returns>
+    public void AttachSharedSetToCampaign(AdWordsUser user, long campaignId, long sharedSetId) {
+      // Get the CampaignSharedSetService.
+      CampaignSharedSetService campaignSharedSetService = (CampaignSharedSetService)
+          user.GetService(AdWordsService.v201502.CampaignSharedSetService);
+
+      CampaignSharedSet campaignSharedSet = new CampaignSharedSet();
+      campaignSharedSet.campaignId = campaignId;
+      campaignSharedSet.sharedSetId = sharedSetId;
+
+      CampaignSharedSetOperation operation = new CampaignSharedSetOperation();
+      operation.@operator = Operator.ADD;
+      operation.operand = campaignSharedSet;
+
+      campaignSharedSetService.mutate(new CampaignSharedSetOperation[] { operation });
+    }
+
+    /// <summary>
+    /// Detaches the shared set from campaign.
+    /// </summary>
+    /// <param name="user">The user.</param>
+    /// <param name="campaignId">The campaign identifier.</param>
+    /// <param name="sharedSetId">The shared set identifier.</param>
+    public void DetachSharedSetFromCampaign(AdWordsUser user, long campaignId, long sharedSetId) {
+      // Get the CampaignSharedSetService.
+      CampaignSharedSetService campaignSharedSetService = (CampaignSharedSetService)
+          user.GetService(AdWordsService.v201502.CampaignSharedSetService);
+
+      CampaignSharedSet campaignSharedSet = new CampaignSharedSet();
+      campaignSharedSet.campaignId = campaignId;
+      campaignSharedSet.sharedSetId = sharedSetId;
+
+      CampaignSharedSetOperation operation = new CampaignSharedSetOperation();
+      operation.@operator = Operator.REMOVE;
+      operation.operand = campaignSharedSet;
+
+      campaignSharedSetService.mutate(new CampaignSharedSetOperation[] { operation });
+    }
+
+    /// <summary>
+    /// Deletes the shared set.
+    /// </summary>
+    /// <param name="user">The user.</param>
+    /// <param name="sharedSetId">The shared set ID.</param>
+    public void DeleteSharedSet(AdWordsUser user, long sharedSetId) {
+      // Get the SharedSetService.
+      SharedSetService sharedSetService = (SharedSetService)
+          user.GetService(AdWordsService.v201502.SharedSetService);
+
+      SharedSetOperation operation = new SharedSetOperation();
+      operation.@operator = Operator.REMOVE;
+      SharedSet sharedSet = new SharedSet();
+      sharedSet.sharedSetId = sharedSetId;
+      operation.operand = sharedSet;
+
+      SharedSetReturnValue retval = sharedSetService.mutate(
+          new SharedSetOperation[] { operation });
     }
 
     /// <summary>
