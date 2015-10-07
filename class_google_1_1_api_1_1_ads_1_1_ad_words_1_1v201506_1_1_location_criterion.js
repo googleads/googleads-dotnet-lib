@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_criterion =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_criterion_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_criterion_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_criterion_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_criterion_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_criterion_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_criterion_1_1_selectable_fields" ],
     [ "canonicalName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_criterion.html#a290d35093896d42cdd4d207480209b5c", null ],
     [ "countryCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_criterion.html#a8ae0fe92cb8de06423a12bfc6420feb5", null ],
     [ "locale", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_criterion.html#aabeca7ea449666033764b27161642a3d", null ],

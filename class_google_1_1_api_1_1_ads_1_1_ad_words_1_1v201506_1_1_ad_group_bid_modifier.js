@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_bid_modifier =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_bid_modifier_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_bid_modifier_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_bid_modifier_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_bid_modifier_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_bid_modifier_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_bid_modifier_1_1_selectable_fields" ],
     [ "adGroupId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_bid_modifier.html#a1a9bf60ff2908da187210d7799d02675", null ],
     [ "adGroupIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_bid_modifier.html#af72de39357f2f1666fa6b433108aa845", null ],
     [ "bidModifier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_bid_modifier.html#a154fb5c1f052a618ccb8177c177417e4", null ],

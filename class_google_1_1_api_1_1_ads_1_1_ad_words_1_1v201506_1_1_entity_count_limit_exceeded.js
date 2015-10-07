@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_entity_count_limit_exceeded =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_entity_count_limit_exceeded_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_entity_count_limit_exceeded_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_entity_count_limit_exceeded_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_entity_count_limit_exceeded_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_entity_count_limit_exceeded_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_entity_count_limit_exceeded_1_1_selectable_fields" ],
     [ "accountLimitType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_entity_count_limit_exceeded.html#af439c12120cefea16a7ee8f5d76608b3", null ],
     [ "enclosingId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_entity_count_limit_exceeded.html#af93568bd63481305405eaf1c493ecd40", null ],
     [ "existingCount", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_entity_count_limit_exceeded.html#a5394ece6bdcdae13917f0590167f01ca", null ],

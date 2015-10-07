@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_frequency_cap =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_frequency_cap_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_frequency_cap_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_frequency_cap_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_frequency_cap_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_frequency_cap_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_frequency_cap_1_1_selectable_fields" ],
     [ "impressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_frequency_cap.html#acd10c3e1923ec5b6fb86944774e9a54e", null ],
     [ "impressionsSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_frequency_cap.html#abee8a9716e38f88a46f120a5c2ef4cfa", null ],
     [ "level", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_frequency_cap.html#ad958cf3dc03bf4ddc511f9f93ba1b180", null ],

@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_app_feed_item =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_app_feed_item_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_app_feed_item_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_app_feed_item_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_app_feed_item_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_app_feed_item_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_app_feed_item_1_1_selectable_fields" ],
     [ "appId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_app_feed_item.html#a3d530bc68e1185532944ef29c2573dbb", null ],
     [ "appLinkText", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_app_feed_item.html#aaf25dbefb12b136c07a143e321e43fc7", null ],
     [ "appStore", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_app_feed_item.html#a4f26ed5d71fbadef1f9cc75be4d7b4ad", null ],

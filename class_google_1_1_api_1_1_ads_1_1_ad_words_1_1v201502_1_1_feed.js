@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_1_1_selectable_fields" ],
     [ "attributes", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed.html#a612e16a25941b44b79f73d1ab3ac98e3", null ],
     [ "id", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed.html#aa6cfcac0ca5490786a05f8c49d1f8eed", null ],
     [ "idSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed.html#a226f71d48a6e90cbd1dc3cf653e036cc", null ],

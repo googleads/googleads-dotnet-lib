@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_link =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_link_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_link_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_link_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_link_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_link_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_link_1_1_selectable_fields" ],
     [ "clientCustomerId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_link.html#a009ba9170d3ce1ba6085ff3aa63453d7", null ],
     [ "clientCustomerIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_link.html#a9d5964d61ceb4e59019afef286e1c42b", null ],
     [ "isHidden", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_link.html#a64b6f7cb8f98d43a3047d2fcc11c31e9", null ],

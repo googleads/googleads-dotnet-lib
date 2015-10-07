@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_target_cpa_bidding_scheme_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_target_cpa_bidding_scheme_1_1_filterable_fields.html#ae6bc93ab067dc86b6fd7f1bbe5b6c501", null ]
+];

@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_summary =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_summary_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_summary_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_summary_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_summary_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_summary_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_summary_1_1_selectable_fields" ],
     [ "numOperations", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_summary.html#ad7359bf1d4203f947e2c2a104967c103", null ],
     [ "numOperationsSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_summary.html#af810dec31b1b70bfe7325ea770034ce6", null ],
     [ "numUnits", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_summary.html#a5b39333b2101090ec02a158c6b568c53", null ],

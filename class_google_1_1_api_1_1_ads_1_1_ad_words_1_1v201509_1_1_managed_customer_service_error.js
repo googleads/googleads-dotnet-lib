@@ -1,0 +1,9 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_managed_customer_service_error =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_managed_customer_service_error_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_managed_customer_service_error_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_managed_customer_service_error_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_managed_customer_service_error_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_managed_customer_service_error_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_managed_customer_service_error_1_1_selectable_fields" ],
+    [ "customerIds", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_managed_customer_service_error.html#a1376e67ce204f6b1c1801109200dfcda", null ],
+    [ "reason", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_managed_customer_service_error.html#ad9224a8d018ac9cf4e91845e662c8619", null ],
+    [ "reasonSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_managed_customer_service_error.html#a622745bb2fbab45bac32cbc8c2d12246", null ]
+];

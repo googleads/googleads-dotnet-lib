@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_extension_setting =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_extension_setting_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_extension_setting_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_extension_setting_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_extension_setting_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_extension_setting_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_extension_setting_1_1_selectable_fields" ],
     [ "adGroupId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_extension_setting.html#a36b8dd78c022ba20ebfc86c8f92c1a1e", null ],
     [ "adGroupIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_extension_setting.html#a44bc6bcd8200232552a504067ca22b38", null ],
     [ "extensionSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_extension_setting.html#a57369a840c5058bd7572625372d3c523", null ],

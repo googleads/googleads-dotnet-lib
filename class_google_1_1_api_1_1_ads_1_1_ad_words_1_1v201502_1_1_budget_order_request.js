@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_order_request =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_order_request_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_order_request_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_order_request_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_order_request_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_order_request_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_order_request_1_1_selectable_fields" ],
     [ "billingAccountName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_order_request.html#a7b43cba84837faefc1783f99f5123a8d", null ],
     [ "budgetOrderName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_order_request.html#a4da3d119d5da423f861258e8ea7fa182", null ],
     [ "date", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_order_request.html#aebb23640e3a2a52b24a29adb47471be6", null ],

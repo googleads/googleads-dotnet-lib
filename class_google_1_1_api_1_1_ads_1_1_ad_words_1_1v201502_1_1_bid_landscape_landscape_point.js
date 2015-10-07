@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bid_landscape_landscape_point =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bid_landscape_landscape_point_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bid_landscape_landscape_point_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bid_landscape_landscape_point_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bid_landscape_landscape_point_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bid_landscape_landscape_point_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bid_landscape_landscape_point_1_1_selectable_fields" ],
     [ "bid", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bid_landscape_landscape_point.html#a4467c707cb45f5de25fd587c3ca3b4ff", null ],
     [ "clicks", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bid_landscape_landscape_point.html#a14545b6714df2b26d62f3c6865fb8c1b", null ],
     [ "clicksSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bid_landscape_landscape_point.html#a4700de20d281a0783f7a752e1c6b77da", null ],

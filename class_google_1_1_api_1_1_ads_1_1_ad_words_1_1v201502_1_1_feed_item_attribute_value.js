@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_attribute_value =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_attribute_value_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_attribute_value_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_attribute_value_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_attribute_value_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_attribute_value_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_attribute_value_1_1_selectable_fields" ],
     [ "booleanValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_attribute_value.html#a43e71f3fcdf473dbda678d2751b1606e", null ],
     [ "booleanValues", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_attribute_value.html#a00f5619f275a726850fca4e84f808e4d", null ],
     [ "booleanValueSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_attribute_value.html#ae8047dffbb477b7a52464b3703fc6ee4", null ],

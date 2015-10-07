@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition_1_1_selectable_fields" ],
     [ "caseValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.html#a6afa132779c6f0507c802085bc3795c3", null ],
     [ "parentCriterionId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.html#a3924755dc88206c3269f79335b165302", null ],
     [ "parentCriterionIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_product_partition.html#a18f2912827e65070ce46bd8219287a07", null ],

@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_remarketing_settings_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_remarketing_settings_1_1_filterable_fields.html#aa06f343c7e01477c9855437578abb55a", null ]
+];

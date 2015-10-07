@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_promotion =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_promotion_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_promotion_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_promotion_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_promotion_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_promotion_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_promotion_1_1_selectable_fields" ],
     [ "budget", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_promotion.html#adf4d96ceadf667acff86eafd947f4d52", null ],
     [ "callTrackingEnabled", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_promotion.html#a1ac347e9144e966a9baa4bad9deafb4c", null ],
     [ "callTrackingEnabledSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_promotion.html#a4857544c937f65c8fc48198ae1fda449", null ],

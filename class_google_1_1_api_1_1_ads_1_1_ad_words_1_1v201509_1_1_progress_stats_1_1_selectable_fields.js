@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_progress_stats_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_progress_stats_1_1_selectable_fields.html#add41bdf8ff9c5b6b7befee25e9a39056", null ]
+];

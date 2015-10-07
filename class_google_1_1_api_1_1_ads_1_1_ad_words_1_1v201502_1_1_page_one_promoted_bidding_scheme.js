@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme_1_1_selectable_fields" ],
     [ "bidCeiling", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#a885105e29d4a0ecde6e316ecd2c6e628", null ],
     [ "bidChangesForRaisesOnly", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#a0abd0f5383331a3c86a1fcbbe3c58d64", null ],
     [ "bidChangesForRaisesOnlySpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_page_one_promoted_bidding_scheme.html#a8026601be6fd9b20d1e796fc8e3bbfa5", null ],

@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_ad_extension =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_ad_extension_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_ad_extension_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_ad_extension_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_ad_extension_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_ad_extension_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_ad_extension_1_1_selectable_fields" ],
     [ "adExtension", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_ad_extension.html#ac33d6f5b68edda4995e17a6d6ceb768f", null ],
     [ "approvalStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_ad_extension.html#afdfbe6173adaba3f4c4691d959918c01", null ],
     [ "approvalStatusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_ad_extension.html#a041ea75f44abcceb7556f0b86ba5a2c0", null ],

@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_experiment_summary_stats =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_experiment_summary_stats_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_experiment_summary_stats_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_experiment_summary_stats_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_experiment_summary_stats_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_experiment_summary_stats_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_experiment_summary_stats_1_1_selectable_fields" ],
     [ "adGroupAdsCount", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_experiment_summary_stats.html#a747e085bfd4ae2816d136d958d0dfe2b", null ],
     [ "adGroupAdsCountSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_experiment_summary_stats.html#aec3c661d9b63112a9faf9758354753bc", null ],
     [ "adGroupCriteriaCount", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_experiment_summary_stats.html#a7d010662a8274bcf39b54d1662caaf67", null ],

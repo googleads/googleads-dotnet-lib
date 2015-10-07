@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_managed_customer =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_managed_customer_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_managed_customer_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_managed_customer_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_managed_customer_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_managed_customer_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_managed_customer_1_1_selectable_fields" ],
     [ "accountLabels", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_managed_customer.html#a9856b411cbb52a0dc501b328d3f27440", null ],
     [ "canManageClients", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_managed_customer.html#a8cac5d46fd9e0fcdd9e5d9df9bfc2ee1", null ],
     [ "canManageClientsSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_managed_customer.html#acd34bb86eb5b8ef0b0b8e48771ad1b40", null ],

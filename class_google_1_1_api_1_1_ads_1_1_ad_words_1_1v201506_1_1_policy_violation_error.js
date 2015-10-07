@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_policy_violation_error =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_policy_violation_error_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_policy_violation_error_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_policy_violation_error_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_policy_violation_error_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_policy_violation_error_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_policy_violation_error_1_1_selectable_fields" ],
     [ "externalPolicyDescription", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_policy_violation_error.html#ae3d3986c113de06c08ee4301b874dcc2", null ],
     [ "externalPolicyName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_policy_violation_error.html#aab32804b9bdbd8d5aef983f2072c781e", null ],
     [ "externalPolicyUrl", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_policy_violation_error.html#ab82b94c176aeb78b3673c6276b6ae035", null ],

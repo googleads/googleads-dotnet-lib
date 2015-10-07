@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shopping_setting =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shopping_setting_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shopping_setting_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shopping_setting_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shopping_setting_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shopping_setting_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shopping_setting_1_1_selectable_fields" ],
     [ "campaignPriority", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shopping_setting.html#af8262012bdf8374f888f62827847c441", null ],
     [ "campaignPrioritySpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shopping_setting.html#aa8cecad742ed8002f8cedd54c280687f", null ],
     [ "enableLocal", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shopping_setting.html#a3d9ae85267ac799e4eaeeed57435c596", null ],

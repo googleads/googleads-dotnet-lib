@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_express_business =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_express_business_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_express_business_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_express_business_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_express_business_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_express_business_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_express_business_1_1_selectable_fields" ],
     [ "address", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_express_business.html#a9d6063cd4b95eca13950c0b272aeb921", null ],
     [ "geoPoint", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_express_business.html#a86498f42a1f8335c4921f70df167d3b3", null ],
     [ "id", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_express_business.html#abfa7ae5d4e0254867ef62ee86efabdae", null ],

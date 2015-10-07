@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_similar_user_list =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_similar_user_list_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_similar_user_list_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_similar_user_list_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_similar_user_list_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_similar_user_list_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_similar_user_list_1_1_selectable_fields" ],
     [ "seedListSize", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_similar_user_list.html#a6797f7b83e1c2d5837222f4cedb2439d", null ],
     [ "seedListSizeSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_similar_user_list.html#a235f3a1f9037e36526031449ac62a69b", null ],
     [ "seedUserListDescription", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_similar_user_list.html#a8ecec74d99ba0c039d98ca94a5aecf52", null ],

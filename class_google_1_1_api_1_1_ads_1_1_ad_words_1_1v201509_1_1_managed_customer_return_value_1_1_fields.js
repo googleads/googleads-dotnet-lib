@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_managed_customer_return_value_1_1_fields =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_managed_customer_return_value_1_1_fields.html#abb08bd04a9a13adc1d6d30cde85e7a40", null ]
+];

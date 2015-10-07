@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_monthly_search_volume =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_monthly_search_volume_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_monthly_search_volume_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_monthly_search_volume_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_monthly_search_volume_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_monthly_search_volume_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_monthly_search_volume_1_1_selectable_fields" ],
     [ "count", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_monthly_search_volume.html#ab59d4ee9dc59ce0767793c33954153ec", null ],
     [ "countSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_monthly_search_volume.html#a7fc538724152abb801bea9efa320a949", null ],
     [ "month", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_monthly_search_volume.html#ab9f7afa926dedf58bbbf1f6ce94d114e", null ],

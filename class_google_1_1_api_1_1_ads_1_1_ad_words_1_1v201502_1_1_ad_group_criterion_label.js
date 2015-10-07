@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_criterion_label =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_criterion_label_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_criterion_label_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_criterion_label_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_criterion_label_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_criterion_label_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_criterion_label_1_1_selectable_fields" ],
     [ "adGroupId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_criterion_label.html#a06b6f279b1f98de4d3ad3ff97ccdda7a", null ],
     [ "adGroupIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_criterion_label.html#adac89165390f70aa5704016e9257bce3", null ],
     [ "criterionId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_ad_group_criterion_label.html#a9360947a7db5a70f654ffdb37cde04ec", null ],

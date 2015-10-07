@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_1_1_selectable_fields" ],
     [ "adGroupTargeting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item.html#acee83ba7cb64f55427ef8b1b0f4fbf17", null ],
     [ "attributeValues", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item.html#aeb161d4cbcb674fbb1a1af21914f7c3e", null ],
     [ "campaignTargeting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item.html#a25347b7125cbc03bd3ea11a51b57de69", null ],

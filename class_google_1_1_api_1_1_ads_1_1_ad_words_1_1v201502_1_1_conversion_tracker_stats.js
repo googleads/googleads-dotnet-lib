@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_stats =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_stats_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_stats_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_stats_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_stats_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_stats_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_stats_1_1_selectable_fields" ],
     [ "conversionValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_stats.html#abeae59d2b30e734abd166c06290c7ea4", null ],
     [ "mostRecentConversionDate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_stats.html#a91e06a9af8962e7a0f93ce5a444867c6", null ],
     [ "numConversionEvents", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_conversion_tracker_stats.html#ab2781f9dd7368f2ee3b7f84827da4db2", null ],

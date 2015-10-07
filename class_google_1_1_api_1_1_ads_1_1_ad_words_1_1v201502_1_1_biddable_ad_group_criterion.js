@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_biddable_ad_group_criterion =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_biddable_ad_group_criterion_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_biddable_ad_group_criterion_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_biddable_ad_group_criterion_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_biddable_ad_group_criterion_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_biddable_ad_group_criterion_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_biddable_ad_group_criterion_1_1_selectable_fields" ],
     [ "approvalStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_biddable_ad_group_criterion.html#abdfe998c85a86b7b10d1ed1343cb5d02", null ],
     [ "approvalStatusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_biddable_ad_group_criterion.html#a9e0d6d895807b0b7c13c0313b24d8eb6", null ],
     [ "biddingStrategyConfiguration", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_biddable_ad_group_criterion.html#aa97e0f404d96efcca11b3ca5a5f95eb5", null ],

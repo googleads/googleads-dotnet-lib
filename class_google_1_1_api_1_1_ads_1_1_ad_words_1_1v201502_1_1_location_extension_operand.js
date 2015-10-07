@@ -1,4 +1,7 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_operand =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_operand_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_operand_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_operand_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_operand_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_operand_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_operand_1_1_selectable_fields" ],
     [ "radius", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_operand.html#a1b4e5abf2014a16a1cdfd574d53057f9", null ]
 ];

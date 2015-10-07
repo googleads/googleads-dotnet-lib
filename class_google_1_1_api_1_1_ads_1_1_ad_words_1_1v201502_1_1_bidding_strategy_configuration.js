@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_strategy_configuration =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_strategy_configuration_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_strategy_configuration_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_strategy_configuration_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_strategy_configuration_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_strategy_configuration_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_strategy_configuration_1_1_selectable_fields" ],
     [ "biddingScheme", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_strategy_configuration.html#a83efc0f619fec073db31c29742f42204", null ],
     [ "biddingStrategyId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_strategy_configuration.html#afe3c1f1523abd2f68975a569a9ceea7a", null ],
     [ "biddingStrategyIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bidding_strategy_configuration.html#a33c3e9f5a56dffe32298922bc60bdb3b", null ],

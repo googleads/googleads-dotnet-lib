@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget_1_1_selectable_fields" ],
     [ "amount", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#aa4e38412a8964099b99efdd6d59a4554", null ],
     [ "budgetId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#ae8a438f4ed8ca9a5e005d09cf17da53b", null ],
     [ "budgetIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_budget.html#abd47c46544178b78c371e7f67651d274", null ],

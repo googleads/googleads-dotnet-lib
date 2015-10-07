@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_schedule =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_schedule_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_schedule_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_schedule_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_schedule_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_schedule_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_schedule_1_1_selectable_fields" ],
     [ "dayOfWeek", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_schedule.html#aaf929dd2e61a39476b54980bc8227291", null ],
     [ "dayOfWeekSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_schedule.html#a36a3c2613fb706cd30a39bc47e24aec6", null ],
     [ "endHour", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_feed_item_schedule.html#ab3e0faf2e597c604bf97e6002032dd75", null ],

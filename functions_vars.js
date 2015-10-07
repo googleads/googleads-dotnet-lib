@@ -21,5 +21,6 @@ var functions_vars =
     [ "t", "functions_vars_0x74.html", null ],
     [ "u", "functions_vars_0x75.html", null ],
     [ "v", "functions_vars_0x76.html", null ],
-    [ "w", "functions_vars_0x77.html", null ]
+    [ "w", "functions_vars_0x77.html", null ],
+    [ "y", "functions_vars_0x79.html", null ]
 ];

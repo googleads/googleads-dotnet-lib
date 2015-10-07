@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_frequency_cap_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_frequency_cap_1_1_filterable_fields.html#a9f121697d0c0a34c2bf18099d0e7ee94", null ]
+];

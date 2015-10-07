@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_bidding_strategy =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_bidding_strategy_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_bidding_strategy_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_bidding_strategy_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_bidding_strategy_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_bidding_strategy_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_bidding_strategy_1_1_selectable_fields" ],
     [ "biddingScheme", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_bidding_strategy.html#a133d56726ca226e0a2ba97e05b1fa036", null ],
     [ "id", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_bidding_strategy.html#a12662217a6f9815b6a633c892291062f", null ],
     [ "idSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_bidding_strategy.html#ac9e54b9b3b70aafc256d746d6b2124a2", null ],

@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_quality_info =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_quality_info_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_quality_info_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_quality_info_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_quality_info_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_quality_info_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_quality_info_1_1_selectable_fields" ],
     [ "isKeywordAdRelevanceAcceptable", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_quality_info.html#a459afc477e738a0654e1844224833fbb", null ],
     [ "isKeywordAdRelevanceAcceptableSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_quality_info.html#ad800fd9dcb6fad1b4f701d8d6cff2e7a", null ],
     [ "isLandingPageQualityAcceptable", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_quality_info.html#a24194e561c396ab755de84721bb17349", null ],

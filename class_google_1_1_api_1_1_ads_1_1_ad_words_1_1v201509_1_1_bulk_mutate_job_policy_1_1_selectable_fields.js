@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_policy_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_policy_1_1_selectable_fields.html#a0b91515b502280bd371cb65c8a2c7d07", null ]
+];

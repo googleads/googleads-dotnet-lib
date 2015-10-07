@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_extension_feed_item =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_extension_feed_item_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_extension_feed_item_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_extension_feed_item_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_extension_feed_item_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_extension_feed_item_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_extension_feed_item_1_1_selectable_fields" ],
     [ "devicePreference", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_extension_feed_item.html#acbb618cf281b1e665534759daa486807", null ],
     [ "endTime", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_extension_feed_item.html#a0f90b1d8f8bb15ec3ff0f45d2a9f4d84", null ],
     [ "ExtensionFeedItemType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_extension_feed_item.html#a4ac813b46239d75247c858ace7041d17", null ],

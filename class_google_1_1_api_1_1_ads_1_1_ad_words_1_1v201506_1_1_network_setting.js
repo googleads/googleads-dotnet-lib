@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_network_setting =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_network_setting_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_network_setting_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_network_setting_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_network_setting_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_network_setting_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_network_setting_1_1_selectable_fields" ],
     [ "targetContentNetwork", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_network_setting.html#a899f4663be8d0766e07d888f859228d7", null ],
     [ "targetContentNetworkSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_network_setting.html#ab941375bcbcee35f6d563e2ab59b6770", null ],
     [ "targetGoogleSearch", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_network_setting.html#a90226b887a65c0e90d4528ffe4deedb4", null ],

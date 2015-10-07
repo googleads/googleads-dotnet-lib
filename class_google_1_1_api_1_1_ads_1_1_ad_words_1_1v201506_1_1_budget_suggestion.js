@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_1_1_selectable_fields" ],
     [ "budgetQuantiles", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion.html#a0b194fccf2208e46b0b7d82f0e3f3c0c", null ],
     [ "cpc", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion.html#aafb24296c79f9e703e115ddf6062f4d9", null ],
     [ "cpm", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion.html#a9918c259fdef3c9fc84f4db8a9d535ba", null ],

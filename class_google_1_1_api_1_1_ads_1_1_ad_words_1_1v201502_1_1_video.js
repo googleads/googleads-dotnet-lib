@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_video =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_video_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_video_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_video_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_video_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_video_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_video_1_1_selectable_fields" ],
     [ "advertisingId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_video.html#acba3f7c8a672436aa2a78b5fab0f2c35", null ],
     [ "durationMillis", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_video.html#ac1524a5340bfcd33a811ac48d82ed459", null ],
     [ "durationMillisSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_video.html#ad8f3f56b64aa01505f104aed016ba396", null ],

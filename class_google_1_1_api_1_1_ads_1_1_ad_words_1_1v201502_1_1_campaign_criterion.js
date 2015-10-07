@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_criterion =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_criterion_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_criterion_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_criterion_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_criterion_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_criterion_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_criterion_1_1_selectable_fields" ],
     [ "bidModifier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_criterion.html#a712df6307b5b665c9baad46ead07bee4", null ],
     [ "bidModifierSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_criterion.html#a9f977cedd5ce5ccdf296f0c2c5f9a2fa", null ],
     [ "CampaignCriterionType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_criterion.html#af27f02e8488894a3f2cd0e1c6dc8a322", null ],

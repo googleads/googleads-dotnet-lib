@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_ad =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_ad_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_ad_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_ad_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_ad_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_ad_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_ad_1_1_selectable_fields" ],
     [ "businessName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_ad.html#ab2ae82686f1591aacbd658be3e970514", null ],
     [ "countryCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_ad.html#ac0c2b13907cafcd1d7e89172f2301b35", null ],
     [ "description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_ad.html#aec62d27475a4c16ce8b2e4f5b0db2ba7", null ],

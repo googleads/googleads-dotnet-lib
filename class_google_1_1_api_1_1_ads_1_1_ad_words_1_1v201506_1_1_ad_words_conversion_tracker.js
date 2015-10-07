@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_words_conversion_tracker =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_words_conversion_tracker_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_words_conversion_tracker_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_words_conversion_tracker_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_words_conversion_tracker_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_words_conversion_tracker_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_words_conversion_tracker_1_1_selectable_fields" ],
     [ "backgroundColor", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_words_conversion_tracker.html#aac9f8e82b90abbd4361647841a2d54ea", null ],
     [ "conversionPageLanguage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_words_conversion_tracker.html#a89cac2f6282f6d57b32805a0dcb0ba67", null ],
     [ "markupLanguage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_words_conversion_tracker.html#a3a332946c2772719dc41d9e2592ca6a0", null ],

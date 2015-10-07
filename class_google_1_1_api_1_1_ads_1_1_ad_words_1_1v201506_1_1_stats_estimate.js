@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_stats_estimate =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_stats_estimate_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_stats_estimate_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_stats_estimate_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_stats_estimate_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_stats_estimate_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_stats_estimate_1_1_selectable_fields" ],
     [ "averageCpc", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_stats_estimate.html#a79931b56c33830456bc0a1165b4ab486", null ],
     [ "averagePosition", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_stats_estimate.html#ae14d19a450dac1236000e3315aa5b189", null ],
     [ "averagePositionSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_stats_estimate.html#a84641ae09e5b1f6b2bf7298a3cfd1ff8", null ],

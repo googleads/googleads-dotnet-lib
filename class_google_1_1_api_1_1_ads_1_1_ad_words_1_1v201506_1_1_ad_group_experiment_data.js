@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_experiment_data =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_experiment_data_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_experiment_data_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_experiment_data_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_experiment_data_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_experiment_data_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_experiment_data_1_1_selectable_fields" ],
     [ "experimentBidMultipliers", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_experiment_data.html#aa65174fa806c2dc650c7fec6372682fe", null ],
     [ "experimentDataStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_experiment_data.html#ad1ff993aab6a15a220975137f1061087", null ],
     [ "experimentDataStatusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group_experiment_data.html#a354e031fe1c54153e116f4e527fb294f", null ],

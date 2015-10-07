@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_device =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_device_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_device_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_device_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_device_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_device_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_device_1_1_selectable_fields" ],
     [ "deviceName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_device.html#a82ff94c8b4d7e9317eb415a633643177", null ],
     [ "deviceType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_device.html#aeef0dab46454353c5c80a85edcbc5627", null ],
     [ "deviceTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_mobile_device.html#ab577ad3ac06f02749d39950c063cf3ec", null ],

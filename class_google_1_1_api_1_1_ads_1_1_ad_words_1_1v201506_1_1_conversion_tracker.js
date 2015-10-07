@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracker =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracker_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracker_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracker_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracker_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracker_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracker_1_1_selectable_fields" ],
     [ "alwaysUseDefaultRevenueValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracker.html#adc270360c2c4967a89ab93dc2ea4bb1b", null ],
     [ "alwaysUseDefaultRevenueValueSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracker.html#a97341d2bec0a87b6a19ccef724f4bdd1", null ],
     [ "category", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_conversion_tracker.html#ad899f72e27bb885734697ecf829b80b2", null ],

@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_shared_set =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_shared_set_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_shared_set_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_shared_set_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_shared_set_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_shared_set_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_shared_set_1_1_selectable_fields" ],
     [ "campaignId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_shared_set.html#a1cc8a96978a90fd17e40e3a45485a00b", null ],
     [ "campaignIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_shared_set.html#aa3ba56b18482d99d925d49e8adfa249a", null ],
     [ "campaignName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_campaign_shared_set.html#af002a9aa159993f70eb96b253b68c392", null ],

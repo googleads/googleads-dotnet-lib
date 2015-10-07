@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_template_ad =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_template_ad_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_template_ad_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_template_ad_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_template_ad_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_template_ad_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_template_ad_1_1_selectable_fields" ],
     [ "adAsImage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_template_ad.html#aca5b141d7945341ba6895ea5f3353176", null ],
     [ "adUnionId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_template_ad.html#ade9c0ba3d98463a6807bb18aa88af1f0", null ],
     [ "dimensions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_template_ad.html#a5cd983cc086718aae5ed8e952e9c09a2", null ],

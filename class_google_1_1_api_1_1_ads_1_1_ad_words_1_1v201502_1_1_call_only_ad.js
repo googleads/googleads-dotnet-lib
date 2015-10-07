@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_call_only_ad =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_call_only_ad_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_call_only_ad_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_call_only_ad_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_call_only_ad_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_call_only_ad_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_call_only_ad_1_1_selectable_fields" ],
     [ "businessName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_call_only_ad.html#a6b001f8aefa73cafe7d58de21c1928b7", null ],
     [ "callTracked", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_call_only_ad.html#ae28146bb778856a4dceada7a847e64e4", null ],
     [ "callTrackedSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_call_only_ad.html#ae9d04f4afad6bafa4313c25ca4fe92ed", null ],

@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data_1_1_selectable_fields" ],
     [ "addedAdExtensions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#ac5de1aa22068380cd98c86fea6d405cf", null ],
     [ "addedCampaignCriteria", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#af5acf6baf576133e50beb9bd40816a15", null ],
     [ "campaignChangeStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_change_data.html#a2043fe1aff337f739027d1edfc2bbe55", null ],

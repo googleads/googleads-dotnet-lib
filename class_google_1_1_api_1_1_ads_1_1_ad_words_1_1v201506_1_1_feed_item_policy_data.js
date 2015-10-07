@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_policy_data =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_policy_data_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_policy_data_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_policy_data_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_policy_data_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_policy_data_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_policy_data_1_1_selectable_fields" ],
     [ "approvalStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_policy_data.html#a3bc62bb6f2a6c3c8c005e1872ed5133f", null ],
     [ "approvalStatusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_policy_data.html#a123852da6f744be875ac4e52044c9724", null ],
     [ "feedMappingId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_policy_data.html#a27a39e66ae133302c83fdc485cb31b45", null ],

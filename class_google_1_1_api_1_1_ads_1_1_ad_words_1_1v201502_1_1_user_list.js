@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_user_list =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_user_list_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_user_list_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_user_list_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_user_list_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_user_list_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_user_list_1_1_selectable_fields" ],
     [ "accessReason", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_user_list.html#a5bec9908d8036a82dc3b3ba4049e1b4a", null ],
     [ "accessReasonSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_user_list.html#a9c589c85737834610ddb1bddf4f65113", null ],
     [ "accountUserListStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_user_list.html#a23f34c2ece0c1d32537d1a81cb0becae", null ],

@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rich_media_ad =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rich_media_ad_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rich_media_ad_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rich_media_ad_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rich_media_ad_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rich_media_ad_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rich_media_ad_1_1_selectable_fields" ],
     [ "adAttributes", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rich_media_ad.html#ada0d36c7474c976843bc578ff2b68e8b", null ],
     [ "adDuration", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rich_media_ad.html#a85419f93837f858590b848c9a3b8c2f3", null ],
     [ "adDurationSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rich_media_ad.html#abf4de8de52fa74a09d29bd674b706939", null ],

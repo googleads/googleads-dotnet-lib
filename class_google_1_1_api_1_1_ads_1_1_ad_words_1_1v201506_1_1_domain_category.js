@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_domain_category =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_domain_category_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_domain_category_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_domain_category_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_domain_category_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_domain_category_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_domain_category_1_1_selectable_fields" ],
     [ "category", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_domain_category.html#a017d51cf144807e24f3ceb1f1e8a169e", null ],
     [ "coverage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_domain_category.html#af2abe7868266a49cc171a2170e340111", null ],
     [ "coverageSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_domain_category.html#a0a747a7b8a2bbd3653d5255fd8601f59", null ],

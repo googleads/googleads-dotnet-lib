@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shared_set =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shared_set_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shared_set_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shared_set_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shared_set_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shared_set_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shared_set_1_1_selectable_fields" ],
     [ "memberCount", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shared_set.html#a43e0eec9b7d201923780f7599a29917d", null ],
     [ "memberCountSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shared_set.html#a4b0ed8cf32fee6695c2f550f7e2da851", null ],
     [ "name", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_shared_set.html#a264937c6d55c552159cc9bb01b63ef91", null ],

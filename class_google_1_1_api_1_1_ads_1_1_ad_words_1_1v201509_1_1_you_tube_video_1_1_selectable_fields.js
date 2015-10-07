@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_you_tube_video_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_you_tube_video_1_1_selectable_fields.html#ad16f5ad0bfe650d266ab56a2a4f6f414", null ]
+];

@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_1_1_selectable_fields" ],
     [ "AdType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#a8d9fed192659b1d7d30a2b1f598fcb16", null ],
     [ "devicePreference", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#ac36c8b45f09b2ca10e30594c0be2edbb", null ],
     [ "devicePreferenceSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad.html#ad1bf2f5aa0534375826380f08c44ec7c", null ],

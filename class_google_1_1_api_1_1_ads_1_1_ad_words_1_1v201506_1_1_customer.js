@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_customer =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_customer_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_customer_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_customer_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_customer_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_customer_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_customer_1_1_selectable_fields" ],
     [ "autoTaggingEnabled", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_customer.html#a55b57221be3445f9cead0829d71023bc", null ],
     [ "autoTaggingEnabledSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_customer.html#a31e7d8899d05e9acb7d16200b472025b", null ],
     [ "canManageClients", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_customer.html#a7fe31437c5c0c1e1edd9de388634d74d", null ],

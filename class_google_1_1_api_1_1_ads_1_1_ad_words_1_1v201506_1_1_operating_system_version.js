@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operating_system_version =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operating_system_version_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operating_system_version_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operating_system_version_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operating_system_version_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operating_system_version_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operating_system_version_1_1_selectable_fields" ],
     [ "name", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operating_system_version.html#ae86e334045fd224f59f788353d7bdec1", null ],
     [ "operatorType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operating_system_version.html#acd852dae245067d7e13299464ea64153", null ],
     [ "operatorTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_operating_system_version.html#a9f8e78df622f95b123c855921cfb5159", null ],

@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_1_1_selectable_fields" ],
     [ "operator{get{return this.operatorField", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html#a6c11a0064b5c0aa96d1f956af036fddb", null ],
     [ "functionString", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html#ac37f62a695ffdb611d0281a999cb9823", null ],
     [ "lhsOperand", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function.html#aa60e07c3ae12da42592b4e503fed0464", null ],

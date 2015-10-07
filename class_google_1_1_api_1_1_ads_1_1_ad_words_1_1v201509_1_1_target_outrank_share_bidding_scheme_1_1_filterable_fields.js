@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_target_outrank_share_bidding_scheme_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_target_outrank_share_bidding_scheme_1_1_filterable_fields.html#ad8c2827691ade762f8a9d2feb3af7b2e", null ]
+];

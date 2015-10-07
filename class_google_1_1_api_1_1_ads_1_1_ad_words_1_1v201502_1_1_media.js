@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_media =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_media_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_media_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_media_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_media_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_media_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_media_1_1_selectable_fields" ],
     [ "creationTime", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_media.html#a23f53b8a7421982c5bcb8deccff4c195", null ],
     [ "dimensions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_media.html#a6317b1023c9b367fa5d38bc3794ac9da", null ],
     [ "fileSize", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_media.html#a6ecd4b7039967696d345a8f00651e359", null ],

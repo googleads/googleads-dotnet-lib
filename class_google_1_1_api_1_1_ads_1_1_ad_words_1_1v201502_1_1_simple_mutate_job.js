@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_simple_mutate_job =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_simple_mutate_job_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_simple_mutate_job_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_simple_mutate_job_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_simple_mutate_job_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_simple_mutate_job_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_simple_mutate_job_1_1_selectable_fields" ],
     [ "history", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_simple_mutate_job.html#ad32969d0e9b895b9ba9f79abb3da0ba5", null ],
     [ "id", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_simple_mutate_job.html#a6b57bc4780794f84aaad39ef11b346cc", null ],
     [ "idSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_simple_mutate_job.html#a7145144b24721f6488c9c7a4bb003ca6", null ],

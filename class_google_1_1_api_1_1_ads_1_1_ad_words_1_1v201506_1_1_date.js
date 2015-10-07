@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_1_1_selectable_fields" ],
     [ "day", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date.html#adf4b44196669cef80667f1228f97ec7f", null ],
     [ "daySpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date.html#ad1deb7adf60e56322acd47001b71c280", null ],
     [ "month", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date.html#a2a6ed7eaef63417d2fdbfd45903a436e", null ],

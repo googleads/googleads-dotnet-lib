@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_offline_conversion_feed =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_offline_conversion_feed_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_offline_conversion_feed_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_offline_conversion_feed_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_offline_conversion_feed_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_offline_conversion_feed_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_offline_conversion_feed_1_1_selectable_fields" ],
     [ "conversionCurrencyCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_offline_conversion_feed.html#ae325663fa2814a87416eeda7a965d3a2", null ],
     [ "conversionName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_offline_conversion_feed.html#aab88139f09c8ed3790aafe1ac2c05046", null ],
     [ "conversionTime", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_offline_conversion_feed.html#a61413fdeac8b3403075b2543c7bc861d", null ],

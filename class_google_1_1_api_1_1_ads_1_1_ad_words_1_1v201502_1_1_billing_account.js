@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_account =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_account_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_account_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_account_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_account_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_account_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_account_1_1_selectable_fields" ],
     [ "currencyCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_account.html#a8776037bbd2515141d30f555981a58d5", null ],
     [ "id", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_account.html#a2cafd74ab86681000f9c82b27ad38c01", null ],
     [ "name", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_billing_account.html#a6a99a2851cf9bb701fe816062eb633ef", null ],

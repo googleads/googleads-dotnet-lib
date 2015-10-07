@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_operand =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_operand_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_operand_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_operand_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_operand_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_operand_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_operand_1_1_selectable_fields" ],
     [ "booleanValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_operand.html#abca1877c6f8d47f6b9b88720a3eb01c8", null ],
     [ "booleanValueSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_operand.html#ac94316a013da05699288bcf09a748819", null ],
     [ "doubleValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_operand.html#a380a58f4b1917b13abe87c75e60562cf", null ],

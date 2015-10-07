@@ -1,0 +1,9 @@
+var namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job =
+[
+    [ "v201509", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1v201509.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1v201509" ],
+    [ "AdWordsBulkRequestException", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_ad_words_bulk_request_exception.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_ad_words_bulk_request_exception" ],
+    [ "BulkJobErrorHandler", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_bulk_job_error_handler.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_bulk_job_error_handler" ],
+    [ "CloudStorageError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_cloud_storage_error.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_cloud_storage_error" ],
+    [ "CloudStorageErrorDetail", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_cloud_storage_error_detail.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_cloud_storage_error_detail" ],
+    [ "CloudStorageErrorResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_cloud_storage_error_response.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_cloud_storage_error_response" ]
+];

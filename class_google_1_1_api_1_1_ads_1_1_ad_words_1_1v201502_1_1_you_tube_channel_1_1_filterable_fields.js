@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_you_tube_channel_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_you_tube_channel_1_1_filterable_fields.html#af1bda9b4ef6f987905c65b6d00fb77e6", null ]
+];

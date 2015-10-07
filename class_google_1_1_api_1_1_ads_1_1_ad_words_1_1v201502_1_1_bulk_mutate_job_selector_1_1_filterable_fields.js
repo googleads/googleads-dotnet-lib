@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bulk_mutate_job_selector_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_bulk_mutate_job_selector_1_1_filterable_fields.html#a763c98f1f1efc86980b80a66837186ed", null ]
+];

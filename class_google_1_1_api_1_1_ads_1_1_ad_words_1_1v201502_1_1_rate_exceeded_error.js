@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rate_exceeded_error =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rate_exceeded_error_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rate_exceeded_error_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rate_exceeded_error_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rate_exceeded_error_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rate_exceeded_error_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rate_exceeded_error_1_1_selectable_fields" ],
     [ "rateName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rate_exceeded_error.html#a8469fead077b1859b105a6d9bb6e52c4", null ],
     [ "rateScope", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rate_exceeded_error.html#ac2f13d492c21209e0c83891dad102787", null ],
     [ "reason", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_rate_exceeded_error.html#a0c2436d2ab75c26d18536132c9b09271", null ],

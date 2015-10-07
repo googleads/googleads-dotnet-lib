@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension_1_1_selectable_fields" ],
     [ "address", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension.html#a8d35a2aa8fd6d164ab0a45e3f8165159", null ],
     [ "companyName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension.html#a4272ba6bee721dfb2d16d8eb19ce8acc", null ],
     [ "encodedLocation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_location_extension.html#aa96af04b422583126e6c18c3620f7a18", null ],

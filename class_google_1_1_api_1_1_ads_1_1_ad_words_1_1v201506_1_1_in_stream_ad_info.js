@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_in_stream_ad_info =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_in_stream_ad_info_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_in_stream_ad_info_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_in_stream_ad_info_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_in_stream_ad_info_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_in_stream_ad_info_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_in_stream_ad_info_1_1_selectable_fields" ],
     [ "maxAdDuration", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_in_stream_ad_info.html#a42dc609cea9ab7a30d654c4fe03ee14d", null ],
     [ "maxAdDurationSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_in_stream_ad_info.html#a12a1ef41f15ee6d6ad1d7577512418dc", null ],
     [ "medianAdDuration", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_in_stream_ad_info.html#ab7bad3917a41b61717181aa8091a3fa9", null ],

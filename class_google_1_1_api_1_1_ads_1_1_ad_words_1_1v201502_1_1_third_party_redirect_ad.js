@@ -1,5 +1,8 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_third_party_redirect_ad =
 [
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_third_party_redirect_ad_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_third_party_redirect_ad_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_third_party_redirect_ad_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_third_party_redirect_ad_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_third_party_redirect_ad_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_third_party_redirect_ad_1_1_selectable_fields" ],
     [ "expandingDirections", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_third_party_redirect_ad.html#ad4714f19919a8e17bc9c0a9f7c92be91", null ],
     [ "isCookieTargeted", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_third_party_redirect_ad.html#aca53213bc5fba1f325a26a7e70927d16", null ],
     [ "isCookieTargetedSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_third_party_redirect_ad.html#a8c60ba040e793005a1b07b52c6c81ed0", null ],
