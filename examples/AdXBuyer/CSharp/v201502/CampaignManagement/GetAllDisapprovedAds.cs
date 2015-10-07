@@ -61,53 +61,40 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
           (AdGroupAdService) user.GetService(AdWordsService.v201502.AdGroupAdService);
 
       // Create the selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "AdGroupCreativeApprovalStatus",
-          "AdGroupAdDisapprovalReasons"};
-
-      // Create the filter.
-      Predicate campaignPredicate = new Predicate();
-      campaignPredicate.@operator = PredicateOperator.EQUALS;
-      campaignPredicate.field = "CampaignId";
-      campaignPredicate.values = new string[] {campaignId.ToString()};
-
-      Predicate approvalPredicate = new Predicate();
-      approvalPredicate.@operator = PredicateOperator.EQUALS;
-      approvalPredicate.field = "AdGroupCreativeApprovalStatus";
-      approvalPredicate.values = new string[] {AdGroupAdApprovalStatus.DISAPPROVED.ToString()};
-
-      selector.predicates = new Predicate[] {campaignPredicate, approvalPredicate};
-
-      // Set the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
+      Selector selector = new Selector() {
+        fields = new string[] {
+          Ad.Fields.Id, AdGroupAd.Fields.AdGroupCreativeApprovalStatus,
+          AdGroupAd.Fields.AdGroupAdDisapprovalReasons
+        },
+        predicates = new Predicate[] {
+          Predicate.Equals(AdGroup.Fields.CampaignId, campaignId),
+          Predicate.Equals(AdGroupAd.Fields.AdGroupCreativeApprovalStatus,
+              AdGroupAdApprovalStatus.DISAPPROVED.ToString())
+        },
+        paging = Paging.Default
+      };
 
       AdGroupAdPage page = new AdGroupAdPage();
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get the disapproved ads.
           page = service.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
             foreach (AdGroupAd adGroupAd in page.entries) {
               Console.WriteLine("{0}) Ad id {1} has been disapproved for the following " +
-                  "reason(s):", i, adGroupAd.ad.id);
+                  "reason(s):", i + 1, adGroupAd.ad.id);
               foreach (string reason in adGroupAd.disapprovalReasons) {
                 Console.WriteLine("    {0}", reason);
               }
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to get disapproved ads.", e);

@@ -68,7 +68,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
 
       ' Create the selector.
       Dim selector As New Selector
-      selector.fields = New String() {"Id", "CriteriaType", "CampaignId"}
+      selector.fields = New String() {
+        Criterion.Fields.Id, Criterion.Fields.CriteriaType, CampaignCriterion.Fields.CampaignId
+      }
 
       ' Set the filters.
       Dim predicate As New Predicate

@@ -70,20 +70,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
 
       ' Create the selector.
       Dim selector As New Selector
-      selector.fields = New String() {"CampaignId", "AdGroupId", "Id", "CriteriaType", "Criteria", _
-          "FinalUrls", "Clicks", "Impressions", "Cost"}
+      selector.fields = New String() {"CampaignId", "AdGroupId", "Id", "CriteriaType", _
+          "Criteria", "FinalUrls", "Clicks", "Impressions", "Cost"}
 
-      Dim predicate As New Predicate
-      predicate.field = "Status"
-      predicate.operator = PredicateOperator.IN
-      predicate.values = New String() {"ENABLED", "PAUSED"}
-      selector.predicates = New Predicate() {predicate}
+      selector.predicates = New Predicate() {
+        Predicate.In("Status", New String() {"ENABLED", "PAUSED"})
+      }
 
       definition.selector = selector
-
-      ' Optional: Include zero impression rows.
-      Dim config As AdWordsAppConfig = DirectCast(user.Config, AdWordsAppConfig)
-      config.IncludeZeroImpressions = True
+      definition.includeZeroImpressions = True
 
       Dim filePath As String = ExampleUtilities.GetHomeDir() & Path.DirectorySeparatorChar & _
           fileName

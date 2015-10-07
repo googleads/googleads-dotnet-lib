@@ -30,8 +30,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all active creative wrappers. To create creative " +
-            "wrappers, run CreateCreativeWrappers.cs.";
+        return "This code example updates a creative wrapper to the 'OUTER' wrapping order. To " +
+            "determine which creative wrappers exist, run GetAllCreativeWrappers.cs.";
       }
     }
 

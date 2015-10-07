@@ -73,11 +73,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       selector.fields = New String() {"CampaignId", "AdGroupId", "Id", "CriteriaType", "Criteria", _
           "FinalUrls", "Clicks", "Impressions", "Cost"}
 
-      Dim predicate As New Predicate
-      predicate.field = "Status"
-      predicate.operator = PredicateOperator.IN
-      predicate.values = New String() {"ENABLED", "PAUSED"}
-      selector.predicates = New Predicate() {predicate}
+      selector.predicates = New Predicate() {
+        Predicate.In("Status", New String() {"ENABLED", "PAUSED"})
+      }
 
       definition.selector = selector
       definition.includeZeroImpressions = True

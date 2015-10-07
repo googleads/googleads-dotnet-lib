@@ -54,7 +54,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
           (CreativeService) user.GetService(DfpService.v201508.CreativeService);
 
       // Set the ID of the creative to update.
-      int creativeId = int.Parse(_T("INSERT_CREATIVE_ID_HERE"));
+      long creativeId = long.Parse(_T("INSERT_CREATIVE_ID_HERE"));
 
       // Create a statement to get all image creatives.
       Statement statement = new StatementBuilder()

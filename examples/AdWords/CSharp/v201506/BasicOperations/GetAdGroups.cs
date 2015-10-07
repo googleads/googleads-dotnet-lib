@@ -63,43 +63,34 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
           (AdGroupService) user.GetService(AdWordsService.v201506.AdGroupService);
 
       // Create the selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "Name"};
-
-      // Create the filters.
-      Predicate predicate = new Predicate();
-      predicate.field = "CampaignId";
-      predicate.@operator = PredicateOperator.EQUALS;
-      predicate.values = new string[] {campaignId.ToString()};
-      selector.predicates = new Predicate[] {predicate};
-
-      // Set the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
+      Selector selector = new Selector() {
+        fields = new string[] { AdGroup.Fields.Id, AdGroup.Fields.Name },
+        predicates = new Predicate[] {
+          Predicate.Equals(AdGroup.Fields.CampaignId, campaignId)
+        },
+        paging = Paging.Default,
+        ordering = new OrderBy[] {OrderBy.Asc(AdGroup.Fields.Name)}
+      };
 
       AdGroupPage page = new AdGroupPage();
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get the ad groups.
           page = adGroupService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
             foreach (AdGroup adGroup in page.entries) {
               Console.WriteLine("{0}) Ad group name is '{1}' and id is {2}.", i + 1, adGroup.name,
                   adGroup.id);
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          // Note: You can also use selector.paging.IncrementOffsetBy(customPageSize)
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of ad groups found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve ad groups.", e);

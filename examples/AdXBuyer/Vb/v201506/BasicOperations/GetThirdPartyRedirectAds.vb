@@ -66,60 +66,37 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
 
       ' Create a selector.
       Dim selector As New Selector
-      selector.fields = New String() {"Id", "Status", "Url", "DisplayUrl", "RichMediaAdSnippet"}
+      selector.fields = New String() {
+        Ad.Fields.Id, AdGroupAd.Fields.Status, ThirdPartyRedirectAd.Fields.Url,
+        ThirdPartyRedirectAd.Fields.DisplayUrl, ThirdPartyRedirectAd.Fields.RichMediaAdSnippet
+      }
 
-      ' Set the sort order.
-      Dim orderBy As New OrderBy
-      orderBy.field = "Id"
-      orderBy.sortOrder = SortOrder.ASCENDING
-      selector.ordering = New OrderBy() {orderBy}
-
-      ' Restrict the fetch to only the selected ad group id.
-      Dim adGroupPredicate As New Predicate
-      adGroupPredicate.field = "AdGroupId"
-      adGroupPredicate.operator = PredicateOperator.EQUALS
-      adGroupPredicate.values = New String() {adGroupId.ToString}
-
-      ' Retrieve only third party redirect ads.
-      Dim typePredicate As New Predicate
-      typePredicate.field = "AdType"
-      typePredicate.operator = PredicateOperator.EQUALS
-      typePredicate.values = New String() {"THIRD_PARTY_REDIRECT_AD"}
-
-      ' By default disabled ads aren't returned by the selector. To return them
-      ' include the DISABLED status in the statuses field.
-      Dim statusPredicate As New Predicate
-      statusPredicate.field = "Status"
-      statusPredicate.operator = PredicateOperator.IN
-
-      statusPredicate.values = New String() {AdGroupAdStatus.ENABLED.ToString, _
-          AdGroupAdStatus.PAUSED.ToString, AdGroupAdStatus.DISABLED.ToString}
-
-      selector.predicates = New Predicate() {adGroupPredicate, statusPredicate, typePredicate}
-
-      ' Select the selector paging.
-      selector.paging = New Paging
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
+      selector.ordering = New OrderBy() {OrderBy.Asc(Ad.Fields.Id)}
+      selector.predicates = New Predicate() {
+        Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId.ToString()),
+        Predicate.Equals("AdType", "THIRD_PARTY_REDIRECT_AD"),
+        Predicate.In(AdGroupAd.Fields.Status, New String() {
+            AdGroupAdStatus.ENABLED.ToString(),
+            AdGroupAdStatus.PAUSED.ToString(),
+            AdGroupAdStatus.DISABLED.ToString()
+        })
+      }
+      selector.paging = Paging.Default
 
       Dim page As New AdGroupAdPage
 
       Try
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
-
           ' Get the third party redirect ads.
           page = service.get(selector)
 
           ' Display the results.
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
 
             For Each adGroupAd As AdGroupAd In page.entries
               Dim thirdPartyRedirectAd As ThirdPartyRedirectAd = adGroupAd.ad
-              Console.WriteLine("{0}) Ad id is {1} and status is {2}", i, _
+              Console.WriteLine("{0}) Ad id is {1} and status is {2}", i + 1, _
                                 thirdPartyRedirectAd.id, adGroupAd.status)
               Console.WriteLine("  Url: {0}\n  Display Url: {1}\n  Snippet:{2}", _
                   String.Join(",", thirdPartyRedirectAd.finalUrls), _
@@ -127,8 +104,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
             Next
             i += 1
           End If
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
         Console.WriteLine("Number of third party redirect ads found: {0}", page.totalNumEntries)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to get third party redirect ads.", e)

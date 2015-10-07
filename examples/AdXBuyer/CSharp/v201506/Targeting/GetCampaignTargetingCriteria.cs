@@ -65,52 +65,38 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
           (CampaignCriterionService) user.GetService(
               AdWordsService.v201506.CampaignCriterionService);
 
-      // Create the selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "CriteriaType", "PlacementUrl"};
-
-      // Set the filters.
-      Predicate campaignPredicate = new Predicate();
-      campaignPredicate.field = "CampaignId";
-      campaignPredicate.@operator = PredicateOperator.EQUALS;
-      campaignPredicate.values = new string[] {campaignId.ToString()};
-
-      Predicate placementPredicate = new Predicate();
-      placementPredicate.field = "CriteriaType";
-      placementPredicate.@operator = PredicateOperator.EQUALS;
-      placementPredicate.values = new string[] {"PLACEMENT"};
-
-      selector.predicates = new Predicate[] {campaignPredicate, placementPredicate};
-
-      // Set the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
+      Selector selector = new Selector() {
+        fields = new string[] {
+          CampaignCriterion.Fields.CampaignId, Criterion.Fields.Id,
+          Criterion.Fields.CriteriaType, Placement.Fields.PlacementUrl
+        },
+        predicates = new Predicate[] {
+          Predicate.Equals(CampaignCriterion.Fields.CampaignId, campaignId.ToString()),
+          Predicate.Equals(Criterion.Fields.CriteriaType, "PLACEMENT")
+        },
+        paging = Paging.Default
+      };
 
       CampaignCriterionPage page = new CampaignCriterionPage();
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get all campaign targets.
           page = campaignCriterionService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
             foreach (CampaignCriterion campaignCriterion in page.entries) {
               Placement placement = campaignCriterion.criterion as Placement;
 
-              Console.WriteLine("{0}) Placement with ID {1} and url {2} was found.", i,
+              Console.WriteLine("{0}) Placement with ID {1} and url {2} was found.", i + 1,
                   placement.id, placement.url);
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of placements found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to get campaign targeting criteria.", e);

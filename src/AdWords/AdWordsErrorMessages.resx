@@ -150,7 +150,7 @@
     <comment>Error message thrown when developer token is not set by user.</comment>
   </data>
   <data name="ClientCustomerIdIsEmpty" xml:space="preserve">
-    <value>AdWords API can find out effective user from the authorization headers, but setting a client customer ID explicitly is recommended. If the credentials in your configuration corresponds to an MCC account, you may not see any data.</value>
+    <value>AdWords API can find out effective user from the authorization headers, but setting a client customer ID explicitly is recommended. If the credentials in your configuration corresponds to an AdWords manager account, you may not see any data.</value>
     <comment>Warning message printed when clientCustomerID header is empty.</comment>
   </data>
   <data name="ExpressHeadersShouldNotBeSpecified" xml:space="preserve">

@@ -64,7 +64,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
 
       ' Create the video selector.
       Dim selector As New Selector
-      selector.fields = New String() {"MediaId", "Width", "Height", "MimeType"}
+      selector.fields = New String() {
+        Media.Fields.MediaId, Dimensions.Fields.Width,
+        Dimensions.Fields.Height, Media.Fields.MimeType
+      }
 
       ' Set the filter.
       Dim predicate As New Predicate
@@ -73,44 +76,43 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
       predicate.values = New String() {MediaMediaType.VIDEO.ToString(), _
           MediaMediaType.IMAGE.ToString()}
 
-      selector.predicates = New Predicate() {predicate}
+      selector.predicates = New Predicate() {
+        predicate.In(Media.Fields.Type, New String() {
+          MediaMediaType.VIDEO.ToString(),
+          MediaMediaType.IMAGE.ToString()
+        })
+      }
 
-      ' Select selector paging.
-      selector.paging = New Paging
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
+      selector.paging = Paging.Default
 
       Dim page As New MediaPage
 
       Try
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
-
           page = mediaService.get(selector)
 
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
 
             For Each media As Media In page.entries
               If TypeOf media Is Video Then
                 Dim video As Video = CType(media, AdWords.v201502.Video)
                 Console.WriteLine("{0}) Video with id '{1}' and name '{2}' was found.", _
-                    i, video.mediaId, video.name)
+                    i + 1, video.mediaId, video.name)
               ElseIf TypeOf media Is Image Then
                 Dim image As Image = CType(media, AdWords.v201502.Image)
                 Dim dimensions As Dictionary(Of MediaSize, Dimensions) = _
                     CreateMediaDimensionMap(image.dimensions)
                 Console.WriteLine("{0}) Image with id '{1}', dimensions '{2}x{3}', and MIME " & _
-                    "type '{4}' was found.", i, image.mediaId, dimensions(MediaSize.FULL).width, _
+                    "type '{4}' was found.", i + 1, image.mediaId, _
+                    dimensions(MediaSize.FULL).width, _
                     dimensions(MediaSize.FULL).height, image.mimeType)
               End If
               i = i + 1
             Next
           End If
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
         Console.WriteLine("Number of images and videos found: {0}", page.totalNumEntries)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to get images and videos.", e)

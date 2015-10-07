@@ -52,10 +52,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     protected void OnAuthorizeButtonClick(object sender, EventArgs e) {
       // This code example shows how to run an AdWords API web application
       // while incorporating the OAuth2 web application flow into your
-      // application. If your application uses a single MCC login to make calls
-      // to all your accounts, you shouldn't use this code example. Instead, you
-      // should run OAuthTokenGenerator.exe to generate a refresh
-      // token and use that configuration in your website's Web.config.
+      // application. If your application uses a single AdWords manager account
+      // login to make calls to all your accounts, you shouldn't use this code
+      // example. Instead, you should run OAuthTokenGenerator.exe to generate a
+      // refresh token and use that configuration in your website's Web.config.
       AdWordsAppConfig config = user.Config as AdWordsAppConfig;
       if (user.Config.OAuth2Mode == OAuth2Flow.APPLICATION &&
             string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
@@ -71,25 +71,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
     /// the event data.</param>
     protected void OnDownloadReportButtonClick(object sender, EventArgs eventArgs) {
       ConfigureUserForOAuth();
-      ReportDefinition definition = new ReportDefinition();
+      ReportDefinition definition = new ReportDefinition() {
+        reportName = "Last 7 days CRITERIA_PERFORMANCE_REPORT",
+        reportType = ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT,
+        downloadFormat = DownloadFormat.GZIPPED_CSV,
+        dateRangeType = ReportDefinitionDateRangeType.LAST_7_DAYS,
 
-      definition.reportName = "Last 7 days CRITERIA_PERFORMANCE_REPORT";
-      definition.reportType = ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT;
-      definition.downloadFormat = DownloadFormat.GZIPPED_CSV;
-      definition.dateRangeType = ReportDefinitionDateRangeType.LAST_7_DAYS;
-
-      // Create selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"CampaignId", "AdGroupId", "Id", "CriteriaType", "Criteria",
-          "CriteriaDestinationUrl", "Clicks", "Impressions", "Cost"};
-
-      Predicate predicate = new Predicate();
-      predicate.field = "Status";
-      predicate.@operator = PredicateOperator.IN;
-      predicate.values = new string[] {"ACTIVE", "PAUSED"};
-      selector.predicates = new Predicate[] {predicate};
-
-      definition.selector = selector;
+        selector = new Selector() {
+          fields = new string[] {"CampaignId", "AdGroupId", "Id", "CriteriaType", "Criteria",
+              "FinalUrls", "Clicks", "Impressions", "Cost"},
+          predicates = new Predicate[] {
+            Predicate.In("Status", new string[] {"ACTIVE", "PAUSED"})
+          }
+        }
+      };
 
       // Optional: Include zero impression rows.
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
@@ -121,14 +116,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
 
       // Now proceed to make your API calls as usual.
       // Create a selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "Name", "Status"};
+      Selector selector = new Selector() {
+        fields = new string[] { Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Status },
+        ordering = new OrderBy[] { OrderBy.Asc(Campaign.Fields.Name) }
+      };
 
-      OrderBy orderByName = new OrderBy();
-      orderByName.field = "Name";
-      orderByName.sortOrder = SortOrder.ASCENDING;
-
-      selector.ordering = new OrderBy[] {orderByName};
       (user.Config as AdWordsAppConfig).ClientCustomerId = txtCustomerId.Text;
 
       try {

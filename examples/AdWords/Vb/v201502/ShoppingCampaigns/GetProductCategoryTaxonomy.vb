@@ -113,11 +113,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
           AdWordsService.v201502.ConstantDataService), AdWords.v201502.ConstantDataService)
 
       Dim selector As New Selector()
-
-      Dim predicate As New Predicate()
-      predicate.field = "Country"
-      predicate.operator = PredicateOperator.IN
-      predicate.values = New String() {"US"}
+      selector.predicates = New Predicate() {
+        Predicate.In(ProductBiddingCategoryData.Fields.Country, New String() {"US"})
+      }
 
       Try
         Dim results As ProductBiddingCategoryData() = _

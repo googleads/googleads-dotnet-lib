@@ -1,3 +1,23 @@
+18.17.0
+=======
+AdWords:
+  - Fixed the display message in RemoveAdGroup examples to match what the example does.
+  - Generated stub code now lists all the selector fields.
+  - All code examples have been updated to use the new selector fields property.
+  - Utility methods have been added to Predicate, Selector and OrderBy classes
+  so you can write more concise code when iterating through objects.
+  - Added support for v201509.
+
+AdXBuyer:
+  - Generated stub code now lists all the selector fields.
+  - All code examples have been updated to use the new selector fields property.
+  - Utility methods have been added to Predicate, Selector and OrderBy classes
+  so you can write more concise code when iterating through objects.
+  - Added support for v201509.
+
+DFP:
+  - Minor bug fixes to v201508 examples.
+
 18.16.0
 =======
 All:

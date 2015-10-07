@@ -60,7 +60,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
           .Where("id = :userId")
           .OrderBy("id ASC")
           .Limit(1)
-          .AddValue("id", userId);
+          .AddValue("userId", userId);
 
 
       try {

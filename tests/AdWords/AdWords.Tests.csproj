@@ -67,6 +67,11 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SoapMessages.v201509.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SoapMessages.v201509.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SoapMessages.v201506.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SoapMessages.v201506.Designer.cs</LastGenOutput>
@@ -77,16 +82,11 @@
       <LastGenOutput>SoapMessages.v201502.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SoapMessages.v201409.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SoapMessages.v201409.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\UpdateCampaign.v201509.txt" />
     <Content Include="Resources\UpdateCampaign.v201506.txt" />
     <Content Include="Resources\UpdateCampaign.v201502.txt" />
-    <Content Include="Resources\UpdateCampaign.v201409.txt" />
     <Content Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -104,6 +104,7 @@
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Util\v201502\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201506\MapUtilitiesTest.cs" />
+    <Compile Include="Util\v201509\MapUtilitiesTest.cs" />
     <Compile Include="v201502\AccountManagementTest.cs" />
     <Compile Include="v201502\AdvancedOperationsTest.cs" />
     <Compile Include="v201502\BasicOperationsTest.cs" />
@@ -136,13 +137,29 @@
     <Compile Include="v201506\TargetingTest.cs" />
     <Compile Include="v201506\TestUtils.cs" />
     <Compile Include="v201506\VersionedExampleTestsBase.cs" />
+    <Compile Include="v201509\AccountManagementTest.cs" />
+    <Compile Include="v201509\AdvancedOperationsTest.cs" />
+    <Compile Include="v201509\BasicOperationsTest.cs" />
+    <Compile Include="v201509\CampaignManagementTest.cs" />
+    <Compile Include="v201509\ErrorHandlingTest.cs" />
+    <Compile Include="v201509\ExtensionsTest.cs" />
+    <Compile Include="v201509\MigrationTest.cs" />
+    <Compile Include="v201509\MiscellaneousTest.cs" />
+    <Compile Include="v201509\MockTests.cs" />
+    <Compile Include="v201509\OptimizationTest.cs" />
+    <Compile Include="v201509\RemarketingTest.cs" />
+    <Compile Include="v201509\ReportingTest.cs" />
+    <Compile Include="v201509\ShoppingCampaignsTest.cs" />
+    <Compile Include="v201509\TargetingTest.cs" />
+    <Compile Include="v201509\TestUtils.cs" />
+    <Compile Include="v201509\VersionedExampleTestsBase.cs" />
     <Compile Include="AdWordsRequestInterceptor.cs" />
     <Compile Include="ExampleTestsBase.cs" />
     <Compile Include="ExamplesMockData.cs" />
     <Compile Include="MockUtilities.cs" />
     <Compile Include="ServiceCreationTests.cs" />
-    <Compile Include="SoapMessages.v201409.Designer.cs" />
     <Compile Include="SoapMessages.v201502.Designer.cs" />
     <Compile Include="SoapMessages.v201506.Designer.cs" />
+    <Compile Include="SoapMessages.v201509.Designer.cs" />
   </ItemGroup>
 </Project>

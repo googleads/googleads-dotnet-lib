@@ -65,37 +65,31 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
 
       ' Create the selector.
       Dim selector As New Selector
-      selector.fields = New String() {"Id", "Name", "Labels"}
+      selector.fields = New String() {
+        Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Labels
+      }
 
       ' Labels filtering is performed by ID. You can use CONTAINS_ANY to
       ' select campaigns with any of the label IDs, CONTAINS_ALL to select
       ' campaigns with all of the label IDs, or CONTAINS_NONE to select
       ' campaigns with none of the label IDs.
-      Dim predicate As New Predicate
-      predicate.operator = PredicateOperator.CONTAINS_ANY
-      predicate.field = "Labels"
-      predicate.values = New String() {labelId.ToString()}
-      selector.predicates = New Predicate() {predicate}
+      selector.predicates = New Predicate() {
+        Predicate.ContainsAny(Campaign.Fields.Labels, New String() {labelId.ToString()})
+      }
 
       ' Set the selector paging.
-      selector.paging = New Paging
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
+      selector.paging = Paging.Default
 
       Dim page As New CampaignPage
 
       Try
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
-
           ' Get the campaigns.
           page = campaignService.get(selector)
 
           ' Display the results.
           If Not (page Is Nothing) AndAlso Not (page.entries Is Nothing) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
             For Each campaign As Campaign In page.entries
               Dim labelNames As New List(Of String)
               For Each label As Label In campaign.labels
@@ -108,8 +102,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
               i = i + 1
             Next
           End If
-          offset += pageSize
-        Loop While offset < page.totalNumEntries
+          selector.paging.IncreaseOffset()
+        Loop While selector.paging.startIndex < page.totalNumEntries
         Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to retrieve campaigns by label.", e)

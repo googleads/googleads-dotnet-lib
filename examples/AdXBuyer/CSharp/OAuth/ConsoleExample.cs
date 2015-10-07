@@ -23,11 +23,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
   /// <summary>
   /// This code example shows how to run an AdWords API command line application
   /// while incorporating the OAuth2 installed application flow into your
-  /// application. If your application uses a single MCC login to make calls to
-  /// all your accounts, you shouldn't use this code example. Instead, you
-  /// should run Common\Util\OAuth2TokenGenerator.cs to generate a refresh token
-  /// and set that in user.Config.OAuth2RefreshToken field, or set
-  /// OAuth2RefreshToken key in your App.config / Web.config.
+  /// application. If your application uses a single AdWords manager account
+  /// login to make calls to all your accounts, you shouldn't use this code
+  /// example. Instead, you should run Common\Util\OAuth2TokenGenerator.cs to
+  /// generate a refresh token and set that in user.Config.OAuth2RefreshToken
+  /// field, or set OAuth2RefreshToken key in your App.config / Web.config.
   ///
   /// This code example depends on Console environment only for reading and
   /// writing values, you may use this code example in other environments like
@@ -59,10 +59,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
 
       // This code example shows how to run an AdWords API web application
       // while incorporating the OAuth2 installed application flow into your
-      // application. If your application uses a single MCC login to make calls
-      // to all your accounts, you shouldn't use this code example. Instead, you
-      // should run OAuthTokenGenerator.exe to generate a refresh
-      // token and use that configuration in your application's App.config.
+      // application. If your application uses a single AdWords manager account
+      // login to make calls to all your accounts, you shouldn't use this code
+      // example. Instead, you should run OAuthTokenGenerator.exe to generate a
+      // refresh token and use that configuration in your application's
+      // App.config.
       AdWordsAppConfig config = user.Config as AdWordsAppConfig;
       if (user.Config.OAuth2Mode == OAuth2Flow.APPLICATION &&
             string.IsNullOrEmpty(config.OAuth2RefreshToken)) {
@@ -77,37 +78,33 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
       CampaignService campaignService =
           (CampaignService) user.GetService(AdWordsService.v201506.CampaignService);
 
-      // Create the selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "Name", "Status"};
+      Selector selector = new Selector() {
+        fields = new string[] { Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Status },
+        ordering = new OrderBy[] { OrderBy.Asc(Campaign.Fields.Name) },
+        paging = Paging.Default
+      };
 
       // Set the selector paging.
       selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
 
       CampaignPage page = new CampaignPage();
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get the campaigns.
           page = campaignService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
             foreach (Campaign campaign in page.entries) {
               Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = '{3}'" +
                 " was found.", i + 1, campaign.id, campaign.name, campaign.status);
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve campaigns", e);

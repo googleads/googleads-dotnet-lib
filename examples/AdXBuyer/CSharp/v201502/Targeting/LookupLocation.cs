@@ -16,14 +16,14 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
+
   /// <summary>
   /// This code example gets location criteria by name.
   /// </summary>
   public class LookupLocation : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -58,25 +58,22 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
           (LocationCriterionService) user.GetService(AdWordsService.v201502.
               LocationCriterionService);
 
-      string[] locationNames = new string[] {"Paris", "Quebec", "Spain", "Deutschland"};
+      string[] locationNames = new string[] { "Paris", "Quebec", "Spain", "Deutschland" };
 
       Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "LocationName", "CanonicalName", "DisplayType",
-          "ParentLocations", "Reach", "TargetingStatus"};
+      selector.fields = new string[] {
+        Location.Fields.Id, Location.Fields.LocationName, LocationCriterion.Fields.CanonicalName,
+        Location.Fields.DisplayType, Location.Fields.ParentLocations,
+        LocationCriterion.Fields.Reach, Location.Fields.TargetingStatus
+      };
 
-      // Location names must match exactly, only EQUALS and IN are supported.
-      Predicate predicate1 = new Predicate();
-      predicate1.field = "LocationName";
-      predicate1.@operator = PredicateOperator.IN;
-      predicate1.values = locationNames;
+      selector.predicates = new Predicate[] {
+        // Location names must match exactly, only EQUALS and IN are supported.
+        Predicate.In(Location.Fields.LocationName, locationNames),
 
-      // Set the locale of the returned location names.
-      Predicate predicate2 = new Predicate();
-      predicate2.field = "Locale";
-      predicate2.@operator = PredicateOperator.EQUALS;
-      predicate2.values = new string[] {"en"};
-
-      selector.predicates = new Predicate[] {predicate1, predicate2};
+        // Set the locale of the returned location names.
+        Predicate.Equals(LocationCriterion.Fields.Locale, "en")
+      };
 
       try {
         // Make the get request.

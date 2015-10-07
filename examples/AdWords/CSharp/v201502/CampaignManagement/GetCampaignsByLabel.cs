@@ -12,10 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Collections.Generic;
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
+
+using System;
+using System.Collections.Generic;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
 
@@ -62,38 +63,30 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
           (CampaignService) user.GetService(AdWordsService.v201502.CampaignService);
 
       // Create the selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] { "Id", "Name", "Labels" };
-
-      // Labels filtering is performed by ID. You can use CONTAINS_ANY to
-      // select campaigns with any of the label IDs, CONTAINS_ALL to select
-      // campaigns with all of the label IDs, or CONTAINS_NONE to select
-      // campaigns with none of the label IDs.
-      Predicate predicate = new Predicate();
-      predicate.@operator = PredicateOperator.CONTAINS_ANY;
-      predicate.field = "Labels";
-      predicate.values = new string[] { labelId.ToString() };
-      selector.predicates = new Predicate[] { predicate };
-
-      // Set the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
+      Selector selector = new Selector() {
+        fields = new string[] { 
+          Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Labels
+        },
+        predicates = new Predicate[] {
+          // Labels filtering is performed by ID. You can use CONTAINS_ANY to
+          // select campaigns with any of the label IDs, CONTAINS_ALL to select
+          // campaigns with all of the label IDs, or CONTAINS_NONE to select
+          // campaigns with none of the label IDs.
+          Predicate.ContainsAny(Campaign.Fields.Labels, new string[] { labelId.ToString() })
+        },
+        paging = Paging.Default
+      };
 
       CampaignPage page = new CampaignPage();
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get the campaigns.
           page = campaignService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
             foreach (Campaign campaign in page.entries) {
               List<string> labelNames = new List<string>();
               foreach (Label label in campaign.labels) {
@@ -106,8 +99,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve campaigns by label", e);

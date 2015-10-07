@@ -65,29 +65,26 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       // Set the business ID to the service.
       promotionService.RequestHeader.expressBusinessId = businessId;
 
-      Selector selector = new Selector();
-      selector.fields = new String[] {"PromotionId", "Name", "Status", "DestinationUrl",
-          "StreetAddressVisible", "CallTrackingEnabled", "ContentNetworkOptedOut", "Budget",
-          "PromotionCriteria", "RemainingBudget", "Creatives", "CampaignIds" };
-
-      // Set the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
+      Selector selector = new Selector() {
+        fields = new String[] {
+          Promotion.Fields.PromotionId, Promotion.Fields.Name, Promotion.Fields.Status,
+          Promotion.Fields.DestinationUrl, Promotion.Fields.CallTrackingEnabled,
+          Promotion.Fields.Budget, Promotion.Fields.PromotionCriteria,
+          Promotion.Fields.RemainingBudget, Promotion.Fields.Creatives,
+          Promotion.Fields.CampaignIds
+        },
+        paging = Paging.Default
+      };
 
       PromotionPage page = null;
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get all promotions for the  business.
           page = promotionService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
             foreach (Promotion promotion in page.entries) {
               // Summary.
               Console.WriteLine("0) Express promotion with name = {1} and id = {2} was found.",
@@ -95,8 +92,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of promotions found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve promotions.", e);

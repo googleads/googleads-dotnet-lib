@@ -59,36 +59,31 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
           (CampaignService) user.GetService(AdWordsService.v201506.CampaignService);
 
       // Create the selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] { "Id", "Name", "Status" };
-
-      // Set the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
+      Selector selector = new Selector() {
+        fields = new string[] {
+          Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Status
+        },
+        paging = Paging.Default
+      };
 
       CampaignPage page = new CampaignPage();
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get the campaigns.
           page = campaignService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
             foreach (Campaign campaign in page.entries) {
               Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = '{3}'" +
                 " was found.", i + 1, campaign.id, campaign.name, campaign.status);
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve campaigns", e);

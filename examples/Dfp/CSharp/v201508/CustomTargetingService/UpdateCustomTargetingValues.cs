@@ -61,7 +61,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
       // Create a statement to only select predefined custom targeting values
       // for a given key.
       StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("customTargetingValueId = :customTargetingValueId")
+          .Where("id = :customTargetingValueId")
           .OrderBy("id ASC")
           .Limit(1)
           .AddValue("customTargetingValueId", customTargetingValueId);

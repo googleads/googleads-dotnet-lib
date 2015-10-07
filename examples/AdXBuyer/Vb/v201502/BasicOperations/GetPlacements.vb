@@ -62,34 +62,28 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
 
       ' Create a selector.
       Dim selector As New Selector
-      selector.fields = New String() {"Id", "AdGroupId", "PlacementUrl"}
+      selector.fields = New String() {
+        Criterion.Fields.Id, AdGroupCriterion.Fields.AdGroupId, Placement.Fields.PlacementUrl
+      }
 
       ' Select only placements.
-      Dim predicate As New Predicate
-      predicate.field = "CriteriaType"
-      predicate.operator = PredicateOperator.EQUALS
-      predicate.values = New String() {"PLACEMENT"}
-      selector.predicates = New Predicate() {predicate}
+      selector.predicates = New Predicate() {
+        predicate.Equals(Criterion.Fields.CriteriaType, "PLACEMENT")
+      }
 
       ' Set the selector paging.
-      selector.paging = New Paging
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
+      selector.paging = Paging.Default
 
       Dim page As New AdGroupCriterionPage
 
       Try
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
-
           ' Get the placements.
           page = adGroupCriterionService.get(selector)
 
           ' Display the results.
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
 
             For Each adGroupCriterion As AdGroupCriterion In page.entries
               Dim isNegative As Boolean = TypeOf adGroupCriterion Is NegativeAdGroupCriterion
@@ -102,19 +96,19 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
               ' to identify the criterion type.
               Dim placement As Placement = adGroupCriterion.criterion
               If isNegative Then
-                Console.WriteLine("{0}) Negative placement with ad group ID = '{1}', placement " & _
-                    "ID = '{2}', and url = '{3}' was found.", i, adGroupCriterion.adGroupId, _
-                    placement.id, placement.url)
+                Console.WriteLine("{0}) Negative placement with ad group ID = '{1}', " & _
+                    "placement ID = '{2}', and url = '{3}' was found.", i + 1, _
+                    adGroupCriterion.adGroupId, placement.id, placement.url)
               Else
                 Console.WriteLine("{0}) Placement with ad group ID = '{1}', placement ID = " & _
-                    "'{2}' and url = '{3}' was found.", i, adGroupCriterion.adGroupId, _
+                    "'{2}' and url = '{3}' was found.", i + 1, adGroupCriterion.adGroupId, _
                     placement.id, placement.url)
               End If
               i += 1
             Next
           End If
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
         Console.WriteLine("Number of placements found: {0}", page.totalNumEntries)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to retrieve placements.", e)

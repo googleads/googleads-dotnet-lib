@@ -84,8 +84,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
 
         if (baseRates != null) {
           foreach (BaseRate updatedBaseRate in baseRates) {
-            Console.WriteLine("Base rate with ID ='{0}' and type '{1}' belonging to rate " +
-                "card '{2}' was found.", baseRate.id, baseRate.GetType().Name, baseRate.rateCardId);
+            Console.WriteLine("Base rate with ID ='{0}' and type '{1}' belonging to rate card " +
+                "'{2}' was updated.", baseRate.id, baseRate.GetType().Name, baseRate.rateCardId);
           }
         } else {
           Console.WriteLine("No base rates updated.");

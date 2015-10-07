@@ -64,7 +64,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
 
       // Create selector.
       Selector selector = new Selector();
-      selector.fields = new String[] {"CustomerId", "Name"};
+      selector.fields = new String[] {
+        ManagedCustomer.Fields.CustomerId, ManagedCustomer.Fields.Name
+      };
 
       try {
         // Get results.

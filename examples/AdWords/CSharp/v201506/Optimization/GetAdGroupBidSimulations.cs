@@ -62,17 +62,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       DataService dataService = (DataService) user.GetService(AdWordsService.v201506.DataService);
 
       // Create the selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"AdGroupId", "LandscapeType", "LandscapeCurrent", "StartDate",
-          "EndDate", "Bid", "LocalClicks", "LocalCost", "LocalImpressions"};
-
-      // Set the filters.
-      Predicate adGroupPredicate = new Predicate();
-      adGroupPredicate.field = "AdGroupId";
-      adGroupPredicate.@operator = PredicateOperator.IN;
-      adGroupPredicate.values = new string[] {adGroupId.ToString()};
-
-      selector.predicates = new Predicate[] {adGroupPredicate};
+      Selector selector = new Selector() {
+        fields = new string[] {
+          AdGroupBidLandscape.Fields.AdGroupId, AdGroupBidLandscape.Fields.LandscapeType,
+          AdGroupBidLandscape.Fields.LandscapeCurrent, AdGroupBidLandscape.Fields.StartDate,
+          AdGroupBidLandscape.Fields.EndDate, BidLandscapeLandscapePoint.Fields.Bid,
+          BidLandscapeLandscapePoint.Fields.LocalClicks,
+          BidLandscapeLandscapePoint.Fields.LocalCost,
+          BidLandscapeLandscapePoint.Fields.LocalImpressions
+        },
+        predicates = new Predicate[] {
+          Predicate.Equals(AdGroupBidLandscape.Fields.AdGroupId, adGroupId)
+        }
+      };
 
       try {
         // Get bid landscape for ad group.

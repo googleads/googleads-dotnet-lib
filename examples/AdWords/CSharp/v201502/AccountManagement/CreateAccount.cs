@@ -22,7 +22,8 @@ using System.IO;
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
   /// <summary>
   /// This code example illustrates how to create an account. Note by default,
-  /// this account will only be accessible via its parent MCC.
+  /// this account will only be accessible via its parent AdWords manager
+  /// account.
   /// </summary>
   public class CreateAccount : ExampleBase {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
     public override string Description {
       get {
         return "This code example illustrates how to create an account. Note by default " +
-            "this account will only be accessible via its parent MCC.";
+            "this account will only be accessible via its parent AdWords manager account.";
       }
     }
 

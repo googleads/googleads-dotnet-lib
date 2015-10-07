@@ -12,12 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 #pragma warning disable 1591
 
 namespace Google.Api.Ads.AdWords.v201506 {
   using Google.Api.Ads.AdWords.Lib;
   using Google.Api.Ads.AdWords.Headers;
+  using Google.Api.Ads.AdWords.Util.Selectors;
+
   using System.Diagnostics;
   using System;
   using System.Xml.Serialization;
@@ -94,9 +95,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupAdPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((AdGroupAdPage) (results[0]));
     }
 
@@ -123,9 +124,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupAdReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupAdOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((AdGroupAdReturnValue) (results[0]));
     }
 
@@ -149,9 +150,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupAdLabelReturnValue mutateLabel([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupAdLabelOperation[] operations) {
       object[] results = this.Invoke("mutateLabel", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((AdGroupAdLabelReturnValue) (results[0]));
     }
 
@@ -166,9 +167,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupAdPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((AdGroupAdPage) (results[0]));
     }
 
@@ -181,9 +182,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Ad[] upgradeUrl([System.Xml.Serialization.XmlElementAttribute("operations")] AdUrlUpgrade[] operations) {
       object[] results = this.Invoke("upgradeUrl", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((Ad[]) (results[0]));
     }
   }
@@ -266,6 +267,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.trackingUrlTemplateField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdUrlUpgrade' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdUrlUpgrade' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdUrlUpgrade' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -323,6 +370,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.listReturnValueTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ListReturnValue' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ListReturnValue' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ListReturnValue' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -357,6 +450,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.partialFailureErrorsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupAdReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupAdReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupAdReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -543,11 +682,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
     }
 
     /// <summary>True if and only if this ad is not serving because it does not meet trademark
-    /// policy. This field is only useful when <a
-    /// href='#approvalStatus'>approvalStatus</a> is an approved status. <span
-    /// class="constraint Selectable">This field can be selected using the value
-    /// "AdGroupAdTrademarkDisapproved".</span> <span class="constraint ReadOnly">This
-    /// field is read only and will be ignored when sent to the API.</span>
+    /// policy. <span class="constraint Selectable">This field can be selected using the
+    /// value "AdGroupAdTrademarkDisapproved".</span> <span class="constraint
+    /// ReadOnly">This field is read only and will be ignored when sent to the
+    /// API.</span>
     /// </summary>
     public bool trademarkDisapproved {
       get {
@@ -610,6 +748,90 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.forwardCompatibilityMapField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupAd' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field AdGroupId = new Field("AdGroupId", true, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static readonly Field AdGroupCreativeApprovalStatus = new Field("AdGroupCreativeApprovalStatus", true, true);
+
+      public static readonly Field Trademarks = new Field("Trademarks", false, true);
+
+      public static readonly Field AdGroupAdDisapprovalReasons = new Field("AdGroupAdDisapprovalReasons", true, true);
+
+      public static readonly Field AdGroupAdTrademarkDisapproved = new Field("AdGroupAdTrademarkDisapproved", false, true);
+
+      public static readonly Field Labels = new Field("Labels", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupAd' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field AdGroupCreativeApprovalStatus = Fields.AdGroupCreativeApprovalStatus;
+
+      public static readonly Field Trademarks = Fields.Trademarks;
+
+      public static readonly Field AdGroupAdDisapprovalReasons = Fields.AdGroupAdDisapprovalReasons;
+
+      public static readonly Field AdGroupAdTrademarkDisapproved = Fields.AdGroupAdTrademarkDisapproved;
+
+      public static readonly Field Labels = Fields.Labels;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupAd' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field AdGroupCreativeApprovalStatus = Fields.AdGroupCreativeApprovalStatus;
+
+      public static readonly Field AdGroupAdDisapprovalReasons = Fields.AdGroupAdDisapprovalReasons;
+
+      public static readonly Field Labels = Fields.Labels;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -849,6 +1071,106 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.adTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Ad' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Id = new Field("Id", true, true);
+
+      public static readonly Field Url = new Field("Url", true, true);
+
+      public static readonly Field DisplayUrl = new Field("DisplayUrl", true, true);
+
+      public static readonly Field CreativeFinalUrls = new Field("CreativeFinalUrls", true, true);
+
+      public static readonly Field CreativeFinalMobileUrls = new Field("CreativeFinalMobileUrls", true, true);
+
+      public static readonly Field CreativeFinalAppUrls = new Field("CreativeFinalAppUrls", true, true);
+
+      public static readonly Field CreativeTrackingUrlTemplate = new Field("CreativeTrackingUrlTemplate", true, true);
+
+      public static readonly Field CreativeUrlCustomParameters = new Field("CreativeUrlCustomParameters", true, true);
+
+      public static readonly Field DevicePreference = new Field("DevicePreference", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Ad' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field Url = Fields.Url;
+
+      public static readonly Field DisplayUrl = Fields.DisplayUrl;
+
+      public static readonly Field CreativeFinalUrls = Fields.CreativeFinalUrls;
+
+      public static readonly Field CreativeFinalMobileUrls = Fields.CreativeFinalMobileUrls;
+
+      public static readonly Field CreativeFinalAppUrls = Fields.CreativeFinalAppUrls;
+
+      public static readonly Field CreativeTrackingUrlTemplate = Fields.CreativeTrackingUrlTemplate;
+
+      public static readonly Field CreativeUrlCustomParameters = Fields.CreativeUrlCustomParameters;
+
+      public static readonly Field DevicePreference = Fields.DevicePreference;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Ad' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field Url = Fields.Url;
+
+      public static readonly Field DisplayUrl = Fields.DisplayUrl;
+
+      public static readonly Field CreativeFinalUrls = Fields.CreativeFinalUrls;
+
+      public static readonly Field CreativeFinalMobileUrls = Fields.CreativeFinalMobileUrls;
+
+      public static readonly Field CreativeFinalAppUrls = Fields.CreativeFinalAppUrls;
+
+      public static readonly Field CreativeTrackingUrlTemplate = Fields.CreativeTrackingUrlTemplate;
+
+      public static readonly Field CreativeUrlCustomParameters = Fields.CreativeUrlCustomParameters;
+
+      public static readonly Field DevicePreference = Fields.DevicePreference;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -901,6 +1223,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.osTypeFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AppUrl' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AppUrl' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AppUrl' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -976,6 +1344,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.doReplaceFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CustomParameters' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CustomParameters' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CustomParameters' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -1047,6 +1461,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.isRemoveFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CustomParameter' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CustomParameter' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CustomParameter' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -1112,6 +1572,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.description2Field = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='DynamicSearchAd' /> class.
+    /// </summary>
+    public new class Fields : Ad.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Description1 = new Field("Description1", true, true);
+
+      public static readonly Field Description2 = new Field("Description2", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DynamicSearchAd' />
+    /// class. </summary>
+    public new class SelectableFields : Ad.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Description1 = Fields.Description1;
+
+      public static readonly Field Description2 = Fields.Description2;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DynamicSearchAd' />
+    /// class. </summary>
+    public new class FilterableFields : Ad.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Description1 = Fields.Description1;
+
+      public static readonly Field Description2 = Fields.Description2;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -1166,6 +1684,70 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.description2Field = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='TextAd' /> class.
+    /// </summary>
+    public new class Fields : Ad.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Headline = new Field("Headline", true, true);
+
+      public static readonly Field Description1 = new Field("Description1", true, true);
+
+      public static readonly Field Description2 = new Field("Description2", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TextAd' />
+    /// class. </summary>
+    public new class SelectableFields : Ad.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Headline = Fields.Headline;
+
+      public static readonly Field Description1 = Fields.Description1;
+
+      public static readonly Field Description2 = Fields.Description2;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TextAd' />
+    /// class. </summary>
+    public new class FilterableFields : Ad.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Headline = Fields.Headline;
+
+      public static readonly Field Description1 = Fields.Description1;
+
+      public static readonly Field Description2 = Fields.Description2;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -1354,6 +1936,74 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.originAdIdFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='TemplateAd' /> class.
+    /// </summary>
+    public new class Fields : Ad.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field TemplateId = new Field("TemplateId", true, true);
+
+      public static readonly Field TemplateAdUnionId = new Field("TemplateAdUnionId", false, true);
+
+      public static readonly Field TemplateAdName = new Field("TemplateAdName", false, true);
+
+      public static readonly Field TemplateAdDuration = new Field("TemplateAdDuration", false, true);
+
+      public static readonly Field TemplateOriginAdId = new Field("TemplateOriginAdId", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TemplateAd' />
+    /// class. </summary>
+    public new class SelectableFields : Ad.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field TemplateId = Fields.TemplateId;
+
+      public static readonly Field TemplateAdUnionId = Fields.TemplateAdUnionId;
+
+      public static readonly Field TemplateAdName = Fields.TemplateAdName;
+
+      public static readonly Field TemplateAdDuration = Fields.TemplateAdDuration;
+
+      public static readonly Field TemplateOriginAdId = Fields.TemplateOriginAdId;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TemplateAd' />
+    /// class. </summary>
+    public new class FilterableFields : Ad.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field TemplateId = Fields.TemplateId;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -1411,6 +2061,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.adUnionIdTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdUnionId' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdUnionId' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdUnionId' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -1452,10 +2148,6 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>List of fields to use for this template element. These must be the same for all
-    /// template ads in the same template ad union. <span class="constraint
-    /// Required">This field is required and should not be <code>null</code>.</span>
-    /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("fields")]
     public TemplateElementField[] fields {
       get {
@@ -1551,6 +2243,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.fieldMediaField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='TemplateElementField' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field TemplateElementFieldName = new Field("TemplateElementFieldName", false, true);
+
+      public static readonly Field TemplateElementFieldType = new Field("TemplateElementFieldType", false, true);
+
+      public static readonly Field TemplateElementFieldText = new Field("TemplateElementFieldText", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TemplateElementField' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field TemplateElementFieldName = Fields.TemplateElementFieldName;
+
+      public static readonly Field TemplateElementFieldType = Fields.TemplateElementFieldType;
+
+      public static readonly Field TemplateElementFieldText = Fields.TemplateElementFieldText;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TemplateElementField' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -1870,6 +2620,92 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.mediaTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Media' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field MediaId = new Field("MediaId", false, true);
+
+      public static readonly Field Type = new Field("Type", false, true);
+
+      public static readonly Field ReferenceId = new Field("ReferenceId", false, true);
+
+      public static readonly Field Dimensions = new Field("Dimensions", false, true);
+
+      public static readonly Field Urls = new Field("Urls", false, true);
+
+      public static readonly Field MimeType = new Field("MimeType", false, true);
+
+      public static readonly Field SourceUrl = new Field("SourceUrl", false, true);
+
+      public static readonly Field Name = new Field("Name", false, true);
+
+      public static readonly Field FileSize = new Field("FileSize", false, true);
+
+      public static readonly Field CreationTime = new Field("CreationTime", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Media' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field MediaId = Fields.MediaId;
+
+      public static readonly Field Type = Fields.Type;
+
+      public static readonly Field ReferenceId = Fields.ReferenceId;
+
+      public static readonly Field Dimensions = Fields.Dimensions;
+
+      public static readonly Field Urls = Fields.Urls;
+
+      public static readonly Field MimeType = Fields.MimeType;
+
+      public static readonly Field SourceUrl = Fields.SourceUrl;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field FileSize = Fields.FileSize;
+
+      public static readonly Field CreationTime = Fields.CreationTime;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Media' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -2037,6 +2873,60 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.heightFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Dimensions' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Width = new Field("Width", false, true);
+
+      public static readonly Field Height = new Field("Height", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Dimensions' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Width = Fields.Width;
+
+      public static readonly Field Height = Fields.Height;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Dimensions' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -2261,6 +3151,76 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.youTubeVideoIdStringField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Video' /> class.
+    /// </summary>
+    public new class Fields : Media.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field DurationMillis = new Field("DurationMillis", false, true);
+
+      public static readonly Field StreamingUrl = new Field("StreamingUrl", false, true);
+
+      public static readonly Field ReadyToPlayOnTheWeb = new Field("ReadyToPlayOnTheWeb", false, true);
+
+      public static readonly Field IndustryStandardCommercialIdentifier = new Field("IndustryStandardCommercialIdentifier", false, true);
+
+      public static readonly Field AdvertisingId = new Field("AdvertisingId", false, true);
+
+      public static readonly Field YouTubeVideoIdString = new Field("YouTubeVideoIdString", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Video' />
+    /// class. </summary>
+    public new class SelectableFields : Media.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field DurationMillis = Fields.DurationMillis;
+
+      public static readonly Field StreamingUrl = Fields.StreamingUrl;
+
+      public static readonly Field ReadyToPlayOnTheWeb = Fields.ReadyToPlayOnTheWeb;
+
+      public static readonly Field IndustryStandardCommercialIdentifier = Fields.IndustryStandardCommercialIdentifier;
+
+      public static readonly Field AdvertisingId = Fields.AdvertisingId;
+
+      public static readonly Field YouTubeVideoIdString = Fields.YouTubeVideoIdString;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Video' />
+    /// class. </summary>
+    public new class FilterableFields : Media.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -2284,6 +3244,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.dataField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Image' /> class.
+    /// </summary>
+    public new class Fields : Media.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Image' />
+    /// class. </summary>
+    public new class SelectableFields : Media.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Image' />
+    /// class. </summary>
+    public new class FilterableFields : Media.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -2371,6 +3377,66 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.readyToPlayOnTheWebFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Audio' /> class.
+    /// </summary>
+    public new class Fields : Media.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field DurationMillis = new Field("DurationMillis", true, true);
+
+      public static readonly Field StreamingUrl = new Field("StreamingUrl", false, true);
+
+      public static readonly Field ReadyToPlayOnTheWeb = new Field("ReadyToPlayOnTheWeb", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Audio' />
+    /// class. </summary>
+    public new class SelectableFields : Media.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field DurationMillis = Fields.DurationMillis;
+
+      public static readonly Field StreamingUrl = Fields.StreamingUrl;
+
+      public static readonly Field ReadyToPlayOnTheWeb = Fields.ReadyToPlayOnTheWeb;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Audio' />
+    /// class. </summary>
+    public new class FilterableFields : Media.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field DurationMillis = Fields.DurationMillis;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -2567,6 +3633,80 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.adAttributesField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='RichMediaAd' /> class.
+    /// </summary>
+    public new class Fields : Ad.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field RichMediaAdName = new Field("RichMediaAdName", false, true);
+
+      public static readonly Field RichMediaAdSnippet = new Field("RichMediaAdSnippet", false, true);
+
+      public static readonly Field RichMediaAdImpressionBeaconUrl = new Field("RichMediaAdImpressionBeaconUrl", false, true);
+
+      public static readonly Field RichMediaAdDuration = new Field("RichMediaAdDuration", false, true);
+
+      public static readonly Field RichMediaAdCertifiedVendorFormatId = new Field("RichMediaAdCertifiedVendorFormatId", false, true);
+
+      public static readonly Field RichMediaAdSourceUrl = new Field("RichMediaAdSourceUrl", false, true);
+
+      public static readonly Field RichMediaAdType = new Field("RichMediaAdType", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RichMediaAd' />
+    /// class. </summary>
+    public new class SelectableFields : Ad.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field RichMediaAdName = Fields.RichMediaAdName;
+
+      public static readonly Field RichMediaAdSnippet = Fields.RichMediaAdSnippet;
+
+      public static readonly Field RichMediaAdImpressionBeaconUrl = Fields.RichMediaAdImpressionBeaconUrl;
+
+      public static readonly Field RichMediaAdDuration = Fields.RichMediaAdDuration;
+
+      public static readonly Field RichMediaAdCertifiedVendorFormatId = Fields.RichMediaAdCertifiedVendorFormatId;
+
+      public static readonly Field RichMediaAdSourceUrl = Fields.RichMediaAdSourceUrl;
+
+      public static readonly Field RichMediaAdType = Fields.RichMediaAdType;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RichMediaAd' />
+    /// class. </summary>
+    public new class FilterableFields : Ad.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -2742,6 +3882,72 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.expandingDirectionsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ThirdPartyRedirectAd' /> class.
+    /// </summary>
+    public new class Fields : RichMediaAd.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field IsCookieTargeted = new Field("IsCookieTargeted", false, true);
+
+      public static readonly Field IsUserInterestTargeted = new Field("IsUserInterestTargeted", false, true);
+
+      public static readonly Field IsTagged = new Field("IsTagged", false, true);
+
+      public static readonly Field VideoTypes = new Field("VideoTypes", false, true);
+
+      public static readonly Field ExpandingDirections = new Field("ExpandingDirections", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ThirdPartyRedirectAd' />
+    /// class. </summary>
+    public new class SelectableFields : RichMediaAd.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field IsCookieTargeted = Fields.IsCookieTargeted;
+
+      public static readonly Field IsUserInterestTargeted = Fields.IsUserInterestTargeted;
+
+      public static readonly Field IsTagged = Fields.IsTagged;
+
+      public static readonly Field VideoTypes = Fields.VideoTypes;
+
+      public static readonly Field ExpandingDirections = Fields.ExpandingDirections;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ThirdPartyRedirectAd' />
+    /// class. </summary>
+    public new class FilterableFields : RichMediaAd.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -2842,6 +4048,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.promotionLineField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ProductAd' /> class.
+    /// </summary>
+    public new class Fields : Ad.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field PromotionLine = new Field("PromotionLine", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductAd' />
+    /// class. </summary>
+    public new class SelectableFields : Ad.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field PromotionLine = Fields.PromotionLine;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductAd' />
+    /// class. </summary>
+    public new class FilterableFields : Ad.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field PromotionLine = Fields.PromotionLine;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -2916,6 +4174,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.adToCopyImageFromFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ImageAd' /> class.
+    /// </summary>
+    public new class Fields : Ad.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field ImageCreativeName = new Field("ImageCreativeName", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ImageAd' />
+    /// class. </summary>
+    public new class SelectableFields : Ad.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field ImageCreativeName = Fields.ImageCreativeName;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ImageAd' />
+    /// class. </summary>
+    public new class FilterableFields : Ad.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field ImageCreativeName = Fields.ImageCreativeName;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -2970,6 +4280,60 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.typeFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='DeprecatedAd' /> class.
+    /// </summary>
+    public new class Fields : Ad.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Name = new Field("Name", false, true);
+
+      public static readonly Field Type = new Field("Type", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DeprecatedAd' />
+    /// class. </summary>
+    public new class SelectableFields : Ad.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Type = Fields.Type;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DeprecatedAd' />
+    /// class. </summary>
+    public new class FilterableFields : Ad.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -3228,6 +4592,94 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.phoneNumberVerificationUrlField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CallOnlyAd' /> class.
+    /// </summary>
+    public new class Fields : Ad.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field CallOnlyAdCountryCode = new Field("CallOnlyAdCountryCode", false, true);
+
+      public static readonly Field CallOnlyAdPhoneNumber = new Field("CallOnlyAdPhoneNumber", false, true);
+
+      public static readonly Field CallOnlyAdBusinessName = new Field("CallOnlyAdBusinessName", true, true);
+
+      public static readonly Field CallOnlyAdDescription1 = new Field("CallOnlyAdDescription1", true, true);
+
+      public static readonly Field CallOnlyAdDescription2 = new Field("CallOnlyAdDescription2", true, true);
+
+      public static readonly Field CallOnlyAdCallTracked = new Field("CallOnlyAdCallTracked", false, true);
+
+      public static readonly Field CallOnlyAdDisableCallConversion = new Field("CallOnlyAdDisableCallConversion", false, true);
+
+      public static readonly Field CallOnlyAdConversionTypeId = new Field("CallOnlyAdConversionTypeId", false, true);
+
+      public static readonly Field CallOnlyAdPhoneNumberVerificationUrl = new Field("CallOnlyAdPhoneNumberVerificationUrl", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CallOnlyAd' />
+    /// class. </summary>
+    public new class SelectableFields : Ad.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field CallOnlyAdCountryCode = Fields.CallOnlyAdCountryCode;
+
+      public static readonly Field CallOnlyAdPhoneNumber = Fields.CallOnlyAdPhoneNumber;
+
+      public static readonly Field CallOnlyAdBusinessName = Fields.CallOnlyAdBusinessName;
+
+      public static readonly Field CallOnlyAdDescription1 = Fields.CallOnlyAdDescription1;
+
+      public static readonly Field CallOnlyAdDescription2 = Fields.CallOnlyAdDescription2;
+
+      public static readonly Field CallOnlyAdCallTracked = Fields.CallOnlyAdCallTracked;
+
+      public static readonly Field CallOnlyAdDisableCallConversion = Fields.CallOnlyAdDisableCallConversion;
+
+      public static readonly Field CallOnlyAdConversionTypeId = Fields.CallOnlyAdConversionTypeId;
+
+      public static readonly Field CallOnlyAdPhoneNumberVerificationUrl = Fields.CallOnlyAdPhoneNumberVerificationUrl;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CallOnlyAd' />
+    /// class. </summary>
+    public new class FilterableFields : Ad.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field CallOnlyAdBusinessName = Fields.CallOnlyAdBusinessName;
+
+      public static readonly Field CallOnlyAdDescription1 = Fields.CallOnlyAdDescription1;
+
+      public static readonly Field CallOnlyAdDescription2 = Fields.CallOnlyAdDescription2;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -3335,6 +4787,66 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.experimentDataStatusFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupAdExperimentData' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field ExperimentId = new Field("ExperimentId", true, true);
+
+      public static readonly Field ExperimentDeltaStatus = new Field("ExperimentDeltaStatus", false, true);
+
+      public static readonly Field ExperimentDataStatus = new Field("ExperimentDataStatus", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupAdExperimentData' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field ExperimentId = Fields.ExperimentId;
+
+      public static readonly Field ExperimentDeltaStatus = Fields.ExperimentDeltaStatus;
+
+      public static readonly Field ExperimentDataStatus = Fields.ExperimentDataStatus;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupAdExperimentData' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field ExperimentId = Fields.ExperimentId;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -3546,6 +5058,74 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.labelTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Label' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field LabelId = new Field("LabelId", true, true);
+
+      public static readonly Field LabelName = new Field("LabelName", true, true);
+
+      public static readonly Field LabelStatus = new Field("LabelStatus", true, true);
+
+      public static readonly Field LabelAttribute = new Field("LabelAttribute", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Label' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field LabelId = Fields.LabelId;
+
+      public static readonly Field LabelName = Fields.LabelName;
+
+      public static readonly Field LabelStatus = Fields.LabelStatus;
+
+      public static readonly Field LabelAttribute = Fields.LabelAttribute;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Label' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field LabelId = Fields.LabelId;
+
+      public static readonly Field LabelName = Fields.LabelName;
+
+      public static readonly Field LabelStatus = Fields.LabelStatus;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -3587,6 +5167,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.labelAttributeTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='LabelAttribute' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LabelAttribute' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LabelAttribute' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -3625,6 +5251,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.descriptionField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='DisplayAttribute' /> class.
+    /// </summary>
+    public new class Fields : LabelAttribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DisplayAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : LabelAttribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DisplayAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : LabelAttribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -3836,6 +5508,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.apiErrorTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ApiError' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ApiError' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ApiError' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -3875,6 +5593,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='UrlError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='UrlError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='UrlError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -3884,19 +5648,6 @@ namespace Google.Api.Ads.AdWords.v201506 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UrlError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
   public enum UrlErrorReason {
-    /// <summary>The url is invalid.
-    /// </summary>
-    INVALID_URL,
-    /// <summary>Destination Url is deprecated.
-    /// </summary>
-    DESTINATION_URL_DEPRECATED,
-    /// <summary>The url contains invalid tag.
-    /// </summary>
-    INVALID_TAG_IN_URL,
-    /// <summary>The url must contain at least one tag (e.g. {lpurl}), This applies only to urls
-    /// associated with website ads or product ads.
-    /// </summary>
-    MISSING_URL_TAG,
     /// <summary>The tracking url template is invalid.
     /// </summary>
     INVALID_TRACKING_URL_TEMPLATE,
@@ -3925,23 +5676,35 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>The final mobile url is invalid.
     /// </summary>
     INVALID_FINAL_MOBILE_URL,
-    /// <summary>The final app url is invalid.
-    /// </summary>
-    INVALID_FINAL_APP_URL,
     /// <summary>The final mobile url contains invalid tag.
     /// </summary>
     INVALID_TAG_IN_FINAL_MOBILE_URL,
-    /// <summary>The final app url contains invalid tag.
-    /// </summary>
-    INVALID_TAG_IN_FINAL_APP_URL,
     /// <summary>The final mobile url contains nested occurrences of the same conditional tag
     /// (i.e. {ifmobile:{ifmobile:x}}).
     /// </summary>
     REDUNDANT_NESTED_FINAL_MOBILE_URL_TAG,
+    /// <summary>The final app url is invalid.
+    /// </summary>
+    INVALID_FINAL_APP_URL,
+    /// <summary>The final app url contains invalid tag.
+    /// </summary>
+    INVALID_TAG_IN_FINAL_APP_URL,
     /// <summary>The final app url contains nested occurrences of the same conditional tag (i.e.
     /// {ifmobile:{ifmobile:x}}).
     /// </summary>
     REDUNDANT_NESTED_FINAL_APP_URL_TAG,
+    /// <summary>More than one app url found for the same OS type.
+    /// </summary>
+    MULTIPLE_APP_URLS_FOR_OSTYPE,
+    /// <summary>The OS type given for an app url is not valid.
+    /// </summary>
+    INVALID_OSTYPE,
+    /// <summary>The protocol given for an app url is not valid. (E.g. "android-app://")
+    /// </summary>
+    INVALID_PROTOCOL_FOR_APP_URL,
+    /// <summary>The package id (app id) given for an app url is not valid.
+    /// </summary>
+    INVALID_PACKAGE_ID_FOR_APP_URL,
     /// <summary>The number of url custom parameters for an entity exceeds the maximum limit
     /// allowed.
     /// </summary>
@@ -3975,18 +5738,19 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>The protocol (http:// or https://) is missing.
     /// </summary>
     MISSING_PROTOCOL,
-    /// <summary>More than one app url found for the same OS type.
+    /// <summary>The url is invalid.
     /// </summary>
-    MULTIPLE_APP_URLS_FOR_OSTYPE,
-    /// <summary>The OS type given for an app url is not valid.
+    INVALID_URL,
+    /// <summary>Destination Url is deprecated.
     /// </summary>
-    INVALID_OSTYPE,
-    /// <summary>The protocol given for an app url is not valid. (E.g. "android-app://")
+    DESTINATION_URL_DEPRECATED,
+    /// <summary>The url contains invalid tag.
     /// </summary>
-    INVALID_PROTOCOL_FOR_APP_URL,
-    /// <summary>The package id (app id) given for an app url is not valid.
+    INVALID_TAG_IN_URL,
+    /// <summary>The url must contain at least one tag (e.g. {lpurl}), This applies only to urls
+    /// associated with website ads or product ads.
     /// </summary>
-    INVALID_PACKAGE_ID_FOR_APP_URL,
+    MISSING_URL_TAG,
     URL_ERROR,
   }
 
@@ -4025,6 +5789,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='StringLengthError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='StringLengthError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='StringLengthError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -4077,6 +5887,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='StatsQueryError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='StatsQueryError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='StatsQueryError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -4127,6 +5983,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='SizeLimitError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SizeLimitError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SizeLimitError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -4189,6 +6091,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='SelectorError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SelectorError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SelectorError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -4292,6 +6240,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='RequiredError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RequiredError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RequiredError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -4399,6 +6393,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='RejectedError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RejectedError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RejectedError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -4448,6 +6488,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ReadOnlyError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ReadOnlyError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ReadOnlyError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -4555,6 +6641,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.retryAfterSecondsFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='RateExceededError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RateExceededError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RateExceededError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -4604,6 +6736,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='RangeError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RangeError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RangeError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -4915,6 +7093,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.violatingPartsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='PolicyViolationError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PolicyViolationError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PolicyViolationError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -4954,6 +7178,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.violatingTextField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='PolicyViolationKey' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PolicyViolationKey' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PolicyViolationKey' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -5024,6 +7294,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.lengthFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='PolicyViolationErrorPart' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PolicyViolationErrorPart' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PolicyViolationErrorPart' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -5061,6 +7377,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='PagingError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PagingError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PagingError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -5116,6 +7478,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='OperatorError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='OperatorError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='OperatorError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -5241,6 +7649,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='NullError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='NullError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='NullError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -5292,6 +7746,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='NotEmptyError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='NotEmptyError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='NotEmptyError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -5341,6 +7841,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='NewEntityCreationError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='NewEntityCreationError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='NewEntityCreationError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -5388,6 +7934,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='MediaError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='MediaError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='MediaError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -5504,6 +8096,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='InternalApiError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='InternalApiError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='InternalApiError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -5562,6 +8200,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ImageError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ImageError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ImageError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -5716,6 +8400,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='IdError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='IdError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='IdError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -5888,6 +8618,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FunctionError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FunctionError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FunctionError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -5983,6 +8759,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ForwardCompatibilityError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ForwardCompatibilityError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ForwardCompatibilityError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -6059,6 +8881,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.feedAttributeNameField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FeedAttributeReferenceError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedAttributeReferenceError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedAttributeReferenceError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -6112,6 +8980,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ExperimentError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ExperimentError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ExperimentError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -6189,6 +9103,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='EntityNotFound' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='EntityNotFound' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='EntityNotFound' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -6328,6 +9288,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.existingCountFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='EntityCountLimitExceeded' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='EntityCountLimitExceeded' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='EntityCountLimitExceeded' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -6431,6 +9437,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='EntityAccessDenied' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='EntityAccessDenied' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='EntityAccessDenied' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -6483,6 +9535,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='DistinctError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DistinctError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DistinctError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -6531,6 +9629,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='DateError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DateError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DateError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -6606,6 +9750,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='DatabaseError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DatabaseError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DatabaseError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -6728,6 +9918,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AuthorizationError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AuthorizationError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AuthorizationError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -6795,6 +10031,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AuthenticationError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AuthenticationError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AuthenticationError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -6913,6 +10195,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdxError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdxError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdxError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -6962,6 +10290,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupAdError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupAdError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupAdError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -7036,6 +10410,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -7501,6 +10921,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandValueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdCustomizerError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdCustomizerError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdCustomizerError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -7662,6 +11128,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.labelIdFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupAdLabel' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupAdLabel' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupAdLabel' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -7685,6 +11197,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.keyField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ExemptionRequest' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ExemptionRequest' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ExemptionRequest' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -7784,6 +11342,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operationTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Operation' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Operation' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Operation' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -7841,6 +11445,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.exemptionRequestsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupAdOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupAdOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupAdOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -7863,6 +11513,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupAdLabelOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupAdLabelOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupAdLabelOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -7956,6 +11652,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.pageTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Page' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Page' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Page' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -7979,6 +11721,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupAdPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupAdPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupAdPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -8051,6 +11839,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.numberResultsFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Paging' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Paging' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Paging' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -8153,6 +11987,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.maxField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='DateRange' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DateRange' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DateRange' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -8452,6 +12332,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.applicationExceptionTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ApplicationException' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ApplicationException' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ApplicationException' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -8474,6 +12400,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.errorsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ApiException' /> class.
+    /// </summary>
+    public new class Fields : ApplicationException.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ApiException' />
+    /// class. </summary>
+    public new class SelectableFields : ApplicationException.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ApiException' />
+    /// class. </summary>
+    public new class FilterableFields : ApplicationException.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -8542,9 +12514,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((CampaignPage) (results[0]));
     }
 
@@ -8564,9 +12536,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CampaignOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((CampaignReturnValue) (results[0]));
     }
 
@@ -8591,9 +12563,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignLabelReturnValue mutateLabel([System.Xml.Serialization.XmlElementAttribute("operations")] CampaignLabelOperation[] operations) {
       object[] results = this.Invoke("mutateLabel", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((CampaignLabelReturnValue) (results[0]));
     }
 
@@ -8608,9 +12580,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((CampaignPage) (results[0]));
     }
   }
@@ -8647,6 +12619,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.partialFailureErrorsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -9080,6 +13098,124 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.urlCustomParametersField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Campaign' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Id = new Field("Id", true, true);
+
+      public static readonly Field Name = new Field("Name", true, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static readonly Field ServingStatus = new Field("ServingStatus", true, true);
+
+      public static readonly Field StartDate = new Field("StartDate", true, true);
+
+      public static readonly Field EndDate = new Field("EndDate", true, true);
+
+      public static readonly Field AdServingOptimizationStatus = new Field("AdServingOptimizationStatus", false, true);
+
+      public static readonly Field Settings = new Field("Settings", false, true);
+
+      public static readonly Field AdvertisingChannelType = new Field("AdvertisingChannelType", true, true);
+
+      public static readonly Field AdvertisingChannelSubType = new Field("AdvertisingChannelSubType", true, true);
+
+      public static readonly Field Labels = new Field("Labels", true, true);
+
+      public static readonly Field TrackingUrlTemplate = new Field("TrackingUrlTemplate", true, true);
+
+      public static readonly Field UrlCustomParameters = new Field("UrlCustomParameters", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Campaign' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field ServingStatus = Fields.ServingStatus;
+
+      public static readonly Field StartDate = Fields.StartDate;
+
+      public static readonly Field EndDate = Fields.EndDate;
+
+      public static readonly Field AdServingOptimizationStatus = Fields.AdServingOptimizationStatus;
+
+      public static readonly Field Settings = Fields.Settings;
+
+      public static readonly Field AdvertisingChannelType = Fields.AdvertisingChannelType;
+
+      public static readonly Field AdvertisingChannelSubType = Fields.AdvertisingChannelSubType;
+
+      public static readonly Field Labels = Fields.Labels;
+
+      public static readonly Field TrackingUrlTemplate = Fields.TrackingUrlTemplate;
+
+      public static readonly Field UrlCustomParameters = Fields.UrlCustomParameters;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Campaign' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field ServingStatus = Fields.ServingStatus;
+
+      public static readonly Field StartDate = Fields.StartDate;
+
+      public static readonly Field EndDate = Fields.EndDate;
+
+      public static readonly Field AdvertisingChannelType = Fields.AdvertisingChannelType;
+
+      public static readonly Field AdvertisingChannelSubType = Fields.AdvertisingChannelSubType;
+
+      public static readonly Field Labels = Fields.Labels;
+
+      public static readonly Field TrackingUrlTemplate = Fields.TrackingUrlTemplate;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -9386,6 +13522,94 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.statusFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Budget' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field BudgetId = new Field("BudgetId", true, true);
+
+      public static readonly Field BudgetName = new Field("BudgetName", true, true);
+
+      public static readonly Field Period = new Field("Period", false, true);
+
+      public static readonly Field Amount = new Field("Amount", true, true);
+
+      public static readonly Field DeliveryMethod = new Field("DeliveryMethod", false, true);
+
+      public static readonly Field BudgetReferenceCount = new Field("BudgetReferenceCount", false, true);
+
+      public static readonly Field IsBudgetExplicitlyShared = new Field("IsBudgetExplicitlyShared", true, true);
+
+      public static readonly Field BudgetStatus = new Field("BudgetStatus", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Budget' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field BudgetId = Fields.BudgetId;
+
+      public static readonly Field BudgetName = Fields.BudgetName;
+
+      public static readonly Field Period = Fields.Period;
+
+      public static readonly Field Amount = Fields.Amount;
+
+      public static readonly Field DeliveryMethod = Fields.DeliveryMethod;
+
+      public static readonly Field BudgetReferenceCount = Fields.BudgetReferenceCount;
+
+      public static readonly Field IsBudgetExplicitlyShared = Fields.IsBudgetExplicitlyShared;
+
+      public static readonly Field BudgetStatus = Fields.BudgetStatus;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Budget' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field BudgetId = Fields.BudgetId;
+
+      public static readonly Field BudgetName = Fields.BudgetName;
+
+      public static readonly Field Amount = Fields.Amount;
+
+      public static readonly Field IsBudgetExplicitlyShared = Fields.IsBudgetExplicitlyShared;
+
+      public static readonly Field BudgetStatus = Fields.BudgetStatus;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -9435,6 +13659,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.microAmountFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Money' /> class.
+    /// </summary>
+    public new class Fields : ComparableValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Money' />
+    /// class. </summary>
+    public new class SelectableFields : ComparableValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Money' />
+    /// class. </summary>
+    public new class FilterableFields : ComparableValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -9463,6 +13733,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.comparableValueTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ComparableValue' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ComparableValue' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ComparableValue' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -9517,6 +13833,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.numberFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='LongValue' /> class.
+    /// </summary>
+    public new class Fields : NumberValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LongValue' />
+    /// class. </summary>
+    public new class SelectableFields : NumberValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LongValue' />
+    /// class. </summary>
+    public new class FilterableFields : NumberValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -9554,6 +13916,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.numberFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='DoubleValue' /> class.
+    /// </summary>
+    public new class Fields : NumberValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DoubleValue' />
+    /// class. </summary>
+    public new class SelectableFields : NumberValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DoubleValue' />
+    /// class. </summary>
+    public new class FilterableFields : NumberValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -9640,6 +14048,60 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.rejectionReasonsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ConversionOptimizerEligibility' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Eligible = new Field("Eligible", false, true);
+
+      public static readonly Field RejectionReasons = new Field("RejectionReasons", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ConversionOptimizerEligibility' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Eligible = Fields.Eligible;
+
+      public static readonly Field RejectionReasons = Fields.RejectionReasons;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ConversionOptimizerEligibility' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -9798,6 +14260,70 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.levelFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FrequencyCap' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field FrequencyCapMaxImpressions = new Field("FrequencyCapMaxImpressions", true, true);
+
+      public static readonly Field TimeUnit = new Field("TimeUnit", true, true);
+
+      public static readonly Field Level = new Field("Level", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FrequencyCap' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field FrequencyCapMaxImpressions = Fields.FrequencyCapMaxImpressions;
+
+      public static readonly Field TimeUnit = Fields.TimeUnit;
+
+      public static readonly Field Level = Fields.Level;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FrequencyCap' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field FrequencyCapMaxImpressions = Fields.FrequencyCapMaxImpressions;
+
+      public static readonly Field TimeUnit = Fields.TimeUnit;
+
+      public static readonly Field Level = Fields.Level;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -9874,6 +14400,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.settingTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Setting' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Setting' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Setting' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -9898,6 +14470,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.trackingUrlField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='TrackingSetting' /> class.
+    /// </summary>
+    public new class Fields : Setting.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TrackingSetting' />
+    /// class. </summary>
+    public new class SelectableFields : Setting.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TrackingSetting' />
+    /// class. </summary>
+    public new class FilterableFields : Setting.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -10020,6 +14638,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.enableLocalFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ShoppingSetting' /> class.
+    /// </summary>
+    public new class Fields : Setting.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ShoppingSetting' />
+    /// class. </summary>
+    public new class SelectableFields : Setting.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ShoppingSetting' />
+    /// class. </summary>
+    public new class FilterableFields : Setting.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -10058,6 +14722,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.optInFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='RealTimeBiddingSetting' /> class.
+    /// </summary>
+    public new class Fields : Setting.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RealTimeBiddingSetting' />
+    /// class. </summary>
+    public new class SelectableFields : Setting.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RealTimeBiddingSetting' />
+    /// class. </summary>
+    public new class FilterableFields : Setting.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -10152,6 +14862,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.negativeGeoTargetTypeFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='GeoTargetTypeSetting' /> class.
+    /// </summary>
+    public new class Fields : Setting.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='GeoTargetTypeSetting' />
+    /// class. </summary>
+    public new class SelectableFields : Setting.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='GeoTargetTypeSetting' />
+    /// class. </summary>
+    public new class FilterableFields : Setting.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -10228,6 +14984,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.languageCodeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='DynamicSearchAdsSetting' /> class.
+    /// </summary>
+    public new class Fields : Setting.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DynamicSearchAdsSetting' />
+    /// class. </summary>
+    public new class SelectableFields : Setting.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DynamicSearchAdsSetting' />
+    /// class. </summary>
+    public new class FilterableFields : Setting.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -10426,6 +15228,76 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.targetPartnerSearchNetworkFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='NetworkSetting' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field TargetGoogleSearch = new Field("TargetGoogleSearch", true, true);
+
+      public static readonly Field TargetSearchNetwork = new Field("TargetSearchNetwork", true, true);
+
+      public static readonly Field TargetContentNetwork = new Field("TargetContentNetwork", true, true);
+
+      public static readonly Field TargetPartnerSearchNetwork = new Field("TargetPartnerSearchNetwork", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='NetworkSetting' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field TargetGoogleSearch = Fields.TargetGoogleSearch;
+
+      public static readonly Field TargetSearchNetwork = Fields.TargetSearchNetwork;
+
+      public static readonly Field TargetContentNetwork = Fields.TargetContentNetwork;
+
+      public static readonly Field TargetPartnerSearchNetwork = Fields.TargetPartnerSearchNetwork;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='NetworkSetting' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field TargetGoogleSearch = Fields.TargetGoogleSearch;
+
+      public static readonly Field TargetSearchNetwork = Fields.TargetSearchNetwork;
+
+      public static readonly Field TargetContentNetwork = Fields.TargetContentNetwork;
+
+      public static readonly Field TargetPartnerSearchNetwork = Fields.TargetPartnerSearchNetwork;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -10441,8 +15313,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// groups and ad group criteria. They cannot be set on campaigns. Multiple bids can
   /// be set at the same time. Only the bids that apply to the effective bidding
   /// strategy will be used. Effective bidding strategy is considered to be the
-  /// directly attached strategy or inherited strategy from above level(s) when
-  /// there?s no directly attached strategy.</p> <p>For more information on flexible
+  /// directly attached strategy or inherited strategy from above level(s) when there
+  /// is no directly attached strategy.</p> <p>For more information on flexible
   /// bidding, visit the <a
   /// href="https://support.google.com/adwords/answer/2979071">Help Center</a>.</p>
   /// </summary>
@@ -10614,6 +15486,76 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.bidsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BiddingStrategyConfiguration' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field BiddingStrategyId = new Field("BiddingStrategyId", true, true);
+
+      public static readonly Field BiddingStrategyName = new Field("BiddingStrategyName", true, true);
+
+      public static readonly Field BiddingStrategyType = new Field("BiddingStrategyType", true, true);
+
+      public static readonly Field BiddingStrategySource = new Field("BiddingStrategySource", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BiddingStrategyConfiguration' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field BiddingStrategyId = Fields.BiddingStrategyId;
+
+      public static readonly Field BiddingStrategyName = Fields.BiddingStrategyName;
+
+      public static readonly Field BiddingStrategyType = Fields.BiddingStrategyType;
+
+      public static readonly Field BiddingStrategySource = Fields.BiddingStrategySource;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BiddingStrategyConfiguration' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field BiddingStrategyId = Fields.BiddingStrategyId;
+
+      public static readonly Field BiddingStrategyName = Fields.BiddingStrategyName;
+
+      public static readonly Field BiddingStrategyType = Fields.BiddingStrategyType;
+
+      public static readonly Field BiddingStrategySource = Fields.BiddingStrategySource;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -10699,6 +15641,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.biddingSchemeTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BiddingScheme' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BiddingScheme' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BiddingScheme' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -10739,6 +15727,60 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.spendTargetField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='TargetSpendBiddingScheme' /> class.
+    /// </summary>
+    public new class Fields : BiddingScheme.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field TargetSpendBidCeiling = new Field("TargetSpendBidCeiling", false, true);
+
+      public static readonly Field TargetSpendSpendTarget = new Field("TargetSpendSpendTarget", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TargetSpendBiddingScheme' />
+    /// class. </summary>
+    public new class SelectableFields : BiddingScheme.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field TargetSpendBidCeiling = Fields.TargetSpendBidCeiling;
+
+      public static readonly Field TargetSpendSpendTarget = Fields.TargetSpendSpendTarget;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TargetSpendBiddingScheme' />
+    /// class. </summary>
+    public new class FilterableFields : BiddingScheme.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -10816,6 +15858,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.bidFloorField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='TargetRoasBiddingScheme' /> class.
+    /// </summary>
+    public new class Fields : BiddingScheme.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field TargetRoas = new Field("TargetRoas", false, true);
+
+      public static readonly Field TargetRoasBidCeiling = new Field("TargetRoasBidCeiling", false, true);
+
+      public static readonly Field TargetRoasBidFloor = new Field("TargetRoasBidFloor", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TargetRoasBiddingScheme' />
+    /// class. </summary>
+    public new class SelectableFields : BiddingScheme.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field TargetRoas = Fields.TargetRoas;
+
+      public static readonly Field TargetRoasBidCeiling = Fields.TargetRoasBidCeiling;
+
+      public static readonly Field TargetRoasBidFloor = Fields.TargetRoasBidFloor;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TargetRoasBiddingScheme' />
+    /// class. </summary>
+    public new class FilterableFields : BiddingScheme.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -10954,6 +16054,82 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.raiseBidWhenLowQualityScoreFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='TargetOutrankShareBiddingScheme' /> class.
+    /// </summary>
+    public new class Fields : BiddingScheme.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field TargetOutrankShare = new Field("TargetOutrankShare", true, true);
+
+      public static readonly Field TargetOutrankShareCompetitorDomain = new Field("TargetOutrankShareCompetitorDomain", true, true);
+
+      public static readonly Field TargetOutrankShareMaxCpcBidCeiling = new Field("TargetOutrankShareMaxCpcBidCeiling", true, true);
+
+      public static readonly Field TargetOutrankShareBidChangesForRaisesOnly = new Field("TargetOutrankShareBidChangesForRaisesOnly", true, true);
+
+      public static readonly Field TargetOutrankShareRaiseBidWhenLowQualityScore = new Field("TargetOutrankShareRaiseBidWhenLowQualityScore", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TargetOutrankShareBiddingScheme' />
+    /// class. </summary>
+    public new class SelectableFields : BiddingScheme.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field TargetOutrankShare = Fields.TargetOutrankShare;
+
+      public static readonly Field TargetOutrankShareCompetitorDomain = Fields.TargetOutrankShareCompetitorDomain;
+
+      public static readonly Field TargetOutrankShareMaxCpcBidCeiling = Fields.TargetOutrankShareMaxCpcBidCeiling;
+
+      public static readonly Field TargetOutrankShareBidChangesForRaisesOnly = Fields.TargetOutrankShareBidChangesForRaisesOnly;
+
+      public static readonly Field TargetOutrankShareRaiseBidWhenLowQualityScore = Fields.TargetOutrankShareRaiseBidWhenLowQualityScore;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TargetOutrankShareBiddingScheme' />
+    /// class. </summary>
+    public new class FilterableFields : BiddingScheme.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field TargetOutrankShare = Fields.TargetOutrankShare;
+
+      public static readonly Field TargetOutrankShareCompetitorDomain = Fields.TargetOutrankShareCompetitorDomain;
+
+      public static readonly Field TargetOutrankShareMaxCpcBidCeiling = Fields.TargetOutrankShareMaxCpcBidCeiling;
+
+      public static readonly Field TargetOutrankShareBidChangesForRaisesOnly = Fields.TargetOutrankShareBidChangesForRaisesOnly;
+
+      public static readonly Field TargetOutrankShareRaiseBidWhenLowQualityScore = Fields.TargetOutrankShareRaiseBidWhenLowQualityScore;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -11014,6 +16190,70 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.maxCpcBidFloorField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='TargetCpaBiddingScheme' /> class.
+    /// </summary>
+    public new class Fields : BiddingScheme.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field TargetCpa = new Field("TargetCpa", true, true);
+
+      public static readonly Field TargetCpaMaxCpcBidCeiling = new Field("TargetCpaMaxCpcBidCeiling", true, true);
+
+      public static readonly Field TargetCpaMaxCpcBidFloor = new Field("TargetCpaMaxCpcBidFloor", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TargetCpaBiddingScheme' />
+    /// class. </summary>
+    public new class SelectableFields : BiddingScheme.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field TargetCpa = Fields.TargetCpa;
+
+      public static readonly Field TargetCpaMaxCpcBidCeiling = Fields.TargetCpaMaxCpcBidCeiling;
+
+      public static readonly Field TargetCpaMaxCpcBidFloor = Fields.TargetCpaMaxCpcBidFloor;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TargetCpaBiddingScheme' />
+    /// class. </summary>
+    public new class FilterableFields : BiddingScheme.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field TargetCpa = Fields.TargetCpa;
+
+      public static readonly Field TargetCpaMaxCpcBidCeiling = Fields.TargetCpaMaxCpcBidCeiling;
+
+      public static readonly Field TargetCpaMaxCpcBidFloor = Fields.TargetCpaMaxCpcBidFloor;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -11197,6 +16437,76 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.raiseBidWhenLowQualityScoreFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='PageOnePromotedBiddingScheme' /> class.
+    /// </summary>
+    public new class Fields : BiddingScheme.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field PageOnePromotedStrategyGoal = new Field("PageOnePromotedStrategyGoal", false, true);
+
+      public static readonly Field PageOnePromotedBidCeiling = new Field("PageOnePromotedBidCeiling", false, true);
+
+      public static readonly Field PageOnePromotedBidModifier = new Field("PageOnePromotedBidModifier", false, true);
+
+      public static readonly Field PageOnePromotedBidChangesForRaisesOnly = new Field("PageOnePromotedBidChangesForRaisesOnly", false, true);
+
+      public static readonly Field PageOnePromotedRaiseBidWhenBudgetConstrained = new Field("PageOnePromotedRaiseBidWhenBudgetConstrained", false, true);
+
+      public static readonly Field PageOnePromotedRaiseBidWhenLowQualityScore = new Field("PageOnePromotedRaiseBidWhenLowQualityScore", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PageOnePromotedBiddingScheme' />
+    /// class. </summary>
+    public new class SelectableFields : BiddingScheme.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field PageOnePromotedStrategyGoal = Fields.PageOnePromotedStrategyGoal;
+
+      public static readonly Field PageOnePromotedBidCeiling = Fields.PageOnePromotedBidCeiling;
+
+      public static readonly Field PageOnePromotedBidModifier = Fields.PageOnePromotedBidModifier;
+
+      public static readonly Field PageOnePromotedBidChangesForRaisesOnly = Fields.PageOnePromotedBidChangesForRaisesOnly;
+
+      public static readonly Field PageOnePromotedRaiseBidWhenBudgetConstrained = Fields.PageOnePromotedRaiseBidWhenBudgetConstrained;
+
+      public static readonly Field PageOnePromotedRaiseBidWhenLowQualityScore = Fields.PageOnePromotedRaiseBidWhenLowQualityScore;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PageOnePromotedBiddingScheme' />
+    /// class. </summary>
+    public new class FilterableFields : BiddingScheme.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -11254,6 +16564,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.activeViewCpmEnabledFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ManualCpmBiddingScheme' /> class.
+    /// </summary>
+    public new class Fields : BiddingScheme.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field ActiveViewCpmEnabled = new Field("ActiveViewCpmEnabled", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManualCpmBiddingScheme' />
+    /// class. </summary>
+    public new class SelectableFields : BiddingScheme.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field ActiveViewCpmEnabled = Fields.ActiveViewCpmEnabled;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManualCpmBiddingScheme' />
+    /// class. </summary>
+    public new class FilterableFields : BiddingScheme.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field ActiveViewCpmEnabled = Fields.ActiveViewCpmEnabled;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -11298,6 +16660,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.enhancedCpcEnabledFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ManualCpcBiddingScheme' /> class.
+    /// </summary>
+    public new class Fields : BiddingScheme.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field EnhancedCpcEnabled = new Field("EnhancedCpcEnabled", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManualCpcBiddingScheme' />
+    /// class. </summary>
+    public new class SelectableFields : BiddingScheme.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field EnhancedCpcEnabled = Fields.EnhancedCpcEnabled;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManualCpcBiddingScheme' />
+    /// class. </summary>
+    public new class FilterableFields : BiddingScheme.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field EnhancedCpcEnabled = Fields.EnhancedCpcEnabled;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -11398,6 +16812,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.bidTypeFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ConversionOptimizerBiddingScheme' /> class.
+    /// </summary>
+    public new class Fields : BiddingScheme.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field BidType = new Field("BidType", true, true);
+
+      public static readonly Field PricingMode = new Field("PricingMode", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ConversionOptimizerBiddingScheme' />
+    /// class. </summary>
+    public new class SelectableFields : BiddingScheme.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field BidType = Fields.BidType;
+
+      public static readonly Field PricingMode = Fields.PricingMode;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ConversionOptimizerBiddingScheme' />
+    /// class. </summary>
+    public new class FilterableFields : BiddingScheme.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field BidType = Fields.BidType;
+
+      public static readonly Field PricingMode = Fields.PricingMode;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -11482,6 +16954,62 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.enhancedCpcEnabledFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BudgetOptimizerBiddingScheme' /> class.
+    /// </summary>
+    public new class Fields : BiddingScheme.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field EnhancedCpcEnabled = new Field("EnhancedCpcEnabled", true, true);
+
+      public static readonly Field BidCeiling = new Field("BidCeiling", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BudgetOptimizerBiddingScheme' />
+    /// class. </summary>
+    public new class SelectableFields : BiddingScheme.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field EnhancedCpcEnabled = Fields.EnhancedCpcEnabled;
+
+      public static readonly Field BidCeiling = Fields.BidCeiling;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BudgetOptimizerBiddingScheme' />
+    /// class. </summary>
+    public new class FilterableFields : BiddingScheme.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field EnhancedCpcEnabled = Fields.EnhancedCpcEnabled;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -11509,6 +17037,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.bidsTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Bids' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Bids' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Bids' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -11568,6 +17142,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.cpmBidSourceFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CpmBid' /> class.
+    /// </summary>
+    public new class Fields : Bids.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field CpmBid = new Field("CpmBid", true, true);
+
+      public static readonly Field CpmBidSource = new Field("CpmBidSource", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CpmBid' />
+    /// class. </summary>
+    public new class SelectableFields : Bids.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field CpmBid = Fields.CpmBid;
+
+      public static readonly Field CpmBidSource = Fields.CpmBidSource;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CpmBid' />
+    /// class. </summary>
+    public new class FilterableFields : Bids.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field CpmBid = Fields.CpmBid;
+
+      public static readonly Field CpmBidSource = Fields.CpmBidSource;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -11648,6 +17280,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.cpcBidSourceFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CpcBid' /> class.
+    /// </summary>
+    public new class Fields : Bids.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field CpcBid = new Field("CpcBid", true, true);
+
+      public static readonly Field CpcBidSource = new Field("CpcBidSource", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CpcBid' />
+    /// class. </summary>
+    public new class SelectableFields : Bids.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field CpcBid = Fields.CpcBid;
+
+      public static readonly Field CpcBidSource = Fields.CpcBidSource;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CpcBid' />
+    /// class. </summary>
+    public new class FilterableFields : Bids.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field CpcBid = Fields.CpcBid;
+
+      public static readonly Field CpcBidSource = Fields.CpcBidSource;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -11670,6 +17360,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.bidField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CpaBid' /> class.
+    /// </summary>
+    public new class Fields : Bids.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field TargetCpaBid = new Field("TargetCpaBid", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CpaBid' />
+    /// class. </summary>
+    public new class SelectableFields : Bids.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field TargetCpaBid = Fields.TargetCpaBid;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CpaBid' />
+    /// class. </summary>
+    public new class FilterableFields : Bids.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field TargetCpaBid = Fields.TargetCpaBid;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -11764,6 +17506,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='SettingError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SettingError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SettingError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -11841,6 +17629,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='RegionCodeError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RegionCodeError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RegionCodeError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -11888,6 +17722,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='DateRangeError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DateRangeError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DateRangeError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -11952,6 +17832,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -12066,6 +17992,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BudgetError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BudgetError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BudgetError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -12158,6 +18130,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='BiddingErrors' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BiddingErrors' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BiddingErrors' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -12377,6 +18395,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.labelIdFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignLabel' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignLabel' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignLabel' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -12403,6 +18467,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -12425,6 +18535,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignLabelOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignLabelOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignLabelOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -12450,6 +18606,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -12511,9 +18713,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignFeedPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((CampaignFeedPage) (results[0]));
     }
 
@@ -12527,9 +18729,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignFeedReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CampaignFeedOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((CampaignFeedReturnValue) (results[0]));
     }
 
@@ -12544,9 +18746,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignFeedPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((CampaignFeedPage) (results[0]));
     }
   }
@@ -12584,6 +18786,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.partialFailureErrorsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignFeedReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignFeedReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignFeedReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -12734,6 +18982,80 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.statusFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignFeed' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field FeedId = new Field("FeedId", true, true);
+
+      public static readonly Field CampaignId = new Field("CampaignId", true, true);
+
+      public static readonly Field MatchingFunction = new Field("MatchingFunction", false, true);
+
+      public static readonly Field PlaceholderTypes = new Field("PlaceholderTypes", true, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignFeed' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field MatchingFunction = Fields.MatchingFunction;
+
+      public static readonly Field PlaceholderTypes = Fields.PlaceholderTypes;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignFeed' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field PlaceholderTypes = Fields.PlaceholderTypes;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -12841,6 +19163,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.functionStringField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Function' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Function' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Function' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -12908,6 +19276,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.functionArgumentOperandTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FunctionArgumentOperand' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FunctionArgumentOperand' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FunctionArgumentOperand' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -12946,6 +19360,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.contextTypeFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='RequestContextOperand' /> class.
+    /// </summary>
+    public new class Fields : FunctionArgumentOperand.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RequestContextOperand' />
+    /// class. </summary>
+    public new class SelectableFields : FunctionArgumentOperand.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RequestContextOperand' />
+    /// class. </summary>
+    public new class FilterableFields : FunctionArgumentOperand.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -12988,6 +19448,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FunctionOperand' /> class.
+    /// </summary>
+    public new class Fields : FunctionArgumentOperand.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FunctionOperand' />
+    /// class. </summary>
+    public new class SelectableFields : FunctionArgumentOperand.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FunctionOperand' />
+    /// class. </summary>
+    public new class FilterableFields : FunctionArgumentOperand.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -13058,6 +19564,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.feedAttributeIdFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedAttributeOperand' /> class.
+    /// </summary>
+    public new class Fields : FunctionArgumentOperand.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedAttributeOperand' />
+    /// class. </summary>
+    public new class SelectableFields : FunctionArgumentOperand.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedAttributeOperand' />
+    /// class. </summary>
+    public new class FilterableFields : FunctionArgumentOperand.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -13229,6 +19781,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.stringValueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ConstantOperand' /> class.
+    /// </summary>
+    public new class Fields : FunctionArgumentOperand.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ConstantOperand' />
+    /// class. </summary>
+    public new class SelectableFields : FunctionArgumentOperand.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ConstantOperand' />
+    /// class. </summary>
+    public new class FilterableFields : FunctionArgumentOperand.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -13325,6 +19923,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CollectionSizeError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CollectionSizeError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CollectionSizeError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -13373,6 +20017,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignFeedError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignFeedError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignFeedError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -13435,6 +20125,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignFeedOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignFeedOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignFeedOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -13476,6 +20212,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignFeedPage' /> class.
+    /// </summary>
+    public new class Fields : NullStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignFeedPage' />
+    /// class. </summary>
+    public new class SelectableFields : NullStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignFeedPage' />
+    /// class. </summary>
+    public new class FilterableFields : NullStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -13619,9 +20401,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ProductBiddingCategoryData[] getProductBiddingCategoryData(Selector selector) {
       object[] results = this.Invoke("getProductBiddingCategoryData", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((ProductBiddingCategoryData[]) (results[0]));
     }
 
@@ -13637,9 +20419,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CriterionUserInterest[] getUserInterestCriterion(ConstantDataServiceUserInterestTaxonomyType userInterestTaxonomyType) {
       object[] results = this.Invoke("getUserInterestCriterion", new object[]
-				{
-					userInterestTaxonomyType
-				});
+        {
+          userInterestTaxonomyType
+        });
       return ((CriterionUserInterest[]) (results[0]));
     }
 
@@ -13694,6 +20476,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.productDimensionTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ProductDimension' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductDimension' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductDimension' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -13731,6 +20559,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ProductTypeFull' /> class.
+    /// </summary>
+    public new class Fields : ProductDimension.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductTypeFull' />
+    /// class. </summary>
+    public new class SelectableFields : ProductDimension.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductTypeFull' />
+    /// class. </summary>
+    public new class FilterableFields : ProductDimension.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -13795,6 +20669,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ProductType' /> class.
+    /// </summary>
+    public new class Fields : ProductDimension.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductType' />
+    /// class. </summary>
+    public new class SelectableFields : ProductDimension.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductType' />
+    /// class. </summary>
+    public new class FilterableFields : ProductDimension.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -13851,6 +20771,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ProductOfferId' /> class.
+    /// </summary>
+    public new class Fields : ProductDimension.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductOfferId' />
+    /// class. </summary>
+    public new class SelectableFields : ProductDimension.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductOfferId' />
+    /// class. </summary>
+    public new class FilterableFields : ProductDimension.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -13912,6 +20878,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ProductCustomAttribute' /> class.
+    /// </summary>
+    public new class Fields : ProductDimension.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductCustomAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : ProductDimension.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductCustomAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : ProductDimension.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -14136,6 +21148,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ProductBrand' /> class.
+    /// </summary>
+    public new class Fields : ProductDimension.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductBrand' />
+    /// class. </summary>
+    public new class SelectableFields : ProductDimension.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductBrand' />
+    /// class. </summary>
+    public new class FilterableFields : ProductDimension.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -14216,6 +21274,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ProductBiddingCategory' /> class.
+    /// </summary>
+    public new class Fields : ProductDimension.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field ParentDimensionType = new Field("ParentDimensionType", true, false);
+
+      public static readonly Field ParentDimensionId = new Field("ParentDimensionId", true, false);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductBiddingCategory' />
+    /// class. </summary>
+    public new class SelectableFields : ProductDimension.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field ParentDimensionType = Fields.ParentDimensionType;
+
+      public static readonly Field ParentDimensionId = Fields.ParentDimensionId;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductBiddingCategory' />
+    /// class. </summary>
+    public new class FilterableFields : ProductDimension.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field ParentDimensionType = Fields.ParentDimensionType;
+
+      public static readonly Field ParentDimensionId = Fields.ParentDimensionId;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -14240,6 +21356,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ProductAdwordsLabels' /> class.
+    /// </summary>
+    public new class Fields : ProductDimension.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductAdwordsLabels' />
+    /// class. </summary>
+    public new class SelectableFields : ProductDimension.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductAdwordsLabels' />
+    /// class. </summary>
+    public new class FilterableFields : ProductDimension.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -14262,6 +21424,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ProductAdwordsGrouping' /> class.
+    /// </summary>
+    public new class Fields : ProductDimension.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductAdwordsGrouping' />
+    /// class. </summary>
+    public new class SelectableFields : ProductDimension.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductAdwordsGrouping' />
+    /// class. </summary>
+    public new class FilterableFields : ProductDimension.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -14290,6 +21498,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.constantDataTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ConstantData' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ConstantData' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ConstantData' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -14391,6 +21645,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.displayValueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ProductBiddingCategoryData' /> class.
+    /// </summary>
+    public new class Fields : ConstantData.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Country = new Field("Country", true, true);
+
+      public static readonly Field BiddingCategoryStatus = new Field("BiddingCategoryStatus", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductBiddingCategoryData' />
+    /// class. </summary>
+    public new class SelectableFields : ConstantData.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Country = Fields.Country;
+
+      public static readonly Field BiddingCategoryStatus = Fields.BiddingCategoryStatus;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductBiddingCategoryData' />
+    /// class. </summary>
+    public new class FilterableFields : ConstantData.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Country = Fields.Country;
+
+      public static readonly Field BiddingCategoryStatus = Fields.BiddingCategoryStatus;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -14535,6 +21847,70 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.criterionTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Criterion' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Id = new Field("Id", true, true);
+
+      public static readonly Field CriteriaType = new Field("CriteriaType", true, true);
+
+      public static readonly Field KeywordTargetingCriterionId = new Field("KeywordTargetingCriterionId", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Criterion' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field CriteriaType = Fields.CriteriaType;
+
+      public static readonly Field KeywordTargetingCriterionId = Fields.KeywordTargetingCriterionId;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Criterion' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field CriteriaType = Fields.CriteriaType;
+
+      public static readonly Field KeywordTargetingCriterionId = Fields.KeywordTargetingCriterionId;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -14727,6 +22103,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.pathField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Vertical' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field VerticalId = new Field("VerticalId", false, true);
+
+      public static readonly Field VerticalParentId = new Field("VerticalParentId", false, true);
+
+      public static readonly Field Path = new Field("Path", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Vertical' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field VerticalId = Fields.VerticalId;
+
+      public static readonly Field VerticalParentId = Fields.VerticalParentId;
+
+      public static readonly Field Path = Fields.Path;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Vertical' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -14811,6 +22245,66 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.userListMembershipStatusFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CriterionUserList' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field UserListId = new Field("UserListId", false, true);
+
+      public static readonly Field UserListName = new Field("UserListName", false, true);
+
+      public static readonly Field UserListMembershipStatus = new Field("UserListMembershipStatus", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CriterionUserList' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field UserListId = Fields.UserListId;
+
+      public static readonly Field UserListName = Fields.UserListName;
+
+      public static readonly Field UserListMembershipStatus = Fields.UserListMembershipStatus;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CriterionUserList' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field UserListMembershipStatus = Fields.UserListMembershipStatus;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -14915,6 +22409,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.userInterestNameField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CriterionUserInterest' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field UserInterestId = new Field("UserInterestId", false, true);
+
+      public static readonly Field UserInterestParentId = new Field("UserInterestParentId", false, true);
+
+      public static readonly Field UserInterestName = new Field("UserInterestName", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CriterionUserInterest' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field UserInterestId = Fields.UserInterestId;
+
+      public static readonly Field UserInterestParentId = Fields.UserInterestParentId;
+
+      public static readonly Field UserInterestName = Fields.UserInterestName;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CriterionUserInterest' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -14944,6 +22496,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.urlField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Placement' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field PlacementUrl = new Field("PlacementUrl", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Placement' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field PlacementUrl = Fields.PlacementUrl;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Placement' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field PlacementUrl = Fields.PlacementUrl;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -14952,8 +22556,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// available mobile platforms</a>. You can also get the list from <a
   /// href='ConstantDataService#getOperatingSystemVersionCriterion'>ConstantDataService</a>.
   /// <p>A criterion of this type can only be created using an ID. A criterion of this
-  /// type is only targetable. <span class="constraint AdxEnabled">This is enabled for
-  /// AdX.</span></p>
+  /// type can be either targeted or excluded. <span class="constraint
+  /// AdxEnabled">This is enabled for AdX.</span></p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15072,6 +22676,68 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operatorTypeFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='OperatingSystemVersion' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field OperatingSystemName = new Field("OperatingSystemName", false, true);
+
+      public static readonly Field OsMajorVersion = new Field("OsMajorVersion", false, true);
+
+      public static readonly Field OsMinorVersion = new Field("OsMinorVersion", false, true);
+
+      public static readonly Field OperatorType = new Field("OperatorType", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='OperatingSystemVersion' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field OperatingSystemName = Fields.OperatingSystemName;
+
+      public static readonly Field OsMajorVersion = Fields.OsMajorVersion;
+
+      public static readonly Field OsMinorVersion = Fields.OsMinorVersion;
+
+      public static readonly Field OperatorType = Fields.OperatorType;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='OperatingSystemVersion' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -15172,6 +22838,68 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operatingSystemNameField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='MobileDevice' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field DeviceName = new Field("DeviceName", false, true);
+
+      public static readonly Field ManufacturerName = new Field("ManufacturerName", false, true);
+
+      public static readonly Field DeviceType = new Field("DeviceType", false, true);
+
+      public static readonly Field OperatingSystemName = new Field("OperatingSystemName", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='MobileDevice' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field DeviceName = Fields.DeviceName;
+
+      public static readonly Field ManufacturerName = Fields.ManufacturerName;
+
+      public static readonly Field DeviceType = Fields.DeviceType;
+
+      public static readonly Field OperatingSystemName = Fields.OperatingSystemName;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='MobileDevice' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -15239,6 +22967,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.displayNameField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='MobileApplication' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field AppId = new Field("AppId", true, true);
+
+      public static readonly Field DisplayName = new Field("DisplayName", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='MobileApplication' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field AppId = Fields.AppId;
+
+      public static readonly Field DisplayName = Fields.DisplayName;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='MobileApplication' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field AppId = Fields.AppId;
+
+      public static readonly Field DisplayName = Fields.DisplayName;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -15301,6 +23087,56 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.displayNameField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='MobileAppCategory' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field MobileAppCategoryId = new Field("MobileAppCategoryId", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='MobileAppCategory' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field MobileAppCategoryId = Fields.MobileAppCategoryId;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='MobileAppCategory' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -15341,6 +23177,60 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.nameField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Language' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field LanguageCode = new Field("LanguageCode", false, true);
+
+      public static readonly Field LanguageName = new Field("LanguageName", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Language' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field LanguageCode = Fields.LanguageCode;
+
+      public static readonly Field LanguageName = Fields.LanguageName;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Language' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -15408,6 +23298,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.matchTypeFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Keyword' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field KeywordText = new Field("KeywordText", true, true);
+
+      public static readonly Field KeywordMatchType = new Field("KeywordMatchType", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Keyword' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field KeywordText = Fields.KeywordText;
+
+      public static readonly Field KeywordMatchType = Fields.KeywordMatchType;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Keyword' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field KeywordText = Fields.KeywordText;
+
+      public static readonly Field KeywordMatchType = Fields.KeywordMatchType;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -15471,6 +23419,56 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.genderTypeFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Gender' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field GenderType = new Field("GenderType", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Gender' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field GenderType = Fields.GenderType;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Gender' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -15523,6 +23521,60 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.countryCodeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Carrier' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field CarrierName = new Field("CarrierName", false, true);
+
+      public static readonly Field CarrierCountryCode = new Field("CarrierCountryCode", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Carrier' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field CarrierName = Fields.CarrierName;
+
+      public static readonly Field CarrierCountryCode = Fields.CarrierCountryCode;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Carrier' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -15565,6 +23617,56 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.ageRangeTypeFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AgeRange' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field AgeRangeType = new Field("AgeRangeType", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AgeRange' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field AgeRangeType = Fields.AgeRangeType;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AgeRange' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -15664,9 +23766,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ConversionTrackerPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((ConversionTrackerPage) (results[0]));
     }
 
@@ -15694,9 +23796,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ConversionTrackerReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] ConversionTrackerOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((ConversionTrackerReturnValue) (results[0]));
     }
 
@@ -15711,9 +23813,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ConversionTrackerPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((ConversionTrackerPage) (results[0]));
     }
   }
@@ -16310,6 +24412,150 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.conversionTrackerTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ConversionTracker' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Id = new Field("Id", true, true);
+
+      public static readonly Field OriginalConversionTypeId = new Field("OriginalConversionTypeId", true, true);
+
+      public static readonly Field Name = new Field("Name", true, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static readonly Field Category = new Field("Category", true, true);
+
+      public static readonly Field ConversionTypeOwnerCustomerId = new Field("ConversionTypeOwnerCustomerId", true, true);
+
+      public static readonly Field ViewthroughLookbackWindow = new Field("ViewthroughLookbackWindow", true, true);
+
+      public static readonly Field IsProductAdsChargeable = new Field("IsProductAdsChargeable", true, true);
+
+      public static readonly Field ProductAdsChargeableConversionWindow = new Field("ProductAdsChargeableConversionWindow", true, true);
+
+      public static readonly Field CtcLookbackWindow = new Field("CtcLookbackWindow", true, true);
+
+      public static readonly Field CountingType = new Field("CountingType", true, true);
+
+      public static readonly Field DefaultRevenueValue = new Field("DefaultRevenueValue", true, true);
+
+      public static readonly Field DefaultRevenueCurrencyCode = new Field("DefaultRevenueCurrencyCode", true, true);
+
+      public static readonly Field AlwaysUseDefaultRevenueValue = new Field("AlwaysUseDefaultRevenueValue", true, true);
+
+      public static readonly Field ExcludeFromBidding = new Field("ExcludeFromBidding", true, true);
+
+      public static readonly Field MostRecentConversionDate = new Field("MostRecentConversionDate", false, true);
+
+      public static readonly Field LastReceivedRequestTime = new Field("LastReceivedRequestTime", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ConversionTracker' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field OriginalConversionTypeId = Fields.OriginalConversionTypeId;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field Category = Fields.Category;
+
+      public static readonly Field ConversionTypeOwnerCustomerId = Fields.ConversionTypeOwnerCustomerId;
+
+      public static readonly Field ViewthroughLookbackWindow = Fields.ViewthroughLookbackWindow;
+
+      public static readonly Field IsProductAdsChargeable = Fields.IsProductAdsChargeable;
+
+      public static readonly Field ProductAdsChargeableConversionWindow = Fields.ProductAdsChargeableConversionWindow;
+
+      public static readonly Field CtcLookbackWindow = Fields.CtcLookbackWindow;
+
+      public static readonly Field CountingType = Fields.CountingType;
+
+      public static readonly Field DefaultRevenueValue = Fields.DefaultRevenueValue;
+
+      public static readonly Field DefaultRevenueCurrencyCode = Fields.DefaultRevenueCurrencyCode;
+
+      public static readonly Field AlwaysUseDefaultRevenueValue = Fields.AlwaysUseDefaultRevenueValue;
+
+      public static readonly Field ExcludeFromBidding = Fields.ExcludeFromBidding;
+
+      public static readonly Field MostRecentConversionDate = Fields.MostRecentConversionDate;
+
+      public static readonly Field LastReceivedRequestTime = Fields.LastReceivedRequestTime;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ConversionTracker' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field OriginalConversionTypeId = Fields.OriginalConversionTypeId;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field Category = Fields.Category;
+
+      public static readonly Field ConversionTypeOwnerCustomerId = Fields.ConversionTypeOwnerCustomerId;
+
+      public static readonly Field ViewthroughLookbackWindow = Fields.ViewthroughLookbackWindow;
+
+      public static readonly Field IsProductAdsChargeable = Fields.IsProductAdsChargeable;
+
+      public static readonly Field ProductAdsChargeableConversionWindow = Fields.ProductAdsChargeableConversionWindow;
+
+      public static readonly Field CtcLookbackWindow = Fields.CtcLookbackWindow;
+
+      public static readonly Field CountingType = Fields.CountingType;
+
+      public static readonly Field DefaultRevenueValue = Fields.DefaultRevenueValue;
+
+      public static readonly Field DefaultRevenueCurrencyCode = Fields.DefaultRevenueCurrencyCode;
+
+      public static readonly Field AlwaysUseDefaultRevenueValue = Fields.AlwaysUseDefaultRevenueValue;
+
+      public static readonly Field ExcludeFromBidding = Fields.ExcludeFromBidding;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -16426,6 +24672,56 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.snippetField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='WebsiteCallMetricsConversion' /> class.
+    /// </summary>
+    public new class Fields : ConversionTracker.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field WebsitePhoneCallDuration = new Field("WebsitePhoneCallDuration", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='WebsiteCallMetricsConversion' />
+    /// class. </summary>
+    public new class SelectableFields : ConversionTracker.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field WebsitePhoneCallDuration = Fields.WebsitePhoneCallDuration;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='WebsiteCallMetricsConversion' />
+    /// class. </summary>
+    public new class FilterableFields : ConversionTracker.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -16466,8 +24762,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     private string appPostbackUrlField;
 
-    /// <summary>App id of the app conversion tracker. <span class="constraint Selectable">This
-    /// field can be selected using the value "AppId".</span><span class="constraint
+    /// <summary>App ID of the app conversion tracker. This field is required for certain
+    /// conversion types, in particular, Android app install (first open) and Android
+    /// app install (from Google Play). <span class="constraint Selectable">This field
+    /// can be selected using the value "AppId".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span>
     /// </summary>
     public string appId {
@@ -16550,9 +24848,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>The postback URL (for iOS conversions only). When the conversion type specifies
-    /// a postback url, Google will send information about each conversion event to that
-    /// url as they happen. Details, including formatting requirements for this field:
+    /// <summary>The postback URL. When the conversion type specifies a postback url, Google will
+    /// send information about each conversion event to that url as they happen.
+    /// Details, including formatting requirements for this field:
     /// https://developers.google.com/app-conversion-tracking/docs/app-install-feedback
     /// <span class="constraint Selectable">This field can be selected using the value
     /// "AppPostbackUrl".</span><span class="constraint Filterable">This field can be
@@ -16564,6 +24862,70 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.appPostbackUrlField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AppConversion' /> class.
+    /// </summary>
+    public new class Fields : ConversionTracker.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field AppId = new Field("AppId", true, true);
+
+      public static readonly Field AppPlatform = new Field("AppPlatform", true, true);
+
+      public static readonly Field AppPostbackUrl = new Field("AppPostbackUrl", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AppConversion' />
+    /// class. </summary>
+    public new class SelectableFields : ConversionTracker.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field AppId = Fields.AppId;
+
+      public static readonly Field AppPlatform = Fields.AppPlatform;
+
+      public static readonly Field AppPostbackUrl = Fields.AppPostbackUrl;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AppConversion' />
+    /// class. </summary>
+    public new class FilterableFields : ConversionTracker.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field AppId = Fields.AppId;
+
+      public static readonly Field AppPlatform = Fields.AppPlatform;
+
+      public static readonly Field AppPostbackUrl = Fields.AppPostbackUrl;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -16742,6 +25104,82 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.trackingCodeTypeFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdWordsConversionTracker' /> class.
+    /// </summary>
+    public new class Fields : ConversionTracker.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field MarkupLanguage = new Field("MarkupLanguage", true, true);
+
+      public static readonly Field TextFormat = new Field("TextFormat", true, true);
+
+      public static readonly Field ConversionPageLanguage = new Field("ConversionPageLanguage", true, true);
+
+      public static readonly Field BackgroundColor = new Field("BackgroundColor", true, true);
+
+      public static readonly Field TrackingCodeType = new Field("TrackingCodeType", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdWordsConversionTracker' />
+    /// class. </summary>
+    public new class SelectableFields : ConversionTracker.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field MarkupLanguage = Fields.MarkupLanguage;
+
+      public static readonly Field TextFormat = Fields.TextFormat;
+
+      public static readonly Field ConversionPageLanguage = Fields.ConversionPageLanguage;
+
+      public static readonly Field BackgroundColor = Fields.BackgroundColor;
+
+      public static readonly Field TrackingCodeType = Fields.TrackingCodeType;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdWordsConversionTracker' />
+    /// class. </summary>
+    public new class FilterableFields : ConversionTracker.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field MarkupLanguage = Fields.MarkupLanguage;
+
+      public static readonly Field TextFormat = Fields.TextFormat;
+
+      public static readonly Field ConversionPageLanguage = Fields.ConversionPageLanguage;
+
+      public static readonly Field BackgroundColor = Fields.BackgroundColor;
+
+      public static readonly Field TrackingCodeType = Fields.TrackingCodeType;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -16835,6 +25273,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.phoneCallDurationFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdCallMetricsConversion' /> class.
+    /// </summary>
+    public new class Fields : ConversionTracker.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field PhoneCallDuration = new Field("PhoneCallDuration", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdCallMetricsConversion' />
+    /// class. </summary>
+    public new class SelectableFields : ConversionTracker.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field PhoneCallDuration = Fields.PhoneCallDuration;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdCallMetricsConversion' />
+    /// class. </summary>
+    public new class FilterableFields : ConversionTracker.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field PhoneCallDuration = Fields.PhoneCallDuration;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -16857,6 +25347,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ConversionTrackerOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ConversionTrackerOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ConversionTrackerOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -16897,6 +25433,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ConversionTrackerPage' /> class.
+    /// </summary>
+    public new class Fields : NoStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ConversionTrackerPage' />
+    /// class. </summary>
+    public new class SelectableFields : NoStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ConversionTrackerPage' />
+    /// class. </summary>
+    public new class FilterableFields : NoStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -17118,9 +25700,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Customer mutate(Customer customer) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					customer
-				});
+        {
+          customer
+        });
       return ((Customer) (results[0]));
     }
   }
@@ -17146,6 +25728,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.snippetField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='RemarketingSettings' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RemarketingSettings' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RemarketingSettings' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -17267,6 +25895,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.usesCrossAccountConversionTrackingFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ConversionTrackingSettings' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ConversionTrackingSettings' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ConversionTrackingSettings' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -17509,6 +26183,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.remarketingSettingsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Customer' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Customer' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Customer' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -17572,9 +26292,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerChangeData get(CustomerSyncSelector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((CustomerChangeData) (results[0]));
     }
   }
@@ -17673,6 +26393,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.removedFeedItemsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedChangeData' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedChangeData' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedChangeData' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -17874,6 +26640,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.removedAdGroupBidModifierCriteriaField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupChangeData' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupChangeData' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupChangeData' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -18047,6 +26859,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.removedFeedsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignChangeData' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignChangeData' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignChangeData' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -18102,6 +26960,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.lastChangeTimestampField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CustomerChangeData' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CustomerChangeData' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CustomerChangeData' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -18187,6 +27091,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.feedIdsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CustomerSyncSelector' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CustomerSyncSelector' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CustomerSyncSelector' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -18336,9 +27286,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerFeedPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((CustomerFeedPage) (results[0]));
     }
 
@@ -18352,9 +27302,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerFeedReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CustomerFeedOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((CustomerFeedReturnValue) (results[0]));
     }
 
@@ -18369,9 +27319,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerFeedPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((CustomerFeedPage) (results[0]));
     }
   }
@@ -18512,6 +27462,74 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.statusFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CustomerFeed' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field FeedId = new Field("FeedId", true, true);
+
+      public static readonly Field MatchingFunction = new Field("MatchingFunction", false, true);
+
+      public static readonly Field PlaceholderTypes = new Field("PlaceholderTypes", true, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CustomerFeed' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field MatchingFunction = Fields.MatchingFunction;
+
+      public static readonly Field PlaceholderTypes = Fields.PlaceholderTypes;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CustomerFeed' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field PlaceholderTypes = Fields.PlaceholderTypes;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -18556,6 +27574,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CustomerFeedOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CustomerFeedOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CustomerFeedOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -18580,6 +27644,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CustomerFeedPage' /> class.
+    /// </summary>
+    public new class Fields : NullStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CustomerFeedPage' />
+    /// class. </summary>
+    public new class SelectableFields : NullStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CustomerFeedPage' />
+    /// class. </summary>
+    public new class FilterableFields : NullStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -18619,6 +27729,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CustomerFeedError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CustomerFeedError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CustomerFeedError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -18724,9 +27880,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupBidLandscapePage getAdGroupBidLandscape(Selector serviceSelector) {
       object[] results = this.Invoke("getAdGroupBidLandscape", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((AdGroupBidLandscapePage) (results[0]));
     }
 
@@ -18748,9 +27904,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CriterionBidLandscapePage getCriterionBidLandscape(Selector serviceSelector) {
       object[] results = this.Invoke("getCriterionBidLandscape", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((CriterionBidLandscapePage) (results[0]));
     }
 
@@ -18767,9 +27923,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual DomainCategoryPage getDomainCategory(Selector serviceSelector) {
       object[] results = this.Invoke("getDomainCategory", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((DomainCategoryPage) (results[0]));
     }
 
@@ -18790,9 +27946,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupBidLandscapePage queryAdGroupBidLandscape(string query) {
       object[] results = this.Invoke("queryAdGroupBidLandscape", new object[]
-				{
-					query
-				});
+        {
+          query
+        });
       return ((AdGroupBidLandscapePage) (results[0]));
     }
 
@@ -18813,9 +27969,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CriterionBidLandscapePage queryCriterionBidLandscape(string query) {
       object[] results = this.Invoke("queryCriterionBidLandscape", new object[]
-				{
-					query
-				});
+        {
+          query
+        });
       return ((CriterionBidLandscapePage) (results[0]));
     }
 
@@ -18831,9 +27987,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual DomainCategoryPage queryDomainCategory(string query) {
       object[] results = this.Invoke("queryDomainCategory", new object[]
-				{
-					query
-				});
+        {
+          query
+        });
       return ((DomainCategoryPage) (results[0]));
     }
   }
@@ -18878,6 +28034,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.campaignIdFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='LevelOfDetail' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field CampaignId = new Field("CampaignId", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LevelOfDetail' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LevelOfDetail' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -18920,9 +28128,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>Estimated number of clicks at this bid. <span class="constraint Selectable">This
-    /// field can be selected using the value "LocalClicks".</span><span
-    /// class="constraint Filterable">This field can be filtered on.</span>
+    /// <summary>Estimated number of clicks at this bid. For mobile bid modifier landscapes, this
+    /// is the estimated number of clicks for mobile only. <span class="constraint
+    /// Selectable">This field can be selected using the value
+    /// "LocalClicks".</span><span class="constraint Filterable">This field can be
+    /// filtered on.</span>
     /// </summary>
     public long clicks {
       get {
@@ -18947,8 +28157,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>Estimated cost at this bid. <span class="constraint Selectable">This field can
-    /// be selected using the value "LocalCost".</span><span class="constraint
+    /// <summary>Estimated cost at this bid. For mobile bid modifier landscapes, this is the
+    /// estimated cost for mobile only. <span class="constraint Selectable">This field
+    /// can be selected using the value "LocalCost".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span>
     /// </summary>
     public Money cost {
@@ -18960,8 +28171,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>Estimated number of impressions at this bid. <span class="constraint
-    /// Selectable">This field can be selected using the value
+    /// <summary>Estimated number of impressions at this bid. For mobile bid modifier landscapes,
+    /// this is the estimated number of impressions for mobile only. <span
+    /// class="constraint Selectable">This field can be selected using the value
     /// "LocalImpressions".</span><span class="constraint Filterable">This field can be
     /// filtered on.</span>
     /// </summary>
@@ -19015,6 +28227,82 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.promotedImpressionsFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BidLandscapeLandscapePoint' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Bid = new Field("Bid", true, true);
+
+      public static readonly Field LocalClicks = new Field("LocalClicks", true, true);
+
+      public static readonly Field LocalCost = new Field("LocalCost", true, true);
+
+      public static readonly Field LocalImpressions = new Field("LocalImpressions", true, true);
+
+      public static readonly Field PromotedImpressions = new Field("PromotedImpressions", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BidLandscapeLandscapePoint' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Bid = Fields.Bid;
+
+      public static readonly Field LocalClicks = Fields.LocalClicks;
+
+      public static readonly Field LocalCost = Fields.LocalCost;
+
+      public static readonly Field LocalImpressions = Fields.LocalImpressions;
+
+      public static readonly Field PromotedImpressions = Fields.PromotedImpressions;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BidLandscapeLandscapePoint' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Bid = Fields.Bid;
+
+      public static readonly Field LocalClicks = Fields.LocalClicks;
+
+      public static readonly Field LocalCost = Fields.LocalCost;
+
+      public static readonly Field LocalImpressions = Fields.LocalImpressions;
+
+      public static readonly Field PromotedImpressions = Fields.PromotedImpressions;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -19044,6 +28332,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.dataEntryTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='DataEntry' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DataEntry' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DataEntry' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -19172,6 +28506,72 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.isoLanguageField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='DomainCategory' /> class.
+    /// </summary>
+    public new class Fields : DimensionProperties.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Category = new Field("Category", true, true);
+
+      public static readonly Field Coverage = new Field("Coverage", false, true);
+
+      public static readonly Field DomainName = new Field("DomainName", true, true);
+
+      public static readonly Field IsoLanguage = new Field("IsoLanguage", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DomainCategory' />
+    /// class. </summary>
+    public new class SelectableFields : DimensionProperties.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Category = Fields.Category;
+
+      public static readonly Field Coverage = Fields.Coverage;
+
+      public static readonly Field DomainName = Fields.DomainName;
+
+      public static readonly Field IsoLanguage = Fields.IsoLanguage;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DomainCategory' />
+    /// class. </summary>
+    public new class FilterableFields : DimensionProperties.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Category = Fields.Category;
+
+      public static readonly Field DomainName = Fields.DomainName;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -19294,6 +28694,72 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.landscapePointsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BidLandscape' /> class.
+    /// </summary>
+    public new class Fields : DataEntry.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field CampaignId = new Field("CampaignId", true, true);
+
+      public static readonly Field AdGroupId = new Field("AdGroupId", true, true);
+
+      public static readonly Field StartDate = new Field("StartDate", false, true);
+
+      public static readonly Field EndDate = new Field("EndDate", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BidLandscape' />
+    /// class. </summary>
+    public new class SelectableFields : DataEntry.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field StartDate = Fields.StartDate;
+
+      public static readonly Field EndDate = Fields.EndDate;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BidLandscape' />
+    /// class. </summary>
+    public new class FilterableFields : DataEntry.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -19335,6 +28801,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.criterionIdFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CriterionBidLandscape' /> class.
+    /// </summary>
+    public new class Fields : BidLandscape.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field CriterionId = new Field("CriterionId", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CriterionBidLandscape' />
+    /// class. </summary>
+    public new class SelectableFields : BidLandscape.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field CriterionId = Fields.CriterionId;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CriterionBidLandscape' />
+    /// class. </summary>
+    public new class FilterableFields : BidLandscape.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field CriterionId = Fields.CriterionId;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -19411,6 +28929,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.landscapeCurrentFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupBidLandscape' /> class.
+    /// </summary>
+    public new class Fields : BidLandscape.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field LandscapeType = new Field("LandscapeType", true, true);
+
+      public static readonly Field LandscapeCurrent = new Field("LandscapeCurrent", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupBidLandscape' />
+    /// class. </summary>
+    public new class SelectableFields : BidLandscape.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field LandscapeType = Fields.LandscapeType;
+
+      public static readonly Field LandscapeCurrent = Fields.LandscapeCurrent;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupBidLandscape' />
+    /// class. </summary>
+    public new class FilterableFields : BidLandscape.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field LandscapeType = Fields.LandscapeType;
+
+      public static readonly Field LandscapeCurrent = Fields.LandscapeCurrent;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -19455,6 +29031,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.entriesField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CriterionBidLandscapePage' /> class.
+    /// </summary>
+    public new class Fields : NoStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CriterionBidLandscapePage' />
+    /// class. </summary>
+    public new class SelectableFields : NoStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CriterionBidLandscapePage' />
+    /// class. </summary>
+    public new class FilterableFields : NoStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -19482,6 +29104,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.entriesField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupBidLandscapePage' /> class.
+    /// </summary>
+    public new class Fields : NoStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupBidLandscapePage' />
+    /// class. </summary>
+    public new class SelectableFields : NoStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupBidLandscapePage' />
+    /// class. </summary>
+    public new class FilterableFields : NoStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -19506,6 +29174,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='DomainCategoryPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DomainCategoryPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DomainCategoryPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -19640,9 +29354,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ExperimentPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((ExperimentPage) (results[0]));
     }
 
@@ -19660,9 +29374,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ExperimentReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] ExperimentOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((ExperimentReturnValue) (results[0]));
     }
   }
@@ -19984,6 +29698,110 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.experimentSummaryStatsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Experiment' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Id = new Field("Id", true, true);
+
+      public static readonly Field ControlId = new Field("ControlId", true, true);
+
+      public static readonly Field CampaignId = new Field("CampaignId", true, true);
+
+      public static readonly Field Name = new Field("Name", true, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static readonly Field ServingStatus = new Field("ServingStatus", false, true);
+
+      public static readonly Field QueryPercentage = new Field("QueryPercentage", true, true);
+
+      public static readonly Field StartDateTime = new Field("StartDateTime", true, true);
+
+      public static readonly Field EndDateTime = new Field("EndDateTime", true, true);
+
+      public static readonly Field LastModifiedDateTime = new Field("LastModifiedDateTime", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Experiment' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field ControlId = Fields.ControlId;
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field ServingStatus = Fields.ServingStatus;
+
+      public static readonly Field QueryPercentage = Fields.QueryPercentage;
+
+      public static readonly Field StartDateTime = Fields.StartDateTime;
+
+      public static readonly Field EndDateTime = Fields.EndDateTime;
+
+      public static readonly Field LastModifiedDateTime = Fields.LastModifiedDateTime;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Experiment' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field ControlId = Fields.ControlId;
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field QueryPercentage = Fields.QueryPercentage;
+
+      public static readonly Field StartDateTime = Fields.StartDateTime;
+
+      public static readonly Field EndDateTime = Fields.EndDateTime;
+
+      public static readonly Field LastModifiedDateTime = Fields.LastModifiedDateTime;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -20126,6 +29944,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.adGroupAdsCountFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ExperimentSummaryStats' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field AdGroupsCount = new Field("AdGroupsCount", false, true);
+
+      public static readonly Field AdGroupCriteriaCount = new Field("AdGroupCriteriaCount", false, true);
+
+      public static readonly Field AdGroupAdsCount = new Field("AdGroupAdsCount", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ExperimentSummaryStats' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field AdGroupsCount = Fields.AdGroupsCount;
+
+      public static readonly Field AdGroupCriteriaCount = Fields.AdGroupCriteriaCount;
+
+      public static readonly Field AdGroupAdsCount = Fields.AdGroupAdsCount;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ExperimentSummaryStats' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -20173,6 +30049,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.entriesField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ExperimentPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ExperimentPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ExperimentPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -20210,6 +30132,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ExperimentServiceError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ExperimentServiceError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ExperimentServiceError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -20335,9 +30303,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((FeedPage) (results[0]));
     }
 
@@ -20351,9 +30319,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] FeedOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((FeedReturnValue) (results[0]));
     }
 
@@ -20368,9 +30336,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((FeedPage) (results[0]));
     }
   }
@@ -20395,6 +30363,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -20565,6 +30579,84 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.systemFeedGenerationDataField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Feed' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Id = new Field("Id", true, true);
+
+      public static readonly Field Name = new Field("Name", true, true);
+
+      public static readonly Field Attributes = new Field("Attributes", false, true);
+
+      public static readonly Field FeedStatus = new Field("FeedStatus", true, true);
+
+      public static readonly Field Origin = new Field("Origin", true, true);
+
+      public static readonly Field SystemFeedGenerationData = new Field("SystemFeedGenerationData", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Feed' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Attributes = Fields.Attributes;
+
+      public static readonly Field FeedStatus = Fields.FeedStatus;
+
+      public static readonly Field Origin = Fields.Origin;
+
+      public static readonly Field SystemFeedGenerationData = Fields.SystemFeedGenerationData;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Feed' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field FeedStatus = Fields.FeedStatus;
+
+      public static readonly Field Origin = Fields.Origin;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -20687,6 +30779,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.isPartOfKeyFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FeedAttribute' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedAttribute' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedAttribute' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -20787,6 +30925,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.systemFeedGenerationDataTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='SystemFeedGenerationData' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SystemFeedGenerationData' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SystemFeedGenerationData' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -20879,6 +31063,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.categoryFiltersField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='PlacesLocationFeedData' /> class.
+    /// </summary>
+    public new class Fields : SystemFeedGenerationData.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PlacesLocationFeedData' />
+    /// class. </summary>
+    public new class SelectableFields : SystemFeedGenerationData.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PlacesLocationFeedData' />
+    /// class. </summary>
+    public new class FilterableFields : SystemFeedGenerationData.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -20930,6 +31160,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.httpAuthorizationHeaderField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='OAuthInfo' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='OAuthInfo' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='OAuthInfo' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -20954,6 +31230,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FeedOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -20976,6 +31298,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedPage' /> class.
+    /// </summary>
+    public new class Fields : NullStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedPage' />
+    /// class. </summary>
+    public new class SelectableFields : NullStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedPage' />
+    /// class. </summary>
+    public new class FilterableFields : NullStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -21015,6 +31383,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -21138,9 +31552,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupFeedPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((AdGroupFeedPage) (results[0]));
     }
 
@@ -21154,9 +31568,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupFeedReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupFeedOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((AdGroupFeedReturnValue) (results[0]));
     }
 
@@ -21171,9 +31585,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupFeedPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((AdGroupFeedPage) (results[0]));
     }
   }
@@ -21210,6 +31624,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.partialFailureErrorsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupFeedReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupFeedReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupFeedReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -21359,6 +31819,80 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.statusFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupFeed' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field FeedId = new Field("FeedId", true, true);
+
+      public static readonly Field AdGroupId = new Field("AdGroupId", true, true);
+
+      public static readonly Field MatchingFunction = new Field("MatchingFunction", false, true);
+
+      public static readonly Field PlaceholderTypes = new Field("PlaceholderTypes", true, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupFeed' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field MatchingFunction = Fields.MatchingFunction;
+
+      public static readonly Field PlaceholderTypes = Fields.PlaceholderTypes;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupFeed' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field PlaceholderTypes = Fields.PlaceholderTypes;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -21416,6 +31950,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupFeedError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupFeedError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupFeedError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -21478,6 +32058,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupFeedOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupFeedOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupFeedOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -21501,6 +32127,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupFeedPage' /> class.
+    /// </summary>
+    public new class Fields : NullStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupFeedPage' />
+    /// class. </summary>
+    public new class SelectableFields : NullStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupFeedPage' />
+    /// class. </summary>
+    public new class FilterableFields : NullStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -21564,9 +32236,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedItemPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((FeedItemPage) (results[0]));
     }
 
@@ -21580,9 +32252,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedItemReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] FeedItemOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((FeedItemReturnValue) (results[0]));
     }
 
@@ -21597,9 +32269,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedItemPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((FeedItemPage) (results[0]));
     }
   }
@@ -21638,6 +32310,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.partialFailureErrorsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedItemReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedItemReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedItemReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -21937,6 +32655,100 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.urlCustomParametersField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FeedItem' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field FeedId = new Field("FeedId", true, true);
+
+      public static readonly Field FeedItemId = new Field("FeedItemId", true, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static readonly Field StartTime = new Field("StartTime", false, true);
+
+      public static readonly Field EndTime = new Field("EndTime", false, true);
+
+      public static readonly Field AttributeValues = new Field("AttributeValues", false, true);
+
+      public static readonly Field PolicyData = new Field("PolicyData", false, true);
+
+      public static readonly Field DevicePreference = new Field("DevicePreference", true, true);
+
+      public static readonly Field Scheduling = new Field("Scheduling", false, true);
+
+      public static readonly Field UrlCustomParameters = new Field("UrlCustomParameters", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedItem' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field FeedItemId = Fields.FeedItemId;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field StartTime = Fields.StartTime;
+
+      public static readonly Field EndTime = Fields.EndTime;
+
+      public static readonly Field AttributeValues = Fields.AttributeValues;
+
+      public static readonly Field PolicyData = Fields.PolicyData;
+
+      public static readonly Field DevicePreference = Fields.DevicePreference;
+
+      public static readonly Field Scheduling = Fields.Scheduling;
+
+      public static readonly Field UrlCustomParameters = Fields.UrlCustomParameters;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedItem' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field FeedItemId = Fields.FeedItemId;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field DevicePreference = Fields.DevicePreference;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -22171,6 +32983,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.stringValuesField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FeedItemAttributeValue' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedItemAttributeValue' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedItemAttributeValue' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -22313,6 +33171,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.validationErrorsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FeedItemPolicyData' /> class.
+    /// </summary>
+    public new class Fields : PolicyData.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedItemPolicyData' />
+    /// class. </summary>
+    public new class SelectableFields : PolicyData.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedItemPolicyData' />
+    /// class. </summary>
+    public new class FilterableFields : PolicyData.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -22418,6 +33322,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.errorInformationField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FeedItemAttributeError' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedItemAttributeError' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedItemAttributeError' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -22459,6 +33409,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.policyDataTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='PolicyData' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PolicyData' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PolicyData' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -22481,6 +33477,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.shortNameField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='DisapprovalReason' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DisapprovalReason' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DisapprovalReason' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -22523,6 +33565,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.devicePreferenceFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedItemDevicePreference' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedItemDevicePreference' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedItemDevicePreference' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -22692,6 +33780,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.endMinuteFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FeedItemSchedule' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedItemSchedule' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedItemSchedule' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -22790,6 +33924,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.targetingCampaignIdFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FeedItemCampaignTargeting' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field TargetingCampaignId = new Field("TargetingCampaignId", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedItemCampaignTargeting' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field TargetingCampaignId = Fields.TargetingCampaignId;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedItemCampaignTargeting' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field TargetingCampaignId = Fields.TargetingCampaignId;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -22835,6 +34021,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.targetingAdGroupIdFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedItemAdGroupTargeting' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field TargetingAdGroupId = new Field("TargetingAdGroupId", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedItemAdGroupTargeting' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field TargetingAdGroupId = Fields.TargetingAdGroupId;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedItemAdGroupTargeting' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field TargetingAdGroupId = Fields.TargetingAdGroupId;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -22930,6 +34168,86 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.parentLocationsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Location' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field LocationName = new Field("LocationName", true, true);
+
+      public static readonly Field DisplayType = new Field("DisplayType", false, true);
+
+      public static readonly Field TargetingStatus = new Field("TargetingStatus", false, true);
+
+      public static readonly Field ParentLocations = new Field("ParentLocations", false, true);
+
+      public static readonly Field GeoTargetingLocationName = new Field("GeoTargetingLocationName", false, true);
+
+      public static readonly Field GeoTargetingDisplayType = new Field("GeoTargetingDisplayType", false, true);
+
+      public static readonly Field GeoTargetingStatus = new Field("GeoTargetingStatus", false, true);
+
+      public static readonly Field GeoTargetingParentLocations = new Field("GeoTargetingParentLocations", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Location' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field LocationName = Fields.LocationName;
+
+      public static readonly Field DisplayType = Fields.DisplayType;
+
+      public static readonly Field TargetingStatus = Fields.TargetingStatus;
+
+      public static readonly Field ParentLocations = Fields.ParentLocations;
+
+      public static readonly Field GeoTargetingLocationName = Fields.GeoTargetingLocationName;
+
+      public static readonly Field GeoTargetingDisplayType = Fields.GeoTargetingDisplayType;
+
+      public static readonly Field GeoTargetingStatus = Fields.GeoTargetingStatus;
+
+      public static readonly Field GeoTargetingParentLocations = Fields.GeoTargetingParentLocations;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Location' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field LocationName = Fields.LocationName;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -23066,6 +34384,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FeedItemOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedItemOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedItemOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -23089,6 +34453,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedItemPage' /> class.
+    /// </summary>
+    public new class Fields : NullStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedItemPage' />
+    /// class. </summary>
+    public new class SelectableFields : NullStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedItemPage' />
+    /// class. </summary>
+    public new class FilterableFields : NullStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -23150,9 +34560,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedMappingPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((FeedMappingPage) (results[0]));
     }
 
@@ -23167,9 +34577,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedMappingReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] FeedMappingOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((FeedMappingReturnValue) (results[0]));
     }
 
@@ -23184,9 +34594,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedMappingPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((FeedMappingPage) (results[0]));
     }
   }
@@ -23212,6 +34622,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedMappingReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedMappingReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedMappingReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -23252,9 +34708,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     private bool criterionTypeFieldSpecified;
 
-    /// <summary>Id of this FeedMapping. &lt;span class="constraint Required"&gt; This field is
-    /// required and should not be <code>null</code> when it is contained within <a
-    /// href='Operator'>Operator</a>s : REMOVE.&lt;/span&gt; <span class="constraint
+    /// <summary>ID of this FeedMapping. <span class="constraint Required">This field is required
+    /// and should not be <code>null</code> when it is contained within <a
+    /// href='Operator'>Operator</a>s : REMOVE.</span> <span class="constraint
     /// Selectable">This field can be selected using the value
     /// "FeedMappingId".</span><span class="constraint Filterable">This field can be
     /// filtered on.</span>
@@ -23282,7 +34738,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>Id of the Feed that is mapped by this mapping. <span class="constraint
+    /// <summary>ID of the Feed that is mapped by this mapping. <span class="constraint
     /// Selectable">This field can be selected using the value "FeedId".</span><span
     /// class="constraint Filterable">This field can be filtered on.</span> <span
     /// class="constraint Required">This field is required and should not be
@@ -23367,11 +34823,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>The list of feed attributes to placeholder fields mappings. &lt;span
-    /// class="constraint Required"&gt; This field is required and should not be
+    /// <summary>The list of feed attributes to placeholder fields mappings. <span
+    /// class="constraint Required">This field is required and should not be
     /// <code>null</code> when it is contained within <a href='Operator'>Operator</a>s :
-    /// ADD.&lt;/span&gt; <span class="constraint Selectable">This field can be selected
-    /// using the value "AttributeFieldMappings".</span>
+    /// ADD.</span> <span class="constraint Selectable">This field can be selected using
+    /// the value "AttributeFieldMappings".</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("attributeFieldMappings")]
     public AttributeFieldMapping[] attributeFieldMappings {
@@ -23407,6 +34863,84 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.criterionTypeFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedMapping' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field FeedMappingId = new Field("FeedMappingId", true, true);
+
+      public static readonly Field FeedId = new Field("FeedId", true, true);
+
+      public static readonly Field PlaceholderType = new Field("PlaceholderType", true, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static readonly Field AttributeFieldMappings = new Field("AttributeFieldMappings", false, true);
+
+      public static readonly Field CriterionType = new Field("CriterionType", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedMapping' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field FeedMappingId = Fields.FeedMappingId;
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field PlaceholderType = Fields.PlaceholderType;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field AttributeFieldMappings = Fields.AttributeFieldMappings;
+
+      public static readonly Field CriterionType = Fields.CriterionType;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedMapping' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field FeedMappingId = Fields.FeedMappingId;
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field PlaceholderType = Fields.PlaceholderType;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -23500,6 +35034,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.fieldIdFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AttributeFieldMapping' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AttributeFieldMapping' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AttributeFieldMapping' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -23525,6 +35105,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='FeedMappingOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedMappingOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedMappingOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -23548,6 +35174,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedMappingPage' /> class.
+    /// </summary>
+    public new class Fields : NullStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedMappingPage' />
+    /// class. </summary>
+    public new class SelectableFields : NullStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedMappingPage' />
+    /// class. </summary>
+    public new class FilterableFields : NullStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -23587,6 +35259,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='FeedMappingError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='FeedMappingError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='FeedMappingError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -23701,9 +35419,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual GeoLocation[] get(GeoLocationSelector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((GeoLocation[]) (results[0]));
     }
   }
@@ -23776,6 +35494,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.longitudeInMicroDegreesFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='GeoPoint' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='GeoPoint' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='GeoPoint' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -23844,6 +35608,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.geoLocationTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='GeoLocation' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='GeoLocation' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='GeoLocation' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -23953,6 +35763,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.countryCodeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Address' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Address' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Address' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -23992,6 +35848,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.addressesField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='GeoLocationSelector' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='GeoLocationSelector' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='GeoLocationSelector' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -24029,6 +35931,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='GeoLocationError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='GeoLocationError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='GeoLocationError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -24102,9 +36050,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual LocationCriterion[] get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((LocationCriterion[]) (results[0]));
     }
 
@@ -24120,9 +36068,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual LocationCriterion[] query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((LocationCriterion[]) (results[0]));
     }
   }
@@ -24247,6 +36195,72 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.countryCodeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='LocationCriterion' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field CanonicalName = new Field("CanonicalName", false, true);
+
+      public static readonly Field Reach = new Field("Reach", false, true);
+
+      public static readonly Field Locale = new Field("Locale", true, false);
+
+      public static readonly Field CountryCode = new Field("CountryCode", true, false);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LocationCriterion' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field CanonicalName = Fields.CanonicalName;
+
+      public static readonly Field Reach = Fields.Reach;
+
+      public static readonly Field Locale = Fields.Locale;
+
+      public static readonly Field CountryCode = Fields.CountryCode;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LocationCriterion' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Locale = Fields.Locale;
+
+      public static readonly Field CountryCode = Fields.CountryCode;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -24361,9 +36375,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ManagedCustomerPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((ManagedCustomerPage) (results[0]));
     }
 
@@ -24378,9 +36392,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual PendingInvitation[] getPendingInvitations(PendingInvitationSelector selector) {
       object[] results = this.Invoke("getPendingInvitations", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((PendingInvitation[]) (results[0]));
     }
 
@@ -24396,9 +36410,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ManagedCustomerReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] ManagedCustomerOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((ManagedCustomerReturnValue) (results[0]));
     }
 
@@ -24425,9 +36439,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlArrayItemAttribute("value", IsNullable = false)]
     public virtual ManagedCustomerLabel[] mutateLabel([System.Xml.Serialization.XmlElementAttribute("operations")] ManagedCustomerLabelOperation[] operations) {
       object[] results = this.Invoke("mutateLabel", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((ManagedCustomerLabel[]) (results[0]));
     }
 
@@ -24452,9 +36466,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlArrayItemAttribute("links", IsNullable = false)]
     public virtual ManagedCustomerLink[] mutateLink([System.Xml.Serialization.XmlElementAttribute("operations")] LinkOperation[] operations) {
       object[] results = this.Invoke("mutateLink", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((ManagedCustomerLink[]) (results[0]));
     }
 
@@ -24472,9 +36486,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlArrayItemAttribute("links", IsNullable = false)]
     public virtual ManagedCustomerLink[] mutateManager([System.Xml.Serialization.XmlElementAttribute("operations")] MoveOperation[] operations) {
       object[] results = this.Invoke("mutateManager", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((ManagedCustomerLink[]) (results[0]));
     }
   }
@@ -24499,6 +36513,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ManagedCustomerReturnValue' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManagedCustomerReturnValue' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManagedCustomerReturnValue' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -24741,6 +36801,104 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.excludeHiddenAccountsFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ManagedCustomer' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Name = new Field("Name", true, true);
+
+      public static readonly Field CompanyName = new Field("CompanyName", true, true);
+
+      public static readonly Field CustomerId = new Field("CustomerId", true, true);
+
+      public static readonly Field CanManageClients = new Field("CanManageClients", true, true);
+
+      public static readonly Field CurrencyCode = new Field("CurrencyCode", true, true);
+
+      public static readonly Field DateTimeZone = new Field("DateTimeZone", true, true);
+
+      public static readonly Field TestAccount = new Field("TestAccount", false, true);
+
+      public static readonly Field AccountLabels = new Field("AccountLabels", true, true);
+
+      public static readonly Field ExcludeHiddenAccounts = new Field("ExcludeHiddenAccounts", true, false);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManagedCustomer' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field CompanyName = Fields.CompanyName;
+
+      public static readonly Field CustomerId = Fields.CustomerId;
+
+      public static readonly Field CanManageClients = Fields.CanManageClients;
+
+      public static readonly Field CurrencyCode = Fields.CurrencyCode;
+
+      public static readonly Field DateTimeZone = Fields.DateTimeZone;
+
+      public static readonly Field TestAccount = Fields.TestAccount;
+
+      public static readonly Field AccountLabels = Fields.AccountLabels;
+
+      public static readonly Field ExcludeHiddenAccounts = Fields.ExcludeHiddenAccounts;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManagedCustomer' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field CompanyName = Fields.CompanyName;
+
+      public static readonly Field CustomerId = Fields.CustomerId;
+
+      public static readonly Field CanManageClients = Fields.CanManageClients;
+
+      public static readonly Field CurrencyCode = Fields.CurrencyCode;
+
+      public static readonly Field DateTimeZone = Fields.DateTimeZone;
+
+      public static readonly Field AccountLabels = Fields.AccountLabels;
+
+      public static readonly Field ExcludeHiddenAccounts = Fields.ExcludeHiddenAccounts;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -24809,6 +36967,62 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.nameField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AccountLabel' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field LabelId = new Field("LabelId", true, true);
+
+      public static readonly Field LabelName = new Field("LabelName", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AccountLabel' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field LabelId = Fields.LabelId;
+
+      public static readonly Field LabelName = Fields.LabelName;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AccountLabel' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field LabelId = Fields.LabelId;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -24885,6 +37099,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.customerIdFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ManagedCustomerLabel' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManagedCustomerLabel' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManagedCustomerLabel' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -24908,6 +37168,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ManagedCustomerOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManagedCustomerOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManagedCustomerOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -24959,6 +37265,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.oldManagerCustomerIdFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='MoveOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='MoveOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='MoveOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -25104,6 +37456,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.isHiddenFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ManagedCustomerLink' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManagedCustomerLink' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManagedCustomerLink' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -25154,6 +37552,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='LinkOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LinkOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LinkOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -25177,6 +37621,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ManagedCustomerLabelOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManagedCustomerLabelOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManagedCustomerLabelOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -25271,6 +37761,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.clientCustomerIdsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='PendingInvitationSelector' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PendingInvitationSelector' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PendingInvitationSelector' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -25307,6 +37843,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.linksField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ManagedCustomerPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManagedCustomerPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManagedCustomerPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -25358,6 +37940,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.customerIdsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ManagedCustomerServiceError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManagedCustomerServiceError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManagedCustomerServiceError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -25479,9 +38107,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual MediaPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((MediaPage) (results[0]));
     }
 
@@ -25496,14 +38124,14 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual MediaPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((MediaPage) (results[0]));
     }
 
-    /// <summary>Uploads new media. Currently, you can only upload <a href='Image'>Image</a>
-    /// files.
+    /// <summary>Uploads new media. Currently, you can upload <a href='Image'>Image</a> files and
+    /// <a href='MediaBundle'>MediaBundle</a>s.
     /// </summary><param name='media'>A list of <code>Media</code> objects, each containing the
     /// data to be uploaded.</param>
     /// <returns>A list of uploaded media in the same order as the argument
@@ -25514,9 +38142,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Media[] upload([System.Xml.Serialization.XmlElementAttribute("media")] Media[] media) {
       object[] results = this.Invoke("upload", new object[]
-				{
-					media
-				});
+        {
+          media
+        });
       return ((Media[]) (results[0]));
     }
   }
@@ -25573,6 +38201,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.totalNumEntriesFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='MediaPage' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='MediaPage' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='MediaPage' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -25610,6 +38284,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='VideoError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='VideoError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='VideoError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -25692,6 +38412,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AudioError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AudioError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AudioError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -25793,9 +38559,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Job[] get(JobSelector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((Job[]) (results[0]));
     }
 
@@ -25811,9 +38577,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual JobResult getResult(JobSelector selector) {
       object[] results = this.Invoke("getResult", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((JobResult) (results[0]));
     }
 
@@ -25831,10 +38597,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SimpleMutateJob mutate([System.Xml.Serialization.XmlElementAttribute("operations")] Operation[] operations, BulkMutateJobPolicy policy) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations,
-					policy
-				});
+        {
+          operations,
+          policy
+        });
       return ((SimpleMutateJob) (results[0]));
     }
   }
@@ -25861,6 +38627,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.prerequisiteJobIdsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='BulkMutateJobPolicy' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BulkMutateJobPolicy' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BulkMutateJobPolicy' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -25906,6 +38718,60 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.videoNameField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='YouTubeVideo' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field VideoId = new Field("VideoId", false, true);
+
+      public static readonly Field VideoName = new Field("VideoName", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='YouTubeVideo' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field VideoId = Fields.VideoId;
+
+      public static readonly Field VideoName = Fields.VideoName;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='YouTubeVideo' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -25947,6 +38813,60 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.channelNameField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='YouTubeChannel' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field ChannelId = new Field("ChannelId", false, true);
+
+      public static readonly Field ChannelName = new Field("ChannelName", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='YouTubeChannel' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field ChannelId = Fields.ChannelId;
+
+      public static readonly Field ChannelName = Fields.ChannelName;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='YouTubeChannel' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -26029,6 +38949,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.criteriaSamplesField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Webpage' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Parameter = new Field("Parameter", false, true);
+
+      public static readonly Field CriteriaCoverage = new Field("CriteriaCoverage", false, true);
+
+      public static readonly Field CriteriaSamples = new Field("CriteriaSamples", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Webpage' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Parameter = Fields.Parameter;
+
+      public static readonly Field CriteriaCoverage = Fields.CriteriaCoverage;
+
+      public static readonly Field CriteriaSamples = Fields.CriteriaSamples;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Webpage' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -26076,6 +39054,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.conditionsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='WebpageParameter' /> class.
+    /// </summary>
+    public new class Fields : CriterionParameter.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='WebpageParameter' />
+    /// class. </summary>
+    public new class SelectableFields : CriterionParameter.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='WebpageParameter' />
+    /// class. </summary>
+    public new class FilterableFields : CriterionParameter.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -26140,6 +39164,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.argumentField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='WebpageCondition' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='WebpageCondition' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='WebpageCondition' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -26199,6 +39269,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.criterionParameterTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CriterionParameter' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CriterionParameter' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CriterionParameter' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -26278,6 +39394,60 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.matchingFunctionField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='LocationGroups' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field FeedId = new Field("FeedId", false, true);
+
+      public static readonly Field MatchingFunction = new Field("MatchingFunction", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LocationGroups' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field MatchingFunction = Fields.MatchingFunction;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LocationGroups' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -26316,6 +39486,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.categoryFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='PlacesOfInterestOperand' /> class.
+    /// </summary>
+    public new class Fields : FunctionArgumentOperand.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PlacesOfInterestOperand' />
+    /// class. </summary>
+    public new class SelectableFields : FunctionArgumentOperand.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PlacesOfInterestOperand' />
+    /// class. </summary>
+    public new class FilterableFields : FunctionArgumentOperand.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -26389,6 +39605,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.locationIdFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='LocationExtensionOperand' /> class.
+    /// </summary>
+    public new class Fields : FunctionArgumentOperand.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LocationExtensionOperand' />
+    /// class. </summary>
+    public new class SelectableFields : FunctionArgumentOperand.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LocationExtensionOperand' />
+    /// class. </summary>
+    public new class FilterableFields : FunctionArgumentOperand.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -26428,6 +39690,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.tierFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='IncomeOperand' /> class.
+    /// </summary>
+    public new class Fields : FunctionArgumentOperand.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='IncomeOperand' />
+    /// class. </summary>
+    public new class SelectableFields : FunctionArgumentOperand.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='IncomeOperand' />
+    /// class. </summary>
+    public new class FilterableFields : FunctionArgumentOperand.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -26477,6 +39785,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.locationsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='GeoTargetOperand' /> class.
+    /// </summary>
+    public new class Fields : FunctionArgumentOperand.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='GeoTargetOperand' />
+    /// class. </summary>
+    public new class SelectableFields : FunctionArgumentOperand.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='GeoTargetOperand' />
+    /// class. </summary>
+    public new class FilterableFields : FunctionArgumentOperand.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -26588,6 +39942,68 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.addressField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Proximity' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field GeoPoint = new Field("GeoPoint", false, true);
+
+      public static readonly Field RadiusDistanceUnits = new Field("RadiusDistanceUnits", false, true);
+
+      public static readonly Field RadiusInUnits = new Field("RadiusInUnits", false, true);
+
+      public static readonly Field Address = new Field("Address", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Proximity' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field GeoPoint = Fields.GeoPoint;
+
+      public static readonly Field RadiusDistanceUnits = Fields.RadiusDistanceUnits;
+
+      public static readonly Field RadiusInUnits = Fields.RadiusInUnits;
+
+      public static readonly Field Address = Fields.Address;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Proximity' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -26639,6 +40055,56 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.dimensionsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ProductScope' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Dimensions = new Field("Dimensions", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductScope' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Dimensions = Fields.Dimensions;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductScope' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -26743,6 +40209,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.caseValueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ProductPartition' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field PartitionType = new Field("PartitionType", false, true);
+
+      public static readonly Field ParentCriterionId = new Field("ParentCriterionId", false, true);
+
+      public static readonly Field CaseValue = new Field("CaseValue", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductPartition' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field PartitionType = Fields.PartitionType;
+
+      public static readonly Field ParentCriterionId = Fields.ParentCriterionId;
+
+      public static readonly Field CaseValue = Fields.CaseValue;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductPartition' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -26790,6 +40314,56 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.platformNameField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Platform' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field PlatformName = new Field("PlatformName", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Platform' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field PlatformName = Fields.PlatformName;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Platform' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -26819,6 +40393,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.ipAddressField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='IpBlock' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='IpBlock' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='IpBlock' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -26838,10 +40458,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>Content label type <span class="constraint Selectable">This field can be
     /// selected using the value "ContentLabelType".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span> <span class="constraint
-    /// CampaignType">This field may not be set for campaign channel subtype
-    /// DISPLAY_MOBILE_APP.</span> <span class="constraint Required">This field is
-    /// required and should not be <code>null</code> when it is contained within <a
-    /// href='Operator'>Operator</a>s : ADD.</span>
+    /// Required">This field is required and should not be <code>null</code> when it is
+    /// contained within <a href='Operator'>Operator</a>s : ADD.</span>
     /// </summary>
     public ContentLabelType contentLabelType {
       get {
@@ -26863,6 +40481,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.contentLabelTypeFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ContentLabel' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field ContentLabelType = new Field("ContentLabelType", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ContentLabel' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field ContentLabelType = Fields.ContentLabelType;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ContentLabel' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field ContentLabelType = Fields.ContentLabelType;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -26991,6 +40661,56 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.appPaymentModelTypeFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AppPaymentModel' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field AppPaymentModelType = new Field("AppPaymentModelType", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AppPaymentModel' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field AppPaymentModelType = Fields.AppPaymentModelType;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AppPaymentModel' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -27200,6 +40920,72 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.endMinuteFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdSchedule' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field DayOfWeek = new Field("DayOfWeek", false, true);
+
+      public static readonly Field StartHour = new Field("StartHour", false, true);
+
+      public static readonly Field StartMinute = new Field("StartMinute", false, true);
+
+      public static readonly Field EndHour = new Field("EndHour", false, true);
+
+      public static readonly Field EndMinute = new Field("EndMinute", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdSchedule' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field DayOfWeek = Fields.DayOfWeek;
+
+      public static readonly Field StartHour = Fields.StartHour;
+
+      public static readonly Field StartMinute = Fields.StartMinute;
+
+      public static readonly Field EndHour = Fields.EndHour;
+
+      public static readonly Field EndMinute = Fields.EndMinute;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdSchedule' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -27223,6 +41009,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.detailsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='TargetingSetting' /> class.
+    /// </summary>
+    public new class Fields : Setting.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TargetingSetting' />
+    /// class. </summary>
+    public new class SelectableFields : Setting.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TargetingSetting' />
+    /// class. </summary>
+    public new class FilterableFields : Setting.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -27295,6 +41127,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.targetAllFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='TargetingSettingDetail' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TargetingSettingDetail' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TargetingSettingDetail' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -27399,6 +41277,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignCriterionOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignCriterionOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignCriterionOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -27562,6 +41486,70 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.campaignCriterionTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignCriterion' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field CampaignId = new Field("CampaignId", true, true);
+
+      public static readonly Field IsNegative = new Field("IsNegative", true, true);
+
+      public static readonly Field BidModifier = new Field("BidModifier", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignCriterion' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field IsNegative = Fields.IsNegative;
+
+      public static readonly Field BidModifier = Fields.BidModifier;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignCriterion' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field IsNegative = Fields.IsNegative;
+
+      public static readonly Field BidModifier = Fields.BidModifier;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -27596,6 +41584,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignAdExtensionOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignAdExtensionOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignAdExtensionOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -27714,6 +41748,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.approvalStatusFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignAdExtension' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignAdExtension' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignAdExtension' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -27774,6 +41854,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.adExtensionTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdExtension' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdExtension' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdExtension' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -27872,6 +41998,56 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.shouldSyncUrlFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='LocationSyncExtension' /> class.
+    /// </summary>
+    public new class Fields : AdExtension.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field IconMediaId = new Field("IconMediaId", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LocationSyncExtension' />
+    /// class. </summary>
+    public new class SelectableFields : AdExtension.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field IconMediaId = Fields.IconMediaId;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LocationSyncExtension' />
+    /// class. </summary>
+    public new class FilterableFields : AdExtension.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -28047,6 +42223,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.imageMediaIdFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='LocationExtension' /> class.
+    /// </summary>
+    public new class Fields : AdExtension.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LocationExtension' />
+    /// class. </summary>
+    public new class SelectableFields : AdExtension.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LocationExtension' />
+    /// class. </summary>
+    public new class FilterableFields : AdExtension.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -28117,6 +42339,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BudgetOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BudgetOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BudgetOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -28139,6 +42407,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -28445,6 +42759,108 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.urlCustomParametersField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroup' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Id = new Field("Id", true, true);
+
+      public static readonly Field CampaignId = new Field("CampaignId", true, true);
+
+      public static readonly Field CampaignName = new Field("CampaignName", true, true);
+
+      public static readonly Field Name = new Field("Name", true, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static readonly Field Settings = new Field("Settings", false, true);
+
+      public static readonly Field Labels = new Field("Labels", true, true);
+
+      public static readonly Field ContentBidCriterionTypeGroup = new Field("ContentBidCriterionTypeGroup", true, true);
+
+      public static readonly Field TrackingUrlTemplate = new Field("TrackingUrlTemplate", true, true);
+
+      public static readonly Field UrlCustomParameters = new Field("UrlCustomParameters", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroup' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field CampaignName = Fields.CampaignName;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field Settings = Fields.Settings;
+
+      public static readonly Field Labels = Fields.Labels;
+
+      public static readonly Field ContentBidCriterionTypeGroup = Fields.ContentBidCriterionTypeGroup;
+
+      public static readonly Field TrackingUrlTemplate = Fields.TrackingUrlTemplate;
+
+      public static readonly Field UrlCustomParameters = Fields.UrlCustomParameters;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroup' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field CampaignName = Fields.CampaignName;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field Labels = Fields.Labels;
+
+      public static readonly Field ContentBidCriterionTypeGroup = Fields.ContentBidCriterionTypeGroup;
+
+      public static readonly Field TrackingUrlTemplate = Fields.TrackingUrlTemplate;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -28592,6 +43008,66 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.experimentBidMultipliersField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupExperimentData' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field ExperimentId = new Field("ExperimentId", true, true);
+
+      public static readonly Field ExperimentDeltaStatus = new Field("ExperimentDeltaStatus", false, true);
+
+      public static readonly Field ExperimentDataStatus = new Field("ExperimentDataStatus", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupExperimentData' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field ExperimentId = Fields.ExperimentId;
+
+      public static readonly Field ExperimentDeltaStatus = Fields.ExperimentDeltaStatus;
+
+      public static readonly Field ExperimentDataStatus = Fields.ExperimentDataStatus;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupExperimentData' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field ExperimentId = Fields.ExperimentId;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -28621,6 +43097,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.adGroupExperimentBidMultipliersTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupExperimentBidMultipliers' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupExperimentBidMultipliers' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupExperimentBidMultipliers' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -28645,6 +43167,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.maxCpmMultiplierField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ManualCPMAdGroupExperimentBidMultipliers' /> class.
+    /// </summary>
+    public new class Fields : AdGroupExperimentBidMultipliers.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field MaxCpmMultiplier = new Field("MaxCpmMultiplier", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManualCPMAdGroupExperimentBidMultipliers' />
+    /// class. </summary>
+    public new class SelectableFields : AdGroupExperimentBidMultipliers.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field MaxCpmMultiplier = Fields.MaxCpmMultiplier;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManualCPMAdGroupExperimentBidMultipliers' />
+    /// class. </summary>
+    public new class FilterableFields : AdGroupExperimentBidMultipliers.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field MaxCpmMultiplier = Fields.MaxCpmMultiplier;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -28703,6 +43277,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.multipliedBidField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BidMultiplier' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BidMultiplier' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BidMultiplier' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -28724,6 +43344,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.amountField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Bid' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Bid' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Bid' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -28767,6 +43433,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.maxContentCpcMultiplierField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ManualCPCAdGroupExperimentBidMultipliers' /> class.
+    /// </summary>
+    public new class Fields : AdGroupExperimentBidMultipliers.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field MaxCpcMultiplier = new Field("MaxCpcMultiplier", true, true);
+
+      public static readonly Field MaxContentCpcMultiplier = new Field("MaxContentCpcMultiplier", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManualCPCAdGroupExperimentBidMultipliers' />
+    /// class. </summary>
+    public new class SelectableFields : AdGroupExperimentBidMultipliers.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field MaxCpcMultiplier = Fields.MaxCpcMultiplier;
+
+      public static readonly Field MaxContentCpcMultiplier = Fields.MaxContentCpcMultiplier;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManualCPCAdGroupExperimentBidMultipliers' />
+    /// class. </summary>
+    public new class FilterableFields : AdGroupExperimentBidMultipliers.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field MaxCpcMultiplier = Fields.MaxCpcMultiplier;
+
+      public static readonly Field MaxContentCpcMultiplier = Fields.MaxContentCpcMultiplier;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -28789,6 +43513,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupLabelOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupLabelOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupLabelOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -28864,6 +43634,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.labelIdFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupLabel' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupLabel' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupLabel' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -28902,6 +43718,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.exemptionRequestsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupCriterionOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupCriterionOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupCriterionOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -29054,6 +43916,70 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.adGroupCriterionTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupCriterion' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field AdGroupId = new Field("AdGroupId", true, true);
+
+      public static readonly Field CriterionUse = new Field("CriterionUse", true, true);
+
+      public static readonly Field Labels = new Field("Labels", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupCriterion' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field CriterionUse = Fields.CriterionUse;
+
+      public static readonly Field Labels = Fields.Labels;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupCriterion' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field CriterionUse = Fields.CriterionUse;
+
+      public static readonly Field Labels = Fields.Labels;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -29421,6 +44347,128 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.urlCustomParametersField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BiddableAdGroupCriterion' /> class.
+    /// </summary>
+    public new class Fields : AdGroupCriterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static readonly Field SystemServingStatus = new Field("SystemServingStatus", true, true);
+
+      public static readonly Field ApprovalStatus = new Field("ApprovalStatus", true, true);
+
+      public static readonly Field DisapprovalReasons = new Field("DisapprovalReasons", false, true);
+
+      public static readonly Field DestinationUrl = new Field("DestinationUrl", true, true);
+
+      public static readonly Field FirstPageCpc = new Field("FirstPageCpc", true, true);
+
+      public static readonly Field TopOfPageCpc = new Field("TopOfPageCpc", true, true);
+
+      public static readonly Field BidModifier = new Field("BidModifier", true, true);
+
+      public static readonly Field FinalUrls = new Field("FinalUrls", true, true);
+
+      public static readonly Field FinalMobileUrls = new Field("FinalMobileUrls", true, true);
+
+      public static readonly Field FinalAppUrls = new Field("FinalAppUrls", true, true);
+
+      public static readonly Field TrackingUrlTemplate = new Field("TrackingUrlTemplate", true, true);
+
+      public static readonly Field UrlCustomParameters = new Field("UrlCustomParameters", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BiddableAdGroupCriterion' />
+    /// class. </summary>
+    public new class SelectableFields : AdGroupCriterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field SystemServingStatus = Fields.SystemServingStatus;
+
+      public static readonly Field ApprovalStatus = Fields.ApprovalStatus;
+
+      public static readonly Field DisapprovalReasons = Fields.DisapprovalReasons;
+
+      public static readonly Field DestinationUrl = Fields.DestinationUrl;
+
+      public static readonly Field FirstPageCpc = Fields.FirstPageCpc;
+
+      public static readonly Field TopOfPageCpc = Fields.TopOfPageCpc;
+
+      public static readonly Field BidModifier = Fields.BidModifier;
+
+      public static readonly Field FinalUrls = Fields.FinalUrls;
+
+      public static readonly Field FinalMobileUrls = Fields.FinalMobileUrls;
+
+      public static readonly Field FinalAppUrls = Fields.FinalAppUrls;
+
+      public static readonly Field TrackingUrlTemplate = Fields.TrackingUrlTemplate;
+
+      public static readonly Field UrlCustomParameters = Fields.UrlCustomParameters;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BiddableAdGroupCriterion' />
+    /// class. </summary>
+    public new class FilterableFields : AdGroupCriterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field SystemServingStatus = Fields.SystemServingStatus;
+
+      public static readonly Field ApprovalStatus = Fields.ApprovalStatus;
+
+      public static readonly Field DestinationUrl = Fields.DestinationUrl;
+
+      public static readonly Field FirstPageCpc = Fields.FirstPageCpc;
+
+      public static readonly Field TopOfPageCpc = Fields.TopOfPageCpc;
+
+      public static readonly Field BidModifier = Fields.BidModifier;
+
+      public static readonly Field FinalUrls = Fields.FinalUrls;
+
+      public static readonly Field FinalMobileUrls = Fields.FinalMobileUrls;
+
+      public static readonly Field FinalAppUrls = Fields.FinalAppUrls;
+
+      public static readonly Field TrackingUrlTemplate = Fields.TrackingUrlTemplate;
+
+      public static readonly Field UrlCustomParameters = Fields.UrlCustomParameters;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -29603,6 +44651,74 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.experimentBidMultiplierField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BiddableAdGroupCriterionExperimentData' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field ExperimentId = new Field("ExperimentId", true, true);
+
+      public static readonly Field ExperimentDeltaStatus = new Field("ExperimentDeltaStatus", true, true);
+
+      public static readonly Field ExperimentDataStatus = new Field("ExperimentDataStatus", false, true);
+
+      public static readonly Field ExperimentBidMultiplier = new Field("ExperimentBidMultiplier", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BiddableAdGroupCriterionExperimentData' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field ExperimentId = Fields.ExperimentId;
+
+      public static readonly Field ExperimentDeltaStatus = Fields.ExperimentDeltaStatus;
+
+      public static readonly Field ExperimentDataStatus = Fields.ExperimentDataStatus;
+
+      public static readonly Field ExperimentBidMultiplier = Fields.ExperimentBidMultiplier;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BiddableAdGroupCriterionExperimentData' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field ExperimentId = Fields.ExperimentId;
+
+      public static readonly Field ExperimentDeltaStatus = Fields.ExperimentDeltaStatus;
+
+      public static readonly Field ExperimentBidMultiplier = Fields.ExperimentBidMultiplier;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -29630,6 +44746,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.adGroupCriterionExperimentBidMultiplierTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupCriterionExperimentBidMultiplier' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupCriterionExperimentBidMultiplier' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupCriterionExperimentBidMultiplier' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -29688,6 +44850,62 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.multiplierSourceFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ManualCPCAdGroupCriterionExperimentBidMultiplier' /> class.
+    /// </summary>
+    public new class Fields : AdGroupCriterionExperimentBidMultiplier.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field MaxCpcMultiplier = new Field("MaxCpcMultiplier", true, true);
+
+      public static readonly Field MultiplierSource = new Field("MultiplierSource", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ManualCPCAdGroupCriterionExperimentBidMultiplier' />
+    /// class. </summary>
+    public new class SelectableFields : AdGroupCriterionExperimentBidMultiplier.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field MaxCpcMultiplier = Fields.MaxCpcMultiplier;
+
+      public static readonly Field MultiplierSource = Fields.MultiplierSource;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ManualCPCAdGroupCriterionExperimentBidMultiplier' />
+    /// class. </summary>
+    public new class FilterableFields : AdGroupCriterionExperimentBidMultiplier.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field MaxCpcMultiplier = Fields.MaxCpcMultiplier;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -29818,6 +45036,70 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.qualityScoreFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='QualityInfo' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field IsKeywordAdRelevanceAcceptable = new Field("IsKeywordAdRelevanceAcceptable", true, true);
+
+      public static readonly Field IsLandingPageQualityAcceptable = new Field("IsLandingPageQualityAcceptable", true, true);
+
+      public static readonly Field QualityScore = new Field("QualityScore", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='QualityInfo' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field IsKeywordAdRelevanceAcceptable = Fields.IsKeywordAdRelevanceAcceptable;
+
+      public static readonly Field IsLandingPageQualityAcceptable = Fields.IsLandingPageQualityAcceptable;
+
+      public static readonly Field QualityScore = Fields.QualityScore;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='QualityInfo' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field IsKeywordAdRelevanceAcceptable = Fields.IsKeywordAdRelevanceAcceptable;
+
+      public static readonly Field IsLandingPageQualityAcceptable = Fields.IsLandingPageQualityAcceptable;
+
+      public static readonly Field QualityScore = Fields.QualityScore;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -29845,6 +45127,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.urlsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='UrlList' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='UrlList' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='UrlList' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -29867,6 +45195,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupCriterionLabelOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupCriterionLabelOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupCriterionLabelOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -29974,6 +45348,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.labelIdFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupCriterionLabel' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupCriterionLabel' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupCriterionLabel' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -29996,6 +45416,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupBidModifierOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupBidModifierOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupBidModifierOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -30158,6 +45624,76 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.bidModifierSourceFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupBidModifier' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field CampaignId = new Field("CampaignId", true, true);
+
+      public static readonly Field AdGroupId = new Field("AdGroupId", true, true);
+
+      public static readonly Field BidModifier = new Field("BidModifier", true, true);
+
+      public static readonly Field BidModifierSource = new Field("BidModifierSource", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupBidModifier' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field BidModifier = Fields.BidModifier;
+
+      public static readonly Field BidModifierSource = Fields.BidModifierSource;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupBidModifier' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field BidModifier = Fields.BidModifier;
+
+      public static readonly Field BidModifierSource = Fields.BidModifierSource;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -30298,6 +45834,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.jobTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Job' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Job' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Job' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -31489,6 +47071,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.jobStatsTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='JobStats' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='JobStats' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='JobStats' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -31558,6 +47186,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.numUnitsFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='BillingSummary' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BillingSummary' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BillingSummary' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -31645,6 +47319,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.historyField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='SimpleMutateJob' /> class.
+    /// </summary>
+    public new class Fields : Job.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SimpleMutateJob' />
+    /// class. </summary>
+    public new class SelectableFields : Job.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SimpleMutateJob' />
+    /// class. </summary>
+    public new class FilterableFields : Job.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -31707,6 +47427,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.jobEventTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='JobEvent' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='JobEvent' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='JobEvent' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -31743,6 +47509,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.errorsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='SimpleMutateResult' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SimpleMutateResult' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SimpleMutateResult' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -31830,6 +47642,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='JobError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='JobError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='JobError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -31958,6 +47816,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignCriterionError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignCriterionError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignCriterionError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -31995,6 +47899,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignAdExtensionError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignAdExtensionError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignAdExtensionError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -32036,6 +47986,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BulkMutateJobError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BulkMutateJobError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BulkMutateJobError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -32073,6 +48069,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupServiceError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupServiceError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupServiceError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -32114,6 +48156,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupCriterionError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupCriterionError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupCriterionError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -32151,6 +48239,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdExtensionError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdExtensionError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdExtensionError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -32264,6 +48398,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.jobSelectorTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='JobSelector' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='JobSelector' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='JobSelector' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -32324,6 +48504,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.resultPartIndexFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='BulkMutateJobSelector' /> class.
+    /// </summary>
+    public new class Fields : JobSelector.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BulkMutateJobSelector' />
+    /// class. </summary>
+    public new class SelectableFields : JobSelector.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BulkMutateJobSelector' />
+    /// class. </summary>
+    public new class FilterableFields : JobSelector.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -32390,9 +48616,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual OfflineConversionFeedReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] OfflineConversionFeedOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((OfflineConversionFeedReturnValue) (results[0]));
     }
   }
@@ -32429,6 +48655,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.partialFailureErrorsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='OfflineConversionFeedReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='OfflineConversionFeedReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='OfflineConversionFeedReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -32557,6 +48829,82 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.conversionCurrencyCodeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='OfflineConversionFeed' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field GoogleClickId = new Field("GoogleClickId", true, true);
+
+      public static readonly Field ConversionName = new Field("ConversionName", true, true);
+
+      public static readonly Field ConversionTime = new Field("ConversionTime", true, true);
+
+      public static readonly Field ConversionValue = new Field("ConversionValue", true, true);
+
+      public static readonly Field ConversionCurrencyCode = new Field("ConversionCurrencyCode", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='OfflineConversionFeed' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field GoogleClickId = Fields.GoogleClickId;
+
+      public static readonly Field ConversionName = Fields.ConversionName;
+
+      public static readonly Field ConversionTime = Fields.ConversionTime;
+
+      public static readonly Field ConversionValue = Fields.ConversionValue;
+
+      public static readonly Field ConversionCurrencyCode = Fields.ConversionCurrencyCode;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='OfflineConversionFeed' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field GoogleClickId = Fields.GoogleClickId;
+
+      public static readonly Field ConversionName = Fields.ConversionName;
+
+      public static readonly Field ConversionTime = Fields.ConversionTime;
+
+      public static readonly Field ConversionValue = Fields.ConversionValue;
+
+      public static readonly Field ConversionCurrencyCode = Fields.ConversionCurrencyCode;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -32681,6 +49029,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CurrencyCodeError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CurrencyCodeError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CurrencyCodeError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -32716,6 +49110,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='OfflineConversionFeedOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='OfflineConversionFeedOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='OfflineConversionFeedOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -32787,9 +49227,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ReportDefinitionField[] getReportFields(ReportDefinitionReportType reportType) {
       object[] results = this.Invoke("getReportFields", new object[]
-				{
-					reportType
-				});
+        {
+          reportType
+        });
       return ((ReportDefinitionField[]) (results[0]));
     }
   }
@@ -32829,6 +49269,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.enumDisplayValueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='EnumValuePair' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='EnumValuePair' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='EnumValuePair' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -33105,6 +49591,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.enumValuePairsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ReportDefinitionField' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ReportDefinitionField' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ReportDefinitionField' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -33232,6 +49764,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='NotWhitelistedError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='NotWhitelistedError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='NotWhitelistedError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -33460,9 +50038,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual TargetingIdeaPage get(TargetingIdeaSelector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((TargetingIdeaPage) (results[0]));
     }
   }
@@ -33499,6 +50077,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.titleField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='WebpageDescriptor' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='WebpageDescriptor' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='WebpageDescriptor' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -33600,6 +50224,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.countFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='MonthlySearchVolume' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='MonthlySearchVolume' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='MonthlySearchVolume' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -33818,6 +50488,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.postRollPercentFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='InStreamAdInfo' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='InStreamAdInfo' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='InStreamAdInfo' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -34135,6 +50851,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.adSizeSpecsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='DisplayAdSpec' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DisplayAdSpec' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DisplayAdSpec' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -34200,6 +50962,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.formatFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdFormatSpec' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdFormatSpec' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdFormatSpec' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -34279,6 +51087,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.attributeTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Attribute' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Attribute' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Attribute' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -34304,6 +51158,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='WebpageDescriptorAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='WebpageDescriptorAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='WebpageDescriptorAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -34325,6 +51225,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='StringAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='StringAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='StringAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -34366,6 +51312,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='PlacementTypeAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PlacementTypeAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PlacementTypeAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -34422,6 +51414,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='PlacementAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PlacementAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PlacementAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -34454,6 +51492,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='MonthlySearchVolumeAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='MonthlySearchVolumeAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='MonthlySearchVolumeAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -34479,6 +51563,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='MoneyAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='MoneyAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='MoneyAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -34502,6 +51632,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='LongRangeAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LongRangeAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LongRangeAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -34543,6 +51719,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='LongAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LongAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LongAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -34566,6 +51788,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='KeywordAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='KeywordAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='KeywordAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -34592,6 +51860,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='IntegerSetAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='IntegerSetAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='IntegerSetAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -34633,6 +51947,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='IntegerAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='IntegerAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='IntegerAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -34656,6 +52016,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='InStreamAdInfoAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='InStreamAdInfoAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='InStreamAdInfoAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -34700,6 +52106,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='IdeaTypeAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='IdeaTypeAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='IdeaTypeAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -34754,6 +52206,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='DoubleAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DoubleAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DoubleAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -34776,6 +52274,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CriterionAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CriterionAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CriterionAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -34817,6 +52361,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BooleanAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BooleanAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BooleanAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -34843,6 +52433,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdSpecListAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdSpecListAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdSpecListAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -34858,9 +52494,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     private AdFormatSpec[] valueField;
 
     /// <summary>A list of <a href='AdFormatSpec'>AdFormatSpec</a>s indicating the type of ad the
-    /// network supports. For example, an ad of type <a
-    /// href='AdFormat#IMAGE'>AdFormat#IMAGE</a>. <span class="constraint Required">This
-    /// field is required and should not be <code>null</code>.</span>
+    /// network supports. For example, an ad of type <code></code>. <span
+    /// class="constraint Required">This field is required and should not be
+    /// <code>null</code>.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("value")]
     public AdFormatSpec[] value {
@@ -34869,6 +52505,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdFormatSpecListAttribute' /> class.
+    /// </summary>
+    public new class Fields : Attribute.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdFormatSpecListAttribute' />
+    /// class. </summary>
+    public new class SelectableFields : Attribute.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdFormatSpecListAttribute' />
+    /// class. </summary>
+    public new class FilterableFields : Attribute.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -34934,17 +52616,6 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// href='#KEYWORD_TEXT'>#KEYWORD_TEXT</a></li> <li><a
   /// href='#SEARCH_VOLUME'>#SEARCH_VOLUME</a></li> <li><a
   /// href='#TARGETED_MONTHLY_SEARCHES'>#TARGETED_MONTHLY_SEARCHES</a></li> </ul>
-  /// <p><b><a href='IdeaType'>IdeaType</a> PLACEMENT supports the following <a
-  /// href='AttributeType'>AttributeType</a>s:</b><br /> </p> <ul> <li><a
-  /// href='#AD_TYPE_SPEC'>#AD_TYPE_SPEC</a></li> <li><a
-  /// href='#APPROX_CONTENT_IMPRESSIONS_PER_DAY'>#APPROX_CONTENT_IMPRESSIONS_PER_DAY</a></li>
-  /// <li><a href='#CRITERION'>#CRITERION</a></li> <li><a
-  /// href='#IDEA_TYPE'>#IDEA_TYPE</a></li> <li><a
-  /// href='#IN_STREAM_AD_INFO'>#IN_STREAM_AD_INFO</a></li> <li><a
-  /// href='#PLACEMENT_CATEGORY'>#PLACEMENT_CATEGORY</a></li> <li><a
-  /// href='#PLACEMENT_NAME'>#PLACEMENT_NAME</a></li> <li><a
-  /// href='#PLACEMENT_TYPE'>#PLACEMENT_TYPE</a></li> <li><a
-  /// href='#SAMPLE_URL'>#SAMPLE_URL</a></li> </ul>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -34967,8 +52638,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p>
     /// </summary>
     COMPETITION,
-    /// <summary>Represents a placement, depending on request type. <p>This element is supported
-    /// by following <a href='IdeaType'>IdeaType</a>s: PLACEMENT.</p>
+    /// <summary>Represents a placement, depending on request type. <p>This element is not
+    /// supported directly by any <a href='IdeaType'>IdeaType</a>.</p>
     /// </summary>
     CRITERION,
     /// <summary>Represents the webpage from which this keyword idea was extracted (if
@@ -34979,7 +52650,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
     EXTRACTED_FROM_WEBPAGE,
     /// <summary>Represents the type of the given idea. <p>Resulting attribute is <a
     /// href='IdeaTypeAttribute'>IdeaTypeAttribute</a>.</p> <p>This element is supported
-    /// by following <a href='IdeaType'>IdeaType</a>s: KEYWORD, PLACEMENT.</p>
+    /// by following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p>
     /// </summary>
     IDEA_TYPE,
     /// <summary>Represents the keyword text for the given keyword idea. <p>Resulting attribute
@@ -35038,6 +52709,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.dataField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='TargetingIdea' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TargetingIdea' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TargetingIdea' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -35092,6 +52809,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='TargetingIdeaPage' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TargetingIdeaPage' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TargetingIdeaPage' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -35165,6 +52928,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.maximumFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='LongComparisonOperation' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LongComparisonOperation' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LongComparisonOperation' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -35208,12 +53017,6 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// <li><a href='RelatedToUrlSearchParameter'>RelatedToUrlSearchParameter</a></li>
   /// <li><a href='SearchVolumeSearchParameter'>SearchVolumeSearchParameter</a></li>
   /// <li><a href='SeedAdGroupIdSearchParameter'>SeedAdGroupIdSearchParameter</a></li>
-  /// </ul> <p><b><a href='IdeaType'>IdeaType</a> PLACEMENT supports following <a
-  /// href='SearchParameter'>SearchParameter</a>s:</b><br /> </p> <ul> <li><a
-  /// href='LanguageSearchParameter'>LanguageSearchParameter</a></li> <li><a
-  /// href='LocationSearchParameter'>LocationSearchParameter</a></li> <li><a
-  /// href='RelatedToQuerySearchParameter'>RelatedToQuerySearchParameter</a></li>
-  /// <li><a href='RelatedToUrlSearchParameter'>RelatedToUrlSearchParameter</a></li>
   /// </ul>
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SeedAdGroupIdSearchParameter))]
@@ -35246,6 +53049,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.searchParameterTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='SearchParameter' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SearchParameter' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SearchParameter' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -35294,6 +53143,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.adGroupIdFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='SeedAdGroupIdSearchParameter' /> class.
+    /// </summary>
+    public new class Fields : SearchParameter.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SeedAdGroupIdSearchParameter' />
+    /// class. </summary>
+    public new class SelectableFields : SearchParameter.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SeedAdGroupIdSearchParameter' />
+    /// class. </summary>
+    public new class FilterableFields : SearchParameter.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -35325,18 +53220,61 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operationField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='SearchVolumeSearchParameter' /> class.
+    /// </summary>
+    public new class Fields : SearchParameter.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SearchVolumeSearchParameter' />
+    /// class. </summary>
+    public new class SelectableFields : SearchParameter.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SearchVolumeSearchParameter' />
+    /// class. </summary>
+    public new class FilterableFields : SearchParameter.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
   /// <summary>A <a href='SearchParameter'>SearchParameter</a> that specifies a set of URLs
   /// that results should in some way be related too. For example, keyword results
-  /// would be similar to content keywords found on the related URLs. <p>This search
-  /// parameter can be used in bulk keyword requests through the <a
-  /// href='TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)'>TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)</a>
-  /// method. It must be single-valued when used in a call to that method.</p> <p>This
-  /// element is supported by following <a href='IdeaType'>IdeaType</a>s: KEYWORD,
-  /// PLACEMENT.</p> <p>This element is supported by following <a
-  /// href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
+  /// would be similar to content keywords found on the related URLs. <p>This element
+  /// is supported by following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This
+  /// element is supported by following <a href='RequestType'>RequestType</a>s: IDEAS,
+  /// STATS.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -35394,16 +53332,59 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.includeSubUrlsFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='RelatedToUrlSearchParameter' /> class.
+    /// </summary>
+    public new class Fields : SearchParameter.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RelatedToUrlSearchParameter' />
+    /// class. </summary>
+    public new class SelectableFields : SearchParameter.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RelatedToUrlSearchParameter' />
+    /// class. </summary>
+    public new class FilterableFields : SearchParameter.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
   /// <summary>A <a href='SearchParameter'>SearchParameter</a> for a query of
-  /// <code>String</code>s. <p>This search parameter can be used in bulk keyword
-  /// requests through the <a
-  /// href='TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)'>TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)</a>
-  /// method.</p> <p>This element is supported by following <a
-  /// href='IdeaType'>IdeaType</a>s: KEYWORD, PLACEMENT.</p> <p>This element is
-  /// supported by following <a href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
+  /// <code>String</code>s. <p>This element is supported by following <a
+  /// href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This element is supported by
+  /// following <a href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -35428,6 +53409,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.queriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='RelatedToQuerySearchParameter' /> class.
+    /// </summary>
+    public new class Fields : SearchParameter.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RelatedToQuerySearchParameter' />
+    /// class. </summary>
+    public new class SelectableFields : SearchParameter.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RelatedToQuerySearchParameter' />
+    /// class. </summary>
+    public new class FilterableFields : SearchParameter.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -35462,6 +53489,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.networkSettingField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='NetworkSearchParameter' /> class.
+    /// </summary>
+    public new class Fields : SearchParameter.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='NetworkSearchParameter' />
+    /// class. </summary>
+    public new class SelectableFields : SearchParameter.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='NetworkSearchParameter' />
+    /// class. </summary>
+    public new class FilterableFields : SearchParameter.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -35471,13 +53544,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// and Los Angeles. <p>This parameter replaces the <code></code>.</p> <p>Warning:
   /// Not all back-ends support sub-country precision.</p> <p>The service allows up to
   /// 10 locations to be targeted for KEYWORD requests and 50 locations for PLACEMENT
-  /// requests.</p> <p>This search parameter can be used in bulk keyword requests
-  /// through the <a
-  /// href='TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)'>TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)</a>
-  /// method. It must be single-valued when used in a call to that method.</p> <p>This
-  /// element is supported by following <a href='IdeaType'>IdeaType</a>s: KEYWORD,
-  /// PLACEMENT.</p> <p>This element is supported by following <a
-  /// href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
+  /// requests.</p> <p>This element is supported by following <a
+  /// href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This element is supported by
+  /// following <a href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -35504,6 +53573,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.locationsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='LocationSearchParameter' /> class.
+    /// </summary>
+    public new class Fields : SearchParameter.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LocationSearchParameter' />
+    /// class. </summary>
+    public new class SelectableFields : SearchParameter.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LocationSearchParameter' />
+    /// class. </summary>
+    public new class FilterableFields : SearchParameter.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -35515,12 +53630,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// href='IdeaType'>IdeaType</a> <code></code> <a href='RequestType'>RequestType</a>
   /// requests, those keywords that are from different language than specified in
   /// <code></code> or have unknown language will be filtered out in the response. To
-  /// avoid filtering, do not include <code></code> in the request.</p> <p>This search
-  /// parameter can be used in bulk keyword requests through the <a
-  /// href='TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)'>TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)</a>
-  /// method. It must be single-valued when used in a call to that method.</p> <p>This
-  /// element is supported by following <a href='IdeaType'>IdeaType</a>s: KEYWORD,
-  /// PLACEMENT.</p> <p>This element is supported by following <a
+  /// avoid filtering, do not include <code></code> in the request.</p> <p>This
+  /// element is supported by following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p>
+  /// <p>This element is supported by following <a
   /// href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -35546,6 +53658,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.languagesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='LanguageSearchParameter' /> class.
+    /// </summary>
+    public new class Fields : SearchParameter.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LanguageSearchParameter' />
+    /// class. </summary>
+    public new class SelectableFields : SearchParameter.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LanguageSearchParameter' />
+    /// class. </summary>
+    public new class FilterableFields : SearchParameter.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -35616,6 +53774,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.excludedField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='IdeaTextFilterSearchParameter' /> class.
+    /// </summary>
+    public new class Fields : SearchParameter.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='IdeaTextFilterSearchParameter' />
+    /// class. </summary>
+    public new class SelectableFields : SearchParameter.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='IdeaTextFilterSearchParameter' />
+    /// class. </summary>
+    public new class FilterableFields : SearchParameter.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -35651,6 +53855,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.levelsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CompetitionSearchParameter' /> class.
+    /// </summary>
+    public new class Fields : SearchParameter.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CompetitionSearchParameter' />
+    /// class. </summary>
+    public new class SelectableFields : SearchParameter.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CompetitionSearchParameter' />
+    /// class. </summary>
+    public new class FilterableFields : SearchParameter.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -35677,11 +53927,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// <summary>A <a href='SearchParameter'>SearchParameter</a> for <code>KEYWORD</code> <a
   /// href='IdeaType'>IdeaType</a>s that sets a keyword category that all search
   /// results should belong to. Uses the newer "Products and Services" taxonomy.
-  /// <p>This search parameter can be used in bulk keyword requests through the <a
-  /// href='TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)'>TargetingIdeaService#getBulkKeywordIdeas(TargetingIdeaSelector)</a>
-  /// method.</p> <p>This element is supported by following <a
-  /// href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This element is supported by
-  /// following <a href='RequestType'>RequestType</a>s: IDEAS.</p>
+  /// <p>This element is supported by following <a href='IdeaType'>IdeaType</a>s:
+  /// KEYWORD.</p> <p>This element is supported by following <a
+  /// href='RequestType'>RequestType</a>s: IDEAS.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -35717,6 +53965,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.categoryIdFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CategoryProductsAndServicesSearchParameter' /> class.
+    /// </summary>
+    public new class Fields : SearchParameter.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CategoryProductsAndServicesSearchParameter' />
+    /// class. </summary>
+    public new class SelectableFields : SearchParameter.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CategoryProductsAndServicesSearchParameter' />
+    /// class. </summary>
+    public new class FilterableFields : SearchParameter.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -35878,6 +54172,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.currencyCodeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='TargetingIdeaSelector' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TargetingIdeaSelector' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TargetingIdeaSelector' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -36029,6 +54369,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reasonFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='TargetingIdeaError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TargetingIdeaError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TargetingIdeaError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -36170,9 +54556,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupCriterionPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((AdGroupCriterionPage) (results[0]));
     }
 
@@ -36188,9 +54574,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupCriterionReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupCriterionOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((AdGroupCriterionReturnValue) (results[0]));
     }
 
@@ -36216,9 +54602,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupCriterionLabelReturnValue mutateLabel([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupCriterionLabelOperation[] operations) {
       object[] results = this.Invoke("mutateLabel", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((AdGroupCriterionLabelReturnValue) (results[0]));
     }
 
@@ -36233,9 +54619,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupCriterionPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((AdGroupCriterionPage) (results[0]));
     }
   }
@@ -36274,6 +54660,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.partialFailureErrorsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupCriterionReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupCriterionReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupCriterionReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -36335,6 +54767,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupCriterionPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupCriterionPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupCriterionPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -36414,9 +54892,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual TrafficEstimatorResult get(TrafficEstimatorSelector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((TrafficEstimatorResult) (results[0]));
     }
   }
@@ -36574,6 +55052,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.totalCostField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='StatsEstimate' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='StatsEstimate' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='StatsEstimate' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -36602,6 +55126,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.estimateTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Estimate' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Estimate' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Estimate' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -36659,6 +55229,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.adGroupEstimatesField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignEstimate' /> class.
+    /// </summary>
+    public new class Fields : Estimate.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignEstimate' />
+    /// class. </summary>
+    public new class SelectableFields : Estimate.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignEstimate' />
+    /// class. </summary>
+    public new class FilterableFields : Estimate.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -36712,6 +55328,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.keywordEstimatesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupEstimate' /> class.
+    /// </summary>
+    public new class Fields : Estimate.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupEstimate' />
+    /// class. </summary>
+    public new class SelectableFields : Estimate.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupEstimate' />
+    /// class. </summary>
+    public new class FilterableFields : Estimate.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -36782,6 +55444,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.maxField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='KeywordEstimate' /> class.
+    /// </summary>
+    public new class Fields : Estimate.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='KeywordEstimate' />
+    /// class. </summary>
+    public new class SelectableFields : Estimate.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='KeywordEstimate' />
+    /// class. </summary>
+    public new class FilterableFields : Estimate.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -36805,6 +55513,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.campaignEstimatesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='TrafficEstimatorResult' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TrafficEstimatorResult' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TrafficEstimatorResult' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -36834,6 +55588,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.estimateRequestTypeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='EstimateRequest' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='EstimateRequest' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='EstimateRequest' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -36986,6 +55786,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.dailyBudgetField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignEstimateRequest' /> class.
+    /// </summary>
+    public new class Fields : EstimateRequest.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignEstimateRequest' />
+    /// class. </summary>
+    public new class SelectableFields : EstimateRequest.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignEstimateRequest' />
+    /// class. </summary>
+    public new class FilterableFields : EstimateRequest.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -37065,6 +55911,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.maxCpcField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupEstimateRequest' /> class.
+    /// </summary>
+    public new class Fields : EstimateRequest.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupEstimateRequest' />
+    /// class. </summary>
+    public new class SelectableFields : EstimateRequest.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupEstimateRequest' />
+    /// class. </summary>
+    public new class FilterableFields : EstimateRequest.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -37153,6 +56045,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.isNegativeFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='KeywordEstimateRequest' /> class.
+    /// </summary>
+    public new class Fields : EstimateRequest.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='KeywordEstimateRequest' />
+    /// class. </summary>
+    public new class SelectableFields : EstimateRequest.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='KeywordEstimateRequest' />
+    /// class. </summary>
+    public new class FilterableFields : EstimateRequest.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -37182,6 +56120,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.campaignEstimateRequestsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='TrafficEstimatorSelector' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='TrafficEstimatorSelector' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='TrafficEstimatorSelector' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -37244,9 +56228,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual UserListPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((UserListPage) (results[0]));
     }
 
@@ -37260,9 +56244,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual UserListReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] UserListOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((UserListReturnValue) (results[0]));
     }
   }
@@ -37733,6 +56717,128 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.userListTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='UserList' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Id = new Field("Id", true, true);
+
+      public static readonly Field IsReadOnly = new Field("IsReadOnly", false, true);
+
+      public static readonly Field Name = new Field("Name", true, true);
+
+      public static readonly Field Description = new Field("Description", false, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static readonly Field IntegrationCode = new Field("IntegrationCode", true, true);
+
+      public static readonly Field AccessReason = new Field("AccessReason", true, true);
+
+      public static readonly Field AccountUserListStatus = new Field("AccountUserListStatus", true, true);
+
+      public static readonly Field MembershipLifeSpan = new Field("MembershipLifeSpan", true, true);
+
+      public static readonly Field Size = new Field("Size", true, true);
+
+      public static readonly Field SizeRange = new Field("SizeRange", false, true);
+
+      public static readonly Field SizeForSearch = new Field("SizeForSearch", true, true);
+
+      public static readonly Field SizeRangeForSearch = new Field("SizeRangeForSearch", false, true);
+
+      public static readonly Field ListType = new Field("ListType", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='UserList' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field IsReadOnly = Fields.IsReadOnly;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Description = Fields.Description;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field IntegrationCode = Fields.IntegrationCode;
+
+      public static readonly Field AccessReason = Fields.AccessReason;
+
+      public static readonly Field AccountUserListStatus = Fields.AccountUserListStatus;
+
+      public static readonly Field MembershipLifeSpan = Fields.MembershipLifeSpan;
+
+      public static readonly Field Size = Fields.Size;
+
+      public static readonly Field SizeRange = Fields.SizeRange;
+
+      public static readonly Field SizeForSearch = Fields.SizeForSearch;
+
+      public static readonly Field SizeRangeForSearch = Fields.SizeRangeForSearch;
+
+      public static readonly Field ListType = Fields.ListType;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='UserList' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field IntegrationCode = Fields.IntegrationCode;
+
+      public static readonly Field AccessReason = Fields.AccessReason;
+
+      public static readonly Field AccountUserListStatus = Fields.AccountUserListStatus;
+
+      public static readonly Field MembershipLifeSpan = Fields.MembershipLifeSpan;
+
+      public static readonly Field Size = Fields.Size;
+
+      public static readonly Field SizeForSearch = Fields.SizeForSearch;
+
+      public static readonly Field ListType = Fields.ListType;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -37981,6 +57087,76 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.seedListSizeFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='SimilarUserList' /> class.
+    /// </summary>
+    public new class Fields : UserList.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field SeedUserListId = new Field("SeedUserListId", true, true);
+
+      public static readonly Field SeedUserListName = new Field("SeedUserListName", false, true);
+
+      public static readonly Field SeedUserListDescription = new Field("SeedUserListDescription", false, true);
+
+      public static readonly Field SeedUserListStatus = new Field("SeedUserListStatus", false, true);
+
+      public static readonly Field SeedListSize = new Field("SeedListSize", true, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SimilarUserList' />
+    /// class. </summary>
+    public new class SelectableFields : UserList.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field SeedUserListId = Fields.SeedUserListId;
+
+      public static readonly Field SeedUserListName = Fields.SeedUserListName;
+
+      public static readonly Field SeedUserListDescription = Fields.SeedUserListDescription;
+
+      public static readonly Field SeedUserListStatus = Fields.SeedUserListStatus;
+
+      public static readonly Field SeedListSize = Fields.SeedListSize;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SimilarUserList' />
+    /// class. </summary>
+    public new class FilterableFields : UserList.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field SeedUserListId = Fields.SeedUserListId;
+
+      public static readonly Field SeedListSize = Fields.SeedListSize;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -38022,6 +57198,56 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.ruleField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ExpressionRuleUserList' /> class.
+    /// </summary>
+    public new class Fields : RuleBasedUserList.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field ExpressionListRule = new Field("ExpressionListRule", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ExpressionRuleUserList' />
+    /// class. </summary>
+    public new class SelectableFields : RuleBasedUserList.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field ExpressionListRule = Fields.ExpressionListRule;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ExpressionRuleUserList' />
+    /// class. </summary>
+    public new class FilterableFields : RuleBasedUserList.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -38053,6 +57279,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.groupsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Rule' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Rule' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Rule' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -38079,6 +57351,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.itemsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='RuleItemGroup' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RuleItemGroup' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RuleItemGroup' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -38172,6 +57490,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='DateRuleItem' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DateRuleItem' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DateRuleItem' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -38203,6 +57567,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.nameField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='DateKey' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DateKey' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DateKey' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -38307,6 +57717,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='NumberRuleItem' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='NumberRuleItem' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='NumberRuleItem' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -38334,6 +57790,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.nameField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='NumberKey' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='NumberKey' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='NumberKey' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -38428,6 +57930,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.valueField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='StringRuleItem' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='StringRuleItem' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='StringRuleItem' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -38456,6 +58004,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.nameField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='StringKey' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='StringKey' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='StringKey' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -38550,6 +58144,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.endDateField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='DateSpecificRuleUserList' /> class.
+    /// </summary>
+    public new class Fields : RuleBasedUserList.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field DateSpecificListRule = new Field("DateSpecificListRule", false, true);
+
+      public static readonly Field DateSpecificListStartDate = new Field("DateSpecificListStartDate", false, true);
+
+      public static readonly Field DateSpecificListEndDate = new Field("DateSpecificListEndDate", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='DateSpecificRuleUserList' />
+    /// class. </summary>
+    public new class SelectableFields : RuleBasedUserList.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field DateSpecificListRule = Fields.DateSpecificListRule;
+
+      public static readonly Field DateSpecificListStartDate = Fields.DateSpecificListStartDate;
+
+      public static readonly Field DateSpecificListEndDate = Fields.DateSpecificListEndDate;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='DateSpecificRuleUserList' />
+    /// class. </summary>
+    public new class FilterableFields : RuleBasedUserList.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -38573,6 +58225,56 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.conversionTypesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='BasicUserList' /> class.
+    /// </summary>
+    public new class Fields : UserList.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field ConversionTypes = new Field("ConversionTypes", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BasicUserList' />
+    /// class. </summary>
+    public new class SelectableFields : UserList.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field ConversionTypes = Fields.ConversionTypes;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BasicUserList' />
+    /// class. </summary>
+    public new class FilterableFields : UserList.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -38659,6 +58361,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.categoryFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='UserListConversionType' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='UserListConversionType' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='UserListConversionType' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -38699,6 +58447,56 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.rulesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='LogicalUserList' /> class.
+    /// </summary>
+    public new class Fields : UserList.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Rules = new Field("Rules", false, true);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LogicalUserList' />
+    /// class. </summary>
+    public new class SelectableFields : UserList.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Rules = Fields.Rules;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LogicalUserList' />
+    /// class. </summary>
+    public new class FilterableFields : UserList.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -38758,6 +58556,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.ruleOperandsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='UserListLogicalRule' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='UserListLogicalRule' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='UserListLogicalRule' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -38829,6 +58673,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='UserListOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='UserListOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='UserListOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -38852,6 +58742,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='UserListPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='UserListPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='UserListPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -38891,6 +58827,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='UserListError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='UserListError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='UserListError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -39014,9 +58996,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ExpressBusinessPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((ExpressBusinessPage) (results[0]));
     }
 
@@ -39031,9 +59013,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ExpressBusiness[] mutate([System.Xml.Serialization.XmlElementAttribute("operations")] ExpressBusinessOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((ExpressBusiness[]) (results[0]));
     }
   }
@@ -39220,6 +59202,88 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.websiteField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ExpressBusiness' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Id = new Field("Id", true, true);
+
+      public static readonly Field Name = new Field("Name", true, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static readonly Field Address = new Field("Address", false, true);
+
+      public static readonly Field GeoPoint = new Field("GeoPoint", false, true);
+
+      public static readonly Field PhoneNumber = new Field("PhoneNumber", false, true);
+
+      public static readonly Field Website = new Field("Website", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ExpressBusiness' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field Address = Fields.Address;
+
+      public static readonly Field GeoPoint = Fields.GeoPoint;
+
+      public static readonly Field PhoneNumber = Fields.PhoneNumber;
+
+      public static readonly Field Website = Fields.Website;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ExpressBusiness' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field Website = Fields.Website;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -39284,6 +59348,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.numberField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='PhoneNumber' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PhoneNumber' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PhoneNumber' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -40280,6 +60390,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.entriesField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ExpressBusinessPage' /> class.
+    /// </summary>
+    public new class Fields : ExpressNoStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ExpressBusinessPage' />
+    /// class. </summary>
+    public new class SelectableFields : ExpressNoStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ExpressBusinessPage' />
+    /// class. </summary>
+    public new class FilterableFields : ExpressNoStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -40377,6 +60533,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.dayFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Date' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Date' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Date' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -40414,6 +60616,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ExpressBusinessError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ExpressBusinessError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ExpressBusinessError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -40500,9 +60748,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetSuggestion get(BudgetSuggestionSelector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((BudgetSuggestion) (results[0]));
     }
   }
@@ -40687,6 +60935,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.currencyCodeFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='BudgetSuggestion' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BudgetSuggestion' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BudgetSuggestion' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -41581,6 +61875,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.localeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ProductService' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field ProductServiceText = new Field("ProductServiceText", true, true);
+
+      public static readonly Field Locale = new Field("Locale", true, false);
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductService' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field ProductServiceText = Fields.ProductServiceText;
+
+      public static readonly Field Locale = Fields.Locale;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductService' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field ProductServiceText = Fields.ProductServiceText;
+
+      public static readonly Field Locale = Fields.Locale;
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -41607,6 +61959,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.criterionField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='NegativeCriterion' /> class.
+    /// </summary>
+    public new class Fields : Criterion.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='NegativeCriterion' />
+    /// class. </summary>
+    public new class SelectableFields : Criterion.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='NegativeCriterion' />
+    /// class. </summary>
+    public new class FilterableFields : Criterion.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -41759,6 +62157,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.currencyCodeFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BudgetSuggestionSelector' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BudgetSuggestionSelector' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BudgetSuggestionSelector' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -41818,9 +62262,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual PromotionPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((PromotionPage) (results[0]));
     }
 
@@ -41834,9 +62278,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Promotion[] mutate([System.Xml.Serialization.XmlElementAttribute("operations")] PromotionOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((Promotion[]) (results[0]));
     }
   }
@@ -42137,6 +62581,104 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.remainingBudgetField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Promotion' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field PromotionId = new Field("PromotionId", true, true);
+
+      public static readonly Field Name = new Field("Name", false, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static readonly Field Creatives = new Field("Creatives", false, true);
+
+      public static readonly Field DestinationUrl = new Field("DestinationUrl", false, true);
+
+      public static readonly Field PhoneNumber = new Field("PhoneNumber", false, true);
+
+      public static readonly Field StreetAddressVisible = new Field("StreetAddressVisible", false, true);
+
+      public static readonly Field CallTrackingEnabled = new Field("CallTrackingEnabled", false, true);
+
+      public static readonly Field Budget = new Field("Budget", false, true);
+
+      public static readonly Field PromotionCriteria = new Field("PromotionCriteria", false, true);
+
+      public static readonly Field CampaignIds = new Field("CampaignIds", false, true);
+
+      public static readonly Field RemainingBudget = new Field("RemainingBudget", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Promotion' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field PromotionId = Fields.PromotionId;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field Creatives = Fields.Creatives;
+
+      public static readonly Field DestinationUrl = Fields.DestinationUrl;
+
+      public static readonly Field PhoneNumber = Fields.PhoneNumber;
+
+      public static readonly Field StreetAddressVisible = Fields.StreetAddressVisible;
+
+      public static readonly Field CallTrackingEnabled = Fields.CallTrackingEnabled;
+
+      public static readonly Field Budget = Fields.Budget;
+
+      public static readonly Field PromotionCriteria = Fields.PromotionCriteria;
+
+      public static readonly Field CampaignIds = Fields.CampaignIds;
+
+      public static readonly Field RemainingBudget = Fields.RemainingBudget;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Promotion' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field PromotionId = Fields.PromotionId;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -42208,6 +62750,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.line2Field = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='Creative' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Creative' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Creative' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -42230,6 +62818,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='PromotionPage' /> class.
+    /// </summary>
+    public new class Fields : ExpressNoStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='PromotionPage' />
+    /// class. </summary>
+    public new class SelectableFields : ExpressNoStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='PromotionPage' />
+    /// class. </summary>
+    public new class FilterableFields : ExpressNoStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -42390,9 +63024,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ProductServicePage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((ProductServicePage) (results[0]));
     }
   }
@@ -42417,6 +63051,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ProductServicePage' /> class.
+    /// </summary>
+    public new class Fields : NoStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ProductServicePage' />
+    /// class. </summary>
+    public new class SelectableFields : NoStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ProductServicePage' />
+    /// class. </summary>
+    public new class FilterableFields : NoStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -42479,9 +63159,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignSharedSetPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((CampaignSharedSetPage) (results[0]));
     }
 
@@ -42495,9 +63175,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignSharedSetReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CampaignSharedSetOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((CampaignSharedSetReturnValue) (results[0]));
     }
 
@@ -42512,9 +63192,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignSharedSetPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((CampaignSharedSetPage) (results[0]));
     }
   }
@@ -42715,6 +63395,84 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.statusFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignSharedSet' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field SharedSetId = new Field("SharedSetId", true, true);
+
+      public static readonly Field CampaignId = new Field("CampaignId", true, true);
+
+      public static readonly Field SharedSetName = new Field("SharedSetName", false, true);
+
+      public static readonly Field SharedSetType = new Field("SharedSetType", true, true);
+
+      public static readonly Field CampaignName = new Field("CampaignName", false, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignSharedSet' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field SharedSetId = Fields.SharedSetId;
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field SharedSetName = Fields.SharedSetName;
+
+      public static readonly Field SharedSetType = Fields.SharedSetType;
+
+      public static readonly Field CampaignName = Fields.CampaignName;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignSharedSet' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field SharedSetId = Fields.SharedSetId;
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field SharedSetType = Fields.SharedSetType;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -42769,6 +63527,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignSharedSetOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignSharedSetOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignSharedSetOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -42902,9 +63706,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SharedCriterionPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((SharedCriterionPage) (results[0]));
     }
 
@@ -42919,9 +63723,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SharedCriterionReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] SharedCriterionOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((SharedCriterionReturnValue) (results[0]));
     }
 
@@ -42935,9 +63739,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SharedCriterionPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((SharedCriterionPage) (results[0]));
     }
   }
@@ -43049,6 +63853,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.negativeFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='SharedCriterion' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field SharedSetId = new Field("SharedSetId", true, true);
+
+      public static readonly Field Negative = new Field("Negative", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SharedCriterion' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field SharedSetId = Fields.SharedSetId;
+
+      public static readonly Field Negative = Fields.Negative;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SharedCriterion' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field SharedSetId = Fields.SharedSetId;
+
+      public static readonly Field Negative = Fields.Negative;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -43071,6 +63933,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='SharedCriterionOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SharedCriterionOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SharedCriterionOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -43096,6 +64004,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='SharedCriterionPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SharedCriterionPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SharedCriterionPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -43213,9 +64167,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SharedSetPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((SharedSetPage) (results[0]));
     }
 
@@ -43229,9 +64183,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SharedSetReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] SharedSetOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((SharedSetReturnValue) (results[0]));
     }
 
@@ -43246,9 +64200,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SharedSetPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((SharedSetPage) (results[0]));
     }
   }
@@ -43470,6 +64424,84 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.statusFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='SharedSet' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field SharedSetId = new Field("SharedSetId", true, true);
+
+      public static readonly Field Name = new Field("Name", true, true);
+
+      public static readonly Field Type = new Field("Type", true, true);
+
+      public static readonly Field MemberCount = new Field("MemberCount", false, true);
+
+      public static readonly Field ReferenceCount = new Field("ReferenceCount", false, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SharedSet' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field SharedSetId = Fields.SharedSetId;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Type = Fields.Type;
+
+      public static readonly Field MemberCount = Fields.MemberCount;
+
+      public static readonly Field ReferenceCount = Fields.ReferenceCount;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SharedSet' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field SharedSetId = Fields.SharedSetId;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Type = Fields.Type;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -43508,6 +64540,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='SharedSetOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SharedSetOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SharedSetOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -43531,6 +64609,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='SharedSetPage' /> class.
+    /// </summary>
+    public new class Fields : NullStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SharedSetPage' />
+    /// class. </summary>
+    public new class SelectableFields : NullStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SharedSetPage' />
+    /// class. </summary>
+    public new class FilterableFields : NullStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -43647,9 +64771,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual LabelPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((LabelPage) (results[0]));
     }
 
@@ -43665,9 +64789,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual LabelReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] LabelOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((LabelReturnValue) (results[0]));
     }
 
@@ -43683,9 +64807,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual LabelPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((LabelPage) (results[0]));
     }
   }
@@ -43734,6 +64858,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='LabelOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LabelOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LabelOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -43757,6 +64927,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='LabelPage' /> class.
+    /// </summary>
+    public new class Fields : NoStatsPage.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LabelPage' />
+    /// class. </summary>
+    public new class SelectableFields : NoStatsPage.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LabelPage' />
+    /// class. </summary>
+    public new class FilterableFields : NoStatsPage.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -43796,6 +65012,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='LabelError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LabelError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LabelError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -43886,9 +65148,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((AdGroupPage) (results[0]));
     }
 
@@ -43905,9 +65167,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((AdGroupReturnValue) (results[0]));
     }
 
@@ -43932,9 +65194,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupLabelReturnValue mutateLabel([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupLabelOperation[] operations) {
       object[] results = this.Invoke("mutateLabel", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((AdGroupLabelReturnValue) (results[0]));
     }
 
@@ -43948,9 +65210,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((AdGroupPage) (results[0]));
     }
   }
@@ -43989,6 +65251,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.partialFailureErrorsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -44049,6 +65357,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -44120,9 +65474,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlArrayItemAttribute("labels", IsNullable = false)]
     public virtual AccountLabel[] get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((AccountLabel[]) (results[0]));
     }
 
@@ -44144,9 +65498,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlArrayItemAttribute("labels", IsNullable = false)]
     public virtual AccountLabel[] mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AccountLabelOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((AccountLabel[]) (results[0]));
     }
   }
@@ -44171,6 +65525,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AccountLabelOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AccountLabelOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AccountLabelOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -44306,9 +65706,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdCustomizerFeedPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((AdCustomizerFeedPage) (results[0]));
     }
 
@@ -44322,9 +65722,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdCustomizerFeedReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdCustomizerFeedOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((AdCustomizerFeedReturnValue) (results[0]));
     }
   }
@@ -44349,6 +65749,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdCustomizerFeedReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdCustomizerFeedReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdCustomizerFeedReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -44471,6 +65917,74 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.feedAttributesField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdCustomizerFeed' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field FeedId = new Field("FeedId", true, true);
+
+      public static readonly Field FeedName = new Field("FeedName", true, true);
+
+      public static readonly Field FeedStatus = new Field("FeedStatus", true, true);
+
+      public static readonly Field FeedAttributes = new Field("FeedAttributes", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdCustomizerFeed' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field FeedName = Fields.FeedName;
+
+      public static readonly Field FeedStatus = Fields.FeedStatus;
+
+      public static readonly Field FeedAttributes = Fields.FeedAttributes;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdCustomizerFeed' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field FeedId = Fields.FeedId;
+
+      public static readonly Field FeedName = Fields.FeedName;
+
+      public static readonly Field FeedStatus = Fields.FeedStatus;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -44558,6 +66072,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.typeFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdCustomizerFeedAttribute' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdCustomizerFeedAttribute' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdCustomizerFeedAttribute' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -44598,6 +66158,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdCustomizerFeedOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdCustomizerFeedOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdCustomizerFeedOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -44660,6 +66266,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdCustomizerFeedError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdCustomizerFeedError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdCustomizerFeedError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -44756,13 +66408,18 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupExtensionSettingPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((AdGroupExtensionSettingPage) (results[0]));
     }
 
-    /// <summary>Applies the list of mutate operations (add, remove, and set).
+    /// <summary>Applies the list of mutate operations (add, remove, and set). <p>Beginning in
+    /// v201509, add and set operations are treated identically. Performing an add
+    /// operation on an ad group with an existing ExtensionSetting will cause the
+    /// operation to be treated like a set operation. Performing a set operation on an
+    /// ad group with no ExtensionSetting will cause the operation to be treated like an
+    /// add operation. </p>
     /// </summary><param name='operations'>The operations to apply. The same <a
     /// href='AdGroupExtensionSetting'>AdGroupExtensionSetting</a> cannot be specified
     /// in more than one operation.</param>
@@ -44775,9 +66432,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupExtensionSettingReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupExtensionSettingOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((AdGroupExtensionSettingReturnValue) (results[0]));
     }
 
@@ -44791,9 +66448,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupExtensionSettingPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((AdGroupExtensionSettingPage) (results[0]));
     }
   }
@@ -44818,6 +66475,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupExtensionSettingReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupExtensionSettingReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupExtensionSettingReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -44915,6 +66618,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.extensionSettingField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupExtensionSetting' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field AdGroupId = new Field("AdGroupId", true, true);
+
+      public static readonly Field ExtensionType = new Field("ExtensionType", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupExtensionSetting' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field ExtensionType = Fields.ExtensionType;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupExtensionSetting' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field ExtensionType = Fields.ExtensionType;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -45000,6 +66761,60 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.platformRestrictionsFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ExtensionSetting' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field Extensions = new Field("Extensions", false, true);
+
+      public static readonly Field PlatformRestrictions = new Field("PlatformRestrictions", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ExtensionSetting' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field Extensions = Fields.Extensions;
+
+      public static readonly Field PlatformRestrictions = Fields.PlatformRestrictions;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ExtensionSetting' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -45242,6 +67057,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.extensionFeedItemTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ExtensionFeedItem' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ExtensionFeedItem' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ExtensionFeedItem' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -45381,6 +67242,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.appUrlCustomParametersField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AppFeedItem' /> class.
+    /// </summary>
+    public new class Fields : ExtensionFeedItem.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AppFeedItem' />
+    /// class. </summary>
+    public new class SelectableFields : ExtensionFeedItem.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AppFeedItem' />
+    /// class. </summary>
+    public new class FilterableFields : ExtensionFeedItem.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -45449,8 +67356,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     }
 
     /// <summary>First line of the description for the sitelink. To clear this field, set its
-    /// value to the empty string. <span class="constraint StringLength">The length of
-    /// this string should be between 0 and 35, inclusive.</span>
+    /// value to the empty string. If this value is set, sitelinkLine3 must also be set.
+    /// <span class="constraint StringLength">The length of this string should be
+    /// between 0 and 35, inclusive.</span>
     /// </summary>
     public string sitelinkLine2 {
       get {
@@ -45462,8 +67370,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     }
 
     /// <summary>Second line of the description for the sitelink. To clear this field, set its
-    /// value to the empty string. <span class="constraint StringLength">The length of
-    /// this string should be between 0 and 35, inclusive.</span>
+    /// value to the empty string. If this value is set, sitelinkLine2 must also be set.
+    /// <span class="constraint StringLength">The length of this string should be
+    /// between 0 and 35, inclusive.</span>
     /// </summary>
     public string sitelinkLine3 {
       get {
@@ -45519,6 +67428,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.sitelinkUrlCustomParametersField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='SitelinkFeedItem' /> class.
+    /// </summary>
+    public new class Fields : ExtensionFeedItem.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SitelinkFeedItem' />
+    /// class. </summary>
+    public new class SelectableFields : ExtensionFeedItem.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SitelinkFeedItem' />
+    /// class. </summary>
+    public new class FilterableFields : ExtensionFeedItem.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -45604,6 +67559,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.reviewTextExactlyQuotedFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='ReviewFeedItem' /> class.
+    /// </summary>
+    public new class Fields : ExtensionFeedItem.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ReviewFeedItem' />
+    /// class. </summary>
+    public new class SelectableFields : ExtensionFeedItem.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ReviewFeedItem' />
+    /// class. </summary>
+    public new class FilterableFields : ExtensionFeedItem.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -45626,6 +67627,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.calloutTextField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CalloutFeedItem' /> class.
+    /// </summary>
+    public new class Fields : ExtensionFeedItem.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CalloutFeedItem' />
+    /// class. </summary>
+    public new class SelectableFields : ExtensionFeedItem.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CalloutFeedItem' />
+    /// class. </summary>
+    public new class FilterableFields : ExtensionFeedItem.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -45740,6 +67787,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.callConversionTypeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CallFeedItem' /> class.
+    /// </summary>
+    public new class Fields : ExtensionFeedItem.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CallFeedItem' />
+    /// class. </summary>
+    public new class SelectableFields : ExtensionFeedItem.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CallFeedItem' />
+    /// class. </summary>
+    public new class FilterableFields : ExtensionFeedItem.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -45779,6 +67872,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.conversionTypeIdFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CallConversionType' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CallConversionType' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CallConversionType' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -45823,6 +67962,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.operandField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupExtensionSettingOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupExtensionSettingOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupExtensionSettingOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -45846,6 +68031,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdGroupExtensionSettingPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdGroupExtensionSettingPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdGroupExtensionSettingPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -45885,6 +68116,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='ExtensionSettingError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='ExtensionSettingError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='ExtensionSettingError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -46091,13 +68368,18 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignExtensionSettingPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((CampaignExtensionSettingPage) (results[0]));
     }
 
-    /// <summary>Applies the list of mutate operations (add, remove, and set).
+    /// <summary>Applies the list of mutate operations (add, remove, and set). <p>Beginning in
+    /// v201509, add and set operations are treated identically. Performing an add
+    /// operation on a campaign with an existing ExtensionSetting will cause the
+    /// operation to be treated like a set operation. Performing a set operation on a
+    /// campaign with no ExtensionSetting will cause the operation to be treated like an
+    /// add operation. </p>
     /// </summary><param name='operations'>The operations to apply. The same <a
     /// href='CampaignExtensionSetting'>CampaignExtensionSetting</a> cannot be specified
     /// in more than one operation.</param>
@@ -46110,9 +68392,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignExtensionSettingReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CampaignExtensionSettingOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((CampaignExtensionSettingReturnValue) (results[0]));
     }
 
@@ -46126,9 +68408,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignExtensionSettingPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((CampaignExtensionSettingPage) (results[0]));
     }
   }
@@ -46153,6 +68435,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignExtensionSettingReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignExtensionSettingReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignExtensionSettingReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -46250,6 +68578,64 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.extensionSettingField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignExtensionSetting' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field CampaignId = new Field("CampaignId", true, true);
+
+      public static readonly Field ExtensionType = new Field("ExtensionType", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignExtensionSetting' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field ExtensionType = Fields.ExtensionType;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignExtensionSetting' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field CampaignId = Fields.CampaignId;
+
+      public static readonly Field ExtensionType = Fields.ExtensionType;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -46272,6 +68658,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignExtensionSettingOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignExtensionSettingOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignExtensionSettingOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -46297,6 +68729,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignExtensionSettingPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignExtensionSettingPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignExtensionSettingPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -46362,13 +68840,18 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerExtensionSettingPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((CustomerExtensionSettingPage) (results[0]));
     }
 
-    /// <summary>Applies the list of mutate operations (add, remove, and set).
+    /// <summary>Applies the list of mutate operations (add, remove, and set). <p>Beginning in
+    /// v201509, add and set operations are treated identically. Performing an add
+    /// operation when there is an existing ExtensionSetting will cause the operation to
+    /// be treated like a set operation. Performing a set operation when there is no
+    /// existing ExtensionSetting will cause the operation to be treated like an add
+    /// operation. </p>
     /// </summary><param name='operations'>The operations to apply. The same <a
     /// href='CustomerExtensionSetting'>CustomerExtensionSetting</a> cannot be specified
     /// in more than one operation.</param>
@@ -46381,9 +68864,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerExtensionSettingReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CustomerExtensionSettingOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((CustomerExtensionSettingReturnValue) (results[0]));
     }
 
@@ -46397,9 +68880,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerExtensionSettingPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((CustomerExtensionSettingPage) (results[0]));
     }
   }
@@ -46424,6 +68907,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CustomerExtensionSettingReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CustomerExtensionSettingReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CustomerExtensionSettingReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -46486,6 +69015,58 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.extensionSettingField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CustomerExtensionSetting' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field ExtensionType = new Field("ExtensionType", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CustomerExtensionSetting' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field ExtensionType = Fields.ExtensionType;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CustomerExtensionSetting' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field ExtensionType = Fields.ExtensionType;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -46508,6 +69089,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CustomerExtensionSettingOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CustomerExtensionSettingOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CustomerExtensionSettingOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -46533,6 +69160,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CustomerExtensionSettingPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CustomerExtensionSettingPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CustomerExtensionSettingPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -46596,9 +69269,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupBidModifierPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((AdGroupBidModifierPage) (results[0]));
     }
 
@@ -46613,9 +69286,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupBidModifierReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupBidModifierOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((AdGroupBidModifierReturnValue) (results[0]));
     }
 
@@ -46630,9 +69303,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupBidModifierPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((AdGroupBidModifierPage) (results[0]));
     }
   }
@@ -46760,9 +69433,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdParamPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((AdParamPage) (results[0]));
     }
 
@@ -46785,9 +69458,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdParam[] mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdParamOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((AdParam[]) (results[0]));
     }
   }
@@ -46813,6 +69486,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdParamOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdParamOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdParamOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -46966,6 +69685,72 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.paramIndexFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdParam' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field AdGroupId = new Field("AdGroupId", true, true);
+
+      public static readonly Field CriterionId = new Field("CriterionId", true, true);
+
+      public static readonly Field InsertionText = new Field("InsertionText", false, true);
+
+      public static readonly Field ParamIndex = new Field("ParamIndex", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdParam' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field CriterionId = Fields.CriterionId;
+
+      public static readonly Field InsertionText = Fields.InsertionText;
+
+      public static readonly Field ParamIndex = Fields.ParamIndex;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdParam' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field AdGroupId = Fields.AdGroupId;
+
+      public static readonly Field CriterionId = Fields.CriterionId;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -47020,6 +69805,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.totalNumEntriesFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='AdParamPage' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdParamPage' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdParamPage' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -47068,6 +69899,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AdParamError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AdParamError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AdParamError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -47160,9 +70037,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BiddingStrategyPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((BiddingStrategyPage) (results[0]));
     }
 
@@ -47176,9 +70053,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BiddingStrategyReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] BiddingStrategyOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((BiddingStrategyReturnValue) (results[0]));
     }
 
@@ -47192,9 +70069,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BiddingStrategyPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((BiddingStrategyPage) (results[0]));
     }
   }
@@ -47365,6 +70242,80 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.typeFieldSpecified = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='SharedBiddingStrategy' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field BiddingScheme = new Field("BiddingScheme", false, true);
+
+      public static readonly Field Id = new Field("Id", true, true);
+
+      public static readonly Field Name = new Field("Name", true, true);
+
+      public static readonly Field Status = new Field("Status", true, true);
+
+      public static readonly Field Type = new Field("Type", true, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='SharedBiddingStrategy' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field BiddingScheme = Fields.BiddingScheme;
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field Type = Fields.Type;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='SharedBiddingStrategy' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field Name = Fields.Name;
+
+      public static readonly Field Status = Fields.Status;
+
+      public static readonly Field Type = Fields.Type;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -47399,6 +70350,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='BiddingStrategyOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BiddingStrategyOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BiddingStrategyOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -47461,6 +70458,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.reasonFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='BiddingStrategyError' /> class.
+    /// </summary>
+    public new class Fields : ApiError.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BiddingStrategyError' />
+    /// class. </summary>
+    public new class SelectableFields : ApiError.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BiddingStrategyError' />
+    /// class. </summary>
+    public new class FilterableFields : ApiError.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -47551,9 +70594,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetOrderPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((BudgetOrderPage) (results[0]));
     }
 
@@ -47587,9 +70630,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetOrderReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] BudgetOrderOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((BudgetOrderReturnValue) (results[0]));
     }
   }
@@ -47615,6 +70658,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.valueField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='BudgetOrderReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BudgetOrderReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BudgetOrderReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -47860,6 +70949,116 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.lastRequestField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BudgetOrder' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static readonly Field BillingAccountId = new Field("BillingAccountId", true, true);
+
+      public static readonly Field Id = new Field("Id", true, true);
+
+      public static readonly Field BillingAccountName = new Field("BillingAccountName", true, true);
+
+      public static readonly Field PoNumber = new Field("PoNumber", true, true);
+
+      public static readonly Field BudgetOrderName = new Field("BudgetOrderName", true, true);
+
+      public static readonly Field PrimaryBillingId = new Field("PrimaryBillingId", true, true);
+
+      public static readonly Field SecondaryBillingId = new Field("SecondaryBillingId", true, true);
+
+      public static readonly Field SpendingLimit = new Field("SpendingLimit", true, true);
+
+      public static readonly Field StartDateTime = new Field("StartDateTime", true, true);
+
+      public static readonly Field EndDateTime = new Field("EndDateTime", true, true);
+
+      public static readonly Field LastRequest = new Field("LastRequest", false, true);
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BudgetOrder' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static readonly Field BillingAccountId = Fields.BillingAccountId;
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field BillingAccountName = Fields.BillingAccountName;
+
+      public static readonly Field PoNumber = Fields.PoNumber;
+
+      public static readonly Field BudgetOrderName = Fields.BudgetOrderName;
+
+      public static readonly Field PrimaryBillingId = Fields.PrimaryBillingId;
+
+      public static readonly Field SecondaryBillingId = Fields.SecondaryBillingId;
+
+      public static readonly Field SpendingLimit = Fields.SpendingLimit;
+
+      public static readonly Field StartDateTime = Fields.StartDateTime;
+
+      public static readonly Field EndDateTime = Fields.EndDateTime;
+
+      public static readonly Field LastRequest = Fields.LastRequest;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BudgetOrder' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static readonly Field BillingAccountId = Fields.BillingAccountId;
+
+      public static readonly Field Id = Fields.Id;
+
+      public static readonly Field BillingAccountName = Fields.BillingAccountName;
+
+      public static readonly Field PoNumber = Fields.PoNumber;
+
+      public static readonly Field BudgetOrderName = Fields.BudgetOrderName;
+
+      public static readonly Field PrimaryBillingId = Fields.PrimaryBillingId;
+
+      public static readonly Field SecondaryBillingId = Fields.SecondaryBillingId;
+
+      public static readonly Field SpendingLimit = Fields.SpendingLimit;
+
+      public static readonly Field StartDateTime = Fields.StartDateTime;
+
+      public static readonly Field EndDateTime = Fields.EndDateTime;
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -48015,6 +71214,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.endDateTimeField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BudgetOrderRequest' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BudgetOrderRequest' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BudgetOrderRequest' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -48053,6 +71298,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='BudgetOrderOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BudgetOrderOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BudgetOrderOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -48140,6 +71431,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.secondaryBillingIdField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='BillingAccount' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BillingAccount' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BillingAccount' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -48163,6 +71500,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='BudgetOrderPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='BudgetOrderPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='BudgetOrderPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -48278,6 +71661,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>StartDate and EndDate should pass in the customer's account timeZone.
     /// </summary>
     INVALID_TIMEZONE_IN_DATE_RANGES,
+    /// <summary>InsServiceId does not match existing one.
+    /// </summary>
+    INS_SERVICE_ID_MISMATCH,
     UNKNOWN,
   }
 
@@ -48444,9 +71830,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					selector
-				});
+        {
+          selector
+        });
       return ((BudgetPage) (results[0]));
     }
 
@@ -48461,9 +71847,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] BudgetOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((BudgetReturnValue) (results[0]));
     }
 
@@ -48478,9 +71864,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((BudgetPage) (results[0]));
     }
   }
@@ -48611,9 +71997,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignCriterionPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-				{
-					serviceSelector
-				});
+        {
+          serviceSelector
+        });
       return ((CampaignCriterionPage) (results[0]));
     }
 
@@ -48628,9 +72014,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignCriterionReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CampaignCriterionOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-				{
-					operations
-				});
+        {
+          operations
+        });
       return ((CampaignCriterionReturnValue) (results[0]));
     }
 
@@ -48645,9 +72031,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignCriterionPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-				{
-					query1
-				});
+        {
+          query1
+        });
       return ((CampaignCriterionPage) (results[0]));
     }
   }
@@ -48686,6 +72072,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
         this.partialFailureErrorsField = value;
       }
     }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignCriterionReturnValue' /> class.
+    /// </summary>
+    public new class Fields : ListReturnValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignCriterionReturnValue' />
+    /// class. </summary>
+    public new class SelectableFields : ListReturnValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignCriterionReturnValue' />
+    /// class. </summary>
+    public new class FilterableFields : ListReturnValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
   }
 
 
@@ -48709,6 +72141,52 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
       set {
         this.entriesField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='CampaignCriterionPage' /> class.
+    /// </summary>
+    public new class Fields : Page.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='CampaignCriterionPage' />
+    /// class. </summary>
+    public new class SelectableFields : Page.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='CampaignCriterionPage' />
+    /// class. </summary>
+    public new class FilterableFields : Page.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
       }
     }
   }
@@ -49680,8 +73158,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// processing the request.</exception>
     MediaPage query(string query1);
 
-    /// <summary>Uploads new media. Currently, you can only upload <a href='Image'>Image</a>
-    /// files.
+    /// <summary>Uploads new media. Currently, you can upload <a href='Image'>Image</a> files and
+    /// <a href='MediaBundle'>MediaBundle</a>s.
     /// </summary><param name='media'>A list of <code>Media</code> objects, each containing the
     /// data to be uploaded.</param>
     /// <returns>A list of uploaded media in the same order as the argument
@@ -50511,7 +73989,12 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <exception cref='ApiException'>Indicates a problem with the request.</exception>
     AdGroupExtensionSettingPage get(Selector selector);
 
-    /// <summary>Applies the list of mutate operations (add, remove, and set).
+    /// <summary>Applies the list of mutate operations (add, remove, and set). <p>Beginning in
+    /// v201509, add and set operations are treated identically. Performing an add
+    /// operation on an ad group with an existing ExtensionSetting will cause the
+    /// operation to be treated like a set operation. Performing a set operation on an
+    /// ad group with no ExtensionSetting will cause the operation to be treated like an
+    /// add operation. </p>
     /// </summary><param name='operations'>The operations to apply. The same <a
     /// href='AdGroupExtensionSetting'>AdGroupExtensionSetting</a> cannot be specified
     /// in more than one operation.</param>
@@ -50557,7 +74040,12 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <exception cref='ApiException'>Indicates a problem with the request.</exception>
     CampaignExtensionSettingPage get(Selector selector);
 
-    /// <summary>Applies the list of mutate operations (add, remove, and set).
+    /// <summary>Applies the list of mutate operations (add, remove, and set). <p>Beginning in
+    /// v201509, add and set operations are treated identically. Performing an add
+    /// operation on a campaign with an existing ExtensionSetting will cause the
+    /// operation to be treated like a set operation. Performing a set operation on a
+    /// campaign with no ExtensionSetting will cause the operation to be treated like an
+    /// add operation. </p>
     /// </summary><param name='operations'>The operations to apply. The same <a
     /// href='CampaignExtensionSetting'>CampaignExtensionSetting</a> cannot be specified
     /// in more than one operation.</param>
@@ -50603,7 +74091,12 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <exception cref='ApiException'>Indicates a problem with the request.</exception>
     CustomerExtensionSettingPage get(Selector selector);
 
-    /// <summary>Applies the list of mutate operations (add, remove, and set).
+    /// <summary>Applies the list of mutate operations (add, remove, and set). <p>Beginning in
+    /// v201509, add and set operations are treated identically. Performing an add
+    /// operation when there is an existing ExtensionSetting will cause the operation to
+    /// be treated like a set operation. Performing a set operation when there is no
+    /// existing ExtensionSetting will cause the operation to be treated like an add
+    /// operation. </p>
     /// </summary><param name='operations'>The operations to apply. The same <a
     /// href='CustomerExtensionSetting'>CustomerExtensionSetting</a> cannot be specified
     /// in more than one operation.</param>

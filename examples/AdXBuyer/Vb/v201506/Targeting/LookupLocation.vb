@@ -62,22 +62,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Dim locationNames As String() = New String() {"Paris", "Quebec", "Spain", "Deutschland"}
 
       Dim selector As New Selector
-      selector.fields = New String() {"Id", "LocationName", "CanonicalName", "DisplayType", _
-          "ParentLocations", "Reach", "TargetingStatus"}
+      selector.fields = New String() {
+        Location.Fields.Id, Location.Fields.LocationName, LocationCriterion.Fields.CanonicalName,
+        Location.Fields.DisplayType, Location.Fields.ParentLocations,
+        LocationCriterion.Fields.Reach, Location.Fields.TargetingStatus
+      }
 
-      ' Location names must match exactly, only EQUALS and IN are supported.
-      Dim predicate1 As New Predicate
-      predicate1.field = "LocationName"
-      predicate1.operator = PredicateOperator.IN
-      predicate1.values = locationNames
-
-      ' Set the locale of the returned location names.
-      Dim predicate2 As New Predicate
-      predicate2.field = "Locale"
-      predicate2.operator = PredicateOperator.EQUALS
-      predicate2.values = New String() {"en"}
-
-      selector.predicates = New Predicate() {predicate1, predicate2}
+      selector.predicates = New Predicate() {
+        Predicate.In(Location.Fields.LocationName, locationNames),
+        Predicate.Equals(LocationCriterion.Fields.Locale, "en")
+      }
 
       Try
         ' Make the get request.

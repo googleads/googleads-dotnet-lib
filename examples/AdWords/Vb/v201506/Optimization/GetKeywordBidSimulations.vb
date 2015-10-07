@@ -69,59 +69,58 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
 
       ' Create the selector.
       Dim selector As New Selector
-      selector.fields = New String() {"AdGroupId", "CriterionId", "StartDate", "EndDate", _
-          "Bid", "LocalClicks", "LocalCost", "LocalImpressions"}
+      selector.fields = New String() {
+        CriterionBidLandscape.Fields.AdGroupId, CriterionBidLandscape.Fields.CriterionId,
+        CriterionBidLandscape.Fields.StartDate, CriterionBidLandscape.Fields.EndDate,
+        BidLandscapeLandscapePoint.Fields.Bid, BidLandscapeLandscapePoint.Fields.LocalClicks,
+        BidLandscapeLandscapePoint.Fields.LocalCost,
+        BidLandscapeLandscapePoint.Fields.LocalImpressions
+      }
 
-      ' Set the filters.
-      Dim adGroupPredicate As New Predicate
-      adGroupPredicate.field = "AdGroupId"
-      adGroupPredicate.operator = PredicateOperator.IN
-      adGroupPredicate.values = New String() {adGroupId.ToString}
-
-      Dim keywordPredicate As New Predicate
-      keywordPredicate.field = "CriterionId"
-      keywordPredicate.operator = PredicateOperator.IN
-      keywordPredicate.values = New String() {keywordId.ToString}
-
-      selector.predicates = New Predicate() {adGroupPredicate, keywordPredicate}
+      selector.predicates = New Predicate() {
+        Predicate.Equals(CriterionBidLandscape.Fields.AdGroupId, adGroupId),
+        Predicate.Equals(CriterionBidLandscape.Fields.CriterionId, keywordId)
+      }
 
       ' Select selector paging.
-      selector.paging = New Paging
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
+      selector.paging = Paging.Default
 
       Dim page As New CriterionBidLandscapePage
 
+      Dim bidLandscapeCount As Integer = 0
+      Dim landscapePointsInLastResponse As Integer = 0
+
       Try
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
-
           ' Get bid landscape for keywords.
           page = dataService.getCriterionBidLandscape(selector)
+          landscapePointsInLastResponse = 0
 
           ' Display bid landscapes.
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
 
             For Each bidLandscape As CriterionBidLandscape In page.entries
               Console.WriteLine("{0}) Found keyword bid landscape with ad group id ""{1}"", " & _
                     "keyword id ""{2}"", start date ""{3}"", end date ""{4}"", and " & _
-                    "landscape points:", i, bidLandscape.adGroupId, bidLandscape.criterionId, _
-                    bidLandscape.startDate, bidLandscape.endDate)
+                    "landscape points:", bidLandscapeCount + 1, bidLandscape.adGroupId, _
+                    bidLandscape.criterionId, bidLandscape.startDate, bidLandscape.endDate)
               For Each bidLandscapePoint As BidLandscapeLandscapePoint _
                   In bidLandscape.landscapePoints
                 Console.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, impressions: {3}", _
                     bidLandscapePoint.bid.microAmount, bidLandscapePoint.clicks, _
                     bidLandscapePoint.cost.microAmount, bidLandscapePoint.impressions)
+                landscapePointsInLastResponse += 1
               Next
+              bidLandscapeCount += 1
             Next
-            i += 1
           End If
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
-        Console.WriteLine("Number of keyword bid landscapes found: {0}", page.totalNumEntries)
+
+          ' Offset by the number of landscape points, NOT the number
+          ' of entries (bid landscapes) in the last response.
+          selector.paging.IncreaseOffsetBy(landscapePointsInLastResponse)
+        Loop While (landscapePointsInLastResponse < selector.paging.numberResults)
+        Console.WriteLine("Number of keyword bid landscapes found: {0}", bidLandscapeCount)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to retrieve keyword bid landscapes.", e)
       End Try

@@ -17,7 +17,6 @@ using Google.Api.Ads.AdWords.v201506;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
@@ -117,7 +116,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
             Console.WriteLine();
           }
         } else {
-          Console.WriteLine("No account changes were found.");;
+          Console.WriteLine("No account changes were found.");
         }
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to get account changes.", e);
@@ -153,8 +152,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       List<long> allCampaigns = new List<long>();
 
       // Create the selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"Id"};
+      Selector selector = new Selector() {
+        fields = new string[] { Campaign.Fields.Id }
+      };
 
       // Get all campaigns.
       CampaignPage page = campaignService.get(selector);

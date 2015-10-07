@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
+
   /// <summary>
   /// This code example gets all keywords in an ad group. To add keywords, run
   /// AddKeywords.cs.
   /// </summary>
   public class GetKeywords : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -64,42 +64,31 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
               AdWordsService.v201502.AdGroupCriterionService);
 
       // Create a selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] { "Id", "KeywordMatchType", "KeywordText", "CriteriaType" };
+      Selector selector = new Selector() {
+        fields = new string[] {
+          Keyword.Fields.Id, Keyword.Fields.KeywordMatchType,
+          Keyword.Fields.KeywordText, Keyword.Fields.CriteriaType
+        },
+        predicates = new Predicate[] {
+          // Select only keywords.
+          Predicate.In(Keyword.Fields.CriteriaType, new string[] {"KEYWORD"}),
 
-      // Select only keywords.
-      Predicate criteriaPredicate = new Predicate();
-      criteriaPredicate.field = "CriteriaType";
-      criteriaPredicate.@operator = PredicateOperator.IN;
-      criteriaPredicate.values = new string[] {"KEYWORD"};
-
-      // Restrict search to an ad group.
-      Predicate adGroupPredicate = new Predicate();
-      adGroupPredicate.field = "AdGroupId";
-      adGroupPredicate.@operator = PredicateOperator.EQUALS;
-      adGroupPredicate.values = new string[] { adGroupId.ToString() };
-
-      selector.predicates = new Predicate[] {adGroupPredicate, criteriaPredicate};
-
-      // Set the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
+          // Restrict search to an ad group.
+          Predicate.Equals(AdGroupCriterion.Fields.AdGroupId, adGroupId),
+        },
+        paging = Paging.Default
+      };
 
       AdGroupCriterionPage page = new AdGroupCriterionPage();
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get the keywords.
           page = adGroupCriterionService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
 
             foreach (AdGroupCriterion adGroupCriterion in page.entries) {
               bool isNegative = (adGroupCriterion is NegativeAdGroupCriterion);
@@ -119,8 +108,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of keywords found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve keywords.", e);

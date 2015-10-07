@@ -67,49 +67,37 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
 
       ' Create the selector.
       Dim selector As New Selector
-      selector.fields = New String() {"Id", "CriteriaType", "PlacementUrl"}
+      selector.fields = New String() {
+        CampaignCriterion.Fields.CampaignId, Criterion.Fields.Id,
+        Criterion.Fields.CriteriaType, Placement.Fields.PlacementUrl
+      }
 
-      ' Set the filters.
-      Dim campaignPredicate As New Predicate
-      campaignPredicate.field = "CampaignId"
-      campaignPredicate.operator = PredicateOperator.EQUALS
-      campaignPredicate.values = New String() {campaignId.ToString}
+      selector.predicates = New Predicate() {
+        Predicate.Equals(CampaignCriterion.Fields.CampaignId, campaignId.ToString()),
+        Predicate.Equals(Criterion.Fields.CriteriaType, "PLACEMENT")
+      }
 
-      Dim placementPredicate As New Predicate
-      placementPredicate.field = "CriteriaType"
-      placementPredicate.operator = PredicateOperator.EQUALS
-      placementPredicate.values = New String() {"PLACEMENT"}
-
-      selector.predicates = New Predicate() {campaignPredicate, placementPredicate}
-
-      ' Set the selector paging.
-      selector.paging = New Paging
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
+      selector.paging = Paging.Default
 
       Dim page As New CampaignCriterionPage
 
       Try
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
-
           ' Get all campaign targets.
           page = campaignCriterionService.get(selector)
 
           ' Display the results.
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
             For Each campaignCriterion As CampaignCriterion In page.entries
               Dim placement As Placement = campaignCriterion.criterion
-              Console.WriteLine("{0}) Placement with ID {1} and url {2} was found.", i, _
+              Console.WriteLine("{0}) Placement with ID {1} and url {2} was found.", i + 1, _
                  placement.id, placement.url)
               i += 1
             Next
           End If
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
         Console.WriteLine("Number of placements found: {0}", page.totalNumEntries)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to get placements.", e)

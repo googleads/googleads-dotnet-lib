@@ -60,29 +60,22 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
     /// <param name="fileName">The file to which the report is downloaded.
     /// </param>
     public void Run(AdWordsUser user, string fileName) {
-      ReportDefinition definition = new ReportDefinition();
+      ReportDefinition definition = new ReportDefinition() {
+        reportName = "Last 7 days CRITERIA_PERFORMANCE_REPORT",
+        reportType = ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT,
+        downloadFormat = DownloadFormat.GZIPPED_CSV,
+        dateRangeType = ReportDefinitionDateRangeType.LAST_7_DAYS,
 
-      definition.reportName = "Last 7 days CRITERIA_PERFORMANCE_REPORT";
-      definition.reportType = ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT;
-      definition.downloadFormat = DownloadFormat.GZIPPED_CSV;
-      definition.dateRangeType = ReportDefinitionDateRangeType.LAST_7_DAYS;
-
-      // Create selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"CampaignId", "AdGroupId", "Id", "CriteriaType", "Criteria",
-          "FinalUrls", "Clicks", "Impressions", "Cost"};
-
-      Predicate predicate = new Predicate();
-      predicate.field = "Status";
-      predicate.@operator = PredicateOperator.IN;
-      predicate.values = new string[] {"ENABLED", "PAUSED"};
-      selector.predicates = new Predicate[] {predicate};
-
-      definition.selector = selector;
-
-      // Optional: Include zero impression rows.
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      config.IncludeZeroImpressions = true;
+        selector = new Selector() {
+          fields = new string[] {"CampaignId", "AdGroupId", "Id", "CriteriaType", "Criteria",
+              "FinalUrls", "Clicks", "Impressions", "Cost"},
+          predicates = new Predicate[] {
+            Predicate.In("Status", new string[] {"ENABLED", "PAUSED"})
+          }
+        },
+        // Optional: Include zero impression rows.
+        includeZeroImpressions = true
+      };
 
       string filePath = ExampleUtilities.GetHomeDir() + Path.DirectorySeparatorChar + fileName;
 

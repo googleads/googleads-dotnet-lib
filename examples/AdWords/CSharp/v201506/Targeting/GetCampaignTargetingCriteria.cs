@@ -66,47 +66,39 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
               AdWordsService.v201506.CampaignCriterionService);
 
       // Create the selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "CriteriaType", "CampaignId"};
-
-      // Set the filters.
-      Predicate predicate = new Predicate();
-      predicate.field = "CampaignId";
-      predicate.@operator = PredicateOperator.EQUALS;
-      predicate.values = new string[] {campaignId.ToString()};
-
-      selector.predicates = new Predicate[] {predicate};
-
-      // Set the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
+      Selector selector = new Selector() {
+        fields = new string[] {
+          CampaignCriterion.Fields.CampaignId, Criterion.Fields.Id,
+          Criterion.Fields.CriteriaType
+        },
+        predicates = new Predicate[] {
+          Predicate.Equals(CampaignCriterion.Fields.CampaignId, campaignId)
+        },
+        paging = Paging.Default
+      };
 
       CampaignCriterionPage page = new CampaignCriterionPage();
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get all campaign targets.
           page = campaignCriterionService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
             foreach (CampaignCriterion campaignCriterion in page.entries) {
               string negative = (campaignCriterion is NegativeCampaignCriterion) ? "Negative " : "";
               Console.WriteLine("{0}) {1}Campaign criterion with id = '{2}' and Type = {3} was " +
-                  " found for campaign id '{4}'", i, negative, campaignCriterion.criterion.id,
+                  " found for campaign id '{4}'", i + 1, negative, campaignCriterion.criterion.id,
                   campaignCriterion.criterion.type, campaignCriterion.campaignId);
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
-        Console.WriteLine("Number of campaign targeting criteria found: {0}", page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
+        Console.WriteLine("Number of campaign targeting criteria found: {0}",
+            page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to get campaign targeting criteria.", e);
       }

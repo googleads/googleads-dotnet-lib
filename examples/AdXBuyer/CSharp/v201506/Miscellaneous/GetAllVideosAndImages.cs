@@ -62,54 +62,47 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
           AdWordsService.v201506.MediaService);
 
       // Create a selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"MediaId", "Width", "Height", "MimeType"};
-
-      // Set the filter.
-      Predicate predicate = new Predicate();
-      predicate.@operator = PredicateOperator.IN;
-      predicate.field = "Type";
-      predicate.values = new string[] {MediaMediaType.VIDEO.ToString(),
-          MediaMediaType.IMAGE.ToString()};
-
-      selector.predicates = new Predicate[] {predicate};
-
-      // Set selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
-
+      Selector selector = new Selector() {
+        fields = new string[] {
+          Media.Fields.MediaId, Dimensions.Fields.Width,
+          Dimensions.Fields.Height,  Media.Fields.MimeType
+        },
+        predicates = new Predicate[] {
+          Predicate.In(Media.Fields.Type, new string[] {
+              MediaMediaType.VIDEO.ToString(),
+              MediaMediaType.IMAGE.ToString()
+          })
+        },
+        paging = Paging.Default
+      };
       MediaPage page = new MediaPage();
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           page = mediaService.get(selector);
 
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
 
             foreach (Media media in page.entries) {
               if (media is Video) {
                 Video video = (Video) media;
-                Console.WriteLine("{0}) Video with id \"{1}\" and name \"{2}\" was found.",
-                    i, video.mediaId, video.name);
+                Console.WriteLine("{0}) Video with id '{1}' and name '{2}' was found.",
+                    i + 1, video.mediaId, video.name);
               } else if (media is Image) {
                 Image image = (Image) media;
                 Dictionary<MediaSize, Dimensions> dimensions =
                     CreateMediaDimensionMap(image.dimensions);
-                Console.WriteLine("{0}) Image with id '{1}', dimensions '{2}x{3}', and MIME type " +
-                    "'{4}' was found.", i, image.mediaId, dimensions[MediaSize.FULL].width,
-                    dimensions[MediaSize.FULL].height, image.mimeType);
+                Console.WriteLine("{0}) Image with id '{1}', dimensions '{2}x{3}', and MIME " +
+                    "type '{4}' was found.", i + 1, image.mediaId,
+                    dimensions[MediaSize.FULL].width, dimensions[MediaSize.FULL].height,
+                    image.mimeType);
               }
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of images and videos found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to get images and videos.", e);

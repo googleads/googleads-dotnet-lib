@@ -102,21 +102,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
     /// </returns>
     private AdGroupAd GetAdGroupAd(AdGroupAdService adGroupAdService, long adGroupId, long adId) {
       // Create a selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] { "Id", "Url" };
-
-      // Restrict the fetch to only the selected ad group ID and ad ID.
-      Predicate adGroupPredicate = new Predicate();
-      adGroupPredicate.field = "AdGroupId";
-      adGroupPredicate.@operator = PredicateOperator.EQUALS;
-      adGroupPredicate.values = new string[] { adGroupId.ToString() };
-
-      Predicate adPredicate = new Predicate();
-      adPredicate.field = "Id";
-      adPredicate.@operator = PredicateOperator.EQUALS;
-      adPredicate.values = new string[] { adId.ToString() };
-
-      selector.predicates = new Predicate[] { adGroupPredicate, adPredicate };
+      Selector selector = new Selector() {
+        fields = new string[] { Ad.Fields.Id, Ad.Fields.Url },
+        predicates = new Predicate[] {
+          // Restrict the fetch to only the selected ad group ID and ad ID.
+          Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId),
+          Predicate.Equals(Ad.Fields.Id, adId)
+        }
+      };
 
       // Get the ad.
       AdGroupAdPage page = adGroupAdService.get(selector);

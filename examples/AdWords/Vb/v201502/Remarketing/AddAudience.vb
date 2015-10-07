@@ -106,13 +106,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
           If (conversionIds.Count > 0) Then
             ' Create the selector.
             Dim selector As New Selector
-            selector.fields = New String() {"Id"}
+            selector.fields = New String() {ConversionTracker.Fields.Id}
 
-            Dim conversionTypePredicate As New Predicate
-            conversionTypePredicate.field = "Id"
-            conversionTypePredicate.operator = PredicateOperator.IN
-            conversionTypePredicate.values = conversionIds.ToArray
-            selector.predicates = New Predicate() {conversionTypePredicate}
+            selector.predicates = New Predicate() {
+              Predicate.In(ConversionTracker.Fields.Id, conversionIds)
+            }
 
             ' Get all conversion trackers.
             Dim page As ConversionTrackerPage = conversionTrackerService.get(selector)

@@ -108,20 +108,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
                                   ByVal adGroupId As Long, ByVal adId As Long) As AdGroupAd
       ' Create a selector.
       Dim selector As New Selector()
-      selector.fields = New String() {"Id", "Url"}
+      selector.fields = New String() {Ad.Fields.Id, Ad.Fields.Url}
 
       ' Restrict the fetch to only the selected ad group ID and ad ID.
-      Dim adGroupPredicate As New Predicate()
-      adGroupPredicate.field = "AdGroupId"
-      adGroupPredicate.operator = PredicateOperator.EQUALS
-      adGroupPredicate.values = New String() {adGroupId.ToString()}
-
-      Dim adPredicate As New Predicate()
-      adPredicate.field = "Id"
-      adPredicate.operator = PredicateOperator.EQUALS
-      adPredicate.values = New String() {adId.ToString()}
-
-      selector.predicates = New Predicate() {adGroupPredicate, adPredicate}
+      selector.predicates = New Predicate() {
+        Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId),
+        Predicate.Equals(Ad.Fields.Id, adId)
+      }
 
       ' Get the ad.
       Dim page As AdGroupAdPage = adGroupAdService.get(selector)

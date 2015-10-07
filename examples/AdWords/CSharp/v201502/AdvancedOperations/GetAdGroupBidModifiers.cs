@@ -14,18 +14,17 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201502;
-using Google.Api.Ads.Common.Util;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
+
   /// <summary>
   /// This code example illustrates how to retrieve ad group level mobile bid
   /// modifiers for a campaign.
   /// </summary>
   public class GetAdGroupBidModifiers : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -64,40 +63,31 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
           (AdGroupBidModifierService) user.GetService(
               AdWordsService.v201502.AdGroupBidModifierService);
 
-      const int PAGE_SIZE = 500;
-
       // Get all ad group bid modifiers for the campaign.
-      Selector selector = new Selector();
-      selector.fields = new String[] {"CampaignId", "AdGroupId", "BidModifier", "BidModifierSource",
-        "CriteriaType", "Id"};
-
-      Predicate predicate = new Predicate();
-      predicate.field = "CampaignId";
-      predicate.@operator = PredicateOperator.EQUALS;
-      predicate.values = new string[] {campaignId.ToString()};
-      selector.predicates = new Predicate[] {predicate};
-
-      // Set the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = PAGE_SIZE;
+      Selector selector = new Selector() {
+        fields = new String[] {
+          AdGroupBidModifier.Fields.CampaignId, AdGroupBidModifier.Fields.AdGroupId,
+          AdGroupBidModifier.Fields.BidModifier, AdGroupBidModifier.Fields.BidModifierSource,
+          Criterion.Fields.CriteriaType, Criterion.Fields.Id
+        },
+        predicates = new Predicate[] {
+          Predicate.Equals(AdGroupBidModifier.Fields.CampaignId, campaignId)
+        },
+        paging = Paging.Default
+      };
 
       AdGroupBidModifierPage page = new AdGroupBidModifierPage();
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get the campaigns.
           page = adGroupBidModifierService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
             foreach (AdGroupBidModifier adGroupBidModifier in page.entries) {
-              string bidModifier = (adGroupBidModifier.bidModifierSpecified)?
+              string bidModifier = (adGroupBidModifier.bidModifierSpecified) ?
                   adGroupBidModifier.bidModifier.ToString() : "UNSET";
               Console.WriteLine("{0}) Campaign ID {1}, AdGroup ID {2}, Criterion ID {3} has " +
                   "ad group level modifier: {4} and source = {5}.",
@@ -107,8 +97,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of adgroup bid modifiers found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve adgroup bid modifiers.", e);

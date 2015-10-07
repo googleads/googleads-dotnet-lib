@@ -61,7 +61,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
           .Where("id = :companyId")
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("id", companyId);
+          .AddValue("companyId", companyId);
 
       try {
         // Get the companies by statement.
@@ -76,7 +76,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
         Company[] companies = companyService.updateCompanies(new Company[] {company});
 
         foreach (Company updatedCompany in companies) {
-          Console.WriteLine("Company with ID = {0}, name = {1}, and comment \"{2}\" was updated",
+          Console.WriteLine("Company with ID = {0}, name = {1}, and comment \"{2}\" was updated.",
               updatedCompany.id, updatedCompany.name, updatedCompany.comment);
         }
       } catch (Exception e) {

@@ -59,7 +59,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
 
       // Create a statement to get the line item.
       StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :lineItemid")
+          .Where("id = :lineItemId")
           .OrderBy("id ASC")
           .Limit(1)
           .AddValue("lineItemId", lineItemId);

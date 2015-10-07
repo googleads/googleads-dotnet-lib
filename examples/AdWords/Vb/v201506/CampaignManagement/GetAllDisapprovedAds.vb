@@ -63,41 +63,31 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
 
       ' Create the selector.
       Dim selector As New Selector
-      selector.fields = New String() {"Id", "AdGroupCreativeApprovalStatus", _
-                                      "AdGroupAdDisapprovalReasons"}
+      selector.fields = New String() {
+        Ad.Fields.Id, AdGroupAd.Fields.AdGroupCreativeApprovalStatus,
+        AdGroupAd.Fields.AdGroupAdDisapprovalReasons
+      }
 
       ' Set the filters.
-      Dim campaignPredicate As New Predicate
-      campaignPredicate.operator = PredicateOperator.EQUALS
-      campaignPredicate.field = "CampaignId"
-      campaignPredicate.values = New String() {campaignId.ToString}
-
-      Dim approvalPredicate As New Predicate
-      approvalPredicate.operator = PredicateOperator.EQUALS
-      approvalPredicate.field = "AdGroupCreativeApprovalStatus"
-      approvalPredicate.values = New String() {AdGroupAdApprovalStatus.DISAPPROVED.ToString()}
-
-      selector.predicates = New Predicate() {campaignPredicate, approvalPredicate}
+      selector.predicates = New Predicate() {
+        Predicate.Equals(AdGroup.Fields.CampaignId, campaignId),
+        Predicate.Equals(AdGroupAd.Fields.AdGroupCreativeApprovalStatus,
+            AdGroupAdApprovalStatus.DISAPPROVED.ToString())
+      }
 
       ' Set the selector paging.
-      selector.paging = New Paging
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
+      selector.paging = Paging.Default
 
       Dim page As New AdGroupAdPage
 
       Try
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
-
           ' Get the disapproved ads.
           page = service.get(selector)
 
           ' Display the results.
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
             For Each adGroupAd As AdGroupAd In page.entries
               Console.WriteLine("{0}) Ad id {1} has been disapproved for the following " & _
                     "reason(s):", i, adGroupAd.ad.id)
@@ -107,8 +97,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
               i += 1
             Next
           End If
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
         Console.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to get disapproved ads.", e)

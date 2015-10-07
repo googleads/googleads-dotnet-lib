@@ -12,10 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201502;
+
 using System;
 using System.Collections.Generic;
-using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201506;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
 

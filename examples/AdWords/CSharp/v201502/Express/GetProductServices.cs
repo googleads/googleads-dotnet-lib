@@ -65,47 +65,31 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
           AdWordsService.v201502.ProductServiceService);
 
       // Create selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"ProductServiceText"};
-
-      // Create predicates.
-      Predicate textPredicate = new Predicate();
-      textPredicate.field = "ProductServiceText";
-      textPredicate.@operator = PredicateOperator.EQUALS;
-      textPredicate.values = new string[] {productServiceSuggestion};
-
-      Predicate localePredicate = new Predicate();
-      localePredicate.field = "Locale";
-      localePredicate.@operator = PredicateOperator.EQUALS;
-      localePredicate.values = new string[]{localeText};
-
-      selector.predicates = new Predicate[] {textPredicate, localePredicate};
-
-      // Set the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
+      Selector selector = new Selector() {
+        fields = new string[] { ProductService.Fields.ProductServiceText },
+        predicates = new Predicate[] {
+          Predicate.Equals(ProductService.Fields.ProductServiceText, productServiceSuggestion),
+          Predicate.Equals(ProductService.Fields.Locale, localeText)
+        },
+        paging = Paging.Default
+      };
 
       ProductServicePage page = null;
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Make the get request.
           page = productServiceService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
             foreach (ProductService productService in page.entries) {
               Console.WriteLine("Product/service with text '{0}' found", productService.text);
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of products/services found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve products/services.", e);

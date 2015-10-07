@@ -78,7 +78,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         // Display the results.
         if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
           AdGroup removedAdGroup = retVal.value[0];
-          Console.WriteLine("Ad group with id = \"{0}\" was renamed to \"{1}\" and removed.",
+          Console.WriteLine("Ad group with id = \"{0}\" and name = \"{1}\" was removed.",
               removedAdGroup.id, removedAdGroup.name);
         } else {
           Console.WriteLine("No ad groups were removed.");

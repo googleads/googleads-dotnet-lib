@@ -78,7 +78,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
 
         if (products != null) {
           foreach (Product updatedProduct in products) {
-            Console.WriteLine("Product with ID = '{0}', name = '{1}', and notes = '{3}' was " +
+            Console.WriteLine("Product with ID = '{0}', name = '{1}', and notes = '{2}' was " +
                 "updated.", updatedProduct.id, updatedProduct.name, updatedProduct.notes);
           }
         } else {

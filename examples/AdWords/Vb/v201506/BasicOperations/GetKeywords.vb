@@ -65,7 +65,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
 
       ' Create a selector.
       Dim selector As New Selector
-      selector.fields = New String() {"Id", "KeywordMatchType", "KeywordText", "CriteriaType"}
+      selector.fields = New String() {
+        Keyword.Fields.Id, Keyword.Fields.KeywordMatchType,
+        Keyword.Fields.KeywordText, Keyword.Fields.CriteriaType
+      }
 
       ' Select only keywords.
       Dim criteriaPredicate As New Predicate
@@ -79,27 +82,22 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       adGroupPredicate.operator = PredicateOperator.EQUALS
       adGroupPredicate.values = New String() {adGroupId.ToString()}
 
-      selector.predicates = New Predicate() {adGroupPredicate, criteriaPredicate}
-
-      ' Set the selector paging.
-      selector.paging = New Paging
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
+      selector.predicates = New Predicate() {
+        Predicate.In(Keyword.Fields.CriteriaType, New String() {"KEYWORD"}),
+        Predicate.Equals(AdGroupCriterion.Fields.AdGroupId, adGroupId)
+      }
+      selector.paging = Paging.Default
 
       Dim page As New AdGroupCriterionPage
 
       Try
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
-
           ' Get the keywords.
           page = adGroupCriterionService.get(selector)
 
           ' Display the results.
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
 
             For Each adGroupCriterion As AdGroupCriterion In page.entries
               Dim isNegative As Boolean = TypeOf adGroupCriterion Is NegativeAdGroupCriterion
@@ -122,8 +120,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
               i += 1
             Next
           End If
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
         Console.WriteLine("Number of keywords found: {0}", page.totalNumEntries)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to retrieve keywords.", e)

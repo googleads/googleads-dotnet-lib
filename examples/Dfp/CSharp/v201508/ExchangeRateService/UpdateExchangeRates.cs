@@ -58,7 +58,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
 
       // Create a statement to get the exchange rate.
       StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :exchangeRateid and refreshRate = :refreshRate")
+          .Where("id = :exchangeRateId and refreshRate = :refreshRate")
           .OrderBy("id ASC")
           .Limit(1)
           .AddValue("exchangeRateId", exchangeRateId)

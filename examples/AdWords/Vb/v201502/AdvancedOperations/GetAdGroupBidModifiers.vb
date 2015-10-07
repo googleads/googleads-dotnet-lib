@@ -66,38 +66,33 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
           AdWordsService.v201502.AdGroupBidModifierService),  _
           AdWords.v201502.AdGroupBidModifierService)
 
-      Const PAGE_SIZE As Integer = 500
-
       ' Get all ad group bid modifiers for the campaign.
       Dim selector As New Selector()
-      selector.fields = New String() {"CampaignId", "AdGroupId", "BidModifier", _
-        "BidModifierSource", "CriteriaType", "Id"}
+      selector.fields = New String() {
+        AdGroupBidModifier.Fields.CampaignId, AdGroupBidModifier.Fields.AdGroupId,
+        AdGroupBidModifier.Fields.BidModifier, AdGroupBidModifier.Fields.BidModifierSource,
+        Criterion.Fields.CriteriaType, Criterion.Fields.Id
+      }
 
       Dim predicate As New Predicate()
       predicate.field = "CampaignId"
       predicate.[operator] = PredicateOperator.EQUALS
       predicate.values = New String() {campaignId.ToString()}
-      selector.predicates = New Predicate() {predicate}
-
-      ' Set the selector paging.
-      selector.paging = New Paging()
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = PAGE_SIZE
+      selector.predicates = New Predicate() {
+        Predicate.Equals(AdGroupBidModifier.Fields.CampaignId, campaignId)
+      }
+      selector.paging = Paging.Default
 
       Dim page As New AdGroupBidModifierPage()
 
       Try
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
-
-          ' Get the campaigns.
+          ' Get the ad group bids.
           page = adGroupBidModifierService.get(selector)
 
           ' Display the results.
           If (Not page Is Nothing) AndAlso (Not page.entries Is Nothing) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
             For Each adGroupBidModifier As AdGroupBidModifier In page.entries
               Dim bidModifier As String = ""
               If adGroupBidModifier.bidModifierSpecified Then
@@ -113,8 +108,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
               i = i + 1
             Next
           End If
-          offset += pageSize
-        Loop While offset < page.totalNumEntries
+          selector.paging.IncreaseOffset()
+        Loop While selector.paging.startIndex < page.totalNumEntries
         Console.WriteLine("Number of adgroup bid modifiers found: {0}", page.totalNumEntries)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to retrieve adgroup bid modifiers.", e)

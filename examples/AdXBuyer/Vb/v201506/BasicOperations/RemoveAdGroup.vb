@@ -81,7 +81,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
           Dim removedAdGroup As AdGroup = retVal.value(0)
-          Console.WriteLine("Ad group with id = ""{0}"" was renamed to ""{1}"" and removed.", _
+          Console.WriteLine("Ad group with id = ""{0}"" and name = ""{1}"" was removed.", _
               removedAdGroup.id, removedAdGroup.name)
         Else
           Console.WriteLine("No ad groups were removed.")

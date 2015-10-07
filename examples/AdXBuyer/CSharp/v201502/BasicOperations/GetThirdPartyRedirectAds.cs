@@ -65,57 +65,40 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
           (AdGroupAdService) user.GetService(AdWordsService.v201502.AdGroupAdService);
 
       // Create a selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "Status", "Url", "DisplayUrl", "RichMediaAdSnippet"};
+      Selector selector = new Selector() {
+        fields = new string[] {
+          Ad.Fields.Id, AdGroupAd.Fields.Status, ThirdPartyRedirectAd.Fields.Url,
+          ThirdPartyRedirectAd.Fields.DisplayUrl, ThirdPartyRedirectAd.Fields.RichMediaAdSnippet
+        },
+        ordering = new OrderBy[] {OrderBy.Asc(Ad.Fields.Id)},
+        predicates = new Predicate[] {
+          // Restrict the fetch to only the selected ad group id.
+          Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId.ToString()),
 
-      // Set the sort order.
-      OrderBy orderBy = new OrderBy();
-      orderBy.field = "Id";
-      orderBy.sortOrder = SortOrder.ASCENDING;
-      selector.ordering = new OrderBy[] {orderBy};
+          // Restrieve only third party redirect ads.
+          Predicate.Equals("AdType", "THIRD_PARTY_REDIRECT_AD"),
 
-      // Restrict the fetch to only the selected ad group id.
-      Predicate adGroupPredicate = new Predicate();
-      adGroupPredicate.field = "AdGroupId";
-      adGroupPredicate.@operator = PredicateOperator.EQUALS;
-      adGroupPredicate.values = new string[] {adGroupId.ToString()};
-
-      // Retrieve only third party redirect ads.
-      Predicate typePredicate = new Predicate();
-      typePredicate.field = "AdType";
-      typePredicate.@operator = PredicateOperator.EQUALS;
-      typePredicate.values = new string[] {"THIRD_PARTY_REDIRECT_AD"};
-
-      // By default disabled ads aren't returned by the selector. To return
-      // them include the DISABLED status in the statuses field.
-      Predicate statusPredicate = new Predicate();
-      statusPredicate.field = "Status";
-      statusPredicate.@operator = PredicateOperator.IN;
-
-      statusPredicate.values = new string[] {AdGroupAdStatus.ENABLED.ToString(),
-          AdGroupAdStatus.PAUSED.ToString(), AdGroupAdStatus.DISABLED.ToString()};
-
-      selector.predicates = new Predicate[] {adGroupPredicate, statusPredicate, typePredicate};
-
-      // Select the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
+          // By default disabled ads aren't returned by the selector. To return
+          // them include the DISABLED status in the statuses field.
+          Predicate.In(AdGroupAd.Fields.Status, new string[] {
+              AdGroupAdStatus.ENABLED.ToString(),
+              AdGroupAdStatus.PAUSED.ToString(),
+              AdGroupAdStatus.DISABLED.ToString()
+          })
+        },
+        paging = Paging.Default
+      };
 
       AdGroupAdPage page = new AdGroupAdPage();
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get the third party redirect ads.
           page = service.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
 
             foreach (AdGroupAd adGroupAd in page.entries) {
               ThirdPartyRedirectAd thirdPartyRedirectAd = (ThirdPartyRedirectAd) adGroupAd.ad;
@@ -127,8 +110,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of third party redirect ads found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to get third party redirect ad(s).", e);

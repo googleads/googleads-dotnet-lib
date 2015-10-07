@@ -61,35 +61,27 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
               AdWordsService.v201506.AdGroupCriterionService);
 
       // Create a selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"Id", "AdGroupId", "PlacementUrl"};
-
-      // Select only keywords.
-      Predicate predicate = new Predicate();
-      predicate.field = "CriteriaType";
-      predicate.@operator = PredicateOperator.EQUALS;
-      predicate.values = new string[] {"PLACEMENT"};
-      selector.predicates = new Predicate[] {predicate};
-
-      // Set the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
+      Selector selector = new Selector() {
+        fields = new string[] {
+          Criterion.Fields.Id, AdGroupCriterion.Fields.AdGroupId, Placement.Fields.PlacementUrl
+        },
+        predicates = new Predicate[] {
+          // Select only placements.
+          Predicate.Equals(Criterion.Fields.CriteriaType, "PLACEMENT")
+        },
+        paging = Paging.Default
+      };
 
       AdGroupCriterionPage page = new AdGroupCriterionPage();
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get the keywords.
           page = adGroupCriterionService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
 
             foreach (AdGroupCriterion adGroupCriterion in page.entries) {
               bool isNegative = (adGroupCriterion is NegativeAdGroupCriterion);
@@ -103,18 +95,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
               Placement placement = (Placement) adGroupCriterion.criterion;
               if (isNegative) {
                 Console.WriteLine("{0}) Negative placement with ad group ID = '{1}', placement " +
-                    "ID = '{2}', and url = '{3}' was found.", i, adGroupCriterion.adGroupId,
+                    "ID = '{2}', and url = '{3}' was found.", i + 1, adGroupCriterion.adGroupId,
                     placement.id, placement.url);
               } else {
-                Console.WriteLine("{0}) Placement with ad group ID = '{1}', placement ID = '{2}' " +
-                    "and url = '{3}' was found.", i, adGroupCriterion.adGroupId,
+                Console.WriteLine("{0}) Placement with ad group ID = '{1}', placement ID = " +
+                    "'{2}' and url = '{3}' was found.", i + 1, adGroupCriterion.adGroupId,
                     placement.id, placement.url);
               }
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of placements found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve placements.", e);

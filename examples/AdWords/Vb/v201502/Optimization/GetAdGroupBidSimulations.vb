@@ -65,16 +65,18 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
 
       ' Create the selector.
       Dim selector As New Selector
-      selector.fields = New String() {"AdGroupId", "LandscapeType", "LandscapeCurrent", _
-          "StartDate", "EndDate", "Bid", "LocalClicks", "LocalCost", "LocalImpressions"}
+      selector.fields = New String() {
+        AdGroupBidLandscape.Fields.AdGroupId, AdGroupBidLandscape.Fields.LandscapeType,
+        AdGroupBidLandscape.Fields.LandscapeCurrent, AdGroupBidLandscape.Fields.StartDate,
+        AdGroupBidLandscape.Fields.EndDate, BidLandscapeLandscapePoint.Fields.Bid,
+        BidLandscapeLandscapePoint.Fields.LocalClicks,
+        BidLandscapeLandscapePoint.Fields.LocalCost,
+        BidLandscapeLandscapePoint.Fields.LocalImpressions
+      }
 
-      ' Set the filters.
-      Dim adGroupPredicate As New Predicate
-      adGroupPredicate.field = "AdGroupId"
-      adGroupPredicate.operator = PredicateOperator.IN
-      adGroupPredicate.values = New String() {adGroupId.ToString}
-
-      selector.predicates = New Predicate() {adGroupPredicate}
+      selector.predicates = New Predicate() {
+        Predicate.Equals(AdGroupBidLandscape.Fields.AdGroupId, adGroupId)
+      }
 
       Try
         ' Get bid landscape for ad group.

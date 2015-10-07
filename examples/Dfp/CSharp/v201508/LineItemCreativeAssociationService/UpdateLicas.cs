@@ -62,7 +62,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
       // Create a statement to get all LICAs.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("lineItemId = :lineItemId AND creativeId = :creativeId")
-          .OrderBy("id ASC")
+          .OrderBy("lineItemId ASC, creativeId ASC")
           .Limit(1)
           .AddValue("lineItemId", lineItemId)
           .AddValue("creativeId", creativeId);

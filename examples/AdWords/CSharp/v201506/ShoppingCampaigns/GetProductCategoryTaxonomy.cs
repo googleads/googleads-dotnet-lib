@@ -111,11 +111,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       ConstantDataService constantDataService = (ConstantDataService) user.GetService(
           AdWordsService.v201506.ConstantDataService);
 
-      Selector selector = new Selector();
-      Predicate predicate = new Predicate();
-      predicate.field = "Country";
-      predicate.@operator = PredicateOperator.IN;
-      predicate.values = new string[] { "US" };
+      Selector selector = new Selector() {
+        predicates = new Predicate[] {
+          Predicate.In(ProductBiddingCategoryData.Fields.Country, new string[] { "US" })
+        }
+      };
 
       try {
         ProductBiddingCategoryData[] results =

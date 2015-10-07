@@ -23,7 +23,8 @@ Imports System.Text
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' <summary>
   ''' This code example illustrates how to create an account. Note by default,
-  ''' this account will only be accessible via its parent MCC.
+  ''' this account will only be accessible via its parent AdWords manager
+  ''' account.
   ''' </summary>
   Public Class CreateAccount
     Inherits ExampleBase
@@ -48,7 +49,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
     Public Overrides ReadOnly Property Description() As String
       Get
         Return "This code example illustrates how to create an account. Note by default," & _
-            " this account will only be accessible via its parent MCC."
+            " this account will only be accessible via its parent AdWords manager account."
       End Get
     End Property
 

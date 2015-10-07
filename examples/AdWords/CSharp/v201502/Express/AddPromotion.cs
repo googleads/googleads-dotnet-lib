@@ -67,15 +67,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
 
       // Get the business for the businessId. We will need its geo point to
       // create a Proximity criterion for the new Promotion.
-      Selector businessSelector = new Selector();
-
-      Predicate predicate = new Predicate();
-      predicate.field = "Id";
-      predicate.@operator = PredicateOperator.EQUALS;
-      predicate.values = new string[] { businessId.ToString() };
-      businessSelector.predicates = new Predicate[] { predicate };
-
-      businessSelector.fields = new string[] { "Id", "GeoPoint" };
+      Selector businessSelector = new Selector() {
+        fields = new string[] {
+          ExpressBusiness.Fields.Id, ExpressBusiness.Fields.GeoPoint
+        },
+        predicates = new Predicate[] {
+          Predicate.Equals(ExpressBusiness.Fields.Id, businessId)
+        }
+      };
 
       ExpressBusinessPage businessPage = businessService.get(businessSelector);
 

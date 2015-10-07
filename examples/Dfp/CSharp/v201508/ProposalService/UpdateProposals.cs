@@ -78,7 +78,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
 
         if (proposals != null) {
           foreach (Proposal updatedProposal in proposals) {
-            Console.WriteLine("Proposal with ID = '{0}', name = '{1}', and notes = '{3}' was " +
+            Console.WriteLine("Proposal with ID = '{0}', name = '{1}', and notes = '{2}' was " +
                 "updated.", updatedProposal.id, updatedProposal.name, updatedProposal.notes);
           }
         } else {

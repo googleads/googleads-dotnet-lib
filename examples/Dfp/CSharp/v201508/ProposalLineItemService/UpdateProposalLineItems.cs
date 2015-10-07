@@ -58,7 +58,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
 
       // Create a statement to get the proposal line item.
       StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :proposalLineItemid")
+          .Where("id = :proposalLineItemId")
           .OrderBy("id ASC")
           .Limit(1)
           .AddValue("proposalLineItemId", proposalLineItemId);

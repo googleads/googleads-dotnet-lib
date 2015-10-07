@@ -65,7 +65,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
 
       ' Create selector.
       Dim selector As New Selector()
-      selector.fields = New String() {"CustomerId", "Name"}
+      selector.fields = New String() {
+        ManagedCustomer.Fields.CustomerId, ManagedCustomer.Fields.Name
+      }
 
       Try
         ' Get results.

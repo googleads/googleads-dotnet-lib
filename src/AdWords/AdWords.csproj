@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -47,11 +48,22 @@
     <Compile Include="Headers\AdWordsSoapHeader.cs" />
     <Compile Include="Headers\RequestHeaderStub.cs" />
     <Compile Include="Headers\ResponseHeaderStub.cs" />
+    <Compile Include="Util\BatchJob\AdWordsBulkRequestException.cs" />
     <Compile Include="Lib\AdWordsCredentialsExpiredException.cs" />
     <Compile Include="Lib\AdWordsException.cs" />
     <Compile Include="Lib\AdWordsTraceListener.cs" />
     <Compile Include="Lib\AdWordsCallListener.cs" />
     <Compile Include="Lib\AdWordsErrorHandler.cs" />
+    <Compile Include="Util\BatchJob\BulkJobErrorHandler.cs" />
+    <Compile Include="Util\BatchJob\CloudStorageErrorDetail.cs" />
+    <Compile Include="Util\BatchJob\CloudStorageErrorResponse.cs" />
+    <Compile Include="Util\BatchJob\v201509\BatchJobUtilities.cs" />
+    <Compile Include="Util\BatchJob\CloudStorageError.cs" />
+    <Compile Include="Util\Selectors\BaseFields.cs" />
+    <Compile Include="Util\v201509\MapUtilities.cs" />
+    <Compile Include="v201502\OrderBy.cs" />
+    <Compile Include="v201502\Paging.cs" />
+    <Compile Include="v201502\Predicate.cs" />
     <Compile Include="Util\v201506\MapUtilities.cs" />
     <Compile Include="Util\Reports\New\IReportDefinition.cs" />
     <Compile Include="Util\v201502\MapUtilities.cs" />
@@ -76,7 +88,18 @@
     <Compile Include="v201502\ReportDefinition.cs" />
     <Compile Include="v201506\AdWordsApi.cs" />
     <Compile Include="v201506\AdWordsServiceV201506.cs" />
+    <Compile Include="Util\Selectors\Field.cs" />
+    <Compile Include="v201506\OrderBy.cs" />
+    <Compile Include="v201506\Paging.cs" />
+    <Compile Include="v201506\Predicate.cs" />
     <Compile Include="v201506\ReportDefinition.cs" />
+    <Compile Include="v201509\AdWordsApi.cs" />
+    <Compile Include="v201509\AdWordsServiceV201509.cs" />
+    <Compile Include="v201509\BatchJobApi.cs" />
+    <Compile Include="v201509\OrderBy.cs" />
+    <Compile Include="v201509\Paging.cs" />
+    <Compile Include="v201509\Predicate.cs" />
+    <Compile Include="v201509\ReportDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

@@ -74,10 +74,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
       size.width = 1;
       size.height = 1;
       size.isAspectRatio = false;
-
-      // Set the size and specify that this is a native creative.
       nativeAppInstallCreative.size = size;
-      nativeAppInstallCreative.isNativeEligible = true;
 
       List<BaseCreativeTemplateVariableValue> templateVariables =
           new List<BaseCreativeTemplateVariableValue>();
@@ -138,12 +135,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
       templateVariables.Add(new UrlCreativeTemplateVariableValue() {
         uniqueName = "DeeplinkclickactionURL",
         value = "market://details?id=com.google.fpl.pie_noon"
-      });
-
-      // Set the fallback URL.
-      templateVariables.Add(new UrlCreativeTemplateVariableValue() {
-        uniqueName = "FallbackclickactionURL",
-        value = "https://play.google.com/store/apps/details?id=com.google.fpl.pie_noon"
       });
 
       nativeAppInstallCreative.creativeTemplateVariableValues = templateVariables.ToArray();

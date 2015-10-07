@@ -102,14 +102,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
 
           if (conversionIds.Count > 0) {
             // Create the selector.
-            Selector selector = new Selector();
-            selector.fields = new string[] {"Id"};
-
-            Predicate conversionTypePredicate = new Predicate();
-            conversionTypePredicate.field = "Id";
-            conversionTypePredicate.@operator = PredicateOperator.IN;
-            conversionTypePredicate.values = conversionIds.ToArray();
-            selector.predicates = new Predicate[] {conversionTypePredicate};
+            Selector selector = new Selector() {
+              fields = new string[] { ConversionTracker.Fields.Id },
+              predicates = new Predicate[] {
+                Predicate.In(ConversionTracker.Fields.Id, conversionIds)
+              }
+            };
 
             // Get all conversion trackers.
             ConversionTrackerPage page = conversionTrackerService.get(selector);

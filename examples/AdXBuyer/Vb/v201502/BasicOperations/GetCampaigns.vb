@@ -61,35 +61,29 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
 
       ' Create the selector.
       Dim selector As New Selector
-      selector.fields = New String() {"Id", "Name", "Status"}
-
-      ' Set the selector paging.
-      selector.paging = New Paging
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
+      selector.fields = New String() {
+        Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Status
+      }
+      selector.paging = Paging.Default
 
       Dim page As New CampaignPage
 
       Try
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
-
           ' Get the campaigns.
           page = campaignService.get(selector)
 
           ' Display the results.
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
             For Each campaign As Campaign In page.entries
               Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = " & _
-                  "'{3}' was found.", i, campaign.id, campaign.name, campaign.status)
+                  "'{3}' was found.", i + 1, campaign.id, campaign.name, campaign.status)
               i += 1
             Next
           End If
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
         Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)

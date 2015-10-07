@@ -65,42 +65,34 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
 
       ' Create the selector.
       Dim selector As New Selector
-      selector.fields = New String() {"Id", "Name"}
+      selector.fields = New String() {
+        AdGroup.Fields.Id, AdGroup.Fields.Name
+      }
 
-      ' Create the filters.
-      Dim predicate As New Predicate
-      predicate.field = "CampaignId"
-      predicate.operator = PredicateOperator.EQUALS
-      predicate.values = New String() {campaignId.ToString}
-      selector.predicates = New Predicate() {predicate}
-
-      ' Set the selector paging.
+      selector.predicates = New Predicate() {
+        Predicate.Equals(AdGroup.Fields.CampaignId, campaignId)
+      }
+      selector.ordering = New OrderBy() {OrderBy.Asc(AdGroup.Fields.Name)}
       selector.paging = New Paging
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
 
       Dim page As New AdGroupPage
 
       Try
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
-
           ' Get the ad groups.
           page = adGroupService.get(selector)
 
           ' Display the results.
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
             For Each adGroup As AdGroup In page.entries
-              Console.WriteLine("{0}) Ad group name is ""{1}"" and id is ""{2}"".", i, _
+              Console.WriteLine("{0}) Ad group name is ""{1}"" and id is ""{2}"".", i + 1, _
                   adGroup.name, adGroup.id)
               i += 1
             Next
           End If
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
         Console.WriteLine("Number of ad groups found: {0}", page.totalNumEntries)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to retrieve ad group(s).", e)

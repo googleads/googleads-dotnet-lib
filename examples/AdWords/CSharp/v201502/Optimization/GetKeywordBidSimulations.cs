@@ -66,60 +66,53 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201502 {
       DataService dataService = (DataService) user.GetService(AdWordsService.v201502.DataService);
 
       // Create the selector.
-      Selector selector = new Selector();
-      selector.fields = new string[] {"AdGroupId", "CriterionId", "StartDate", "EndDate", "Bid",
-          "LocalClicks", "LocalCost", "LocalImpressions"};
-
-      // Create the filters.
-      Predicate adGroupPredicate = new Predicate();
-      adGroupPredicate.field = "AdGroupId";
-      adGroupPredicate.@operator = PredicateOperator.IN;
-      adGroupPredicate.values = new string[] {adGroupId.ToString()};
-
-      Predicate keywordPredicate = new Predicate();
-      keywordPredicate.field = "CriterionId";
-      keywordPredicate.@operator = PredicateOperator.IN;
-      keywordPredicate.values = new string[] {keywordId.ToString()};
-
-      selector.predicates = new Predicate[] {adGroupPredicate, keywordPredicate};
-
-      // Set selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
+      Selector selector = new Selector() {
+        fields = new string[] {
+          CriterionBidLandscape.Fields.AdGroupId, CriterionBidLandscape.Fields.CriterionId,
+          CriterionBidLandscape.Fields.StartDate, CriterionBidLandscape.Fields.EndDate, 
+          BidLandscapeLandscapePoint.Fields.Bid, BidLandscapeLandscapePoint.Fields.LocalClicks,
+          BidLandscapeLandscapePoint.Fields.LocalCost,
+          BidLandscapeLandscapePoint.Fields.LocalImpressions
+        },
+        predicates = new Predicate[] {
+          Predicate.Equals(CriterionBidLandscape.Fields.AdGroupId, adGroupId),
+          Predicate.Equals(CriterionBidLandscape.Fields.CriterionId, keywordId)
+        },
+        paging = Paging.Default
+      };
 
       CriterionBidLandscapePage page = new CriterionBidLandscapePage();
+      int bidLandscapeCount = 0;
+      int landscapePointsInLastResponse = 0;
 
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get bid landscape for keywords.
           page = dataService.getCriterionBidLandscape(selector);
+          landscapePointsInLastResponse = 0;
 
           // Display bid landscapes.
           if (page != null && page.entries != null) {
-            int i = offset;
-
             foreach (CriterionBidLandscape bidLandscape in page.entries) {
               Console.WriteLine("{0}) Found criterion bid landscape with ad group id '{1}', " +
                   "keyword id '{2}', start date '{3}', end date '{4}', and landscape points:",
-                  i, bidLandscape.adGroupId, bidLandscape.criterionId, bidLandscape.startDate,
-                  bidLandscape.endDate);
+                  bidLandscapeCount + 1, bidLandscape.adGroupId, bidLandscape.criterionId,
+                  bidLandscape.startDate, bidLandscape.endDate);
               foreach (BidLandscapeLandscapePoint bidLandscapePoint in
                   bidLandscape.landscapePoints) {
                 Console.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, impressions: {3}\n",
                     bidLandscapePoint.bid.microAmount, bidLandscapePoint.clicks,
                     bidLandscapePoint.cost.microAmount, bidLandscapePoint.impressions);
+                landscapePointsInLastResponse++;
               }
-              i++;
+              bidLandscapeCount++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
-        Console.WriteLine("Number of keyword bid landscapes found: {0}", page.totalNumEntries);
+          // Offset by the number of landscape points, NOT the number
+          // of entries (bid landscapes) in the last response.
+          selector.paging.IncreaseOffsetBy(landscapePointsInLastResponse);
+        } while (landscapePointsInLastResponse < selector.paging.numberResults);
+        Console.WriteLine("Number of keyword bid landscapes found: {0}", bidLandscapeCount);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve keyword bid landscapes.", e);
       }

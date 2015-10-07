@@ -60,36 +60,27 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       ExpressBusinessService businessService = (ExpressBusinessService)
           user.GetService(AdWordsService.v201506.ExpressBusinessService);
 
-      Selector selector = new Selector();
-      selector.fields = new String[] { "Id", "Name", "Website", "Address", "GeoPoint", "Status" };
-
-      // To get all express businesses owned by the current customer,
-      // simply skip the call to selector.setPredicates below.
-      Predicate predicate = new Predicate();
-      predicate.field = "Status";
-      predicate.@operator = PredicateOperator.EQUALS;
-      predicate.values = new string[] { "ACTIVE" };
-
-      selector.predicates = new Predicate[] { predicate };
-
-      // Set the selector paging.
-      selector.paging = new Paging();
-
-      int offset = 0;
-      int pageSize = 500;
-
+      Selector selector = new Selector() {
+        fields = new String[] { ExpressBusiness.Fields.Id, ExpressBusiness.Fields.Name,
+          ExpressBusiness.Fields.Website, ExpressBusiness.Fields.Address,
+          ExpressBusiness.Fields.GeoPoint, ExpressBusiness.Fields.Status
+        },
+        predicates = new Predicate[] {
+          // To get all express businesses owned by the current customer,
+          // simply skip the call to selector.setPredicates below.
+          Predicate.Equals(ExpressBusiness.Fields.Status, ExpressBusinessStatus.ENABLED.ToString())
+        },
+        paging = Paging.Default
+      };
       ExpressBusinessPage page = null;
       try {
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
-
           // Get all businesses.
           page = businessService.get(selector);
 
           // Display the results.
           if (page != null && page.entries != null) {
-            int i = offset;
+            int i = selector.paging.startIndex;
             foreach (ExpressBusiness business in page.entries) {
               Console.WriteLine("{0}) Express business found with name '{1}', id = {2}, " +
                   "website = {3} and status = {4}.\n", i + 1, business.name, business.id,
@@ -101,8 +92,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of businesses found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve express business.", e);

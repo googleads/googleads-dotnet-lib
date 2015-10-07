@@ -23,7 +23,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
   ''' <summary>
   ''' This code example demonstrates how to find and remove shared sets and
   ''' shared set criteria.
-  ''' 
+  '''
   ''' </summary>
   Public Class FindAndRemoveCriteriaFromSharedSet
     Inherits ExampleBase
@@ -81,49 +81,42 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Dim campaignSharedSetService As CampaignSharedSetService = DirectCast(user.GetService( _
               AdWordsService.v201506.CampaignSharedSetService), CampaignSharedSetService)
 
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
-
       Dim selector As New Selector()
-      selector.fields = New String() {"SharedSetId", "CampaignId", "SharedSetName", "SharedSetType"}
+      selector.fields = New String() {
+        CampaignSharedSet.Fields.SharedSetId,
+        CampaignSharedSet.Fields.CampaignId,
+        CampaignSharedSet.Fields.SharedSetName,
+        CampaignSharedSet.Fields.SharedSetType
+      }
 
-      Dim predicate1 As New Predicate()
-      predicate1.field = "CampaignId"
-      predicate1.operator = PredicateOperator.EQUALS
-      predicate1.values = New String() {campaignId.ToString()}
-
-      Dim predicate2 As New Predicate()
-      predicate2.field = "SharedSetType"
-      predicate2.operator = PredicateOperator.IN
-      predicate2.values = New String() {SharedSetType.NEGATIVE_KEYWORDS.ToString()}
-
-      selector.predicates = New Predicate() {predicate1, predicate2}
-      selector.paging = New Paging()
-      selector.paging.numberResults = pageSize
-
+      selector.predicates = New Predicate() {
+        Predicate.Equals(CampaignSharedSet.Fields.CampaignId, campaignId),
+        Predicate.In(CampaignSharedSet.Fields.SharedSetType,
+            New String() {SharedSetType.NEGATIVE_KEYWORDS.ToString()})
+      }
+      selector.paging = Paging.Default
       Dim sharedSetIds As New List(Of String)
 
       Dim page As New CampaignSharedSetPage()
 
       Try
         Do
-          selector.paging.startIndex = offset
-
           ' Get the campaigns.
           page = campaignSharedSetService.get(selector)
 
           ' Display the results.
           If (Not page Is Nothing) AndAlso (Not page.entries Is Nothing) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
             For Each campaignSharedSet As CampaignSharedSet In page.entries
               sharedSetIds.Add(campaignSharedSet.sharedSetId.ToString())
-              Console.WriteLine("Campaign shared set ID {0} and name '{1}' found for campaign " & _
-                  "ID {2}.\n", campaignSharedSet.sharedSetId, campaignSharedSet.sharedSetName, _
-                  campaignSharedSet.campaignId)
+              Console.WriteLine("{0}) Campaign shared set ID {1} and name '{2}' found for " & _
+                  "campaign ID {3}.\n", i + 1, campaignSharedSet.sharedSetId, _
+                  campaignSharedSet.sharedSetName, campaignSharedSet.campaignId)
+              i = i + 1
             Next
           End If
-          offset += pageSize
-        Loop While (offset < page.totalNumEntries)
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
         Return sharedSetIds
       Catch e As Exception
         Throw New Exception("Failed to get shared set ids for campaign.", e)
@@ -141,60 +134,54 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       Dim sharedCriterionService As SharedCriterionService = DirectCast(user.GetService( _
           AdWordsService.v201506.SharedCriterionService), SharedCriterionService)
 
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
-
       Dim selector As New Selector()
-      selector.fields = New String() {"SharedSetId", "Id", "KeywordText", _
-          "KeywordMatchType", "PlacementUrl"}
+      selector.fields = New String() {
+        SharedSet.Fields.SharedSetId, Criterion.Fields.Id, Keyword.Fields.KeywordText, _
+        Keyword.Fields.KeywordMatchType, Placement.Fields.PlacementUrl
+      }
 
-      Dim predicate As New Predicate()
-      predicate.field = "SharedSetId"
-      predicate.operator = PredicateOperator.IN
-      predicate.values = sharedSetIds.ToArray()
+      selector.predicates = New Predicate() {
+        Predicate.In(SharedSet.Fields.SharedSetId, sharedSetIds)
+      }
 
-      selector.predicates = New Predicate() {predicate}
-      selector.paging = New Paging()
-      selector.paging.numberResults = pageSize
+      selector.paging = Paging.Default
 
       Dim sharedCriteria As New List(Of SharedCriterion)
-
       Dim page As New SharedCriterionPage()
 
       Try
         Do
-          selector.paging.startIndex = offset
-
-          ' Get the campaigns.
+          ' Get the criteria.
           page = sharedCriterionService.get(selector)
 
           ' Display the results.
           If (Not page Is Nothing) AndAlso (Not page.entries Is Nothing) Then
-            Dim i As Integer = offset
+            Dim i As Integer = selector.paging.startIndex
             For Each sharedCriterion As SharedCriterion In page.entries
-              Select sharedCriterion.criterion.type
+              Select Case sharedCriterion.criterion.type
                 Case CriterionType.KEYWORD
                   Dim keyword As Keyword = DirectCast(sharedCriterion.criterion, Keyword)
                   Console.WriteLine("Shared negative keyword with ID {0} and text '{1}' was " & _
                       "found.", keyword.id, keyword.text)
                   Exit Select
-                  
+
                 Case CriterionType.PLACEMENT
                   Dim placement As Placement = DirectCast(sharedCriterion.criterion, Placement)
-                  Console.WriteLine("Shared negative placement with ID {0} and URL '{1}' " & _
-                      "was found.", placement.id, placement.url)
+                  Console.WriteLine("{0}) Shared negative placement with ID {1} and URL '{2}' " & _
+                      "was found.", i + 1, placement.id, placement.url)
                   Exit Select
 
                 Case Else
-                  Console.WriteLine("Shared criteria with ID {0} was found.", _
-                      sharedCriterion.criterion.id)
+                  Console.WriteLine("{0}) Shared criteria with ID {1} was found.", _
+                      i + 1, sharedCriterion.criterion.id)
               End Select
 
+              i = i + 1
               sharedCriteria.Add(sharedCriterion)
             Next
           End If
-          offset += pageSize
-        Loop While (offset < page.totalNumEntries)
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
 
         Return sharedCriteria
       Catch e As Exception

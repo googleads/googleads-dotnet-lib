@@ -157,7 +157,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201502
 
       ' Create the selector.
       Dim selector As New Selector
-      selector.fields = New String() {"Id"}
+      selector.fields = New String() {Campaign.Fields.Id}
 
       ' Get all campaigns.
       Dim page As CampaignPage = campaignService.get(selector)
