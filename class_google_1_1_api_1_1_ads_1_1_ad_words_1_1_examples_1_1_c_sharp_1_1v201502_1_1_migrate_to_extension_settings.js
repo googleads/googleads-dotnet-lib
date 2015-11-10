@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_migrate_to_extension_settings =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_migrate_to_extension_settings.html#a8d081ce3214077c4c44d72df3e9e4107", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_migrate_to_extension_settings.html#a77befa7c53c451b1e9e8b041a6a7e800", null ]
-];

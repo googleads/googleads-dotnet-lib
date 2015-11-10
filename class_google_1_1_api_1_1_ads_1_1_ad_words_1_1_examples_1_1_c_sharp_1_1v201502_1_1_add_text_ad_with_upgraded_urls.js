@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_add_text_ad_with_upgraded_urls =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_add_text_ad_with_upgraded_urls.html#ac114d0acb6561fec0ca68b957e79da49", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_add_text_ad_with_upgraded_urls.html#a33a568453218771f2bfe7eab5f5574cf", null ]
-];

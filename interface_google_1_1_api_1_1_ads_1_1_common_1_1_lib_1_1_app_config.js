@@ -1,6 +1,7 @@
 var interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config =
 [
     [ "GetDefaultOAuth2Scope", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a86aff01c208b8838710bfc860979cdca", null ],
+    [ "GetUserAgent", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a2b11644dc8d00f3253e1e51d30432390", null ],
     [ "AuthToken", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a9c08c5ecde6fdae6fd706a4c97734216", null ],
     [ "Email", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a40ed99fdb8c9f44f7ea8535c67807915", null ],
     [ "EnableGzipCompression", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#aa93c182689ae35cc4da5e794401f78c0", null ],

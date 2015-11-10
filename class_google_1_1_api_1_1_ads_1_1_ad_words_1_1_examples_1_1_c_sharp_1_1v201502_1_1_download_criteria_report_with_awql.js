@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_download_criteria_report_with_awql =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_download_criteria_report_with_awql.html#a3812396d08ea1b0d36ee1b1d5a0227dc", null ],
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_download_criteria_report_with_awql.html#a3812396d08ea1b0d36ee1b1d5a0227dc", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_download_criteria_report_with_awql.html#abd8e343d00d439ecd03f48286cf41d8b", null ]
-];

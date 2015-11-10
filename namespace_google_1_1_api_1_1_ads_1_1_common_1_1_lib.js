@@ -25,6 +25,5 @@ var namespace_google_1_1_api_1_1_ads_1_1_common_1_1_lib =
     [ "ServiceSignature", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_service_signature.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_service_signature" ],
     [ "SoapHeaderBase", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_header_base.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_header_base" ],
     [ "SoapListenerExtension", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_listener_extension.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_listener_extension" ],
-    [ "SoapListenerExtensionAttribute", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_listener_extension_attribute.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_listener_extension_attribute" ],
-    [ "DfaTraceListener", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_dfa_trace_listener.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_dfa_trace_listener" ]
+    [ "SoapListenerExtensionAttribute", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_listener_extension_attribute.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_listener_extension_attribute" ]
 ];

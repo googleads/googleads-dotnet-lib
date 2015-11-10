@@ -1,7 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_in_stream_ad_info_attribute =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_in_stream_ad_info_attribute_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_in_stream_ad_info_attribute_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_in_stream_ad_info_attribute_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_in_stream_ad_info_attribute_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_in_stream_ad_info_attribute_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_in_stream_ad_info_attribute_1_1_selectable_fields" ],
-    [ "value", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_in_stream_ad_info_attribute.html#a1dbadd849ee9257d4bfce83df7702e60", null ]
-];

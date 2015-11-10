@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_c_sharp_1_1v1__19_1_1_assign_advertisers_to_advertiser_group =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_c_sharp_1_1v1__19_1_1_assign_advertisers_to_advertiser_group.html#a679ecce7a44592e199cf750d6101f88f", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfa_1_1_examples_1_1_c_sharp_1_1v1__19_1_1_assign_advertisers_to_advertiser_group.html#add8d4ff5f04565d754c75faca4877846", null ]
-];

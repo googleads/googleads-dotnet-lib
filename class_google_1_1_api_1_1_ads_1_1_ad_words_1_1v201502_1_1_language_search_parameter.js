@@ -1,7 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_language_search_parameter =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_language_search_parameter_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_language_search_parameter_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_language_search_parameter_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_language_search_parameter_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_language_search_parameter_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_language_search_parameter_1_1_selectable_fields" ],
-    [ "languages", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201502_1_1_language_search_parameter.html#ab8831b6a0aaf64a184fe37b9081157fb", null ]
-];

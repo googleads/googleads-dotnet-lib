@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_get_new_keywords =
-[
-    [ "Settings", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_get_new_keywords_1_1_settings.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_get_new_keywords_1_1_settings" ],
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_get_new_keywords.html#a84bdecc9f8aebf131d4244ce7f426e3d", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201502_1_1_get_new_keywords.html#a10fe0a7ad1df7637dfe6d9e519ef92fa", null ]
-];
