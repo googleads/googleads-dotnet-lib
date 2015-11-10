@@ -69,7 +69,7 @@ namespace Google.Api.Ads.Dfp.Util.v201505 {
       PreconditionUtilities.CheckNotNull(reportDownloadOptions,
           "reportDownloadOptions cannot be null");
       WebResponse response = null;
-      HttpWebRequest request = BuildRequest(reportService.getReportDownloadUrlWithOptions(
+      WebRequest request = BuildRequest(reportService.getReportDownloadUrlWithOptions(
           reportJobId, reportDownloadOptions));
       response = request.GetResponse();
       return new ReportResponse(response);
@@ -80,14 +80,8 @@ namespace Google.Api.Ads.Dfp.Util.v201505 {
     /// </summary>
     /// <param name="downloadUrl">The download url.</param>
     /// <returns></returns>
-    private HttpWebRequest BuildRequest(string downloadUrl) {
-      DfpAppConfig config = this.reportService.User.Config as DfpAppConfig;
-      HttpWebRequest request = (HttpWebRequest) HttpWebRequest.Create(downloadUrl);
-      request.Method = "GET";
-      request.Proxy = config.Proxy;
-      request.Timeout = config.Timeout;
-      request.UserAgent = config.GetUserAgent();
-      return request;
+    private WebRequest BuildRequest(string downloadUrl) {
+      return HttpUtilities.BuildRequest(downloadUrl, "GET", this.reportService.User.Config);
     }
 
   }

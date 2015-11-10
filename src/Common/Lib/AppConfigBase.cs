@@ -27,7 +27,7 @@ namespace Google.Api.Ads.Common.Lib {
   /// <summary>
   /// This class reads the configuration keys from App.config.
   /// </summary>
-  public abstract class AppConfigBase : INotifyPropertyChanged, AppConfig {
+  public class AppConfigBase : INotifyPropertyChanged, AppConfig {
     /// <summary>
     /// The short name to identify this assembly.
     /// </summary>
@@ -500,6 +500,14 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
+    /// Gets the user agent text.
+    /// </summary>
+    /// <returns>The user agent.</returns>
+    public virtual string GetUserAgent() {
+      return "";
+    }
+
+    /// <summary>
     /// Gets the signature for this assembly, given a type derived from
     /// AppConfigBase.
     /// </summary>
@@ -544,7 +552,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Default constructor for the object.
     /// </summary>
-    protected AppConfigBase() {
+    public AppConfigBase() {
       proxy = null;
       maskCredentials = true;
       timeout = DEFAULT_TIMEOUT;

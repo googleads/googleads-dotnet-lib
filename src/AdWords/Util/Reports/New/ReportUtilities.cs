@@ -19,8 +19,6 @@ using Google.Api.Ads.Common.Util.Reports;
 
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Web;
@@ -124,7 +122,8 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// utilities object.</param>
     /// <param name="reportDefinition">The report definition.</param>
     /// <param name="reportVersion">The report version.</param>
-    public ReportUtilities(AdWordsUser user, string reportVersion, IReportDefinition reportDefinition)
+    public ReportUtilities(AdWordsUser user, string reportVersion,
+        IReportDefinition reportDefinition)
       : base(user) {
       this.reportVersion = reportVersion;
       this.reportDefinition = reportDefinition;
@@ -177,26 +176,18 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
           logEntry.Flush();
           return new ReportResponse(response);
         } catch (WebException e) {
-          string contents = "";
           Exception reportsException = null;
 
-          using (response = e.Response) {
-            try {
-              contents = MediaUtilities.GetStreamContentsAsString(
-                  response.GetResponseStream());
-            } catch {
-              contents = e.Message;
-            }
+          string contents = HttpUtilities.GetErrorResponseBody(e);
 
-            logEntry.LogResponse(response, true, contents);
-            logEntry.Flush();
+          logEntry.LogResponse(e.Response, true, contents);
+          logEntry.Flush();
 
-            reportsException = ParseException(e, contents);
+          reportsException = ParseException(e, contents);
 
-            if (AdWordsErrorHandler.IsOAuthTokenExpiredError(reportsException)) {
-              reportsException = new AdWordsCredentialsExpiredException(
-                  request.Headers["Authorization"]);
-            }
+          if (AdWordsErrorHandler.IsOAuthTokenExpiredError(reportsException)) {
+            reportsException = new AdWordsCredentialsExpiredException(
+                request.Headers["Authorization"]);
           }
           if (errorHandler.ShouldRetry(reportsException)) {
             errorHandler.PrepareForRetry(reportsException);
@@ -216,20 +207,11 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     private HttpWebRequest BuildRequest(string downloadUrl, string postBody) {
       AdWordsAppConfig config = this.User.Config as AdWordsAppConfig;
 
-      HttpWebRequest request = (HttpWebRequest) HttpWebRequest.Create(downloadUrl);
-      request.Method = "POST";
-      request.Proxy = config.Proxy;
-      request.Timeout = config.Timeout;
-      request.UserAgent = config.GetUserAgent();
-
+      HttpWebRequest request = (HttpWebRequest) HttpUtilities.BuildRequest(downloadUrl, "POST",
+          config);
       request.Headers.Add("clientCustomerId: " + config.ClientCustomerId);
       request.ContentType = "application/x-www-form-urlencoded";
-      if (config.EnableGzipCompression) {
-        (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.GZip
-            | DecompressionMethods.Deflate;
-      } else {
-        (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.None;
-      }
+
       if (this.User.OAuthProvider != null) {
         request.Headers["Authorization"] = this.User.OAuthProvider.GetAuthHeader();
       } else {

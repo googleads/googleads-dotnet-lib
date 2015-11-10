@@ -81,5 +81,25 @@ namespace Google.Api.Ads.AdWords.Tests.v201509 {
         new CSharpExamples.GetReportFields().Run(user, reportType);
       });
     }
+
+    /// <summary>
+    /// Tests the StreamCriteriaReportResults VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestStreamCriteriaReportResultsVBExample() {
+      RunExample(delegate() {
+        new VBExamples.StreamCriteriaReportResults().Run(user);
+      });
+    }
+
+    /// <summary>
+    /// Tests the StreamCriteriaReportResults C# code example.
+    /// </summary>
+    [Test]
+    public void TestStreamCriteriaReportResultsCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.StreamCriteriaReportResults().Run(user);
+      });
+    }
   }
 }

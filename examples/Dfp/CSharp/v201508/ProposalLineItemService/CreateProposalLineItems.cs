@@ -51,9 +51,11 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// </summary>
     /// <param name="user">The DFP user object running the code examples.</param>
     public override void Run(DfpUser user) {
+      // [START get_proposal_line_item_service] MOE:strip_line
       // Get the ProposalLineItemService.
       ProposalLineItemService proposalLineItemService =
           (ProposalLineItemService) user.GetService(DfpService.v201508.ProposalLineItemService);
+      // [END get_proposal_line_item_service] MOE:strip_line
 
       // Get the NetworkService.
       NetworkService networkService =
@@ -63,6 +65,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
       long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
       long productId = long.Parse(_T("INSERT_PRODUCT_ID_HERE"));
 
+      // [START add_targeting] MOE:strip_line
       // Get the root ad unit ID used to target the whole site.
       String rootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
 
@@ -79,41 +82,58 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
       // Create targeting.
       Targeting targeting = new Targeting();
       targeting.inventoryTargeting = inventoryTargeting;
+      // [END add_targeting] MOE:strip_line
 
+      // [START create_proposal_line_item_local] MOE:strip_line
       // Create a proposal line item.
       ProposalLineItem proposalLineItem = new ProposalLineItem();
       proposalLineItem.name = "Proposal line item #" + new Random().Next(int.MaxValue);
+      // [END create_proposal_line_item_local] MOE:strip_line
 
+      // [START set_required_creation_fields] MOE:strip_line
       proposalLineItem.proposalId = proposalId;
       proposalLineItem.rateCardId = rateCardId;
       proposalLineItem.productId = productId;
       proposalLineItem.targeting = targeting;
+      // [END set_required_creation_fields] MOE:strip_line
 
+      // [START set_dates] MOE:strip_line
       // Set the length of the proposal line item to run.
       proposalLineItem.startDateTime =
           DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(7), "America/New_York");
       proposalLineItem.endDateTime =
           DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(30), "America/New_York");
+      // [END set_dates] MOE:strip_line
 
+      // [START set_delivery_info] MOE:strip_line
       // Set delivery specifications for the proposal line item.
       proposalLineItem.deliveryRateType = DeliveryRateType.EVENLY;
       proposalLineItem.creativeRotationType = CreativeRotationType.OPTIMIZED;
+      // [END set_delivery_info] MOE:strip_line
 
+      // [START set_billing] MOE:strip_line
       // Set billing specifications for the proposal line item.
       proposalLineItem.billingCap = BillingCap.CAPPED_CUMULATIVE;
       proposalLineItem.billingSource = BillingSource.THIRD_PARTY_VOLUME;
+      // [END set_billing] MOE:strip_line
 
+      // [START set_goal] MOE:strip_line
       // Set pricing for the proposal line item for 1000 impressions at a CPM of $2
       // for a total value of $2.
       proposalLineItem.goal = new Goal() {unitType = UnitType.IMPRESSIONS, units = 1000L};
+      // [END set_goal] MOE:strip_line
+      // [START set_costs] MOE:strip_line
       proposalLineItem.cost = new Money() {currencyCode = "USD", microAmount = 2000000L};
       proposalLineItem.costPerUnit = new Money() {currencyCode = "USD", microAmount = 2000000L};
       proposalLineItem.rateType = RateType.CPM;
+      // [END set_costs] MOE:strip_line
 
       try {
+        // [START create_proposal_line_item_server] MOE:strip_line
         // Create the proposal line item on the server.
         ProposalLineItem[] proposalLineItems = proposalLineItemService.createProposalLineItems(
             new ProposalLineItem[] {proposalLineItem});
+        // [END create_proposal_line_item_server] MOE:strip_line
 
         foreach (ProposalLineItem createdProposalLineItem in proposalLineItems) {
           Console.WriteLine("A proposal line item with ID \"{0}\" and name \"{1}\" was created.",

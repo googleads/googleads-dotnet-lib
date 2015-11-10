@@ -149,5 +149,11 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets the default OAuth2 scope.
     /// </summary>
     string GetDefaultOAuth2Scope();
+
+    /// <summary>
+    /// Gets the user agent text.
+    /// </summary>
+    /// <returns>The user agent.</returns>
+    string GetUserAgent();
   }
 }

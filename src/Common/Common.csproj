@@ -92,6 +92,7 @@
     <Compile Include="Logging\TraceListener.cs" />
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\HttpUtilities.cs" />
     <Compile Include="Util\Reports\AdsReportUtilities.cs" />
     <Compile Include="Util\Reports\ReportResponse.cs" />
     <Compile Include="Util\CsvException.cs" />

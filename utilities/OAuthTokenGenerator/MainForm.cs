@@ -37,8 +37,6 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator {
 
       scopeMap.Add("AdWords API", "https://www.googleapis.com/auth/adwords");
       scopeMap.Add("Doubleclick for Publishers API", "https://www.googleapis.com/auth/dfp");
-      scopeMap.Add("DoubleClick for Advertisers API",
-          "https://www.googleapis.com/auth/dfatrafficking");
 
       foreach (string key in scopeMap.Keys) {
         chkScopes.Items.Add(key);
@@ -64,17 +62,26 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator {
         return;
       }
 
-      if (chkScopes.SelectedItems.Count == 0) {
+      List<string> allScopes = new List<string>();
+      for (int i = 0; i < chkScopes.SelectedItems.Count; i++) {
+        allScopes.Add(scopeMap[chkScopes.SelectedItems[i].ToString()]);
+      }
+
+      string[] additionalScopes = txtExtraScopes.Text.Split(new char[] { '\r', '\n' }, 
+          StringSplitOptions.RemoveEmptyEntries);
+
+      foreach (string additionalScope in additionalScopes) {
+        if (!string.IsNullOrWhiteSpace(additionalScope)) {
+          allScopes.Add(additionalScope);
+        }
+      }
+
+      if (allScopes.Count == 0) {
         MessageBox.Show("You should select at least one scope.");
         return;
       }
 
-      StringBuilder scopeBuilder = new StringBuilder();
-      for (int i = 0; i < chkScopes.SelectedItems.Count; i++) {
-        scopeBuilder.Append(scopeMap[chkScopes.SelectedItems[i].ToString()] + " ");
-      }
-
-      LoginForm loginForm = new LoginForm(clientId, clientSecret, scopeBuilder.ToString().Trim());
+      LoginForm loginForm = new LoginForm(clientId, clientSecret, string.Join(" ", allScopes));
       loginForm.ShowDialog();
     }
 

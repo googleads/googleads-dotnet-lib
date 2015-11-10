@@ -292,10 +292,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="body">The request body.</param>
     /// <param name="errorMessage">The error message.</param>
     protected void CallTokenEndpoint(string body) {
-      WebRequest request = HttpWebRequest.Create(TOKEN_ENDPOINT);
-      request.Proxy = config.Proxy;
-
-      request.Method = "POST";
+      WebRequest request = HttpUtilities.BuildRequest(TOKEN_ENDPOINT, "POST", config);
       request.ContentType = "application/x-www-form-urlencoded";
 
       using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {

@@ -1,3 +1,28 @@
+18.18.0
+=======
+AdWords:
+  - Removed support for AdWords API v201502.
+  - Updated the BatchJobUtilities class to use resumable upload.
+  - Fixed some code examples that were using v201502 to use a newer version of
+  the API.
+  - Added a code example that shows how to stream a report and process it.
+  - Updated the GetKeywords example to match the rest of the client library examples.
+
+AdXBuyer:
+  - Removed support for AdWords API v201502.
+  - Fixed some code examples that were using v201502 to use a newer version of
+  the API.
+
+DFA:
+  - Removed support for the legacy DFA API.
+
+DFP:
+  -
+
+Common:
+  - A new HTTPUtilities class was introduced, and all the utility classes were
+  updated to use this class for creating an HTTP connection.
+
 18.17.0
 =======
 AdWords:

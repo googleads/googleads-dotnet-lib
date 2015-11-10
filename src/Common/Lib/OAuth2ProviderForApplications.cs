@@ -183,8 +183,8 @@ namespace Google.Api.Ads.Common.Lib {
       ValidateOAuth2Parameter("RefreshToken", RefreshToken);
 
       string url = string.Format("{0}?token={1}", REVOKE_ENDPOINT, RefreshToken);
-      WebRequest request = HttpWebRequest.Create(url);
-      request.Proxy = config.Proxy;
+
+      WebRequest request = HttpUtilities.BuildRequest(url, "GET", config);
 
       LogEntry logEntry = new LogEntry(this.Config, new DefaultDateTimeProvider());
       logEntry.LogRequest(request, "", new HashSet<string>());

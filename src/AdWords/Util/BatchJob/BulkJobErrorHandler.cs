@@ -60,21 +60,28 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     /// otherwise.
     /// </returns>
     public override bool IsTransientError(Exception exception) {
+      HttpStatusCode httpCode = 0;
       if (exception is AdWordsBulkRequestException) {
-        AdWordsBulkRequestException ex = (AdWordsBulkRequestException) exception;
-        switch ((HttpStatusCode) ex.error.code) {
-          case HttpStatusCode.InternalServerError:
-          case HttpStatusCode.BadGateway:
-          case HttpStatusCode.ServiceUnavailable:
-          case HttpStatusCode.GatewayTimeout:
-          case HttpStatusCode.NotFound:
-            return true;
-
-          default:
-            return false;
+        AdWordsBulkRequestException e = (AdWordsBulkRequestException) exception;
+        if (e.error != null) {
+          httpCode = (HttpStatusCode) e.error.code;
         }
+      } else if (exception is WebException) {
+        WebException e = (WebException) exception;
+        httpCode = (e.Response as HttpWebResponse).StatusCode;
       } else {
         return false;
+      }
+      switch (httpCode) {
+        case HttpStatusCode.InternalServerError:
+        case HttpStatusCode.BadGateway:
+        case HttpStatusCode.ServiceUnavailable:
+        case HttpStatusCode.GatewayTimeout:
+        case HttpStatusCode.NotFound:
+          return true;
+
+        default:
+          return false;
       }
     }
 

@@ -12,30 +12,40 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Lib;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
-using System.Text;
 
 namespace Google.Api.Ads.Common.Util {
+
   /// <summary>
   /// Provides utility methods for handling media resources.
   /// </summary>
   public static class MediaUtilities {
+
     /// <summary>
     /// Retrieves an asset from the web given its url.
     /// </summary>
     /// <param name="assetUrl">The url of the asset to be retrieved.</param>
+    /// <param name="config">The application configuration instance.</param>
     /// <returns>Asset data, as an array of bytes.</returns>
     /// <exception cref="ArgumentNullException">Thrown if
-    /// <paramref name="assetUrl"/> is null.</exception>
-    public static byte[] GetAssetDataFromUrl(Uri assetUrl) {
+    /// <paramref name="assetUrl"/> or <paramref name="config"/>is null.
+    /// </exception>
+    public static byte[] GetAssetDataFromUrl(Uri assetUrl, AppConfig config) {
       if (assetUrl == null) {
         throw new ArgumentNullException("assetUrl");
       }
-      WebRequest request = HttpWebRequest.Create(assetUrl);
+
+      if (config == null) {
+        throw new ArgumentNullException("config");
+      }
+
+      WebRequest request = HttpUtilities.BuildRequest(assetUrl.AbsoluteUri, "GET", config);
       WebResponse response = request.GetResponse();
 
       MemoryStream memStream = new MemoryStream();
@@ -52,11 +62,42 @@ namespace Google.Api.Ads.Common.Util {
     /// <returns>Asset data, as an array of bytes.</returns>
     /// <exception cref="ArgumentNullException">Thrown if
     /// <paramref name="assetUrl"/> is null.</exception>
+    public static byte[] GetAssetDataFromUrl(Uri assetUrl) {
+      return GetAssetDataFromUrl(assetUrl, new AppConfigBase());
+    }
+
+    /// <summary>
+    /// Retrieves an asset from the web given its url.
+    /// </summary>
+    /// <param name="assetUrl">The url of the asset to be retrieved.</param>
+    /// <returns>Asset data, as an array of bytes.</returns>
+    /// <exception cref="ArgumentNullException">Thrown if
+    /// <paramref name="assetUrl"/> is null.</exception>
     public static byte[] GetAssetDataFromUrl(string assetUrl) {
       if (string.IsNullOrEmpty(assetUrl)) {
         throw new ArgumentNullException("assetUrl");
       }
       return GetAssetDataFromUrl(new Uri(assetUrl));
+    }
+
+    /// <summary>
+    /// Retrieves an asset from the web given its url.
+    /// </summary>
+    /// <param name="assetUrl">The url of the asset to be retrieved.</param>
+    /// <returns>Asset data, as an array of bytes.</returns>
+    /// <exception cref="ArgumentNullException">Thrown if
+    /// <paramref name="assetUrl"/> or <paramref name="config" /> is null.
+    /// </exception>
+    public static byte[] GetAssetDataFromUrl(string assetUrl, AppConfig config) {
+      if (string.IsNullOrEmpty(assetUrl)) {
+        throw new ArgumentNullException("assetUrl");
+      }
+
+      if (config == null) {
+        throw new ArgumentNullException("config");
+      }
+
+      return GetAssetDataFromUrl(new Uri(assetUrl), config);
     }
 
     /// <summary>

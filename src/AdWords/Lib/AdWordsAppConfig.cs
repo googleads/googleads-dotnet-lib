@@ -332,7 +332,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <summary>
     /// Gets a useragent string that can be used with the library.
     /// </summary>
-    public string GetUserAgent() {
+    public override string GetUserAgent() {
       return String.Format("{0} ({1}{2})", this.UserAgent, this.Signature,
           this.EnableGzipCompression ? ", gzip" : "");
     }

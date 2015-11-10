@@ -13,7 +13,7 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201502;
+using Google.Api.Ads.AdWords.v201506;
 
 using System;
 using System.Collections.Generic;

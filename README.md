@@ -1,8 +1,8 @@
 #Google Ads API .NET Client Library
 
 This project hosts the .NET client library for the various SOAP-Based Ads APIs - AdWords API,
-DoubleClick Ad Exchange Buyer SOAP (AdxBuyer) API, DoubleClick for Advertisers (DFA) API, and
-Google's DoubleClick for Publishers (DFP) API at Google.
+DoubleClick Ad Exchange Buyer SOAP (AdxBuyer) API, and Google's DoubleClick for Publishers (DFP)
+API at Google.
 
 ##Features
 - Distributed via Nuget
@@ -53,12 +53,6 @@ This is the recommended way to get the client library. The nuget distributions o
 - [Google.Dfp.Examples.CSharp](https://www.nuget.org/packages/Google.Dfp.Examples.CSharp/):
  C# Code examples for DFP API
 
-###DFA API
-
-- [Google.Dfa](https://www.nuget.org/packages/Google.Dfa/): DFA API DotNet Client Library
-- [Google.Dfa.Examples.CSharp](https://www.nuget.org/packages/Google.Dfa.Examples.CSharp/): C# Code
- examples for DFA API
-
 To use the library, you can install the appropriate nuget packages and add reference to your Visual
  Studio project. You can learn more about the nuget package manager at http://www.nuget.org.
 ##Binary distribution
@@ -67,7 +61,7 @@ The binary distribution of the Ads API .NET library consists of a precompiled ve
  library as a .NET assembly, code examples for using the library, and library documentation.
  If you are interested in just using the library and not in its internals, and you don't use
  nuget package manager in your development environment, then you should download this distribution.
- There are separate downloads for AdWords, AdxBuyer, DFA and DFP APIs.
+ There are separate downloads for AdWords, AdxBuyer and DFP APIs.
 
 The contents of this distribution are as follows:
 ```
@@ -130,7 +124,7 @@ The source distribution of the Ads API .NET Client Library consists of individua
  projects for the client library, code examples and test cases, documentation, and support
  libraries and tools for compiling and running the library. If you are interested in the
  library internals you should download this distribution. There are separate downloads for
- AdWords, AdxBuyer, DFP and DFA APIs.
+ AdWords, AdxBuyer and DFP APIs.
 
 ```
 The contents of this distribution are as follows:
@@ -208,15 +202,13 @@ See https://github.com/googleads/googleads-dotnet-lib/wiki#logging for details.
 - AdWords API: https://developers.google.com/adwords/api/
 - AdxBuyer API: https://developers.google.com/ad-exchange/buyer-soap/
 - DFP API: https://developers.google.com/doubleclick-publishers/
-- DFA API: https://developers.google.com/doubleclick-advertisers/
 
 ###Support forum
 - AdWords API: https://developers.google.com/adwords/api/community/
 - AdxBuyer API: https://developers.google.com/ad-exchange/buyer-soap/community/
 - DFP API: https://developers.google.com/doubleclick-publishers/community
-- DFA API: https://developers.google.com/doubleclick-advertisers/community
 
 ###Authors
 - https://github.com/AnashOommen
-- https://github.com/Narwalter
+- https://github.com/ChristopherSeeley
 - https://github.com/jimper

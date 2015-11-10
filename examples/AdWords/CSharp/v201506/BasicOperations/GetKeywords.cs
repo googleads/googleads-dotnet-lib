@@ -76,6 +76,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
           // Restrict search to an ad group.
           Predicate.Equals(AdGroupCriterion.Fields.AdGroupId, adGroupId),
         },
+        ordering = new OrderBy[] { OrderBy.Asc(Keyword.Fields.KeywordText) },
         paging = Paging.Default
       };
 
@@ -91,20 +92,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
             int i = selector.paging.startIndex;
 
             foreach (AdGroupCriterion adGroupCriterion in page.entries) {
-              bool isNegative = (adGroupCriterion is NegativeAdGroupCriterion);
-
-              // If you are retrieving multiple type of criteria, then you may
-              // need to check for
-              //
-              // if (adGroupCriterion is Keyword) { ... }
-              //
-              // to identify the criterion type.
               Keyword keyword = (Keyword) adGroupCriterion.criterion;
-              string keywordType = isNegative ? "Negative keyword" : "Keyword";
 
-              Console.WriteLine("{0}) {1} with text = '{2}', matchtype = '{3}', ID = '{4}' and " +
-                  "criteria type = '{5}' was found.", i + 1, keywordType, keyword.text,
-                  keyword.matchType, keyword.id, keyword.CriterionType);
+              Console.WriteLine("{0}) Keyword with text '{1}', match type '{2}', criteria " +
+                  "type '{3}', and ID {4} was found.", i + 1, keyword.text, keyword.matchType,
+                  keyword.type, keyword.id);
               i++;
             }
           }
