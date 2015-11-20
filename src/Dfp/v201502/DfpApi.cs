@@ -184,10 +184,12 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// while processing a service request. <p>The OGNL field path is provided for
   /// parsers to identify the request data element that may have caused the error.</p>
   /// </summary>
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TypeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(StatementError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ServerError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceSegmentError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequiredError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequiredCollectionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuotaError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PublisherQueryLanguageSyntaxError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PublisherQueryLanguageContextError))]
@@ -213,7 +215,6 @@ namespace Google.Api.Ads.Dfp.v201502 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(NullError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserDomainTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(UniqueError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(TypeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TimeZoneError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TechnologyTargetingError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TeamError))]
@@ -222,10 +223,10 @@ namespace Google.Api.Ads.Dfp.v201502 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReservationDetailsError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequiredSizeError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequiredNumberError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequiredCollectionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RegExError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProgrammaticError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(OrderError))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(OrderActionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LineItemOperationError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LineItemFlightDateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LineItemError))]
@@ -262,7 +263,6 @@ namespace Google.Api.Ads.Dfp.v201502 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdRuleFrequencyCapError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdRuleDateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(InventoryUnitSizesError))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(OrderActionError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExchangeRateError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitHierarchyError))]
@@ -1860,7 +1860,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// href='NonRuleBasedFirstPartyAudienceSegment'>NonRuleBasedFirstPartyAudienceSegment</a>
   /// is a <a href='FirstPartyAudienceSegment'>FirstPartyAudienceSegment</a> owned by
   /// the publisher network. It doesn't contain a rule. Cookies are usually added to
-  /// this segment via cookie upload.
+  /// this segment via cookie upload. <p>These segments are created by data management
+  /// platforms or Google Analytics. They cannot be created using the DFP API.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
   [System.SerializableAttribute()]
@@ -2192,6 +2193,17 @@ namespace Google.Api.Ads.Dfp.v201502 {
   }
 
 
+  /// <summary>An error for a field which is an invalid type.
+  /// </summary>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
+  public partial class TypeError : ApiError {
+  }
+
+
   /// <summary>An error that occurs while parsing <a href='Statement'>Statement</a> objects.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
@@ -2458,6 +2470,63 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// <summary>Missing required field.
     /// </summary>
     REQUIRED,
+  }
+
+
+  /// <summary>A list of all errors to be used for validating sizes of collections.
+  /// </summary>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
+  public partial class RequiredCollectionError : ApiError {
+    private RequiredCollectionErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    public RequiredCollectionErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    /// <summary> <code>true</code>, if a value is specified for <see cref="reason" />,
+    /// <code>false</code> otherwise. </summary>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredCollectionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
+  public enum RequiredCollectionErrorReason {
+    /// <summary>A required collection is missing.
+    /// </summary>
+    REQUIRED,
+    /// <summary>Collection size is too large.
+    /// </summary>
+    TOO_LARGE,
+    /// <summary>Collection size is too small.
+    /// </summary>
+    TOO_SMALL,
+    /// <summary>The value returned if the actual value is not exposed by the requested API
+    /// version.
+    /// </summary>
+    UNKNOWN,
   }
 
 
@@ -7761,6 +7830,9 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// <summary>The line item has been synced.
     /// </summary>
     SYNCED,
+    /// <summary>The value returned if the actual value is not exposed by the requested API
+    /// version.
+    /// </summary>
     UNKNOWN,
   }
 
@@ -10623,17 +10695,6 @@ namespace Google.Api.Ads.Dfp.v201502 {
   }
 
 
-  /// <summary>An error for a field which is an invalid type.
-  /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
-  public partial class TypeError : ApiError {
-  }
-
-
   /// <summary>Errors related to timezones.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
@@ -10801,7 +10862,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TeamError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
   public enum TeamErrorReason {
-    /// <summary>User cannot use this entity because it not on any of the user's teams.
+    /// <summary>User cannot use this entity because it is not on any of the user's teams.
     /// </summary>
     ENTITY_NOT_ON_USERS_TEAMS,
     /// <summary>The targeted or excluded ad unit must be on the order's teams.
@@ -10817,6 +10878,9 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// with an entity of that type.
     /// </summary>
     ALL_TEAM_ASSOCIATION_NOT_ALLOWED,
+    /// <summary>The all entities team access type cannot be overridden.
+    /// </summary>
+    ALL_TEAM_ACCESS_OVERRIDE_NOT_ALLOWED,
     /// <summary>The value returned if the actual value is not exposed by the requested API
     /// version.
     /// </summary>
@@ -11259,63 +11323,6 @@ namespace Google.Api.Ads.Dfp.v201502 {
   }
 
 
-  /// <summary>A list of all errors to be used for validating sizes of collections.
-  /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
-  public partial class RequiredCollectionError : ApiError {
-    private RequiredCollectionErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    public RequiredCollectionErrorReason reason {
-      get {
-        return this.reasonField;
-      }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    /// <summary> <code>true</code>, if a value is specified for <see cref="reason" />,
-    /// <code>false</code> otherwise. </summary>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
-    }
-  }
-
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredCollectionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
-  public enum RequiredCollectionErrorReason {
-    /// <summary>A required collection is missing.
-    /// </summary>
-    REQUIRED,
-    /// <summary>Collection size is too large.
-    /// </summary>
-    TOO_LARGE,
-    /// <summary>Collection size is too small.
-    /// </summary>
-    TOO_SMALL,
-    /// <summary>The value returned if the actual value is not exposed by the requested API
-    /// version.
-    /// </summary>
-    UNKNOWN,
-  }
-
-
   /// <summary>Caused by supplying a value for an object attribute that does not conform to a
   /// documented valid regular expression.
   /// </summary>
@@ -11546,6 +11553,84 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// <summary>Programmatic info fields should not be set for a non-programmatic order.
     /// </summary>
     INVALID_FIELDS_SET_FOR_NON_PROGRAMMATIC_ORDER,
+    /// <summary>The value returned if the actual value is not exposed by the requested API
+    /// version.
+    /// </summary>
+    UNKNOWN,
+  }
+
+
+  /// <summary>Lists all errors associated with performing actions on <a href='Order'>Order</a>
+  /// objects.
+  /// </summary>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
+  public partial class OrderActionError : ApiError {
+    private OrderActionErrorReason reasonField;
+
+    private bool reasonFieldSpecified;
+
+    /// <summary>The error reason represented by an enum.
+    /// </summary>
+    public OrderActionErrorReason reason {
+      get {
+        return this.reasonField;
+      }
+      set {
+        this.reasonField = value;
+        this.reasonSpecified = true;
+      }
+    }
+
+    /// <summary> <code>true</code>, if a value is specified for <see cref="reason" />,
+    /// <code>false</code> otherwise. </summary>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool reasonSpecified {
+      get {
+        return this.reasonFieldSpecified;
+      }
+      set {
+        this.reasonFieldSpecified = value;
+      }
+    }
+  }
+
+
+  /// <summary>The reasons for the target error.
+  /// </summary>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OrderActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
+  public enum OrderActionErrorReason {
+    /// <summary>The operation is not allowed due to lack of permissions.
+    /// </summary>
+    PERMISSION_DENIED,
+    /// <summary>The operation is not applicable for the current state of the <a
+    /// href='Order'>Order</a>.
+    /// </summary>
+    NOT_APPLICABLE,
+    /// <summary>The <a href='Order'>Order</a> is archived, an <a
+    /// href='OrderAction'>OrderAction</a> cannot be applied to an archived order.
+    /// </summary>
+    IS_ARCHIVED,
+    /// <summary>The <a href='Order'>Order</a> is past its end date, An <a
+    /// href='OrderAction'>OrderAction</a> cannot be applied to a order that has ended.
+    /// </summary>
+    HAS_ENDED,
+    /// <summary>A <a href='Order'>Order</a> cannot be approved if it contains reservable <a
+    /// href='LineItem'>LineItem</a>s that are unreserved.
+    /// </summary>
+    CANNOT_APPROVE_WITH_UNRESERVED_LINE_ITEMS,
+    /// <summary>Deleting an <a href='Order'>Order</a> with delivered line items is not allowed
+    /// </summary>
+    CANNOT_DELETE_ORDER_WITH_DELIVERED_LINEITEMS,
+    /// <summary>Cannot approve because company credit status is not active.
+    /// </summary>
+    CANNOT_APPROVE_COMPANY_CREDIT_STATUS_NOT_ACTIVE,
     /// <summary>The value returned if the actual value is not exposed by the requested API
     /// version.
     /// </summary>
@@ -12299,17 +12384,6 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// <summary>A landing page-only ad unit cannot be targeted if it doesn't have any children.
     /// </summary>
     SELF_ONLY_INVENTORY_UNIT_WITHOUT_DESCENDANTS,
-    /// <summary>Shared inventory from one distributor network cannot be targeted along with
-    /// inventory from another distributor.
-    /// </summary>
-    INVENTORY_FROM_MULTIPLE_NETWORKS_CANNOT_BE_TARGETED_SIMULTANEOUSLY,
-    /// <summary>Shared inventory from one distributor network cannot be targeted along with
-    /// inventory in the local network.
-    /// </summary>
-    INVENTORY_FROM_LOCAL_AND_DISTRIBUTOR_NETWORKS_CANNOT_BE_TARGETED_SIMULTANEOUSLY,
-    /// <summary>Shared inventory cannot be targeted along with audience segments.
-    /// </summary>
-    SHARED_INVENTORY_CANNOT_BE_TARGETED_WITH_AUDIENCE_SEGMENTS_SIMULTANEOUSLY,
     /// <summary>Shared inventory cannot be targeted for selected line item type.
     /// </summary>
     UNSUPPORTED_LINE_ITEM_TYPE_FOR_SHARED_INVENTORY_TARGETING,
@@ -17215,7 +17289,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <code>"select CountryCode, Name from Geo_Target"</code>, where
   /// <code>CountryCode</code> and <code>Name</code> are columns of interest and
   /// <code>Geo_Target</code> is the table.</p> <p>The following tables are
-  /// supported:</p> <h4>Geo_Target</h4> <p>Use this table instead of the other Geo
+  /// supported:</p> <h2>Geo_Target</h2> <p>Use this table instead of the other Geo
   /// tables below (Country, Region, Metro, City, Postal_Code) which will eventually
   /// be removed.</p> <table> <tr> <th scope="col">Column Name</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique identifier for
@@ -17236,7 +17310,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <li>Prefecture</li> <li>Province</li> <li>Region</li> <li>State</li>
   /// <li>Territory</li> <li>Tv_Region</li> <li>Union_Territory</li> </ul> </td> </tr>
   /// <tr> <td>Targetable</td> <td>Indicates whether geographical targeting is
-  /// allowed</td> </tr> </table> <h4>Country</h4> This table is deprecated. V201408
+  /// allowed</td> </tr> </table> <h2>Country</h2> This table is deprecated. V201408
   /// is the last version this table can be used in. Use <strong>Geo_Target</strong>
   /// instead. <table> <tr> <th scope="col">Column Name</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique identifier for
@@ -17244,7 +17318,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// ISO 3166-1 alpha-2</td> </tr> <tr> <td>CountryName</td> <td>The name of the
   /// country</td> </tr> <tr> <td>CurrencyCode</td> <td>Currency code as defined by
   /// ISO 4217</td> </tr> <tr> <td>Targetable</td> <td>Indicates whether geographical
-  /// targeting is allowed</td> </tr> </table> <h4>Region</h4> This table is
+  /// targeting is allowed</td> </tr> </table> <h2>Region</h2> This table is
   /// deprecated. V201408 is the last version this table can be used in. Use
   /// <strong>Geo_Target</strong> instead. <table> <tr> <th scope="col">Column
   /// Name</th> <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique
@@ -17253,7 +17327,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// region</td> </tr> <tr> <td>CountryCode</td> <td>Country code as defined by ISO
   /// 3166-1 alpha-2</td> </tr> <tr> <td>CountryName</td> <td>The name of the
   /// country</td> </tr> <tr> <td>Targetable</td> <td>Indicates whether geographical
-  /// targeting is allowed</td> </tr> </table> <h4>Metro</h4> This table is
+  /// targeting is allowed</td> </tr> </table> <h2>Metro</h2> This table is
   /// deprecated. V201408 is the last version this table can be used in. Use
   /// <strong>Geo_Target</strong> instead. <table> <tr> <th scope="col">Column
   /// Name</th> <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique
@@ -17262,7 +17336,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// name of the metro</td> </tr> <tr> <td>CountryCode</td> <td>Country code as
   /// defined by ISO 3166-1 alpha-2</td> </tr> <tr> <td>CountryName</td> <td>The name
   /// of the country</td> </tr> <tr> <td>Targetable</td> <td>Indicates whether
-  /// geographical targeting is allowed</td> </tr> </table> <h4>City</h4> This table
+  /// geographical targeting is allowed</td> </tr> </table> <h2>City</h2> This table
   /// is deprecated. V201408 is the last version this table can be used in. Use
   /// <strong>Geo_Target</strong> instead. <table> <tr> <th scope="col">Column
   /// Name</th> <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique
@@ -17274,66 +17348,66 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <td>CountryCode</td> <td>Country code as defined by ISO 3166-1 alpha-2</td>
   /// </tr> <tr> <td>CountryName</td> <td>The name of the country</td> </tr> <tr>
   /// <td>Targetable</td> <td>Indicates whether geographical targeting is allowed</td>
-  /// </tr> </table> <h4>Postal_Code</h4> This table is deprecated. V201408 is the
+  /// </tr> </table> <h2>Postal_Code</h2> This table is deprecated. V201408 is the
   /// last version this table can be used in. Use <strong>Geo_Target</strong> instead.
   /// <table> <tr> <th scope="col">Column Name</th> <th scope="col">Description</th>
   /// </tr> <tr> <td>Id</td> <td>Unique identifier for the postal code</td> </tr> <tr>
   /// <td>PostalCode</td> <td>Postal code</td> </tr> <tr> <td>CountryCode</td>
   /// <td>Country code as defined by ISO 3166-1 alpha-2</td> </tr> <tr>
   /// <td>Targetable</td> <td>Indicates whether geographical targeting is allowed</td>
-  /// </tr> </table> <h4>Bandwidth_Group</h4> <table> <tr> <th scope="col">Column
+  /// </tr> </table> <h2>Bandwidth_Group</h2> <table> <tr> <th scope="col">Column
   /// Name</th> <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique
   /// identifier for the bandwidth group</td> </tr> <tr> <td>BandwidthName</td>
-  /// <td>Name of the bandwidth group</td> </tr> </table> <h4>Browser</h4> <table>
+  /// <td>Name of the bandwidth group</td> </tr> </table> <h2>Browser</h2> <table>
   /// <tr> <th scope="col">Column Name</th> <th scope="col">Description</th> </tr>
   /// <tr> <td>Id</td> <td>Unique identifier for the browser</td> </tr> <tr>
   /// <td>BrowserName</td> <td>Name of the browser</td> </tr> <tr>
   /// <td>MajorVersion</td> <td>Major version of the browser</td> </tr> <tr>
   /// <td>MinorVersion</td> <td>Minor version of the browser</td> </tr> </table>
-  /// <h4>Browser_Language</h4> <table> <tr> <th scope="col">Column Name</th> <th
+  /// <h2>Browser_Language</h2> <table> <tr> <th scope="col">Column Name</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique identifier for
   /// the browser language</td> </tr> <tr> <td>BrowserLanguageName</td> <td>Browser's
-  /// language</td> </tr> </table> <h4>Device_Capability</h4> <table> <tr> <th
+  /// language</td> </tr> </table> <h2>Device_Capability</h2> <table> <tr> <th
   /// scope="col">Column Name</th> <th scope="col">Description</th> </tr> <tr>
   /// <td>Id</td> <td>Unique identifier for the device capability</td> </tr> <tr>
   /// <td>DeviceCapabilityName</td> <td>Name of the device capability</td> </tr>
-  /// </table> <h4>Device_Category</h4> <table> <tr> <th scope="col">Column Name</th>
+  /// </table> <h2>Device_Category</h2> <table> <tr> <th scope="col">Column Name</th>
   /// <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique identifier
   /// for the device category</td> </tr> <tr> <td>DeviceCategoryName</td> <td>Name of
-  /// the device category</td> </tr> </table> <h4>Device_Manufacturer</h4> <table>
+  /// the device category</td> </tr> </table> <h2>Device_Manufacturer</h2> <table>
   /// <tr> <th scope="col">Column Name</th> <th scope="col">Description</th> </tr>
   /// <tr> <td>Id</td> <td>Unique identifier for the device manufacturer</td> </tr>
   /// <tr> <td>MobileDeviceManufacturerName</td> <td>Name of the device
-  /// manufacturer</td> </tr> </table> <h4>Mobile_Carrier</h4> <table> <tr> <th
+  /// manufacturer</td> </tr> </table> <h2>Mobile_Carrier</h2> <table> <tr> <th
   /// scope="col">Column Name</th> <th scope="col">Description</th> </tr> <tr>
   /// <td>Id</td> <td>Unique identifier for the mobile carrier</td> </tr> <tr>
   /// <td>CountryCode</td> <td>The country code of the mobile carrier</td> </tr> <tr>
   /// <td>MobileCarrierName</td> <td>Name of the mobile carrier</td> </tr> </table>
-  /// <h4>Mobile_Device</h4> <table> <tr> <th scope="col">Column Name</th> <th
+  /// <h2>Mobile_Device</h2> <table> <tr> <th scope="col">Column Name</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique identifier for
   /// the mobile device</td> </tr> <tr> <td>MobileDeviceManufacturerId</td> <td>Id of
   /// the device manufacturer</td> </tr> <tr> <td>MobileDeviceName</td> <td>Name of
-  /// the mobile device</td> </tr> </table> <h4>Mobile_Device_Submodel</h4> <table>
+  /// the mobile device</td> </tr> </table> <h2>Mobile_Device_Submodel</h2> <table>
   /// <tr> <th scope="col">Column Name</th> <th scope="col">Description</th> </tr>
   /// <tr> <td>Id</td> <td>Unique identifier for the mobile device submodel</td> </tr>
   /// <tr> <td>MobileDeviceId</td> <td>Id of the mobile device</td> </tr> <tr>
   /// <td>MobileDeviceSubmodelName</td> <td>Name of the mobile device submodel</td>
-  /// </tr> </table> <h4>Operating_System</h4> <table> <tr> <th scope="col">Column
+  /// </tr> </table> <h2>Operating_System</h2> <table> <tr> <th scope="col">Column
   /// Name</th> <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique
   /// identifier for the operating system</td> </tr> <tr> <td>OperatingSystemName</td>
   /// <td>Name of the operating system</td> </tr> </table>
-  /// <h4>Operating_System_Version</h4> <table> <tr> <th scope="col">Column Name</th>
+  /// <h2>Operating_System_Version</h2> <table> <tr> <th scope="col">Column Name</th>
   /// <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique identifier
   /// for the operating system version</td> </tr> <tr> <td>OperatingSystemId</td>
   /// <td>Id of the operating system</td> </tr> <tr> <td>MajorVersion</td> <td>The
   /// operating system major version</td> </tr> <tr> <td>MinorVersion</td> <td>The
   /// operating system minor version</td> </tr> <tr> <td>MicroVersion</td> <td>The
-  /// operating system micro version</td> </tr> </table> <h4>Third_Party_Company</h4>
+  /// operating system micro version</td> </tr> </table> <h2>Third_Party_Company</h2>
   /// <table> <tr> <th scope="col">Column Name</th> <th scope="col">Description</th>
   /// </tr> <tr> <td>Id</td> <td>Unique identifier for the third party company</td>
   /// </tr> <tr> <td>Name</td> <td>The third party company name</td> </tr> <tr>
   /// <td>Type</td> <td>The third party company type</td> </tr> <tr> <td>Status</td>
-  /// <td>The status of the third party company</td> </tr> </table> <h4>Time_Zone</h4>
+  /// <td>The status of the third party company</td> </tr> </table> <h2>Time_Zone</h2>
   /// <table> <tr> <th scope="col">Column Name</th> <th scope="col">Description</th>
   /// </tr> <tr> <td>Id</td> <td>Unique identifier for the time zone in the form of
   /// <code></code></td> </tr> <tr> <td>StandardGmtOffset</td> <td>The standard GMT
@@ -17341,7 +17415,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <code>America/New_York</code></td> </tr> <tr> <td>SupportedInReports</td>
   /// <td>Indicates whether the time zone is supported in reports. Only time zones
   /// that are full hour offsets from <a href='Network#timeZone'>Network#timeZone</a>
-  /// are supported in reports.</td> </tr> </table> <h4 id="Line_Item">Line_Item</h4>
+  /// are supported in reports.</td> </tr> </table> <h2 id="Line_Item">Line_Item</h2>
   /// <table> <tr> <th scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>CostType</td>
   /// <td><code>Text</code></td> <td>The method used for billing this
@@ -17387,8 +17461,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <td><code>Number</code></td> <td>The total number of impressions or clicks that
   /// will be reserved for the <code>LineItem</code>. If the line item is of type <a
   /// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a>, then it represents
-  /// the percentage of available impressions reserved.</td> </tr> </table> <h4
-  /// id="Ad_Unit">Ad_Unit</h4> <table> <tr> <th scope="col">Column name</th> <th
+  /// the percentage of available impressions reserved.</td> </tr> </table> <h2
+  /// id="Ad_Unit">Ad_Unit</h2> <table> <tr> <th scope="col">Column name</th> <th
   /// scope="col">Type</th> <th scope="col">Description</th> </tr> <tr>
   /// <td>AdUnitCode</td> <td><code>Text</code></td> <td>A string used to uniquely
   /// identify the ad unit for the purposes of serving the ad. This attribute is
@@ -17406,7 +17480,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <td><code>Number</code></td> <td>The unique ID of the <a
   /// href='Company'>Company</a>, which is of type <a
   /// href='Company.Type#AFFILIATE_DISTRIBUTION_PARTNER'>Company.Type#AFFILIATE_DISTRIBUTION_PARTNER</a>,
-  /// to which this ad unit belongs.</td> </tr> </table> <h4 id="User">User</h4>
+  /// to which this ad unit belongs.</td> </tr> </table> <h2 id="User">User</h2>
   /// <table> <tr> <th scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Email</td>
   /// <td><code>Text</code></td> <td>The email or login of the user.</td> </tr> <tr>
@@ -17419,8 +17493,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <td>RoleId</td> <td><code>Number</code></td> <td>The unique role ID of the user.
   /// <a href='Role'>Role</a> objects that are created by Google will have negative
   /// IDs.</td> </tr> <tr> <td>RoleName</td> <td><code>Text</code></td> <td>The name
-  /// of the <a href='Role'>Role</a> assigned to the user.</td> </tr> </table> <h4
-  /// id="Exchange_Rate">Exchange_Rate</h4> <table> <tr> <th scope="col">Column
+  /// of the <a href='Role'>Role</a> assigned to the user.</td> </tr> </table> <h2
+  /// id="Exchange_Rate">Exchange_Rate</h2> <table> <tr> <th scope="col">Column
   /// name</th> <th scope="col">Type</th> <th scope="col">Description</th> </tr> <tr>
   /// <td>CurrencyCode</td> <td><code>Text</code></td> <td>The currency code that the
   /// exchange rate is related to. The exchange rate is between this currency and <a
@@ -17443,8 +17517,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// refresh rate at which the exchange rate is updated. Setting this attribute to <a
   /// href='ExchangeRateRefreshRate#FIXED'>ExchangeRateRefreshRate#FIXED</a> without
   /// setting the exchange rate value will cause unknown exchange rate value returned
-  /// in future queries.</td> </tr> </table> <h4
-  /// id="Programmatic_Buyer">Programmatic_Buyer</h4> <table> <tr> <th
+  /// in future queries.</td> </tr> </table> <h2
+  /// id="Programmatic_Buyer">Programmatic_Buyer</h2> <table> <tr> <th
   /// scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>AdxBuyerNetworkId</td>
   /// <td><code>Number</code></td> <td>The ID used by Adx to bill the appropriate
@@ -17456,15 +17530,15 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <td>The ID of the programmatic buyer's parent. For advertisers, this field
   /// contains the advertiser's partner ID. For partners, this field is zero.</td>
   /// </tr> <tr> <td>Type</td> <td><code>Text</code></td> <td>The type of a
-  /// programmatic buyer.</td> </tr> </table> <h4
-  /// id="Audience_Segment_Category">Audience_Segment_Category</h4> <table> <tr> <th
+  /// programmatic buyer.</td> </tr> </table> <h2
+  /// id="Audience_Segment_Category">Audience_Segment_Category</h2> <table> <tr> <th
   /// scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td><code>Number</code></td>
   /// <td>The unique identifier for the audience segment category.</td> </tr> <tr>
   /// <td>Name</td> <td><code>Text</code></td> <td>The name of the audience segment
   /// category.</td> </tr> <tr> <td>ParentId</td> <td><code>Number</code></td> <td>The
   /// unique identifier of the audience segment category's parent.</td> </tr> </table>
-  /// <h4 id="Audience_Segment">Audience_Segment</h4> <table> <tr> <th
+  /// <h2 id="Audience_Segment">Audience_Segment</h2> <table> <tr> <th
   /// scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>CategoryIds</td> <td><code>Set of
   /// number</code></td> <td>The ids of the categories that this audience segment
@@ -17475,8 +17549,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// the audience segment.</td> </tr> <tr> <td>OwnerName</td>
   /// <td><code>Text</code></td> <td>The owner name of the audience segment.</td>
   /// </tr> <tr> <td>SegmentType</td> <td><code>Text</code></td> <td>The type of the
-  /// audience segment.</td> </tr> </table> <h4
-  /// id="Proposal_Retraction_Reason">Proposal_Retraction_Reason</h4> <table> <tr> <th
+  /// audience segment.</td> </tr> </table> <h2
+  /// id="Proposal_Retraction_Reason">Proposal_Retraction_Reason</h2> <table> <tr> <th
   /// scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td><code>Number</code></td>
   /// <td>The ID of the <code>ProposalRetractionReason</code>. This attribute is
@@ -17484,8 +17558,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// created.</td> </tr> <tr> <td>IsActive</td> <td><code>Boolean</code></td>
   /// <td>True if the <code>ProposalRetractionReason</code> is active.</td> </tr> <tr>
   /// <td>Name</td> <td><code>Text</code></td> <td>The name of the
-  /// <code>ProposalRetractionReason</code>.</td> </tr> </table> <h4
-  /// id="Audience_Explorer">Audience_Explorer</h4> <table> <tr> <th
+  /// <code>ProposalRetractionReason</code>.</td> </tr> </table> <h2
+  /// id="Audience_Explorer">Audience_Explorer</h2> <table> <tr> <th
   /// scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td><code>Number</code></td>
   /// <td>Uniquely identifies the audience segment.</td> </tr> <tr>
@@ -17661,84 +17735,6 @@ namespace Google.Api.Ads.Dfp.v201502 {
         this.rowsField = value;
       }
     }
-  }
-
-
-  /// <summary>Lists all errors associated with performing actions on <a href='Order'>Order</a>
-  /// objects.
-  /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
-  public partial class OrderActionError : ApiError {
-    private OrderActionErrorReason reasonField;
-
-    private bool reasonFieldSpecified;
-
-    /// <summary>The error reason represented by an enum.
-    /// </summary>
-    public OrderActionErrorReason reason {
-      get {
-        return this.reasonField;
-      }
-      set {
-        this.reasonField = value;
-        this.reasonSpecified = true;
-      }
-    }
-
-    /// <summary> <code>true</code>, if a value is specified for <see cref="reason" />,
-    /// <code>false</code> otherwise. </summary>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool reasonSpecified {
-      get {
-        return this.reasonFieldSpecified;
-      }
-      set {
-        this.reasonFieldSpecified = value;
-      }
-    }
-  }
-
-
-  /// <summary>The reasons for the target error.
-  /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OrderActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
-  public enum OrderActionErrorReason {
-    /// <summary>The operation is not allowed due to lack of permissions.
-    /// </summary>
-    PERMISSION_DENIED,
-    /// <summary>The operation is not applicable for the current state of the <a
-    /// href='Order'>Order</a>.
-    /// </summary>
-    NOT_APPLICABLE,
-    /// <summary>The <a href='Order'>Order</a> is archived, an <a
-    /// href='OrderAction'>OrderAction</a> cannot be applied to an archived order.
-    /// </summary>
-    IS_ARCHIVED,
-    /// <summary>The <a href='Order'>Order</a> is past its end date, An <a
-    /// href='OrderAction'>OrderAction</a> cannot be applied to a order that has ended.
-    /// </summary>
-    HAS_ENDED,
-    /// <summary>A <a href='Order'>Order</a> cannot be approved if it contains reservable <a
-    /// href='LineItem'>LineItem</a>s that are unreserved.
-    /// </summary>
-    CANNOT_APPROVE_WITH_UNRESERVED_LINE_ITEMS,
-    /// <summary>Deleting an <a href='Order'>Order</a> with delivered line items is not allowed
-    /// </summary>
-    CANNOT_DELETE_ORDER_WITH_DELIVERED_LINEITEMS,
-    /// <summary>Cannot approve because company credit status is not active.
-    /// </summary>
-    CANNOT_APPROVE_COMPANY_CREDIT_STATUS_NOT_ACTIVE,
-    /// <summary>The value returned if the actual value is not exposed by the requested API
-    /// version.
-    /// </summary>
-    UNKNOWN,
   }
 
 
@@ -19288,7 +19284,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
 
   /// <summary>Provides methods for updating and retrieving <a
   /// href='ProductPackage'>ProductPackage</a> objects. <p>A <a
-  /// href='PackageProduct'>PackageProduct</a> represents a group of products which
+  /// href='ProductPackage'>ProductPackage</a> represents a group of products which
   /// will be sold together.</p> <p>To use this service, you need to have the new
   /// sales management solution enabled on your network. If you do not see a "Sales"
   /// tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
@@ -24778,8 +24774,9 @@ namespace Google.Api.Ads.Dfp.v201502 {
       return ((SharedAdUnitPage) (results[0]));
     }
 
-    /// <summary>Performs actions on shared ad unit objects that match the given <a
-    /// href='Statement#query'>Statement#query</a>.
+    /// <summary><b>This method is deprecated and is a no-op.</b> <p>Performs actions on shared
+    /// ad unit objects that match the given <a
+    /// href='Statement#query'>Statement#query</a>. </p>
     /// </summary><param name='sharedAdUnitAction'>the action to perform</param>
     /// <param name='filterStatement'>a Publisher Query Language statement used to
     /// filter a set of shared ad units</param>
@@ -26826,10 +26823,6 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// already been associated to a partner.
     /// </summary>
     DESCENDANT_AD_UNIT_HAS_PARTNER_ASSOCIATION,
-    /// <summary>Indicates the error that the partner intended to be associated has already been
-    /// associated to another inventory unit in this network.
-    /// </summary>
-    SAME_PARTNER_ASSOCIATION_IN_INVENTORY_HIERARCHY,
     /// <summary>Indicates the error that the partner intended to be associated has no default
     /// financial term. Default financial term is essential for those partner
     /// associating with inventory units.
@@ -40103,7 +40096,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
 
   /// <summary>Provides methods for creating and retrieving <a
   /// href='ProductPackageItem'>ProductPackageItem</a> objects. <p>A <a
-  /// href='PackageProductItem'>PackageProductItem</a> represents a product which will
+  /// href='ProductPackageItem'>ProductPackageItem</a> represents a product which will
   /// be associated with a <a href='ProductPackage'>ProductPackage</a>.</p> <p>To use
   /// this service, you need to have the new sales management solution enabled on your
   /// network. If you do not see a "Sales" tab in <a
@@ -40837,9 +40830,9 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// report. To add a <a href='CustomField'>CustomField</a> to the report, you must
     /// include its corresponding <a href='Dimension'>Dimension</a>, determined by the
     /// <a href='CustomField#entityType'>CustomField#entityType</a>, as a <a
-    /// href='#dimensions'>dimension</a>. <table> <tr> <th scope="col"><a
+    /// href='#dimensions'>dimension</a>. <table> <tr> <th scope="col" colspan="2"><a
     /// href='CustomFieldEntityType#entityType'>CustomFieldEntityType#entityType</a></th>
-    /// <th scope="col"><a href='Dimension'>Dimension</a></th> </tr> <tr> <td><a
+    /// </tr> <tr> <td><a
     /// href='CustomFieldEntityType#LINE_ITEM'>CustomFieldEntityType#LINE_ITEM</a></td>
     /// <td><a href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a></td> </tr>
     /// <tr> <td><a
@@ -41458,244 +41451,244 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// <summary>Breaks down reporting data by audience segment data provider name.
     /// </summary>
     AUDIENCE_SEGMENT_DATA_PROVIDER_NAME,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad size. This
-    /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad size.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_AD_SIZE_NAME,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange platforms. This
-    /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange platforms.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_PLATFORM_TYPE_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange pricing rules.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_PRICING_RULE_NAME,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange tags. This
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange tags. <p><b>This
     /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_TAG_NAME,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange URLs. This
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange URLs. <p><b>This
     /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_URL_CHANNEL_NAME,
-    /// <summary>Breaks down data by Ad Exchange linked web properties. This experimental
+    /// <summary>Breaks down data by Ad Exchange linked web properties. <p><b>This experimental
     /// dimension only works with Ad Exchange web properties linked with an active
-    /// status.
+    /// status.</b></p>
     /// </summary>
     AD_EXCHANGE_AD_CLIENT_ID,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange creative size.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_CREATIVE_SIZES,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad types. This
-    /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad types.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_AD_FORMAT_NAME,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange channels. This
-    /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange channels.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_CHANNEL_NAME,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange products. This
-    /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange products.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_PRODUCT_NAME,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange sites. This
-    /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange sites.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_SITE_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange request sources.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_REQUEST_SOURCES,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad transaction.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_TRANSACTION_TYPE_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by the Ad Exchange advertiser
-    /// name that bids on ads. This experimental dimension only works with Ad Exchange
-    /// web properties linked with an active status.
+    /// name that bids on ads. <p><b>This experimental dimension only works with Ad
+    /// Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_ADVERTISER_NAME,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange agency. This
-    /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange agency.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_AGENCY,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange bid type. This
-    /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange bid type.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_BID_TYPE,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange branding type.
-    /// Examples: Branded, Anonymous. This experimental dimension only works with Ad
-    /// Exchange web properties linked with an active status.
+    /// Examples: Branded, Anonymous. <p><b>This experimental dimension only works with
+    /// Ad Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_BRANDING_TYPE,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad network name.
-    /// Example: Google Adwords. This experimental dimension only works with Ad Exchange
-    /// web properties linked with an active status.
+    /// Example: Google Adwords. <p><b>This experimental dimension only works with Ad
+    /// Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_BUYER_NETWORK_NAME,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange date. This
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange date. <p><b>This
     /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_DATE,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal CPM cost.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_DEAL_CPM,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal id. This
-    /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal id.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_DEAL_ID,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal name. This
-    /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal name.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_DEAL_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal/transaction
-    /// type. Example: Open auction. This experimental dimension only works with Ad
-    /// Exchange web properties linked with an active status.
+    /// type. Example: Open auction. <p><b>This experimental dimension only works with
+    /// Ad Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_DEAL_TYPE,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange DSP buyer
-    /// network name. This experimental dimension only works with Ad Exchange web
-    /// properties linked with an active status.
+    /// network name. <p><b>This experimental dimension only works with Ad Exchange web
+    /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_DSP_BUYER_NETWORK_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange expansion type.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_EXPANSION_TYPE,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange country code.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_COUNTRY_CODE,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange country name.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_COUNTRY_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange inventory
-    /// ownership. This experimental dimension only works with Ad Exchange web
-    /// properties linked with an active status.
+    /// ownership. <p><b>This experimental dimension only works with Ad Exchange web
+    /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_INVENTORY_OWNERSHIP,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange advertiser
-    /// landing page domain. This experimental dimension only works with Ad Exchange web
-    /// properties linked with an active status.
+    /// landing page domain. <p><b>This experimental dimension only works with Ad
+    /// Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_LANDING_PAGE_DOMAIN,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange mobile app name.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_MOBILE_APP_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange mobile carrier
-    /// name. This experimental dimension only works with Ad Exchange web properties
-    /// linked with an active status.
+    /// name. <p><b>This experimental dimension only works with Ad Exchange web
+    /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_MOBILE_CARRIER_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange mobile device
-    /// name. This experimental dimension only works with Ad Exchange web properties
-    /// linked with an active status.
+    /// name. <p><b>This experimental dimension only works with Ad Exchange web
+    /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_MOBILE_DEVICE_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange mobile inventory
-    /// type. This experimental dimension only works with Ad Exchange web properties
-    /// linked with an active status.
+    /// type. <p><b>This experimental dimension only works with Ad Exchange web
+    /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_MOBILE_INVENTORY_TYPE,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange month. This
-    /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange month.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_MONTH,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange partner name.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_NETWORK_PARTNER_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange operating system
-    /// version. This experimental dimension only works with Ad Exchange web properties
-    /// linked with an active status.
+    /// version. <p><b>This experimental dimension only works with Ad Exchange web
+    /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_OS_VERSION_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange pricing rule id.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_PRICING_RULE_ID,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange tags. This
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange tags. <p><b>This
     /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_TAG_CODE,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange targeting type.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_TARGETING_TYPE,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange third party
-    /// buyer account name. This experimental dimension only works with Ad Exchange web
-    /// properties linked with an active status.
+    /// buyer account name. <p><b>This experimental dimension only works with Ad
+    /// Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_THIRD_PARTY_BUYER_ACCOUNT_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange third-party
-    /// network tag currency. This experimental dimension only works with Ad Exchange
-    /// web properties linked with an active status.
+    /// network tag currency. <p><b>This experimental dimension only works with Ad
+    /// Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_THIRD_PARTY_NETWORK_TAG_CURRENCY,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange network tag
-    /// name. This experimental dimension only works with Ad Exchange web properties
-    /// linked with an active status.
+    /// name. <p><b>This experimental dimension only works with Ad Exchange web
+    /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_THIRD_PARTY_NETWORK_TAG_NAME,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange channel id. This
-    /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange channel id.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_URL_CHANNEL_ID,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange user bandwidth.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_USER_BANDWIDTH_NAME,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange video ad
-    /// duration. This experimental dimension only works with Ad Exchange web properties
-    /// linked with an active status.
+    /// duration. <p><b>This experimental dimension only works with Ad Exchange web
+    /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_VIDEO_AD_DURATION,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange raw video ad
-    /// duration. This experimental dimension only works with Ad Exchange web properties
-    /// linked with an active status.
+    /// duration. <p><b>This experimental dimension only works with Ad Exchange web
+    /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_VIDEO_AD_DURATION_RAW,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange video ad type.
-    /// This experimental dimension only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_VIDEO_AD_FORMAT,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange week. This
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange week. <p><b>This
     /// experimental dimension only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_WEEK,
     /// <summary>Campaign date segment of Nielsen OCR reporting. <p>This column is deprecated and
@@ -41989,157 +41982,158 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// </summary>
     AD_EXCHANGE_LINE_ITEM_LEVEL_IMPRESSIONS,
     /// <summary>The number of impressions delivered by Ad Exchange properties linked to DFP.
-    /// This experimental column only works with Ad Exchange web properties linked with
-    /// an active status.
+    /// <p><b>This experimental column only works with Ad Exchange web properties linked
+    /// with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_IMPRESSIONS,
     /// <summary>The number of matched queries delivered by Ad Exchange properties linked to DFP.
-    /// This experimental column only works with Ad Exchange web properties linked with
-    /// an active status.
+    /// <p><b>This experimental column only works with Ad Exchange web properties linked
+    /// with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_MATCHED_QUERIES,
     /// <summary>The number of viewed queries delivered by Ad Exchange properties linked to DFP.
-    /// This experimental column only works with Ad Exchange web properties linked with
-    /// an active status.
+    /// <p><b>This experimental column only works with Ad Exchange web properties linked
+    /// with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_VIEWED_QUERIES,
-    /// <summary>The number of clicks delivered by Ad Exchange properties linked to DFP. This
-    /// experimental column only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>The number of clicks delivered by Ad Exchange properties linked to DFP.
+    /// <p><b>This experimental column only works with Ad Exchange web properties linked
+    /// with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_CLICKS,
-    /// <summary>The estimated revenue generated by Ad Exchange properties linked to DFP. This
-    /// experimental column only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>The estimated revenue generated by Ad Exchange properties linked to DFP.
+    /// <p><b>This experimental column only works with Ad Exchange web properties linked
+    /// with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_ESTIMATED_REVENUE,
-    /// <summary>The coverage or fill rate reported by Ad Exchange properties linked to DFP. This
-    /// experimental column only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>The coverage or fill rate reported by Ad Exchange properties linked to DFP.
+    /// <p><b>This experimental column only works with Ad Exchange web properties linked
+    /// with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_COVERAGE,
     /// <summary>The matched queries click-through rate delivered by Ad Exchange properties
-    /// linked to DFP. This experimental column only works with Ad Exchange web
-    /// properties linked with an active status.
+    /// linked to DFP. <p><b>This experimental column only works with Ad Exchange web
+    /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_MATCHED_QUERIES_CTR,
-    /// <summary>The total lift generated by Ad Exchange properties linked to DFP. This
+    /// <summary>The total lift generated by Ad Exchange properties linked to DFP. <p><b>This
     /// experimental column only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_LIFT,
     /// <summary>The cost-per-click revenue generated by Ad Exchange properties linked to DFP.
-    /// This experimental column only works with Ad Exchange web properties linked with
-    /// an active status.
+    /// <p><b>This experimental column only works with Ad Exchange web properties linked
+    /// with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_CPC_REVENUE,
-    /// <summary>The number of ad requests issued by Ad Exchange properties linked to DFP. This
-    /// experimental column only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>The number of ad requests issued by Ad Exchange properties linked to DFP.
+    /// <p><b>This experimental column only works with Ad Exchange web properties linked
+    /// with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_REQUESTS,
     /// <summary>The average estimated cost-per-thousand-ad requests earned by Ad Exchange
-    /// properties linked to DFP. This experimental column only works with Ad Exchange
-    /// web properties linked with an active status.
+    /// properties linked to DFP. <p><b>This experimental column only works with Ad
+    /// Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_REQUEST_ECPM,
     /// <summary>The the click-through rate of ad requests issued by Ad Exchange properties
-    /// linked to DFP. This experimental column only works with Ad Exchange web
-    /// properties linked with an active status.
+    /// linked to DFP. <p><b>This experimental column only works with Ad Exchange web
+    /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_REQUEST_CTR,
     /// <summary>The click-through rate of impressions issued by Ad Exchange properties linked to
-    /// DFP. This experimental column only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// DFP. <p><b>This experimental column only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_CTR,
-    /// <summary>The video ad drop off rate issued by Ad Exchange properties linked to DFP. This
-    /// experimental column only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// <summary>The video ad drop off rate issued by Ad Exchange properties linked to DFP.
+    /// <p><b>This experimental column only works with Ad Exchange web properties linked
+    /// with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_VIDEO_DROPOFF_RATE,
     /// <summary>The video ad abandonment rate issued by Ad Exchange properties linked to DFP.
-    /// This experimental column only works with Ad Exchange web properties linked with
-    /// an active status.
+    /// <p><b>This experimental column only works with Ad Exchange web properties linked
+    /// with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_VIDEO_ABANDONMENT_RATE,
     /// <summary>The average estimated cost-per-thousand-impressions generated by Ad Exchange
-    /// properties linked to DFP. This experimental column only works with Ad Exchange
-    /// web properties linked with an active status.
+    /// properties linked to DFP. <p><b>This experimental column only works with Ad
+    /// Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_ECPM,
     /// <summary>The measurement rate of Active View impressions generated by Ad Exchange
-    /// properties linked to DFP. This experimental column only works with Ad Exchange
-    /// web properties linked with an active status.
+    /// properties linked to DFP. <p><b>This experimental column only works with Ad
+    /// Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_ACTIVE_VIEW_MEASUREABLE_RATE,
     /// <summary>The viewable rate of Active View impressions generated by Ad Exchange properties
-    /// linked to DFP. This experimental column only works with Ad Exchange web
-    /// properties linked with an active status.
+    /// linked to DFP. <p><b>This experimental column only works with Ad Exchange web
+    /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_RATE,
-    /// <summary>The video fill rate by Ad Exchange properties linked to DFP. This experimental
-    /// column only works with Ad Exchange web properties linked with an active status.
+    /// <summary>The video fill rate by Ad Exchange properties linked to DFP. <p><b>This
+    /// experimental column only works with Ad Exchange web properties linked with an
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_VIDEO_FILL_RATE,
     /// <summary>The first quartile (25% of video played back) of video ads by Ad Exchange
-    /// properties linked to DFP. This experimental column only works with Ad Exchange
-    /// web properties linked with an active status.
+    /// properties linked to DFP. <p><b>This experimental column only works with Ad
+    /// Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_VIDEO_QUARTILE_1,
     /// <summary>The third quartile (75% of video played back) of video ads by Ad Exchange
-    /// properties linked to DFP. This experimental column only works with Ad Exchange
-    /// web properties linked with an active status.
+    /// properties linked to DFP. <p><b>This experimental column only works with Ad
+    /// Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_VIDEO_QUARTILE_3,
-    /// <summary>The Trueview video skip rate by Ad Exchange properties linked to DFP. This
+    /// <summary>The Trueview video skip rate by Ad Exchange properties linked to DFP. <p><b>This
     /// experimental column only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_VIDEO_TRUEVIEW_SKIP_RATE,
-    /// <summary>The Trueview video views by Ad Exchange properties linked to DFP. This
+    /// <summary>The Trueview video views by Ad Exchange properties linked to DFP. <p><b>This
     /// experimental column only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_VIDEO_TRUEVIEWS,
     /// <summary>The video view-through rate (only applies to Trueview ads) by Ad Exchange
-    /// properties linked to DFP. This experimental column only works with Ad Exchange
-    /// web properties linked with an active status.
+    /// properties linked to DFP. <p><b>This experimental column only works with Ad
+    /// Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_VIDEO_VTR,
     /// <summary>The third-party impression discrepancy by Ad Exchange properties linked to DFP.
-    /// This experimental column only works with Ad Exchange web properties linked with
-    /// an active status.
+    /// <p><b>This experimental column only works with Ad Exchange web properties linked
+    /// with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_THIRD_PARTY_DISCREPANCY,
-    /// <summary>The third-party earnings by Ad Exchange properties linked to DFP. This
+    /// <summary>The third-party earnings by Ad Exchange properties linked to DFP. <p><b>This
     /// experimental column only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_THIRD_PARTY_EARNINGS,
     /// <summary>The third-party average cost-per-thousand-impressions earned by Ad Exchange
-    /// properties linked to DFP. This experimental column only works with Ad Exchange
-    /// web properties linked with an active status.
+    /// properties linked to DFP. <p><b>This experimental column only works with Ad
+    /// Exchange web properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_THIRD_PARTY_ECPM,
-    /// <summary>The third-party fill rate by Ad Exchange properties linked to DFP. This
+    /// <summary>The third-party fill rate by Ad Exchange properties linked to DFP. <p><b>This
     /// experimental column only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_THIRD_PARTY_FILL_RATE,
-    /// <summary>The third-party passbacks by Ad Exchange properties linked to DFP. This
+    /// <summary>The third-party passbacks by Ad Exchange properties linked to DFP. <p><b>This
     /// experimental column only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_THIRD_PARTY_PASSBACKS,
-    /// <summary>The third-party impressions by Ad Exchange properties linked to DFP. This
+    /// <summary>The third-party impressions by Ad Exchange properties linked to DFP. <p><b>This
     /// experimental column only works with Ad Exchange web properties linked with an
-    /// active status.
+    /// active status.</b></p>
     /// </summary>
     AD_EXCHANGE_THIRD_PARTY_IMPRESSIONS,
     /// <summary>The total impressions including third-party by Ad Exchange properties linked to
-    /// DFP. This experimental column only works with Ad Exchange web properties linked
-    /// with an active status.
+    /// DFP. <p><b>This experimental column only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_IMPRESSIONS_INCLUDING_THIRD_PARTY,
     /// <summary>The number of impressions an Ad Exchange ad delivered for line item-level
@@ -44147,7 +44141,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// </summary>
     PROPOSAL_LINE_ITEM_PRODUCT_ADJUSTMENT,
     /// <summary>Represents <a
-    /// href='ProposalLineItem#unitsBoughtBuffer'>ProposalLineItem#unitsBoughtBuffer</a>
+    /// href='ProposalLineItem#contractedQuantityBuffer'>ProposalLineItem#contractedQuantityBuffer</a>
     /// for <a
     /// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
     /// </summary>
@@ -44172,8 +44166,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
     /// </summary>
     PROPOSAL_LINE_ITEM_BILLING_SCHEDULE,
-    /// <summary>Represents <a
-    /// href='ProposalLineItem#unitsBought'>ProposalLineItem#unitsBought</a> for <a
+    /// <summary>Represents <a href='Goal#units'>Goal#units</a> of <a
+    /// href='ProposalLineItem#goal'>ProposalLineItem#goal</a> for <a
     /// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>
     /// The attribute is available only if <a
     /// href='ProposalLineItem#lineItemType'>ProposalLineItem#lineItemType</a> is of
@@ -45985,15 +45979,9 @@ namespace Google.Api.Ads.Dfp.v201502 {
       }
     }
 
-    /// <summary>The strategy for serving roadblocked creatives (i.e. instances where multiple
-    /// creatives must be served together on a single web page) for the created <a
-    /// href='ProposalLineItem'>ProposalLineItem</a>. Only <a
-    /// href='RoadblockingType#ONE_OR_MORE'>RoadblockingType#ONE_OR_MORE</a> and <a
-    /// href='RoadblockingType#CREATIVE_SET'>RoadblockingType#CREATIVE_SET</a> are
-    /// supported. <a
-    /// href='RoadblockingType#CREATIVE_SET'>RoadblockingType#CREATIVE_SET</a> can be
-    /// used to serve multiple creatives on a single web page. This attribute is
-    /// read-only.
+    /// <summary>The strategy for serving roadblocked creatives, i.e. instances where multiple
+    /// creatives must be served together on a single web page. <p>This attribute is
+    /// read-only.</p>
     /// </summary>
     public RoadblockingType roadblockingType {
       get {
@@ -46394,6 +46382,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// href='ReconciliationReportRow#orderId'>ReconciliationReportRow#orderId</a></td>
     /// </tr> <tr> <td><code>lineItemId</code></td> <td><a
     /// href='ReconciliationReportRow#lineItemId'>ReconciliationReportRow#lineItemId</a></td>
+    /// </tr> <tr> <td><code>proposalLineItemId</code></td> <td><a
+    /// href='ReconciliationReportRow#proposalLineItemId'>ReconciliationReportRow#proposalLineItemId</a></td>
     /// </tr> <tr> <td><code>creativeId</code></td> <td><a
     /// href='ReconciliationReportRow#creativeId'>ReconciliationReportRow#creativeId</a></td>
     /// </tr> <tr> <td><code>lineItemCostType</code></td> <td><a
@@ -47733,18 +47723,15 @@ namespace Google.Api.Ads.Dfp.v201502 {
       }
     }
 
-    /// <summary>The strategy for serving roadblocked creatives (i.e. instances where multiple
-    /// creatives must be served together on a single web page) for the created <a
-    /// href='ProposalLineItem'>ProposalLineItem</a>. Only <a
-    /// href='RoadblockingType#ONE_OR_MORE'>RoadblockingType#ONE_OR_MORE</a> and <a
-    /// href='RoadblockingType#CREATIVE_SET'>RoadblockingType#CREATIVE_SET</a> are
-    /// supported. <a
-    /// href='RoadblockingType#CREATIVE_SET'>RoadblockingType#CREATIVE_SET</a> can be
-    /// used to serve multiple creatives on a single web page. This attribute is
+    /// <summary>The strategy for serving roadblocked creatives, i.e. instances where multiple
+    /// creatives must be served together on a single web page. This attribute is
     /// optional and defaults to <a
-    /// href='RoadblockingType#ONE_OR_MORE'>RoadblockingType#ONE_OR_MORE</a> when <a
+    /// href='RoadblockingType#ONE_OR_MORE'>RoadblockingType#ONE_OR_MORE</a> if <a
     /// href='#productType'>#productType</a> is <a
-    /// href='ProductType#DFP'>ProductType#DFP</a>.
+    /// href='ProductType#DFP'>ProductType#DFP</a>, or <a
+    /// href='RoadblockingType#CREATIVE_SET'>RoadblockingType#CREATIVE_SET</a> if there
+    /// are companion sizes in <a
+    /// href='#creativePlaceholders'>#creativePlaceholders</a>.
     /// </summary>
     public RoadblockingType roadblockingType {
       get {
@@ -49319,6 +49306,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
     }
 
     /// <summary>Updates the specified <a href='ProposalLineItem'>ProposalLineItem</a> objects.
+    /// If free editing mode is enabled, this will trigger inventory reservation and
+    /// cause the proposal to be pushed to DFP again.
     /// </summary><param name='proposalLineItems'>the proposal line items to update</param>
     /// <returns>the updated proposal line items</returns>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
@@ -54446,48 +54435,6 @@ namespace Google.Api.Ads.Dfp.v201502 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
   public abstract partial class PackageAction {
-    private PackageOperator packageOperatorField;
-
-    private bool packageOperatorFieldSpecified;
-
-    public PackageOperator packageOperator {
-      get {
-        return this.packageOperatorField;
-      }
-      set {
-        this.packageOperatorField = value;
-        this.packageOperatorSpecified = true;
-      }
-    }
-
-    /// <summary> <code>true</code>, if a value is specified for <see
-    /// cref="packageOperator" />, <code>false</code> otherwise. </summary>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool packageOperatorSpecified {
-      get {
-        return this.packageOperatorFieldSpecified;
-      }
-      set {
-        this.packageOperatorFieldSpecified = value;
-      }
-    }
-  }
-
-
-  /// <summary>Possible operators to be performed on a <a href='Package'>Package</a>.
-  /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201502")]
-  public enum PackageOperator {
-    /// <summary>Creates proposal line items from a package.
-    /// </summary>
-    CREATE_PROPOSAL_LINE_ITEMS,
-    /// <summary>The value returned if the actual value is not exposed by the requested API
-    /// version.
-    /// </summary>
-    UNKNOWN,
   }
 
 
@@ -56924,7 +56871,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <code>"select CountryCode, Name from Geo_Target"</code>, where
   /// <code>CountryCode</code> and <code>Name</code> are columns of interest and
   /// <code>Geo_Target</code> is the table.</p> <p>The following tables are
-  /// supported:</p> <h4>Geo_Target</h4> <p>Use this table instead of the other Geo
+  /// supported:</p> <h2>Geo_Target</h2> <p>Use this table instead of the other Geo
   /// tables below (Country, Region, Metro, City, Postal_Code) which will eventually
   /// be removed.</p> <table> <tr> <th scope="col">Column Name</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique identifier for
@@ -56945,7 +56892,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <li>Prefecture</li> <li>Province</li> <li>Region</li> <li>State</li>
   /// <li>Territory</li> <li>Tv_Region</li> <li>Union_Territory</li> </ul> </td> </tr>
   /// <tr> <td>Targetable</td> <td>Indicates whether geographical targeting is
-  /// allowed</td> </tr> </table> <h4>Country</h4> This table is deprecated. V201408
+  /// allowed</td> </tr> </table> <h2>Country</h2> This table is deprecated. V201408
   /// is the last version this table can be used in. Use <strong>Geo_Target</strong>
   /// instead. <table> <tr> <th scope="col">Column Name</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique identifier for
@@ -56953,7 +56900,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// ISO 3166-1 alpha-2</td> </tr> <tr> <td>CountryName</td> <td>The name of the
   /// country</td> </tr> <tr> <td>CurrencyCode</td> <td>Currency code as defined by
   /// ISO 4217</td> </tr> <tr> <td>Targetable</td> <td>Indicates whether geographical
-  /// targeting is allowed</td> </tr> </table> <h4>Region</h4> This table is
+  /// targeting is allowed</td> </tr> </table> <h2>Region</h2> This table is
   /// deprecated. V201408 is the last version this table can be used in. Use
   /// <strong>Geo_Target</strong> instead. <table> <tr> <th scope="col">Column
   /// Name</th> <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique
@@ -56962,7 +56909,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// region</td> </tr> <tr> <td>CountryCode</td> <td>Country code as defined by ISO
   /// 3166-1 alpha-2</td> </tr> <tr> <td>CountryName</td> <td>The name of the
   /// country</td> </tr> <tr> <td>Targetable</td> <td>Indicates whether geographical
-  /// targeting is allowed</td> </tr> </table> <h4>Metro</h4> This table is
+  /// targeting is allowed</td> </tr> </table> <h2>Metro</h2> This table is
   /// deprecated. V201408 is the last version this table can be used in. Use
   /// <strong>Geo_Target</strong> instead. <table> <tr> <th scope="col">Column
   /// Name</th> <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique
@@ -56971,7 +56918,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// name of the metro</td> </tr> <tr> <td>CountryCode</td> <td>Country code as
   /// defined by ISO 3166-1 alpha-2</td> </tr> <tr> <td>CountryName</td> <td>The name
   /// of the country</td> </tr> <tr> <td>Targetable</td> <td>Indicates whether
-  /// geographical targeting is allowed</td> </tr> </table> <h4>City</h4> This table
+  /// geographical targeting is allowed</td> </tr> </table> <h2>City</h2> This table
   /// is deprecated. V201408 is the last version this table can be used in. Use
   /// <strong>Geo_Target</strong> instead. <table> <tr> <th scope="col">Column
   /// Name</th> <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique
@@ -56983,66 +56930,66 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <td>CountryCode</td> <td>Country code as defined by ISO 3166-1 alpha-2</td>
   /// </tr> <tr> <td>CountryName</td> <td>The name of the country</td> </tr> <tr>
   /// <td>Targetable</td> <td>Indicates whether geographical targeting is allowed</td>
-  /// </tr> </table> <h4>Postal_Code</h4> This table is deprecated. V201408 is the
+  /// </tr> </table> <h2>Postal_Code</h2> This table is deprecated. V201408 is the
   /// last version this table can be used in. Use <strong>Geo_Target</strong> instead.
   /// <table> <tr> <th scope="col">Column Name</th> <th scope="col">Description</th>
   /// </tr> <tr> <td>Id</td> <td>Unique identifier for the postal code</td> </tr> <tr>
   /// <td>PostalCode</td> <td>Postal code</td> </tr> <tr> <td>CountryCode</td>
   /// <td>Country code as defined by ISO 3166-1 alpha-2</td> </tr> <tr>
   /// <td>Targetable</td> <td>Indicates whether geographical targeting is allowed</td>
-  /// </tr> </table> <h4>Bandwidth_Group</h4> <table> <tr> <th scope="col">Column
+  /// </tr> </table> <h2>Bandwidth_Group</h2> <table> <tr> <th scope="col">Column
   /// Name</th> <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique
   /// identifier for the bandwidth group</td> </tr> <tr> <td>BandwidthName</td>
-  /// <td>Name of the bandwidth group</td> </tr> </table> <h4>Browser</h4> <table>
+  /// <td>Name of the bandwidth group</td> </tr> </table> <h2>Browser</h2> <table>
   /// <tr> <th scope="col">Column Name</th> <th scope="col">Description</th> </tr>
   /// <tr> <td>Id</td> <td>Unique identifier for the browser</td> </tr> <tr>
   /// <td>BrowserName</td> <td>Name of the browser</td> </tr> <tr>
   /// <td>MajorVersion</td> <td>Major version of the browser</td> </tr> <tr>
   /// <td>MinorVersion</td> <td>Minor version of the browser</td> </tr> </table>
-  /// <h4>Browser_Language</h4> <table> <tr> <th scope="col">Column Name</th> <th
+  /// <h2>Browser_Language</h2> <table> <tr> <th scope="col">Column Name</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique identifier for
   /// the browser language</td> </tr> <tr> <td>BrowserLanguageName</td> <td>Browser's
-  /// language</td> </tr> </table> <h4>Device_Capability</h4> <table> <tr> <th
+  /// language</td> </tr> </table> <h2>Device_Capability</h2> <table> <tr> <th
   /// scope="col">Column Name</th> <th scope="col">Description</th> </tr> <tr>
   /// <td>Id</td> <td>Unique identifier for the device capability</td> </tr> <tr>
   /// <td>DeviceCapabilityName</td> <td>Name of the device capability</td> </tr>
-  /// </table> <h4>Device_Category</h4> <table> <tr> <th scope="col">Column Name</th>
+  /// </table> <h2>Device_Category</h2> <table> <tr> <th scope="col">Column Name</th>
   /// <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique identifier
   /// for the device category</td> </tr> <tr> <td>DeviceCategoryName</td> <td>Name of
-  /// the device category</td> </tr> </table> <h4>Device_Manufacturer</h4> <table>
+  /// the device category</td> </tr> </table> <h2>Device_Manufacturer</h2> <table>
   /// <tr> <th scope="col">Column Name</th> <th scope="col">Description</th> </tr>
   /// <tr> <td>Id</td> <td>Unique identifier for the device manufacturer</td> </tr>
   /// <tr> <td>MobileDeviceManufacturerName</td> <td>Name of the device
-  /// manufacturer</td> </tr> </table> <h4>Mobile_Carrier</h4> <table> <tr> <th
+  /// manufacturer</td> </tr> </table> <h2>Mobile_Carrier</h2> <table> <tr> <th
   /// scope="col">Column Name</th> <th scope="col">Description</th> </tr> <tr>
   /// <td>Id</td> <td>Unique identifier for the mobile carrier</td> </tr> <tr>
   /// <td>CountryCode</td> <td>The country code of the mobile carrier</td> </tr> <tr>
   /// <td>MobileCarrierName</td> <td>Name of the mobile carrier</td> </tr> </table>
-  /// <h4>Mobile_Device</h4> <table> <tr> <th scope="col">Column Name</th> <th
+  /// <h2>Mobile_Device</h2> <table> <tr> <th scope="col">Column Name</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique identifier for
   /// the mobile device</td> </tr> <tr> <td>MobileDeviceManufacturerId</td> <td>Id of
   /// the device manufacturer</td> </tr> <tr> <td>MobileDeviceName</td> <td>Name of
-  /// the mobile device</td> </tr> </table> <h4>Mobile_Device_Submodel</h4> <table>
+  /// the mobile device</td> </tr> </table> <h2>Mobile_Device_Submodel</h2> <table>
   /// <tr> <th scope="col">Column Name</th> <th scope="col">Description</th> </tr>
   /// <tr> <td>Id</td> <td>Unique identifier for the mobile device submodel</td> </tr>
   /// <tr> <td>MobileDeviceId</td> <td>Id of the mobile device</td> </tr> <tr>
   /// <td>MobileDeviceSubmodelName</td> <td>Name of the mobile device submodel</td>
-  /// </tr> </table> <h4>Operating_System</h4> <table> <tr> <th scope="col">Column
+  /// </tr> </table> <h2>Operating_System</h2> <table> <tr> <th scope="col">Column
   /// Name</th> <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique
   /// identifier for the operating system</td> </tr> <tr> <td>OperatingSystemName</td>
   /// <td>Name of the operating system</td> </tr> </table>
-  /// <h4>Operating_System_Version</h4> <table> <tr> <th scope="col">Column Name</th>
+  /// <h2>Operating_System_Version</h2> <table> <tr> <th scope="col">Column Name</th>
   /// <th scope="col">Description</th> </tr> <tr> <td>Id</td> <td>Unique identifier
   /// for the operating system version</td> </tr> <tr> <td>OperatingSystemId</td>
   /// <td>Id of the operating system</td> </tr> <tr> <td>MajorVersion</td> <td>The
   /// operating system major version</td> </tr> <tr> <td>MinorVersion</td> <td>The
   /// operating system minor version</td> </tr> <tr> <td>MicroVersion</td> <td>The
-  /// operating system micro version</td> </tr> </table> <h4>Third_Party_Company</h4>
+  /// operating system micro version</td> </tr> </table> <h2>Third_Party_Company</h2>
   /// <table> <tr> <th scope="col">Column Name</th> <th scope="col">Description</th>
   /// </tr> <tr> <td>Id</td> <td>Unique identifier for the third party company</td>
   /// </tr> <tr> <td>Name</td> <td>The third party company name</td> </tr> <tr>
   /// <td>Type</td> <td>The third party company type</td> </tr> <tr> <td>Status</td>
-  /// <td>The status of the third party company</td> </tr> </table> <h4>Time_Zone</h4>
+  /// <td>The status of the third party company</td> </tr> </table> <h2>Time_Zone</h2>
   /// <table> <tr> <th scope="col">Column Name</th> <th scope="col">Description</th>
   /// </tr> <tr> <td>Id</td> <td>Unique identifier for the time zone in the form of
   /// <code></code></td> </tr> <tr> <td>StandardGmtOffset</td> <td>The standard GMT
@@ -57050,7 +56997,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <code>America/New_York</code></td> </tr> <tr> <td>SupportedInReports</td>
   /// <td>Indicates whether the time zone is supported in reports. Only time zones
   /// that are full hour offsets from <a href='Network#timeZone'>Network#timeZone</a>
-  /// are supported in reports.</td> </tr> </table> <h4 id="Line_Item">Line_Item</h4>
+  /// are supported in reports.</td> </tr> </table> <h2 id="Line_Item">Line_Item</h2>
   /// <table> <tr> <th scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>CostType</td>
   /// <td><code>Text</code></td> <td>The method used for billing this
@@ -57096,8 +57043,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <td><code>Number</code></td> <td>The total number of impressions or clicks that
   /// will be reserved for the <code>LineItem</code>. If the line item is of type <a
   /// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a>, then it represents
-  /// the percentage of available impressions reserved.</td> </tr> </table> <h4
-  /// id="Ad_Unit">Ad_Unit</h4> <table> <tr> <th scope="col">Column name</th> <th
+  /// the percentage of available impressions reserved.</td> </tr> </table> <h2
+  /// id="Ad_Unit">Ad_Unit</h2> <table> <tr> <th scope="col">Column name</th> <th
   /// scope="col">Type</th> <th scope="col">Description</th> </tr> <tr>
   /// <td>AdUnitCode</td> <td><code>Text</code></td> <td>A string used to uniquely
   /// identify the ad unit for the purposes of serving the ad. This attribute is
@@ -57115,7 +57062,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <td><code>Number</code></td> <td>The unique ID of the <a
   /// href='Company'>Company</a>, which is of type <a
   /// href='Company.Type#AFFILIATE_DISTRIBUTION_PARTNER'>Company.Type#AFFILIATE_DISTRIBUTION_PARTNER</a>,
-  /// to which this ad unit belongs.</td> </tr> </table> <h4 id="User">User</h4>
+  /// to which this ad unit belongs.</td> </tr> </table> <h2 id="User">User</h2>
   /// <table> <tr> <th scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Email</td>
   /// <td><code>Text</code></td> <td>The email or login of the user.</td> </tr> <tr>
@@ -57128,8 +57075,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <td>RoleId</td> <td><code>Number</code></td> <td>The unique role ID of the user.
   /// <a href='Role'>Role</a> objects that are created by Google will have negative
   /// IDs.</td> </tr> <tr> <td>RoleName</td> <td><code>Text</code></td> <td>The name
-  /// of the <a href='Role'>Role</a> assigned to the user.</td> </tr> </table> <h4
-  /// id="Exchange_Rate">Exchange_Rate</h4> <table> <tr> <th scope="col">Column
+  /// of the <a href='Role'>Role</a> assigned to the user.</td> </tr> </table> <h2
+  /// id="Exchange_Rate">Exchange_Rate</h2> <table> <tr> <th scope="col">Column
   /// name</th> <th scope="col">Type</th> <th scope="col">Description</th> </tr> <tr>
   /// <td>CurrencyCode</td> <td><code>Text</code></td> <td>The currency code that the
   /// exchange rate is related to. The exchange rate is between this currency and <a
@@ -57152,8 +57099,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// refresh rate at which the exchange rate is updated. Setting this attribute to <a
   /// href='ExchangeRateRefreshRate#FIXED'>ExchangeRateRefreshRate#FIXED</a> without
   /// setting the exchange rate value will cause unknown exchange rate value returned
-  /// in future queries.</td> </tr> </table> <h4
-  /// id="Programmatic_Buyer">Programmatic_Buyer</h4> <table> <tr> <th
+  /// in future queries.</td> </tr> </table> <h2
+  /// id="Programmatic_Buyer">Programmatic_Buyer</h2> <table> <tr> <th
   /// scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>AdxBuyerNetworkId</td>
   /// <td><code>Number</code></td> <td>The ID used by Adx to bill the appropriate
@@ -57165,15 +57112,15 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// <td>The ID of the programmatic buyer's parent. For advertisers, this field
   /// contains the advertiser's partner ID. For partners, this field is zero.</td>
   /// </tr> <tr> <td>Type</td> <td><code>Text</code></td> <td>The type of a
-  /// programmatic buyer.</td> </tr> </table> <h4
-  /// id="Audience_Segment_Category">Audience_Segment_Category</h4> <table> <tr> <th
+  /// programmatic buyer.</td> </tr> </table> <h2
+  /// id="Audience_Segment_Category">Audience_Segment_Category</h2> <table> <tr> <th
   /// scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td><code>Number</code></td>
   /// <td>The unique identifier for the audience segment category.</td> </tr> <tr>
   /// <td>Name</td> <td><code>Text</code></td> <td>The name of the audience segment
   /// category.</td> </tr> <tr> <td>ParentId</td> <td><code>Number</code></td> <td>The
   /// unique identifier of the audience segment category's parent.</td> </tr> </table>
-  /// <h4 id="Audience_Segment">Audience_Segment</h4> <table> <tr> <th
+  /// <h2 id="Audience_Segment">Audience_Segment</h2> <table> <tr> <th
   /// scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>CategoryIds</td> <td><code>Set of
   /// number</code></td> <td>The ids of the categories that this audience segment
@@ -57184,8 +57131,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// the audience segment.</td> </tr> <tr> <td>OwnerName</td>
   /// <td><code>Text</code></td> <td>The owner name of the audience segment.</td>
   /// </tr> <tr> <td>SegmentType</td> <td><code>Text</code></td> <td>The type of the
-  /// audience segment.</td> </tr> </table> <h4
-  /// id="Proposal_Retraction_Reason">Proposal_Retraction_Reason</h4> <table> <tr> <th
+  /// audience segment.</td> </tr> </table> <h2
+  /// id="Proposal_Retraction_Reason">Proposal_Retraction_Reason</h2> <table> <tr> <th
   /// scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td><code>Number</code></td>
   /// <td>The ID of the <code>ProposalRetractionReason</code>. This attribute is
@@ -57193,8 +57140,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
   /// created.</td> </tr> <tr> <td>IsActive</td> <td><code>Boolean</code></td>
   /// <td>True if the <code>ProposalRetractionReason</code> is active.</td> </tr> <tr>
   /// <td>Name</td> <td><code>Text</code></td> <td>The name of the
-  /// <code>ProposalRetractionReason</code>.</td> </tr> </table> <h4
-  /// id="Audience_Explorer">Audience_Explorer</h4> <table> <tr> <th
+  /// <code>ProposalRetractionReason</code>.</td> </tr> </table> <h2
+  /// id="Audience_Explorer">Audience_Explorer</h2> <table> <tr> <th
   /// scope="col">Column name</th> <th scope="col">Type</th> <th
   /// scope="col">Description</th> </tr> <tr> <td>Id</td> <td><code>Number</code></td>
   /// <td>Uniquely identifies the audience segment.</td> </tr> <tr>
@@ -57327,7 +57274,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
 
   /// <summary>Provides methods for updating and retrieving <a
   /// href='ProductPackage'>ProductPackage</a> objects. <p>A <a
-  /// href='PackageProduct'>PackageProduct</a> represents a group of products which
+  /// href='ProductPackage'>ProductPackage</a> represents a group of products which
   /// will be sold together.</p> <p>To use this service, you need to have the new
   /// sales management solution enabled on your network. If you do not see a "Sales"
   /// tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
@@ -57820,8 +57767,9 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// <returns>the shared ad units that match the given filter</returns>
     SharedAdUnitPage getSharedAdUnitsByStatement(Statement filterStatement);
 
-    /// <summary>Performs actions on shared ad unit objects that match the given <a
-    /// href='Statement#query'>Statement#query</a>.
+    /// <summary><b>This method is deprecated and is a no-op.</b> <p>Performs actions on shared
+    /// ad unit objects that match the given <a
+    /// href='Statement#query'>Statement#query</a>. </p>
     /// </summary><param name='sharedAdUnitAction'>the action to perform</param>
     /// <param name='filterStatement'>a Publisher Query Language statement used to
     /// filter a set of shared ad units</param>
@@ -58442,7 +58390,7 @@ namespace Google.Api.Ads.Dfp.v201502 {
 
   /// <summary>Provides methods for creating and retrieving <a
   /// href='ProductPackageItem'>ProductPackageItem</a> objects. <p>A <a
-  /// href='PackageProductItem'>PackageProductItem</a> represents a product which will
+  /// href='ProductPackageItem'>ProductPackageItem</a> represents a product which will
   /// be associated with a <a href='ProductPackage'>ProductPackage</a>.</p> <p>To use
   /// this service, you need to have the new sales management solution enabled on your
   /// network. If you do not see a "Sales" tab in <a
@@ -58671,6 +58619,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
     /// href='ReconciliationReportRow#orderId'>ReconciliationReportRow#orderId</a></td>
     /// </tr> <tr> <td><code>lineItemId</code></td> <td><a
     /// href='ReconciliationReportRow#lineItemId'>ReconciliationReportRow#lineItemId</a></td>
+    /// </tr> <tr> <td><code>proposalLineItemId</code></td> <td><a
+    /// href='ReconciliationReportRow#proposalLineItemId'>ReconciliationReportRow#proposalLineItemId</a></td>
     /// </tr> <tr> <td><code>creativeId</code></td> <td><a
     /// href='ReconciliationReportRow#creativeId'>ReconciliationReportRow#creativeId</a></td>
     /// </tr> <tr> <td><code>lineItemCostType</code></td> <td><a
@@ -58903,6 +58853,8 @@ namespace Google.Api.Ads.Dfp.v201502 {
     UpdateResult performProposalLineItemAction(ProposalLineItemAction proposalLineItemAction, Statement filterStatement);
 
     /// <summary>Updates the specified <a href='ProposalLineItem'>ProposalLineItem</a> objects.
+    /// If free editing mode is enabled, this will trigger inventory reservation and
+    /// cause the proposal to be pushed to DFP again.
     /// </summary><param name='proposalLineItems'>the proposal line items to update</param>
     /// <returns>the updated proposal line items</returns>
     ProposalLineItem[] updateProposalLineItems(ProposalLineItem[] proposalLineItems);

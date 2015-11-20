@@ -101,19 +101,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
-    <Compile Include="v201408\CompanyServiceTests.cs" />
-    <Compile Include="v201408\CreativeServiceTests.cs" />
-    <Compile Include="v201408\ForecastServiceTests.cs" />
-    <Compile Include="v201408\InventoryServiceTests.cs" />
-    <Compile Include="v201408\LineItemCreativeAssociationServiceTests.cs" />
-    <Compile Include="v201408\LineItemServiceTests.cs" />
-    <Compile Include="v201408\OrderServiceTests.cs" />
-    <Compile Include="v201408\PlacementServiceTests.cs" />
-    <Compile Include="v201408\PqlUtilitiesTests.cs" />
-    <Compile Include="v201408\ReportServiceTests.cs" />
-    <Compile Include="v201408\StatementBuilderTests.cs" />
-    <Compile Include="v201408\TestUtils.cs" />
-    <Compile Include="v201408\UserServiceTests.cs" />
     <Compile Include="v201411\CompanyServiceTests.cs" />
     <Compile Include="v201411\CreativeServiceTests.cs" />
     <Compile Include="v201411\ForecastServiceTests.cs" />
@@ -168,6 +155,20 @@
     <Compile Include="v201508\StatementBuilderTests.cs" />
     <Compile Include="v201508\TestUtils.cs" />
     <Compile Include="v201508\UserServiceTests.cs" />
+    <Compile Include="v201511\CompanyServiceTests.cs" />
+    <Compile Include="v201511\CreativeServiceTests.cs" />
+    <Compile Include="v201511\DateTimeUtilitiesTests.cs" />
+    <Compile Include="v201511\ForecastServiceTests.cs" />
+    <Compile Include="v201511\InventoryServiceTests.cs" />
+    <Compile Include="v201511\LineItemCreativeAssociationServiceTests.cs" />
+    <Compile Include="v201511\LineItemServiceTests.cs" />
+    <Compile Include="v201511\OrderServiceTests.cs" />
+    <Compile Include="v201511\PlacementServiceTests.cs" />
+    <Compile Include="v201511\PqlUtilitiesTests.cs" />
+    <Compile Include="v201511\ReportServiceTests.cs" />
+    <Compile Include="v201511\StatementBuilderTests.cs" />
+    <Compile Include="v201511\TestUtils.cs" />
+    <Compile Include="v201511\UserServiceTests.cs" />
     <Compile Include="BaseTests.cs" />
     <Compile Include="ServiceCreationTests.cs" />
   </ItemGroup>

@@ -1,3 +1,19 @@
+18.19.0
+=======
+AdWords:
+  -
+
+AdXBuyer:
+  -
+
+DFP:
+  - Added support for v201511.
+  - Removed support for v201408.
+  - Removed examples for v201411.
+
+Common:
+  -
+
 18.18.0
 =======
 AdWords:
