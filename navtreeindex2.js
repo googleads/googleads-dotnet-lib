@@ -1,9 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_get_campaign_targeting_criteria.html":[1,0,0,0,0,0,0,0,1,75],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_get_campaign_targeting_criteria.html#a5b3d8403841a40965c47c429271d1782":[1,0,0,0,0,0,0,0,1,75,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_get_campaign_targeting_criteria.html#a5b3d8403841a40965c47c429271d1782":[1,0,0,0,0,0,0,0,1,75,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_get_campaign_targeting_criteria.html#ab899e339f41a10ff978e379ca026b9d8":[1,0,0,0,0,0,0,0,1,75,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_get_campaigns.html":[1,0,0,0,0,0,0,0,1,18],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_get_campaigns.html#a01e3cf86746ca54a5e8df48d4067abed":[1,0,0,0,0,0,0,0,1,18,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_get_campaigns.html#a01e3cf86746ca54a5e8df48d4067abed":[1,0,0,0,0,0,0,0,1,18,1],
@@ -102,8 +98,8 @@ var NAVTREEINDEX2 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_remove_ad_group.html#a716273e4d3a926886bd96978b3bdd383":[1,0,0,0,0,0,0,0,1,24,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_remove_campaign.html":[1,0,0,0,0,0,0,0,1,25],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_remove_campaign.html#a0a117e4ad72f0aa53541ac55f785bb27":[1,0,0,0,0,0,0,0,1,25,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_remove_campaign.html#ae1ddf0c1304fcbdad99ddb8945b1eeb3":[1,0,0,0,0,0,0,0,1,25,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_remove_campaign.html#ae1ddf0c1304fcbdad99ddb8945b1eeb3":[1,0,0,0,0,0,0,0,1,25,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_remove_campaign.html#ae1ddf0c1304fcbdad99ddb8945b1eeb3":[1,0,0,0,0,0,0,0,1,25,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_remove_keyword.html":[1,0,0,0,0,0,0,0,1,26],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_remove_keyword.html#a5bf3867be55f067c46145b9bd07de3f6":[1,0,0,0,0,0,0,0,1,26,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_remove_keyword.html#a70e9149f7a94b31c7841907452d680bf":[1,0,0,0,0,0,0,0,1,26,1],
@@ -249,5 +245,9 @@ var NAVTREEINDEX2 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_text_ads.html":[1,0,0,0,0,0,0,0,2,17],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_text_ads.html#a531c3f647ceba005d35839e8613c2d96":[1,0,0,0,0,0,0,0,2,17,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_text_ads.html#af5073e15d9f8c1d747fbda1e476773eb":[1,0,0,0,0,0,0,0,2,17,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_third_party_redirect_ads.html":[1,0,0,0,0,0,0,0,2,84]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_third_party_redirect_ads.html":[1,0,0,0,0,0,0,0,2,84],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_third_party_redirect_ads.html#a8205ed1ecdb3e23d93fd867bafde14b3":[1,0,0,0,0,0,0,0,2,84,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_third_party_redirect_ads.html#ad7e67d5e7e73b375bc1934cac2fcd9fe":[1,0,0,0,0,0,0,0,2,84,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_budget_utilization_report.html":[1,0,0,0,0,0,0,0,2,77],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_budget_utilization_report.html#a0d49fc888d4c6fd7bcf86d9643434057":[1,0,0,0,0,0,0,0,2,77,3]
 };

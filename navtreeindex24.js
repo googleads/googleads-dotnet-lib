@@ -1,9 +1,5 @@
 var NAVTREEINDEX24 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_criterion_operation_1_1_filterable_fields.html#a3357aee9287332e32b7ec47f37eeb68c":[1,0,0,0,0,0,4,520,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_criterion_operation_1_1_selectable_fields.html":[1,0,0,0,0,0,4,520,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_criterion_operation_1_1_selectable_fields.html#a4652d16510c3e02866943f29d007dae8":[1,0,0,0,0,0,4,520,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_criterion_page.html":[1,0,0,0,0,0,4,521],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_criterion_page.html#a89388b730af6450e041ce3c2db585df8":[1,0,0,0,0,0,4,521,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_criterion_page_1_1_fields.html":[1,0,0,0,0,0,4,521,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_shared_criterion_page_1_1_fields.html#ad5b84b42e29f5b196392f6e2ba74fba6":[1,0,0,0,0,0,4,521,0,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX24 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme_1_1_fields.html":[1,0,0,0,0,0,4,117,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme_1_1_fields.html#a40d27025c431b73ef5b8946dd0c6fca5":[1,0,0,0,0,0,4,117,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme_1_1_filterable_fields.html":[1,0,0,0,0,0,4,117,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme_1_1_filterable_fields.html#a856dd124e1142653ec005ec43462e5c0":[1,0,0,0,0,0,4,117,1,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme_1_1_filterable_fields.html#a856dd124e1142653ec005ec43462e5c0":[1,0,0,0,0,0,4,117,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme_1_1_selectable_fields.html":[1,0,0,0,0,0,4,117,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_roas_bidding_scheme_1_1_selectable_fields.html#a2d1998be52e256516c16cf09cdc7fb3b":[1,0,0,0,0,0,4,117,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_spend_bidding_scheme.html":[1,0,0,0,0,0,4,116],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_target_spend_bidding_scheme.html#a97cfa6107f87e6b50a41418021bbdfe7":[1,0,0,0,0,0,4,116,4]
 };

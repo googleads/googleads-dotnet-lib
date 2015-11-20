@@ -1,9 +1,5 @@
 var NAVTREEINDEX19 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_groups_1_1_filterable_fields.html":[1,0,0,0,0,0,4,312,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_groups_1_1_filterable_fields.html#aec29fcf1c5e76c4a87aeca757f7db39f":[1,0,0,0,0,0,4,312,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_groups_1_1_selectable_fields.html":[1,0,0,0,0,0,4,312,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_groups_1_1_selectable_fields.html#a315e8b0379e051543385112cf778bf74":[1,0,0,0,0,0,4,312,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_search_parameter.html":[1,0,0,0,0,0,4,438],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_search_parameter.html#a02a99ffff3aaaf5e066b3e5eee2dad15":[1,0,0,0,0,0,4,438,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_location_search_parameter_1_1_fields.html":[1,0,0,0,0,0,4,438,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX19 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_media___size___string_map_entry.html#a0c99e24fb52c8fc364dd40d1349a9518":[1,0,0,0,0,0,4,19,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_media___size___string_map_entry.html#a2ba88868111d6c7c5f8b29187cffacb3":[1,0,0,0,0,0,4,19,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_media_error.html":[1,0,0,0,0,0,4,58],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_media_error.html#a98fe1b2600f9417a8212ffd4fefe809d":[1,0,0,0,0,0,4,58,4]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_media_error.html#a98fe1b2600f9417a8212ffd4fefe809d":[1,0,0,0,0,0,4,58,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_media_error.html#ac05720cc4d16883df9803f97fb762b07":[1,0,0,0,0,0,4,58,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_media_error_1_1_fields.html":[1,0,0,0,0,0,4,58,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_media_error_1_1_fields.html#aa7d112bd65b0a759d9214c0668ade58e":[1,0,0,0,0,0,4,58,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_media_error_1_1_filterable_fields.html":[1,0,0,0,0,0,4,58,1]
 };

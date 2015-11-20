@@ -1,9 +1,5 @@
 var NAVTREEINDEX44 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition.html#a3d12ee221d5b4b00703b9465f621f87f":[1,0,0,0,0,0,5,120,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition.html#a5ba2e26e70fd215b913556ecd0216a9b":[1,0,0,0,0,0,5,120,5],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition.html#aa886a252e7ef6f183c46ea34e5e742b4":[1,0,0,0,0,0,5,120,7],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition.html#ac4f4c5e95422579c6e4e4dfc4bdf514f":[1,0,0,0,0,0,5,120,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition_1_1_fields.html":[1,0,0,0,0,0,5,120,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition_1_1_fields.html#a152cfd980368862eb9fb88495fdf39a7":[1,0,0,0,0,0,5,120,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition_1_1_filterable_fields.html":[1,0,0,0,0,0,5,120,1],
@@ -249,5 +245,9 @@ var NAVTREEINDEX44 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition.html#adf780d028f3fa01e66a48d29463b358b":[1,0,0,0,0,0,5,649,14],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_error.html":[1,0,0,0,0,0,5,580],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_error.html#a4afcd200c4398a63257363b38fa8b3db":[1,0,0,0,0,0,5,580,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_error.html#af35f876cfed7905993f8f082708c8c1c":[1,0,0,0,0,0,5,580,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_error.html#af35f876cfed7905993f8f082708c8c1c":[1,0,0,0,0,0,5,580,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_field.html":[1,0,0,0,0,0,5,579],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_field.html#a087b5ef1f92d6d4bec33295cccafb958":[1,0,0,0,0,0,5,579,19],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_field.html#a10b290bc45d4c3a5c1f117d6522a7a28":[1,0,0,0,0,0,5,579,16],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_field.html#a45f6d114c2d019f1a7a9cbc761e1265e":[1,0,0,0,0,0,5,579,4]
 };

@@ -1,9 +1,5 @@
 var NAVTREEINDEX29 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_operation_1_1_filterable_fields.html":[1,0,0,0,0,0,5,185,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_operation_1_1_filterable_fields.html#ac25ed1dfa65238f0bd96382615acd610":[1,0,0,0,0,0,5,185,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_operation_1_1_selectable_fields.html":[1,0,0,0,0,0,5,185,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_operation_1_1_selectable_fields.html#ab6c2cb1a139b7f0923b51042a2cade3e":[1,0,0,0,0,0,5,185,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_page.html":[1,0,0,0,0,0,5,444],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_page.html#abf3adfcbdf0e6dbedad91fe5ae1e87ae":[1,0,0,0,0,0,5,444,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_page_1_1_fields.html":[1,0,0,0,0,0,5,444,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX29 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_app_url.html#ae62d31f6977b09f88371afeae8810abc":[1,0,0,0,0,0,5,204,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_app_url_1_1_fields.html":[1,0,0,0,0,0,5,204,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_app_url_1_1_fields.html#a7f33766f2fec28382a4ecaa6e225f6eb":[1,0,0,0,0,0,5,204,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_app_url_1_1_filterable_fields.html":[1,0,0,0,0,0,5,204,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_app_url_1_1_filterable_fields.html":[1,0,0,0,0,0,5,204,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_app_url_1_1_filterable_fields.html#ae6632fe88f3213f937aee4aaafe2e1fe":[1,0,0,0,0,0,5,204,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_app_url_1_1_selectable_fields.html":[1,0,0,0,0,0,5,204,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_app_url_1_1_selectable_fields.html#a98744c8ce90e09b5554b709853a703ee":[1,0,0,0,0,0,5,204,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_application_exception.html":[1,0,0,0,0,0,5,9]
 };

@@ -1,9 +1,5 @@
 var NAVTREEINDEX36 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_specific_rule_user_list_1_1_filterable_fields.html#a7e4239f898844a86ab410f526ed0a5e9":[1,0,0,0,0,0,5,471,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_specific_rule_user_list_1_1_selectable_fields.html":[1,0,0,0,0,0,5,471,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_specific_rule_user_list_1_1_selectable_fields.html#a3f84174c04706412cedb580ac251fb54":[1,0,0,0,0,0,5,471,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_time_range.html":[1,0,0,0,0,0,5,7],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_time_range.html#a2fa7d4a699e1d553b7501211341163ce":[1,0,0,0,0,0,5,7,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_time_range.html#a65f17c466b2f97774c0e9972d1c29414":[1,0,0,0,0,0,5,7,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_deprecated_ad.html":[1,0,0,0,0,0,5,229],
@@ -249,5 +245,9 @@ var NAVTREEINDEX36 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats.html#a2c9c6919c2dd623c0e745f9aaea67344":[1,0,0,0,0,0,5,544,8],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats.html#a42b2d80651a5214524ba412b00483e36":[1,0,0,0,0,0,5,544,7],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats.html#ab714964da3071010f5dc0c0d725b91fa":[1,0,0,0,0,0,5,544,6],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats.html#aca4074369f7ba939db8b911d4ce99be0":[1,0,0,0,0,0,5,544,5]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats.html#aca4074369f7ba939db8b911d4ce99be0":[1,0,0,0,0,0,5,544,5],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats.html#ad4e39b4d67f29c31465f32aac55fbcb8":[1,0,0,0,0,0,5,544,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats.html#ad74f94d8ca2402022c7dd105af50a471":[1,0,0,0,0,0,5,544,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats_1_1_fields.html":[1,0,0,0,0,0,5,544,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats_1_1_fields.html#a41817d6d203277ec7a29db2b81fd83d2":[1,0,0,0,0,0,5,544,0,0]
 };

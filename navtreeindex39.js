@@ -1,9 +1,5 @@
 var NAVTREEINDEX39 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand.html#af03ae722d1e8358fa0d9f45d37342d13":[1,0,0,0,0,0,5,101,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand_1_1_fields.html":[1,0,0,0,0,0,5,101,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand_1_1_fields.html#a2655b0bf773b3cc44aaf2b0f7b6d3cf6":[1,0,0,0,0,0,5,101,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand_1_1_filterable_fields.html":[1,0,0,0,0,0,5,101,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand_1_1_filterable_fields.html#ae9cfd53e51f95009ef6c6b9128c82bb8":[1,0,0,0,0,0,5,101,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand_1_1_selectable_fields.html":[1,0,0,0,0,0,5,101,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand_1_1_selectable_fields.html#aa6d0e5203541aa069d8ad5401c92fd39":[1,0,0,0,0,0,5,101,2,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX39 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_label_error_1_1_fields.html":[1,0,0,0,0,0,5,348,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_label_error_1_1_fields.html#ae63a9e7ebfcfbcb8777f4e9c7cf12e6f":[1,0,0,0,0,0,5,348,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_label_error_1_1_filterable_fields.html":[1,0,0,0,0,0,5,348,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_label_error_1_1_filterable_fields.html#a030406dc04ff06b7aa337226386f195c":[1,0,0,0,0,0,5,348,1,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_label_error_1_1_filterable_fields.html#a030406dc04ff06b7aa337226386f195c":[1,0,0,0,0,0,5,348,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_label_error_1_1_selectable_fields.html":[1,0,0,0,0,0,5,348,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_label_error_1_1_selectable_fields.html#acfd088e51db16a7227f86274e9cdab4b":[1,0,0,0,0,0,5,348,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_label_operation.html":[1,0,0,0,0,0,5,346],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_label_operation.html#a61b196a4e4bd9ad6d1665941324c9f55":[1,0,0,0,0,0,5,346,3]
 };

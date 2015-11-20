@@ -1,9 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_errors_1_1_fields.html#ac472845d8d4d85df297a1fe654a0dbba":[1,0,0,0,0,0,4,136,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_errors_1_1_filterable_fields.html":[1,0,0,0,0,0,4,136,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_errors_1_1_filterable_fields.html#a44af305f6f489240dcb79d085b853b04":[1,0,0,0,0,0,4,136,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_errors_1_1_selectable_fields.html":[1,0,0,0,0,0,4,136,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_errors_1_1_selectable_fields.html#a8b8b7a3dc1c97df2896af4ac575f45f7":[1,0,0,0,0,0,4,136,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_scheme.html":[1,0,0,0,0,0,4,115],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_bidding_scheme.html#a5218d9b9579aa0ddcf97ada810b1ffcf":[1,0,0,0,0,0,4,115,3],
@@ -249,5 +245,9 @@ var NAVTREEINDEX9 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector.html#a48cfd8f91993e0d8f3cbb98c315db468":[1,0,0,0,0,0,4,502,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector.html#ade7880bfae98a2456875788f151cf2e6":[1,0,0,0,0,0,4,502,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector.html#af9b2ed2fada009cf697b403157a7a1ef":[1,0,0,0,0,0,4,502,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector_1_1_fields.html":[1,0,0,0,0,0,4,502,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector_1_1_fields.html":[1,0,0,0,0,0,4,502,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector_1_1_fields.html#a5802851be0a981fcd1e35079c478f2c1":[1,0,0,0,0,0,4,502,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector_1_1_filterable_fields.html":[1,0,0,0,0,0,4,502,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector_1_1_filterable_fields.html#aeca49cd0d76ad8f60e57f6076cb5d8fb":[1,0,0,0,0,0,4,502,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector_1_1_selectable_fields.html":[1,0,0,0,0,0,4,502,2]
 };

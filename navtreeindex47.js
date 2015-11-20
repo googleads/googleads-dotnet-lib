@@ -1,9 +1,5 @@
 var NAVTREEINDEX47 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector_1_1_fields.html#ae7242c2b896de579085762fb7b098ed5":[1,0,0,0,0,0,5,425,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector_1_1_filterable_fields.html":[1,0,0,0,0,0,5,425,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector_1_1_filterable_fields.html#aea3543962e4b692432a2e71011ba9322":[1,0,0,0,0,0,5,425,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector_1_1_selectable_fields.html":[1,0,0,0,0,0,5,425,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector_1_1_selectable_fields.html#ace988c0ff015ee6115230dcec81311dc":[1,0,0,0,0,0,5,425,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_service.html":[1,0,0,0,0,0,5,391],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_service.html#a45c456cd5ba7c4e7bdafbb199260c138":[1,0,0,0,0,0,5,391,1],
@@ -249,5 +245,9 @@ var NAVTREEINDEX47 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_vertical_1_1_filterable_fields.html#a4f85acad38a165cc1a478d27e5a5c176":[1,0,0,0,0,0,5,91,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_vertical_1_1_selectable_fields.html":[1,0,0,0,0,0,5,91,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_vertical_1_1_selectable_fields.html#a121993ea99403788353ee8cc9ca3f77b":[1,0,0,0,0,0,5,91,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_video.html":[1,0,0,0,0,0,5,221]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_video.html":[1,0,0,0,0,0,5,221],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_video.html#a2bcc9c28d99f42f0f3345541f728568b":[1,0,0,0,0,0,5,221,9],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_video.html#a48c31d3087608a3d42c62fe7a1aa5c13":[1,0,0,0,0,0,5,221,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_video.html#a69e76157896fb62616f9069854c40f3c":[1,0,0,0,0,0,5,221,7],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_video.html#a6e4f5b98b63cec51654fa12de67b9423":[1,0,0,0,0,0,5,221,6]
 };

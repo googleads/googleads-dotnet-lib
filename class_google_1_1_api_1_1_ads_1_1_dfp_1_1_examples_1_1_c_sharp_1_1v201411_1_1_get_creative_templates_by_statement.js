@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201411_1_1_get_creative_templates_by_statement =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201411_1_1_get_creative_templates_by_statement.html#ae3a5b7fff4b7b6d9491f34853270faa9", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201411_1_1_get_creative_templates_by_statement.html#ae0874422c9eceef6cd427e2a7e62c9dc", null ]
-];

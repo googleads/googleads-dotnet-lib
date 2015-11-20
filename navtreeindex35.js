@@ -1,9 +1,5 @@
 var NAVTREEINDEX35 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_custom_parameters_1_1_fields.html#ad71240d5c6670adde09e1702345a1c70":[1,0,0,0,0,0,5,135,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_custom_parameters_1_1_filterable_fields.html":[1,0,0,0,0,0,5,135,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_custom_parameters_1_1_filterable_fields.html#aee45a8353771612749342e66ef8bf272":[1,0,0,0,0,0,5,135,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_custom_parameters_1_1_selectable_fields.html":[1,0,0,0,0,0,5,135,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_custom_parameters_1_1_selectable_fields.html#aede95904d840bbca8eae0f218a263b63":[1,0,0,0,0,0,5,135,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_customer.html":[1,0,0,0,0,0,5,356],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_customer.html#a11362d5bfa191690a1518f8d8d507df9":[1,0,0,0,0,0,5,356,7],
@@ -249,5 +245,9 @@ var NAVTREEINDEX35 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_specific_rule_user_list.html#afdc6cefaff5bd9a2590eff0343a5a92f":[1,0,0,0,0,0,5,471,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_specific_rule_user_list_1_1_fields.html":[1,0,0,0,0,0,5,471,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_specific_rule_user_list_1_1_fields.html#a0baebcf646c52220a65d19555865f5c7":[1,0,0,0,0,0,5,471,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_specific_rule_user_list_1_1_filterable_fields.html":[1,0,0,0,0,0,5,471,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_specific_rule_user_list_1_1_filterable_fields.html":[1,0,0,0,0,0,5,471,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_specific_rule_user_list_1_1_filterable_fields.html#a7e4239f898844a86ab410f526ed0a5e9":[1,0,0,0,0,0,5,471,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_specific_rule_user_list_1_1_selectable_fields.html":[1,0,0,0,0,0,5,471,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_specific_rule_user_list_1_1_selectable_fields.html#a3f84174c04706412cedb580ac251fb54":[1,0,0,0,0,0,5,471,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date_time_range.html":[1,0,0,0,0,0,5,7]
 };

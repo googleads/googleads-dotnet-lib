@@ -1,9 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_data_1_1_filterable_fields.html":[1,0,0,0,0,0,4,171,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_data_1_1_filterable_fields.html#aed2fc0a02a09e951b18b836dd6141c78":[1,0,0,0,0,0,4,171,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_data_1_1_selectable_fields.html":[1,0,0,0,0,0,4,171,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_data_1_1_selectable_fields.html#a4c4c6653e947b0130794f5392598b486":[1,0,0,0,0,0,4,171,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_data_service.html":[1,0,0,0,0,0,4,156],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_data_service.html#a21d5f117ebb2827c6affbc7ef8ba3f63":[1,0,0,0,0,0,4,156,8],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_constant_data_service.html#a24434fd3f2eb445eadaa3de5cdeb8742":[1,0,0,0,0,0,4,156,2],
@@ -249,5 +245,9 @@ var NAVTREEINDEX12 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion_user_list.html#a3857363ce6cbc6a408c0032b27f6a271":[1,0,0,0,0,0,4,175,6],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion_user_list.html#a42a09505af8869b667d6ee2f80b7b1e8":[1,0,0,0,0,0,4,175,7],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion_user_list.html#a571c24c8708447ac38a9f2fda2a99195":[1,0,0,0,0,0,4,175,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion_user_list_1_1_fields.html":[1,0,0,0,0,0,4,175,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion_user_list_1_1_fields.html":[1,0,0,0,0,0,4,175,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion_user_list_1_1_fields.html#a9417993de7a6794539a7b51a853a6956":[1,0,0,0,0,0,4,175,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion_user_list_1_1_filterable_fields.html":[1,0,0,0,0,0,4,175,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion_user_list_1_1_filterable_fields.html#ac044713b94e237339fd26ecf800fc651":[1,0,0,0,0,0,4,175,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_criterion_user_list_1_1_selectable_fields.html":[1,0,0,0,0,0,4,175,2]
 };

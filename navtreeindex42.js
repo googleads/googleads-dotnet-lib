@@ -1,9 +1,5 @@
 var NAVTREEINDEX42 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_monthly_search_volume_attribute_1_1_filterable_fields.html":[1,0,0,0,0,0,5,398,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_monthly_search_volume_attribute_1_1_filterable_fields.html#a0d300c72780a3e4c9e8710c387f6902c":[1,0,0,0,0,0,5,398,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_monthly_search_volume_attribute_1_1_selectable_fields.html":[1,0,0,0,0,0,5,398,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_monthly_search_volume_attribute_1_1_selectable_fields.html#aeff14e130dcd3b35fe4966f09457a29b":[1,0,0,0,0,0,5,398,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_move_operation.html":[1,0,0,0,0,0,5,289],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_move_operation.html#aafc881963dd870df2a19d58c92edc947":[1,0,0,0,0,0,5,289,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_move_operation.html#ab9b20458a615ab7158fd1bf770a21d7f":[1,0,0,0,0,0,5,289,4],
@@ -249,5 +245,9 @@ var NAVTREEINDEX42 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page.html#a5f7d9058eb10fcbcc18c9d9379ef0136":[1,0,0,0,0,0,5,43,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_1_1_fields.html":[1,0,0,0,0,0,5,43,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_1_1_fields.html#a23596e0e27fb87f59106b6574e259cf3":[1,0,0,0,0,0,5,43,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_1_1_filterable_fields.html":[1,0,0,0,0,0,5,43,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_1_1_filterable_fields.html":[1,0,0,0,0,0,5,43,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_1_1_filterable_fields.html#a633e475243da7cfbe724db58f1ea15cc":[1,0,0,0,0,0,5,43,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_1_1_selectable_fields.html":[1,0,0,0,0,0,5,43,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_1_1_selectable_fields.html#aadac43d9e18a9808033011945d62b8a5":[1,0,0,0,0,0,5,43,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_one_promoted_bidding_scheme.html":[1,0,0,0,0,0,5,162]
 };

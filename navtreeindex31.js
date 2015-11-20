@@ -1,9 +1,5 @@
 var NAVTREEINDEX31 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bidding_strategy_error_1_1_filterable_fields.html":[1,0,0,0,0,0,5,455,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bidding_strategy_error_1_1_filterable_fields.html#aa1255cc5aedf204eb50fc27c68b4aefa":[1,0,0,0,0,0,5,455,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bidding_strategy_error_1_1_selectable_fields.html":[1,0,0,0,0,0,5,455,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bidding_strategy_error_1_1_selectable_fields.html#a89811a86b2a9354cce8a6969ac37ea96":[1,0,0,0,0,0,5,455,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bidding_strategy_operation.html":[1,0,0,0,0,0,5,453],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bidding_strategy_operation.html#afc16bd55dd1ab8d737a92c9157fbfee0":[1,0,0,0,0,0,5,453,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bidding_strategy_operation_1_1_fields.html":[1,0,0,0,0,0,5,453,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX31 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_selector.html#ab5466315fb5e5386288da9b1622b3d43":[1,0,0,0,0,0,5,282,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_selector_1_1_fields.html":[1,0,0,0,0,0,5,282,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_selector_1_1_fields.html#a591fc12c0cdae4a18b7362817ae5bbb8":[1,0,0,0,0,0,5,282,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_selector_1_1_filterable_fields.html":[1,0,0,0,0,0,5,282,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_selector_1_1_filterable_fields.html":[1,0,0,0,0,0,5,282,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_selector_1_1_filterable_fields.html#a6aaba5cf5ea6680051935237665cb4c4":[1,0,0,0,0,0,5,282,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_selector_1_1_selectable_fields.html":[1,0,0,0,0,0,5,282,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_selector_1_1_selectable_fields.html#a5f46936b05352b375d690cc10d84319c":[1,0,0,0,0,0,5,282,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_call_conversion_type.html":[1,0,0,0,0,0,5,368]
 };

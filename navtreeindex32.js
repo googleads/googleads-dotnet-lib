@@ -1,9 +1,5 @@
 var NAVTREEINDEX32 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_selector_1_1_filterable_fields.html#a6aaba5cf5ea6680051935237665cb4c4":[1,0,0,0,0,0,5,282,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_selector_1_1_selectable_fields.html":[1,0,0,0,0,0,5,282,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_bulk_mutate_job_selector_1_1_selectable_fields.html#a5f46936b05352b375d690cc10d84319c":[1,0,0,0,0,0,5,282,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_call_conversion_type.html":[1,0,0,0,0,0,5,368],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_call_conversion_type.html#a049036db55b00ca3c998a0e4e51f8c20":[1,0,0,0,0,0,5,368,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_call_conversion_type.html#a7ae2b0626b5d0a0e2f9c702110e3f866":[1,0,0,0,0,0,5,368,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_call_conversion_type_1_1_fields.html":[1,0,0,0,0,0,5,368,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX32 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_campaign_extension_setting_page_1_1_fields.html#ad635a886deb400c11bc942d8bca0baed":[1,0,0,0,0,0,5,370,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_campaign_extension_setting_page_1_1_filterable_fields.html":[1,0,0,0,0,0,5,370,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_campaign_extension_setting_page_1_1_filterable_fields.html#aee11d9405ce2c02ee0446e473b580c2c":[1,0,0,0,0,0,5,370,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_campaign_extension_setting_page_1_1_selectable_fields.html":[1,0,0,0,0,0,5,370,2]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_campaign_extension_setting_page_1_1_selectable_fields.html":[1,0,0,0,0,0,5,370,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_campaign_extension_setting_page_1_1_selectable_fields.html#a1b34e8d8864691915db2b76f2b07cba5":[1,0,0,0,0,0,5,370,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_campaign_extension_setting_return_value.html":[1,0,0,0,0,0,5,358],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_campaign_extension_setting_return_value.html#af5db841357b7a3e248a5fc2db9760cc8":[1,0,0,0,0,0,5,358,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_campaign_extension_setting_return_value_1_1_fields.html":[1,0,0,0,0,0,5,358,0]
 };

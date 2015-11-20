@@ -1,9 +1,5 @@
 var NAVTREEINDEX45 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_field.html":[1,0,0,0,0,0,5,579],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_field.html#a087b5ef1f92d6d4bec33295cccafb958":[1,0,0,0,0,0,5,579,19],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_field.html#a10b290bc45d4c3a5c1f117d6522a7a28":[1,0,0,0,0,0,5,579,16],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_field.html#a45f6d114c2d019f1a7a9cbc761e1265e":[1,0,0,0,0,0,5,579,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_field.html#a4c24a56e1678684e27c123281ae9d605":[1,0,0,0,0,0,5,579,17],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_field.html#a4c8b91d22a022e848366d7e54c509fd5":[1,0,0,0,0,0,5,579,12],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_report_definition_field.html#a6cac558609db497b4857382c9c48fa2c":[1,0,0,0,0,0,5,579,5],
@@ -249,5 +245,9 @@ var NAVTREEINDEX45 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_page_1_1_filterable_fields.html#a7dd363fb3480bb08d5169e534377a457":[1,0,0,0,0,0,5,489,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_page_1_1_selectable_fields.html":[1,0,0,0,0,0,5,489,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_page_1_1_selectable_fields.html#af1d1ad40ed380fc160fd58a13705ce06":[1,0,0,0,0,0,5,489,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_return_value.html":[1,0,0,0,0,0,5,486]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_return_value.html":[1,0,0,0,0,0,5,486],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_return_value.html#a078c84e579f67e03e198be7275a5c3c8":[1,0,0,0,0,0,5,486,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_service.html":[1,0,0,0,0,0,5,485],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_service.html#a07cc985e06aac6f51a4125f6316d528d":[1,0,0,0,0,0,5,485,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_service.html#a478f4ebd0fe80a097d85ec3a4cb733c4":[1,0,0,0,0,0,5,485,4]
 };

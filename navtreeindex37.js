@@ -1,9 +1,5 @@
 var NAVTREEINDEX37 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats.html#ad4e39b4d67f29c31465f32aac55fbcb8":[1,0,0,0,0,0,5,544,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats.html#ad74f94d8ca2402022c7dd105af50a471":[1,0,0,0,0,0,5,544,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats_1_1_fields.html":[1,0,0,0,0,0,5,544,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats_1_1_fields.html#a41817d6d203277ec7a29db2b81fd83d2":[1,0,0,0,0,0,5,544,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats_1_1_filterable_fields.html":[1,0,0,0,0,0,5,544,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats_1_1_filterable_fields.html#a842e1ec11dcd7ece321c7290a7f02151":[1,0,0,0,0,0,5,544,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_experiment_summary_stats_1_1_selectable_fields.html":[1,0,0,0,0,0,5,544,2],
@@ -249,5 +245,9 @@ var NAVTREEINDEX37 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_campaign_targeting_1_1_selectable_fields.html":[1,0,0,0,0,0,5,82,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_campaign_targeting_1_1_selectable_fields.html#ac349666d7e74ab7d78015009afc692a6":[1,0,0,0,0,0,5,82,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference.html":[1,0,0,0,0,0,5,80],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference.html#a50651d876a84936befc9595dc99004c0":[1,0,0,0,0,0,5,80,4]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference.html#a50651d876a84936befc9595dc99004c0":[1,0,0,0,0,0,5,80,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference.html#a96147f386acb29d99094bdd538520e41":[1,0,0,0,0,0,5,80,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference_1_1_fields.html":[1,0,0,0,0,0,5,80,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference_1_1_fields.html#ac5bfd15343589d262b8acc368fb39425":[1,0,0,0,0,0,5,80,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference_1_1_filterable_fields.html":[1,0,0,0,0,0,5,80,1]
 };

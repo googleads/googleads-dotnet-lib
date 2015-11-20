@@ -157,7 +157,7 @@ Properties</h2></td></tr>
 <tr class="memitem:aabfe7cc95c24e5bd1a82f5012fc97a42"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_product_template.html#aabfe7cc95c24e5bd1a82f5012fc97a42">rateTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:aabfe7cc95c24e5bd1a82f5012fc97a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6771cd95b118acb14239f808957912ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508.html#a62d58cf822c0118cd054d90ca130ff64">RoadblockingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_product_template.html#a6771cd95b118acb14239f808957912ab">roadblockingType</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6771cd95b118acb14239f808957912ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">The strategy for serving roadblocked creatives (i.e. instances where multiple creatives must be served together on a single web page) for the created <a href="ProposalLineItem">ProposalLineItem</a>. Only <a href="RoadblockingType#ONE_OR_MORE">RoadblockingType::ONE_OR_MORE</a> and <a href="RoadblockingType#CREATIVE_SET">RoadblockingType::CREATIVE_SET</a> are supported. <a href="RoadblockingType#CREATIVE_SET">RoadblockingType::CREATIVE_SET</a> can be used to serve multiple creatives on a single web page. This attribute is optional and defaults to <a href="RoadblockingType#ONE_OR_MORE">RoadblockingType::ONE_OR_MORE</a> when <a href="#productType">#productType</a> is <a href="ProductType#DFP">ProductType::DFP</a>.  <a href="#a6771cd95b118acb14239f808957912ab">More...</a><br/></td></tr>
+<tr class="memdesc:a6771cd95b118acb14239f808957912ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">The strategy for serving roadblocked creatives, i.e. instances where multiple creatives must be served together on a single web page. This attribute is optional and defaults to <a href="RoadblockingType#ONE_OR_MORE">RoadblockingType::ONE_OR_MORE</a> if <a href="#productType">#productType</a> is <a href="ProductType#DFP">ProductType::DFP</a>, or <a href="RoadblockingType#CREATIVE_SET">RoadblockingType::CREATIVE_SET</a> if there are companion sizes in <a href="#creativePlaceholders">#creativePlaceholders</a>.  <a href="#a6771cd95b118acb14239f808957912ab">More...</a><br/></td></tr>
 <tr class="separator:a6771cd95b118acb14239f808957912ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace5b65eb035d053681c658ef632512ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_product_template.html#ace5b65eb035d053681c658ef632512ae">roadblockingTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ace5b65eb035d053681c658ef632512ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -841,7 +841,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The strategy for serving roadblocked creatives (i.e. instances where multiple creatives must be served together on a single web page) for the created <a href="ProposalLineItem">ProposalLineItem</a>. Only <a href="RoadblockingType#ONE_OR_MORE">RoadblockingType::ONE_OR_MORE</a> and <a href="RoadblockingType#CREATIVE_SET">RoadblockingType::CREATIVE_SET</a> are supported. <a href="RoadblockingType#CREATIVE_SET">RoadblockingType::CREATIVE_SET</a> can be used to serve multiple creatives on a single web page. This attribute is optional and defaults to <a href="RoadblockingType#ONE_OR_MORE">RoadblockingType::ONE_OR_MORE</a> when <a href="#productType">#productType</a> is <a href="ProductType#DFP">ProductType::DFP</a>. </p>
+<p>The strategy for serving roadblocked creatives, i.e. instances where multiple creatives must be served together on a single web page. This attribute is optional and defaults to <a href="RoadblockingType#ONE_OR_MORE">RoadblockingType::ONE_OR_MORE</a> if <a href="#productType">#productType</a> is <a href="ProductType#DFP">ProductType::DFP</a>, or <a href="RoadblockingType#CREATIVE_SET">RoadblockingType::CREATIVE_SET</a> if there are companion sizes in <a href="#creativePlaceholders">#creativePlaceholders</a>. </p>
 
 </div>
 </div>
@@ -864,7 +864,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_product_template.html#a6771cd95b118acb14239f808957912ab" title="The strategy for serving roadblocked creatives (i.e. instances where multiple creatives must be serve...">roadblockingType</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_product_template.html#a6771cd95b118acb14239f808957912ab" title="The strategy for serving roadblocked creatives, i.e. instances where multiple creatives must be serve...">roadblockingType</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -961,7 +961,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.0TN6HChMUx/dist/github/src/Dfp/v201508/<a class="el" href="v201508_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.oCXC983OTN/dist/github/src/Dfp/v201508/<a class="el" href="v201508_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -969,7 +969,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508.html">v201508</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_product_template.html">ProductTemplate</a></li>
-    <li class="footer">Generated on Tue Nov 10 2015 14:56:56 for Ads API .NET library by
+    <li class="footer">Generated on Fri Nov 20 2015 10:35:31 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

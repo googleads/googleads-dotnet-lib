@@ -1,9 +1,5 @@
 var NAVTREEINDEX38 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference.html#a96147f386acb29d99094bdd538520e41":[1,0,0,0,0,0,5,80,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference_1_1_fields.html":[1,0,0,0,0,0,5,80,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference_1_1_fields.html#ac5bfd15343589d262b8acc368fb39425":[1,0,0,0,0,0,5,80,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference_1_1_filterable_fields.html":[1,0,0,0,0,0,5,80,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference_1_1_filterable_fields.html#a884829568cface0004c27437c2d73548":[1,0,0,0,0,0,5,80,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference_1_1_selectable_fields.html":[1,0,0,0,0,0,5,80,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_feed_item_device_preference_1_1_selectable_fields.html#aa794167d3beaf5a674eb4c8c911bc43c":[1,0,0,0,0,0,5,80,2,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX38 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_point_1_1_filterable_fields.html#a73da1545e82ccd92c450633d019a196a":[1,0,0,0,0,0,5,103,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_point_1_1_selectable_fields.html":[1,0,0,0,0,0,5,103,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_point_1_1_selectable_fields.html#a1569ae55ff588dde3879d1107b5e26da":[1,0,0,0,0,0,5,103,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand.html":[1,0,0,0,0,0,5,101]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand.html":[1,0,0,0,0,0,5,101],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand.html#af03ae722d1e8358fa0d9f45d37342d13":[1,0,0,0,0,0,5,101,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand_1_1_fields.html":[1,0,0,0,0,0,5,101,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand_1_1_fields.html#a2655b0bf773b3cc44aaf2b0f7b6d3cf6":[1,0,0,0,0,0,5,101,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_geo_target_operand_1_1_filterable_fields.html":[1,0,0,0,0,0,5,101,1]
 };

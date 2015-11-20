@@ -7,10 +7,10 @@ var searchData=
   ['keywordattribute',['KeywordAttribute',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_keyword_attribute.html',1,'Google::Api::Ads::AdWords::v201509']]],
   ['keywordestimate',['KeywordEstimate',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_keyword_estimate.html',1,'Google::Api::Ads::AdWords::v201509']]],
   ['keywordestimate',['KeywordEstimate',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_keyword_estimate.html',1,'Google::Api::Ads::AdWords::v201506']]],
-  ['keywordestimaterequest',['KeywordEstimateRequest',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_keyword_estimate_request.html',1,'Google::Api::Ads::AdWords::v201509']]],
   ['keywordestimaterequest',['KeywordEstimateRequest',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_keyword_estimate_request.html',1,'Google::Api::Ads::AdWords::v201506']]],
-  ['keywordgroup',['KeywordGroup',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_keyword_group.html',1,'Google::Api::Ads::AdWords::v201506']]],
+  ['keywordestimaterequest',['KeywordEstimateRequest',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_keyword_estimate_request.html',1,'Google::Api::Ads::AdWords::v201509']]],
   ['keywordgroup',['KeywordGroup',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_keyword_group.html',1,'Google::Api::Ads::AdWords::v201509']]],
+  ['keywordgroup',['KeywordGroup',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_keyword_group.html',1,'Google::Api::Ads::AdWords::v201506']]],
   ['keywordset',['KeywordSet',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_keyword_set.html',1,'Google::Api::Ads::AdWords::v201506']]],
   ['keywordset',['KeywordSet',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_keyword_set.html',1,'Google::Api::Ads::AdWords::v201509']]]
 ];

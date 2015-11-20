@@ -1,9 +1,5 @@
 var NAVTREEINDEX14 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_range_1_1_filterable_fields.html#aaca8bce07518f5801077fa56d9a2e87a":[1,0,0,0,0,0,4,91,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_range_1_1_selectable_fields.html":[1,0,0,0,0,0,4,91,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_range_1_1_selectable_fields.html#ae15e74d715f423127c30e15d30c9086d":[1,0,0,0,0,0,4,91,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_range_error.html":[1,0,0,0,0,0,4,133],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_range_error.html#a9d86e6ea867b842a099e4b444ddf04ee":[1,0,0,0,0,0,4,133,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_range_error.html#ab8dcd12a2f4918b45fed6dff625d45bd":[1,0,0,0,0,0,4,133,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_date_range_error_1_1_fields.html":[1,0,0,0,0,0,4,133,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX14 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_experiment_1_1_filterable_fields.html":[1,0,0,0,0,0,4,232,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_experiment_1_1_filterable_fields.html#ae061a7041e9b43c7f75d2cfe351fa4d0":[1,0,0,0,0,0,4,232,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_experiment_1_1_selectable_fields.html":[1,0,0,0,0,0,4,232,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_experiment_1_1_selectable_fields.html#a31f5765cd3a0311f3877f40d097fb31e":[1,0,0,0,0,0,4,232,2,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_experiment_1_1_selectable_fields.html#a31f5765cd3a0311f3877f40d097fb31e":[1,0,0,0,0,0,4,232,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_experiment_error.html":[1,0,0,0,0,0,4,66],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_experiment_error.html#a537563d8b9c2fb59f3635eccb15e7ecb":[1,0,0,0,0,0,4,66,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_experiment_error.html#a99339fef7600eaef6951997ab7002ee6":[1,0,0,0,0,0,4,66,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_experiment_error_1_1_fields.html":[1,0,0,0,0,0,4,66,0]
 };

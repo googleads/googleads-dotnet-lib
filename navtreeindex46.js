@@ -1,9 +1,5 @@
 var NAVTREEINDEX46 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_return_value.html#a078c84e579f67e03e198be7275a5c3c8":[1,0,0,0,0,0,5,486,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_service.html":[1,0,0,0,0,0,5,485],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_service.html#a07cc985e06aac6f51a4125f6316d528d":[1,0,0,0,0,0,5,485,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_service.html#a478f4ebd0fe80a097d85ec3a4cb733c4":[1,0,0,0,0,0,5,485,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_service.html#a4b021d77ebfe1025d676732017d2dde5":[1,0,0,0,0,0,5,485,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_service.html#a591432369cc3ed362f5525eaa1191406":[1,0,0,0,0,0,5,485,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_shared_set_service.html#acc4a3680644ecbd8210cb815f6a3a6b7":[1,0,0,0,0,0,5,485,2],
@@ -249,5 +245,9 @@ var NAVTREEINDEX46 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector.html#a6e7ae64288adf91b556fa30b6eda3580":[1,0,0,0,0,0,5,425,6],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector.html#a736861bf7c162a52c0a116654821d55b":[1,0,0,0,0,0,5,425,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector.html#ad9f4196ba08f8517ed66e92b753ca0f0":[1,0,0,0,0,0,5,425,5],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector_1_1_fields.html":[1,0,0,0,0,0,5,425,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector_1_1_fields.html":[1,0,0,0,0,0,5,425,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector_1_1_fields.html#ae7242c2b896de579085762fb7b098ed5":[1,0,0,0,0,0,5,425,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector_1_1_filterable_fields.html":[1,0,0,0,0,0,5,425,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector_1_1_filterable_fields.html#aea3543962e4b692432a2e71011ba9322":[1,0,0,0,0,0,5,425,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_targeting_idea_selector_1_1_selectable_fields.html":[1,0,0,0,0,0,5,425,2]
 };

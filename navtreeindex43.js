@@ -1,9 +1,5 @@
 var NAVTREEINDEX43 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_1_1_filterable_fields.html#a633e475243da7cfbe724db58f1ea15cc":[1,0,0,0,0,0,5,43,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_1_1_selectable_fields.html":[1,0,0,0,0,0,5,43,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_1_1_selectable_fields.html#aadac43d9e18a9808033011945d62b8a5":[1,0,0,0,0,0,5,43,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_one_promoted_bidding_scheme.html":[1,0,0,0,0,0,5,162],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_one_promoted_bidding_scheme.html#a238bbed381e1bc8ea0235755dfde098c":[1,0,0,0,0,0,5,162,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_one_promoted_bidding_scheme.html#a326237c379cc557f95f4c870e24d4c48":[1,0,0,0,0,0,5,162,7],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_page_one_promoted_bidding_scheme.html#a411b23dca6874f599767349cb10a25db":[1,0,0,0,0,0,5,162,11],
@@ -249,5 +245,9 @@ var NAVTREEINDEX43 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_offer_id_1_1_selectable_fields.html":[1,0,0,0,0,0,5,110,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_offer_id_1_1_selectable_fields.html#aa1c9feb5af47b242b8acd3359cc46ba5":[1,0,0,0,0,0,5,110,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition.html":[1,0,0,0,0,0,5,120],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition.html#a01badbcbb1d87990173f44b5e80c31cf":[1,0,0,0,0,0,5,120,6]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition.html#a01badbcbb1d87990173f44b5e80c31cf":[1,0,0,0,0,0,5,120,6],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition.html#a3d12ee221d5b4b00703b9465f621f87f":[1,0,0,0,0,0,5,120,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition.html#a5ba2e26e70fd215b913556ecd0216a9b":[1,0,0,0,0,0,5,120,5],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition.html#aa886a252e7ef6f183c46ea34e5e742b4":[1,0,0,0,0,0,5,120,7],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_product_partition.html#ac4f4c5e95422579c6e4e4dfc4bdf514f":[1,0,0,0,0,0,5,120,3]
 };

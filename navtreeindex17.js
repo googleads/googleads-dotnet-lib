@@ -1,9 +1,5 @@
 var NAVTREEINDEX17 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_error_1_1_fields.html":[1,0,0,0,0,0,4,63,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_error_1_1_fields.html#a3a9cbf191eac2418f40cce60411fb291":[1,0,0,0,0,0,4,63,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_error_1_1_filterable_fields.html":[1,0,0,0,0,0,4,63,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_error_1_1_filterable_fields.html#a7f87ead93657d43abff7b2f6c2984770":[1,0,0,0,0,0,4,63,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_error_1_1_selectable_fields.html":[1,0,0,0,0,0,4,63,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_error_1_1_selectable_fields.html#af6ae71535edfea90acfa5b3605fac3f9":[1,0,0,0,0,0,4,63,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_function_operand.html":[1,0,0,0,0,0,4,148],
@@ -249,5 +245,9 @@ var NAVTREEINDEX17 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_job_event.html":[1,0,0,0,0,0,4,367],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_job_event.html#a508ef4c4b1b968623821b982cf088226":[1,0,0,0,0,0,4,367,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_job_event.html#ad0758af0682b348e3a4a34f9aa8489f8":[1,0,0,0,0,0,4,367,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_job_event_1_1_fields.html":[1,0,0,0,0,0,4,367,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_job_event_1_1_fields.html":[1,0,0,0,0,0,4,367,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_job_event_1_1_fields.html#afa5822c5b945aed66f9e72341bd8c28a":[1,0,0,0,0,0,4,367,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_job_event_1_1_filterable_fields.html":[1,0,0,0,0,0,4,367,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_job_event_1_1_filterable_fields.html#a16e9e5e09693ae04fef3bf4599123369":[1,0,0,0,0,0,4,367,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_job_event_1_1_selectable_fields.html":[1,0,0,0,0,0,4,367,2]
 };

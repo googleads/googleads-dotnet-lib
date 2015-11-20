@@ -1,9 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector_1_1_fields.html#a5802851be0a981fcd1e35079c478f2c1":[1,0,0,0,0,0,4,502,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector_1_1_filterable_fields.html":[1,0,0,0,0,0,4,502,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector_1_1_filterable_fields.html#aeca49cd0d76ad8f60e57f6076cb5d8fb":[1,0,0,0,0,0,4,502,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector_1_1_selectable_fields.html":[1,0,0,0,0,0,4,502,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_selector_1_1_selectable_fields.html#a1c44364572a67d7d7e59ee2c60e33cc6":[1,0,0,0,0,0,4,502,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_service.html":[1,0,0,0,0,0,4,495],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_suggestion_service.html#ac50d57e49367caf624b8027f816475d9":[1,0,0,0,0,0,4,495,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX10 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_estimate_request.html#a42a7b7e593f947afa6785f2ab49610b7":[1,0,0,0,0,0,4,459,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_estimate_request.html#a93f1e8b640329dd5f97fbaf2b0da7d9b":[1,0,0,0,0,0,4,459,7],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_estimate_request.html#aacd8756e6c00426a590c18c72e7f6e63":[1,0,0,0,0,0,4,459,6],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_estimate_request.html#abbc0e94eae8b7c582a0299cc4024bb09":[1,0,0,0,0,0,4,459,4]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_estimate_request.html#abbc0e94eae8b7c582a0299cc4024bb09":[1,0,0,0,0,0,4,459,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_estimate_request.html#aca0a398964df7e9a453d3037887f47d4":[1,0,0,0,0,0,4,459,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_estimate_request_1_1_fields.html":[1,0,0,0,0,0,4,459,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_estimate_request_1_1_fields.html#a9ccb437750ab02257d6216e97f2b2eef":[1,0,0,0,0,0,4,459,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_campaign_estimate_request_1_1_filterable_fields.html":[1,0,0,0,0,0,4,459,1]
 };
