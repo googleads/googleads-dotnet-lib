@@ -68,7 +68,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
       ' Get the CampaignCriterionService.
       Dim campaignCriterionService As CampaignCriterionService = CType(user.GetService( _
           AdWordsService.v201509.CampaignCriterionService),  _
-          AdWords.v201509.CampaignCriterionService)
+          CampaignCriterionService)
 
       ' Create mobile platform. The ID can be found in the documentation.
       ' https://developers.google.com/adwords/api/docs/appendix/platforms

@@ -61,7 +61,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the DataService.
       Dim dataService As DataService = CType(user.GetService( _
-          AdWordsService.v201509.DataService), AdWords.v201509.DataService)
+          AdWordsService.v201509.DataService), DataService)
 
       ' Create the selector.
       Dim selector As New Selector

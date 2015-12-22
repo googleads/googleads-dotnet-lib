@@ -59,13 +59,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the services.
       Dim biddingStrategyService As BiddingStrategyService = CType(user.GetService( _
-          AdWordsService.v201509.BiddingStrategyService), AdWords.v201509.BiddingStrategyService)
+          AdWordsService.v201509.BiddingStrategyService), BiddingStrategyService)
 
       Dim budgetService As BudgetService = CType(user.GetService( _
-          AdWordsService.v201509.BudgetService), AdWords.v201509.BudgetService)
+          AdWordsService.v201509.BudgetService), BudgetService)
 
       Dim campaignService As CampaignService = CType(user.GetService( _
-          AdWordsService.v201509.CampaignService), AdWords.v201509.CampaignService)
+          AdWordsService.v201509.CampaignService), CampaignService)
 
       Dim biddingStrategyName As String = "Maximize Clicks " & ExampleUtilities.GetRandomString()
       Dim bidCeiling As Long = 2000000

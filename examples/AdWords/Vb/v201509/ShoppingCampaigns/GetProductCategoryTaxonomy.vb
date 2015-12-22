@@ -110,7 +110,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the ConstantDataService.
       Dim constantDataService As ConstantDataService = CType(user.GetService( _
-          AdWordsService.v201509.ConstantDataService), AdWords.v201509.ConstantDataService)
+          AdWordsService.v201509.ConstantDataService), ConstantDataService)
 
       Dim selector As New Selector()
       selector.predicates = New Predicate() {

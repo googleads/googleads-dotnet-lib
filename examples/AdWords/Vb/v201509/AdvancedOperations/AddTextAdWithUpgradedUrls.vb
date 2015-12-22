@@ -129,7 +129,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
           Console.WriteLine("New text ad with ID = {0} and display URL = '{1}' was " & _
               "created.", newAdGroupAd.ad.id, newAdGroupAd.ad.displayUrl)
           Console.WriteLine("Upgraded URL properties:")
-          Dim newTextAd As TextAd = CType(newAdGroupAd.ad, AdWords.v201509.TextAd)
+          Dim newTextAd As TextAd = CType(newAdGroupAd.ad, TextAd)
 
           Console.WriteLine("  Final URLs: {0}", String.Join(", ", newTextAd.finalUrls))
           Console.WriteLine("  Final Mobile URLS: {0}", _

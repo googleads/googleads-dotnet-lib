@@ -1,3 +1,31 @@
+18.20.0
+=======
+AdWords:
+  - Added support for ProductPartitionTree utility. See
+  https://github.com/googleads/googleads-dotnet-lib/wiki/Working-with-ProductPartitionTrees for
+  usage details. (https://github.com/googleads/googleads-dotnet-lib/issues/60)
+  - Fixed a stack overflow error in BatchJobUtilities.cs.
+   (https://github.com/googleads/googleads-dotnet-lib/issues/59)
+  - Added support for FeedValidationErrors.
+    (https://github.com/googleads/googleads-dotnet-lib/issues/19)
+  - Added more friendly messages for AdWordsApiException
+   (https://github.com/googleads/googleads-dotnet-lib/issues/5)
+  - Fixed a compilation issue with Google.AdWords.Examples.CSharp nuget package.
+   (https://github.com/googleads/googleads-dotnet-lib/issues/58)
+
+AdXBuyer:
+  -
+
+DFP:
+  -
+
+Common:
+  - Added an TemporaryIdGenerator class that generates a sequence of IDs to be
+  used with various services that accept temporary IDs (e.g. Product Partition
+  trees and Batch Jobs in AdWords API).
+  - Added a Clone() method to SerializationUtilities. This method may be used
+  to perform a deep clone of objects that are XmlSerializable.
+
 18.19.0
 =======
 AdWords:

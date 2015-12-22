@@ -60,7 +60,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
     Public Sub Run(ByVal user As AdWordsUser, ByVal reportType As ReportDefinitionReportType)
       ' Get the ReportDefinitionService.
       Dim reportDefinitionService As ReportDefinitionService = CType(user.GetService( _
-          AdWordsService.v201506.ReportDefinitionService), AdWords.v201506.ReportDefinitionService)
+          AdWordsService.v201506.ReportDefinitionService), ReportDefinitionService)
 
       ' The type of the report to get fields for.
       ' E.g.: KEYWORDS_PERFORMANCE_REPORT

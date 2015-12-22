@@ -56,7 +56,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the TrafficEstimatorService.
       Dim trafficEstimatorService As TrafficEstimatorService = CType(user.GetService( _
-          AdWordsService.v201506.TrafficEstimatorService), AdWords.v201506.TrafficEstimatorService)
+          AdWordsService.v201506.TrafficEstimatorService), TrafficEstimatorService)
 
       ' Create keywords. Up to 2000 keywords can be passed in a single request.
       Dim keyword1 As New Keyword

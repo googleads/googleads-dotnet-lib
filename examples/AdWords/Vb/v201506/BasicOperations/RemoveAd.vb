@@ -62,7 +62,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal adId As Long)
       ' Get the AdGroupAdService.
       Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
-          AdWordsService.v201506.AdGroupAdService), AdWords.v201506.AdGroupAdService)
+          AdWordsService.v201506.AdGroupAdService), AdGroupAdService)
 
       ' Since we do not need to update any ad-specific fields, it is enough to
       ' create the base type.

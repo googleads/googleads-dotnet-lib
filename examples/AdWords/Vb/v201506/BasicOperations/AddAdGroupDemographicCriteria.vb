@@ -61,7 +61,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService( _
-          AdWordsService.v201506.AdGroupCriterionService), AdWords.v201506.AdGroupCriterionService)
+          AdWordsService.v201506.AdGroupCriterionService), AdGroupCriterionService)
 
       ' Create biddable ad group criterion for gender
       Dim genderTarget As New Gender()

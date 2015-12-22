@@ -132,7 +132,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
                                                  ByVal adCustomizerFeed As AdCustomizerFeed)
       ' Get the FeedItemService.
       Dim feedItemService As FeedItemService = CType(user.GetService( _
-          AdWordsService.v201506.FeedItemService), AdWords.v201506.FeedItemService)
+          AdWordsService.v201506.FeedItemService), FeedItemService)
 
       Dim feedItemOperations As New List(Of FeedItemOperation)
 
@@ -215,7 +215,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
                                                    ByVal feedName As String)
       ' Get the AdGroupAdService.
       Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
-          AdWordsService.v201506.AdGroupAdService), AdWords.v201506.AdGroupAdService)
+          AdWordsService.v201506.AdGroupAdService), AdGroupAdService)
 
       Dim textAd As New TextAd
       textAd.headline = String.Format("Luxury Cruise to {{={0}.Name}}", feedName)

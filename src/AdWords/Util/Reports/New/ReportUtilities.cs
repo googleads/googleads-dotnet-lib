@@ -34,7 +34,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Default report version.
     /// </summary>
-    private const string DEFAULT_REPORT_VERSION = "v201506";
+    internal const string DEFAULT_REPORT_VERSION = "v201509";
 
     /// <summary>
     /// Sets the reporting API version to use.
@@ -256,13 +256,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
           downloadError.ErrorType = errorNode.SelectSingleNode("type").InnerText;
           downloadError.FieldPath = errorNode.SelectSingleNode("fieldPath").InnerText;
           downloadError.Trigger = errorNode.SelectSingleNode("trigger").InnerText;
-
           errorList.Add(downloadError);
         }
       } catch {
       }
-      AdWordsReportsException retval = new AdWordsReportsException(
-          "Report download errors occurred.", exception);
+      AdWordsReportsException retval = new AdWordsReportsException(this.reportVersion,
+          AdWordsErrorMessages.ReportingExceptionOccurred, exception);
       retval.Errors = errorList.ToArray();
       return retval;
     }

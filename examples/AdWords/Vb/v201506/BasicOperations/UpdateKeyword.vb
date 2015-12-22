@@ -62,7 +62,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal keywordId As Long)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService( _
-          AdWordsService.v201506.AdGroupCriterionService), AdWords.v201506.AdGroupCriterionService)
+          AdWordsService.v201506.AdGroupCriterionService), AdGroupCriterionService)
 
       ' Since we are not updating any keyword-specific fields, it is enough to
       ' create a criterion object.
@@ -97,7 +97,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
             (retVal.value.Length > 0)) Then
           Dim adGroupCriterion As BiddableAdGroupCriterion = _
-              CType(retVal.value(0), AdWords.v201506.BiddableAdGroupCriterion)
+              CType(retVal.value(0), BiddableAdGroupCriterion)
           Dim bidAmount As Long = 0L
           For Each bids As Bids In adGroupCriterion.biddingStrategyConfiguration.bids
             If TypeOf bids Is CpcBid Then

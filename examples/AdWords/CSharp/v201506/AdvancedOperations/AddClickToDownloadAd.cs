@@ -14,19 +14,18 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
-using Google.Api.Ads.Common.Util;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
+
   /// <summary>
   /// This code example creates a click-to-download ad, also known as an
   /// app promotion ad to a given ad group. To list ad groups, run
   /// GetAdGroups.cs.
   /// </summary>
   public class AddClickToDownloadAd : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -107,7 +106,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       adData.fields = new TemplateElementField[] {headline, description1, description2, appId,
           appStore};
 
-      clickToDownloadAppAd.templateElements = new TemplateElement[] {adData};
+      clickToDownloadAppAd.templateElements = new TemplateElement[] { adData };
 
       // Create the adgroupad.
       AdGroupAd clickToDownloadAppAdGroupAd = new AdGroupAd();
@@ -124,7 +123,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
 
       try {
         // Create the ads.
-        AdGroupAdReturnValue retval = adGroupAdService.mutate(new AdGroupAdOperation[] {operation});
+        AdGroupAdReturnValue retval = adGroupAdService.mutate(
+            new AdGroupAdOperation[] { operation });
 
         // Display the results.
         if (retval != null && retval.value != null) {

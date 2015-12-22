@@ -150,7 +150,7 @@ namespace Google.Api.Ads.Common.Util {
     /// </summary>
     /// <param name="objToSerialize">The object to serialize.</param>
     /// <returns>The serialized xml string.</returns>
-    /// <remarks><paramref name="objToSerialize"/> must me XmlSerializable.
+    /// <remarks><paramref name="objToSerialize"/> must be XmlSerializable.
     /// </remarks>
     public static string SerializeAsXmlText(object objToSerialize) {
       string retval = "";
@@ -160,6 +160,18 @@ namespace Google.Api.Ads.Common.Util {
         retval = writer.ToString();
       }
       return retval;
+    }
+
+    /// <summary>
+    /// Clones an object.
+    /// </summary>
+    /// <param name="objToClone">The object to clone.</param>
+    /// <returns>The cloned object.</returns>
+    /// <remarks><paramref name="objToSerialize"/> must be Serializable.
+    /// </remarks>
+    public static object CloneObject(object objToClone) {
+      string serializedObject = SerializeAsXmlText(objToClone);
+      return DeserializeFromXmlText(serializedObject, objToClone.GetType());
     }
 
     /// <summary>

@@ -32,9 +32,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     private ReportDownloadError[] errors;
 
     /// <summary>
-    /// The exception message.
+    /// The API version.
     /// </summary>
-    private string message;
+    private string apiVersion;
 
     /// <summary>
     /// Gets or sets the errors.
@@ -44,34 +44,59 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         return errors;
       }
       set {
+        foreach (ReportDownloadError error in value) {
+          error.ApiVersion = this.ApiVersion;
+        }
         errors = value;
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the API version.
+    /// </summary>
+    public string ApiVersion {
+      get {
+        return apiVersion;
+      }
+      set {
+        apiVersion = value;
       }
     }
 
     /// <summary>
     /// Public constructor.
     /// </summary>
-    public AdWordsReportsException()
+    public AdWordsReportsException() : base() {
+    }
+
+    /// <summary>
+    /// Public constructor.
+    /// </summary>
+    /// <param name="apiVersion">The API Version.</param>
+    public AdWordsReportsException(string apiVersion)
       : base() {
+      this.apiVersion = apiVersion;
     }
 
     /// <summary>
     /// Public constructor.
     /// </summary>
     /// <param name="message">Error message for this API exception.</param>
-    public AdWordsReportsException(string message)
-      : base("") {
-      this.message = message;
+    /// <param name="apiVersion">The API Version.</param>
+    public AdWordsReportsException(string apiVersion, string message)
+      : base(message) {
+      this.apiVersion = apiVersion;
     }
 
     /// <summary>
     /// Public constructor.
     /// </summary>
+    /// <param name="apiVersion">The API Version.</param>
     /// <param name="message">Error message for this API exception.</param>
     /// <param name="innerException">Inner exception, if any.</param>
-    public AdWordsReportsException(string message, Exception innerException)
-      : base("", innerException) {
-      this.message = message;
+    public AdWordsReportsException(string apiVersion, string message, Exception innerException)
+      : base(message, innerException) {
+      this.apiVersion = apiVersion;
     }
 
     /// <summary>
@@ -84,7 +109,8 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     protected AdWordsReportsException(SerializationInfo info, StreamingContext context)
       : base(info, context) {
       if (info != null) {
-        errors = (ReportDownloadError[]) info.GetValue("errors", typeof(ReportDownloadError[]));
+        errors = GetValue<ReportDownloadError[]>(info, "errors");
+        apiVersion = GetValue<string>(info, "apiVersion");
       }
     }
 
@@ -103,6 +129,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       base.GetObjectData(info, context);
       if (info != null) {
         info.AddValue("errors", errors);
+        info.AddValue("apiVersion", apiVersion);
       }
     }
 
@@ -114,7 +141,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     public override string Message {
       get {
         StringBuilder exceptionBuilder = new StringBuilder();
-        exceptionBuilder.AppendFormat("{0}: {1} ", this.GetType().Name, this.message);
+        exceptionBuilder.AppendFormat("{0}: {1} ", this.GetType().Name, base.Message);
 
         if (errors != null) {
           exceptionBuilder.AppendFormat("{0}{0}{1}{0}{0}", Environment.NewLine,

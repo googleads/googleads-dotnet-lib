@@ -117,7 +117,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
       ByVal feedName As String)
       ' Get the FeedService.
       Dim feedService As FeedService = CType(user.GetService( _
-          AdWordsService.v201509.FeedService), AdWords.v201509.FeedService)
+          AdWordsService.v201509.FeedService), FeedService)
 
       ' Create attributes.
       Dim textAttribute As New FeedAttribute
@@ -156,7 +156,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
         ByVal user As AdWordsUser, ByVal sitelinksData As SitelinksDataHolder)
       ' Get the FeedItemService.
       Dim feedItemService As FeedItemService = CType(user.GetService( _
-          AdWordsService.v201509.FeedItemService), AdWords.v201509.FeedItemService)
+          AdWordsService.v201509.FeedItemService), FeedItemService)
 
       ' Create operations to add FeedItems.
       Dim home As FeedItemOperation = _
@@ -200,7 +200,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
        ByVal user As AdWordsUser, ByVal sitelinksData As SitelinksDataHolder)
       ' Get the FeedItemService.
       Dim feedMappingService As FeedMappingService = CType(user.GetService( _
-          AdWordsService.v201509.FeedMappingService), AdWords.v201509.FeedMappingService)
+          AdWordsService.v201509.FeedMappingService), FeedMappingService)
 
       ' Map the FeedAttributeIds to the fieldId constants.
       Dim linkTextFieldMapping As New AttributeFieldMapping
@@ -234,7 +234,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
       ByVal sitelinksData As SitelinksDataHolder, ByVal campaignId As Long)
       ' Get the CampaignFeedService.
       Dim campaignFeedService As CampaignFeedService = CType(user.GetService( _
-          AdWordsService.v201509.CampaignFeedService), AdWords.v201509.CampaignFeedService)
+          AdWordsService.v201509.CampaignFeedService), CampaignFeedService)
 
       ' Construct a matching function that associates the sitelink feeditems to
       ' the campaign, and set the device preference to Mobile. See the matching

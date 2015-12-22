@@ -92,8 +92,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201502 {
           statementBuilder.RemoveLimitAndOffset();
 
           // Create action.
-          Dfp.v201502.SubmitProposalsForApproval action =
-              new Dfp.v201502.SubmitProposalsForApproval();
+          SubmitProposalsForApproval action = new SubmitProposalsForApproval();
 
           // Perform action.
           UpdateResult result = proposalService.performProposalAction(action,

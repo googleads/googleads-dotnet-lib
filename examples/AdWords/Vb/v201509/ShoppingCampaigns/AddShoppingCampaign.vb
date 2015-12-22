@@ -60,11 +60,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
     Public Sub Run(ByVal user As AdWordsUser, ByVal budgetId As Long, ByVal merchantId As Long)
       ' Get the required services.
       Dim campaignService As CampaignService = CType(user.GetService( _
-          AdWordsService.v201509.CampaignService), AdWords.v201509.CampaignService)
+          AdWordsService.v201509.CampaignService), CampaignService)
       Dim adGroupService As AdGroupService = CType(user.GetService( _
-          AdWordsService.v201509.AdGroupService), AdWords.v201509.AdGroupService)
+          AdWordsService.v201509.AdGroupService), AdGroupService)
       Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
-          AdWordsService.v201509.AdGroupAdService), AdWords.v201509.AdGroupAdService)
+          AdWordsService.v201509.AdGroupAdService), AdGroupAdService)
 
       Try
         Dim campaign As Campaign = CreateCampaign(budgetId, merchantId, campaignService)

@@ -19,6 +19,8 @@ Imports System
 Imports System.Collections.Generic
 Imports System.IO
 
+Imports DayOfWeek = Google.Api.Ads.AdWords.v201509.DayOfWeek
+
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
 
   ''' <summary>
@@ -99,35 +101,35 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
       sitelink4.sitelinkFinalUrls = New String() {"http://www.example.com/happyhours"}
 
       Dim schedule1 As New FeedItemSchedule()
-      schedule1.dayOfWeek = AdWords.v201509.DayOfWeek.MONDAY
+      schedule1.dayOfWeek = DayOfWeek.MONDAY
       schedule1.startHour = 18
       schedule1.startMinute = MinuteOfHour.ZERO
       schedule1.endHour = 21
       schedule1.endMinute = MinuteOfHour.ZERO
 
       Dim schedule2 As New FeedItemSchedule()
-      schedule2.dayOfWeek = AdWords.v201509.DayOfWeek.TUESDAY
+      schedule2.dayOfWeek = DayOfWeek.TUESDAY
       schedule2.startHour = 18
       schedule2.startMinute = MinuteOfHour.ZERO
       schedule2.endHour = 21
       schedule2.endMinute = MinuteOfHour.ZERO
 
       Dim schedule3 As New FeedItemSchedule()
-      schedule3.dayOfWeek = AdWords.v201509.DayOfWeek.WEDNESDAY
+      schedule3.dayOfWeek = DayOfWeek.WEDNESDAY
       schedule3.startHour = 18
       schedule3.startMinute = MinuteOfHour.ZERO
       schedule3.endHour = 21
       schedule3.endMinute = MinuteOfHour.ZERO
 
       Dim schedule4 As New FeedItemSchedule()
-      schedule4.dayOfWeek = AdWords.v201509.DayOfWeek.THURSDAY
+      schedule4.dayOfWeek = DayOfWeek.THURSDAY
       schedule4.startHour = 18
       schedule4.startMinute = MinuteOfHour.ZERO
       schedule4.endHour = 21
       schedule4.endMinute = MinuteOfHour.ZERO
 
       Dim schedule5 As New FeedItemSchedule()
-      schedule5.dayOfWeek = AdWords.v201509.DayOfWeek.FRIDAY
+      schedule5.dayOfWeek = DayOfWeek.FRIDAY
       schedule5.startHour = 18
       schedule5.startMinute = MinuteOfHour.ZERO
       schedule5.endHour = 21

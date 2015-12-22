@@ -60,6 +60,29 @@
     <Compile Include="Util\BatchJob\v201509\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\CloudStorageError.cs" />
     <Compile Include="Util\Selectors\BaseFields.cs" />
+    <Compile Include="Util\Shopping\BiddableUnitState.cs" />
+    <Compile Include="Util\Shopping\ExcludedUnitState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Shopping\NodeDifference.cs" />
+    <Compile Include="Util\Shopping\NodeState.cs" />
+    <Compile Include="Util\Shopping\NodeType.cs" />
+    <Compile Include="Util\Shopping\ShoppingMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoppingMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\Shopping\SubdivisionState.cs" />
+    <Compile Include="v201506\ApiError.cs" />
+    <Compile Include="v201506\ApiException.cs" />
+    <Compile Include="v201506\FeedValidationErrors.cs" />
+    <Compile Include="v201509\AdWordsApi.ProductDimension.cs" />
+    <Compile Include="Util\Shopping\v201509\OperationPair.cs" />
+    <Compile Include="Util\Shopping\v201509\ProductDimensionEqualityComparer.cs" />
+    <Compile Include="Util\Shopping\v201509\ProductDimensions.cs" />
+    <Compile Include="Util\Shopping\v201509\ProductPartitionNode.cs" />
+    <Compile Include="Util\Shopping\v201509\ProductPartitionNodeAdapter.cs" />
+    <Compile Include="Util\Shopping\v201509\ProductPartitionTree.cs" />
     <Compile Include="Util\v201509\MapUtilities.cs" />
     <Compile Include="Util\v201506\MapUtilities.cs" />
     <Compile Include="Util\Reports\New\IReportDefinition.cs" />
@@ -88,7 +111,10 @@
     <Compile Include="v201506\ReportDefinition.cs" />
     <Compile Include="v201509\AdWordsApi.cs" />
     <Compile Include="v201509\AdWordsServiceV201509.cs" />
+    <Compile Include="v201509\ApiError.cs" />
     <Compile Include="v201509\BatchJobApi.cs" />
+    <Compile Include="v201509\ApiException.cs" />
+    <Compile Include="v201509\FeedValidationErrors.cs" />
     <Compile Include="v201509\OrderBy.cs" />
     <Compile Include="v201509\Paging.cs" />
     <Compile Include="v201509\Predicate.cs" />
@@ -103,6 +129,11 @@
     <EmbeddedResource Include="AdWordsErrorMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AdWordsErrorMessages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Util\Shopping\ShoppingMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ShoppingMessages.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

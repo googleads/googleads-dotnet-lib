@@ -57,7 +57,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
       ' Get the LocationCriterionService.
       Dim locationCriterionService As LocationCriterionService = CType(user.GetService( _
           AdWordsService.v201509.LocationCriterionService),  _
-          AdWords.v201509.LocationCriterionService)
+          LocationCriterionService)
 
       Dim locationNames As String() = New String() {"Paris", "Quebec", "Spain", "Deutschland"}
 

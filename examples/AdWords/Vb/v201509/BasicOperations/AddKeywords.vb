@@ -67,7 +67,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupCriterionService.
       Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService( _
-          AdWordsService.v201509.AdGroupCriterionService), AdWords.v201509.AdGroupCriterionService)
+          AdWordsService.v201509.AdGroupCriterionService), AdGroupCriterionService)
 
       Dim operations As New List(Of AdGroupCriterionOperation)
 

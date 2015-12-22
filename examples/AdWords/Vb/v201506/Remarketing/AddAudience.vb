@@ -61,7 +61,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       ' Get the ConversionTrackerService.
       Dim conversionTrackerService As ConversionTrackerService = CType(user.GetService( _
           AdWordsService.v201506.ConversionTrackerService),  _
-          AdWords.v201506.ConversionTrackerService)
+          ConversionTrackerService)
 
       Dim userList As New BasicUserList
 

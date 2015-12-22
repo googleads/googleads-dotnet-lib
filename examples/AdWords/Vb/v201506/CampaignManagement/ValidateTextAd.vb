@@ -63,7 +63,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupAdService.
       Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
-          AdWordsService.v201506.AdGroupAdService), AdWords.v201506.AdGroupAdService)
+          AdWordsService.v201506.AdGroupAdService), AdGroupAdService)
 
       ' Set the validateOnly headers.
       adGroupAdService.RequestHeader.validateOnly = True

@@ -61,7 +61,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
     Public Sub Run(ByVal user As AdWordsUser, ByVal labelId As Long)
       ' Get the CampaignService.
       Dim campaignService As CampaignService = CType(user.GetService( _
-          AdWordsService.v201506.CampaignService), AdWords.v201506.CampaignService)
+          AdWordsService.v201506.CampaignService), CampaignService)
 
       ' Create the selector.
       Dim selector As New Selector

@@ -13,11 +13,10 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.Util.Shopping.v201509;
 using Google.Api.Ads.AdWords.v201509;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
 
@@ -25,147 +24,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
   /// This code example creates a ProductPartition tree.
   /// </summary>
   public class AddProductPartitionTree : ExampleBase {
-
-    /// <summary>
-    /// A helper class for creating ProductPartition trees.
-    /// </summary>
-    private class ProductPartitionHelper {
-
-      /// <summary>
-      /// The ID of the AdGroup that we wish to attach the partition tree to.
-      /// </summary>
-      private long adGroupId;
-
-      /// <summary>
-      /// The next temporary critertion ID to be used.
-      ///
-      /// When creating our tree we need to specify the parent-child
-      /// relationships between nodes. However, until a criterion has been
-      /// created on the server we do not have a criterionId with which to
-      /// refer to it.
-      ///
-      /// Instead we can specify temporary IDs that are specific to a single
-      /// mutate request. Once the criteria have been created they are assigned
-      /// an ID as normal and the temporary ID will no longer refer to it.
-      ///
-      /// A valid temporary ID is any negative integer.
-      /// </summary>
-      private long nextId = -1;
-
-      /// <summary>
-      /// The set of mutate operations needed to create the current tree.
-      /// </summary>
-      private List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
-
-      /// <summary>
-      /// Overloaded constructor.
-      /// </summary>
-      /// <param name="adGroupId">The ID of the AdGroup that we wish to attach
-      /// the partition tree to.</param>
-      public ProductPartitionHelper(long adGroupId) {
-        this.adGroupId = adGroupId;
-      }
-
-      public AdGroupCriterionOperation[] Operations {
-        get {
-          return operations.ToArray();
-        }
-      }
-
-      /// <summary>
-      /// Creates a subdivision node.
-      /// </summary>
-      /// <param name="parent">The node that should be this node's parent.
-      /// </param>
-      /// <param name="value">The value being paritioned on.</param>
-      /// <returns>A new subdivision node.</returns>
-      public ProductPartition CreateSubdivision(ProductPartition parent, ProductDimension value) {
-        ProductPartition division = new ProductPartition();
-        division.partitionType = ProductPartitionType.SUBDIVISION;
-        division.id = this.nextId--;
-
-        // The root node has neither a parent nor a value.
-        if (parent != null) {
-          division.parentCriterionId = parent.id;
-          division.caseValue = value;
-        }
-
-        BiddableAdGroupCriterion criterion = new BiddableAdGroupCriterion();
-        criterion.adGroupId = this.adGroupId;
-        criterion.criterion = division;
-
-        this.CreateAddOperation(criterion);
-        return division;
-      }
-
-      /// <summary>
-      /// Creates the unit.
-      /// </summary>
-      /// <param name="parent">The node that should be this node's parent.
-      /// </param>
-      /// <param name="value">The value being paritioned on.</param>
-      /// <param name="bidAmount">The amount to bid for matching products,
-      /// in micros.</param>
-      /// <param name="isNegative">True, if this is negative criterion, false
-      /// otherwise.</param>
-      /// <returns>A new unit node.</returns>
-      public ProductPartition CreateUnit(ProductPartition parent, ProductDimension value,
-          long bidAmount, bool isNegative) {
-        ProductPartition unit = new ProductPartition();
-        unit.partitionType = ProductPartitionType.UNIT;
-
-        // The root node has neither a parent nor a value.
-        if (parent != null) {
-          unit.parentCriterionId = parent.id;
-          unit.caseValue = value;
-        }
-
-        AdGroupCriterion criterion;
-
-        if (isNegative) {
-          criterion = new NegativeAdGroupCriterion();
-        } else {
-          BiddingStrategyConfiguration biddingStrategyConfiguration =
-              new BiddingStrategyConfiguration();
-
-          CpcBid cpcBid = new CpcBid();
-          cpcBid.bid = new Money();
-          cpcBid.bid.microAmount = bidAmount;
-          biddingStrategyConfiguration.bids = new Bids[] { cpcBid };
-
-          criterion = new BiddableAdGroupCriterion();
-          (criterion as BiddableAdGroupCriterion).biddingStrategyConfiguration =
-              biddingStrategyConfiguration;
-        }
-
-        criterion.adGroupId = this.adGroupId;
-        criterion.criterion = unit;
-
-        this.CreateAddOperation(criterion);
-
-        return unit;
-      }
-
-      /// <summary>
-      /// Creates an AdGroupCriterionOperation for the given criterion
-      /// </summary>
-      /// <param name="criterion">The criterion we want to add</param>
-      private void CreateAddOperation(AdGroupCriterion criterion) {
-        AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-        operation.operand = criterion;
-        operation.@operator = Operator.ADD;
-        this.operations.Add(operation);
-      }
-    }
-
-    /// <summary>
-    /// Returns a description about the code example.
-    /// </summary>
-    public override string Description {
-      get {
-        return "This code example creates a ProductPartition tree.";
-      }
-    }
 
     /// <summary>
     /// Main method, to run this code example as a standalone application.
@@ -184,6 +42,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
     }
 
     /// <summary>
+    /// Returns a description about the code example.
+    /// </summary>
+    public override string Description {
+      get {
+        return "This code example creates a ProductPartition tree.";
+      }
+    }
+
+    /// <summary>
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
@@ -195,114 +62,82 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
           (AdGroupCriterionService) user.GetService(
               AdWordsService.v201509.AdGroupCriterionService);
 
-      ProductPartitionHelper helper = new ProductPartitionHelper(adGroupId);
+      // Build a new ProductPartitionTree using the ad group's current set of criteria.
+      ProductPartitionTree partitionTree =
+          ProductPartitionTree.DownloadAdGroupTree(user, adGroupId);
 
-      // The most trivial partition tree has only a unit node as the root:
-      //   helper.createUnit(null, null, 100000);
+      Console.WriteLine("Original tree: {0}", partitionTree);
 
-      ProductPartition root = helper.CreateSubdivision(null, null);
+      // Clear out any existing criteria.
+      ProductPartitionNode rootNode = partitionTree.Root.RemoveAllChildren();
 
-      ProductCanonicalCondition newCondition = new ProductCanonicalCondition();
-      newCondition.condition = ProductCanonicalConditionCondition.NEW;
-      ProductPartition newPartition = helper.CreateUnit(root, newCondition, 200000, false);
+      // Make the root node a subdivision.
+      rootNode = rootNode.AsSubdivision();
 
-      ProductCanonicalCondition usedCondition = new ProductCanonicalCondition();
-      usedCondition.condition = ProductCanonicalConditionCondition.USED;
-      ProductPartition usedPartition = helper.CreateUnit(root, usedCondition, 100000, false);
+      // Add a unit node for condition = NEW.
+      ProductPartitionNode newConditionNode = rootNode.AddChild(
+          ProductDimensions.CreateCanonicalCondition(ProductCanonicalConditionCondition.NEW));
+      newConditionNode.AsBiddableUnit().CpcBid = 200000;
 
-      ProductPartition otherCondition = helper.CreateSubdivision(root,
-          new ProductCanonicalCondition());
+      ProductPartitionNode usedConditionNode = rootNode.AddChild(
+          ProductDimensions.CreateCanonicalCondition(ProductCanonicalConditionCondition.USED));
+      usedConditionNode.AsBiddableUnit().CpcBid = 100000;
 
-      ProductBrand coolBrand = new ProductBrand();
-      coolBrand.value = "CoolBrand";
-      helper.CreateUnit(otherCondition, coolBrand, 900000, false);
+      // Add a subdivision node for condition = null (everything else).
+      ProductPartitionNode otherConditionNode =
+          rootNode.AddChild(ProductDimensions.CreateCanonicalCondition()).AsSubdivision();
 
-      ProductBrand cheapBrand = new ProductBrand();
-      cheapBrand.value = "CheapBrand";
-      helper.CreateUnit(otherCondition, cheapBrand, 10000, false);
+      // Add a unit node under condition = null for brand = "CoolBrand".
+      ProductPartitionNode coolBrandNode = otherConditionNode.AddChild(
+          ProductDimensions.CreateBrand("CoolBrand"));
+      coolBrandNode.AsBiddableUnit().CpcBid = 900000L;
 
-      ProductPartition otherBrand =
-          helper.CreateSubdivision(otherCondition, new ProductBrand());
+      // Add a unit node under condition = null for brand = "CheapBrand".
+      ProductPartitionNode cheapBrandNode = otherConditionNode.AddChild(
+          ProductDimensions.CreateBrand("CheapBrand"));
+      cheapBrandNode.AsBiddableUnit().CpcBid = 10000L;
 
-      // The value for the bidding category is a fixed ID for the 'Luggage & Bags'
+      // Add a subdivision node under condition = null for brand = null (everything else).
+      ProductPartitionNode otherBrandNode = otherConditionNode.AddChild(
+          ProductDimensions.CreateBrand(null)).AsSubdivision();
+
+      // Add unit nodes under condition = null/brand = null.
+      // The value for each bidding category is a fixed ID for a specific
       // category. You can retrieve IDs for categories from the ConstantDataService.
       // See the 'GetProductCategoryTaxonomy' example for more details.
 
-      ProductBiddingCategory luggageAndBags = new ProductBiddingCategory();
-      luggageAndBags.type = ProductDimensionType.BIDDING_CATEGORY_L1;
-      luggageAndBags.value = -5914235892932915235;
-      helper.CreateUnit(otherBrand, luggageAndBags, 750000, false);
+      // Add a unit node under condition = null/brand = null for product type
+      // level 1 = 'Luggage & Bags'.
+      ProductPartitionNode luggageAndBagNode = otherBrandNode.AddChild(
+          ProductDimensions.CreateBiddingCategory(ProductDimensionType.BIDDING_CATEGORY_L1,
+          -5914235892932915235L));
+      luggageAndBagNode.AsBiddableUnit().CpcBid = 750000L;
 
-      ProductBiddingCategory everythingElse = new ProductBiddingCategory();
-      everythingElse.type = ProductDimensionType.BIDDING_CATEGORY_L1;
-
-      helper.CreateUnit(otherBrand, everythingElse, 110000, false);
+      // Add a unit node under condition = null/brand = null for product type
+      // level 1 = null (everything else).
+      ProductPartitionNode everythingElseNode = otherBrandNode.AddChild(
+          ProductDimensions.CreateBiddingCategory(ProductDimensionType.BIDDING_CATEGORY_L1));
+      everythingElseNode.AsBiddableUnit().CpcBid = 110000L;
 
       try {
-        // Make the mutate request.
-        AdGroupCriterionReturnValue retval = adGroupCriterionService.mutate(helper.Operations);
+        // Make the mutate request, using the operations returned by the ProductPartitionTree.
+        AdGroupCriterionOperation[] mutateOperations = partitionTree.GetMutateOperations();
 
-        Dictionary<long, List<ProductPartition>> children =
-            new Dictionary<long, List<ProductPartition>>();
-        ProductPartition rootNode = null;
-        // For each criterion, make an array containing each of its children
-        // We always create the parent before the child, so we can rely on that here.
-        foreach (AdGroupCriterion adGroupCriterion in retval.value) {
-          ProductPartition newCriterion = (ProductPartition) adGroupCriterion.criterion;
-          children[newCriterion.id] = new List<ProductPartition>();
-
-          if (newCriterion.parentCriterionIdSpecified) {
-            children[newCriterion.parentCriterionId].Add(newCriterion);
-          } else {
-            rootNode = (ProductPartition) adGroupCriterion.criterion;
-          }
+        if (mutateOperations.Length == 0) {
+          Console.WriteLine("Skipping the mutate call because the original tree and the current " +
+              "tree are logically identical.");
+        } else {
+          adGroupCriterionService.mutate(mutateOperations);
         }
 
-        // Show the tree
-        StringWriter writer = new StringWriter();
-        DisplayTree(rootNode, children, 0, writer);
-        Console.WriteLine(writer.ToString());
+        // The request was successful, so create a new ProductPartitionTree based on the updated
+        // state of the ad group.
+        partitionTree = ProductPartitionTree.DownloadAdGroupTree(user, adGroupId);
+
+        Console.WriteLine("Final tree: {0}", partitionTree);
 
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to set shopping product partition.", e);
-      }
-    }
-
-    /// <summary>
-    /// Displays the product partition tree.
-    /// </summary>
-    /// <param name="node">The root node.</param>
-    /// <param name="children">The child node.</param>
-    /// <param name="level">The tree level.</param>
-    /// <param name="writer">The stream to write output to.</param>
-    private void DisplayTree(ProductPartition node, Dictionary<long,
-        List<ProductPartition>> children, int level, StringWriter writer) {
-      // Recursively display a node and each of its children.
-      object value = null;
-      string type = "";
-
-      if (node.caseValue != null) {
-        type = node.caseValue.ProductDimensionType;
-        switch (type) {
-          case "ProductCanonicalCondition":
-            value = (node.caseValue as ProductCanonicalCondition).condition.ToString();
-            break;
-
-          case "ProductBiddingCategory":
-            value = (node.caseValue as ProductBiddingCategory).type.ToString() + "(" +
-                (node.caseValue as ProductBiddingCategory).value + ")";
-            break;
-
-          default:
-            value = node.caseValue.GetType().GetProperty("value").GetValue(node.caseValue, null);
-            break;
-        }
-      }
-
-      writer.WriteLine("{0}id: {1}, type: {2}, value: {3}", "".PadLeft(level, ' '), node.id,
-          type, value);
-      foreach (ProductPartition childNode in children[node.id]) {
-        DisplayTree(childNode, children, level + 1, writer);
       }
     }
   }

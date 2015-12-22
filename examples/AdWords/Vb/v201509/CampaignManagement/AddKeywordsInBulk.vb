@@ -62,7 +62,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the MutateJobService.
       Dim mutateJobService As MutateJobService = CType(user.GetService( _
-          AdWordsService.v201509.MutateJobService), AdWords.v201509.MutateJobService)
+          AdWordsService.v201509.MutateJobService), MutateJobService)
 
       Const RETRY_INTERVAL As Integer = 30
       Const RETRIES_COUNT As Integer = 30

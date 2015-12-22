@@ -60,7 +60,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the CampaignService.
       Dim campaignService As CampaignService = CType(user.GetService( _
-          AdWordsService.v201509.CampaignService), AdWords.v201509.CampaignService)
+          AdWordsService.v201509.CampaignService), CampaignService)
 
       ' Create the query.
       Dim query As String = "SELECT Id, Name, Status ORDER BY Name"

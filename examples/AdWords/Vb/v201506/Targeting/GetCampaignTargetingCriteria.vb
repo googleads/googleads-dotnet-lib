@@ -64,7 +64,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       ' Get the CampaignCriterionService.
       Dim campaignCriterionService As CampaignCriterionService = CType(user.GetService( _
           AdWordsService.v201506.CampaignCriterionService),  _
-          AdWords.v201506.CampaignCriterionService)
+          CampaignCriterionService)
 
       ' Create the selector.
       Dim selector As New Selector

@@ -98,7 +98,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
             Dim i As Integer = selector.paging.startIndex
 
             For Each adGroupAd As AdGroupAd In page.entries
-              Dim textAd As TextAd = CType(adGroupAd.ad, AdWords.v201509.TextAd)
+              Dim textAd As TextAd = CType(adGroupAd.ad, TextAd)
               Console.WriteLine("{0}) Ad id is {1} and status is {2}", i + 1, textAd.id, _
                   adGroupAd.status)
               Console.WriteLine("  {0}\n  {1}\n  {2}\n  {3}", textAd.headline, _

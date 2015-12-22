@@ -65,7 +65,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob.v201509 {
     /// </summary>
     /// <param name="user">AdWords user to be used along with this
     /// utilities object.</param>
-    public BatchJobUtilities(AdsUser user) :this(user, DEFAULT_CHUNK_SIZE) {
+    public BatchJobUtilities(AdsUser user) : this(user, DEFAULT_CHUNK_SIZE) {
     }
 
     /// <summary>
@@ -77,7 +77,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob.v201509 {
     /// <param name="chunkSize">The chunk size to use for resumable upload.</param>
     /// <exception cref="ArgumentException">Thrown if <paramref name="chunkSie"/>
     /// is not a multiple of 256KB.</exception>
-    public BatchJobUtilities(AdsUser user, int chunkSize) : this(user) {
+    public BatchJobUtilities(AdsUser user, int chunkSize) {
       if ((chunkSize % CHUNK_SIZE_ALIGN) != 0) {
         throw new ArgumentException("Chunk size should be a multiple of 256KB.");
       }

@@ -57,7 +57,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the TargetingIdeaService.
       Dim targetingIdeaService As TargetingIdeaService = CType(user.GetService( _
-          AdWordsService.v201506.TargetingIdeaService), AdWords.v201506.TargetingIdeaService)
+          AdWordsService.v201506.TargetingIdeaService), TargetingIdeaService)
 
       Dim keywordText As String = "mars cruise"
 

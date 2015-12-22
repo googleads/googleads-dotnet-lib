@@ -60,7 +60,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("id = :companyId")
           .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .Limit(1)
           .AddValue("companyId", companyId);
 
       try {

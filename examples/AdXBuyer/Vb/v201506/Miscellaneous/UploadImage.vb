@@ -57,7 +57,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the MediaService.
       Dim mediaService As MediaService = CType(user.GetService( _
-          AdWordsService.v201506.MediaService), AdWords.v201506.MediaService)
+          AdWordsService.v201506.MediaService), MediaService)
 
       ' Create the image.
       Dim image As New Image

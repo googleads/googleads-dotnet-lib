@@ -64,7 +64,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
       ' Get the AdGroupBidModifierService.
       Dim adGroupBidModifierService As AdGroupBidModifierService = CType(user.GetService( _
           AdWordsService.v201509.AdGroupBidModifierService),  _
-          AdWords.v201509.AdGroupBidModifierService)
+          AdGroupBidModifierService)
 
       ' Get all ad group bid modifiers for the campaign.
       Dim selector As New Selector()

@@ -14,6 +14,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace Google.Api.Ads.AdWords.Util.Reports {
@@ -36,6 +37,23 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// The field that triggered this error, if applicable.
     /// </summary>
     string fieldPath;
+
+    /// <summary>
+    /// The API version.
+    /// </summary>
+    string apiVersion = ReportUtilities.DEFAULT_REPORT_VERSION;
+
+    /// <summary>
+    /// Gets or sets the API version.
+    /// </summary>
+    public string ApiVersion {
+      get {
+        return apiVersion;
+      }
+      set {
+        apiVersion = value;
+      }
+    }
 
     /// <summary>
     /// Gets or sets the type of the error.
@@ -80,8 +98,25 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// A <see cref="System.String" /> that represents this instance.
     /// </returns>
     public override string ToString() {
-      return string.Format("Error: {0}, Trigger: {1}, FieldPath: {2}", errorType, trigger,
-          fieldPath);
+      string key = errorType.Replace("ReportDefinitionError", "ReportDefinitionErrorReason");
+
+      string description = GetErrorDescription(key, apiVersion);
+
+      return string.Format("{0}. (Error: {1}, FieldPath: {2}, Trigger: {3})", description,
+          errorType, this.fieldPath, this.trigger);
+    }
+
+    public static string GetErrorDescription(string errorCode, string version) {
+      string typeName = string.Format("Google.Api.Ads.AdWords.{0}.ErrorDescriptions", version);
+
+      Type type = Type.GetType(typeName);
+      if (type != null) {
+        MethodInfo mi = type.GetMethod("Lookup", BindingFlags.Public | BindingFlags.Static);
+        if (mi != null) {
+          return mi.Invoke(null, new object[] { errorCode }).ToString();
+        }
+      }
+      return errorCode;
     }
   }
 }

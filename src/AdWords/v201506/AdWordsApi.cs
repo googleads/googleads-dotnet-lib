@@ -13,12 +13,11 @@
 // limitations under the License.
 
 #pragma warning disable 1591
-
 namespace Google.Api.Ads.AdWords.v201506 {
+  using Google.Api.Ads.AdWords.Util.Selectors;
   using Google.Api.Ads.AdWords.Lib;
   using Google.Api.Ads.AdWords.Headers;
-  using Google.Api.Ads.AdWords.Util.Selectors;
-
+  using System.Collections.Generic;
   using System.Diagnostics;
   using System;
   using System.Xml.Serialization;
@@ -1188,8 +1187,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     private bool osTypeFieldSpecified;
 
-    /// <summary>The app deep link url. E.g. "android-app://com.my.App" <span class="constraint
-    /// Required">This field is required and should not be <code>null</code>.</span>
+    /// <summary>The app deep link url. E.g. "android-app://com.my.App"
     /// </summary>
     public string url {
       get {
@@ -4012,16 +4010,16 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
 
   /// <summary>Represents a product ad (known as a <a
-  /// href="//support.google.com/adwords/bin/answer.py?answer=2456103">product listing
-  /// ad</a> in the AdWords user interface). A product ad displays product data
-  /// (managed using the Google Merchant Center) that is pulled from the Google base
-  /// product feed specified in the parent campaign's <a
-  /// href='ShoppingSetting'>shopping setting</a>. <p class="caution"><b>Caution:</b>
-  /// Product ads do not use <a href='#url'>url</a>, <a
-  /// href='#finalUrls'>finalUrls</a>, <a href='#finalMobileUrls'>finalMobileUrls</a>,
-  /// <a href='#finalAppUrls'>finalAppUrls</a>, or <a
-  /// href='#displayUrl'>displayUrl</a>; setting these fields on a product ad will
-  /// cause an error. <a href='#urlCustomParameters'>urlCustomParameters</a> and <a
+  /// href="//support.google.com/adwords/answer/2456103">product listing ad</a> in the
+  /// AdWords user interface). A product ad displays product data (managed using the
+  /// Google Merchant Center) that is pulled from the Google base product feed
+  /// specified in the parent campaign's <a href='ShoppingSetting'>shopping
+  /// setting</a>. <p class="caution"><b>Caution:</b> Product ads do not use <a
+  /// href='#url'>url</a>, <a href='#finalUrls'>finalUrls</a>, <a
+  /// href='#finalMobileUrls'>finalMobileUrls</a>, <a
+  /// href='#finalAppUrls'>finalAppUrls</a>, or <a href='#displayUrl'>displayUrl</a>;
+  /// setting these fields on a product ad will cause an error. <a
+  /// href='#urlCustomParameters'>urlCustomParameters</a> and <a
   /// href='#trackingUrlTemplate'>trackingUrlTemplate</a> can be set, but it is not
   /// recommended, as they will not be used; they should be set at the ad group or
   /// campaign level instead.</p> <span class="constraint AdxEnabled">This is disabled
@@ -4131,10 +4129,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>The name label for this ad. <span class="constraint Selectable">This field can
-    /// be selected using the value "ImageCreativeName".</span><span class="constraint
-    /// Filterable">This field can be filtered on.</span> <span class="constraint
-    /// Required">This field is required and should not be <code>null</code>.</span>
+    /// <summary>The name label for this ad. <span class="constraint Required">This field is
+    /// required and should not be <code>null</code>.</span> <span class="constraint
+    /// Selectable">This field can be selected using the value
+    /// "ImageCreativeName".</span><span class="constraint Filterable">This field can be
+    /// filtered on.</span>
     /// </summary>
     public string name {
       get {
@@ -4246,7 +4245,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
     private bool typeFieldSpecified;
 
     /// <summary>Name of the ad. <span class="constraint Selectable">This field can be selected
-    /// using the value "Name".</span>
+    /// using the value "Name".</span> <span class="constraint ReadOnly">This field is
+    /// read only and will be ignored when sent to the API.</span>
     /// </summary>
     public string name {
       get {
@@ -4258,7 +4258,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
     }
 
     /// <summary>Type of the creative. <span class="constraint Selectable">This field can be
-    /// selected using the value "Type".</span>
+    /// selected using the value "Type".</span> <span class="constraint ReadOnly">This
+    /// field is read only and will be ignored when sent to the API.</span>
     /// </summary>
     public DeprecatedAdType type {
       get {
@@ -4433,7 +4434,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     /// <summary>Two letter country code for the ad. Examples: 'US', 'GB'. <span
     /// class="constraint Selectable">This field can be selected using the value
-    /// "CallOnlyAdCountryCode".</span>
+    /// "CallOnlyAdCountryCode".</span><span class="constraint Filterable">This field
+    /// can be filtered on.</span>
     /// </summary>
     public string countryCode {
       get {
@@ -4446,7 +4448,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     /// <summary>Phone number string for the ad. Examples: '(800) 356-9377', "16502531234",
     /// "+442001234567" <span class="constraint Selectable">This field can be selected
-    /// using the value "CallOnlyAdPhoneNumber".</span>
+    /// using the value "CallOnlyAdPhoneNumber".</span><span class="constraint
+    /// Filterable">This field can be filtered on.</span>
     /// </summary>
     public string phoneNumber {
       get {
@@ -4582,7 +4585,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     /// <summary>Url to be used for phone number verification. <span class="constraint
     /// Selectable">This field can be selected using the value
-    /// "CallOnlyAdPhoneNumberVerificationUrl".</span>
+    /// "CallOnlyAdPhoneNumberVerificationUrl".</span><span class="constraint
+    /// Filterable">This field can be filtered on.</span>
     /// </summary>
     public string phoneNumberVerificationUrl {
       get {
@@ -4600,9 +4604,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
       protected Fields() {
       }
 
-      public static readonly Field CallOnlyAdCountryCode = new Field("CallOnlyAdCountryCode", false, true);
+      public static readonly Field CallOnlyAdCountryCode = new Field("CallOnlyAdCountryCode", true, true);
 
-      public static readonly Field CallOnlyAdPhoneNumber = new Field("CallOnlyAdPhoneNumber", false, true);
+      public static readonly Field CallOnlyAdPhoneNumber = new Field("CallOnlyAdPhoneNumber", true, true);
 
       public static readonly Field CallOnlyAdBusinessName = new Field("CallOnlyAdBusinessName", true, true);
 
@@ -4616,7 +4620,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
       public static readonly Field CallOnlyAdConversionTypeId = new Field("CallOnlyAdConversionTypeId", false, true);
 
-      public static readonly Field CallOnlyAdPhoneNumberVerificationUrl = new Field("CallOnlyAdPhoneNumberVerificationUrl", false, true);
+      public static readonly Field CallOnlyAdPhoneNumberVerificationUrl = new Field("CallOnlyAdPhoneNumberVerificationUrl", true, true);
 
       public static new Field[] All {
         get {
@@ -4668,11 +4672,17 @@ namespace Google.Api.Ads.AdWords.v201506 {
       protected FilterableFields() {
       }
 
+      public static readonly Field CallOnlyAdCountryCode = Fields.CallOnlyAdCountryCode;
+
+      public static readonly Field CallOnlyAdPhoneNumber = Fields.CallOnlyAdPhoneNumber;
+
       public static readonly Field CallOnlyAdBusinessName = Fields.CallOnlyAdBusinessName;
 
       public static readonly Field CallOnlyAdDescription1 = Fields.CallOnlyAdDescription1;
 
       public static readonly Field CallOnlyAdDescription2 = Fields.CallOnlyAdDescription2;
+
+      public static readonly Field CallOnlyAdPhoneNumberVerificationUrl = Fields.CallOnlyAdPhoneNumberVerificationUrl;
 
       public static new Field[] All {
         get {
@@ -15471,11 +15481,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
     }
 
     /// <summary>Specifies the bids. Bids can be set only on ad groups and ad group criteria.
-    /// Bids cannot be set on campaign. Default CPC, CPM and CPA bid values will be set
-    /// if they are not provided during <a href='AdGroup'>AdGroup</a> creation. Default
-    /// CPC, CPM and CPA bid values are minimal billable amounts in local currencies.
-    /// For example, for US Dollars CPC, CPM and CPA default values are $0.01, $0.25 and
-    /// $0.01, respectively.
+    /// Bids cannot be set on campaign. Default CPC and CPM bid values will be set if
+    /// they are not provided during <a href='AdGroup'>AdGroup</a> creation. Default CPC
+    /// and CPM values are minimal billable amounts in local currencies. For example,
+    /// for US Dollars CPC and CPM default values are $0.01 and $0.01, respectively.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("bids")]
     public Bids[] bids {
@@ -15787,14 +15796,14 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
 
   /// <summary>Target Roas bidding strategy helps you maximize revenue while averaging a
-  /// specific target Return On Average Spend (ROAS). For example: If TargetRoas is
+  /// specific target Return On Average Spend (ROAS). <p>For example: If TargetRoas is
   /// 1.5, the strategy will create as much revenue as possible while ensuring that
-  /// every $1.00 of clicks provides $1.50 in conversion value. <p>Note that campaigns
-  /// must meet <a
-  /// href="//support.google.com/adwords/bin/answer.py?answer=2471188">specific
-  /// eligibility requirements</a> before they can use the
-  /// <code>TargetRoasBiddingScheme</code> bidding strategy. <span class="constraint
-  /// AdxEnabled">This is disabled for AdX.</span></p>
+  /// every $1.00 of clicks provides $1.50 in conversion value.</p> <p>Note that
+  /// campaigns must meet <a
+  /// href="//support.google.com/adwords/answer/2471188">specific eligibility
+  /// requirements</a> before they can use the <code>TargetRoasBiddingScheme</code>
+  /// bidding strategy. <span class="constraint AdxEnabled">This is disabled for
+  /// AdX.</span></p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16138,10 +16147,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// is similar to the <code>ConversionOptimizerBiddingScheme</code> but does not
   /// support user-entered AdGroup-level target CPA bids, but rather a strategy-wide
   /// average CPA target. <p>Note that campaigns must meet <a
-  /// href="//support.google.com/adwords/bin/answer.py?answer=2471188">specific
-  /// eligibility requirements</a> before they can use the
-  /// <code>TargetCpaBiddingScheme</code> bidding strategy. <span class="constraint
-  /// AdxEnabled">This is disabled for AdX.</span></p>
+  /// href="//support.google.com/adwords/answer/2471188">specific eligibility
+  /// requirements</a> before they can use the <code>TargetCpaBiddingScheme</code>
+  /// bidding strategy. <span class="constraint AdxEnabled">This is disabled for
+  /// AdX.</span></p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16634,8 +16643,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     /// <summary>The enhanced CPC bidding option for the campaign, which enables bids to be
     /// enhanced based on conversion optimizer data. For more information about enhanced
-    /// CPC, see the <a
-    /// href="//support.google.com/adwords/bin/answer.py?answer=2464964">AdWords Help
+    /// CPC, see the <a href="//support.google.com/adwords/answer/2464964">AdWords Help
     /// Center</a>. <span class="constraint Selectable">This field can be selected using
     /// the value "EnhancedCpcEnabled".</span><span class="constraint Filterable">This
     /// field can be filtered on.</span>
@@ -16926,8 +16934,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     /// <summary>The enhanced CPC bidding option for the campaign, which enables bids to be
     /// enhanced based on conversion optimizer data. For more information about enhanced
-    /// CPC, see the <a
-    /// href="//support.google.com/adwords/bin/answer.py?answer=2464964">AdWords Help
+    /// CPC, see the <a href="//support.google.com/adwords/answer/2464964">AdWords Help
     /// Center</a>. <span class="constraint Selectable">This field can be selected using
     /// the value "EnhancedCpcEnabled".</span><span class="constraint Filterable">This
     /// field can be filtered on.</span>
@@ -19418,7 +19425,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>Feed item id in the request context.
     /// </summary>
     FEED_ITEM_ID,
-    /// <summary>The device's platform (possible values are 'Desktop' or 'Mobile'.
+    /// <summary>The device's platform (possible values are 'Desktop' or 'Mobile').
     /// </summary>
     DEVICE_PLATFORM,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
@@ -20613,7 +20620,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// <summary>One element of a product type string at a certain level. Top-level product types
   /// are at level 1, their children at level 2, and so on. We currently support up to
   /// 5 levels. The user must specify a dimension type that indicates the level of the
-  /// product type. All cases of the the same subdivision must have the same dimension
+  /// product type. All cases of the same subdivision must have the same dimension
   /// type (product type level).
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -21200,8 +21207,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// <summary>One element of a bidding category at a certain level. Top-level categories are
   /// at level 1, their children at level 2, and so on. We currently support up to 5
   /// levels. The user must specify a dimension type that indicates the level of the
-  /// category. All cases of the the same subdivision must have the same dimension
-  /// type (category level).
+  /// category. All cases of the same subdivision must have the same dimension type
+  /// (category level).
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -22754,8 +22761,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
 
   /// <summary>Represents a Mobile Device Criterion. <p>A criterion of this type can only be
-  /// created using an ID. A criterion of this type is only targetable. <span
-  /// class="constraint AdxEnabled">This is enabled for AdX.</span></p>
+  /// created using an ID. A criterion of this type can be either targeted or
+  /// excluded. <span class="constraint AdxEnabled">This is enabled for
+  /// AdX.</span></p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -23483,7 +23491,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
 
   /// <summary>Represents a Carrier Criterion. <p>A criterion of this type can only be created
-  /// using an ID. A criterion of this type is only targetable. <span
+  /// using an ID. A criterion of this type can be either targeted or excluded. <span
   /// class="constraint AdxEnabled">This is enabled for AdX.</span></p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -24335,13 +24343,13 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>Whether this conversion tracker should be excluded from the "Conv (opt.)"
+    /// <summary>Whether this conversion tracker should be excluded from the "Conversions"
     /// columns in reports. <p>If true, the conversion tracker will not be counted
-    /// towards Conv (opt.). If false, it will be counted in Conv (opt.). This is the
-    /// default.</p> Either way, conversions will still be counted in the "Conversions"
-    /// columns in reports. <span class="constraint Selectable">This field can be
-    /// selected using the value "ExcludeFromBidding".</span><span class="constraint
-    /// Filterable">This field can be filtered on.</span>
+    /// towards Conversions. If false, it will be counted in Conversions. This is the
+    /// default.</p> Either way, conversions will still be counted in the
+    /// "AllConversions" columns in reports. <span class="constraint Selectable">This
+    /// field can be selected using the value "ExcludeFromBidding".</span><span
+    /// class="constraint Filterable">This field can be filtered on.</span>
     /// </summary>
     public bool excludeFromBidding {
       get {
@@ -25222,7 +25230,14 @@ namespace Google.Api.Ads.AdWords.v201506 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdWordsConversionTracker.TrackingCodeType", Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
   public enum AdWordsConversionTrackerTrackingCodeType {
+    /// <summary>The snippet that is fired as a result of a website page loading.
+    /// </summary>
     WEBPAGE,
+    /// <summary>For embedding on a (mobile) webpage. The snippet contains a JavaScript function
+    /// which fires the tag. This function is typically called from an onClick handler
+    /// added to a link or button element on the page that also instructs a mobile
+    /// device to dial the advertiser's phone number.
+    /// </summary>
     CLICK_TO_CALL,
     ANDROID_REMARKETING,
     APPLE_IOS_REMARKETING,
@@ -25575,7 +25590,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// multiple conversion types.
     /// </summary>
     DUPLICATE_NAME,
-    /// <summary>An error occurred while sending email.
+    /// <summary>An error occurred while the server was sending the email.
     /// </summary>
     EMAIL_FAILED,
     /// <summary>The maximum number of active conversion types for this account has been
@@ -36474,7 +36489,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     /// <summary>Moves client customers to new managers (moving links). Only the following action
     /// is possible: <ul> <li>SET + ACTIVE: manager moves client customers to new
-    /// managers within the same MCC hierarchy</li> </ul>
+    /// managers within the same manager account hierarchy</li> </ul>
     /// </summary><param name='operations'>List of unique operations.</param>
     /// <returns>results for the given operations</returns>
     /// <exception cref='ApiException'>with a <a
@@ -36659,9 +36674,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>Whether this account can manage clients. This field is read only for external
-    /// clients and will be ignored when sent to the API. <span class="constraint
-    /// Selectable">This field can be selected using the value
+    /// <summary>Whether this account can manage clients. <span class="constraint ReadOnly">This
+    /// field is read only and will be ignored when sent to the API.</span> <span
+    /// class="constraint Selectable">This field can be selected using the value
     /// "CanManageClients".</span><span class="constraint Filterable">This field can be
     /// filtered on.</span>
     /// </summary>
@@ -38478,9 +38493,12 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
   /// <summary>Use the <code>MutateJobService</code> to schedule large batches of updates to
   /// your AdWords campaigns as asynchronous mutate jobs, and to retrieve the status,
-  /// results or statistics of your recent jobs. <p>Use this service when you wish to
-  /// release your application from actively waiting on a synchronous response. Your
-  /// application can do other things or even shutdown while we execute mutations
+  /// results or statistics of your recent jobs. <p class="note"><b>Note:</b>
+  /// <code>MutateJobService</code> is being replaced by <code>BatchJobService</code>.
+  /// New development should use <code>BatchJobService</code>; existing code should
+  /// start moving to it.</p> <p>Use this service when you wish to release your
+  /// application from actively waiting on a synchronous response. Your application
+  /// can do other things or even shutdown while we execute mutations
   /// asynchronously.</p> <p>Requests to the service will fail if the request was
   /// invalid or if any of a job's structural constraints are violated, and depending
   /// on the operation, the job will not get created or updated.</p> <p>Once a job has
@@ -38790,8 +38808,12 @@ namespace Google.Api.Ads.AdWords.v201506 {
     private string channelNameField;
 
     /// <summary>The YouTube uploader channel id or the channel code of a YouTube content
-    /// channel. <span class="constraint Selectable">This field can be selected using
-    /// the value "ChannelId".</span>
+    /// channel. <p>The uploader channel id can be obtained from the YouTube id-based
+    /// URL. For example, in
+    /// <code>https://www.youtube.com/channel/UCEN58iXQg82TXgsDCjWqIkg</code> the
+    /// channel id is <code>UCEN58iXQg82TXgsDCjWqIkg</code></p> <p>For more information
+    /// see: https://support.google.com/youtube/answer/6180214 <span class="constraint
+    /// Selectable">This field can be selected using the value "ChannelId".</span></p>
     /// </summary>
     public string channelId {
       get {
@@ -39763,7 +39785,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
 
   /// <summary>Represents an operand containing geo information, specifying the scope of the
-  /// geographical area.
+  /// geographical area. Currently, geo targets are restricted to a single criterion
+  /// id per operand.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -41062,6 +41085,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
   /// <summary>Specifies if criteria of this type group should be used to restrict targeting,
   /// or if ads can serve anywhere and criteria are only used in determining the bid.
+  /// <p>For more information, see <a
+  /// href="https://support.google.com/adwords/answer/6056342">Targeting
+  /// Settings</a>.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -41103,9 +41129,13 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>If true, do not use criteria of this type to restrict targeting. <span
-    /// class="constraint Required">This field is required and should not be
-    /// <code>null</code>.</span>
+    /// <summary>If true, criteria of this type can be used to modify bidding but will not
+    /// restrict targeting of ads. This is equivalent to "Bid only" in the AdWords user
+    /// interface. If false, restricts your ads to showing only for the criteria you
+    /// have selected for this CriterionTypeGroup. This is equivalent to "Target and
+    /// Bid" in the AdWords user interface. The default setting for a CriterionTypeGroup
+    /// is false ("Target and Bid"). <span class="constraint Required">This field is
+    /// required and should not be <code>null</code>.</span>
     /// </summary>
     public bool targetAll {
       get {
@@ -45009,10 +45039,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>Keyword quality score that ranges from 1 to 10, 1 being the lowest, 10 the
-    /// highest. <span class="constraint Selectable">This field can be selected using
-    /// the value "QualityScore".</span><span class="constraint Filterable">This field
-    /// can be filtered on.</span>
+    /// <summary>The keyword quality score ranges from 1 (lowest) to 10 (highest). This field may
+    /// be returned as NULL if AdWords does not have enough information to determine an
+    /// appropriate quality score value. <span class="constraint Selectable">This field
+    /// can be selected using the value "QualityScore".</span><span class="constraint
+    /// Filterable">This field can be filtered on.</span>
     /// </summary>
     public int qualityScore {
       get {
@@ -45550,10 +45581,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>The criterion whose bid value is being overridden. Currently, only the
-    /// HighEndMobile platform criterion (ID=30001) is supported. <span
-    /// class="constraint Required">This field is required and should not be
-    /// <code>null</code>.</span>
+    /// <summary>The criterion whose bid value is being overridden. Currently, bid modifier
+    /// overrides are supported only for HighEndMobile platform criterion (ID=30001).
+    /// The <a href='AdGroupBidModifierService#get'>AdGroupBidModifierService#get</a>
+    /// method returns all platform criteria. <span class="constraint Required">This
+    /// field is required and should not be <code>null</code>.</span>
     /// </summary>
     public Criterion criterion {
       get {
@@ -53273,8 +53305,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// that results should in some way be related too. For example, keyword results
   /// would be similar to content keywords found on the related URLs. <p>This element
   /// is supported by following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This
-  /// element is supported by following <a href='RequestType'>RequestType</a>s: IDEAS,
-  /// STATS.</p>
+  /// element is supported by following <a href='RequestType'>RequestType</a>s:
+  /// IDEAS.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -53748,7 +53780,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>A set of strings specifying which ideas should be included in the results. <span
     /// class="constraint ContentsDistinct">This field must contain distinct
     /// elements.</span> <span class="constraint ContentsNotNull">This field must not
-    /// contain <code></code> elements.</span>
+    /// contain <code></code> elements.</span> <span class="constraint
+    /// ContentsStringLength">Strings in this field must be non-empty (trimmed).</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("included")]
     public string[] included {
@@ -53763,7 +53796,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>A set of strings specifying which ideas should be excluded from the results.
     /// <span class="constraint ContentsDistinct">This field must contain distinct
     /// elements.</span> <span class="constraint ContentsNotNull">This field must not
-    /// contain <code></code> elements.</span>
+    /// contain <code></code> elements.</span> <span class="constraint
+    /// ContentsStringLength">Strings in this field must be non-empty (trimmed).</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("excluded")]
     public string[] excluded {
@@ -62942,7 +62976,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>AOL account.
     /// </summary>
     AOL_ACCOUNT,
-    /// <summary>MCC account.
+    /// <summary>The requested action is not supported for a manager account.
     /// </summary>
     MCC_ACCOUNT,
     /// <summary>The specified destination URL is invalid.
@@ -62960,6 +62994,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>Non-local +Pages are not supported.
     /// </summary>
     NON_LOCAL_BUSINESS,
+    /// <summary>Promotion is already migrated to AdWords.
+    /// </summary>
+    ALREADY_MIGRATED,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
@@ -70709,8 +70746,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>A <a href='BudgetOrder'>BudgetOrder</a> links an account wide budget with a <a
-  /// href='BillingAccount'>BillingAccount</a>.
+  /// <summary>A <a href="https://support.google.com/adwords/answer/2393037">budget order</a>
+  /// links an account-wide budget with a <a href='BillingAccount'>BillingAccount</a>.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -71349,7 +71386,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>Represents an BillingAccount.
+  /// <summary>Represents an account to which invoices are sent in <a
+  /// href="https://support.google.com/adwords/answer/2375371">consolidated
+  /// billing</a>.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -71661,9 +71700,6 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>StartDate and EndDate should pass in the customer's account timeZone.
     /// </summary>
     INVALID_TIMEZONE_IN_DATE_RANGES,
-    /// <summary>InsServiceId does not match existing one.
-    /// </summary>
-    INS_SERVICE_ID_MISMATCH,
     UNKNOWN,
   }
 
@@ -73113,7 +73149,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     /// <summary>Moves client customers to new managers (moving links). Only the following action
     /// is possible: <ul> <li>SET + ACTIVE: manager moves client customers to new
-    /// managers within the same MCC hierarchy</li> </ul>
+    /// managers within the same manager account hierarchy</li> </ul>
     /// </summary><param name='operations'>List of unique operations.</param>
     /// <returns>results for the given operations</returns>
     /// <exception cref='ApiException'>with a <a
@@ -73170,9 +73206,12 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
   /// <summary>Use the <code>MutateJobService</code> to schedule large batches of updates to
   /// your AdWords campaigns as asynchronous mutate jobs, and to retrieve the status,
-  /// results or statistics of your recent jobs. <p>Use this service when you wish to
-  /// release your application from actively waiting on a synchronous response. Your
-  /// application can do other things or even shutdown while we execute mutations
+  /// results or statistics of your recent jobs. <p class="note"><b>Note:</b>
+  /// <code>MutateJobService</code> is being replaced by <code>BatchJobService</code>.
+  /// New development should use <code>BatchJobService</code>; existing code should
+  /// start moving to it.</p> <p>Use this service when you wish to release your
+  /// application from actively waiting on a synchronous response. Your application
+  /// can do other things or even shutdown while we execute mutations
   /// asynchronously.</p> <p>Requests to the service will fail if the request was
   /// invalid or if any of a job's structural constraints are violated, and depending
   /// on the operation, the job will not get created or updated.</p> <p>Once a job has
@@ -74395,6 +74434,1131 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <exception cref='ApiException'>if problems occur while parsing the query or
     /// fetching campaign criteria.</exception>
     CampaignCriterionPage query(string query1);
+  }
+
+
+  /// <summary>
+  /// A class to lookup human-friendly descriptions for an error enumeration.
+  /// </summary>
+  public class ErrorDescriptions {
+    /// <summary>
+    /// A dictionary to hold the error messages.
+    /// </summary>
+    private static readonly Dictionary<string, string> codes;
+
+    /// <summary>
+    /// Static constructor to initialize the error lookup dictionary.
+    /// </summary>
+    static ErrorDescriptions() {
+      codes = new Dictionary<string, string>();
+      codes["UrlErrorReason.INVALID_TRACKING_URL_TEMPLATE"] = "The tracking url template is invalid.";
+      codes["UrlErrorReason.INVALID_TAG_IN_TRACKING_URL_TEMPLATE"] = "The tracking url template contains invalid tag.";
+      codes["UrlErrorReason.MISSING_TRACKING_URL_TEMPLATE_TAG"] = "The tracking url template must contain at least one tag (e.g. {lpurl}), This applies only to tracking url template associated with website ads or product ads.";
+      codes["UrlErrorReason.REDUNDANT_NESTED_TRACKING_URL_TEMPLATE_TAG"] = "The tracking url template contains nested occurrences of the same conditional tag (i.e. {ifmobile:{ifmobile:x}}).";
+      codes["UrlErrorReason.INVALID_FINAL_URL"] = "The final url is invalid.";
+      codes["UrlErrorReason.INVALID_TAG_IN_FINAL_URL"] = "The final url contains invalid tag.";
+      codes["UrlErrorReason.REDUNDANT_NESTED_FINAL_URL_TAG"] = "The final url contains nested occurrences of the same conditional tag (i.e. {ifmobile:{ifmobile:x}}).";
+      codes["UrlErrorReason.INVALID_FINAL_MOBILE_URL"] = "The final mobile url is invalid.";
+      codes["UrlErrorReason.INVALID_TAG_IN_FINAL_MOBILE_URL"] = "The final mobile url contains invalid tag.";
+      codes["UrlErrorReason.REDUNDANT_NESTED_FINAL_MOBILE_URL_TAG"] = "The final mobile url contains nested occurrences of the same conditional tag (i.e. {ifmobile:{ifmobile:x}}).";
+      codes["UrlErrorReason.INVALID_FINAL_APP_URL"] = "The final app url is invalid.";
+      codes["UrlErrorReason.INVALID_TAG_IN_FINAL_APP_URL"] = "The final app url contains invalid tag.";
+      codes["UrlErrorReason.REDUNDANT_NESTED_FINAL_APP_URL_TAG"] = "The final app url contains nested occurrences of the same conditional tag (i.e. {ifmobile:{ifmobile:x}}).";
+      codes["UrlErrorReason.MULTIPLE_APP_URLS_FOR_OSTYPE"] = "More than one app url found for the same OS type.";
+      codes["UrlErrorReason.INVALID_OSTYPE"] = "The OS type given for an app url is not valid.";
+      codes["UrlErrorReason.INVALID_PROTOCOL_FOR_APP_URL"] = "The protocol given for an app url is not valid. (E.g. \"android-app://\")";
+      codes["UrlErrorReason.INVALID_PACKAGE_ID_FOR_APP_URL"] = "The package id (app id) given for an app url is not valid.";
+      codes["UrlErrorReason.URL_CUSTOM_PARAMETERS_COUNT_EXCEEDS_LIMIT"] = "The number of url custom parameters for an entity exceeds the maximum limit allowed.";
+      codes["UrlErrorReason.URL_CUSTOM_PARAMETER_REMOVAL_WITH_NON_NULL_VALUE"] = "The parameter has isRemove set to true but a value that is non-null.";
+      codes["UrlErrorReason.CANNOT_REMOVE_URL_CUSTOM_PARAMETER_IN_ADD_OPERATION"] = "For add operations, there will not be any existing parameters to delete.";
+      codes["UrlErrorReason.CANNOT_REMOVE_URL_CUSTOM_PARAMETER_DURING_FULL_REPLACEMENT"] = "When the doReplace flag is set to true, individual parameters cannot be deleted.";
+      codes["UrlErrorReason.NULL_CUSTOM_PARAMETER_VALUE_DURING_ADD_OR_FULL_REPLACEMENT"] = "For ADD operations and when the doReplace flag is set to true, custom parameter values cannot be null.";
+      codes["UrlErrorReason.INVALID_CHARACTERS_IN_URL_CUSTOM_PARAMETER_KEY"] = "An invalid character appears in the parameter key.";
+      codes["UrlErrorReason.INVALID_CHARACTERS_IN_URL_CUSTOM_PARAMETER_VALUE"] = "An invalid character appears in the parameter value.";
+      codes["UrlErrorReason.INVALID_TAG_IN_URL_CUSTOM_PARAMETER_VALUE"] = "The url custom parameter value fails url tag validation.";
+      codes["UrlErrorReason.REDUNDANT_NESTED_URL_CUSTOM_PARAMETER_TAG"] = "The custom parameter contains nested occurrences of the same conditional tag (i.e. {ifmobile:{ifmobile:x}}).";
+      codes["UrlErrorReason.MISSING_PROTOCOL"] = "The protocol (http:// or https://) is missing.";
+      codes["UrlErrorReason.INVALID_URL"] = "The url is invalid.";
+      codes["UrlErrorReason.DESTINATION_URL_DEPRECATED"] = "Destination Url is deprecated.";
+      codes["UrlErrorReason.INVALID_TAG_IN_URL"] = "The url contains invalid tag.";
+      codes["UrlErrorReason.MISSING_URL_TAG"] = "The url must contain at least one tag (e.g. {lpurl}), This applies only to urls associated with website ads or product ads.";
+      codes["UrlErrorReason.URL_ERROR"] = "";
+      codes["StringLengthErrorReason.TOO_SHORT"] = "";
+      codes["StringLengthErrorReason.TOO_LONG"] = "";
+      codes["StatsQueryErrorReason.DATE_NOT_IN_VALID_RANGE"] = "Date is outside of allowed range.";
+      codes["SizeLimitErrorReason.REQUEST_SIZE_LIMIT_EXCEEDED"] = "The number of entries in the request exceeds the system limit.";
+      codes["SizeLimitErrorReason.RESPONSE_SIZE_LIMIT_EXCEEDED"] = "The number of entries in the response exceeds the system limit.";
+      codes["SizeLimitErrorReason.INTERNAL_STORAGE_ERROR"] = "The account is too large to load.";
+      codes["SizeLimitErrorReason.UNKNOWN"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["SelectorErrorReason.INVALID_FIELD_NAME"] = "The field name is not valid.";
+      codes["SelectorErrorReason.MISSING_FIELDS"] = "The list of fields is null or empty.";
+      codes["SelectorErrorReason.MISSING_PREDICATES"] = "The list of predicates is null or empty.";
+      codes["SelectorErrorReason.OPERATOR_DOES_NOT_SUPPORT_MULTIPLE_VALUES"] = "Predicate operator does not support multiple values. Multiple values are supported only for <a href='Predicate.Operator#IN'>Predicate.Operator#IN</a> and <a href='Predicate.Operator#NOT_IN'>Predicate.Operator#NOT_IN</a>.";
+      codes["SelectorErrorReason.INVALID_PREDICATE_ENUM_VALUE"] = "The predicate enum value is not valid.";
+      codes["SelectorErrorReason.MISSING_PREDICATE_OPERATOR"] = "The predicate operator is empty.";
+      codes["SelectorErrorReason.MISSING_PREDICATE_VALUES"] = "The predicate values are empty.";
+      codes["SelectorErrorReason.INVALID_PREDICATE_FIELD_NAME"] = "The predicate field name is not valid.";
+      codes["SelectorErrorReason.INVALID_PREDICATE_OPERATOR"] = "The predicate operator is not valid.";
+      codes["SelectorErrorReason.INVALID_FIELD_SELECTION"] = "Invalid selection of fields.";
+      codes["SelectorErrorReason.INVALID_PREDICATE_VALUE"] = "The predicate value is not valid.";
+      codes["SelectorErrorReason.INVALID_SORT_FIELD_NAME"] = "The sort field name is not valid or the field is not sortable.";
+      codes["SelectorErrorReason.SELECTOR_ERROR"] = "Standard error.";
+      codes["SelectorErrorReason.FILTER_BY_DATE_RANGE_NOT_SUPPORTED"] = "Filtering by date range is not supported.";
+      codes["SelectorErrorReason.START_INDEX_IS_TOO_HIGH"] = "Selector paging start index is too high.";
+      codes["SelectorErrorReason.TOO_MANY_PREDICATE_VALUES"] = "The values list in a predicate was too long.";
+      codes["SelectorErrorReason.UNKNOWN_ERROR"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["RequiredErrorReason.REQUIRED"] = "Missing required field.";
+      codes["RequestErrorReason.UNKNOWN"] = "Error reason is unknown.";
+      codes["RequestErrorReason.INVALID_INPUT"] = "Invalid input.";
+      codes["RequestErrorReason.UNSUPPORTED_VERSION"] = "The api version in the request has been discontinued. Please update to the new AdWords API version.";
+      codes["RejectedErrorReason.UNKNOWN_VALUE"] = "Unknown value encountered";
+      codes["ReadOnlyErrorReason.READ_ONLY"] = "";
+      codes["RateExceededErrorReason.RATE_EXCEEDED"] = "Rate exceeded.";
+      codes["RangeErrorReason.TOO_LOW"] = "";
+      codes["RangeErrorReason.TOO_HIGH"] = "";
+      codes["QuotaCheckErrorReason.INVALID_TOKEN_HEADER"] = "Customer passed in an invalid token in the header.";
+      codes["QuotaCheckErrorReason.ACCOUNT_DELINQUENT"] = "Customer is marked delinquent.";
+      codes["QuotaCheckErrorReason.ACCOUNT_INACCESSIBLE"] = "Customer is a fraudulent.";
+      codes["QuotaCheckErrorReason.ACCOUNT_INACTIVE"] = "Inactive Account.";
+      codes["QuotaCheckErrorReason.INCOMPLETE_SIGNUP"] = "Signup not complete";
+      codes["QuotaCheckErrorReason.DEVELOPER_TOKEN_NOT_APPROVED"] = "Developer token is not approved for production access, and the customer is attempting to access a production account.";
+      codes["QuotaCheckErrorReason.TERMS_AND_CONDITIONS_NOT_SIGNED"] = "Terms and conditions are not signed.";
+      codes["QuotaCheckErrorReason.MONTHLY_BUDGET_REACHED"] = "Monthly budget quota reached.";
+      codes["QuotaCheckErrorReason.QUOTA_EXCEEDED"] = "Monthly budget quota exceeded.";
+      codes["QueryErrorReason.PARSING_FAILED"] = "Exception that happens when trying to parse a query that doesn't match the AWQL grammar.";
+      codes["QueryErrorReason.MISSING_QUERY"] = "The provided query is an empty string.";
+      codes["QueryErrorReason.MISSING_SELECT_CLAUSE"] = "The query does not contain the required SELECT clause or it is not in the correct location.";
+      codes["QueryErrorReason.MISSING_FROM_CLAUSE"] = "The query does not contain the required FROM clause or it is not in the correct location.";
+      codes["QueryErrorReason.INVALID_SELECT_CLAUSE"] = "The SELECT clause could not be parsed.";
+      codes["QueryErrorReason.INVALID_FROM_CLAUSE"] = "The FROM clause could not be parsed.";
+      codes["QueryErrorReason.INVALID_WHERE_CLAUSE"] = "The WHERE clause could not be parsed.";
+      codes["QueryErrorReason.INVALID_ORDER_BY_CLAUSE"] = "The ORDER BY clause could not be parsed.";
+      codes["QueryErrorReason.INVALID_LIMIT_CLAUSE"] = "The LIMIT clause could not be parsed.";
+      codes["QueryErrorReason.INVALID_START_INDEX_IN_LIMIT_CLAUSE"] = "The startIndex in the LIMIT clause does not contain a valid integer.";
+      codes["QueryErrorReason.INVALID_PAGE_SIZE_IN_LIMIT_CLAUSE"] = "The pageSize in the LIMIT clause does not contain a valid integer.";
+      codes["QueryErrorReason.INVALID_DURING_CLAUSE"] = "The DURING clause could not be parsed.";
+      codes["QueryErrorReason.INVALID_MIN_DATE_IN_DURING_CLAUSE"] = "The minimum date in the DURING clause is not a valid date in YYYYMMDD format.";
+      codes["QueryErrorReason.INVALID_MAX_DATE_IN_DURING_CLAUSE"] = "The maximum date in the DURING clause is not a valid date in YYYYMMDD format.";
+      codes["QueryErrorReason.MAX_LESS_THAN_MIN_IN_DURING_CLAUSE"] = "The minimum date in the DURING is after the maximum date.";
+      codes["QueryErrorReason.VALIDATION_FAILED"] = "The query matched the grammar, but is invalid in some way such as using a service that isn't supported.";
+      codes["PagingErrorReason.START_INDEX_CANNOT_BE_NEGATIVE"] = "";
+      codes["PagingErrorReason.NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE"] = "";
+      codes["PagingErrorReason.UNKNOWN"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["OperatorErrorReason.OPERATOR_NOT_SUPPORTED"] = "";
+      codes["NullErrorReason.NULL_CONTENT"] = "Specified list/container must not contain any null elements";
+      codes["NotEmptyErrorReason.EMPTY_LIST"] = "";
+      codes["NewEntityCreationErrorReason.CANNOT_SET_ID_FOR_ADD"] = "Do not set the id field while creating new entities.";
+      codes["MediaErrorReason.CANNOT_ADD_STANDARD_ICON"] = "Cannot add a standard icon type";
+      codes["MediaErrorReason.CANNOT_SELECT_STANDARD_ICON_WITH_OTHER_TYPES"] = "May only select Standard Icons alone";
+      codes["MediaErrorReason.DUPLICATE_MEDIA"] = "A media with given type and reference id already exists";
+      codes["MediaErrorReason.EMPTY_FIELD"] = "A required field was not specified or is an empty string.";
+      codes["MediaErrorReason.ENTITY_REFERENCED_IN_MULTIPLE_OPS"] = "A media may only be modified once per call";
+      codes["MediaErrorReason.FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE"] = "Field is not supported for the media sub type.";
+      codes["MediaErrorReason.INVALID_MEDIA_ID"] = "The media id is invalid";
+      codes["MediaErrorReason.INVALID_MEDIA_TYPE"] = "The media type is invalid";
+      codes["MediaErrorReason.INVALID_MEDIA_SUB_TYPE"] = "The media subtype is invalid";
+      codes["MediaErrorReason.INVALID_REFERENCE_ID"] = "The media reference id is invalid";
+      codes["MediaErrorReason.INVALID_YOU_TUBE_ID"] = "The YouTube video id is invalid";
+      codes["MediaErrorReason.YOU_TUBE_VIDEO_NOT_FOUND"] = "The YouTube video id is syntactically valid but the video was not found.";
+      codes["MediaErrorReason.YOU_TUBE_SERVICE_UNAVAILABLE"] = "YouTube is unavailable for requesting video data.";
+      codes["MediaErrorReason.YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION"] = "The YouTube video has a non positive duration.";
+      codes["MediaErrorReason.MEDIA_FAILED_TRANSCODING"] = "Media has failed transcoding";
+      codes["MediaErrorReason.MEDIA_NOT_TRANSCODED"] = "Media has not been transcoded";
+      codes["MediaErrorReason.MEDIA_TYPE_DOES_NOT_MATCH_OBJECT_TYPE"] = "The MediaType does not match the actual media object's type";
+      codes["MediaErrorReason.NO_FIELDS_SPECIFIED"] = "None of the fields have been specified.";
+      codes["MediaErrorReason.NULL_REFERENCE_ID_AND_MEDIA_ID"] = "One of reference Id or media Id must be specified";
+      codes["MediaErrorReason.TOO_LONG"] = "The string has too many characters.";
+      codes["MediaErrorReason.UNSUPPORTED_OPERATION"] = "The specified operation is not supported. Only ADD, SET, and REMOVE are supported";
+      codes["MediaErrorReason.UNSUPPORTED_TYPE"] = "";
+      codes["InternalApiErrorReason.UNEXPECTED_INTERNAL_API_ERROR"] = "API encountered an unexpected internal error.";
+      codes["InternalApiErrorReason.TRANSIENT_ERROR"] = "A temporary error occurred during the request. Please retry.";
+      codes["InternalApiErrorReason.UNKNOWN"] = "The cause of the error is not known or only defined in newer versions.";
+      codes["InternalApiErrorReason.DOWNTIME"] = "The API is currently unavailable for a planned downtime.";
+      codes["ImageErrorReason.INVALID_IMAGE"] = "The image is not valid.";
+      codes["ImageErrorReason.STORAGE_ERROR"] = "The image could not be stored.";
+      codes["ImageErrorReason.BAD_REQUEST"] = "There was a problem with the request.";
+      codes["ImageErrorReason.UNEXPECTED_SIZE"] = "The image is not of legal dimensions.";
+      codes["ImageErrorReason.ANIMATED_NOT_ALLOWED"] = "Animated image are not permitted.";
+      codes["ImageErrorReason.ANIMATION_TOO_LONG"] = "Animation is too long.";
+      codes["ImageErrorReason.SERVER_ERROR"] = "There was an error on the server.";
+      codes["ImageErrorReason.CMYK_JPEG_NOT_ALLOWED"] = "Image cannot be in CMYK color format.";
+      codes["ImageErrorReason.FLASH_NOT_ALLOWED"] = "Flash images are not permitted.";
+      codes["ImageErrorReason.FLASH_WITHOUT_CLICKTAG"] = "Flash images must support clickTag.";
+      codes["ImageErrorReason.FLASH_ERROR_AFTER_FIXING_CLICK_TAG"] = "A flash error has occurred after fixing the click tag.";
+      codes["ImageErrorReason.ANIMATED_VISUAL_EFFECT"] = "Unacceptable visual effects.";
+      codes["ImageErrorReason.FLASH_ERROR"] = "There was a problem with the flash image.";
+      codes["ImageErrorReason.LAYOUT_PROBLEM"] = "Incorrect image layout.";
+      codes["ImageErrorReason.PROBLEM_READING_IMAGE_FILE"] = "There was a problem reading the image file.";
+      codes["ImageErrorReason.ERROR_STORING_IMAGE"] = "There was an error storing the image.";
+      codes["ImageErrorReason.FLASH_HAS_NETWORK_OBJECTS"] = "Flash cannot have network objects.";
+      codes["ImageErrorReason.FLASH_HAS_NETWORK_METHODS"] = "Flash cannot have network methods.";
+      codes["ImageErrorReason.FLASH_HAS_URL"] = "Flash cannot have a Url.";
+      codes["ImageErrorReason.FLASH_HAS_MOUSE_TRACKING"] = "Flash cannot use mouse tracking.";
+      codes["ImageErrorReason.FLASH_HAS_RANDOM_NUM"] = "Flash cannot have a random number.";
+      codes["ImageErrorReason.FLASH_SELF_TARGETS"] = "Ad click target cannot be '_self'.";
+      codes["ImageErrorReason.FLASH_BAD_GETURL_TARGET"] = "GetUrl method should only use '_blank'.";
+      codes["ImageErrorReason.FLASH_VERSION_NOT_SUPPORTED"] = "Flash version is not supported.";
+      codes["ImageErrorReason.FLASH_WITHOUT_HARD_CODED_CLICK_URL"] = "Flash movies need to have hard coded click URL or clickTAG";
+      codes["ImageErrorReason.INVALID_FLASH_FILE"] = "Uploaded flash file is corrupted.";
+      codes["ImageErrorReason.FAILED_TO_FIX_CLICK_TAG_IN_FLASH"] = "Uploaded flash file can be parsed, but the click tag can not be fixed properly.";
+      codes["ImageErrorReason.FLASH_ACCESSES_NETWORK_RESOURCES"] = "Flash movie accesses network resources";
+      codes["ImageErrorReason.FLASH_EXTERNAL_JS_CALL"] = "Flash movie attempts to call external javascript code";
+      codes["ImageErrorReason.FLASH_EXTERNAL_FS_CALL"] = "Flash movie attempts to call flash system commands";
+      codes["ImageErrorReason.FILE_TOO_LARGE"] = "Image file is too large.";
+      codes["ImageErrorReason.IMAGE_DATA_TOO_LARGE"] = "Image data is too large.";
+      codes["ImageErrorReason.IMAGE_PROCESSING_ERROR"] = "Error while processing the image.";
+      codes["ImageErrorReason.IMAGE_TOO_SMALL"] = "Image is too small.";
+      codes["ImageErrorReason.INVALID_INPUT"] = "Input was invalid.";
+      codes["ImageErrorReason.PROBLEM_READING_FILE"] = "There was a problem reading the image file.";
+      codes["IdErrorReason.NOT_FOUND"] = "Id not found";
+      codes["FunctionParsingErrorReason.NO_MORE_INPUT"] = "Unexpected end of function string.";
+      codes["FunctionParsingErrorReason.EXPECTED_CHARACTER"] = "Could not find an expected character.";
+      codes["FunctionParsingErrorReason.UNEXPECTED_SEPARATOR"] = "Unexpected separator character.";
+      codes["FunctionParsingErrorReason.UNMATCHED_LEFT_BRACKET"] = "Unmatched left bracket or parenthesis.";
+      codes["FunctionParsingErrorReason.UNMATCHED_RIGHT_BRACKET"] = "Unmatched right bracket or parenthesis.";
+      codes["FunctionParsingErrorReason.TOO_MANY_NESTED_FUNCTIONS"] = "Functions are nested too deeply.";
+      codes["FunctionParsingErrorReason.MISSING_RIGHT_HAND_OPERAND"] = "Missing right-hand-side operand.";
+      codes["FunctionParsingErrorReason.INVALID_OPERATOR_NAME"] = "Invalid operator/function name.";
+      codes["FunctionParsingErrorReason.FEED_ATTRIBUTE_OPERAND_ARGUMENT_NOT_INTEGER"] = "Feed attribute operand's argument is not an integer.";
+      codes["FunctionParsingErrorReason.NO_OPERANDS"] = "Missing function operands.";
+      codes["FunctionParsingErrorReason.TOO_MANY_OPERANDS"] = "Function had too many operands.";
+      codes["FunctionParsingErrorReason.UNKNOWN"] = "";
+      codes["FunctionErrorReason.INVALID_FUNCTION_FORMAT"] = "The format of the function is not recognized as a supported function format.";
+      codes["FunctionErrorReason.DATA_TYPE_MISMATCH"] = "Operand data types do not match.";
+      codes["FunctionErrorReason.INVALID_CONJUNCTION_OPERANDS"] = "The operands cannot be used together in a conjunction.";
+      codes["FunctionErrorReason.INVALID_NUMBER_OF_OPERANDS"] = "Invalid numer of Operands.";
+      codes["FunctionErrorReason.INVALID_OPERAND_TYPE"] = "Operand Type not supported.";
+      codes["FunctionErrorReason.INVALID_OPERATOR"] = "Operator not supported.";
+      codes["FunctionErrorReason.INVALID_REQUEST_CONTEXT_TYPE"] = "Request context type not supported.";
+      codes["FunctionErrorReason.INVALID_FUNCTION_FOR_CALL_PLACEHOLDER"] = "The matching function is not allowed for call placeholders";
+      codes["FunctionErrorReason.INVALID_FUNCTION_FOR_PLACEHOLDER"] = "The matching function is not allowed for the specified placeholder";
+      codes["FunctionErrorReason.INVALID_OPERAND"] = "Invalid operand.";
+      codes["FunctionErrorReason.MISSING_CONSTANT_OPERAND_VALUE"] = "Missing value for the constant operand.";
+      codes["FunctionErrorReason.INVALID_CONSTANT_OPERAND_VALUE"] = "The value of the constant operand is invalid.";
+      codes["FunctionErrorReason.INVALID_NESTING"] = "Invalid function nesting.";
+      codes["FunctionErrorReason.MULTIPLE_FEED_IDS_NOT_SUPPORTED"] = "The Feed ID was different from another Feed ID in the same function.";
+      codes["FunctionErrorReason.INVALID_ATTRIBUTE_NAME"] = "Invalid attribute name.";
+      codes["FunctionErrorReason.UNKNOWN"] = "";
+      codes["ForwardCompatibilityErrorReason.INVALID_FORWARD_COMPATIBILITY_MAP_VALUE"] = "Invalid value specified for a key in the forward compatibility map.";
+      codes["ForwardCompatibilityErrorReason.UNKNOWN"] = "";
+      codes["FeedAttributeReferenceErrorReason.CANNOT_REFERENCE_DELETED_FEED"] = "A feed referenced by ID has been deleted.";
+      codes["FeedAttributeReferenceErrorReason.INVALID_FEED_NAME"] = "There is no active feed with the given name.";
+      codes["FeedAttributeReferenceErrorReason.INVALID_FEED_ATTRIBUTE_NAME"] = "There is no feed attribute in an active feed with the given name.";
+      codes["ExperimentErrorReason.EXPERIMENT_DELTA_STATUS_NOT_SPECIFIED"] = "Experiment delta status not specified.";
+      codes["ExperimentErrorReason.EXPERIMENT_DELTA_STATUS_NOT_ALLOWED"] = "Experiment delta status not allowed.";
+      codes["ExperimentErrorReason.EXPERIMENT_STATUS_NOT_ALLOWED"] = "Cannot create experiment data in REMOVED status";
+      codes["ExperimentErrorReason.EXPERIMENT_NOT_ALLOWED_FOR_BIDDING_STRATEGY"] = "Experiments are not allowed for this bidding strategy";
+      codes["ExperimentErrorReason.EXPERIMENT_NOT_ALLOWED_FOR_CRITERION_TYPE"] = "Experiments are not allowed for this criterion type";
+      codes["ExperimentErrorReason.EXPERIMENT_NOT_ACTIVE"] = "Cannot make changes for inactive experiments";
+      codes["ExperimentErrorReason.INVALID_EXPERIMENT_ID"] = "Invalid experiment id";
+      codes["ExperimentErrorReason.EXPERIMENT_ID_NOT_SPECIFIED_WITH_SEGMENTATION_CRITERIA"] = "Experiment id must be specified for this criterion";
+      codes["ExperimentErrorReason.TOO_MANY_CHANGES_TO_EXPERIMENT"] = "This experiment has too many changes";
+      codes["ExperimentErrorReason.EXPERIMENT_ERROR"] = "";
+      codes["DistinctErrorReason.DUPLICATE_ELEMENT"] = "";
+      codes["DistinctErrorReason.DUPLICATE_TYPE"] = "";
+      codes["DateErrorReason.INVALID_FIELD_VALUES_IN_DATE"] = "Given field values do not correspond to a valid date.";
+      codes["DateErrorReason.INVALID_FIELD_VALUES_IN_DATE_TIME"] = "Given field values do not correspond to a valid date time.";
+      codes["DateErrorReason.INVALID_STRING_DATE"] = "The string date's format should be yyyymmdd.";
+      codes["DateErrorReason.INVALID_STRING_DATE_RANGE"] = "The string date range's format should be yyyymmdd yyyymmdd.";
+      codes["DateErrorReason.INVALID_STRING_DATE_TIME"] = "The string date time's format should be yyyymmdd hhmmss [tz].";
+      codes["DateErrorReason.EARLIER_THAN_MINIMUM_DATE"] = "Date is before allowed minimum.";
+      codes["DateErrorReason.LATER_THAN_MAXIMUM_DATE"] = "Date is after allowed maximum.";
+      codes["DateErrorReason.DATE_RANGE_MINIMUM_DATE_LATER_THAN_MAXIMUM_DATE"] = "Date range bounds are not in order.";
+      codes["DateErrorReason.DATE_RANGE_MINIMUM_AND_MAXIMUM_DATES_BOTH_NULL"] = "Both dates in range are null.";
+      codes["DatabaseErrorReason.CONCURRENT_MODIFICATION"] = "A concurrency problem occurred as two threads were attempting to modify same object.";
+      codes["DatabaseErrorReason.PERMISSION_DENIED"] = "The permission was denied to access an object.";
+      codes["DatabaseErrorReason.ACCESS_PROHIBITED"] = "The user's access to an object has been prohibited.";
+      codes["DatabaseErrorReason.CAMPAIGN_PRODUCT_NOT_SUPPORTED"] = "Requested campaign belongs to a product that is not supported by the api.";
+      codes["DatabaseErrorReason.DUPLICATE_KEY"] = "a duplicate key was detected upon insertion";
+      codes["DatabaseErrorReason.DATABASE_ERROR"] = "a database error has occurred";
+      codes["DatabaseErrorReason.UNKNOWN"] = "an unknown error has occurred";
+      codes["ClientTermsErrorReason.INCOMPLETE_SIGNUP_CURRENT_ADWORDS_TNC_NOT_AGREED"] = "Customer has not agreed to the latest AdWords Terms &amp; Conditions";
+      codes["AuthorizationErrorReason.UNABLE_TO_AUTHORIZE"] = "Could not complete authorization due to an internal problem.";
+      codes["AuthorizationErrorReason.NO_ADWORDS_ACCOUNT_FOR_CUSTOMER"] = "Customer has no AdWords account.";
+      codes["AuthorizationErrorReason.USER_PERMISSION_DENIED"] = "User doesn't have permission to access customer.";
+      codes["AuthorizationErrorReason.EFFECTIVE_USER_PERMISSION_DENIED"] = "Effective user doesn't have permission to access this customer.";
+      codes["AuthorizationErrorReason.USER_HAS_READONLY_PERMISSION"] = "User has read-only permission cannot mutate.";
+      codes["AuthorizationErrorReason.NO_CUSTOMER_FOUND"] = "No customer found.";
+      codes["AuthorizationErrorReason.SERVICE_ACCESS_DENIED"] = "Developer doesn't have permission to access service.";
+      codes["AuthenticationErrorReason.AUTHENTICATION_FAILED"] = "Authentication of the request failed.";
+      codes["AuthenticationErrorReason.CLIENT_CUSTOMER_ID_IS_REQUIRED"] = "Client Customer Id is required if CustomerIdMode is set to CLIENT_EXTERNAL_CUSTOMER_ID. Starting version V201409 ClientCustomerId will be required for all requests except for <a href='CustomerService#get'>CustomerService#get</a>";
+      codes["AuthenticationErrorReason.CLIENT_EMAIL_REQUIRED"] = "Client Email is required if CustomerIdMode is set to CLIENT_EXTERNAL_EMAIL_FIELD.";
+      codes["AuthenticationErrorReason.CLIENT_CUSTOMER_ID_INVALID"] = "Client customer Id is not a number.";
+      codes["AuthenticationErrorReason.CLIENT_EMAIL_INVALID"] = "Client customer Id is not a number.";
+      codes["AuthenticationErrorReason.CLIENT_EMAIL_FAILED_TO_AUTHENTICATE"] = "Client email is not a valid customer email.";
+      codes["AuthenticationErrorReason.CUSTOMER_NOT_FOUND"] = "No customer found for the customer id provided in the header.";
+      codes["AuthenticationErrorReason.GOOGLE_ACCOUNT_DELETED"] = "Client's Google Account is deleted.";
+      codes["AuthenticationErrorReason.GOOGLE_ACCOUNT_COOKIE_INVALID"] = "Google account login token in the cookie is invalid.";
+      codes["AuthenticationErrorReason.FAILED_TO_AUTHENTICATE_GOOGLE_ACCOUNT"] = "problem occurred during Google account authentication.";
+      codes["AuthenticationErrorReason.GOOGLE_ACCOUNT_USER_AND_ADS_USER_MISMATCH"] = "The user in the google account login token does not match the UserId in the cookie.";
+      codes["AuthenticationErrorReason.LOGIN_COOKIE_REQUIRED"] = "Login cookie is required for authentication.";
+      codes["AuthenticationErrorReason.NOT_ADS_USER"] = "User in the cookie is not a valid Ads user.";
+      codes["AuthenticationErrorReason.OAUTH_TOKEN_INVALID"] = "Oauth token in the header is not valid.";
+      codes["AuthenticationErrorReason.OAUTH_TOKEN_EXPIRED"] = "Oauth token in the header has expired.";
+      codes["AuthenticationErrorReason.OAUTH_TOKEN_DISABLED"] = "Oauth token in the header has been disabled.";
+      codes["AuthenticationErrorReason.OAUTH_TOKEN_REVOKED"] = "Oauth token in the header has been revoked.";
+      codes["AuthenticationErrorReason.OAUTH_TOKEN_HEADER_INVALID"] = "Oauth token HTTP header is malformed.";
+      codes["AuthenticationErrorReason.LOGIN_COOKIE_INVALID"] = "Login cookie is not valid.";
+      codes["AuthenticationErrorReason.FAILED_TO_RETRIEVE_LOGIN_COOKIE"] = "Failed to decrypt the login cookie.";
+      codes["AuthenticationErrorReason.USER_ID_INVALID"] = "User Id in the header is not a valid id.";
+      codes["AdxErrorReason.UNSUPPORTED_FEATURE"] = "Attempt to use non-AdX feature by AdX customer.";
+      codes["AdGroupAdErrorReason.AD_GROUP_AD_LABEL_DOES_NOT_EXIST"] = "No link found between the adgroup ad and the label.";
+      codes["AdGroupAdErrorReason.AD_GROUP_AD_LABEL_ALREADY_EXISTS"] = "The label has already been attached to the adgroup ad.";
+      codes["AdGroupAdErrorReason.AD_NOT_UNDER_ADGROUP"] = "The specified ad was not found in the adgroup";
+      codes["AdGroupAdErrorReason.CANNOT_OPERATE_ON_REMOVED_ADGROUPAD"] = "Removed ads may not be modified";
+      codes["AdGroupAdErrorReason.CANNOT_CREATE_DEPRECATED_ADS"] = "An ad of this type is deprecated and cannot be created. Only deletions are permitted.";
+      codes["AdGroupAdErrorReason.EMPTY_FIELD"] = "A required field was not specified or is an empty string.";
+      codes["AdGroupAdErrorReason.ENTITY_REFERENCED_IN_MULTIPLE_OPS"] = "An ad may only be modified once per call";
+      codes["AdGroupAdErrorReason.UNSUPPORTED_OPERATION"] = "The specified operation is not supported. Only ADD, SET, and REMOVE are supported";
+      codes["AdErrorReason.AD_CUSTOMIZERS_NOT_SUPPORTED_FOR_AD_TYPE"] = "Ad customizers are not supported for ad type.";
+      codes["AdErrorReason.APPROXIMATELY_TOO_LONG"] = "Estimating character sizes the string is too long.";
+      codes["AdErrorReason.APPROXIMATELY_TOO_SHORT"] = "Estimating character sizes the string is too short.";
+      codes["AdErrorReason.BAD_SNIPPET"] = "There is a problem with the snippet.";
+      codes["AdErrorReason.CANNOT_SET_BUSINESS_NAME_IF_URL_SET"] = "business name and url cannot be set at the same time";
+      codes["AdErrorReason.CANNOT_SET_FIELD"] = "The specified field is incompatible with this ad's type or settings.";
+      codes["AdErrorReason.CANNOT_SET_FIELD_WITH_ORIGIN_AD_ID_SET"] = "Cannot set field when originAdId is set.";
+      codes["AdErrorReason.CANNOT_SET_URL"] = "Cannot specify a url for the ad type";
+      codes["AdErrorReason.CANNOT_SET_WITHOUT_FINAL_URLS"] = "Cannot specify a tracking or mobile url without also setting final urls";
+      codes["AdErrorReason.CANNOT_SET_WITH_FINAL_URLS"] = "Cannot specify a legacy url and a final url simultaneously";
+      codes["AdErrorReason.CANNOT_SET_WITH_TRACKING_URL_TEMPLATE"] = "Cannot specify a legacy url and a tracking url template simultaneously in a DSA.";
+      codes["AdErrorReason.CUSTOMER_NOT_APPROVED_MOBILEADS"] = "Customer is not approved for mobile ads.";
+      codes["AdErrorReason.CUSTOMER_NOT_APPROVED_THIRDPARTY_ADS"] = "Customer is not approved for 3PAS richmedia ads.";
+      codes["AdErrorReason.CUSTOMER_NOT_APPROVED_THIRDPARTY_REDIRECT_ADS"] = "Customer is not approved for 3PAS redirect richmedia (Ad Exchange) ads.";
+      codes["AdErrorReason.CUSTOMER_NOT_ELIGIBLE"] = "Not an eligible customer";
+      codes["AdErrorReason.CUSTOMER_NOT_ELIGIBLE_FOR_UPDATING_BEACON_URL"] = "Customer is not eligible for updating beacon url";
+      codes["AdErrorReason.DIMENSION_ALREADY_IN_UNION"] = "There already exists an ad with the same dimensions in the union.";
+      codes["AdErrorReason.DIMENSION_MUST_BE_SET"] = "Ad's dimension must be set before setting union dimension.";
+      codes["AdErrorReason.DIMENSION_NOT_IN_UNION"] = "Ad's dimension must be included in the union dimensions.";
+      codes["AdErrorReason.DISPLAY_URL_CANNOT_BE_SPECIFIED"] = "Display Url cannot be specified (applies to Ad Exchange Ads)";
+      codes["AdErrorReason.DOMESTIC_PHONE_NUMBER_FORMAT"] = "Telephone number contains invalid characters or invalid format. Please re-enter your number using digits (0-9), dashes (-), and parentheses only.";
+      codes["AdErrorReason.EMERGENCY_PHONE_NUMBER"] = "Emergency telephone numbers are not allowed. Please enter a valid domestic phone number to connect customers to your business.";
+      codes["AdErrorReason.EMPTY_FIELD"] = "A required field was not specified or is an empty string.";
+      codes["AdErrorReason.FEED_ATTRIBUTE_MUST_HAVE_MAPPING_FOR_TYPE_ID"] = "A feed attribute referenced in an ad customizer tag is not in the ad customizer mapping for the feed.";
+      codes["AdErrorReason.FEED_ATTRIBUTE_MAPPING_TYPE_MISMATCH"] = "The ad customizer field mapping for the feed attribute does not match the expected field type.";
+      codes["AdErrorReason.ILLEGAL_AD_CUSTOMIZER_TAG_USE"] = "The use of ad customizer tags in the ad text is disallowed. Details in trigger.";
+      codes["AdErrorReason.INCONSISTENT_STATUS_IN_TEMPLATE_UNION"] = "The status cannot differ among template ads of the same union.";
+      codes["AdErrorReason.INCORRECT_LENGTH"] = "The length of the string is not valid.";
+      codes["AdErrorReason.INELIGIBLE_FOR_UPGRADE"] = "The ad is ineligible for upgrade.";
+      codes["AdErrorReason.INVALID_AD_ADDRESS_CAMPAIGN_TARGET"] = "User cannot create mobile ad for countries targeted in specified campaign.";
+      codes["AdErrorReason.INVALID_AD_TYPE"] = "Invalid Ad type. A specific type of Ad is required.";
+      codes["AdErrorReason.INVALID_ATTRIBUTES_FOR_MOBILE_IMAGE"] = "Headline, description or phone cannot be present when creating mobile image ad.";
+      codes["AdErrorReason.INVALID_ATTRIBUTES_FOR_MOBILE_TEXT"] = "Image cannot be present when creating mobile text ad.";
+      codes["AdErrorReason.INVALID_CHARACTER_FOR_URL"] = "Invalid character in URL.";
+      codes["AdErrorReason.INVALID_COUNTRY_CODE"] = "Creative's country code is not valid.";
+      codes["AdErrorReason.INVALID_DSA_URL_TAG"] = "Invalid use of Dynamic Search Ads tags ({lpurl} etc.)";
+      codes["AdErrorReason.INVALID_INPUT"] = "An input error whose real reason was not properly mapped (should not happen).";
+      codes["AdErrorReason.INVALID_MARKUP_LANGUAGE"] = "An invalid markup language was entered.";
+      codes["AdErrorReason.INVALID_MOBILE_CARRIER"] = "An invalid mobile carrier was entered.";
+      codes["AdErrorReason.INVALID_MOBILE_CARRIER_TARGET"] = "Specified mobile carriers target a country not targeted by the campaign.";
+      codes["AdErrorReason.INVALID_NUMBER_OF_ELEMENTS"] = "Wrong number of elements for given element type";
+      codes["AdErrorReason.INVALID_PHONE_NUMBER_FORMAT"] = "The format of the telephone number is incorrect. Please re-enter the number using the correct format.";
+      codes["AdErrorReason.INVALID_RICH_MEDIA_CERTIFIED_VENDOR_FORMAT_ID"] = "The certified vendor format id is incorrect.";
+      codes["AdErrorReason.INVALID_TEMPLATE_DATA"] = "The template ad data contains validation errors.";
+      codes["AdErrorReason.INVALID_TEMPLATE_ELEMENT_FIELD_TYPE"] = "The template field doesn't have have the correct type.";
+      codes["AdErrorReason.INVALID_TEMPLATE_ID"] = "Invalid template id.";
+      codes["AdErrorReason.LINE_TOO_WIDE"] = "After substituting replacement strings, the line is too wide.";
+      codes["AdErrorReason.MARKUP_LANGUAGES_PRESENT"] = "When entering a markup language the Destination URL must be entered.";
+      codes["AdErrorReason.MISSING_AD_CUSTOMIZER_MAPPING"] = "The feed referenced must have ad customizer mapping to be used in a customizer tag.";
+      codes["AdErrorReason.MISSING_ADDRESS_COMPONENT"] = "Missing address component in template element address field.";
+      codes["AdErrorReason.MISSING_ADVERTISEMENT_NAME"] = "An ad name must be entered.";
+      codes["AdErrorReason.MISSING_BUSINESS_NAME"] = "Business name must be entered.";
+      codes["AdErrorReason.MISSING_DESCRIPTION1"] = "Description (line 2) must be entered.";
+      codes["AdErrorReason.MISSING_DESCRIPTION2"] = "Description (line 3) must be entered.";
+      codes["AdErrorReason.MISSING_DESTINATION_URL"] = "A destination URL must be entered.";
+      codes["AdErrorReason.MISSING_DESTINATION_URL_TAG"] = "The destination url must contain at least one tag (e.g. {lpurl})";
+      codes["AdErrorReason.MISSING_DIMENSION"] = "A valid dimension must be specified for this ad.";
+      codes["AdErrorReason.MISSING_DISPLAY_URL"] = "A display URL must be entered.";
+      codes["AdErrorReason.MISSING_HEADLINE"] = "Headline must be entered.";
+      codes["AdErrorReason.MISSING_HEIGHT"] = "A height must be entered.";
+      codes["AdErrorReason.MISSING_IMAGE"] = "An image must be entered.";
+      codes["AdErrorReason.MISSING_MARKUP_LANGUAGES"] = "The markup language in which your site is written must be entered.";
+      codes["AdErrorReason.MISSING_MOBILE_CARRIER"] = "A mobile carrier must be entered.";
+      codes["AdErrorReason.MISSING_PHONE"] = "Phone number must be entered.";
+      codes["AdErrorReason.MISSING_REQUIRED_TEMPLATE_FIELDS"] = "Missing required template fields";
+      codes["AdErrorReason.MISSING_TEMPLATE_FIELD_VALUE"] = "Missing a required field value";
+      codes["AdErrorReason.MISSING_TEXT"] = "The ad must have text.";
+      codes["AdErrorReason.MISSING_URL_AND_PHONE"] = "Ad must link to a mobile web page or connect users to your business telephone, or both. Please enter a mobile Destination URL and/or a business telephone number.";
+      codes["AdErrorReason.MISSING_VISIBLE_URL"] = "A visible URL must be entered.";
+      codes["AdErrorReason.MISSING_WIDTH"] = "A width must be entered.";
+      codes["AdErrorReason.MULTIPLE_DISTINCT_FEEDS_UNSUPPORTED"] = "Only 1 feed can be used as the source of ad customizer substitutions in a single ad.";
+      codes["AdErrorReason.MUST_USE_TEMP_AD_UNION_ID_ON_ADD"] = "TempAdUnionId must be use when adding template ads.";
+      codes["AdErrorReason.TOO_LONG"] = "The string has too many characters.";
+      codes["AdErrorReason.TOO_SHORT"] = "The string has too few characters.";
+      codes["AdErrorReason.UNION_DIMENSIONS_CANNOT_CHANGE"] = "Ad union dimensions cannot change for saved ads.";
+      codes["AdErrorReason.UNKNOWN_ADDRESS_COMPONENT"] = "Address component is not {country, lat, lng}.";
+      codes["AdErrorReason.UNKNOWN_FIELD_NAME"] = "Unknown unique field name";
+      codes["AdErrorReason.UNKNOWN_UNIQUE_NAME"] = "Unknown unique name (template element type specifier)";
+      codes["AdErrorReason.UNSUPPORTED_DIMENSIONS"] = "Unsupported ad dimension";
+      codes["AdErrorReason.URL_INVALID_SCHEME"] = "URL starts with an invalid scheme.";
+      codes["AdErrorReason.URL_INVALID_TOP_LEVEL_DOMAIN"] = "URL ends with an invalid top-level domain name.";
+      codes["AdErrorReason.URL_MALFORMED"] = "URL contains illegal characters.";
+      codes["AdErrorReason.URL_NO_HOST"] = "URL must contain a host name.";
+      codes["AdErrorReason.URL_NOT_EQUIVALENT"] = "URL not equivalent during upgrade.";
+      codes["AdErrorReason.URL_HOST_NAME_TOO_LONG"] = "URL host name too long to be stored as visible URL (applies to Ad Exchange ads)";
+      codes["AdErrorReason.URL_NO_SCHEME"] = "URL must start with a scheme.";
+      codes["AdErrorReason.URL_NO_TOP_LEVEL_DOMAIN"] = "URL should end in a valid domain extension, such as .com or .net.";
+      codes["AdErrorReason.URL_PATH_NOT_ALLOWED"] = "URL must not end with a path.";
+      codes["AdErrorReason.URL_PORT_NOT_ALLOWED"] = "URL must not specify a port.";
+      codes["AdErrorReason.URL_QUERY_NOT_ALLOWED"] = "URL must not contain a query.";
+      codes["AdErrorReason.URL_SCHEME_BEFORE_DSA_TAG"] = "A url scheme is not allowed in front of tag in dest url (e.g. http://{lpurl})";
+      codes["AdErrorReason.USER_DOES_NOT_HAVE_ACCESS_TO_TEMPLATE"] = "The user does not have permissions to create a template ad for the given template.";
+      codes["AdErrorReason.INCONSISTENT_EXPANDABLE_SETTINGS"] = "Expandable setting is inconsistent/wrong. For example, an AdX ad is invalid if it has a expandable vendor format but no expanding directions specified, or expanding directions is specified, but the vendor format is not expandable.";
+      codes["AdErrorReason.INVALID_FORMAT"] = "Format is invalid";
+      codes["AdErrorReason.INVALID_FIELD_TEXT"] = "The text of this field did not match a pattern of allowed values.";
+      codes["AdErrorReason.ELEMENT_NOT_PRESENT"] = "Template element is mising";
+      codes["AdErrorReason.IMAGE_ERROR"] = "Error occurred during image processing";
+      codes["AdErrorReason.VALUE_NOT_IN_RANGE"] = "The value is not within the valid range";
+      codes["AdErrorReason.FIELD_NOT_PRESENT"] = "Template element field is not present";
+      codes["AdErrorReason.ADDRESS_NOT_COMPLETE"] = "Address is incomplete";
+      codes["AdErrorReason.ADDRESS_INVALID"] = "Invalid address";
+      codes["AdErrorReason.VIDEO_RETRIEVAL_ERROR"] = "Error retrieving specified video";
+      codes["AdErrorReason.AUDIO_ERROR"] = "Error processing audio";
+      codes["AdErrorReason.INVALID_YOUTUBE_DISPLAY_URL"] = "Display URL is incorrect for YouTube PYV ads";
+      codes["AdErrorReason.INCOMPATIBLE_AD_TYPE_AND_DEVICE_PREFERENCE"] = "The device preference is not compatible with the ad type";
+      codes["AdErrorReason.CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY"] = "Call tracking is not supported for specified country.";
+      codes["AdErrorReason.CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED"] = "Carrier specific short number is not allowed.";
+      codes["AdErrorReason.DISALLOWED_NUMBER_TYPE"] = "Specified phone number type is disallowed.";
+      codes["AdErrorReason.PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY"] = "Phone number not supported for country.";
+      codes["AdErrorReason.PREMIUM_RATE_NUMBER_NOT_ALLOWED"] = "Premium rate phone number is not allowed.";
+      codes["AdErrorReason.VANITY_PHONE_NUMBER_NOT_ALLOWED"] = "Vanity phone number is not allowed.";
+      codes["AdErrorReason.INVALID_CALL_CONVERSION_TYPE_ID"] = "Invalid call conversion type id.";
+      codes["AdErrorReason.CANNOT_DISABLE_CALL_CONVERSION_AND_SET_CONVERSION_TYPE_ID"] = "";
+      codes["AdCustomizerErrorReason.COUNTDOWN_INVALID_DATE_FORMAT"] = "Invalid date argument in countdown function.";
+      codes["AdCustomizerErrorReason.COUNTDOWN_DATE_IN_PAST"] = "Countdown end date is in the past.";
+      codes["AdCustomizerErrorReason.COUNTDOWN_INVALID_LOCALE"] = "Invalid locale string in countdown function.";
+      codes["AdCustomizerErrorReason.COUNTDOWN_INVALID_START_DAYS_BEFORE"] = "Days-before argument to countdown function is not positive.";
+      codes["StringFormatErrorReason.UNKNOWN"] = "";
+      codes["StringFormatErrorReason.ILLEGAL_CHARS"] = "The input string value contains disallowed characters.";
+      codes["StringFormatErrorReason.INVALID_FORMAT"] = "The input string value is invalid for the associated field.";
+      codes["SettingErrorReason.DUPLICATE_SETTING_TYPE"] = "The campaign already has a setting of the type that is being added.";
+      codes["SettingErrorReason.SETTING_TYPE_IS_NOT_AVAILABLE"] = "The campaign setting is not available for this AdWords account.";
+      codes["SettingErrorReason.SETTING_TYPE_IS_NOT_COMPATIBLE_WITH_CAMPAIGN"] = "The setting is not compatible with the campaign.";
+      codes["SettingErrorReason.TARGETING_SETTING_CONTAINS_INVALID_CRITERION_TYPE_GROUP"] = "The supplied TargetingSetting contains an invalid CriterionTypeGroup. See <a href='CriterionTypeGroup'>CriterionTypeGroup</a> documentation for CriterionTypeGroups allowed in Campaign or AdGroup TargetingSettings.";
+      codes["SettingErrorReason.DYNAMIC_SEARCH_ADS_SETTING_CONTAINS_INVALID_DOMAIN_NAME"] = "The supplied DynamicSearchAdsSetting contains an invalid domain name.";
+      codes["SettingErrorReason.DYNAMIC_SEARCH_ADS_SETTING_CONTAINS_INVALID_LANGUAGE_CODE"] = "The supplied DynamicSearchAdsSetting contains an invalid language code.";
+      codes["SettingErrorReason.TARGET_ALL_IS_NOT_ALLOWED_FOR_PLACEMENT_IN_SEARCH_CAMPAIGN"] = "TargetingSettings in search campaigns should not have CriterionTypeGroup.PLACEMENT set to targetAll.";
+      codes["SettingErrorReason.UNKNOWN"] = "Unspecified campaign setting error. <span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["RegionCodeErrorReason.INVALID_REGION_CODE"] = "";
+      codes["DateRangeErrorReason.DATE_RANGE_ERROR"] = "";
+      codes["DateRangeErrorReason.INVALID_DATE"] = "Invalid date.";
+      codes["DateRangeErrorReason.START_DATE_AFTER_END_DATE"] = "The start date was after the end date.";
+      codes["DateRangeErrorReason.CANNOT_SET_DATE_TO_PAST"] = "Cannot set date to past time";
+      codes["DateRangeErrorReason.AFTER_MAXIMUM_ALLOWABLE_DATE"] = "A date was used that is past the system \"last\" date.";
+      codes["DateRangeErrorReason.CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED"] = "Trying to change start date on a campaign that has started.";
+      codes["CampaignErrorReason.CANNOT_GO_BACK_TO_INCOMPLETE"] = "A complete campaign cannot go back to being incomplete";
+      codes["CampaignErrorReason.CANNOT_SET_END_DATE_BEFORE_EXPERIMENT_END_DATE"] = "Trying to modify an end date before an active experiment end date.";
+      codes["CampaignErrorReason.DUPLICATE_CAMPAIGN_NAME"] = "Trying to modify the name of an active or paused campaign, where the name is already assigned to another active or paused campaign.";
+      codes["CampaignErrorReason.INCOMPATIBLE_CAMPAIGN_FIELD"] = "Two fields are in conflicting modes.";
+      codes["CampaignErrorReason.INVALID_CAMPAIGN_NAME"] = "Campaign name cannot be used.";
+      codes["CampaignErrorReason.INVALID_AD_SERVING_OPTIMIZATION_STATUS"] = "Given status is invalid.";
+      codes["CampaignErrorReason.INVALID_TRACKING_URL"] = "Error in the campaign level tracking url.";
+      codes["CampaignErrorReason.MAX_IMPRESSIONS_NOT_IN_RANGE"] = "The maximum number of impressions for Frequency Cap should be an integer greater than 0.";
+      codes["CampaignErrorReason.TIME_UNIT_NOT_SUPPORTED"] = "Only the Day, Week and Month time units are supported.";
+      codes["CampaignErrorReason.INVALID_OPERATION_IF_SERVING_STATUS_HAS_ENDED"] = "Operation not allowed on a campaign whose serving status has ended";
+      codes["CampaignErrorReason.BUDGET_CANNOT_BE_SHARED"] = "This budget is exclusively linked to a Campaign that is using @link{Experiment}s so it cannot be shared.";
+      codes["CampaignErrorReason.CAMPAIGN_CANNOT_USE_SHARED_BUDGET"] = "Campaigns using @link{Experiment}s cannot use a shared budget.";
+      codes["CampaignErrorReason.CAMPAIGN_LABEL_DOES_NOT_EXIST"] = "No link found between the campaign and the label.";
+      codes["CampaignErrorReason.CAMPAIGN_LABEL_ALREADY_EXISTS"] = "The label has already been attached to the campaign.";
+      codes["CampaignErrorReason.MISSING_SHOPPING_SETTING"] = "A ShoppingSetting was not found when creating a shopping campaign.";
+      codes["CampaignErrorReason.INVALID_SHOPPING_SALES_COUNTRY"] = "The country in shopping setting is not an allowed country.";
+      codes["CampaignErrorReason.ADVERTISING_CHANNEL_TYPE_NOT_AVAILABLE_FOR_ACCOUNT_TYPE"] = "The requested channel type is not available according to the customer's account setting.";
+      codes["CampaignErrorReason.INVALID_ADVERTISING_CHANNEL_SUB_TYPE"] = "The AdvertisingChannelSubType is not a valid subtype of the primary channel type.";
+      codes["CampaignErrorReason.UNKNOWN"] = "Default error <span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["BudgetErrorReason.BUDGET_REMOVED"] = "The requested budget no longer exists.";
+      codes["BudgetErrorReason.BUDGET_ERROR"] = "Default budget error.";
+      codes["BudgetErrorReason.BUDGET_IN_USE"] = "The budget is associated with at least one campaign, and so the budget cannot be removed.";
+      codes["BudgetErrorReason.BUDGET_PERIOD_NOT_AVAILABLE"] = "Customer is not whitelisted for this budget period.";
+      codes["BudgetErrorReason.CANNOT_EDIT_SHARED_BUDGET"] = "Customer cannot use CampaignService to edit a shared budget.";
+      codes["BudgetErrorReason.CANNOT_MODIFY_FIELD_OF_IMPLICITLY_SHARED_BUDGET"] = "This field is not mutable on implicitly shared budgets";
+      codes["BudgetErrorReason.CANNOT_UPDATE_BUDGET_TO_IMPLICITLY_SHARED"] = "Cannot change explicitly shared budgets back to implicitly shared ones.";
+      codes["BudgetErrorReason.CANNOT_UPDATE_BUDGET_TO_EXPLICITLY_SHARED_WITHOUT_NAME"] = "An implicit budget without a name cannot be changed to explicitly shared budget.";
+      codes["BudgetErrorReason.CANNOT_USE_IMPLICITLY_SHARED_BUDGET_WITH_MULTIPLE_CAMPAIGNS"] = "Only explicitly shared budgets can be used with multiple campaigns.";
+      codes["BudgetErrorReason.DUPLICATE_NAME"] = "A budget with this name already exists.";
+      codes["BudgetErrorReason.MONEY_AMOUNT_IN_WRONG_CURRENCY"] = "A money amount was not in the expected currency.";
+      codes["BudgetErrorReason.MONEY_AMOUNT_LESS_THAN_CURRENCY_MINIMUM_CPC"] = "A money amount was less than the minimum CPC for currency.";
+      codes["BudgetErrorReason.MONEY_AMOUNT_TOO_LARGE"] = "A money amount was greater than the maximum allowed.";
+      codes["BudgetErrorReason.NEGATIVE_MONEY_AMOUNT"] = "A money amount was negative.";
+      codes["BudgetErrorReason.NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT"] = "A money amount was not a multiple of a minimum unit.";
+      codes["CollectionSizeErrorReason.TOO_FEW"] = "";
+      codes["CollectionSizeErrorReason.TOO_MANY"] = "";
+      codes["CampaignFeedErrorReason.FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE"] = "An active feed already exists for this campaign and place holder type.";
+      codes["CampaignFeedErrorReason.INVALID_ID"] = "The specified id does not exist.";
+      codes["CampaignFeedErrorReason.CANNOT_ADD_FOR_DELETED_FEED"] = "The specified feed is deleted.";
+      codes["CampaignFeedErrorReason.CANNOT_ADD_ALREADY_EXISTING_CAMPAIGN_FEED"] = "The CampaignFeed already exists. SET should be used to modify the existing CampaignFeed.";
+      codes["CampaignFeedErrorReason.CANNOT_OPERATE_ON_REMOVED_CAMPAIGN_FEED"] = "Cannot operate on deleted campaign feed.";
+      codes["CampaignFeedErrorReason.INVALID_PLACEHOLDER_TYPES"] = "Invalid placeholder type ids.";
+      codes["CampaignFeedErrorReason.MISSING_FEEDMAPPING_FOR_PLACEHOLDER_TYPE"] = "Feed mapping for this placeholder type does not exist.";
+      codes["CampaignFeedErrorReason.NO_EXISTING_LOCATION_CUSTOMER_FEED"] = "Location CampaignFeeds cannot be created unless there is a location CustomerFeed for the specified feed.";
+      codes["CampaignFeedErrorReason.UNKNOWN"] = "";
+      codes["ConversionTrackingErrorReason.ALREADY_CREATED_CUSTOM_CONVERSION_TYPE"] = "An attempt to make a forked conversion type from a global conversion type was made, but there already exists a conversion type forked from this global conversion type.";
+      codes["ConversionTrackingErrorReason.ANALYTICS_NOT_ALLOWED"] = "This user is not whitelisted for the import of Analytics goals and profiles, and yet requested to mutate an Analytics conversion type.";
+      codes["ConversionTrackingErrorReason.CANNOT_ADD_CONVERSION_TYPE_SUBCLASS"] = "Cannot execute an ADD operation on this subclass of ConversionType (currently, only instances of AdWordsConversionType may be added).";
+      codes["ConversionTrackingErrorReason.CANNOT_CHANGE_APP_CONVERSION_TYPE"] = "AppConversions cannot change app conversion types once it has been set.";
+      codes["ConversionTrackingErrorReason.CANNOT_CHANGE_APP_PLATFORM"] = "AppConversions cannot change app platforms once it has been set.";
+      codes["ConversionTrackingErrorReason.CANNNOT_CHANGE_CONVERSION_SUBCLASS"] = "Cannot change between subclasses of ConversionType";
+      codes["ConversionTrackingErrorReason.CANNOT_SET_HIDDEN_STATUS"] = "If a conversion type's status is initially non-hidden, it may not be changed to Hidden; nor may hidden conversion types be created through the API. Hidden conversion types are typically created by backend processes.";
+      codes["ConversionTrackingErrorReason.CONVERSION_TYPE_NOT_FOUND"] = "An attempt to access a conversion type failed because no conversion type with this ID exists for this account.";
+      codes["ConversionTrackingErrorReason.DOMAIN_EXCEPTION"] = "An exception occurred in the domain layer during an attempt to process a ConversionTypeOperation.";
+      codes["ConversionTrackingErrorReason.INCONSISTENT_COUNTING_TYPE"] = "An attempt was made to set a counting type inconsistent with other properties. Currently, AppConversion with appConversionType = DOWNLOAD and appPlatform = ANDROID_MARKET cannot have a countingType of MANY_PER_CLICK";
+      codes["ConversionTrackingErrorReason.DUPLICATE_APP_ID"] = "The user specified two identical app ids when attempting to create or rename a conversion type.";
+      codes["ConversionTrackingErrorReason.DUPLICATE_NAME"] = "The user specified two identical names when attempting to create or rename multiple conversion types.";
+      codes["ConversionTrackingErrorReason.EMAIL_FAILED"] = "An error occurred while the server was sending the email.";
+      codes["ConversionTrackingErrorReason.EXCEEDED_CONVERSION_TYPE_LIMIT"] = "The maximum number of active conversion types for this account has been exceeded.";
+      codes["ConversionTrackingErrorReason.ID_IS_NULL"] = "The user requested to modify an existing conversion type, but did not supply an ID.";
+      codes["ConversionTrackingErrorReason.INVALID_APP_ID"] = "App ids must adhere to valid Java package naming requirements.";
+      codes["ConversionTrackingErrorReason.CANNOT_SET_APP_ID"] = "App id can not be set to forked system-defined Android download conversion type.";
+      codes["ConversionTrackingErrorReason.INVALID_COLOR"] = "The user entered an invalid background color. The background color must be a valid HTML hex color code, such as \"99ccff\".";
+      codes["ConversionTrackingErrorReason.INVALID_CONVERSION"] = "The conversion given is invalid";
+      codes["ConversionTrackingErrorReason.INVALID_DATE_RANGE"] = "The date range specified in the stats selector is invalid.";
+      codes["ConversionTrackingErrorReason.INVALID_EMAIL_ADDRESS"] = "The email address of the sender or the recipient of a snippet email was invalid.";
+      codes["ConversionTrackingErrorReason.INVALID_ORIGINAL_CONVERSION_TYPE_ID"] = "When providing a global conversion type id to fork from in an ADD operation, the global conversion type id is not acceptable (i.e.: we don't allow this global conversion type to be forked from)";
+      codes["ConversionTrackingErrorReason.MUST_SET_APP_PLATFORM_AND_APP_CONVERSION_TYPE_TOGETHER"] = "The AppPlatform and AppConversionType must be set at the same time. It is an error to set just one or the other.";
+      codes["ConversionTrackingErrorReason.NAME_ALREADY_EXISTS"] = "The user attempted to create a new conversion type, or to rename an existing conversion type, whose new name matches one of the other conversion types for his account.";
+      codes["ConversionTrackingErrorReason.NO_RECIPIENTS"] = "The user asked to send a notification email, but specified no recipients.";
+      codes["ConversionTrackingErrorReason.NO_SNIPPET"] = "The requested conversion type has no snippet, and thus its snippet email cannot be sent.";
+      codes["ConversionTrackingErrorReason.TOO_MANY_WEBPAGES"] = "The requested date range contains too many webpages to be processed.";
+      codes["ConversionTrackingErrorReason.UNKNOWN_SORTING_TYPE"] = "An unknown sorting type was specified in the selector.";
+      codes["CustomerSyncErrorReason.INVALID_CAMPAIGN_ID"] = "The request attempted to access a campaign that either does not exist or belongs to a different account.";
+      codes["CustomerSyncErrorReason.INVALID_FEED_ID"] = "The request attempted to access a feed that either does not exist or belongs to a different account.";
+      codes["CustomerSyncErrorReason.INVALID_DATE_RANGE"] = "The request asked for an invalid date range";
+      codes["CustomerSyncErrorReason.TOO_MANY_CHANGES"] = "There have been too many changes to sync the campaign over the requested date/time range. To avoid this error, try specifying a smaller date/time range. If this does not work, you should assume that everything has changed and retrieve the objects using their respective services.";
+      codes["CustomerFeedErrorReason.FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE"] = "An active feed already exists for this customer and place holder type.";
+      codes["CustomerFeedErrorReason.INVALID_ID"] = "The specified id does not exist.";
+      codes["CustomerFeedErrorReason.CANNOT_ADD_FOR_DELETED_FEED"] = "The specified feed is deleted.";
+      codes["CustomerFeedErrorReason.CANNOT_ADD_ALREADY_EXISTING_CUSTOMER_FEED"] = "The CustomerFeed already exists. SET should be used to modify the existing CustomerFeed.";
+      codes["CustomerFeedErrorReason.CANNOT_MODIFY_REMOVED_CUSTOMER_FEED"] = "Cannot modify removed customer feed.";
+      codes["CustomerFeedErrorReason.INVALID_PLACEHOLDER_TYPES"] = "Invalid placeholder types.";
+      codes["CustomerFeedErrorReason.MISSING_FEEDMAPPING_FOR_PLACEHOLDER_TYPE"] = "Feed mapping for this placeholder type does not exist.";
+      codes["CustomerFeedErrorReason.PLACEHOLDER_TYPE_NOT_ALLOWED_ON_CUSTOMER_FEED"] = "Placeholder not allowed at the account level.";
+      codes["CustomerFeedErrorReason.UNKNOWN"] = "";
+      codes["DataErrorReason.CANNOT_CREATE_TABLE_ENTRY"] = "";
+      codes["DataErrorReason.NO_TABLE_ENTRY_CLASS_FOR_VIEW_TYPE"] = "";
+      codes["DataErrorReason.TABLE_SERVICE_ERROR"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["ExperimentServiceErrorReason.AFTER_MAXIMUM_ALLOWABLE_DATE"] = "Start/end date is too far in the future";
+      codes["ExperimentServiceErrorReason.AOL_PARTNER_CAMPAIGNS_CANT_RUN_EXPERIMENTS"] = "AOL partners are not permitted to run experiments";
+      codes["ExperimentServiceErrorReason.CANNOT_CREATE_EXPERIMENT_FOR_BIDDING_STRATEGY"] = "Cannot create experiment for bidding strategy";
+      codes["ExperimentServiceErrorReason.CANNOT_CREATE_EXPERIMENT_FOR_BIDDING_STRATEGY_FEATURE"] = "Cannot create experiment for a bidding strategy feature used in the campaign.";
+      codes["ExperimentServiceErrorReason.CANNOT_SET_DATE_TO_PAST"] = "Specified start/end date for experiment is in the past";
+      codes["ExperimentServiceErrorReason.CANNOT_SET_END_DATE_WITHOUT_SETTING_START_DATE"] = "Cannot set an end date for an experiment if a start date is not set.";
+      codes["ExperimentServiceErrorReason.CANNOT_USE_EXPERIMENT_WITH_SHARED_BUDGET"] = "Cannot use experiment with a campaign that is using a shared budget.";
+      codes["ExperimentServiceErrorReason.DATE_OUTSIDE_CAMPAIGN_DATE_RANGE"] = "Start date before campaign start or end date after campaign end";
+      codes["ExperimentServiceErrorReason.EXPERIMENT_ALREADY_STARTED"] = "Can't change start date of experiment once started";
+      codes["ExperimentServiceErrorReason.EXPERIMENT_ENDED"] = "Can't edit ended experiments";
+      codes["ExperimentServiceErrorReason.EXPERIMENT_LIMIT_EXCEEDED"] = "Adding experiment would exceed maximum allowed experiments in campaign.";
+      codes["ExperimentServiceErrorReason.INVALID_EXPERIMENT_NAME"] = "Experiment name cannot be used.";
+      codes["ExperimentServiceErrorReason.INVALID_QUERY_PERCENTAGE"] = "The query percentage is not valid";
+      codes["ExperimentServiceErrorReason.CANNOT_CHANGE_QUERY_PERCENTAGE_AFTER_EXPERIMENT_HAS_STARTED"] = "Cannot change query percentage after experiment has started";
+      codes["ExperimentServiceErrorReason.INVALID_STATUS_UPDATE"] = "Invalid initial experiment status or transition.";
+      codes["ExperimentServiceErrorReason.START_DATE_AFTER_END_DATE"] = "The experiment start date was after the experiment end date.";
+      codes["ExperimentServiceErrorReason.NO_VALID_BUDGET"] = "No budget in this campaign";
+      codes["ExperimentServiceErrorReason.EXPERIMENT_NOT_ACTIVE"] = "An inactive experiment cannot be changed";
+      codes["ExperimentServiceErrorReason.EXPERIMENT_SERVICE_ERROR"] = "";
+      codes["FeedErrorReason.ATTRIBUTE_NAMES_NOT_UNIQUE"] = "The names of the FeedAttributes must be unique.";
+      codes["FeedErrorReason.ATTRIBUTES_DO_NOT_MATCH_EXISTING_ATTRIBUTES"] = "The attribute list must be an exact copy of the existing list if the attribute id's are present.";
+      codes["FeedErrorReason.CANNOT_CHANGE_ORIGIN"] = "Origin can only be set during Feed creation.";
+      codes["FeedErrorReason.CANNOT_SPECIFY_USER_ORIGIN_FOR_SYSTEM_FEED"] = "Cannot specify USER origin for a system generated feed.";
+      codes["FeedErrorReason.CANNOT_SPECIFY_ADWORDS_ORIGIN_FOR_NON_SYSTEM_FEED"] = "Cannot specify ADWORDS origin for a non-system generated feed.";
+      codes["FeedErrorReason.CANNOT_SPECIFY_FEED_ATTRIBUTES_FOR_SYSTEM_FEED"] = "Cannot specify feed attributes for system feed.";
+      codes["FeedErrorReason.CANNOT_UPDATE_FEED_ATTRIBUTES_WITH_ORIGIN_ADWORDS"] = "Cannot update FeedAttributes on feed with origin adwords.";
+      codes["FeedErrorReason.FEED_REMOVED"] = "The given id refers to a removed Feed. Removed Feeds are immutable.";
+      codes["FeedErrorReason.INVALID_ORIGIN_VALUE"] = "The origin of the feed is not valid for the client.";
+      codes["FeedErrorReason.FEED_ORIGIN_IS_NOT_USER"] = "A user can only create and modify feeds with user origin.";
+      codes["FeedErrorReason.DUPLICATE_FEED_NAME"] = "Feed name matches that of another active Feed.";
+      codes["FeedErrorReason.INVALID_FEED_NAME"] = "Name of feed is not allowed.";
+      codes["FeedErrorReason.MISSING_OAUTH_INFO"] = "Missing OAuthInfo";
+      codes["FeedErrorReason.NEW_ATTRIBUTE_CANNOT_BE_PART_OF_UNIQUE_KEY"] = "New FeedAttributes must not effect the unique key.";
+      codes["FeedErrorReason.TOO_MANY_FEED_ATTRIBUTES_FOR_FEED"] = "Too many FeedAttributes for a Feed.";
+      codes["FeedErrorReason.INVALID_BUSINESS_ACCOUNT"] = "The business account is not valid.";
+      codes["FeedErrorReason.BUSINESS_ACCOUNT_CANNOT_ACCESS_LOCATION_ACCOUNT"] = "Business account cannot access Google My Business account.";
+      codes["FeedErrorReason.UNKNOWN"] = "";
+      codes["AdGroupFeedErrorReason.FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE"] = "An active feed already exists for this adgroup and place holder type.";
+      codes["AdGroupFeedErrorReason.INVALID_ID"] = "The specified id does not exist.";
+      codes["AdGroupFeedErrorReason.CANNOT_ADD_FOR_DELETED_FEED"] = "The specified feed is deleted.";
+      codes["AdGroupFeedErrorReason.CANNOT_ADD_ALREADY_EXISTING_ADGROUP_FEED"] = "The AdGroupFeed already exists. SET should be used to modify the existing AdGroupFeed.";
+      codes["AdGroupFeedErrorReason.CANNOT_OPERATE_ON_REMOVED_ADGROUP_FEED"] = "Cannot operate on removed adgroup feed.";
+      codes["AdGroupFeedErrorReason.INVALID_PLACEHOLDER_TYPES"] = "Invalid placeholder type ids.";
+      codes["AdGroupFeedErrorReason.MISSING_FEEDMAPPING_FOR_PLACEHOLDER_TYPE"] = "Feed mapping for this placeholder type does not exist.";
+      codes["AdGroupFeedErrorReason.NO_EXISTING_LOCATION_CUSTOMER_FEED"] = "Location AdGroupFeeds cannot be created unless there is a location CustomerFeed for the specified feed.";
+      codes["AdGroupFeedErrorReason.UNKNOWN"] = "";
+      codes["FeedItemErrorReason.CAMPAIGN_TARGETING_MISMATCH"] = "Targeted adgroup's campaign does not match the targeted campaign.";
+      codes["FeedItemErrorReason.CANNOT_CONVERT_ATTRIBUTE_VALUE_FROM_STRING"] = "Cannot convert the feed attribute value from string to its real type.";
+      codes["FeedItemErrorReason.CANNOT_OPERATE_ON_REMOVED_FEED_ITEM"] = "Cannot operate on removed feed item.";
+      codes["FeedItemErrorReason.DATE_TIME_MUST_BE_IN_ACCOUNT_TIME_ZONE"] = "Date time zone does not match the account's time zone.";
+      codes["FeedItemErrorReason.KEY_ATTRIBUTES_NOT_FOUND"] = "Feed item with the key attributes could not be found.";
+      codes["FeedItemErrorReason.INVALID_DEVICE_PREFERENCE"] = "Unknown or unsupported device preference.";
+      codes["FeedItemErrorReason.INVALID_SCHEDULE_END"] = "Invalid feed item schedule end time (i.e., endHour = 24 and endMinute != 0).";
+      codes["FeedItemErrorReason.INVALID_URL"] = "Url feed attribute value is not valid.";
+      codes["FeedItemErrorReason.MISSING_KEY_ATTRIBUTES"] = "Some key attributes are missing.";
+      codes["FeedItemErrorReason.KEY_ATTRIBUTES_NOT_UNIQUE"] = "Feed item has same key attributes as another feed item.";
+      codes["FeedItemErrorReason.CANNOT_MODIFY_KEY_ATTRIBUTE_VALUE"] = "Cannot modify key attributes on an existing feed item.";
+      codes["FeedItemErrorReason.OVERLAPPING_SCHEDULES"] = "Overlapping feed item schedule times (e.g., 7-10AM and 8-11AM) are not allowed.";
+      codes["FeedItemErrorReason.SCHEDULE_END_NOT_AFTER_START"] = "Feed item schedule end time must be after start time.";
+      codes["FeedItemErrorReason.TOO_MANY_SCHEDULES_PER_DAY"] = "There are too many feed item schedules per day.";
+      codes["FeedItemErrorReason.UNKNOWN"] = "Unknown error.";
+      codes["FeedMappingErrorReason.INVALID_PLACEHOLDER_FIELD"] = "The given placeholder field does not exist.";
+      codes["FeedMappingErrorReason.INVALID_CRITERION_FIELD"] = "The given criterion field does not exist.";
+      codes["FeedMappingErrorReason.INVALID_PLACEHOLDER_TYPE"] = "The given placeholder type does not exist.";
+      codes["FeedMappingErrorReason.INVALID_CRITERION_TYPE"] = "The given criterion type does not exist.";
+      codes["FeedMappingErrorReason.CANNOT_SET_PLACEHOLDER_TYPE_AND_CRITERION_TYPE"] = "Cannot specify both placeholder type and criterion type.";
+      codes["FeedMappingErrorReason.NO_ATTRIBUTE_FIELD_MAPPINGS"] = "A feed mapping must contain at least one attribute field mapping.";
+      codes["FeedMappingErrorReason.FEED_ATTRIBUTE_TYPE_MISMATCH"] = "The type of the feed attribute referenced in the attribute field mapping must match the type of the placeholder field.";
+      codes["FeedMappingErrorReason.CANNOT_OPERATE_ON_MAPPINGS_FOR_SYSTEM_GENERATED_FEED"] = "A feed mapping for a system generated feed cannot be operated on.";
+      codes["FeedMappingErrorReason.MULTIPLE_MAPPINGS_FOR_PLACEHOLDER_TYPE"] = "Only one feed mapping for a placeholder type is allowed per feed or customer (depending on the placeholder type).";
+      codes["FeedMappingErrorReason.MULTIPLE_MAPPINGS_FOR_CRITERION_TYPE"] = "Only one feed mapping for a criterion type is allowed per customer.";
+      codes["FeedMappingErrorReason.UNEXPECTED_ATTRIBUTE_FIELD_MAPPINGS"] = "This feed mapping may not contain any explicit attribute field mappings.";
+      codes["FeedMappingErrorReason.LOCATION_PLACEHOLDER_ONLY_FOR_PLACES_FEEDS"] = "Location placeholder feedmappings can only be created for Places feeds.";
+      codes["FeedMappingErrorReason.CANNOT_MODIFY_MAPPINGS_FOR_TYPED_FEED"] = "Mappings for typed feeds cannot be modified.";
+      codes["FeedMappingErrorReason.UNKNOWN"] = "";
+      codes["GeoLocationErrorReason.UNKNOWN"] = "";
+      codes["LocationCriterionServiceErrorReason.REQUIRED_LOCATION_CRITERION_PREDICATE_MISSING"] = "";
+      codes["LocationCriterionServiceErrorReason.TOO_MANY_LOCATION_CRITERION_PREDICATES_SPECIFIED"] = "";
+      codes["LocationCriterionServiceErrorReason.INVALID_COUNTRY_CODE"] = "";
+      codes["LocationCriterionServiceErrorReason.LOCATION_CRITERION_SERVICE_ERROR"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["ManagedCustomerServiceErrorReason.UNKNOWN"] = "Unknown.";
+      codes["ManagedCustomerServiceErrorReason.NOT_AUTHORIZED"] = "The user is not authorized to perform the action";
+      codes["ManagedCustomerServiceErrorReason.INVALID_SELECTOR"] = "Invalid selector";
+      codes["ManagedCustomerServiceErrorReason.INVALID_TIMEZONE"] = "Can't process the passed in timezone.";
+      codes["ManagedCustomerServiceErrorReason.INVALID_CURRENCY"] = "Can't process the passed in currency code.";
+      codes["ManagedCustomerServiceErrorReason.INVALID_DESCRIPTIVE_NAME"] = "Can't process the passed in descriptive name.";
+      codes["ManagedCustomerServiceErrorReason.ADD_CUSTOMER_FAILURE"] = "Generic error during add customer process.";
+      codes["ManagedCustomerServiceErrorReason.SAVE_CUSTOMERS_FAILURE"] = "There was a problem saving the modified customers, and some of the customers may not have been saved successfully.";
+      codes["ManagedCustomerServiceErrorReason.ALREADY_MANAGED_BY_THIS_MANAGER"] = "Attempt to establish a link with a client that is already managed by the manager.";
+      codes["ManagedCustomerServiceErrorReason.ALREADY_INVITED_BY_THIS_MANAGER"] = "Attempt to invite a client that has already been invited by the manager.";
+      codes["ManagedCustomerServiceErrorReason.NO_PENDING_INVITATION"] = "Attempt to accept an invitation that doesn't exist.";
+      codes["ManagedCustomerServiceErrorReason.TOO_MANY_ACCOUNTS"] = "Manager account has the maximum number of linked accounts.";
+      codes["ManagedCustomerServiceErrorReason.TOO_MANY_ACCOUNTS_AT_MANAGER"] = "Your manager's account has the maximum number of linked accounts.";
+      codes["ManagedCustomerServiceErrorReason.TEST_ACCOUNT_LINK_ERROR"] = "Error involving test accounts (mixed types) or too many child accounts.";
+      codes["ManagedCustomerServiceErrorReason.INVALID_LABEL_ID"] = "Label id was not found, or is not owned by the requesting customer.";
+      codes["ManagedCustomerServiceErrorReason.CANNOT_APPLY_INACTIVE_LABEL"] = "Deleted labels cannot be applied to customers.";
+      codes["ManagedCustomerServiceErrorReason.APPLIED_LABEL_TO_TOO_MANY_ACCOUNTS"] = "A label cannot be applied to more than 1000 customers.";
+      codes["VideoErrorReason.INVALID_VIDEO"] = "Invalid video.";
+      codes["VideoErrorReason.STORAGE_ERROR"] = "Storage error.";
+      codes["VideoErrorReason.BAD_REQUEST"] = "Bad request.";
+      codes["VideoErrorReason.ERROR_GENERATING_STREAMING_URL"] = "Server error.";
+      codes["VideoErrorReason.UNEXPECTED_SIZE"] = "Unexpected size.";
+      codes["VideoErrorReason.SERVER_ERROR"] = "Server error.";
+      codes["VideoErrorReason.FILE_TOO_LARGE"] = "File too large.";
+      codes["VideoErrorReason.VIDEO_PROCESSING_ERROR"] = "Video processing error.";
+      codes["VideoErrorReason.INVALID_INPUT"] = "Invalid input.";
+      codes["VideoErrorReason.PROBLEM_READING_FILE"] = "Problem reading file.";
+      codes["VideoErrorReason.INVALID_ISCI"] = "Invalid ISCI.";
+      codes["VideoErrorReason.INVALID_AD_ID"] = "Invalid AD-ID.";
+      codes["AudioErrorReason.INVALID_AUDIO"] = "";
+      codes["AudioErrorReason.PROBLEM_READING_AUDIO_FILE"] = "";
+      codes["AudioErrorReason.ERROR_STORING_AUDIO"] = "";
+      codes["AudioErrorReason.FILE_TOO_LARGE"] = "";
+      codes["AudioErrorReason.UNSUPPORTED_AUDIO"] = "";
+      codes["AudioErrorReason.ERROR_GENERATING_STREAMING_URL"] = "";
+      codes["AdExtensionErrorReason.ACCOUNT_DELETED"] = "Account has been deleted";
+      codes["AdExtensionErrorReason.AD_EXTENSION_NO_LONGER_ACTIVE"] = "Cannot reuse an ad extension that is no longer active";
+      codes["AdExtensionErrorReason.CANNOT_HAVE_MULTIPLE_LOCATION_SYNC_EXTENSIONS_PER_CAMPAIGN"] = "Cannot have multiple location sync extensions per campaign";
+      codes["AdExtensionErrorReason.CANNOT_HAVE_MULTIPLE_MOBILE_EXTENSIONS_PER_CAMPAIGN"] = "Cannot have multiple mobile extensions per campaign";
+      codes["AdExtensionErrorReason.CANNOT_HAVE_MULTIPLE_PRODUCT_EXTENSIONS_PER_CAMPAIGN"] = "Cannot have multiple product extensions per campaign";
+      codes["AdExtensionErrorReason.CANNOT_HAVE_MULTIPLE_SITELINKS_EXTENSIONS_PER_CAMPAIGN"] = "Cannot have multiple sitelinks extensions per campaign";
+      codes["AdExtensionErrorReason.CANNOT_HAVE_MULTIPLE_IN_APP_LINK_EXTENSIONS_PER_CAMPAIGN_PER_APPSTORE"] = "Cannot have multiple in-app link extensions with same app store in a campaign.";
+      codes["AdExtensionErrorReason.INVALID_ADEXTENSION_TYPE"] = "Invalid adextension type for an input adextension";
+      codes["AdExtensionErrorReason.INVALID_AUTH_TOKEN_FOR_EMAIL"] = "Invalid auth token for the given email";
+      codes["AdExtensionErrorReason.INVALID_COUNTRY_CODE"] = "Invalid country code specified";
+      codes["AdExtensionErrorReason.INVALID_DOMESTIC_PHONE_NUMBER_FORMAT"] = "Invalid phone number format specified";
+      codes["AdExtensionErrorReason.INVALID_DESTINATION_URL"] = "Invalid destination url specified";
+      codes["AdExtensionErrorReason.INVALID_EMAIL"] = "Invalid email specified";
+      codes["AdExtensionErrorReason.INVALID_ENCODED_LOCATION"] = "The encoded location does not match what should have been returned in GeoLocation.";
+      codes["AdExtensionErrorReason.INVALID_ENUM_CONDITION_OPERATOR"] = "The enum operator in condition is not valid.";
+      codes["AdExtensionErrorReason.INVALID_ICON_DIMENSIONS"] = "The icon has dimensions other than 16x16";
+      codes["AdExtensionErrorReason.INVALID_ID"] = "Invalid id specified";
+      codes["AdExtensionErrorReason.INVALID_IMAGE_DIMENSIONS"] = "The image has width or height exceeding 125";
+      codes["AdExtensionErrorReason.INVALID_INPUT"] = "The input field is invalid";
+      codes["AdExtensionErrorReason.INVALID_LATITUDE"] = "Invalid latitude specified";
+      codes["AdExtensionErrorReason.INVALID_LONGITUDE"] = "Invalid longitude specified";
+      codes["AdExtensionErrorReason.INVALID_PHONE_NUMBER"] = "Invalid phone number specified";
+      codes["AdExtensionErrorReason.INVALID_STRING_CONDITION_OPERATOR"] = "The string operator in condition is not valid.";
+      codes["AdExtensionErrorReason.INVALID_TOLL_PHONE_NUMBER_FORMAT"] = "Invalid toll phone number format specified";
+      codes["AdExtensionErrorReason.MEDIA_DOES_NOT_BELONG_TO_ACCOUNT"] = "Media referenced does not belong to the customer's account";
+      codes["AdExtensionErrorReason.MEDIA_NOT_ICON_TYPE"] = "Media referenced is not an icon";
+      codes["AdExtensionErrorReason.MEDIA_NOT_IMAGE_TYPE"] = "Media referenced is not an image";
+      codes["AdExtensionErrorReason.MISSING_ADVERTISER_NAME"] = "Missing advertiser name";
+      codes["AdExtensionErrorReason.MISSING_AUTH_TOKEN"] = "Missing auth token";
+      codes["AdExtensionErrorReason.MISSING_COUNTRY_CODE"] = "Missing country code";
+      codes["AdExtensionErrorReason.MISSING_CITY_NAME"] = "Missing city name";
+      codes["AdExtensionErrorReason.MISSING_EMAIL"] = "Missing email";
+      codes["AdExtensionErrorReason.MISSING_ENCODED_LOCATION"] = "Missing encoded location";
+      codes["AdExtensionErrorReason.MISSING_CONDITION_OPERAND"] = "Missing operand for condition";
+      codes["AdExtensionErrorReason.MISSING_CONDITION_STRING_VALUE"] = "Missing comparison string value for condition";
+      codes["AdExtensionErrorReason.MISSING_POSTAL_CODE"] = "Missing postal code";
+      codes["AdExtensionErrorReason.MISSING_STREET_ADDRESS"] = "Missing street address";
+      codes["AdExtensionErrorReason.NUM_AND_GROUPS_OVER_LIMIT"] = "Extension or OR clause contains more than 10 AND clauses";
+      codes["AdExtensionErrorReason.NUM_CONDITIONS_OVER_LIMIT"] = "The number of conditions in an extension or AND group (5 max in AND) exceeds limit";
+      codes["AdExtensionErrorReason.NUM_LOCATION_EXTENSIONS_OVER_LIMIT"] = "The number of location extensions exceeds campaign limits";
+      codes["AdExtensionErrorReason.NOT_AUTHORIZED_TO_CREATE_EXTENSION"] = "The client is not authorized to make the specified extension";
+      codes["AdExtensionErrorReason.PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY"] = "Setting phone number is not supported for the specified country currently";
+      codes["AdExtensionErrorReason.DISALLOWED_NUMBER_TYPE"] = "Phone number type is not allowed";
+      codes["AdExtensionErrorReason.PREMIUM_RATE_NUMBER_NOT_ALLOWED"] = "Premium rate numbers e.g. 1-900 numbers not allowed";
+      codes["AdExtensionErrorReason.TOO_LONG"] = "Text is too long";
+      codes["AdExtensionErrorReason.USER_NOT_PERMITTED_TO_CREATE_LBC_SYNC_LOCATION_EXTENSION"] = "The user is not permitted to create location sync extensions";
+      codes["AdGroupCriterionErrorReason.AD_GROUP_CRITERION_LABEL_DOES_NOT_EXIST"] = "No link found between the AdGroupCriterion and the label.";
+      codes["AdGroupCriterionErrorReason.AD_GROUP_CRITERION_LABEL_ALREADY_EXISTS"] = "The label has already been attached to the AdGroupCriterion.";
+      codes["AdGroupCriterionErrorReason.CANNOT_ADD_LABEL_TO_NEGATIVE_CRITERION"] = "Negative AdGroupCriterion cannot have labels.";
+      codes["AdGroupCriterionErrorReason.TOO_MANY_OPERTAIONS"] = "Too many operations for a single call.";
+      codes["AdGroupCriterionErrorReason.CANT_UPDATE_NEGATIVE"] = "Negative ad group criteria are not updateable.";
+      codes["AdGroupCriterionErrorReason.CONCRETE_TYPE_REQUIRED"] = "Concrete type of criterion (keyword v.s. placement) is required for ADD and SET operations.";
+      codes["AdGroupCriterionErrorReason.BID_INCOMPATIBLE_WITH_ADGROUP"] = "Bid is incompatible with ad group's bidding settings.";
+      codes["AdGroupCriterionErrorReason.CANNOT_TARGET_AND_EXCLUDE"] = "Cannot target and exclude the same criterion at once.";
+      codes["AdGroupCriterionErrorReason.ILLEGAL_URL"] = "The URL of a placement is invalid.";
+      codes["AdGroupCriterionErrorReason.INVALID_KEYWORD_TEXT"] = "Keyword text was invalid.";
+      codes["AdGroupCriterionErrorReason.INVALID_DESTINATION_URL"] = "Destination URL was invalid.";
+      codes["AdGroupCriterionErrorReason.MISSING_DESTINATION_URL_TAG"] = "The destination url must contain at least one tag (e.g. {lpurl})";
+      codes["AdGroupCriterionErrorReason.KEYWORD_LEVEL_BID_NOT_SUPPORTED_FOR_MANUALCPM"] = "Keyword-level cpm bid is not supported";
+      codes["AdGroupCriterionErrorReason.INVALID_USER_STATUS"] = "For example, cannot add a biddable ad group criterion that had been removed.";
+      codes["AdGroupCriterionErrorReason.CANNOT_ADD_CRITERIA_TYPE"] = "Criteria type cannot be targeted for the ad group. Either the account is restricted to keywords only, the criteria type is incompatible with the campaign's bidding strategy, or the criteria type can only be applied to campaigns.";
+      codes["AdGroupCriterionErrorReason.CANNOT_EXCLUDE_CRITERIA_TYPE"] = "Criteria type cannot be excluded for the ad group. Refer to the documentation for a specific criterion to check if it is excludable.";
+      codes["AdGroupCriterionErrorReason.INVALID_PRODUCT_PARTITION_HIERARCHY"] = "Ad group is invalid due to the product partitions it contains.";
+      codes["AdGroupCriterionErrorReason.PRODUCT_PARTITION_UNIT_CANNOT_HAVE_CHILDREN"] = "Product partition unit cannot have children.";
+      codes["AdGroupCriterionErrorReason.PRODUCT_PARTITION_SUBDIVISION_REQUIRES_OTHERS_CASE"] = "Subdivided product partitions must have an \"others\" case.";
+      codes["AdGroupCriterionErrorReason.PRODUCT_PARTITION_REQUIRES_SAME_DIMENSION_TYPE_AS_SIBLINGS"] = "Dimension type of product partition must be the same as that of its siblings.";
+      codes["AdGroupCriterionErrorReason.PRODUCT_PARTITION_ALREADY_EXISTS"] = "Product partition cannot be added to the ad group because it already exists.";
+      codes["AdGroupCriterionErrorReason.PRODUCT_PARTITION_DOES_NOT_EXIST"] = "Product partition referenced in the operation was not found in the ad group.";
+      codes["AdGroupCriterionErrorReason.PRODUCT_PARTITION_CANNOT_BE_REMOVED"] = "Recursive removal failed because product partition subdivision is being created or modified in this request.";
+      codes["AdGroupCriterionErrorReason.INVALID_PRODUCT_PARTITION_TYPE"] = "Product partition type is not allowed for specified AdGroupCriterion type.";
+      codes["AdGroupCriterionErrorReason.PRODUCT_PARTITION_ADD_MAY_ONLY_USE_TEMP_ID"] = "Product partition in an ADD operation specifies a non temporary CriterionId.";
+      codes["AdGroupCriterionErrorReason.CAMPAIGN_TYPE_NOT_COMPATIBLE_WITH_PARTIAL_FAILURE"] = "Partial failure is not supported for shopping campaign mutate operations.";
+      codes["AdGroupCriterionErrorReason.OPERATIONS_FOR_TOO_MANY_SHOPPING_ADGROUPS"] = "Operations in the mutate request changes too many shopping ad groups. Please split requests for multiple shopping ad groups across multiple requests.";
+      codes["AdGroupCriterionErrorReason.CANNOT_MODIFY_URL_FIELDS_WITH_DUPLICATE_ELEMENTS"] = "Not allowed to modify url fields of an ad group criterion if there are duplicate elements for that ad group criterion in the request.";
+      codes["AdGroupCriterionErrorReason.CANNOT_SET_WITHOUT_FINAL_URLS"] = "Cannot set url fields without also setting final urls.";
+      codes["AdGroupCriterionErrorReason.CANNOT_CLEAR_FINAL_URLS_IF_FINAL_MOBILE_URLS_EXIST"] = "Cannot clear final urls if final mobile urls exist.";
+      codes["AdGroupCriterionErrorReason.CANNOT_CLEAR_FINAL_URLS_IF_FINAL_APP_URLS_EXIST"] = "Cannot clear final urls if final app urls exist.";
+      codes["AdGroupCriterionErrorReason.CANNOT_CLEAR_FINAL_URLS_IF_TRACKING_URL_TEMPLATE_EXISTS"] = "Cannot clear final urls if tracking url template exists.";
+      codes["AdGroupCriterionErrorReason.CANNOT_CLEAR_FINAL_URLS_IF_URL_CUSTOM_PARAMETERS_EXIST"] = "Cannot clear final urls if url custom parameters exist.";
+      codes["AdGroupCriterionErrorReason.CANNOT_SET_BOTH_DESTINATION_URL_AND_FINAL_URLS"] = "Cannot set both destination url and final urls.";
+      codes["AdGroupCriterionErrorReason.CANNOT_SET_BOTH_DESTINATION_URL_AND_TRACKING_URL_TEMPLATE"] = "Cannot set both destination url and tracking url template.";
+      codes["AdGroupCriterionErrorReason.FINAL_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE"] = "Final urls are not supported for this criterion type.";
+      codes["AdGroupCriterionErrorReason.FINAL_MOBILE_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE"] = "Final mobile urls are not supported for this criterion type.";
+      codes["AdGroupCriterionErrorReason.UNKNOWN"] = "";
+      codes["AdGroupServiceErrorReason.DUPLICATE_ADGROUP_NAME"] = "AdGroup with the same name already exists for the campaign.";
+      codes["AdGroupServiceErrorReason.INVALID_ADGROUP_NAME"] = "AdGroup name is not valid.";
+      codes["AdGroupServiceErrorReason.USE_SET_OPERATOR_AND_MARK_STATUS_TO_REMOVED"] = "Cannot remove an adgroup, adgroup status can be marked removed using set operator.";
+      codes["AdGroupServiceErrorReason.ADVERTISER_NOT_ON_CONTENT_NETWORK"] = "Advertiser is not allowed to target sites or set site bids that are not on the Google Search Network.";
+      codes["AdGroupServiceErrorReason.BID_TOO_BIG"] = "Bid amount is too big.";
+      codes["AdGroupServiceErrorReason.BID_TYPE_AND_BIDDING_STRATEGY_MISMATCH"] = "AdGroup bid does not match the campaign's bidding strategy.";
+      codes["AdGroupServiceErrorReason.MISSING_ADGROUP_NAME"] = "AdGroup name is required for Add.";
+      codes["AdGroupServiceErrorReason.ADGROUP_LABEL_DOES_NOT_EXIST"] = "No link found between the ad group and the label.";
+      codes["AdGroupServiceErrorReason.ADGROUP_LABEL_ALREADY_EXISTS"] = "The label has already been attached to the ad group.";
+      codes["AdGroupServiceErrorReason.INVALID_CONTENT_BID_CRITERION_TYPE_GROUP"] = "The CriterionTypeGroup is not supported for the content bid dimension.";
+      codes["BetaErrorReason.BETA_FEATURE"] = "Attempt to use beta feature by non-beta account.";
+      codes["BiddingErrorReason.BID_AMOUNT_REQUIRED"] = "Bid amount can not be null.";
+      codes["BiddingErrorReason.BID_TOO_SMALL"] = "Bid amount is too small.";
+      codes["BiddingErrorReason.BID_TOO_BIG"] = "Bid amount is too big.";
+      codes["BiddingErrorReason.BID_TOO_MANY_FRACTIONAL_DIGITS"] = "Bid has too many fractional digit precision.";
+      codes["BiddingErrorReason.NON_POSITIVE_BID"] = "Bids must have a positive amount.";
+      codes["BiddingErrorReason.BID_TOO_HIGH_FOR_DAILY_BUDGET"] = "Bid is too high for the daily budget.";
+      codes["BiddingErrorReason.BID_TOO_HIGH_FOR_MONTHLY_BUDGET"] = "Bid is too high for the monthly budget.";
+      codes["BiddingErrorReason.MUST_EXCLUDE_0_TO_17_WITH_OTHER_AGE_EXCLUSIONS"] = "Demographic targeting: Age 0-17 needs to be excluded for any other age to get excluded";
+      codes["BiddingErrorReason.CAMPAIGN_MUST_HAVE_A_BUDGET_TO_ENABLE_BUDGET_OPTIMIZER"] = "Not allowed to enable budget optimizer, for a campaign with no budget.";
+      codes["BiddingErrorReason.CANNOT_SET_CONTENT_BID_WITHOUT_SETTING_KEYWORD_MAX_CPC_AS_WELL"] = "Not allowed to set content bid without setting the keyword bid.";
+      codes["BiddingErrorReason.CANNOT_CREATE_CAMPAIGN_WITH_CONVERSION_OPTIMIZER"] = "Campaign can not be created with Conversion Optimizer bidding strategy. It can be transitioned to conversion optimizer, once eligible.";
+      codes["BiddingErrorReason.PAY_PER_CONVERSION_NOT_AVAILABLE_FOR_CUSTOMER"] = "Pay per conversion is not available to all the customer, only few whitelisted customers can use this.";
+      codes["BiddingErrorReason.PAY_PER_CONVERSION_NOT_ALLOWED_WITH_TARGET_CPA"] = "Pay per conversion is not allowed with Target CPA";
+      codes["BiddingErrorReason.PAY_PER_CONVERSION_NOT_ALLOWED_WITH_MANY_PER_CLICK"] = "Pay per conversion is not allowed with many per click";
+      codes["BiddingErrorReason.TARGET_CPA_NOT_AVAILABLE_FOR_CUSTOMER"] = "Customer is not whitelisted to use target cpa";
+      codes["BiddingErrorReason.MANY_PER_CLICK_NOT_AVAILABLE_FOR_CUSTOMER"] = "Customer is not whitelisted to use many per click";
+      codes["BiddingErrorReason.CANNOT_SET_SITE_MAX_CPC"] = "Site cpc bid can not be set";
+      codes["BiddingErrorReason.BID_ERROR"] = "Default bidding related error";
+      codes["BiddingTransitionErrorReason.BID_TO_POSITION_ENABLED"] = "Transition is not allowed since Bid to position is enabled.";
+      codes["BiddingTransitionErrorReason.BIDDING_STRATEGY_NOT_AVAILABLE_FOR_ACCOUNT_TYPE"] = "Bidding strategy is not available for the account type.";
+      codes["BiddingTransitionErrorReason.BUDGET_OPTIMIZER_IS_ENABLED"] = "Transition is not allowed for a budget optimizer campaign.";
+      codes["BiddingTransitionErrorReason.CONVERSION_OPTIMIZER_IS_ENABLED"] = "Transition is not allowed for a conversion optimizer campaign.";
+      codes["BiddingTransitionErrorReason.CONVERSION_TRACKING_NOT_ENABLED"] = "Conversion tracking is not enabled for the campaign that has VBB transition.";
+      codes["BiddingTransitionErrorReason.CONVERSION_TRACKING_NOT_AVAILABLE_FOR_ACCOUNT_TYPE"] = "Conversion tracking is not available for the account type.";
+      codes["BiddingTransitionErrorReason.USE_POSITION_PREFERENCE_IN_MANUALCPC_INSTEAD_TO_DISABLE_POSITION_PREFERENCE"] = "Disable position preference by turning it off for the campaign.";
+      codes["BiddingTransitionErrorReason.INVALID_BID"] = "Explicit bid is invalid for the transition.";
+      codes["BiddingTransitionErrorReason.CANNOT_SET_EXPLICIT_BID"] = "Cannot set an explicit bid for adgroups with transition, e.g., ManualCPC from BudgetOptimizer only takes proxy bids.";
+      codes["BiddingTransitionErrorReason.EXPLICIT_BID_REQUIRED_FOR_TRANSITION"] = "Explicit bid is required for bidding transition, e.g., ManualCPC &lt;-&gt; ManualCPM.";
+      codes["BiddingTransitionErrorReason.EXPLICIT_BID_TYPE_DOES_NOT_MATCH_CAMPAIGN_BIDDING_STRATEGY"] = "Explicit bid specified for the bidding transition should match the bidding strategy of the transitioning campaign.";
+      codes["BiddingTransitionErrorReason.MISSING_REQUIRED_BID"] = "The required bid for transition is missing.";
+      codes["BiddingTransitionErrorReason.INVALID_STATUS"] = "Campaign has an invalid status.";
+      codes["BiddingTransitionErrorReason.IS_CPM_CAMPAIGN"] = "Transition is not allowed for CPM campaigns.";
+      codes["BiddingTransitionErrorReason.IS_PERCENT_CPA_CAMPAIGN"] = "Transition is not allowed for percent CPA campaigns.";
+      codes["BiddingTransitionErrorReason.NOT_THE_PREVIOUS_BIDDING_STRATEGY"] = "For budget optimizer, the only transition allowed is a switch to the previous strategy.";
+      codes["BiddingTransitionErrorReason.NOT_ENOUGH_CONVERSION_DATA"] = "Not enough required data for conversion, or not enough data in the last 3 days suggesting that the campaign is not stable enough to enter into the conversion optimizer.";
+      codes["BiddingTransitionErrorReason.NOT_ENOUGH_CONVERSIONS"] = "Not enough conversions tracked for VBB transition.";
+      codes["BiddingTransitionErrorReason.OPTED_IN_SEARCH"] = "Campaign is on the search network--so can't switch to CPM.";
+      codes["BiddingTransitionErrorReason.PROXY_BIDDING_ON"] = "Proxy bidding is on.";
+      codes["BiddingTransitionErrorReason.SITE_REMNANT_RESERVATION_ALLOWED"] = "Can not switch to manual CPC if campaign allows site remnant reservation bid type.";
+      codes["BiddingTransitionErrorReason.TRANSITION_TO_ITSELF"] = "Transition to self is not allowed.";
+      codes["BiddingTransitionErrorReason.UNKNOWN_BIDDING_STRATEGY"] = "Unknown bidding strategy.";
+      codes["BiddingTransitionErrorReason.UNSUPPORTED_TRANSITION"] = "Transition is not supported.";
+      codes["BiddingTransitionErrorReason.VCG_ENABLED"] = "Transition not allowed since VCG is enabled.";
+      codes["BiddingTransitionErrorReason.BIDDING_TRANSITION_FAILED"] = "Bidding transition failed. This is the default bidding transition error when no other errors match.";
+      codes["BiddingTransitionErrorReason.ACCELERATED_DELIVERY_NOT_SUPPORTED_FOR_BUDGET_OPTIMIZER"] = "Accelerated delivery method is not supported for budget optimizer.";
+      codes["BiddingTransitionErrorReason.HAS_ACTIVE_EXPERIMENT"] = "Bidding transition is prohibited for campaigns that have an active experiment.";
+      codes["BiddingTransitionErrorReason.INCOMPATIBLE_WITH_CAMPAIGN_SETTING"] = "Target bidding strategy is incompatible with a campaign setting.";
+      codes["BulkMutateJobErrorReason.CAN_RETURN_RESULT_FOR_ONLY_COMPLETED_JOBS"] = "The job selector must specify a job that has completed when a result part is also requested to be returned.";
+      codes["BulkMutateJobErrorReason.CAN_RETURN_RESULT_FOR_ONLY_ONE_JOB"] = "The job selector must specify a single job when a result part is also requested to be returned.";
+      codes["BulkMutateJobErrorReason.CANNOT_UPDATE_JOB_ONCE_ALL_REQUEST_PARTS_ARE_RECEIVED"] = "A bulk mutate job can be updated to add new request parts or to set the number of request parts only until all request parts are determined to have been received.";
+      codes["BulkMutateJobErrorReason.INVALID_SCOPING_ENTITY_TYPE"] = "An operation stream in the bulk mutate request refers to an unknown or unsupported type of scoping entity.";
+      codes["BulkMutateJobErrorReason.MISSING_SCOPING_ENTITY_FOR_OPERATION_STREAM"] = "An operation stream in the bulk mutate request does not specify a scoping entity id.";
+      codes["BulkMutateJobErrorReason.MORE_THAN_ONE_SCOPING_ENTITY_TYPE"] = "The operation streams in the bulk mutate request refer to more than one type of scoping entity.";
+      codes["BulkMutateJobErrorReason.PAYLOAD_STORE_UNAVAILABLE"] = "The request cannot be processed because the payload store (where the request and response parts are saved) is temporarily unavailable.";
+      codes["BulkMutateJobErrorReason.REQUEST_PART_IS_OUT_OF_ORDER"] = "The request part is not the next one expected to be received.";
+      codes["BulkMutateJobErrorReason.TOO_MANY_OPERATION_STREAMS_IN_REQUEST_PART"] = "The number of operation streams in this request part exceeds the maximum limit.";
+      codes["BulkMutateJobErrorReason.TOO_MANY_OPERATIONS_IN_JOB"] = "The number of operations in this job exceeds the maximum limit.";
+      codes["BulkMutateJobErrorReason.TOO_MANY_OPERATIONS_IN_REQUEST_PART"] = "The number of operations in this request part exceeds the maximum limit.";
+      codes["BulkMutateJobErrorReason.TOO_MANY_RESULTS_TO_STORE"] = "The limit for the number of operation results to store in the bulk mutate workflow system has been exceeded for this customer.";
+      codes["BulkMutateJobErrorReason.TOO_MANY_SCOPING_ENTITIES"] = "The operation streams in the bulk mutate request refer to more than the allowed number of scoping entities.";
+      codes["BulkMutateJobErrorReason.UNKNOWN"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["BulkMutateJobErrorReason.LOST_RESULT"] = "A specific operation has been applied but the result was lost. This can be returned when getting the result of a completed job.";
+      codes["BulkMutateJobErrorReason.UNPROCESSED_RESULT"] = "A specific operation was not applied because of job failure(s). This can be returned when getting the result of a completed job.";
+      codes["BulkMutateJobErrorReason.BATCH_FAILURE"] = "A specific operation was not applied because another operation in the same batch failed. This can be returned when getting the result of a completed job with other failed operations.";
+      codes["BulkMutateJobErrorReason.SERVICE_PROVIDED_NO_RESULT"] = "The operation was applied, but we got fewer results than we expected. This can be returned when getting the result of a completed job.";
+      codes["CampaignAdExtensionErrorReason.ADEXTENSION_NOT_UNDER_CAMPAIGN"] = "Cannot operate on an adextensions under the wrong campaign";
+      codes["CampaignAdExtensionErrorReason.CANNOT_ADD_REMOVED_CAMPAIGN_ADEXTENSION"] = "Cannot add a CampaignAdExtension with status REMOVED.";
+      codes["CampaignAdExtensionErrorReason.CANNOT_OPERATE_ON_REMOVED_CAMPAIGN_ADEXTENSION"] = "Cannot operate on a CampaignAdExtension with status REMOVED.";
+      codes["CampaignAdExtensionErrorReason.INVALID_ADEXTENSION_ID"] = "Invalid adextension id";
+      codes["CampaignAdExtensionErrorReason.MISSING_ADEXTENSION_ID"] = "Missing adextension id";
+      codes["CampaignAdExtensionErrorReason.MUST_USE_CONCRETE_ADEXTENSION"] = "Must use a concrete subtype of AdExtension (eg. LocationExtension)";
+      codes["CampaignAdExtensionErrorReason.UNKNOWN_ERROR"] = "";
+      codes["CampaignCriterionErrorReason.CONCRETE_TYPE_REQUIRED"] = "Concrete type of criterion (keyword v.s. placement) is required for ADD and SET operations.";
+      codes["CampaignCriterionErrorReason.INVALID_PLACEMENT_URL"] = "Invalid placement URL.";
+      codes["CampaignCriterionErrorReason.CANNOT_EXCLUDE_CRITERIA_TYPE"] = "Criteria type can not be excluded for the campaign by the customer. like AOL account type cannot target site type criteria";
+      codes["CampaignCriterionErrorReason.CANNOT_TARGET_AND_EXCLUDE"] = "Cannot target and exclude the same criterion.";
+      codes["CampaignCriterionErrorReason.TOO_MANY_OPERTAIONS"] = "The #mutate operation contained too many operations.";
+      codes["CampaignCriterionErrorReason.OPERATOR_NOT_SUPPORTED_FOR_CRITERION_TYPE"] = "This operator cannot be applied to a criterion of this type.";
+      codes["CampaignCriterionErrorReason.SHOPPING_CAMPAIGN_SALES_COUNTRY_NOT_SUPPORTED_FOR_SALES_CHANNEL"] = "The Shopping campaign sales country is not supported for ProductSalesChannel targeting.";
+      codes["CampaignCriterionErrorReason.UNKNOWN"] = "";
+      codes["CampaignCriterionErrorReason.CANNOT_ADD_EXISTING_FIELD"] = "The existing field can't be updated with ADD operation. It can be updated with SET operation only.";
+      codes["CriterionErrorReason.CONCRETE_TYPE_REQUIRED"] = "Concrete type of criterion is required for ADD and SET operations.";
+      codes["CriterionErrorReason.INVALID_EXCLUDED_CATEGORY"] = "The category requested for exclusion is invalid.";
+      codes["CriterionErrorReason.INVALID_KEYWORD_TEXT"] = "Invalid keyword criteria text.";
+      codes["CriterionErrorReason.KEYWORD_TEXT_TOO_LONG"] = "Keyword text should be less than 80 chars.";
+      codes["CriterionErrorReason.KEYWORD_HAS_TOO_MANY_WORDS"] = "Keyword text has too many words.";
+      codes["CriterionErrorReason.KEYWORD_HAS_INVALID_CHARS"] = "Keyword text has invalid characters or symbols.";
+      codes["CriterionErrorReason.INVALID_PLACEMENT_URL"] = "Invalid placement URL.";
+      codes["CriterionErrorReason.INVALID_USER_LIST"] = "Invalid user list criterion.";
+      codes["CriterionErrorReason.INVALID_USER_INTEREST"] = "Invalid user interest criterion.";
+      codes["CriterionErrorReason.INVALID_FORMAT_FOR_PLACEMENT_URL"] = "Placement URL has wrong format.";
+      codes["CriterionErrorReason.PLACEMENT_URL_IS_TOO_LONG"] = "Placement URL is too long.";
+      codes["CriterionErrorReason.PLACEMENT_URL_HAS_ILLEGAL_CHAR"] = "Indicates the URL contains an illegal character.";
+      codes["CriterionErrorReason.PLACEMENT_URL_HAS_MULTIPLE_SITES_IN_LINE"] = "Indicates the URL contains multiple comma separated URLs.";
+      codes["CriterionErrorReason.PLACEMENT_IS_NOT_AVAILABLE_FOR_TARGETING_OR_EXCLUSION"] = "Indicates the domain is blacklisted.";
+      codes["CriterionErrorReason.INVALID_VERTICAL_PATH"] = "Invalid vertical path.";
+      codes["CriterionErrorReason.YOUTUBE_VERTICAL_CHANNEL_DEPRECATED"] = "Indicates the placement is a YouTube vertical channel, which is no longer supported.";
+      codes["CriterionErrorReason.YOUTUBE_DEMOGRAPHIC_CHANNEL_DEPRECATED"] = "Indicates the placement is a YouTube demographic channel, which is no longer supported.";
+      codes["CriterionErrorReason.YOUTUBE_URL_UNSUPPORTED"] = "YouTube urls are not supported in Placement criterion. Use YouTubeChannel and YouTubeVideo criterion instead.";
+      codes["CriterionErrorReason.CANNOT_EXCLUDE_CRITERIA_TYPE"] = "Criteria type can not be excluded by the customer, like AOL account type cannot target site type criteria.";
+      codes["CriterionErrorReason.CANNOT_ADD_CRITERIA_TYPE"] = "Criteria type can not be targeted.";
+      codes["CriterionErrorReason.INVALID_PRODUCT_FILTER"] = "Product filter in the product criteria has invalid characters. Operand and the argument in the filter can not have \"==\" or \"&amp;+\".";
+      codes["CriterionErrorReason.PRODUCT_FILTER_TOO_LONG"] = "Product filter in the product criteria is translated to a string as operand1==argument1&amp;+operand2==argument2, maximum allowed length for the string is 255 chars.";
+      codes["CriterionErrorReason.CANNOT_ADD_DISPLAY_ONLY_LISTS_TO_SEARCH_ONLY_CAMPAIGNS"] = "Not allowed to add display only UserLists to search only campaigns.";
+      codes["CriterionErrorReason.CANNOT_SET_BIDS_ON_CRITERION_TYPE_IN_SEARCH_CAMPAIGNS"] = "Not allowed to set bids for this criterion type in search campaigns";
+      codes["CriterionErrorReason.CANNOT_ADD_DESTINATION_URL_TO_CRITERION_TYPE_IN_SEARCH_CAMPAIGNS"] = "Destination URL cannot be set for the criterion types of Gender, AgeRange, UserList, Placement, MobileApp, and MobileAppCategory in search campaigns.";
+      codes["CriterionErrorReason.INVALID_IP_ADDRESS"] = "IP address is not valid.";
+      codes["CriterionErrorReason.INVALID_IP_FORMAT"] = "IP format is not valid.";
+      codes["CriterionErrorReason.INVALID_MOBILE_APP"] = "Mobile application is not valid.";
+      codes["CriterionErrorReason.INVALID_MOBILE_APP_CATEGORY"] = "Mobile application category is not valid.";
+      codes["CriterionErrorReason.INVALID_CRITERION_ID"] = "The CriterionId does not exist or is of the incorrect type.";
+      codes["CriterionErrorReason.CANNOT_TARGET_CRITERION"] = "The Criterion is not allowed to be targeted.";
+      codes["CriterionErrorReason.CANNOT_TARGET_OBSOLETE_CRITERION"] = "The criterion is not allowed to be targeted as it is deprecated.";
+      codes["CriterionErrorReason.CRITERION_ID_AND_TYPE_MISMATCH"] = "The CriterionId is not valid for the type.";
+      codes["CriterionErrorReason.INVALID_PROXIMITY_RADIUS"] = "Distance for the radius for the proximity criterion is invalid.";
+      codes["CriterionErrorReason.INVALID_PROXIMITY_RADIUS_UNITS"] = "Units for the distance for the radius for the proximity criterion is invalid.";
+      codes["CriterionErrorReason.INVALID_STREETADDRESS_LENGTH"] = "Street address is too short.";
+      codes["CriterionErrorReason.INVALID_CITYNAME_LENGTH"] = "City name in the address is too short.";
+      codes["CriterionErrorReason.INVALID_REGIONCODE_LENGTH"] = "Region code in the address is too short.";
+      codes["CriterionErrorReason.INVALID_REGIONNAME_LENGTH"] = "Region name in the address is not valid.";
+      codes["CriterionErrorReason.INVALID_POSTALCODE_LENGTH"] = "Postal code in the address is not valid.";
+      codes["CriterionErrorReason.INVALID_COUNTRY_CODE"] = "Country code in the address is not valid.";
+      codes["CriterionErrorReason.INVALID_LATITUDE"] = "Latitude for the GeoPoint is not valid.";
+      codes["CriterionErrorReason.INVALID_LONGITUDE"] = "Longitude for the GeoPoint is not valid.";
+      codes["CriterionErrorReason.PROXIMITY_GEOPOINT_AND_ADDRESS_BOTH_CANNOT_BE_NULL"] = "The Proximity input is not valid. Both address and geoPoint cannot be null.";
+      codes["CriterionErrorReason.INVALID_PROXIMITY_ADDRESS"] = "The Proximity address cannot be geocoded to a valid lat/long.";
+      codes["CriterionErrorReason.INVALID_USER_DOMAIN_NAME"] = "User domain name is not valid.";
+      codes["CriterionErrorReason.CRITERION_PARAMETER_TOO_LONG"] = "Length of serialized criterion parameter exceeded size limit.";
+      codes["CriterionErrorReason.AD_SCHEDULE_TIME_INTERVALS_OVERLAP"] = "Time interval in the AdSchedule overlaps with another AdSchedule.";
+      codes["CriterionErrorReason.AD_SCHEDULE_INTERVAL_CANNOT_SPAN_MULTIPLE_DAYS"] = "AdSchedule time interval cannot span multiple days.";
+      codes["CriterionErrorReason.AD_SCHEDULE_INVALID_TIME_INTERVAL"] = "AdSchedule time interval specified is invalid, endTime cannot be earlier than startTime.";
+      codes["CriterionErrorReason.AD_SCHEDULE_EXCEEDED_INTERVALS_PER_DAY_LIMIT"] = "The number of AdSchedule entries in a day exceeds the limit.";
+      codes["CriterionErrorReason.AD_SCHEDULE_CRITERION_ID_MISMATCHING_FIELDS"] = "CriteriaId does not match the interval of the AdSchedule specified.";
+      codes["CriterionErrorReason.CANNOT_BID_MODIFY_CRITERION_TYPE"] = "Cannot set bid modifier for this criterion type.";
+      codes["CriterionErrorReason.CANNOT_BID_MODIFY_CRITERION_CAMPAIGN_OPTED_OUT"] = "Cannot bid modify criterion, since it is opted out of the campaign.";
+      codes["CriterionErrorReason.CANNOT_BID_MODIFY_NEGATIVE_CRITERION"] = "Cannot set bid modifier for a negative criterion.";
+      codes["CriterionErrorReason.BID_MODIFIER_ALREADY_EXISTS"] = "Bid Modifier already exists. Use SET operation to update.";
+      codes["CriterionErrorReason.FEED_ID_NOT_ALLOWED"] = "Feed Id is not allowed in these Location Groups.";
+      codes["CriterionErrorReason.ACCOUNT_INELIGIBLE_FOR_CRITERIA_TYPE"] = "The account may not use the requested criteria type. For example, some accounts are restricted to keywords only.";
+      codes["CriterionErrorReason.CRITERIA_TYPE_INVALID_FOR_BIDDING_STRATEGY"] = "The requested criteria type cannot be used with campaign or ad group bidding strategy.";
+      codes["CriterionErrorReason.CANNOT_EXCLUDE_CRITERION"] = "The Criterion is not allowed to be excluded.";
+      codes["CriterionErrorReason.CANNOT_REMOVE_CRITERION"] = "The criterion is not allowed to be removed. For example, we cannot remove any of the platform criterion.";
+      codes["CriterionErrorReason.PRODUCT_SCOPE_TOO_LONG"] = "The combined length of product dimension values of the product scope criterion is too long.";
+      codes["CriterionErrorReason.PRODUCT_SCOPE_TOO_MANY_DIMENSIONS"] = "Product scope contains too many dimensions.";
+      codes["CriterionErrorReason.PRODUCT_PARTITION_TOO_LONG"] = "The combined length of product dimension values of the product partition criterion is too long.";
+      codes["CriterionErrorReason.PRODUCT_PARTITION_TOO_MANY_DIMENSIONS"] = "Product partition contains too many dimensions.";
+      codes["CriterionErrorReason.INVALID_PRODUCT_DIMENSION"] = "The product dimension is invalid (e.g. dimension contains illegal value, dimension type is represented with wrong class, etc). Product dimension value can not contain \"==\" or \"&amp;+\".";
+      codes["CriterionErrorReason.INVALID_PRODUCT_DIMENSION_TYPE"] = "Product dimension type is either invalid for campaigns of this type or cannot be used in the current context. BIDDING_CATEGORY_Lx and PRODUCT_TYPE_Lx product dimensions must be used in ascending order of their levels: L1, L2, L3, L4, L5... The levels must be specified sequentially and start from L1. Furthermore, an \"others\" product partition cannot be subdivided with a dimension of the same type but of a higher level (\"others\" BIDDING_CATEGORY_L3 can be subdivided with BRAND but not with BIDDING_CATEGORY_L4).";
+      codes["CriterionErrorReason.INVALID_PRODUCT_BIDDING_CATEGORY"] = "Bidding categories do not form a valid path in the Shopping bidding category taxonomy.";
+      codes["CriterionErrorReason.MISSING_SHOPPING_SETTING"] = "ShoppingSetting must be added to the campaign before ProductScope criteria can be added.";
+      codes["CriterionErrorReason.INVALID_MATCHING_FUNCTION"] = "Matching function is invalid.";
+      codes["CriterionErrorReason.LOCATION_FILTER_NOT_ALLOWED"] = "Filter parameters not allowed for location groups targeting.";
+      codes["CriterionErrorReason.LOCATION_FILTER_INVALID"] = "Given location filter parameter is invalid for location groups targeting.";
+      codes["CriterionErrorReason.UNKNOWN"] = "";
+      codes["JobErrorReason.DUPLICATE_JOB_KEY_FOR_CUSTOMER"] = "The supplied customer job key has already been used for an earlier job.";
+      codes["JobErrorReason.JOB_TYPE_NOT_SUPPORTED"] = "The server does not support the given type of job.";
+      codes["JobErrorReason.PREREQUISITE_JOB_FAILED"] = "A job specified as a prerequisite to this job has failed.";
+      codes["JobErrorReason.SELECTOR_CANNOT_USE_BOTH_JOB_IDS_AND_JOB_KEYS"] = "Cannot select using both job ids and customer job keys.";
+      codes["JobErrorReason.TOO_LATE_TO_CANCEL_JOB"] = "Cannot cancel this job as it is an advanced stage of processing; See the specific job type to understand when a job may be canceled.";
+      codes["JobErrorReason.TOO_MANY_PREREQUISITE_JOBS"] = "The limit for the number of prerequisite jobs has been exceeded for this job request.";
+      codes["JobErrorReason.TOO_MANY_JOBS_IN_QUEUE"] = "The limit for the number of pending jobs has been exceeded for this customer.";
+      codes["JobErrorReason.USER_CANCELED_JOB"] = "The job was canceled at the request of the user.";
+      codes["JobErrorReason.WORKFLOW_FAILURE"] = "Encountered a workflow system failure.";
+      codes["JobErrorReason.UNKNOWN"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["MultiplierErrorReason.MULTIPLIER_TOO_HIGH"] = "Multiplier value is too high";
+      codes["MultiplierErrorReason.MULTIPLIER_TOO_LOW"] = "Multiplier value is too low";
+      codes["MultiplierErrorReason.TOO_MANY_FRACTIONAL_DIGITS"] = "Too many fractional digits";
+      codes["MultiplierErrorReason.MULTIPLIER_NOT_ALLOWED_FOR_BIDDING_STRATEGY"] = "A multiplier cannot be set for this bidding strategy";
+      codes["MultiplierErrorReason.MULTIPLIER_NOT_ALLOWED_WHEN_BASE_BID_IS_MISSING"] = "A multiplier cannot be set when there is no base bid (e.g., content max cpc)";
+      codes["MultiplierErrorReason.MULTIPLIER_NOT_ALLOWED_FOR_EXPERIMENT_DELTA_STATUS"] = "A multiplier cannot be set for this criterion type";
+      codes["MultiplierErrorReason.NO_MULTIPLIER_SPECIFIED"] = "A bid multiplier must be specified";
+      codes["MultiplierErrorReason.MULTIPLIER_CAUSES_BID_TO_EXCEED_DAILY_BUDGET"] = "Multiplier causes bid to exceed daily budget";
+      codes["MultiplierErrorReason.MULTIPLIER_CAUSES_BID_TO_EXCEED_MONTHLY_BUDGET"] = "Multiplier causes bid to exceed monthly budget";
+      codes["MultiplierErrorReason.MULTIPLIER_CAUSES_BID_TO_EXCEED_CUSTOM_BUDGET"] = "Multiplier causes bid to exceed custom budget";
+      codes["MultiplierErrorReason.MULTIPLIER_CAUSES_BID_TO_EXCEED_MAX_ALLOWED_BID"] = "Multiplier causes bid to exceed maximum allowed bid";
+      codes["MultiplierErrorReason.BID_LESS_THAN_MIN_ALLOWED_BID_WITH_MULTIPLIER"] = "Multiplier causes bid to become less than the minimum bid allowed";
+      codes["MultiplierErrorReason.MULTIPLIER_AND_BIDDING_STRATEGY_TYPE_MISMATCH"] = "Multiplier type (cpc vs. cpm) needs to match campaign's bidding strategy";
+      codes["MultiplierErrorReason.MULTIPLIER_ERROR"] = "";
+      codes["PolicyViolationErrorReason.POLICY_ERROR"] = "";
+      codes["OfflineConversionErrorReason.UNPARSEABLE_GCLID"] = "This google click ID could not be decoded.";
+      codes["OfflineConversionErrorReason.CONVERSION_PRECEDES_CLICK"] = "This conversion is reported to have happened before the click.";
+      codes["OfflineConversionErrorReason.FUTURE_CONVERSION_TIME"] = "You cannot set a future conversion time.";
+      codes["OfflineConversionErrorReason.EXPIRED_CLICK"] = "This click is either too old to be imported or occurred before the conversion window for the specified combination of conversion date and conversion name (default is 90 days).";
+      codes["OfflineConversionErrorReason.TOO_RECENT_CLICK"] = "This click occurred less than 24 hours ago, please try again after a day or so.";
+      codes["OfflineConversionErrorReason.INVALID_CLICK"] = "This click does not exist in the system. This can occur if google click ids are collected for non AdWords clicks (e.g. dart search).";
+      codes["OfflineConversionErrorReason.UNAUTHORIZED_USER"] = "This customer is trying to upload conversions for a different customer that it does not manage.";
+      codes["OfflineConversionErrorReason.INVALID_CONVERSION_TYPE"] = "This customer does not have an import conversion with a name that matches the label of this conversion.";
+      codes["OfflineConversionErrorReason.CLICK_MISSING_CONVERSION_LABEL"] = "Cannot process clicks that occurred when none of the effective conversion types in the account were enabled, to generate conversions.";
+      codes["OfflineConversionErrorReason.UNKNOWN"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["CurrencyCodeErrorReason.UNSUPPORTED_CURRENCY_CODE"] = "";
+      codes["ReportDefinitionErrorReason.INVALID_DATE_RANGE_FOR_REPORT"] = "Customer passed in invalid date range for a report type.";
+      codes["ReportDefinitionErrorReason.INVALID_FIELD_NAME_FOR_REPORT"] = "Customer passed in invalid field name for a report type";
+      codes["ReportDefinitionErrorReason.UNABLE_TO_FIND_MAPPING_FOR_THIS_REPORT"] = "Unable to locate a field mapping for this report type.";
+      codes["ReportDefinitionErrorReason.INVALID_COLUMN_NAME_FOR_REPORT"] = "Customer passed in invalid column name for a report type";
+      codes["ReportDefinitionErrorReason.INVALID_REPORT_DEFINITION_ID"] = "Customer passed in invalid report definition id.";
+      codes["ReportDefinitionErrorReason.REPORT_SELECTOR_CANNOT_BE_NULL"] = "Report selector cannot be null.";
+      codes["ReportDefinitionErrorReason.NO_ENUMS_FOR_THIS_COLUMN_NAME"] = "No Enums exist for this column name.";
+      codes["ReportDefinitionErrorReason.INVALID_VIEW"] = "Invalid view name.";
+      codes["ReportDefinitionErrorReason.SORTING_NOT_SUPPORTED"] = "Sorting is not supported for reports.";
+      codes["ReportDefinitionErrorReason.PAGING_NOT_SUPPORTED"] = "Paging is not supported for reports.";
+      codes["ReportDefinitionErrorReason.CUSTOMER_SERVING_TYPE_REPORT_MISMATCH"] = "Customer can not create report of a selected type.";
+      codes["ReportDefinitionErrorReason.CLIENT_SELECTOR_NO_CUSTOMER_IDENTIFIER"] = "Cross client report has an client selector without any valid identifier for a customer.";
+      codes["ReportDefinitionErrorReason.CLIENT_SELECTOR_INVALID_CUSTOMER_ID"] = "Cross client report has an invalid external customer ID in the client selector.";
+      codes["ReportDefinitionErrorReason.REPORT_DEFINITION_ERROR"] = "";
+      codes["NotWhitelistedErrorReason.CUSTOMER_NOT_WHITELISTED_FOR_API"] = "Customer is not whitelisted for accessing the API.";
+      codes["TrafficEstimatorErrorReason.NO_CAMPAIGN_FOR_AD_GROUP_ESTIMATE_REQUEST"] = "When the request with <code>null</code> campaign ID in <a href='CampaignEstimateRequest'>CampaignEstimateRequest</a> contains an <a href='AdGroupEstimateRequest'>AdGroupEstimateRequest</a> with an ID.";
+      codes["TrafficEstimatorErrorReason.NO_AD_GROUP_FOR_KEYWORD_ESTIMATE_REQUEST"] = "When the request with <code>null</code> adgroup ID in <a href='AdGroupEstimateRequest'>AdGroupEstimateRequest</a> contains a <a href='KeywordEstimateRequest'>KeywordEstimateRequest</a> with an ID.";
+      codes["TrafficEstimatorErrorReason.NO_MAX_CPC_FOR_KEYWORD_ESTIMATE_REQUEST"] = "All <a href='KeywordEstimateRequest'>KeywordEstimateRequest</a> items should have maxCpc associated with them.";
+      codes["TrafficEstimatorErrorReason.TOO_MANY_KEYWORD_ESTIMATE_REQUESTS"] = "When there are more <a href='KeywordEstimateRequest'>KeywordEstimateRequest</a>s in the request than TrafficEstimatorService allows.";
+      codes["TrafficEstimatorErrorReason.TOO_MANY_CAMPAIGN_ESTIMATE_REQUESTS"] = "When there are more <a href='CampaignEstimateRequest'>CampaignEstimateRequest</a>s in the request than TrafficEstimatorService allows.";
+      codes["TrafficEstimatorErrorReason.TOO_MANY_ADGROUP_ESTIMATE_REQUESTS"] = "When there are more <a href='AdGroupEstimateRequest'>AdGroupEstimateRequest</a>s in the request than TrafficEstimatorService allows.";
+      codes["TrafficEstimatorErrorReason.TOO_MANY_TARGETS"] = "When there are more targets in the request than TrafficEstimatorService allows. See documentation on <a href='CampaignEstimateRequest'>CampaignEstimateRequest</a> for more information about this error.";
+      codes["TrafficEstimatorErrorReason.KEYWORD_TOO_LONG"] = "Request contains a keyword that is too long for backends to handle.";
+      codes["TrafficEstimatorErrorReason.KEYWORD_CONTAINS_BROAD_MATCH_MODIFIERS"] = "Request contains a keyword that contains broad match modifiers.";
+      codes["TrafficEstimatorErrorReason.INVALID_INPUT"] = "When an unexpected error occurs.";
+      codes["TrafficEstimatorErrorReason.SERVICE_UNAVAILABLE"] = "When backend service calls fail.";
+      codes["TargetingIdeaErrorReason.DUPLICATE_SEARCH_FILTER_TYPES_PRESENT"] = "Error returned when there are multiple instance of same type of <a href='search.SearchParameter'>search.SearchParameter</a>s.";
+      codes["TargetingIdeaErrorReason.INSUFFICIENT_SEARCH_PARAMETERS"] = "Error returned when the <a href='TargetingIdeaSelector'>TargetingIdeaSelector</a> doesn't have enough <a href='search.SearchParameter'>search.SearchParameter</a>s to execute request.";
+      codes["TargetingIdeaErrorReason.INVALID_ATTRIBUTE_TYPE"] = "Error returned when an <a href='AttributeType'>AttributeType</a> doesn't match the <a href='IdeaType'>IdeaType</a> specified in the <a href='TargetingIdeaSelector'>TargetingIdeaSelector</a>. For example, if the <code>KEYWORD</code> <code>IDEAS</code> selector contains an <code>STATS</code> only AttributeType, this error will be returned.";
+      codes["TargetingIdeaErrorReason.INVALID_SEARCH_PARAMETERS"] = "Error returned when a <a href='search.SearchParameter'>search.SearchParameter</a> doesn't match the <a href='IdeaType'>IdeaType</a> specified in the <a href='TargetingIdeaSelector'>TargetingIdeaSelector</a> or is otherwise invalid. Error trigger usually contains the parameter name, and error details contain a more detailed explanation.";
+      codes["TargetingIdeaErrorReason.INVALID_DOMAIN_SUFFIX"] = "Error returned when the <a href='TargetingIdeaSelector'>TargetingIdeaSelector</a> contains a <a href='search.DomainSuffixSearchParameter'>search.DomainSuffixSearchParameter</a>s that contains an invalid domain suffix.";
+      codes["TargetingIdeaErrorReason.MUTUALLY_EXCLUSIVE_SEARCH_PARAMETERS_IN_QUERY"] = "Error returned when a selector contains mutually exclusive parameters.";
+      codes["TargetingIdeaErrorReason.SERVICE_UNAVAILABLE"] = "Error returned when the <a href='TargetingIdeaService'>TargetingIdeaService</a> is not available.";
+      codes["TargetingIdeaErrorReason.INVALID_URL_IN_SEARCH_PARAMETER"] = "Error returned when the URL value specified in the <a href='TargetingIdeaSelector'>TargetingIdeaSelector</a>, such as <a href='search.RelatedToUrlSearchParameter'>search.RelatedToUrlSearchParameter</a>, is not a valid URL.";
+      codes["TargetingIdeaErrorReason.TOO_MANY_RESULTS_REQUESTED"] = "Error returned when the requested number of entries in <a href='TargetingIdeaSelector'>TargetingIdeaSelector</a>'s <a href='Paging'>Paging</a> is greater than the maximum allowed.";
+      codes["TargetingIdeaErrorReason.NO_PAGING_IN_SELECTOR"] = "Error returned when the requested <a href='Paging'>Paging</a> is missing from <a href='TargetingIdeaSelector'>TargetingIdeaSelector</a> when required.";
+      codes["TargetingIdeaErrorReason.INVALID_INCLUDED_EXCLUDED_KEYWORDS"] = "Error returned when included keywords and excluded keywords in <a href='search.IdeaTextFilterSearchParameter'>search.IdeaTextFilterSearchParameter</a>, <a href='search.IdeaTextMatchesSearchParameter'>search.IdeaTextMatchesSearchParameter</a> or <a href='search.ExcludedKeywordSearchParameter'>search.ExcludedKeywordSearchParameter</a> are overlapped.";
+      codes["UserListErrorReason.EXTERNAL_REMARKETING_USER_LIST_MUTATE_NOT_SUPPORTED"] = "Creating and updating external remarketing user lists is not supported.";
+      codes["UserListErrorReason.CONCRETE_TYPE_REQUIRED"] = "Concrete type of user list (logical v.s. remarketing) is required for ADD and SET operations.";
+      codes["UserListErrorReason.CONVERSION_TYPE_ID_REQUIRED"] = "Adding/updating user list conversion types requires specifying the conversion type id.";
+      codes["UserListErrorReason.DUPLICATE_CONVERSION_TYPES"] = "Remarketing user list cannot have duplicate conversion types.";
+      codes["UserListErrorReason.INVALID_CONVERSION_TYPE"] = "Conversion type is invalid/unknown.";
+      codes["UserListErrorReason.INVALID_DESCRIPTION"] = "User list description is empty or invalid";
+      codes["UserListErrorReason.INVALID_NAME"] = "User list name is empty or invalid.";
+      codes["UserListErrorReason.INVALID_TYPE"] = "Type of the UserList does not match.";
+      codes["UserListErrorReason.INVALID_USER_LIST_LOGICAL_RULE_OPERAND"] = "User list rule operand is invalid.";
+      codes["UserListErrorReason.NAME_ALREADY_USED"] = "Name is already being used for another user list for the account.";
+      codes["UserListErrorReason.NEW_CONVERSION_TYPE_NAME_REQUIRED"] = "Name is required when creating a new conversion type.";
+      codes["UserListErrorReason.OWNERSHIP_REQUIRED_FOR_SET"] = "Only an owner account may edit a user list.";
+      codes["UserListErrorReason.REMOVE_NOT_SUPPORTED"] = "Removing user lists is not supported.";
+      codes["UserListErrorReason.USER_LIST_MUTATE_NOT_SUPPORTED"] = "The user list of the type is not mutable";
+      codes["UserListErrorReason.INVALID_RULE"] = "Rule is invalid.";
+      codes["UserListErrorReason.INVALID_DATE_RANGE"] = "The specified date range is empty.";
+      codes["UserListErrorReason.MAX_NUM_RULEBASED_USERLISTS"] = "Maximum number of rulebased user lists a customer can have.";
+      codes["UserListErrorReason.USER_LIST_SERVICE_ERROR"] = "Default generic error.";
+      codes["ExpressBusinessErrorReason.INVALID_WEBSITE"] = "Website is invalid.";
+      codes["ExpressBusinessErrorReason.INVALID_ADDRESS"] = "Address is invalid or cannot be geocoded using the specified geo point.";
+      codes["ExpressBusinessErrorReason.INVALID_PHONE_NUMBER"] = "Phone number is invalid.";
+      codes["ExpressBusinessErrorReason.PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED"] = "Premium rate phone numbers e.g. 1-900 numbers not allowed.";
+      codes["ExpressBusinessErrorReason.UNKNOWN"] = "Default error. <span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["PromotionErrorReason.MISSING_BUSINESS_NAME"] = "The specified business does not have a public name.";
+      codes["PromotionErrorReason.BUSINESS_DELETED"] = "The specified business is deleted.";
+      codes["PromotionErrorReason.NOT_BUSINESS_OWNER"] = "The specified business is not owned by the current user.";
+      codes["PromotionErrorReason.BUSINESS_OWNER_NOT_FOUND"] = "No owner found for business.";
+      codes["PromotionErrorReason.BUSINESS_OWNER_ACCOUNT_NOT_MATCHED"] = "Business owner's account doesn't match effective account.";
+      codes["PromotionErrorReason.BUSINESS_PROMOTED_BY_ANOTHER_ACCOUNT"] = "Business is promoted by another account.";
+      codes["PromotionErrorReason.BUSINESS_COUNTRY_NOT_SUPPORTED"] = "The business address is in an unsupported country.";
+      codes["PromotionErrorReason.BUSINESS_LANGUAGE_NOT_SUPPORTED"] = "The plus page uses an unsupported language.";
+      codes["PromotionErrorReason.CURRENCY_NOT_SUPPORTED"] = "Not supported currency.";
+      codes["PromotionErrorReason.AOL_ACCOUNT"] = "AOL account.";
+      codes["PromotionErrorReason.MCC_ACCOUNT"] = "The requested action is not supported for a manager account.";
+      codes["PromotionErrorReason.INVALID_DESTINATION_URL"] = "The specified destination URL is invalid.";
+      codes["PromotionErrorReason.CALL_TRACKING_NOT_SUPPORTED"] = "Call tracking is not supported.";
+      codes["PromotionErrorReason.INVALID_PHONE_NUMBER"] = "Phone number is invalid.";
+      codes["PromotionErrorReason.PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED"] = "Premium rate phone numbers e.g. 1-900 numbers not allowed.";
+      codes["PromotionErrorReason.NON_LOCAL_BUSINESS"] = "Non-local +Pages are not supported.";
+      codes["PromotionErrorReason.ALREADY_MIGRATED"] = "Promotion is already migrated to AdWords.";
+      codes["PromotionErrorReason.UNKNOWN"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["CampaignSharedSetErrorReason.CAMPAIGN_SHARED_SET_DOES_NOT_EXIST"] = "";
+      codes["CampaignSharedSetErrorReason.SHARED_SET_NOT_ACTIVE"] = "";
+      codes["CampaignSharedSetErrorReason.UNKNOWN"] = "";
+      codes["SharedCriterionErrorReason.EXCEEDS_CRITERIA_LIMIT"] = "";
+      codes["SharedCriterionErrorReason.INCORRECT_CRITERION_TYPE"] = "";
+      codes["SharedCriterionErrorReason.CANNOT_TARGET_AND_EXCLUDE"] = "Cannot add the same crietrion as positive and negative in the same shared set.";
+      codes["SharedCriterionErrorReason.NEGATIVE_CRITERION_REQUIRED"] = "Negative shared set type requires a negative shared set criterion.";
+      codes["SharedCriterionErrorReason.UNKNOWN"] = "";
+      codes["SharedSetErrorReason.CUSTOMER_CANNOT_CREATE_SHARED_SET_OF_THIS_TYPE"] = "";
+      codes["SharedSetErrorReason.DUPLICATE_NAME"] = "";
+      codes["SharedSetErrorReason.SHARED_SET_REMOVED"] = "";
+      codes["SharedSetErrorReason.SHARED_SET_IN_USE"] = "";
+      codes["SharedSetErrorReason.UNKNOWN"] = "";
+      codes["LabelErrorReason.DUPLICATE_NAME"] = "Label name must be unique.";
+      codes["LabelErrorReason.INVALID_LABEL_NAME"] = "Label names cannot be empty";
+      codes["LabelErrorReason.INVALID_LABEL_TYPE"] = "Invalid Label type. A specific type of Label is required.";
+      codes["LabelErrorReason.UNKNOWN"] = "Default error. <span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["LabelServiceErrorReason.EMPTY_LABEL_NAME"] = "The label name is empty.";
+      codes["LabelServiceErrorReason.LABEL_NAME_TOO_LONG"] = "The label name is longer than max allowed size.";
+      codes["LabelServiceErrorReason.DUPLICATE_LABEL_NAME"] = "The customer already has an active label with the same name.";
+      codes["LabelServiceErrorReason.RESERVED_LABEL_NAME"] = "The label name is reserved by the system.";
+      codes["LabelServiceErrorReason.CANNOT_BE_DELETED"] = "The label cannot be deleted";
+      codes["LabelServiceErrorReason.TOO_MANY_LABELS"] = "A customer cannot own more than 200 labels.";
+      codes["LabelServiceErrorReason.INVALID_LABEL_ID"] = "Label id was not found.";
+      codes["LabelServiceErrorReason.CUSTOMER_CANNOT_CREATE_LABELS"] = "This customer cannot create labels. Only manager customers may create labels.";
+      codes["LabelServiceErrorReason.SERVER_CLIENT_VERSION_MISMATCH"] = "An unknown enum value has been given for this error reason.";
+      codes["AdCustomizerFeedErrorReason.CANNOT_ADD_KEY_ATTRIBUTE"] = "The key attribute cannot be added to an existing ad customizer feed.";
+      codes["AdCustomizerFeedErrorReason.NOT_AD_CUSTOMIZER_FEED"] = "The feed is not an ad customizer feed.";
+      codes["AdCustomizerFeedErrorReason.INVALID_FEED_NAME"] = "Name of AdCustomizerFeed is not allowed.";
+      codes["AdCustomizerFeedErrorReason.TOO_MANY_FEED_ATTRIBUTES_FOR_FEED"] = "Too many AdCustomizerFeedAttributes for an AdCustomizerFeed.";
+      codes["AdCustomizerFeedErrorReason.ATTRIBUTE_NAMES_NOT_UNIQUE"] = "The names of the AdCustomizerFeedAttributes must be unique.";
+      codes["AdCustomizerFeedErrorReason.FEED_DELETED"] = "The given id refers to a removed Feed. Removed Feeds are immutable.";
+      codes["AdCustomizerFeedErrorReason.DUPLICATE_FEED_NAME"] = "Feed name matches that of another active Feed.";
+      codes["AdCustomizerFeedErrorReason.UNKNOWN"] = "";
+      codes["ExtensionSettingErrorReason.EXTENSIONS_REQUIRED"] = "A platform restriction was provided without input extensions or existing extensions.";
+      codes["ExtensionSettingErrorReason.FEED_TYPE_EXTENSION_TYPE_MISMATCH"] = "The provided feed type does not correspond to the provided extensions.";
+      codes["ExtensionSettingErrorReason.INVALID_FEED_TYPE"] = "The provided feed type cannot be used.";
+      codes["ExtensionSettingErrorReason.INVALID_FEED_TYPE_FOR_CUSTOMER_EXTENSION_SETTING"] = "The provided feed type cannot be used at the customer level.";
+      codes["ExtensionSettingErrorReason.CANNOT_CHANGE_FEED_ITEM_ON_ADD"] = "Can not change a feed item field on an ADD operation.";
+      codes["ExtensionSettingErrorReason.NO_EXISTING_AD_GROUP_EXTENSION_SETTING_FOR_TYPE"] = "There is no existing AdGroupExtensionSetting for this type.";
+      codes["ExtensionSettingErrorReason.NO_EXISTING_CAMPAIGN_EXTENSION_SETTING_FOR_TYPE"] = "There is no existing CampaignExtensionSetting for this type.";
+      codes["ExtensionSettingErrorReason.NO_EXISTING_CUSTOMER_EXTENSION_SETTING_FOR_TYPE"] = "There is no existing CustomerExtensionSetting for this type.";
+      codes["ExtensionSettingErrorReason.AD_GROUP_EXTENSION_SETTING_ALREADY_EXISTS"] = "The AdGroupExtensionSetting already exists. SET should be used to modify the existing AdGroupExtensionSetting.";
+      codes["ExtensionSettingErrorReason.CAMPAIGN_EXTENSION_SETTING_ALREADY_EXISTS"] = "The CampaignExtensionSetting already exists. SET should be used to modify the existing CampaignExtensionSetting.";
+      codes["ExtensionSettingErrorReason.CUSTOMER_EXTENSION_SETTING_ALREADY_EXISTS"] = "The CustomerExtensionSetting already exists. SET should be used to modify the existing CustomerExtensionSetting.";
+      codes["ExtensionSettingErrorReason.AD_GROUP_FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE"] = "An active ad group feed already exists for this place holder type.";
+      codes["ExtensionSettingErrorReason.CAMPAIGN_FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE"] = "An active campaign feed already exists for this place holder type.";
+      codes["ExtensionSettingErrorReason.CUSTOMER_FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE"] = "An active customer feed already exists for this place holder type.";
+      codes["ExtensionSettingErrorReason.VALUE_OUT_OF_RANGE"] = "Value is not within the accepted range.";
+      codes["ExtensionSettingErrorReason.URL_LIST_TOO_LONG"] = "Url list is too long.";
+      codes["ExtensionSettingErrorReason.CANNOT_SET_WITH_FINAL_URLS"] = "Cannot simultaneously set sitelink field with final urls.";
+      codes["ExtensionSettingErrorReason.CANNOT_SET_WITHOUT_FINAL_URLS"] = "Must set field with final urls.";
+      codes["ExtensionSettingErrorReason.CANNOT_SET_BOTH_DESTINATION_URL_AND_TRACKING_URL_TEMPLATE"] = "Cannot simultaneously set sitelink url field with tracking url template.";
+      codes["ExtensionSettingErrorReason.INVALID_PHONE_NUMBER"] = "Phone number for a call extension is invalid.";
+      codes["ExtensionSettingErrorReason.PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY"] = "Phone number for a call extension is not supported for the given country code.";
+      codes["ExtensionSettingErrorReason.CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED"] = "A carrier specific number in short format is not allowed for call extensions.";
+      codes["ExtensionSettingErrorReason.PREMIUM_RATE_NUMBER_NOT_ALLOWED"] = "Premium rate numbers are not allowed for call extensions.";
+      codes["ExtensionSettingErrorReason.DISALLOWED_NUMBER_TYPE"] = "Phone number type for a call extension is not allowed.";
+      codes["ExtensionSettingErrorReason.INVALID_DOMESTIC_PHONE_NUMBER_FORMAT"] = "Phone number for a call extension does not meet domestic format requirements.";
+      codes["ExtensionSettingErrorReason.VANITY_PHONE_NUMBER_NOT_ALLOWED"] = "Vanity phone numbers (i.e. those including letters) are not allowed for call extensions.";
+      codes["ExtensionSettingErrorReason.INVALID_COUNTRY_CODE"] = "Country code provided for a call extension is invalid.";
+      codes["ExtensionSettingErrorReason.INVALID_CALL_CONVERSION_TYPE_ID"] = "Call conversion type id provided for a call extension is invalid.";
+      codes["ExtensionSettingErrorReason.CUSTOMER_NOT_WHITELISTED_FOR_CALLTRACKING"] = "For a call extension, the customer is not whitelisted for call tracking.";
+      codes["ExtensionSettingErrorReason.CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY"] = "Call tracking is not supported for the given country for a call extension.";
+      codes["ExtensionSettingErrorReason.INVALID_APP_ID"] = "App id provided for an app extension is invalid.";
+      codes["ExtensionSettingErrorReason.QUOTES_IN_REVIEW_EXTENSION_SNIPPET"] = "Quotation marks present in the review text for a review extension.";
+      codes["ExtensionSettingErrorReason.HYPHENS_IN_REVIEW_EXTENSION_SNIPPET"] = "Hyphen character present in the review text for a review extension.";
+      codes["ExtensionSettingErrorReason.REVIEW_EXTENSION_SOURCE_INELIGIBLE"] = "A blacklisted review source name or url was provided for a review extension.";
+      codes["ExtensionSettingErrorReason.SOURCE_NAME_IN_REVIEW_EXTENSION_TEXT"] = "Review source name should not be found in the review text.";
+      codes["ExtensionSettingErrorReason.MISSING_FIELD"] = "Field must be set.";
+      codes["ExtensionSettingErrorReason.INVALID_DEVICE_PREFERENCE"] = "Unknown or unsupported device preference.";
+      codes["ExtensionSettingErrorReason.INVALID_SCHEDULE_END"] = "Invalid feed item schedule end time (i.e., endHour = 24 and endMinute != 0).";
+      codes["ExtensionSettingErrorReason.DATE_TIME_MUST_BE_IN_ACCOUNT_TIME_ZONE"] = "Date time zone does not match the account's time zone.";
+      codes["ExtensionSettingErrorReason.OVERLAPPING_SCHEDULES"] = "Overlapping feed item schedule times (e.g., 7-10AM and 8-11AM) are not allowed.";
+      codes["ExtensionSettingErrorReason.SCHEDULE_END_NOT_AFTER_START"] = "Feed item schedule end time must be after start time.";
+      codes["ExtensionSettingErrorReason.TOO_MANY_SCHEDULES_PER_DAY"] = "There are too many feed item schedules per day.";
+      codes["ExtensionSettingErrorReason.UNKNOWN"] = "";
+      codes["AdParamErrorReason.AD_PARAM_CANNOT_BE_SPECIFIED_MULTIPLE_TIMES"] = "The same ad param cannot be specified in multiple operations";
+      codes["AdParamErrorReason.AD_PARAM_DOES_NOT_EXIST"] = "Specified AdParam does not exist";
+      codes["AdParamErrorReason.CRITERION_SPECIFIED_MUST_BE_KEYWORD"] = "Specified criterion is not a keyword";
+      codes["AdParamErrorReason.INVALID_ADGROUP_CRITERION_SPECIFIED"] = "The (AdGroupId,CriterionId) is invalid";
+      codes["AdParamErrorReason.INVALID_INSERTION_TEXT_FORMAT"] = "The insertion text is invalid";
+      codes["AdParamErrorReason.MUST_SPECIFY_ADGROUP_ID"] = "Must specify AdGroupId in selector";
+      codes["AdParamErrorReason.UNKNOWN"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
+      codes["BiddingStrategyErrorReason.DUPLICATE_NAME"] = "Each bidding strategy must have a unique name.";
+      codes["BiddingStrategyErrorReason.CANNOT_CHANGE_BIDDING_STRATEGY_TYPE"] = "Bidding strategy type is immutable.";
+      codes["BiddingStrategyErrorReason.CANNOT_REMOVE_ASSOCIATED_STRATEGY"] = "Only bidding strategies not linked to campaigns, adgroups or adgroup criteria can be removed.";
+      codes["BiddingStrategyErrorReason.BIDDING_STRATEGY_NOT_SUPPORTED"] = "The specified bidding strategy is not supported.";
+      codes["BiddingStrategyErrorReason.UNKNOWN"] = "";
+      codes["CustomerOrderLineErrorReason.INVALID_ORDER_LINE_ID"] = "Order Line Id does not exist.";
+      codes["CustomerOrderLineErrorReason.END_DATE_BEFORE_START_DATE"] = "End date must be later than start date";
+      codes["CustomerOrderLineErrorReason.NEGATIVE_SPEND"] = "Spending limit must be positive";
+      codes["CustomerOrderLineErrorReason.CREATE_IN_PAST"] = "Cannot create order line with start date in the past";
+      codes["CustomerOrderLineErrorReason.ALREADY_STARTED"] = "Cannot change start date after the order line has started";
+      codes["CustomerOrderLineErrorReason.ALREADY_SPENT"] = "Cannot set spending limit below what has already been spent";
+      codes["CustomerOrderLineErrorReason.FINISHED_IN_THE_PAST"] = "Cannot move end date into the past";
+      codes["CustomerOrderLineErrorReason.CANCEL_ACTIVE"] = "Cannot cancel active order line";
+      codes["CustomerOrderLineErrorReason.OVERLAP_DATE_RANGE"] = "Cannot make overlapping order lines.";
+      codes["CustomerOrderLineErrorReason.COS_CHANGE"] = "Cannot make a COS order line non-COS.";
+      codes["CustomerOrderLineErrorReason.NON_ADWORDS"] = "Cannot create an order line on a non-adwords account";
+      codes["CustomerOrderLineErrorReason.START_DATE_AFTER_ACTUAL"] = "Cannot set contract start date to be after actual start date";
+      codes["CustomerOrderLineErrorReason.END_DATE_PAST_MAX"] = "Cannot set contract start date to be after actual start date";
+      codes["CustomerOrderLineErrorReason.PARENT_IS_SELF"] = "only cancelled order lines may have themselves as parent";
+      codes["CustomerOrderLineErrorReason.CANNOT_CANCEL_NEW"] = "Cannot cancel new order line";
+      codes["CustomerOrderLineErrorReason.CANNOT_CANCEL_STARTED"] = "Cannot cancel started order line";
+      codes["CustomerOrderLineErrorReason.CANNOT_PROMOTE_NON_PENDING_ORDERLINE"] = "Cannot promote an order line that is not pending.";
+      codes["CustomerOrderLineErrorReason.UPDATE_ORDERLINE_WILL_SHIFT_CURRENT"] = "Updating order line will shift current order line.";
+      codes["CustomerOrderLineErrorReason.ORDERLINE_BEING_MODIFIED_IS_NOT_NORMAL_OR_PENDING"] = "Only Order lines in normal or pending state can be modified.";
+      codes["CustomerOrderLineErrorReason.INVALID_STATUS_CHANGE"] = "Invalid Status Change by client.";
+      codes["CustomerOrderLineErrorReason.MORE_THAN_ONE_OPERATION_NOT_PERMITTED"] = "More than one operation not permitted per call.";
+      codes["CustomerOrderLineErrorReason.INVALID_TIMEZONE_IN_DATE_RANGES"] = "StartDate and EndDate should pass in the customer's account timeZone.";
+      codes["CustomerOrderLineErrorReason.UNKNOWN"] = "";
+      codes["BudgetOrderErrorReason.BUDGET_APPROVAL_IN_PROGRESS"] = "Existing pending request is being approved.";
+      codes["BudgetOrderErrorReason.SERVICE_UNAVAILABLE"] = "A server backend was not available.";
+      codes["BudgetOrderErrorReason.FIELD_NOT_ELIGIBLE_FOR_CURRENT_BILLING"] = "The request contains a field that is only available if the manager account is whitelisted for new billing backend.";
+      codes["BudgetOrderErrorReason.INVALID_BILLING_ACCOUNT"] = "The billing account was invalid.";
+      codes["BudgetOrderErrorReason.GENERIC_BILLING_ERROR"] = "Unspecified billing service error.";
+      codes["BudgetOrderErrorReason.INVALID_BILLING_ACCOUNT_ID_FORMAT"] = "The billing account ID format was invalid.";
+      codes["BudgetOrderErrorReason.INVALID_BUDGET_DATE_RANGE"] = "Budget date range was invalid.";
+      codes["BudgetOrderErrorReason.INCOMPATIBLE_CURRENCY"] = "Customer's currency is different from what is in the billing system.";
+      codes["BudgetOrderErrorReason.BUDGET_UPDATE_DENIED"] = "User does not have permission to update this budget.";
+      codes["BudgetOrderErrorReason.BUDGET_ALREADY_STARTED"] = "User attempted to cancel a started budget.";
+      codes["BudgetOrderErrorReason.BUDGET_ALREADY_ENDED"] = "User attempted to change an ended budget.";
+      codes["BudgetOrderErrorReason.INVALID_CONSTRAINT"] = "Invalid amount, start date or end date specified.";
+      codes["BudgetOrderErrorReason.INVALID_BID_TOO_LARGE"] = "The bid is too high.";
+      codes["BudgetOrderErrorReason.NO_SUCH_BUDGET_FOUND"] = "Budget was not found.";
+      codes["BudgetOrderErrorReason.INVALID_BUDGET_ALREADY_SPENT"] = "The budget cannot be lowered below the amount which has already been spent.";
+      codes["BudgetOrderErrorReason.INVALID_TIMEZONE_IN_DATE"] = "Time zone from user input is different from user's account time zone.";
+      codes["BudgetOrderErrorReason.ACCOUNT_BUDGET_ID_SET_IN_ADD"] = "The BudgetOrder's ID was set in an add operation.";
+      codes["BudgetOrderErrorReason.MORE_THAN_ONE_OPERATIONS"] = "We don't support more than one operation per mutate call.";
+      codes["BudgetOrderErrorReason.MCC_HIERARCHY_SIZE_TOO_LARGE"] = "MCC Hierarchy size is too large.";
+      codes["BudgetOrderErrorReason.INVALID_MCC_HIERARCHY"] = "MCC Hierarchy not found.";
+      codes["BudgetOrderErrorReason.UNKNOWN"] = "";
+    }
+
+    /// <summary>
+    /// Looks up an error description by code.
+    /// </summary>
+    /// <param name='key'>The error code.</param>
+    /// <returns>The error description, or the key if no description can be found.</returns>
+    public static string Lookup(string key) {
+      if (codes.ContainsKey(key)) {
+        return codes[key];
+      } else {
+        return key;
+      }
+    }
   }
 }
 #pragma warning restore 1591

@@ -17,6 +17,8 @@ using Google.Api.Ads.AdWords.v201509;
 
 using System;
 
+using DayOfWeek = Google.Api.Ads.AdWords.v201509.DayOfWeek;
+
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
 
   /// <summary>
@@ -98,35 +100,35 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
         sitelinkFinalUrls = new string[] { "http://www.example.com/happyhours" },
         scheduling = new FeedItemSchedule[] {
             new FeedItemSchedule() {
-                dayOfWeek = AdWords.v201509.DayOfWeek.MONDAY,
+                dayOfWeek = DayOfWeek.MONDAY,
                 startHour = 18,
                 startMinute = MinuteOfHour.ZERO,
                 endHour = 21,
                 endMinute = MinuteOfHour.ZERO
             },
             new FeedItemSchedule() {
-                dayOfWeek = AdWords.v201509.DayOfWeek.TUESDAY,
+                dayOfWeek = DayOfWeek.TUESDAY,
                 startHour = 18,
                 startMinute = MinuteOfHour.ZERO,
                 endHour = 21,
                 endMinute = MinuteOfHour.ZERO
             },
             new FeedItemSchedule() {
-                dayOfWeek = AdWords.v201509.DayOfWeek.WEDNESDAY,
+                dayOfWeek = DayOfWeek.WEDNESDAY,
                 startHour = 18,
                 startMinute = MinuteOfHour.ZERO,
                 endHour = 21,
                 endMinute = MinuteOfHour.ZERO
             },
             new FeedItemSchedule() {
-                dayOfWeek = AdWords.v201509.DayOfWeek.THURSDAY,
+                dayOfWeek = DayOfWeek.THURSDAY,
                 startHour = 18,
                 startMinute = MinuteOfHour.ZERO,
                 endHour = 21,
                 endMinute = MinuteOfHour.ZERO
             },
             new FeedItemSchedule() {
-                dayOfWeek = AdWords.v201509.DayOfWeek.FRIDAY,
+                dayOfWeek = DayOfWeek.FRIDAY,
                 startHour = 18,
                 startMinute = MinuteOfHour.ZERO,
                 endHour = 21,

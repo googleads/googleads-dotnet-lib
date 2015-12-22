@@ -112,7 +112,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
 
       ' Get the BatchJobService.
       Dim batchJobService As BatchJobService = CType(user.GetService( _
-          AdWordsService.v201509.BatchJobService), AdWords.v201509.BatchJobService)
+          AdWordsService.v201509.BatchJobService), BatchJobService)
 
       Try
         ' Create a BatchJob.

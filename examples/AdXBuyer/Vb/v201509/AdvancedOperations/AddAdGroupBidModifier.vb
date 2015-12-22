@@ -65,7 +65,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
       ' Get the AdGroupBidModifierService.
       Dim adGroupBidModifierService As AdGroupBidModifierService = CType(user.GetService( _
           AdWordsService.v201509.AdGroupBidModifierService), 
-              AdWords.v201509.AdGroupBidModifierService)
+              AdGroupBidModifierService)
 
       ' Mobile criterion ID.
       Dim criterionId As Long = 30001

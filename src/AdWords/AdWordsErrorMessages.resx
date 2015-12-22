@@ -134,7 +134,7 @@
     <comment>Used for ArgumentException by AdWordsServiceFactory.CreateService and LegacyAdWordsServiceFactory if the signature is not of desired type.</comment>
   </data>
   <data name="AnApiExceptionOccurred" xml:space="preserve">
-    <value>An API exception has occurred. See ApiException and InnerException fields for more details.</value>
+    <value>One or more AdWords API errors have occurred.</value>
     <comment>Used by AdWordsSoapClient while throwing AdWordsApiException.</comment>
   </data>
   <data name="ReportNumPollsExceeded" xml:space="preserve">
@@ -164,5 +164,9 @@
   <data name="MissingExpressHeaders" xml:space="preserve">
     <value>No AdWords Express headers were found on PromotionService request.</value>
     <comment>Used for ArgumentException by AdWordsSoapClient.InitForCall if a validation for AdWords Express headers fails.</comment>
+  </data>
+  <data name="ReportingExceptionOccurred" xml:space="preserve">
+    <value>One or more AdWords Report download errors have occurred.</value>
+    <comment>Used by ReportUtilities while throwing AdWordsReportException.</comment>
   </data>
 </root>

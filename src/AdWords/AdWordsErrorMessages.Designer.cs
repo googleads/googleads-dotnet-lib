@@ -61,7 +61,7 @@ namespace Google.Api.Ads.AdWords {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An API exception has occurred. See ApiException and InnerException fields for more details..
+        ///   Looks up a localized string similar to One or more AdWords API errors have occurred..
         /// </summary>
         internal static string AnApiExceptionOccurred {
             get {
@@ -138,6 +138,15 @@ namespace Google.Api.Ads.AdWords {
         internal static string ReportGenerationFailed {
             get {
                 return ResourceManager.GetString("ReportGenerationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to One or more AdWords Report download errors have occurred..
+        /// </summary>
+        internal static string ReportingExceptionOccurred {
+            get {
+                return ResourceManager.GetString("ReportingExceptionOccurred", resourceCulture);
             }
         }
         

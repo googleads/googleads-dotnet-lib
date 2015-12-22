@@ -133,7 +133,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
     /// <summary>
     /// Class to hold keyword details.
     /// </summary>
-    private class Keyword {
+    private class LocalKeyword {
 
       /// <summary>
       /// Gets or sets the keyword text.
@@ -175,7 +175,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
       /// <summary>
       /// Gets or sets the seed keyword.
       /// </summary>
-      public Keyword Keyword { get; set; }
+      public LocalKeyword Keyword { get; set; }
 
       /// <summary>
       /// Gets or sets the seed keyword stat, if available.
@@ -424,7 +424,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
             @operator = Operator.ADD,
             operand = new BiddableAdGroupCriterion() {
               adGroupId = adGroupId,
-              criterion = new AdWords.v201509.Keyword() {
+              criterion = new Keyword() {
                 text = trafficEstimates[i].Keyword.KeywordText,
                 matchType = trafficEstimates[i].MatchType,
               },
@@ -523,7 +523,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
         foreach (string[] row in csvFile.Records) {
           row[1] = row[1].Replace("(close variant)", "").Trim();
           SeedKeyword sqrKeyword = new SeedKeyword() {
-            Keyword = new Keyword() {
+            Keyword = new LocalKeyword() {
               Text = row[0],
               MatchType = (KeywordMatchType) Enum.Parse(typeof(KeywordMatchType), row[1], true)
             },
@@ -576,7 +576,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
         foreach (string[] row in csvFile.Records) {
           row[1] = row[1].Replace("(close variant)", "").Trim();
           SeedKeyword accountKeyword = new SeedKeyword() {
-            Keyword = new Keyword() {
+            Keyword = new LocalKeyword() {
               Text = row[0],
               MatchType = (KeywordMatchType) Enum.Parse(typeof(KeywordMatchType), row[1], true)
             },
@@ -607,7 +607,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
 
       foreach (string[] row in csvFile.Records) {
         SeedKeyword userKeyword = new SeedKeyword() {
-          Keyword = new Keyword() {
+          Keyword = new LocalKeyword() {
             Text = row[0],
             MatchType = (KeywordMatchType) Enum.Parse(typeof(KeywordMatchType), row[1], true)
           },
@@ -797,7 +797,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
 
         for (int j = i; j < i + Settings.TES_KEYWORDS_LIST_SIZE && j < keywords.Count; j++) {
           KeywordEstimateRequest keywordEstimateRequest = new KeywordEstimateRequest() {
-            keyword = new AdWords.v201509.Keyword() {
+            keyword = new Keyword() {
               text = keywords[j].KeywordText,
               matchType = matchType
             }
@@ -840,7 +840,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
 
               if (adGroupEstimate.keywordEstimates != null) {
                 for (int k = 0; k < adGroupEstimate.keywordEstimates.Length; k++) {
-                  AdWords.v201509.Keyword keyword = keywordEstimateRequests[k].keyword;
+                  Keyword keyword = keywordEstimateRequests[k].keyword;
                   KeywordEstimate keywordEstimate = adGroupEstimate.keywordEstimates[k];
 
                   if (keywordEstimateRequests[k].isNegative) {
