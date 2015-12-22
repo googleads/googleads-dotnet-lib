@@ -647,5 +647,7 @@ var namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506 =
     [ "IBudgetOrderService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_i_budget_order_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_i_budget_order_service" ],
     [ "IBudgetService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_i_budget_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_i_budget_service" ],
     [ "ICampaignCriterionService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_i_campaign_criterion_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_i_campaign_criterion_service" ],
+    [ "ErrorDescriptions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_error_descriptions.html", null ],
+    [ "FeedValidationErrors", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_validation_errors.html", null ],
     [ "ReportDefinition", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_report_definition.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_report_definition" ]
 ];

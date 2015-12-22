@@ -82,6 +82,7 @@ var NAVTREEINDEX0 =
 "_ad_words_2_headers_2_response_header_8cs.html":[2,0,0,0,0,0,1,0,0,3],
 "_ad_words_2_headers_2_response_header_stub_8cs.html":[2,0,0,0,0,0,1,0,0,4],
 "_ad_words_2_util_2_reports_2_new_2_report_utilities_8cs.html":[2,0,0,0,0,0,1,0,3,1,0,3],
+"_ad_words_api_8_product_dimension_8cs.html":[2,0,0,0,0,0,1,0,5,1],
 "_ad_words_api_exception_8cs.html":[2,0,0,0,0,0,1,0,1,0],
 "_ad_words_app_config_8cs.html":[2,0,0,0,0,0,1,0,1,1],
 "_ad_words_bulk_request_exception_8cs.html":[2,0,0,0,0,0,1,0,3,0,1],
@@ -95,7 +96,7 @@ var NAVTREEINDEX0 =
 "_ad_words_service_factory_8cs.html":[2,0,0,0,0,0,1,0,1,7],
 "_ad_words_service_signature_8cs.html":[2,0,0,0,0,0,1,0,1,8],
 "_ad_words_service_v201506_8cs.html":[2,0,0,0,0,0,1,0,4,1],
-"_ad_words_service_v201509_8cs.html":[2,0,0,0,0,0,1,0,5,1],
+"_ad_words_service_v201509_8cs.html":[2,0,0,0,0,0,1,0,5,2],
 "_ad_words_soap_client_8cs.html":[2,0,0,0,0,0,1,0,1,9],
 "_ad_words_soap_header_8cs.html":[2,0,0,0,0,0,1,0,0,0],
 "_ad_words_trace_listener_8cs.html":[2,0,0,0,0,0,1,0,1,10],
@@ -199,8 +200,9 @@ var NAVTREEINDEX0 =
 "_app_config_base_8cs.html":[2,0,0,0,0,0,1,1,0,10],
 "_authentication_8cs.html":[2,0,0,0,0,0,1,2,0,0],
 "_base_fields_8cs.html":[2,0,0,0,0,0,1,0,3,2,0],
-"_batch_job_api_8cs.html":[2,0,0,0,0,0,1,0,5,2],
+"_batch_job_api_8cs.html":[2,0,0,0,0,0,1,0,5,5],
 "_batch_job_utilities_8cs.html":[2,0,0,0,0,0,1,0,3,0,0,0],
+"_biddable_unit_state_8cs.html":[2,0,0,0,0,0,1,0,3,3,1],
 "_bulk_job_error_handler_8cs.html":[2,0,0,0,0,0,1,0,3,0,2],
 "_cloud_storage_error_8cs.html":[2,0,0,0,0,0,1,0,3,0,3],
 "_cloud_storage_error_detail_8cs.html":[2,0,0,0,0,0,1,0,3,0,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "_dfp_service_v201511_8cs.html":[2,0,0,0,0,0,1,2,8,1],
 "_dfp_soap_client_8cs.html":[2,0,0,0,0,0,1,2,1,7],
 "_dfp_soap_header_8cs.html":[2,0,0,0,0,0,1,2,0,1],
-"_dfp_trace_listener_8cs.html":[2,0,0,0,0,0,1,2,1,8],
-"_dfp_user_8cs.html":[2,0,0,0,0,0,1,2,1,9],
-"_error_handler_8cs.html":[2,0,0,0,0,0,1,1,0,14]
+"_dfp_trace_listener_8cs.html":[2,0,0,0,0,0,1,2,1,8]
 };

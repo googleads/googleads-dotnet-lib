@@ -136,13 +136,15 @@ Required">This field is required and should not be </span> <a href="#a57dd280594
 <tr class="memitem:ae098a69da41356eb0b700edef4300242"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_targeting_setting_detail.html#ae098a69da41356eb0b700edef4300242">criterionTypeGroupSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ae098a69da41356eb0b700edef4300242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a522a75b2cdf3534464c415e829318a0d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_targeting_setting_detail.html#a522a75b2cdf3534464c415e829318a0d">targetAll</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a522a75b2cdf3534464c415e829318a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, do not use criteria of this type to restrict targeting. <span class="constraint Required">This field is required and should not be </span> <a href="#a522a75b2cdf3534464c415e829318a0d">More...</a><br/></td></tr>
+<tr class="memdesc:a522a75b2cdf3534464c415e829318a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, criteria of this type can be used to modify bidding but will not restrict targeting of ads. This is equivalent to "Bid only" in the <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> user interface. If false, restricts your ads to showing only for the criteria you have selected for this CriterionTypeGroup. This is equivalent to "Target and
+Bid" in the <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> user interface. The default setting for a CriterionTypeGroup is false ("Target and Bid"). <span class="constraint Required">This field is required and should not be </span> <a href="#a522a75b2cdf3534464c415e829318a0d">More...</a><br/></td></tr>
 <tr class="separator:a522a75b2cdf3534464c415e829318a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1349741f0e5da51d5b852f9f8a12eb65"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_targeting_setting_detail.html#a1349741f0e5da51d5b852f9f8a12eb65">targetAllSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a1349741f0e5da51d5b852f9f8a12eb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Specifies if criteria of this type group should be used to restrict targeting, or if ads can serve anywhere and criteria are only used in determining the bid. </p>
+<p>For more information, see <a href="https://support.google.com/adwords/answer/6056342">Targeting Settings</a>.</p>
 </div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a57dd280594d84b9d91173f3fa8d6dd71"></a>
 <div class="memitem">
@@ -209,7 +211,8 @@ Required">This field is required and should not be </span></p>
 </table>
 </div><div class="memdoc">
 
-<p>If true, do not use criteria of this type to restrict targeting. <span class="constraint Required">This field is required and should not be </span></p>
+<p>If true, criteria of this type can be used to modify bidding but will not restrict targeting of ads. This is equivalent to "Bid only" in the <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> user interface. If false, restricts your ads to showing only for the criteria you have selected for this CriterionTypeGroup. This is equivalent to "Target and
+Bid" in the <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> user interface. The default setting for a CriterionTypeGroup is false ("Target and Bid"). <span class="constraint Required">This field is required and should not be </span></p>
 <p><code>null</code>. </p>
 
 </div>
@@ -233,12 +236,12 @@ Required">This field is required and should not be </span></p>
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_targeting_setting_detail.html#a522a75b2cdf3534464c415e829318a0d" title="If true, do not use criteria of this type to restrict targeting. This field is required and should no...">targetAll</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_targeting_setting_detail.html#a522a75b2cdf3534464c415e829318a0d" title="If true, criteria of this type can be used to modify bidding but will not restrict targeting of ads...">targetAll</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.oCXC983OTN/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.KFBipMSPlB/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -246,7 +249,7 @@ Required">This field is required and should not be </span></p>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html">v201506</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_targeting_setting_detail.html">TargetingSettingDetail</a></li>
-    <li class="footer">Generated on Fri Nov 20 2015 10:32:07 for Ads API .NET library by
+    <li class="footer">Generated on Tue Dec 22 2015 13:52:59 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

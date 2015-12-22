@@ -2021,6 +2021,7 @@ var v201506_2_ad_words_api_8cs =
     [ "IBudgetOrderService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_i_budget_order_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_i_budget_order_service" ],
     [ "IBudgetService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_i_budget_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_i_budget_service" ],
     [ "ICampaignCriterionService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_i_campaign_criterion_service.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_i_campaign_criterion_service" ],
+    [ "ErrorDescriptions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_error_descriptions.html", null ],
     [ "AccessReason", "v201506_2_ad_words_api_8cs.html#a53da438ec303134543f6231dcdfcc2b3", [
       [ "OWNED", "v201506_2_ad_words_api_8cs.html#a53da438ec303134543f6231dcdfcc2b3a93964512ba6191b671f19f34ddfd51ca", null ],
       [ "SHARED", "v201506_2_ad_words_api_8cs.html#a53da438ec303134543f6231dcdfcc2b3a049518eb4dc1859c7cebbe15876cfd63", null ],
@@ -3313,7 +3314,6 @@ var v201506_2_ad_words_api_8cs =
       [ "INVALID_STATUS_CHANGE", "v201506_2_ad_words_api_8cs.html#ad7bdeea3a70108a5c6e292d66c5edd17a76d5aac996d01e5a154bbbfd6993c77b", null ],
       [ "MORE_THAN_ONE_OPERATION_NOT_PERMITTED", "v201506_2_ad_words_api_8cs.html#ad7bdeea3a70108a5c6e292d66c5edd17aa0fc18ef598c2f559e7ec52eb94b1f9a", null ],
       [ "INVALID_TIMEZONE_IN_DATE_RANGES", "v201506_2_ad_words_api_8cs.html#ad7bdeea3a70108a5c6e292d66c5edd17af072b57398ed5aefd200e79090b05604", null ],
-      [ "INS_SERVICE_ID_MISMATCH", "v201506_2_ad_words_api_8cs.html#ad7bdeea3a70108a5c6e292d66c5edd17af662d76ae7f5b7c8a4c246b6d972f503", null ],
       [ "UNKNOWN", "v201506_2_ad_words_api_8cs.html#ad7bdeea3a70108a5c6e292d66c5edd17a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "CustomerSyncErrorReason", "v201506_2_ad_words_api_8cs.html#a9e42fa8baa75edee0bb06f295ca23477", [
@@ -4395,6 +4395,7 @@ var v201506_2_ad_words_api_8cs =
       [ "INVALID_PHONE_NUMBER", "v201506_2_ad_words_api_8cs.html#a37a6549a7e626273b48bb3da5c316050ad38f7b08498efa8a99a91467df482716", null ],
       [ "PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED", "v201506_2_ad_words_api_8cs.html#a37a6549a7e626273b48bb3da5c316050adbd85e149e1edfd3ea390effe410260d", null ],
       [ "NON_LOCAL_BUSINESS", "v201506_2_ad_words_api_8cs.html#a37a6549a7e626273b48bb3da5c316050ab11f5c4655fbd384bc4bf12ce25f73d2", null ],
+      [ "ALREADY_MIGRATED", "v201506_2_ad_words_api_8cs.html#a37a6549a7e626273b48bb3da5c316050a912716de8dd4674efbfeba9c7c32d933", null ],
       [ "UNKNOWN", "v201506_2_ad_words_api_8cs.html#a37a6549a7e626273b48bb3da5c316050a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "PromotionStatus", "v201506_2_ad_words_api_8cs.html#ae1a307ca0a7ecb01463967dcf2223f70", [
