@@ -1,3 +1,35 @@
+18.21.0
+======
+AdWords:
+  - Updated Web.config to replace "MCC" with "AdWords manager account".
+  - Fixed a few more instances of old Paging logic with the new Paging.Default
+    code.
+  - Fixed a paging bug in OAuth\ConsoleExample.cs.
+   (https://github.com/googleads/googleads-dotnet-lib/issues/66)
+  - Fixed a paging bug in AddAdGroups.vb.
+   (https://github.com/googleads/googleads-dotnet-lib/issues/65)
+  - Fixed the AddSitelinks code example to check for end dates in the past
+   (https://github.com/googleads/googleads-dotnet-lib/issues/64)
+  - Fixed the GetKeywordBidSimulations code example to check for infinite loop
+   when there are no results.
+   (https://github.com/googleads/googleads-dotnet-lib/issues/63)
+  - Fixed the GetProductCategoryTaxonomy code example to fix an incorrect
+   condition check for adding product category taxonomies to a dictionary.
+   (https://github.com/googleads/googleads-dotnet-lib/issues/62)
+  - Fixed the AddCrmBasedUserList code example to update the membershipLifeSpan
+   field. (https://github.com/googleads/googleads-dotnet-lib/issues/61)
+AdXBuyer:
+  -
+
+DFA:
+  -
+
+DFP:
+  -
+
+Common:
+  -
+
 18.20.0
 =======
 AdWords:

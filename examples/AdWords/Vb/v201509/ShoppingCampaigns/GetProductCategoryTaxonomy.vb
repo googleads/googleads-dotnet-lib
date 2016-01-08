@@ -133,14 +133,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
             parentId = productBiddingCategory.parentDimensionValue.value
           End If
 
-          If (biddingCategories.ContainsKey(id)) Then
+          If Not biddingCategories.ContainsKey(id) Then
             biddingCategories.Add(id, New ProductCategory())
           End If
 
           Dim category As ProductCategory = biddingCategories(id)
 
           If (parentId <> 0) Then
-            If (biddingCategories.ContainsKey(parentId)) Then
+            If Not biddingCategories.ContainsKey(parentId) Then
               biddingCategories.Add(parentId, New ProductCategory())
             End If
             Dim parent As ProductCategory = biddingCategories(parentId)

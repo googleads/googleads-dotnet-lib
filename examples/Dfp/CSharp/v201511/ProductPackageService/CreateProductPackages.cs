@@ -22,7 +22,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
   /// This code example creates a product package. To determine which product packages exist,
   /// run GetAllProductPackages.cs.
   /// </summary>
-  class CreateProposalPackages : SampleBase {
+  class CreateProductPackages : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -38,7 +38,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      SampleBase codeExample = new CreateProposals();
+      SampleBase codeExample = new CreateProductPackages();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }

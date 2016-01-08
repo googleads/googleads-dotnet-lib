@@ -73,7 +73,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         Predicate.Equals(AdGroup.Fields.CampaignId, campaignId)
       }
       selector.ordering = New OrderBy() {OrderBy.Asc(AdGroup.Fields.Name)}
-      selector.paging = New Paging
+      selector.paging = Paging.Default
 
       Dim page As New AdGroupPage
 

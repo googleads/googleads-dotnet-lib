@@ -42,7 +42,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
       /// <summary>
       /// The product category children.
       /// </summary>
-      List<ProductCategory> children;
+      List<ProductCategory> children = new List<ProductCategory>();
 
       /// <summary>
       /// Gets or sets the product category id.
@@ -134,14 +134,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
             parentId = productBiddingCategory.parentDimensionValue.value;
           }
 
-          if (biddingCategories.ContainsKey(id)) {
+          if (!biddingCategories.ContainsKey(id)) {
             biddingCategories.Add(id, new ProductCategory());
           }
 
           ProductCategory category = biddingCategories[id];
 
           if (parentId != 0) {
-            if (biddingCategories.ContainsKey(parentId)) {
+            if (!biddingCategories.ContainsKey(parentId)) {
               biddingCategories.Add(parentId, new ProductCategory());
             }
             ProductCategory parent = biddingCategories[parentId];

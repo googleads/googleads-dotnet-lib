@@ -75,14 +75,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the UserListService.
       Dim userListService As AdwordsUserListService = CType(user.GetService( _
-          AdWordsService.v201506.AdwordsUserListService), AdwordsUserListService)
+          AdWordsService.v201509.AdwordsUserListService), AdwordsUserListService)
 
       ' Create remarketing user list.
       Dim userList As New CrmBasedUserList
       userList.name = "Customer relationship management list #" & _
           ExampleUtilities.GetRandomString()
       userList.description = "A list of customers that originated from email addresses"
-      userList.membershipLifeSpan = 365L
+
+      ' CRM Userlist has a maximum membership lifespan of 180 days. See
+      ' https://support.google.com/adwords/answer/6276125 for details.
+      userList.membershipLifeSpan = 180L
 
       ' You can optionally provide this field to conveniently link an endpoint
       ' for opting-out members from this list. This would link to a service you
@@ -117,7 +120,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
 
         ' Hash normalized email addresses based on SHA-256 hashing algorithm.
         Dim emailHashes(EMAILS.Length) As String
-        For i As Integer = 0 To EMAILS.Length
+        For i As Integer = 0 To EMAILS.Length - 1
           Dim normalizedEmail As String = ToNormalizedEmail(EMAILS(i))
           emailHashes(i) = ToSha256String(hashProvider, normalizedEmail)
         Next

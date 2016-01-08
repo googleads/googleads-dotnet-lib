@@ -119,7 +119,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
           ' Offset by the number of landscape points, NOT the number
           ' of entries (bid landscapes) in the last response.
           selector.paging.IncreaseOffsetBy(landscapePointsInLastResponse)
-        Loop While (landscapePointsInLastResponse < selector.paging.numberResults)
+        Loop While (landscapePointsInLastResponse > 0 And _
+                    landscapePointsInLastResponse < selector.paging.numberResults)
         Console.WriteLine("Number of keyword bid landscapes found: {0}", bidLandscapeCount)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to retrieve keyword bid landscapes.", e)

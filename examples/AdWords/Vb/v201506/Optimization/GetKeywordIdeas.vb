@@ -85,28 +85,18 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
                                                          languageParameter}
 
       ' Set selector paging (required for targeting idea service).
-      Dim paging As New Paging()
-      paging.startIndex = 0
-      paging.numberResults = 500
-      selector.paging = paging
-
-      Dim offset As Long = 0
-      Dim pageSize As Long = 500
-
+      Dim paging As Paging = paging.Default
       Dim page As New TargetingIdeaPage()
 
       Try
+        Dim i As Integer = 0
         Do
-          selector.paging.startIndex = CInt(offset)
-          selector.paging.numberResults = CInt(pageSize)
-
           ' Get related keywords.
           page = targetingIdeaService.get(selector)
 
           'Display the results.
 
           If Not page.entries Is Nothing AndAlso page.entries.Length > 0 Then
-            Dim i As Integer = CInt(offset)
             For Each targetingIdea As TargetingIdea In page.entries
               Dim keyword As String = Nothing
               Dim categories As String = Nothing
@@ -135,8 +125,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
               i = i + 1
             Next
           End If
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
         Console.WriteLine("Number of related keywords found: {0}", page.totalNumEntries)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to retrieve related keywords.", e)

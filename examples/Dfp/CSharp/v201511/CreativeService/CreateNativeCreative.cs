@@ -68,6 +68,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
           String.Format("Native creative #{0}", new Random().Next(int.MaxValue));
       nativeAppInstallCreative.advertiserId = advertiserId;
       nativeAppInstallCreative.creativeTemplateId = creativeTemplateId;
+      nativeAppInstallCreative.destinationUrl =
+          "https://play.google.com/store/apps/details?id=com.google.fpl.pie_noon";
 
       // Use 1x1 as the size for native creatives.
       Size size = new Size();

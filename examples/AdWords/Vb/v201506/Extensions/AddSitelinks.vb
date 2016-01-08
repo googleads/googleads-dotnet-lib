@@ -74,19 +74,30 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
 
       Dim customer As Customer = customerService.get()
 
+      Dim extensions As New List(Of ExtensionFeedItem)
+
       ' Create your sitelinks.
       Dim sitelink1 As New SitelinkFeedItem()
       sitelink1.sitelinkText = "Store Hours"
       sitelink1.sitelinkFinalUrls = New String() {"http://www.example.com/storehours"}
+      extensions.Add(sitelink1)
 
-      ' Show the Thanksgiving specials link only from 20 - 27 Nov.
-      Dim sitelink2 As New SitelinkFeedItem()
-      sitelink2.sitelinkText = "Thanksgiving Specials"
-      sitelink2.sitelinkFinalUrls = New String() {"http://www.example.com/thanksgiving"}
-      sitelink2.startTime = String.Format("{0}1120 000000 {1}", DateTime.Now.Year, _
+      Dim startOfThanksGiving As New DateTime(DateTime.Now.Year, 11, 20, 0, 0, 0)
+      Dim endOfThanksGiving As New DateTime(DateTime.Now.Year, 11, 27, 23, 59, 59)
+
+      ' Add check to make sure we don't create a sitelink with end date in the
+      ' past.
+      If DateTime.Now < endOfThanksGiving Then
+        ' Show the Thanksgiving specials link only from 20 - 27 Nov.
+        Dim sitelink2 As New SitelinkFeedItem()
+        sitelink2.sitelinkText = "Thanksgiving Specials"
+        sitelink2.sitelinkFinalUrls = New String() {"http://www.example.com/thanksgiving"}
+        sitelink2.startTime = String.Format("{0}1120 000000 {1}", DateTime.Now.Year, _
+                                            customer.dateTimeZone)
+        sitelink2.endTime = String.Format("{0}1127 235959 {1}", DateTime.Now.Year, _
                                           customer.dateTimeZone)
-      sitelink2.endTime = String.Format("{0}1127 235959 {1}", DateTime.Now.Year, _
-                                        customer.dateTimeZone)
+        extensions.Add(sitelink2)
+      End If
 
       ' Show the wifi details primarily for high end mobile users.
       Dim sitelink3 As New SitelinkFeedItem()
@@ -94,11 +105,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       sitelink3.sitelinkFinalUrls = New String() {"http://www.example.com/mobile/wifi"}
       sitelink3.devicePreference = New FeedItemDevicePreference()
       sitelink3.devicePreference.devicePreference = 30001
+      extensions.Add(sitelink3)
 
       ' Show the happy hours link only during Mon - Fri 6PM to 9PM.
       Dim sitelink4 As New SitelinkFeedItem()
       sitelink4.sitelinkText = "Happy hours"
       sitelink4.sitelinkFinalUrls = New String() {"http://www.example.com/happyhours"}
+      extensions.Add(sitelink4)
 
       Dim schedule1 As New FeedItemSchedule()
       schedule1.dayOfWeek = DayOfWeek.MONDAY
@@ -145,9 +158,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       campaignExtensionSetting.campaignId = campaignId
       campaignExtensionSetting.extensionType = FeedType.SITELINK
       campaignExtensionSetting.extensionSetting = New ExtensionSetting()
-      campaignExtensionSetting.extensionSetting.extensions = New ExtensionFeedItem() { _
-        sitelink1, sitelink2, sitelink3, sitelink4 _
-      }
+      campaignExtensionSetting.extensionSetting.extensions = extensions.ToArray
 
       Dim extensionOperation As New CampaignExtensionSettingOperation()
       extensionOperation.operand = campaignExtensionSetting

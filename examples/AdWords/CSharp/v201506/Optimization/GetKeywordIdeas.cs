@@ -86,26 +86,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         new SearchParameter[] {relatedToQuerySearchParameter, languageParameter};
 
       // Set selector paging (required for targeting idea service).
-      Paging paging = new Paging();
-      paging.startIndex = 0;
-      paging.numberResults = 500;
-      selector.paging = paging;
-
-      int offset = 0;
-      int pageSize = 500;
-
+      Paging paging = Paging.Default;
       TargetingIdeaPage page = new TargetingIdeaPage();
 
       try {
+        int i = 0;
         do {
-          selector.paging.startIndex = offset;
-          selector.paging.numberResults = pageSize;
           // Get related keywords.
           page = targetingIdeaService.get(selector);
 
           // Display related keywords.
           if (page.entries != null && page.entries.Length > 0) {
-            int i = offset;
             foreach (TargetingIdea targetingIdea in page.entries) {
               string keyword = null;
               string categories = null;
@@ -135,8 +126,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
               i++;
             }
           }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
         Console.WriteLine("Number of related keywords found: {0}", page.totalNumEntries);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve related keywords.", e);

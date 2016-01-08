@@ -81,24 +81,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
       selector.predicates = New Predicate() {predicate}
 
       ' Set the selector paging.
-      selector.paging = New Paging
-
-      Dim offset As Integer = 0
-      Dim pageSize As Integer = 500
-
+      selector.paging = Paging.Default
       Dim page As New CampaignCriterionPage
 
       Try
+        Dim i As Integer = 0
         Do
-          selector.paging.startIndex = offset
-          selector.paging.numberResults = pageSize
-
           ' Get all campaign targets.
           page = campaignCriterionService.get(selector)
 
           ' Display the results.
           If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = offset
             For Each campaignCriterion As CampaignCriterion In page.entries
               Dim negative As String = ""
               If (TypeOf campaignCriterion Is NegativeCampaignCriterion) Then
@@ -111,8 +104,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
               i += 1
             Next
           End If
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
         Console.WriteLine("Number of campaign targeting criteria found: {0}", page.totalNumEntries)
       Catch e As Exception
         Throw New System.ApplicationException("Failed to get campaign targeting criteria.", e)

@@ -78,8 +78,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
         foreach (BaseRate createdBaseRate in baseRates) {
           Console.WriteLine("A product template base rate with ID '{0}' and rate '{1} {2}' was " +
               "created.", createdBaseRate.id, createdBaseRate.GetType().Name,
-              (((ProductBaseRate) createdBaseRate).rate.microAmount / 1000000f),
-              ((ProductBaseRate) createdBaseRate).rate.currencyCode);
+              (((ProductTemplateBaseRate) createdBaseRate).rate.microAmount / 1000000f),
+              ((ProductTemplateBaseRate) createdBaseRate).rate.currencyCode);
         }
       } catch (Exception e) {
           Console.WriteLine("Failed to create base rates. Exception says \"{0}\"", e.Message);

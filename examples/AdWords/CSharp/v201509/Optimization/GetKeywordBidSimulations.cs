@@ -111,7 +111,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
           // Offset by the number of landscape points, NOT the number
           // of entries (bid landscapes) in the last response.
           selector.paging.IncreaseOffsetBy(landscapePointsInLastResponse);
-        } while (landscapePointsInLastResponse < selector.paging.numberResults);
+        } while (landscapePointsInLastResponse > 0 &&
+            landscapePointsInLastResponse < selector.paging.numberResults);
         Console.WriteLine("Number of keyword bid landscapes found: {0}", bidLandscapeCount);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve keyword bid landscapes.", e);

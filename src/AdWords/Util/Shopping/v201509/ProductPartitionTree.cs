@@ -54,11 +54,6 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201509 {
     private readonly ProductDimensionEqualityComparer dimensionComparator;
 
     /// <summary>
-    /// The page size to use when retrieving ad group criteria.
-    /// </summary>
-    private const int PAGE_SIZE = Paging.DEFAULT_PAGE_SIZE;
-
-    /// <summary>
     /// The parent ID for root node.
     /// </summary>
     public const int ROOT_PARENT_ID = 0;
@@ -139,9 +134,7 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201509 {
             }
           },
         },
-        paging = new Paging() {
-          numberResults = PAGE_SIZE
-        }
+        paging = Paging.Default
       };
 
       AdGroupCriterionPage page;

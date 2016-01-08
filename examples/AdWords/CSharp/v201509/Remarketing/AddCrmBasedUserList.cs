@@ -79,7 +79,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
       CrmBasedUserList userList = new CrmBasedUserList() {
         name = "Customer relationship management list #" + ExampleUtilities.GetRandomString(),
         description = "A list of customers that originated from email addresses",
-        membershipLifeSpan = 365L,
+
+        // CRM Userlist has a maximum membership lifespan of 180 days. See
+        // https://support.google.com/adwords/answer/6276125 for details.
+        membershipLifeSpan = 180L,
 
         // You can optionally provide this field to conveniently link an
         // endpoint for opting-out members from this list. This would link to

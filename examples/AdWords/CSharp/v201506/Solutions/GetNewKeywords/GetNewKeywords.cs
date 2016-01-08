@@ -71,11 +71,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       public const int KPR_MAX_RESULTS = 10;
 
       /// <summary>
-      /// The page size to be used for retrieving results.
-      /// </summary>
-      public const int PAGE_SIZE = 500;
-
-      /// <summary>
       /// The accuracy for float results.
       /// </summary>
       public const int ACCURACY = 3;
@@ -685,20 +680,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
         selector.searchParameters = paramList.ToArray();
 
         // Set selector paging (required for targeting idea service).
-        Paging paging = new Paging();
-        paging.startIndex = 0;
-        paging.numberResults = Settings.PAGE_SIZE;
-        selector.paging = paging;
-
-        int offset = 0;
-        int pageSize = 500;
-
+        Paging paging = Paging.Default;
         TargetingIdeaPage page = new TargetingIdeaPage();
 
         try {
           do {
-            selector.paging.startIndex = offset;
-            selector.paging.numberResults = pageSize;
             // Get related keywords.
             page = targetingIdeaService.get(selector);
 
@@ -750,8 +736,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
                 retval.Add(keywordIdea);
               }
             }
-            offset += pageSize;
-          } while (offset < page.totalNumEntries);
+            selector.paging.IncreaseOffset();
+          } while (selector.paging.startIndex < page.totalNumEntries);
         } catch (Exception e) {
           throw new System.ApplicationException("Failed to retrieve related keywords.", e);
         }

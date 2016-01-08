@@ -16,6 +16,8 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201506;
 
 using System;
+using System.Collections.Generic;
+
 using DayOfWeek = Google.Api.Ads.AdWords.v201506.DayOfWeek;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
@@ -67,21 +69,33 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       CustomerService customerService = (CustomerService) user.GetService(
           AdWordsService.v201506.CustomerService);
       Customer customer = customerService.get();
-      
+
+      List<ExtensionFeedItem> extensions = new List<ExtensionFeedItem>();
+
       // Create your sitelinks.
       SitelinkFeedItem sitelink1 = new SitelinkFeedItem() {
         sitelinkText = "Store Hours",
         sitelinkFinalUrls = new string[] { "http://www.example.com/storehours" }
       };
+      extensions.Add(sitelink1);
 
-      // Show the Thanksgiving specials link only from 20 - 27 Nov.
-      SitelinkFeedItem sitelink2 = new SitelinkFeedItem() {
-        sitelinkText = "Thanksgiving Specials",
-        sitelinkFinalUrls = new string[] { "http://www.example.com/thanksgiving" },
-        startTime = string.Format("{0}1120 000000 {1}", DateTime.Now.Year, customer.dateTimeZone),
-        endTime = string.Format("{0}1127 235959 {1}", DateTime.Now.Year, customer.dateTimeZone)
-      };
+      DateTime startOfThanksGiving = new DateTime(DateTime.Now.Year, 11, 20, 0, 0, 0);
+      DateTime endOfThanksGiving = new DateTime(DateTime.Now.Year, 11, 27, 23, 59, 59);
 
+      // Add check to make sure we don't create a sitelink with end date in the
+      // past.
+      if (DateTime.Now < endOfThanksGiving) {
+        // Show the Thanksgiving specials link only from 20 - 27 Nov.
+        SitelinkFeedItem sitelink2 = new SitelinkFeedItem() {
+          sitelinkText = "Thanksgiving Specials",
+          sitelinkFinalUrls = new string[] { "http://www.example.com/thanksgiving" },
+          startTime = string.Format("{0} {1}", startOfThanksGiving.ToString("yyyyMMdd HHmmss"),
+              customer.dateTimeZone),
+          endTime = string.Format("{0} {1}", endOfThanksGiving.ToString("yyyyMMdd HHmmss"),
+              customer.dateTimeZone)
+        };
+        extensions.Add(sitelink2);
+      }
       // Show the wifi details primarily for high end mobile users.
       SitelinkFeedItem sitelink3 = new SitelinkFeedItem() {
         sitelinkText = "Wifi available",
@@ -92,6 +106,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
           devicePreference = 30001
         }
       };
+      extensions.Add(sitelink3);
 
       // Show the happy hours link only during Mon - Fri 6PM to 9PM.
       SitelinkFeedItem sitelink4 = new SitelinkFeedItem() {
@@ -135,6 +150,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
             }
         }
       };
+      extensions.Add(sitelink4);
 
       // Create your campaign extension settings. This associates the sitelinks
       // to your campaign.
@@ -142,9 +158,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201506 {
       campaignExtensionSetting.campaignId = campaignId;
       campaignExtensionSetting.extensionType = FeedType.SITELINK;
       campaignExtensionSetting.extensionSetting = new ExtensionSetting() {
-        extensions = new ExtensionFeedItem[] {
-            sitelink1, sitelink2, sitelink3, sitelink4
-        }
+        extensions = extensions.ToArray()
       };
 
       CampaignExtensionSettingOperation operation = new CampaignExtensionSettingOperation() {

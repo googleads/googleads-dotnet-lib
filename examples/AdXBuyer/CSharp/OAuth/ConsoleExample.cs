@@ -84,9 +84,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
         paging = Paging.Default
       };
 
-      // Set the selector paging.
-      selector.paging = new Paging();
-
       CampaignPage page = new CampaignPage();
 
       try {
