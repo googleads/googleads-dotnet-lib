@@ -1,7 +1,5 @@
 var NAVTREEINDEX118 =
 {
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_rate_card_page.html#ab8545570937ffbc00f6d2a882370b73e":[1,0,0,0,0,2,8,381,4],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_rate_card_page.html#acac241c11d0f8c2c8c17eeaa84259489":[1,0,0,0,0,2,8,381,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_rate_card_service.html":[1,0,0,0,0,2,8,377],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_rate_card_service.html#a0c4477a0e5e9a91d52b4e10e116a0725":[1,0,0,0,0,2,8,377,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_rate_card_service.html#a1499e487a8b1f16e57d3c14923559428":[1,0,0,0,0,2,8,377,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX118 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_resume_orders.html#adb11522eeb26564812f16a194e121902":[1,0,0,0,0,2,8,481,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_resume_proposal_line_items.html":[1,0,0,0,0,2,8,551],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_retract_orders.html":[1,0,0,0,0,2,8,480],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_retract_orders_without_reservation_changes.html":[1,0,0,0,0,2,8,479]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_retract_orders_without_reservation_changes.html":[1,0,0,0,0,2,8,479],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_retract_proposals.html":[1,0,0,0,0,2,8,390],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_retract_proposals.html#ae9ec1b56dfc1b532971d13e85ddfdcc5":[1,0,0,0,0,2,8,390,0]
 };

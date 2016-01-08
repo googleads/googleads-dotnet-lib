@@ -1,7 +1,5 @@
 var NAVTREEINDEX75 =
 {
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_deactivate_labels.html":[1,0,0,0,0,2,5,300],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_deactivate_line_item_creative_associations.html":[1,0,0,0,0,2,5,308],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_deactivate_placements.html":[1,0,0,0,0,2,5,565],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_deactivate_product_packages.html":[1,0,0,0,0,2,5,245],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_deactivate_product_templates.html":[1,0,0,0,0,2,5,515],
@@ -249,5 +247,7 @@ var NAVTREEINDEX75 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_invalid_url_error.html#a5cc3b2b8363cce18d2bf79977572680d":[1,0,0,0,0,2,5,152,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_invalid_url_error.html#ac55f12d06d6f2defc1e763050bb255e5":[1,0,0,0,0,2,5,152,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_inventory_service.html":[1,0,0,0,0,2,5,332],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_inventory_service.html#a3c296b8156581ba9f831ea6fe89e81f9":[1,0,0,0,0,2,5,332,3]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_inventory_service.html#a3c296b8156581ba9f831ea6fe89e81f9":[1,0,0,0,0,2,5,332,3],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_inventory_service.html#a3dc3bf88611da0ab96f1dd70a1f73b5f":[1,0,0,0,0,2,5,332,7],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201502_1_1_inventory_service.html#a4080b3da5be6632d17cb6ddeb28af193":[1,0,0,0,0,2,5,332,2]
 };

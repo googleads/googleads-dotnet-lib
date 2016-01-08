@@ -1,7 +1,5 @@
 var NAVTREEINDEX119 =
 {
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_retract_proposals.html":[1,0,0,0,0,2,8,390],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_retract_proposals.html#ae9ec1b56dfc1b532971d13e85ddfdcc5":[1,0,0,0,0,2,8,390,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_retraction_details.html":[1,0,0,0,0,2,8,391],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_retraction_details.html#a05e536517cb138742c1a1a1c26d585a9":[1,0,0,0,0,2,8,391,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_retraction_details.html#a538c381e7ad019d6b03515de83d0c04f":[1,0,0,0,0,2,8,391,2],
@@ -249,5 +247,7 @@ var NAVTREEINDEX119 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_technology_targeting.html#a7df31d873e99d226d1fd16401166ca0d":[1,0,0,0,0,2,8,97,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_technology_targeting.html#ab2162c5a531ff4f07cb80388b16df4b8":[1,0,0,0,0,2,8,97,5],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_technology_targeting.html#add2515ccfff09d7ba03dccd15a421663":[1,0,0,0,0,2,8,97,9],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_technology_targeting_error.html":[1,0,0,0,0,2,8,147]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_technology_targeting_error.html":[1,0,0,0,0,2,8,147],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_technology_targeting_error.html#a1f6bc58c21c2b478adb0e0d8e9fda464":[1,0,0,0,0,2,8,147,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201511_1_1_technology_targeting_error.html#a696584de953b3c8c33861738d6e2a90f":[1,0,0,0,0,2,8,147,1]
 };

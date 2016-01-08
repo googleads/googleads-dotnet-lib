@@ -1,7 +1,5 @@
 var NAVTREEINDEX100 =
 {
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_delete_custom_targeting_values.html":[1,0,0,0,0,2,7,267],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_delete_exchange_rates.html":[1,0,0,0,0,2,7,469],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_delete_line_item_creative_associations.html":[1,0,0,0,0,2,7,321],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_delete_line_items.html":[1,0,0,0,0,2,7,224],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_delete_orders.html":[1,0,0,0,0,2,7,485],
@@ -249,5 +247,7 @@ var NAVTREEINDEX100 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_inventory_service.html#ae45d6b7287734b5450325cafde66584e":[1,0,0,0,0,2,7,345,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_inventory_service.html#aefbd22a92183f18fd20b631a4fa756c0":[1,0,0,0,0,2,7,345,7],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_inventory_targeting.html":[1,0,0,0,0,2,7,22],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_inventory_targeting.html#a76b857a57da8e7812e07c76a965bb0df":[1,0,0,0,0,2,7,22,2]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_inventory_targeting.html#a76b857a57da8e7812e07c76a965bb0df":[1,0,0,0,0,2,7,22,2],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_inventory_targeting.html#af235e970e650e9ded2417a7e3cfb4840":[1,0,0,0,0,2,7,22,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_inventory_targeting.html#afde5d4842392ce0c4dc8db918c54997e":[1,0,0,0,0,2,7,22,1]
 };

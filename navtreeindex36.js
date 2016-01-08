@@ -1,7 +1,5 @@
 var NAVTREEINDEX36 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_database_error_1_1_selectable_fields.html":[1,0,0,0,0,0,5,90,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_database_error_1_1_selectable_fields.html#a90af530c4a69f08b5e3f90baae402143":[1,0,0,0,0,0,5,90,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date.html":[1,0,0,0,0,0,5,483],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date.html#a1cabd382f786e8a6c4b0f25a37552c65":[1,0,0,0,0,0,5,483,8],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_date.html#a5865fbb9526184957a97749d7e6c5577":[1,0,0,0,0,0,5,483,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX36 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_exemption_request.html":[1,0,0,0,0,0,5,40],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_exemption_request.html#a000b2f7dff17536b3ce1d04510b9cf33":[1,0,0,0,0,0,5,40,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_exemption_request_1_1_fields.html":[1,0,0,0,0,0,5,40,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_exemption_request_1_1_fields.html#affae99a655accaa6412c03dbb0f2d6f1":[1,0,0,0,0,0,5,40,0,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_exemption_request_1_1_fields.html#affae99a655accaa6412c03dbb0f2d6f1":[1,0,0,0,0,0,5,40,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_exemption_request_1_1_filterable_fields.html":[1,0,0,0,0,0,5,40,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_exemption_request_1_1_filterable_fields.html#a28216bd28993e60ec83d2c1e20b6857d":[1,0,0,0,0,0,5,40,1,0]
 };

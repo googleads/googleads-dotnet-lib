@@ -1,0 +1,19 @@
+var dir_2eb6c05d21f8b5b13c404d5539cd9fdd =
+[
+    [ "Properties", "dir_ffbd682a32703e00e9f5611d95d6d07f.html", "dir_ffbd682a32703e00e9f5611d95d6d07f" ],
+    [ "ConsoleExample.cs", "_ad_words_2_c_sharp_2_o_auth_2_console_example_8cs.html", [
+      [ "ConsoleExample", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_console_example.html", null ]
+    ] ],
+    [ "Default.aspx.cs", "_ad_words_2_c_sharp_2_o_auth_2_default_8aspx_8cs.html", [
+      [ "Default", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default" ]
+    ] ],
+    [ "Default.aspx.designer.cs", "_ad_words_2_c_sharp_2_o_auth_2_default_8aspx_8designer_8cs.html", [
+      [ "Default", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default" ]
+    ] ],
+    [ "OAuthLogin.aspx.cs", "_ad_words_2_c_sharp_2_o_auth_2_o_auth_login_8aspx_8cs.html", [
+      [ "OAuthLogin", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_o_auth_login.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_o_auth_login" ]
+    ] ],
+    [ "OAuthLogin.aspx.designer.cs", "_ad_words_2_c_sharp_2_o_auth_2_o_auth_login_8aspx_8designer_8cs.html", [
+      [ "OAuthLogin", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_o_auth_login.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_o_auth_login" ]
+    ] ]
+];
