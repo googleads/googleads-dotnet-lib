@@ -32,15 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.5.5.10112, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\NUnit\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\lib\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Common\Common.csproj">
@@ -55,7 +54,7 @@
       <Project>{5C1DE791-767A-4599-A0B9-51D6D2DFCC81}</Project>
       <Name>AdWords.Examples.CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\examples\adwords\vb\AdWords.Examples.VB.vbproj">
+    <ProjectReference Include="..\..\examples\AdWords\vb\AdWords.Examples.VB.vbproj">
       <Project>{A4AE3724-C225-4F03-AC77-A71C1330D8DD}</Project>
       <Name>AdWords.Examples.VB</Name>
     </ProjectReference>
@@ -67,6 +66,11 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SoapMessages.v201601.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SoapMessages.v201601.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SoapMessages.v201509.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SoapMessages.v201509.Designer.cs</LastGenOutput>
@@ -79,6 +83,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\UpdateCampaign.v201601.txt" />
     <Content Include="Resources\UpdateCampaign.v201509.txt" />
     <Content Include="Resources\UpdateCampaign.v201506.txt" />
     <Content Include="App.config" />
@@ -96,13 +101,21 @@
     <Compile Include="Lib\AdWordsServiceFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
+    <Compile Include="Util\BatchJob\v201509\BatchJobUtilitiesTest.cs" />
+    <Compile Include="Util\BatchJob\v201601\BatchJobUtilitiesTest.cs" />
     <Compile Include="Util\Shopping\v201509\ProductDimensionEqualityComparerTest.cs" />
     <Compile Include="Util\Shopping\v201509\ProductDimensionsTest.cs" />
     <Compile Include="Util\Shopping\v201509\ProductPartitionNodeTest.cs" />
     <Compile Include="Util\Shopping\v201509\ProductPartitionTreeIntegrationTests.cs" />
     <Compile Include="Util\Shopping\v201509\ProductPartitionTreeTest.cs" />
+    <Compile Include="Util\Shopping\v201601\ProductDimensionEqualityComparerTest.cs" />
+    <Compile Include="Util\Shopping\v201601\ProductDimensionsTest.cs" />
+    <Compile Include="Util\Shopping\v201601\ProductPartitionNodeTest.cs" />
+    <Compile Include="Util\Shopping\v201601\ProductPartitionTreeIntegrationTests.cs" />
+    <Compile Include="Util\Shopping\v201601\ProductPartitionTreeTest.cs" />
     <Compile Include="Util\v201506\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201509\MapUtilitiesTest.cs" />
+    <Compile Include="Util\v201601\MapUtilitiesTest.cs" />
     <Compile Include="v201506\AccountManagementTest.cs" />
     <Compile Include="v201506\AdvancedOperationsTest.cs" />
     <Compile Include="v201506\BasicOperationsTest.cs" />
@@ -136,6 +149,23 @@
     <Compile Include="v201509\TargetingTest.cs" />
     <Compile Include="v201509\TestUtils.cs" />
     <Compile Include="v201509\VersionedExampleTestsBase.cs" />
+    <Compile Include="v201601\AccountManagementTest.cs" />
+    <Compile Include="v201601\AdvancedOperationsTest.cs" />
+    <Compile Include="v201601\BasicOperationsTest.cs" />
+    <Compile Include="v201601\CampaignManagementTest.cs" />
+    <Compile Include="v201601\ErrorHandlingTest.cs" />
+    <Compile Include="v201601\ExtensionsTest.cs" />
+    <Compile Include="v201601\MigrationTest.cs" />
+    <Compile Include="v201601\MiscellaneousTest.cs" />
+    <Compile Include="v201601\MockTests.cs" />
+    <Compile Include="v201601\OptimizationTest.cs" />
+    <Compile Include="v201601\RemarketingTest.cs" />
+    <Compile Include="v201601\ReportingTest.cs" />
+    <Compile Include="v201601\ShoppingCampaignsTest.cs" />
+    <Compile Include="v201601\ShoppingTestUtils.cs" />
+    <Compile Include="v201601\TargetingTest.cs" />
+    <Compile Include="v201601\TestUtils.cs" />
+    <Compile Include="v201601\VersionedExampleTestsBase.cs" />
     <Compile Include="AdWordsRequestInterceptor.cs" />
     <Compile Include="ExampleTestsBase.cs" />
     <Compile Include="ExamplesMockData.cs" />
@@ -143,5 +173,6 @@
     <Compile Include="ServiceCreationTests.cs" />
     <Compile Include="SoapMessages.v201506.Designer.cs" />
     <Compile Include="SoapMessages.v201509.Designer.cs" />
+    <Compile Include="SoapMessages.v201601.Designer.cs" />
   </ItemGroup>
 </Project>

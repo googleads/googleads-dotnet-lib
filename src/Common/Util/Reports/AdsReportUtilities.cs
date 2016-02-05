@@ -132,7 +132,7 @@ namespace Google.Api.Ads.Common.Util.Reports {
     /// <summary>
     /// Gets the report download response asynchronously.
     /// </summary>
-    public void GetResponseAsync() {
+    public virtual void GetResponseAsync() {
       asyncThread = new Thread(new ThreadStart(delegate() {
         try {
           ReportResponse response = GetResponse();
@@ -154,7 +154,7 @@ namespace Google.Api.Ads.Common.Util.Reports {
     /// Gets the report download response.
     /// </summary>
     /// <returns>The report response.</returns>
-    public ReportResponse GetResponse() {
+    public virtual ReportResponse GetResponse() {
       Schedule();
       while (ShouldWaitMore()) {
         Thread.Sleep(WAIT_PERIOD);

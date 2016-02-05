@@ -15,8 +15,9 @@
 namespace Google.Api.Ads.AdWords.v201506 {
 
   /// <summary>
-  /// Specifies how an entity (eg. adgroup, campaign, criterion, ad) should be
-  /// filtered.
+  /// Specifies the page of results to return in the response. A page is
+  /// specified by the result position to start at and the maximum number of
+  /// results to return.
   /// </summary>
   public partial class Paging {
 

@@ -32,6 +32,18 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
   public class ReportUtilities : AdsReportUtilities {
 
     /// <summary>
+    /// The feature ID for this class.
+    /// </summary>
+    private const AdsFeatureUsageRegistry.Features FEATURE_ID =
+        AdsFeatureUsageRegistry.Features.ReportDownloader;
+
+    /// <summary>
+    /// The registry for saving feature usage information..
+    /// </summary>
+    private readonly AdsFeatureUsageRegistry featureUsageRegistry =
+        AdsFeatureUsageRegistry.Instance;
+
+    /// <summary>
     /// Default report version.
     /// </summary>
     internal const string DEFAULT_REPORT_VERSION = "v201509";
@@ -194,6 +206,8 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
           } else {
             throw reportsException;
           }
+        } finally {
+          featureUsageRegistry.Clear();
         }
       }
     }
@@ -281,6 +295,27 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         node.RemoveAllAttributes();
       }
       return doc.OuterXml;
+    }
+
+    /// <summary>
+    /// Gets the report download response.
+    /// </summary>
+    /// <returns>The report response.</returns>
+    public override ReportResponse GetResponse() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
+      return base.GetResponse();
+    }
+
+    /// <summary>
+    /// Gets the report download response asynchronously.
+    /// </summary>
+    public override void GetResponseAsync() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
+      base.GetResponseAsync();
     }
   }
 }

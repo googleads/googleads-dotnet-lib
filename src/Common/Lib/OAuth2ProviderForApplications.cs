@@ -17,7 +17,6 @@ using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Net;
 using System.Web;
 
@@ -29,6 +28,12 @@ namespace Google.Api.Ads.Common.Lib {
   /// </summary>
   public class OAuth2ProviderForApplications : OAuth2ProviderBase,
       AdsOAuthProviderForApplications {
+
+    /// <summary>
+    /// The feature ID for this class.
+    /// </summary>
+    private const AdsFeatureUsageRegistry.Features FEATURE_ID =
+        AdsFeatureUsageRegistry.Features.OAuthApplicationFlow;
 
     /// <summary>
     /// The OAuth2 endpoint for revoking a refresh token programmatically.
@@ -98,6 +103,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// <exception cref="ArgumentNullException">Thrown if one of the following
     /// OAuth2 parameters are empty: Scope, ClientId</exception>
     public string GetAuthorizationUrl() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       string accessType = (isOffline) ? "offline" : "online";
       string redirectUrl = (string.IsNullOrEmpty(RedirectUri)) ? OFFLINE_REDIRECT_URL : RedirectUri;
 
@@ -128,6 +136,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// OAuth2 parameters are empty: ClientId, ClientSecret, AuthorizationCode.
     /// </exception>
     public bool FetchAccessAndRefreshTokens(string authorizationCode) {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       string redirectUrl = (string.IsNullOrEmpty(RedirectUri)) ? OFFLINE_REDIRECT_URL : RedirectUri;
 
       if (string.IsNullOrEmpty(authorizationCode)) {
@@ -159,6 +170,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// OAuth2 parameters are empty: ClientId, ClientSecret, RefreshToken.
     /// </exception>
     public void RefreshAccessTokenInOfflineMode() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       ValidateOAuth2Parameter("RefreshToken", RefreshToken);
       ValidateOAuth2Parameter("ClientId", ClientId);
       ValidateOAuth2Parameter("ClientSecret", ClientSecret);
@@ -180,6 +194,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// <exception cref="ArgumentNullException">Thrown if one of the following
     /// OAuth2 parameters are empty: RefreshToken.</exception>
     public void RevokeRefreshToken() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       ValidateOAuth2Parameter("RefreshToken", RefreshToken);
 
       string url = string.Format("{0}?token={1}", REVOKE_ENDPOINT, RefreshToken);
@@ -226,11 +243,35 @@ namespace Google.Api.Ads.Common.Lib {
     /// <exception cref="ArgumentNullException">Thrown if RefreshToken is empty.
     /// </exception>
     public override void RefreshAccessToken() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       ValidateOAuth2Parameter("RefreshToken", RefreshToken);
       if (!IsOffline) {
         throw new ArgumentException(CommonErrorMessages.OAuth2IsNotInOfflineMode);
       }
       RefreshAccessTokenInOfflineMode();
+    }
+
+    /// <summary>
+    /// Gets the auth header.
+    /// </summary>
+    /// <returns>The auth header.</returns>
+    public override string GetAuthHeader() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
+      return base.GetAuthHeader();
+    }
+
+    /// <summary>
+    /// Refreshes the access token if expiring.
+    /// </summary>
+    public override void RefreshAccessTokenIfExpiring() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
+      base.RefreshAccessTokenIfExpiring();
     }
   }
 }

@@ -101,7 +101,6 @@ namespace Google.Api.Ads.AdWords.Lib {
         requestHeader.clientCustomerId = awConfig.ClientCustomerId;
       }
       requestHeader.developerToken = awConfig.DeveloperToken;
-      requestHeader.userAgent = awConfig.GetUserAgent();
     }
 
     /// <summary>

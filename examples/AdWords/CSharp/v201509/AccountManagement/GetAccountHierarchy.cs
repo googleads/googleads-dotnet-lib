@@ -17,16 +17,17 @@ using Google.Api.Ads.AdWords.v201509;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
+
   /// <summary>
   /// This code example illustrates how to retrieve the account hierarchy under
   /// an account. This code example won't work with Test Accounts. See
   /// https://developers.google.com/adwords/api/docs/test-accounts
   /// </summary>
   public class GetAccountHierarchy : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -67,52 +68,58 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
       selector.fields = new String[] {
           ManagedCustomer.Fields.CustomerId, ManagedCustomer.Fields.Name
       };
+      selector.paging = Paging.Default;
 
+      // Map from customerId to customer node.
+      Dictionary<long, ManagedCustomerTreeNode> customerIdToCustomerNode =
+          new Dictionary<long, ManagedCustomerTreeNode>();
+
+      // Temporary cache to save links.
+      List<ManagedCustomerLink> allLinks = new List<ManagedCustomerLink>();
+
+      ManagedCustomerPage page = null;
       try {
-        // Get results.
-        ManagedCustomerPage page = managedCustomerService.get(selector);
+        do {
+          page = managedCustomerService.get(selector);
 
-        // Display serviced account graph.
-        if (page.entries != null) {
-          // Create map from customerId to customer node.
-          Dictionary<long, ManagedCustomerTreeNode> customerIdToCustomerNode =
-              new Dictionary<long, ManagedCustomerTreeNode>();
+          if (page.entries != null) {
+            // Create account tree nodes for each customer.
+            foreach (ManagedCustomer customer in page.entries) {
+              ManagedCustomerTreeNode node = new ManagedCustomerTreeNode();
+              node.Account = customer;
+              customerIdToCustomerNode.Add(customer.customerId, node);
+            }
 
-          // Create account tree nodes for each customer.
-          foreach (ManagedCustomer customer in page.entries) {
-            ManagedCustomerTreeNode node = new ManagedCustomerTreeNode();
-            node.Account = customer;
-            customerIdToCustomerNode.Add(customer.customerId, node);
-          }
-
-          // For each link, connect nodes in tree.
-          if (page.links != null) {
-            foreach (ManagedCustomerLink link in page.links) {
-              ManagedCustomerTreeNode managerNode =
-                  customerIdToCustomerNode[link.managerCustomerId];
-              ManagedCustomerTreeNode childNode = customerIdToCustomerNode[link.clientCustomerId];
-              childNode.ParentNode = managerNode;
-              if (managerNode != null) {
-                managerNode.ChildAccounts.Add(childNode);
-              }
+            if (page.links != null) {
+              allLinks.AddRange(page.links);
             }
           }
+          selector.paging.IncreaseOffset();
+        } while (selector.paging.startIndex < page.totalNumEntries);
 
-          // Find the root account node in the tree.
-          ManagedCustomerTreeNode rootNode = null;
-          foreach (ManagedCustomer account in page.entries) {
-            if (customerIdToCustomerNode[account.customerId].ParentNode == null) {
-              rootNode = customerIdToCustomerNode[account.customerId];
-              break;
-            }
+        // For each link, connect nodes in tree.
+        foreach (ManagedCustomerLink link in allLinks) {
+          ManagedCustomerTreeNode managerNode =
+              customerIdToCustomerNode[link.managerCustomerId];
+          ManagedCustomerTreeNode childNode = customerIdToCustomerNode[link.clientCustomerId];
+          childNode.ParentNode = managerNode;
+          if (managerNode != null) {
+            managerNode.ChildAccounts.Add(childNode);
           }
-
-          // Display account tree.
-          Console.WriteLine("CustomerId, Name");
-          Console.WriteLine(rootNode.ToTreeString(0, new StringBuilder()));
-        } else {
-          Console.WriteLine("No serviced accounts were found.");
         }
+
+        // Find the root account node in the tree.
+        ManagedCustomerTreeNode rootNode = null;
+        foreach (ManagedCustomerTreeNode node in customerIdToCustomerNode.Values) {
+          if (node.ParentNode == null) {
+            rootNode = node;
+            break;
+          }
+        }
+
+        // Display account tree.
+        Console.WriteLine("CustomerId, Name");
+        Console.WriteLine(rootNode.ToTreeString(0, new StringBuilder()));
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to create ad groups.", e);
       }
@@ -121,7 +128,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
     /**
      * Example implementation of a node that would exist in an account tree.
      */
-    class ManagedCustomerTreeNode {
+
+    private class ManagedCustomerTreeNode {
+
       /// <summary>
       /// The parent node.
       /// </summary>
@@ -179,9 +188,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
       /// representation.</param>
       /// <returns>The tree string representation.</returns>
       public StringBuilder ToTreeString(int depth, StringBuilder sb) {
-        sb.Append(new String('-', depth * 2));
+        sb.Append('-', depth * 2);
         sb.Append(this);
-        sb.Append("\n");
+        sb.AppendLine();
         foreach (ManagedCustomerTreeNode childAccount in childAccounts) {
           childAccount.ToTreeString(depth + 1, sb);
         }

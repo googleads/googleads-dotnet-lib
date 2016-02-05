@@ -68,56 +68,150 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
       selector.fields = New String() {
         ManagedCustomer.Fields.CustomerId, ManagedCustomer.Fields.Name
       }
+      selector.paging = Paging.Default
+ 
+      ' Map from customerId to customer node.
+      Dim customerIdToCustomerNode As Dictionary(Of Long, ManagedCustomerTreeNode) = _
+          New Dictionary(Of Long, ManagedCustomerTreeNode)()
 
+      ' Temporary cache to save links.
+      Dim allLinks As New List(Of ManagedCustomerLink)
+
+      Dim page As ManagedCustomerPage = Nothing
       Try
-        ' Get results.
-        Dim page As ManagedCustomerPage = mcService.get(selector)
+        Do
+          page = mcService.get(selector)
 
-        ' Display serviced account graph.
-        If Not page.entries Is Nothing Then
-          ' Create map from customerId to customer node.
-          Dim customerIdToCustomerNode As Dictionary(Of Long, ManagedCustomerTreeNode) = _
-              New Dictionary(Of Long, ManagedCustomerTreeNode)()
-
-          ' Create account tree nodes for each customer.
-          For Each customer As ManagedCustomer In page.entries
-            Dim node As New ManagedCustomerTreeNode()
-            node.Account = customer
-            customerIdToCustomerNode.Add(customer.customerId, node)
-          Next
-
-          ' For each link, connect nodes in tree.
-          If (Not page.links Is Nothing) Then
-            For Each link As ManagedCustomerLink In page.links
-              Dim managerNode As ManagedCustomerTreeNode = _
-                  customerIdToCustomerNode(link.managerCustomerId)
-              Dim childNode As ManagedCustomerTreeNode = _
-                  customerIdToCustomerNode(link.clientCustomerId)
-              childNode.ParentNode = managerNode
-              If (Not managerNode Is Nothing) Then
-                managerNode.ChildAccounts.Add(childNode)
-              End If
+          ' Display serviced account graph.
+          If Not page.entries Is Nothing Then
+            ' Create account tree nodes for each customer.
+            For Each customer As ManagedCustomer In page.entries
+              Dim node As New ManagedCustomerTreeNode()
+              node.Account = customer
+              customerIdToCustomerNode.Add(customer.customerId, node)
             Next
+
+            If Not page.links Is Nothing Then
+              allLinks.AddRange(page.links)
+            End If
           End If
 
-          ' Find the root account node in the tree.
-          Dim rootNode As ManagedCustomerTreeNode = Nothing
-          For Each account As ManagedCustomer In page.entries
-            If (customerIdToCustomerNode(account.customerId).ParentNode Is Nothing) Then
-              rootNode = customerIdToCustomerNode(account.customerId)
-              Exit For
-            End If
-          Next
+          selector.paging.IncreaseOffset()
+        Loop While (selector.paging.startIndex < page.totalNumEntries)
 
-          ' Display account tree.
-          Console.WriteLine("CustomerId, Name")
-          Console.WriteLine(rootNode.ToTreeString(0, New StringBuilder()))
-        Else
-          Console.WriteLine("No accounts were found.")
-        End If
+        ' For each link, connect nodes in tree.
+        For Each link As ManagedCustomerLink In allLinks
+          Dim managerNode As ManagedCustomerTreeNode = _
+              customerIdToCustomerNode(link.managerCustomerId)
+          Dim childNode As ManagedCustomerTreeNode = _
+              customerIdToCustomerNode(link.clientCustomerId)
+          childNode.ParentNode = managerNode
+          If (Not managerNode Is Nothing) Then
+            managerNode.ChildAccounts.Add(childNode)
+          End If
+        Next
+
+        ' Find the root account node in the tree.
+        Dim rootNode As ManagedCustomerTreeNode = Nothing
+        For Each node As ManagedCustomerTreeNode In customerIdToCustomerNode.Values
+          If node.ParentNode Is Nothing Then
+            rootNode = node
+            Exit For
+          End If
+        Next
+
+        ' Display account tree.
+        Console.WriteLine("CustomerId, Name")
+        Console.WriteLine(rootNode.ToTreeString(0, New StringBuilder()))
       Catch e As Exception
         Throw New System.ApplicationException("Failed to get accounts.", e)
       End Try
     End Sub
+  End Class
+
+
+  ''' <summary>
+  '''Example implementation of a node that would exist in an account tree.
+  ''' </summary>
+  Class ManagedCustomerTreeNode
+    ''' <summary>
+    ''' The parent node.
+    ''' </summary>
+    Private _parentNode As ManagedCustomerTreeNode
+
+    ''' <summary>
+    ''' The account associated with this node.
+    ''' </summary>
+    Private _account As ManagedCustomer
+
+    ''' <summary>
+    ''' The list of child accounts.
+    ''' </summary>
+    Private _childAccounts As New List(Of ManagedCustomerTreeNode)
+
+    ''' <summary>
+    ''' Gets or sets the parent node.
+    ''' </summary>
+    Public Property ParentNode() As ManagedCustomerTreeNode
+      Get
+        Return _parentNode
+      End Get
+      Set(ByVal value As ManagedCustomerTreeNode)
+        _parentNode = value
+      End Set
+    End Property
+
+
+    ''' <summary>
+    ''' Gets or sets the account.
+    ''' </summary>
+    Public Property Account() As ManagedCustomer
+      Get
+        Return _account
+      End Get
+      Set(ByVal value As ManagedCustomer)
+        _account = value
+      End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the child accounts.
+    ''' </summary>
+    Public Property ChildAccounts() As List(Of ManagedCustomerTreeNode)
+      Get
+        Return _childAccounts
+      End Get
+      Set(ByVal value As List(Of ManagedCustomerTreeNode))
+        _childAccounts = value
+      End Set
+    End Property
+
+    ''' <summary>
+    ''' Returns a <see cref="System.String"/> that represents this instance.
+    ''' </summary>
+    ''' <returns>
+    ''' A <see cref="System.String"/> that represents this instance.
+    ''' </returns>
+    Public Overrides Function ToString() As String
+      Return String.Format("{0}, {1}", _account.customerId, _account.name)
+    End Function
+
+    ''' <summary>
+    ''' Returns a string representation of the current level of the tree and
+    ''' recursively returns the string representation of the levels below it.
+    ''' </summary>
+    ''' <param name="depth">The depth of the node.</param>
+    ''' <param name="sb">The String Builder containing the tree
+    ''' representation.</param>
+    ''' <returns>The tree string representation.</returns>
+    Public Function ToTreeString(ByVal depth As Integer, ByVal sb As StringBuilder) As StringBuilder
+      sb.Append("-"c, depth * 2)
+      sb.Append(Me)
+      sb.AppendLine()
+      For Each childAccount As ManagedCustomerTreeNode In _childAccounts
+        childAccount.ToTreeString(depth + 1, sb)
+      Next
+      Return sb
+    End Function
   End Class
 End Namespace

@@ -97,7 +97,9 @@ namespace Google.Api.Ads.Common.Lib {
       this.config = config;
       MergeValuesFromHeaders(config, headers);
       RegisterServices(GetServiceTypes());
-      listeners.AddRange(GetDefaultListeners());
+      if (this.config.EnableSoapExtension) {
+        listeners.AddRange(GetDefaultListeners());
+      }
       SetHeadersFromConfig();
       config.PropertyChanged += delegate(object sender, PropertyChangedEventArgs e) {
         if (e.PropertyName == "OAuth2Mode") {

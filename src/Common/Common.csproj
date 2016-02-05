@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -56,10 +56,10 @@
     <Compile Include="Lib\AppConfig.cs" />
     <Compile Include="Lib\AppConfigBase.cs" />
     <Compile Include="Lib\Configurable.cs" />
+    <Compile Include="Logging\AdsFeatureUsageRegistry.cs" />
     <Compile Include="Logging\KeyValueMessageFormatter.cs" />
     <Compile Include="Util\DateTimeProvider.cs" />
     <Compile Include="Util\DefaultDateTimeProvider.cs" />
-    <Compile Include="Lib\InMemoryTokenCache.cs" />
     <Compile Include="Lib\CredentialsExpiredException.cs" />
     <Compile Include="Lib\ErrorHandler.cs" />
     <Compile Include="Lib\ContextStore.cs" />

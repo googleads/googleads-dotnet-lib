@@ -46,11 +46,6 @@ namespace Google.Api.Ads.Dfp.Tests.v201508 {
     private long traffickerId;
 
     /// <summary>
-    /// Current user id for running tests.
-    /// </summary>
-    private long currentUserId;
-
-    /// <summary>
     /// Default public constructor.
     /// </summary>
     public UserServiceTests() : base() {
@@ -65,7 +60,6 @@ namespace Google.Api.Ads.Dfp.Tests.v201508 {
       userService = (UserService) user.GetService(DfpService.v201508.UserService);
       salespersonId = utils.GetSalesperson(user).id;
       traffickerId = utils.GetTrafficker(user).id;
-      currentUserId = utils.GetCurrentUser(user).id;
     }
 
     /// <summary>
@@ -80,21 +74,6 @@ namespace Google.Api.Ads.Dfp.Tests.v201508 {
       });
       Assert.NotNull(roles);
       Assert.GreaterOrEqual(roles.Length, 0);
-    }
-
-    /// <summary>
-    /// Test whether we can fetch the current user.
-    /// </summary>
-    [Test]
-    public void TestGetCurrentUser() {
-      User user = null;
-
-      Assert.DoesNotThrow(delegate() {
-        user = userService.getCurrentUser();
-      });
-
-      Assert.NotNull(user);
-      Assert.AreEqual(user.id, currentUserId);
     }
 
     /// <summary>

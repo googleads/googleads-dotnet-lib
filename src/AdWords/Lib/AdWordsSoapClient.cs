@@ -14,6 +14,7 @@
 
 using Google.Api.Ads.AdWords.Headers;
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
 
 using System;
@@ -70,6 +71,8 @@ namespace Google.Api.Ads.AdWords.Lib {
         }
       }
 
+      header.userAgent = config.GetUserAgent();
+
       string oAuthHeader = null;
       if (this.User.OAuthProvider != null) {
         oAuthHeader = this.User.OAuthProvider.GetAuthHeader();
@@ -95,6 +98,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <param name="parameters">The method parameters.</param>
     protected override void CleanupAfterCall(string methodName, object[] parameters) {
       ContextStore.RemoveKey("OAuthHeader");
+      AdsFeatureUsageRegistry.Instance.Clear();
       base.CleanupAfterCall(methodName, parameters);
     }
 

@@ -12,8 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Reflection;
+using Google.Api.Ads.Common.Logging;
 
 namespace Google.Api.Ads.AdWords.Util.Selectors {
 
@@ -21,6 +20,19 @@ namespace Google.Api.Ads.AdWords.Util.Selectors {
   /// Represents a Selector field.
   /// </summary>
   public class Field {
+
+    /// <summary>
+    /// The registry for saving feature usage information..
+    /// </summary>
+    private static readonly AdsFeatureUsageRegistry featureUsageRegistry =
+        AdsFeatureUsageRegistry.Instance;
+
+    /// <summary>
+    /// The feature ID for this class.
+    /// </summary>
+    private const AdsFeatureUsageRegistry.Features FEATURE_ID =
+        AdsFeatureUsageRegistry.Features.SelectorField;
+
     /// <summary>
     /// True, if this field can be filtered on, false otherwise.
     /// </summary>
@@ -84,6 +96,9 @@ namespace Google.Api.Ads.AdWords.Util.Selectors {
     /// A <see cref="System.String" /> that represents this instance.
     /// </returns>
     public override string ToString() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       return this.fieldName;
     }
 
@@ -94,6 +109,9 @@ namespace Google.Api.Ads.AdWords.Util.Selectors {
     /// <param name="x">The field to be converted to string.</param>
     /// <returns>A stringified representation of x.</returns>
     public static implicit operator string(Field x) {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       return x.ToString();
     }
   }

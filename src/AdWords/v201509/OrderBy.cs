@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Logging;
+
 namespace Google.Api.Ads.AdWords.v201509 {
 
   /// <summary>
@@ -20,11 +22,27 @@ namespace Google.Api.Ads.AdWords.v201509 {
   public partial class OrderBy {
 
     /// <summary>
+    /// The registry for saving feature usage information..
+    /// </summary>
+    private static readonly AdsFeatureUsageRegistry featureUsageRegistry =
+        AdsFeatureUsageRegistry.Instance;
+
+    /// <summary>
+    /// The feature ID for this class.
+    /// </summary>
+    private const AdsFeatureUsageRegistry.Features FEATURE_ID =
+        AdsFeatureUsageRegistry.Features.SelectorBuilder;
+
+    /// <summary>
     /// Creates an ascending sorting order to be used with a selector.
     /// </summary>
     /// <param name="field">The field to sort on.</param>
-    /// <returns>The current object, for call chaining.</returns>
+    /// <returns>A new <see cref="Orderby"/> object that sorts the result in
+    /// ascending order by <paramref name="field"/> value.</returns>
     public static OrderBy Asc(string field) {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       return new OrderBy() {
         field = field,
         sortOrder = SortOrder.ASCENDING
@@ -35,8 +53,12 @@ namespace Google.Api.Ads.AdWords.v201509 {
     /// Creates a descending sorting order to be used with a selector.
     /// </summary>
     /// <param name="field">The field to sort on.</param>
-    /// <returns>The current object, for call chaining.</returns>
+    /// <returns>A new <see cref="Orderby"/> object that sorts the result in
+    /// descending order by <paramref name="field"/> value.</returns>
     public static OrderBy Desc(string field) {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       return new OrderBy() {
         field = field,
         sortOrder = SortOrder.DESCENDING

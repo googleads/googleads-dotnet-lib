@@ -33,10 +33,6 @@ namespace Google.Api.Ads.Dfp.Tests.v201511 {
   /// A utility class to assist the testing of v201511 services.
   /// </summary>
   public class TestUtils {
-    public User GetCurrentUser(DfpUser user) {
-      return GetUserByEmail(user, new DfpAppConfig().Email);
-    }
-
     public User GetTrafficker(DfpUser user) {
       return GetUserByEmail(user, "dfp.api.trafficker@gmail.com");
     }

@@ -14,7 +14,7 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.Reports;
-using Google.Api.Ads.AdWords.v201506;
+using Google.Api.Ads.AdWords.v201601;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util.Reports;
 
@@ -93,7 +93,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
       string filePath = Path.GetTempFileName();
 
       try {
-        ReportUtilities utilities = new ReportUtilities(user, "v201506", definition);
+        ReportUtilities utilities = new ReportUtilities(user, "v201601", definition);
         using (ReportResponse response = utilities.GetResponse()) {
           response.Save(filePath);
         }
@@ -125,7 +125,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
 
       try {
         CampaignService service =
-            (CampaignService) user.GetService(AdWordsService.v201506.CampaignService);
+            (CampaignService) user.GetService(AdWordsService.v201601.CampaignService);
 
         CampaignPage page = service.get(selector);
 

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -54,13 +54,22 @@
     <Compile Include="Lib\AdWordsTraceListener.cs" />
     <Compile Include="Lib\AdWordsCallListener.cs" />
     <Compile Include="Lib\AdWordsErrorHandler.cs" />
+    <Compile Include="Util\BatchJob\BatchJobUtilitiesBase.cs" />
     <Compile Include="Util\BatchJob\BulkJobErrorHandler.cs" />
     <Compile Include="Util\BatchJob\CloudStorageErrorDetail.cs" />
     <Compile Include="Util\BatchJob\CloudStorageErrorResponse.cs" />
+    <Compile Include="Util\BatchJob\v201601\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\v201509\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\CloudStorageError.cs" />
+    <Compile Include="Util\v201601\MapUtilities.cs" />
     <Compile Include="Util\Selectors\BaseFields.cs" />
     <Compile Include="Util\Shopping\BiddableUnitState.cs" />
+    <Compile Include="Util\Shopping\v201601\OperationPair.cs" />
+    <Compile Include="Util\Shopping\v201601\ProductDimensionEqualityComparer.cs" />
+    <Compile Include="Util\Shopping\v201601\ProductDimensions.cs" />
+    <Compile Include="Util\Shopping\v201601\ProductPartitionNode.cs" />
+    <Compile Include="Util\Shopping\v201601\ProductPartitionNodeAdapter.cs" />
+    <Compile Include="Util\Shopping\v201601\ProductPartitionTree.cs" />
     <Compile Include="Util\Shopping\ExcludedUnitState.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -119,6 +128,17 @@
     <Compile Include="v201509\Paging.cs" />
     <Compile Include="v201509\Predicate.cs" />
     <Compile Include="v201509\ReportDefinition.cs" />
+    <Compile Include="v201601\AdWordsApi.cs" />
+    <Compile Include="v201601\AdWordsApi.ProductDimension.cs" />
+    <Compile Include="v201601\AdWordsServiceV201601.cs" />
+    <Compile Include="v201601\ApiError.cs" />
+    <Compile Include="v201601\ApiException.cs" />
+    <Compile Include="v201601\BatchJobApi.cs" />
+    <Compile Include="v201601\FeedValidationErrors.cs" />
+    <Compile Include="v201601\OrderBy.cs" />
+    <Compile Include="v201601\Paging.cs" />
+    <Compile Include="v201601\Predicate.cs" />
+    <Compile Include="v201601\ReportDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

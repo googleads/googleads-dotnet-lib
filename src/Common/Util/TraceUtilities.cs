@@ -14,6 +14,8 @@
 
 #define TRACE
 
+using Google.Api.Ads.Common.Logging;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,7 +25,19 @@ namespace Google.Api.Ads.Common.Util {
   /// <summary>
   /// Provides utility methods to write to Trace stream.
   /// </summary>
-  public static class TraceUtilities {
+  public class TraceUtilities {
+
+    /// <summary>
+    /// The registry for saving feature usage information..
+    /// </summary>
+    private static readonly AdsFeatureUsageRegistry featureUsageRegistry =
+        AdsFeatureUsageRegistry.Instance;
+
+    /// <summary>
+    /// The feature ID for this class.
+    /// </summary>
+    private const AdsFeatureUsageRegistry.Features FEATURE_ID =
+        AdsFeatureUsageRegistry.Features.Logging;
 
     /// <summary>
     /// Trace source for deprecation messages.
@@ -111,6 +125,9 @@ namespace Google.Api.Ads.Common.Util {
     /// <exception cref="ArgumentException">Thrown if the trace source is
     /// unknown.</exception>
     public static TraceSource GetSource(string sourceName) {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       if (KNOWN_TRACE_SOURCES.ContainsKey(sourceName)) {
         return KNOWN_TRACE_SOURCES[sourceName];
       } else {
@@ -126,6 +143,9 @@ namespace Google.Api.Ads.Common.Util {
     /// <remarks>The trace levels may be controlled from App.config by setting
     /// the level for AdsClientLibs.DeprecationMessages trace switch. </remarks>
     public static void WriteDeprecationWarnings(string message) {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       Write(DEPRECATION_MESSAGES_SOURCE, TraceEventType.Warning, message);
     }
 
@@ -136,6 +156,9 @@ namespace Google.Api.Ads.Common.Util {
     /// <remarks>The trace levels may be controlled from App.config by setting
     /// the level for AdsClientLibs.GeneralWarningMessages trace switch. </remarks>
     public static void WriteGeneralWarnings(string message) {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       Write(GENERAL_WARNING_MESSAGES_SOURCE, TraceEventType.Warning, message);
     }
 
@@ -146,6 +169,9 @@ namespace Google.Api.Ads.Common.Util {
     /// <remarks>The trace levels may be controlled from App.config by setting
     /// the level for AdsClientLibs.GeneralWarningMessages trace switch. </remarks>
     public static void WriteGeneralErrors(string message) {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       Write(GENERAL_WARNING_MESSAGES_SOURCE, TraceEventType.Error, message);
     }
 
@@ -157,6 +183,9 @@ namespace Google.Api.Ads.Common.Util {
     /// <remarks>The trace levels may be controlled from App.config by setting
     /// the level for AdsClientLibs.SoapXmlLogs trace switch. </remarks>
     public static void WriteDetailedRequestLogs(string message, Boolean isError) {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       TraceEventType type = isError ? TraceEventType.Error : TraceEventType.Information;
       Write(DETAILED_REQUEST_LOGS_SOURCE, type, message);
       Write(DEPRECATED_DETAILED_REQUEST_LOGS_SOURCE, type, message);
@@ -170,6 +199,9 @@ namespace Google.Api.Ads.Common.Util {
     /// <remarks>The trace levels may be controlled from App.config by setting
     /// the level for AdsClientLibs.RequestInfoLogs trace switch. </remarks>
     public static void WriteSummaryRequestLogs(string message, Boolean isError) {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       TraceEventType type = isError ? TraceEventType.Error : TraceEventType.Information;
       Write(SUMMARY_REQUEST_LOGS_SOURCE, type, message);
       Write(DEPRECATED_SUMMARY_REQUEST_LOGS_SOURCE, type, message);

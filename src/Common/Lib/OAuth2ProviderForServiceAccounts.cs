@@ -12,18 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Logging;
+
 using System;
-using System.Text;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Web;
 
 namespace Google.Api.Ads.Common.Lib {
+
   /// <summary>
   /// Provides OAuth authorization mechanism for Ads services when using service
   /// account flow.
   /// </summary>
   public class OAuth2ProviderForServiceAccounts : OAuth2ProviderBase,
       AdsOAuthProviderForServiceAccounts {
+
+    /// <summary>
+    /// The feature ID for this class.
+    /// </summary>
+    private const AdsFeatureUsageRegistry.Features FEATURE_ID =
+        AdsFeatureUsageRegistry.Features.OAuthServiceAccountFlow;
+
     /// <summary>
     /// Audience for generating JWT string.
     /// </summary>
@@ -97,7 +107,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// Initializes a new instance of the OAuth2ProviderForServiceAccounts class.
     /// </summary>
     /// <param name="config">The config.</param>
-    public OAuth2ProviderForServiceAccounts(AppConfig config) : base(config) { }
+    public OAuth2ProviderForServiceAccounts(AppConfig config)
+      : base(config) {
+    }
 
     /// <summary>
     /// Gets the access token for service account.
@@ -106,6 +118,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// OAuth2 parameters are empty: ServiceAccountEmail, Scope,
     /// JwtCertificatePath, JwtCertificatePassword.</exception>
     public void GenerateAccessTokenForServiceAccount() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       long timestamp = config.UnixTimestamp;
       long expiry = timestamp + DEFAULT_EXPIRY_PERIOD;
 
@@ -149,6 +164,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// Refreshes the access token.
     /// </summary>
     public override void RefreshAccessToken() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       GenerateAccessTokenForServiceAccount();
     }
   }

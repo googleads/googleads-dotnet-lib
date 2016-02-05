@@ -12,13 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Logging;
+
 namespace Google.Api.Ads.AdWords.v201509 {
 
   /// <summary>
-  /// Specifies how an entity (eg. adgroup, campaign, criterion, ad) should be
-  /// filtered.
+  /// Specifies the page of results to return in the response. A page is
+  /// specified by the result position to start at and the maximum number of
+  /// results to return.
   /// </summary>
   public partial class Paging {
+
+    /// <summary>
+    /// The feature ID for this class.
+    /// </summary>
+    private const AdsFeatureUsageRegistry.Features FEATURE_ID =
+        AdsFeatureUsageRegistry.Features.SelectorBuilder;
+
+    /// <summary>
+    /// The registry for saving feature usage information..
+    /// </summary>
+    private static readonly AdsFeatureUsageRegistry featureUsageRegistry =
+        AdsFeatureUsageRegistry.Instance;
 
     /// <summary>
     /// The default page size.
@@ -30,6 +45,9 @@ namespace Google.Api.Ads.AdWords.v201509 {
     /// </summary>
     public static Paging Default {
       get {
+        // Mark the usage.
+        featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
         return new Paging() {
           startIndex = 0,
           numberResults = DEFAULT_PAGE_SIZE
@@ -42,6 +60,9 @@ namespace Google.Api.Ads.AdWords.v201509 {
     /// </summary>
     /// <param name="pageSize">Size of the page.</param>
     public void IncreaseOffsetBy(int pageSize) {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       this.startIndex += pageSize;
     }
 
@@ -49,6 +70,9 @@ namespace Google.Api.Ads.AdWords.v201509 {
     /// Increases the offset by <see cref="numberResults"/>.
     /// </summary>
     public void IncreaseOffset() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       this.startIndex += this.numberResults;
     }
   }

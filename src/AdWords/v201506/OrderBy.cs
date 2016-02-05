@@ -23,7 +23,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// Creates an ascending sorting order to be used with a selector.
     /// </summary>
     /// <param name="field">The field to sort on.</param>
-    /// <returns>The current object, for call chaining.</returns>
+    /// <returns>A new <see cref="Orderby"/> object that sorts the result in
+    /// ascending order by <paramref name="field"/> value.</returns>
     public static OrderBy Asc(string field) {
       return new OrderBy() {
         field = field,
@@ -35,7 +36,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// Creates a descending sorting order to be used with a selector.
     /// </summary>
     /// <param name="field">The field to sort on.</param>
-    /// <returns>The current object, for call chaining.</returns>
+    /// <returns>A new <see cref="Orderby"/> object that sorts the result in
+    /// descending order by <paramref name="field"/> value.</returns>
     public static OrderBy Desc(string field) {
       return new OrderBy() {
         field = field,

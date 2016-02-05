@@ -98,9 +98,6 @@ namespace Google.Api.Ads.Common.Tests.Lib {
           config.OAuth2CertificatePassword);
       Assert.AreEqual(tblSettings["OAuth2Mode"].ToString(), config.OAuth2Mode.ToString());
 
-      Assert.AreEqual(tblSettings["Email"].ToString(), config.Email);
-      Assert.AreEqual(tblSettings["Password"].ToString(), config.Password);
-      Assert.AreEqual(tblSettings["AuthToken"].ToString(), config.AuthToken);
       Assert.AreEqual(bool.Parse(tblSettings["EnableGzipCompression"].ToString()),
           config.EnableGzipCompression);
     }

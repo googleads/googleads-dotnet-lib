@@ -17,17 +17,20 @@ using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
-using System.Web;
 
 namespace Google.Api.Ads.Common.Lib {
 
   public abstract class OAuth2ProviderBase : AdsOAuthProvider {
+
+    /// <summary>
+    /// The registry for saving feature usage information..
+    /// </summary>
+    protected readonly AdsFeatureUsageRegistry featureUsageRegistry =
+        AdsFeatureUsageRegistry.Instance;
 
     /// <summary>
     /// The OAuth2 endpoint for obtaining an authorization token.
@@ -254,7 +257,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets the auth header.
     /// </summary>
     /// <returns>The auth header.</returns>
-    public string GetAuthHeader() {
+    public virtual string GetAuthHeader() {
       RefreshAccessTokenIfExpiring();
       return "Bearer " + this.AccessToken;
     }
@@ -262,7 +265,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Refreshes the access token if expiring.
     /// </summary>
-    public void RefreshAccessTokenIfExpiring() {
+    public virtual void RefreshAccessTokenIfExpiring() {
       if (IsAccessTokenExpiring()) {
         RefreshAccessToken();
       }

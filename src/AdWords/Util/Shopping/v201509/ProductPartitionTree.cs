@@ -14,6 +14,7 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201509;
+using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
 
 using System;
@@ -26,6 +27,18 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201509 {
   /// that also handles applying changes made to the tree under the root.
   /// </summary>
   public class ProductPartitionTree {
+
+    /// <summary>
+    /// The feature ID for this class.
+    /// </summary>
+    private const AdsFeatureUsageRegistry.Features FEATURE_ID =
+        AdsFeatureUsageRegistry.Features.ProductPartitionTree;
+
+    /// <summary>
+    /// The registry for saving feature usage information..
+    /// </summary>
+    private readonly AdsFeatureUsageRegistry featureUsageRegistry =
+        AdsFeatureUsageRegistry.Instance;
 
     /// <summary>
     /// The ad group ID for this tree.
@@ -215,6 +228,7 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201509 {
     /// <param name="adGroupCriteria">The list of ad group criteria.</param>
     /// <returns></returns>
     public static ProductPartitionTree CreateAdGroupTree(List<AdGroupCriterion> adGroupCriteria) {
+      // Mark the usage.
       return CreateAdGroupTree(0, adGroupCriteria);
     }
 
@@ -233,7 +247,12 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201509 {
       PreconditionUtilities.CheckNotNull(adGroupCriteria, ShoppingMessages.CriteriaListNull);
 
       Dictionary<long, List<AdGroupCriterion>> parentIdMap = CreateParentIdMap(adGroupCriteria);
-      return CreateAdGroupTree(adGroupId, parentIdMap);
+      
+      ProductPartitionTree retval = CreateAdGroupTree(adGroupId, parentIdMap);
+
+      // Mark the usage.
+      retval.featureUsageRegistry.MarkUsage(FEATURE_ID);
+      return retval;
     }
 
     /// <summary>
@@ -368,6 +387,9 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201509 {
     /// </summary>
     /// <returns>The list of mutate operations.</returns>
     public AdGroupCriterionOperation[] GetMutateOperations() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
       foreach (OperationPair operationPair in CreateMutateOperationPairs()) {
         operations.Add(operationPair.Operation);
@@ -582,6 +604,9 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201509 {
     /// A <see cref="System.String" /> that represents this instance.
     /// </returns>
     public override string ToString() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+
       return String.Format("AdGroupID: {0}\nTree:\n{1}", this.adGroupId, this.Root);
     }
   }

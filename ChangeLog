@@ -1,3 +1,26 @@
+18.22.0
+=======
+
+AdWords:
+  - Added support for v201601.
+  - Updated BatchJobUtilities to use the new resumable URL. Added a flag to
+  disable chunked upload. Increased the default chunk size to 32MB.
+  - Fixed GetAccountHierarchy example to use paging.
+  - Enhanced various utilities to include identifier in user agent.
+
+AdXBuyer:
+  - Removed code examples, tests and wiki entries.
+
+DFP:
+  -
+
+Common:
+  - Added EnableSoapExtension property to App.config to fix issue #70.
+   (https://github.com/googleads/googleads-dotnet-lib/issues/70)
+  - Made AppConfig.Proxy a writable property.
+  - Added support to include utilities identifier in user agent. This feature
+  may be controlled using the IncludeUtilitiesInUserAgent setting in App.config.
+
 18.21.0
 ======
 AdWords:

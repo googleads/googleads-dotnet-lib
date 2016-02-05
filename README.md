@@ -1,8 +1,8 @@
 #Google Ads API .NET Client Library
 
-This project hosts the .NET client library for the various SOAP-Based Ads APIs - AdWords API,
-DoubleClick Ad Exchange Buyer SOAP (AdxBuyer) API, and Google's DoubleClick for Publishers (DFP)
-API at Google.
+This project hosts the .NET client library for the various SOAP-Based Ads APIs at Google -
+ [AdWords API](//developers.google.com/adwords/api) and
+ [Google's DoubleClick for Publishers (DFP) API](//developers.google.com/doubleclick-publishers).
 
 ##Features
 - Distributed via Nuget
@@ -34,7 +34,7 @@ the the appropriate section below, depending on the distribution you are using.
 
 This is the recommended way to get the client library. The nuget distributions of the client library
  are listed below:
-###AdWords and AdxBuyer API
+###AdWords API
 
 - [Google.AdWords](https://www.nuget.org/packages/Google.AdWords/): AdWords and DoubleClick Ad
  Exchange Buyer API DotNet Client Library
@@ -42,10 +42,6 @@ This is the recommended way to get the client library. The nuget distributions o
  C# Code examples for AdWords API
 - [Google.AdWords.Examples.VB](https://www.nuget.org/packages/Google.AdWords.Examples.VB/):
  VB.NET Code examples for AdWords API
-- [Google.AdXBuyer.Examples.CSharp](https://www.nuget.org/packages/Google.AdXBuyer.Examples.CSharp/):
- C# Code examples for AdxBuyer API
-- [Google.AdXBuyer.Examples.VB](https://www.nuget.org/packages/Google.AdXBuyer.Examples.VB/):
- VB.NET Code examples for AdxBuyer API
 
 ###DFP API
 
@@ -61,7 +57,7 @@ The binary distribution of the Ads API .NET library consists of a precompiled ve
  library as a .NET assembly, code examples for using the library, and library documentation.
  If you are interested in just using the library and not in its internals, and you don't use
  nuget package manager in your development environment, then you should download this distribution.
- There are separate downloads for AdWords, AdxBuyer and DFP APIs.
+ There are separate downloads for AdWords and DFP APIs.
 
 The contents of this distribution are as follows:
 ```
@@ -124,7 +120,7 @@ The source distribution of the Ads API .NET Client Library consists of individua
  projects for the client library, code examples and test cases, documentation, and support
  libraries and tools for compiling and running the library. If you are interested in the
  library internals you should download this distribution. There are separate downloads for
- AdWords, AdxBuyer and DFP APIs.
+ AdWords and DFP APIs.
 
 ```
 The contents of this distribution are as follows:
@@ -133,8 +129,6 @@ The contents of this distribution are as follows:
     \examples
       \adwords
         - Adwords API code examples, in C# and VB.NET.
-      \adxbuyer
-        - DoubleClick Ad Exchange Buyer API code examples, in C# and VB.NET.
     \lib
       - External client libraries referenced by various projects in the source
         distribution.
@@ -200,12 +194,10 @@ See https://github.com/googleads/googleads-dotnet-lib/wiki#logging for details.
 
 ###API Documentation:
 - AdWords API: https://developers.google.com/adwords/api/
-- AdxBuyer API: https://developers.google.com/ad-exchange/buyer-soap/
 - DFP API: https://developers.google.com/doubleclick-publishers/
 
 ###Support forum
 - AdWords API: https://developers.google.com/adwords/api/community/
-- AdxBuyer API: https://developers.google.com/ad-exchange/buyer-soap/community/
 - DFP API: https://developers.google.com/doubleclick-publishers/community
 
 ###Authors

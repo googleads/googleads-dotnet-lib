@@ -76,6 +76,12 @@ namespace Google.Api.Ads.Dfp.Lib {
       public static readonly ServiceSignature CompanyService;
 
       /// <summary>
+      /// See <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201511/ContentBundleService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature ContentBundleService;
+
+      /// <summary>
       /// See <a href="https://developers.google.com/doubleclick-publishers/docs/reference/v201511/ContentService">
       /// this page</a> for details.
       /// </summary>
@@ -333,6 +339,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         AudienceSegmentService = DfpService.MakeServiceSignature("v201511",
             "AudienceSegmentService");
         CompanyService = DfpService.MakeServiceSignature("v201511", "CompanyService");
+        ContentBundleService = DfpService.MakeServiceSignature("v201511", "ContentBundleService");
         ContentService = DfpService.MakeServiceSignature("v201511", "ContentService");
         ContentMetadataKeyHierarchyService = DfpService.MakeServiceSignature("v201511",
             "ContentMetadataKeyHierarchyService");

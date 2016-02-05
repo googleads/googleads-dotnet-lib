@@ -12,29 +12,35 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Logging;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Globalization;
-using System.IO;
 using System.Net;
 using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
-using System.Xml;
 
 namespace Google.Api.Ads.Common.Lib {
+
   /// <summary>
   /// This class reads the configuration keys from App.config.
   /// </summary>
   public class AppConfigBase : INotifyPropertyChanged, AppConfig {
+
+    /// <summary>
+    /// The registry for saving feature usage information..
+    /// </summary>
+    private static readonly AdsFeatureUsageRegistry featureUsageRegistry =
+        AdsFeatureUsageRegistry.Instance;
+
     /// <summary>
     /// The short name to identify this assembly.
     /// </summary>
     private const string SHORT_NAME = "Common-Dotnet";
 
     /// <summary>
-    /// Key name for proxyServer
+    /// Key name for proxyServer.
     /// </summary>
     private const string PROXY_SERVER = "ProxyServer";
 
@@ -129,19 +135,9 @@ namespace Google.Api.Ads.Common.Lib {
     private const string OAUTH2_JWT_CERTIFICATE_PASSWORD = "OAuth2JwtCertificatePassword";
 
     /// <summary>
-    /// Key name for authToken.
+    /// Key name for includeFeaturesInUserAgent.
     /// </summary>
-    private const string AUTHTOKEN = "AuthToken";
-
-    /// <summary>
-    /// Key name for email.
-    /// </summary>
-    private const string EMAIL = "Email";
-
-    /// <summary>
-    /// Key name for password.
-    /// </summary>
-    private const string PASSWORD = "Password";
+    private const string INCLUDE_FEATURES_IN_USERAGENT = "IncludeUtilitiesInUserAgent";
 
     /// <summary>
     /// Web proxy to be used with the services.
@@ -225,19 +221,14 @@ namespace Google.Api.Ads.Common.Lib {
     private OAuth2Flow oAuth2Mode;
 
     /// <summary>
-    /// Authtoken to be used in making API calls.
+    /// True, if SOAP extensions for logging should be turned on.
     /// </summary>
-    private string authToken;
+    private bool enableSoapExtension;
 
-    /// <summary>
-    /// Email to be used in getting AuthToken.
+    /// True, if the usage of a feature should be added to the user agent,
+    /// false otherwise.
     /// </summary>
-    private string email;
-
-    /// <summary>
-    /// Password to be used in getting AuthToken.
-    /// </summary>
-    private string password;
+    private static bool includeFeaturesInUserAgent;
 
     /// <summary>
     /// Default value for number of times to retry a call if an API call fails
@@ -457,38 +448,29 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets or sets the email to be used in getting AuthToken.
+    /// Gets or sets whether SOAP extensions should be turned on for
+    /// logging.
     /// </summary>
-    public string Email {
+    public bool EnableSoapExtension {
       get {
-        return email;
+        return enableGzipCompression;
       }
       set {
-        SetPropertyField("Email", ref email, value);
+        SetPropertyField("EnableSoapExtension", ref enableSoapExtension, value);
       }
     }
 
-    /// <summary>
-    /// Gets or sets the password to be used in getting AuthToken.
+    /// Gets or sets whether usage of various client library features should be
+    /// tracked.
     /// </summary>
-    public string Password {
+    /// <remarks>The name of the property is kept different to match the setting
+    /// name for other client libraries.</remarks>
+    public bool IncludeUtilitiesInUserAgent {
       get {
-        return password;
+        return includeFeaturesInUserAgent;
       }
       set {
-        SetPropertyField("Password", ref password, value);
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the auth token to be used in SOAP headers.
-    /// </summary>
-    public string AuthToken {
-      get {
-        return authToken;
-      }
-      set {
-        SetPropertyField("AuthToken", ref authToken, value);
+        SetPropertyField("IncludeUtilitiesInUserAgent", ref includeFeaturesInUserAgent, value);
       }
     }
 
@@ -533,9 +515,11 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     public string Signature {
       get {
-        return string.Format("{0}, {1}, .NET CLR/{2}",
+        string utilsAgent = (this.IncludeUtilitiesInUserAgent) ? featureUsageRegistry.Text : "";
+        return string.Format("{0}, {1}, .NET CLR/{2}, {3}",
             GetAssemblySignatureFromAppConfigType(this.GetType()),
-            GetAssemblySignatureFromAppConfigType(this.GetType().BaseType), Environment.Version);
+            GetAssemblySignatureFromAppConfigType(this.GetType().BaseType), Environment.Version,
+            utilsAgent);
       }
     }
 
@@ -566,9 +550,8 @@ namespace Google.Api.Ads.Common.Lib {
       oAuth2RedirectUri = null;
       oAuth2PrnEmail = "";
       oAuth2ServiceAccountEmail = "";
-      authToken = "";
-      email = "";
-      password = "";
+
+      includeFeaturesInUserAgent = true;
     }
 
     /// <summary>
@@ -617,14 +600,13 @@ namespace Google.Api.Ads.Common.Lib {
       oAuth2CertificatePassword = ReadSetting(settings, OAUTH2_JWT_CERTIFICATE_PASSWORD,
           oAuth2CertificatePassword);
 
-      email = ReadSetting(settings, EMAIL, email);
-      password = ReadSetting(settings, PASSWORD, password);
-      authToken = ReadSetting(settings, AUTHTOKEN, authToken);
-
       int.TryParse(ReadSetting(settings, TIMEOUT, timeout.ToString()), out timeout);
       int.TryParse(ReadSetting(settings, RETRYCOUNT, retryCount.ToString()), out retryCount);
       bool.TryParse(ReadSetting(settings, ENABLE_GZIP_COMPRESSION,
           enableGzipCompression.ToString()), out enableGzipCompression);
+
+      bool.TryParse(ReadSetting(settings, INCLUDE_FEATURES_IN_USERAGENT,
+          includeFeaturesInUserAgent.ToString()), out includeFeaturesInUserAgent);
     }
 
     /// <summary>

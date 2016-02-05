@@ -12,18 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
 
 namespace Google.Api.Ads.Common.Lib {
+
   /// <summary>
   /// This class provides access to the call context, and hides the differences
   /// when the library is running as a web application or a normal application.
   /// </summary>
   public class ContextStore {
+
     /// <summary>
     /// Adds a key-value pair to the context store.
     /// </summary>

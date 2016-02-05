@@ -171,7 +171,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="methodName">Name of the method.</param>
     /// <param name="parameters">The method parameters.</param>
     protected virtual void InitForCall(string methodName, object[] parameters) {
-      if (!IsSoapListenerLoaded()) {
+      if (this.user.Config.EnableSoapExtension && !IsSoapListenerLoaded()) {
         throw new ApplicationException(CommonErrorMessages.SoapListenerExtensionNotLoaded);
       }
       ContextStore.AddKey("SoapService", this);

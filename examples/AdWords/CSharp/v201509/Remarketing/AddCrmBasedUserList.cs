@@ -84,11 +84,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
         // https://support.google.com/adwords/answer/6276125 for details.
         membershipLifeSpan = 180L,
 
-        // You can optionally provide this field to conveniently link an
-        // endpoint for opting-out members from this list. This would link to
-        // a service you created that would appropriately remove members from
-        // the relevant user list. Different user lists may use different
-        // endpoints. Use this field to store the appropriate link.
+        // This field is optional. It links to a service you created that allows members
+        // of this list to remove themselves.
         optOutLink = "http://endpoint1.example.com/optout"
       };
 

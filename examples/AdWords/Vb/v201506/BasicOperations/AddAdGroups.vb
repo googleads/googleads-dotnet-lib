@@ -89,7 +89,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201506
         adGroup.biddingStrategyConfiguration = biddingConfig
 
         ' Optional: Set targeting restrictions.
-        ' These settings only affect serving for the Display Network.
+        ' Depending on the criterionTypeGroup value, most TargetingSettingDetail
+        ' only affect Display campaigns. However, the USER_INTEREST_AND_LIST value
+        ' works for RLSA campaigns - Search campaigns targeting using a
+        ' remarketing list.
         Dim targetingSetting As New TargetingSetting()
 
         ' Restricting to serve ads that match your ad group placements.

@@ -12,15 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
 using System.ComponentModel;
 using System.Net;
 
 namespace Google.Api.Ads.Common.Lib {
+
   /// <summary>
   /// Interface for common configuration properties.
   /// </summary>
   public interface AppConfig {
+
     /// <summary>
     /// Gets whether the credentials in the log file should be masked.
     /// </summary>
@@ -94,19 +95,10 @@ namespace Google.Api.Ads.Common.Lib {
     string OAuth2CertificatePassword { get; set; }
 
     /// <summary>
-    /// Gets or sets the email to be used in getting AuthToken.
+    /// Gets or sets whether usage information of various client library
+    /// features should be included in the user agent.
     /// </summary>
-    string Email { get; set; }
-
-    /// <summary>
-    /// Gets or sets the password to be used in getting AuthToken.
-    /// </summary>
-    string Password { get; set; }
-
-    /// <summary>
-    /// Gets or sets the auth token to be used in SOAP headers.
-    /// </summary>
-    string AuthToken { get; set; }
+    bool IncludeUtilitiesInUserAgent { get; set; }
 
     /// <summary>
     /// Occurs when a property is changed.
@@ -116,7 +108,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets the web proxy to be used with the services.
     /// </summary>
-    IWebProxy Proxy { get; }
+    IWebProxy Proxy { get; set; }
 
     /// <summary>
     /// Gets or sets the number of times to retry a call if an API call fails
@@ -144,6 +136,12 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets the number of seconds after Jan 1, 1970, 00:00:00
     /// </summary>
     long UnixTimestamp { get; }
+
+    /// <summary>
+    /// Gets or sets whether SOAP listener extensions should be turned 
+    /// on for logging.
+    /// </summary>
+    bool EnableSoapExtension { get; set; }
 
     /// <summary>
     /// Gets the default OAuth2 scope.
