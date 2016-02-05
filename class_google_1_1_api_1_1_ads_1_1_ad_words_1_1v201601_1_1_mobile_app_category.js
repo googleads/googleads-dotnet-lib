@@ -1,0 +1,9 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_mobile_app_category =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_mobile_app_category_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_mobile_app_category_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_mobile_app_category_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_mobile_app_category_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_mobile_app_category_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_mobile_app_category_1_1_selectable_fields" ],
+    [ "displayName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_mobile_app_category.html#a5df1890c35cfe8c7b5770fb4042a33ff", null ],
+    [ "mobileAppCategoryId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_mobile_app_category.html#a9db2fc66dc7a0a00ad372ce4944db9f2", null ],
+    [ "mobileAppCategoryIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_mobile_app_category.html#a16c2e5b0163fed7c638e88dda99ee6c9", null ]
+];

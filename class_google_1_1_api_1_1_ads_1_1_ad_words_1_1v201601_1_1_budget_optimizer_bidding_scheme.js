@@ -1,0 +1,9 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_budget_optimizer_bidding_scheme =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_budget_optimizer_bidding_scheme_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_budget_optimizer_bidding_scheme_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_budget_optimizer_bidding_scheme_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_budget_optimizer_bidding_scheme_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_budget_optimizer_bidding_scheme_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_budget_optimizer_bidding_scheme_1_1_selectable_fields" ],
+    [ "bidCeiling", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_budget_optimizer_bidding_scheme.html#ad1485a0256094113e37c88b0b19039a7", null ],
+    [ "enhancedCpcEnabled", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_budget_optimizer_bidding_scheme.html#a48d609d7815a9e21402cfaea45ab1382", null ],
+    [ "enhancedCpcEnabledSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_budget_optimizer_bidding_scheme.html#af12361c7b81fde86d6161b92d8785c49", null ]
+];

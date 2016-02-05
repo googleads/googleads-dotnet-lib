@@ -9,5 +9,6 @@ var namespace_google_1_1_api_1_1_ads_1_1_common_1_1_util =
     [ "HttpUtilities", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_http_utilities.html", null ],
     [ "PreconditionUtilities", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_precondition_utilities.html", null ],
     [ "SerializationUtilities", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_serialization_utilities.html", null ],
-    [ "TemporaryIdGenerator", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_temporary_id_generator.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_temporary_id_generator" ]
+    [ "TemporaryIdGenerator", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_temporary_id_generator.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_temporary_id_generator" ],
+    [ "TraceUtilities", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_trace_utilities.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_trace_utilities" ]
 ];

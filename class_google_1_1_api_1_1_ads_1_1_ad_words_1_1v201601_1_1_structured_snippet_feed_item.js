@@ -1,0 +1,8 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_structured_snippet_feed_item =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_structured_snippet_feed_item_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_structured_snippet_feed_item_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_structured_snippet_feed_item_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_structured_snippet_feed_item_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_structured_snippet_feed_item_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_structured_snippet_feed_item_1_1_selectable_fields" ],
+    [ "header", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_structured_snippet_feed_item.html#af86551ec6ac2560465237d68e82d2ce2", null ],
+    [ "values", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_structured_snippet_feed_item.html#afc2c7726e374c256b9312173efb724ce", null ]
+];

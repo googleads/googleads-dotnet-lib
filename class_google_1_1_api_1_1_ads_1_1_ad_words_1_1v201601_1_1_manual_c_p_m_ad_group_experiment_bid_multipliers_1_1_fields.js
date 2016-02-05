@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_manual_c_p_m_ad_group_experiment_bid_multipliers_1_1_fields =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_manual_c_p_m_ad_group_experiment_bid_multipliers_1_1_fields.html#a5cd8223f05405fb16790bb6941fb14cc", null ]
+];

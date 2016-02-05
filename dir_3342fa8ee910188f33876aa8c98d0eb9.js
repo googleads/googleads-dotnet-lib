@@ -1,6 +1,0 @@
-var dir_3342fa8ee910188f33876aa8c98d0eb9 =
-[
-    [ "AdWords", "dir_4411351539b4e712a79cc24c4f4ba760.html", "dir_4411351539b4e712a79cc24c4f4ba760" ],
-    [ "AdXBuyer", "dir_9533b1d2e6e19c50d241807e88096f62.html", "dir_9533b1d2e6e19c50d241807e88096f62" ],
-    [ "Dfp", "dir_63014b03b925c4d7403f38de8f5e0766.html", "dir_63014b03b925c4d7403f38de8f5e0766" ]
-];

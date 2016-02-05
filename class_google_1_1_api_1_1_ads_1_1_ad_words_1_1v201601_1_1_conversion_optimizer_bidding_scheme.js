@@ -1,0 +1,10 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_conversion_optimizer_bidding_scheme =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_conversion_optimizer_bidding_scheme_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_conversion_optimizer_bidding_scheme_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_conversion_optimizer_bidding_scheme_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_conversion_optimizer_bidding_scheme_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_conversion_optimizer_bidding_scheme_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_conversion_optimizer_bidding_scheme_1_1_selectable_fields" ],
+    [ "bidType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_conversion_optimizer_bidding_scheme.html#a1d5c758d887ca9bf8105a554ec55a4ff", null ],
+    [ "bidTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_conversion_optimizer_bidding_scheme.html#a450258d4145a9d16aecdf838eb090ffc", null ],
+    [ "pricingMode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_conversion_optimizer_bidding_scheme.html#a42733cc99377a740d5c24a7b1bb919a6", null ],
+    [ "pricingModeSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_conversion_optimizer_bidding_scheme.html#a09815e1d2f2afd8481065aa6541da0da", null ]
+];

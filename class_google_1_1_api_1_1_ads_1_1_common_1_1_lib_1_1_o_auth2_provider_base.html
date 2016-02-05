@@ -132,12 +132,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad941f235bdc346bc32ef142efc1aa8bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_base.html#ad941f235bdc346bc32ef142efc1aa8bf">OAuth2ProviderBase</a> (<a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html">AppConfig</a> <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_base.html#a19d5098b0f5b32fdce91b579a55c7fc0">config</a>)</td></tr>
 <tr class="memdesc:ad941f235bdc346bc32ef142efc1aa8bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the OAuth2 class.  <a href="#ad941f235bdc346bc32ef142efc1aa8bf">More...</a><br/></td></tr>
 <tr class="separator:ad941f235bdc346bc32ef142efc1aa8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7307bbdbb4b38b4653d2f63d7f8074e0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_base.html#a7307bbdbb4b38b4653d2f63d7f8074e0">GetAuthHeader</a> ()</td></tr>
-<tr class="memdesc:a7307bbdbb4b38b4653d2f63d7f8074e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the auth header.  <a href="#a7307bbdbb4b38b4653d2f63d7f8074e0">More...</a><br/></td></tr>
-<tr class="separator:a7307bbdbb4b38b4653d2f63d7f8074e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63a53a18c2567ae72978d4678505f446"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_base.html#a63a53a18c2567ae72978d4678505f446">RefreshAccessTokenIfExpiring</a> ()</td></tr>
-<tr class="memdesc:a63a53a18c2567ae72978d4678505f446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes the access token if expiring.  <a href="#a63a53a18c2567ae72978d4678505f446">More...</a><br/></td></tr>
-<tr class="separator:a63a53a18c2567ae72978d4678505f446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ec161970b8aa6c8afa315d358fa5ab3"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_base.html#a2ec161970b8aa6c8afa315d358fa5ab3">GetAuthHeader</a> ()</td></tr>
+<tr class="memdesc:a2ec161970b8aa6c8afa315d358fa5ab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the auth header.  <a href="#a2ec161970b8aa6c8afa315d358fa5ab3">More...</a><br/></td></tr>
+<tr class="separator:a2ec161970b8aa6c8afa315d358fa5ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bc659c7ce39309ad03da230bb169d79"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_base.html#a8bc659c7ce39309ad03da230bb169d79">RefreshAccessTokenIfExpiring</a> ()</td></tr>
+<tr class="memdesc:a8bc659c7ce39309ad03da230bb169d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes the access token if expiring.  <a href="#a8bc659c7ce39309ad03da230bb169d79">More...</a><br/></td></tr>
+<tr class="separator:a8bc659c7ce39309ad03da230bb169d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b29677f2d881523c7837252bc1516e1"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_base.html#a2b29677f2d881523c7837252bc1516e1">RefreshAccessToken</a> ()</td></tr>
 <tr class="memdesc:a2b29677f2d881523c7837252bc1516e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes the access token if expiring.  <a href="#a2b29677f2d881523c7837252bc1516e1">More...</a><br/></td></tr>
 <tr class="separator:a2b29677f2d881523c7837252bc1516e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,6 +168,9 @@ Static Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:ac16043af95f77d4ed415931773ffb4e5"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_ads_feature_usage_registry.html">AdsFeatureUsageRegistry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_base.html#ac16043af95f77d4ed415931773ffb4e5">featureUsageRegistry</a></td></tr>
+<tr class="memdesc:ac16043af95f77d4ed415931773ffb4e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The registry for saving feature usage information..  <a href="#ac16043af95f77d4ed415931773ffb4e5">More...</a><br/></td></tr>
+<tr class="separator:ac16043af95f77d4ed415931773ffb4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55b862cbae56907f627d19a648e1a5b9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_base.html#a55b862cbae56907f627d19a648e1a5b9">AUTH_ENDPOINT</a> = &quot;https://accounts.google.com/o/oauth2/auth&quot;</td></tr>
 <tr class="memdesc:a55b862cbae56907f627d19a648e1a5b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The OAuth2 endpoint for obtaining an authorization token.  <a href="#a55b862cbae56907f627d19a648e1a5b9">More...</a><br/></td></tr>
 <tr class="separator:a55b862cbae56907f627d19a648e1a5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -349,7 +352,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7307bbdbb4b38b4653d2f63d7f8074e0"></a>
+<a class="anchor" id="a2ec161970b8aa6c8afa315d358fa5ab3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -357,7 +360,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string Google.Api.Ads.Common.Lib.OAuth2ProviderBase.GetAuthHeader </td>
+          <td class="memname">virtual string Google.Api.Ads.Common.Lib.OAuth2ProviderBase.GetAuthHeader </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -365,7 +368,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -374,6 +377,8 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The auth header.</dd></dl>
 
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider.html#a56cebcf3dbd0d0b7be9993bff8f20fdc">Google.Api.Ads.Common.Lib.AdsOAuthProvider</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#a526fd2b87274db9f576866a131471878">Google.Api.Ads.Common.Lib.OAuth2ProviderForApplications</a>.</p>
 
 </div>
 </div>
@@ -484,7 +489,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a63a53a18c2567ae72978d4678505f446"></a>
+<a class="anchor" id="a8bc659c7ce39309ad03da230bb169d79"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -492,7 +497,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Google.Api.Ads.Common.Lib.OAuth2ProviderBase.RefreshAccessTokenIfExpiring </td>
+          <td class="memname">virtual void Google.Api.Ads.Common.Lib.OAuth2ProviderBase.RefreshAccessTokenIfExpiring </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -500,7 +505,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -508,6 +513,8 @@ Properties</h2></td></tr>
 <p>Refreshes the access token if expiring. </p>
 
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider.html#a80837af3bd71d8d8caa508d4f0074826">Google.Api.Ads.Common.Lib.AdsOAuthProvider</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#a157d8092f98c93fd50081d3fb46eaf1b">Google.Api.Ads.Common.Lib.OAuth2ProviderForApplications</a>.</p>
 
 </div>
 </div>
@@ -628,6 +635,30 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The configuration object to be used with this client. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac16043af95f77d4ed415931773ffb4e5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_ads_feature_usage_registry.html">AdsFeatureUsageRegistry</a> Google.Api.Ads.Common.Lib.OAuth2ProviderBase.featureUsageRegistry</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">        AdsFeatureUsageRegistry.Instance</div>
+</div><!-- fragment -->
+<p>The registry for saving feature usage information.. </p>
 
 </div>
 </div>
@@ -919,7 +950,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.pfpvUsK0Xt/dist/github/src/Common/Lib/<a class="el" href="_o_auth2_provider_base_8cs.html">OAuth2ProviderBase.cs</a></li>
+<li>/tmp/tmp.iWtmD0S9v1/dist/github/src/Common/Lib/<a class="el" href="_o_auth2_provider_base_8cs.html">OAuth2ProviderBase.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -927,7 +958,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common.html">Common</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_lib.html">Lib</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_base.html">OAuth2ProviderBase</a></li>
-    <li class="footer">Generated on Fri Jan 8 2016 15:47:53 for Ads API .NET library by
+    <li class="footer">Generated on Fri Feb 5 2016 11:28:57 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

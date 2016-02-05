@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_criterion_bid_landscape_page_1_1_fields =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_criterion_bid_landscape_page_1_1_fields.html#a24333d2af4f98001fc56e4c96de60d63", null ]
+];

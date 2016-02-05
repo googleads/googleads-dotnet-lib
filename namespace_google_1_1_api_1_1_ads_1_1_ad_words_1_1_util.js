@@ -6,5 +6,6 @@ var namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util =
     [ "Shopping", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping" ],
     [ "v201506", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1v201506.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1v201506" ],
     [ "v201509", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1v201509.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1v201509" ],
+    [ "v201601", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1v201601.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1v201601" ],
     [ "ErrorUtilities", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_error_utilities.html", null ]
 ];

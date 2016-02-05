@@ -1,5 +1,6 @@
 var namespace_google_1_1_api_1_1_ads_1_1_common_1_1_logging =
 [
+    [ "AdsFeatureUsageRegistry", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_ads_feature_usage_registry.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_ads_feature_usage_registry" ],
     [ "DefaultBodyFormatter", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_default_body_formatter.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_default_body_formatter" ],
     [ "JsonBodyFormatter", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_json_body_formatter.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_json_body_formatter" ],
     [ "KeyValueMessageFormatter", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_key_value_message_formatter.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_key_value_message_formatter" ],
