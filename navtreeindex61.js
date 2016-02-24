@@ -1,5 +1,6 @@
 var NAVTREEINDEX61 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_feed_mapping_service.html#a0df1eb4b406095068c3d3d7d7f863025":[1,0,0,0,0,0,6,300,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_feed_mapping_service.html#a3419866f420e243bc671ef5651db4a1f":[1,0,0,0,0,0,6,300,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_feed_mapping_service.html#a704755b8fc589748fea6af9af64f0163":[1,0,0,0,0,0,6,300,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_feed_mapping_service.html#aaaba1260d792375c7cf427c3f1294339":[1,0,0,0,0,0,6,300,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX61 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_job_1_1_fields.html#a80d4792b855fa3396718f68b29c02cd2":[1,0,0,0,0,0,6,366,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_job_1_1_filterable_fields.html":[1,0,0,0,0,0,6,366,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_job_1_1_filterable_fields.html#a74bf42b566f8129160b5e71f65530eff":[1,0,0,0,0,0,6,366,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_job_1_1_selectable_fields.html":[1,0,0,0,0,0,6,366,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_job_1_1_selectable_fields.html#ab439c2662c443e17ae9c762c85b681ef":[1,0,0,0,0,0,6,366,2,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_job_1_1_selectable_fields.html":[1,0,0,0,0,0,6,366,2]
 };

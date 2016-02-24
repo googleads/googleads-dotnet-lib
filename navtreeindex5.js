@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201509_1_1_product_partition_node.html#a2aba8bc85b612bc555f3e5aba3536d3c":[1,0,0,0,0,0,3,3,0,1,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201509_1_1_product_partition_node.html#a472442c45f32e41df7c93f16580af849":[1,0,0,0,0,0,3,3,0,1,19],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201509_1_1_product_partition_node.html#a634b311db9d4cff4e4fef7a22820d46a":[1,0,0,0,0,0,3,3,0,1,16],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201509_1_1_product_partition_node.html#a671f4888c04c56a0cf5ca4fc70a26111":[1,0,0,0,0,0,3,3,0,1,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_format_spec_list_attribute_1_1_filterable_fields.html":[1,0,0,0,0,0,4,427,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_format_spec_list_attribute_1_1_filterable_fields.html#a143b81bc507cc7701d9958b23b443645":[1,0,0,0,0,0,4,427,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_format_spec_list_attribute_1_1_selectable_fields.html":[1,0,0,0,0,0,4,427,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_format_spec_list_attribute_1_1_selectable_fields.html#abfb496a11b2a707cf509b448805a94d3":[1,0,0,0,0,0,4,427,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_group.html":[1,0,0,0,0,0,4,338]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_ad_format_spec_list_attribute_1_1_selectable_fields.html#abfb496a11b2a707cf509b448805a94d3":[1,0,0,0,0,0,4,427,2,0]
 };

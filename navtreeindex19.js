@@ -1,5 +1,6 @@
 var NAVTREEINDEX19 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_label_error_1_1_selectable_fields.html":[1,0,0,0,0,0,4,533,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_label_error_1_1_selectable_fields.html#a6c0ded68cbd6436a179b7af474ac696c":[1,0,0,0,0,0,4,533,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_label_operation.html":[1,0,0,0,0,0,4,531],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_label_operation.html#a9190bb69cbfecdcaf4210e2ad2e0230f":[1,0,0,0,0,0,4,531,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_label_operation_1_1_fields.html":[1,0,0,0,0,0,4,295,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_label_operation_1_1_fields.html#a94d7b49e6697984ecbcfb797177f5596":[1,0,0,0,0,0,4,295,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_label_operation_1_1_filterable_fields.html":[1,0,0,0,0,0,4,295,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_label_operation_1_1_filterable_fields.html#a1e9ae90ad987090579e7f4cefb6fc41e":[1,0,0,0,0,0,4,295,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_label_operation_1_1_selectable_fields.html":[1,0,0,0,0,0,4,295,2]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_managed_customer_label_operation_1_1_filterable_fields.html#a1e9ae90ad987090579e7f4cefb6fc41e":[1,0,0,0,0,0,4,295,1,0]
 };

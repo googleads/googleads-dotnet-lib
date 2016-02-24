@@ -1,4 +1,0 @@
-var dir_b820cae01ed9da9298f7e7638a310f81 =
-[
-    [ "dist", "dir_3d6a9f17de477412998526b889a3c845.html", "dir_3d6a9f17de477412998526b889a3c845" ]
-];

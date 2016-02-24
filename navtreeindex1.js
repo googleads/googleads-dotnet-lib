@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_sitelinks_using_feeds.html#a00387108669f5a7debf3a66c323ee006":[1,0,0,0,0,0,0,0,1,52,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_sitelinks_using_feeds.html#acc9afb8a8ba7e7bcaeed3c436e343272":[1,0,0,0,0,0,0,0,1,52,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_text_ad_with_upgraded_urls.html":[1,0,0,0,0,0,0,0,1,6],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201506_1_1_add_text_ad_with_upgraded_urls.html#a6faad48fb9bb1065d2d01e399aedc8d4":[1,0,0,0,0,0,0,0,1,6,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_experiment.html#ac900995ddf6f6ebcb3c5c13ac408528f":[1,0,0,0,0,0,0,0,2,32,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_express_businesses.html":[1,0,0,0,0,0,0,0,2,44],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_express_businesses.html#a416489c6e306355c51fa68531f1dcb5d":[1,0,0,0,0,0,0,0,2,44,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_express_businesses.html#a76fa7b1e7b5d229e1137143f221d3b37":[1,0,0,0,0,0,0,0,2,44,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_google_my_business_location_extensions.html":[1,0,0,0,0,0,0,0,2,52]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_add_express_businesses.html#a76fa7b1e7b5d229e1137143f221d3b37":[1,0,0,0,0,0,0,0,2,44,0]
 };

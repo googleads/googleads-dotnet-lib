@@ -1,5 +1,6 @@
 var NAVTREEINDEX66 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_policy_violation_error_1_1_filterable_fields.html":[1,0,0,0,0,0,6,50,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_policy_violation_error_1_1_filterable_fields.html#afbe818feda2f0f1564492d98c4217c23":[1,0,0,0,0,0,6,50,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_policy_violation_error_1_1_selectable_fields.html":[1,0,0,0,0,0,6,50,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_policy_violation_error_1_1_selectable_fields.html#ab282e3956b86af77056de9f539a3906a":[1,0,0,0,0,0,6,50,2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX66 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_promotion_service.html#aca30fd7784b60d080832fabe10c67ae3":[1,0,0,0,0,0,6,493,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_proximity.html":[1,0,0,0,0,0,6,119],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_proximity.html#a03f5ca0c030b6b6f16d147f87d847ad4":[1,0,0,0,0,0,6,119,6],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_proximity.html#a1c32044ecec4c87bc76b44c4f493584a":[1,0,0,0,0,0,6,119,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_proximity.html#a2cf5ad9ef3e66c7fa2af8b449cacb13e":[1,0,0,0,0,0,6,119,5]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_proximity.html#a1c32044ecec4c87bc76b44c4f493584a":[1,0,0,0,0,0,6,119,4]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX48 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_third_party_redirect_ad_1_1_selectable_fields.html#a3cef0cf37269985a92ab6a03426d6271":[1,0,0,0,0,0,5,27,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_tracking_setting.html":[1,0,0,0,0,0,5,170],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_tracking_setting.html#af2727ae6d4ae517b30eda593fc341459":[1,0,0,0,0,0,5,170,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_tracking_setting_1_1_fields.html":[1,0,0,0,0,0,5,170,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX48 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_you_tube_video_1_1_fields.html#a35de5332ba11a50c7deca216e6b9b02f":[1,0,0,0,0,0,5,102,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_you_tube_video_1_1_filterable_fields.html":[1,0,0,0,0,0,5,102,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_you_tube_video_1_1_filterable_fields.html#ad11f803a088b5703630f2fe8590c7343":[1,0,0,0,0,0,5,102,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_you_tube_video_1_1_selectable_fields.html":[1,0,0,0,0,0,5,102,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_you_tube_video_1_1_selectable_fields.html#ad16f5ad0bfe650d266ab56a2a4f6f414":[1,0,0,0,0,0,5,102,2,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_you_tube_video_1_1_selectable_fields.html":[1,0,0,0,0,0,5,102,2]
 };
