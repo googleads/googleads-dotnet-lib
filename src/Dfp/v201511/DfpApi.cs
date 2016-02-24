@@ -12044,6 +12044,11 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_PLATFORM_TYPE_NAME,
+    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange pricing rule id.
+    /// <p><b>This experimental dimension only works with Ad Exchange web properties
+    /// linked with an active status.</b></p>
+    /// </summary>
+    AD_EXCHANGE_PRICING_RULE_ID,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange pricing rules.
     /// <p><b>This experimental dimension only works with Ad Exchange web properties
     /// linked with an active status.</b></p>
@@ -12214,11 +12219,6 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// properties linked with an active status.</b></p>
     /// </summary>
     AD_EXCHANGE_OS_VERSION_NAME,
-    /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange pricing rule id.
-    /// <p><b>This experimental dimension only works with Ad Exchange web properties
-    /// linked with an active status.</b></p>
-    /// </summary>
-    AD_EXCHANGE_PRICING_RULE_ID,
     /// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange tags. <p><b>This
     /// experimental dimension only works with Ad Exchange web properties linked with an
     /// active status.</b></p>
@@ -22090,7 +22090,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>The inventory is once reserved and now released.
     /// </summary>
     RELEASED,
-    /// <summary>This entity does not need inventory.
+    /// <summary>The reservation status of the corresponding <a href='LineItem'>LineItem</a>
+    /// should be used for this <a href='ProposalLineItem'>ProposalLineItem</a>.
     /// </summary>
     IGNORED,
     /// <summary>The value returned if the actual value is not exposed by the requested API

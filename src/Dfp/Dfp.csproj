@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -46,6 +46,10 @@
     <Compile Include="Headers\RequestHeaderStub.cs" />
     <Compile Include="Headers\OAuth.cs" />
     <Compile Include="Lib\DfpAuthorizationMethod.cs" />
+    <Compile Include="Util\v201602\DateTimeUtilities.cs" />
+    <Compile Include="Util\v201602\PqlUtilities.cs" />
+    <Compile Include="Util\v201602\StatementBuilder.cs" />
+    <Compile Include="Util\v201602\ReportUtilities.cs" />
     <Compile Include="Util\v201511\DateTimeUtilities.cs" />
     <Compile Include="Util\v201511\PqlUtilities.cs" />
     <Compile Include="Util\v201511\StatementBuilder.cs" />
@@ -62,9 +66,6 @@
     <Compile Include="Util\v201502\PqlUtilities.cs" />
     <Compile Include="Util\v201502\StatementBuilder.cs" />
     <Compile Include="Util\v201502\ReportUtilities.cs" />
-    <Compile Include="Util\v201411\DateTimeUtilities.cs" />
-    <Compile Include="Util\v201411\PqlUtilities.cs" />
-    <Compile Include="Util\v201411\StatementBuilder.cs" />
     <Compile Include="DfpErrorMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,8 +84,6 @@
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Headers\RequestHeader.cs" />
-    <Compile Include="v201411\DfpApi.cs" />
-    <Compile Include="v201411\DfpServiceV201411.cs" />
     <Compile Include="v201502\DfpApi.cs" />
     <Compile Include="v201502\DfpServiceV201502.cs" />
     <Compile Include="v201505\DfpApi.cs" />
@@ -93,6 +92,8 @@
     <Compile Include="v201508\DfpServiceV201508.cs" />
     <Compile Include="v201511\DfpApi.cs" />
     <Compile Include="v201511\DfpServiceV201511.cs" />
+    <Compile Include="v201602\DfpApi.cs" />
+    <Compile Include="v201602\DfpServiceV201602.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

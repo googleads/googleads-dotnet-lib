@@ -174,7 +174,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
           Thread.Sleep(sleepMillis);
 
           Selector selector = new Selector() {
-            fields = new string[] { BatchJob.Fields.Id, BatchJob.Fields.Status },
+            fields = new string[] { BatchJob.Fields.Id, BatchJob.Fields.Status,
+                BatchJob.Fields.DownloadUrl, BatchJob.Fields.ProcessingErrors,
+                BatchJob.Fields.ProgressStats },
             predicates = new Predicate[] {
               Predicate.Equals(BatchJob.Fields.Id, batchJob.id)
             }

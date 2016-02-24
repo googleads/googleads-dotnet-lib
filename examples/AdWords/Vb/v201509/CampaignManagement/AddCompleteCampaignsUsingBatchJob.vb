@@ -173,7 +173,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
           Thread.Sleep(sleepMillis)
 
           Dim selector As New Selector()
-          selector.fields = New String() {BatchJob.Fields.Id, BatchJob.Fields.Status}
+          selector.fields = New String() { _
+              BatchJob.Fields.Id, BatchJob.Fields.Status, BatchJob.Fields.DownloadUrl, _
+              BatchJob.Fields.ProcessingErrors, BatchJob.Fields.ProgressStats
+          }
           selector.predicates = New Predicate() { _
             Predicate.Equals(BatchJob.Fields.Id, job.id)
           }

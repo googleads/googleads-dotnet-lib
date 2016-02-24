@@ -453,7 +453,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     public bool EnableSoapExtension {
       get {
-        return enableGzipCompression;
+        return enableSoapExtension;
       }
       set {
         SetPropertyField("EnableSoapExtension", ref enableSoapExtension, value);
